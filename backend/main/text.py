@@ -788,7 +788,15 @@ Note that there is a space between the name and the pipes (`|`).
                         "Your loop is perfect."
             )
 
-        return self.check_exercise(solution, test, generate_inputs, functionise=True)
+        result = self.check_exercise(solution, test, generate_inputs, functionise=True)
+        if result is True:
+            if sum(isinstance(node, ast.For) for node in ast.walk(self.tree)) > 1:
+                return dict(
+                    message="Well done, this solution is correct! However, it can be improved. "
+                            "You only need to use one loop - using more is inefficient. "
+                            "You can reuse the variable containing the line of `-` and `+`."
+                )
+        return result
 
     @step("""
 You're getting good at this! Looks like you need more of a challenge...maybe instead of putting a name in a box, the name should be the box? Write a program that outputs this:
@@ -801,10 +809,10 @@ You're getting good at this! Looks like you need more of a challenge...maybe ins
     d     d
     +World+
     """, hints="""
-You will need two for loops over `name`, one after the other
+You will need two for loops over `name`, one after the other.
 Each line except for the first and last has the same characters in the middle. That means you can reuse something.
-Create a variable containing the spaces in the middle and use it many times
-Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces
+Create a variable containing the spaces in the middle and use it many times.
+Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.
 """)
     def name_box_2(self):
         # TODO only allow two loops
@@ -842,7 +850,21 @@ b   b
         def generate_inputs():
             return {"name": generate_short_string()}
 
-        return self.check_exercise(solution, test, generate_inputs, functionise=True)
+        result = self.check_exercise(solution, test, generate_inputs, functionise=True)
+        if result is True:
+            for outer in ast.walk(self.tree):
+                if isinstance(outer, ast.For):
+                    for inner in ast.walk(outer):
+                        if isinstance(inner, ast.For) and outer != inner:
+                            return dict(
+                                message="Well done, this solution is correct! "
+                                        "And you used a nested loop (a loop inside a loop) which we "
+                                        "haven't even covered yet! "
+                                        "However, in this case a nested loop is inefficient. "
+                                        "You can make a variable containing spaces and reuse that in each line."
+                            )
+
+        return result
 
     @step("""
 Sweet! You're really getting the hang of this! If you want, here's one more optional bonus challenge. Try writing a program that outputs:
