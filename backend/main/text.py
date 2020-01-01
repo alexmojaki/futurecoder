@@ -151,14 +151,16 @@ By the way, if you get stuck, you can click the lightbulb icon in the bottom rig
           """,
           hints="The space character must be somewhere inside quotes.")
     def hello_world_space(self):
-        # TODO // You must still add two or more strings together.
-        return (
-                "'hello world'" in self.result and
-                search_ast(
-                    self.expr,
-                    ast.BinOp(left=ast.Str(), op=ast.Add(), right=ast.Str()),
-                )
-        )
+        if "'hello world'" not in self.result:
+            return False
+
+        if search_ast(
+                self.expr,
+                ast.BinOp(left=ast.Str(), op=ast.Add(), right=ast.Str()),
+        ):
+            return True
+
+        return dict(message="You must still add two or more strings together.")
 
     @step("""
 Well done! Any of the following are valid solutions:
