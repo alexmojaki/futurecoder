@@ -209,6 +209,14 @@ The answer is that `sunshine` looks like a variable, so Python tries to look up 
 Now make a variable called `name` whose value is another string. The string can be anything...how about your name?
     """)
     def name_assign(self):
+        match = re.match(r"(.*)=", self.input)
+        if match and match.group(1).strip() != "name":
+            return dict(message="Put `name` before the `=` to create a variable called `name`.")
+
+        if self.input_matches("name=[^'\"].*"):
+            return dict(message="You've got the `name = ` part right, now put a string on "
+                                "the right of the `=`.")
+
         if not is_ast_like(
                 self.tree,
                 ast.Module(body=[ast.Assign(targets=[ast.Name(id='name')],
@@ -216,16 +224,14 @@ Now make a variable called `name` whose value is another string. The string can 
         ):
             return False
         name = self.console.locals.get('name')
-        if isinstance(name, str) and name:
-            return True
+        if isinstance(name, str):
+            if not name:
+                return dict(message="Choose a non-empty string")
+            if name[0] == " ":
+                return dict(message="For this exercise, choose a name "
+                                    "that doesn't start with a space.")
 
-        # TODO help user in case of:
-        """
-        // empty string
-        // string starts with space
-        // name = non-string
-        // non-name = something
-        """
+            return True
 
     @step("""
 You can use variables in calculations just like you would use literals. For example, try:
