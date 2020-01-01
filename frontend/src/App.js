@@ -93,16 +93,6 @@ class AppComponent extends React.Component {
               onCommand={(cmd) => rpc("shell_line", {line: cmd}, (data) => this.ranCode(data))}
               ref={this.terminal}
             />
-            {/*<Terminal*/}
-            {/*  color='white'*/}
-            {/*  prompt='white'*/}
-            {/*  commandPassThrough={(cmd, print) => {*/}
-            {/*    rpc("shell_line", {line: cmd}, ranCode);*/}
-            {/*  }}*/}
-            {/*  hideTopBar*/}
-            {/*  allowTabs={false}*/}
-            {/*  promptSymbol=">>>"*/}
-            {/*/>*/}
           </div>
         </div>
       </div>

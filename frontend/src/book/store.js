@@ -40,7 +40,6 @@ export const showHint = makeAction(
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
-    console.log(state.server.progress, value.progress);
     if (state.server.progress < value.progress) {
       animateScroll.scrollToBottom({duration: 1000, delay: 500});
       state = {
