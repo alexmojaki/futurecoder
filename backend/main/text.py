@@ -729,7 +729,6 @@ Note that there is a space between the name and the pipes (`|`).
         """),
     ])
     def name_box(self):
-        # TODO handle using two loops
         @returns_stdout
         def solution(name):
             line = ''
@@ -815,8 +814,6 @@ Create a variable containing the spaces in the middle and use it many times.
 Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.
 """)
     def name_box_2(self):
-        # TODO only allow two loops
-        # TODO no nested loops
         @returns_stdout
         def solution(name):
             line = '+' + name + '+'
