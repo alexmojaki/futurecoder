@@ -1,0 +1,78 @@
+.ide {
+  width: 48vw;
+  height: 97vh;
+  position: fixed;
+  right: 1vw;
+  top: 1vh;
+  bottom: 1vh;
+  
+  display: flex;
+  flex-direction: column;
+
+  .editor-buttons {
+    margin-bottom: 5px;
+  }
+
+  .editor-and-terminal {
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+
+    .editor {
+      height: 49%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 51%;
+    }
+
+    .terminal {
+      height: 49%;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      top: 51%;
+      
+      > div[name=react-console-emulator] {
+        height: 100%;
+        min-height: unset !important;
+      }
+      //> div, > div > div > div {
+      //  overflow-x: auto;
+      //  width: 100%;
+      //  height: 100%;
+      //  max-width: 100%;
+      //  min-height: 100%;
+      //  max-height: 100%;
+      //}
+    }
+  }
+
+}
+
+
+.book-container {
+  margin-left: 2vw;
+  width: 46vw;
+
+  code {
+    color: black;
+  }
+}
+
+.hint-icon {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 48px;
+  height: 48px;
+}
+
+.popup-content {
+  top: unset !important;
+  left: unset !important;
+  width: auto !important;
+  overflow: auto;
+  max-height: 80vh;
+  max-width: 40vw;
+}

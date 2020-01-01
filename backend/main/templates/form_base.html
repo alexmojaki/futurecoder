@@ -1,0 +1,34 @@
+{% extends "backend_base.html" %}
+
+{% block body %}
+<div>
+  <header>
+    <h1>{% block header%}{% endblock %}</h1>
+  </header>
+  <section>    
+    <div class="section-header">
+      <h2>
+        {% block form_title %}{% endblock %}
+      </h2>
+      <div class="section-controls">
+        {% block form_actions %}
+
+        {% endblock %}
+      </div>
+    </div>
+    {% include "messages.html" %}
+    <form class="table-form" method="post">{% csrf_token %}
+      {% block form %}
+      <table>
+        {{ form.as_table }}
+      </table>      
+      <button class="btn">
+        <i class="fas fa-check"></i>
+        Update
+      </button>
+      {% endblock %}
+    </form>
+  </section>
+</div>
+  
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block base_body %}
+    <div class="main-layout">
+
+        <nav>
+            <div>
+                <a>
+                    <i class="far fa-user-circle"></i> {{ user.username }}
+                </a>
+                <a href="{% url 'logout' %}">
+                    <i class="fas fa-power-off"></i> Sign out
+                </a>
+            </div>
+        </nav>
+        {% block main_block %}
+            <main>
+                {% block body %}
+
+                {% endblock %}
+            </main>
+        {% endblock %}
+    </div>
+{% endblock %}
