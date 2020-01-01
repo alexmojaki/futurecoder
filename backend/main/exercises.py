@@ -3,6 +3,7 @@ import inspect
 import random
 import string
 import traceback
+from textwrap import indent
 
 from littleutils import only
 
@@ -97,11 +98,17 @@ def check_exercise(func, solution, test, generate_inputs, functionise=False):
 def clean_result(result):
     if not isinstance(result, str):
         result = repr(result)
-    return result.rstrip() or '<nothing>'
+    result = result.rstrip()
+    result = result or '<nothing>'
+    result = indent(result, '    ')
+    return result
 
 
 def inputs_string(inputs):
-    return '\n'.join(f'{name} = {value!r}' for name, value in inputs.items())
+    return indent(
+        '\n'.join(f'{name} = {value!r}' for name, value in inputs.items()),
+        '    ',
+    )
 
 
 def check_result(func, inputs, expected_result):
@@ -122,11 +129,11 @@ but for these inputs:
 
 your code outputs:
 
-{result.rstrip()}
+{result}
 
 when it should output:
 
-{expected_result.rstrip()}
+{expected_result}
 """)
 
 

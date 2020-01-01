@@ -1,4 +1,4 @@
-import {redact} from "../frontendlib";
+import {ipush, iremove, redact} from "../frontendlib";
 import {rpc} from "../rpc";
 import {animateScroll} from "react-scroll";
 
@@ -11,6 +11,8 @@ const initialState = {
   },
   numHints: 0,
   editorContent: "",
+  messages: [],
+  pastMessages: [],
 };
 
 
@@ -45,6 +47,7 @@ export const ranCode = makeAction(
       state = {
         ...state,
         numHints: 0,
+        messages: [],
         server: {
           ...state.server,
           progress: value.progress,
@@ -53,6 +56,16 @@ export const ranCode = makeAction(
         }
       };
     }
+    if (value.message && state.pastMessages.indexOf(value.message) === -1) {
+      animateScroll.scrollToBottom({duration: 1000, delay: 500});
+      state = ipush(state, "messages", value.message);
+      state = ipush(state, "pastMessages", value.message);
+    }
     return state;
   },
 );
+
+export const closeMessage = makeAction(
+  'CLOSE_MESSAGE',
+  (state, {value}) => iremove(state, "messages", value)
+)

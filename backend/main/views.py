@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.shortcuts import render
 from django.views import View
+from markdown import markdown
 
 from main.models import CodeEntry
 from main.text import text_parts, steps, Steps
@@ -142,8 +143,8 @@ class API:
 
         return dict(
             result=(lines(stdout, "white") +
-                    lines(stderr, "red") +
-                    lines(message, "cyan")),
+                    lines(stderr, "red")),
+            message=markdown(message),
             **self.current_state(),
         )
 
@@ -189,12 +190,3 @@ class API:
     def move_step(self, delta: int):
         self.user.step = steps[self.progress + delta]
         self.user.save()
-
-
-def render_with_markers(self, markers: list, strip_leading_indent=True) -> str:
-    print(self, markers, strip_leading_indent)
-    return ''
-
-
-def bar():
-    pass

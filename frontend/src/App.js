@@ -4,14 +4,14 @@ import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
-import {bookSetState, bookState, ranCode, moveStep, showHint} from "./book/store";
+import {bookSetState, bookState, ranCode, moveStep, showHint, closeMessage} from "./book/store";
 import hintIcon from "./img/hint.png"
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-monokai";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faPlay} from '@fortawesome/free-solid-svg-icons'
+import {faPlay, faTimes} from '@fortawesome/free-solid-svg-icons'
 import {animateScroll} from "react-scroll";
 
 class AppComponent extends React.Component {
@@ -37,6 +37,7 @@ class AppComponent extends React.Component {
       },
       numHints,
       editorContent,
+      messages,
     } = this.props;
     return <div className="book-container">
       <div className="book-text markdown-body">
@@ -46,6 +47,19 @@ class AppComponent extends React.Component {
             <hr/>
           </div>
         )}
+        {
+          messages.map((message, index) =>
+            <div key={index} className="card book-message">
+              <div
+                className="card-header"
+                onClick={() => closeMessage(index)}>
+                <FontAwesomeIcon icon={faTimes}/>
+              </div>
+              <div className="card-body" 
+                   dangerouslySetInnerHTML={{__html: message}}/>
+            </div>
+          )
+        }
         <div>
           <button onClick={() => moveStep(-1)}>{"<-"}</button>
           <button onClick={() => moveStep(+1)}>{"->"}</button>

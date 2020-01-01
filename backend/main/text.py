@@ -92,9 +92,9 @@ At the bottom right of the screen is the *shell*. This is a place for running sm
 
         return dict(
             message=dedent("""
-                Awesome, you're trying things out your own experiments!
+                Awesome, you're trying out your own experiments!
                 That's a great sign. Keep it up.
-                Just letting you know that you do need to eventually type '1+2'
+                Just letting you know that you do need to eventually type `1+2`
                 for the book to move forward.
                 """)
         )
@@ -776,8 +776,7 @@ Note that there is a space between the name and the pipes (`|`).
                 functionise=True,
         ) is True:
             return dict(
-                message="You're almost there!\n"
-                        "Just add a few more characters to your strings.\n"
+                message="You're almost there! Just add a few more characters to your strings. "
                         "Your loop is perfect."
             )
 
