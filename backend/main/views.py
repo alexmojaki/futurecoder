@@ -122,12 +122,7 @@ class API:
         message = ""
 
         if self.user.step_name != "final_text":
-            method = getattr(self.page(entry, console, self.user.step.program), self.user.step_name)
-            try:
-                step_result = method()
-            except SyntaxError:
-                step_result = False
-
+            step_result = self.page(entry, console, self.user.step_name).check_step()
             if isinstance(step_result, dict):
                 passed = step_result.get("passed", False)
                 message = step_result.get("message", "")

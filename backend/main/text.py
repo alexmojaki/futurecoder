@@ -92,12 +92,26 @@ class PageMeta(type):
 
 
 class Page(metaclass=PageMeta):
-    def __init__(self, code_entry, console, program):
+    def __init__(self, code_entry, console, step_name):
         self.input = code_entry.input
         self.result = code_entry.output
         self.code_source = code_entry.source
         self.console = console
-        self.program = program
+        self.step_name = step_name
+        self.step = getattr(self, step_name)
+
+    def before_step(self):
+        return None
+
+    def check_step(self):
+        before = self.before_step()
+        if before is not None:
+            return before
+
+        try:
+            return self.step()
+        except SyntaxError:
+            return False
 
     def check_exercise(self, *args, **kwargs):
         if self.code_source == "editor":
@@ -119,7 +133,7 @@ class Page(metaclass=PageMeta):
         return is_ast_like(self.tree, ast.parse(template))
 
     def matches_program(self):
-        return self.tree_matches(self.program)
+        return self.tree_matches(self.step.program)
 
     def input_matches(self, pattern, remove_spaces=True):
         inp = self.input.rstrip()

@@ -45,6 +45,12 @@ The answer is that `sunshine` looks like a variable, so Python tries to look up 
 
 
 class UsingVariables(Page):
+    def before_step(self):
+        if 'word_plus_name' in self.step_name and self.console.locals.get("word") != "Hello":
+            return dict(
+                message="Oops, you need to set `word = 'Hello'` before we can continue."
+            )
+
     @step("""
 Previously we made a variable called `word` with the value `'Hello'` with this code:
 
