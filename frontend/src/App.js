@@ -76,7 +76,7 @@ class AppComponent extends React.Component {
           <button className="btn btn-primary" onClick={() => movePage(-1)}>Previous</button>}
           {" "}
           {showingPageIndex < pages.length - 1 && step_index === page.step_texts.length - 1 &&
-          <button className="btn btn-primary" onClick={() => movePage(+1)}>Next</button>}
+          <button className="btn btn-success" onClick={() => movePage(+1)}>Next</button>}
         </div>
       </div>
       <div className="ide">
