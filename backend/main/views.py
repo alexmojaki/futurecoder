@@ -14,8 +14,9 @@ from django.shortcuts import render
 from django.views import View
 from markdown import markdown
 
+from main.chapters.variables import WritingPrograms
 from main.models import CodeEntry
-from main.text import Page, WritingPrograms, page_slugs_list
+from main.text import Page, page_slugs_list
 
 log = logging.getLogger(__name__)
 
