@@ -7,7 +7,7 @@ from astcheck import is_ast_like
 from markdown import markdown
 
 from main.exercises import check_exercise
-from main.utils import no_weird_whitespace
+from main.utils import no_weird_whitespace, snake
 
 
 def step(text, *, program="", hints=()):
@@ -72,7 +72,11 @@ class PageMeta(type):
 
     @property
     def title(cls):
-        return cls.slug
+        return (
+            snake(cls.slug)
+                .replace("_", " ")
+                .title()
+        )
 
     @property
     def index(self):
