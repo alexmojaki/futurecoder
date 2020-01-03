@@ -130,7 +130,16 @@ class Page(metaclass=PageMeta):
         return self.stmt.value
 
     def tree_matches(self, template):
-        return is_ast_like(self.tree, ast.parse(template))
+        if is_ast_like(self.tree, ast.parse(template)):
+            return True
+
+        if is_ast_like(ast.parse(self.input.lower()), ast.parse(template.lower())):
+            return dict(
+                message="Python is case sensitive! That means that small and capital letters "
+                        "matter and changing them changes the meaning of the program. The strings "
+                        "`'hello'` and `'Hello'` are different, as are the variable names "
+                        "`word` and `Word`."
+            )
 
     def matches_program(self):
         return self.tree_matches(self.step.program)
