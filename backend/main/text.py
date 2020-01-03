@@ -8,9 +8,6 @@ from markdown import markdown
 from main.exercises import generate_short_string, check_result, check_exercise
 from main.utils import no_weird_whitespace, returns_stdout
 
-text_parts = []
-steps = []
-
 
 def step(text, *, program="", hints=()):
     if isinstance(hints, str):
@@ -31,17 +28,65 @@ def step(text, *, program="", hints=()):
     text = markdown(text.strip())
 
     def decorator(f):
+        f.is_step = True
         f.hints = hints
         f.text = text
         f.program = program
-        text_parts.append(text)
-        steps.append(f.__name__)
         return f
 
     return decorator
 
 
-class Steps:
+pages = {}
+page_slugs_list = []
+
+
+class PageMeta(type):
+    final_text = None
+    step_names = []
+    step_texts = []
+
+    def __init__(cls, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if cls.__name__ == "Page":
+            return
+        pages[cls.slug] = cls
+        page_slugs_list.append(cls.slug)
+        cls.step_names = []
+        cls.step_texts = []
+        for key, value in cls.__dict__.items():
+            if getattr(value, "is_step", False):
+                cls.step_names.append(key)
+                cls.step_texts.append(value.text)
+
+        assert isinstance(cls.final_text, str)
+        no_weird_whitespace(cls.final_text)
+        cls.final_text = markdown(cls.final_text.strip())
+        cls.step_names.append("final_text")
+        cls.step_texts.append(cls.final_text)
+
+    @property
+    def slug(cls):
+        return cls.__name__
+
+    @property
+    def title(cls):
+        return cls.slug
+
+    @property
+    def index(self):
+        return page_slugs_list.index(self.slug)
+
+    @property
+    def next_page(self):
+        return pages[page_slugs_list[self.index + 1]]
+
+    @property
+    def previous_page(self):
+        return pages[page_slugs_list[self.index - 1]]
+
+
+class Page(metaclass=PageMeta):
     def __init__(self, code_entry, console, program):
         self.input = code_entry.input
         self.result = code_entry.output
@@ -77,9 +122,9 @@ class Steps:
             inp = re.sub(r'\s', '', inp)
         return re.match(pattern + '$', inp)
 
-    @step("""
-# The shell
 
+class IntroducingTheShell(Page):
+    @step("""
 At the bottom right of the screen is the *shell*. This is a place for running small bits of Python code. Just type in some code, press enter, and it'll run! Try it now:
 
 1. Click anywhere on the shell (the black area).
@@ -118,11 +163,19 @@ Try doing some more calculations now. You can multiply numbers with `*`, divide 
             )
         return self.input_matches(r'\d[-*/]\d')
 
+    final_text = """
+Excellent! Keep experimenting. When you're ready, click 'Next' to continue.
+"""
+
+
+class NavigatingShellHistory(Page):
+    final_text = """
+Here's a tip: often you will want to re-run a previously entered bit of code, or a slightly modified version of it. You can copy and paste, but that's tedious and gets in the way of experimenting. A better method is to press the Up Arrow key on your keyboard. This will insert the previous line of code into the shell. Keep pressing it to go further back in your history, and if you go too far, press the Down Arrow key to go the other way. Try using it now.
+    """
+
+
+class IntroducingStrings(Page):
     @step("""
-Awesome! Here's a tip: often you will want to re-run a previously entered bit of code, or a slightly modified version of it. You can copy and paste, but that's tedious and gets in the way of experimenting. A better method is to press the Up Arrow key on your keyboard. This will insert the previous line of code into the shell. Keep pressing it to go further back in your history, and if you go too far, press the Down Arrow key to go the other way. Try using it now.
-
-# Strings
-
 Python lets you do much more than calculate. In fact, we're not going to touch numbers or maths for a while. Instead, we're going to look at *strings*. Strings are essentially snippets of text. For example, enter the following into the shell, quotes (`'`) included:
 
 __program_indented__
@@ -130,11 +183,15 @@ __program_indented__
     def hello_string(self):
         return self.matches_program()
 
-    @step("""
+    final_text = """
 The shell simply gives the same thing back because there's nothing to further to calculate. `'hello'` is simply equal to `'hello'`.
 
-A string is a sequence of characters - in this case the 5 characters `hello`. The quotes are not part of the string - they are there to tell both humans and computers that this is a string consisting of whatever characters are between the quotes.
+A string is a sequence of characters. A character is a single symbol such as a letter, number, punctuation, space, etc. In this case the string contains the 5 characters `hello`. The quotes are not part of the string - they are there to tell both humans and computers that this is a string consisting of whatever characters are between the quotes.
+"""
 
+
+class AddingStrings(Page):
+    @step("""
 Strings can be added together using `+`, although this means something very different from adding numbers. For example, try:
 
 __program_indented__
@@ -149,7 +206,10 @@ Here's an exercise: change the previous code slightly so that the result is the 
 
 By the way, if you get stuck, you can click the lightbulb icon in the bottom right for a hint.
           """,
-          hints="The space character must be somewhere inside quotes.")
+          hints=[
+              "A space is a character just like any other, like `o` or `w`.",
+              "The space character must be somewhere inside quotes.",
+          ])
     def hello_world_space(self):
         if "'hello world'" not in self.result:
             return False
@@ -162,15 +222,17 @@ By the way, if you get stuck, you can click the lightbulb icon in the bottom rig
 
         return dict(message="You must still add two or more strings together.")
 
-    @step("""
+    final_text = """
 Well done! Any of the following are valid solutions:
 
     'hello ' + 'world'
     'hello' + ' world'
     'hello' + ' ' + 'world'
+"""
 
-# Variables
 
+class IntroducingVariables(Page):
+    @step("""
 To make interesting programs, we can't always manipulate the same values. We need a way to refer to values that are unknown ahead of time and can change - values that can vary. These are called *variables*.
 
 Run this code:
@@ -178,7 +240,6 @@ Run this code:
 __program_indented__
     """, program="word = 'Hello'")
     def word_assign(self):
-        # TODO // case sensitive
         return self.matches_program()
 
     @step("""
@@ -203,8 +264,16 @@ Similarly, `'sunshine'` is `'sunshine'`, but what's `__program__` without quotes
     def sunshine_undefined_check(self):
         return self.matches_program()
 
-    @step("""
+    final_text = """
 The answer is that `sunshine` looks like a variable, so Python tries to look up its value, but since we never defined a variable with that name we get an error.
+"""
+
+
+class UsingVariables(Page):
+    @step("""
+Previously we made a variable called `word` with the value `'Hello'` with this code:
+
+    word = 'Hello'
 
 Now make a variable called `name` whose value is another string. The string can be anything...how about your name?
     """)
@@ -283,11 +352,13 @@ Those quotes around strings are getting annoying. Try running this:
     def first_print(self):
         return self.matches_program()
 
+    final_text = """
+Hooray! No more quotes! We'll break down what's happening in this code later. For now just know that `print(<something>)` displays `<something>` in the shell. In particular it displays the actual content of strings that we usually care about, instead of a representation of strings that's suitable for code which has things like quotes. The word `print` here has nothing to do with putting ink on paper.
+"""
+
+
+class WritingPrograms(Page):
     @step("""
-Hooray! No more quotes! We'll break down what's happening in this code later. For now just know that `print(<something>)` displays `<something>` in the console. In particular it displays the actual content of strings that we usually care about, instead of a representation of strings that's suitable for code which has things like quotes. The word `print` here has nothing to do with putting ink on paper.
-
-# Writing programs
-
 It's time to stop doing everything in the shell. In the top right you can see the *editor*. This is a place where you can write and run longer programs. The shell is great and you should keep using it to explore, but the editor is where real programs live.
 
 Copy the program below into the editor, then click the 'Run' button:
@@ -303,7 +374,7 @@ print(word + ' ' + name)
     def editor_hello_world(self):
         return self.matches_program()
 
-    @step("""
+    final_text = """
 Congratulations, you have run your first actual program!
 
 Take some time to understand this program. Python runs each line one at a time from top to bottom. You should try simulating this process in your head - think about what each line does. See how the value of `word` was changed and what effect this had. Note that when `print` is used multiple times, each thing (`Hello World` and `Goodbye World` in this case) is printed on its own line.
@@ -315,9 +386,11 @@ Some things to note about programs in the editor:
 3. If you enter code in the shell and it has a value, that value will automatically be displayed. That doesn't happen for programs in the editor - you have to print values. If you remove `print()` from the program, changing the two lines to just `word + ' ' + name`, nothing will be displayed.
 
 I recommend that you check all of these things for yourself.
+"""
 
-# `for` loops
 
+class IntroducingForLoops(Page):
+    @step("""
 Good news! You've made it past the boring basics. We can start to write some interesting programs and have a bit of fun. One of the most powerful concepts in programming is the *loop*, which lets you repeat the same code over and over. Python has two kinds of loop: `for` loops and `while` loops. Here is an example of a for loop, try running this program:
 
 __program_indented__
@@ -328,7 +401,7 @@ for character in name: print(character)
     def first_for_loop(self):
         return self.matches_program()
 
-    @step("""
+    final_text = """
 You can read the code almost like normal English:
 
 > For each character in the string `name`, print that character.
@@ -359,8 +432,16 @@ A for loop generally follows this structure:
     for <variable> in <collection>: <code to repeat>
 
 The `for`, `in`, and `:` are all essential.
+"""
 
-Actually, the example above is simplified; it would usually (and should) be written like so:
+
+class Indentation(Page):
+    @step("""
+This example loop:
+
+    for character in name: print(character)
+
+works, but actually it would usually (and should) be written like this:
 
     for character in name:
         print(character)
@@ -413,9 +494,13 @@ Both programs are valid, they just do different things. The below program is inv
     def mismatched_indentations(self):
         return 'unindent does not match any outer indentation level' in self.result
 
-    @step("""
+    final_text = """
 The problem is that both lines are indented, but by different amounts. The first line starts with 4 spaces, the second line starts with 2. When you indent, you should always indent by 4 spaces. Any consistent indentation is actually acceptable, but 4 spaces is the convention that almost everyone follows. Note that the editor generally makes this easy for you. For example, if you press the 'Tab' key on your keyboard in the editor, it will insert 4 spaces for you.
+"""
 
+
+class BasicForLoopExercises(Page):
+    @step("""
 Time for some exercises! Modify this program:
 
     name = 'World'
@@ -474,6 +559,8 @@ For `name = 'World'`, it should output:
     World
     World
     World
+
+By the way, you can set `name` to anything in the first line. Only the rest of the program after that will be checked.
     """, hints="""
 Forget loops for a moment. How would you write a program which prints `name` 3 times?
 The solution looks very similar to the other programs we've seen in this section.
@@ -504,13 +591,19 @@ Bob
 
         return self.check_exercise(solution, test, generate_inputs, functionise=True)
 
+    final_text = """
+We're making really good progress! You're solving problems and writing new code!
+Let's keep making things more interesting.
+"""
+
+
+class BuildingUpStrings(Page):
     @step("""
-Fabulous! Before we look at some more loops, we need to quickly learn another concept. Look at this program:
-
-
-What do you think the line `hello = hello + '!'` does? What do you think the program will output? Make a prediction, then run it to find out.
+Before we look at some more loops, we need to quickly learn another concept. Look at this program:
 
 __program_indented__
+
+What do you think the line `hello = hello + '!'` does? What do you think the program will output? Make a prediction, then run it to find out.
     """, program="""
 hello = 'Hello'
 print(hello)
@@ -560,10 +653,22 @@ for char in name:
     def name_triangle_missing_last_line(self):
         return self.matches_program()
 
-    @step("""
+    final_text = """
 The last character in `name` only gets added to `line` at the end of the loop, after `print(line)` has already run for the last time. So that character and the full `name` never get printed at the bottom of the triangle.
+"""
 
-Exercise: modify the original program to add a space after every character in the triangle, so the output looks like this:
+
+class BuildingUpStringsExercises(Page):
+    @step("""
+Modify this program:
+
+    name = 'World'
+    line = ''
+    for char in name:
+        line = line + char
+        print(line)
+
+to add a space after every character in the triangle, so the output looks like this:
 
     W
     W o
@@ -709,17 +814,20 @@ Note that there is a space between the name and the pipes (`|`).
         "You only need one for loop - the one used to make the line of dashes from the previous exercise.",
         "Don't try and do everything at once. Break the problem up into smaller, easier subproblems.",
         dedent("""\
-        Try writing programs that output:
+        Try writing a program that outputs:
 
             -----
             World
             -----
-
-        and:
+        """),
+        "Since you need to output three separate lines of text, you will need to call `print()` three times.",
+        dedent("""\
+        Try writing a program that outputs:
 
             | World |
-
-        and:
+        """),
+        dedent("""\
+        Try writing a program that outputs:
 
             +-----+
             |World|
@@ -808,7 +916,7 @@ You're getting good at this! Looks like you need more of a challenge...maybe ins
     d     d
     +World+
     """, hints="""
-You will need two for loops over `name`, one after the other.
+You will need two separate for loops over `name`.
 Each line except for the first and last has the same characters in the middle. That means you can reuse something.
 Create a variable containing the spaces in the middle and use it many times.
 Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.
@@ -863,7 +971,7 @@ b   b
 
         return result
 
-    @step("""
+    final_text = """
 Sweet! You're really getting the hang of this! If you want, here's one more optional bonus challenge. Try writing a program that outputs:
 
     W
@@ -873,9 +981,7 @@ Sweet! You're really getting the hang of this! If you want, here's one more opti
         d
 
 Or don't, it's up to you.
-    """)
-    def end_of_book(self):
-        return False
+    """
 
 
 def search_ast(node, template):

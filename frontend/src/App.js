@@ -4,7 +4,7 @@ import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
-import {bookSetState, bookState, ranCode, moveStep, showHint, closeMessage} from "./book/store";
+import {bookSetState, bookState, ranCode, moveStep, showHint, closeMessage, movePage} from "./book/store";
 import hintIcon from "./img/hint.png"
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -34,6 +34,7 @@ class AppComponent extends React.Component {
         progress,
         hints,
         showEditor,
+        title,
       },
       numHints,
       editorContent,
@@ -41,6 +42,7 @@ class AppComponent extends React.Component {
     } = this.props;
     return <div className="book-container">
       <div className="book-text markdown-body">
+        <h1>{title}</h1>
         {parts.slice(0, progress + 1).map((part, index) =>
           <div key={index}>
             <div dangerouslySetInnerHTML={{__html: part}}/>
@@ -60,10 +62,15 @@ class AppComponent extends React.Component {
             </div>
           )
         }
+        {/*<div>*/}
+        {/*  <button onClick={() => moveStep(-1)}>{"<-"}</button>*/}
+        {/*  <button onClick={() => moveStep(+1)}>{"->"}</button>*/}
+        {/*</div>*/}
+        {progress === parts.length - 1 &&
         <div>
-          <button onClick={() => moveStep(-1)}>{"<-"}</button>
-          <button onClick={() => moveStep(+1)}>{"->"}</button>
+          <button className="btn btn-primary" onClick={() => movePage(+1)}>Next</button>
         </div>
+        }
       </div>
       <div className="ide">
         <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>

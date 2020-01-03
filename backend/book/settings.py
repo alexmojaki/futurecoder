@@ -15,6 +15,12 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from pathlib import Path
 
+try:
+    import birdseye
+except ImportError:
+    pass
+
+
 BASE_DIR = Path(__file__).parent.parent
 
 # Quick-start development settings - unsuitable for production

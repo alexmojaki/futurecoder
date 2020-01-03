@@ -6,7 +6,7 @@ import sys
 import traceback
 from code import InteractiveConsole
 from io import StringIO
-from typing import get_type_hints
+from typing import get_type_hints, Type
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseBadRequest
@@ -15,7 +15,7 @@ from django.views import View
 from markdown import markdown
 
 from main.models import CodeEntry
-from main.text import text_parts, steps, Steps
+from main.text import Page, WritingPrograms, page_slugs_list
 
 log = logging.getLogger(__name__)
 
@@ -81,24 +81,24 @@ class API:
         return self.request.user
 
     @property
-    def step(self):
-        return self.user.step
+    def page(self) -> Type[Page]:
+        return self.user.page
 
     @property
-    def progress(self):
-        return steps.index(self.step)
+    def step_index(self):
+        return self.page.step_names.index(self.user.step_name)
 
     @property
     def hints(self):
-        step = getattr(Steps, self.step)
-        return step.hints
+        return getattr(self.user.step, "hints", ())
 
     def _run_code(self, code, runner, source):
         entry = CodeEntry.objects.create(
             input=code,
             source=source,
             user=self.user,
-            step=self.step,
+            page_slug=self.user.page_slug,
+            step_name=self.user.step_name,
         )
 
         stdout = StringIO()
@@ -117,23 +117,23 @@ class API:
         entry.output = stdout + "\n" + stderr
         entry.save()
 
-        try:
-            f = getattr(Steps, self.step)
-            method = getattr(Steps(entry, console, f.program), self.step)
-            step_result = method()
-        except SyntaxError:
-            step_result = False
+        message = ""
 
-        if isinstance(step_result, dict):
-            passed = step_result.get("passed", False)
-            message = step_result.get("message", "")
-        else:
-            passed = step_result
-            message = ""
+        if self.user.step_name != "final_text":
+            method = getattr(self.page(entry, console, self.user.step.program), self.user.step_name)
+            try:
+                step_result = method()
+            except SyntaxError:
+                step_result = False
 
-        if passed:
-            self.user.step = steps[self.progress + 1]
-            self.user.save()
+            if isinstance(step_result, dict):
+                passed = step_result.get("passed", False)
+                message = step_result.get("message", "")
+            else:
+                passed = step_result
+
+            if passed:
+                self.move_step(1)
 
         def lines(text, color):
             return [
@@ -176,17 +176,24 @@ class API:
 
     def load_data(self):
         return dict(
-            parts=text_parts,
             **self.current_state(),
         )
 
     def current_state(self):
         return dict(
-            progress=self.progress,
+            title=self.page.title,
+            parts=self.page.step_texts,
+            progress=self.step_index,
             hints=self.hints,
-            showEditor=self.progress >= steps.index(Steps.editor_hello_world.__name__)
+            showEditor=self.page.index >= WritingPrograms.index,
         )
 
     def move_step(self, delta: int):
-        self.user.step = steps[self.progress + delta]
+        self.user.step_name = self.page.step_names[self.step_index + delta]
         self.user.save()
+
+    def move_page(self, delta: int):
+        self.user.page_slug = page_slugs_list[self.page.index + delta]
+        self.user.step_name = self.page.step_names[0]
+        self.user.save()
+        return self.current_state()

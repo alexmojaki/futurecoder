@@ -4,6 +4,7 @@ import {animateScroll} from "react-scroll";
 
 const initialState = {
   server: {
+    title: "",
     parts: [],
     progress: 0,
     hints: [],
@@ -28,6 +29,11 @@ export const moveStep = (delta) => {
   rpc("move_step", {delta});
   setState("server.progress", localState.server.progress + delta);
 };
+
+export const movePage = (delta) => {
+  rpc("move_page", {delta}, (data) => setState("server", data));
+};
+
 
 export const showHint = makeAction(
   'SHOW_HINT',
