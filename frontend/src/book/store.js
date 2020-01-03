@@ -4,17 +4,17 @@ import {animateScroll} from "react-scroll";
 
 const initialState = {
   server: {
-    pages: [
-      {
-        title: "Loading...",
-        step_texts: [],
-      }
-    ],
     step_index: 0,
     page_index: 0,
     hints: [],
     showEditor: false,
   },
+  pages: [
+    {
+      title: "Loading...",
+      step_texts: [],
+    }
+  ],
   numHints: 0,
   editorContent: "",
   messages: [],
@@ -28,8 +28,9 @@ const {reducer, makeAction, setState, localState} = redact('rpc', initialState, 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState};
 
 rpc("load_data", {}, (data) => {
-  setState("server", data);
-  setState("showingPageIndex", data.page_index);
+  setState("server", data.state);
+  setState("pages", data.pages);
+  setState("showingPageIndex", data.state.page_index);
 });
 
 // export const moveStep = (delta) => {
@@ -38,11 +39,13 @@ rpc("load_data", {}, (data) => {
 // };
 
 export const movePage = (delta) => {
-  if (localState.showingPageIndex + delta > localState.server.page_index) {
-    rpc("next_page", {});
+  const newIndex = localState.showingPageIndex + delta;
+  if (newIndex > localState.server.page_index) {
     setState("server.step_index", 0);
+    setState("server.page_index", newIndex);
+    rpc("next_page", {}, (data) => setState("server", data));
   }
-  setState("showingPageIndex", localState.showingPageIndex + delta);
+  setState("showingPageIndex", newIndex);
 };
 
 
@@ -59,18 +62,13 @@ export const showHint = makeAction(
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
-    if (state.server.step_index < value.step_index) {
+    if (state.server.step_index < value.state.step_index) {
       animateScroll.scrollToBottom({duration: 1000, delay: 500});
       state = {
         ...state,
         numHints: 0,
         messages: [],
-        server: {
-          ...state.server,
-          step_index: value.step_index,
-          hints: value.hints,
-          showEditor: value.showEditor,
-        }
+        server: value.state,
       };
     }
     if (value.message && state.pastMessages.indexOf(value.message) === -1) {

@@ -147,7 +147,7 @@ class API:
             result=(lines(stdout, "white") +
                     lines(stderr, "red")),
             message=markdown(message),
-            **self.current_state(),
+            state=self.current_state(),
         )
 
     def shell_line(self, line):
@@ -182,7 +182,7 @@ class API:
                 select_attrs(page, "title step_texts")
                 for page in pages.values()
             ],
-            **self.current_state(),
+            state=self.current_state(),
         )
 
     def current_state(self):

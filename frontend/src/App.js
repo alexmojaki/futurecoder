@@ -34,12 +34,12 @@ class AppComponent extends React.Component {
       editorContent,
       messages,
       showingPageIndex,
+      pages,
     } = this.props;
     let {
       step_index,
       hints,
       showEditor,
-      pages,
     } = server;
     const page = pages[showingPageIndex];
     if (showingPageIndex < server.page_index) {
