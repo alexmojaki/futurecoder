@@ -12,11 +12,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.shortcuts import render
 from django.views import View
+from littleutils import select_attrs
 from markdown import markdown
 
 from main.chapters.variables import WritingPrograms
 from main.models import CodeEntry
-from main.text import Page, page_slugs_list
+from main.text import Page, page_slugs_list, pages
 
 log = logging.getLogger(__name__)
 
@@ -177,15 +178,17 @@ class API:
 
     def load_data(self):
         return dict(
+            pages=[
+                select_attrs(page, "title step_texts")
+                for page in pages.values()
+            ],
             **self.current_state(),
         )
 
     def current_state(self):
         return dict(
-            title=self.page.title,
-            parts=self.page.step_texts,
-            progress=self.step_index,
-            hints=self.hints,
+            **select_attrs(self, "hints step_index"),
+            page_index=self.page.index,
             showEditor=self.page.index >= WritingPrograms.index,
         )
 
@@ -193,8 +196,8 @@ class API:
         self.user.step_name = self.page.step_names[self.step_index + delta]
         self.user.save()
 
-    def move_page(self, delta: int):
-        self.user.page_slug = page_slugs_list[self.page.index + delta]
+    def next_page(self):
+        self.user.page_slug = page_slugs_list[self.page.index + 1]
         self.user.step_name = self.page.step_names[0]
         self.user.save()
         return self.current_state()

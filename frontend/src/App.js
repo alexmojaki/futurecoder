@@ -4,7 +4,7 @@ import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
-import {bookSetState, bookState, ranCode, moveStep, showHint, closeMessage, movePage} from "./book/store";
+import {bookSetState, bookState, closeMessage, movePage, ranCode, showHint} from "./book/store";
 import hintIcon from "./img/hint.png"
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -29,21 +29,26 @@ class AppComponent extends React.Component {
 
   render() {
     const {
-      server: {
-        parts,
-        progress,
-        hints,
-        showEditor,
-        title,
-      },
+      server,
       numHints,
       editorContent,
       messages,
+      showingPageIndex,
     } = this.props;
+    let {
+      step_index,
+      hints,
+      showEditor,
+      pages,
+    } = server;
+    const page = pages[showingPageIndex];
+    if (showingPageIndex < server.page_index) {
+      step_index = page.step_texts.length - 1;
+    }
     return <div className="book-container">
       <div className="book-text markdown-body">
-        <h1>{title}</h1>
-        {parts.slice(0, progress + 1).map((part, index) =>
+        <h1>{page.title}</h1>
+        {page.step_texts.slice(0, step_index + 1).map((part, index) =>
           <div key={index}>
             <div dangerouslySetInnerHTML={{__html: part}}/>
             <hr/>
@@ -66,11 +71,13 @@ class AppComponent extends React.Component {
         {/*  <button onClick={() => moveStep(-1)}>{"<-"}</button>*/}
         {/*  <button onClick={() => moveStep(+1)}>{"->"}</button>*/}
         {/*</div>*/}
-        {progress === parts.length - 1 &&
         <div>
-          <button className="btn btn-primary" onClick={() => movePage(+1)}>Next</button>
+          {showingPageIndex > 0 &&
+          <button className="btn btn-primary" onClick={() => movePage(-1)}>Previous</button>}
+          {" "}
+          {showingPageIndex < pages.length - 1 && step_index === page.step_texts.length - 1 &&
+          <button className="btn btn-primary" onClick={() => movePage(+1)}>Next</button>}
         </div>
-        }
       </div>
       <div className="ide">
         <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>

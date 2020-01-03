@@ -4,9 +4,14 @@ import {animateScroll} from "react-scroll";
 
 const initialState = {
   server: {
-    title: "",
-    parts: [],
-    progress: 0,
+    pages: [
+      {
+        title: "Loading...",
+        step_texts: [],
+      }
+    ],
+    step_index: 0,
+    page_index: 0,
     hints: [],
     showEditor: false,
   },
@@ -14,6 +19,7 @@ const initialState = {
   editorContent: "",
   messages: [],
   pastMessages: [],
+  showingPageIndex: 0,
 };
 
 
@@ -22,16 +28,21 @@ const {reducer, makeAction, setState, localState} = redact('rpc', initialState, 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState};
 
 rpc("load_data", {}, (data) => {
-  return setState("server", data);
+  setState("server", data);
+  setState("showingPageIndex", data.page_index);
 });
 
-export const moveStep = (delta) => {
-  rpc("move_step", {delta});
-  setState("server.progress", localState.server.progress + delta);
-};
+// export const moveStep = (delta) => {
+//   rpc("move_step", {delta});
+//   setState("server.step_index", localState.server.step_index + delta);
+// };
 
 export const movePage = (delta) => {
-  rpc("move_page", {delta}, (data) => setState("server", data));
+  if (localState.showingPageIndex + delta > localState.server.page_index) {
+    rpc("next_page", {});
+    setState("server.step_index", 0);
+  }
+  setState("showingPageIndex", localState.showingPageIndex + delta);
 };
 
 
@@ -48,7 +59,7 @@ export const showHint = makeAction(
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
-    if (state.server.progress < value.progress) {
+    if (state.server.step_index < value.step_index) {
       animateScroll.scrollToBottom({duration: 1000, delay: 500});
       state = {
         ...state,
@@ -56,7 +67,7 @@ export const ranCode = makeAction(
         messages: [],
         server: {
           ...state.server,
-          progress: value.progress,
+          step_index: value.step_index,
           hints: value.hints,
           showEditor: value.showEditor,
         }
