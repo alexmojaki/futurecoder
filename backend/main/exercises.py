@@ -139,7 +139,7 @@ when it should output:
 
 def generate_short_string():
     length = random.randrange(3, 8)
-    return "".join(random.sample(string.ascii_lowercase, length))
+    return "".join(random.sample(string.ascii_letters, length))
 
 
 def main():
