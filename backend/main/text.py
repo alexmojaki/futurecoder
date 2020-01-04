@@ -10,7 +10,7 @@ from main.exercises import check_exercise
 from main.utils import no_weird_whitespace, snake
 
 
-def step(text, *, program="", hints=()):
+def step(text, *, program="", expected_program="", hints=()):
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
     hints = [markdown(text) for text in hints]
@@ -25,6 +25,10 @@ def step(text, *, program="", hints=()):
     else:
         assert not program
     assert "__program_" not in text
+
+    assert not (expected_program and program)
+    if expected_program:
+        program = expected_program
 
     text = markdown(text.strip())
 
@@ -158,5 +162,5 @@ def search_ast(node, template):
     )
 
 
-for chapter_name in "shell string_basics variables for_loops".split():
+for chapter_name in "shell string_basics variables for_loops if_statements".split():
     import_module("main.chapters." + chapter_name)
