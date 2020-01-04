@@ -599,3 +599,31 @@ Sweet! You're really getting the hang of this! If you want, here's one more opti
 
 Or don't, it's up to you.
     """
+
+
+class BasicTerminology(Page):
+    final_text = """
+Here's some words you need to know:
+
+An ***expression*** is a piece of code that has a value. For example, in this line of code:
+
+    sentence = 'Hello ' + name
+
+there are three expressions:
+
+1. `'Hello '`
+2. `name`
+3. `'Hello ' + name`
+
+By contrast, the full line `sentence = ...` is a ***statement***. It's a command that tells the computer to perform an action. It has no value of its own. This means, for example, that you can't add statements together. This code is invalid:
+
+    (word = 'Hello') + (name = 'Bob')
+
+Specifically, a statement like `sentence = ...` where a variable is given a value is called ***assignment*** - the value is *assigned to* the the variable.
+
+A program is a list of statements which are executed in order. A `for` loop is a *compound statement*, meaning it has a body of its own which contains other statements. Most statements will also contain expressions, and expressions can contain other smaller expressions, but expressions cannot contain statements.
+
+The process of calculating the value of an expression is called ***evaluation*** - note how it almost contains the word 'value'. The computer *evaluates* `1 + 2` to get the value `3`.
+
+The process of executing a loop is called ***iteration***. Code like `for char in 'Hello':` is *iterating over* the string `'Hello'`. The fact that it's possible means that strings are *iterable*. By contrast, numbers are not iterable, which is exactly what Python will tell you if you try `for char in 3:`. Each run through the loop is *one iteration*, so in this example there will be 5 iterations.
+"""
