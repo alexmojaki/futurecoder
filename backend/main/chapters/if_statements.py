@@ -1,4 +1,8 @@
+import random
+
+from main.exercises import check_result, generate_short_string
 from main.text import Page, step
+from main.utils import returns_stdout
 
 
 class IntroducingIfStatements(Page):
@@ -75,5 +79,80 @@ print(sentence)
     """)
     def excited_false_example(self):
         return self.matches_program()
+
+    @step("""
+Time for an exercise. Modify the program above to include an extra
+boolean parameter `confused`, so the program should start like this:
+
+    sentence = 'Hello World'
+    excited = False
+    confused = True
+
+(`sentence` can be any string and the two booleans can be either `True` or `False`)
+
+When `confused` is true, the printed sentence should have a question mark added to the end.
+If both `confused` and `excited` are true, the sentence should end with `!?`.
+    """, hints="""
+You only need to add a few lines to the existing program. All the existing code should be left as is.
+The code that you add should be very similar to the existing code.
+        """)
+    def excited_confused_exercise(self):
+        @returns_stdout
+        def solution(sentence, excited, confused):
+            if excited:
+                sentence += '!'
+            if confused:
+                sentence += '?'
+            print(sentence)
+
+        def test(func):
+            check_result(
+                func,
+                dict(
+                    sentence='Hello',
+                    excited=True,
+                    confused=True,
+                ),
+                'Hello!?',
+            )
+
+            check_result(
+                func,
+                dict(
+                    sentence='Hello there',
+                    excited=True,
+                    confused=False,
+                ),
+                'Hello there!',
+            )
+
+            check_result(
+                func,
+                dict(
+                    sentence="I'm bored",
+                    excited=False,
+                    confused=False,
+                ),
+                "I'm bored",
+            )
+
+            check_result(
+                func,
+                dict(
+                    sentence="Who are you",
+                    excited=False,
+                    confused=True,
+                ),
+                "Who are you?",
+            )
+
+        def generate_inputs():
+            return dict(
+                sentence=generate_short_string(),
+                excited=random.choice([True, False]),
+                confused=random.choice([True, False]),
+            )
+
+        return self.check_exercise(solution, test, generate_inputs, functionise=True)
 
     final_text = """TODO"""

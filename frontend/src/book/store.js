@@ -33,10 +33,10 @@ rpc("load_data", {}, (data) => {
   setState("showingPageIndex", data.state.page_index);
 });
 
-// export const moveStep = (delta) => {
-//   rpc("move_step", {delta});
-//   setState("server.step_index", localState.server.step_index + delta);
-// };
+export const moveStep = (delta) => {
+  rpc("move_step", {delta});
+  setState("server.step_index", localState.server.step_index + delta);
+};
 
 export const movePage = (delta) => {
   const newIndex = localState.showingPageIndex + delta;

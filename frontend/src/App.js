@@ -4,7 +4,7 @@ import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
-import {bookSetState, bookState, closeMessage, movePage, ranCode, showHint} from "./book/store";
+import {bookSetState, bookState, closeMessage, movePage, moveStep, ranCode, showHint} from "./book/store";
 import hintIcon from "./img/hint.png"
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -67,10 +67,10 @@ class AppComponent extends React.Component {
             </div>
           )
         }
-        {/*<div>*/}
-        {/*  <button onClick={() => moveStep(-1)}>{"<-"}</button>*/}
-        {/*  <button onClick={() => moveStep(+1)}>{"->"}</button>*/}
-        {/*</div>*/}
+        <div>
+          <button onClick={() => moveStep(-1)}>{"<-"}</button>
+          <button onClick={() => moveStep(+1)}>{"->"}</button>
+        </div>
         <div>
           {showingPageIndex > 0 &&
           <button className="btn btn-primary btn-sm" onClick={() => movePage(-1)}>Previous</button>}
