@@ -3,7 +3,8 @@ from io import StringIO
 import re
 import sys
 
-from littleutils import withattrs
+from littleutils import withattrs, strip_required_prefix, strip_required_suffix
+from markdown import markdown
 
 
 def assign(**attrs):
@@ -41,3 +42,10 @@ def snake(camel_string):
 
 
 assert snake('fooBar') == snake('FooBar') == 'foo_bar'
+
+
+def unwrapped_markdown(s):
+    s = markdown(s)
+    s = strip_required_prefix(s, "<p>")
+    s = strip_required_suffix(s, "</p>")
+    return s
