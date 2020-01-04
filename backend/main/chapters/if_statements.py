@@ -155,4 +155,109 @@ The code that you add should be very similar to the existing code.
 
         return self.check_exercise(solution, test, generate_inputs, functionise=True)
 
-    final_text = """TODO"""
+    final_text = """
+Well done! This program can do 4 different things depending on how you combine `excited`
+and `confused`. Try them out if you want.
+"""
+
+
+class CombiningCompoundStatements(Page):
+    @step("""
+Compound statements like `for` loops and `if` statements have bodies which are a list
+of inner statements. Those inner statements can be anything, including other compound statements.
+Try this example of a `for` loop inside an `if` statement for when you want to show
+that you're *really* excited:
+
+__program_indented__
+""", program="""
+sentence = 'Hello World'
+excited = True
+
+if excited:
+    new_sentence = ''
+    for char in sentence:
+        new_sentence += char
+        new_sentence += '!'
+    sentence = new_sentence
+
+print(sentence)
+""")
+    def for_inside_if(self):
+        return self.matches_program()
+
+    @step("""
+Note how the body of the `if` statement (5 lines) is indented as usual, while the body
+of the `for` loop (2 lines) is indented by an additional 4 spaces in each line to show that
+those lines are within the `for` loop. You can see the overall structure of the program
+just by looking at the indentation.
+
+Alternatively, you can put an `if` inside a `for`:
+
+    sentence = 'Hello World'
+    excited = True
+
+    new_sentence = ''
+    for char in sentence:
+        new_sentence += char
+        if excited:
+            new_sentence += '!'
+
+    sentence = new_sentence
+    print(sentence)
+
+These two programs have the exact same result, although the first one is more efficient since it
+only iterates over the string if it needs to, since when `excited = False` nothing changes.
+
+Now run this program:
+
+__program_indented__
+""", program="""
+sentence = 'Hello World'
+
+include = False
+new_sentence = ''
+for char in sentence:
+    if include:
+        new_sentence += char
+    include = True
+
+print(new_sentence)
+""")
+    def print_tail(self):
+        return self.matches_program()
+
+    @step("""
+As you can see, it prints everything but the first character. Take some time to understand how this works.
+
+Now modify the program to do the opposite: only print the first character, leave out the rest.
+    """, hints="""
+The code should be almost exactly the same, just make a couple of small changes.
+Make sure that the code inside `if include:` runs at the beginning of the loop, in the first iteration.
+That means `include` should be `True` at that point.
+Make sure that the code inside `if include:` *doesn't* run after the first iteration.
+That means `include` should be `False` after the first iteration.
+""")
+    def print_first_character(self):
+        @returns_stdout
+        def solution(sentence):
+            include = True
+            new_sentence = ''
+            for char in sentence:
+                if include:
+                    new_sentence += char
+                include = False
+
+            print(new_sentence)
+
+        def test(func):
+            check_result(func, dict(sentence='Hello there'), 'H')
+            check_result(func, dict(sentence='Goodbye'), 'G')
+
+        def generate_inputs():
+            return dict(sentence=generate_short_string())
+
+        return self.check_exercise(solution, test, generate_inputs, functionise=True)
+
+    final_text = """
+Great job! You're working with increasingly complex programs.
+"""
