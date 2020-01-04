@@ -168,3 +168,37 @@ Some things to note about programs in the editor:
 
 I recommend that you check all of these things for yourself.
 """
+
+
+class StoringCalculationsInVariables(Page):
+    @step("""
+Often you will use variables to store the results of calculations. This will help to build more complex programs. For example, try this program:
+
+    __program_indented__
+        """, program="""
+word = 'Hello'
+name = 'World'
+sentence = word + ' ' + name
+print(sentence)
+        """)
+    def sentence_equals_word_plus_name(self):
+        return self.matches_program()
+
+    @step("""
+Now `sentence` has the value `'Hello World'` which can be used multiple times. Note that it will continue to have this value until it is directly reassigned, e.g. with another statement like `sentence = <something>`. For example, run this extended program:
+
+    __program_indented__
+        """, program="""
+word = 'Hello'
+name = 'World'
+sentence = word + ' ' + name
+print(sentence)
+word = 'Goodbye'
+print(sentence)
+        """)
+    def sentence_doesnt_change(self):
+        return self.matches_program()
+
+    final_text = """
+Unlike a spreadsheet where formulas update automatically, a variable like `sentence` doesn't remember how it was calculated and won't change if the underlying values `word` or `name` are changed.
+"""
