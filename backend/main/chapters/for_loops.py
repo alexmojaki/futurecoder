@@ -69,9 +69,13 @@ works, but actually it would usually (and should) be written like this:
 
 Specifically, the code to be repeated (known as the *body*) starts on a new line after the colon (`:`), and it must be *indented*, i.e. have some spaces before it. The code below without indentation is invalid, run it to see for yourself:
 
-    for character in name:
-    print(character)
+__program_indented__
         """
+
+        program = """
+for character in name:
+print(character)
+"""
 
         def check(self):
             return 'expected an indented block' in self.result
@@ -106,20 +110,24 @@ There are two indented lines, so they're both part of the body, so `---` gets pr
 
     class mismatched_indentations(Step):
         """
-Since `print('---')` is not indented, it's not part of the loop body. This means it only runs once, after the whole loop has finished running.
+Since `print('---')` is not indented, it's not part of the loop body. This means it only runs once, after the whole loop has finished running. Both programs are valid, they just do different things.
 
-Both programs are valid, they just do different things. The below program is invalid, try running it:
+The program below is invalid. Both lines in the loop body are indented, but by different amounts. The first line starts with 4 spaces, the second line starts with 2. Try running it.
 
-    for character in name:
-        print(character)
-      print('---')
+__program_indented__
         """
+
+        program = """
+for character in name:
+    print(character)
+  print('---')
+"""
 
         def check(self):
             return 'unindent does not match any outer indentation level' in self.result
 
     final_text = """
-The problem is that both lines are indented, but by different amounts. The first line starts with 4 spaces, the second line starts with 2. When you indent, you should always indent by 4 spaces. Any consistent indentation is actually acceptable, but 4 spaces is the convention that almost everyone follows. Note that the editor generally makes this easy for you. For example, if you press the 'Tab' key on your keyboard in the editor, it will insert 4 spaces for you.
+When you indent, you should always indent by 4 spaces. Any consistent indentation is actually acceptable, but 4 spaces is the convention that almost everyone follows. Note that the editor generally makes this easy for you. For example, if you press the 'Tab' key on your keyboard in the editor, it will insert 4 spaces for you.
 """
 
 

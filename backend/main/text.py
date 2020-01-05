@@ -35,11 +35,10 @@ class StepMeta(ABCMeta):
         assert issubclass(cls, Step)
         text = cls.text or cls.__doc__
         program = cls.program
-        expected_program = cls.expected_program
         hints = cls.hints
 
-        program = clean_program(program)
-        expected_program = clean_program(expected_program)
+        solution = cls.__dict__.get("solution", "")
+        program = clean_program(program) or clean_program(solution)
 
         if isinstance(hints, str):
             hints = hints.strip().splitlines()
@@ -51,14 +50,13 @@ class StepMeta(ABCMeta):
             indented = indent(program, '    ')
             text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
         else:
-            assert not program
+            assert not cls.program_in_text, "Either include __program__ or __program_indented__ in the text, " \
+                                            "or set program_in_text = False in the class."
+
         assert "__program_" not in text
-
-        assert not (expected_program and program)
-        if expected_program:
-            program = expected_program
-
+        assert program
         assert text
+
         text = markdown(text.strip())
 
         setattrs(cls,
@@ -147,7 +145,7 @@ class Page(metaclass=PageMeta):
 class Step(metaclass=StepMeta):
     text = ""
     program = ""
-    expected_program = ""
+    program_in_text = True
     hints = ()
     is_step = True
     abstract = True
@@ -203,6 +201,7 @@ class Step(metaclass=StepMeta):
 class ExerciseStep(Step):
     tests = {}
     abstract = True
+    program_in_text = False
 
     def check(self):
         return self.check_exercise(

@@ -47,6 +47,9 @@ By the way, if you get stuck, you can click the lightbulb icon in the bottom rig
               "The space character must be somewhere inside quotes.",
           ]
 
+        program = "'hello ' + 'world'"
+        program_in_text = False
+
         def check(self):
             if "'hello world'" not in self.result:
                 return False

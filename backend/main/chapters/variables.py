@@ -66,6 +66,9 @@ Previously we made a variable called `word` with the value `'Hello'` with this c
 Now make a variable called `name` whose value is another string. The string can be anything...how about your name?
         """
 
+        program = "name = 'Alex'"
+        program_in_text = False
+
         def check(self):
             match = re.match(r"(.*)=", self.input)
             if match and match.group(1).strip() != "name":
@@ -120,7 +123,8 @@ Your answer should contain a mixture of variables (no quotes) and string literal
 You will need to have a space character inside quotes.
         """
 
-        expected_program = "word + ' ' + name"
+        program = "word + ' ' + name"
+        program_in_text = False
 
     class word_assign_goodbye(VerbatimStep):
         """
@@ -209,9 +213,10 @@ Now `sentence` has the value `'Hello World'` which can be used multiple times. N
     word = 'Goodbye'
     print(sentence)
         """
+        program_in_text = False
 
         # noinspection PyUnusedLocal
-        def expected_program(self):
+        def program(self):
             word = 'Hello'
             name = 'World'
             sentence = word + ' ' + name

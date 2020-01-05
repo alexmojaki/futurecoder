@@ -76,8 +76,9 @@ __program_indented__
 
 Change `excited = True` to `excited = False` and run the program again to see what the difference is.
         """
+        program_in_text = False
 
-        def expected_program(self):
+        def program(self):
             sentence = 'Hello World'
             excited = False
             if excited:
@@ -275,8 +276,9 @@ __program_indented__
         """
 Now change the first line to `condition = False` and run it again.
         """
+        program_in_text = False
 
-        def expected_program(self):
+        def program(self):
             condition = False
             if condition:
                 print('Yes')
@@ -309,8 +311,9 @@ __program_indented__
 
 Now change `excited` to `False` and run it again.
         """
+        program_in_text = False
 
-        def expected_program(self):
+        def program(self):
             sentence = 'Hello World'
             excited = False
             if excited:
@@ -338,9 +341,10 @@ Spoilers below! Have you figured it out?
 
 What happens if you change `excited` to `False`?
         """
+        program_in_text = False
 
         # noinspection PyUnboundLocalVariable
-        def expected_program(self):
+        def program(self):
             sentence = 'Hello World'
             excited = False
 

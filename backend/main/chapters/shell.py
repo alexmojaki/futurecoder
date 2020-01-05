@@ -1,12 +1,12 @@
 from textwrap import dedent
 
-from main.text import Page
+from main.text import Page, VerbatimStep
 from main.text import Step
 
 
 class IntroducingTheShell(Page):
 
-    class first_expression(Step):
+    class first_expression(VerbatimStep):
         """
 At the bottom right of the screen is the *shell*. This is a place for running small bits of Python code. Just type in some code, press enter, and it'll run! Try it now:
 
@@ -18,7 +18,7 @@ At the bottom right of the screen is the *shell*. This is a place for running sm
         program = "1+2"
 
         def check(self):
-            if self.matches_program():
+            if super().check():
                 return True
 
             return dict(
@@ -38,6 +38,9 @@ The shell is probably your most important tool for learning Python, and you shou
 
 Try doing some more calculations now. You can multiply numbers with `*`, divide with `/`, and subtract with `-`. You can also use parentheses, i.e. `(` and `)`.
         """
+
+        program = "5 - 6"
+        program_in_text = False
 
         def check(self):
             if 'x' in self.input:
