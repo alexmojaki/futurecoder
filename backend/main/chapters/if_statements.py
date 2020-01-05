@@ -2,7 +2,7 @@ import ast
 import random
 from abc import ABC
 
-from main.exercises import check_result, generate_short_string
+from main.exercises import generate_short_string
 from main.text import ExerciseStep, VerbatimStep
 from main.text import Page
 from main.utils import returns_stdout
@@ -415,9 +415,10 @@ In the first iteration you need an uppercase letter. In the following iterations
 
             print(new_sentence)
 
-        def test(self, func):
-            check_result(func, dict(sentence='HELLO THERE'), 'Hello there')
-            check_result(func, dict(sentence='goodbye'), 'Goodbye')
+        tests = {
+            'HELLO THERE': 'Hello there',
+            'goodbye': 'Goodbye',
+        }
 
         def generate_inputs(self):
             return dict(sentence=generate_short_string())
@@ -458,12 +459,9 @@ Combine that flipping `if/else` with the one that chooses an uppercase or lowerc
 
             print(new_sentence)
 
-        def test(self, func):
-            check_result(
-                func,
-                dict(sentence='One more exercise, and then you can relax.'),
-                'OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.',
-            )
+        tests = {
+            'One more exercise, and then you can relax.': 'OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.',
+        }
 
         def generate_inputs(self):
             return dict(sentence=generate_short_string())

@@ -46,7 +46,7 @@ class StepMeta(ABCMeta):
         if solution:
             assert not program
             # noinspection PyUnresolvedReferences
-            inputs = cls.generate_inputs(None)
+            inputs = list(cls.test_values())[0][0]
             program = clean_program(solution, inputs)
         else:
             program = clean_program(program)
@@ -226,14 +226,20 @@ class ExerciseStep(Step):
     def solution(self):
         raise NotImplementedError
 
-    def arg_names(self):
-        return list(inspect.signature(self.solution).parameters)
+    @classmethod
+    def arg_names(cls):
+        return list(inspect.signature(cls.solution).parameters)[1:]
 
-    def test_exercise(self, func):
-        for inputs, result in self.tests.items():
+    @classmethod
+    def test_values(cls):
+        for inputs, result in cls.tests.items():
             if not isinstance(inputs, tuple):
                 inputs = (inputs,)
-            inputs = dict(zip(self.arg_names(), inputs))
+            inputs = dict(zip(cls.arg_names(), inputs))
+            yield inputs, result
+
+    def test_exercise(self, func):
+        for inputs, result in self.test_values():
             check_result(func, inputs, result)
 
     def generate_inputs(self):

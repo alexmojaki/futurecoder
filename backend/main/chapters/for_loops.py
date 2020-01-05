@@ -587,8 +587,8 @@ Use one loop to create a bunch of spaces, and a second loop to print a bunch of 
                 print(char + spaces + char)
             print(line)
 
-        def test(self, func):
-            check_result(func, {"name": "World"}, """\
+        tests = {
+            "World": """\
 +World+
 W     W
 o     o
@@ -596,14 +596,15 @@ r     r
 l     l
 d     d
 +World+
-""")
-            check_result(func, {"name": "Bob"}, """\
+""",
+            "Bob": """\
 +Bob+
 B   B
 o   o
 b   b
 +Bob+
-""")
+""",
+        }
 
         def generate_inputs(self):
             return {"name": generate_short_string()}
