@@ -81,7 +81,6 @@ def check_exercise(func, solution, test, generate_inputs, functionise=False):
         try:
             check_result(func, initial_names, expected_result)
         except:
-            traceback.print_exc()
             # Assume that the user can tell that the output is wrong
             return False
 
@@ -115,7 +114,7 @@ def check_result(func, inputs, expected_result):
     try:
         result = func(**inputs)
     except Exception as e:
-        result = traceback.format_exception_only(type(e), e)
+        result = ''.join(traceback.format_exception_only(type(e), e))
 
     result = clean_result(result)
     expected_result = clean_result(expected_result)

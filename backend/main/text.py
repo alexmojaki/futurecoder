@@ -1,45 +1,69 @@
 import ast
+import inspect
+import random
 import re
 from importlib import import_module
-from textwrap import indent
+from textwrap import indent, dedent
+from typing import get_type_hints
 
 from astcheck import is_ast_like
+from littleutils import setattrs
 from markdown import markdown
 
-from main.exercises import check_exercise
+from main.exercises import check_exercise, check_result, generate_short_string
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
 
+step = None
 
-def step(text, *, program="", expected_program="", hints=()):
-    if isinstance(hints, str):
-        hints = hints.strip().splitlines()
-    hints = [markdown(text) for text in hints]
-    no_weird_whitespace(text)
+
+def clean_program(program):
+    if callable(program):
+        lines, _ = inspect.getsourcelines(program)
+        program = dedent(''.join(lines[1:]))
+        compile(program, "<program>", "exec")  # check validity
     no_weird_whitespace(program)
-    program = program.strip()
-    if "__program_" in text:
-        assert program
-        text = text.replace("__program__", program)
-        indented = indent(program, '    ')
-        text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
-    else:
-        assert not program
-    assert "__program_" not in text
+    return program.strip()
 
-    assert not (expected_program and program)
-    if expected_program:
-        program = expected_program
 
-    text = markdown(text.strip())
+class StepMeta(type):
+    def __init__(cls, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if cls.__dict__.get("abstract"):
+            return
 
-    def decorator(f):
-        f.is_step = True
-        f.hints = hints
-        f.text = text
-        f.program = program
-        return f
+        assert issubclass(cls, Step)
+        text = cls.text or cls.__doc__
+        program = cls.program
+        expected_program = cls.expected_program
+        hints = cls.hints
 
-    return decorator
+        program = clean_program(program)
+        expected_program = clean_program(expected_program)
+
+        if isinstance(hints, str):
+            hints = hints.strip().splitlines()
+        hints = [markdown(text) for text in hints]
+        no_weird_whitespace(text)
+        if "__program_" in text:
+            assert program
+            text = text.replace("__program__", program)
+            indented = indent(program, '    ')
+            text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
+        else:
+            assert not program
+        assert "__program_" not in text
+
+        assert not (expected_program and program)
+        if expected_program:
+            program = expected_program
+
+        assert text
+        text = markdown(text.strip())
+
+        setattrs(cls,
+                 text=text,
+                 program=program,
+                 hints=hints)
 
 
 pages = {}
@@ -103,7 +127,7 @@ class Page(metaclass=PageMeta):
         self.code_source = code_entry.source
         self.console = console
         self.step_name = step_name
-        self.step = getattr(self, step_name)
+        self.step = getattr(self, step_name)(code_entry, console)
 
     def before_step(self):
         return None
@@ -114,9 +138,27 @@ class Page(metaclass=PageMeta):
             return before
 
         try:
-            return self.step()
+            return self.step.check()
         except SyntaxError:
             return False
+
+
+class Step(metaclass=StepMeta):
+    text = ""
+    program = ""
+    expected_program = ""
+    hints = ()
+    is_step = True
+    abstract = True
+
+    def __init__(self, code_entry, console):
+        self.input = code_entry.input
+        self.result = code_entry.output
+        self.code_source = code_entry.source
+        self.console = console
+
+    def check(self):
+        raise NotImplementedError
 
     def check_exercise(self, *args, **kwargs):
         if self.code_source == "editor":
@@ -147,13 +189,55 @@ class Page(metaclass=PageMeta):
             )
 
     def matches_program(self):
-        return self.tree_matches(self.step.program)
+        return self.tree_matches(self.program)
 
     def input_matches(self, pattern, remove_spaces=True):
         inp = self.input.rstrip()
         if remove_spaces:
             inp = re.sub(r'\s', '', inp)
         return re.match(pattern + '$', inp)
+
+
+class ExerciseStep(Step):
+    tests = {}
+    abstract = True
+
+    def check(self):
+        return self.check_exercise(
+            self.solution, 
+            self.test_exercise,
+            self.generate_inputs, 
+            functionise=True,
+        )
+
+    def solution(self):
+        raise NotImplementedError
+
+    def arg_names(self):
+        return list(inspect.signature(self.solution).parameters)
+
+    def test_exercise(self, func):
+        for inputs, result in self.tests.items():
+            if not isinstance(inputs, tuple):
+                inputs = (inputs,)
+            inputs = dict(zip(self.arg_names(), inputs))
+            check_result(func, inputs, result)
+
+    def generate_inputs(self):
+        return {
+            name: {
+                str: generate_short_string(),
+                bool: random.choice([True, False]),
+            }[typ]
+            for name, typ in get_type_hints(self.solution).items()
+        }
+
+
+class VerbatimStep(Step):
+    abstract = True
+
+    def check(self):
+        return self.matches_program()
 
 
 def search_ast(node, template):
