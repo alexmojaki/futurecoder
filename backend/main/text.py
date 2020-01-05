@@ -8,19 +8,24 @@ from textwrap import indent, dedent
 from typing import get_type_hints
 
 from astcheck import is_ast_like
+from asttokens import ASTTokens
 from littleutils import setattrs
 from markdown import markdown
 
-from main.exercises import check_exercise, check_result, generate_short_string
+from main.exercises import check_exercise, check_result, generate_short_string, inputs_string
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
 
 step = None
 
 
-def clean_program(program):
+def clean_program(program, inputs=None):
     if callable(program):
-        lines, _ = inspect.getsourcelines(program)
-        program = dedent(''.join(lines[1:]))
+        inputs = inputs_string(inputs or {})
+        source = dedent(inspect.getsource(program))
+        atok = ASTTokens(source, parse=True)
+        func = atok.tree.body[0]
+        lines = source.splitlines()[func.body[0].first_token.start[0] - 1:]
+        program = inputs + '\n' + dedent('\n'.join(lines))
         compile(program, "<program>", "exec")  # check validity
     no_weird_whitespace(program)
     return program.strip()
@@ -38,7 +43,13 @@ class StepMeta(ABCMeta):
         hints = cls.hints
 
         solution = cls.__dict__.get("solution", "")
-        program = clean_program(program) or clean_program(solution)
+        if solution:
+            assert not program
+            # noinspection PyUnresolvedReferences
+            inputs = cls.generate_inputs(None)
+            program = clean_program(solution, inputs)
+        else:
+            program = clean_program(program)
 
         if isinstance(hints, str):
             hints = hints.strip().splitlines()

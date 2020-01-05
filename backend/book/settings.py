@@ -32,6 +32,12 @@ SECRET_KEY = 'kt1+4_u=ga%3v3@fy0@7c(&lq%)6tt=c+f-(ihd32@t$)i6gjm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+try:
+    import snoop
+    snoop.install(enabled=DEBUG)
+except ImportError:
+    pass
+
 ALLOWED_HOSTS = []
 
 # Application definition

@@ -31,7 +31,7 @@ def make_function(program, function_template):
         raise ExerciseError(f"""\
 Your code should start like this:
 
-{inputs_string(dict.fromkeys(arg_names, "..."))}
+{indented_inputs_string(dict.fromkeys(arg_names, "..."))}
 """)
 
     assignments = tree.body[:len(arg_names)]
@@ -103,11 +103,13 @@ def clean_result(result):
     return result
 
 
+def indented_inputs_string(inputs):
+    return indent(inputs_string(inputs), '    ')
+
+
 def inputs_string(inputs):
-    return indent(
-        '\n'.join(f'{name} = {value!r}' for name, value in inputs.items()),
-        '    ',
-    )
+    return '\n'.join(f'{name} = {value!r}'
+                     for name, value in inputs.items())
 
 
 def check_result(func, inputs, expected_result):
@@ -124,7 +126,7 @@ def check_result(func, inputs, expected_result):
 Your code gives the right output for the example,
 but for these inputs:
 
-{inputs_string(inputs)}
+{indented_inputs_string(inputs)}
 
 your code outputs:
 
