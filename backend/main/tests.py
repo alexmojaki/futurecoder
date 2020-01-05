@@ -1,3 +1,7 @@
+import json
+import os
+from pathlib import Path
+
 from django.test import TestCase, Client
 
 from main.models import User
@@ -19,6 +23,7 @@ class StepsTestCase(TestCase):
     def test_steps(self):
         data = api("load_data")
         state = data["state"]
+        transcript = []
         for page_index, page in enumerate(pages.values()):
             for step_index, step_name in enumerate(page.step_names[:-1]):
                 assert page_index == state["page_index"]
@@ -30,5 +35,17 @@ class StepsTestCase(TestCase):
                 else:
                     response = api("shell_line", line=program)
                 state = response["state"]
+                transcript.append(dict(
+                    program=program.splitlines(),
+                    page=page.title,
+                    step=step_name,
+                    response=response,
+                ))
             if page_index < len(pages) - 1:
                 state = api("next_page")
+        path = Path(__file__).parent / "test_transcript.json"
+        if os.environ.get("FIX_TESTS", 0):
+            dump = json.dumps(transcript, indent=4, sort_keys=True)
+            path.write_text(dump)
+        else:
+            self.assertEqual(transcript, json.loads(path.read_text()))

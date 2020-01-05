@@ -7,7 +7,7 @@ from textwrap import indent
 
 from littleutils import only
 
-from main.utils import returns_stdout
+from main.utils import returns_stdout, format_exception_string
 
 
 class ExerciseError(Exception):
@@ -116,7 +116,7 @@ def check_result(func, inputs, expected_result):
     try:
         result = func(**inputs)
     except Exception as e:
-        result = ''.join(traceback.format_exception_only(type(e), e))
+        result = format_exception_string(e)
 
     result = clean_result(result)
     expected_result = clean_result(expected_result)

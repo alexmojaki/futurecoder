@@ -1,4 +1,5 @@
 import functools
+import traceback
 from io import StringIO
 import re
 import sys
@@ -49,3 +50,7 @@ def unwrapped_markdown(s):
     s = strip_required_prefix(s, "<p>")
     s = strip_required_suffix(s, "</p>")
     return s
+
+
+def format_exception_string(e):
+    return ''.join(traceback.format_exception_only(type(e), e))

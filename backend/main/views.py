@@ -3,7 +3,6 @@ import json
 import linecache
 import logging
 import sys
-import traceback
 from code import InteractiveConsole
 from io import StringIO
 from typing import get_type_hints, Type
@@ -18,6 +17,7 @@ from markdown import markdown
 from main.chapters.variables import WritingPrograms
 from main.models import CodeEntry
 from main.text import Page, page_slugs_list, pages
+from main.utils import format_exception_string
 
 log = logging.getLogger(__name__)
 
@@ -160,14 +160,14 @@ class API:
             )
             try:
                 code_obj = compile(code, filename, "exec")
-            except SyntaxError:
-                traceback.print_exc()
+            except SyntaxError as e:
+                print(format_exception_string(e), file=sys.stderr)
                 return
 
             try:
                 exec(code_obj, console.locals)
-            except:
-                traceback.print_exc()
+            except Exception as e:
+                print(format_exception_string(e), file=sys.stderr)
 
         return self._run_code(code, runner, "editor")
 
