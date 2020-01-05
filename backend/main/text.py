@@ -2,6 +2,7 @@ import ast
 import inspect
 import random
 import re
+from abc import ABCMeta, abstractmethod
 from importlib import import_module
 from textwrap import indent, dedent
 from typing import get_type_hints
@@ -25,7 +26,7 @@ def clean_program(program):
     return program.strip()
 
 
-class StepMeta(type):
+class StepMeta(ABCMeta):
     def __init__(cls, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if cls.__dict__.get("abstract"):
@@ -157,6 +158,7 @@ class Step(metaclass=StepMeta):
         self.code_source = code_entry.source
         self.console = console
 
+    @abstractmethod
     def check(self):
         raise NotImplementedError
 
@@ -210,6 +212,7 @@ class ExerciseStep(Step):
             functionise=True,
         )
 
+    @abstractmethod
     def solution(self):
         raise NotImplementedError
 

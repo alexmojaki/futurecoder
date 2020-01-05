@@ -1,5 +1,6 @@
 import ast
 import random
+from abc import ABC
 
 from main.exercises import check_result, generate_short_string
 from main.text import ExerciseStep, VerbatimStep
@@ -235,7 +236,7 @@ Great job! You're working with increasingly complex programs.
 """
 
 
-class ChallengeStep(ExerciseStep):
+class ChallengeStep(ExerciseStep, ABC):
     abstract = True
 
     def check(self):
