@@ -11,7 +11,7 @@ from typing import get_type_hints, Union, Type
 
 from astcheck import is_ast_like
 from asttokens import ASTTokens
-from littleutils import setattrs
+from littleutils import setattrs, select_keys, select_attrs
 from markdown import markdown
 
 from main.exercises import check_exercise, check_result, generate_short_string, inputs_string
@@ -37,8 +37,12 @@ def clean_step_class(cls, clean_inner=True):
     hints = cls.hints
 
     solution = cls.__dict__.get("solution", "")
+    assert bool(solution) ^ bool(program)
+    assert text
+    no_weird_whitespace(text)
+
     if solution:
-        assert not program
+        assert cls.tests
         # noinspection PyUnresolvedReferences
         inputs = list(cls.test_values())[0][0]
         program = clean_program(solution, inputs)
@@ -48,8 +52,8 @@ def clean_step_class(cls, clean_inner=True):
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
-    hints = [markdown(text) for text in hints]
-    no_weird_whitespace(text)
+    hints = [markdown(hint) for hint in hints]
+
     if "__program_" in text:
         text = text.replace("__program__", program)
         indented = indent(program, '    ')
@@ -59,28 +63,26 @@ def clean_step_class(cls, clean_inner=True):
                                         "or set program_in_text = False in the class."
 
     assert "__program_" not in text
-    assert text
 
     text = markdown(dedent(text).strip())
 
     messages = []
     if clean_inner:
         for name, inner_cls in inspect.getmembers(cls):
-            if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)) or name == "parent":
+            if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)):
                 continue
 
-            if isinstance(inner_cls, type) and issubclass(inner_cls, MessageStep):
-                if hasattr(cls, "tests") and not getattr(inner_cls, "tests", None):
-                    inner_cls.tests = cls.tests
+            if issubclass(inner_cls, MessageStep):
+                inner_cls.tests = inner_cls.tests or cls.tests
                 clean_step_class(inner_cls)
 
                 # noinspection PyAbstractClass
-                class combined(inner_cls, cls):
-                    pass
+                class inner_cls(inner_cls, cls):
+                    __name__ = inner_cls.__name__
+                    __qualname__ = inner_cls.__qualname__
+                    __module__ = inner_cls.__module__
 
-                inner_cls = combined
                 messages.append(inner_cls)
-                # inner_cls.parent = cls
 
             clean_step_class(inner_cls, clean_inner=False)
 
@@ -165,6 +167,7 @@ class Step(ABC):
     is_step = True
     abstract = True
     messages = ()
+    tests = {}
 
     def __init__(self, *args):
         self.args = args
@@ -222,7 +225,6 @@ class Step(ABC):
 
 
 class ExerciseStep(Step):
-    tests = {}
     abstract = True
     program_in_text = False
 
