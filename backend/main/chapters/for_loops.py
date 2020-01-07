@@ -511,7 +511,7 @@ Note that there is a space between the name and the pipes (`|`).
         def generate_inputs(self):
             return {"name": generate_short_string()}
 
-        class missing_spaces(MessageStep, ExerciseStep):
+        class missing_spaces(ExerciseStep, MessageStep):
             """
             You're almost there! Just add a few more characters to your strings.
             Your loop is perfect.
@@ -542,7 +542,7 @@ Note that there is a space between the name and the pipes (`|`).
             def generate_inputs(self):
                 return {"name": generate_short_string()}
 
-        class multiple_loops(MessageStep, ExerciseStep):
+        class multiple_loops(ExerciseStep, MessageStep):
             """
             Well done, this solution is correct! However, it can be improved.
             You only need to use one loop - using more is inefficient.
@@ -558,13 +558,13 @@ Note that there is a space between the name and the pipes (`|`).
                 line = ''
                 for _ in name:
                     line += '-'
-                line = '+' + line + '+'
+                line = '+-' + line + '-+'
                 print(line)
-                print('|' + name + '|')
+                print('| ' + name + ' |')
                 line = ''
                 for _ in name:
                     line += '-'
-                line = '+' + line + '+'
+                line = '+-' + line + '-+'
                 print(line)
 
     class name_box_2(ExerciseStep):

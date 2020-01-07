@@ -20,7 +20,6 @@ class StepsTestCase(TestCase):
         self.user = User.objects.create_user("admin", "admin@example.com", "pass")
         client.post("/accounts/login/", dict(username="admin", password="pass"))
 
-    @snoop
     def test_steps(self):
         data = api("load_data")
         state = data["state"]
@@ -30,18 +29,26 @@ class StepsTestCase(TestCase):
                 assert page_index == state["page_index"]
                 assert step_index == state["step_index"]
                 step = getattr(page, step_name)
-                program = step.program
-                if "\n" in program:
-                    response = api("run_program", code=program)
-                else:
-                    response = api("shell_line", line=program)
-                state = response["state"]
-                transcript.append(dict(
-                    program=program.splitlines(),
-                    page=page.title,
-                    step=step_name,
-                    response=response,
-                ))
+
+                for substep in [*step.messages, step]:
+                    program = substep.program
+                    if "\n" in program:
+                        response = api("run_program", code=program)
+                    else:
+                        response = api("shell_line", line=program)
+                    state = response["state"]
+                    transcript.append(dict(
+                        program=program.splitlines(),
+                        page=page.title,
+                        step=step_name,
+                        response=response,
+                    ))
+                    is_message = substep in step.messages
+                    if is_message:
+                        self.assertEqual(response["message"], substep.text)
+
+                    self.assertEqual(step_index + (not is_message), state["step_index"])
+
             if page_index < len(pages) - 1:
                 state = api("next_page")
         path = Path(__file__).parent / "test_transcript.json"

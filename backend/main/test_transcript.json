@@ -2,6 +2,28 @@
     {
         "page": "Introducing The Shell",
         "program": [
+            "'literally anything'"
+        ],
+        "response": {
+            "message": "<p>Awesome, you're trying out your own experiments!\nThat's a great sign. Keep it up.\nJust letting you know that you do need to eventually type <code>1+2</code> for the book to move forward.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "'literally anything'"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 0,
+                "showEditor": false,
+                "step_index": 0
+            }
+        },
+        "step": "first_expression"
+    },
+    {
+        "page": "Introducing The Shell",
+        "program": [
             "1+2"
         ],
         "response": {
@@ -20,6 +42,40 @@
             }
         },
         "step": "first_expression"
+    },
+    {
+        "page": "Introducing The Shell",
+        "program": [
+            "3 x 4"
+        ],
+        "response": {
+            "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n\n<pre><code>3 * 4\n</code></pre>",
+            "result": [
+                {
+                    "color": "red",
+                    "text": "  File \"<console>\", line 1"
+                },
+                {
+                    "color": "red",
+                    "text": "    3 x 4"
+                },
+                {
+                    "color": "red",
+                    "text": "      ^"
+                },
+                {
+                    "color": "red",
+                    "text": "SyntaxError: invalid syntax"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 0,
+                "showEditor": false,
+                "step_index": 1
+            }
+        },
+        "step": "more_calculation"
     },
     {
         "page": "Introducing The Shell",
@@ -89,6 +145,31 @@
             }
         },
         "step": "hello_world_concat"
+    },
+    {
+        "page": "Adding Strings",
+        "program": [
+            "'hello world'"
+        ],
+        "response": {
+            "message": "<p>You must still add two or more strings together.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "'hello world'"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>A space is a character just like any other, like <code>o</code> or <code>w</code>.</p>",
+                    "<p>The space character must be somewhere inside quotes.</p>"
+                ],
+                "page_index": 3,
+                "showEditor": false,
+                "step_index": 1
+            }
+        },
+        "step": "hello_world_space"
     },
     {
         "page": "Adding Strings",
@@ -202,6 +283,74 @@
             }
         },
         "step": "sunshine_undefined_check"
+    },
+    {
+        "page": "Using Variables",
+        "program": [
+            "foo = 3"
+        ],
+        "response": {
+            "message": "<p>Put <code>name</code> before the <code>=</code> to create a variable called <code>name</code>.</p>",
+            "result": [],
+            "state": {
+                "hints": [],
+                "page_index": 5,
+                "showEditor": false,
+                "step_index": 0
+            }
+        },
+        "step": "name_assign"
+    },
+    {
+        "page": "Using Variables",
+        "program": [
+            "name = ''"
+        ],
+        "response": {
+            "message": "<p>For this exercise, choose a non-empty string</p>",
+            "result": [],
+            "state": {
+                "hints": [],
+                "page_index": 5,
+                "showEditor": false,
+                "step_index": 0
+            }
+        },
+        "step": "name_assign"
+    },
+    {
+        "page": "Using Variables",
+        "program": [
+            "name = 3"
+        ],
+        "response": {
+            "message": "<p>You've got the <code>name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
+            "result": [],
+            "state": {
+                "hints": [],
+                "page_index": 5,
+                "showEditor": false,
+                "step_index": 0
+            }
+        },
+        "step": "name_assign"
+    },
+    {
+        "page": "Using Variables",
+        "program": [
+            "name = ' Alex'"
+        ],
+        "response": {
+            "message": "<p>For this exercise, choose a name that doesn't start with a space.</p>",
+            "result": [],
+            "state": {
+                "hints": [],
+                "page_index": 5,
+                "showEditor": false,
+                "step_index": 0
+            }
+        },
+        "step": "name_assign"
     },
     {
         "page": "Using Variables",
@@ -993,6 +1142,100 @@
             "line = ''",
             "for _ in name:",
             "    line += '-'",
+            "line = '+' + line + '+'",
+            "print(line)",
+            "print('|' + name + '|')",
+            "print(line)"
+        ],
+        "response": {
+            "message": "<p>You're almost there! Just add a few more characters to your strings.\nYour loop is perfect.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "+-----+"
+                },
+                {
+                    "color": "white",
+                    "text": "|World|"
+                },
+                {
+                    "color": "white",
+                    "text": "+-----+"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>You did all the hard stuff in the previous exercise. Now it's just some simple string concatenation.</p>",
+                    "<p>You only need one for loop - the one used to make the line of dashes from the previous exercise.</p>",
+                    "<p>Don't try and do everything at once. Break the problem up into smaller, easier subproblems.</p>",
+                    "<p>Try writing a program that outputs:</p>\n<pre><code>-----\nWorld\n-----\n</code></pre>",
+                    "<p>Since you need to output three separate lines of text, you will need to call <code>print()</code> three times.</p>",
+                    "<p>Try writing a program that outputs:</p>\n<pre><code>| World |\n</code></pre>",
+                    "<p>Try writing a program that outputs:</p>\n<pre><code>+-----+\n|World|\n+-----+\n</code></pre>\n<p>(i.e. no spaces around <code>World</code>)</p>"
+                ],
+                "page_index": 12,
+                "showEditor": true,
+                "step_index": 3
+            }
+        },
+        "step": "name_box"
+    },
+    {
+        "page": "Building Up Strings Exercises",
+        "program": [
+            "name = 'World'",
+            "line = ''",
+            "for _ in name:",
+            "    line += '-'",
+            "line = '+-' + line + '-+'",
+            "print(line)",
+            "print('| ' + name + ' |')",
+            "line = ''",
+            "for _ in name:",
+            "    line += '-'",
+            "line = '+-' + line + '-+'",
+            "print(line)"
+        ],
+        "response": {
+            "message": "<p>Well done, this solution is correct! However, it can be improved.\nYou only need to use one loop - using more is inefficient.\nYou can reuse the variable containing the line of <code>-</code> and <code>+</code>.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "+-------+"
+                },
+                {
+                    "color": "white",
+                    "text": "| World |"
+                },
+                {
+                    "color": "white",
+                    "text": "+-------+"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>You did all the hard stuff in the previous exercise. Now it's just some simple string concatenation.</p>",
+                    "<p>You only need one for loop - the one used to make the line of dashes from the previous exercise.</p>",
+                    "<p>Don't try and do everything at once. Break the problem up into smaller, easier subproblems.</p>",
+                    "<p>Try writing a program that outputs:</p>\n<pre><code>-----\nWorld\n-----\n</code></pre>",
+                    "<p>Since you need to output three separate lines of text, you will need to call <code>print()</code> three times.</p>",
+                    "<p>Try writing a program that outputs:</p>\n<pre><code>| World |\n</code></pre>",
+                    "<p>Try writing a program that outputs:</p>\n<pre><code>+-----+\n|World|\n+-----+\n</code></pre>\n<p>(i.e. no spaces around <code>World</code>)</p>"
+                ],
+                "page_index": 12,
+                "showEditor": true,
+                "step_index": 3
+            }
+        },
+        "step": "name_box"
+    },
+    {
+        "page": "Building Up Strings Exercises",
+        "program": [
+            "name = 'World'",
+            "line = ''",
+            "for _ in name:",
+            "    line += '-'",
             "line = '+-' + line + '-+'",
             "print(line)",
             "print('| ' + name + ' |')",
@@ -1027,6 +1270,66 @@
             }
         },
         "step": "name_box"
+    },
+    {
+        "page": "Building Up Strings Exercises",
+        "program": [
+            "name = 'World'",
+            "line = '+' + name + '+'",
+            "print(line)",
+            "for char in name:",
+            "    inner_line = char",
+            "    for _ in name:",
+            "        inner_line += ' '",
+            "    inner_line += char",
+            "    print(inner_line)",
+            "print(line)"
+        ],
+        "response": {
+            "message": "<p>Well done, this solution is correct!\nAnd you used a nested loop (a loop inside a loop) which we haven't even covered yet!\nHowever, in this case a nested loop is inefficient.\nYou can make a variable containing spaces and reuse that in each line.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "+World+"
+                },
+                {
+                    "color": "white",
+                    "text": "W     W"
+                },
+                {
+                    "color": "white",
+                    "text": "o     o"
+                },
+                {
+                    "color": "white",
+                    "text": "r     r"
+                },
+                {
+                    "color": "white",
+                    "text": "l     l"
+                },
+                {
+                    "color": "white",
+                    "text": "d     d"
+                },
+                {
+                    "color": "white",
+                    "text": "+World+"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>You will need two separate for loops over <code>name</code>.</p>",
+                    "<p>Each line except for the first and last has the same characters in the middle. That means you can reuse something.</p>",
+                    "<p>Create a variable containing the spaces in the middle and use it many times.</p>",
+                    "<p>Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.</p>"
+                ],
+                "page_index": 12,
+                "showEditor": true,
+                "step_index": 4
+            }
+        },
+        "step": "name_box_2"
     },
     {
         "page": "Building Up Strings Exercises",
@@ -1499,6 +1802,50 @@
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "sentence = 'HELLO THERE'",
+            "new_sentence = ''",
+            "",
+            "include = True",
+            "for char in sentence:",
+            "    if include:",
+            "        new_sentence += char.upper()",
+            "    include = False",
+            "",
+            "include = False",
+            "for char in sentence:",
+            "    if include:",
+            "        new_sentence += char.lower()",
+            "    include = True",
+            "",
+            "print(new_sentence)"
+        ],
+        "response": {
+            "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Hello there"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>You've learned all the tools you need for this. I believe in you! Look at previous programs for inspiration.</p>",
+                    "<p>You will need a loop to build up the new sentence character by character.</p>",
+                    "<p>You will need an <code>if/else</code> to choose whether to add an uppercase or lowercase character.</p>",
+                    "<p>Your <code>if/else</code> needs to execute different bodies depending on which iteration of the loop it's in.</p>",
+                    "<p>That means that your <code>if</code> condition needs to be a variable that changes inside the loop.</p>",
+                    "<p>In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter.</p>"
+                ],
+                "page_index": 16,
+                "showEditor": true,
+                "step_index": 6
+            }
+        },
+        "step": "capitalise"
+    },
+    {
+        "page": "<code>if</code> and <code>else</code>",
+        "program": [
+            "sentence = 'HELLO THERE'",
             "upper = True",
             "new_sentence = ''",
             "for char in sentence:",
@@ -1533,6 +1880,49 @@
             }
         },
         "step": "capitalise"
+    },
+    {
+        "page": "<code>if</code> and <code>else</code>",
+        "program": [
+            "sentence = 'One more exercise, and then you can relax.'",
+            "upper = True",
+            "new_sentence = ''",
+            "for char in sentence:",
+            "    if upper:",
+            "        char = char.upper()",
+            "    else:",
+            "        char = char.lower()",
+            "",
+            "    if upper:",
+            "        upper = False",
+            "    else:",
+            "        upper = True",
+            "    new_sentence += char",
+            "",
+            "print(new_sentence)"
+        ],
+        "response": {
+            "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX."
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>This is similar to the previous exercise. The difference is when and where you set the condition variable.</p>",
+                    "<p>You will need to have a boolean variable which changes with every iteration. </p>",
+                    "<p>First write a small program which takes a boolean variable and flips it, i.e. if the variable is <code>True</code> it becomes <code>False</code> and if it starts out <code>False</code> it's changed to <code>True</code>. No loops, just an <code>if/else</code>.</p>",
+                    "<p>You will need to use the variable in the <code>if</code> condition and also assign to the same variable in the body.</p>",
+                    "<p>Combine that flipping <code>if/else</code> with the one that chooses an uppercase or lowercase character.</p>"
+                ],
+                "page_index": 16,
+                "showEditor": true,
+                "step_index": 7
+            }
+        },
+        "step": "spongebob"
     },
     {
         "page": "<code>if</code> and <code>else</code>",

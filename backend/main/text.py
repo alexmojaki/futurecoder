@@ -4,10 +4,10 @@ import ast
 import inspect
 import random
 import re
-from abc import abstractmethod, ABC, ABCMeta
+from abc import abstractmethod, ABC
 from importlib import import_module
 from textwrap import indent, dedent
-from typing import get_type_hints, Type
+from typing import get_type_hints, Union, Type
 
 from astcheck import is_ast_like
 from asttokens import ASTTokens
@@ -31,7 +31,7 @@ def clean_program(program, inputs=None):
     return program.strip()
 
 
-def clean_step_class(cls):
+def clean_step_class(cls, clean_inner=True):
     text = cls.text or cls.__doc__
     program = cls.program
     hints = cls.hints
@@ -65,16 +65,25 @@ def clean_step_class(cls):
     text = markdown(dedent(text).strip())
 
     messages = []
-    for name, inner_cls in inspect.getmembers(cls):
-        if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)):
-            continue
+    if clean_inner:
+        for name, inner_cls in inspect.getmembers(cls):
+            if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)) or name == "parent":
+                continue
 
-        if isinstance(inner_cls, type) and issubclass(inner_cls, MessageStep):
-            messages.append(inner_cls)
-            if hasattr(cls, "tests") and not getattr(inner_cls, "tests", None):
-                inner_cls.tests = cls.tests
+            if isinstance(inner_cls, type) and issubclass(inner_cls, MessageStep):
+                if hasattr(cls, "tests") and not getattr(inner_cls, "tests", None):
+                    inner_cls.tests = cls.tests
+                clean_step_class(inner_cls)
 
-        clean_step_class(inner_cls)
+                # noinspection PyAbstractClass
+                class combined(inner_cls, cls):
+                    pass
+
+                inner_cls = combined
+                messages.append(inner_cls)
+                # inner_cls.parent = cls
+
+            clean_step_class(inner_cls, clean_inner=False)
 
     setattrs(cls,
              text=text,
@@ -139,17 +148,12 @@ class PageMeta(type):
 
 
 class Page(metaclass=PageMeta):
-    def __init__(self, code_entry, console, step_name):
-        self.input = code_entry.input
-        self.result = code_entry.output
-        self.code_source = code_entry.source
-        self.console = console
-        self.step_name = step_name
-        self.step = getattr(self, step_name)(code_entry, console)
-
-    def check_step(self):
+    @classmethod
+    def check_step(cls, step_name, code_entry, console):
+        step_cls: Type[Step] = getattr(cls, step_name)
+        step = step_cls(code_entry.input, code_entry.output, code_entry.source, console)
         try:
-            return self.step.check_with_messages()
+            return step.check_with_messages()
         except SyntaxError:
             return False
 
@@ -163,21 +167,21 @@ class Step(ABC):
     abstract = True
     messages = ()
 
-    def __init__(self, code_entry, console):
-        self.input = code_entry.input
-        self.result = code_entry.output
-        self.code_source = code_entry.source
-        self.console = console
+    def __init__(self, *args):
+        self.args = args
+        self.input, self.result, self.code_source, self.console = args
 
     def check_with_messages(self):
         result = self.check()
+        if not isinstance(result, dict):
+            result = bool(result)
         for message_cls in self.messages:
-            if result == message_cls.after_success and message_cls[self]:
-                return result.message()
+            if result == message_cls.after_success and message_cls.check_message(self):
+                return message_cls.message()
         return result
 
     @abstractmethod
-    def check(self):
+    def check(self) -> Union[bool, dict]:
         raise NotImplementedError
 
     def check_exercise(self, *args, **kwargs):
@@ -268,12 +272,7 @@ class VerbatimStep(Step):
         return self.matches_program()
 
 
-class MessageStepMeta(ABCMeta):
-    def __getitem__(cls: Type[MessageStep], step):
-        return cls.check(step)
-
-
-class MessageStep(Step, ABC, metaclass=MessageStepMeta):
+class MessageStep(Step, ABC):
     abstract = True
     program_in_text = False
     after_success = False
@@ -281,6 +280,10 @@ class MessageStep(Step, ABC, metaclass=MessageStepMeta):
     @classmethod
     def message(cls):
         return dict(message=cls.text)
+
+    @classmethod
+    def check_message(cls, step):
+        return cls(*step.args).check()
 
 
 def search_ast(node, template):

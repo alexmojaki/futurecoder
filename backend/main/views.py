@@ -122,7 +122,7 @@ class API:
         message = ""
 
         if self.user.step_name != "final_text":
-            step_result = self.page(entry, console, self.user.step_name).check_step()
+            step_result = self.page.check_step(self.user.step_name, entry, console)
             if isinstance(step_result, dict):
                 passed = step_result.get("passed", False)
                 message = step_result.get("message", "")

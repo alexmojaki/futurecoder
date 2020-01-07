@@ -76,14 +76,14 @@ Now make a variable called `name` whose value is another string. The string can 
 
         class assigned_something_else(MessageStep):
             """Put `name` before the `=` to create a variable called `name`."""
-            program = "foo = bar"
+            program = "foo = 3"
 
             def check(self):
                 match = re.match(r"(.*)=", self.input)
                 return bool(match and match.group(1).strip() != "name")
 
         class name_equals_something_else(MessageStep):
-            """You've got the `name = ` part right, now put a string on the right of the `=`."""
+            """You've got the `name = ` part right, now put a string (use quotes) on the right of the `=`."""
             program = "name = 3"
 
             def check(self):
@@ -103,7 +103,7 @@ Now make a variable called `name` whose value is another string. The string can 
             after_success = True
 
             def check(self):
-                self.console.locals['name'].startswith(' ')
+                return self.console.locals['name'].startswith(' ')
 
         def check(self):
             return (
