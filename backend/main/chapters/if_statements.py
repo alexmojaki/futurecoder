@@ -243,7 +243,6 @@ class too_many_compound(MessageStep, ExerciseStep, ABC):
     However, it can be improved. You only need to use one loop and one `if/else`.
     """
     after_success = True
-    abstract = True
 
     def check(self):
         return any(

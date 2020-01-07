@@ -51,8 +51,6 @@ The answer is that `sunshine` looks like a variable, so Python tries to look up 
 
 
 class word_must_be_hello(VerbatimStep):
-    abstract = True
-
     def check(self):
         if self.console.locals.get("word") != "Hello":
             return dict(

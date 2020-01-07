@@ -165,7 +165,6 @@ class Step(ABC):
     program_in_text = True
     hints = ()
     is_step = True
-    abstract = True
     messages = ()
     tests = {}
 
@@ -225,7 +224,6 @@ class Step(ABC):
 
 
 class ExerciseStep(Step):
-    abstract = True
     program_in_text = False
 
     def check(self):
@@ -267,14 +265,11 @@ class ExerciseStep(Step):
 
 
 class VerbatimStep(Step):
-    abstract = True
-
     def check(self):
         return self.matches_program()
 
 
 class MessageStep(Step, ABC):
-    abstract = True
     program_in_text = False
     after_success = False
 
