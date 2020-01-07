@@ -44,13 +44,13 @@ def clean_step_class(cls, clean_inner=True):
         program = clean_program(solution, inputs)
     else:
         program = clean_program(program)
+    assert program
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
     hints = [markdown(text) for text in hints]
     no_weird_whitespace(text)
     if "__program_" in text:
-        assert program
         text = text.replace("__program__", program)
         indented = indent(program, '    ')
         text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
@@ -59,7 +59,6 @@ def clean_step_class(cls, clean_inner=True):
                                         "or set program_in_text = False in the class."
 
     assert "__program_" not in text
-    assert program
     assert text
 
     text = markdown(dedent(text).strip())
