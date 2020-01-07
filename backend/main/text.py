@@ -90,7 +90,7 @@ def clean_step_class(cls, clean_inner=True):
                         partial(inner_cls.solution, None),
                         partial(cls.solution, None),
                         cls.test_exercise,
-                        partial(cls.generate_inputs, None),
+                        cls.generate_inputs,
                     )
 
             clean_step_class(inner_cls, clean_inner=False)
@@ -264,13 +264,14 @@ class ExerciseStep(Step):
         for inputs, result in cls.test_values():
             check_result(func, inputs, result)
 
-    def generate_inputs(self):
+    @classmethod
+    def generate_inputs(cls):
         return {
             name: {
                 str: generate_short_string(),
                 bool: random.choice([True, False]),
             }[typ]
-            for name, typ in get_type_hints(self.solution).items()
+            for name, typ in get_type_hints(cls.solution).items()
         }
 
 

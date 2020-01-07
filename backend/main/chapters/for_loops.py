@@ -1,7 +1,6 @@
 import ast
 from textwrap import dedent
 
-from main.exercises import generate_short_string
 from main.text import Page, MessageStep
 from main.text import Step, ExerciseStep, VerbatimStep
 from main.utils import returns_stdout
@@ -158,7 +157,7 @@ You will need to use `+`.
         """
 
         @returns_stdout
-        def solution(self, name):
+        def solution(self, name: str):
             for character in name:
                 print('---' + character)
 
@@ -176,9 +175,6 @@ You will need to use `+`.
 ---b
 """,
         }
-
-        def generate_inputs(self, ):
-            return {"name": generate_short_string()}
 
     class loop_exercise_2(ExerciseStep):
         """
@@ -206,7 +202,7 @@ The for loop will create a variable such as `character`, but the program doesn't
         """
 
         @returns_stdout
-        def solution(self, name):
+        def solution(self, name: str):
             for _ in name:
                 print(name)
 
@@ -224,9 +220,6 @@ Bob
 Bob
 """,
         }
-
-        def generate_inputs(self, ):
-            return {"name": generate_short_string()}
 
     final_text = """
 We're making really good progress! You're solving problems and writing new code!
@@ -323,7 +316,7 @@ You will need to use a string consisting of one space: `' '`.
         """
 
         @returns_stdout
-        def solution(self, name):
+        def solution(self, name: str):
             line = ''
             for char in name:
                 line = line + char + ' '
@@ -343,9 +336,6 @@ B o
 B o b 
 """,
         }
-
-        def generate_inputs(self, ):
-            return {"name": generate_short_string()}
 
     class name_triangle_backwards(ExerciseStep):
         """
@@ -367,7 +357,7 @@ You need to add the character before the string, instead of after.
         """
 
         @returns_stdout
-        def solution(self, name):
+        def solution(self, name: str):
             line = ''
             for char in name:
                 line = char + line
@@ -387,9 +377,6 @@ mA
 ymA
 """,
         }
-
-        def generate_inputs(self, ):
-            return {"name": generate_short_string()}
 
     class name_underlined(ExerciseStep):
         """
@@ -421,7 +408,7 @@ The for loop will create a variable such as `char`, but the program doesn't need
         """
 
         @returns_stdout
-        def solution(self, name):
+        def solution(self, name: str):
             line = ''
             for _ in name:
                 line += '-'
@@ -438,9 +425,6 @@ Bob
 ---
 """,
         }
-
-        def generate_inputs(self, ):
-            return {"name": generate_short_string()}
 
     class name_box(ExerciseStep):
         """
@@ -486,7 +470,7 @@ Note that there is a space between the name and the pipes (`|`).
         ]
 
         @returns_stdout
-        def solution(self, name):
+        def solution(self, name: str):
             line = ''
             for _ in name:
                 line += '-'
@@ -508,16 +492,13 @@ Note that there is a space between the name and the pipes (`|`).
 """,
         }
 
-        def generate_inputs(self):
-            return {"name": generate_short_string()}
-
         class missing_spaces(ExerciseStep, MessageStep):
             """
             You're almost there! Just add a few more characters to your strings.
             Your loop is perfect.
             """
             @returns_stdout
-            def solution(self, name):
+            def solution(self, name: str):
                 line = ''
                 for _ in name:
                     line += '-'
@@ -539,9 +520,6 @@ Note that there is a space between the name and the pipes (`|`).
 """,
             }
 
-            def generate_inputs(self):
-                return {"name": generate_short_string()}
-
         class multiple_loops(ExerciseStep, MessageStep):
             """
             Well done, this solution is correct! However, it can be improved.
@@ -554,7 +532,7 @@ Note that there is a space between the name and the pipes (`|`).
                 return sum(isinstance(node, ast.For) for node in ast.walk(self.tree)) > 1
 
             @returns_stdout
-            def solution(self, name):
+            def solution(self, name: str):
                 line = ''
                 for _ in name:
                     line += '-'
@@ -588,7 +566,7 @@ Use one loop to create a bunch of spaces, and a second loop to print a bunch of 
         """
 
         @returns_stdout
-        def solution(self, name):
+        def solution(self, name: str):
             line = '+' + name + '+'
             spaces = ''
             for _ in name:
@@ -618,9 +596,6 @@ b   b
 """,
         }
 
-        def generate_inputs(self):
-            return {"name": generate_short_string()}
-
         class nested_loop(MessageStep, ExerciseStep):
             """
             Well done, this solution is correct!
@@ -638,7 +613,7 @@ b   b
                                 return True
 
             @returns_stdout
-            def solution(self, name):
+            def solution(self, name: str):
                 line = '+' + name + '+'
                 print(line)
                 for char in name:

@@ -2,7 +2,6 @@ import ast
 import random
 from abc import ABC
 
-from main.exercises import generate_short_string
 from main.text import ExerciseStep, VerbatimStep, MessageStep
 from main.text import Page
 from main.utils import returns_stdout
@@ -106,7 +105,7 @@ The code that you add should be very similar to the existing code.
         """
 
         @returns_stdout
-        def solution(self, sentence, excited, confused):
+        def solution(self, sentence: str, excited: bool, confused: bool):
             if excited:
                 sentence += '!'
             if confused:
@@ -119,13 +118,6 @@ The code that you add should be very similar to the existing code.
             ("I'm bored", False, False): "I'm bored",
             ('Who are you', False, True): 'Who are you?',
         }
-
-        def generate_inputs(self, ):
-            return dict(
-                sentence=generate_short_string(),
-                excited=random.choice([True, False]),
-                confused=random.choice([True, False]),
-            )
 
     final_text = """
 Well done! This program can do 4 different things depending on how you combine `excited`
@@ -214,7 +206,7 @@ That means `include` should be `False` after the first iteration.
         """
 
         @returns_stdout
-        def solution(self, sentence):
+        def solution(self, sentence: str):
             include = True
             new_sentence = ''
             for char in sentence:
@@ -228,9 +220,6 @@ That means `include` should be `False` after the first iteration.
             'Hello there': 'H',
             'Goodbye': 'G',
         }
-
-        def generate_inputs(self, ):
-            return dict(sentence=generate_short_string())
 
     final_text = """
 Great job! You're working with increasingly complex programs.
@@ -363,7 +352,7 @@ is added to the end of the sentence instead of an exclamation mark (`!`).
         """
 
         @returns_stdout
-        def solution(self, sentence, excited):
+        def solution(self, sentence: str, excited: bool):
             if excited:
                 char = '!'
             else:
@@ -376,10 +365,6 @@ is added to the end of the sentence instead of an exclamation mark (`!`).
             ('Hello there', True): 'Hello there!',
             ('Goodbye', False): 'Goodbye.',
         }
-
-        def generate_inputs(self, ):
-            return dict(sentence=generate_short_string(),
-                        excited=random.choice([True, False]))
 
     class capitalise(ExerciseStep):
         """
@@ -401,7 +386,7 @@ In the first iteration you need an uppercase letter. In the following iterations
         """
 
         @returns_stdout
-        def solution(self, sentence):
+        def solution(self, sentence: str):
             upper = True
             new_sentence = ''
             for char in sentence:
@@ -419,12 +404,9 @@ In the first iteration you need an uppercase letter. In the following iterations
             'goodbye': 'Goodbye',
         }
 
-        def generate_inputs(self):
-            return dict(sentence=generate_short_string())
-
         class two_loops(too_many_compound):
             @returns_stdout
-            def solution(self, sentence):
+            def solution(self, sentence: str):
                 new_sentence = ''
 
                 include = True
@@ -463,7 +445,7 @@ Combine that flipping `if/else` with the one that chooses an uppercase or lowerc
         """
 
         @returns_stdout
-        def solution(self, sentence):
+        def solution(self, sentence: str):
             upper = True
             new_sentence = ''
             for char in sentence:
@@ -481,12 +463,9 @@ Combine that flipping `if/else` with the one that chooses an uppercase or lowerc
             'One more exercise, and then you can relax.': 'OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.',
         }
 
-        def generate_inputs(self):
-            return dict(sentence=generate_short_string())
-
         class two_ifs(too_many_compound):
             @returns_stdout
-            def solution(self, sentence):
+            def solution(self, sentence: str):
                 upper = True
                 new_sentence = ''
                 for char in sentence:
