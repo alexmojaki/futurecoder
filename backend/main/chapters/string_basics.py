@@ -1,6 +1,6 @@
 import ast
 
-from main.text import Page, search_ast
+from main.text import Page, search_ast, MessageStep
 from main.text import Step, VerbatimStep
 
 
@@ -50,17 +50,21 @@ By the way, if you get stuck, you can click the lightbulb icon in the bottom rig
         program = "'hello ' + 'world'"
         program_in_text = False
 
-        def check(self):
-            if "'hello world'" not in self.result:
-                return False
+        class literal_answer(MessageStep):
+            """
+            You must still add two or more strings together.
+            """
+            program = "'hello world'"
+            after_success = True
 
-            if search_ast(
+            def check(self):
+                return not search_ast(
                     self.expr,
                     ast.BinOp(left=ast.Str(), op=ast.Add(), right=ast.Str()),
-            ):
-                return True
+                )
 
-            return dict(message="You must still add two or more strings together.")
+        def check(self):
+            return "'hello world'" in self.result
 
     final_text = """
 Well done! Any of the following are valid solutions:

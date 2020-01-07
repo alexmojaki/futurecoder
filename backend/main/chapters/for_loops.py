@@ -1,8 +1,8 @@
 import ast
 from textwrap import dedent
 
-from main.exercises import generate_short_string, check_result
-from main.text import Page
+from main.exercises import generate_short_string
+from main.text import Page, MessageStep
 from main.text import Step, ExerciseStep, VerbatimStep
 from main.utils import returns_stdout
 
@@ -511,9 +511,13 @@ Note that there is a space between the name and the pipes (`|`).
         def generate_inputs(self):
             return {"name": generate_short_string()}
 
-        def check(self):
+        class missing_spaces(MessageStep, ExerciseStep):
+            """
+            You're almost there! Just add a few more characters to your strings.
+            Your loop is perfect.
+            """
             @returns_stdout
-            def missing_spaces_solution(name):
+            def solution(self, name):
                 line = ''
                 for _ in name:
                     line += '-'
@@ -522,38 +526,46 @@ Note that there is a space between the name and the pipes (`|`).
                 print('|' + name + '|')
                 print(line)
 
-            def missing_spaces_test(func):
-                check_result(func, {"name": "World"}, """\
+            tests = {
+                "World": """\
 +-----+
 |World|
 +-----+
-            """)
-                check_result(func, {"name": "Bob"}, """\
+""",
+                "Bob": """\
 +---+
 |Bob|
 +---+
-                """)
+""",
+            }
 
-            if self.check_exercise(
-                    missing_spaces_solution,
-                    missing_spaces_test,
-                    self.generate_inputs,
-                    functionise=True,
-            ) is True:
-                return dict(
-                    message="You're almost there! Just add a few more characters to your strings. "
-                            "Your loop is perfect."
-                )
+            def generate_inputs(self):
+                return {"name": generate_short_string()}
 
-            result = super().check()
-            if result is True:
-                if sum(isinstance(node, ast.For) for node in ast.walk(self.tree)) > 1:
-                    return dict(
-                        message="Well done, this solution is correct! However, it can be improved. "
-                                "You only need to use one loop - using more is inefficient. "
-                                "You can reuse the variable containing the line of `-` and `+`."
-                    )
-            return result
+        class multiple_loops(MessageStep, ExerciseStep):
+            """
+            Well done, this solution is correct! However, it can be improved.
+            You only need to use one loop - using more is inefficient.
+            You can reuse the variable containing the line of `-` and `+`.
+            """
+            after_success = True
+
+            def check(self):
+                return sum(isinstance(node, ast.For) for node in ast.walk(self.tree)) > 1
+
+            @returns_stdout
+            def solution(self, name):
+                line = ''
+                for _ in name:
+                    line += '-'
+                line = '+' + line + '+'
+                print(line)
+                print('|' + name + '|')
+                line = ''
+                for _ in name:
+                    line += '-'
+                line = '+' + line + '+'
+                print(line)
 
     class name_box_2(ExerciseStep):
         """
@@ -609,21 +621,33 @@ b   b
         def generate_inputs(self):
             return {"name": generate_short_string()}
 
-        def check(self):
-            result = super().check()
-            if result is True:
+        class nested_loop(MessageStep, ExerciseStep):
+            """
+            Well done, this solution is correct!
+            And you used a nested loop (a loop inside a loop) which we haven't even covered yet!
+            However, in this case a nested loop is inefficient.
+            You can make a variable containing spaces and reuse that in each line.
+            """
+            after_success = True
+
+            def check(self):
                 for outer in ast.walk(self.tree):
                     if isinstance(outer, ast.For):
                         for inner in ast.walk(outer):
                             if isinstance(inner, ast.For) and outer != inner:
-                                return dict(
-                                    message="Well done, this solution is correct! "
-                                            "And you used a nested loop (a loop inside a loop) which we "
-                                            "haven't even covered yet! "
-                                            "However, in this case a nested loop is inefficient. "
-                                            "You can make a variable containing spaces and reuse that in each line."
-                                )
-            return result
+                                return True
+
+            @returns_stdout
+            def solution(self, name):
+                line = '+' + name + '+'
+                print(line)
+                for char in name:
+                    inner_line = char
+                    for _ in name:
+                        inner_line += ' '
+                    inner_line += char
+                    print(inner_line)
+                print(line)
 
     final_text = """
 Sweet! You're really getting the hang of this! If you want, here's one more optional bonus challenge. Try writing a program that outputs:

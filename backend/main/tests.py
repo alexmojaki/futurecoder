@@ -20,6 +20,7 @@ class StepsTestCase(TestCase):
         self.user = User.objects.create_user("admin", "admin@example.com", "pass")
         client.post("/accounts/login/", dict(username="admin", password="pass"))
 
+    @snoop
     def test_steps(self):
         data = api("load_data")
         state = data["state"]

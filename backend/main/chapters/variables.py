@@ -3,7 +3,7 @@ import re
 
 from astcheck import is_ast_like
 
-from main.text import Page
+from main.text import Page, MessageStep
 from main.text import Step, VerbatimStep
 
 
@@ -50,13 +50,18 @@ The answer is that `sunshine` looks like a variable, so Python tries to look up 
 """
 
 
-class UsingVariables(Page):
-    def before_step(self):
-        if 'word_plus_name' in self.step_name and self.console.locals.get("word") != "Hello":
+class word_must_be_hello(VerbatimStep):
+    abstract = True
+
+    def check(self):
+        if self.console.locals.get("word") != "Hello":
             return dict(
                 message="Oops, you need to set `word = 'Hello'` before we can continue."
             )
+        return super().check()
 
+
+class UsingVariables(Page):
     class name_assign(Step):
         """
 Previously we made a variable called `word` with the value `'Hello'` with this code:
@@ -69,30 +74,45 @@ Now make a variable called `name` whose value is another string. The string can 
         program = "name = 'Alex'"
         program_in_text = False
 
+        class assigned_something_else(MessageStep):
+            """Put `name` before the `=` to create a variable called `name`."""
+            program = "foo = bar"
+
+            def check(self):
+                match = re.match(r"(.*)=", self.input)
+                return bool(match and match.group(1).strip() != "name")
+
+        class name_equals_something_else(MessageStep):
+            """You've got the `name = ` part right, now put a string on the right of the `=`."""
+            program = "name = 3"
+
+            def check(self):
+                return self.input_matches("name=[^'\"].*")
+
+        class empty_string(MessageStep):
+            """For this exercise, choose a non-empty string"""
+            program = "name = ''"
+            after_success = True
+
+            def check(self):
+                return not self.console.locals['name']
+
+        class starts_with_space(MessageStep):
+            """For this exercise, choose a name that doesn't start with a space."""
+            program = "name = ' Alex'"
+            after_success = True
+
+            def check(self):
+                self.console.locals['name'].startswith(' ')
+
         def check(self):
-            match = re.match(r"(.*)=", self.input)
-            if match and match.group(1).strip() != "name":
-                return dict(message="Put `name` before the `=` to create a variable called `name`.")
-
-            if self.input_matches("name=[^'\"].*"):
-                return dict(message="You've got the `name = ` part right, now put a string on "
-                                    "the right of the `=`.")
-
-            if not is_ast_like(
-                    self.tree,
-                    ast.Module(body=[ast.Assign(targets=[ast.Name(id='name')],
-                                                value=ast.Constant())])
-            ):
-                return False
-            name = self.console.locals.get('name')
-            if isinstance(name, str):
-                if not name:
-                    return dict(message="Choose a non-empty string")
-                if name[0] == " ":
-                    return dict(message="For this exercise, choose a name "
-                                        "that doesn't start with a space.")
-
-                return True
+            return (
+                    is_ast_like(
+                        self.tree,
+                        ast.Module(body=[ast.Assign(targets=[ast.Name(id='name')])])
+                    )
+                    and isinstance(self.console.locals.get('name'), str)
+            )
 
     class hello_plus_name(VerbatimStep):
         """
@@ -103,7 +123,7 @@ __program_indented__
 
         program = "'Hello ' + name"
 
-    class word_plus_name(VerbatimStep):
+    class word_plus_name(word_must_be_hello):
         """
 Or you can just add variables together. Try:
 
@@ -112,7 +132,7 @@ Or you can just add variables together. Try:
 
         program = "word + name"
 
-    class word_plus_name_with_space(VerbatimStep):
+    class word_plus_name_with_space(word_must_be_hello):
         """
 Oops...that doesn't look nice. Can you modify the code above so that there's a space between the word and the name?
         """

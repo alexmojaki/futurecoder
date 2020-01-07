@@ -3,7 +3,7 @@ import random
 from abc import ABC
 
 from main.exercises import generate_short_string
-from main.text import ExerciseStep, VerbatimStep
+from main.text import ExerciseStep, VerbatimStep, MessageStep
 from main.text import Page
 from main.utils import returns_stdout
 
@@ -237,22 +237,22 @@ Great job! You're working with increasingly complex programs.
 """
 
 
-class ChallengeStep(ExerciseStep, ABC):
+class too_many_compound(MessageStep, ExerciseStep, ABC):
+    text = """
+    Well done, this solution is correct!
+    However, it can be improved. You only need to use one loop and one `if/else`.
+    """
+    after_success = True
     abstract = True
 
     def check(self):
-        result = super().check()
-        if result is True:
-            ifs_and_fors = [
-                sum(isinstance(node, typ) for node in ast.walk(self.tree))
-                for typ in [ast.If, ast.For]
-            ]
-            if max(ifs_and_fors) > 1:
-                return dict(
-                    message="Well done, this solution is correct! However, it can be improved. "
-                            "You only need to use one loop and one `if/else`."
-                )
-        return result
+        return any(
+            sum(
+                isinstance(node, typ)
+                for node in ast.walk(self.tree)
+            ) > 1
+            for typ in [ast.If, ast.For]
+        )
 
 
 class IfAndElse(Page):
@@ -382,7 +382,7 @@ is added to the end of the sentence instead of an exclamation mark (`!`).
             return dict(sentence=generate_short_string(),
                         excited=random.choice([True, False]))
 
-    class capitalise(ChallengeStep):
+    class capitalise(ExerciseStep):
         """
 Time for a challenge!
 
@@ -423,7 +423,26 @@ In the first iteration you need an uppercase letter. In the following iterations
         def generate_inputs(self):
             return dict(sentence=generate_short_string())
 
-    class spongebob(ChallengeStep):
+        class two_loops(too_many_compound):
+            @returns_stdout
+            def solution(self, sentence):
+                new_sentence = ''
+
+                include = True
+                for char in sentence:
+                    if include:
+                        new_sentence += char.upper()
+                    include = False
+
+                include = False
+                for char in sentence:
+                    if include:
+                        new_sentence += char.lower()
+                    include = True
+
+                print(new_sentence)
+
+    class spongebob(ExerciseStep):
         """
 Excellent!!!
 
@@ -465,6 +484,25 @@ Combine that flipping `if/else` with the one that chooses an uppercase or lowerc
 
         def generate_inputs(self):
             return dict(sentence=generate_short_string())
+
+        class two_ifs(too_many_compound):
+            @returns_stdout
+            def solution(self, sentence):
+                upper = True
+                new_sentence = ''
+                for char in sentence:
+                    if upper:
+                        char = char.upper()
+                    else:
+                        char = char.lower()
+
+                    if upper:
+                        upper = False
+                    else:
+                        upper = True
+                    new_sentence += char
+
+                print(new_sentence)
 
     final_text = """
 Perfect! Take a moment to be proud of what you've achieved. Can you feel your brain growing?

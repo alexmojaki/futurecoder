@@ -1,6 +1,4 @@
-from textwrap import dedent
-
-from main.text import Page, VerbatimStep
+from main.text import Page, VerbatimStep, MessageStep
 from main.text import Step
 
 
@@ -17,18 +15,17 @@ At the bottom right of the screen is the *shell*. This is a place for running sm
 
         program = "1+2"
 
-        def check(self):
-            if super().check():
-                return True
+        class anything_else(MessageStep):
+            """
+            Awesome, you're trying out your own experiments!
+            That's a great sign. Keep it up.
+            Just letting you know that you do need to eventually type `1+2` for the book to move forward.
+            """
 
-            return dict(
-                message=dedent("""
-                    Awesome, you're trying out your own experiments!
-                    That's a great sign. Keep it up.
-                    Just letting you know that you do need to eventually type `1+2`
-                    for the book to move forward.
-                    """)
-            )
+            program = "'literally anything'"
+
+            def check(self):
+                return True
 
     class more_calculation(Step):
         """
@@ -42,16 +39,19 @@ Try doing some more calculations now. You can multiply numbers with `*`, divide 
         program = "5 - 6"
         program_in_text = False
 
-        def check(self):
-            if 'x' in self.input:
-                return dict(
-                    message=dedent("""
-                        I see an 'x'.
-                        If you're trying to multiply, use an asterisk, e.g:
+        class x_to_multiple(MessageStep):
+            """
+            I see an 'x'. If you're trying to multiply, use an asterisk, e.g:
 
-                            3 * 4
-                        """)
-                )
+                3 * 4
+            """
+
+            program = "3 x 4"
+
+            def check(self):
+                return 'x' in self.input
+
+        def check(self):
             return self.input_matches(r'\d[-*/]\d')
 
     final_text = """

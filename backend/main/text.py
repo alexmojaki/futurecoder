@@ -1,11 +1,13 @@
+from __future__ import annotations
+
 import ast
 import inspect
 import random
 import re
-from abc import ABCMeta, abstractmethod
+from abc import abstractmethod, ABC, ABCMeta
 from importlib import import_module
 from textwrap import indent, dedent
-from typing import get_type_hints
+from typing import get_type_hints, Type
 
 from astcheck import is_ast_like
 from asttokens import ASTTokens
@@ -14,8 +16,6 @@ from markdown import markdown
 
 from main.exercises import check_exercise, check_result, generate_short_string, inputs_string
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
-
-step = None
 
 
 def clean_program(program, inputs=None):
@@ -31,49 +31,56 @@ def clean_program(program, inputs=None):
     return program.strip()
 
 
-class StepMeta(ABCMeta):
-    def __init__(cls, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if cls.__dict__.get("abstract"):
-            return
+def clean_step_class(cls):
+    text = cls.text or cls.__doc__
+    program = cls.program
+    hints = cls.hints
 
-        assert issubclass(cls, Step)
-        text = cls.text or cls.__doc__
-        program = cls.program
-        hints = cls.hints
+    solution = cls.__dict__.get("solution", "")
+    if solution:
+        assert not program
+        # noinspection PyUnresolvedReferences
+        inputs = list(cls.test_values())[0][0]
+        program = clean_program(solution, inputs)
+    else:
+        program = clean_program(program)
 
-        solution = cls.__dict__.get("solution", "")
-        if solution:
-            assert not program
-            # noinspection PyUnresolvedReferences
-            inputs = list(cls.test_values())[0][0]
-            program = clean_program(solution, inputs)
-        else:
-            program = clean_program(program)
-
-        if isinstance(hints, str):
-            hints = hints.strip().splitlines()
-        hints = [markdown(text) for text in hints]
-        no_weird_whitespace(text)
-        if "__program_" in text:
-            assert program
-            text = text.replace("__program__", program)
-            indented = indent(program, '    ')
-            text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
-        else:
-            assert not cls.program_in_text, "Either include __program__ or __program_indented__ in the text, " \
-                                            "or set program_in_text = False in the class."
-
-        assert "__program_" not in text
+    if isinstance(hints, str):
+        hints = hints.strip().splitlines()
+    hints = [markdown(text) for text in hints]
+    no_weird_whitespace(text)
+    if "__program_" in text:
         assert program
-        assert text
+        text = text.replace("__program__", program)
+        indented = indent(program, '    ')
+        text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
+    else:
+        assert not cls.program_in_text, "Either include __program__ or __program_indented__ in the text, " \
+                                        "or set program_in_text = False in the class."
 
-        text = markdown(text.strip())
+    assert "__program_" not in text
+    assert program
+    assert text
 
-        setattrs(cls,
-                 text=text,
-                 program=program,
-                 hints=hints)
+    text = markdown(dedent(text).strip())
+
+    messages = []
+    for name, inner_cls in inspect.getmembers(cls):
+        if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)):
+            continue
+
+        if isinstance(inner_cls, type) and issubclass(inner_cls, MessageStep):
+            messages.append(inner_cls)
+            if hasattr(cls, "tests") and not getattr(inner_cls, "tests", None):
+                inner_cls.tests = cls.tests
+
+        clean_step_class(inner_cls)
+
+    setattrs(cls,
+             text=text,
+             program=program,
+             messages=messages,
+             hints=hints)
 
 
 pages = {}
@@ -95,6 +102,7 @@ class PageMeta(type):
         cls.step_texts = []
         for key, value in cls.__dict__.items():
             if getattr(value, "is_step", False):
+                clean_step_class(value)
                 cls.step_names.append(key)
                 cls.step_texts.append(value.text)
 
@@ -139,33 +147,34 @@ class Page(metaclass=PageMeta):
         self.step_name = step_name
         self.step = getattr(self, step_name)(code_entry, console)
 
-    def before_step(self):
-        return None
-
     def check_step(self):
-        before = self.before_step()
-        if before is not None:
-            return before
-
         try:
-            return self.step.check()
+            return self.step.check_with_messages()
         except SyntaxError:
             return False
 
 
-class Step(metaclass=StepMeta):
+class Step(ABC):
     text = ""
     program = ""
     program_in_text = True
     hints = ()
     is_step = True
     abstract = True
+    messages = ()
 
     def __init__(self, code_entry, console):
         self.input = code_entry.input
         self.result = code_entry.output
         self.code_source = code_entry.source
         self.console = console
+
+    def check_with_messages(self):
+        result = self.check()
+        for message_cls in self.messages:
+            if result == message_cls.after_success and message_cls[self]:
+                return result.message()
+        return result
 
     @abstractmethod
     def check(self):
@@ -257,6 +266,21 @@ class VerbatimStep(Step):
 
     def check(self):
         return self.matches_program()
+
+
+class MessageStepMeta(ABCMeta):
+    def __getitem__(cls: Type[MessageStep], step):
+        return cls.check(step)
+
+
+class MessageStep(Step, ABC, metaclass=MessageStepMeta):
+    abstract = True
+    program_in_text = False
+    after_success = False
+
+    @classmethod
+    def message(cls):
+        return dict(message=cls.text)
 
 
 def search_ast(node, template):
