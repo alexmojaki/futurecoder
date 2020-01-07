@@ -5,13 +5,14 @@ import inspect
 import random
 import re
 from abc import abstractmethod, ABC
+from functools import partial
 from importlib import import_module
 from textwrap import indent, dedent
 from typing import get_type_hints, Union, Type
 
 from astcheck import is_ast_like
 from asttokens import ASTTokens
-from littleutils import setattrs, select_keys, select_attrs
+from littleutils import setattrs
 from markdown import markdown
 
 from main.exercises import check_exercise, check_result, generate_short_string, inputs_string
@@ -83,6 +84,14 @@ def clean_step_class(cls, clean_inner=True):
                     __module__ = inner_cls.__module__
 
                 messages.append(inner_cls)
+
+                if inner_cls.after_success and issubclass(inner_cls, ExerciseStep):
+                    check_exercise(
+                        partial(inner_cls.solution, None),
+                        partial(cls.solution, None),
+                        cls.test_exercise,
+                        partial(cls.generate_inputs, None),
+                    )
 
             clean_step_class(inner_cls, clean_inner=False)
 
@@ -250,8 +259,9 @@ class ExerciseStep(Step):
             inputs = dict(zip(cls.arg_names(), inputs))
             yield inputs, result
 
-    def test_exercise(self, func):
-        for inputs, result in self.test_values():
+    @classmethod
+    def test_exercise(cls, func):
+        for inputs, result in cls.test_values():
             check_result(func, inputs, result)
 
     def generate_inputs(self):
