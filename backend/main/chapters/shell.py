@@ -37,7 +37,6 @@ Try doing some more calculations now. You can multiply numbers with `*`, divide 
         """
 
         program = "5 - 6"
-        program_in_text = False
 
         class x_to_multiple(MessageStep):
             """

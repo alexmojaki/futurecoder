@@ -82,6 +82,7 @@ def clean_step_class(cls, clean_inner=True):
                     __name__ = inner_cls.__name__
                     __qualname__ = inner_cls.__qualname__
                     __module__ = inner_cls.__module__
+                    program_in_text = inner_cls.program_in_text
 
                 messages.append(inner_cls)
 
@@ -171,7 +172,7 @@ class Page(metaclass=PageMeta):
 class Step(ABC):
     text = ""
     program = ""
-    program_in_text = True
+    program_in_text = False
     hints = ()
     is_step = True
     messages = ()
@@ -233,7 +234,6 @@ class Step(ABC):
 
 
 class ExerciseStep(Step):
-    program_in_text = False
 
     def check(self):
         return self.check_exercise(
@@ -276,12 +276,13 @@ class ExerciseStep(Step):
 
 
 class VerbatimStep(Step):
+    program_in_text = True
+
     def check(self):
         return self.matches_program()
 
 
 class MessageStep(Step, ABC):
-    program_in_text = False
     after_success = False
 
     @classmethod

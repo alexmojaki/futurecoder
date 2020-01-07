@@ -70,7 +70,6 @@ Now make a variable called `name` whose value is another string. The string can 
         """
 
         program = "name = 'Alex'"
-        program_in_text = False
 
         class assigned_something_else(MessageStep):
             """Put `name` before the `=` to create a variable called `name`."""

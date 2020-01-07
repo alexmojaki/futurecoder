@@ -48,7 +48,6 @@ By the way, if you get stuck, you can click the lightbulb icon in the bottom rig
           ]
 
         program = "'hello ' + 'world'"
-        program_in_text = False
 
         class literal_answer(MessageStep):
             """
