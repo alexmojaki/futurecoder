@@ -46,6 +46,7 @@ export const movePage = (delta) => {
     rpc("next_page", {}, (data) => setState("server", data));
   }
   setState("showingPageIndex", newIndex);
+  animateScroll.scrollToTop({delay: 0, duration: 0});
 };
 
 
