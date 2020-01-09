@@ -12,6 +12,8 @@ libsass = "^0.19.4"
 django-compressor = "^2.3"
 markdown = "^3.1.1"
 astcheck = "^0.2.5"
+asttokens = "^2.0.3"
+littleutils = "^0.2.1"
 
 [tool.poetry.dev-dependencies]
 

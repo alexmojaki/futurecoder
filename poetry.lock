@@ -8,6 +8,20 @@ version = "0.2.5"
 
 [[package]]
 category = "main"
+description = "Annotate AST trees with source code positions"
+name = "asttokens"
+optional = false
+python-versions = "*"
+version = "2.0.3"
+
+[package.dependencies]
+six = "*"
+
+[package.extras]
+test = ["astroid", "pytest"]
+
+[[package]]
+category = "main"
 description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 name = "django"
 optional = false
@@ -71,6 +85,14 @@ six = "*"
 
 [[package]]
 category = "main"
+description = "Small personal collection of python utility functions"
+name = "littleutils"
+optional = false
+python-versions = "*"
+version = "0.2.1"
+
+[[package]]
+category = "main"
 description = "Python implementation of Markdown."
 name = "markdown"
 optional = false
@@ -124,13 +146,17 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.3.0"
 
 [metadata]
-content-hash = "1297611eb83bfb681fe0588b27e0ca55f4c8087aa087dd379e2862da20a3ad85"
+content-hash = "2e4ca4bf6e9c07d9d3a2e3f4bbecb85f255737c5fb867eae2df88e43ae2d0239"
 python-versions = "^3.8"
 
 [metadata.files]
 astcheck = [
     {file = "astcheck-0.2.5-py2.py3-none-any.whl", hash = "sha256:083d3f787e42f7707f4e9b3ea8ef4e08f50753e3612b494ebcb8cda763979f07"},
     {file = "astcheck-0.2.5.tar.gz", hash = "sha256:ba9987e8dfe6c2b9ea6720ab8fbdb5aa00fdfa2908017be8a272b2a4b663397d"},
+]
+asttokens = [
+    {file = "asttokens-2.0.3-py2.py3-none-any.whl", hash = "sha256:f58af645756597143629a4ac1fe78bc670b4429018ad741ac1f4cfd4504fc436"},
+    {file = "asttokens-2.0.3.tar.gz", hash = "sha256:284831ac3e33be743ca6ac018316b66abfd8b1a49d6366ce6c7b1fd07504a21b"},
 ]
 django = [
     {file = "Django-2.2.7-py3-none-any.whl", hash = "sha256:89c2007ca4fa5b351a51a279eccff298520783b713bf28efb89dfb81c80ea49b"},
@@ -164,6 +190,9 @@ libsass = [
     {file = "libsass-0.19.4-cp37-cp37m-win_amd64.whl", hash = "sha256:a7e685466448c9b1bf98243339793978f654a1151eb5c975f09b83c7a226f4c1"},
     {file = "libsass-0.19.4-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:6a51393d75f6e3c812785b0fa0b7d67c54258c28011921f204643b55f7355ec0"},
     {file = "libsass-0.19.4.tar.gz", hash = "sha256:8b5b6d1a7c4ea1d954e0982b04474cc076286493f6af2d0a13c2e950fbe0be95"},
+]
+littleutils = [
+    {file = "littleutils-0.2.1.tar.gz", hash = "sha256:2e22c358a80267d176cc4021c966db051e0daf6220b703a2403ea96077301bb2"},
 ]
 markdown = [
     {file = "Markdown-3.1.1-py2.py3-none-any.whl", hash = "sha256:56a46ac655704b91e5b7e6326ce43d5ef72411376588afa1dd90e881b83c7e8c"},
