@@ -1957,5 +1957,237 @@
             }
         },
         "step": "spongebob"
+    },
+    {
+        "page": "The Equality Operator",
+        "program": [
+            "print(1 + 2 == 3)",
+            "print(4 + 5 == 6)",
+            "print('ab' + 'c' == 'a' + 'bc')"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 17,
+                "showEditor": true,
+                "step_index": 1
+            }
+        },
+        "step": "introducing_equality"
+    },
+    {
+        "page": "The Equality Operator",
+        "program": [
+            "print(1 + 2 = 3)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "red",
+                    "text": "  File \"<console>\", line 1"
+                },
+                {
+                    "color": "red",
+                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 17,
+                "showEditor": true,
+                "step_index": 2
+            }
+        },
+        "step": "equality_vs_assignment"
+    },
+    {
+        "page": "The Equality Operator",
+        "program": [
+            "name = 'kesha'",
+            "new_name = ''",
+            "for c in name:",
+            "    if c == 's':",
+            "        c = '$'",
+            "    new_name += c",
+            "",
+            "print(new_name)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "ke$ha"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>You just need to add a few lines of code that are very similar to existing ones.</p>"
+                ],
+                "page_index": 17,
+                "showEditor": true,
+                "step_index": 3
+            }
+        },
+        "step": "if_equals_replacing_characters"
+    },
+    {
+        "page": "The Equality Operator",
+        "program": [
+            "name = 'kesha'",
+            "new_name = ''",
+            "for c in name:",
+            "    if c == 'e':",
+            "        c = '3'",
+            "    if c == 's':",
+            "        c = '$'",
+            "    if c == 'a':",
+            "        c = '@'",
+            "    new_name += c",
+            "",
+            "print(new_name)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "k3$h@"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 17,
+                "showEditor": true,
+                "step_index": 4
+            }
+        },
+        "step": "if_equals_replacing_characters_exercise"
+    },
+    {
+        "page": "Introducing <code>elif</code>",
+        "program": [
+            "dna = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
+            "opposite_dna = ''",
+            "for char in dna:",
+            "    if char == 'A':",
+            "        char = 'T'",
+            "    if char == 'T':",
+            "        char = 'A'",
+            "    if char == 'G':",
+            "        char = 'C'",
+            "    if char == 'C':",
+            "        char = 'G'",
+            "    opposite_dna += char",
+            "",
+            "print(opposite_dna)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "AGAAGGGAGGAAAGAAAGAGGAAGGGAAAA"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>Change:</p>\n<pre><code>if char == 'A':\n    char = 'T'\nif char == 'T':\n    char = 'A'\n</code></pre>\n<p>to look like the revised snippet. It's just a small change, do it without copy-pasting.</p>",
+                    "<p>Now make the same kind of change to the code swapping G and C.</p>"
+                ],
+                "page_index": 18,
+                "showEditor": true,
+                "step_index": 1
+            }
+        },
+        "step": "dna_example"
+    },
+    {
+        "page": "Introducing <code>elif</code>",
+        "program": [
+            "dna = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
+            "opposite_dna = ''",
+            "for char in dna:",
+            "    if char == 'A':",
+            "        char = 'T'",
+            "    else:",
+            "        if char == 'T':",
+            "            char = 'A'",
+            "    if char == 'G':",
+            "        char = 'C'",
+            "    else:",
+            "        if char == 'C':",
+            "            char = 'G'",
+            "    opposite_dna += char",
+            "",
+            "print(opposite_dna)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "TCATCGCAGGAATCAATGTCCTACCGAATA"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 18,
+                "showEditor": true,
+                "step_index": 2
+            }
+        },
+        "step": "dna_example_with_else"
+    },
+    {
+        "page": "Introducing <code>elif</code>",
+        "program": [
+            "dna = 'GTGGTGAACATAAGTGGTACGTTAACGGCA'",
+            "opposite_dna = ''",
+            "for char in dna:",
+            "    if char == 'A':",
+            "        char = 'T'",
+            "    elif char == 'T':",
+            "        char = 'A'",
+            "    elif char == 'G':",
+            "        char = 'C'",
+            "    elif char == 'C':",
+            "        char = 'G'",
+            "    opposite_dna += char",
+            "",
+            "print(opposite_dna)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "CACCACTTGTATTCACCATGCAATTGCCGT"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 18,
+                "showEditor": true,
+                "step_index": 3
+            }
+        },
+        "step": "dna_example_with_elif"
     }
 ]

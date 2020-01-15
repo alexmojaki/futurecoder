@@ -1,8 +1,9 @@
 import ast
 import random
 from abc import ABC
+from textwrap import dedent
 
-from main.text import ExerciseStep, VerbatimStep, MessageStep
+from main.text import ExerciseStep, VerbatimStep, MessageStep, Step
 from main.text import Page
 from main.utils import returns_stdout
 
@@ -485,3 +486,258 @@ Combine that flipping `if/else` with the one that chooses an uppercase or lowerc
     final_text = """
 Perfect! Take a moment to be proud of what you've achieved. Can you feel your brain growing?
 """
+
+
+class TheEqualityOperator(Page):
+    class introducing_equality(VerbatimStep):
+        """
+There are several ways to obtain booleans without assigning them directly,
+which allows you to construct very useful `if` statements. In particular there
+are many *comparison operators* which compare the values of two expressions.
+The most common is the equality operator which checks if two values are equal.
+It's denoted by two equals signs: `==`. Try running this:
+
+__program_indented__
+        """
+
+        def program(self):
+            print(1 + 2 == 3)
+            print(4 + 5 == 6)
+            print('ab' + 'c' == 'a' + 'bc')
+
+    class equality_vs_assignment(Step):
+        """
+As you can see, if the values are equal, the equality expression evaluates to `True`,
+otherwise it's `False`.
+
+Note the difference between the equality operator `==` and a single `=` which has different meanings,
+particularly in assignment statements as you've seen them so far. What happens if you try
+removing a single `=` from the previous program?
+        """
+
+        program = "print(1 + 2 = 3)"
+
+        def check(self):
+            return "SyntaxError" in self.result
+
+    class if_equals_replacing_characters(VerbatimStep):
+        """
+Let's use `==` in an `if` statement. In this program, the `if` body runs only when `c` is the character `'s'`. See for yourself.
+
+__program_indented__
+        """
+
+        def program(self):
+            name = 'kesha'
+            new_name = ''
+            for c in name:
+                if c == 's':
+                    c = '$'
+                new_name += c
+
+            print(new_name)
+
+    class if_equals_replacing_characters_exercise(ExerciseStep):
+        """
+Now extend the program to also replace `e` with `3` and `a` with `@`.
+        """
+
+        hints = """
+You just need to add a few lines of code that are very similar to existing ones.
+"""
+
+        @returns_stdout
+        def solution(self, name: str):
+            new_name = ''
+            for c in name:
+                if c == 'e':
+                    c = '3'
+                if c == 's':
+                    c = '$'
+                if c == 'a':
+                    c = '@'
+                new_name += c
+
+            print(new_name)
+
+        tests = {
+            "kesha": "k3$h@",
+            "alex": "@l3x",
+        }
+
+    final_text = "Well done!"
+
+
+class IntroducingElif(Page):
+    title = "Introducing `elif`"
+
+    class dna_example(VerbatimStep):
+        """
+Quick biology lesson! Most of the cells in your body contain your full genetic code in DNA.
+This consists of strands of molecular units called nucleobases which come in four varieties:
+Adenine, Cytosine, Guanine, and Thymine, or ACGT for short.
+So part of a single strand might be something like:
+
+    AGTAGCGTCCTTAGTTACAGGATGGCTTAT...
+
+This will be paired with another strand where A is replaced by T and vice versa,
+and C is replaced by G and vice versa, e.g:
+
+    TCATCGCAGGAATCAATGTCCTACCGAATA...
+
+The two strands are 'zipped' together into the famous double helix structure,
+joined by the matching A-T and C-G pairs. These pairings are essential in copying DNA when
+cells divide and reproduce. The double helix is unzipped and the code is transcribed
+into its opposite version to make the copy.
+
+We're going to repeat that process. Let's try the same kind of program we just wrote:
+
+__program_indented__
+        """
+
+        def program(self):
+            dna = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+            opposite_dna = ''
+            for char in dna:
+                if char == 'A':
+                    char = 'T'
+                if char == 'T':
+                    char = 'A'
+                if char == 'G':
+                    char = 'C'
+                if char == 'C':
+                    char = 'G'
+                opposite_dna += char
+
+            print(opposite_dna)
+
+    class dna_example_with_else(ExerciseStep):
+        """
+Oh dear, that doesn't quite work. `T` is changed to `A` but `A` isn't changed to anything.
+Can you see why?
+
+When `char == 'A'`, then the body `char = 'T'` does indeed run. But that means that the following
+condition `char == 'T'` also passes and so `char = 'A'` and we're back where we started.
+We need to only change `char` from `T` to `A` if `char` wasn't already `A` to begin with,
+meaning `char == 'A'` was `False`. We can do that with an `else`, like so:
+
+    if char == 'A':
+        char = 'T'
+    else:
+        if char == 'T':
+            char = 'A'
+
+Now fix the program to replace all characters correctly.
+        """
+
+        hints = [
+            dedent("""
+            Change:
+
+                if char == 'A':
+                    char = 'T'
+                if char == 'T':
+                    char = 'A'
+
+            to look like the revised snippet. It's just a small change, do it without copy-pasting.
+            """),
+            "Now make the same kind of change to the code swapping G and C."
+        ]
+
+        @returns_stdout
+        def solution(self, dna: str):
+            opposite_dna = ''
+            for char in dna:
+                if char == 'A':
+                    char = 'T'
+                else:
+                    if char == 'T':
+                        char = 'A'
+                if char == 'G':
+                    char = 'C'
+                else:
+                    if char == 'C':
+                        char = 'G'
+                opposite_dna += char
+
+            print(opposite_dna)
+
+        tests = {
+            "AGTAGCGTCCTTAGTTACAGGATGGCTTAT": "TCATCGCAGGAATCAATGTCCTACCGAATA",
+            "GTGGTGAACATAAGTGGTACGTTAACGGCA": "CACCACTTGTATTCACCATGCAATTGCCGT",
+        }
+
+        @classmethod
+        def generate_inputs(cls):
+            return {"dna": "".join(random.choice("ATGC") for _ in range(30))}
+
+    class dna_example_with_elif(VerbatimStep):
+        """
+Brilliant! You have mimicked what your own cells are constantly doing.
+
+An `if` inside an `else` can be replaced by a single keyword `elif`. For example,
+the previous code can be changed to this:
+
+    if char == 'A':
+        char = 'T'
+    elif char == 'T':
+        char = 'A'
+    elif char == 'G':
+        char = 'C'
+    elif char == 'C':
+        char = 'G'
+        """
+
+        program_in_text = False
+
+        def program(self):
+            dna = 'GTGGTGAACATAAGTGGTACGTTAACGGCA'
+            opposite_dna = ''
+            for char in dna:
+                if char == 'A':
+                    char = 'T'
+                elif char == 'T':
+                    char = 'A'
+                elif char == 'G':
+                    char = 'C'
+                elif char == 'C':
+                    char = 'G'
+                opposite_dna += char
+
+            print(opposite_dna)
+
+    final_text = """
+It's common to have a chain of `elif` clauses when you want exactly one of many
+bodies to run, like in this case. In general, code like this:
+
+    if X:
+        ...
+    else:
+        if Y:
+            ...
+        else:
+            if Z:
+                ...
+            else:
+                ...
+
+can be rewritten as:
+
+    if X:
+        ...
+    elif Y:
+        ...
+    elif Z:
+        ...
+    else:
+        ...
+
+which is both shorter and saves you from unpleasant nested indentation.
+The difference is only cosmetic: once the computer runs this code, it can't
+tell the difference between the two versions.
+
+Note that `elif`(s) can optionally be followed by one final `else`. We didn't include one
+in our DNA example, but we could add one to alert us to any unexpected characters
+in the input, or change `elif char == 'C':` to `else:` if we were confident
+about the input being valid.
+    """
