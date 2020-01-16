@@ -2189,5 +2189,173 @@
             }
         },
         "step": "dna_example_with_elif"
+    },
+    {
+        "page": "Other Comparison Operators",
+        "program": [
+            "1 != 2"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 19,
+                "showEditor": true,
+                "step_index": 1
+            }
+        },
+        "step": "try_not_equals"
+    },
+    {
+        "page": "Other Comparison Operators",
+        "program": [
+            "sentence = \"The e key on my keyboard is broken\"",
+            "new_sentence = ''",
+            "for c in sentence:",
+            "    if c != 'e':",
+            "        new_sentence += c",
+            "print(new_sentence)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Th  ky on my kyboard is brokn"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 19,
+                "showEditor": true,
+                "step_index": 2
+            }
+        },
+        "step": "brokn_kyboard"
+    },
+    {
+        "page": "Other Comparison Operators",
+        "program": [
+            "1 < 2"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 19,
+                "showEditor": true,
+                "step_index": 3
+            }
+        },
+        "step": "introducing_less_than"
+    },
+    {
+        "page": "Other Comparison Operators",
+        "program": [
+            "'1' < '2'"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 19,
+                "showEditor": true,
+                "step_index": 4
+            }
+        },
+        "step": "comparing_strings"
+    },
+    {
+        "page": "Other Comparison Operators",
+        "program": [
+            "percentage = 73",
+            "",
+            "if percentage < 20:",
+            "    grade = \"F\"",
+            "elif percentage < 40:",
+            "    grade = \"D\"",
+            "elif percentage < 60:",
+            "    grade = \"C\"",
+            "elif percentage < 80:",
+            "    grade = \"B\"",
+            "else:",
+            "    grade = \"A\"",
+            "",
+            "print(grade)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "B"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>Try writing a program which prints the smallest of just <code>x1</code> and <code>x2</code>.</p>",
+                    "<p>All you need is a few uses of <code>&lt;</code>, <code>if</code>, and <code>else</code>.</p>",
+                    "<p>You will need an <code>if</code> inside the body of an <code>if</code>.</p>",
+                    "<p>You will need an <code>if</code> inside the body of an <code>else</code> (or equivalently, an <code>elif</code>).</p>"
+                ],
+                "page_index": 19,
+                "showEditor": true,
+                "step_index": 5
+            }
+        },
+        "step": "grades_example"
+    },
+    {
+        "page": "Other Comparison Operators",
+        "program": [
+            "x1 = 'Charlie'",
+            "x2 = 'Alice'",
+            "x3 = 'Bob'",
+            "if x1 < x2:",
+            "    if x1 < x3:",
+            "        first = x1",
+            "    else:",
+            "        first = x3",
+            "else:",
+            "    if x2 < x3:",
+            "        first = x2",
+            "    else:",
+            "        first = x3",
+            "print(first)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Alice"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 19,
+                "showEditor": true,
+                "step_index": 6
+            }
+        },
+        "step": "min_three_exercise"
     }
 ]

@@ -3,7 +3,7 @@ import random
 from abc import ABC
 from textwrap import dedent
 
-from main.text import ExerciseStep, VerbatimStep, MessageStep, Step
+from main.text import ExerciseStep, VerbatimStep, MessageStep, Step, search_ast
 from main.text import Page
 from main.utils import returns_stdout
 
@@ -741,3 +741,164 @@ in our DNA example, but we could add one to alert us to any unexpected character
 in the input, or change `elif char == 'C':` to `else:` if we were confident
 about the input being valid.
     """
+
+
+class try_less_than_in_shell(Step):
+    comparators_type = None
+
+    def check(self):
+        if self.code_source != "shell":
+            return False
+        for node in ast.walk(self.tree):
+            if (
+                    isinstance(node, ast.Compare) and
+                    isinstance(node.ops[0], (ast.Lt, ast.Gt)) and
+                    isinstance(node.left, ast.Constant) and
+                    isinstance(node.left.value, self.comparators_type) and
+                    isinstance(node.comparators[0], ast.Constant) and
+                    isinstance(node.comparators[0].value, self.comparators_type)
+            ):
+                return True
+
+
+class OtherComparisonOperators(Page):
+    class try_not_equals(Step):
+        """
+The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It evaluates to `True` when two values are...not equal. Try it for yourself in the shell.
+        """
+
+        program = "1 != 2"
+
+        def check(self):
+            return (
+                    self.code_source == "shell"
+                    and search_ast(self.tree, ast.NotEq())
+            )
+
+    class brokn_kyboard(VerbatimStep):
+        """
+Here's a cute little program using `!=`:
+
+__program_indented__
+        """
+
+        def program(self):
+            sentence = "The e key on my keyboard is broken"
+            new_sentence = ''
+            for c in sentence:
+                if c != 'e':
+                    new_sentence += c
+            print(new_sentence)
+
+    class introducing_less_than(try_less_than_in_shell):
+        """
+Other handy operators are `<` (less than) and `>` (greater than). For example, `a < b` means "`a` is less than `b`". Try using one of these in the shell to compare two numbers.
+        """
+
+        program = "1 < 2"
+        comparators_type = int
+
+    class comparing_strings(try_less_than_in_shell):
+        """
+You can also use these operators to compare strings. If you arrange two strings in alphabetical order, the first one is 'less than' the second. See for yourself.
+        """
+
+        program = "'1' < '2'"
+        comparators_type = str
+
+    class grades_example(VerbatimStep):
+        """
+Here's a practical example of `<` in action for you to try:
+
+__program_indented__
+
+Recall that `elif percentage < 40` after `if percentage < 20` means "if the percentage wasn't less than 20 and also is less than 40", so it will pass for all numbers from 20 to 39 inclusive. Similarly a 'C' is for percentages from 40 to 59, and an 'A' is for any number 80 and up.
+        """
+
+        def program(self):
+            percentage = 73
+
+            if percentage < 20:
+                grade = "F"
+            elif percentage < 40:
+                grade = "D"
+            elif percentage < 60:
+                grade = "C"
+            elif percentage < 80:
+                grade = "B"
+            else:
+                grade = "A"
+
+            print(grade)
+
+    class min_three_exercise(ExerciseStep):
+        """
+Now for an exercise: write a program that takes three variables `x1`, `x2`, and `x3`, and prints the value of the smallest one. So for:
+
+    x1 = 'Charlie'
+    x2 = 'Alice'
+    x3 = 'Bob'
+
+it should print `Alice`.
+        """
+
+        hints = """
+Try writing a program which prints the smallest of just `x1` and `x2`.
+All you need is a few uses of `<`, `if`, and `else`.
+You will need an `if` inside the body of an `if`.
+You will need an `if` inside the body of an `else` (or equivalently, an `elif`).
+"""
+
+        @returns_stdout
+        def solution(self, x1: str, x2: str, x3: str):
+            if x1 < x2:
+                if x1 < x3:
+                    first = x1
+                else:
+                    first = x3
+            else:
+                if x2 < x3:
+                    first = x2
+                else:
+                    first = x3
+            print(first)
+
+        tests = {
+            ('Charlie', 'Alice', 'Bob'): 'Alice',
+            ('Charlie', 'Bob', 'Alice'): 'Alice',
+            ('Alice', 'Charlie', 'Bob'): 'Alice',
+            (1, 2, 3): 1,
+        }
+
+    final_text = """
+Marvelous!
+
+There are many ways this could be solved. Here's one solution:
+
+    if x1 < x2:
+        if x1 < x3:
+            first = x1
+        else:
+            first = x3
+    else:
+        if x2 < x3:
+            first = x2
+        else:
+            first = x3
+
+    print(first)
+
+This program (and yours too) works equally well with numbers and strings,
+but not a mixture.
+
+`<` and `>` evaluate to False if the compared values are equal. For example,
+3 is not less than 3, so `3 < 3` and `3 > 3` are both False.
+To allow equal values, use `<=` and `>=`.
+Again, if you squint, they look a bit like ≤ and ≥.
+Note that the `=` comes second - there are no such operators as `=<` or `=>`.
+To remember this, read them out loud as "less than or equal to"
+and "greater than or equal to".
+
+In summary, the main comparison operators are `==`, `!=`, `<`, `>`, `<=`, and `>=`.
+If you ever have doubts about what they do, play with them in the shell!
+"""
