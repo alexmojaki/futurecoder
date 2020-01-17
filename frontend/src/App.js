@@ -11,7 +11,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-monokai";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faPlay, faTimes} from '@fortawesome/free-solid-svg-icons'
+import {faBug, faPlay, faTimes} from '@fortawesome/free-solid-svg-icons'
 import {animateScroll} from "react-scroll";
 
 class AppComponent extends React.Component {
@@ -95,6 +95,22 @@ class AppComponent extends React.Component {
             }}
           >
             <FontAwesomeIcon icon={faPlay}/> Run
+          </button>
+
+          <button
+            className="btn btn-success"
+            onClick={() => {
+              rpc(
+                "run_program",
+                {code: bookState.editorContent, use_snoop: true},
+                (data) => {
+                  this.terminal.current.clearStdout();
+                  return this.ranCode(data);
+                },
+              );
+            }}
+          >
+            <FontAwesomeIcon icon={faBug}/> Snoop
           </button>
         </div>
         <div className="editor-and-terminal">

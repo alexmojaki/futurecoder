@@ -14,6 +14,7 @@ markdown = "^3.1.1"
 astcheck = "^0.2.5"
 asttokens = "^2.0.3"
 littleutils = "^0.2.1"
+snoop = "^0.2.4"
 
 [tool.poetry.dev-dependencies]
 

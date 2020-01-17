@@ -22,6 +22,14 @@ test = ["astroid", "pytest"]
 
 [[package]]
 category = "main"
+description = "Better version of repr/reprlib for short, cheap string representations."
+name = "cheap-repr"
+optional = false
+python-versions = "*"
+version = "0.4.1"
+
+[[package]]
+category = "main"
 description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 name = "django"
 optional = false
@@ -74,6 +82,14 @@ dev = ["libsass (>=0.13)"]
 
 [[package]]
 category = "main"
+description = "Get the currently executing AST node of a frame, and other information"
+name = "executing"
+optional = false
+python-versions = "*"
+version = "0.4.1"
+
+[[package]]
+category = "main"
 description = "Sass for Python: A straightforward binding of libsass for Python."
 name = "libsass"
 optional = false
@@ -104,6 +120,14 @@ setuptools = ">=36"
 
 [package.extras]
 testing = ["coverage", "pyyaml"]
+
+[[package]]
+category = "main"
+description = "Pygments is a syntax highlighting package written in Python."
+name = "pygments"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "2.5.2"
 
 [[package]]
 category = "main"
@@ -139,6 +163,24 @@ version = "1.13.0"
 
 [[package]]
 category = "main"
+description = "Powerful debugging tools for Python"
+name = "snoop"
+optional = false
+python-versions = "*"
+version = "0.2.4"
+
+[package.dependencies]
+asttokens = "*"
+cheap_repr = ">=0.4.0"
+executing = "*"
+pygments = "*"
+six = "*"
+
+[package.extras]
+tests = ["pytest", "littleutils", "numpy (>=1.16.3)", "pandas (>=0.24.2)", "birdseye", "django"]
+
+[[package]]
+category = "main"
 description = "Non-validating SQL parser"
 name = "sqlparse"
 optional = false
@@ -146,7 +188,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.3.0"
 
 [metadata]
-content-hash = "2e4ca4bf6e9c07d9d3a2e3f4bbecb85f255737c5fb867eae2df88e43ae2d0239"
+content-hash = "7d73cede8ce38531d68cb8466af0eb4b2a1c4b15222edde12ebde730f4daab93"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -157,6 +199,9 @@ astcheck = [
 asttokens = [
     {file = "asttokens-2.0.3-py2.py3-none-any.whl", hash = "sha256:f58af645756597143629a4ac1fe78bc670b4429018ad741ac1f4cfd4504fc436"},
     {file = "asttokens-2.0.3.tar.gz", hash = "sha256:284831ac3e33be743ca6ac018316b66abfd8b1a49d6366ce6c7b1fd07504a21b"},
+]
+cheap-repr = [
+    {file = "cheap_repr-0.4.1.tar.gz", hash = "sha256:675e6fc43bcad39f796f588d492bbc402baa4efde164fdb1b3f50264779278a6"},
 ]
 django = [
     {file = "Django-2.2.7-py3-none-any.whl", hash = "sha256:89c2007ca4fa5b351a51a279eccff298520783b713bf28efb89dfb81c80ea49b"},
@@ -172,6 +217,9 @@ django-compressor = [
 ]
 django-sass-processor = [
     {file = "django-sass-processor-0.7.4.tar.gz", hash = "sha256:c1b56e76ce2b57382d26328ecdc204d3f65412d5da35df8a6b7bce6e7f754882"},
+]
+executing = [
+    {file = "executing-0.4.1.tar.gz", hash = "sha256:b180cd26e6bc23305a20a7cbd228a6bab94ae359e0a304dfc58425e3b0bdf6be"},
 ]
 libsass = [
     {file = "libsass-0.19.4-cp27-cp27m-macosx_10_14_intel.whl", hash = "sha256:74acd9adf506142699dfa292f0e569fdccbd9e7cf619e8226f7117de73566e32"},
@@ -198,6 +246,10 @@ markdown = [
     {file = "Markdown-3.1.1-py2.py3-none-any.whl", hash = "sha256:56a46ac655704b91e5b7e6326ce43d5ef72411376588afa1dd90e881b83c7e8c"},
     {file = "Markdown-3.1.1.tar.gz", hash = "sha256:2e50876bcdd74517e7b71f3e7a76102050edec255b3983403f1a63e7c8a41e7a"},
 ]
+pygments = [
+    {file = "Pygments-2.5.2-py2.py3-none-any.whl", hash = "sha256:2a3fe295e54a20164a9df49c75fa58526d3be48e14aceba6d6b1e8ac0bfd6f1b"},
+    {file = "Pygments-2.5.2.tar.gz", hash = "sha256:98c8aa5a9f778fcd1026a17361ddaf7330d1b7c62ae97c3bb0ae73e0b9b6b0fe"},
+]
 pytz = [
     {file = "pytz-2019.3-py2.py3-none-any.whl", hash = "sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d"},
     {file = "pytz-2019.3.tar.gz", hash = "sha256:b02c06db6cf09c12dd25137e563b31700d3b80fcc4ad23abb7a315f2789819be"},
@@ -223,6 +275,9 @@ rjsmin = [
 six = [
     {file = "six-1.13.0-py2.py3-none-any.whl", hash = "sha256:1f1b7d42e254082a9db6279deae68afb421ceba6158efa6131de7b3003ee93fd"},
     {file = "six-1.13.0.tar.gz", hash = "sha256:30f610279e8b2578cab6db20741130331735c781b56053c59c4076da27f06b66"},
+]
+snoop = [
+    {file = "snoop-0.2.4.tar.gz", hash = "sha256:89a60f95fac717cd7e4af7674478c6c31d33e40a159452a6db7c609993e535c9"},
 ]
 sqlparse = [
     {file = "sqlparse-0.3.0-py2.py3-none-any.whl", hash = "sha256:40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177"},

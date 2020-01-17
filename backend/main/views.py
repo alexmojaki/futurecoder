@@ -1,12 +1,17 @@
+import ast
 import inspect
 import json
 import linecache
 import logging
+import os
 import sys
 from code import InteractiveConsole
 from io import StringIO
 from typing import get_type_hints, Type
 
+import snoop
+import snoop.formatting
+import snoop.tracer
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.shortcuts import render
@@ -20,6 +25,22 @@ from main.text import Page, page_slugs_list, pages
 from main.utils import format_exception_string
 
 log = logging.getLogger(__name__)
+
+snoop.install(columns=())
+snoop.tracer.internal_directories = (os.path.dirname((lambda: 0).__code__.co_filename),)
+
+
+class PatchedFrameInfo(snoop.tracer.FrameInfo):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        code = self.frame.f_code
+        self.is_ipython_cell = (
+                code.co_name == '<module>' and
+                code.co_filename == "my_program.py"
+        )
+
+
+snoop.tracer.FrameInfo = PatchedFrameInfo
 
 
 class IFrameView(LoginRequiredMixin, View):
@@ -148,7 +169,7 @@ class API:
     def shell_line(self, line):
         return self._run_code(line, lambda: console.push(line), "shell")
 
-    def run_program(self, code):
+    def run_program(self, code, use_snoop=False):
         def runner():
             console.locals = {}
             filename = "my_program.py"
@@ -158,6 +179,8 @@ class API:
                 [line + '\n' for line in code.splitlines()],
                 filename,
             )
+            snoop.formatting.Source._class_local('__source_cache', {}).pop(filename, None)
+
             try:
                 code_obj = compile(code, filename, "exec")
             except SyntaxError as e:
@@ -165,7 +188,19 @@ class API:
                 return
 
             try:
-                exec(code_obj, console.locals)
+                if use_snoop:
+                    tracer = snoop.snoop()
+                    tracer.variable_whitelist = set()
+                    for node in ast.walk(ast.parse(code)):
+                        if isinstance(node, ast.Name):
+                            name = node.id
+                            tracer.variable_whitelist.add(name)
+                    tracer.target_codes.add(code_obj)
+                    with tracer:
+                        exec(code_obj, console.locals)
+                else:
+                    exec(code_obj, console.locals)
+
             except Exception as e:
                 print(format_exception_string(e), file=sys.stderr)
 
