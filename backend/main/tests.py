@@ -4,6 +4,7 @@ from pathlib import Path
 
 from django.test import TestCase, Client
 
+from main.chapters.if_statements import UnderstandingProgramsWithSnoop
 from main.models import User
 from main.text import pages
 
@@ -33,7 +34,8 @@ class StepsTestCase(TestCase):
                 for substep in [*step.messages, step]:
                     program = substep.program
                     if "\n" in program:
-                        response = api("run_program", code=program)
+                        use_snoop = step == UnderstandingProgramsWithSnoop.print_tail_snoop
+                        response = api("run_program", code=program, use_snoop=use_snoop)
                     else:
                         response = api("shell_line", line=program)
                     state = response["state"]
