@@ -157,6 +157,10 @@ class PageMeta(type):
     def previous_page(self):
         return pages[page_slugs_list[self.index - 1]]
 
+    @property
+    def steps(self):
+        return [getattr(self, step_name) for step_name in self.step_names]
+
 
 class Page(metaclass=PageMeta):
     @classmethod
