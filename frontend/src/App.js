@@ -40,6 +40,7 @@ class AppComponent extends React.Component {
       step_index,
       hints,
       showEditor,
+      showSnoop,
     } = server;
     const page = pages[showingPageIndex];
     if (showingPageIndex < server.page_index) {
@@ -97,6 +98,9 @@ class AppComponent extends React.Component {
             <FontAwesomeIcon icon={faPlay}/> Run
           </button>
 
+          {" "}
+
+          {showSnoop &&
           <button
             className="btn btn-success"
             onClick={() => {
@@ -111,7 +115,7 @@ class AppComponent extends React.Component {
             }}
           >
             <FontAwesomeIcon icon={faBug}/> Snoop
-          </button>
+          </button>}
         </div>
         <div className="editor-and-terminal">
           <div className={"editor " + (showEditor ? "" : "invisible")}>

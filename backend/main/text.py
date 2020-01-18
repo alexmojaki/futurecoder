@@ -196,7 +196,7 @@ class Step(ABC):
         raise NotImplementedError
 
     def check_exercise(self, *args, **kwargs):
-        if self.code_source == "editor":
+        if self.code_source != "shell":
             return check_exercise(self.input, *args, **kwargs)
 
     @property

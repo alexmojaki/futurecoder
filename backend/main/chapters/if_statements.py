@@ -150,8 +150,7 @@ __program_indented__
 
             print(sentence)
 
-    class print_tail(VerbatimStep):
-        """
+    final_text = """
 Note how the body of the `if` statement (5 lines) is indented as usual, while the body
 of the `for` loop (2 lines) is indented by an additional 4 spaces in each line to show that
 those lines are within the `for` loop. You can see the overall structure of the program
@@ -171,29 +170,86 @@ Alternatively, you can put an `if` inside a `for`:
     sentence = new_sentence
     print(sentence)
 
-These two programs have the exact same result, although the first one is more efficient since it
+These two programs have the exact same result. However the first one is more efficient as it
 only iterates over the string if it needs to, since when `excited = False` nothing changes.
+        """
 
-Now run this program:
+
+class print_tail_base(VerbatimStep):
+    def program(self):
+        sentence = 'Hello World'
+
+        include = False
+        new_sentence = ''
+        for char in sentence:
+            if include:
+                new_sentence += char
+            include = True
+
+        print(new_sentence)
+
+
+class UnderstandingProgramsWithSnoop(Page):
+    class print_tail(print_tail_base):
+        """
+Run this program:
 
 __program_indented__
         """
 
-        def program(self):
-            sentence = 'Hello World'
+    class print_tail_snoop(print_tail_base):
+        """
+As you can see, it prints everything but the first character. Take some time to understand how this works.
 
-            include = False
-            new_sentence = ''
-            for char in sentence:
-                if include:
-                    new_sentence += char
-                include = True
+In fact, it's time to introduce a new tool to help you understand programs. Click the 'Snoop' button to run the same program while also showing what's happening.
+        """
 
-            print(new_sentence)
+        program_in_text = False
+
+        def check(self):
+            return super().check() and self.code_source == "snoop"
 
     class print_first_character(ExerciseStep):
         """
-As you can see, it prints everything but the first character. Take some time to understand how this works.
+Tada! Scroll to the top of the terminal and let's walk through what snoop is showing you.
+It starts out very straightforward:
+
+        1 | sentence = 'Hello World'
+        3 | include = False
+        4 | new_sentence = ''
+        5 | for char in sentence:
+     ...... char = 'H'
+
+The first lines are simply showing you the lines of the program that the computer ran.
+On the left is the line number as seen in the editor.
+
+Running `for char in sentence:` assigns a value to the variable `char`, so snoop shows you that value.
+Lines starting with `......` indicate a new variable or a change in the value of an existing variable.
+Such lines will not be shown when they're redundant, which is why the snoop output doesn't start like this:
+
+        1 | sentence = 'Hello World'
+     ...... sentence = 'Hello World'
+        3 | include = False
+     ...... include = False
+        4 | new_sentence = ''
+     ...... new_sentence = ''
+        5 | for char in sentence:
+     ...... char = 'H'
+
+The next two lines are:
+
+        6 |     if include:
+        8 |     include = True
+
+What's important here is what's not showing: because `include` is `False`, line 7 (`new_sentence += char`) gets skipped. But then `include` is set to `True`, so the next iteration of the loop is different:
+
+        5 | for char in sentence:
+     ...... char = 'e'
+        6 |     if include:
+        7 |         new_sentence += char
+     .............. new_sentence = 'e'
+
+`new_sentence += char` runs for the first time and the variable `new_sentence` gets a new value.
 
 Now modify the program to do the opposite: only print the first character, leave out the rest.
         """

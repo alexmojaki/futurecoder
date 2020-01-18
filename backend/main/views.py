@@ -19,6 +19,7 @@ from django.views import View
 from littleutils import select_attrs
 from markdown import markdown
 
+from main.chapters.if_statements import UnderstandingProgramsWithSnoop
 from main.chapters.variables import WritingPrograms
 from main.models import CodeEntry
 from main.text import Page, page_slugs_list, pages
@@ -208,7 +209,7 @@ class API:
             except Exception as e:
                 print(format_exception_string(e), file=sys.stderr)
 
-        return self._run_code(code, runner, "editor")
+        return self._run_code(code, runner, "snoop" if use_snoop else "editor")
 
     def load_data(self):
         return dict(
@@ -224,6 +225,7 @@ class API:
             **select_attrs(self, "hints step_index"),
             page_index=self.page.index,
             showEditor=self.page.index >= WritingPrograms.index,
+            showSnoop=(self.page.index, self.step_index) >= (UnderstandingProgramsWithSnoop.index, 1),
         )
 
     def move_step(self, delta: int):

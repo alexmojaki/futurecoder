@@ -8,6 +8,7 @@ const initialState = {
     page_index: 0,
     hints: [],
     showEditor: false,
+    showSnoop: false,
   },
   pages: [
     {
