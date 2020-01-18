@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
-import html from 'react-inner-html'
+import AnsiUp from "ansi_up";
 
 import sourceStyles from './defs/styles/TerminalMessage'
+
+const ansi_up = new AnsiUp();
 
 export default class TerminalMessage extends Component {
 
@@ -17,6 +19,9 @@ export default class TerminalMessage extends Component {
       message: sourceStyles
     }
 
-    return <p style={{...styles.message, color}}>{content}</p>
+    return <p
+      style={{...styles.message, color}}
+      dangerouslySetInnerHTML={{__html: ansi_up.ansi_to_html(content)}}
+    />
   }
 }

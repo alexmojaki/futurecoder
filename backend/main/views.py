@@ -26,7 +26,6 @@ from main.utils import format_exception_string
 
 log = logging.getLogger(__name__)
 
-snoop.install(columns=())
 snoop.tracer.internal_directories = (os.path.dirname((lambda: 0).__code__.co_filename),)
 
 
@@ -189,7 +188,12 @@ class API:
 
             try:
                 if use_snoop:
-                    tracer = snoop.snoop()
+                    config = snoop.Config(
+                        columns=(),
+                        out=sys.stdout,
+                        color=True,
+                    )
+                    tracer = config.snoop()
                     tracer.variable_whitelist = set()
                     for node in ast.walk(ast.parse(code)):
                         if isinstance(node, ast.Name):
