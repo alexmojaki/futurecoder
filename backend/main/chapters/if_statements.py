@@ -900,9 +900,7 @@ it should print `Alice`.
 
         hints = """
 Try writing a program which prints the smallest of just `x1` and `x2`.
-All you need is a few uses of `<`, `if`, and `else`.
-You will need an `if` inside the body of an `if`.
-You will need an `if` inside the body of an `else` (or equivalently, an `elif`).
+All you need is a few uses of `<`, `if`, and maybe `else`.
 """
 
         @returns_stdout
@@ -944,7 +942,19 @@ There are many ways this could be solved. Here's one solution:
 
     print(first)
 
-This program (and yours too) works equally well with numbers and strings,
+Here's another:
+
+    first = x1
+
+    if x2 < first:
+        first = x2
+
+    if x3 < first:
+        first = x3
+
+    print(first)
+
+These programs (and yours too) all work equally well with numbers and strings,
 but not a mixture.
 
 `<` and `>` evaluate to False if the compared values are equal. For example,
