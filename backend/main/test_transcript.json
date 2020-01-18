@@ -2689,9 +2689,7 @@
             "state": {
                 "hints": [
                     "<p>Try writing a program which prints the smallest of just <code>x1</code> and <code>x2</code>.</p>",
-                    "<p>All you need is a few uses of <code>&lt;</code>, <code>if</code>, and <code>else</code>.</p>",
-                    "<p>You will need an <code>if</code> inside the body of an <code>if</code>.</p>",
-                    "<p>You will need an <code>if</code> inside the body of an <code>else</code> (or equivalently, an <code>elif</code>).</p>"
+                    "<p>All you need is a few uses of <code>&lt;</code>, <code>if</code>, and maybe <code>else</code>.</p>"
                 ],
                 "page_index": 20,
                 "showEditor": true,
