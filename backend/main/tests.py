@@ -47,7 +47,7 @@ class StepsTestCase(TestCase):
                     if is_message:
                         self.assertEqual(response["message"], substep.text)
 
-                    self.assertEqual(step_index + (not is_message), state["step_index"])
+                    self.assertEqual(step_index + (not is_message), state["step_index"], transcript[-1])
 
             if page_index < len(pages) - 1:
                 state = api("next_page")
