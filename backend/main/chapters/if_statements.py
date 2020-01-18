@@ -652,7 +652,7 @@ __program_indented__
         """
 
         def program(self):
-            dna = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+            dna = 'AGTAGCGTC'
             opposite_dna = ''
             for char in dna:
                 if char == 'A':
@@ -747,7 +747,7 @@ the previous code can be changed to this:
         program_in_text = False
 
         def program(self):
-            dna = 'GTGGTGAACATAAGTGGTACGTTAACGGCA'
+            dna = 'AGTAGCGTC'
             opposite_dna = ''
             for char in dna:
                 if char == 'A':
