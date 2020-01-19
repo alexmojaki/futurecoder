@@ -309,5 +309,5 @@ def search_ast(node, template):
     )
 
 
-for chapter_name in "shell string_basics variables for_loops if_statements".split():
+for chapter_name in "shell string_basics variables for_loops if_statements lists".split():
     import_module("main.chapters." + chapter_name)

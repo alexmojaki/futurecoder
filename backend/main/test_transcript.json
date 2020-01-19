@@ -2734,5 +2734,228 @@
             }
         },
         "step": "min_three_exercise"
+    },
+    {
+        "page": "Introducing Lists",
+        "program": [
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "for word in words:",
+            "    print(word)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "This"
+                },
+                {
+                    "color": "white",
+                    "text": "is"
+                },
+                {
+                    "color": "white",
+                    "text": "a"
+                },
+                {
+                    "color": "white",
+                    "text": "list"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 21,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 1
+            }
+        },
+        "step": "first_list"
+    },
+    {
+        "page": "Introducing Lists",
+        "program": [
+            "x = 1",
+            "things = ['Hello', x, x + 3]",
+            "print(things)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "['Hello', 1, 4]"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 21,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 2
+            }
+        },
+        "step": "can_contain_anything"
+    },
+    {
+        "page": "Introducing Lists",
+        "program": [
+            "numbers = [3, 1, 4, 1, 5, 9]",
+            "",
+            "total = 0",
+            "for number in numbers:",
+            "    total += number",
+            "",
+            "print(total)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "23"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>This is very similar to the exercises you've done building up strings character by character.</p>",
+                    "<p>The solution is very similar to the program that adds numbers.</p>",
+                    "<p>In fact, what happens if you try running that program with a list of strings?</p>",
+                    "<p>The problem is that 0. You can't add 0 to a string because numbers and strings are incompatible.</p>",
+                    "<p>Is there a similar concept among strings to 0? A blank initial value?</p>"
+                ],
+                "page_index": 21,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 3
+            }
+        },
+        "step": "numbers_sum"
+    },
+    {
+        "page": "Introducing Lists",
+        "program": [
+            "words = ['This', 'is', 'a', 'list']",
+            "total = ''",
+            "for word in words:",
+            "    total += word",
+            "",
+            "print(total)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Thisisalist"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>Remember that you can multiply numbers using <code>*</code>.</p>",
+                    "<p>This program is structurally very similar to the programs you've written to build up strings character by character.</p>",
+                    "<p>Make a new list, and then build it up element by element in a for loop.</p>",
+                    "<p>Start with an empty list.</p>",
+                    "<p>You can make a list with one element <code>x</code> by just writing <code>[x]</code>.</p>",
+                    "<p>You can add an element to a list by adding a list containing one element.</p>"
+                ],
+                "page_index": 21,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 4
+            }
+        },
+        "step": "strings_sum"
+    },
+    {
+        "page": "Introducing Lists",
+        "program": [
+            "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
+            "double = []",
+            "for number in numbers:",
+            "    double += [number * 2]",
+            "print(double)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[6, 2, 8, 2, 10, 18, 4, 12, 10]"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>This is very similar to the previous exercise.</p>",
+                    "<p>The difference is that sometimes you should skip appending to the new list.</p>",
+                    "<p>Use an <code>if</code> statement.</p>",
+                    "<p>Use a comparison operator to test if a number is big enough to add.</p>"
+                ],
+                "page_index": 21,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 5
+            }
+        },
+        "step": "double_numbers"
+    },
+    {
+        "page": "Introducing Lists",
+        "program": [
+            "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
+            "big_numbers = []",
+            "for number in numbers:",
+            "    if number > 5:",
+            "        big_numbers.append(number)",
+            "print(big_numbers)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[9, 6]"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 21,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 6
+            }
+        },
+        "step": "filter_numbers"
+    },
+    {
+        "page": "Using <code>break</code> to end a loop early",
+        "program": [
+            "things = ['This', 'is', 'a', 'list']",
+            "thing_to_find = 'is'",
+            "found = False",
+            "for thing in things:",
+            "    if thing == thing_to_find:",
+            "        found = True",
+            "",
+            "print(found)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 22,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 1
+            }
+        },
+        "step": "list_contains_exercise"
     }
 ]
