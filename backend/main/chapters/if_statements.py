@@ -725,7 +725,12 @@ Now fix the program to replace all characters correctly.
 
         @classmethod
         def generate_inputs(cls):
-            return {"dna": "".join(random.choice("ATGC") for _ in range(30))}
+            return {
+                "dna": "".join(
+                    random.choice("ATGC") 
+                    for _ in range(random.randrange(20, 30))
+                )
+            }
 
     class dna_example_with_elif(VerbatimStep):
         """
