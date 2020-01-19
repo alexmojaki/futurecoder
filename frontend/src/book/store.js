@@ -1,6 +1,7 @@
-import {ipush, iremove, redact} from "../frontendlib";
+import {ipush, iremove, iset, redact} from "../frontendlib";
 import {rpc} from "../rpc";
 import {animateScroll} from "react-scroll";
+import _ from "lodash";
 
 const initialState = {
   server: {
@@ -21,6 +22,11 @@ const initialState = {
   messages: [],
   pastMessages: [],
   showingPageIndex: 0,
+  solution: {
+    tokens: [],
+    maskedIndices: [],
+    mask: [],
+  }
 };
 
 
@@ -68,8 +74,7 @@ export const ranCode = makeAction(
       animateScroll.scrollToBottom({duration: 1000, delay: 500});
       state = {
         ...state,
-        numHints: 0,
-        messages: [],
+        ..._.pick(initialState, ["numHints", "messages", "solution"]),
         server: value.state,
       };
     }
@@ -85,4 +90,25 @@ export const ranCode = makeAction(
 export const closeMessage = makeAction(
   'CLOSE_MESSAGE',
   (state, {value}) => iremove(state, "messages", value)
+)
+
+export const getSolution = () => {
+  rpc("get_solution", {},
+    (data) => {
+      setState('solution', data)
+    },
+  );
+}
+
+export const revealSolutionToken = makeAction(
+  "REVEAL_SOLUTION_TOKEN",
+  (state) => {
+    const indices = state.solution.maskedIndices;
+    if (!indices.length) {
+      return state;
+    }
+    state = iremove(state, "solution.maskedIndices", 0);
+    state = iset(state, ["solution", "mask", indices[0]], false);
+    return state;
+  }
 )

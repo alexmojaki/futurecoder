@@ -7,6 +7,9 @@ import os
 import sys
 from code import InteractiveConsole
 from io import StringIO
+from random import shuffle
+from textwrap import dedent
+from tokenize import generate_tokens, Untokenizer
 from typing import get_type_hints, Type
 
 import snoop
@@ -22,7 +25,7 @@ from markdown import markdown
 from main.chapters.if_statements import UnderstandingProgramsWithSnoop
 from main.chapters.variables import WritingPrograms
 from main.models import CodeEntry
-from main.text import Page, page_slugs_list, pages
+from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
 from main.utils import format_exception_string
 
 log = logging.getLogger(__name__)
@@ -237,3 +240,29 @@ class API:
         self.user.step_name = self.page.step_names[0]
         self.user.save()
         return self.current_state()
+
+    def get_solution(self):
+        step = getattr(self.page, self.user.step_name)
+        if issubclass(step, ExerciseStep):
+            program = clean_program(step.solution)
+        else:
+            program = step.program
+
+        untokenizer = Untokenizer()
+        tokens = generate_tokens(StringIO(program).readline)
+        untokenizer.untokenize(tokens)
+        tokens = untokenizer.tokens
+
+        masked_indices = []
+        mask = [False] * len(tokens)
+        for i, token in enumerate(tokens):
+            if not token.isspace():
+                masked_indices.append(i)
+                mask[i] = True
+        shuffle(masked_indices)
+
+        return dict(
+            tokens=tokens,
+            maskedIndices=masked_indices,
+            mask=mask,
+        )

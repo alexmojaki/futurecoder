@@ -4,7 +4,17 @@ import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
-import {bookSetState, bookState, closeMessage, movePage, moveStep, ranCode, showHint} from "./book/store";
+import {
+  bookSetState,
+  bookState,
+  closeMessage,
+  getSolution,
+  movePage,
+  moveStep,
+  ranCode,
+  revealSolutionToken,
+  showHint
+} from "./book/store";
 import hintIcon from "./img/hint.png"
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -35,6 +45,7 @@ class AppComponent extends React.Component {
       messages,
       showingPageIndex,
       pages,
+      solution,
     } = this.props;
     let {
       step_index,
@@ -169,13 +180,22 @@ class AppComponent extends React.Component {
                       <hr/>
                     </div>
                   )}
-                  {
-                    numHints < hints.length ?
-                      <div>
-                        <button onClick={showHint}>Get another hint</button>
-                      </div>
-                      : null
-                  }
+                  <div>
+                    {
+                      numHints < hints.length ?
+                        <button onClick={showHint}>
+                          Get another hint
+                        </button>
+                        :
+                        solution.tokens.length === 0 ?
+                          <button onClick={getSolution}>
+                            I'm desperate, show me the solution, even though it will slow down my learning
+                          </button>
+                          :
+                          <Solution solution={solution}/>
+
+                    }
+                  </div>
                 </div>
             }
 
@@ -185,6 +205,31 @@ class AppComponent extends React.Component {
 
     </div>
   }
+}
+
+const Solution = ({solution}) => {
+  console.log({solution})
+  return <div>
+  <pre>
+    {solution.tokens.map((token, tokenIndex) =>
+      <span
+        className={
+          `solution-token-${solution.mask[tokenIndex]
+            ? "hidden" : "visible"}`
+        }
+        key={tokenIndex}
+      >
+        {token}
+      </span>
+    )}
+  </pre>
+    {solution.maskedIndices.length > 0 &&
+    <p>
+      <button onClick={revealSolutionToken}>
+        Reveal
+      </button>
+    </p>}
+  </div>;
 }
 
 export const App = connect(

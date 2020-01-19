@@ -80,3 +80,8 @@
   max-height: 80vh;
   max-width: 40vw;
 }
+
+.solution-token-hidden, .solution-token-hidden::selection {
+  background: black;
+  color: black;
+}
