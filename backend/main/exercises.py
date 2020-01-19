@@ -5,6 +5,7 @@ import string
 import traceback
 from textwrap import indent
 
+import typing
 from littleutils import only
 
 from main.utils import returns_stdout, format_exception_string
@@ -141,6 +142,24 @@ when it should output:
 def generate_short_string():
     length = random.randrange(3, 8)
     return "".join(random.sample(string.ascii_letters, length))
+
+
+def generate_list(typ):
+    return [
+        generate_for_type(typ)
+        for _ in range(random.randrange(5, 10))
+    ]
+
+
+def generate_for_type(typ):
+    if isinstance(typ, typing._GenericAlias):
+        if typ.__origin__ is list:
+            return generate_list(only(typ.__args__))
+    return {
+        str: generate_short_string(),
+        bool: random.choice([True, False]),
+        int: random.randrange(100),
+    }[typ]
 
 
 def main():

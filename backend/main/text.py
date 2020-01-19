@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import ast
 import inspect
-import random
 import re
 from abc import abstractmethod, ABC
+from copy import deepcopy
 from functools import partial
 from importlib import import_module
 from textwrap import indent, dedent
@@ -15,7 +15,7 @@ from asttokens import ASTTokens
 from littleutils import setattrs
 from markdown import markdown
 
-from main.exercises import check_exercise, check_result, generate_short_string, inputs_string
+from main.exercises import check_exercise, check_result, inputs_string, generate_for_type
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
 
 
@@ -248,7 +248,7 @@ class ExerciseStep(Step):
         )
 
     @abstractmethod
-    def solution(self):
+    def solution(self, *args, **kwargs):
         raise NotImplementedError
 
     @classmethod
@@ -257,10 +257,17 @@ class ExerciseStep(Step):
 
     @classmethod
     def test_values(cls):
-        for inputs, result in cls.tests.items():
-            if not isinstance(inputs, tuple):
-                inputs = (inputs,)
-            inputs = dict(zip(cls.arg_names(), inputs))
+        tests = cls.tests
+        if isinstance(tests, dict):
+            tests = tests.items()
+        for inputs, result in tests:
+            if not isinstance(inputs, dict):
+                if not isinstance(inputs, tuple):
+                    inputs = (inputs,)
+                arg_names = cls.arg_names()
+                assert len(arg_names) == len(inputs)
+                inputs = dict(zip(arg_names, inputs))
+            inputs = deepcopy(inputs)
             yield inputs, result
 
     @classmethod
@@ -271,10 +278,7 @@ class ExerciseStep(Step):
     @classmethod
     def generate_inputs(cls):
         return {
-            name: {
-                str: generate_short_string(),
-                bool: random.choice([True, False]),
-            }[typ]
+            name: generate_for_type(typ)
             for name, typ in get_type_hints(cls.solution).items()
         }
 
