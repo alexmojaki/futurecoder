@@ -2957,5 +2957,246 @@
             }
         },
         "step": "list_contains_exercise"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "print(words[0])",
+            "print(words[1])",
+            "print(words[2])",
+            "print(words[3])"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "This"
+                },
+                {
+                    "color": "white",
+                    "text": "is"
+                },
+                {
+                    "color": "white",
+                    "text": "a"
+                },
+                {
+                    "color": "white",
+                    "text": "list"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 1
+            }
+        },
+        "step": "introducing_subscripting"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "words[4]"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "red",
+                    "text": "Traceback (most recent call last):"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"<console>\", line 1, in <module>"
+                },
+                {
+                    "color": "red",
+                    "text": "IndexError: list index out of range"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 2
+            }
+        },
+        "step": "index_error"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "for i in range(10):",
+            "    print(i)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "0"
+                },
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "4"
+                },
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "6"
+                },
+                {
+                    "color": "white",
+                    "text": "7"
+                },
+                {
+                    "color": "white",
+                    "text": "8"
+                },
+                {
+                    "color": "white",
+                    "text": "9"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 3
+            }
+        },
+        "step": "introducing_len_and_range"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "for index in range(len(words)):",
+            "    print(index)",
+            "    print(words[index])"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "0"
+                },
+                {
+                    "color": "white",
+                    "text": "This"
+                },
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "is"
+                },
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": "a"
+                },
+                {
+                    "color": "white",
+                    "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "list"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>Did you experiment with indexing and <code>len()</code> with strings in the shell?</p>",
+                    "<p>Forget loops for a moment. How would you print just the first line, which has the first character of each of the two strings?</p>",
+                    "<p>In the second line you want to print the second character of each string, and so on.</p>",
+                    "<p>You will need a <code>for</code> loop.</p>",
+                    "<p>You will need indexing (subscripting).</p>",
+                    "<p>You will need <code>range</code>.</p>",
+                    "<p>You will need <code>len</code>.</p>",
+                    "<p>You will need <code>+</code>.</p>",
+                    "<p>You will need to index both strings.</p>",
+                    "<p>You will need to pass the same index to both strings each time to retrieve matching characters.</p>"
+                ],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 4
+            }
+        },
+        "step": "range_len"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "string1 = 'Hello'",
+            "string2 = 'World'",
+            "for i in range(len(string1)):",
+            "    char1 = string1[i]",
+            "    char2 = string2[i]",
+            "    print(char1 + ' ' + char2)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "H W"
+                },
+                {
+                    "color": "white",
+                    "text": "e o"
+                },
+                {
+                    "color": "white",
+                    "text": "l r"
+                },
+                {
+                    "color": "white",
+                    "text": "l l"
+                },
+                {
+                    "color": "white",
+                    "text": "o d"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 5
+            }
+        },
+        "step": "zip_exercise"
     }
 ]

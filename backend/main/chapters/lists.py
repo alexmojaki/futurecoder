@@ -1,8 +1,9 @@
 import random
+from textwrap import dedent
 from typing import List
 
-from main.exercises import generate_list
-from main.text import Page, VerbatimStep, ExerciseStep
+from main.exercises import generate_list, generate_string
+from main.text import Page, VerbatimStep, ExerciseStep, Step
 from main.utils import returns_stdout
 
 
@@ -287,3 +288,140 @@ You can stop any loop using a `break` statement, like so:
 This is just as correct but skips unnecessary iterations and checks once it finds the element.
 You can use snoop to see the difference.
         """
+
+
+class GettingElementsAtPosition(Page):
+    title = "Getting Elements at a Position"
+
+    class introducing_subscripting(VerbatimStep):
+        """
+Looping is great, but often you just want to retrieve a single element from the list at a known position.
+Here's how:
+
+__program_indented__
+        """
+
+        def program(self):
+            words = ['This', 'is', 'a', 'list']
+
+            print(words[0])
+            print(words[1])
+            print(words[2])
+            print(words[3])
+
+    class index_error(Step):
+        """
+In general, you can get the element at the position `i` with `words[i]`. The operation is called *subscripting* or *indexing*, and the position is called the *index*.
+
+You've probably noticed that the first index is 0, not 1. In programming, counting starts at 0. It seems weird, but that's how most programming languages do it, and it's generally agreed to be better.
+
+This also means that the last index in this list of 4 elements is 3. What happens if you try getting an index greater than that?
+        """
+
+        program = "words[4]"
+
+        def check(self):
+            return "IndexError" in self.result
+
+    class introducing_len_and_range(VerbatimStep):
+        """
+There you go. `words[4]` and beyond don't exist, so trying that will give you an error.
+
+By the way, you can get the number of elements in a list (commonly called the *length*) using `len(words)`.
+That means that the last valid index of the list is `len(words) - 1`, so the last element is `words[len(words) - 1]`. Try these for yourself.
+
+So in general, the valid indices are:
+
+    [0, 1, 2, ..., len(words) - 2, len(words) - 1]
+
+There's a handy built in function to give you these values, called `range`:
+
+__program_indented__
+        """
+
+        def program(self):
+            for i in range(10):
+                print(i)
+
+    class range_len(VerbatimStep):
+        """
+`range(n)` is similar to the list `[0, 1, 2, ..., n - 2, n - 1]`.
+This gives us an alternative way to loop over a list:
+
+__program_indented__
+        """
+
+        def program(self):
+            words = ['This', 'is', 'a', 'list']
+
+            for index in range(len(words)):
+                print(index)
+                print(words[index])
+
+    class zip_exercise(ExerciseStep):
+        """
+By the way, indexing and `len()` also work on strings. Try them out in the shell.
+
+Let's get some exercise! Given two strings of equal length, e.g:
+
+    string1 = "Hello"
+    string2 = "World"
+
+print them vertically side by side, with a space between each character:
+
+    H W
+    e o
+    l r
+    l l
+    o d
+        """
+
+        hints = """
+Did you experiment with indexing and `len()` with strings in the shell?
+Forget loops for a moment. How would you print just the first line, which has the first character of each of the two strings?
+In the second line you want to print the second character of each string, and so on.
+You will need a `for` loop.
+You will need indexing (subscripting).
+You will need `range`.
+You will need `len`.
+You will need `+`.
+You will need to index both strings.
+You will need to pass the same index to both strings each time to retrieve matching characters.
+"""
+
+        @returns_stdout
+        def solution(self, string1, string2):
+            for i in range(len(string1)):
+                char1 = string1[i]
+                char2 = string2[i]
+                print(char1 + ' ' + char2)
+
+        tests = {
+            ("Hello", "World"): dedent("""\
+                    H W
+                    e o
+                    l r
+                    l l
+                    o d
+                    """),
+            ("Having", "ablast"): dedent("""\
+                    H a
+                    a b
+                    v l
+                    i a
+                    n s
+                    g t
+                    """),
+        }
+
+        @classmethod
+        def generate_inputs(cls):
+            length = random.randrange(5, 11)
+            return dict(
+                string1=generate_string(length),
+                string2=generate_string(length),
+            )
+
+    final_text = """
+TODO
+    """

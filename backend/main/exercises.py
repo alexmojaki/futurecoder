@@ -139,15 +139,16 @@ when it should output:
 """)
 
 
-def generate_short_string():
-    length = random.randrange(3, 8)
+def generate_string(length=None):
+    if length is None:
+        length = random.randrange(5, 11)
     return "".join(random.sample(string.ascii_letters, length))
 
 
 def generate_list(typ):
     return [
         generate_for_type(typ)
-        for _ in range(random.randrange(5, 10))
+        for _ in range(random.randrange(5, 11))
     ]
 
 
@@ -156,7 +157,7 @@ def generate_for_type(typ):
         if typ.__origin__ is list:
             return generate_list(only(typ.__args__))
     return {
-        str: generate_short_string(),
+        str: generate_string(),
         bool: random.choice([True, False]),
         int: random.randrange(100),
     }[typ]
@@ -177,7 +178,7 @@ print('Hello ' + name)
         check_result(func, {"name": "Bob"}, "Hello Bob\n")
 
     def generate_inputs():
-        return {"name": generate_short_string()}
+        return {"name": generate_string()}
 
     print(check_exercise(program, solution, test, generate_inputs, functionise=True))
 
