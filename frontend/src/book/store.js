@@ -22,6 +22,7 @@ const initialState = {
   messages: [],
   pastMessages: [],
   showingPageIndex: 0,
+  requestingSolution: false,
   solution: {
     tokens: [],
     maskedIndices: [],
@@ -74,7 +75,9 @@ export const ranCode = makeAction(
       animateScroll.scrollToBottom({duration: 1000, delay: 500});
       state = {
         ...state,
-        ..._.pick(initialState, ["numHints", "messages", "solution"]),
+        ..._.pick(initialState, [(
+          "numHints messages solution " +
+          "requestingSolution").split(" ")]),
         server: value.state,
       };
     }

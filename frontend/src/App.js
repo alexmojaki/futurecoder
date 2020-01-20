@@ -46,6 +46,7 @@ class AppComponent extends React.Component {
       showingPageIndex,
       pages,
       solution,
+      requestingSolution,
     } = this.props;
     let {
       step_index,
@@ -187,10 +188,24 @@ class AppComponent extends React.Component {
                           Get another hint
                         </button>
                         :
-                        solution.tokens.length === 0 ?
-                          <button onClick={getSolution}>
-                            I'm desperate, show me the solution, even though it will slow down my learning
+                        !requestingSolution ?
+                          <button onClick={() => bookSetState("requestingSolution", true)}>
+                            Show solution
                           </button>
+                          : solution.tokens.length === 0 ?
+                          <>
+                            <p>Are you sure? You will learn much better if you can solve this yourself.</p>
+                            <p>
+                              <button onClick={getSolution} className="btn btn-primary">
+                                Yes
+                              </button>
+                              {" "}
+                              <button onClick={() => bookSetState("requestingSolution", false)}
+                                      className="btn-default btn">
+                                No
+                              </button>
+                            </p>
+                          </>
                           :
                           <Solution solution={solution}/>
 
@@ -208,7 +223,6 @@ class AppComponent extends React.Component {
 }
 
 const Solution = ({solution}) => {
-  console.log({solution})
   return <div>
   <pre>
     {solution.tokens.map((token, tokenIndex) =>
