@@ -4,7 +4,7 @@ from pathlib import Path
 
 from django.test import TestCase, Client
 
-from main.chapters.if_statements import UnderstandingProgramsWithSnoop
+from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.models import User
 from main.text import pages
 

@@ -8,7 +8,6 @@ import sys
 from code import InteractiveConsole
 from io import StringIO
 from random import shuffle
-from textwrap import dedent
 from tokenize import generate_tokens, Untokenizer
 from typing import get_type_hints, Type
 
@@ -22,8 +21,8 @@ from django.views import View
 from littleutils import select_attrs
 from markdown import markdown
 
-from main.chapters.if_statements import UnderstandingProgramsWithSnoop
-from main.chapters.variables import WritingPrograms
+from main.chapters.c03_variables import WritingPrograms
+from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.models import CodeEntry
 from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
 from main.utils import format_exception_string

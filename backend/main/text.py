@@ -7,6 +7,7 @@ from abc import abstractmethod, ABC
 from copy import deepcopy
 from functools import partial
 from importlib import import_module
+from pathlib import Path
 from textwrap import indent, dedent
 from typing import get_type_hints, Union, Type
 
@@ -309,5 +310,16 @@ def search_ast(node, template):
     )
 
 
-for chapter_name in "shell string_basics variables for_loops if_statements lists".split():
-    import_module("main.chapters." + chapter_name)
+def load_chapters():
+    chapters_dir = Path(__file__).parent / "chapters"
+    path: Path
+    for path in sorted(chapters_dir.glob("c*.py")):
+        module_name = path.stem
+        full_module_name = "main.chapters." + module_name
+        module = import_module(full_module_name)
+        title = module_name[4:].replace("_", " ").title()
+        chapter_pages = [p for p in pages.values() if p.__module__ == full_module_name]
+        yield title, module, chapter_pages
+
+
+chapters = list(load_chapters())
