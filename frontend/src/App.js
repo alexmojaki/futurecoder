@@ -98,8 +98,8 @@ class AppComponent extends React.Component {
             className="btn btn-primary"
             onClick={() => {
               rpc(
-                "run_program",
-                {code: bookState.editorContent},
+                "run_code",
+                {code: bookState.editorContent, source: "editor"},
                 (data) => {
                   this.terminal.current.clearStdout();
                   return this.ranCode(data);
@@ -118,7 +118,7 @@ class AppComponent extends React.Component {
             onClick={() => {
               rpc(
                 "run_program",
-                {code: bookState.editorContent, use_snoop: true},
+                {code: bookState.editorContent, source: "snoop"},
                 (data) => {
                   this.terminal.current.clearStdout();
                   return this.ranCode(data);
@@ -150,7 +150,10 @@ class AppComponent extends React.Component {
           <div className="terminal">
             <Terminal
               promptLabel=">>> "
-              onCommand={(cmd) => rpc("shell_line", {line: cmd}, (data) => this.ranCode(data))}
+              onCommand={(cmd) => rpc(
+                "run_code", 
+                {code: cmd, source: "shell"}, 
+                (data) => this.ranCode(data))}
               ref={this.terminal}
             />
           </div>

@@ -165,9 +165,9 @@ class PageMeta(type):
 
 class Page(metaclass=PageMeta):
     @classmethod
-    def check_step(cls, step_name, code_entry, console):
-        step_cls: Type[Step] = getattr(cls, step_name)
-        step = step_cls(code_entry.input, code_entry.output, code_entry.source, console)
+    def check_step(cls, code_entry, output, console):
+        step_cls: Type[Step] = getattr(cls, code_entry['step_name'])
+        step = step_cls(code_entry['input'], output, code_entry['source'], console)
         try:
             return step.check_with_messages()
         except SyntaxError:

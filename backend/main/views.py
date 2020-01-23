@@ -1,19 +1,11 @@
-import ast
 import inspect
 import json
-import linecache
 import logging
-import os
-import sys
-from code import InteractiveConsole
 from io import StringIO
 from random import shuffle
 from tokenize import generate_tokens, Untokenizer
 from typing import get_type_hints, Type
 
-import snoop
-import snoop.formatting
-import snoop.tracer
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.shortcuts import render
@@ -25,24 +17,9 @@ from main.chapters.c03_variables import WritingPrograms
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.models import CodeEntry
 from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
-from main.utils import format_exception_string
+from main.worker import worker_connection
 
 log = logging.getLogger(__name__)
-
-snoop.tracer.internal_directories = (os.path.dirname((lambda: 0).__code__.co_filename),)
-
-
-class PatchedFrameInfo(snoop.tracer.FrameInfo):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        code = self.frame.f_code
-        self.is_ipython_cell = (
-                code.co_name == '<module>' and
-                code.co_filename == "my_program.py"
-        )
-
-
-snoop.tracer.FrameInfo = PatchedFrameInfo
 
 
 class IFrameView(LoginRequiredMixin, View):
@@ -94,9 +71,6 @@ def api_view(request, method_name):
     return JsonResponse(result, json_dumps_params=dict(indent=4, sort_keys=True))
 
 
-console = InteractiveConsole()
-
-
 class API:
     def __init__(self, request):
         self.request = request
@@ -117,43 +91,28 @@ class API:
     def hints(self):
         return getattr(self.user.step, "hints", ())
 
-    def _run_code(self, code, runner, source):
-        entry = CodeEntry.objects.create(
+    def run_code(self, code, source):
+        entry_dict = dict(
             input=code,
             source=source,
-            user=self.user,
             page_slug=self.user.page_slug,
             step_name=self.user.step_name,
         )
 
-        stdout = StringIO()
-        stderr = StringIO()
-        orig_stdout = sys.stdout
-        orig_stderr = sys.stderr
-        try:
-            sys.stdout = stdout
-            sys.stderr = stderr
-            runner()
-        finally:
-            sys.stdout = orig_stdout
-            sys.stderr = orig_stderr
-        stdout = stdout.getvalue().rstrip('\n')
-        stderr = stderr.getvalue().rstrip('\n')
-        entry.output = stdout + "\n" + stderr
+        entry = CodeEntry.objects.create(
+            **entry_dict,
+            user=self.user,
+        )
+
+        connection = worker_connection()
+        connection.send(entry_dict)
+        result = connection.recv()
+
+        entry.output = result["output"]
         entry.save()
 
-        message = ""
-
-        if self.user.step_name != "final_text":
-            step_result = self.page.check_step(self.user.step_name, entry, console)
-            if isinstance(step_result, dict):
-                passed = step_result.get("passed", False)
-                message = step_result.get("message", "")
-            else:
-                passed = step_result
-
-            if passed:
-                self.move_step(1)
+        if result["passed"]:
+            self.move_step(1)
 
         def lines(text, color):
             return [
@@ -162,56 +121,11 @@ class API:
             ]
 
         return dict(
-            result=(lines(stdout, "white") +
-                    lines(stderr, "red")),
-            message=markdown(message),
+            result=lines(result["stdout"], "white") +
+                   lines(result["stderr"], "red"),
+            message=markdown(result["message"]),
             state=self.current_state(),
         )
-
-    def shell_line(self, line):
-        return self._run_code(line, lambda: console.push(line), "shell")
-
-    def run_program(self, code, use_snoop=False):
-        def runner():
-            console.locals = {}
-            filename = "my_program.py"
-            linecache.cache[filename] = (
-                len(code),
-                None,
-                [line + '\n' for line in code.splitlines()],
-                filename,
-            )
-            snoop.formatting.Source._class_local('__source_cache', {}).pop(filename, None)
-
-            try:
-                code_obj = compile(code, filename, "exec")
-            except SyntaxError as e:
-                print(format_exception_string(e), file=sys.stderr)
-                return
-
-            try:
-                if use_snoop:
-                    config = snoop.Config(
-                        columns=(),
-                        out=sys.stdout,
-                        color=True,
-                    )
-                    tracer = config.snoop()
-                    tracer.variable_whitelist = set()
-                    for node in ast.walk(ast.parse(code)):
-                        if isinstance(node, ast.Name):
-                            name = node.id
-                            tracer.variable_whitelist.add(name)
-                    tracer.target_codes.add(code_obj)
-                    with tracer:
-                        exec(code_obj, console.locals)
-                else:
-                    exec(code_obj, console.locals)
-
-            except Exception as e:
-                print(format_exception_string(e), file=sys.stderr)
-
-        return self._run_code(code, runner, "snoop" if use_snoop else "editor")
 
     def load_data(self):
         return dict(

@@ -5,7 +5,6 @@ from pathlib import Path
 from django.test import TestCase, Client
 
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
-from main.models import User
 from main.text import pages
 
 client = Client()
@@ -18,6 +17,8 @@ def api(method, **kwargs):
 
 class StepsTestCase(TestCase):
     def setUp(self):
+        from main.models import User
+
         self.user = User.objects.create_user("admin", "admin@example.com", "pass")
         client.post("/accounts/login/", dict(username="admin", password="pass"))
 
@@ -34,10 +35,13 @@ class StepsTestCase(TestCase):
                 for substep in [*step.messages, step]:
                     program = substep.program
                     if "\n" in program:
-                        use_snoop = step == UnderstandingProgramsWithSnoop.print_tail_snoop
-                        response = api("run_program", code=program, use_snoop=use_snoop)
+                        if step == UnderstandingProgramsWithSnoop.print_tail_snoop:
+                            code_source = "snoop"
+                        else:
+                            code_source = "editor"
                     else:
-                        response = api("shell_line", line=program)
+                        code_source = "shell"
+                    response = api("run_code", code=program, source=code_source)
                     state = response["state"]
                     transcript.append(dict(
                         program=program.splitlines(),
