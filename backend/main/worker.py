@@ -2,12 +2,13 @@ import ast
 import linecache
 import logging
 import os
+import queue
 import sys
 from code import InteractiveConsole
 from functools import lru_cache
-from io import StringIO
 from multiprocessing import Pipe, Process
 from multiprocessing.connection import Connection
+from multiprocessing.dummy import Pool
 
 import snoop
 import snoop.formatting
@@ -18,7 +19,30 @@ from main.utils import format_exception_string
 
 log = logging.getLogger(__name__)
 
-snoop.tracer.internal_directories = (os.path.dirname((lambda: 0).__code__.co_filename),)
+output_lines = []
+
+
+class SysStream:
+    def __init__(self, color):
+        self.color = color
+        self.buf = ''
+
+    def __getattr__(self, item):
+        return getattr(sys.__stdout__, item)
+
+    def write(self, s):
+        self.buf += s
+        lines = self.buf.split('\n')
+        output_lines.extend(
+            dict(text=line or ' ', color=self.color)
+            for line in lines[:-1]
+        )
+        self.buf = lines[-1]
+
+    # TODO return last bit of output without \n
+
+
+snoop.tracer.internal_directories += (os.path.dirname((lambda: 0).__code__.co_filename),)
 
 
 class PatchedFrameInfo(snoop.tracer.FrameInfo):
@@ -80,21 +104,19 @@ def runner(code_source, code):
         print(format_exception_string(e), file=sys.stderr)
 
 
-def run_code(entry):
-    stdout = StringIO()
-    stderr = StringIO()
+def run_code(entry, result_queue):
     orig_stdout = sys.stdout
     orig_stderr = sys.stderr
     try:
-        sys.stdout = stdout
-        sys.stderr = stderr
+        sys.stdout = SysStream("white")
+        sys.stderr = SysStream("red")
         runner(entry['source'], entry['input'])
     finally:
         sys.stdout = orig_stdout
         sys.stderr = orig_stderr
-    stdout = stdout.getvalue().rstrip('\n')
-    stderr = stderr.getvalue().rstrip('\n')
-    output = stdout + "\n" + stderr
+
+    # TODO include all lines from multiple steps
+    output = "\n".join(line["text"] for line in output_lines)
 
     message = ""
     passed = False
@@ -108,19 +130,45 @@ def run_code(entry):
         else:
             passed = step_result
 
-    return dict(
-        stderr=stderr,
-        stdout=stdout,
+    result_queue.put(dict(
+        lines=output_lines.copy(),
         passed=passed,
         message=message,
         output=output,
-    )
+    ))
+
+
+thread_pool = Pool(1)
 
 
 def consumer(connection: Connection):
+    result_queue = queue.Queue()
+    input_queue = queue.Queue()
+    awaiting_input = False
+
+    def readline():
+        nonlocal awaiting_input
+        result_queue.put(dict(
+            lines=output_lines.copy(),
+            passed=False,
+            message='',
+            output='',
+        ))
+        awaiting_input = True
+        inp = input_queue.get()
+        awaiting_input = False
+        return inp
+
+    sys.stdin.readline = readline
+
     while True:
         entry = connection.recv()
-        result = run_code(entry)
+        if awaiting_input and entry["source"] == "shell":
+            input_queue.put(entry["input"])
+        else:
+            thread_pool.apply_async(run_code, (entry, result_queue))
+        result = result_queue.get()
+        output_lines.clear()
         connection.send(result)
 
 

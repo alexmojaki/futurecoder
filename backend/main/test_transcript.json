@@ -676,6 +676,10 @@
                 {
                     "color": "red",
                     "text": "IndentationError: expected an indented block"
+                },
+                {
+                    "color": "red",
+                    "text": " "
                 }
             ],
             "state": {
@@ -823,6 +827,10 @@
                 {
                     "color": "red",
                     "text": "IndentationError: unindent does not match any outer indentation level"
+                },
+                {
+                    "color": "red",
+                    "text": " "
                 }
             ],
             "state": {
@@ -2110,6 +2118,10 @@
                 {
                     "color": "red",
                     "text": "NameError: name 'char' is not defined"
+                },
+                {
+                    "color": "red",
+                    "text": " "
                 }
             ],
             "state": {

@@ -114,15 +114,8 @@ class API:
         if result["passed"]:
             self.move_step(1)
 
-        def lines(text, color):
-            return [
-                dict(text=line or ' ', color=color)
-                for line in text.splitlines()
-            ]
-
         return dict(
-            result=lines(result["stdout"], "white") +
-                   lines(result["stderr"], "red"),
+            result=result["lines"],
             message=markdown(result["message"]),
             state=self.current_state(),
         )
