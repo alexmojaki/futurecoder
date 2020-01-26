@@ -1,15 +1,16 @@
 import ast
 import linecache
 import logging
+import multiprocessing
 import os
-import queue
 import sys
 from code import InteractiveConsole
 from functools import lru_cache
-from multiprocessing import Pipe, Process
+from multiprocessing import Pool, Pipe
 from multiprocessing.connection import Connection
-from multiprocessing.dummy import Pool
+from threading import Thread
 
+import atexit
 import snoop
 import snoop.formatting
 import snoop.tracer
@@ -19,7 +20,11 @@ from main.utils import format_exception_string
 
 log = logging.getLogger(__name__)
 
+TESTING = False
+
 output_lines = []
+
+snoop.install(out=sys.__stderr__)
 
 
 class SysStream:
@@ -104,7 +109,20 @@ def runner(code_source, code):
         print(format_exception_string(e), file=sys.stderr)
 
 
-def run_code(entry, result_queue):
+def run_code(entry, input_queue, result_queue):
+    def readline():
+        result_queue.put(dict(
+            lines=output_lines.copy(),
+            passed=False,
+            message='',
+            output='',
+            awaiting_input=True,
+        ))
+        output_lines.clear()
+        return input_queue.get()
+
+    sys.stdin.readline = readline
+
     orig_stdout = sys.stdout
     orig_stderr = sys.stderr
     try:
@@ -135,46 +153,49 @@ def run_code(entry, result_queue):
         passed=passed,
         message=message,
         output=output,
+        awaiting_input=False,
     ))
-
-
-thread_pool = Pool(1)
+    output_lines.clear()
 
 
 def consumer(connection: Connection):
-    result_queue = queue.Queue()
-    input_queue = queue.Queue()
+    pool = Pool(1)
+
+    def cleanup():
+        pool.terminate()
+
+    atexit.register(cleanup)
+
+    manager = multiprocessing.Manager()
+    input_queue = manager.Queue()
+    result_queue = manager.Queue()
+
     awaiting_input = False
 
-    def readline():
-        nonlocal awaiting_input
-        result_queue.put(dict(
-            lines=output_lines.copy(),
-            passed=False,
-            message='',
-            output='',
-        ))
-        awaiting_input = True
-        inp = input_queue.get()
-        awaiting_input = False
-        return inp
-
-    sys.stdin.readline = readline
+    def run():
+        pool.apply_async(run_code, (entry, input_queue, result_queue))
 
     while True:
         entry = connection.recv()
-        if awaiting_input and entry["source"] == "shell":
-            input_queue.put(entry["input"])
+        if entry["source"] == "shell":
+            if awaiting_input:
+                input_queue.put(entry["input"])
+            else:
+                run()
         else:
-            thread_pool.apply_async(run_code, (entry, result_queue))
+            if not TESTING:
+                pool.terminate()
+                pool = Pool(1)
+
+            run()
         result = result_queue.get()
-        output_lines.clear()
+        awaiting_input = result["awaiting_input"]
         connection.send(result)
 
 
 @lru_cache
 def worker_connection():
     parent_connection, child_connection = Pipe()
-    p = Process(target=consumer, args=(child_connection,), daemon=True)
+    p = Thread(target=consumer, args=(child_connection,), daemon=True)
     p.start()
     return parent_connection

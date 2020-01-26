@@ -6,9 +6,10 @@ from django.test import TestCase, Client
 
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.text import pages
+from main import worker
 
 client = Client()
-
+worker.TESTING = True
 
 def api(method, **kwargs):
     response = client.post(f"/api/{method}/", data=kwargs, content_type="application/json")
