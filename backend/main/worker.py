@@ -236,7 +236,7 @@ class ManagedPool:
         self.original_pid = self.current_pid
 
     def restart(self):
-        self.terminate()
+        Thread(target=self.terminate).start()
         self.__init__()
 
     @property
@@ -251,7 +251,7 @@ class ManagedPool:
         return getattr(self.pool, item)
 
 
-def consumer(connection: Connection):
+def bacconsumer(connection: Connection):
     pool = ManagedPool()
 
     def cleanup():
@@ -284,14 +284,16 @@ def consumer(connection: Connection):
         result = None
         while result is None:
             try:
-                result = result_queue.get(timeout=1)
+                result = result_queue.get(timeout=3)
             except queue.Empty:
                 if pool.died:
                     pool.restart()
                     result = dict(
-                        lines=output_lines.copy() + [dict(
-                            color='red', text='Process died',
-                        )],
+                        lines=[
+                            dict(color='red', text='The process died.'),
+                            dict(color='red', text='Your code probably took too long.'),
+                            dict(color='red', text='Maybe you have an infinite loop?'),
+                        ],
                         passed=False,
                         message='',
                         output='',
