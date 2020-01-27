@@ -251,7 +251,7 @@ class ManagedPool:
         return getattr(self.pool, item)
 
 
-def bacconsumer(connection: Connection):
+def consumer(connection: Connection):
     pool = ManagedPool()
 
     def cleanup():
