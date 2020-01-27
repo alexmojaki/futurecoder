@@ -1,16 +1,20 @@
 import ast
+import atexit
+import inspect
 import linecache
 import logging
 import multiprocessing
 import os
+import queue
+import resource
 import sys
 from code import InteractiveConsole
 from functools import lru_cache
+from importlib import import_module
 from multiprocessing import Pool, Pipe
 from multiprocessing.connection import Connection
 from threading import Thread
 
-import atexit
 import snoop
 import snoop.formatting
 import snoop.tracer
@@ -24,7 +28,7 @@ TESTING = False
 
 output_lines = []
 
-snoop.install(out=sys.__stderr__)
+snoop.install(out=sys.__stderr__, columns=['thread'])
 
 
 class SysStream:
@@ -109,7 +113,75 @@ def runner(code_source, code):
         print(format_exception_string(e), file=sys.stderr)
 
 
+@lru_cache
+def destroy_dangerous_functions():
+    import signal
+    import gc
+
+    del signal.sigwait.__doc__
+
+    bad_module_names = "signal _signal".split()
+
+    func = None
+    get_referrers = gc.get_referrers
+
+    funcs = [get_referrers, gc.get_referents, gc.get_objects, os.system]
+    expected_refs = [locals(), funcs]
+
+    for module_name in bad_module_names:
+        module = import_module(module_name)
+        funcs += [
+            value for value in module.__dict__.values()
+            if inspect.isroutine(value)
+            if getattr(value, "__module__", None) in bad_module_names
+        ]
+
+    for func in funcs:
+        for ref in get_referrers(func):
+            if ref in expected_refs:
+                continue
+
+            if isinstance(ref, dict):
+                for key in list(ref):
+                    if ref[key] == func:
+                        del ref[key]
+
+            if isinstance(ref, list):
+                while func in ref:
+                    ref.remove(func)
+
+        for ref in get_referrers(func):
+            assert ref in expected_refs
+
+
+def set_limits():
+    destroy_dangerous_functions()
+
+    usage = resource.getrusage(resource.RUSAGE_SELF)
+
+    # TODO tests can exceed this time since the process is not restarted, causing failure
+    max_time = int(usage.ru_utime + usage.ru_stime) + 2
+    try:
+        resource.setrlimit(resource.RLIMIT_CPU, (max_time, max_time))
+    except ValueError:
+        pass
+
+    # TODO
+    # resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
+
+
+def run_code_in_thread(*args):
+    # run_code(*args)
+    Thread(target=run_code, args=args).start()
+
+
 def run_code(entry, input_queue, result_queue):
+    # Open the queue files before setting the file limit
+    result_queue.put(None)
+    input_queue.empty()
+
+    set_limits()
+
     def readline():
         result_queue.put(dict(
             lines=output_lines.copy(),
@@ -158,8 +230,29 @@ def run_code(entry, input_queue, result_queue):
     output_lines.clear()
 
 
+class ManagedPool:
+    def __init__(self):
+        self.pool = Pool(1)
+        self.original_pid = self.current_pid
+
+    def restart(self):
+        self.terminate()
+        self.__init__()
+
+    @property
+    def current_pid(self):
+        return self._pool[0].pid
+
+    @property
+    def died(self):
+        return self.original_pid != self.current_pid
+
+    def __getattr__(self, item):
+        return getattr(self.pool, item)
+
+
 def consumer(connection: Connection):
-    pool = Pool(1)
+    pool = ManagedPool()
 
     def cleanup():
         pool.terminate()
@@ -173,7 +266,8 @@ def consumer(connection: Connection):
     awaiting_input = False
 
     def run():
-        pool.apply_async(run_code, (entry, input_queue, result_queue))
+        # run_code_in_thread(entry, input_queue, result_queue)
+        pool.apply_async(run_code_in_thread, (entry, input_queue, result_queue))
 
     while True:
         entry = connection.recv()
@@ -184,11 +278,25 @@ def consumer(connection: Connection):
                 run()
         else:
             if not TESTING:
-                pool.terminate()
-                pool = Pool(1)
+                pool.restart()
 
             run()
-        result = result_queue.get()
+        result = None
+        while result is None:
+            try:
+                result = result_queue.get(timeout=1)
+            except queue.Empty:
+                if pool.died:
+                    pool.restart()
+                    result = dict(
+                        lines=output_lines.copy() + [dict(
+                            color='red', text='Process died',
+                        )],
+                        passed=False,
+                        message='',
+                        output='',
+                        awaiting_input=False,
+                    )
         awaiting_input = result["awaiting_input"]
         connection.send(result)
 
