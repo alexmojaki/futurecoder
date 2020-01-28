@@ -422,6 +422,138 @@ You will need to pass the same index to both strings each time to retrieve match
                 string2=generate_string(length),
             )
 
+    class zip_longest_exercise(ExerciseStep):
+        """
+Incredible!
+
+Your solution probably looks something like this:
+
+    for i in range(len(string1)):
+        char1 = string1[i]
+        char2 = string2[i]
+        print(char1 + ' ' + char2)
+
+This doesn't work so well if the strings have different lengths.
+In fact, it goes wrong in different ways depending on whether `string1` or `string2` is longer.
+Your next challenge is to fix this problem by filling in 'missing' characters with spaces.
+
+For example, for:
+
+    string1 = "Goodbye"
+    string2 = "World"
+
+output:
+
+    G W
+    o o
+    o r
+    d l
+    b d
+    y  
+    e  
+
+and for:
+
+    string1 = "Hello"
+    string2 = "Elizabeth"
+
+output:
+
+    H E
+    e l
+    l i
+    l z
+    o a
+      b
+      e
+      t
+      h
+        """
+
+        hints = [
+            "The solution has the same overall structure and "
+            "essential elements of the previous solution, "
+            "but it's significantly longer and will require "
+            "a few additional ideas and pieces.",
+            dedent("""
+            In particular, it should still contain something like:
+
+                for i in range(...):
+                    ...
+                    print(char1 + ' ' + char2)
+            """),
+            "What should go inside `range()`? Neither `len(string1)` nor `len(string2)` is good enough.",
+            "You want a loop iteration for every character in the longer string.",
+            "That means you need `range(<length of the longest string>)`",
+            "In other words you need to find the biggest of the two values "
+            "`len(string1)` and `len(string2)`. You've already done an exercise like that.",
+            "Once you've sorted out `for i in range(...)`, `i` will sometimes be too big "
+            "to be a valid index for both strings. You will need to check if it's too big before indexing.",
+            "Remember, the biggest valid index for `string1` is `len(string1) - 1`. "
+            "`len(string)` is too big.",
+            "You will need two `if` statements, one for each string.",
+            "You will need to set e.g. `char1 = ' '` when `string1[i]` is not valid.",
+        ]
+
+        # TODO catch user writing string1 < string2
+
+        @returns_stdout
+        def solution(self, string1, string2):
+            length1 = len(string1)
+            length2 = len(string2)
+
+            if length1 > length2:
+                length = length1
+            else:
+                length = length2
+
+            for i in range(length):
+                if i < len(string1):
+                    char1 = string1[i]
+                else:
+                    char1 = ' '
+
+                if i < len(string2):
+                    char2 = string2[i]
+                else:
+                    char2 = ' '
+
+                print(char1 + ' ' + char2)
+
+        tests = {
+            ("Goodbye", "World"): dedent("""\
+                    G W
+                    o o
+                    o r
+                    d l
+                    b d
+                    y  
+                    e  
+                    """),
+            ("Hello", "Elizabeth"): dedent("""\
+                    H E
+                    e l
+                    l i
+                    l z
+                    o a
+                      b
+                      e
+                      t
+                      h
+                    """),
+        }
+
+        @classmethod
+        def generate_inputs(cls):
+            length1 = random.randrange(5, 11)
+            length2 = random.randrange(12, 20)
+            if random.choice([True, False]):
+                length1, length2 = length2, length1
+            return dict(
+                string1=generate_string(length1),
+                string2=generate_string(length2),
+            )
+
     final_text = """
 TODO
     """

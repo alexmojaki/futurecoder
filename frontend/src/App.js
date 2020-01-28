@@ -117,7 +117,7 @@ class AppComponent extends React.Component {
             className="btn btn-success"
             onClick={() => {
               rpc(
-                "run_program",
+                "run_code",
                 {code: bookState.editorContent, source: "snoop"},
                 (data) => {
                   this.terminal.current.clearStdout();

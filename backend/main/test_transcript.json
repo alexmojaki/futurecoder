@@ -3202,7 +3202,18 @@
                 }
             ],
             "state": {
-                "hints": [],
+                "hints": [
+                    "<p>The solution has the same overall structure and essential elements of the previous solution, but it's significantly longer and will require a few additional ideas and pieces.</p>",
+                    "<p>In particular, it should still contain something like:</p>\n<pre><code>for i in range(...):\n    ...\n    print(char1 + ' ' + char2)\n</code></pre>",
+                    "<p>What should go inside <code>range()</code>? Neither <code>len(string1)</code> nor <code>len(string2)</code> is good enough.</p>",
+                    "<p>You want a loop iteration for every character in the longer string.</p>",
+                    "<p>That means you need <code>range(&lt;length of the longest string&gt;)</code></p>",
+                    "<p>In other words you need to find the biggest of the two values <code>len(string1)</code> nor <code>len(string2)</code>. You've already done an exercise like that.</p>",
+                    "<p>Once you've sorted out <code>for i in range(...)</code>, <code>i</code> will sometimes be too big to be a valid index for both strings. You will need to check if it's too big before indexing.</p>",
+                    "<p>Remember, the biggest valid index for <code>string1</code> is <code>len(string1) - 1</code>. <code>len(string)</code> is too big.</p>",
+                    "<p>You will need two <code>if</code>s, one for each string.</p>",
+                    "<p>You will need to set e.g. <code>char1 = ' '</code> when <code>string1[i]</code> is not valid.</p>"
+                ],
                 "page_index": 23,
                 "showEditor": true,
                 "showSnoop": true,
@@ -3210,5 +3221,73 @@
             }
         },
         "step": "zip_exercise"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "string1 = 'Goodbye'",
+            "string2 = 'World'",
+            "length1 = len(string1)",
+            "length2 = len(string2)",
+            "",
+            "if length1 > length2:",
+            "    length = length1",
+            "else:",
+            "    length = length2",
+            "",
+            "for i in range(length):",
+            "    if i < len(string1):",
+            "        char1 = string1[i]",
+            "    else:",
+            "        char1 = ' '",
+            "",
+            "    if i < len(string2):",
+            "        char2 = string2[i]",
+            "    else:",
+            "        char2 = ' '",
+            "",
+            "    print(char1 + ' ' + char2)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "G W"
+                },
+                {
+                    "color": "white",
+                    "text": "o o"
+                },
+                {
+                    "color": "white",
+                    "text": "o r"
+                },
+                {
+                    "color": "white",
+                    "text": "d l"
+                },
+                {
+                    "color": "white",
+                    "text": "b d"
+                },
+                {
+                    "color": "white",
+                    "text": "y  "
+                },
+                {
+                    "color": "white",
+                    "text": "e  "
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 6
+            }
+        },
+        "step": "zip_longest_exercise"
     }
 ]
