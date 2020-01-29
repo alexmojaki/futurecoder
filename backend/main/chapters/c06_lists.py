@@ -358,11 +358,56 @@ __program_indented__
                 print(index)
                 print(words[index])
 
+    class index_exercise(ExerciseStep):
+        """
+Let's get some exercise! Given a list `things` and a value `to_find`,
+print the index of `to_find` in the list, i.e. the number `i` such that
+`things[i]` is `to_find`. For example, for
+
+    things = ['This', 'is', 'a', 'list']
+    to_find = 'a'
+
+your program should print `2`.
+
+You can assume that `to_find` is always somewhere in the list, and that it appears only once.
+        """
+
+        hints = """
+You will need to look at all the possible indices of `things` and check which one is the answer.
+To look at all possible indices, you will need a loop over `range(len(things))`.
+To check if an index is the answer, you will need to use:
+- `if`
+- the index in a subscript
+- `==`
+        """
+
+        @returns_stdout
+        def solution(self, things, to_find):
+            for i in range(len(things)):
+                if to_find == things[i]:
+                    print(i)
+
+        tests = [
+            ((['This', 'is', 'a', 'list'], 'a'), 2),
+            (([0, 1, 2, 3, 4, 5, 6], 6), 6),
+        ]
+
+        @classmethod
+        def generate_inputs(cls):
+            things = generate_list(str)
+            to_find = random.choice(things)
+            return dict(
+                things=things,
+                to_find=to_find,
+            )
+
     class zip_exercise(ExerciseStep):
         """
+Nice!
+
 By the way, indexing and `len()` also work on strings. Try them out in the shell.
 
-Let's get some exercise! Given two strings of equal length, e.g:
+Here's another exercise. Given two strings of equal length, e.g:
 
     string1 = "Hello"
     string2 = "World"
@@ -555,5 +600,5 @@ output:
             )
 
     final_text = """
-TODO
+Magnificent! Take a break, you've earned it!
     """

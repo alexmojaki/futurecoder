@@ -3148,6 +3148,40 @@
             ],
             "state": {
                 "hints": [
+                    "<p>You will need to look at all the possible indices of <code>things</code> and check which one is the answer.</p>",
+                    "<p>To look at all possible indices, you will need a loop over <code>range(len(things))</code>.</p>",
+                    "<p>To check if an index is the answer, you will need to use:</p>",
+                    "<ul>\n<li><code>if</code></li>\n</ul>",
+                    "<ul>\n<li>the index in a subscript</li>\n</ul>",
+                    "<ul>\n<li><code>==</code></li>\n</ul>"
+                ],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 4
+            }
+        },
+        "step": "range_len"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "things = ['This', 'is', 'a', 'list']",
+            "to_find = 'a'",
+            "for i in range(len(things)):",
+            "    if to_find == things[i]:",
+            "        print(i)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "2"
+                }
+            ],
+            "state": {
+                "hints": [
                     "<p>Did you experiment with indexing and <code>len()</code> with strings in the shell?</p>",
                     "<p>Forget loops for a moment. How would you print just the first line, which has the first character of each of the two strings?</p>",
                     "<p>In the second line you want to print the second character of each string, and so on.</p>",
@@ -3162,10 +3196,10 @@
                 "page_index": 23,
                 "showEditor": true,
                 "showSnoop": true,
-                "step_index": 4
+                "step_index": 5
             }
         },
-        "step": "range_len"
+        "step": "index_exercise"
     },
     {
         "page": "Getting Elements at a Position",
@@ -3208,16 +3242,16 @@
                     "<p>What should go inside <code>range()</code>? Neither <code>len(string1)</code> nor <code>len(string2)</code> is good enough.</p>",
                     "<p>You want a loop iteration for every character in the longer string.</p>",
                     "<p>That means you need <code>range(&lt;length of the longest string&gt;)</code></p>",
-                    "<p>In other words you need to find the biggest of the two values <code>len(string1)</code> nor <code>len(string2)</code>. You've already done an exercise like that.</p>",
+                    "<p>In other words you need to find the biggest of the two values <code>len(string1)</code> and <code>len(string2)</code>. You've already done an exercise like that.</p>",
                     "<p>Once you've sorted out <code>for i in range(...)</code>, <code>i</code> will sometimes be too big to be a valid index for both strings. You will need to check if it's too big before indexing.</p>",
                     "<p>Remember, the biggest valid index for <code>string1</code> is <code>len(string1) - 1</code>. <code>len(string)</code> is too big.</p>",
-                    "<p>You will need two <code>if</code>s, one for each string.</p>",
+                    "<p>You will need two <code>if</code> statements, one for each string.</p>",
                     "<p>You will need to set e.g. <code>char1 = ' '</code> when <code>string1[i]</code> is not valid.</p>"
                 ],
                 "page_index": 23,
                 "showEditor": true,
                 "showSnoop": true,
-                "step_index": 5
+                "step_index": 6
             }
         },
         "step": "zip_exercise"
@@ -3285,7 +3319,7 @@
                 "page_index": 23,
                 "showEditor": true,
                 "showSnoop": true,
-                "step_index": 6
+                "step_index": 7
             }
         },
         "step": "zip_longest_exercise"
