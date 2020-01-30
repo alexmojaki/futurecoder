@@ -3,7 +3,7 @@ from textwrap import dedent
 from typing import List
 
 from main.exercises import generate_list, generate_string
-from main.text import Page, VerbatimStep, ExerciseStep, Step
+from main.text import Page, VerbatimStep, ExerciseStep, Step, MessageStep
 from main.utils import returns_stdout
 
 
@@ -361,15 +361,15 @@ __program_indented__
     class index_exercise(ExerciseStep):
         """
 Let's get some exercise! Given a list `things` and a value `to_find`,
-print the index of `to_find` in the list, i.e. the number `i` such that
+print the first index of `to_find` in the list, i.e. the lowest number `i` such that
 `things[i]` is `to_find`. For example, for
 
-    things = ['This', 'is', 'a', 'list']
-    to_find = 'a'
+    things = ['on', 'the', 'way', 'to', 'the', 'store']
+    to_find = 'the'
 
-your program should print `2`.
+your program should print `1`.
 
-You can assume that `to_find` is always somewhere in the list, and that it appears only once.
+You can assume that `to_find` appears at least once.
         """
 
         hints = """
@@ -379,23 +379,65 @@ To check if an index is the answer, you will need to use:
 - `if`
 - the index in a subscript
 - `==`
+Since you're looking for the first index, you need to stop the loop once you find one.
+You learned how to stop a loop in the middle recently.
+You need to use `break`.
         """
+
+        class all_indices(MessageStep, ExerciseStep):
+            """
+            You're almost there! However, this prints all the indices,
+            not just the first one.
+            """
+
+            @returns_stdout
+            def solution(self, things, to_find):
+                for i in range(len(things)):
+                    if to_find == things[i]:
+                        print(i)
+
+            tests = [
+                ((['on', 'the', 'way', 'to', 'the', 'store'], 'the'), "1\n4"),
+                (([0, 1, 2, 3, 4, 5, 6, 6], 6), "6\n7"),
+            ]
+
+        class last_index(MessageStep, ExerciseStep):
+            """
+            You're almost there! However, this prints the *last* index,
+            not the first one.
+            """
+
+            @returns_stdout
+            def solution(self, things, to_find):
+                answer = None
+                for i in range(len(things)):
+                    if to_find == things[i]:
+                        answer = i
+                print(answer)
+
+            tests = [
+                ((['on', 'the', 'way', 'to', 'the', 'store'], 'the'), 4),
+                (([0, 1, 2, 3, 4, 5, 6, 6], 6), 7),
+            ]
 
         @returns_stdout
         def solution(self, things, to_find):
             for i in range(len(things)):
                 if to_find == things[i]:
                     print(i)
+                    break
 
         tests = [
-            ((['This', 'is', 'a', 'list'], 'a'), 2),
-            (([0, 1, 2, 3, 4, 5, 6], 6), 6),
+            ((['on', 'the', 'way', 'to', 'the', 'store'], 'the'), 1),
+            (([0, 1, 2, 3, 4, 5, 6, 6], 6), 6),
         ]
 
         @classmethod
         def generate_inputs(cls):
             things = generate_list(str)
-            to_find = random.choice(things)
+            to_find = generate_string()
+            things += [to_find] * random.randint(1, 3)
+            random.shuffle(things)
             return dict(
                 things=things,
                 to_find=to_find,

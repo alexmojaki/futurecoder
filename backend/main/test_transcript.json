@@ -3153,7 +3153,10 @@
                     "<p>To check if an index is the answer, you will need to use:</p>",
                     "<ul>\n<li><code>if</code></li>\n</ul>",
                     "<ul>\n<li>the index in a subscript</li>\n</ul>",
-                    "<ul>\n<li><code>==</code></li>\n</ul>"
+                    "<ul>\n<li><code>==</code></li>\n</ul>",
+                    "<p>Since you're looking for the first index, you need to stop the loop once you find one.</p>",
+                    "<p>You learned how to stop a loop in the middle recently.</p>",
+                    "<p>You need to use <code>break</code>.</p>"
                 ],
                 "page_index": 23,
                 "showEditor": true,
@@ -3166,18 +3169,99 @@
     {
         "page": "Getting Elements at a Position",
         "program": [
-            "things = ['This', 'is', 'a', 'list']",
-            "to_find = 'a'",
+            "things = ['on', 'the', 'way', 'to', 'the', 'store']",
+            "to_find = 'the'",
             "for i in range(len(things)):",
             "    if to_find == things[i]:",
             "        print(i)"
+        ],
+        "response": {
+            "message": "<p>You're almost there! However, this prints all the indices,\nnot just the first one.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "4"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>You will need to look at all the possible indices of <code>things</code> and check which one is the answer.</p>",
+                    "<p>To look at all possible indices, you will need a loop over <code>range(len(things))</code>.</p>",
+                    "<p>To check if an index is the answer, you will need to use:</p>",
+                    "<ul>\n<li><code>if</code></li>\n</ul>",
+                    "<ul>\n<li>the index in a subscript</li>\n</ul>",
+                    "<ul>\n<li><code>==</code></li>\n</ul>",
+                    "<p>Since you're looking for the first index, you need to stop the loop once you find one.</p>",
+                    "<p>You learned how to stop a loop in the middle recently.</p>",
+                    "<p>You need to use <code>break</code>.</p>"
+                ],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 4
+            }
+        },
+        "step": "index_exercise"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "things = ['on', 'the', 'way', 'to', 'the', 'store']",
+            "to_find = 'the'",
+            "answer = None",
+            "for i in range(len(things)):",
+            "    if to_find == things[i]:",
+            "        answer = i",
+            "print(answer)"
+        ],
+        "response": {
+            "message": "<p>You're almost there! However, this prints the <em>last</em> index,\nnot the first one.</p>",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "4"
+                }
+            ],
+            "state": {
+                "hints": [
+                    "<p>You will need to look at all the possible indices of <code>things</code> and check which one is the answer.</p>",
+                    "<p>To look at all possible indices, you will need a loop over <code>range(len(things))</code>.</p>",
+                    "<p>To check if an index is the answer, you will need to use:</p>",
+                    "<ul>\n<li><code>if</code></li>\n</ul>",
+                    "<ul>\n<li>the index in a subscript</li>\n</ul>",
+                    "<ul>\n<li><code>==</code></li>\n</ul>",
+                    "<p>Since you're looking for the first index, you need to stop the loop once you find one.</p>",
+                    "<p>You learned how to stop a loop in the middle recently.</p>",
+                    "<p>You need to use <code>break</code>.</p>"
+                ],
+                "page_index": 23,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 4
+            }
+        },
+        "step": "index_exercise"
+    },
+    {
+        "page": "Getting Elements at a Position",
+        "program": [
+            "things = ['on', 'the', 'way', 'to', 'the', 'store']",
+            "to_find = 'the'",
+            "for i in range(len(things)):",
+            "    if to_find == things[i]:",
+            "        print(i)",
+            "        break"
         ],
         "response": {
             "message": "",
             "result": [
                 {
                     "color": "white",
-                    "text": "2"
+                    "text": "1"
                 }
             ],
             "state": {
