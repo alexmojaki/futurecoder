@@ -766,3 +766,92 @@ The button will open a new tab with a visualisation from [pythontutor.com](http:
 There you can navigate through the program step by step with the "Prev" or "Next" buttons, or drag
 the slider left or right. You can also see the values of variables on the right.
 """
+
+
+class EqualsVsIs(Page):
+    title = "`==` vs `is`"
+
+    class two_separate_lists(VerbatimStep):
+        """
+It's time to learn some technical details that are often misunderstood and lead to errors.
+Run this program:
+
+__program_indented__
+        """
+
+        def program(self):
+            list1 = [1, 2, 3]
+            list2 = [1, 2, 3]
+
+            print(list1)
+            print(list2)
+            print(list1 == list2)
+
+            print(list1 is list2)
+
+            list1.append(4)
+
+            print(list1)
+            print(list2)
+
+    class same_list(VerbatimStep):
+        """
+This program is quite straightforward and mostly consists of things you're familiar with.
+We create two variables which refer to lists.
+The lists have the same elements, so they are equal: `list1 == list2` is `True`.
+
+But then there's a new comparison operator: `is`. Here `list1 is list2` is `False`.
+That means that regardless of the two lists being equal,
+they are still two separate, distinct, individual lists.
+As a result, when you append 4 to `list1`, only `list1` changes.
+
+Now change `list2 = [1, 2, 3]` to `list2 = list1` and see what difference it makes.
+        """
+
+        program_in_text = False
+
+        def program(self):
+            list1 = [1, 2, 3]
+            list2 = list1
+
+            print(list1)
+            print(list2)
+            print(list1 == list2)
+
+            print(list1 is list2)
+
+            list1.append(4)
+
+            print(list1)
+            print(list2)
+
+    final_text = """
+Now `list1 is list2` is `True`, because *there is only one list*, and the two variables
+`list1` and `list2` both refer to that same list. `list1.append(4)` appends to the one list
+and the result can be seen in both `print(list1)` and `print(list2)` because both lines
+are now just different ways of printing the same list.
+
+I recommend running both versions with Python Tutor to see how it visualises the difference.
+In the second case, the two variables both have arrows pointing to a single list object.
+
+`list2 = list1` doesn't create an eternal link between the variables. If you assign a new value
+to *either* of the variables, e.g. `list1 = [7, 8, 9]`, the other variable will be unaffected
+and will still point to the original list.
+
+Basically, an assignment like:
+
+    list2 = <expression>
+
+means 'make the variable `list2` refer to whatever `<expression>` evaluates to'.
+It doesn't make a copy of that value, which is how both variables can end up pointing to the same list.
+But as we've learned before, `list2` doesn't remember `<expression>`, only the value.
+It doesn't know about other variables.
+
+You can copy a list with the `copy` method:
+
+    list2 = list1.copy()
+
+This will make the program behave like the first version again.
+
+If you come across this kind of problem and you're still having trouble understanding this stuff, read the essay [Facts and myths about Python names and values](https://nedbatchelder.com/text/names.html). 
+"""
