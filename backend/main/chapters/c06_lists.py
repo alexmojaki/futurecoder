@@ -644,3 +644,101 @@ output:
     final_text = """
 Magnificent! Take a break, you've earned it!
     """
+
+
+class CallingFunctionsTerminology(Page):
+    title = "Terminology: Calling functions and methods"
+
+    class print_functions(VerbatimStep):
+        """
+It's time to expand your vocabulary some more.
+
+`print` and `len` are ***functions***. See for yourself:
+
+__program_indented__
+        """
+
+        def program(self):
+            print(len)
+            print(print)
+
+    class introducing_callable(VerbatimStep):
+        """
+An expression like `len(things)` or `print(things)` is a function ***call*** - when you write that, you are ***calling*** the function `len` or `print`. The fact that this is possible means that functions are ***callable***:
+
+__program_indented__
+        """
+
+        def program(self):
+            print(callable(len))
+
+    class not_callable(VerbatimStep):
+        """
+Most things are not callable, so trying to call them will give you an error:
+
+__program_indented__
+        """
+
+        # noinspection PyCallingNonCallable
+        def program(self):
+            f = 'a string'
+            print(callable(f))
+            f()
+
+    class print_returns_none(VerbatimStep):
+        """
+In the call `len(things)`, `things` is an ***argument***. Sometimes you will also see the word ***parameter***, which means basically the same thing as argument. It's a bit like you're giving the argument to the function - specifically we say that the argument `things` is *passed* to `len`, and `len` *accepts* or *receives* the argument.
+
+`len(things)` will evaluate to a number such as 3, in which case we say that `len` ***returned*** 3.
+
+All calls have to return something...even if it's nothing. For example, `print`'s job is to display something on screen, not to return a useful value. So it returns something useless instead:
+
+__program_indented__
+        """
+
+        # noinspection PyNoneFunctionAssignment
+        def program(self):
+            things = [1, 2, 3]
+            length = len(things)
+            printed = print(length)
+            print(printed)
+
+    class len_of_none(VerbatimStep):
+        """
+`None` is a special 'null' value which can't do anything interesting. It's a common placeholder that represents the lack of a real useful value. Functions that don't want to return anything return `None` by default. If you see an error message about `None` or `NoneType`, it often means you assigned the wrong thing to a variable:
+
+__program_indented__
+        """
+
+        # noinspection PyNoneFunctionAssignment,PyUnusedLocal,PyTypeChecker
+        def program(self):
+            things = print([1, 2, 3])
+            length = len(things)
+
+    class methods_of_str(VerbatimStep):
+        """
+A ***method*** is a function which belongs to a type, and can be called on all values of that type using `.`. For example, `upper` and `lower` are methods of strings, which are called with e.g. `word.upper()`:
+
+__program_indented__
+        """
+
+        def program(self):
+            word = 'Hello'
+            print(word.upper)
+            print(word.upper())
+
+    class no_append_for_str(VerbatimStep):
+        """
+Another example is that `append` is a method of lists. But you can't use `.upper` on a list or `.append` on a string:
+
+__program_indented__
+        """
+
+        # noinspection PyUnresolvedReferences
+        def program(self):
+            word = 'Hello'
+            word.append('!')
+
+    final_text = """
+    The word 'attribute' in the error message refers to the use of `.` - the error actually comes just from `word.append`, without even a call.
+        """

@@ -3407,5 +3407,208 @@
             }
         },
         "step": "zip_longest_exercise"
+    },
+    {
+        "page": "Terminology: Calling functions and methods",
+        "program": [
+            "print(len)",
+            "print(print)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "<built-in function len>"
+                },
+                {
+                    "color": "white",
+                    "text": "<built-in function print>"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 24,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 1
+            }
+        },
+        "step": "print_functions"
+    },
+    {
+        "page": "Terminology: Calling functions and methods",
+        "program": [
+            "print(callable(len))"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 24,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 2
+            }
+        },
+        "step": "introducing_callable"
+    },
+    {
+        "page": "Terminology: Calling functions and methods",
+        "program": [
+            "f = 'a string'",
+            "print(callable(f))",
+            "f()"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "red",
+                    "text": "TypeError: 'str' object is not callable"
+                },
+                {
+                    "color": "red",
+                    "text": " "
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 24,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 3
+            }
+        },
+        "step": "not_callable"
+    },
+    {
+        "page": "Terminology: Calling functions and methods",
+        "program": [
+            "things = [1, 2, 3]",
+            "length = len(things)",
+            "printed = print(length)",
+            "print(printed)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "None"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 24,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 4
+            }
+        },
+        "step": "print_returns_none"
+    },
+    {
+        "page": "Terminology: Calling functions and methods",
+        "program": [
+            "things = print([1, 2, 3])",
+            "length = len(things)"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3]"
+                },
+                {
+                    "color": "red",
+                    "text": "TypeError: object of type 'NoneType' has no len()"
+                },
+                {
+                    "color": "red",
+                    "text": " "
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 24,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 5
+            }
+        },
+        "step": "len_of_none"
+    },
+    {
+        "page": "Terminology: Calling functions and methods",
+        "program": [
+            "word = 'Hello'",
+            "print(word.upper)",
+            "print(word.upper())"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "<built-in method upper of str object at 0x10f914430>"
+                },
+                {
+                    "color": "white",
+                    "text": "HELLO"
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 24,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 6
+            }
+        },
+        "step": "methods_of_str"
+    },
+    {
+        "page": "Terminology: Calling functions and methods",
+        "program": [
+            "word = 'Hello'",
+            "word.append('!')"
+        ],
+        "response": {
+            "message": "",
+            "result": [
+                {
+                    "color": "red",
+                    "text": "AttributeError: 'str' object has no attribute 'append'"
+                },
+                {
+                    "color": "red",
+                    "text": " "
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 24,
+                "showEditor": true,
+                "showSnoop": true,
+                "step_index": 7
+            }
+        },
+        "step": "no_append_for_str"
     }
 ]
