@@ -15,6 +15,7 @@ from markdown import markdown
 
 from main.chapters.c03_variables import WritingPrograms
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
+from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
 from main.models import CodeEntry
 from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
 from main.worker import worker_connection
@@ -135,6 +136,7 @@ class API:
             page_index=self.page.index,
             showEditor=self.page.index >= WritingPrograms.index,
             showSnoop=(self.page.index, self.step_index) >= (UnderstandingProgramsWithSnoop.index, 1),
+            showPythonTutor=self.page.index >= UnderstandingProgramsWithPythonTutor.index,
         )
 
     def move_step(self, delta: int):

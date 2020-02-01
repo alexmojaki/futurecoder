@@ -21,7 +21,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-monokai";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faBug, faPlay, faTimes} from '@fortawesome/free-solid-svg-icons'
+import {faBug, faPlay, faTimes, faUserGraduate} from '@fortawesome/free-solid-svg-icons'
 import {animateScroll} from "react-scroll";
 
 class AppComponent extends React.Component {
@@ -53,6 +53,7 @@ class AppComponent extends React.Component {
       hints,
       showEditor,
       showSnoop,
+      showPythonTutor,
     } = server;
     const page = pages[showingPageIndex];
     if (showingPageIndex < server.page_index) {
@@ -127,6 +128,27 @@ class AppComponent extends React.Component {
             }}
           >
             <FontAwesomeIcon icon={faBug}/> Snoop
+          </button>}
+
+          {" "}
+
+          {showPythonTutor &&
+          <button
+            className="btn btn-success"
+            onClick={() => window.open(
+              'https://pythontutor.com/iframe-embed.html#code=' + escape(bookState.editorContent) +
+              '&codeDivHeight=600' +
+              '&codeDivWidth=600' +
+              '&cumulative=false' +
+              '&curInstr=0' +
+              '&heapPrimitives=false' +
+              '&origin=opt-frontend.js' +
+              '&py=3' +
+              '&rawInputLstJSON=%5B%5D' +
+              '&textReferences=false',
+            )}
+          >
+            <FontAwesomeIcon icon={faUserGraduate}/> Python Tutor
           </button>}
         </div>
         <div className="editor-and-terminal">

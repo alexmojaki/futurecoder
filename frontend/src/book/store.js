@@ -10,6 +10,7 @@ const initialState = {
     hints: [],
     showEditor: false,
     showSnoop: false,
+    showPythonTutor: false,
   },
   pages: [
     {

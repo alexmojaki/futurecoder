@@ -742,3 +742,27 @@ __program_indented__
     final_text = """
     The word 'attribute' in the error message refers to the use of `.` - the error actually comes just from `word.append`, without even a call.
         """
+
+
+class UnderstandingProgramsWithPythonTutor(Page):
+    final_text = """
+It's time to learn about another tool to explore programs. Put some code in the editor and then click the new "Python Tutor" button. Here's some example code if you want:
+
+    all_numbers = [2, 4, 8, 1, 9, 7]
+
+    small_numbers = []
+    big_numbers = []
+
+    for number in all_numbers:
+        if number <= 5:
+            small_numbers.append(number)
+        else:
+            big_numbers.append(number)
+
+    print(small_numbers)
+    print(big_numbers)
+
+The button will open a new tab with a visualisation from [pythontutor.com](http://pythontutor.com).
+There you can navigate through the program step by step with the "Prev" or "Next" buttons, or drag
+the slider left or right. You can also see the values of variables on the right.
+"""
