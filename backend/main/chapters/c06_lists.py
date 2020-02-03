@@ -1,6 +1,9 @@
+import ast
 import random
 from textwrap import dedent
 from typing import List
+
+from astcheck import is_ast_like
 
 from main.exercises import generate_list, generate_string
 from main.text import Page, VerbatimStep, ExerciseStep, Step, MessageStep
@@ -741,6 +744,153 @@ __program_indented__
 
     final_text = """
     The word 'attribute' in the error message refers to the use of `.` - the error actually comes just from `word.append`, without even a call.
+        """
+
+
+class FunctionsAndMethodsForLists(Page):
+
+    # TODO this is quite the information dump and I'd like it to be a little more interactive,
+    # but users don't need to know these functions off by heart.
+
+    class sum_list(Step):
+        """
+Let's review how to work with lists. Suppose we have a list `nums = [1, 2, 3]`. You can use:
+
+- **`append`**: Add an element to the end of the list. `nums.append(4)` changes the list to `[1, 2, 3, 4]`.
+- **`len`**: Returns the number of elements. `len(nums)` is `3`.
+- **`range`**: `range(n)` is an object similar to the list of numbers from 0 to `n - 1`. In particular, `range(len(nums))` is like `[0, 1, 2]`.
+- **`subscripting`**: Get a value at an index. `nums[0]` is 1, `nums[1]` is 2, `nums[2]` is 3.
+- **`+`**: Concatenates lists. `nums + [4, 5]` is `[1, 2, 3, 4, 5]`.
+
+Here's some new things. Try them out in the shell.
+
+- **`subscript assignment`**: Set a value at an index. `nums[0] = 9` changes the list to `[9, 2, 3]`.
+- **`join`**: Add a list of strings with a separator in between. This is a method of strings (the separator) which takes an iterable of strings as an argument. `'--'.join(['apples', 'oranges', 'bananas'])` returns `'apples--oranges--bananas'`. You can also use an empty string if you don't want a separator, e.g. `''.join(['apples', 'oranges', 'bananas'])` returns `'applesorangesbananas'`. 
+- **`sum`**: Add a list of numbers. `sum(nums)` is 6.
+- **`in`**: A comparison operator that checks if a value is in a list. `2 in nums` is `True`, but `4 in nums` is `False`.
+- **`index`**: Returns the first index of a value in a list. `[7, 8, 9, 8].index(8)` is 1. Raises an error if the value isn't there.
+
+You may recognise some of these from your exercises. I assure you that those exercises were not pointless, as you've now learned valuable fundamental skills. For example, you can use `in` to check if a list contains 5, but there's no similarly easy way to check for a number bigger than 5.
+
+It's useful to know these functions, but it's not easy to learn them all, and there's many more. A more important skill is being able to look things up. For example, here are some typical ways you might Google the above functions if you forgot their names:
+
+- `append`
+    - python add element to list
+    - python add item at end of list
+- `len`
+    - python size of list
+    - python number of elements in list
+    - python how many characters in string
+- `join`
+    - python combine list of strings with separator
+    - python add together list of strings with string in between
+- `sum`
+    - python add list of numbers
+    - python total of numbers
+- `in`
+    - python check if list contains value
+    - python test if list has element
+- `index`
+    - python get position of element
+    - python get index of value
+
+Let's practice this skill now. Find a function/method that returns the value in a list which is bigger than any other value. For example, given the list `[21, 55, 4, 91, 62, 49]`, it will return `91`. You should write the answer in the shell as a single small expression. For example, if you were looking for the function `sum`, you could write `sum([21, 55, 4, 91, 62, 49])`. Don't solve this manually with a loop.
+    """
+
+        hints = """
+Use the words 'python' and 'list' in your search query.
+In one word, what's special about `91` in the list `[21, 55, 4, 91, 62, 49]`?
+'biggest' or 'largest'
+'python biggest value in list'
+"""
+
+        program = "max([21, 55, 4, 91, 62, 49])"
+
+        def check(self):
+            return is_ast_like(
+                self.expr,
+                ast.Call(func=ast.Name(id='max')),
+            )
+
+    class list_insert(Step):
+        """
+Good find! Let's do one more. If you have a list:
+
+    nums = [1, 2, 3, 4, 5]
+
+You could write `nums.append(9)` and `nums` would change to:
+
+    [1, 2, 3, 4, 5, 9]
+
+But suppose you don't want the 9 to be at the end, you want it to go between the second and third elements:
+
+    [1, 2, 9, 3, 4, 5]
+
+Call the right function/method in the shell to do that. 
+        """
+
+        hints = """
+Use the words 'python' and 'list' in your search query.
+Instead of putting the value at the beginning or end, we want to put it ____________?
+'in the middle' or 'at an index' or 'at a particular position'
+'python add value at index'
+"""
+
+        program = "nums.insert(2, 9)"
+
+        def check(self):
+            return is_ast_like(
+                self.expr,
+                ast.Call(func=ast.Attribute(attr='insert'),
+                         args=[ast.Constant(value=2),
+                               ast.Constant(value=9)]),
+            )
+
+    class dir_list(VerbatimStep):
+        """
+Perfect!
+
+It can also be useful to Google things like "python list tutorial", e.g. if:
+
+- Googling a specific method has failed so you want to find it manually.
+- You're still confused about lists after this course.
+- It's been a while since you learned about lists and you need a reminder.
+- You're struggling to solve a problem with lists and you need to go back to basics and strengthen your foundations.
+
+There are also ways to find information without any googling. Try `__program__` in the shell.  
+        """
+
+        program = "dir([])"
+
+    final_text = """
+`dir()` returns a list of the argument's attributes, which are mostly methods. Many will start with `__` which you can ignore for now - scroll to the end of the list and you'll see some familiar methods.
+
+Here are a few more useful functions/methods. Suppose `nums = [28, 99, 10, 81, 59, 64]`
+
+- **`sorted`**: Takes an iterable and returns a list of the elements in order. `sorted(nums)` returns `[10, 28, 59, 64, 81, 99]`.
+- **`pop`**: Removes and returns an element at a given index. `nums.pop(3)` removes `nums[3]` (`81`) from the list and returns it. Without an argument, i.e. just `nums.pop()`, it will remove and return the last element.
+- **`remove`**: Removes the first occurrence of the given element. `nums.remove(10)` will leave `nums` as `[28, 99, 81, 59, 64]`. Raises an error if the value doesn't exist. Equivalent to `nums.pop(nums.index(10))`.
+- **`count`**: Returns the number of times the argument appears in the list. `[1, 2, 3, 2, 7, 2, 5].count(2)` is 3.
+
+You've already seen that `len` and subscripting work with strings, a bit as if strings are lists of characters. Strings also support some of the new methods we've learned, not just for characters but for any substring. For example:
+
+- `'the' in 'feed the dog and the cat'` is `True`
+- `'feed the dog and the cat'.count('the')` is 2
+- `'feed the dog and the cat'.index('the')` is 5
+
+Note that in most cases, methods which modify a list in place (`append`, `insert`, `remove`) merely return `None`, while the remaining functions/methods return a new useful value without changing the original argument. The only exception is the `pop` method.
+
+Modifying a value directly is called *mutation* - types of values which can be mutated are *mutable*, while those that can't are *immutable*. Strings are immutable - they don't have any methods like `append` or even subscript assignment. You simply can't change a string - you can only create new strings and use those instead. That means that this is a useless statement on its own:
+
+    word.upper()
+
+The string referred to by `word` isn't modified, instead `word.upper()` returned a new string which was immediately discarded. If you want to change the value that `word` refers to, you have to assign a new value to the variable:
+
+    word = word.upper()
+
+Or you can use `word.upper()` immediately in a larger expression, e.g.
+
+    if word.lower() == 'yes':
         """
 
 
