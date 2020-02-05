@@ -212,10 +212,6 @@ class Step(ABC):
     def stmt(self):
         return self.tree.body[0]
 
-    @property
-    def expr(self):
-        return self.stmt.value
-
     def tree_matches(self, template):
         if is_ast_like(self.tree, ast.parse(template)):
             return True

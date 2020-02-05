@@ -3,10 +3,8 @@ import random
 from textwrap import dedent
 from typing import List
 
-from astcheck import is_ast_like
-
 from main.exercises import generate_list, generate_string
-from main.text import Page, VerbatimStep, ExerciseStep, Step, MessageStep
+from main.text import Page, VerbatimStep, ExerciseStep, Step, MessageStep, search_ast
 from main.utils import returns_stdout
 
 
@@ -807,8 +805,8 @@ In one word, what's special about `91` in the list `[21, 55, 4, 91, 62, 49]`?
         program = "max([21, 55, 4, 91, 62, 49])"
 
         def check(self):
-            return is_ast_like(
-                self.expr,
+            return search_ast(
+                self.stmt,
                 ast.Call(func=ast.Name(id='max')),
             )
 
@@ -839,8 +837,8 @@ Instead of putting the value at the beginning or end, we want to put it ________
         program = "nums.insert(2, 9)"
 
         def check(self):
-            return is_ast_like(
-                self.expr,
+            return search_ast(
+                self.stmt,
                 ast.Call(func=ast.Attribute(attr='insert'),
                          args=[ast.Constant(value=2),
                                ast.Constant(value=9)]),
