@@ -3663,7 +3663,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "<built-in method upper of str object at 0x1059ae5f0>"
+                    "text": "<built-in method upper of str object at 0xABC>"
                 },
                 {
                     "color": "white",

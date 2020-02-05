@@ -1,7 +1,7 @@
 import json
 import os
 from pathlib import Path
-
+import re
 from django.test import TestCase, Client
 
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
@@ -10,6 +10,7 @@ from main import worker
 
 client = Client()
 worker.TESTING = True
+
 
 def api(method, **kwargs):
     response = client.post(f"/api/{method}/", data=kwargs, content_type="application/json")
@@ -44,6 +45,8 @@ class StepsTestCase(TestCase):
                         code_source = "shell"
                     response = api("run_code", code=program, source=code_source)
                     state = response["state"]
+                    for line in response["result"]:
+                        line["text"] = normalise_output(line["text"])
                     transcript.append(dict(
                         program=program.splitlines(),
                         page=page.title,
@@ -64,3 +67,8 @@ class StepsTestCase(TestCase):
             path.write_text(dump)
         else:
             self.assertEqual(transcript, json.loads(path.read_text()))
+
+
+def normalise_output(s):
+    s = re.sub(r" at 0x\w+>", " at 0xABC>", s)
+    return s
