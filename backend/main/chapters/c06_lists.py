@@ -1005,3 +1005,60 @@ This will make the program behave like the first version again.
 
 If you come across this kind of problem and you're still having trouble understanding this stuff, read the essay [Facts and myths about Python names and values](https://nedbatchelder.com/text/names.html). 
 """
+
+
+class ModifyingWhileIterating(Page):
+    final_text = """
+Consider this program. It loops through a numbers and removes the ones smaller than 10. Or at least, it tries to. I recommend running it with Python Tutor.
+
+    numbers = [10, 7, 8, 3, 12, 15]
+    for i in range(len(numbers)):
+        number = numbers[i]
+        if number <= 10:
+            numbers.pop(i)
+    print(numbers)
+
+(remember that `numbers.pop(i)` removes the element from `numbers` at index `i`)
+
+As it runs, it clearly skips even looking at 7 or 3 and doesn't remove them, and at the end it fails when it tries to access an index that's too high. Can you see why this happens?
+
+The index variable `i` runs through the usual values 0, 1, 2, ... as it's supposed to, but as the list changes those are no longer the positions we want. For example in the first iteration `i` is 0 and `number` is 10, which gets removed. This shifts the rest of the numbers left one position, so now 7 is in position 0. But then in the next iteration `i` is 1, and `numbers[i]` is 8. 7 got skipped. 
+
+We could try writing the program to use `remove` instead of `pop` so we don't have to use indices. It even looks nicer this way.
+
+    numbers = [10, 7, 8, 3, 12, 15]
+    for number in numbers:
+        if number <= 10:
+            numbers.remove(number)
+    print(numbers)
+
+But it turns out this does the same thing, for the same reason. Iterating over a list still goes through the indices under the hood.
+
+The lesson here is to ***never modify something while you iterate over it***. Keep mutation and looping separate.
+
+The good news is that there are many ways to solve this. You can instead just loop over a copy, as in:
+
+    for number in numbers.copy():
+
+Now the list being modified and the list being itererated over are separate objects, even if they start out with equal contents.
+
+Similarly, you could loop over the original and modify a copy:
+
+    numbers = [10, 7, 8, 3, 12, 15]
+    big_numbers = numbers.copy()
+
+    for number in numbers:
+        if number <= 10:
+            big_numbers.remove(number)
+    print(big_numbers)
+
+Or you could build up a new list from scratch. In this case, we've already done a similar thing in an exercise:
+
+    numbers = [10, 7, 8, 3, 12, 15]
+    big_numbers = []
+
+    for number in numbers:
+        if number > 10:
+            big_numbers.append(number)
+    print(big_numbers)
+"""
