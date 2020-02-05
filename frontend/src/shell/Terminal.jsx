@@ -9,6 +9,7 @@ import scrollHistory from './handlers/scrollHistory'
 // Definitions
 import sourceStyles from './defs/styles/Terminal'
 import types from './defs/types/Terminal'
+import {bookState} from "../book/store";
 
 export default class Terminal extends Component {
   constructor(props) {
@@ -224,6 +225,15 @@ export default class Terminal extends Component {
               {this.props.promptLabel || '$'}
             </span>
             {/* Input */}
+
+            {bookState.processing &&
+            <div className="lds-ellipsis">
+              <div/>
+              <div/>
+              <div/>
+              <div/>
+            </div>}
+
             <input
               ref={this.terminalInput}
               name={'react-console-emulator__input'}
@@ -232,10 +242,7 @@ export default class Terminal extends Component {
               onKeyDown={this.handleInput}
               type={'text'}
               autoComplete={'off'}
-              disabled={
-                this.props.disableOnProcess &&
-                /* istanbul ignore next: Covered by interactivity tests */ this.state.processing
-              }
+              disabled={bookState.processing}
             />
           </div>
         </div>

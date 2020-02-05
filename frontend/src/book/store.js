@@ -18,6 +18,7 @@ const initialState = {
       step_texts: [],
     }
   ],
+  processing: false,
   numHints: 0,
   editorContent: "",
   messages: [],
@@ -32,7 +33,7 @@ const initialState = {
 };
 
 
-const {reducer, makeAction, setState, localState} = redact('rpc', initialState, {dispatched: true});
+const {reducer, makeAction, setState, localState} = redact('book', initialState, {dispatched: true});
 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState};
 
@@ -80,6 +81,7 @@ export const ranCode = makeAction(
           "numHints messages solution " +
           "requestingSolution").split(" ")]),
         server: value.state,
+        processing: false,
       };
     }
     if (value.message && state.pastMessages.indexOf(value.message) === -1) {

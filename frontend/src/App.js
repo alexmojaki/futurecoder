@@ -30,11 +30,31 @@ class AppComponent extends React.Component {
     this.terminal = React.createRef()
   }
 
-  ranCode(data) {
-    ranCode(data);
-    const terminal = this.terminal.current;
-    data.result.forEach((line) => terminal.pushToStdout(line))
-    animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
+  runCode({code, source}) {
+    const shell = source === "shell";
+    if (!shell && !code) {
+      code = bookState.editorContent;
+    }
+    if (!code.trim()) {
+      return;
+    }
+    bookSetState("processing", true);
+    rpc(
+      "run_code",
+      {code, source},
+      (data) => {
+        if (!shell) {
+          this.terminal.current.clearStdout();
+        }
+        bookSetState("processing", false);
+
+        ranCode(data);
+        const terminal = this.terminal.current;
+        data.result.forEach((line) => terminal.pushToStdout(line))
+        animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
+        terminal.focusTerminal();
+      },
+    );
   }
 
   render() {
@@ -98,14 +118,7 @@ class AppComponent extends React.Component {
           <button
             className="btn btn-primary"
             onClick={() => {
-              rpc(
-                "run_code",
-                {code: bookState.editorContent, source: "editor"},
-                (data) => {
-                  this.terminal.current.clearStdout();
-                  return this.ranCode(data);
-                },
-              );
+              this.runCode({source: "editor"});
             }}
           >
             <FontAwesomeIcon icon={faPlay}/> Run
@@ -117,14 +130,7 @@ class AppComponent extends React.Component {
           <button
             className="btn btn-success"
             onClick={() => {
-              rpc(
-                "run_code",
-                {code: bookState.editorContent, source: "snoop"},
-                (data) => {
-                  this.terminal.current.clearStdout();
-                  return this.ranCode(data);
-                },
-              );
+              this.runCode({source: "snoop"})
             }}
           >
             <FontAwesomeIcon icon={faBug}/> Snoop
@@ -172,10 +178,7 @@ class AppComponent extends React.Component {
           <div className="terminal">
             <Terminal
               promptLabel=">>> "
-              onCommand={(cmd) => rpc(
-                "run_code", 
-                {code: cmd, source: "shell"}, 
-                (data) => this.ranCode(data))}
+              onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
               ref={this.terminal}
             />
           </div>
