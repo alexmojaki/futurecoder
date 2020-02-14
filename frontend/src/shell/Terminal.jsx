@@ -51,9 +51,11 @@ export default class Terminal extends Component {
     const rootNode = this.terminalRoot.current;
 
     // This may look ridiculous, but it is necessary to decouple execution for just a millisecond in order to scroll all the way
-    setTimeout(() => {
-      rootNode.scrollTop = rootNode.scrollHeight
-    }, 1)
+    [1, 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900].forEach(timeout =>
+      setTimeout(() => {
+        rootNode.scrollTop = rootNode.scrollHeight
+      }, timeout)
+    )
   }
 
   validateCommands() {
@@ -125,7 +127,7 @@ export default class Terminal extends Component {
 
       if (!this.props.noAutomaticStdout) {
 
-        const message = this.props.promptLabel + rawInput;
+        const message = rawInput + '\n';
         if (!this.props.noHistory) this.pushToStdout(message, rawInput);
         else this.pushToStdout(message)
       }
@@ -183,6 +185,7 @@ export default class Terminal extends Component {
     if (this.props.welcomeMessage) this.showWelcomeMessage();
     /* istanbul ignore next: Covered by interactivity tests */
     if (this.props.autoFocus) this.focusTerminal()
+    this.pushToStdout(">>> ");
   }
 
   render() {
@@ -216,16 +219,7 @@ export default class Terminal extends Component {
             className={this.props.inputAreaClassName}
             style={styles.inputArea}
           >
-            {/* Prompt label */}
-            <span
-              name={'react-console-emulator__promptLabel'}
-              className={this.props.promptLabelClassName}
-              style={styles.promptLabel}
-            >
-              {this.props.promptLabel || '$'}
-            </span>
             {/* Input */}
-
             {bookState.processing &&
             <div className="lds-ellipsis">
               <div/>

@@ -115,8 +115,12 @@ class API:
         if result["passed"]:
             self.move_step(1)
 
+        output_parts = result["output_parts"]
+        if not result["awaiting_input"]:
+            output_parts.append(dict(text=">>> ", color="white"))
+
         return dict(
-            result=result["lines"],
+            result=output_parts,
             message=markdown(result["message"]),
             state=self.current_state(),
         )

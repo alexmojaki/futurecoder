@@ -26,30 +26,40 @@ log = logging.getLogger(__name__)
 
 TESTING = False
 
-output_lines = []
-
 snoop.install(out=sys.__stderr__, columns=['thread'])
 
 
 class SysStream:
-    def __init__(self, color):
+    def __init__(self, output, color):
+        self.output = output
         self.color = color
-        self.buf = ''
 
     def __getattr__(self, item):
         return getattr(sys.__stdout__, item)
 
     def write(self, s):
-        self.buf += s
-        lines = self.buf.split('\n')
-        output_lines.extend(
-            dict(text=line or ' ', color=self.color)
-            for line in lines[:-1]
+        # TODO limit output length
+        self.output.parts.append(
+            dict(text=s, color=self.color)
         )
-        self.buf = lines[-1]
 
-    # TODO return last bit of output without \n
 
+class OutputBuffer:
+    def __init__(self):
+        self.parts = []
+        self.stdout = SysStream(self, "white")
+        self.stderr = SysStream(self, "red")
+
+    def pop(self):
+        parts = self.parts.copy()
+        self.parts.clear()
+        return parts
+
+    def string(self):
+        return "".join(part["text"] for part in self.parts)
+
+
+output_buffer = OutputBuffer()
 
 snoop.tracer.internal_directories += (os.path.dirname((lambda: 0).__code__.co_filename),)
 
@@ -175,6 +185,31 @@ def run_code_in_thread(*args):
     Thread(target=run_code, args=args).start()
 
 
+def put_result(
+        q, *,
+        passed=False,
+        message='',
+        awaiting_input=False,
+        output=None,
+        output_parts=None,
+):
+    if output is None:
+        output = output_buffer.string()
+
+    if output_parts is None:
+        output_parts = output_buffer.pop()
+
+    q.put(dict(
+        passed=passed,
+        message=message,
+        awaiting_input=awaiting_input,
+        output=output,
+        output_parts=output_parts,
+    ))
+
+    return output
+
+
 def run_code(entry, input_queue, result_queue):
     # Open the queue files before setting the file limit
     result_queue.put(None)
@@ -183,14 +218,10 @@ def run_code(entry, input_queue, result_queue):
     set_limits()
 
     def readline():
-        result_queue.put(dict(
-            lines=output_lines.copy(),
-            passed=False,
-            message='',
-            output='',
+        put_result(
+            result_queue,
             awaiting_input=True,
-        ))
-        output_lines.clear()
+        )
         return input_queue.get()
 
     sys.stdin.readline = readline
@@ -198,18 +229,16 @@ def run_code(entry, input_queue, result_queue):
     orig_stdout = sys.stdout
     orig_stderr = sys.stderr
     try:
-        sys.stdout = SysStream("white")
-        sys.stderr = SysStream("red")
+        sys.stdout = output_buffer.stdout
+        sys.stderr = output_buffer.stderr
         runner(entry['source'], entry['input'])
     finally:
         sys.stdout = orig_stdout
         sys.stderr = orig_stderr
 
-    # TODO include all lines from multiple steps
-    output = "\n".join(line["text"] for line in output_lines)
-
     message = ""
     passed = False
+    output = output_buffer.string()
 
     if entry['step_name'] != "final_text":
         page = pages[entry['page_slug']]
@@ -220,14 +249,12 @@ def run_code(entry, input_queue, result_queue):
         else:
             passed = step_result
 
-    result_queue.put(dict(
-        lines=output_lines.copy(),
+    put_result(
+        result_queue,
         passed=passed,
         message=message,
         output=output,
-        awaiting_input=False,
-    ))
-    output_lines.clear()
+    )
 
 
 class ManagedPool:
@@ -289,14 +316,14 @@ def consumer(connection: Connection):
                 if pool.died:
                     pool.restart()
                     result = dict(
-                        lines=[
-                            dict(color='red', text='The process died.'),
-                            dict(color='red', text='Your code probably took too long.'),
-                            dict(color='red', text='Maybe you have an infinite loop?'),
+                        output_parts=[
+                            dict(color='red', text='The process died.\n'),
+                            dict(color='red', text='Your code probably took too long.\n'),
+                            dict(color='red', text='Maybe you have an infinite loop?\n'),
                         ],
                         passed=False,
                         message='',
-                        output='',
+                        output='The process died.',
                         awaiting_input=False,
                     )
         awaiting_input = result["awaiting_input"]

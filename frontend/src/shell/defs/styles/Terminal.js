@@ -28,11 +28,11 @@ export default {
   },
   input: {
     border: '0',
-    padding: '0 0 0 7px',
+    padding: '0',
     margin: '0',
+    marginBottom: '2em',
     flexGrow: '100',
     width: '100%',
-    height: '22px',
     background: 'transparent',
     fontSize: '15px',
     color: '#FFFFFF',

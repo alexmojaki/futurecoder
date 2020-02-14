@@ -177,7 +177,6 @@ class AppComponent extends React.Component {
           </div>
           <div className="terminal">
             <Terminal
-              promptLabel=">>> "
               onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
               ref={this.terminal}
             />

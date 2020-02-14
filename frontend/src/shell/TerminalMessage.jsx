@@ -19,7 +19,7 @@ export default class TerminalMessage extends Component {
       message: sourceStyles
     }
 
-    return <p
+    return <span
       style={{...styles.message, color}}
       dangerouslySetInnerHTML={{__html: ansi_up.ansi_to_html(content)}}
     />
