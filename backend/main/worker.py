@@ -304,7 +304,7 @@ def consumer(connection: Connection):
             else:
                 run()
         else:
-            if not TESTING:
+            if not TESTING and awaiting_input:
                 pool.restart()
 
             run()
