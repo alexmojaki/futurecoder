@@ -18,7 +18,7 @@
     "react-dom": "^16.11.0",
     "react-redux": "^7.1.3",
     "react-scripts": "3.2.0",
-    "react-scroll": "^1.7.14",
+    "react-scroll": "^1.7.16",
     "reactjs-popup": "^1.5.0",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",

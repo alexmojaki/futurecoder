@@ -1,6 +1,6 @@
 import {ipush, iremove, iset, redact} from "../frontendlib";
 import {rpc} from "../rpc";
-import {animateScroll} from "react-scroll";
+import {scroller, animateScroll} from "react-scroll";
 import _ from "lodash";
 
 const initialState = {
@@ -74,7 +74,14 @@ export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
     if (state.server.step_index < value.state.step_index) {
-      animateScroll.scrollToBottom({duration: 1000, delay: 500});
+      setTimeout(() =>
+          scroller.scrollTo(`step-text-${value.state.step_index}`, {
+            duration: 1000,
+            smooth: true,
+          }),
+        500,
+      )
+
       state = {
         ...state,
         ..._.pick(initialState, [(

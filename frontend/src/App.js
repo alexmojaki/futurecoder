@@ -83,7 +83,7 @@ class AppComponent extends React.Component {
       <div className="book-text markdown-body">
         <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
         {page.step_texts.slice(0, step_index + 1).map((part, index) =>
-          <div key={index}>
+          <div key={index} id={`step-text-${index}`}>
             <div dangerouslySetInnerHTML={{__html: part}}/>
             <hr/>
           </div>
