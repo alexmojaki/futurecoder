@@ -10,6 +10,14 @@
                 {
                     "color": "white",
                     "text": "'literally anything'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -34,6 +42,14 @@
                 {
                     "color": "white",
                     "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -57,19 +73,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "  File \"<console>\", line 1"
+                    "text": "  File \"<console>\", line 1\n    3 x 4\n      ^\nSyntaxError: invalid syntax\n"
                 },
                 {
-                    "color": "red",
-                    "text": "    3 x 4"
-                },
-                {
-                    "color": "red",
-                    "text": "      ^"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: invalid syntax"
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -94,6 +102,14 @@
                 {
                     "color": "white",
                     "text": "-1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -118,6 +134,14 @@
                 {
                     "color": "white",
                     "text": "'hello'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -142,6 +166,14 @@
                 {
                     "color": "white",
                     "text": "'helloworld'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -169,6 +201,14 @@
                 {
                     "color": "white",
                     "text": "'hello world'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -196,6 +236,14 @@
                 {
                     "color": "white",
                     "text": "'hello world'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -216,7 +264,12 @@
         ],
         "response": {
             "message": "",
-            "result": [],
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ],
             "state": {
                 "hints": [],
                 "page_index": 4,
@@ -239,6 +292,14 @@
                 {
                     "color": "white",
                     "text": "'Hello'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -263,6 +324,14 @@
                 {
                     "color": "white",
                     "text": "'word'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -286,15 +355,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):"
+                    "text": "Traceback (most recent call last):\n  File \"<console>\", line 1, in <module>\nNameError: name 'sunshine' is not defined\n"
                 },
                 {
-                    "color": "red",
-                    "text": "  File \"<console>\", line 1, in <module>"
-                },
-                {
-                    "color": "red",
-                    "text": "NameError: name 'sunshine' is not defined"
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -315,7 +380,12 @@
         ],
         "response": {
             "message": "<p>Put <code>name</code> before the <code>=</code> to create a variable called <code>name</code>.</p>",
-            "result": [],
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ],
             "state": {
                 "hints": [],
                 "page_index": 5,
@@ -334,7 +404,12 @@
         ],
         "response": {
             "message": "<p>For this exercise, choose a non-empty string</p>",
-            "result": [],
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ],
             "state": {
                 "hints": [],
                 "page_index": 5,
@@ -353,7 +428,12 @@
         ],
         "response": {
             "message": "<p>You've got the <code>name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
-            "result": [],
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ],
             "state": {
                 "hints": [],
                 "page_index": 5,
@@ -372,7 +452,12 @@
         ],
         "response": {
             "message": "<p>For this exercise, choose a name that doesn't start with a space.</p>",
-            "result": [],
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ],
             "state": {
                 "hints": [],
                 "page_index": 5,
@@ -391,7 +476,12 @@
         ],
         "response": {
             "message": "",
-            "result": [],
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ],
             "state": {
                 "hints": [],
                 "page_index": 5,
@@ -414,6 +504,14 @@
                 {
                     "color": "white",
                     "text": "'Hello Alex'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -438,6 +536,14 @@
                 {
                     "color": "white",
                     "text": "'HelloAlex'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -466,6 +572,14 @@
                 {
                     "color": "white",
                     "text": "'Hello Alex'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -486,7 +600,12 @@
         ],
         "response": {
             "message": "",
-            "result": [],
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ],
             "state": {
                 "hints": [],
                 "page_index": 5,
@@ -509,6 +628,14 @@
                 {
                     "color": "white",
                     "text": "'Goodbye Alex'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -533,6 +660,14 @@
                 {
                     "color": "white",
                     "text": "Goodbye Alex"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -564,7 +699,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "Goodbye World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -592,6 +739,14 @@
                 {
                     "color": "white",
                     "text": "Hello World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -624,7 +779,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "Hello World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -653,7 +820,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "o"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -661,11 +836,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "l"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -690,23 +881,15 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 2"
+                    "text": "  File \"my_program.py\", line 2\n    print(character)\n    ^\nIndentationError: expected an indented block\n"
                 },
                 {
                     "color": "red",
-                    "text": "    print(character)"
+                    "text": "\n"
                 },
                 {
-                    "color": "red",
-                    "text": "    ^"
-                },
-                {
-                    "color": "red",
-                    "text": "IndentationError: expected an indented block"
-                },
-                {
-                    "color": "red",
-                    "text": " "
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -738,7 +921,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -746,7 +937,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -754,7 +953,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -762,7 +969,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -770,7 +985,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -802,7 +1029,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "o"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -810,7 +1045,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "l"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -818,7 +1061,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -844,23 +1099,15 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 3"
+                    "text": "  File \"my_program.py\", line 3\n    print('---')\n               ^\nIndentationError: unindent does not match any outer indentation level\n"
                 },
                 {
                     "color": "red",
-                    "text": "    print('---')"
+                    "text": "\n"
                 },
                 {
-                    "color": "red",
-                    "text": "               ^"
-                },
-                {
-                    "color": "red",
-                    "text": "IndentationError: unindent does not match any outer indentation level"
-                },
-                {
-                    "color": "red",
-                    "text": " "
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -890,7 +1137,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---o"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -898,11 +1153,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---l"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "---d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -936,7 +1207,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "World"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -944,11 +1215,35 @@
                 },
                 {
                     "color": "white",
-                    "text": "World"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
                     "text": "World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -979,7 +1274,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "Hello!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1011,7 +1318,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "Wo"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1019,11 +1334,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "Worl"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1051,7 +1382,11 @@
             "result": [
                 {
                     "color": "white",
-                    "text": " "
+                    "text": ""
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1059,7 +1394,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "Wo"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1067,7 +1410,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "Worl"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1099,7 +1454,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "W o "
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1107,11 +1470,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "W o r l "
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "W o r l d "
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1149,7 +1528,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "oW"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1157,11 +1544,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "lroW"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "dlroW"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1199,7 +1602,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "-----"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1242,11 +1657,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "|World|"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "+-----+"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1293,11 +1724,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "| World |"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "+-------+"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1340,11 +1787,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "| World |"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "+-------+"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1386,7 +1849,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "W     W"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1394,7 +1865,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "r     r"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1402,11 +1881,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "d     d"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "+World+"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1448,7 +1943,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "W     W"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1456,7 +1959,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "r     r"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1464,11 +1975,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "d     d"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "+World+"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1499,7 +2026,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1528,6 +2067,14 @@
                 {
                     "color": "white",
                     "text": "This gets printed"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1556,6 +2103,14 @@
                 {
                     "color": "white",
                     "text": "Hello World!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1584,6 +2139,14 @@
                 {
                     "color": "white",
                     "text": "Hello World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1618,6 +2181,14 @@
                 {
                     "color": "white",
                     "text": "Hello!?"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1652,6 +2223,14 @@
                 {
                     "color": "white",
                     "text": "H!e!l!l!o! !W!o!r!l!d!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1685,6 +2264,14 @@
                 {
                     "color": "white",
                     "text": "ello World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -1717,279 +2304,215 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": ""
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n"
                 },
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:"
-                },
-                {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\n"
                 },
                 {
                     "color": "white",
                     "text": "ello World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ""
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2028,6 +2551,14 @@
                 {
                     "color": "white",
                     "text": "H"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2056,6 +2587,14 @@
                 {
                     "color": "white",
                     "text": "Yes"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2084,6 +2623,14 @@
                 {
                     "color": "white",
                     "text": "No"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2114,6 +2661,14 @@
                 {
                     "color": "white",
                     "text": "HELLO WORLD"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2144,6 +2699,14 @@
                 {
                     "color": "white",
                     "text": "hello world"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2174,11 +2737,15 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "NameError: name 'char' is not defined"
+                    "text": "NameError: name 'char' is not defined\n"
                 },
                 {
                     "color": "red",
-                    "text": " "
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2211,6 +2778,14 @@
                 {
                     "color": "white",
                     "text": "Hello there!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2257,6 +2832,14 @@
                 {
                     "color": "white",
                     "text": "Hello there"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2299,6 +2882,14 @@
                 {
                     "color": "white",
                     "text": "Hello there"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2344,6 +2935,14 @@
                 {
                     "color": "white",
                     "text": "OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2386,6 +2985,14 @@
                 {
                     "color": "white",
                     "text": "OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2415,11 +3022,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "False"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2443,11 +3066,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "  File \"<console>\", line 1"
+                    "text": "  File \"<console>\", line 1\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n"
                 },
                 {
-                    "color": "red",
-                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?"
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2479,6 +3102,14 @@
                 {
                     "color": "white",
                     "text": "ke$ha"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2516,6 +3147,14 @@
                 {
                     "color": "white",
                     "text": "k3$h@"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2553,6 +3192,14 @@
                 {
                     "color": "white",
                     "text": "AGAAGGGAG"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2595,6 +3242,14 @@
                 {
                     "color": "white",
                     "text": "TCATCGCAGGAATCAATGTCCTACCGAATA"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2632,6 +3287,14 @@
                 {
                     "color": "white",
                     "text": "TCATCGCAG"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2656,6 +3319,14 @@
                 {
                     "color": "white",
                     "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2685,6 +3356,14 @@
                 {
                     "color": "white",
                     "text": "Th  ky on my kyboard is brokn"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2709,6 +3388,14 @@
                 {
                     "color": "white",
                     "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2733,6 +3420,14 @@
                 {
                     "color": "white",
                     "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2770,6 +3465,14 @@
                 {
                     "color": "white",
                     "text": "B"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2810,6 +3513,14 @@
                 {
                     "color": "white",
                     "text": "Alice"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2840,7 +3551,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "is"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -2848,7 +3567,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "list"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2875,6 +3606,14 @@
                 {
                     "color": "white",
                     "text": "['Hello', 1, 4]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2905,6 +3644,14 @@
                 {
                     "color": "white",
                     "text": "23"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2940,6 +3687,14 @@
                 {
                     "color": "white",
                     "text": "Thisisalist"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -2975,6 +3730,14 @@
                 {
                     "color": "white",
                     "text": "[6, 2, 8, 2, 10, 18, 4, 12, 10]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3009,6 +3772,14 @@
                 {
                     "color": "white",
                     "text": "[9, 6]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3040,6 +3811,14 @@
                 {
                     "color": "white",
                     "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3072,7 +3851,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "is"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3080,7 +3867,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "list"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3104,15 +3903,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):"
+                    "text": "Traceback (most recent call last):\n  File \"<console>\", line 1, in <module>\nIndexError: list index out of range\n"
                 },
                 {
-                    "color": "red",
-                    "text": "  File \"<console>\", line 1, in <module>"
-                },
-                {
-                    "color": "red",
-                    "text": "IndexError: list index out of range"
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3141,7 +3936,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3149,7 +3952,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3157,7 +3968,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3165,7 +3984,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "7"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3173,7 +4000,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "9"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3205,7 +4044,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "This"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3213,7 +4060,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "is"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3221,7 +4076,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "a"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3229,7 +4092,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "list"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3271,7 +4146,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "4"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3312,6 +4199,14 @@
                 {
                     "color": "white",
                     "text": "4"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3351,6 +4246,14 @@
                 {
                     "color": "white",
                     "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3394,7 +4297,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "e o"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3402,11 +4313,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "l l"
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "o d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3466,7 +4393,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "o o"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3474,7 +4409,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "d l"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3482,11 +4425,27 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "y  "
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "e  "
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3515,7 +4474,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "<built-in function print>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3540,6 +4511,14 @@
                 {
                     "color": "white",
                     "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3568,12 +4547,20 @@
                     "text": "False"
                 },
                 {
-                    "color": "red",
-                    "text": "TypeError: 'str' object is not callable"
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "red",
-                    "text": " "
+                    "text": "TypeError: 'str' object is not callable\n"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3604,7 +4591,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "None"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3632,12 +4631,20 @@
                     "text": "[1, 2, 3]"
                 },
                 {
-                    "color": "red",
-                    "text": "TypeError: object of type 'NoneType' has no len()"
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "red",
-                    "text": " "
+                    "text": "TypeError: object of type 'NoneType' has no len()\n"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3667,7 +4674,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "HELLO"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3692,11 +4711,15 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "AttributeError: 'str' object has no attribute 'append'"
+                    "text": "AttributeError: 'str' object has no attribute 'append'\n"
                 },
                 {
                     "color": "red",
-                    "text": " "
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3721,6 +4744,14 @@
                 {
                     "color": "white",
                     "text": "91"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3749,15 +4780,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):"
+                    "text": "Traceback (most recent call last):\n  File \"<console>\", line 1, in <module>\nNameError: name 'nums' is not defined\n"
                 },
                 {
-                    "color": "red",
-                    "text": "  File \"<console>\", line 1, in <module>"
-                },
-                {
-                    "color": "red",
-                    "text": "NameError: name 'nums' is not defined"
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3782,6 +4809,14 @@
                 {
                     "color": "white",
                     "text": "['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3821,7 +4856,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "[1, 2, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3829,7 +4872,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3837,7 +4888,19 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "[1, 2, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
@@ -3877,11 +4940,15 @@
                 },
                 {
                     "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
                     "text": "[1, 2, 3]"
                 },
                 {
                     "color": "white",
-                    "text": "True"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3889,11 +4956,35 @@
                 },
                 {
                     "color": "white",
-                    "text": "[1, 2, 3, 4]"
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
                     "text": "[1, 2, 3, 4]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3, 4]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
                 }
             ],
             "state": {
