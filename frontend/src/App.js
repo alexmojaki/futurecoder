@@ -53,6 +53,10 @@ class AppComponent extends React.Component {
         data.result.forEach((line) => terminal.pushToStdout(line))
         animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
         terminal.focusTerminal();
+        
+        if (data.birdseye_url) {
+          window.open(data.birdseye_url);
+        }
       },
     );
   }
@@ -74,6 +78,7 @@ class AppComponent extends React.Component {
       showEditor,
       showSnoop,
       showPythonTutor,
+      showBirdseye,
     } = server;
     const page = pages[showingPageIndex];
     if (showingPageIndex < server.page_index) {
@@ -156,6 +161,17 @@ class AppComponent extends React.Component {
           >
             <FontAwesomeIcon icon={faUserGraduate}/> Python Tutor
           </button>}
+
+          {showBirdseye &&
+          <button
+            className="btn btn-success"
+            onClick={() => {
+              this.runCode({source: "birdseye"})
+            }}
+          >
+            <FontAwesomeIcon icon={faBug}/> Birdseye
+          </button>}
+
         </div>
         <div className="editor-and-terminal">
           <div className={"editor " + (showEditor ? "" : "invisible")}>

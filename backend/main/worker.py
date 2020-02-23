@@ -14,6 +14,7 @@ from importlib import import_module
 from multiprocessing import Pool, Pipe
 from multiprocessing.connection import Connection
 from threading import Thread
+from birdseye import BirdsEye
 
 import snoop
 import snoop.formatting
@@ -81,9 +82,9 @@ console = InteractiveConsole()
 
 def runner(code_source, code):
     if code_source == "shell":
-        return console.push(code)
+        console.push(code)
+        return {}
 
-    use_snoop = code_source == "snoop"
     console.locals = {}
     filename = "my_program.py"
     linecache.cache[filename] = (
@@ -98,10 +99,12 @@ def runner(code_source, code):
         code_obj = compile(code, filename, "exec")
     except SyntaxError as e:
         print(format_exception_string(e), file=sys.stderr)
-        return
+        return {}
+
+    birdseye_call_id = None
 
     try:
-        if use_snoop:
+        if code_source == "snoop":
             config = snoop.Config(
                 columns=(),
                 out=sys.stdout,
@@ -116,11 +119,21 @@ def runner(code_source, code):
             tracer.target_codes.add(code_obj)
             with tracer:
                 exec(code_obj, console.locals)
+        elif code_source == "birdseye":
+            eye = BirdsEye()
+            traced_file = eye.compile(code, filename)
+            eye._trace('<module>', filename, traced_file, traced_file.code, 'module', code)
+            try:
+                exec(traced_file.code, eye._trace_methods_dict(traced_file))
+            finally:
+                birdseye_call_id = eye._last_call_id
         else:
             exec(code_obj, console.locals)
 
     except Exception as e:
         print(format_exception_string(e), file=sys.stderr)
+
+    return dict(birdseye_call_id=birdseye_call_id)
 
 
 @lru_cache
@@ -192,6 +205,7 @@ def put_result(
         awaiting_input=False,
         output=None,
         output_parts=None,
+        birdseye_call_id=None,
 ):
     if output is None:
         output = output_buffer.string()
@@ -205,6 +219,7 @@ def put_result(
         awaiting_input=awaiting_input,
         output=output,
         output_parts=output_parts,
+        birdseye_call_id=birdseye_call_id,
     ))
 
     return output
@@ -231,7 +246,7 @@ def run_code(entry, input_queue, result_queue):
     try:
         sys.stdout = output_buffer.stdout
         sys.stderr = output_buffer.stderr
-        runner(entry['source'], entry['input'])
+        runner_result = runner(entry['source'], entry['input'])
     finally:
         sys.stdout = orig_stdout
         sys.stderr = orig_stderr
@@ -254,6 +269,7 @@ def run_code(entry, input_queue, result_queue):
         passed=passed,
         message=message,
         output=output,
+        birdseye_call_id=runner_result.get("birdseye_call_id"),
     )
 
 

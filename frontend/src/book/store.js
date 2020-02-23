@@ -11,6 +11,7 @@ const initialState = {
     showEditor: false,
     showSnoop: false,
     showPythonTutor: false,
+    showBirdseye: true,
   },
   pages: [
     {

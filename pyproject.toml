@@ -15,6 +15,7 @@ astcheck = "^0.2.5"
 asttokens = "^2.0.3"
 littleutils = "^0.2.1"
 snoop = "^0.2.4"
+birdseye = "^0.8.3"
 
 [tool.poetry.dev-dependencies]
 

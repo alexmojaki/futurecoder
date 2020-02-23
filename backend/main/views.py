@@ -119,10 +119,15 @@ class API:
         if not result["awaiting_input"]:
             output_parts.append(dict(text=">>> ", color="white"))
 
+        birdseye_url = None
+        if result["birdseye_call_id"]:
+            birdseye_url = f"/birdseye/ipython_call/{result['birdseye_call_id']}"
+
         return dict(
             result=output_parts,
             message=markdown(result["message"]),
             state=self.current_state(),
+            birdseye_url=birdseye_url,
         )
 
     def load_data(self):
@@ -141,6 +146,7 @@ class API:
             showEditor=self.page.index >= WritingPrograms.index,
             showSnoop=(self.page.index, self.step_index) >= (UnderstandingProgramsWithSnoop.index, 1),
             showPythonTutor=self.page.index >= UnderstandingProgramsWithPythonTutor.index,
+            showBirdseye=True,
         )
 
     def move_step(self, delta: int):
