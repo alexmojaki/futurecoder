@@ -160,6 +160,8 @@ class AppComponent extends React.Component {
             <FontAwesomeIcon icon={faUserGraduate}/> Python Tutor
           </button>}
 
+          {" "}
+
           {showBirdseye &&
           <button
             className="btn btn-success"
