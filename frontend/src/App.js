@@ -107,16 +107,14 @@ class AppComponent extends React.Component {
           )
         }
         <div>
-          <button onClick={() => moveStep(-1)}>{"<-"}</button>
-          <button onClick={() => moveStep(+1)}>{"->"}</button>
-        </div>
-        <div>
           {showingPageIndex > 0 &&
           <button className="btn btn-primary btn-sm" onClick={() => movePage(-1)}>Previous</button>}
           {" "}
           {showingPageIndex < pages.length - 1 && step_index === page.step_texts.length - 1 &&
           <button className="btn btn-success" onClick={() => movePage(+1)}>Next</button>}
         </div>
+        <br/>
+        <StepButtons/>
       </div>
       <div className="ide">
         <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
@@ -264,6 +262,19 @@ class AppComponent extends React.Component {
     </div>
   }
 }
+
+const StepButton = ({delta, label}) =>
+  <button className="btn btn-danger btn-sm"
+          onClick={() => moveStep(delta)}>
+    {label}
+  </button>
+
+const StepButtons = () =>
+  <div style={{position: "fixed", bottom: 0}}>
+    <StepButton delta={-1} label="Reverse step"/>
+    {" "}
+    <StepButton delta={+1} label="Skip step"/>
+  </div>
 
 const Solution = ({solution}) => {
   return <div>

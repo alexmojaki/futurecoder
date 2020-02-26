@@ -150,8 +150,17 @@ class API:
         )
 
     def move_step(self, delta: int):
-        self.user.step_name = self.page.step_names[self.step_index + delta]
+        step_names = self.page.step_names
+        new_index = self.step_index + delta
+        if new_index >= len(step_names):
+            self.next_page()
+        elif new_index < 0:
+            self.user.page_slug = page_slugs_list[self.page.index - 1]
+            self.user.step_name = self.page.step_names[0]
+        else:
+            self.user.step_name = step_names[new_index]
         self.user.save()
+        return self.load_data()
 
     def next_page(self):
         self.user.page_slug = page_slugs_list[self.page.index + 1]

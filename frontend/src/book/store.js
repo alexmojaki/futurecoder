@@ -38,15 +38,16 @@ const {reducer, makeAction, setState, localState} = redact('book', initialState,
 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState};
 
-rpc("load_data", {}, (data) => {
+const loadData = (data) => {
   setState("server", data.state);
   setState("pages", data.pages);
   setState("showingPageIndex", data.state.page_index);
-});
+}
+
+rpc("load_data", {}, loadData);
 
 export const moveStep = (delta) => {
-  rpc("move_step", {delta});
-  setState("server.step_index", localState.server.step_index + delta);
+  rpc("move_step", {delta}, loadData);
 };
 
 export const movePage = (delta) => {
