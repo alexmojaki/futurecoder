@@ -5,6 +5,7 @@
             "'literally anything'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>Awesome, you're trying out your own experiments!\nThat's a great sign. Keep it up.\nJust letting you know that you do need to eventually type <code>1+2</code> for the book to move forward.</p>",
             "result": [
                 {
@@ -23,6 +24,7 @@
             "state": {
                 "hints": [],
                 "page_index": 0,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -37,6 +39,7 @@
             "1+2"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -55,6 +58,7 @@
             "state": {
                 "hints": [],
                 "page_index": 0,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -69,6 +73,7 @@
             "3 x 4"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n\n<pre><code>3 * 4\n</code></pre>",
             "result": [
                 {
@@ -83,6 +88,7 @@
             "state": {
                 "hints": [],
                 "page_index": 0,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -97,6 +103,7 @@
             "5 - 6"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -115,6 +122,7 @@
             "state": {
                 "hints": [],
                 "page_index": 0,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -129,6 +137,7 @@
             "'hello'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -147,6 +156,7 @@
             "state": {
                 "hints": [],
                 "page_index": 2,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -161,6 +171,7 @@
             "'hello' + 'world'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -182,6 +193,7 @@
                     "<p>The space character must be somewhere inside quotes.</p>"
                 ],
                 "page_index": 3,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -196,6 +208,7 @@
             "'hello world'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>You must still add two or more strings together.</p>",
             "result": [
                 {
@@ -217,6 +230,7 @@
                     "<p>The space character must be somewhere inside quotes.</p>"
                 ],
                 "page_index": 3,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -231,6 +245,7 @@
             "'hello ' + 'world'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -249,6 +264,7 @@
             "state": {
                 "hints": [],
                 "page_index": 3,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -263,6 +279,7 @@
             "word = 'Hello'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -273,6 +290,7 @@
             "state": {
                 "hints": [],
                 "page_index": 4,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -287,6 +305,7 @@
             "word"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -305,6 +324,7 @@
             "state": {
                 "hints": [],
                 "page_index": 4,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -319,6 +339,7 @@
             "'word'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -337,6 +358,7 @@
             "state": {
                 "hints": [],
                 "page_index": 4,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -351,6 +373,7 @@
             "sunshine"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -365,6 +388,7 @@
             "state": {
                 "hints": [],
                 "page_index": 4,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -379,6 +403,7 @@
             "foo = 3"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>Put <code>name</code> before the <code>=</code> to create a variable called <code>name</code>.</p>",
             "result": [
                 {
@@ -389,6 +414,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -403,6 +429,7 @@
             "name = ''"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>For this exercise, choose a non-empty string</p>",
             "result": [
                 {
@@ -413,6 +440,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -427,6 +455,7 @@
             "name = 3"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>You've got the <code>name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
             "result": [
                 {
@@ -437,6 +466,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -451,6 +481,7 @@
             "name = ' Alex'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>For this exercise, choose a name that doesn't start with a space.</p>",
             "result": [
                 {
@@ -461,6 +492,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -475,6 +507,7 @@
             "name = 'Alex'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -485,6 +518,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -499,6 +533,7 @@
             "'Hello ' + name"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -517,6 +552,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -531,6 +567,7 @@
             "word + name"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -553,6 +590,7 @@
                     "<p>You will need to have a space character inside quotes.</p>"
                 ],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -567,6 +605,7 @@
             "word + ' ' + name"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -585,6 +624,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -599,6 +639,7 @@
             "word = 'Goodbye'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -609,6 +650,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -623,6 +665,7 @@
             "word + ' ' + name"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -641,6 +684,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -655,6 +699,7 @@
             "print(word + ' ' + name)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -673,6 +718,7 @@
             "state": {
                 "hints": [],
                 "page_index": 5,
+                "showBirdseye": true,
                 "showEditor": false,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -691,6 +737,7 @@
             "print(word + ' ' + name)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -717,6 +764,7 @@
             "state": {
                 "hints": [],
                 "page_index": 6,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -734,6 +782,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -752,6 +801,7 @@
             "state": {
                 "hints": [],
                 "page_index": 7,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -771,6 +821,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -797,6 +848,7 @@
             "state": {
                 "hints": [],
                 "page_index": 7,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -812,6 +864,7 @@
             "for character in name: print(character)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -862,6 +915,7 @@
             "state": {
                 "hints": [],
                 "page_index": 8,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -877,6 +931,7 @@
             "print(character)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -895,6 +950,7 @@
             "state": {
                 "hints": [],
                 "page_index": 9,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -913,6 +969,7 @@
             "    print('---')"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1003,6 +1060,7 @@
             "state": {
                 "hints": [],
                 "page_index": 9,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1021,6 +1079,7 @@
             "print('---')"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1079,6 +1138,7 @@
             "state": {
                 "hints": [],
                 "page_index": 9,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1095,6 +1155,7 @@
             "  print('---')"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1113,6 +1174,7 @@
             "state": {
                 "hints": [],
                 "page_index": 9,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1129,6 +1191,7 @@
             "    print('---' + character)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1183,6 +1246,7 @@
                     "<p>The for loop will create a variable such as <code>character</code>, but the program doesn't need to use it.</p>"
                 ],
                 "page_index": 10,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1199,6 +1263,7 @@
             "    print(name)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1249,6 +1314,7 @@
             "state": {
                 "hints": [],
                 "page_index": 10,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1266,6 +1332,7 @@
             "print(hello)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1292,6 +1359,7 @@
             "state": {
                 "hints": [],
                 "page_index": 11,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1310,6 +1378,7 @@
             "    print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1360,6 +1429,7 @@
             "state": {
                 "hints": [],
                 "page_index": 11,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1378,6 +1448,7 @@
             "    line = line + char"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1428,6 +1499,7 @@
             "state": {
                 "hints": [],
                 "page_index": 11,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1446,6 +1518,7 @@
             "    print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1502,6 +1575,7 @@
                     "<p>3 + 7 is equal to 7 + 3. Same for all numbers. Is this also true for strings?</p>"
                 ],
                 "page_index": 12,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1520,6 +1594,7 @@
             "    print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1575,6 +1650,7 @@
                     "<p>The for loop will create a variable such as <code>char</code>, but the program doesn't need to use it.</p>"
                 ],
                 "page_index": 12,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1594,6 +1670,7 @@
             "print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1628,6 +1705,7 @@
                     "<p>Try writing a program that outputs:</p>\n<pre><code>+-----+\n|World|\n+-----+\n</code></pre>\n<p>(i.e. no spaces around <code>World</code>)</p>"
                 ],
                 "page_index": 12,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1649,6 +1727,7 @@
             "print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>You're almost there! Just add a few more characters to your strings.\nYour loop is perfect.</p>",
             "result": [
                 {
@@ -1691,6 +1770,7 @@
                     "<p>Try writing a program that outputs:</p>\n<pre><code>+-----+\n|World|\n+-----+\n</code></pre>\n<p>(i.e. no spaces around <code>World</code>)</p>"
                 ],
                 "page_index": 12,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1716,6 +1796,7 @@
             "print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>Well done, this solution is correct! However, it can be improved.\nYou only need to use one loop - using more is inefficient.\nYou can reuse the variable containing the line of <code>-</code> and <code>+</code>.</p>",
             "result": [
                 {
@@ -1758,6 +1839,7 @@
                     "<p>Try writing a program that outputs:</p>\n<pre><code>+-----+\n|World|\n+-----+\n</code></pre>\n<p>(i.e. no spaces around <code>World</code>)</p>"
                 ],
                 "page_index": 12,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1779,6 +1861,7 @@
             "print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -1818,6 +1901,7 @@
                     "<p>Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.</p>"
                 ],
                 "page_index": 12,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1841,6 +1925,7 @@
             "print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nAnd you used a nested loop (a loop inside a loop) which we haven't even covered yet!\nHowever, in this case a nested loop is inefficient.\nYou can make a variable containing spaces and reuse that in each line.</p>",
             "result": [
                 {
@@ -1912,6 +1997,7 @@
                     "<p>Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.</p>"
                 ],
                 "page_index": 12,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -1935,6 +2021,7 @@
             "print(line)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2001,6 +2088,7 @@
             "state": {
                 "hints": [],
                 "page_index": 12,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -2018,6 +2106,7 @@
             "print(condition)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2044,6 +2133,7 @@
             "state": {
                 "hints": [],
                 "page_index": 14,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -2062,6 +2152,7 @@
             "    print('This does not')"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2080,6 +2171,7 @@
             "state": {
                 "hints": [],
                 "page_index": 14,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -2098,6 +2190,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2116,6 +2209,7 @@
             "state": {
                 "hints": [],
                 "page_index": 14,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -2134,6 +2228,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2155,6 +2250,7 @@
                     "<p>The code that you add should be very similar to the existing code.</p>"
                 ],
                 "page_index": 14,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -2176,6 +2272,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2194,6 +2291,7 @@
             "state": {
                 "hints": [],
                 "page_index": 14,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -2218,6 +2316,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2236,6 +2335,7 @@
             "state": {
                 "hints": [],
                 "page_index": 15,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": false,
@@ -2259,6 +2359,7 @@
             "print(new_sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2277,6 +2378,7 @@
             "state": {
                 "hints": [],
                 "page_index": 16,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2300,6 +2402,7 @@
             "print(new_sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2524,6 +2627,7 @@
                     "<p>That means <code>include</code> should be <code>False</code> after the first iteration.</p>"
                 ],
                 "page_index": 16,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2546,6 +2650,7 @@
             "print(new_sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2564,6 +2669,7 @@
             "state": {
                 "hints": [],
                 "page_index": 16,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2582,6 +2688,7 @@
             "    print('No')"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2600,6 +2707,7 @@
             "state": {
                 "hints": [],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2618,6 +2726,7 @@
             "    print('No')"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2636,6 +2745,7 @@
             "state": {
                 "hints": [],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2656,6 +2766,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2674,6 +2785,7 @@
             "state": {
                 "hints": [],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2694,6 +2806,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2712,6 +2825,7 @@
             "state": {
                 "hints": [],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2733,6 +2847,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2751,6 +2866,7 @@
             "state": {
                 "hints": [],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2773,6 +2889,7 @@
             "print(sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2798,6 +2915,7 @@
                     "<p>In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter.</p>"
                 ],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2827,6 +2945,7 @@
             "print(new_sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
             "result": [
                 {
@@ -2852,6 +2971,7 @@
                     "<p>In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter.</p>"
                 ],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2877,6 +2997,7 @@
             "print(new_sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2901,6 +3022,7 @@
                     "<p>Combine that flipping <code>if/else</code> with the one that chooses an uppercase or lowercase character.</p>"
                 ],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2930,6 +3052,7 @@
             "print(new_sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
             "result": [
                 {
@@ -2954,6 +3077,7 @@
                     "<p>Combine that flipping <code>if/else</code> with the one that chooses an uppercase or lowercase character.</p>"
                 ],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -2980,6 +3104,7 @@
             "print(new_sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -2998,6 +3123,7 @@
             "state": {
                 "hints": [],
                 "page_index": 17,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3014,6 +3140,7 @@
             "print('ab' + 'c' == 'a' + 'bc')"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3048,6 +3175,7 @@
             "state": {
                 "hints": [],
                 "page_index": 18,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3062,6 +3190,7 @@
             "print(1 + 2 = 3)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3076,6 +3205,7 @@
             "state": {
                 "hints": [],
                 "page_index": 18,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3097,6 +3227,7 @@
             "print(new_name)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3117,6 +3248,7 @@
                     "<p>You just need to add a few lines of code that are very similar to existing ones.</p>"
                 ],
                 "page_index": 18,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3142,6 +3274,7 @@
             "print(new_name)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3160,6 +3293,7 @@
             "state": {
                 "hints": [],
                 "page_index": 18,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3187,6 +3321,7 @@
             "print(opposite_dna)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3208,6 +3343,7 @@
                     "<p>Now make the same kind of change to the code swapping G and C.</p>"
                 ],
                 "page_index": 19,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3237,6 +3373,7 @@
             "print(opposite_dna)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3255,6 +3392,7 @@
             "state": {
                 "hints": [],
                 "page_index": 19,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3282,6 +3420,7 @@
             "print(opposite_dna)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3300,6 +3439,7 @@
             "state": {
                 "hints": [],
                 "page_index": 19,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3314,6 +3454,7 @@
             "1 != 2"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3332,6 +3473,7 @@
             "state": {
                 "hints": [],
                 "page_index": 20,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3351,6 +3493,7 @@
             "print(new_sentence)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3369,6 +3512,7 @@
             "state": {
                 "hints": [],
                 "page_index": 20,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3383,6 +3527,7 @@
             "1 < 2"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3401,6 +3546,7 @@
             "state": {
                 "hints": [],
                 "page_index": 20,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3415,6 +3561,7 @@
             "'1' < '2'"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3433,6 +3580,7 @@
             "state": {
                 "hints": [],
                 "page_index": 20,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3460,6 +3608,7 @@
             "print(grade)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3481,6 +3630,7 @@
                     "<p>All you need is a few uses of <code>&lt;</code>, <code>if</code>, and maybe <code>else</code>.</p>"
                 ],
                 "page_index": 20,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3508,6 +3658,7 @@
             "print(first)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3526,6 +3677,7 @@
             "state": {
                 "hints": [],
                 "page_index": 20,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3543,6 +3695,7 @@
             "    print(word)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3585,6 +3738,7 @@
             "state": {
                 "hints": [],
                 "page_index": 21,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3601,6 +3755,7 @@
             "print(things)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3619,6 +3774,7 @@
             "state": {
                 "hints": [],
                 "page_index": 21,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3639,6 +3795,7 @@
             "print(total)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3663,6 +3820,7 @@
                     "<p>Is there a similar concept among strings to 0? A blank initial value?</p>"
                 ],
                 "page_index": 21,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3682,6 +3840,7 @@
             "print(total)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3707,6 +3866,7 @@
                     "<p>You can add an element to a list by adding a list containing one element.</p>"
                 ],
                 "page_index": 21,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3725,6 +3885,7 @@
             "print(double)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3748,6 +3909,7 @@
                     "<p>Use a comparison operator to test if a number is big enough to add.</p>"
                 ],
                 "page_index": 21,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3767,6 +3929,7 @@
             "print(big_numbers)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3785,6 +3948,7 @@
             "state": {
                 "hints": [],
                 "page_index": 21,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3806,6 +3970,7 @@
             "print(found)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3824,6 +3989,7 @@
             "state": {
                 "hints": [],
                 "page_index": 22,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3843,6 +4009,7 @@
             "print(words[3])"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3885,6 +4052,7 @@
             "state": {
                 "hints": [],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3899,6 +4067,7 @@
             "words[4]"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -3913,6 +4082,7 @@
             "state": {
                 "hints": [],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -3928,6 +4098,7 @@
             "    print(i)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4018,6 +4189,7 @@
             "state": {
                 "hints": [],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4036,6 +4208,7 @@
             "    print(words[index])"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4120,6 +4293,7 @@
                     "<p>You need to use <code>break</code>.</p>"
                 ],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4138,6 +4312,7 @@
             "        print(i)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>You're almost there! However, this prints all the indices,\nnot just the first one.</p>",
             "result": [
                 {
@@ -4174,6 +4349,7 @@
                     "<p>You need to use <code>break</code>.</p>"
                 ],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4194,6 +4370,7 @@
             "print(answer)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "<p>You're almost there! However, this prints the <em>last</em> index,\nnot the first one.</p>",
             "result": [
                 {
@@ -4222,6 +4399,7 @@
                     "<p>You need to use <code>break</code>.</p>"
                 ],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4241,6 +4419,7 @@
             "        break"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4270,6 +4449,7 @@
                     "<p>You will need to pass the same index to both strings each time to retrieve matching characters.</p>"
                 ],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4289,6 +4469,7 @@
             "    print(char1 + ' ' + char2)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4350,6 +4531,7 @@
                     "<p>You will need to set e.g. <code>char1 = ' '</code> when <code>string1[i]</code> is not valid.</p>"
                 ],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4385,6 +4567,7 @@
             "    print(char1 + ' ' + char2)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4451,6 +4634,7 @@
             "state": {
                 "hints": [],
                 "page_index": 23,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4466,6 +4650,7 @@
             "print(print)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4492,6 +4677,7 @@
             "state": {
                 "hints": [],
                 "page_index": 24,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4506,6 +4692,7 @@
             "print(callable(len))"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4524,6 +4711,7 @@
             "state": {
                 "hints": [],
                 "page_index": 24,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4540,6 +4728,7 @@
             "f()"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4566,6 +4755,7 @@
             "state": {
                 "hints": [],
                 "page_index": 24,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4583,6 +4773,7 @@
             "print(printed)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4609,6 +4800,7 @@
             "state": {
                 "hints": [],
                 "page_index": 24,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4624,6 +4816,7 @@
             "length = len(things)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4650,6 +4843,7 @@
             "state": {
                 "hints": [],
                 "page_index": 24,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4666,6 +4860,7 @@
             "print(word.upper())"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4692,6 +4887,7 @@
             "state": {
                 "hints": [],
                 "page_index": 24,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4707,6 +4903,7 @@
             "word.append('!')"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4725,6 +4922,7 @@
             "state": {
                 "hints": [],
                 "page_index": 24,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4739,6 +4937,7 @@
             "max([21, 55, 4, 91, 62, 49])"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4762,6 +4961,7 @@
                     "<p>'python add value at index'</p>"
                 ],
                 "page_index": 25,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4776,6 +4976,7 @@
             "nums.insert(2, 9)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4790,6 +4991,7 @@
             "state": {
                 "hints": [],
                 "page_index": 25,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4804,6 +5006,7 @@
             "dir([])"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4822,6 +5025,7 @@
             "state": {
                 "hints": [],
                 "page_index": 25,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": false,
                 "showSnoop": true,
@@ -4848,6 +5052,7 @@
             "print(list2)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4906,6 +5111,7 @@
             "state": {
                 "hints": [],
                 "page_index": 27,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": true,
                 "showSnoop": true,
@@ -4932,6 +5138,7 @@
             "print(list2)"
         ],
         "response": {
+            "birdseye_url": null,
             "message": "",
             "result": [
                 {
@@ -4990,6 +5197,7 @@
             "state": {
                 "hints": [],
                 "page_index": 27,
+                "showBirdseye": true,
                 "showEditor": true,
                 "showPythonTutor": true,
                 "showSnoop": true,
