@@ -11,14 +11,15 @@ import sys
 from code import InteractiveConsole
 from functools import lru_cache
 from importlib import import_module
-from multiprocessing import Pool, Pipe
+from multiprocessing import Pipe
 from multiprocessing.connection import Connection
+from multiprocessing.context import Process
 from threading import Thread
-from birdseye import BirdsEye
 
 import snoop
 import snoop.formatting
 import snoop.tracer
+from birdseye.bird import BirdsEye
 
 from main.text import pages
 from main.utils import format_exception_string
@@ -193,11 +194,6 @@ def set_limits():
     # resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
 
 
-def run_code_in_thread(*args):
-    # run_code(*args)
-    Thread(target=run_code, args=args).start()
-
-
 def put_result(
         q, *,
         passed=False,
@@ -225,13 +221,25 @@ def put_result(
     return output
 
 
-def run_code(entry, input_queue, result_queue):
+def worker_loop_in_thread(*args):
+    Thread(target=worker_loop, args=args).start()
+
+
+def worker_loop(task_queue, input_queue, result_queue):
     # Open the queue files before setting the file limit
     result_queue.put(None)
     input_queue.empty()
+    task_queue.empty()
+    str(BirdsEye().db)
 
     set_limits()
 
+    while True:
+        entry = task_queue.get()
+        run_code(entry, input_queue, result_queue)
+
+
+def run_code(entry, input_queue, result_queue):
     def readline():
         put_result(
             result_queue,
@@ -273,44 +281,33 @@ def run_code(entry, input_queue, result_queue):
     )
 
 
-class ManagedPool:
-    def __init__(self):
-        self.pool = Pool(1)
-        self.original_pid = self.current_pid
-
-    def restart(self):
-        Thread(target=self.terminate).start()
-        self.__init__()
-
-    @property
-    def current_pid(self):
-        return self._pool[0].pid
-
-    @property
-    def died(self):
-        return self.original_pid != self.current_pid
-
-    def __getattr__(self, item):
-        return getattr(self.pool, item)
-
-
 def consumer(connection: Connection):
-    pool = ManagedPool()
-
-    def cleanup():
-        pool.terminate()
-
-    atexit.register(cleanup)
-
     manager = multiprocessing.Manager()
+    task_queue = manager.Queue()
     input_queue = manager.Queue()
     result_queue = manager.Queue()
+    process = None
+
+    def start_process():
+        nonlocal process
+        process = Process(
+            target=worker_loop_in_thread,
+            args=(task_queue, input_queue, result_queue),
+            daemon=True,
+        )
+        process.start()
+
+    start_process()
+
+    def cleanup():
+        process.terminate()
+
+    atexit.register(cleanup)
 
     awaiting_input = False
 
     def run():
-        # run_code_in_thread(entry, input_queue, result_queue)
-        pool.apply_async(run_code_in_thread, (entry, input_queue, result_queue))
+        task_queue.put(entry)
 
     while True:
         entry = connection.recv()
@@ -321,7 +318,8 @@ def consumer(connection: Connection):
                 run()
         else:
             if not TESTING and awaiting_input:
-                pool.restart()
+                process.terminate()
+                start_process()
 
             run()
         result = None
@@ -329,19 +327,23 @@ def consumer(connection: Connection):
             try:
                 result = result_queue.get(timeout=3)
             except queue.Empty:
-                if pool.died:
-                    pool.restart()
-                    result = dict(
-                        output_parts=[
-                            dict(color='red', text='The process died.\n'),
-                            dict(color='red', text='Your code probably took too long.\n'),
-                            dict(color='red', text='Maybe you have an infinite loop?\n'),
-                        ],
-                        passed=False,
-                        message='',
-                        output='The process died.',
-                        awaiting_input=False,
-                    )
+                alive = process.is_alive()
+                print(f"Process {alive=}")
+                if alive:
+                    process.terminate()
+                start_process()
+                result = dict(
+                    output_parts=[
+                        dict(color='red', text='The process died.\n'),
+                        dict(color='red', text='Your code probably took too long.\n'),
+                        dict(color='red', text='Maybe you have an infinite loop?\n'),
+                    ],
+                    passed=False,
+                    message='',
+                    output='The process died.',
+                    awaiting_input=False,
+                    birdseye_call_id=None,
+                )
         awaiting_input = result["awaiting_input"]
         connection.send(result)
 
