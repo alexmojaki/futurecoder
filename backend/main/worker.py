@@ -355,8 +355,8 @@ def consumer(connection: Connection):
         connection.send(result)
 
 
-@lru_cache
-def worker_connection():
+@lru_cache(maxsize=None)
+def worker_connection(_user_id):
     parent_connection, child_connection = Pipe()
     p = Thread(target=consumer, args=(child_connection,), daemon=True)
     p.start()

@@ -107,7 +107,7 @@ class API:
             user=self.user,
         )
 
-        connection = worker_connection()
+        connection = worker_connection(self.user.id)
         connection.send(entry_dict)
         result = connection.recv()
 
