@@ -11,15 +11,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from pathlib import Path
 
-try:
-    import birdseye
-except ImportError:
-    pass
-
+import birdseye
+import snoop
 
 BASE_DIR = Path(__file__).parent.parent
 
@@ -32,11 +27,7 @@ SECRET_KEY = 'kt1+4_u=ga%3v3@fy0@7c(&lq%)6tt=c+f-(ihd32@t$)i6gjm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-try:
-    import snoop
-    snoop.install(enabled=DEBUG)
-except ImportError:
-    pass
+snoop.install(enabled=DEBUG)
 
 ALLOWED_HOSTS = []
 
