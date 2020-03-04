@@ -16,6 +16,7 @@ asttokens = "^2.0.3"
 littleutils = "^0.2.1"
 snoop = "^0.2.4"
 birdseye = "^0.8.3"
+django-allauth = "^0.41.0"
 
 [tool.poetry.dev-dependencies]
 

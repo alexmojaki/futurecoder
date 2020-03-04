@@ -11,6 +11,6 @@
 {#    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>#}
   </head>
   <body class="backend">
-    {% block base_body %} {% endblock %}
+    {% block base_body %} {% block content %} {% endblock %} {% endblock %}
   </body>
 </html>
