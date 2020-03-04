@@ -5,7 +5,9 @@ from io import StringIO
 from random import shuffle
 from tokenize import generate_tokens, Untokenizer
 from typing import get_type_hints, Type
+from uuid import uuid4
 
+from birdseye import eye
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.shortcuts import render
@@ -120,8 +122,25 @@ class API:
             output_parts.append(dict(text=">>> ", color="white"))
 
         birdseye_url = None
-        if result["birdseye_call_id"]:
-            birdseye_url = f"/birdseye/ipython_call/{result['birdseye_call_id']}"
+        birdseye_objects = result["birdseye_objects"]
+        if birdseye_objects:
+            functions = birdseye_objects["functions"]
+            function_ids = [d.pop('id') for d in functions]
+            functions = [eye.db.Function(**{**d, 'hash': uuid4().hex}) for d in functions]
+            with eye.db.session_scope() as session:
+                for func in functions:
+                    session.add(func)
+                session.commit()
+                function_ids = {old: func.id for old, func in zip(function_ids, functions)}
+
+                for call in birdseye_objects["calls"]:
+                    call["function_id"] = function_ids[call["function_id"]]
+                    call = eye.db.Call(**call)
+                    session.add(call)
+                    # TODO get correct call from top level
+                    call_id = call.id
+
+            birdseye_url = f"/birdseye/ipython_call/{call_id}"
 
         return dict(
             result=output_parts,

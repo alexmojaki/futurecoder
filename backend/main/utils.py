@@ -54,3 +54,13 @@ def unwrapped_markdown(s):
 
 def format_exception_string(e):
     return ''.join(traceback.format_exception_only(type(e), e))
+
+
+def row_to_dict(row):
+    d = row.__dict__.copy()
+    del d["_sa_instance_state"]
+    return d
+
+
+def rows_to_dicts(rows):
+    return [row_to_dict(row) for row in rows]

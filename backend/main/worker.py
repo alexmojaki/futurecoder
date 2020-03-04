@@ -8,7 +8,9 @@ import os
 import queue
 import resource
 import sys
+import traceback
 from code import InteractiveConsole
+from datetime import datetime
 from functools import lru_cache
 from importlib import import_module
 from multiprocessing import Pipe
@@ -16,19 +18,23 @@ from multiprocessing.connection import Connection
 from multiprocessing.context import Process
 from threading import Thread
 
+import birdseye.bird
 import snoop
 import snoop.formatting
 import snoop.tracer
 from birdseye.bird import BirdsEye
+from snoop import snoop
 
 from main.text import pages
-from main.utils import format_exception_string
+from main.utils import format_exception_string, rows_to_dicts
 
 log = logging.getLogger(__name__)
 
 TESTING = False
 
 snoop.install(out=sys.__stderr__, columns=['thread'])
+
+birdseye.bird.get_unfrozen_datetime = datetime.now
 
 
 class SysStream:
@@ -102,7 +108,7 @@ def runner(code_source, code):
         print(format_exception_string(e), file=sys.stderr)
         return {}
 
-    birdseye_call_id = None
+    birdseye_objects = None
 
     try:
         if code_source == "snoop":
@@ -121,20 +127,24 @@ def runner(code_source, code):
             with tracer:
                 exec(code_obj, console.locals)
         elif code_source == "birdseye":
-            eye = BirdsEye()
+            eye = BirdsEye("sqlite://")
             traced_file = eye.compile(code, filename)
             eye._trace('<module>', filename, traced_file, traced_file.code, 'module', code)
             try:
                 exec(traced_file.code, eye._trace_methods_dict(traced_file))
             finally:
-                birdseye_call_id = eye._last_call_id
+                with eye.db.session_scope() as session:
+                    objects = session.query(eye.db.Call, eye.db.Function).all()
+                    calls, functions = [rows_to_dicts(set(column)) for column in zip(*objects)]
+                birdseye_objects = dict(calls=calls, functions=functions)
         else:
             exec(code_obj, console.locals)
 
     except Exception as e:
+        traceback.print_exc()
         print(format_exception_string(e), file=sys.stderr)
 
-    return dict(birdseye_call_id=birdseye_call_id)
+    return dict(birdseye_objects=birdseye_objects)
 
 
 @lru_cache
@@ -190,8 +200,7 @@ def set_limits():
     except ValueError:
         pass
 
-    # TODO
-    # resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
+    resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
 
 
 def put_result(
@@ -201,7 +210,7 @@ def put_result(
         awaiting_input=False,
         output=None,
         output_parts=None,
-        birdseye_call_id=None,
+        birdseye_objects=None,
 ):
     if output is None:
         output = output_buffer.string()
@@ -215,7 +224,7 @@ def put_result(
         awaiting_input=awaiting_input,
         output=output,
         output_parts=output_parts,
-        birdseye_call_id=birdseye_call_id,
+        birdseye_objects=birdseye_objects,
     ))
 
     return output
@@ -277,7 +286,7 @@ def run_code(entry, input_queue, result_queue):
         passed=passed,
         message=message,
         output=output,
-        birdseye_call_id=runner_result.get("birdseye_call_id"),
+        birdseye_objects=runner_result.get("birdseye_objects"),
     )
 
 
@@ -342,7 +351,7 @@ def consumer(connection: Connection):
                     message='',
                     output='The process died.',
                     awaiting_input=False,
-                    birdseye_call_id=None,
+                    birdseye_objects=None,
                 )
         awaiting_input = result["awaiting_input"]
         connection.send(result)
