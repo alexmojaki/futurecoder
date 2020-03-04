@@ -8,7 +8,6 @@ import os
 import queue
 import resource
 import sys
-import traceback
 from code import InteractiveConsole
 from datetime import datetime
 from functools import lru_cache
@@ -141,7 +140,6 @@ def runner(code_source, code):
             exec(code_obj, console.locals)
 
     except Exception as e:
-        traceback.print_exc()
         print(format_exception_string(e), file=sys.stderr)
 
     return dict(birdseye_objects=birdseye_objects)
