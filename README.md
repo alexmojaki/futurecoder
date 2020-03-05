@@ -17,7 +17,7 @@ This is a platform/course for complete beginners to teach themselves programming
     1. Ensure you have recent versions of `node` and `npm`.
     2. Run `npm install` to download dependencies.
     3. Run `npm start` to start the frontend development server.
-4. Go to http://localhost:3000/accounts/login/ and login with the username "admin" and the password "admin".
+4. Go to http://localhost:3000/accounts/login/ and login with the email "admin@example.com" and the password "admin".
 5. You should be redirected to http://localhost:3000/ and see the start of the course: "Introducing The Shell".
 
 ## Controls
