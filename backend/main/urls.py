@@ -14,11 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from django.views.generic import TemplateView
 
-from main.views import IFrameView, api_view
+from main.views import api_view
 
 urlpatterns = [
-    path('shell', IFrameView.as_view(iframe_pattern="/f")),
     path('api/<method_name>/', api_view),
-
+    path('home/', TemplateView.as_view(template_name="home.html")),
 ]

@@ -3,7 +3,7 @@ const proxy = require("http-proxy-middleware");
 const routes = [
   "/accounts",
   "/static_backend/",
-  "/shell",
+  "/home",
   "/birdseye",
   "/admin",
   "/api"

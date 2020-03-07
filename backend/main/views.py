@@ -8,10 +8,7 @@ from typing import get_type_hints, Type
 from uuid import uuid4
 
 from birdseye import eye
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse, HttpResponseBadRequest
-from django.shortcuts import render
-from django.views import View
 from littleutils import select_attrs
 from markdown import markdown
 
@@ -23,17 +20,6 @@ from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
 from main.worker import worker_connection
 
 log = logging.getLogger(__name__)
-
-
-class IFrameView(LoginRequiredMixin, View):
-    iframe_pattern = ""
-
-    def get(self, request, *args, **kwargs):
-        return render(
-            request,
-            "iframe_view.html",
-            dict(iframe_url=self.iframe_pattern.format(*args, **kwargs)),
-        )
 
 
 def api_view(request, method_name):
@@ -150,12 +136,19 @@ class API:
         )
 
     def load_data(self):
+        user = self.user
+        if user.is_anonymous:
+            return {}
+
         return dict(
             pages=[
                 select_attrs(page, "title step_texts")
                 for page in pages.values()
             ],
             state=self.current_state(),
+            user=dict(
+                email=user.email,
+            ),
         )
 
     def current_state(self):

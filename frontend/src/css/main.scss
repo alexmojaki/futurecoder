@@ -50,14 +50,45 @@
   code {
     color: black;
   }
-  
+
   .terminal p code {
     color: white;
   }
-  
+
   .book-text {
     margin-bottom: 3em;
   }
+}
+
+// override react-popup
+.popup-content {
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+
+  .popup-arrow {
+    display: none;
+  }
+}
+
+.my-popup-content {
+  background: white;
+  z-index: 2;
+  padding: 0.5em;
+}
+
+.menu-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.menu-popup {
+  @extend .my-popup-content;
+  position: fixed;
+  top: 50px;
+  right: 50px;
 }
 
 .hint-icon {
@@ -68,10 +99,11 @@
   height: 48px;
 }
 
-.popup-content {
-  top: unset !important;
-  left: unset !important;
-  width: auto !important;
+.hints-popup {
+  @extend .my-popup-content;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
   overflow: auto;
   max-height: 80vh;
   max-width: 40vw;

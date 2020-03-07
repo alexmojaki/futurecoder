@@ -4,25 +4,15 @@ import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
-import {
-  bookSetState,
-  bookState,
-  closeMessage,
-  getSolution,
-  movePage,
-  moveStep,
-  ranCode,
-  revealSolutionToken,
-  showHint
-} from "./book/store";
-import hintIcon from "./img/hint.png"
+import {bookSetState, bookState, closeMessage, movePage, moveStep, ranCode} from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-monokai";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faBug, faPlay, faTimes, faUserGraduate} from '@fortawesome/free-solid-svg-icons'
+import {faBars, faBug, faPlay, faTimes, faUserGraduate} from '@fortawesome/free-solid-svg-icons'
 import {animateScroll} from "react-scroll";
+import {HintsPopup} from "./Hints";
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -71,6 +61,7 @@ class AppComponent extends React.Component {
       pages,
       solution,
       requestingSolution,
+      user,
     } = this.props;
     let {
       step_index,
@@ -200,66 +191,24 @@ class AppComponent extends React.Component {
         </div>
       </div>
 
-      {
-        hints.length ?
-          <Popup
-            contentStyle={{
-              position: "fixed",
-              bottom: 50,
-              right: 50,
-            }}
-            arrowStyle={{
-              display: "none",
-            }}
-            trigger={<img src={hintIcon} className="hint-icon" alt="Hint button"/>}
-          >
-            {
-              numHints === 0 ?
-                <button onClick={showHint}>Get a hint</button>
-                :
-                <div className="markdown-body">
-                  {hints.slice(0, numHints).map((hint, index) =>
-                    <div>
-                      <div key={index} dangerouslySetInnerHTML={{__html: hint}}/>
-                      <hr/>
-                    </div>
-                  )}
-                  <div>
-                    {
-                      numHints < hints.length ?
-                        <button onClick={showHint}>
-                          Get another hint
-                        </button>
-                        :
-                        !requestingSolution ?
-                          <button onClick={() => bookSetState("requestingSolution", true)}>
-                            Show solution
-                          </button>
-                          : solution.tokens.length === 0 ?
-                          <>
-                            <p>Are you sure? You will learn much better if you can solve this yourself.</p>
-                            <p>
-                              <button onClick={getSolution} className="btn btn-primary">
-                                Yes
-                              </button>
-                              {" "}
-                              <button onClick={() => bookSetState("requestingSolution", false)}
-                                      className="btn-default btn">
-                                No
-                              </button>
-                            </p>
-                          </>
-                          :
-                          <Solution solution={solution}/>
+      <HintsPopup
+        hints={hints}
+        numHints={numHints}
+        requestingSolution={requestingSolution}
+        solution={solution}
+      />
 
-                    }
-                  </div>
-                </div>
-            }
-
-          </Popup>
-          : null
-      }
+      <Popup
+        trigger={
+          <button className="btn menu-icon">
+            <FontAwesomeIcon icon={faBars} size="lg"/>
+          </button>}
+      >
+        <div className="menu-popup">
+          <p>{user.email}</p>
+          <p><a href="/accounts/logout/">Sign out</a></p>
+        </div>
+      </Popup>
 
     </div>
   }
@@ -278,29 +227,6 @@ const StepButtons = () =>
     <StepButton delta={+1} label="Skip step"/>
   </div>
 
-const Solution = ({solution}) => {
-  return <div>
-  <pre>
-    {solution.tokens.map((token, tokenIndex) =>
-      <span
-        className={
-          `solution-token-${solution.mask[tokenIndex]
-            ? "hidden" : "visible"}`
-        }
-        key={tokenIndex}
-      >
-        {token}
-      </span>
-    )}
-  </pre>
-    {solution.maskedIndices.length > 0 &&
-    <p>
-      <button onClick={revealSolutionToken}>
-        Reveal
-      </button>
-    </p>}
-  </div>;
-}
 
 export const App = connect(
   state => state.book,

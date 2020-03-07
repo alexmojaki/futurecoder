@@ -19,6 +19,9 @@ const initialState = {
       step_texts: [],
     }
   ],
+  user: {
+    email: "",
+  },
   processing: false,
   numHints: 0,
   editorContent: "",
@@ -39,8 +42,12 @@ const {reducer, makeAction, setState, localState} = redact('book', initialState,
 export {reducer as bookReducer, setState as bookSetState, localState as bookState};
 
 const loadData = (data) => {
+  if (!data.user) {
+    window.location = "/accounts/login/?next=/course/"
+  }
   setState("server", data.state);
   setState("pages", data.pages);
+  setState("user", data.user);
   setState("showingPageIndex", data.state.page_index);
 }
 
