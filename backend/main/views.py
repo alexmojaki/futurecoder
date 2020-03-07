@@ -148,8 +148,13 @@ class API:
             state=self.current_state(),
             user=dict(
                 email=user.email,
+                developerMode=user.developer_mode,
             ),
         )
+
+    def set_developer_mode(self, value: bool):
+        self.user.developer_mode = value
+        self.user.save()
 
     def current_state(self):
         return dict(

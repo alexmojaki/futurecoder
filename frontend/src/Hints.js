@@ -7,23 +7,27 @@ export const HintsPopup = ({hints, numHints, requestingSolution, solution}) => {
   if (!hints.length) {
     return null;
   }
-  return <Popup
-    trigger={<img src={hintIcon} className="hint-icon" alt="Hint button"/>}
-  >
-    <div className="hints-popup">
-      {
-        numHints === 0 ?
-          <button onClick={showHint}>Get a hint</button>
-          :
-          <Hints
-            hints={hints}
-            numHints={numHints}
-            requestingSolution={requestingSolution}
-            solution={solution}
-          />
-      }
+  return (
+    <div className="custom-popup">
+      <Popup
+        trigger={<img src={hintIcon} className="hint-icon" alt="Hint button"/>}
+      >
+        <div className="hints-popup">
+          {
+            numHints === 0 ?
+              <button onClick={showHint}>Get a hint</button>
+              :
+              <Hints
+                hints={hints}
+                numHints={numHints}
+                requestingSolution={requestingSolution}
+                solution={solution}
+              />
+          }
+        </div>
+      </Popup>
     </div>
-  </Popup>
+  )
 }
 
 

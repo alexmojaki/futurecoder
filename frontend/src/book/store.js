@@ -21,6 +21,7 @@ const initialState = {
   ],
   user: {
     email: "",
+    developerMode: false,
   },
   processing: false,
   numHints: 0,
@@ -134,3 +135,8 @@ export const revealSolutionToken = makeAction(
     return state;
   }
 )
+
+export const setDeveloperMode = (value) => {
+  rpc("set_developer_mode", {value});
+  setState("user.developerMode", value);
+}

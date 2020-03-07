@@ -7,6 +7,7 @@ from main.text import page_slugs_list, pages
 class User(AbstractUser):
     page_slug = models.CharField(default=page_slugs_list[0], max_length=128)
     step_name = models.CharField(default=pages[page_slugs_list[0]].step_names[0], max_length=128)
+    developer_mode = models.BooleanField(default=False)
 
     @property
     def page(self):

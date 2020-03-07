@@ -61,14 +61,16 @@
 }
 
 // override react-popup
-.popup-content {
-  width: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
+.custom-popup {
+  > .popup-content {
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
 
-  .popup-arrow {
-    display: none;
+    .popup-arrow {
+      display: none;
+    }
   }
 }
 
@@ -107,6 +109,15 @@
   overflow: auto;
   max-height: 80vh;
   max-width: 40vw;
+}
+
+.settings-modal {
+  label b {
+    position: relative;
+    bottom: 5px;
+    left: 6px;
+    font-size: 1.3em;
+  }  
 }
 
 .solution-token-hidden, .solution-token-hidden::selection {
