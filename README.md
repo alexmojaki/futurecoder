@@ -2,6 +2,32 @@
 
 This is a platform/course for complete beginners to teach themselves programming, specifically in Python. Currently it's very much a WIP.
 
+## Features
+
+The course is a fully interactive 'book' which requires the user to run code in the provided editor or shell to advance:
+
+![full](images/full.png)
+
+The code at each step is checked automatically. Common mistakes can be caught and pointed out to the student. If needed, the student can get small hints to gradually guide them to the solution:
+
+![hints](images/hints.png)
+
+If they're still really stuck, they can reveal the solution bit by bit:
+
+![solution](images/solution.png)
+
+Several debuggers are provided, including [snoop](https://github.com/alexmojaki/snoop):
+
+![snoop](images/snoop.png)
+
+[birdseye](https://github.com/alexmojaki/birdseye):
+
+![birdseye](images/birdseye.png)
+
+and [Python Tutor](http://pythontutor.com/):
+
+![pythontutor](images/pythontutor.png)
+
 ## Getting started
 
 1. Clone the repository.

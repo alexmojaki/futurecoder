@@ -26,6 +26,9 @@ import {HintsPopup} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {FeedbackModal} from "./Feedback";
+import birdseyeIcon from "./img/birdseye_icon.png";
+import hintIcon from "./img/hint.png";
+
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -175,7 +178,12 @@ class AppComponent extends React.Component {
               this.runCode({source: "birdseye"})
             }}
           >
-            <FontAwesomeIcon icon={faBug}/> Birdseye
+            {<img
+              src={birdseyeIcon}
+              width={20}
+              height={20}
+              alt="birdseye logo"
+              style={{position: "relative", top: "-2px"}}/>} Birdseye
           </button>}
 
         </div>

@@ -15,7 +15,7 @@ export const HintsPopup = ({hints, numHints, requestingSolution, solution}) => {
         <div className="hints-popup">
           {
             numHints === 0 ?
-              <button onClick={showHint}>Get a hint</button>
+              <button onClick={showHint} className="btn btn-primary">Get a hint</button>
               :
               <Hints
                 hints={hints}
@@ -42,7 +42,7 @@ const Hints = ({hints, numHints, requestingSolution, solution}) =>
     <div>
       {
         numHints < hints.length ?
-          <button onClick={showHint}>
+          <button onClick={showHint} className="btn btn-primary">
             Get another hint
           </button>
           :
@@ -58,7 +58,7 @@ const Hints = ({hints, numHints, requestingSolution, solution}) =>
 const RequestSolution = ({requestingSolution, solution}) => {
   if (!requestingSolution) {
     return (
-      <button onClick={() => bookSetState("requestingSolution", true)}>
+      <button onClick={() => bookSetState("requestingSolution", true)} className="btn btn-primary">
         Show solution
       </button>
     )
@@ -102,7 +102,7 @@ const Solution = ({solution}) =>
     </pre>
     {solution.maskedIndices.length > 0 &&
     <p>
-      <button onClick={revealSolutionToken}>
+      <button onClick={revealSolutionToken} className="btn btn-primary">
         Reveal
       </button>
     </p>}
