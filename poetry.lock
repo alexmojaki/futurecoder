@@ -155,6 +155,18 @@ dev = ["libsass (>=0.13)"]
 
 [[package]]
 category = "main"
+description = "A django package that allows easy identification of visitors' browser, operating system and device information (mobile phone, tablet or has touch capabilities)."
+name = "django-user-agents"
+optional = false
+python-versions = "*"
+version = "0.4.0"
+
+[package.dependencies]
+django = "*"
+user-agents = "*"
+
+[[package]]
+category = "main"
 description = "Get the currently executing AST node of a frame, and other information"
 name = "executing"
 optional = false
@@ -439,6 +451,14 @@ version = "0.3.0"
 
 [[package]]
 category = "main"
+description = "Python port of Browserscope's user agent parser"
+name = "ua-parser"
+optional = false
+python-versions = "*"
+version = "0.10.0"
+
+[[package]]
+category = "main"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 name = "urllib3"
 optional = false
@@ -449,6 +469,17 @@ version = "1.25.8"
 brotli = ["brotlipy (>=0.6.0)"]
 secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
+
+[[package]]
+category = "main"
+description = "A library to identify devices (phones, tablets) and their capabilities by parsing (browser/HTTP) user agent strings"
+name = "user-agents"
+optional = false
+python-versions = "*"
+version = "2.1"
+
+[package.dependencies]
+ua-parser = ">=0.9.0"
 
 [[package]]
 category = "main"
@@ -463,7 +494,7 @@ dev = ["pytest", "coverage", "tox", "sphinx", "pallets-sphinx-themes", "sphinx-i
 watchdog = ["watchdog"]
 
 [metadata]
-content-hash = "7c91be12ed2a69dd99849f5bc6eddd4fc8e0e3ed60b6fcf80af5e7fa119cb0fa"
+content-hash = "fe1625c19fe25b04a972ef9f0c6f0d206abf2396e3d9839b154d027911fc696d"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -518,6 +549,10 @@ django-compressor = [
 ]
 django-sass-processor = [
     {file = "django-sass-processor-0.7.4.tar.gz", hash = "sha256:c1b56e76ce2b57382d26328ecdc204d3f65412d5da35df8a6b7bce6e7f754882"},
+]
+django-user-agents = [
+    {file = "django-user_agents-0.4.0.tar.gz", hash = "sha256:cda8ae2146cee30e6867a07943f56ecc570b4391d725ab5309901a8b3e4a3514"},
+    {file = "django_user_agents-0.4.0-py3-none-any.whl", hash = "sha256:cd9d9f7158b23c5237b2dacb0bc4fffdf77fefe1d2633b5814d3874288ebdb5d"},
 ]
 executing = [
     {file = "executing-0.4.1.tar.gz", hash = "sha256:b180cd26e6bc23305a20a7cbd228a6bab94ae359e0a304dfc58425e3b0bdf6be"},
@@ -669,9 +704,17 @@ sqlparse = [
     {file = "sqlparse-0.3.0-py2.py3-none-any.whl", hash = "sha256:40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177"},
     {file = "sqlparse-0.3.0.tar.gz", hash = "sha256:7c3dca29c022744e95b547e867cee89f4fce4373f3549ccd8797d8eb52cdb873"},
 ]
+ua-parser = [
+    {file = "ua-parser-0.10.0.tar.gz", hash = "sha256:47b1782ed130d890018d983fac37c2a80799d9e0b9c532e734c67cf70f185033"},
+    {file = "ua_parser-0.10.0-py2.py3-none-any.whl", hash = "sha256:46ab2e383c01dbd2ab284991b87d624a26a08f72da4d7d413f5bfab8b9036f8a"},
+]
 urllib3 = [
     {file = "urllib3-1.25.8-py2.py3-none-any.whl", hash = "sha256:2f3db8b19923a873b3e5256dc9c2dedfa883e33d87c690d9c7913e1f40673cdc"},
     {file = "urllib3-1.25.8.tar.gz", hash = "sha256:87716c2d2a7121198ebcb7ce7cccf6ce5e9ba539041cfbaeecfb641dc0bf6acc"},
+]
+user-agents = [
+    {file = "user-agents-2.1.tar.gz", hash = "sha256:da54371d856c35d8ead0622da24ad5ef6d667eda3629a750e3373a3e847a054b"},
+    {file = "user_agents-2.1-py2-none-any.whl", hash = "sha256:e727ab6f169e829bc25d41dbd25b9ff679b4631bd81959bcf7de1e246da67194"},
 ]
 werkzeug = [
     {file = "Werkzeug-1.0.0-py2.py3-none-any.whl", hash = "sha256:6dc65cf9091cf750012f56f2cad759fa9e879f511b5ff8685e456b4e3bf90d16"},

@@ -7,8 +7,11 @@ from tokenize import generate_tokens, Untokenizer
 from typing import get_type_hints, Type
 from uuid import uuid4
 
+import requests
 from birdseye import eye
+from django.conf import settings
 from django.http import JsonResponse, HttpResponseBadRequest
+from django_user_agents.utils import get_user_agent
 from littleutils import select_attrs
 from markdown import markdown
 
@@ -210,3 +213,39 @@ class API:
             maskedIndices=masked_indices,
             mask=mask,
         )
+
+    def submit_feedback(self, title, description, state):
+        """Create an issue on github.com using the given parameters."""
+
+        body = f"""
+**User Issue**
+Email: {self.user.email}
+User Agent: {get_user_agent(self.request)}
+
+{description}
+
+<details>
+
+<summary>Redux state</summary>
+
+<p>
+
+```json
+{json.dumps(state, indent=2)}
+```
+
+</p>
+</details>
+        """
+
+        r = requests.post(
+            'https://api.github.com/repos/alexmojaki/python_init/issues',
+            json={'title': title,
+                  'body': body,
+                  'labels': ['user', 'bug']},
+            headers=dict(
+                Authorization='token ' + settings.GITHUB_TOKEN,
+            ),
+        )
+
+        assert r.status_code == 201

@@ -17,6 +17,7 @@ littleutils = "^0.2.1"
 snoop = "^0.2.4"
 birdseye = "^0.8.3"
 django-allauth = "^0.41.0"
+django-user-agents = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
 

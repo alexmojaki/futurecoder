@@ -24,6 +24,7 @@ import {animateScroll} from "react-scroll";
 import {HintsPopup} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
+import {FeedbackModal} from "./Feedback";
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -250,6 +251,15 @@ const MenuPopup = ({user}) =>
             closeOnDocumentClick
           >
             <SettingsModal user={user}/>
+          </Popup>
+        </p>
+        <p>
+          <Popup
+            trigger={<a href="#"><FontAwesomeIcon icon={faBug}/> Feedback </a>}
+            modal
+            closeOnDocumentClick
+          >
+            {close => <FeedbackModal close={close}/>}
           </Popup>
         </p>
       </div>

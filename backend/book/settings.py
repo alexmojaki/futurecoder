@@ -18,16 +18,16 @@ import snoop
 
 BASE_DIR = Path(__file__).parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'kt1+4_u=ga%3v3@fy0@7c(&lq%)6tt=c+f-(ihd32@t$)i6gjm',
+)
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kt1+4_u=ga%3v3@fy0@7c(&lq%)6tt=c+f-(ihd32@t$)i6gjm'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 snoop.install(enabled=DEBUG)
+
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 ALLOWED_HOSTS = []
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # 'allauth.socialaccount.providers.facebook',
+    'django_user_agents',
 ]
 
 MIDDLEWARE = [
