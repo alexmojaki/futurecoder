@@ -18,14 +18,19 @@ This is a platform/course for complete beginners to teach themselves programming
     2. Run `npm install` to download dependencies.
     3. Run `npm start` to start the frontend development server.
 4. Go to http://localhost:3000/accounts/login/ and login with the email "admin@example.com" and the password "admin".
-5. You should be redirected to http://localhost:3000/ and see the start of the course: "Introducing The Shell".
+5. You should be redirected to http://localhost:3000/course/ and see the start of the course: "Introducing The Shell".
 
 ## Controls
 
 The course consists of *pages* and each page consists of *steps*. Each step requires that the user runs some code that satisfies the requirements of that step. Once they succeed, they are shown the next step. Once they complete all the steps in a page, they are shown the "Next page" button to move forward. They can click "Previous" if they want to review completed pages, but it doesn't affect their progress - any code they submit is still evaluated against the current step, and refreshing the page returns to the last page. Hopefully these basics (without the formal details) should become intuitively clear to the user as they try to use the site.
 
-The red buttons floating at the bottom of the screen are different - these are there to aid development and would not be available to a learner. They change the currently active step, so you can move forward without having to complete exercises or backwards to test a step again.
+To explore the course more freely:
+
+1. Click the hamburger menu icon in the top left.
+2. Click Settings.
+3. Turn Developer mode on.
+4. This should give you two red buttons floating at the bottom of the screen. They change the currently active step, so you can move forward without having to complete exercises or backwards to test a step again.
 
 At the beginning of the course only the shell is available to encourage quick exploration. After a few pages an editor is introduced to allow running full programs.
 
-The course provides three debuggers to specially run code: snoop, PythonTutor, and birdseye. Each should only become available starting from a specific page which introduces that tool. No such page has been written for birdseye, so for now it's immediately available when the editor is introduced.
+The course provides three debuggers to specially run code: snoop, PythonTutor, and birdseye. Each should only become available starting from a specific page which introduces that tool. No such page has been written yet for birdseye, so for now it's immediately available when the editor is introduced.
