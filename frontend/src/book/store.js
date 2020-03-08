@@ -46,10 +46,16 @@ const loadData = (data) => {
   if (!data.user) {
     window.location = "/accounts/login/?next=/course/"
   }
+  const fresh = localState.pages.length === 1;
   setState("server", data.state);
   setState("pages", data.pages);
   setState("user", data.user);
-  setState("showingPageIndex", data.state.page_index);
+  const pageIndex = new URLSearchParams(window.location.search).get('page');
+  if (pageIndex != null && fresh) {
+    setState("showingPageIndex", parseInt(pageIndex));
+  } else {
+    setState("showingPageIndex", data.state.page_index);
+  }
 }
 
 rpc("load_data", {}, loadData);

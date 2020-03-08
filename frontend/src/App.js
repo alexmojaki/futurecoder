@@ -14,6 +14,7 @@ import {
   faBars,
   faBug,
   faCog,
+  faListOl,
   faPlay,
   faSignOutAlt,
   faTimes,
@@ -262,6 +263,7 @@ const MenuPopup = ({user}) =>
             {close => <FeedbackModal close={close}/>}
           </Popup>
         </p>
+        <p><a href="/toc/"> <FontAwesomeIcon icon={faListOl}/> Table of Contents</a></p>
       </div>
     </Popup>
   </div>

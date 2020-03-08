@@ -16,9 +16,11 @@ Including another URLconf
 from django.urls import path
 from django.views.generic import TemplateView
 
+from main.text import chapters
 from main.views import api_view
 
 urlpatterns = [
     path('api/<method_name>/', api_view),
     path('home/', TemplateView.as_view(template_name="home.html")),
+    path('toc/', TemplateView.as_view(template_name="toc.html", extra_context=dict(chapters=chapters))),
 ]

@@ -4,6 +4,7 @@ const routes = [
   "/accounts",
   "/static_backend/",
   "/home",
+  "/toc",
   "/birdseye",
   "/admin",
   "/api"

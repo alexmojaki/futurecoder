@@ -173,6 +173,19 @@ class Page(metaclass=PageMeta):
         except SyntaxError:
             return False
 
+    # Workaround for Django templates which can't see metaclass properties
+    @classmethod
+    def title_prop(cls):
+        return cls.title
+
+    @classmethod
+    def slug_prop(cls):
+        return cls.slug
+
+    @classmethod
+    def index_prop(cls):
+        return cls.index
+
 
 class Step(ABC):
     text = ""
