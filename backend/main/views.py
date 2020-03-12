@@ -2,6 +2,7 @@ import inspect
 import json
 import logging
 from io import StringIO
+from pathlib import Path
 from random import shuffle
 from tokenize import generate_tokens, Untokenizer
 from typing import get_type_hints, Type
@@ -10,7 +11,8 @@ from uuid import uuid4
 import requests
 from birdseye import eye
 from django.conf import settings
-from django.http import JsonResponse, HttpResponseBadRequest
+from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse
+from django.views import View
 from django_user_agents.utils import get_user_agent
 from littleutils import select_attrs
 from markdown import markdown
@@ -249,3 +251,24 @@ User Agent: {get_user_agent(self.request)}
         )
 
         assert r.status_code == 201
+
+
+class FrontendAppView(View):
+    """
+    Serves the compiled frontend entry point (only works if you have run `yarn
+    run build`).
+    """
+
+    def get(self, _request):
+        try:
+            with open(Path(__file__).parent / "../../frontend/build/index.html") as f:
+                return HttpResponse(f.read())
+        except FileNotFoundError:
+            return HttpResponse(
+                """
+                This URL is only used when you have built the production
+                version of the app. Visit http://localhost:3000/ instead, or
+                run `yarn run build` to test the production version.
+                """,
+                status=501,
+            )
