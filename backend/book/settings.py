@@ -29,7 +29,11 @@ snoop.install(enabled=DEBUG)
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'alexmojaki.pythonanywhere.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 # Application definition
 
