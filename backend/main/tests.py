@@ -22,7 +22,7 @@ class StepsTestCase(TestCase):
         from main.models import User
 
         self.user = User.objects.create_user("admin", "admin@example.com", "pass")
-        client.post("/accounts/login/", dict(username="admin", password="pass"))
+        client.post("/accounts/login/", dict(login="admin@example.com", password="pass"))
 
     def test_steps(self):
         data = api("load_data")
