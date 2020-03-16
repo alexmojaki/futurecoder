@@ -22,7 +22,7 @@ from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
 from main.models import CodeEntry
 from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
-from main.worker import worker_connection
+from main.worker import worker_result
 
 log = logging.getLogger(__name__)
 
@@ -91,16 +91,12 @@ class API:
             source=source,
             page_slug=self.user.page_slug,
             step_name=self.user.step_name,
+            user_id=self.user.id,
         )
 
-        entry = CodeEntry.objects.create(
-            **entry_dict,
-            user=self.user,
-        )
+        entry = CodeEntry.objects.create(**entry_dict)
 
-        connection = worker_connection(self.user.id)
-        connection.send(entry_dict)
-        result = connection.recv()
+        result = worker_result(entry_dict)
 
         entry.output = result["output"]
         entry.save()

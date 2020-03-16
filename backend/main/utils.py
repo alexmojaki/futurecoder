@@ -1,5 +1,7 @@
 import functools
+import threading
 import traceback
+from functools import lru_cache
 from io import StringIO
 import re
 import sys
@@ -64,3 +66,18 @@ def row_to_dict(row):
 
 def rows_to_dicts(rows):
     return [row_to_dict(row) for row in rows]
+
+
+def thread_separate_lru_cache(*cache_args, **cache_kwargs):
+    def decorator(func):
+        @lru_cache(*cache_args, **cache_kwargs)
+        def cached(_thread_id, *args, **kwargs):
+            return func(*args, **kwargs)
+
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            return cached(threading.get_ident(), *args, **kwargs)
+
+        return wrapper
+
+    return decorator

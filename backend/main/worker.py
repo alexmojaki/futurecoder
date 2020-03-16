@@ -9,13 +9,13 @@ import queue
 import resource
 import sys
 from code import InteractiveConsole
+from collections import defaultdict
 from datetime import datetime
 from functools import lru_cache
 from importlib import import_module
-from multiprocessing import Pipe
-from multiprocessing.connection import Connection
 from multiprocessing.context import Process
 from threading import Thread
+from time import sleep
 
 import birdseye.bird
 import snoop
@@ -26,6 +26,7 @@ from snoop import snoop
 
 from main.text import pages
 from main.utils import format_exception_string, rows_to_dicts
+from main.workers.communications import AbstractCommunications, ThreadCommunications
 
 log = logging.getLogger(__name__)
 
@@ -288,57 +289,53 @@ def run_code(entry, input_queue, result_queue):
     )
 
 
-def consumer(connection: Connection):
-    manager = multiprocessing.Manager()
-    task_queue = manager.Queue()
-    input_queue = manager.Queue()
-    result_queue = manager.Queue()
-    process = None
+class UserProcess:
+    def __init__(self, manager):
+        self.task_queue = manager.Queue()
+        self.input_queue = manager.Queue()
+        self.result_queue = manager.Queue()
+        self.awaiting_input = False
+        self.process = None
+        self.start_process()
 
-    def start_process():
-        nonlocal process
-        process = Process(
+        @atexit.register
+        def cleanup():
+            if self.process:
+                self.process.terminate()
+
+    def start_process(self):
+        self.process = Process(
             target=worker_loop_in_thread,
-            args=(task_queue, input_queue, result_queue),
+            args=(self.task_queue, self.input_queue, self.result_queue),
             daemon=True,
         )
-        process.start()
+        self.process.start()
 
-    start_process()
-
-    def cleanup():
-        process.terminate()
-
-    atexit.register(cleanup)
-
-    awaiting_input = False
-
-    def run():
-        task_queue.put(entry)
-
-    while True:
-        entry = connection.recv()
+    def handle_entry(self, entry):
         if entry["source"] == "shell":
-            if awaiting_input:
-                input_queue.put(entry["input"])
+            if self.awaiting_input:
+                self.input_queue.put(entry["input"])
             else:
-                run()
+                self.task_queue.put(entry)
         else:
-            if not TESTING and awaiting_input:
-                process.terminate()
-                start_process()
+            if not TESTING and self.awaiting_input:
+                self.process.terminate()
+                self.start_process()
 
-            run()
+            self.task_queue.put(entry)
+
+    def await_result(self, callback):
+        # TODO cancel if result was cancelled by a newer handle_entry
         result = None
         while result is None:
             try:
-                result = result_queue.get(timeout=3)
+                result = self.result_queue.get(timeout=3)
             except queue.Empty:
-                alive = process.is_alive()
+                alive = self.process.is_alive()
                 print(f"Process {alive=}")
                 if alive:
-                    process.terminate()
-                start_process()
+                    self.process.terminate()
+                self.start_process()
                 result = dict(
                     output_parts=[
                         dict(color='red', text='The process died.\n'),
@@ -351,13 +348,62 @@ def consumer(connection: Connection):
                     awaiting_input=False,
                     birdseye_objects=None,
                 )
-        awaiting_input = result["awaiting_input"]
-        connection.send(result)
+        self.awaiting_input = result["awaiting_input"]
+        callback(result)
 
 
-@lru_cache(maxsize=None)
-def worker_connection(_user_id):
-    parent_connection, child_connection = Pipe()
-    p = Thread(target=consumer, args=(child_connection,), daemon=True)
-    p.start()
-    return parent_connection
+def master_consumer_loop(comms: AbstractCommunications):
+    comms = comms.make_master_side_communications()
+    manager = multiprocessing.Manager()
+    user_processes = defaultdict(lambda: UserProcess(manager))
+
+    while True:
+        entry = comms.recv_entry()
+        user_id = str(entry["user_id"])
+        user_process = user_processes[user_id]
+        user_process.handle_entry(entry)
+
+        def callback(result):
+            comms.send_result(user_id, result)
+
+        Thread(
+            target=user_process.await_result,
+            args=[callback],
+        ).start()
+
+
+@lru_cache()
+def master_communications() -> AbstractCommunications:
+    from django.conf import settings
+    if settings.RABBITMQ_HOST:
+        from .workers.pika import PikaCommunications
+        comms = PikaCommunications()
+    else:
+        comms = ThreadCommunications()
+
+    if not settings.SEPARATE_WORKER_PROCESS:
+        Thread(
+            target=master_consumer_loop,
+            args=[comms],
+            daemon=True,
+            name=master_consumer_loop.__name__,
+        ).start()
+
+    return comms
+
+
+def worker_result(entry):
+    comms: AbstractCommunications = master_communications()
+    comms.send_entry(entry)
+    user_id = str(entry["user_id"])
+    return comms.recv_result(user_id)
+
+
+def main():
+    from main.workers.pika import PikaCommunications
+    comms = PikaCommunications()
+    master_consumer_loop(comms)
+
+
+if __name__ == '__main__':
+    main()

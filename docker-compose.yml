@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  server:
+    image: python-init
+    build: .
+    ports:
+      - 3000:3000
+    env_file: .env
+    stdin_open: true
+    tty: true
+  #    volumes:
+  #      - ./backend/consumer/:/usr/src/app/backend/consumer/
+  #      - ./backend/credifly/:/usr/src/app/backend/credifly/
+  #      - ./backend/organisation/:/usr/src/app/backend/organisation/
+  #      - ./backend/agent/:/usr/src/app/backend/agent/
+    depends_on:
+      - rabbitmq
+  worker:
+    image: python-init
+    build: .
+    env_file: .env
+    stdin_open: true
+    tty: true
+    entrypoint: python -m main.worker
+    depends_on:
+      - rabbitmq
+  rabbitmq:
+    image: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+ 

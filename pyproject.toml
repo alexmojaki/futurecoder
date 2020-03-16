@@ -18,6 +18,12 @@ snoop = "^0.2.4"
 birdseye = "^0.8.3"
 django-allauth = "^0.41.0"
 django-user-agents = "^0.4.0"
+gevent = {version = "^1.4", optional = true}
+gunicorn = {version = "^19.9", optional = true}
+pika = {version = "^1.1.0", optional = true}
+
+[tool.poetry.extras]
+production = ["gevent", "gunicorn", "pika"]
 
 [tool.poetry.dev-dependencies]
 

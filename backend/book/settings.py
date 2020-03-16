@@ -29,6 +29,9 @@ snoop.install(enabled=DEBUG)
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
+RABBITMQ_HOST = os.environ.get('RABBITMQ_HOST', '')
+SEPARATE_WORKER_PROCESS = os.environ.get('SEPARATE_WORKER_PROCESS', 'False')[0].upper() == 'T'
+
 ALLOWED_HOSTS = [
     'alexmojaki.pythonanywhere.com',
     'localhost',
