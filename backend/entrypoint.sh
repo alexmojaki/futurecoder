@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -ex
 
-nginx
+#nginx
 
 #rabbitmq-server -detached
 
@@ -12,4 +12,4 @@ python manage.py init_db
 
 #python -m main.worker &
 
-gunicorn -c gunicorn_config.py book.wsgi:application
+gunicorn -c gunicorn_config.py book.wsgi:application --bind 0.0.0.0:$PORT
