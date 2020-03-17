@@ -34,6 +34,7 @@ SEPARATE_WORKER_PROCESS = os.environ.get('SEPARATE_WORKER_PROCESS', 'False')[0].
 
 ALLOWED_HOSTS = [
     'alexmojaki.pythonanywhere.com',
+    os.environ.get('HEROKU_APP_NAME', '') + '.herokuapp.com',
     'localhost',
     '127.0.0.1',
 ]

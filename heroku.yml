@@ -1,6 +1,6 @@
 setup:
   addons:
-    - plan: cloudamqp
+    - plan: cloudamqp:lemur
 build:
   docker:
     web: Dockerfile
