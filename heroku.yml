@@ -5,9 +5,5 @@ build:
   docker:
     web: Dockerfile
     worker: Dockerfile
-release:
-  command:
-    - ./deployment-tasks.sh
-  image: worker
 run:
   worker: python -m main.worker
