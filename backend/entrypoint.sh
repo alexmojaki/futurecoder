@@ -12,4 +12,4 @@ python manage.py init_db
 
 #python -m main.worker &
 
-gunicorn -c gunicorn_config.py book.wsgi:application --bind 0.0.0.0:$PORT
+gunicorn -c gunicorn_config.py book.wsgi:application --bind 0.0.0.0:${PORT:-3000}
