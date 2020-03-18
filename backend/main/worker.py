@@ -15,13 +15,13 @@ from functools import lru_cache
 from importlib import import_module
 from multiprocessing.context import Process
 from threading import Thread
-from time import sleep
 
 import birdseye.bird
 import snoop
 import snoop.formatting
 import snoop.tracer
 from birdseye.bird import BirdsEye
+from littleutils import setup_quick_console_logging
 from snoop import snoop
 
 from main.text import pages
@@ -375,7 +375,7 @@ def master_consumer_loop(comms: AbstractCommunications):
 @lru_cache()
 def master_communications() -> AbstractCommunications:
     from django.conf import settings
-    if settings.RABBITMQ_HOST:
+    if os.environ.get('CLOUDAMQP_URL'):
         from .workers.pika import PikaCommunications
         comms = PikaCommunications()
     else:
@@ -406,4 +406,5 @@ def main():
 
 
 if __name__ == '__main__':
+    setup_quick_console_logging()
     main()

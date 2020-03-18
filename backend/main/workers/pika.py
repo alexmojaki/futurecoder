@@ -1,5 +1,6 @@
 import atexit
 import json
+import logging
 import os
 from contextlib import contextmanager
 from functools import cached_property
@@ -9,14 +10,16 @@ from littleutils import retry
 from main.utils import thread_separate_lru_cache
 from main.workers.communications import AbstractCommunications
 
+log = logging.getLogger(__name__)
+
 
 @thread_separate_lru_cache()
-@retry(num_attempts=10, sleeptime=2)
+@retry(num_attempts=10, sleeptime=2, log=log)
 def connection():
     import pika
 
-    host = os.environ['RABBITMQ_HOST']
-    result = pika.BlockingConnection(pika.ConnectionParameters(host))
+    params = pika.URLParameters(os.environ['CLOUDAMQP_URL'])
+    result = pika.BlockingConnection(params)
     atexit.register(result.close)
     return result
 

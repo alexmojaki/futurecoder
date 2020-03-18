@@ -1,6 +1,8 @@
 setup:
   addons:
     - plan: cloudamqp:lemur
+  config:
+    SEPARATE_WORKER_PROCESS: True
 build:
   docker:
     web: Dockerfile
