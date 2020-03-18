@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get(
     'kt1+4_u=ga%3v3@fy0@7c(&lq%)6tt=c+f-(ihd32@t$)i6gjm',
 )
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True')[0].upper() == 'T'
 
 snoop.install(enabled=DEBUG)
 
