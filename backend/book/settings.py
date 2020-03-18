@@ -141,8 +141,6 @@ STATICFILES_FINDERS = [
     "sass_processor.finders.CssFinder",
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r"^.+\.scss$"
 STATIC_ROOT = "static/"
 SASS_PROCESSOR_ROOT = STATIC_ROOT
