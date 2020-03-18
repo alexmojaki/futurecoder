@@ -5,7 +5,10 @@ import os
 from contextlib import contextmanager
 from functools import cached_property
 
-from littleutils import retry
+from littleutils import retry, DecentJSONEncoder
+
+import pika
+from pika.exceptions import AMQPConnectionError
 
 from main.utils import thread_separate_lru_cache
 from main.workers.communications import AbstractCommunications
@@ -14,10 +17,8 @@ log = logging.getLogger(__name__)
 
 
 @thread_separate_lru_cache()
-@retry(num_attempts=10, sleeptime=2, log=log)
+@retry(num_attempts=10, sleeptime=2, log=log, exception_class=AMQPConnectionError)
 def connection():
-    import pika
-
     params = pika.URLParameters(os.environ['CLOUDAMQP_URL'])
     result = pika.BlockingConnection(params)
     atexit.register(result.close)
@@ -63,7 +64,7 @@ class Queue:
         return json.loads(body.decode('utf8'))
 
     def publish(self, value):
-        body = json.dumps(value).encode('utf8')
+        body = json.dumps(value, cls=DecentJSONEncoder).encode('utf8')
         with self.maybe_cleanup():
             self.channel.basic_publish(
                 exchange='',

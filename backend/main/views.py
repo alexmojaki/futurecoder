@@ -1,6 +1,7 @@
 import inspect
 import json
 import logging
+from datetime import datetime
 from io import StringIO
 from pathlib import Path
 from random import shuffle
@@ -122,6 +123,7 @@ class API:
 
                 for call in birdseye_objects["calls"]:
                     call["function_id"] = function_ids[call["function_id"]]
+                    call["start_time"] = datetime.fromisoformat(call["start_time"])
                     call = eye.db.Call(**call)
                     session.add(call)
                     # TODO get correct call from top level

@@ -1,19 +1,21 @@
 version: "3"
 
+volumes:
+  database_volume: {}
+  
 services:
-  server:
+  web:
     image: python-init
     build: .
     ports:
       - 3000:3000
     env_file: .env
+    environment:
+      SEPARATE_WORKER_PROCESS: 'True'
+      CLOUDAMQP_URL: amqp://rabbitmq
+      DATABASE_URL: postgres://postgres:pass@database/postgres
     stdin_open: true
     tty: true
-  #    volumes:
-  #      - ./backend/consumer/:/usr/src/app/backend/consumer/
-  #      - ./backend/credifly/:/usr/src/app/backend/credifly/
-  #      - ./backend/organisation/:/usr/src/app/backend/organisation/
-  #      - ./backend/agent/:/usr/src/app/backend/agent/
     depends_on:
       - rabbitmq
   worker:
@@ -23,6 +25,9 @@ services:
     stdin_open: true
     tty: true
     entrypoint: python -m main.worker
+    environment:
+      SEPARATE_WORKER_PROCESS: 'True'
+      CLOUDAMQP_URL: amqp://rabbitmq
     depends_on:
       - rabbitmq
   rabbitmq:
@@ -30,4 +35,11 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
- 
+  database:
+    image: postgres:12
+    volumes:
+      - database_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: pass
+    ports:
+      - 5432:5432
