@@ -1,0 +1,13 @@
+{
+  "name": "python_init",
+  "repository": "https://github.com/alexmojaki/python_init",
+  "env": {
+    "SEPARATE_WORKER_PROCESS: ": "True",
+    "DEBUG: ": "False"
+  },
+  "addons": [
+    "cloudamqp",
+    "heroku-postgresql"
+  ],
+  "stack": "container"
+}
