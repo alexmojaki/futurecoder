@@ -396,7 +396,7 @@ twisted = ["twisted"]
 category = "main"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
 name = "psycopg2"
-optional = false
+optional = true
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
 version = "2.8.4"
 
@@ -595,10 +595,10 @@ version = "5.0.1"
 brotli = ["brotli"]
 
 [extras]
-production = ["gevent", "gunicorn", "pika"]
+production = ["gevent", "gunicorn", "pika", "psycopg2"]
 
 [metadata]
-content-hash = "7c07ec18edfb435b8609a13f4c37612e482095e23cf4267f78574c542afba247"
+content-hash = "d5a921c26fe204b0fb2bab5e8f755f3e8aaf8b2680a335ec80b56a84d2b804d9"
 python-versions = "^3.8"
 
 [metadata.files]
