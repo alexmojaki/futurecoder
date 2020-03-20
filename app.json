@@ -1,8 +1,8 @@
 {
   "repository": "https://github.com/alexmojaki/python_init",
   "env": {
-    "SEPARATE_WORKER_PROCESS: ": "True",
-    "DEBUG: ": "False"
+    "SEPARATE_WORKER_PROCESS": "True",
+    "DEBUG": "False"
   },
   "addons": [
     "cloudamqp",
