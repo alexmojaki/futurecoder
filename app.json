@@ -1,3 +1,8 @@
 {
+  "repository": "https://github.com/alexmojaki/python_init",
+  "addons": [
+    "cloudamqp",
+    "heroku-postgresql"
+  ],
   "stack": "container"
 }
