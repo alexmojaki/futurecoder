@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.generic import TemplateView
 
 from main.text import chapters
@@ -24,6 +25,6 @@ urlpatterns = [
     path('api/<method_name>/', api_view),
     path('home/', home_view),
     path('', home_view),
-    path('course/', FrontendAppView.as_view()),
+    path('course/', ensure_csrf_cookie(FrontendAppView.as_view())),
     path('toc/', TemplateView.as_view(template_name="toc.html", extra_context=dict(chapters=chapters))),
 ]

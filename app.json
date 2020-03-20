@@ -8,5 +8,13 @@
     "cloudamqp",
     "heroku-postgresql"
   ],
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
   "stack": "container"
 }
