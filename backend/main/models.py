@@ -18,6 +18,10 @@ class User(AbstractUser):
         return getattr(self.page, self.step_name)
 
 
+class ListEmail(models.Model):
+    email = models.EmailField()
+
+
 class CodeEntry(models.Model):
     timestamp = models.DateTimeField(auto_now=True)
     input = models.TextField()

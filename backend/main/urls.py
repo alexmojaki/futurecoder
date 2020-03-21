@@ -18,9 +18,9 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.generic import TemplateView
 
 from main.text import chapters
-from main.views import api_view, FrontendAppView
+from main.views import api_view, FrontendAppView, HomePageView
 
-home_view = TemplateView.as_view(template_name="home.html")
+home_view = HomePageView.as_view()
 urlpatterns = [
     path('api/<method_name>/', api_view),
     path('home/', home_view),

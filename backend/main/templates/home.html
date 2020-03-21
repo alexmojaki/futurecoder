@@ -10,12 +10,25 @@
         </p>
 
         <p>
-            This site is intended for demonstration, not large scale usage.
+            This site is currently only ready for demonstration, not large scale usage.
             So don't start sharing it with everyone who wants to learn to code.
             It's hosted on free, minimal infrastructure that can't handle a lot of load.
         </p>
 
         <p>
+            If you'd like to be updated when the site is ready, enter your email below:
+        </p>
+
+        {% load crispy_forms_tags %}
+
+        <form method="post">
+            {% crispy form %}
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        
+        {% include "messages.html" %}
+
+        <p style="margin-top: 2em">
             But please share this with people who are interested in providing free education
             and contributing to open source software!
             Learn more about the project in the

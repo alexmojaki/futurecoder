@@ -165,6 +165,14 @@ six = ">=1.12.0"
 
 [[package]]
 category = "main"
+description = "Best way to have Django DRY forms"
+name = "django-crispy-forms"
+optional = false
+python-versions = "*"
+version = "1.9.0"
+
+[[package]]
+category = "main"
 description = "SASS processor to compile SCSS files into *.css, while rendering, or offline."
 name = "django-sass-processor"
 optional = false
@@ -598,7 +606,7 @@ brotli = ["brotli"]
 production = ["gevent", "gunicorn", "pika", "psycopg2"]
 
 [metadata]
-content-hash = "d5a921c26fe204b0fb2bab5e8f755f3e8aaf8b2680a335ec80b56a84d2b804d9"
+content-hash = "76fa56fb9810af5bda4e7ed039e14324b5abdffea992bf5ab638c1deefdad1dd"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -684,6 +692,10 @@ django-appconf = [
 django-compressor = [
     {file = "django_compressor-2.4-py2.py3-none-any.whl", hash = "sha256:57ac0a696d061e5fc6fbc55381d2050f353b973fb97eee5593f39247bc0f30af"},
     {file = "django_compressor-2.4.tar.gz", hash = "sha256:d2ed1c6137ddaac5536233ec0a819e14009553fee0a869bea65d03e5285ba74f"},
+]
+django-crispy-forms = [
+    {file = "django-crispy-forms-1.9.0.tar.gz", hash = "sha256:67e73ac863d3159500029fbbcdcb788f287a3fd357becebc1a0b51f73896dce3"},
+    {file = "django_crispy_forms-1.9.0-py2.py3-none-any.whl", hash = "sha256:50032184708ce351e3c9f0008ac35d659d9d5973fa2db218066f2e0a76eb41d9"},
 ]
 django-sass-processor = [
     {file = "django-sass-processor-0.7.5.tar.gz", hash = "sha256:9267e5fcc7fcde2ec0c7d6ad045b4c6c7e9aea92498ed1725312035a5469b410"},

@@ -1,10 +1,10 @@
 import functools
+import re
+import sys
 import threading
 import traceback
 from functools import lru_cache
 from io import StringIO
-import re
-import sys
 
 from littleutils import withattrs, strip_required_prefix, strip_required_suffix
 from markdown import markdown
