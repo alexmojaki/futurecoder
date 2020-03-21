@@ -12,8 +12,12 @@ from uuid import uuid4
 import requests
 from birdseye import eye
 from django.conf import settings
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from django.forms import ModelForm
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse
 from django.views import View
+from django.views.generic import CreateView
 from django_user_agents.utils import get_user_agent
 from littleutils import select_attrs
 from markdown import markdown
@@ -21,8 +25,9 @@ from markdown import markdown
 from main.chapters.c03_variables import WritingPrograms
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
-from main.models import CodeEntry
+from main.models import CodeEntry, ListEmail
 from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
+from main.utils.django import PlaceHolderForm
 from main.worker import worker_result
 
 log = logging.getLogger(__name__)
@@ -251,7 +256,7 @@ User Agent: {get_user_agent(self.request)}
         assert r.status_code == 201
 
 
-class FrontendAppView(View):
+class FrontendAppView(LoginRequiredMixin, View):
     """
     Serves the compiled frontend entry point (only works if you have run `yarn
     run build`).
@@ -270,3 +275,18 @@ class FrontendAppView(View):
                 """,
                 status=501,
             )
+
+
+class HomePageView(SuccessMessageMixin, CreateView):
+    template_name = "home.html"
+    success_message = "Success! We will email %(email)s when the time is right..."
+
+    def get_success_url(self):
+        return self.request.path_info
+
+    class form_class(ModelForm, PlaceHolderForm):
+        helper_attrs = dict(form_tag=False)
+
+        class Meta:
+            model = ListEmail
+            fields = ["email"]
