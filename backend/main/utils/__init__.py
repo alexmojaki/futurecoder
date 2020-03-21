@@ -54,8 +54,13 @@ def unwrapped_markdown(s):
     return s
 
 
-def format_exception_string(e):
-    return ''.join(traceback.format_exception_only(type(e), e))
+def format_exception_string():
+    return ''.join(traceback.format_exception_only(*sys.exc_info()[:2]))
+
+
+def print_exception():
+    print(format_exception_string(), file=sys.stderr)
+
 
 
 def row_to_dict(row):

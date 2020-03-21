@@ -117,7 +117,7 @@ def check_result(func, inputs, expected_result):
     try:
         result = func(**inputs)
     except Exception as e:
-        result = format_exception_string(e)
+        result = format_exception_string()
 
     result = clean_result(result)
     expected_result = clean_result(expected_result)

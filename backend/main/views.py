@@ -128,7 +128,8 @@ class API:
 
                 for call in birdseye_objects["calls"]:
                     call["function_id"] = function_ids[call["function_id"]]
-                    call["start_time"] = datetime.fromisoformat(call["start_time"])
+                    if isinstance(call["start_time"], str):
+                        call["start_time"] = datetime.fromisoformat(call["start_time"])
                     call = eye.db.Call(**call)
                     session.add(call)
                     # TODO get correct call from top level

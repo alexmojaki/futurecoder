@@ -8,6 +8,7 @@ import os
 import queue
 import resource
 import sys
+import traceback
 from code import InteractiveConsole
 from collections import defaultdict
 from datetime import datetime
@@ -25,7 +26,7 @@ from littleutils import setup_quick_console_logging
 from snoop import snoop
 
 from main.text import pages
-from main.utils import format_exception_string, rows_to_dicts
+from main.utils import rows_to_dicts, print_exception
 from main.workers.communications import AbstractCommunications, ThreadCommunications
 
 log = logging.getLogger(__name__)
@@ -87,6 +88,14 @@ snoop.tracer.FrameInfo = PatchedFrameInfo
 console = InteractiveConsole()
 
 
+def execute(code_obj):
+    try:
+        # noinspection PyTypeChecker
+        exec(code_obj, console.locals)
+    except Exception:
+        print_exception()
+
+
 def runner(code_source, code):
     if code_source == "shell":
         console.push(code)
@@ -104,46 +113,41 @@ def runner(code_source, code):
 
     try:
         code_obj = compile(code, filename, "exec")
-    except SyntaxError as e:
-        print(format_exception_string(e), file=sys.stderr)
+    except SyntaxError:
+        print_exception()
         return {}
 
     birdseye_objects = None
 
-    try:
-        if code_source == "snoop":
-            config = snoop.Config(
-                columns=(),
-                out=sys.stdout,
-                color=True,
-            )
-            tracer = config.snoop()
-            tracer.variable_whitelist = set()
-            for node in ast.walk(ast.parse(code)):
-                if isinstance(node, ast.Name):
-                    name = node.id
-                    tracer.variable_whitelist.add(name)
-            tracer.target_codes.add(code_obj)
-            with tracer:
-                exec(code_obj, console.locals)
-        elif code_source == "birdseye":
-            eye = BirdsEye("sqlite://")
-            traced_file = eye.compile(code, filename)
-            eye._trace('<module>', filename, traced_file, traced_file.code, 'module', code)
-            try:
-                exec(traced_file.code, eye._trace_methods_dict(traced_file))
-            finally:
-                with eye.db.session_scope() as session:
-                    objects = session.query(eye.db.Call, eye.db.Function).all()
-                    calls, functions = [rows_to_dicts(set(column)) for column in zip(*objects)]
-                birdseye_objects = dict(calls=calls, functions=functions)
-        else:
-            exec(code_obj, console.locals)
+    if code_source == "snoop":
+        config = snoop.Config(
+            columns=(),
+            out=sys.stdout,
+            color=True,
+        )
+        tracer = config.snoop()
+        tracer.variable_whitelist = set()
+        for node in ast.walk(ast.parse(code)):
+            if isinstance(node, ast.Name):
+                name = node.id
+                tracer.variable_whitelist.add(name)
+        tracer.target_codes.add(code_obj)
+        with tracer:
+            execute(code_obj)
+    elif code_source == "birdseye":
+        eye = BirdsEye("sqlite://")
+        traced_file = eye.compile(code, filename)
+        eye._trace('<module>', filename, traced_file, traced_file.code, 'module', code)
+        console.locals = eye._trace_methods_dict(traced_file)
+        execute(traced_file.code)
+        with eye.db.session_scope() as session:
+            objects = session.query(eye.db.Call, eye.db.Function).all()
+            calls, functions = [rows_to_dicts(set(column)) for column in zip(*objects)]
+        birdseye_objects = dict(calls=calls, functions=functions)
+    else:
+        execute(code_obj)
 
-    except Exception as e:
-        print(format_exception_string(e), file=sys.stderr)
-
-    return dict(birdseye_objects=birdseye_objects)
+    return birdseye_objects
 
 
 @lru_cache
@@ -202,8 +206,7 @@ def set_limits():
     resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
 
 
-def put_result(
-        q, *,
+def make_result(
         passed=False,
         message='',
         awaiting_input=False,
@@ -217,16 +220,31 @@ def put_result(
     if output_parts is None:
         output_parts = output_buffer.pop()
 
-    q.put(dict(
+    return dict(
         passed=passed,
         message=message,
         awaiting_input=awaiting_input,
         output=output,
         output_parts=output_parts,
         birdseye_objects=birdseye_objects,
-    ))
+    )
 
-    return output
+
+def internal_error_result():
+    output = f"""
+INTERNAL ERROR IN COURSE:
+=========================
+
+{"".join(traceback.format_exception(*sys.exc_info()))}
+
+This is an error in our code, not yours.
+Consider using the Feedback button in the top-right menu
+to explain what led up to this.
+"""
+    return make_result(
+        output=output,
+        output_parts=[dict(color="red", text=output)],
+    )
 
 
 def worker_loop_in_thread(*args):
@@ -244,15 +262,15 @@ def worker_loop(task_queue, input_queue, result_queue):
 
     while True:
         entry = task_queue.get()
-        run_code(entry, input_queue, result_queue)
+        try:
+            run_code(entry, input_queue, result_queue)
+        except Exception:
+            result_queue.put(internal_error_result())
 
 
 def run_code(entry, input_queue, result_queue):
     def readline():
-        put_result(
-            result_queue,
-            awaiting_input=True,
-        )
+        result_queue.put(make_result(awaiting_input=True))
         return input_queue.get()
 
     sys.stdin.readline = readline
@@ -262,7 +280,7 @@ def run_code(entry, input_queue, result_queue):
     try:
         sys.stdout = output_buffer.stdout
         sys.stderr = output_buffer.stderr
-        runner_result = runner(entry['source'], entry['input'])
+        birdseye_objects = runner(entry['source'], entry['input'])
     finally:
         sys.stdout = orig_stdout
         sys.stderr = orig_stderr
@@ -280,13 +298,12 @@ def run_code(entry, input_queue, result_queue):
         else:
             passed = step_result
 
-    put_result(
-        result_queue,
+    result_queue.put(make_result(
         passed=passed,
         message=message,
         output=output,
-        birdseye_objects=runner_result.get("birdseye_objects"),
-    )
+        birdseye_objects=birdseye_objects,
+    ))
 
 
 class UserProcess:
@@ -325,6 +342,14 @@ class UserProcess:
             self.task_queue.put(entry)
 
     def await_result(self, callback):
+        try:
+            result = self._await_result()
+        except Exception:
+            result = internal_error_result()
+        self.awaiting_input = result["awaiting_input"]
+        callback(result)
+
+    def _await_result(self):
         # TODO cancel if result was cancelled by a newer handle_entry
         result = None
         while result is None:
@@ -336,20 +361,15 @@ class UserProcess:
                 if alive:
                     self.process.terminate()
                 self.start_process()
-                result = dict(
+                result = make_result(
                     output_parts=[
                         dict(color='red', text='The process died.\n'),
                         dict(color='red', text='Your code probably took too long.\n'),
                         dict(color='red', text='Maybe you have an infinite loop?\n'),
                     ],
-                    passed=False,
-                    message='',
                     output='The process died.',
-                    awaiting_input=False,
-                    birdseye_objects=None,
                 )
-        self.awaiting_input = result["awaiting_input"]
-        callback(result)
+        return result
 
 
 def master_consumer_loop(comms: AbstractCommunications):
@@ -360,16 +380,19 @@ def master_consumer_loop(comms: AbstractCommunications):
     while True:
         entry = comms.recv_entry()
         user_id = str(entry["user_id"])
-        user_process = user_processes[user_id]
-        user_process.handle_entry(entry)
 
         def callback(result):
             comms.send_result(user_id, result)
 
-        Thread(
-            target=user_process.await_result,
-            args=[callback],
-        ).start()
+        try:
+            user_process = user_processes[user_id]
+            user_process.handle_entry(entry)
+            Thread(
+                target=user_process.await_result,
+                args=[callback],
+            ).start()
+        except Exception:
+            callback(internal_error_result())
 
 
 @lru_cache()
