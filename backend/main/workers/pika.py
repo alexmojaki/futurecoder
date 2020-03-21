@@ -17,7 +17,7 @@ log = logging.getLogger(__name__)
 
 
 @thread_separate_lru_cache()
-@retry(num_attempts=10, sleeptime=2, log=log, exception_class=AMQPConnectionError)
+@retry(num_attempts=10, sleeptime=5, log=log, exception_class=AMQPConnectionError)
 def connection():
     params = pika.URLParameters(os.environ['CLOUDAMQP_URL'])
     result = pika.BlockingConnection(params)
