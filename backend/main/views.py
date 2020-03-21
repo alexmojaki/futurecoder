@@ -28,7 +28,7 @@ from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
 from main.models import CodeEntry, ListEmail
 from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
 from main.utils.django import PlaceHolderForm
-from main.worker import worker_result
+from main.workers.master import worker_result
 
 log = logging.getLogger(__name__)
 

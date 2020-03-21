@@ -6,7 +6,7 @@ import snoop
 import snoop.formatting
 import snoop.tracer
 
-from main.worker import execute
+from .worker import execute
 
 snoop.tracer.internal_directories += (
     os.path.dirname(os.path.dirname(

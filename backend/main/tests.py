@@ -6,10 +6,10 @@ from django.test import TestCase, Client
 
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.text import pages
-from main import worker
+from main.workers import master
 
 client = Client()
-worker.TESTING = True
+master.TESTING = True
 
 
 def api(method, **kwargs):

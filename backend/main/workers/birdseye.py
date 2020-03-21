@@ -4,7 +4,7 @@ import birdseye.bird
 from birdseye.bird import BirdsEye
 
 from main.utils import rows_to_dicts
-from main.worker import console, execute
+from .worker import console, execute
 
 birdseye.bird.get_unfrozen_datetime = datetime.now
 
