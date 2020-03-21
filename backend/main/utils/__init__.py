@@ -62,7 +62,6 @@ def print_exception():
     print(format_exception_string(), file=sys.stderr)
 
 
-
 def row_to_dict(row):
     d = row.__dict__.copy()
     del d["_sa_instance_state"]

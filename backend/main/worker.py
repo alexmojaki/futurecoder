@@ -1,4 +1,3 @@
-import ast
 import atexit
 import inspect
 import linecache
@@ -11,31 +10,21 @@ import sys
 import traceback
 from code import InteractiveConsole
 from collections import defaultdict
-from datetime import datetime
 from functools import lru_cache
 from importlib import import_module
 from multiprocessing.context import Process
 from threading import Thread
 
-import birdseye.bird
-import snoop
-import snoop.formatting
-import snoop.tracer
-from birdseye.bird import BirdsEye
 from littleutils import setup_quick_console_logging
-from snoop import snoop
 
 from main.text import pages
-from main.utils import rows_to_dicts, print_exception
+from main.utils import print_exception
 from main.workers.communications import AbstractCommunications, ThreadCommunications
+
 
 log = logging.getLogger(__name__)
 
 TESTING = False
-
-snoop.install(out=sys.__stderr__, columns=['thread'])
-
-birdseye.bird.get_unfrozen_datetime = datetime.now
 
 
 class SysStream:
@@ -70,20 +59,6 @@ class OutputBuffer:
 
 output_buffer = OutputBuffer()
 
-snoop.tracer.internal_directories += (os.path.dirname((lambda: 0).__code__.co_filename),)
-
-
-class PatchedFrameInfo(snoop.tracer.FrameInfo):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        code = self.frame.f_code
-        self.is_ipython_cell = (
-                code.co_name == '<module>' and
-                code.co_filename == "my_program.py"
-        )
-
-
-snoop.tracer.FrameInfo = PatchedFrameInfo
 
 console = InteractiveConsole()
 
@@ -109,7 +84,6 @@ def runner(code_source, code):
         [line + '\n' for line in code.splitlines()],
         filename,
     )
-    snoop.formatting.Source._class_local('__source_cache', {}).pop(filename, None)
 
     try:
         code_obj = compile(code, filename, "exec")
@@ -120,30 +94,11 @@ def runner(code_source, code):
     birdseye_objects = None
 
     if code_source == "snoop":
-        config = snoop.Config(
-            columns=(),
-            out=sys.stdout,
-            color=True,
-        )
-        tracer = config.snoop()
-        tracer.variable_whitelist = set()
-        for node in ast.walk(ast.parse(code)):
-            if isinstance(node, ast.Name):
-                name = node.id
-                tracer.variable_whitelist.add(name)
-        tracer.target_codes.add(code_obj)
-        with tracer:
-            execute(code_obj)
+        from main.workers.snoop import exec_snoop
+        exec_snoop(filename, code, code_obj)
     elif code_source == "birdseye":
-        eye = BirdsEye("sqlite://")
-        traced_file = eye.compile(code, filename)
-        eye._trace('<module>', filename, traced_file, traced_file.code, 'module', code)
-        console.locals = eye._trace_methods_dict(traced_file)
-        execute(traced_file.code)
-        with eye.db.session_scope() as session:
-            objects = session.query(eye.db.Call, eye.db.Function).all()
-            calls, functions = [rows_to_dicts(set(column)) for column in zip(*objects)]
-        birdseye_objects = dict(calls=calls, functions=functions)
+        from main.workers.birdseye import exec_birdseye
+        birdseye_objects = exec_birdseye(filename, code)
     else:
         execute(code_obj)
 
@@ -203,6 +158,9 @@ def set_limits():
     except ValueError:
         pass
 
+    from main.workers import snoop, birdseye
+    str([snoop, birdseye])
+
     resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
 
 
@@ -256,7 +214,6 @@ def worker_loop(task_queue, input_queue, result_queue):
     result_queue.put(None)
     input_queue.empty()
     task_queue.empty()
-    str(BirdsEye().db)
 
     set_limits()
 
