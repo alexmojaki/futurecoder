@@ -7,9 +7,16 @@ import Popup from "reactjs-popup";
 
 
 export const FeedbackModal = ({close, error}) => {
-  let initialTitle, instructions;
+  let initialTitle, instructions, descriptionExtra;
   if (error) {
     initialTitle = `Error in RPC method ${error.method}`;
+    const details = `
+Method: ${error.method}
+Request data: ${JSON.stringify(error.data, null, 4)}
+
+${error.traceback}
+`;
+    descriptionExtra = "\n\n```" + details + "```";
     instructions = <>
       <h3>Report error</h3>
       <p>
@@ -19,18 +26,13 @@ export const FeedbackModal = ({close, error}) => {
       </p>
       <details>
         <summary>Click for error details</summary>
-        <pre>{`
-Method: ${error.method}
-
-Request data: ${JSON.stringify(error.data, null, 4)}
-
-${error.traceback}
-          `}</pre>
+        <pre>{details}</pre>
       </details>
 
     </>
   } else {
     initialTitle = "";
+    descriptionExtra = "";
     instructions = <>
       <h3>Give feedback</h3>
       <p>Tell us what you like or don't like! If you're reporting a bug, give a detailed description of the problem:</p>
@@ -73,7 +75,7 @@ ${error.traceback}
             rpc("submit_feedback",
               {
                 title: title.value,
-                description: description.value,
+                description: description.value + descriptionExtra,
                 state: redact.store.getState(),
               });
             close();

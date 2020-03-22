@@ -15,7 +15,9 @@ export const rpc = (method, data, onSuccess, onError) => {
   ).then((response) => {
     console.log('Finished RPC method', method);
     if (response.data.error) {
-      stateSet("error", {...response.data.error, method, data});
+      if (method !== "submit_feedback") {
+        stateSet("error", {...response.data.error, method, data});
+      }
     } else if (onSuccess) {
       onSuccess(response.data);
     }
