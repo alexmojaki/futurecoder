@@ -5,7 +5,7 @@ const initialState = {
   error: null,
 };
 
-const {stateSet, statePush, reducer, makeAction} = redact('rpc', initialState);
+const {stateSet, statePush, reducer, makeAction} = redact('rpc', initialState, {dispatched: true});
 
 export {stateSet, statePush, reducer as rpcReducer};
 

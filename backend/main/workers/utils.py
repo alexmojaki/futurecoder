@@ -64,7 +64,7 @@ def internal_error_result():
 INTERNAL ERROR IN COURSE:
 =========================
 
-{"".join(traceback.format_exception(*sys.exc_info()))}
+{"".join(traceback.format_exc())}
 
 This is an error in our code, not yours.
 Consider using the Feedback button in the top-right menu
