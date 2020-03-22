@@ -21,6 +21,7 @@ from django.views.generic import CreateView
 from django_user_agents.utils import get_user_agent
 from littleutils import select_attrs
 from markdown import markdown
+from sentry_sdk import capture_exception
 
 from main.chapters.c03_variables import WritingPrograms
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
@@ -51,6 +52,7 @@ def api_view(request, method_name):
         if not isinstance(result, dict):
             result = {'result': result}
     except Exception:
+        capture_exception()
         result = dict(
             error=dict(
                 traceback=traceback.format_exc(),

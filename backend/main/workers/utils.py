@@ -1,6 +1,8 @@
 import sys
 import traceback
 
+from sentry_sdk import capture_exception
+
 
 class SysStream:
     def __init__(self, output, color):
@@ -61,7 +63,16 @@ def make_result(
     )
 
 
-def internal_error_result():
+def internal_error_result(sentry_offline=False):
+    if sentry_offline:
+        sentry_event = None
+        # TODO https://stackoverflow.com/questions/60801638/how-to-capture-an-easily-serialisable-exception-event-with-sentry
+        # exc_info = sys.exc_info()
+        # sentry_event = event_from_exception(exc_info)
+    else:
+        sentry_event = None
+        capture_exception()
+
     tb = traceback.format_exc()
     output = f"""
 INTERNAL ERROR IN COURSE:
@@ -74,5 +85,5 @@ This is an error in our code, not yours.
     return make_result(
         output=output,
         output_parts=[dict(color="red", text=output)],
-        error=dict(traceback=tb),
+        error=dict(traceback=tb, sentry_event=sentry_event),
     )

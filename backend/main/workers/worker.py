@@ -73,7 +73,7 @@ def worker_loop(task_queue, input_queue, result_queue):
         try:
             run_code(entry, input_queue, result_queue)
         except Exception:
-            result_queue.put(internal_error_result())
+            result_queue.put(internal_error_result(sentry_offline=True))
 
 
 def run_code(entry, input_queue, result_queue):

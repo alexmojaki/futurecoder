@@ -1,14 +1,12 @@
 import atexit
 import multiprocessing
-import os
 import queue
 from collections import defaultdict
 from functools import lru_cache
 from multiprocessing.context import Process
 from threading import Thread
 
-from littleutils import setup_quick_console_logging
-
+from main import simple_settings
 from main.workers.communications import AbstractCommunications, ThreadCommunications
 from main.workers.utils import internal_error_result, make_result
 from main.workers.worker import worker_loop_in_thread
@@ -54,6 +52,9 @@ class UserProcess:
     def await_result(self, callback):
         try:
             result = self._await_result()
+            # if result["error"] and result["error"]["sentry_event"]:
+            #     event, hint = result["error"]["sentry_event"]
+            #     capture_event(event, hint)
         except Exception:
             result = internal_error_result()
         self.awaiting_input = result["awaiting_input"]
@@ -107,14 +108,13 @@ def master_consumer_loop(comms: AbstractCommunications):
 
 @lru_cache()
 def master_communications() -> AbstractCommunications:
-    from django.conf import settings
-    if os.environ.get('CLOUDAMQP_URL'):
+    if simple_settings.CLOUDAMQP_URL:
         from .pika import PikaCommunications
         comms = PikaCommunications()
     else:
         comms = ThreadCommunications()
 
-    if not settings.SEPARATE_WORKER_PROCESS:
+    if not simple_settings.SEPARATE_WORKER_PROCESS:
         Thread(
             target=master_consumer_loop,
             args=[comms],
@@ -139,5 +139,4 @@ def main():
 
 
 if __name__ == '__main__':
-    setup_quick_console_logging()
     main()

@@ -18,6 +18,7 @@ import birdseye
 import dj_database_url
 import snoop
 from django.contrib.messages import constants as messages
+from main import simple_settings
 
 BASE_DIR = Path(__file__).parent.parent
 
