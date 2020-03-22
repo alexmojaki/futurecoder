@@ -1,9 +1,8 @@
 import atexit
-import multiprocessing
 import queue
 from collections import defaultdict
 from functools import lru_cache
-from multiprocessing.context import Process
+from multiprocessing import Queue, Process
 from threading import Thread
 
 from main import simple_settings
@@ -15,10 +14,10 @@ TESTING = False
 
 
 class UserProcess:
-    def __init__(self, manager):
-        self.task_queue = manager.Queue()
-        self.input_queue = manager.Queue()
-        self.result_queue = manager.Queue()
+    def __init__(self):
+        self.task_queue = Queue()
+        self.input_queue = Queue()
+        self.result_queue = Queue()
         self.awaiting_input = False
         self.process = None
         self.start_process()
@@ -85,8 +84,7 @@ class UserProcess:
 
 def master_consumer_loop(comms: AbstractCommunications):
     comms = comms.make_master_side_communications()
-    manager = multiprocessing.Manager()
-    user_processes = defaultdict(lambda: UserProcess(manager))
+    user_processes = defaultdict(UserProcess)
 
     while True:
         entry = comms.recv_entry()

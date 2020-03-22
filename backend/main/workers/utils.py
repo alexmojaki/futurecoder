@@ -1,6 +1,9 @@
 import sys
 import traceback
+import multiprocessing.queues
+import json
 
+from littleutils import DecentJSONEncoder
 from sentry_sdk import capture_exception
 
 
@@ -36,6 +39,8 @@ class OutputBuffer:
 
 output_buffer = OutputBuffer()
 
+json_encoder = DecentJSONEncoder()
+
 
 def make_result(
         passed=False,
@@ -52,7 +57,7 @@ def make_result(
     if output_parts is None:
         output_parts = output_buffer.pop()
 
-    return dict(
+    result = dict(
         passed=passed,
         message=message,
         awaiting_input=awaiting_input,
@@ -61,6 +66,10 @@ def make_result(
         birdseye_objects=birdseye_objects,
         error=error,
     )
+    # Check that JSON encoding works here
+    # because failures in the queue pickling are silent
+    json_pickler.dumps(result)
+    return result
 
 
 def internal_error_result(sentry_offline=False):
@@ -87,3 +96,16 @@ This is an error in our code, not yours.
         output_parts=[dict(color="red", text=output)],
         error=dict(traceback=tb, sentry_event=sentry_event),
     )
+
+
+# Queues don't communicate in pickle so that the worker
+# can't put something malicious for the master to unpickle
+class JsonPickler:
+    def loads(self, b):
+        return json.loads(b.decode("utf8"))
+
+    def dumps(self, x):
+        return json_encoder.encode(x).encode("utf8")
+
+
+multiprocessing.queues._ForkingPickler = json_pickler = JsonPickler()
