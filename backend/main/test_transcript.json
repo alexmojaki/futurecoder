@@ -78,7 +78,71 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "  File \"<console>\", line 1\n    3 x 4\n      ^\nSyntaxError: invalid syntax\n"
+                    "text": "Traceback (most recent call last):\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 63, in runsource\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 168, in __call__\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 99, in _maybe_compile\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 87, in _maybe_compile\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 133, in __call__\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"<console>\", line 1\n"
+                },
+                {
+                    "color": "red",
+                    "text": "    "
+                },
+                {
+                    "color": "red",
+                    "text": "3 x 4\n"
+                },
+                {
+                    "color": "red",
+                    "text": "    "
+                },
+                {
+                    "color": "red",
+                    "text": " "
+                },
+                {
+                    "color": "red",
+                    "text": " "
+                },
+                {
+                    "color": "red",
+                    "text": "^\n"
+                },
+                {
+                    "color": "red",
+                    "text": "SyntaxError"
+                },
+                {
+                    "color": "red",
+                    "text": ": "
+                },
+                {
+                    "color": "red",
+                    "text": "invalid syntax"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -378,7 +442,31 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n  File \"<console>\", line 1, in <module>\nNameError: name 'sunshine' is not defined\n"
+                    "text": "Traceback (most recent call last):\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 90, in runcode\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"<console>\", line 1, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "NameError"
+                },
+                {
+                    "color": "red",
+                    "text": ": "
+                },
+                {
+                    "color": "red",
+                    "text": "name 'sunshine' is not defined"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3195,7 +3283,47 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "  File \"<console>\", line 1\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n"
+                    "text": "Traceback (most recent call last):\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 63, in runsource\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 168, in __call__\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 99, in _maybe_compile\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 87, in _maybe_compile\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 133, in __call__\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"<console>\", line 1\n"
+                },
+                {
+                    "color": "red",
+                    "text": "SyntaxError"
+                },
+                {
+                    "color": "red",
+                    "text": ": "
+                },
+                {
+                    "color": "red",
+                    "text": "expression cannot contain assignment, perhaps you meant \"==\"?"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -4072,7 +4200,31 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n  File \"<console>\", line 1, in <module>\nIndexError: list index out of range\n"
+                    "text": "Traceback (most recent call last):\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 90, in runcode\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"<console>\", line 1, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "IndexError"
+                },
+                {
+                    "color": "red",
+                    "text": ": "
+                },
+                {
+                    "color": "red",
+                    "text": "list index out of range"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -4981,7 +5133,31 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n  File \"<console>\", line 1, in <module>\nNameError: name 'nums' is not defined\n"
+                    "text": "Traceback (most recent call last):\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 90, in runcode\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"<console>\", line 1, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "NameError"
+                },
+                {
+                    "color": "red",
+                    "text": ": "
+                },
+                {
+                    "color": "red",
+                    "text": "name 'nums' is not defined"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
                 },
                 {
                     "color": "white",
