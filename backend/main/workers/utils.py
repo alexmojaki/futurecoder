@@ -42,6 +42,7 @@ def make_result(
         output=None,
         output_parts=None,
         birdseye_objects=None,
+        error=None,
 ):
     if output is None:
         output = output_buffer.string()
@@ -56,21 +57,22 @@ def make_result(
         output=output,
         output_parts=output_parts,
         birdseye_objects=birdseye_objects,
+        error=error,
     )
 
 
 def internal_error_result():
+    tb = traceback.format_exc()
     output = f"""
 INTERNAL ERROR IN COURSE:
 =========================
 
-{"".join(traceback.format_exc())}
+{tb}
 
 This is an error in our code, not yours.
-Consider using the Feedback button in the top-right menu
-to explain what led up to this.
 """
     return make_result(
         output=output,
         output_parts=[dict(color="red", text=output)],
+        error=dict(traceback=tb),
     )

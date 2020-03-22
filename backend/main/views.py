@@ -53,7 +53,7 @@ def api_view(request, method_name):
     except Exception:
         result = dict(
             error=dict(
-                traceback="".join(traceback.format_exc()),
+                traceback=traceback.format_exc(),
             )
         )
     return JsonResponse(result)
@@ -94,6 +94,9 @@ class API:
 
         entry.output = result["output"]
         entry.save()
+
+        if result["error"]:
+            return dict(error=result["error"])
 
         if result["passed"]:
             self.move_step(1)
