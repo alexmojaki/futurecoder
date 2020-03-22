@@ -25,9 +25,8 @@ import {animateScroll} from "react-scroll";
 import {HintsPopup} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import {FeedbackModal} from "./Feedback";
+import {ErrorModal, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
-import hintIcon from "./img/hint.png";
 
 
 class AppComponent extends React.Component {
@@ -78,6 +77,7 @@ class AppComponent extends React.Component {
       solution,
       requestingSolution,
       user,
+      rpcError,
     } = this.props;
     let {
       step_index,
@@ -224,6 +224,8 @@ class AppComponent extends React.Component {
       <MenuPopup
         user={user}
       />
+
+      <ErrorModal error={rpcError}/>
     </div>
   }
 }
@@ -295,5 +297,8 @@ const SettingsModal = ({user}) => (
 
 
 export const App = connect(
-  state => state.book,
+  state => ({
+    ...state.book,
+    rpcError: state.rpc.error,
+  }),
 )(AppComponent);

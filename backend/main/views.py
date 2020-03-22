@@ -1,6 +1,6 @@
-import inspect
 import json
 import logging
+import traceback
 from datetime import datetime
 from io import StringIO
 from pathlib import Path
@@ -15,7 +15,7 @@ from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.forms import ModelForm
-from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse
+from django.http import JsonResponse, HttpResponse
 from django.views import View
 from django.views.generic import CreateView
 from django_user_agents.utils import get_user_agent
@@ -28,47 +28,35 @@ from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
 from main.models import CodeEntry, ListEmail
 from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
 from main.utils.django import PlaceHolderForm
-from main.worker import worker_result
+from main.workers.master import worker_result
 
 log = logging.getLogger(__name__)
 
 
 def api_view(request, method_name):
-    body = request.body
     try:
         method = getattr(API(request), method_name)
-    except AttributeError:
-        log.error('Unknown method %s, body = %s', method_name, body)
-        return HttpResponseBadRequest()
-    try:
+        body = request.body
         body = body.decode('utf8')
-    except UnicodeDecodeError:
-        log.exception('Failed to decode %s', body)
-        return HttpResponseBadRequest()
-    log.info('API request: method = %s, body = %s', method_name, body)
-    try:
         args = json.loads(body)
-    except ValueError as e:
-        log.error('JSON decode error: %s', e)
-        return HttpResponseBadRequest()
-    signature = inspect.signature(method)
-    try:
-        signature.bind(**args)
-    except TypeError as e:
-        log.error(e)
-        return HttpResponseBadRequest()
-    for arg_name, hint in get_type_hints(method).items():
-        if arg_name == 'return':
-            continue
-        arg = args[arg_name]
-        if not isinstance(arg, hint):
-            log.warning(
-                'Incorrect type for argument %s = %r of method %s: found %s, expected %s',
-                arg_name, arg, method_name, arg.__class__.__name__, hint.__name__)
-    result = method(**args)
-    if not isinstance(result, dict):
-        result = {'result': result}
-    return JsonResponse(result, json_dumps_params=dict(indent=4, sort_keys=True))
+        for arg_name, hint in get_type_hints(method).items():
+            if arg_name == 'return':
+                continue
+            arg = args[arg_name]
+            if not isinstance(arg, hint):
+                log.warning(
+                    'Incorrect type for argument %s = %r of method %s: found %s, expected %s',
+                    arg_name, arg, method_name, arg.__class__.__name__, hint.__name__)
+        result = method(**args)
+        if not isinstance(result, dict):
+            result = {'result': result}
+    except Exception:
+        result = dict(
+            error=dict(
+                traceback=traceback.format_exc(),
+            )
+        )
+    return JsonResponse(result)
 
 
 class API:
@@ -107,6 +95,9 @@ class API:
         entry.output = result["output"]
         entry.save()
 
+        if result["error"]:
+            return dict(error=result["error"])
+
         if result["passed"]:
             self.move_step(1)
 
@@ -128,7 +119,8 @@ class API:
 
                 for call in birdseye_objects["calls"]:
                     call["function_id"] = function_ids[call["function_id"]]
-                    call["start_time"] = datetime.fromisoformat(call["start_time"])
+                    if isinstance(call["start_time"], str):
+                        call["start_time"] = datetime.fromisoformat(call["start_time"])
                     call = eye.db.Call(**call)
                     session.add(call)
                     # TODO get correct call from top level

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {stateSet} from "./store";
 // import {finishLoading, statePush, stateSet} from "./store";
 
 axios.defaults.xsrfCookieName = 'csrftoken';
@@ -12,13 +13,16 @@ export const rpc = (method, data, onSuccess, onError) => {
     `/api/${method}/`,
     data,
   ).then((response) => {
-    console.log('Success for RPC method', method);
-    if (onSuccess) {
+    console.log('Finished RPC method', method);
+    if (response.data.error) {
+      if (method !== "submit_feedback") {
+        stateSet("error", {...response.data.error, method, data});
+      }
+    } else if (onSuccess) {
       onSuccess(response.data);
     }
   }).catch((response) => {
     const message = `Error for RPC method ${method}`;
-    // dispatch(stateSet('error', message));
     console.error(message, response);
     if (onError) {
       onError(response);

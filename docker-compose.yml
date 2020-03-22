@@ -24,7 +24,7 @@ services:
     env_file: .env
     stdin_open: true
     tty: true
-    entrypoint: python -m main.worker
+    entrypoint: python -m main.workers.master
     environment:
       SEPARATE_WORKER_PROCESS: 'True'
       CLOUDAMQP_URL: amqp://rabbitmq

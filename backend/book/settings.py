@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import sys
 from pathlib import Path
 
 import birdseye
@@ -27,7 +28,7 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get('DEBUG', 'True')[0].upper() == 'T'
 
-snoop.install(enabled=DEBUG)
+snoop.install(enabled=DEBUG, out=sys.__stderr__, columns=['thread'])
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
