@@ -91,8 +91,12 @@ export default class Terminal extends Component {
 
   pushToStdout(message, rawInput) {
     const {stdout, history} = this.state;
-
-    stdout.push(message);
+    
+    if (message instanceof Array) {
+      stdout.push(...message);
+    } else {
+      stdout.push(message);
+    }
 
     /* istanbul ignore if: Covered by interactivity tests */
     if (rawInput) { // Only supplied if history is enabled

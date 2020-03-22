@@ -55,7 +55,7 @@ class AppComponent extends React.Component {
 
         ranCode(data);
         const terminal = this.terminal.current;
-        data.result.forEach((line) => terminal.pushToStdout(line))
+        terminal.pushToStdout(data.result);
         animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
         terminal.focusTerminal();
         
