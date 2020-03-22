@@ -8,4 +8,4 @@ build:
     web: Dockerfile
     worker: Dockerfile
 run:
-  worker: python -m main.worker
+  worker: python -m main.workers.master
