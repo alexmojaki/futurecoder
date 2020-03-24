@@ -6,7 +6,6 @@
   },
   "addons": [
     "cloudamqp",
-    "sentry",
     "heroku-postgresql"
   ],
   "formation": {
