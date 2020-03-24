@@ -1,5 +1,6 @@
 import linecache
 import logging
+import os
 import sys
 from code import InteractiveConsole
 from threading import Thread
@@ -61,6 +62,7 @@ def worker_loop_in_thread(*args):
 
 
 def worker_loop(task_queue, input_queue, result_queue):
+    os.environ.clear()
     # Open the queue files before setting the file limit
     result_queue.put(None)
     input_queue.empty()
