@@ -10,7 +10,7 @@
   "formation": {
     "web": {
       "quantity": 1
-    },
+    }
   },
   "stack": "container"
 }
