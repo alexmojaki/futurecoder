@@ -1,12 +1,15 @@
 import atexit
+import multiprocessing
 import queue
 from collections import defaultdict
 from functools import lru_cache
 from multiprocessing import Queue, Process
 from threading import Thread
+from time import sleep
+
+import flask
 
 from main import simple_settings
-from main.workers.communications import AbstractCommunications, ThreadCommunications
 from main.workers.utils import internal_error_result, make_result
 from main.workers.worker import worker_loop_in_thread
 
@@ -48,23 +51,23 @@ class UserProcess:
 
             self.task_queue.put(entry)
 
-    def await_result(self, callback):
-        try:
-            result = self._await_result()
-            # if result["error"] and result["error"]["sentry_event"]:
-            #     event, hint = result["error"]["sentry_event"]
-            #     capture_event(event, hint)
-        except Exception:
-            result = internal_error_result()
+    def await_result(self):
+        result = self._await_result()
+        # if result["error"] and result["error"]["sentry_event"]:
+        #     event, hint = result["error"]["sentry_event"]
+        #     capture_event(event, hint)
         self.awaiting_input = result["awaiting_input"]
-        callback(result)
+        return result
 
     def _await_result(self):
         # TODO cancel if result was cancelled by a newer handle_entry
         result = None
+        # TODO handle initial timeout better
+        timeout = 10
         while result is None:
             try:
-                result = self.result_queue.get(timeout=3)
+                result = self.result_queue.get(timeout=timeout)
+                timeout = 3
             except queue.Empty:
                 alive = self.process.is_alive()
                 print(f"Process {alive=}")
@@ -82,59 +85,63 @@ class UserProcess:
         return result
 
 
-def master_consumer_loop(comms: AbstractCommunications):
-    comms = comms.make_master_side_communications()
-    user_processes = defaultdict(UserProcess)
+user_processes = defaultdict(UserProcess)
 
-    while True:
-        entry = comms.recv_entry()
-        user_id = str(entry["user_id"])
+app = flask.Flask(__name__)
 
-        def callback(result):
-            comms.send_result(user_id, result)
+multiprocessing.set_start_method("spawn")
 
-        try:
-            user_process = user_processes[user_id]
-            user_process.handle_entry(entry)
-            Thread(
-                target=user_process.await_result,
-                args=[callback],
-            ).start()
-        except Exception:
-            callback(internal_error_result())
+
+@app.route("/run", methods=["POST"])
+def run():
+    try:
+        entry = flask.request.json
+        user_process = user_processes[entry["user_id"]]
+        user_process.handle_entry(entry)
+        return user_process.await_result()
+    except Exception:
+        return internal_error_result()
+
+
+@app.route("/health")
+def health():
+    return "ok"
+
+
+def run_server():
+    app.run(host="0.0.0.0")
+
+
+master_url = "http://localhost:5000/"
 
 
 @lru_cache()
-def master_communications() -> AbstractCommunications:
-    if simple_settings.CLOUDAMQP_URL:
-        from .pika import PikaCommunications
-        comms = PikaCommunications()
-    else:
-        comms = ThreadCommunications()
+def master_session():
+    import requests
+    session = requests.Session()
 
     if not simple_settings.SEPARATE_WORKER_PROCESS:
         Thread(
-            target=master_consumer_loop,
-            args=[comms],
+            target=run_server,
             daemon=True,
-            name=master_consumer_loop.__name__,
+            name=run_server.__name__,
         ).start()
 
-    return comms
+        # Wait until alive
+        while True:
+            try:
+                session.get(master_url + "health")
+                break
+            except requests.exceptions.ConnectionError:
+                sleep(1)
+
+    return session
 
 
 def worker_result(entry):
-    comms: AbstractCommunications = master_communications()
-    comms.send_entry(entry)
-    user_id = str(entry["user_id"])
-    return comms.recv_result(user_id)
-
-
-def main():
-    from main.workers.pika import PikaCommunications
-    comms = PikaCommunications()
-    master_consumer_loop(comms)
+    session = master_session()
+    return session.post(master_url + "run", json=entry).json()
 
 
 if __name__ == '__main__':
-    main()
+    run_server()

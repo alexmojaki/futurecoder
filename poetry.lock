@@ -287,7 +287,7 @@ description = "Python humanize utilities"
 name = "humanize"
 optional = false
 python-versions = ">=3.5"
-version = "2.0.0"
+version = "2.2.0"
 
 [package.extras]
 tests = ["freezegun", "pytest", "pytest-cov"]
@@ -387,18 +387,6 @@ version = "0.2.0"
 [package.dependencies]
 littleutils = "*"
 requests = "*"
-
-[[package]]
-category = "main"
-description = "Pika Python AMQP Client Library"
-name = "pika"
-optional = true
-python-versions = "*"
-version = "1.1.0"
-
-[package.extras]
-tornado = ["tornado"]
-twisted = ["twisted"]
 
 [[package]]
 category = "main"
@@ -629,10 +617,10 @@ version = "5.0.1"
 brotli = ["brotli"]
 
 [extras]
-production = ["gevent", "gunicorn", "pika", "psycopg2"]
+production = ["gevent", "gunicorn", "psycopg2"]
 
 [metadata]
-content-hash = "2a0aa603ba205d1c2a3e44023c8be6d962e5613e66745ae79949d3325c34fc41"
+content-hash = "fc763661fbdd3b8f8ccc4905d9a241df16180dc37bccb9ed27492d7af8bfc7b1"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -798,8 +786,8 @@ gunicorn = [
     {file = "gunicorn-19.10.0.tar.gz", hash = "sha256:f9de24e358b841567063629cd0a656b26792a41e23a24d0dcb40224fc3940081"},
 ]
 humanize = [
-    {file = "humanize-2.0.0-py3-none-any.whl", hash = "sha256:50423d4264ae51b660087a9b8fc26aa5b93319b26fa6430fc63facb7befd2e1e"},
-    {file = "humanize-2.0.0.tar.gz", hash = "sha256:1766e8b82772abdf54a0b3620b14b21b36feba5160401838f97d18a4c58c7f71"},
+    {file = "humanize-2.2.0-py3-none-any.whl", hash = "sha256:0b3157df0f3fcdcb7611180d305a23fd4b6290eb23586e058762f8576348fbab"},
+    {file = "humanize-2.2.0.tar.gz", hash = "sha256:de8ef6ffee618a9d369b3d1fb1359780ccaa2cc76a0e777c6ff21f04d19a0eb8"},
 ]
 idna = [
     {file = "idna-2.9-py2.py3-none-any.whl", hash = "sha256:a068a21ceac8a4d63dbfd964670474107f541babbd2250d61922f029858365fa"},
@@ -879,10 +867,6 @@ oauthlib = [
 ]
 outdated = [
     {file = "outdated-0.2.0.tar.gz", hash = "sha256:bcb145e0e372ba467e998c327d3d1ba72a134b0d5a729749729df6c6244ce643"},
-]
-pika = [
-    {file = "pika-1.1.0-py2.py3-none-any.whl", hash = "sha256:4e1a1a6585a41b2341992ec32aadb7a919d649eb82904fd8e4a4e0871c8cf3af"},
-    {file = "pika-1.1.0.tar.gz", hash = "sha256:9fa76ba4b65034b878b2b8de90ff8660a59d925b087c5bb88f8fdbb4b64a1dbf"},
 ]
 psycopg2 = [
     {file = "psycopg2-2.8.4-cp27-cp27m-win32.whl", hash = "sha256:72772181d9bad1fa349792a1e7384dde56742c14af2b9986013eb94a240f005b"},
