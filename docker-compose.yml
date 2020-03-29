@@ -12,29 +12,18 @@ services:
     env_file: .env
     environment:
       SEPARATE_WORKER_PROCESS: 'True'
-      CLOUDAMQP_URL: amqp://rabbitmq
       DATABASE_URL: postgres://postgres:pass@database/postgres
     stdin_open: true
     tty: true
-    depends_on:
-      - rabbitmq
-  worker:
-    image: python-init
-    build: .
-    env_file: .env
-    stdin_open: true
-    tty: true
-    entrypoint: python -m main.workers.master
-    environment:
-      SEPARATE_WORKER_PROCESS: 'True'
-      CLOUDAMQP_URL: amqp://rabbitmq
-    depends_on:
-      - rabbitmq
-  rabbitmq:
-    image: rabbitmq
-    ports:
-      - 5672:5672
-      - 15672:15672
+#  worker:
+#    image: python-init
+#    build: .
+#    env_file: .env
+#    stdin_open: true
+#    tty: true
+#    entrypoint: gunicorn --threads 10 --bind 0.0.0.0:5000  main.workers.master:app
+#    ports:
+#      - 5000:5000
   database:
     image: postgres:12
     volumes:
