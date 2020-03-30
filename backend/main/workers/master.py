@@ -23,6 +23,7 @@ class UserProcess:
         self.result_queue = Queue()
         self.awaiting_input = False
         self.process = None
+        self.fresh_process = True
         self.start_process()
 
         @atexit.register
@@ -31,6 +32,7 @@ class UserProcess:
                 self.process.terminate()
 
     def start_process(self):
+        self.fresh_process = True
         self.process = Process(
             target=worker_loop_in_thread,
             args=(self.task_queue, self.input_queue, self.result_queue),
@@ -62,12 +64,11 @@ class UserProcess:
     def _await_result(self):
         # TODO cancel if result was cancelled by a newer handle_entry
         result = None
-        # TODO handle initial timeout better
-        timeout = 10
         while result is None:
+            timeout = 10 if self.fresh_process else 3
             try:
                 result = self.result_queue.get(timeout=timeout)
-                timeout = 3
+                assert (result is None) == self.fresh_process
             except queue.Empty:
                 alive = self.process.is_alive()
                 print(f"Process {alive=}")
@@ -82,6 +83,7 @@ class UserProcess:
                     ],
                     output='The process died.',
                 )
+            self.fresh_process = False
         return result
 
 
@@ -89,7 +91,11 @@ user_processes = defaultdict(UserProcess)
 
 app = flask.Flask(__name__)
 
-multiprocessing.set_start_method("spawn")
+try:
+    multiprocessing.set_start_method("spawn")
+except RuntimeError:
+    # noinspection PyArgumentList
+    assert multiprocessing.get_start_method() == "spawn"
 
 
 @app.route("/run", methods=["POST"])
