@@ -12,5 +12,6 @@ sentry_sdk.init(
     send_default_pii=True
 )
 
-CLOUDAMQP_URL = os.environ.get('CLOUDAMQP_URL')
 SEPARATE_WORKER_PROCESS = os.environ.get('SEPARATE_WORKER_PROCESS', 'False')[0].upper() == 'T'
+
+MASTER_URL = os.environ.get('MASTER_URL', "http://localhost:5000/")

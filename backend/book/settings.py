@@ -33,8 +33,6 @@ snoop.install(enabled=DEBUG, out=sys.__stderr__, columns=['thread'])
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
-SEPARATE_WORKER_PROCESS = os.environ.get('SEPARATE_WORKER_PROCESS', 'False')[0].upper() == 'T'
-
 ALLOWED_HOSTS = [
     'alexmojaki.pythonanywhere.com',
     os.environ.get('HEROKU_APP_NAME', '') + '.herokuapp.com',
