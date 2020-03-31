@@ -29,6 +29,8 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get('DEBUG', 'True')[0].upper() == 'T'
 
+SAVE_CODE_ENTRIES = os.environ.get('SAVE_CODE_ENTRIES', 'True')[0].upper() == 'T'
+
 snoop.install(enabled=DEBUG, out=sys.__stderr__, columns=['thread'])
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')

@@ -90,12 +90,15 @@ class API:
             user_id=self.user.id,
         )
 
-        entry = CodeEntry.objects.create(**entry_dict)
+        entry = None
+        if settings.SAVE_CODE_ENTRIES:
+            entry = CodeEntry.objects.create(**entry_dict)
 
         result = worker_result(entry_dict)
 
-        entry.output = result["output"]
-        entry.save()
+        if settings.SAVE_CODE_ENTRIES:
+            entry.output = result["output"]
+            entry.save()
 
         if result["error"]:
             return dict(error=result["error"])
