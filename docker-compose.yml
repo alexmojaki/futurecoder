@@ -13,17 +13,19 @@ services:
     environment:
       SEPARATE_WORKER_PROCESS: 'True'
       DATABASE_URL: postgres://postgres:pass@database/postgres
+      DEBUG: 'False'
+      MASTER_URL: http://master:5000/
     stdin_open: true
     tty: true
-#  worker:
-#    image: python-init
-#    build: .
-#    env_file: .env
-#    stdin_open: true
-#    tty: true
-#    entrypoint: gunicorn --threads 10 --bind 0.0.0.0:5000  main.workers.master:app
-#    ports:
-#      - 5000:5000
+  master:
+    image: python-init
+    build: .
+    env_file: .env
+    stdin_open: true
+    tty: true
+    entrypoint: ./master_server.sh
+    ports:
+      - 5000:5000
   database:
     image: postgres:12
     volumes:

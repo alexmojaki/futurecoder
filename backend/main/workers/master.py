@@ -118,9 +118,6 @@ def run_server():
     app.run(host="0.0.0.0")
 
 
-master_url = "http://localhost:5000/"
-
-
 @lru_cache()
 def master_session():
     import requests
@@ -136,7 +133,7 @@ def master_session():
         # Wait until alive
         while True:
             try:
-                session.get(master_url + "health")
+                session.get(simple_settings.MASTER_URL + "health")
                 break
             except requests.exceptions.ConnectionError:
                 sleep(1)
@@ -146,7 +143,7 @@ def master_session():
 
 def worker_result(entry):
     session = master_session()
-    return session.post(master_url + "run", json=entry).json()
+    return session.post(simple_settings.MASTER_URL + "run", json=entry).json()
 
 
 if __name__ == '__main__':
