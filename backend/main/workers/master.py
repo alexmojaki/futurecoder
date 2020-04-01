@@ -1,4 +1,5 @@
 import atexit
+import logging
 import multiprocessing
 import queue
 from collections import defaultdict, deque
@@ -17,6 +18,8 @@ from main.workers.utils import internal_error_result, make_result
 from main.workers.worker import worker_loop_in_thread
 
 TESTING = False
+
+log = logging.getLogger(__name__)
 
 
 class UserProcess:
@@ -87,7 +90,7 @@ class UserProcess:
                 assert (result is None) == self.fresh_process
             except queue.Empty:
                 alive = self.process.is_alive()
-                print(f"Process {alive=}")
+                log.info(f"Process {alive=}")
                 if alive:
                     self.process.terminate()
                 self.start_process()
@@ -120,15 +123,15 @@ def monitor_processes():
         sleep(MONITOR.SLEEP_TIME)
         percent = psutil.virtual_memory().percent
         history.append(percent)
-        print(f"Recent memory usage: {history}")
-        print(f"Number of user processes: {len(user_processes)}")
+        log.info(f"Recent memory usage: {history}")
+        log.info(f"Number of user processes: {len(user_processes)}")
         if (
                 len(history) == history.maxlen
                 and min(history) > MONITOR.THRESHOLD
                 and len(user_processes) > MONITOR.MIN_PROCESSES
         ):
             oldest = min(user_processes.values(), key=lambda p: p.last_used)
-            print(f"Terminating process last used {int(time() - oldest.last_used)} seconds ago")
+            log.info(f"Terminating process last used {int(time() - oldest.last_used)} seconds ago")
             del user_processes[oldest.user_id]
             oldest.close()
             history.clear()
