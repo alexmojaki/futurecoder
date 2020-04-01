@@ -18,22 +18,11 @@ import birdseye
 import dj_database_url
 import snoop
 from django.contrib.messages import constants as messages
-from main import simple_settings
+from main.simple_settings import *
 
 BASE_DIR = Path(__file__).parent.parent
 
-SECRET_KEY = os.environ.get(
-    'SECRET_KEY',
-    'kt1+4_u=ga%3v3@fy0@7c(&lq%)6tt=c+f-(ihd32@t$)i6gjm',
-)
-
-DEBUG = os.environ.get('DEBUG', 'True')[0].upper() == 'T'
-
-SAVE_CODE_ENTRIES = os.environ.get('SAVE_CODE_ENTRIES', 'True')[0].upper() == 'T'
-
-snoop.install(enabled=DEBUG, out=sys.__stderr__, columns=['thread'])
-
-GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
+snoop.install(enabled=Root.DEBUG, out=sys.__stderr__, columns=['thread'])
 
 ALLOWED_HOSTS = [
     'alexmojaki.pythonanywhere.com',

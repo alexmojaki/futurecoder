@@ -21,6 +21,8 @@ services:
     image: python-init
     build: .
     env_file: .env
+    environment:
+      MONITOR_ACTIVE: 'True'
     stdin_open: true
     tty: true
     entrypoint: ./master_server.sh
