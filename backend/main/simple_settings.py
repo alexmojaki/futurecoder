@@ -1,4 +1,7 @@
+import sys
+
 import sentry_sdk
+import snoop
 from dryenv import DryEnv, populate_globals
 from littleutils import setup_quick_console_logging
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -26,6 +29,8 @@ class MONITOR(DryEnv):
     NUM_MEASUREMENTS = 3
     SLEEP_TIME = 5
 
+
+snoop.install(enabled=Root.DEBUG, out=sys.__stderr__, columns=['thread'])
 
 sentry_sdk.init(
     dsn=Root.SENTRY_DSN,

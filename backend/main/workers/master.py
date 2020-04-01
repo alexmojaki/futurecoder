@@ -9,6 +9,7 @@ from time import sleep, time
 
 import flask
 import psutil
+import sentry_sdk
 
 from main import simple_settings
 from main.simple_settings import MONITOR
@@ -71,9 +72,8 @@ class UserProcess:
 
     def await_result(self):
         result = self._await_result()
-        # if result["error"] and result["error"]["sentry_event"]:
-        #     event, hint = result["error"]["sentry_event"]
-        #     capture_event(event, hint)
+        if result["error"] and result["error"]["sentry_event"]:
+            sentry_sdk.capture_event(result["error"]["sentry_event"])
         self.awaiting_input = result["awaiting_input"]
         return result
 

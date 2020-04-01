@@ -16,13 +16,10 @@ from pathlib import Path
 
 import birdseye
 import dj_database_url
-import snoop
 from django.contrib.messages import constants as messages
 from main.simple_settings import *
 
 BASE_DIR = Path(__file__).parent.parent
-
-snoop.install(enabled=Root.DEBUG, out=sys.__stderr__, columns=['thread'])
 
 ALLOWED_HOSTS = [
     'alexmojaki.pythonanywhere.com',

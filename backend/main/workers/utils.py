@@ -1,10 +1,10 @@
+import json
+import multiprocessing.queues
 import sys
 import traceback
-import multiprocessing.queues
-import json
 
+import sentry_sdk
 from littleutils import DecentJSONEncoder
-from sentry_sdk import capture_exception
 
 
 class SysStream:
@@ -72,15 +72,31 @@ def make_result(
     return result
 
 
+# Import eagerly
+sentry_sdk.Hub(sentry_sdk.Client(transport=lambda e: None))
+
+
+def get_exception_event():
+    event = {}
+
+    def transport(e):
+        nonlocal event
+        event = e
+
+    client = sentry_sdk.Client(transport=transport)
+    hub = sentry_sdk.Hub(client)
+    hub.capture_exception()
+
+    assert event
+    return event
+
+
 def internal_error_result(sentry_offline=False):
     if sentry_offline:
-        sentry_event = None
-        # TODO https://stackoverflow.com/questions/60801638/how-to-capture-an-easily-serialisable-exception-event-with-sentry
-        # exc_info = sys.exc_info()
-        # sentry_event = event_from_exception(exc_info)
+        sentry_event = get_exception_event()
     else:
         sentry_event = None
-        capture_exception()
+        sentry_sdk.capture_exception()
 
     tb = traceback.format_exc()
     output = f"""
