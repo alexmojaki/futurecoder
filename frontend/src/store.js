@@ -10,6 +10,14 @@ import {
 } from "./frontendlib";
 import {bookReducer} from "./book/store";
 
+import createSentryMiddleware from "redux-sentry-middleware";
+import * as Sentry from "@sentry/browser";
+
+if (process.env.NODE_ENV !== 'development') {
+  console.log('Configuring sentry');
+  Sentry.init({dsn: 'https://8eeb5d4141a64fb38b6dac0c8bba9de3@sentry.io/5170673'});
+}
+
 const {delegateReducer, stateSet} = redact("root");
 
 TextContainer.connect = connect;
@@ -29,6 +37,7 @@ export const store = createStore(
   composeEnhancers(applyMiddleware(
     thunk,
     logger,
+    createSentryMiddleware(Sentry),
   ))
 );
 
