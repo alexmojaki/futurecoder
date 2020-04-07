@@ -5,6 +5,25 @@ from functools import lru_cache
 from importlib import import_module
 
 
+def patch_cwd():
+    """
+    os.getcwd() requires opening a file, which fails under the limits,
+    so this removes the need for that.
+    """
+
+    cwd = os.getcwd()
+
+    def chdir(d):
+        nonlocal cwd
+        cwd = d
+
+    def getcwd():
+        return cwd
+
+    os.getcwd = getcwd
+    os.chdir = chdir
+
+
 def set_limits():
     destroy_dangerous_functions()
 
@@ -19,6 +38,8 @@ def set_limits():
 
     from main.workers import snoop, birdseye
     str([snoop, birdseye])
+
+    patch_cwd()
 
     resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
 

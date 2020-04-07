@@ -5,6 +5,8 @@ import sys
 from code import InteractiveConsole
 from threading import Thread
 
+import stack_data
+
 from main.text import pages
 from main.utils import print_exception
 from main.workers.limits import set_limits
@@ -25,10 +27,12 @@ def execute(code_obj):
 
 def runner(code_source, code):
     if code_source == "shell":
-        console.push(code)
-        return {}
+        mode = "single"
+        code += "\n"  # Allow compiling single-line compound statements
+    else:
+        mode = "exec"
+        console.locals = {}
 
-    console.locals = {}
     filename = "my_program.py"
     linecache.cache[filename] = (
         len(code),
@@ -37,8 +41,10 @@ def runner(code_source, code):
         filename,
     )
 
+    stack_data.Source._class_local('__source_cache', {}).pop(filename, None)
+
     try:
-        code_obj = compile(code, filename, "exec")
+        code_obj = compile(code, filename, mode)
     except SyntaxError:
         print_exception()
         return {}
@@ -63,6 +69,10 @@ def worker_loop_in_thread(*args):
 
 def worker_loop(task_queue, input_queue, result_queue):
     os.environ.clear()
+    os.environ.update(
+        OUTDATED_IGNORE="1",
+    )
+
     # Open the queue files before setting the file limit
     result_queue.put(None)
     input_queue.empty()

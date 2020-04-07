@@ -1,5 +1,4 @@
 import ast
-import os
 import sys
 
 import snoop
@@ -7,12 +6,9 @@ import snoop.formatting
 import snoop.tracer
 
 from .worker import execute
+from ..utils import internal_dir
 
-snoop.tracer.internal_directories += (
-    os.path.dirname(os.path.dirname(
-        (lambda: 0).__code__.co_filename
-    )),
-)
+snoop.tracer.internal_directories += (internal_dir,)
 
 
 class PatchedFrameInfo(snoop.tracer.FrameInfo):

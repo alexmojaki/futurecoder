@@ -82,67 +82,19 @@
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 63, in runsource\n"
+                    "text": "  File \"my_program.py\", line 1\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 168, in __call__\n"
+                    "text": "    3 x 4\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 99, in _maybe_compile\n"
+                    "text": "      ^\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 87, in _maybe_compile\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 133, in __call__\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"<console>\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    "
-                },
-                {
-                    "color": "red",
-                    "text": "3 x 4\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    "
-                },
-                {
-                    "color": "red",
-                    "text": " "
-                },
-                {
-                    "color": "red",
-                    "text": " "
-                },
-                {
-                    "color": "red",
-                    "text": "^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError"
-                },
-                {
-                    "color": "red",
-                    "text": ": "
-                },
-                {
-                    "color": "red",
-                    "text": "invalid syntax"
-                },
-                {
-                    "color": "red",
-                    "text": "\n"
+                    "text": "SyntaxError: invalid syntax\n"
                 },
                 {
                     "color": "white",
@@ -446,27 +398,15 @@
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 90, in runcode\n"
+                    "text": " File \"my_program.py\", line 1, in <module>\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"<console>\", line 1, in <module>\n"
+                    "text": "-->    1 | \u001b[38;5;15msunshine\u001b[39m\n"
                 },
                 {
                     "color": "red",
-                    "text": "NameError"
-                },
-                {
-                    "color": "red",
-                    "text": ": "
-                },
-                {
-                    "color": "red",
-                    "text": "name 'sunshine' is not defined"
-                },
-                {
-                    "color": "red",
-                    "text": "\n"
+                    "text": "NameError: name 'sunshine' is not defined\n"
                 },
                 {
                     "color": "white",
@@ -1024,11 +964,23 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 2\n    print(character)\n    ^\nIndentationError: expected an indented block\n"
+                    "text": "Traceback (most recent call last):\n"
                 },
                 {
                     "color": "red",
-                    "text": "\n"
+                    "text": "  File \"my_program.py\", line 2\n"
+                },
+                {
+                    "color": "red",
+                    "text": "    print(character)\n"
+                },
+                {
+                    "color": "red",
+                    "text": "    ^\n"
+                },
+                {
+                    "color": "red",
+                    "text": "IndentationError: expected an indented block\n"
                 },
                 {
                     "color": "white",
@@ -1248,11 +1200,23 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 3\n    print('---')\n               ^\nIndentationError: unindent does not match any outer indentation level\n"
+                    "text": "Traceback (most recent call last):\n"
                 },
                 {
                     "color": "red",
-                    "text": "\n"
+                    "text": "  File \"my_program.py\", line 3\n"
+                },
+                {
+                    "color": "red",
+                    "text": "    print('---')\n"
+                },
+                {
+                    "color": "red",
+                    "text": "               ^\n"
+                },
+                {
+                    "color": "red",
+                    "text": "IndentationError: unindent does not match any outer indentation level\n"
                 },
                 {
                     "color": "white",
@@ -1539,10 +1503,6 @@
             "birdseye_url": null,
             "message": "",
             "result": [
-                {
-                    "color": "white",
-                    "text": ""
-                },
                 {
                     "color": "white",
                     "text": "\n"
@@ -2495,10 +2455,6 @@
             "result": [
                 {
                     "color": "white",
-                    "text": ""
-                },
-                {
-                    "color": "white",
                     "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n"
                 },
                 {
@@ -2696,10 +2652,6 @@
                 {
                     "color": "white",
                     "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ""
                 },
                 {
                     "color": "white",
@@ -2940,11 +2892,19 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "NameError: name 'char' is not defined\n"
+                    "text": "Traceback (most recent call last):\n"
                 },
                 {
                     "color": "red",
-                    "text": "\n"
+                    "text": " File \"my_program.py\", line 6, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "-->    6 | \u001b[38;5;15msentence\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15mchar\u001b[39m\n"
+                },
+                {
+                    "color": "red",
+                    "text": "NameError: name 'char' is not defined\n"
                 },
                 {
                     "color": "white",
@@ -3287,43 +3247,11 @@
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 63, in runsource\n"
+                    "text": "  File \"my_program.py\", line 1\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 168, in __call__\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 99, in _maybe_compile\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 87, in _maybe_compile\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/codeop.py\", line 133, in __call__\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"<console>\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError"
-                },
-                {
-                    "color": "red",
-                    "text": ": "
-                },
-                {
-                    "color": "red",
-                    "text": "expression cannot contain assignment, perhaps you meant \"==\"?"
-                },
-                {
-                    "color": "red",
-                    "text": "\n"
+                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n"
                 },
                 {
                     "color": "white",
@@ -4204,27 +4132,15 @@
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 90, in runcode\n"
+                    "text": " File \"my_program.py\", line 1, in <module>\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"<console>\", line 1, in <module>\n"
+                    "text": "-->    1 | \u001b[38;5;15mwords\u001b[39m\u001b[38;5;15m[\u001b[39m\u001b[38;5;141m4\u001b[39m\u001b[38;5;15m]\u001b[39m\n"
                 },
                 {
                     "color": "red",
-                    "text": "IndexError"
-                },
-                {
-                    "color": "red",
-                    "text": ": "
-                },
-                {
-                    "color": "red",
-                    "text": "list index out of range"
-                },
-                {
-                    "color": "red",
-                    "text": "\n"
+                    "text": "IndexError: list index out of range\n"
                 },
                 {
                     "color": "white",
@@ -4893,11 +4809,19 @@
                 },
                 {
                     "color": "red",
-                    "text": "TypeError: 'str' object is not callable\n"
+                    "text": "Traceback (most recent call last):\n"
                 },
                 {
                     "color": "red",
-                    "text": "\n"
+                    "text": " File \"my_program.py\", line 3, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "-->    3 | \u001b[38;5;15;48;5;24mf\u001b[39;49m\u001b[38;5;15;48;5;24m(\u001b[39;49m\u001b[38;5;15;48;5;24m)\u001b[39;49m\n"
+                },
+                {
+                    "color": "red",
+                    "text": "TypeError: 'str' object is not callable\n"
                 },
                 {
                     "color": "white",
@@ -4981,11 +4905,19 @@
                 },
                 {
                     "color": "red",
-                    "text": "TypeError: object of type 'NoneType' has no len()\n"
+                    "text": "Traceback (most recent call last):\n"
                 },
                 {
                     "color": "red",
-                    "text": "\n"
+                    "text": " File \"my_program.py\", line 2, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "-->    2 | \u001b[38;5;15mlength\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15;48;5;24mlen\u001b[39;49m\u001b[38;5;15;48;5;24m(\u001b[39;49m\u001b[38;5;15;48;5;24mthings\u001b[39;49m\u001b[38;5;15;48;5;24m)\u001b[39;49m\n"
+                },
+                {
+                    "color": "red",
+                    "text": "TypeError: object of type 'NoneType' has no len()\n"
                 },
                 {
                     "color": "white",
@@ -5060,11 +4992,19 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "AttributeError: 'str' object has no attribute 'append'\n"
+                    "text": "Traceback (most recent call last):\n"
                 },
                 {
                     "color": "red",
-                    "text": "\n"
+                    "text": " File \"my_program.py\", line 2, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "-->    2 | \u001b[38;5;15;48;5;24mword\u001b[39;49m\u001b[38;5;197;48;5;24m.\u001b[39;49m\u001b[38;5;15;48;5;24mappend\u001b[39;49m\u001b[38;5;15m(\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;186m!\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
+                },
+                {
+                    "color": "red",
+                    "text": "AttributeError: 'str' object has no attribute 'append'\n"
                 },
                 {
                     "color": "white",
@@ -5137,27 +5077,15 @@
                 },
                 {
                     "color": "red",
-                    "text": "  File \"/Users/alexhall/.pyenv/versions/3.8.0/lib/python3.8/code.py\", line 90, in runcode\n"
+                    "text": " File \"my_program.py\", line 1, in <module>\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"<console>\", line 1, in <module>\n"
+                    "text": "-->    1 | \u001b[38;5;15mnums\u001b[39m\u001b[38;5;197m.\u001b[39m\u001b[38;5;15minsert\u001b[39m\u001b[38;5;15m(\u001b[39m\u001b[38;5;141m2\u001b[39m\u001b[38;5;15m,\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;141m9\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
                 },
                 {
                     "color": "red",
-                    "text": "NameError"
-                },
-                {
-                    "color": "red",
-                    "text": ": "
-                },
-                {
-                    "color": "red",
-                    "text": "name 'nums' is not defined"
-                },
-                {
-                    "color": "red",
-                    "text": "\n"
+                    "text": "NameError: name 'nums' is not defined\n"
                 },
                 {
                     "color": "white",
