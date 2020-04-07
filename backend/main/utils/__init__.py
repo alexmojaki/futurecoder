@@ -1,4 +1,5 @@
 import functools
+import os
 import re
 import sys
 import threading
@@ -6,8 +7,20 @@ import traceback
 from functools import lru_cache
 from io import StringIO
 
+import stack_data
 from littleutils import withattrs, strip_required_prefix, strip_required_suffix
 from markdown import markdown
+from pygments.formatters import HtmlFormatter
+from pygments.lexers import get_lexer_by_name
+from pygments.styles import get_style_by_name
+
+get_lexer_by_name("python3")
+get_style_by_name("monokai")
+str(HtmlFormatter)
+
+internal_dir = os.path.dirname(os.path.dirname(
+    (lambda: 0).__code__.co_filename
+))
 
 
 def assign(**attrs):
@@ -58,8 +71,22 @@ def format_exception_string():
     return ''.join(traceback.format_exception_only(*sys.exc_info()[:2]))
 
 
+class Formatter(stack_data.Formatter):
+    def format_frame(self, frame):
+        if frame.filename.startswith(internal_dir):
+            return
+        yield from super().format_frame(frame)
+
+
+formatter = Formatter(
+    options=stack_data.Options(before=0, after=0),
+    pygmented=True,
+    show_executing_node=True,
+)
+
+
 def print_exception():
-    print(format_exception_string(), file=sys.stderr)
+    formatter.print_exception()
 
 
 def row_to_dict(row):

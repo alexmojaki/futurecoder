@@ -28,6 +28,7 @@ sentry-sdk = "^0.14.3"
 requests = "^2.23.0"
 psutil = "^5.7.0"
 dryenv = "^0.0.1"
+stack_data = "^0.0.7"
 
 [tool.poetry.extras]
 production = ["gevent", "gunicorn", "psycopg2"]

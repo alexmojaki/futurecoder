@@ -423,6 +423,17 @@ version = "2.8.4"
 
 [[package]]
 category = "main"
+description = "Safely evaluate AST nodes without side effects"
+name = "pure-eval"
+optional = false
+python-versions = "*"
+version = "0.0.3"
+
+[package.extras]
+tests = ["pytest"]
+
+[[package]]
+category = "main"
 description = "C parser in Python"
 marker = "sys_platform == \"win32\" and platform_python_implementation == \"CPython\""
 name = "pycparser"
@@ -601,6 +612,22 @@ version = "0.3.1"
 
 [[package]]
 category = "main"
+description = "Extract data from python stack frames and tracebacks for informative displays"
+name = "stack-data"
+optional = false
+python-versions = "*"
+version = "0.0.7"
+
+[package.dependencies]
+asttokens = "*"
+executing = "*"
+pure-eval = "*"
+
+[package.extras]
+tests = ["pytest", "typeguard", "pygments", "pep517", "littleutils"]
+
+[[package]]
+category = "main"
 description = "Python port of Browserscope's user agent parser"
 name = "ua-parser"
 optional = false
@@ -658,7 +685,7 @@ brotli = ["brotli"]
 production = ["gevent", "gunicorn", "psycopg2"]
 
 [metadata]
-content-hash = "99b5ff87eceac2f4f5fa53847a226918617f2dfc9f4ebc304a76d2caeb09bfb4"
+content-hash = "b552d14dc674144991a5d525b20cbdb54c8c2b3298f6ce561f36044aac2b25f0"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -937,6 +964,9 @@ psycopg2 = [
     {file = "psycopg2-2.8.4-cp38-cp38-win_amd64.whl", hash = "sha256:92a07dfd4d7c325dd177548c4134052d4842222833576c8391aab6f74038fc3f"},
     {file = "psycopg2-2.8.4.tar.gz", hash = "sha256:f898e5cc0a662a9e12bde6f931263a1bbd350cfb18e1d5336a12927851825bb6"},
 ]
+pure-eval = [
+    {file = "pure_eval-0.0.3.tar.gz", hash = "sha256:207facfb53f183e740be37d3e13f25968e16e7799d7725940b3ee008266903c1"},
+]
 pycparser = [
     {file = "pycparser-2.20-py2.py3-none-any.whl", hash = "sha256:7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"},
     {file = "pycparser-2.20.tar.gz", hash = "sha256:2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"},
@@ -1013,6 +1043,9 @@ sqlalchemy = [
 sqlparse = [
     {file = "sqlparse-0.3.1-py2.py3-none-any.whl", hash = "sha256:022fb9c87b524d1f7862b3037e541f68597a730a8843245c349fc93e1643dc4e"},
     {file = "sqlparse-0.3.1.tar.gz", hash = "sha256:e162203737712307dfe78860cc56c8da8a852ab2ee33750e33aeadf38d12c548"},
+]
+stack-data = [
+    {file = "stack_data-0.0.7-py3-none-any.whl", hash = "sha256:120ffd2ad3a4d6972d8afdf2356c003abf4b9c65388655497bd2436cb60b4c0f"},
 ]
 ua-parser = [
     {file = "ua-parser-0.10.0.tar.gz", hash = "sha256:47b1782ed130d890018d983fac37c2a80799d9e0b9c532e734c67cf70f185033"},

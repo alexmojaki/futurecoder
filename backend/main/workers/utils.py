@@ -16,6 +16,8 @@ class SysStream:
         return getattr(sys.__stdout__, item)
 
     def write(self, s):
+        if not s:
+            return
         # TODO limit output length
         self.output.parts.append(
             dict(text=s, color=self.color)
