@@ -16,6 +16,10 @@ If they're still really stuck, they can reveal the solution bit by bit:
 
 ![solution](images/solution.png)
 
+Tracebacks are more helpful than usual, highlighting the exact operation which failed and ensuring that the right amount of context is visible for multiline statements:
+
+![traceback](images/traceback.png) 
+
 Several debuggers are provided, including [snoop](https://github.com/alexmojaki/snoop):
 
 ![snoop](images/snoop.png)
