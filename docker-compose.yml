@@ -5,7 +5,7 @@ volumes:
   
 services:
   web:
-    image: python-init
+    image: futurecoder
     build: .
     ports:
       - 3000:3000
@@ -18,7 +18,7 @@ services:
     stdin_open: true
     tty: true
   master:
-    image: python-init
+    image: futurecoder
     build: .
     env_file: .env
     environment:

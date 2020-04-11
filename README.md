@@ -1,8 +1,8 @@
-# `python_init`
+# `futurecoder`
 
 This is a platform/course for complete beginners to teach themselves programming, specifically in Python. Currently it's very much a work in progress - please consider [contributing](#contributing)!
 
-You can try a demo here: https://python-init.herokuapp.com/
+You can try a demo here: https://futurecoder.herokuapp.com/
 
 ## Features
 
@@ -38,13 +38,13 @@ and [Python Tutor](http://pythontutor.com/):
 
 While most of the groundwork is in place, there is a lot to do to make this a complete course ready for users. All kinds of help are needed and greatly appreciated.
 
-For starters, try using the platform to see what it's like. You can go straight to the [demo site](https://python-init.herokuapp.com/) and quickly sign up for an account. See the [Controls](#controls) section below if you're not sure how to use it. Please give feedback about anything that's confusing, could be done better, or doesn't work.
+For starters, try using the platform to see what it's like. You can go straight to the [demo site](https://futurecoder.herokuapp.com/) and quickly sign up for an account. See the [Controls](#controls) section below if you're not sure how to use it. Please give feedback about anything that's confusing, could be done better, or doesn't work.
 
 In the event that the demo site gets more attention than it can handle, try [running the code locally with the instructions below](#running-locally).
 
-The easiest way to contribute concretely is to write learning material for the course. This doesn't require any expertise beyond knowing how Python works. See [this issue](https://github.com/alexmojaki/python_init/issues/23) for some guidance and join the conversation!
+The easiest way to contribute concretely is to write learning material for the course. This doesn't require any expertise beyond knowing how Python works. See [this issue](https://github.com/alexmojaki/futurecoder/issues/23) for some guidance and join the conversation!
 
-Beyond that, there's plenty of coding work to do on the platform, including frontend, backend, and devops work. See the [list of issues](https://github.com/alexmojaki/python_init/issues) for some ideas.
+Beyond that, there's plenty of coding work to do on the platform, including frontend, backend, and devops work. See the [list of issues](https://github.com/alexmojaki/futurecoder/issues) for some ideas.
 
 ## Running locally
 

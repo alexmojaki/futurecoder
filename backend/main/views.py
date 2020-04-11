@@ -240,7 +240,7 @@ User Agent: {get_user_agent(self.request)}
         """
 
         r = requests.post(
-            'https://api.github.com/repos/alexmojaki/python_init/issues',
+            'https://api.github.com/repos/alexmojaki/futurecoder/issues',
             json={'title': title,
                   'body': body,
                   'labels': ['user', 'bug']},

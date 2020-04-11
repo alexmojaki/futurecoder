@@ -1,5 +1,5 @@
 {
-  "repository": "https://github.com/alexmojaki/python_init",
+  "repository": "https://github.com/alexmojaki/futurecoder",
   "env": {
     "SEPARATE_WORKER_PROCESS": "True",
     "DEBUG": "False"
