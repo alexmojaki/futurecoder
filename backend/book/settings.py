@@ -22,8 +22,8 @@ from main.simple_settings import *
 BASE_DIR = Path(__file__).parent.parent
 
 ALLOWED_HOSTS = [
-    'alexmojaki.pythonanywhere.com',
     os.environ.get('HEROKU_APP_NAME', '') + '.herokuapp.com',
+    'futurecoder.io',
     'localhost',
     '127.0.0.1',
 ]
