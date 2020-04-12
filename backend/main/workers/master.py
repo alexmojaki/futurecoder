@@ -88,6 +88,7 @@ class UserProcess:
             try:
                 result = self.result_queue.get(timeout=timeout)
                 assert (result is None) == self.fresh_process
+                self.fresh_process = False
             except queue.Empty:
                 alive = self.process.is_alive()
                 log.info(f"Process {alive=}")
@@ -102,7 +103,6 @@ class UserProcess:
                     ],
                     output='The process died.',
                 )
-            self.fresh_process = False
         return result
 
 
