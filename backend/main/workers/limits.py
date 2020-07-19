@@ -56,7 +56,13 @@ def destroy_dangerous_functions():
     func = None
     get_referrers = gc.get_referrers
 
-    funcs = [get_referrers, gc.get_referents, gc.get_objects, os.system]
+    funcs = [
+        get_referrers,
+        gc.get_referents,
+        gc.get_objects,
+        os.system,
+        *[v for k, v in os.__dict__.items() if k.startswith("exec")],
+    ]
     expected_refs = [locals(), funcs]
 
     for module_name in bad_module_names:
