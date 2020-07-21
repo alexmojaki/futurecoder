@@ -5311,7 +5311,7 @@
         "step": "same_list"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "for letter in \"ABC\":",
             "    print(letter)",
@@ -5460,7 +5460,7 @@
         "step": "first_nested_loop"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "for letter in \"ABC\":",
             "    print(letter)",
@@ -5634,7 +5634,7 @@
         "step": "first_nested_loop_with_line"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "for letter in \"ABC\":",
             "    print(letter)",
@@ -5915,7 +5915,7 @@
         "step": "first_nested_loop_with_two_arg_print"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "print(1 + \"x\")"
         ],
@@ -5968,7 +5968,7 @@
         "step": "times_table_exercise"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "for left in range(12):",
             "    left += 1",
@@ -9571,7 +9571,7 @@
         "step": "times_table_exercise"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "2 x 3"
         ],
@@ -9628,7 +9628,7 @@
         "step": "times_table_exercise"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "for left in range(12):",
             "    left += 1",
@@ -15519,7 +15519,7 @@
         "step": "times_table_exercise"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "players = ['Alice', 'Bob', 'Charlie']",
             "for player1 in players:",
@@ -15703,7 +15703,7 @@
         "step": "player_vs_player_exercise"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "letters = 'AB'",
             "for c1 in letters:",
@@ -15858,7 +15858,7 @@
                     "<p>Building up a line of characters should be very familiar from previous exercises, the only difference is that you have to make it a given length instead of just the same length as another string.</p>",
                     "<p>An easy way to do something <code>n</code> times is to loop over <code>range(n)</code>. </p>",
                     "<p>You need to use a for loop inside a for loop.</p>",
-                    "<p>You need numbers that count down, like 5, 4, 3, 2, 1. There is a way to do this with range, and you can easily look it up, but it's also easy to use a normal range and do some very simple maths to convert numbers counting up into numbers counting down.</p>",
+                    "<p>You need numbers that count down, like 5, 4, 3, 2, 1. There is a way to do this with <code>range</code>, and you can easily look it up, but it's also easy to use a normal range and do some very simple maths to convert numbers counting up into numbers counting down.</p>",
                     "<p>What formula converts 0 into 5, 1 into 4, 2, into 3, etc?</p>"
                 ],
                 "page_index": 29,
@@ -15872,7 +15872,7 @@
         "step": "crack_password_exercise"
     },
     {
-        "page": "Nested Loops",
+        "page": "Introducing Nested Loops",
         "program": [
             "size = 3",
             "for i in range(size):",
