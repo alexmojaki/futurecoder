@@ -100,9 +100,9 @@ export const ranCode = makeAction(
 
       state = {
         ...state,
-        ..._.pick(initialState, [(
+        ..._.pick(initialState, (
           "numHints messages solution " +
-          "requestingSolution").split(" ")]),
+          "requestingSolution").split(" ")),
         server: value.state,
         processing: false,
       };
