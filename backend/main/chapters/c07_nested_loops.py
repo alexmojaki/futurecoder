@@ -1,3 +1,4 @@
+# flake8: NOQA E501
 from typing import List
 
 from main.exercises import generate_string

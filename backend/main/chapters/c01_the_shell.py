@@ -1,3 +1,4 @@
+# flake8: NOQA E501
 from main.text import Page, VerbatimStep, MessageStep
 from main.text import Step
 

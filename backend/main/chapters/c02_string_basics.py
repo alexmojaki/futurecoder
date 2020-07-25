@@ -1,3 +1,4 @@
+# flake8: NOQA E501
 import ast
 
 from main.text import Page, search_ast, MessageStep
