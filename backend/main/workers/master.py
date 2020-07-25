@@ -4,7 +4,7 @@ import multiprocessing
 import queue
 from collections import defaultdict, deque
 from functools import lru_cache
-from multiprocessing import Queue, Process
+from multiprocessing import Process, Queue
 from threading import Thread
 from time import sleep, time
 

@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 
 import os
 
-import birdseye.server
 from django.core.wsgi import get_wsgi_application
+
+import birdseye.server
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'book.settings')

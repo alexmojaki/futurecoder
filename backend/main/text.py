@@ -3,20 +3,25 @@ from __future__ import annotations
 import ast
 import inspect
 import re
-from abc import abstractmethod, ABC
+from abc import ABC, abstractmethod
 from copy import deepcopy
 from functools import partial
 from importlib import import_module
 from pathlib import Path
-from textwrap import indent, dedent
-from typing import get_type_hints, Union, Type
+from textwrap import dedent, indent
+from typing import Type, Union, get_type_hints
 
 from astcheck import is_ast_like
 from asttokens import ASTTokens
 from littleutils import setattrs
 from markdown import markdown
 
-from main.exercises import check_exercise, check_result, inputs_string, generate_for_type
+from main.exercises import (
+    check_exercise,
+    check_result,
+    generate_for_type,
+    inputs_string,
+)
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
 
 

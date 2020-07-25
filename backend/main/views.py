@@ -5,19 +5,20 @@ from datetime import datetime
 from io import StringIO
 from pathlib import Path
 from random import shuffle
-from tokenize import generate_tokens, Untokenizer
-from typing import get_type_hints, Type
+from tokenize import Untokenizer, generate_tokens
+from typing import Type, get_type_hints
 from uuid import uuid4
 
-import requests
-from birdseye import eye
 from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.forms import ModelForm
-from django.http import JsonResponse, HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views import View
 from django.views.generic import CreateView
+
+import requests
+from birdseye import eye
 from django_user_agents.utils import get_user_agent
 from littleutils import select_attrs
 from markdown import markdown
@@ -27,7 +28,7 @@ from main.chapters.c03_variables import WritingPrograms
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
 from main.models import CodeEntry, ListEmail
-from main.text import Page, page_slugs_list, pages, ExerciseStep, clean_program
+from main.text import ExerciseStep, Page, clean_program, page_slugs_list, pages
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
 

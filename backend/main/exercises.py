@@ -3,12 +3,12 @@ import inspect
 import random
 import string
 import traceback
+import typing
 from textwrap import indent
 
-import typing
 from littleutils import only
 
-from main.utils import returns_stdout, format_exception_string
+from main.utils import format_exception_string, returns_stdout
 
 
 class ExerciseError(Exception):

@@ -10,7 +10,11 @@ import stack_data
 from main.text import pages
 from main.utils import print_exception
 from main.workers.limits import set_limits
-from main.workers.utils import internal_error_result, make_result, output_buffer
+from main.workers.utils import (
+    internal_error_result,
+    make_result,
+    output_buffer,
+)
 
 log = logging.getLogger(__name__)
 
