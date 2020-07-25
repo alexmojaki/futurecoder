@@ -1,3 +1,4 @@
+# flake8: NOQA E501
 import ast
 import re
 
