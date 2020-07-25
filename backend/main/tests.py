@@ -1,8 +1,9 @@
 import json
 import os
-from pathlib import Path
 import re
-from django.test import TestCase, Client
+from pathlib import Path
+
+from django.test import Client, TestCase
 
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.text import pages

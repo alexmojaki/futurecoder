@@ -5,8 +5,8 @@ import snoop
 import snoop.formatting
 import snoop.tracer
 
-from .worker import execute
 from ..utils import internal_dir
+from .worker import execute
 
 snoop.tracer.internal_directories += (internal_dir,)
 

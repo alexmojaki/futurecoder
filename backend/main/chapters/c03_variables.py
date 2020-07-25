@@ -4,8 +4,7 @@ import re
 
 from astcheck import is_ast_like
 
-from main.text import Page, MessageStep
-from main.text import Step, VerbatimStep
+from main.text import MessageStep, Page, Step, VerbatimStep
 
 
 class IntroducingVariables(Page):
