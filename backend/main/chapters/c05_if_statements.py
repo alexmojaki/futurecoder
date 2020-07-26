@@ -4,14 +4,7 @@ import random
 from abc import ABC
 from textwrap import dedent
 
-from main.text import (
-    ExerciseStep,
-    MessageStep,
-    Page,
-    Step,
-    VerbatimStep,
-    search_ast,
-)
+from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast
 from main.utils import returns_stdout
 
 
