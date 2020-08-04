@@ -66,49 +66,51 @@ Previously we made a variable called `word` with the value `'Hello'` with this c
 
     word = 'Hello'
 
-Now make a variable called `name` whose value is another string. The string can be anything...how about your name?
+Now make a variable called `your_name` whose value is another string. The string should be your name. Try it!
+
+TIPS: The character `_` in `your_name` is called an *underscore*. Use it to separate words when you want a variable name containing multiple words. You can type it on most keyboards by pressing Shift and hyphen/dash/minus (`-`).
         """
 
-        program = "name = 'Alex'"
+        program = "your_name = 'Alex'"
 
         class assigned_something_else(MessageStep):
-            """Put `name` before the `=` to create a variable called `name`."""
+            """Put `your_name` before the `=` to create a variable called `your_name`."""
             program = "foo = 3"
 
             def check(self):
                 match = re.match(r"(.*)=", self.input)
-                return bool(match and match.group(1).strip() != "name")
+                return bool(match and match.group(1).strip() != "your_name")
 
         class name_equals_something_else(MessageStep):
-            """You've got the `name = ` part right, now put a string (use quotes) on the right of the `=`."""
-            program = "name = 3"
+            """You've got the `your_name = ` part right, now put a string (use quotes) on the right of the `=`."""
+            program = "your_name = 3"
 
             def check(self):
-                return self.input_matches("name=[^'\"].*")
+                return self.input_matches("your_name=[^'\"].*")
 
         class empty_string(MessageStep):
             """For this exercise, choose a non-empty string"""
-            program = "name = ''"
+            program = "your_name = ''"
             after_success = True
 
             def check(self):
-                return not self.console.locals['name']
+                return not self.console.locals['your_name']
 
         class starts_with_space(MessageStep):
             """For this exercise, choose a name that doesn't start with a space."""
-            program = "name = ' Alex'"
+            program = "your_name = ' Alex'"
             after_success = True
 
             def check(self):
-                return self.console.locals['name'].startswith(' ')
+                return self.console.locals['your_name'].startswith(' ')
 
         def check(self):
             return (
                     is_ast_like(
                         self.tree,
-                        ast.Module(body=[ast.Assign(targets=[ast.Name(id='name')])])
+                        ast.Module(body=[ast.Assign(targets=[ast.Name(id='your_name')])])
                     )
-                    and isinstance(self.console.locals.get('name'), str)
+                    and isinstance(self.console.locals.get('your_name'), str)
             )
 
     class hello_plus_name(VerbatimStep):
@@ -118,7 +120,7 @@ You can use variables in calculations just like you would use literals. For exam
 __program_indented__
         """
 
-        program = "'Hello ' + name"
+        program = "'Hello ' + your_name"
 
     class word_plus_name(word_must_be_hello):
         """
@@ -127,11 +129,11 @@ Or you can just add variables together. Try:
     __program_indented__
         """
 
-        program = "word + name"
+        program = "word + your_name"
 
     class word_plus_name_with_space(word_must_be_hello):
         """
-Oops...that doesn't look nice. Can you modify the code above so that there's a space between the word and the name?
+Oops...that doesn't look nice. Can you modify the code above so that there's a space between the word and your name?
         """
 
         hints = """
@@ -140,7 +142,7 @@ Your answer should contain a mixture of variables (no quotes) and string literal
 You will need to have a space character inside quotes.
         """
 
-        program = "word + ' ' + name"
+        program = "word + ' ' + your_name"
         program_in_text = False
 
     class word_assign_goodbye(VerbatimStep):
@@ -159,7 +161,7 @@ Variables can also change their values over time. Right now `word` has the value
 Now observe the effect of this change by running `__program__` again.
         """
 
-        program = "word + ' ' + name"
+        program = "word + ' ' + your_name"
 
     class first_print(VerbatimStep):
         """
@@ -168,7 +170,7 @@ Those quotes around strings are getting annoying. Try running this:
     __program_indented__
         """
 
-        program = "print(word + ' ' + name)"
+        program = "print(word + ' ' + your_name)"
 
     final_text = """
 Hooray! No more quotes! We'll break down what's happening in this code later. For now just know that `print(<something>)` displays `<something>` in the shell. In particular it displays the actual content of strings that we usually care about, instead of a representation of strings that's suitable for code which has things like quotes. The word `print` here has nothing to do with putting ink on paper.
