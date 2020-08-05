@@ -432,7 +432,7 @@
         ],
         "response": {
             "birdseye_url": null,
-            "message": "<p>Put <code>name</code> before the <code>=</code> to create a variable called <code>name</code>.</p>",
+            "message": "<p>Put <code>your_name</code> before the <code>=</code> to create a variable called <code>your_name</code>.</p>",
             "result": [
                 {
                     "color": "white",
@@ -454,7 +454,7 @@
     {
         "page": "Using Variables",
         "program": [
-            "name = ''"
+            "your_name = ''"
         ],
         "response": {
             "birdseye_url": null,
@@ -480,11 +480,11 @@
     {
         "page": "Using Variables",
         "program": [
-            "name = 3"
+            "your_name = 3"
         ],
         "response": {
             "birdseye_url": null,
-            "message": "<p>You've got the <code>name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
+            "message": "<p>You've got the <code>your_name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
             "result": [
                 {
                     "color": "white",
@@ -506,7 +506,7 @@
     {
         "page": "Using Variables",
         "program": [
-            "name = ' Alex'"
+            "your_name = ' Alex'"
         ],
         "response": {
             "birdseye_url": null,
@@ -532,7 +532,7 @@
     {
         "page": "Using Variables",
         "program": [
-            "name = 'Alex'"
+            "your_name = 'Alex'"
         ],
         "response": {
             "birdseye_url": null,
@@ -558,7 +558,7 @@
     {
         "page": "Using Variables",
         "program": [
-            "'Hello ' + name"
+            "'Hello ' + your_name"
         ],
         "response": {
             "birdseye_url": null,
@@ -592,7 +592,7 @@
     {
         "page": "Using Variables",
         "program": [
-            "word + name"
+            "word + your_name"
         ],
         "response": {
             "birdseye_url": null,
@@ -630,7 +630,7 @@
     {
         "page": "Using Variables",
         "program": [
-            "word + ' ' + name"
+            "word + ' ' + your_name"
         ],
         "response": {
             "birdseye_url": null,
@@ -690,7 +690,7 @@
     {
         "page": "Using Variables",
         "program": [
-            "word + ' ' + name"
+            "word + ' ' + your_name"
         ],
         "response": {
             "birdseye_url": null,
@@ -724,7 +724,7 @@
     {
         "page": "Using Variables",
         "program": [
-            "print(word + ' ' + name)"
+            "print(word + ' ' + your_name)"
         ],
         "response": {
             "birdseye_url": null,
