@@ -8,7 +8,7 @@ from functools import lru_cache
 from io import StringIO
 
 import stack_data
-from littleutils import withattrs, strip_required_prefix, strip_required_suffix
+from littleutils import strip_required_prefix, strip_required_suffix, withattrs
 from markdown import markdown
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name

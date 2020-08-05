@@ -14,9 +14,11 @@ import os
 import sys
 from pathlib import Path
 
+from django.contrib.messages import constants as messages
+
 import birdseye
 import dj_database_url
-from django.contrib.messages import constants as messages
+
 from main.simple_settings import *
 
 BASE_DIR = Path(__file__).parent.parent

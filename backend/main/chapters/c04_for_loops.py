@@ -1,8 +1,8 @@
+# flake8: NOQA E501
 import ast
 from textwrap import dedent
 
-from main.text import Page, MessageStep
-from main.text import Step, ExerciseStep, VerbatimStep
+from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep
 from main.utils import returns_stdout
 
 

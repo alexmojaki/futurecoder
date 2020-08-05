@@ -1,9 +1,8 @@
-from main.text import Page, VerbatimStep, MessageStep
-from main.text import Step
+# flake8: NOQA E501
+from main.text import MessageStep, Page, Step, VerbatimStep
 
 
 class IntroducingTheShell(Page):
-
     class first_expression(VerbatimStep):
         """
 At the bottom right of the screen is the *shell*. This is a place for running small bits of Python code. Just type in some code, press enter, and it'll run! Try it now:
@@ -48,10 +47,10 @@ Try doing some more calculations now. You can multiply numbers with `*`, divide 
             program = "3 x 4"
 
             def check(self):
-                return 'x' in self.input
+                return "x" in self.input
 
         def check(self):
-            return self.input_matches(r'\d[-*/]\d')
+            return self.input_matches(r"\d[-*/]\d")
 
     final_text = """
 Excellent! Keep experimenting. When you're ready, click 'Next' to continue.

@@ -1,10 +1,10 @@
+# flake8: NOQA E501
 import ast
 import random
 from abc import ABC
 from textwrap import dedent
 
-from main.text import ExerciseStep, VerbatimStep, MessageStep, Step, search_ast
-from main.text import Page
+from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast
 from main.utils import returns_stdout
 
 

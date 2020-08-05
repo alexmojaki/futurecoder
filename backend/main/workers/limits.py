@@ -36,7 +36,7 @@ def set_limits():
     except ValueError:
         pass
 
-    from main.workers import snoop, birdseye
+    from main.workers import birdseye, snoop
     str([snoop, birdseye])
 
     patch_cwd()
@@ -46,8 +46,8 @@ def set_limits():
 
 @lru_cache
 def destroy_dangerous_functions():
-    import signal
     import gc
+    import signal
 
     del signal.sigwait.__doc__
 

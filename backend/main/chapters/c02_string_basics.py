@@ -1,7 +1,7 @@
+# flake8: NOQA E501
 import ast
 
-from main.text import Page, search_ast, MessageStep
-from main.text import Step, VerbatimStep
+from main.text import MessageStep, Page, Step, VerbatimStep, search_ast
 
 
 class IntroducingStrings(Page):

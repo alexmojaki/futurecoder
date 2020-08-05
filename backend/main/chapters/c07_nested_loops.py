@@ -1,7 +1,8 @@
+# flake8: NOQA E501
 from typing import List
 
 from main.exercises import generate_string
-from main.text import Page, VerbatimStep, ExerciseStep, MessageStep
+from main.text import ExerciseStep, MessageStep, Page, VerbatimStep
 from main.utils import returns_stdout
 
 
