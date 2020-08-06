@@ -4,7 +4,7 @@ import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
-import {bookSetState, bookState, closeMessage, movePage, moveStep, ranCode, setDeveloperMode} from "./book/store";
+import {bookSetState, bookState, closeMessage, movePage, moveStep, ranCode, setDeveloperMode, stepIndex} from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-python";
@@ -72,7 +72,6 @@ class AppComponent extends React.Component {
       numHints,
       editorContent,
       messages,
-      showingPageIndex,
       pages,
       solution,
       requestingSolution,
@@ -80,17 +79,15 @@ class AppComponent extends React.Component {
       rpcError,
     } = this.props;
     let {
-      step_index,
       hints,
       showEditor,
       showSnoop,
       showPythonTutor,
       showBirdseye,
+      page_index,
     } = server;
-    const page = pages[showingPageIndex];
-    if (showingPageIndex < server.page_index) {
-      step_index = page.step_texts.length - 1;
-    }
+    const page = pages[page_index];
+    const step_index = stepIndex()
     return <div className="book-container">
       <div className="book-text markdown-body">
         <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
@@ -114,10 +111,10 @@ class AppComponent extends React.Component {
           )
         }
         <div>
-          {showingPageIndex > 0 &&
+          {page_index > 0 &&
           <button className="btn btn-primary btn-sm" onClick={() => movePage(-1)}>Previous</button>}
           {" "}
-          {showingPageIndex < pages.length - 1 && step_index === page.step_texts.length - 1 &&
+          {page_index < pages.length - 1 && step_index === page.step_texts.length - 1 &&
           <button className="btn btn-success" onClick={() => movePage(+1)}>Next</button>}
         </div>
         <br/>

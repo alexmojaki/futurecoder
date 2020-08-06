@@ -5,7 +5,7 @@ import _ from "lodash";
 
 const initialState = {
   server: {
-    step_index: 0,
+    pages_progress: {},
     page_index: 0,
     hints: [],
     showEditor: false,
@@ -28,7 +28,6 @@ const initialState = {
   editorContent: "",
   messages: [],
   pastMessages: [],
-  showingPageIndex: 0,
   requestingSolution: false,
   solution: {
     tokens: [],
@@ -42,19 +41,29 @@ const {reducer, makeAction, setState, localState} = redact('book', initialState,
 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState};
 
+export const stepIndex = (state = localState.server) => state.pages_progress[state.page_index];
+
+const set_server_page = (index) => rpc(
+  "set_page",
+  {index},
+  (data) => setState("server", data),
+);
+
 const loadData = (data) => {
   if (!data.user) {
     window.location = "/accounts/login/?next=/course/"
   }
   const fresh = localState.pages.length === 1;
-  setState("server", data.state);
   setState("pages", data.pages);
+  setState("server", data.state);
   setState("user", data.user);
-  const pageIndex = new URLSearchParams(window.location.search).get('page');
+  let pageIndex = new URLSearchParams(window.location.search).get('page');
   if (pageIndex != null && fresh) {
-    setState("showingPageIndex", parseInt(pageIndex));
+    pageIndex = parseInt(pageIndex);
+    set_server_page(pageIndex);
+    setState("server.page_index", pageIndex);
   } else {
-    setState("showingPageIndex", data.state.page_index);
+    setState("server.page_index", data.state.page_index);
   }
 }
 
@@ -65,14 +74,10 @@ export const moveStep = (delta) => {
 };
 
 export const movePage = (delta) => {
-  const newIndex = localState.showingPageIndex + delta;
-  if (newIndex > localState.server.page_index) {
-    setState("server.step_index", 0);
-    setState("server.page_index", newIndex);
-    rpc("next_page", {}, (data) => setState("server", data));
-  }
-  setState("showingPageIndex", newIndex);
-  animateScroll.scrollToTop({delay: 0, duration: 0});
+  const newIndex = localState.server.page_index + delta;
+  setState("server.page_index", newIndex);
+  set_server_page(newIndex);
+  scroller.scrollTo(`step-text-${stepIndex()}`, {delay: 0, duration: 0})
 };
 
 
@@ -89,9 +94,10 @@ export const showHint = makeAction(
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
-    if (state.server.step_index < value.state.step_index) {
+    const newStepIndex = stepIndex(value.state);
+    if (stepIndex(state.server) < newStepIndex) {
       setTimeout(() =>
-          scroller.scrollTo(`step-text-${value.state.step_index}`, {
+          scroller.scrollTo(`step-text-${newStepIndex}`, {
             duration: 1000,
             smooth: true,
           }),

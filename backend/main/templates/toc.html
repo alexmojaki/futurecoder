@@ -9,11 +9,9 @@
                 <ol>
                     {% for page in chapter.2 %}
                         <li>
-                            <a
-                                    {% if user.page.index_prop >= page.index_prop %}
-                                        href="/course/?page={{ page.index_prop }}"
-                                    {% endif %}
-                            >{{ page.title_prop|safe }}</a>
+                            <a href="/course/?page={{ page.index_prop }}">
+                                {{ page.title_prop|safe }}
+                            </a>
                         </li>
                     {% endfor %}
                 </ol>
