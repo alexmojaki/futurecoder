@@ -22,16 +22,19 @@
         <h2>Table of Contents</h2>
         <ol>
             {% for chapter in chapters %}
-                <li><b>{{ chapter.0 }}</b></li>
-                <ol>
-                    {% for page in chapter.2 %}
-                        <li>
-                            <a href="/course/?page={{ page.index_prop }}">
-                                {{ page.title_prop|safe }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ol>
+                <li>
+                    <b>{{ chapter.0 }}</b>
+                    <ol>
+                        {% for page in chapter.2 %}
+                            <li>
+                                <a href="/course/?page={{ page.index_prop }}">
+                                    {{ page.title_prop|safe }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </li>
+
             {% endfor %}
         </ol>
 
