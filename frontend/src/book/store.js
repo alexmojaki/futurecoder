@@ -1,6 +1,6 @@
 import {ipush, iremove, iset, redact} from "../frontendlib";
 import {rpc} from "../rpc";
-import {scroller, animateScroll} from "react-scroll";
+import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
 
 const initialState = {
@@ -51,7 +51,9 @@ const set_server_page = (index) => rpc(
 
 const loadData = (data) => {
   if (!data.user) {
-    window.location = "/accounts/login/?next=/course/"
+    window.location = '/accounts/login/?next='
+      + window.location.pathname
+      + window.location.search;
   }
   const fresh = localState.pages.length === 1;
   setState("pages", data.pages);
