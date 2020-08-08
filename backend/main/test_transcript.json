@@ -5065,27 +5065,21 @@
     {
         "page": "Functions And Methods For Lists",
         "program": [
-            "nums.insert(2, 9)"
+            "nums = [1, 2, 3, 4, 5]",
+            "nums.insert(2, 9)",
+            "print(nums)"
         ],
         "response": {
             "birdseye_url": null,
             "message": "",
             "result": [
                 {
-                    "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "color": "white",
+                    "text": "[1, 2, 9, 3, 4, 5]"
                 },
                 {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 1, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    1 | \u001b[38;5;15mnums\u001b[39m\u001b[38;5;197m.\u001b[39m\u001b[38;5;15minsert\u001b[39m\u001b[38;5;15m(\u001b[39m\u001b[38;5;141m2\u001b[39m\u001b[38;5;15m,\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;141m9\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "NameError: name 'nums' is not defined\n"
+                    "color": "white",
+                    "text": "\n"
                 },
                 {
                     "color": "white",

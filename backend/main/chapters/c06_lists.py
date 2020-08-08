@@ -813,19 +813,21 @@ In one word, what's special about `91` in the list `[21, 55, 4, 91, 62, 49]`?
 
     class list_insert(Step):
         """
-Good find! Let's do one more. If you have a list:
+Good find! Let's do one more. Consider this program:
 
     nums = [1, 2, 3, 4, 5]
+    nums.append(9)
+    print(nums)
 
-You could write `nums.append(9)` and `nums` would change to:
+This changes `nums` so that it prints:
 
     [1, 2, 3, 4, 5, 9]
 
-But suppose you don't want the 9 to be at the end, you want it to go between the second and third elements:
+But suppose you don't want the 9 to be at the end, you want it to go between the second and third elements, so the output is:
 
     [1, 2, 9, 3, 4, 5]
 
-Call the right function/method in the shell to do that. 
+Replace the middle line (i.e. the call to `append`) with the right function/method call to do that. 
         """
 
         hints = """
@@ -835,11 +837,14 @@ Instead of putting the value at the beginning or end, we want to put it ________
 'python add value at index'
 """
 
-        program = "nums.insert(2, 9)"
+        def program(self):
+            nums = [1, 2, 3, 4, 5]
+            nums.insert(2, 9)
+            print(nums)
 
         def check(self):
             return search_ast(
-                self.stmt,
+                self.tree,
                 ast.Call(func=ast.Attribute(attr='insert'),
                          args=[ast.Constant(value=2),
                                ast.Constant(value=9)]),
