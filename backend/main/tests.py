@@ -46,6 +46,7 @@ class StepsTestCase(TestCase):
                         code_source = "shell"
                     response = api("run_code", code=program, source=code_source)
                     state = response["state"]
+                    del state["pages_progress"]
                     for line in response["result"]:
                         line["text"] = normalise_output(line["text"])
                     transcript.append(dict(
@@ -61,7 +62,7 @@ class StepsTestCase(TestCase):
                     self.assertEqual(step_index + (not is_message), state["step_index"], transcript[-1])
 
             if page_index < len(pages) - 1:
-                state = api("next_page")
+                state = api("set_page", index=page_index + 1)
         path = Path(__file__).parent / "test_transcript.json"
         if os.environ.get("FIX_TESTS", 0):
             dump = json.dumps(transcript, indent=4, sort_keys=True)

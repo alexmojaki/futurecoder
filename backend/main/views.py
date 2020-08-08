@@ -27,7 +27,7 @@ from sentry_sdk import capture_exception
 from main.chapters.c03_variables import WritingPrograms
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
 from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
-from main.models import CodeEntry, ListEmail
+from main.models import CodeEntry, ListEmail, User
 from main.text import ExerciseStep, Page, clean_program, page_slugs_list, pages
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
@@ -67,7 +67,7 @@ class API:
         self.request = request
 
     @property
-    def user(self):
+    def user(self) -> User:
         return self.request.user
 
     @property
@@ -162,8 +162,13 @@ class API:
         self.user.save()
 
     def current_state(self):
+        pages_progress = self.user.pages_progress
         return dict(
             **select_attrs(self, "hints step_index"),
+            pages_progress=[
+                page.step_names.index(pages_progress[page_slug]["step_name"])
+                for page_slug, page in pages.items()
+            ],
             page_index=self.page.index,
             showEditor=self.page.index >= WritingPrograms.index,
             showSnoop=(self.page.index, self.step_index) >= (UnderstandingProgramsWithSnoop.index, 1),
@@ -174,19 +179,15 @@ class API:
     def move_step(self, delta: int):
         step_names = self.page.step_names
         new_index = self.step_index + delta
-        if new_index >= len(step_names):
-            self.next_page()
-        elif new_index < 0:
-            self.user.page_slug = page_slugs_list[self.page.index - 1]
-            self.user.step_name = self.page.step_names[0]
-        else:
-            self.user.step_name = step_names[new_index]
-        self.user.save()
+        if 0 <= new_index < len(step_names):
+            new_step_name = step_names[new_index]
+            self.user.pages_progress[self.user.page_slug]["step_name"] = new_step_name
+            self.user.save()
+
         return self.load_data()
 
-    def next_page(self):
-        self.user.page_slug = page_slugs_list[self.page.index + 1]
-        self.user.step_name = self.page.step_names[0]
+    def set_page(self, index):
+        self.user.page_slug = page_slugs_list[index]
         self.user.save()
         return self.current_state()
 
