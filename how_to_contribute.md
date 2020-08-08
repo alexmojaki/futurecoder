@@ -33,3 +33,53 @@ Take a look at [the issues labeled "course material"](https://github.com/alexmoj
 If you want to write fresh content, see [this issue](https://github.com/alexmojaki/futurecoder/issues/23) for the central discussion and additional guidance. This is a good place to dump rough ideas and snippets.
 
 If you want to contribute a solid bit of course with actual text, code, and exercises, open a new issue with a proposal draft just in markdown. Don't jump to implementing it in Python.
+
+## How to implement course content in Python
+
+### Chapters
+
+To the user, a chapter is a group of pages in the table of contents. In the code, a chapter is a single Python file under `backend/main/chapters`. To add a new chapter, just add a new file and follow the naming pattern. The title of the chapter for the table of contents will be derived automatically from the filename.
+
+### Pages
+
+To the user, a page is a group of steps that can be viewed all at once. You can jump to any page in the table of contents, or use the Previous/Next buttons to go back and forth.
+
+In code, a page is a class in a chapter file inheriting from `main.text.Page`. Pages have the following:
+
+- A `slug`, which by default is just the class name. This is used in various places in the system to identify the page, e.g. it's stored in the database to identify which page a user last visited. If you blindly rename a page class you will break existing data. If you must do so, set the `slug` class attribute to the original class name.
+- A `title`, which is what the user sees. By default this is derived from the class name. You can override it by setting the `title` class attribute, which can include markdown.
+- Zero or more step classes declared inside, discussed below.
+- A `final_text` attribute. This is required. This is like the final 'step', except it's not a step class, it's just a string containing markdown. This is the end of a page after a user has completed all the steps that require interaction. When the user sees the final text, they will see the 'Next' button below to go to the next page (if there is one).
+
+### Steps
+
+Steps are the building blocks of the course, and this is where things get interesting. A step is some text containing information and instructions or an exercise for the user plus logic to check that they have completed the step correctly. Users must complete steps (by running code) to advance through the course.
+
+In code, a step is a class inheriting from `main.text.Step` declared inside a `Page` class. It has:
+
+- `text`. This is a string containing markdown displayed to the user. Typically this is declared just in the docstring of the class, but you can set the `text` class attribute directly if needed.
+- A `check` method which determines if the user submitted the right code, discussed more below.
+- A `program`, which is a string containing Python code which would solve this step and allow the user to advance, i.e. it passes the `check` method. This has several uses:
+    - It shows readers of the code what you expect users to enter for this step.
+    - It's used to automatically test the `check` method.
+    - It will be shown to the user if they request a solution after reading all hints.
+    - It's what users have to enter in a `VerbatimStep`.
+    - If the `text` contains `__program__` or `__program_indented__`, that will be replaced by the `program`.
+ 
+   You can define `program` as a string or a method. A string is good if the program is really short or contains invalid syntax. A method is better in other cases so that editors can work with it nicely. It will be converted to a string automatically.
+- `hints` (optional) is a list of markdown strings which the user can reveal one by one to gradually guide them to a solution. For brevity you can provide a single string which will be split by newlines.
+- Zero or more `MessageStep` classes declared inside, detailed further down.
+
+#### Implementing `check`.
+
+When the user runs code, the code is passed to a worker which executes it. The worker then checks the code, output, and local variables in the `Step.check` instance method. The methods leading up to this are `Page.check_step` and `Step.check_with_messages`.
+
+The `check` method almost always returns a boolean: `True` if the user entered the correct code and may advance, otherwise `False`. In rare cases it may return a dict `{"message": "<some message for the user>"}`, although you should usually use a `MessageStep` for this.
+
+In most cases you want to inherit from `VerbatimStep` or `ExerciseStep`, which implement `check` for you but have additional requirements. If you want to implement `check` yourself, here are the attributes you can use from `self`:
+
+- `input`: the code the user entered as a string.
+- `tree`: the AST parsed from `input`. This is what you should use most often, especially with the helper functions `main.text.search_ast`, `astcheck.is_ast_like`, and `ast.walk`. The best place to learn about the Python AST is https://greentreesnakes.readthedocs.io/.
+- `result`: the output of the user's program. This is a string containing both stdout and stderr. It's therefore a good way to check if a particular exception was raised.
+- `code_source`: a string equal to either `"shell"`, `"editor"`, `"snoop"`, or `"birdseye"` indicating how the user ran the code. This is useful when you want to force the user to run code a certain way, e.g. to see a debugger in action or encourage exploration in the shell.
+- `console.locals` is a dict of the variables created by the program.
