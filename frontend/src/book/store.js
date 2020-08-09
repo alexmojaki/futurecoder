@@ -59,9 +59,10 @@ const loadData = (data) => {
   setState("pages", data.pages);
   setState("server", data.state);
   setState("user", data.user);
-  let pageIndex = new URLSearchParams(window.location.search).get('page');
-  if (pageIndex != null && fresh) {
-    pageIndex = parseInt(pageIndex);
+  const pageSlug = new URLSearchParams(window.location.search).get('page');
+  if (pageSlug != null && fresh) {
+    // Allow either page index or page slug in URL
+    const pageIndex = parseInt(pageSlug) || parseInt(_.findIndex(data.pages, {slug: pageSlug}));
     set_server_page(pageIndex);
     setState("server.page_index", pageIndex);
   } else {

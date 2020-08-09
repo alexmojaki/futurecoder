@@ -150,18 +150,22 @@ class AppComponent extends React.Component {
           {showPythonTutor &&
           <button
             className="btn btn-success"
-            onClick={() => window.open(
-              'https://pythontutor.com/iframe-embed.html#code=' + escape(bookState.editorContent) +
-              '&codeDivHeight=600' +
-              '&codeDivWidth=600' +
-              '&cumulative=false' +
-              '&curInstr=0' +
-              '&heapPrimitives=false' +
-              '&origin=opt-frontend.js' +
-              '&py=3' +
-              '&rawInputLstJSON=%5B%5D' +
-              '&textReferences=false',
-            )}
+            onClick={() => {
+              this.runCode({source: "pythontutor"});
+              window.open(
+                'https://pythontutor.com/iframe-embed.html#code=' +
+                escape(bookState.editorContent) +
+                '&codeDivHeight=600' +
+                '&codeDivWidth=600' +
+                '&cumulative=false' +
+                '&curInstr=0' +
+                '&heapPrimitives=false' +
+                '&origin=opt-frontend.js' +
+                '&py=3' +
+                '&rawInputLstJSON=%5B%5D' +
+                '&textReferences=false',
+              );
+            }}
           >
             <FontAwesomeIcon icon={faUserGraduate}/> Python Tutor
           </button>}

@@ -147,7 +147,7 @@ class API:
 
         return dict(
             pages=[
-                select_attrs(page, "title step_texts")
+                select_attrs(page, "slug title index step_texts")
                 for page in pages.values()
             ],
             state=self.current_state(),
