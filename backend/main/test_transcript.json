@@ -5133,6 +5133,60 @@
         "step": "dir_list"
     },
     {
+        "page": "Understanding Programs With Python Tutor",
+        "program": [
+            "all_numbers = [2, 4, 8, 1, 9, 7]",
+            "",
+            "small_numbers = []",
+            "big_numbers = []",
+            "",
+            "for number in all_numbers:",
+            "    if number <= 5:",
+            "        small_numbers.append(number)",
+            "    else:",
+            "        big_numbers.append(number)",
+            "",
+            "print(small_numbers)",
+            "print(big_numbers)"
+        ],
+        "response": {
+            "birdseye_url": null,
+            "message": "",
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[2, 4, 1]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[8, 9, 7]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ],
+            "state": {
+                "hints": [],
+                "page_index": 26,
+                "showBirdseye": true,
+                "showEditor": true,
+                "showPythonTutor": true,
+                "showSnoop": true,
+                "step_index": 1
+            }
+        },
+        "step": "run_with_python_tutor"
+    },
+    {
         "page": "<code>==</code> vs <code>is</code>",
         "program": [
             "list1 = [1, 2, 3]",

@@ -899,26 +899,38 @@ Or you can use `word.upper()` immediately in a larger expression, e.g.
 
 
 class UnderstandingProgramsWithPythonTutor(Page):
-    final_text = """
-It's time to learn about another tool to explore programs. Put some code in the editor and then click the new "Python Tutor" button. Here's some example code if you want:
-
-    all_numbers = [2, 4, 8, 1, 9, 7]
-
-    small_numbers = []
-    big_numbers = []
-
-    for number in all_numbers:
-        if number <= 5:
-            small_numbers.append(number)
-        else:
-            big_numbers.append(number)
-
-    print(small_numbers)
-    print(big_numbers)
-
-The button will open a new tab with a visualisation from [pythontutor.com](http://pythontutor.com).
+    class run_with_python_tutor(VerbatimStep):
+        """
+It's time to learn about another tool to explore programs.
+Copy the code below into the editor and then click the new "Python Tutor" button.
+The button opens a new tab with a visualisation from [pythontutor.com](http://pythontutor.com).
 There you can navigate through the program step by step with the "Prev" or "Next" buttons, or drag
 the slider left or right. You can also see the values of variables on the right.
+
+    __program_indented__
+        """
+
+        def check(self):
+            return super().check() and self.code_source == "pythontutor"
+
+        def program(self):
+            all_numbers = [2, 4, 8, 1, 9, 7]
+
+            small_numbers = []
+            big_numbers = []
+
+            for number in all_numbers:
+                if number <= 5:
+                    small_numbers.append(number)
+                else:
+                    big_numbers.append(number)
+
+            print(small_numbers)
+            print(big_numbers)
+
+    final_text = """
+Note that the code runs twice separately: once here, once on pythontutor.com.
+Depending on your program, the two runs may produce different results.
 """
 
 

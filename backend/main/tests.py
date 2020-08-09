@@ -6,6 +6,7 @@ from pathlib import Path
 from django.test import Client, TestCase
 
 from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
+from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
 from main.text import pages
 from main.workers import master
 
@@ -40,6 +41,8 @@ class StepsTestCase(TestCase):
                     if "\n" in program:
                         if step == UnderstandingProgramsWithSnoop.print_tail_snoop:
                             code_source = "snoop"
+                        elif step == UnderstandingProgramsWithPythonTutor.run_with_python_tutor:
+                            code_source = "pythontutor"
                         else:
                             code_source = "editor"
                     else:

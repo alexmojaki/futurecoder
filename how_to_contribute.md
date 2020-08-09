@@ -85,7 +85,7 @@ In most cases you want to inherit from `VerbatimStep` or `ExerciseStep`, which i
 - `input`: the code the user entered as a string.
 - `tree`: the AST parsed from `input`. This is what you should use most often, especially with the helper functions `main.text.search_ast`, `astcheck.is_ast_like`, and `ast.walk`. The best place to learn about the Python AST is https://greentreesnakes.readthedocs.io/.
 - `result`: the output of the user's program. This is a string containing both stdout and stderr. It's therefore a good way to check if a particular exception was raised.
-- `code_source`: a string equal to either `"shell"`, `"editor"`, `"snoop"`, or `"birdseye"` indicating how the user ran the code. This is useful when you want to force the user to run code a certain way, e.g. to see a debugger in action or encourage exploration in the shell.
+- `code_source`: a string equal to either `"shell"`, `"editor"`, `"snoop"`, `"pythontutor"`, or `"birdseye"` indicating how the user ran the code. This is useful when you want to force the user to run code a certain way, e.g. to see a debugger in action or encourage exploration in the shell.
 - `console.locals` is a dict of the variables created by the program.
 
 #### VerbatimStep
