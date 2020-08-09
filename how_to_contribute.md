@@ -70,7 +70,11 @@ In code, a step is a class inheriting from `main.text.Step` declared inside a `P
 - `hints` (optional) is a list of markdown strings which the user can reveal one by one to gradually guide them to a solution. For brevity you can provide a single string which will be split by newlines.
 - Zero or more `MessageStep` classes declared inside, detailed further down.
 
-#### Implementing `check`.
+#### Generating steps automatically
+
+The fastest way to get started implementing steps is to open `backend/main/generate_steps.py`, replace `input_text` a markdown draft, and run the script. This will generate a series of `VerbatimStep`s (see below) where each indented code block becomes the program for one step. This won't usually be exactly what you need, but it gets a lot of the boring boilerplate out of the way.
+
+#### The `check` method
 
 When the user runs code, the code is passed to a worker which executes it. The worker then checks the code, output, and local variables in the `Step.check` instance method. The methods leading up to this are `Page.check_step` and `Step.check_with_messages`.
 
@@ -83,3 +87,94 @@ In most cases you want to inherit from `VerbatimStep` or `ExerciseStep`, which i
 - `result`: the output of the user's program. This is a string containing both stdout and stderr. It's therefore a good way to check if a particular exception was raised.
 - `code_source`: a string equal to either `"shell"`, `"editor"`, `"snoop"`, or `"birdseye"` indicating how the user ran the code. This is useful when you want to force the user to run code a certain way, e.g. to see a debugger in action or encourage exploration in the shell.
 - `console.locals` is a dict of the variables created by the program.
+
+#### VerbatimStep
+
+This is the simplest kind of step. The text should instruct the user to run specific code, and they have to enter that exact code to pass. 'Exact' means that the AST must match - there can be differences in whitespace, comments, and the type of quotes used, but the rest should be identical, including variable names. If the only difference is due to case sensitivity, then a message will be shown to the user about this.
+
+The code that the user must enter is given by `program`, which can be a string or a method.
+
+The text should contain the program so that the user can copy it. Rather than duplicating the program, write `__program__` or `__program_indented__` in the text and it will be automatically replaced by the program, indented in the latter case. For example, your class might look like this:
+
+    class one_plus_two(VerbatimStep):
+        """
+        Run `__program__` in the shell.
+        """
+        
+        program = "1 + 2"
+    
+Then the text will say "Run `1 + 2` in the shell." and the user will have to do exactly that to continue (although if the editor is visible they can use that too). Alternatively, if you want them to run some longer multiline code, it would look like this:
+
+    class one_plus_two(VerbatimStep):
+        """
+        Run this:
+        
+            __program_indented__
+        """
+        
+        def program(self):
+            x = 1 + 2
+            print(x)
+
+Actually indenting `__program_indented__` is optional.
+
+In some cases you don't want the full program in the text. For example if the full program was specified in the previous step and you don't want the text to repeat it, you can write "replace <some line> with <some other line>". Make sure these instructions are very clear, as the user will not have access to hints or the complete solution. Then set `program_in_text = False` in the class to indicate your intention, otherwise an error will be raised when `__program__` is not found in the text.
+
+#### ExerciseStep
+
+This is for when the student needs to solve a problem on their own, and statically analysing a submission won't do - you need to run the code with different inputs to verify that it's correct.
+
+For example, a user will typically be given text like:
+
+> Time for an exercise! Given a number `foo` and a string `bar`, e.g:
+> 
+>     foo = 5
+>     bar = 'spam'
+>
+> Write a program which prints `bar` `foo` times, e.g:
+>
+>     spam
+>     spam
+>     spam
+>     spam
+>     spam
+
+The first thing you need is a `solution` method. This is specified instead of `program`, which will be generated from `solution`. It should have function parameters corresponding to the inputs of the exercise. In this case, the `solution` method is:
+
+```python
+@returns_stdout
+def solution(self, foo: int, bar: str):
+    for _ in range(foo):
+        print(bar)
+```
+
+The decorator `@returns_stdout` is required because the user is simply being asked to print something, not write a proper function with a return value.
+
+The user must then start their program with variable definitions for `foo` and `bar`. They don't need to use the exact values in the example, just the names. These will be stripped from the program to produce a function which can take any inputs and thus be tested and compared to the solution. The user may try to write a program which always just prints `spam` 5 times, so we need to make sure they've written a properly generic program.
+
+The next thing the `ExerciseStep` needs is `tests`. This is a list of inputs to pass to the solution and their corresponding expected outputs. The inputs can be a tuple of arguments, a dict of keyword arguments, or a single argument if the solution only takes one. The value of `tests` can be a list of pairs or a dict if the inputs are hashable.
+
+`tests` can have any number of entries - you typically want 2 or 3. They're useful for readers of the code to see what the solution is meant to do. If the user's code produces the right output for their own inputs but doesn't pass one of the tests, they will be shown the inputs, expected output, and actual output from their code. Therefore you want your tests to be simple readable examples that are helpful to both developers and students, while also checking the program behaviour nicely. Here is an example:
+
+```python
+tests = {
+    (5, "spam"): """\
+spam
+spam
+spam
+spam
+spam
+""",
+    (3, "baz"): """\
+baz
+baz
+baz
+""",
+}
+```
+
+`tests` will be immediately used to test `solution`, you'll get an error if they don't match.
+
+The `tests` alone are not quite enough to prevent a user from cheating. Since they are always shown the inputs and outputs, they could just use `if` to hardcode the correct outputs. To really make sure, the exercise will also generate some random inputs. The step's `solution` will then generate the expected outputs, and the user submission must match those too. The method `generate_inputs` should return one random dict of keyword arguments to pass to the solution. The default implementation does this automatically based on the type annotations in `solution`, so often (such as in this case) you don't need to do it yourself.
+
+Finally, remember to give some `hints`! These are very important for exercises.
