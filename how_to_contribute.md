@@ -178,3 +178,15 @@ baz
 The `tests` alone are not quite enough to prevent a user from cheating. Since they are always shown the inputs and outputs, they could just use `if` to hardcode the correct outputs. To really make sure, the exercise will also generate some random inputs. The step's `solution` will then generate the expected outputs, and the user submission must match those too. The method `generate_inputs` should return one random dict of keyword arguments to pass to the solution. The default implementation does this automatically based on the type annotations in `solution`, so often (such as in this case) you don't need to do it yourself.
 
 Finally, remember to give some `hints`! These are very important for exercises.
+
+#### MessageStep
+
+A `MessageStep` class is declared inside a regular `Step` class. It checks for mistakes and other problems and gives a message to the user if needed.
+
+`MessageStep` inherits from `Step` and lets you use the same framework. You can even inherit from both `MessageStep` and `ExerciseStep`. Like a normal `Step`, you need to provide text and a `check` method. If `check` returns `True`, the text may be shown to the user. You also need to provide `program` (or `solution` for an `ExerciseStep`) as an example of something that passes `check`.
+
+The default use case is to point out a mistake that prevented the user from advancing. In this case, the message `check` method will only be called if the outer step `check` returned False. This way you don't have to worry about showing the user a message "here's why you failed" when they actually succeeded.
+
+The other case is when they technically solved the problem as described but you don't want them to pass because they used some sneaky trick or otherwise missed the intended solution. In this case the message `check` will only be called if the outer step `check` returned True. To indicate this, set `after_success = True` in the message class.
+
+Any `Step` class declared inside another `Step` class (so typically an inner `MessageStep`) will automatically inherit from the outer `Step` class. This makes it easy to reuse methods from the outer class in the inner class, for example you only need to define `generate_inputs` once. Of course this can also lead to some weird side effects, so be aware of it. This is part of the system that I feel iffy about for obvious reasons, so it may change.
