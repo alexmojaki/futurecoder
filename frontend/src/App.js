@@ -27,6 +27,7 @@ import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
+import _ from "lodash";
 
 
 class AppComponent extends React.Component {
@@ -46,7 +47,7 @@ class AppComponent extends React.Component {
     bookSetState("processing", true);
     rpc(
       "run_code",
-      {code, source},
+      {code, source, page_index: bookState.page_index, step_index: stepIndex()},
       (data) => {
         if (!shell) {
           this.terminal.current.clearStdout();
@@ -68,7 +69,6 @@ class AppComponent extends React.Component {
 
   render() {
     const {
-      server,
       numHints,
       editorContent,
       messages,
@@ -77,23 +77,24 @@ class AppComponent extends React.Component {
       requestingSolution,
       user,
       rpcError,
-    } = this.props;
-    let {
-      hints,
-      showEditor,
-      showSnoop,
-      showPythonTutor,
-      showBirdseye,
       page_index,
-    } = server;
+    } = this.props;
     const page = pages[page_index];
-    const step_index = stepIndex()
+    const step_index = stepIndex();
+    const step = page.steps[step_index];
+    const showEditor = page_index >= _.findIndex(pages, {slug: "WritingPrograms"});
+    const snoopPageIndex = _.findIndex(pages, {slug: "UnderstandingProgramsWithSnoop"});
+    const showSnoop = page_index > snoopPageIndex ||
+      (page_index === snoopPageIndex && step_index >= 1);
+    const showPythonTutor = page_index >= _.findIndex(pages, {slug: "UnderstandingProgramsWithPythonTutor"});
+    const showBirdseye = true;
+
     return <div className="book-container">
       <div className="book-text markdown-body">
         <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
-        {page.step_texts.slice(0, step_index + 1).map((part, index) =>
+        {page.steps.slice(0, step_index + 1).map((part, index) =>
           <div key={index} id={`step-text-${index}`}>
-            <div dangerouslySetInnerHTML={{__html: part}}/>
+            <div dangerouslySetInnerHTML={{__html: part.text}}/>
             <hr/>
           </div>
         )}
@@ -114,7 +115,7 @@ class AppComponent extends React.Component {
           {page_index > 0 &&
           <button className="btn btn-primary btn-sm" onClick={() => movePage(-1)}>Previous</button>}
           {" "}
-          {page_index < pages.length - 1 && step_index === page.step_texts.length - 1 &&
+          {page_index < pages.length - 1 && step_index === page.steps.length - 1 &&
           <button className="btn btn-success" onClick={() => movePage(+1)}>Next</button>}
         </div>
         <br/>
@@ -216,7 +217,7 @@ class AppComponent extends React.Component {
       </div>
 
       <HintsPopup
-        hints={hints}
+        hints={step.hints}
         numHints={numHints}
         requestingSolution={requestingSolution}
         solution={solution}

@@ -5,18 +5,20 @@ import _ from "lodash";
 
 const initialState = {
   server: {
-    pages_progress: {},
-    page_index: 0,
-    hints: [],
-    showEditor: false,
-    showSnoop: false,
-    showPythonTutor: false,
-    showBirdseye: true,
+    pages_progress: [0],
   },
+  page_index: 0,
   pages: [
     {
       title: "Loading...",
-      step_texts: [],
+      slug: "loading_placeholder",
+      steps: [
+        {
+          text: "",
+          hints: [],
+          slug: "loading_placeholder",
+        }
+      ],
     }
   ],
   user: {
@@ -41,13 +43,12 @@ const {reducer, makeAction, setState, localState} = redact('book', initialState,
 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState};
 
-export const stepIndex = (state = localState.server) => state.pages_progress[state.page_index];
+export const stepIndex = (state = localState) => state.server.pages_progress[state.page_index];
 
-const set_server_page = (index) => rpc(
-  "set_page",
-  {index},
-  (data) => setState("server", data),
-);
+const set_page = (index) => {
+  setState("page_index", index);
+  rpc("set_page", {index});
+};
 
 const loadData = (data) => {
   if (!data.user) {
@@ -55,31 +56,34 @@ const loadData = (data) => {
       + window.location.pathname
       + window.location.search;
   }
-  const fresh = localState.pages.length === 1;
   setState("pages", data.pages);
   setState("server", data.state);
   setState("user", data.user);
   const pageSlug = new URLSearchParams(window.location.search).get('page');
-  if (pageSlug != null && fresh) {
+  let pageIndex;
+  if (pageSlug != null) {
     // Allow either page index or page slug in URL
-    const pageIndex = parseInt(pageSlug) || parseInt(_.findIndex(data.pages, {slug: pageSlug}));
-    set_server_page(pageIndex);
-    setState("server.page_index", pageIndex);
+    pageIndex = parseInt(pageSlug) || parseInt(_.findIndex(data.pages, {slug: pageSlug}));
   } else {
-    setState("server.page_index", data.state.page_index);
+    pageIndex = data.page_index;
   }
+  set_page(pageIndex);
 }
 
 rpc("load_data", {}, loadData);
 
 export const moveStep = (delta) => {
-  rpc("move_step", {delta}, loadData);
+  rpc("move_step",
+    {
+      page_index: localState.page_index,
+      step_index: stepIndex() + delta
+    },
+    (result) => setState("server", result),
+  );
 };
 
 export const movePage = (delta) => {
-  const newIndex = localState.server.page_index + delta;
-  setState("server.page_index", newIndex);
-  set_server_page(newIndex);
+  set_page(localState.page_index + delta);
   scroller.scrollTo(`step-text-${stepIndex()}`, {delay: 0, duration: 0})
 };
 
@@ -97,10 +101,9 @@ export const showHint = makeAction(
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
-    const newStepIndex = stepIndex(value.state);
-    if (stepIndex(state.server) < newStepIndex) {
+    if (value.passed) {
       setTimeout(() =>
-          scroller.scrollTo(`step-text-${newStepIndex}`, {
+          scroller.scrollTo(`step-text-${stepIndex()}`, {
             duration: 1000,
             smooth: true,
           }),
@@ -131,7 +134,10 @@ export const closeMessage = makeAction(
 )
 
 export const getSolution = () => {
-  rpc("get_solution", {},
+  rpc("get_solution", {
+      page_index: localState.page_index,
+      step_index: stepIndex(),
+    },
     (data) => {
       setState('solution', data)
     },
