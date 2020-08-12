@@ -5,7 +5,7 @@ import queue
 from collections import defaultdict, deque
 from functools import lru_cache
 from multiprocessing import Process, Queue
-from threading import Thread
+from threading import Thread, RLock
 from time import sleep, time
 
 import flask
@@ -25,33 +25,53 @@ log = logging.getLogger(__name__)
 class UserProcess:
     def __init__(self):
         self.user_id = None
-        self.task_queue = Queue()
-        self.input_queue = Queue()
-        self.result_queue = Queue()
+        self.lock = RLock()
+        self.task_queue = None
+        self.input_queue = None
+        self.result_queue = None
         self.awaiting_input = False
         self.process = None
         self.fresh_process = True
         self.last_used = float('inf')
         self.start_process()
 
-        atexit.register(self.atexit_cleanup)
+        atexit.register(self.cleanup)
 
-    def atexit_cleanup(self):
-        if self.process:
-            self.process.terminate()
+    def cleanup(self, *, in_background=False):
+        process = self.process
+        queues = [self.task_queue, self.input_queue, self.result_queue]
+
+        if process is None:
+            assert not any(queues), (process, queues)
+            return
+
+        def do():
+            if process:
+                process.terminate()
+            for q in queues:
+                if q:
+                    q.close()
+
+        if in_background:
+            Thread(target=do).start()
+        else:
+            do()
 
     def close(self):
-        atexit.unregister(self.atexit_cleanup)
-        for q in [self.task_queue, self.input_queue, self.result_queue]:
-            q.close()
-        self.process.terminate()
+        atexit.unregister(self.cleanup)
+        self.cleanup(in_background=True)
 
     @property
     def ps(self):
         return psutil.Process(self.process.pid)
 
     def start_process(self):
+        self.cleanup(in_background=True)
         self.fresh_process = True
+        self.awaiting_input = False
+        self.task_queue = Queue()
+        self.input_queue = Queue()
+        self.result_queue = Queue()
         self.process = Process(
             target=worker_loop_in_thread,
             args=(self.task_queue, self.input_queue, self.result_queue),
@@ -68,7 +88,6 @@ class UserProcess:
                 self.task_queue.put(entry)
         else:
             if not TESTING and self.awaiting_input:
-                self.process.terminate()
                 self.start_process()
 
             self.task_queue.put(entry)
@@ -90,10 +109,6 @@ class UserProcess:
                 assert (result is None) == self.fresh_process
                 self.fresh_process = False
             except queue.Empty:
-                alive = self.process.is_alive()
-                log.info(f"Process {alive=}")
-                if alive:
-                    self.process.terminate()
                 self.start_process()
                 result = make_result(
                     output_parts=[
@@ -133,7 +148,8 @@ def monitor_processes():
             oldest = min(user_processes.values(), key=lambda p: p.last_used)
             log.info(f"Terminating process last used {int(time() - oldest.last_used)} seconds ago")
             del user_processes[oldest.user_id]
-            oldest.close()
+            with oldest.lock:
+                oldest.close()
             history.clear()
 
 
@@ -155,8 +171,9 @@ def run():
         user_id = entry["user_id"]
         user_process = user_processes[user_id]
         user_process.user_id = user_id
-        user_process.handle_entry(entry)
-        return user_process.await_result()
+        with user_process.lock:
+            user_process.handle_entry(entry)
+            return user_process.await_result()
     except Exception:
         return internal_error_result()
 
