@@ -6,7 +6,7 @@ from io import StringIO
 from pathlib import Path
 from random import shuffle
 from tokenize import Untokenizer, generate_tokens
-from typing import Type, get_type_hints
+from typing import get_type_hints
 from uuid import uuid4
 
 from django.conf import settings
@@ -24,11 +24,8 @@ from littleutils import select_attrs
 from markdown import markdown
 from sentry_sdk import capture_exception
 
-from main.chapters.c03_variables import WritingPrograms
-from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
-from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
 from main.models import CodeEntry, ListEmail, User
-from main.text import ExerciseStep, Page, clean_program, page_slugs_list, pages
+from main.text import ExerciseStep, clean_program, page_slugs_list, pages
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
 
@@ -70,24 +67,13 @@ class API:
     def user(self) -> User:
         return self.request.user
 
-    @property
-    def page(self) -> Type[Page]:
-        return self.user.page
-
-    @property
-    def step_index(self):
-        return self.page.step_names.index(self.user.step_name)
-
-    @property
-    def hints(self):
-        return getattr(self.user.step, "hints", ())
-
-    def run_code(self, code, source):
+    def run_code(self, code, source, page_index, step_index):
+        page_slug = page_slugs_list[page_index]
         entry_dict = dict(
             input=code,
             source=source,
-            page_slug=self.user.page_slug,
-            step_name=self.user.step_name,
+            page_slug=page_slug,
+            step_name=pages[page_slug].step_names[step_index],
             user_id=self.user.id,
         )
 
@@ -104,8 +90,8 @@ class API:
         if result["error"]:
             return dict(error=result["error"])
 
-        if result["passed"]:
-            self.move_step(1)
+        if passed := result["passed"]:
+            self.move_step(page_index, step_index + 1)
 
         output_parts = result["output_parts"]
         if not result["awaiting_input"]:
@@ -138,6 +124,7 @@ class API:
             message=markdown(result["message"]),
             state=self.current_state(),
             birdseye_url=birdseye_url,
+            passed=passed,
         )
 
     def load_data(self):
@@ -147,7 +134,7 @@ class API:
 
         return dict(
             pages=[
-                select_attrs(page, "slug title index step_texts")
+                dict(**select_attrs(page, "slug title index"), steps=page.step_dicts)
                 for page in pages.values()
             ],
             state=self.current_state(),
@@ -155,6 +142,7 @@ class API:
                 email=user.email,
                 developerMode=user.developer_mode,
             ),
+            page_index=pages[self.user.page_slug].index,
         )
 
     def set_developer_mode(self, value: bool):
@@ -164,35 +152,29 @@ class API:
     def current_state(self):
         pages_progress = self.user.pages_progress
         return dict(
-            **select_attrs(self, "hints step_index"),
             pages_progress=[
                 page.step_names.index(pages_progress[page_slug]["step_name"])
                 for page_slug, page in pages.items()
             ],
-            page_index=self.page.index,
-            showEditor=self.page.index >= WritingPrograms.index,
-            showSnoop=(self.page.index, self.step_index) >= (UnderstandingProgramsWithSnoop.index, 1),
-            showPythonTutor=self.page.index >= UnderstandingProgramsWithPythonTutor.index,
-            showBirdseye=True,
         )
 
-    def move_step(self, delta: int):
-        step_names = self.page.step_names
-        new_index = self.step_index + delta
-        if 0 <= new_index < len(step_names):
-            new_step_name = step_names[new_index]
-            self.user.pages_progress[self.user.page_slug]["step_name"] = new_step_name
+    def move_step(self, page_index, step_index: int):
+        page_slug = page_slugs_list[page_index]
+        step_names = pages[page_slug].step_names
+        if 0 <= step_index < len(step_names):
+            new_step_name = step_names[step_index]
+            self.user.pages_progress[page_slug]["step_name"] = new_step_name
             self.user.save()
 
-        return self.load_data()
+        return self.current_state()
 
     def set_page(self, index):
         self.user.page_slug = page_slugs_list[index]
         self.user.save()
-        return self.current_state()
 
-    def get_solution(self):
-        step = getattr(self.page, self.user.step_name)
+    def get_solution(self, page_index, step_index: int):
+        page = pages[page_slugs_list[page_index]]
+        step = getattr(page, page.step_names[step_index])
         if issubclass(step, ExerciseStep):
             program = clean_program(step.solution)
         else:

@@ -19,10 +19,6 @@ class User(AbstractUser):
     developer_mode = models.BooleanField(default=False)
 
     @property
-    def page(self):
-        return pages[self.page_slug]
-
-    @property
     def pages_progress(self):
         """
         Returns a PagesProgress dict which fills in default values.
@@ -33,14 +29,6 @@ class User(AbstractUser):
         if not isinstance(result, PagesProgress):
             result = self.json["pages_progress"] = PagesProgress(result)
         return result
-
-    @property
-    def step_name(self):
-        return self.pages_progress[self.page_slug]["step_name"]
-
-    @property
-    def step(self):
-        return getattr(self.page, self.step_name)
 
 
 class ListEmail(models.Model):

@@ -624,16 +624,87 @@ b   b
                     print(inner_line)
                 print(line)
 
-    final_text = """
-Sweet! You're really getting the hang of this! If you want, here's one more optional bonus challenge. Try writing a program that outputs:
+    class diagonal_name_bonus_challenge(ExerciseStep):
+        """
+Sweet! You're really getting the hang of this!
+
+If you want you can do one more optional bonus challenge below.
+If not, you can just continue to the [next page](/course/?page=BasicTerminology) now.
+You can come back and do this later if you want.
+
+Try writing a program that outputs the given `name` in a diagonal line, e.g:
 
     W
      o
       r
        l
         d
+        """
 
-Or don't, it's up to you.
+        hints = """
+The first letter should have 0 spaces before it, the second letter should have 1 space before it, the third should have 2, etc.
+You should keep the spaces in a variable and build them up in a loop, as before.
+The difference is that you need to print letters at the same time as building up spaces.
+In other words, you need a single loop that does both.
+The body of the loop needs to print the spaces and letter, and also add a space.
+Since the first letter should have no spaces before it, you need to add a space after printing a letter.
+        """
+
+        # TODO automatically catch print with multiple args?
+
+        @returns_stdout
+        def solution(self, name: str):
+            spaces = ''
+            for char in name:
+                print(spaces + char)
+                spaces += ' '
+
+        tests = {
+            'World': """\
+W
+ o
+  r
+   l
+    d
+""",
+            'Bob': """\
+B
+ o
+  b
+""",
+        }
+
+        class add_space_first(MessageStep, ExerciseStep):
+            """
+            Almost there! You have one space too many before each letter.
+            Make sure that the first time your loop calls `print`
+            your variable which will contain the spaces is an empty string.
+            Check the order of your code.
+            """
+            @returns_stdout
+            def solution(self, name: str):
+                spaces = ''
+                for char in name:
+                    spaces += ' '
+                    print(spaces + char)
+
+            tests = {
+                'World': """\
+ W
+  o
+   r
+    l
+     d
+""",
+                'Bob': """\
+ B
+  o
+   b
+""",
+            }
+
+    final_text = """
+Wow, nothing can stop you!
     """
 
 

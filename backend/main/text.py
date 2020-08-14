@@ -167,6 +167,18 @@ class PageMeta(type):
     def steps(self):
         return [getattr(self, step_name) for step_name in self.step_names]
 
+    @property
+    def step_dicts(self):
+        return [
+            dict(
+                text=text,
+                name=name,
+                hints=getattr(step, "hints", []),
+            )
+            for name, text, step in
+            zip(self.step_names, self.step_texts, self.steps)
+        ]
+
 
 class Page(metaclass=PageMeta):
     @classmethod
