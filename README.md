@@ -61,7 +61,7 @@ and [Python Tutor](http://pythontutor.com/):
 
 ## Controls
 
-The course consists of *pages* and each page consists of *steps*. Each step requires that the user runs some code that satisfies the requirements of that step. Once they succeed, they are shown the next step. Once they complete all the steps in a page, they are shown the "Next page" button to move forward. They can click "Previous" if they want to review completed pages, but it doesn't affect their progress - any code they submit is still evaluated against the current step, and refreshing the page returns to the last page. Hopefully these basics (without the formal details) should become intuitively clear to the user as they try to use the site.
+The course consists of *pages* and each of them has a subject. When user open the website and click *Go to the Course*, they will be straightly led to the table of contents, where all pages are listed. User can choose any page whose subject is appealing to you to start from. User can also go back to TOC from each page by clicking *Table of Contents* in the menu. If your last page is anything but the first page, a link to that page is given at the top of the TOC to easily get back to where you were. Each page consists of *steps* and each step requires that the user runs some code that satisfies the requirements of that step. Once they succeed, they are shown the next step. Once they complete all the steps in a page, they are shown the "Next" button to move forward to the next page and the "Previous" button to review completed pages. Your progress on each page is recorded separately. Whenever you open a page, you are immediately on whichever step you reached previously. Besides, the page you move to is recorded as well. Opening simply `/course/` will take you to the page you were last on. Hopefully these basics (without the formal details) should become intuitively clear to the user as they try to use the site.
 
 To explore the course more freely:
 
@@ -69,10 +69,6 @@ To explore the course more freely:
 2. Click Settings.
 3. Turn Developer mode on.
 4. This should give you two red buttons floating at the bottom of the screen. They change the currently active step, so you can move forward without having to complete exercises or backwards to test a step again.
-
-When you open the website and click *Go to the Course*, you will be straightly led to the table of contents, where you can choose from which page to start. You can also go back to it by clicking *Table of Contents* in the menu. If your last page is anything but the first page, a link to that page is given at the top of the TOC to easily get back to where you were.
-
-Your progress on each page is recorded separately. Whenever you open a page, you are immediately on whichever step you reached previously. Besides, the page you move to is recorded as well. Opening simply `/course/` will take you to the page you were last on.
 
 At the beginning of the course only the shell is available to encourage quick exploration. After a few pages an editor is introduced to allow running full programs.
 
