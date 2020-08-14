@@ -22,7 +22,7 @@ If they're still really stuck, they can reveal the solution bit by bit:
 
 Tracebacks are more helpful than usual, highlighting the exact operation which failed and ensuring that the right amount of context is visible for multiline statements:
 
-![traceback](images/traceback.png) 
+![traceback](images/traceback.png)
 
 Several debuggers are provided, including [snoop](https://github.com/alexmojaki/snoop):
 
@@ -69,6 +69,10 @@ To explore the course more freely:
 2. Click Settings.
 3. Turn Developer mode on.
 4. This should give you two red buttons floating at the bottom of the screen. They change the currently active step, so you can move forward without having to complete exercises or backwards to test a step again.
+
+When you open the website and click *Go to the Course*, you will be straightly led to the table of contents, where you can choose from which page to start. You can also go back to it by clicking *Table of Contents* in the menu. If your last page is anything but the first page, a link to that page is given at the top of the TOC to easily get back to where you were.
+
+Your progress on each page is recorded separately. Whenever you open a page, you are immediately on whichever step you reached previously. Besides, the page you move to is recorded as well. Opening simply `/course/` will take you to the page you were last on.
 
 At the beginning of the course only the shell is available to encourage quick exploration. After a few pages an editor is introduced to allow running full programs.
 
