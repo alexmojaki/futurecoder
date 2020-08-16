@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="backend/main/static/logo/bordered2.png" width="300px" height="300px" alt="logo">
+</p>
+
 # `futurecoder`
 
 This is a platform/course for people to teach themselves programming in Python, especially complete beginners at programming.
