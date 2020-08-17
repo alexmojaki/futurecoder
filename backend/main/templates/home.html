@@ -1,25 +1,39 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block base_body %}
-    <div class="container">
-        <h1>Welcome to <code>futurecoder</code>!</h1>
+  <div class="container">
 
-        <p>
-            This is a free open source platform/course for complete beginners to teach themselves programming,
-            specifically in Python.
-        </p>
+    <img src="{% static 'logo/banner.png' %}" width="100%" style="margin: 3em 0">
 
-        <p>
-            This site is currently only ready for demonstration, not large scale usage.
-            So don't start sharing it with everyone who wants to learn to code.
-            It's hosted on free, minimal infrastructure that can't handle a lot of load.
-        </p>
+    <div style="margin: auto; width: 70%; font-size: 32pt">
+      <ul style="list-style: none">
+        <li><i class="fa fa-chevron-right" aria-hidden="true"></i> Learn coding interactively</li>
+        <li><i class="fa fa-chevron-right" aria-hidden="true"></i> Free and Open Source</li>
+        <li><i class="fa fa-chevron-right" aria-hidden="true"></i> Designed with care for beginners</li>
+      </ul>
+    </div>
 
-        <p>
-            If you'd like to be updated when the site is ready, enter your email below:
-        </p>
+    <div style="margin: 3em auto; width: 70%; ">
+      <a class="btn btn-lg btn-outline-light"
+         style="font-size: 72pt; border-radius: 20px"
+         href="/toc/"
+      >
+        Start now
+      </a>
+    </div>
 
-        {% load crispy_forms_tags %}
+    <p>
+      This site is currently only ready for demonstration, not large scale usage.
+      So don't start sharing it with everyone who wants to learn to code.
+      It's hosted on free, minimal infrastructure that can't handle a lot of load.
+    </p>
+
+    <p>
+      If you'd like to be updated when the site is ready, enter your email below:
+    </p>
+
+    {% load crispy_forms_tags %}
 
         <form method="post">
             {% crispy form %}
@@ -34,7 +48,5 @@
             Learn more about the project in the
             <a href="https://github.com/alexmojaki/futurecoder">GitHub code repository</a>.
         </p>
-
-        <h3><a href="/toc/">Go to the course</a></h3>
     </div>
 {% endblock %}
