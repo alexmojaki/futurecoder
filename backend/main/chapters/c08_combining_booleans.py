@@ -91,9 +91,16 @@ Now run the code again. Try different inputs. Try Alice, Bob, or something else.
 
     class ACommonMistake(VerbatimStep):
         """
-A common mistake, although it appears to make sense in English, is to write it like this:
+Take careful note of how we wrote the condition:
+
+    if name == "Alice" or name == "Bob":
+
+A common mistake is to write this instead:
 
     if name == "Alice" or "Bob":
+
+It makes sense if you read it like English: "If `name` is equal to either "Alice" or "Bob", then print...".
+But Python is not English, and that's not how `or` works.
 
 Replace the `if` line in the code with the above line, and try running it again
 with `Charlie` when asked for a name.
@@ -120,25 +127,58 @@ Then the Birdseye page will pop up. Inspect the `if` statement carefully.
             return super().check() and self.code_source == "birdseye"
 
     final_text = """
-When we inspect it with Birdseye, we can see that
+When we inspect it with Birdseye, we can see that:
+
+    name == "Alice" or "Bob"
+
+is not translated into
+
+    name == ("Alice" or "Bob")
+
+the way we think in English, but rather:
+
+    (name == "Alice") or ("Bob")
+
+What then happens is:
 
 - `name == "Alice"` evaluates to `False`,
 - `name == "Alice" or "Bob"` evaluates to `"Bob"`, and
 -  `if "Bob"` triggers the `print` statement
 
-(`if` followed by any non-empty string will be satisfied).
+Perhaps you feel like this:
 
-This is because Python evaluates `x or y` to `y` only when `x` is `False`,
-which is what happened in this case.
-(If `x` is `True`, `y` will not be evaluated.)
+[![I now have additional questions](https://i.imgur.com/jN57tGt.png)](https://imgur.com/a/icKzI)
 
-Once again, the correct way is:
+The only thing you really need to know is this: Until you know what you're doing, always
+make sure you put booleans on both sides of `or`, because it's a boolean operator.
+`name == "Alice" or "Bob"` breaks that rule.
 
-    if name == "Alice" or name == "Bob":
+If you're curious, the answers are below, but you can skip them if you want.
 
-Alternatively to `or`, we can also accomplish the same result by using a List instead:
+----
 
-    if name in ["Alice", "Bob"]:
+> Why does `(name == "Alice") or ("Bob")` equal `"Bob"`? Why does it equal anything? `"Bob"` isn't even a boolean!
+
+The definition "`A or B` is `True` if either `A` or `B` is `True`" was a simplification. It's the easiest
+way to think about `or` most of the time, especially for writing `if` statements.
+The real definition is that if `A` is true then `A or B` is just `A` (in fact `B` is not even evaluated),
+otherwise it's `B`.
+You can see for yourself that if `A` and `B` are booleans then the two definitions are equivalent.
+In this example `A` is `name == "Alice"` which is `False`, so `A or B` is `B` which is `"Bob"`.
+
+> Why does `if "Bob"` run the body? Again, `"Bob"` isn't a boolean!
+
+Python actually lets you treat anything like a boolean. Most things are equivalent to `True` in this context,
+including all strings (such as `"Bob"`) except the empty string which is 'falsy'.
+
+> Is there a better way to write the condition without repeating `name ==` each time?
+
+Yes! In [Functions and Methods for Lists](/course/?page=FunctionsAndMethodsForLists) we mentioned the `in`
+operator, which you can use with a list like this:
+
+    if name in ["Alice", "Bob", "Charlie"]:
+
+But you can't always get rid of `or` like that.
 """
 
 
