@@ -31,9 +31,14 @@ Let's see if we can do better. We could replace both `print` statements with:
 
     print("I have a friend called " + name + "!")
 
-We could also replace the `if` statements by using `or`,
-which is one of Python's built-in boolean operators.
-Try the following command in the shell. Think about what you expect it to return:
+We could also combine the two `if` statements into one using **`or`**. `or` is a *boolean operator*,
+meaning it's an operator (like `+` or `-`) which combines two booleans (`True` or `False`).
+
+The expression `A or B` is `True` if either `A` or `B` is `True`, i.e. if `A` is `True` or `B` is `True`, or both.
+It's only `False` if neither `A` nor `B` is `True`, i.e. both are `False`.
+
+Let's try some examples in the shell.
+Try the following in the shell. Think about what you expect it to return:
 
 __program_indented__
         """
