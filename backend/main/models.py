@@ -30,6 +30,10 @@ class User(AbstractUser):
             result = self.json["pages_progress"] = PagesProgress(result)
         return result
 
+    @property
+    def page(self):
+        return pages[self.page_slug]
+
 
 class ListEmail(models.Model):
     email = models.EmailField()
