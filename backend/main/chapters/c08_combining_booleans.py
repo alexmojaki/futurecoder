@@ -108,7 +108,7 @@ with `Charlie` when asked for a name.
                 print("I have a friend called " + name + "!")
 
     class InspectWithBirdseye(ACommonMistake):
-        """
+        text = """
 Our code is not giving errors, but it seems to be doing the wrong thing:
 it still prints "I have a friend called..." even when `name` is `Charlie`.
 Try inspecting the code with Birdseye. When you click Birdseye, it will first
