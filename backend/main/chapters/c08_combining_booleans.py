@@ -1,7 +1,8 @@
 # flake8: NOQA E501
 
 from typing import List
-from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast
+
+from main.text import ExerciseStep, Page, VerbatimStep
 from main.utils import returns_stdout
 
 
@@ -101,7 +102,7 @@ with `Charlie` when asked for a name.
             if name == "Alice" or "Bob":
                 print("I have a friend called " + name + "!")
 
-    class InspectWithBirdseye(VerbatimStep):
+    class InspectWithBirdseye(ACommonMistake):
         """
 Our code is not giving errors, but it seems to be doing the wrong thing:
 it still prints "I have a friend called..." even when `name` is `Charlie`.
@@ -109,14 +110,9 @@ Try inspecting the code with Birdseye. When you click Birdseye, it will first
 run the program. When asked for a name, type `Charlie` again and hit Enter.
 Then the Birdseye page will pop up. Inspect the `if` statement carefully.
         """
-        program_in_text = False
 
-        def program(self):
-            print("What is your name?")
-            name = input()
-            print("Hello " + name + "!")
-            if name == "Alice" or "Bob":
-                print("I have a friend called " + name + "!")
+        def check(self):
+            return super().check() and self.code_source == "birdseye"
 
     final_text = """
 When we inspect it with Birdseye, we can see that
