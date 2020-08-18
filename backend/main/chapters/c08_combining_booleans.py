@@ -126,7 +126,8 @@ Then the Birdseye page will pop up. Inspect the `if` statement carefully.
         def check(self):
             return super().check() and self.code_source == "birdseye"
 
-    final_text = """
+    class AnExercise(ExerciseStep):
+        """
 When we inspect it with Birdseye, we can see that:
 
     name == "Alice" or "Bob"
@@ -154,6 +155,7 @@ make sure you put booleans on both sides of `or`, because it's a boolean operato
 `name == "Alice" or "Bob"` breaks that rule.
 
 If you're curious, the answers are below, but you can skip them if you want.
+Make sure to read the Exercise that comes afterwards!
 
 ----
 
@@ -179,14 +181,9 @@ operator, which you can use with a list like this:
     if name in ["Alice", "Bob", "Charlie"]:
 
 But you can't always get rid of `or` like that.
-"""
 
+----
 
-class AnExerciseUsingOr(Page):
-    title = "Introducing And"
-
-    class AnExercise(ExerciseStep):
-        """
 Exercise: using `or`, write code that checks the validity of a given percentage number.
 A percentage number is valid if it is between 0 and 100 (including 0 and 100).
 
@@ -222,8 +219,8 @@ This percentage is not valid.
 """,
         }
 
-    class TrueAndTrue(VerbatimStep):
-        """
+
+    final_text = """
 Good job! The typical solution looks like:
 
     percentage = 50
@@ -231,7 +228,14 @@ Good job! The typical solution looks like:
         print("This percentage is not valid.")
     else:
         print("This percentage is valid.")
+"""
 
+
+class AnExerciseUsingOr(Page):
+    title = "Introducing And"
+
+    class TrueAndTrue(VerbatimStep):
+        """
 Another boolean operator in Python is `and`.
 The statement `A and B` is true only if both `A` and `B` are true.
 Try it in the shell:
@@ -264,9 +268,9 @@ Exercise: rewrite our percentage checking code, using `and` instead of `or`.
 It should still work exactly as before.
         """
         hints = """
-Our code with `or` first determines if `percentage` is invalid, else concludes validity. 
+Our code with `or` first determines if `percentage` is invalid, else concludes validity.
 Using `and` will do this in reverse.
-Change the line with the `if` statement in the code, using `and` to achieve the same logic. 
+Change the line with the `if` statement in the code, using `and` to achieve the same logic.
 Then change the `print` statements accordingly.
 You will have to change the comparison operators too.
         """
@@ -299,17 +303,17 @@ This percentage is not valid.
     final_text = """
 Awesome! A typical solution looks like:
 
-    percentage = 50 
+    percentage = 50
     if 0 <= percentage and percentage <= 100:
-        print("This percentage is valid.") 
-    else:         
+        print("This percentage is valid.")
+    else:
         print("This percentage is not valid.")
-        
+
 In Python,
 
     if 0 <= percentage and percentage <= 100:
 
-can also be written as a short hand: 
+can also be written as a short hand:
 
     if 0 <= percentage <= 100:
 
@@ -485,9 +489,9 @@ then your code should print `X wins!`
 How many diagonals are there on the board? What do they have in common?
 Which entries of `row1, row2, row3` make up each diagonal?
 Similar to how we checked a row, check that the 3 entries on a diagonal are equal to each other.
-Similar to how we checked three rows together, check the two diagonals together. 
+Similar to how we checked three rows together, check the two diagonals together.
 As before, use a multi-line boolean expression where `if` contains lines that are connected with `or`.
-Don't forget the `else` part! 
+Don't forget the `else` part!
         """
 
         @returns_stdout
@@ -566,6 +570,6 @@ __program_indented__
         program = "not (True or True)"
 
     final_text = """
-We see that `not (True or True)` evaluates to `not (True)` which is `False`. 
+We see that `not (True or True)` evaluates to `not (True)` which is `False`.
 Because of the parentheses, `or` gets evaluated first.
     """
