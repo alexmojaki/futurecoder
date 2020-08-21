@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+import multiprocessing
 import os
 import sys
 from pathlib import Path
@@ -156,3 +156,9 @@ SOCIALACCOUNT_PROVIDERS = {
     #     }
     # }
 }
+
+try:
+    multiprocessing.set_start_method("spawn")
+except RuntimeError:
+    # noinspection PyArgumentList
+    assert multiprocessing.get_start_method() == "spawn"
