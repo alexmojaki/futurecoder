@@ -31,9 +31,13 @@ def clean_program(program, *, inputs=None, function_name=None):
         source = dedent(inspect.getsource(program))
         if function_name:
             assert source.count("def solution(self, ") == 1
-            program = source.replace("def solution(self, ", f"def {function_name}(")
-            # TODO strip annotations
-            program = program.replace("@returns_stdout\n", "")
+            params = ", ".join(list(inspect.signature(program).parameters.keys())[1:])
+            program = re.sub(
+                "(@returns_stdout\n)?"
+                r"def solution\(self, .+?\):",
+                f"def {function_name}({params}):",
+                source,
+            )
         else:
             atok = ASTTokens(source, parse=True)
             func = atok.tree.body[0]
