@@ -230,10 +230,6 @@ class Step(ABC):
     def check(self) -> Union[bool, dict]:
         raise NotImplementedError
 
-    def check_exercise(self, *args, **kwargs):
-        if self.code_source != "shell":
-            return check_exercise(self.input, *args, **kwargs)
-
     @property
     def tree(self):
         return ast.parse(self.input)
@@ -267,12 +263,14 @@ class Step(ABC):
 class ExerciseStep(Step):
 
     def check(self):
-        return self.check_exercise(
-            self.solution, 
-            self.test_exercise,
-            self.generate_inputs, 
-            functionise=True,
-        )
+        if self.code_source != "shell":
+            return check_exercise(
+                self.input,
+                self.solution,
+                self.test_exercise,
+                self.generate_inputs,
+                functionise=True,
+            )
 
     @abstractmethod
     def solution(self, *args, **kwargs):
