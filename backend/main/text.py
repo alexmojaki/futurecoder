@@ -289,6 +289,15 @@ class ExerciseStep(Step):
             if not inspect.isfunction(func):
                 return dict(message=f"`{self.function_name}` is not a function.")
 
+            actual_num_params = len(inspect.signature(func).parameters)
+            needed_num_params = len(inspect.signature(self.solution).parameters)
+            if actual_num_params != needed_num_params:
+                return dict(
+                    message=f"`{self.function_name}` should have "
+                            f"{needed_num_params} parameter{'s' * (needed_num_params > 1)}, but it has "
+                            f"{actual_num_params}."
+                )
+
             # TODO check that function has correct signature
 
             return check_exercise(
