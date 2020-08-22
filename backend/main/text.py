@@ -263,14 +263,16 @@ class Step(ABC):
 class ExerciseStep(Step):
 
     def check(self):
-        if self.code_source != "shell":
-            return check_exercise(
-                self.input,
-                self.solution,
-                self.test_exercise,
-                self.generate_inputs,
-                functionise=True,
-            )
+        if self.code_source == "shell":
+            return False
+
+        return check_exercise(
+            self.input,
+            self.solution,
+            self.test_exercise,
+            self.generate_inputs,
+            functionise=True,
+        )
 
     @abstractmethod
     def solution(self, *args, **kwargs):
