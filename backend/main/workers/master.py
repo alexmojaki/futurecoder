@@ -125,6 +125,12 @@ user_processes = defaultdict(UserProcess)
 
 app = flask.Flask(__name__)
 
+try:
+    multiprocessing.set_start_method("spawn")
+except RuntimeError:
+    # noinspection PyArgumentList
+    assert multiprocessing.get_start_method() == "spawn"
+
 
 def monitor_processes():
     history = deque([], MONITOR.NUM_MEASUREMENTS)
