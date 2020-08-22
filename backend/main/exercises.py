@@ -52,10 +52,13 @@ Your code should start like this:
     def func(**kwargs):
         exec(code, kwargs)
 
-    if getattr(function_template, "returns_stdout", False):
-        func = returns_stdout(func)
-
     return initial_names, func
+
+
+def match_returns_stdout(func, solution):
+    if getattr(solution, "returns_stdout", False):
+        func = returns_stdout(func)
+    return func
 
 
 def check_exercise(func, solution, test, generate_inputs, functionise=False):
@@ -72,6 +75,8 @@ def check_exercise(func, solution, test, generate_inputs, functionise=False):
         except ExerciseError as e:
             return dict(message=str(e))
 
+        func = match_returns_stdout(func, solution)
+
         try:
             expected_result = solution(**initial_names)
         except Exception:
@@ -84,6 +89,8 @@ def check_exercise(func, solution, test, generate_inputs, functionise=False):
         except:
             # Assume that the user can tell that the output is wrong
             return False
+    else:
+        func = match_returns_stdout(func, solution)
 
     try:
         test(func)
@@ -124,8 +131,7 @@ def check_result(func, inputs, expected_result):
 
     if result != expected_result:
         raise ExerciseError(f"""\
-Your code gives the right output for the example,
-but for these inputs:
+For these inputs:
 
 {indented_inputs_string(inputs)}
 

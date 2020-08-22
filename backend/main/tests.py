@@ -66,6 +66,7 @@ class StepsTestCase(TestCase):
                     self.assertEqual(
                         response["passed"],
                         not is_message,
+                        transcript[-1],
                     )
 
                     self.assertEqual(
