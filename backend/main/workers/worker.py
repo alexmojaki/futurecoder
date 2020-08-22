@@ -4,6 +4,7 @@ import os
 import sys
 from code import InteractiveConsole
 from threading import Thread
+from time import sleep
 
 import stack_data
 
@@ -74,7 +75,9 @@ def worker_loop(task_queue, input_queue, result_queue):
     )
 
     # Open the queue files before setting the file limit
+    sleep(0.01)
     result_queue.put(None)
+    sleep(0.01)
     input_queue.empty()
     task_queue.empty()
 

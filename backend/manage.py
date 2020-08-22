@@ -1,7 +1,14 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+import multiprocessing
 import os
 import sys
+
+try:
+    multiprocessing.set_start_method("spawn")
+except RuntimeError:
+    # noinspection PyArgumentList
+    assert multiprocessing.get_start_method() == "spawn"
 
 
 def main():

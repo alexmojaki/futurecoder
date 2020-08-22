@@ -7,6 +7,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>Awesome, you're trying out your own experiments!\nThat's a great sign. Keep it up.\nJust letting you know that you do need to eventually type <code>1+2</code> for the book to move forward.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -20,16 +21,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 0,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 0
-            }
+            ]
         },
         "step": "first_expression"
     },
@@ -41,6 +33,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -54,16 +47,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 0,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "first_expression"
     },
@@ -75,6 +59,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n\n<pre><code>3 * 4\n</code></pre>",
+            "passed": false,
             "result": [
                 {
                     "color": "red",
@@ -100,16 +85,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 0,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "more_calculation"
     },
@@ -121,6 +97,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -134,16 +111,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 0,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "more_calculation"
     },
@@ -155,6 +123,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -168,16 +137,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 2,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "hello_string"
     },
@@ -189,6 +149,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -202,19 +163,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>A space is a character just like any other, like <code>o</code> or <code>w</code>.</p>",
-                    "<p>The space character must be somewhere inside quotes.</p>"
-                ],
-                "page_index": 3,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "hello_world_concat"
     },
@@ -226,6 +175,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>You must still add two or more strings together.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -239,19 +189,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>A space is a character just like any other, like <code>o</code> or <code>w</code>.</p>",
-                    "<p>The space character must be somewhere inside quotes.</p>"
-                ],
-                "page_index": 3,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "hello_world_space"
     },
@@ -263,6 +201,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -276,16 +215,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 3,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "hello_world_space"
     },
@@ -297,21 +227,13 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 4,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "word_assign"
     },
@@ -323,6 +245,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -336,16 +259,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 4,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "word_check"
     },
@@ -357,6 +271,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -370,16 +285,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 4,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 3
-            }
+            ]
         },
         "step": "word_string_check"
     },
@@ -391,6 +297,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "red",
@@ -412,16 +319,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 4,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 4
-            }
+            ]
         },
         "step": "sunshine_undefined_check"
     },
@@ -433,21 +331,13 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>Put <code>your_name</code> before the <code>=</code> to create a variable called <code>your_name</code>.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 0
-            }
+            ]
         },
         "step": "name_assign"
     },
@@ -459,21 +349,13 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>For this exercise, choose a non-empty string</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 0
-            }
+            ]
         },
         "step": "name_assign"
     },
@@ -485,21 +367,13 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>You've got the <code>your_name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 0
-            }
+            ]
         },
         "step": "name_assign"
     },
@@ -511,21 +385,13 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>For this exercise, choose a name that doesn't start with a space.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 0
-            }
+            ]
         },
         "step": "name_assign"
     },
@@ -537,21 +403,13 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "name_assign"
     },
@@ -563,6 +421,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -576,16 +435,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "hello_plus_name"
     },
@@ -597,6 +447,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -610,20 +461,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You will need to use <code>+</code> twice, like 1+2+3.</p>",
-                    "<p>Your answer should contain a mixture of variables (no quotes) and string literals (quotes).</p>",
-                    "<p>You will need to have a space character inside quotes.</p>"
-                ],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 3
-            }
+            ]
         },
         "step": "word_plus_name"
     },
@@ -635,6 +473,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -648,16 +487,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 4
-            }
+            ]
         },
         "step": "word_plus_name_with_space"
     },
@@ -669,21 +499,13 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 5
-            }
+            ]
         },
         "step": "word_assign_goodbye"
     },
@@ -695,6 +517,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -708,16 +531,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 6
-            }
+            ]
         },
         "step": "goodbye_plus_name"
     },
@@ -729,6 +543,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -742,16 +557,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 5,
-                "showBirdseye": true,
-                "showEditor": false,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 7
-            }
+            ]
         },
         "step": "first_print"
     },
@@ -767,6 +573,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -788,16 +595,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 6,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "editor_hello_world"
     },
@@ -812,6 +610,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -825,16 +624,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 7,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "sentence_equals_word_plus_name"
     },
@@ -851,6 +641,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -872,16 +663,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 7,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "sentence_doesnt_change"
     },
@@ -894,6 +676,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -939,16 +722,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 8,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "first_for_loop"
     },
@@ -961,6 +735,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "red",
@@ -986,16 +761,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 9,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "missing_indentation"
     },
@@ -1011,6 +777,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1096,16 +863,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 9,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "two_indented_lines"
     },
@@ -1121,6 +879,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1174,16 +933,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 9,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 3
-            }
+            ]
         },
         "step": "one_indented_line"
     },
@@ -1197,6 +947,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "red",
@@ -1222,16 +973,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 9,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 4
-            }
+            ]
         },
         "step": "mismatched_indentations"
     },
@@ -1245,6 +987,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1290,20 +1033,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Forget loops for a moment. How would you write a program which prints <code>name</code> 3 times?</p>",
-                    "<p>The solution looks very similar to the other programs we've seen in this section.</p>",
-                    "<p>The for loop will create a variable such as <code>character</code>, but the program doesn't need to use it.</p>"
-                ],
-                "page_index": 10,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "loop_exercise_1"
     },
@@ -1317,6 +1047,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1362,16 +1093,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 10,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "loop_exercise_2"
     },
@@ -1386,6 +1108,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1407,16 +1130,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 11,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "hello_plus_equals"
     },
@@ -1432,6 +1146,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1477,16 +1192,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 11,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "name_triangle"
     },
@@ -1502,6 +1208,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1543,16 +1250,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 11,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 3
-            }
+            ]
         },
         "step": "name_triangle_missing_last_line"
     },
@@ -1568,6 +1266,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1613,22 +1312,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>The solution is very similar to the original triangle program, just make one small change.</p>",
-                    "<p>You still want to add one character to <code>line</code> at a time, it's just a question of where you add it.</p>",
-                    "<p>You want the lines to be reversed, so you need to reverse/flip something.</p>",
-                    "<p>You need to add the character before the string, instead of after.</p>",
-                    "<p>3 + 7 is equal to 7 + 3. Same for all numbers. Is this also true for strings?</p>"
-                ],
-                "page_index": 12,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "name_triangle_spaced"
     },
@@ -1644,6 +1328,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1689,21 +1374,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Look at the triangle program for inspiration.</p>",
-                    "<p>Look at the program where you printed <code>name</code> once for each character for inspiration.</p>",
-                    "<p>You will need to build up a string of dashes (<code>-</code>) one character at a time.</p>",
-                    "<p>The for loop will create a variable such as <code>char</code>, but the program doesn't need to use it.</p>"
-                ],
-                "page_index": 12,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "name_triangle_backwards"
     },
@@ -1720,6 +1391,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1741,24 +1413,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You did all the hard stuff in the previous exercise. Now it's just some simple string concatenation.</p>",
-                    "<p>You only need one for loop - the one used to make the line of dashes from the previous exercise.</p>",
-                    "<p>Don't try and do everything at once. Break the problem up into smaller, easier subproblems.</p>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>-----\nWorld\n-----\n</code></pre>",
-                    "<p>Since you need to output three separate lines of text, you will need to call <code>print()</code> three times.</p>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>| World |\n</code></pre>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>+-----+\n|World|\n+-----+\n</code></pre>\n<p>(i.e. no spaces around <code>World</code>)</p>"
-                ],
-                "page_index": 12,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 3
-            }
+            ]
         },
         "step": "name_underlined"
     },
@@ -1777,6 +1432,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>You're almost there! Just add a few more characters to your strings.\nYour loop is perfect.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -1806,24 +1462,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You did all the hard stuff in the previous exercise. Now it's just some simple string concatenation.</p>",
-                    "<p>You only need one for loop - the one used to make the line of dashes from the previous exercise.</p>",
-                    "<p>Don't try and do everything at once. Break the problem up into smaller, easier subproblems.</p>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>-----\nWorld\n-----\n</code></pre>",
-                    "<p>Since you need to output three separate lines of text, you will need to call <code>print()</code> three times.</p>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>| World |\n</code></pre>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>+-----+\n|World|\n+-----+\n</code></pre>\n<p>(i.e. no spaces around <code>World</code>)</p>"
-                ],
-                "page_index": 12,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 3
-            }
+            ]
         },
         "step": "name_box"
     },
@@ -1846,6 +1485,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>Well done, this solution is correct! However, it can be improved.\nYou only need to use one loop - using more is inefficient.\nYou can reuse the variable containing the line of <code>-</code> and <code>+</code>.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -1875,24 +1515,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You did all the hard stuff in the previous exercise. Now it's just some simple string concatenation.</p>",
-                    "<p>You only need one for loop - the one used to make the line of dashes from the previous exercise.</p>",
-                    "<p>Don't try and do everything at once. Break the problem up into smaller, easier subproblems.</p>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>-----\nWorld\n-----\n</code></pre>",
-                    "<p>Since you need to output three separate lines of text, you will need to call <code>print()</code> three times.</p>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>| World |\n</code></pre>",
-                    "<p>Try writing a program that outputs:</p>\n<pre><code>+-----+\n|World|\n+-----+\n</code></pre>\n<p>(i.e. no spaces around <code>World</code>)</p>"
-                ],
-                "page_index": 12,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 3
-            }
+            ]
         },
         "step": "name_box"
     },
@@ -1911,6 +1534,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1940,21 +1564,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You will need two separate for loops over <code>name</code>.</p>",
-                    "<p>Each line except for the first and last has the same characters in the middle. That means you can reuse something.</p>",
-                    "<p>Create a variable containing the spaces in the middle and use it many times.</p>",
-                    "<p>Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.</p>"
-                ],
-                "page_index": 12,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 4
-            }
+            ]
         },
         "step": "name_box"
     },
@@ -1975,6 +1585,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nAnd you used a nested loop (a loop inside a loop) which we haven't even covered yet!\nHowever, in this case a nested loop is inefficient.\nYou can make a variable containing spaces and reuse that in each line.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -2036,21 +1647,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You will need two separate for loops over <code>name</code>.</p>",
-                    "<p>Each line except for the first and last has the same characters in the middle. That means you can reuse something.</p>",
-                    "<p>Create a variable containing the spaces in the middle and use it many times.</p>",
-                    "<p>Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.</p>"
-                ],
-                "page_index": 12,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 4
-            }
+            ]
         },
         "step": "name_box_2"
     },
@@ -2071,6 +1668,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2132,18 +1730,133 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 12,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 5
-            }
+            ]
         },
         "step": "name_box_2"
+    },
+    {
+        "page": "Building Up Strings Exercises",
+        "program": [
+            "name = 'World'",
+            "spaces = ''",
+            "for char in name:",
+            "    spaces += ' '",
+            "    print(spaces + char)"
+        ],
+        "response": {
+            "birdseye_url": null,
+            "message": "<p>Almost there! You have one space too many before each letter.\nMake sure that the first time your loop calls <code>print</code>\nyour variable which will contain the spaces is an empty string.\nCheck the order of your code.</p>",
+            "passed": false,
+            "result": [
+                {
+                    "color": "white",
+                    "text": " W"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "  o"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "   r"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "    l"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "     d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "diagonal_name_bonus_challenge"
+    },
+    {
+        "page": "Building Up Strings Exercises",
+        "program": [
+            "name = 'World'",
+            "spaces = ''",
+            "for char in name:",
+            "    print(spaces + char)",
+            "    spaces += ' '"
+        ],
+        "response": {
+            "birdseye_url": null,
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "W"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": " o"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "  r"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "   l"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "    d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "diagonal_name_bonus_challenge"
     },
     {
         "page": "Introducing If Statements",
@@ -2156,6 +1869,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2177,16 +1891,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 14,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "introducing_booleans"
     },
@@ -2202,6 +1907,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2215,16 +1921,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 14,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 2
-            }
+            ]
         },
         "step": "first_if_statements"
     },
@@ -2240,6 +1937,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2253,16 +1951,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 14,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 3
-            }
+            ]
         },
         "step": "excited_example"
     },
@@ -2278,6 +1967,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2291,19 +1981,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You only need to add a few lines to the existing program. All the existing code should be left as is.</p>",
-                    "<p>The code that you add should be very similar to the existing code.</p>"
-                ],
-                "page_index": 14,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 4
-            }
+            ]
         },
         "step": "excited_false_example"
     },
@@ -2322,6 +2000,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2335,16 +2014,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 14,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 5
-            }
+            ]
         },
         "step": "excited_confused_exercise"
     },
@@ -2366,6 +2036,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2379,16 +2050,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 15,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": false,
-                "step_index": 1
-            }
+            ]
         },
         "step": "for_inside_if"
     },
@@ -2409,6 +2071,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2422,16 +2085,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 16,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "print_tail"
     },
@@ -2452,6 +2106,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2657,22 +2312,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>The code should be almost exactly the same, just make a couple of small changes.</p>",
-                    "<p>Make sure that the code inside <code>if include:</code> runs at the beginning of the loop, in the first iteration.</p>",
-                    "<p>That means <code>include</code> should be <code>True</code> at that point.</p>",
-                    "<p>Make sure that the code inside <code>if include:</code> <em>doesn't</em> run after the first iteration.</p>",
-                    "<p>That means <code>include</code> should be <code>False</code> after the first iteration.</p>"
-                ],
-                "page_index": 16,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "print_tail_snoop"
     },
@@ -2692,6 +2332,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2705,16 +2346,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 16,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "print_first_character"
     },
@@ -2730,6 +2362,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2743,16 +2376,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "first_if_else"
     },
@@ -2768,6 +2392,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2781,16 +2406,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "first_if_else_false"
     },
@@ -2808,6 +2424,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2821,16 +2438,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "if_upper_else_lower"
     },
@@ -2848,6 +2456,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2861,16 +2470,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "if_upper_else_lower_false"
     },
@@ -2889,6 +2489,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "red",
@@ -2910,16 +2511,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 5
-            }
+            ]
         },
         "step": "undefined_char"
     },
@@ -2939,6 +2531,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -2952,23 +2545,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You've learned all the tools you need for this. I believe in you! Look at previous programs for inspiration.</p>",
-                    "<p>You will need a loop to build up the new sentence character by character.</p>",
-                    "<p>You will need an <code>if/else</code> to choose whether to add an uppercase or lowercase character.</p>",
-                    "<p>Your <code>if/else</code> needs to execute different bodies depending on which iteration of the loop it's in.</p>",
-                    "<p>That means that your <code>if</code> condition needs to be a variable that changes inside the loop.</p>",
-                    "<p>In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter.</p>"
-                ],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 6
-            }
+            ]
         },
         "step": "else_full_stop"
     },
@@ -2995,6 +2572,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -3008,23 +2586,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You've learned all the tools you need for this. I believe in you! Look at previous programs for inspiration.</p>",
-                    "<p>You will need a loop to build up the new sentence character by character.</p>",
-                    "<p>You will need an <code>if/else</code> to choose whether to add an uppercase or lowercase character.</p>",
-                    "<p>Your <code>if/else</code> needs to execute different bodies depending on which iteration of the loop it's in.</p>",
-                    "<p>That means that your <code>if</code> condition needs to be a variable that changes inside the loop.</p>",
-                    "<p>In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter.</p>"
-                ],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 6
-            }
+            ]
         },
         "step": "capitalise"
     },
@@ -3047,6 +2609,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3060,22 +2623,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>This is similar to the previous exercise. The difference is when and where you set the condition variable.</p>",
-                    "<p>You will need to have a boolean variable which changes with every iteration. </p>",
-                    "<p>First write a small program which takes a boolean variable and flips it, i.e. if the variable is <code>True</code> it becomes <code>False</code> and if it starts out <code>False</code> it's changed to <code>True</code>. No loops, just an <code>if/else</code>.</p>",
-                    "<p>You will need to use the variable in the <code>if</code> condition and also assign to the same variable in the body.</p>",
-                    "<p>Combine that flipping <code>if/else</code> with the one that chooses an uppercase or lowercase character.</p>"
-                ],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 7
-            }
+            ]
         },
         "step": "capitalise"
     },
@@ -3102,6 +2650,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -3115,22 +2664,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>This is similar to the previous exercise. The difference is when and where you set the condition variable.</p>",
-                    "<p>You will need to have a boolean variable which changes with every iteration. </p>",
-                    "<p>First write a small program which takes a boolean variable and flips it, i.e. if the variable is <code>True</code> it becomes <code>False</code> and if it starts out <code>False</code> it's changed to <code>True</code>. No loops, just an <code>if/else</code>.</p>",
-                    "<p>You will need to use the variable in the <code>if</code> condition and also assign to the same variable in the body.</p>",
-                    "<p>Combine that flipping <code>if/else</code> with the one that chooses an uppercase or lowercase character.</p>"
-                ],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 7
-            }
+            ]
         },
         "step": "spongebob"
     },
@@ -3154,6 +2688,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3167,16 +2702,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 17,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 8
-            }
+            ]
         },
         "step": "spongebob"
     },
@@ -3190,6 +2716,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3219,16 +2746,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 18,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "introducing_equality"
     },
@@ -3240,6 +2758,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "red",
@@ -3257,16 +2776,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 18,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "equality_vs_assignment"
     },
@@ -3285,6 +2795,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3298,18 +2809,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You just need to add a few lines of code that are very similar to existing ones.</p>"
-                ],
-                "page_index": 18,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "if_equals_replacing_characters"
     },
@@ -3332,6 +2832,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3345,16 +2846,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 18,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "if_equals_replacing_characters_exercise"
     },
@@ -3379,6 +2871,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3392,19 +2885,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Change:</p>\n<pre><code>if char == 'A':\n    char = 'T'\nif char == 'T':\n    char = 'A'\n</code></pre>\n<p>to look like the revised snippet. It's just a small change, do it without copy-pasting.</p>",
-                    "<p>Now make the same kind of change to the code swapping G and C.</p>"
-                ],
-                "page_index": 19,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "dna_example"
     },
@@ -3431,6 +2912,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3444,16 +2926,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 19,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "dna_example_with_else"
     },
@@ -3478,6 +2951,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3491,16 +2965,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 19,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "dna_example_with_elif"
     },
@@ -3512,6 +2977,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3525,16 +2991,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 20,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "try_not_equals"
     },
@@ -3551,6 +3008,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3564,16 +3022,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 20,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "brokn_kyboard"
     },
@@ -3585,6 +3034,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3598,16 +3048,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 20,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "introducing_less_than"
     },
@@ -3619,6 +3060,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3632,16 +3074,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 20,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "comparing_strings"
     },
@@ -3666,6 +3099,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3679,19 +3113,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Try writing a program which prints the smallest of just <code>x1</code> and <code>x2</code>.</p>",
-                    "<p>All you need is a few uses of <code>&lt;</code>, <code>if</code>, and maybe <code>else</code>.</p>"
-                ],
-                "page_index": 20,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 5
-            }
+            ]
         },
         "step": "grades_example"
     },
@@ -3716,6 +3138,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3729,16 +3152,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 20,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 6
-            }
+            ]
         },
         "step": "min_three_exercise"
     },
@@ -3753,6 +3167,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3790,16 +3205,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 21,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "first_list"
     },
@@ -3813,6 +3219,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3826,16 +3233,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 21,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "can_contain_anything"
     },
@@ -3853,6 +3251,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3866,22 +3265,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>This is very similar to the exercises you've done building up strings character by character.</p>",
-                    "<p>The solution is very similar to the program that adds numbers.</p>",
-                    "<p>In fact, what happens if you try running that program with a list of strings?</p>",
-                    "<p>The problem is that 0. You can't add 0 to a string because numbers and strings are incompatible.</p>",
-                    "<p>Is there a similar concept among strings to 0? A blank initial value?</p>"
-                ],
-                "page_index": 21,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "numbers_sum"
     },
@@ -3898,6 +3282,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3911,23 +3296,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Remember that you can multiply numbers using <code>*</code>.</p>",
-                    "<p>This program is structurally very similar to the programs you've written to build up strings character by character.</p>",
-                    "<p>Make a new list, and then build it up element by element in a for loop.</p>",
-                    "<p>Start with an empty list.</p>",
-                    "<p>You can make a list with one element <code>x</code> by just writing <code>[x]</code>.</p>",
-                    "<p>You can add an element to a list by adding a list containing one element.</p>"
-                ],
-                "page_index": 21,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "strings_sum"
     },
@@ -3943,6 +3312,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -3956,21 +3326,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>This is very similar to the previous exercise.</p>",
-                    "<p>The difference is that sometimes you should skip appending to the new list.</p>",
-                    "<p>Use an <code>if</code> statement.</p>",
-                    "<p>Use a comparison operator to test if a number is big enough to add.</p>"
-                ],
-                "page_index": 21,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 5
-            }
+            ]
         },
         "step": "double_numbers"
     },
@@ -3987,6 +3343,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4000,16 +3357,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 21,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 6
-            }
+            ]
         },
         "step": "filter_numbers"
     },
@@ -4028,6 +3376,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4041,16 +3390,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 22,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "list_contains_exercise"
     },
@@ -4067,6 +3407,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4104,16 +3445,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "introducing_subscripting"
     },
@@ -4125,6 +3457,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "red",
@@ -4146,16 +3479,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "index_error"
     },
@@ -4168,6 +3492,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4253,16 +3578,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "introducing_len_and_range"
     },
@@ -4278,6 +3594,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4347,26 +3664,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You will need to look at all the possible indices of <code>things</code> and check which one is the answer.</p>",
-                    "<p>To look at all possible indices, you will need a loop over <code>range(len(things))</code>.</p>",
-                    "<p>To check if an index is the answer, you will need to use:</p>",
-                    "<ul>\n<li><code>if</code></li>\n</ul>",
-                    "<ul>\n<li>the index in a subscript</li>\n</ul>",
-                    "<ul>\n<li><code>==</code></li>\n</ul>",
-                    "<p>Since you're looking for the first index, you need to stop the loop once you find one.</p>",
-                    "<p>You learned how to stop a loop in the middle recently.</p>",
-                    "<p>You need to use <code>break</code>.</p>"
-                ],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "range_len"
     },
@@ -4382,6 +3680,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>You're almost there! However, this prints all the indices,\nnot just the first one.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -4403,26 +3702,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You will need to look at all the possible indices of <code>things</code> and check which one is the answer.</p>",
-                    "<p>To look at all possible indices, you will need a loop over <code>range(len(things))</code>.</p>",
-                    "<p>To check if an index is the answer, you will need to use:</p>",
-                    "<ul>\n<li><code>if</code></li>\n</ul>",
-                    "<ul>\n<li>the index in a subscript</li>\n</ul>",
-                    "<ul>\n<li><code>==</code></li>\n</ul>",
-                    "<p>Since you're looking for the first index, you need to stop the loop once you find one.</p>",
-                    "<p>You learned how to stop a loop in the middle recently.</p>",
-                    "<p>You need to use <code>break</code>.</p>"
-                ],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "index_exercise"
     },
@@ -4440,6 +3720,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>You're almost there! However, this prints the <em>last</em> index,\nnot the first one.</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -4453,26 +3734,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You will need to look at all the possible indices of <code>things</code> and check which one is the answer.</p>",
-                    "<p>To look at all possible indices, you will need a loop over <code>range(len(things))</code>.</p>",
-                    "<p>To check if an index is the answer, you will need to use:</p>",
-                    "<ul>\n<li><code>if</code></li>\n</ul>",
-                    "<ul>\n<li>the index in a subscript</li>\n</ul>",
-                    "<ul>\n<li><code>==</code></li>\n</ul>",
-                    "<p>Since you're looking for the first index, you need to stop the loop once you find one.</p>",
-                    "<p>You learned how to stop a loop in the middle recently.</p>",
-                    "<p>You need to use <code>break</code>.</p>"
-                ],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "index_exercise"
     },
@@ -4489,6 +3751,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4502,27 +3765,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Did you experiment with indexing and <code>len()</code> with strings in the shell?</p>",
-                    "<p>Forget loops for a moment. How would you print just the first line, which has the first character of each of the two strings?</p>",
-                    "<p>In the second line you want to print the second character of each string, and so on.</p>",
-                    "<p>You will need a <code>for</code> loop.</p>",
-                    "<p>You will need indexing (subscripting).</p>",
-                    "<p>You will need <code>range</code>.</p>",
-                    "<p>You will need <code>len</code>.</p>",
-                    "<p>You will need <code>+</code>.</p>",
-                    "<p>You will need to index both strings.</p>",
-                    "<p>You will need to pass the same index to both strings each time to retrieve matching characters.</p>"
-                ],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 5
-            }
+            ]
         },
         "step": "index_exercise"
     },
@@ -4539,6 +3782,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4584,27 +3828,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>The solution has the same overall structure and essential elements of the previous solution, but it's significantly longer and will require a few additional ideas and pieces.</p>",
-                    "<p>In particular, it should still contain something like:</p>\n<pre><code>for i in range(...):\n    ...\n    print(char1 + ' ' + char2)\n</code></pre>",
-                    "<p>What should go inside <code>range()</code>? Neither <code>len(string1)</code> nor <code>len(string2)</code> is good enough.</p>",
-                    "<p>You want a loop iteration for every character in the longer string.</p>",
-                    "<p>That means you need <code>range(&lt;length of the longest string&gt;)</code></p>",
-                    "<p>In other words you need to find the biggest of the two values <code>len(string1)</code> and <code>len(string2)</code>. You've already done an exercise like that.</p>",
-                    "<p>Once you've sorted out <code>for i in range(...)</code>, <code>i</code> will sometimes be too big to be a valid index for both strings. You will need to check if it's too big before indexing.</p>",
-                    "<p>Remember, the biggest valid index for <code>string1</code> is <code>len(string1) - 1</code>. <code>len(string)</code> is too big.</p>",
-                    "<p>You will need two <code>if</code> statements, one for each string.</p>",
-                    "<p>You will need to set e.g. <code>char1 = ' '</code> when <code>string1[i]</code> is not valid.</p>"
-                ],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 6
-            }
+            ]
         },
         "step": "zip_exercise"
     },
@@ -4637,6 +3861,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4698,16 +3923,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 23,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 7
-            }
+            ]
         },
         "step": "zip_longest_exercise"
     },
@@ -4720,6 +3936,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4741,16 +3958,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 24,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "print_functions"
     },
@@ -4762,6 +3970,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4775,16 +3984,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 24,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "introducing_callable"
     },
@@ -4798,6 +3998,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4827,16 +4028,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 24,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "not_callable"
     },
@@ -4851,6 +4043,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4872,16 +4065,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 24,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "print_returns_none"
     },
@@ -4894,6 +4078,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4923,16 +4108,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 24,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 5
-            }
+            ]
         },
         "step": "len_of_none"
     },
@@ -4946,6 +4122,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -4967,16 +4144,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 24,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 6
-            }
+            ]
         },
         "step": "methods_of_str"
     },
@@ -4989,6 +4157,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "red",
@@ -5010,16 +4179,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 24,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 7
-            }
+            ]
         },
         "step": "no_append_for_str"
     },
@@ -5031,6 +4191,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5044,21 +4205,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Use the words 'python' and 'list' in your search query.</p>",
-                    "<p>Instead of putting the value at the beginning or end, we want to put it <strong><em>_</em></strong>_____?</p>",
-                    "<p>'in the middle' or 'at an index' or 'at a particular position'</p>",
-                    "<p>'python add value at index'</p>"
-                ],
-                "page_index": 25,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "sum_list"
     },
@@ -5072,6 +4219,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5085,16 +4233,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 25,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "list_insert"
     },
@@ -5106,6 +4245,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5119,16 +4259,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 25,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": false,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "dir_list"
     },
@@ -5152,6 +4283,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5173,16 +4305,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 26,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "run_with_python_tutor"
     },
@@ -5206,6 +4329,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5259,16 +4383,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 27,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "two_separate_lists"
     },
@@ -5292,6 +4407,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5345,16 +4461,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 27,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "same_list"
     },
@@ -5369,6 +4476,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5494,16 +4602,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 1
-            }
+            ]
         },
         "step": "first_nested_loop"
     },
@@ -5519,6 +4618,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5668,16 +4768,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 2
-            }
+            ]
         },
         "step": "first_nested_loop_with_line"
     },
@@ -5693,6 +4784,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -5938,27 +5030,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You need to use a for loop inside a for loop.</p>",
-                    "<p>You need the numbers from 1 to 12.</p>",
-                    "<p>Whenever you need a sequence of consecutive numbers, use <code>range</code>.</p>",
-                    "<p>You want something like <code>for x in range(n):</code>.</p>",
-                    "<p>This will start with <code>x = 0</code>, but there's an easy workaround for that.</p>",
-                    "<p>You can just add 1 to <code>x</code>.</p>",
-                    "<p>Use <code>*</code> to multiply numbers.</p>",
-                    "<p>Use <code>print()</code> with several arguments separated by commas to print several things on one line.</p>",
-                    "<p>Remember to print a line with the correct number of dashes after each section.</p>",
-                    "<p>Make sure each line is in the correct loop and has the right amount of indentation.</p>"
-                ],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "first_nested_loop_with_two_arg_print"
     },
@@ -5970,6 +5042,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>You can't add together strings and numbers. Use <code>print()</code> with several arguments\nas shown above, e.g. <code>print(x, y, z)</code>. It'll even add spaces for you!</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "red",
@@ -5991,27 +5064,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You need to use a for loop inside a for loop.</p>",
-                    "<p>You need the numbers from 1 to 12.</p>",
-                    "<p>Whenever you need a sequence of consecutive numbers, use <code>range</code>.</p>",
-                    "<p>You want something like <code>for x in range(n):</code>.</p>",
-                    "<p>This will start with <code>x = 0</code>, but there's an easy workaround for that.</p>",
-                    "<p>You can just add 1 to <code>x</code>.</p>",
-                    "<p>Use <code>*</code> to multiply numbers.</p>",
-                    "<p>Use <code>print()</code> with several arguments separated by commas to print several things on one line.</p>",
-                    "<p>Remember to print a line with the correct number of dashes after each section.</p>",
-                    "<p>Make sure each line is in the correct loop and has the right amount of indentation.</p>"
-                ],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "times_table_exercise"
     },
@@ -6037,6 +5090,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>Your solution is too long. You only need a few lines of code for this problem.\nUse a nested loop so that you don't need to repeat yourself.\nThe computer will do the repetition for you!</p>",
+            "passed": false,
             "result": [
                 {
                     "color": "white",
@@ -9594,27 +8648,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You need to use a for loop inside a for loop.</p>",
-                    "<p>You need the numbers from 1 to 12.</p>",
-                    "<p>Whenever you need a sequence of consecutive numbers, use <code>range</code>.</p>",
-                    "<p>You want something like <code>for x in range(n):</code>.</p>",
-                    "<p>This will start with <code>x = 0</code>, but there's an easy workaround for that.</p>",
-                    "<p>You can just add 1 to <code>x</code>.</p>",
-                    "<p>Use <code>*</code> to multiply numbers.</p>",
-                    "<p>Use <code>print()</code> with several arguments separated by commas to print several things on one line.</p>",
-                    "<p>Remember to print a line with the correct number of dashes after each section.</p>",
-                    "<p>Make sure each line is in the correct loop and has the right amount of indentation.</p>"
-                ],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "times_table_exercise"
     },
@@ -9626,6 +8660,7 @@
         "response": {
             "birdseye_url": null,
             "message": "<p>To multiply numbers, use <code>*</code></p>",
+            "passed": false,
             "result": [
                 {
                     "color": "red",
@@ -9651,27 +8686,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>You need to use a for loop inside a for loop.</p>",
-                    "<p>You need the numbers from 1 to 12.</p>",
-                    "<p>Whenever you need a sequence of consecutive numbers, use <code>range</code>.</p>",
-                    "<p>You want something like <code>for x in range(n):</code>.</p>",
-                    "<p>This will start with <code>x = 0</code>, but there's an easy workaround for that.</p>",
-                    "<p>You can just add 1 to <code>x</code>.</p>",
-                    "<p>Use <code>*</code> to multiply numbers.</p>",
-                    "<p>Use <code>print()</code> with several arguments separated by commas to print several things on one line.</p>",
-                    "<p>Remember to print a line with the correct number of dashes after each section.</p>",
-                    "<p>Make sure each line is in the correct loop and has the right amount of indentation.</p>"
-                ],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 3
-            }
+            ]
         },
         "step": "times_table_exercise"
     },
@@ -9688,6 +8703,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -15549,20 +14565,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Think about how you would do this manually and systematically, with a pencil and paper.</p>",
-                    "<p>You need to use a for loop inside a for loop.</p>",
-                    "<p>You need an <code>if</code> statement to check that the two players aren't the same person.</p>"
-                ],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 4
-            }
+            ]
         },
         "step": "times_table_exercise"
     },
@@ -15578,6 +14581,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -15727,26 +14731,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>Think about how you would do this manually and systematically, with a pencil and paper.</p>",
-                    "<p>The fact that the password must be four letters long is very important. This would be a lot harder to solve if the password could be any given length.</p>",
-                    "<p>But the string <code>letters</code> might have any number of characters.</p>",
-                    "<p>If there are <code>n</code> different letters, then the number of possible passwords is <code>n^4 == n*n*n*n</code> because there are <code>n</code> possible letters for each position and they're all independent.</p>",
-                    "<p>Suppose again that <code>letters = \"ABCD\"</code>. Imagine you have all possible three-letter passwords. Now for each one, add an A at the end, or add a B, or a C, or a D. That's how you would get all possible four-letter passwords.</p>",
-                    "<p>Remember, a for loop can contain any statement, including another for loop.</p>",
-                    "<p>That applies to all for loops.</p>",
-                    "<p>One for loop inside another for loop is no longer enough.</p>",
-                    "<p>You have to go deeper.</p>"
-                ],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 5
-            }
+            ]
         },
         "step": "player_vs_player_exercise"
     },
@@ -15763,6 +14748,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -15896,26 +14882,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [
-                    "<p>How would you describe instructions to type in this triangle manually?</p>",
-                    "<p>Print a line of <code>size</code> Os, then <code>size - 1</code> Os, etc. down to 1 O. For example print 5 Os, then 4 Os, then 3, 2, and 1.</p>",
-                    "<p>Break this down into subproblems.</p>",
-                    "<p>How do you print one line of Os of a given length, and how do you go through all the lengths?</p>",
-                    "<p>Building up a line of characters should be very familiar from previous exercises, the only difference is that you have to make it a given length instead of just the same length as another string.</p>",
-                    "<p>An easy way to do something <code>n</code> times is to loop over <code>range(n)</code>. </p>",
-                    "<p>You need to use a for loop inside a for loop.</p>",
-                    "<p>You need numbers that count down, like 5, 4, 3, 2, 1. There is a way to do this with <code>range</code>, and you can easily look it up, but it's also easy to use a normal range and do some very simple maths to convert numbers counting up into numbers counting down.</p>",
-                    "<p>What formula converts 0 into 5, 1 into 4, 2, into 3, etc?</p>"
-                ],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 6
-            }
+            ]
         },
         "step": "crack_password_exercise"
     },
@@ -15933,6 +14900,7 @@
         "response": {
             "birdseye_url": null,
             "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -15962,16 +14930,7 @@
                     "color": "white",
                     "text": ">>> "
                 }
-            ],
-            "state": {
-                "hints": [],
-                "page_index": 29,
-                "showBirdseye": true,
-                "showEditor": true,
-                "showPythonTutor": true,
-                "showSnoop": true,
-                "step_index": 7
-            }
+            ]
         },
         "step": "upside_down_triangle_exercise"
     }
