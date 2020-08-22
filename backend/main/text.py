@@ -298,8 +298,6 @@ class ExerciseStep(Step):
                             f"{actual_num_params}."
                 )
 
-            # TODO check that function has correct signature
-
             return check_exercise(
                 func,
                 self.solution,
