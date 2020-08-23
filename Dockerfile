@@ -7,6 +7,8 @@ WORKDIR frontend
 RUN npm ci
 COPY frontend .
 RUN npm run build
+WORKDIR build
+RUN sed -i s:/static/:/static_backend/:g index.html
 
 # Stage 2 - Setup server
 FROM ubuntu:18.04
