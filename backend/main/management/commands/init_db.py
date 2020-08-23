@@ -1,6 +1,9 @@
+from allauth.socialaccount.models import SocialApp
+from django.contrib.sites.models import Site
 from django.core.management.base import BaseCommand
 
 from main.models import User
+from main.simple_settings import GOOGLE_APP
 
 
 class Command(BaseCommand):
@@ -18,3 +21,20 @@ class Command(BaseCommand):
             last_name="Adminson",
             email="admin@example.com",
         )
+
+        print("Modifying site")
+        site = Site.objects.get()
+        site.domain = "localhost:3000"
+        site.name = "futurecoder"
+        site.save()
+
+        print("Adding Google app")
+        google_app = SocialApp.objects.create(
+            provider="google",
+            name="Google",
+            client_id=GOOGLE_APP.ID,
+            secret=GOOGLE_APP.SECRET,
+            key="",
+        )
+        google_app.sites.add(site)
+        google_app.save()

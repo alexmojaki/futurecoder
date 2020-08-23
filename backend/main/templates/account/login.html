@@ -26,8 +26,10 @@
       <h2>Sign In</h2>
 
       <div class="social-btn text-center">
+        <a href="{% provider_login_url 'google' process='login' %}" class="btn btn-google btn-lg"><i
+                class="fab fa-google"></i> Google</a>
         <a href="{% provider_login_url 'github' process='login' %}" class="btn btn-github btn-lg"><i
-                class="fab fa-github"></i> Connect with GitHub</a>
+                class="fab fa-github"></i> GitHub</a>
       </div>
       <div class="or-seperator"><b>or</b></div>
 

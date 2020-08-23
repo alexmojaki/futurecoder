@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.facebook',
     'django_user_agents',
     'crispy_forms',
@@ -156,6 +157,15 @@ SOCIALACCOUNT_PROVIDERS = {
         'APP': {
             'client_id': GITHUB_APP.ID,
             'secret': GITHUB_APP.SECRET,
+        }
+    },
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
         }
     }
     # 'facebook': {
