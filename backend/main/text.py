@@ -25,14 +25,20 @@ from main.exercises import (
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
 
 
-def clean_program(program, inputs=None):
+def clean_program(program, *, inputs=None, function_name=None):
     if callable(program):
         inputs = inputs_string(inputs or {})
         source = dedent(inspect.getsource(program))
-        atok = ASTTokens(source, parse=True)
-        func = atok.tree.body[0]
-        lines = source.splitlines()[func.body[0].first_token.start[0] - 1:]
-        program = inputs + '\n' + dedent('\n'.join(lines))
+        if function_name:
+            assert source.count("def solution(self, ") == 1
+            program = source.replace("def solution(self, ", f"def {function_name}(")
+            # TODO strip annotations
+            program = program.replace("@returns_stdout\n", "")
+        else:
+            atok = ASTTokens(source, parse=True)
+            func = atok.tree.body[0]
+            lines = source.splitlines()[func.body[0].first_token.start[0] - 1:]
+            program = inputs + '\n' + dedent('\n'.join(lines))
         compile(program, "<program>", "exec")  # check validity
     no_weird_whitespace(program)
     return program.strip()
@@ -52,7 +58,7 @@ def clean_step_class(cls, clean_inner=True):
         assert cls.tests
         # noinspection PyUnresolvedReferences
         inputs = list(cls.test_values())[0][0]
-        program = clean_program(solution, inputs)
+        program = clean_program(solution, inputs=inputs, function_name=cls.function_name)
     else:
         program = clean_program(program)
     assert program
@@ -230,10 +236,6 @@ class Step(ABC):
     def check(self) -> Union[bool, dict]:
         raise NotImplementedError
 
-    def check_exercise(self, *args, **kwargs):
-        if self.code_source != "shell":
-            return check_exercise(self.input, *args, **kwargs)
-
     @property
     def tree(self):
         return ast.parse(self.input)
@@ -265,14 +267,45 @@ class Step(ABC):
 
 
 class ExerciseStep(Step):
+    function_name = None
 
     def check(self):
-        return self.check_exercise(
-            self.solution, 
-            self.test_exercise,
-            self.generate_inputs, 
-            functionise=True,
-        )
+        if self.code_source == "shell":
+            return False
+
+        if self.function_name is None:
+            return check_exercise(
+                self.input,
+                self.solution,
+                self.test_exercise,
+                self.generate_inputs,
+                functionise=True,
+            )
+        else:
+            if self.function_name not in self.console.locals:
+                return dict(message=f"You must define a function `{self.function_name}`")
+
+            func = self.console.locals[self.function_name]
+            if not inspect.isfunction(func):
+                return dict(message=f"`{self.function_name}` is not a function.")
+
+            actual_num_params = len(inspect.signature(func).parameters)
+            needed_num_params = len(inspect.signature(self.solution).parameters)
+            if actual_num_params != needed_num_params:
+                return dict(
+                    message=f"`{self.function_name}` should have "
+                            f"{needed_num_params} parameter{'s' * (needed_num_params > 1)}, but it has "
+                            f"{actual_num_params}."
+                )
+
+            # TODO check that function has correct signature
+
+            return check_exercise(
+                func,
+                self.solution,
+                self.test_exercise,
+                self.generate_inputs,
+            )
 
     @abstractmethod
     def solution(self, *args, **kwargs):

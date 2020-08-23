@@ -14933,5 +14933,118 @@
             ]
         },
         "step": "upside_down_triangle_exercise"
+    },
+    {
+        "page": "Defining Functions",
+        "program": [
+            "def greet(name):",
+            "    print(\"Hello \" + name + \"!\")",
+            "",
+            "greet(\"Alice\")",
+            "greet(\"Bob\")"
+        ],
+        "response": {
+            "birdseye_url": null,
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Hello Alice!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Hello Bob!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "define_greet"
+    },
+    {
+        "page": "Defining Functions",
+        "program": [
+            "def greet(name):",
+            "    print(\"Hello \" + name + \"!\")",
+            "    print(\"How are you?\")",
+            "",
+            "greet(\"Alice\")",
+            "greet(\"Bob\")"
+        ],
+        "response": {
+            "birdseye_url": null,
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Hello Alice!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "How are you?"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Hello Bob!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "How are you?"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "how_are_you"
+    },
+    {
+        "page": "Defining Functions",
+        "program": [
+            "def print_twice(x: str):",
+            "    print(x)",
+            "    print(x)"
+        ],
+        "response": {
+            "birdseye_url": null,
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "print_twice_exercise"
     }
 ]

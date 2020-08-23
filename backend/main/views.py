@@ -176,7 +176,7 @@ class API:
         page = pages[page_slugs_list[page_index]]
         step = getattr(page, page.step_names[step_index])
         if issubclass(step, ExerciseStep):
-            program = clean_program(step.solution)
+            program = clean_program(step.solution, function_name=step.function_name)
         else:
             program = step.program
 
