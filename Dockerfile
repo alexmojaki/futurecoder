@@ -39,6 +39,7 @@ RUN LC_ALL=C.UTF-8 LANG=C.UTF-8 poetry install --extras "production" --no-dev
 COPY --from=build-frontend /usr/src/app/frontend/build ./frontend/build
 COPY ./backend ./backend
 WORKDIR /usr/src/app/backend
+RUN ./manage.py compilescss
 RUN ./manage.py collectstatic --noinput
 
 EXPOSE 3000
