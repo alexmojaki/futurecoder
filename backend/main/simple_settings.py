@@ -21,6 +21,8 @@ class Root(DryEnv):
     SECRET_KEY = 'kt1+4_u=ga%3v3@fy0@7c(&lq%)6tt=c+f-(ihd32@t$)i6gjm'
     GITHUB_TOKEN = ""
 
+    DISABLE_HTTPS = False
+
 
 class MONITOR(DryEnv):
     ACTIVE = False

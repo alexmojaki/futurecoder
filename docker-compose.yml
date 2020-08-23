@@ -15,6 +15,7 @@ services:
       DATABASE_URL: postgres://postgres:pass@database/postgres
       DEBUG: 'False'
       MASTER_URL: http://master:5000/
+      DISABLE_HTTPS: 'True'
     stdin_open: true
     tty: true
   master:
