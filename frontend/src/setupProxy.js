@@ -6,6 +6,7 @@ const routes = [
   "/toc",
   "/birdseye",
   "/admin",
+  "/static_backend/",
   "/api"
 ];
 

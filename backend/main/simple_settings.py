@@ -30,6 +30,11 @@ class MONITOR(DryEnv):
     SLEEP_TIME = 5
 
 
+class GITHUB_APP(DryEnv):
+    ID = ''
+    SECRET = ''
+
+
 snoop.install(enabled=Root.DEBUG, out=sys.__stderr__, columns=['thread'])
 
 sentry_sdk.init(

@@ -3,46 +3,52 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
-
 {% block content %}
-    
-{% include "messages.html" %}
 
-<h1>{% trans "Sign In" %}</h1>
+  {% include "messages.html" %}
 
-{% get_providers as socialaccount_providers %}
+  {% include "socialaccount/snippets/login_extra.html" %}
 
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+  <style>
+      body {
+          background: midnightblue;
+      }
+  </style>
 
-<div class="socialaccount_ballot">
+  <!--suppress HtmlFormInputWithoutLabel -->
+  <div class="signup-form">
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+      {% endif %}
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+      <h2>Sign In</h2>
 
-  <div class="login-or">{% trans 'or' %}</div>
+      <div class="social-btn text-center">
+        <a href="{% provider_login_url 'github' process='login' %}" class="btn btn-github btn-lg"><i
+                class="fab fa-github"></i> Connect with GitHub</a>
+      </div>
+      <div class="or-seperator"><b>or</b></div>
 
-</div>
+      {{ form.non_field_errors }}
 
-{% include "socialaccount/snippets/login_extra.html" %}
+      <div class="form-group">
+        <input type="email" class="form-control input-lg" name="login" placeholder="Email Address"
+               required="required">
+        {{ form.login.errors }}
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control input-lg" name="password" placeholder="Password"
+               required="required">
+        {{ form.password.errors }}
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-lg btn-block signup-btn">Sign In</button>
+      </div>
+      <div class="text-center"><a href="{{ signup_url }}">Need an account?</a></div>
 
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-{#  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>#}
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
+    </form>
+  </div>
 
 {% endblock %}

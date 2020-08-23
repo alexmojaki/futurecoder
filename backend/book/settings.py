@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
     # 'allauth.socialaccount.providers.facebook',
     'django_user_agents',
     'crispy_forms',
@@ -72,7 +73,7 @@ MIDDLEWARE = [
 ]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = not Root.DEBUG
 
 ROOT_URLCONF = 'book.urls'
 
@@ -117,7 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = "/static/"
+STATIC_URL = "/static_backend/"
 STATICFILES_DIRS = [
     str(BASE_DIR.parent / f"frontend/build/static")
 ]
@@ -151,6 +152,12 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'APP': {
+            'client_id': GITHUB_APP.ID,
+            'secret': GITHUB_APP.SECRET,
+        }
+    }
     # 'facebook': {
     #     'APP': {
     #         'client_id': '123',
