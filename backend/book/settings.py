@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
     'django_user_agents',
     'crispy_forms',
 ]
@@ -167,14 +167,15 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {
             'access_type': 'offline',
         }
-    }
-    # 'facebook': {
-    #     'APP': {
-    #         'client_id': '123',
-    #         'secret': '456',
-    #         'key': ''
-    #     }
-    # }
+    },
+    'facebook': {
+        'METHOD': 'js_sdk',
+        'SCOPE': ['email'],
+        'APP': {
+            'client_id': FACEBOOK_APP.ID,
+            'secret': FACEBOOK_APP.SECRET,
+        },
+    },
 }
 
 try:

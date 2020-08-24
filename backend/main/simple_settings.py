@@ -37,6 +37,11 @@ class GITHUB_APP(DryEnv):
     SECRET = ''
 
 
+class FACEBOOK_APP(DryEnv):
+    ID = ''
+    SECRET = ''
+
+
 class GOOGLE_APP(DryEnv):
     ID = ''
     SECRET = ''
