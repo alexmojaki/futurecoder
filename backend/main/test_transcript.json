@@ -15248,5 +15248,46 @@
             ]
         },
         "step": "swap_parameters"
+    },
+    {
+        "page": "Defining Functions",
+        "program": [
+            "def print_many(n, thing):",
+            "    for _ in range(n):",
+            "        print(thing)",
+            "",
+            "def print_twice(x):",
+            "    print_many(2, x)",
+            "",
+            "print_twice(\"Hello\")"
+        ],
+        "response": {
+            "birdseye_url": null,
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Hello"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Hello"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "print_twice_call_print_many"
     }
 ]

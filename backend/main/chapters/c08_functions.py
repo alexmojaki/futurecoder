@@ -221,6 +221,26 @@ We still want `thing = "Hello"` and `n = 3`.
 
             print_many(3, "Hello")
 
+    class print_twice_call_print_many(VerbatimStep):
+        """
+The body of a function can contain anything, including function calls. In fact we've already done that by calling
+print. But calling one of our own functions is no different, so our functions can call each other!
+
+For example, we can implement `print_twice` using `print_many`:
+
+__program_indented__
+"""
+
+        def program(self):
+            def print_many(n, thing):
+                for _ in range(n):
+                    print(thing)
+
+            def print_twice(x):
+                print_many(2, x)
+
+            print_twice("Hello")
+
     final_text = """
-Well done! You've reached the end for now. More coming soon!
+Well done! You've reached the end of the course for now. More coming soon!
 """
