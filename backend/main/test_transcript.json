@@ -15030,6 +15030,61 @@
     {
         "page": "Defining Functions",
         "program": [
+            "def say_hello(name):",
+            "    print(\"Hello \" + name + \"!\")",
+            "    print(\"How are you?\")",
+            "",
+            "say_hello(\"Alice\")",
+            "say_hello(\"Bob\")"
+        ],
+        "response": {
+            "birdseye_url": null,
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Hello Alice!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "How are you?"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Hello Bob!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "How are you?"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "change_function_name"
+    },
+    {
+        "page": "Defining Functions",
+        "program": [
             "def print_twice(x):",
             "    print(x)",
             "    print(x)"

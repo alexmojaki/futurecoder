@@ -1,8 +1,6 @@
 # flake8: NOQA E501
-from typing import List
 
-from main.exercises import generate_string
-from main.text import ExerciseStep, MessageStep, Page, VerbatimStep
+from main.text import ExerciseStep, Page, VerbatimStep
 from main.utils import returns_stdout
 
 
@@ -51,7 +49,7 @@ Then run the program again.
             greet("Alice")
             greet("Bob")
 
-    class print_twice_exercise(ExerciseStep):
+    class change_function_name(VerbatimStep):
         """
 Note how the output of the program changed. `How are you?` is printed twice. You can think of the whole program as being
 equivalent to this:
@@ -77,6 +75,22 @@ e.g. it can't contain a space.
 one parameter called `name`.
 5. A colon `:`
 
+Let's do some simple exercises. Change the name of the function from `greet` to `say_hello`.
+Make sure the whole program stays working as before, but don't change anything else.
+"""
+
+        program_in_text = False
+
+        def program(self):
+            def say_hello(name):
+                print("Hello " + name + "!")
+                print("How are you?")
+
+            say_hello("Alice")
+            say_hello("Bob")
+
+    class print_twice_exercise(ExerciseStep):
+        """"
 Here's an exercise: write a function called `print_twice` which accepts one argument `x` and prints that argument twice.
 
 For example, `print_twice("Hello")` should output:
