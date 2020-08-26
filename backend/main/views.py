@@ -9,6 +9,9 @@ from tokenize import Untokenizer, generate_tokens
 from typing import get_type_hints
 from uuid import uuid4
 
+import birdseye.server
+import requests
+from birdseye import eye
 from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -16,11 +19,8 @@ from django.forms import ModelForm
 from django.http import HttpResponse, JsonResponse
 from django.views import View
 from django.views.generic import CreateView
-
-import requests
-from birdseye import eye
 from django_user_agents.utils import get_user_agent
-from littleutils import select_attrs
+from littleutils import select_attrs, only
 from markdown import markdown
 from sentry_sdk import capture_exception
 
@@ -101,6 +101,11 @@ class API:
         birdseye_objects = result["birdseye_objects"]
         if birdseye_objects:
             functions = birdseye_objects["functions"]
+            top_old_function_id = only(
+                f["id"]
+                for f in functions
+                if f["name"] == "<module>"
+            )
             function_ids = [d.pop('id') for d in functions]
             functions = [eye.db.Function(**{**d, 'hash': uuid4().hex}) for d in functions]
             with eye.db.session_scope() as session:
@@ -109,15 +114,18 @@ class API:
                 session.commit()
                 function_ids = {old: func.id for old, func in zip(function_ids, functions)}
 
+                call_id = None
                 for call in birdseye_objects["calls"]:
-                    call["function_id"] = function_ids[call["function_id"]]
+                    old_function_id = call["function_id"]
+                    is_top_call = old_function_id == top_old_function_id
+                    call["function_id"] = function_ids[old_function_id]
                     call["start_time"] = datetime.fromisoformat(call["start_time"])
                     call = eye.db.Call(**call)
                     session.add(call)
-                    # TODO get correct call from top level
-                    call_id = call.id
+                    if is_top_call:
+                        call_id = call.id
 
-            birdseye_url = f"/birdseye/ipython_call/{call_id}"
+            birdseye_url = f"/birdseye/call/{call_id}"
 
         return dict(
             result=output_parts,
@@ -270,3 +278,14 @@ class HomePageView(SuccessMessageMixin, CreateView):
         class Meta:
             model = ListEmail
             fields = ["email"]
+
+
+def fix_birdseye_server():
+    views = birdseye.server.app.view_functions
+    birdseye.server.app.view_functions = {
+        "call_view": views["ipython_call_view"],
+        "static": views["static"],
+    }
+
+
+fix_birdseye_server()
