@@ -282,9 +282,10 @@ class HomePageView(SuccessMessageMixin, CreateView):
 
 def fix_birdseye_server():
     views = birdseye.server.app.view_functions
-    ipython_call_view = views["ipython_call_view"]
-    views.clear()
-    views["call_view"] = ipython_call_view
+    birdseye.server.app.view_functions = {
+        "call_view": views["ipython_call_view"],
+        "static": views["static"],
+    }
 
 
 fix_birdseye_server()
