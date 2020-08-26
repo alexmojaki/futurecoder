@@ -165,6 +165,62 @@ Make sure that you don't call your function inside the function body. Check your
             123: "123\n123\n",
         }
 
+    class print_many(VerbatimStep):
+        """
+Functions can have many parameters. Here's an example:
+
+__program_indented__
+
+Note the commas used to separate parameters in the function definition and arguments in the function call,
+and the correspondence between the definition and the call:
+
+    def print_many(thing, n):
+                     ^    ^
+                     |    |
+      print_many("Hello", 3)
+
+So calling `print_many("Hello", 3)` is like running:
+
+    thing = "Hello"
+    n = 3
+    for _ in range(n):
+        print(thing)
+
+Try it now.
+"""
+
+        def program(self):
+            def print_many(thing, n):
+                for _ in range(n):
+                    print(thing)
+
+            print_many("Hello", 3)
+
+    class swap_parameters(VerbatimStep):
+        """
+Now for another simple exercise. Swap around the parameters in the function definition header so that it says:
+
+    def print_many(n, thing):
+
+If you do this and nothing else, you will get an error. Fix the rest of the program so that it behaves like before.
+*Don't change the body of the function*.
+"""
+        program_in_text = False
+
+        hints = """
+The only change to the function definition should be the swapping of parameters as instructed, nothing else.
+You need to fix the call to `print_many`.
+If the function is defined as `def print_many(n, thing)`, what does `print_many("Hello", 3)` mean?
+We still want `thing = "Hello"` and `n = 3`.
+"""
+
+        def program(self):
+            def print_many(n, thing):
+                for _ in range(n):
+                    print(thing)
+
+            print_many(3, "Hello")
+
     final_text = """
 Well done! You've reached the end for now. More coming soon!
 """
