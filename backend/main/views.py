@@ -9,6 +9,7 @@ from tokenize import Untokenizer, generate_tokens
 from typing import get_type_hints
 from uuid import uuid4
 
+import birdseye.server
 import requests
 from birdseye import eye
 from django.conf import settings
@@ -124,7 +125,7 @@ class API:
                     if is_top_call:
                         call_id = call.id
 
-            birdseye_url = f"/birdseye/ipython_call/{call_id}"
+            birdseye_url = f"/birdseye/call/{call_id}"
 
         return dict(
             result=output_parts,
@@ -277,3 +278,13 @@ class HomePageView(SuccessMessageMixin, CreateView):
         class Meta:
             model = ListEmail
             fields = ["email"]
+
+
+def fix_birdseye_server():
+    views = birdseye.server.app.view_functions
+    ipython_call_view = views["ipython_call_view"]
+    views.clear()
+    views["call_view"] = ipython_call_view
+
+
+fix_birdseye_server()
