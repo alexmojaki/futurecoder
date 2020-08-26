@@ -84,9 +84,21 @@ For example, `print_twice("Hello")` should output:
     Hello
     Hello
 """
-        # TODO hints
-
         function_name = "print_twice"
+
+        hints = """
+There's no clever problem solving here, this is just about following the recipe for defining a function.
+Make sure you have all the parts of a function listed above.
+That includes `def`, `()`, and `:`.
+Make sure your function is named `print_twice`.
+Make sure it accepts one parameter in between the parentheses `()`.
+Look at the other functions defined above for help.
+Use the parameter inside the function body.
+Make sure the body is indented.
+The body needs two statements or a very simple loop.
+You can test your function by calling it after the function definition, but it's not required.
+Make sure that you don't call your function inside the function body. Check your indentation.
+"""
 
         @returns_stdout
         def solution(self, x: str):

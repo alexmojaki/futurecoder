@@ -15030,7 +15030,7 @@
     {
         "page": "Defining Functions",
         "program": [
-            "def print_twice(x: str):",
+            "def print_twice(x):",
             "    print(x)",
             "    print(x)"
         ],
