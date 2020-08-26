@@ -81,6 +81,17 @@ Make sure the whole program stays working as before, but don't change anything e
 
         program_in_text = False
 
+        hints = """
+You have to change the name in the function definition header, but that's not all.
+If you just change the name in the function definition header, what happens?
+You get an error. Look at the message. What is it telling you? Where does the error come from?
+If your function is called `say_hello`, what does `greet("Alice")` mean?
+You need to change exactly 3 lines of the program.
+In each line you change, change exactly one word.
+Don't touch the body of the function. It should still have `print("How are you?")`.
+You should still call the function twice after defining it, with arguments `"Alice"` and `"Bob"`.
+"""
+
         def program(self):
             def say_hello(name):
                 print("Hello " + name + "!")
@@ -89,14 +100,45 @@ Make sure the whole program stays working as before, but don't change anything e
             say_hello("Alice")
             say_hello("Bob")
 
+    class change_parameter_name(VerbatimStep):
+        """
+Good! Now do a similar exercise: change the name of the parameter from `name` to `person_name`.
+"""
+
+        program_in_text = False
+
+        hints = """
+You have to change the parameter name in the function definition header, but that's not all.
+If you just change the parameter name in the function definition header, what happens?
+You get an error. Look at the message. What is it telling you? Where does the error come from?
+If the parameter is called `person_name`, what does `print("Hello " + name + "!")` mean?
+You need to change exactly 2 lines of the program.
+In each line you change, change exactly one word.
+Don't touch the part after the function definition, i.e. `say_hello("Alice")` and `say_hello("Bob")`.
+You should still have two statements in the function body, including `print("How are you?")`.
+"""
+
+        def program(self):
+            def say_hello(person_name):
+                print("Hello " + person_name + "!")
+                print("How are you?")
+
+            say_hello("Alice")
+            say_hello("Bob")
+
     class print_twice_exercise(ExerciseStep):
-        """"
-Here's an exercise: write a function called `print_twice` which accepts one argument `x` and prints that argument twice.
+        """
+Well done!
+
+Now write your own function called `print_twice` which accepts one argument `x` and prints that argument twice
+on two lines.
 
 For example, `print_twice("Hello")` should output:
 
     Hello
     Hello
+
+You can test your function by calling it after the function definition, but it's not required.
 """
         function_name = "print_twice"
 
@@ -110,7 +152,6 @@ Look at the other functions defined above for help.
 Use the parameter inside the function body.
 Make sure the body is indented.
 The body needs two statements or a very simple loop.
-You can test your function by calling it after the function definition, but it's not required.
 Make sure that you don't call your function inside the function body. Check your indentation.
 """
 
