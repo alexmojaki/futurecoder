@@ -241,6 +241,51 @@ __program_indented__
 
             print_twice("Hello")
 
+    class see_stack_in_snoop(print_twice_call_print_many):
+        text = """
+Run the program again with Snoop to see how it shows the function calls.
+        """
+
+        expected_code_source = "snoop"
+        program_in_text = False
+
+    class see_stack_in_pythontutor(print_twice_call_print_many):
+        text = """
+Snoop starts each function call with:
+
+1. A new level of indentation in the logs.
+2. `>>> Call to <function name>`
+3. The values of the arguments.
+4. The function header line.
+
+It ends the call with `<<< Return value from <function name>`. We'll learn about return values soon.
+
+Now run the program again with Python Tutor.
+        """
+
+        expected_code_source = "pythontutor"
+        program_in_text = False
+
+    class see_stack_in_birdseye(print_twice_call_print_many):
+        text = """
+Each time a function is called, a new *frame* is created, which contains the local variable values
+in that call and other information about what's currently happening.
+When the function call completes, the frame is deleted.
+
+You can see this in Python Tutor on the right under "Frames". At the top is the Global frame,
+the top level frame where the whole program is running. As you click Next, new frames appear
+and then disappear. In each one you can see the values of the variables.
+
+Finally, run the program with Bird's Eye.
+        """
+
+        expected_code_source = "birdseye"
+        program_in_text = False
+
     final_text = """
+Bird's Eye only shows one frame (function call) at a time. At first you see the global frame.
+At the bottom is the call to `print_twice`. Click on the little blue arrow to take
+you into that frame, and then click on the next one to enter `print_many`.
+
 Well done! You've reached the end of the course for now. More coming soon!
 """
