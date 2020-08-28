@@ -1,12 +1,13 @@
 import ast
+import inspect
 import sys
 
 import snoop
 import snoop.formatting
 import snoop.tracer
 
-from ..utils import internal_dir
 from .worker import execute
+from ..utils import internal_dir
 
 snoop.tracer.internal_directories += (internal_dir,)
 
@@ -39,5 +40,19 @@ def exec_snoop(filename, code, code_obj):
             name = node.id
             tracer.variable_whitelist.add(name)
     tracer.target_codes.add(code_obj)
+
+    def find_code(root_code):
+        """
+        Trace all functions recursively, like trace_module_deep.
+        """
+        for sub_code_obj in root_code.co_consts:
+            if not inspect.iscode(sub_code_obj):
+                continue
+
+            find_code(sub_code_obj)
+            tracer.target_codes.add(sub_code_obj)
+
+    find_code(code_obj)
+
     with tracer:
         execute(code_obj)
