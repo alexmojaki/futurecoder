@@ -616,3 +616,75 @@ O
     final_text = """
 Wow, you're an artist too!
 """
+
+
+class IntroducingBirdseye(Page):
+    class first_birdseye_example(VerbatimStep):
+        """
+You've seen snoop and pythontutor. futurecoder comes with one last tool to analyse programs as they run, called *birdseye* (as in bird's eye view).
+
+Here's an example program to run. Copy it into the editor and click the birdseye button. This will open a new browser tab with the visualisation.
+
+__program_indented__
+        """
+
+        expected_code_source = "birdseye"
+
+        def program(self):
+            a = 2
+            b = 3
+            c = 4
+            d = 5
+            print(a * b + c * d)
+
+    class step_name_here(VerbatimStep):
+        """
+While the other tools show how code runs line by line and the values of variables, birdseye shows you the value of every expression in a program. This lets you see how a complex expression is broken down into smaller sub-expressions
+and what the value of each one is.
+
+Hover your mouse over the various boxed expressions in the last line of the program.
+As each box is highlighted, its value is shown at the bottom of the screen. Clicking on the box will stick it on a panel so you can see several expression values at once and move your mouse around freely.
+
+In this case birdseye shows that the expression:
+
+    a * b + c * d
+
+is broken into
+
+    (a * b) + (c * d)
+
+rather than
+
+    ((a * b) + c) * d
+
+In other words, Python follows the usual order of operations in maths, rather than just evaluating from left to right.
+
+Note that there are some expressions that birdseye doesn't put in a box. In this case `2`, `3`, `4`, `5`, and `print` are all expressions as well, but their values are obvious and boxing them would just be clutter.
+
+Here's a more complicated example to try out:
+
+__program_indented__
+        """
+
+        expected_code_source = "birdseye"
+
+        def program(self):
+            word = 'Amazing'
+            vowels = []
+            consonants = []
+            for letter in word:
+                if letter.lower() in 'aeiou':
+                    vowels.append(letter)
+                else:
+                    consonants.append(letter)
+            print(vowels)
+            print(consonants)
+
+    final_text = """
+Note that:
+
+1. There's a pair of arrows next to the for loop. Click on them to navigate through the loop in time and see what happened in different iterations.
+2. Code that doesn't run in an iteration because of the `if` is greyed out. The expressions within have no values because they weren't evaluated.
+3. The values recorded for the expressions `vowels` and `consonants` depend on which box you look at. In the lines after the loop, they contain all the letters, but inside the loop they only contain some, and exactly how many depends on which iteration you're on.
+4. In `vowels.append(letter)`, you see what the values of those variables were *at that moment*. That means that `letter` is about to be appended to `vowels` but this hasn't happened yet, so `vowels` doesn't contain `letter`.
+        """

@@ -26,7 +26,7 @@ description = "Graphical Python debugger which lets you easily view the values o
 name = "birdseye"
 optional = false
 python-versions = "*"
-version = "0.8.3"
+version = "0.8.4"
 
 [package.dependencies]
 Flask = "*"
@@ -38,6 +38,9 @@ future = "*"
 littleutils = ">=0.2"
 outdated = "*"
 sqlalchemy = "*"
+
+[package.extras]
+tests = ["bs4", "selenium", "requests", "pytest", "numpy", "pandas"]
 
 [[package]]
 category = "main"
@@ -759,7 +762,7 @@ asttokens = [
     {file = "asttokens-2.0.3.tar.gz", hash = "sha256:284831ac3e33be743ca6ac018316b66abfd8b1a49d6366ce6c7b1fd07504a21b"},
 ]
 birdseye = [
-    {file = "birdseye-0.8.3.tar.gz", hash = "sha256:4dd626b9e178b2084b21b178d668e821821387dba9c572e76a9171f911cee0ad"},
+    {file = "birdseye-0.8.4.tar.gz", hash = "sha256:34fbf3a042f257e981cb0d4849d279457269d212851404b19bf9635af71e0701"},
 ]
 cached-property = [
     {file = "cached-property-1.5.1.tar.gz", hash = "sha256:9217a59f14a5682da7c4b8829deadbfc194ac22e9908ccf7c8820234e80a1504"},

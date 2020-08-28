@@ -5,8 +5,6 @@ from pathlib import Path
 
 from django.test import Client, TestCase
 
-from main.chapters.c05_if_statements import UnderstandingProgramsWithSnoop
-from main.chapters.c06_lists import UnderstandingProgramsWithPythonTutor
 from main.text import pages
 from main.workers import master
 
@@ -35,12 +33,7 @@ class StepsTestCase(TestCase):
                 for substep in [*step.messages, step]:
                     program = substep.program
                     if "\n" in program:
-                        if step == UnderstandingProgramsWithSnoop.print_tail_snoop:
-                            code_source = "snoop"
-                        elif step == UnderstandingProgramsWithPythonTutor.run_with_python_tutor:
-                            code_source = "pythontutor"
-                        else:
-                            code_source = "editor"
+                        code_source = step.expected_code_source or "editor"
                     else:
                         code_source = "shell"
                     response = api(
@@ -53,6 +46,7 @@ class StepsTestCase(TestCase):
                     state = response.pop("state")
                     for line in response["result"]:
                         line["text"] = normalise_output(line["text"])
+                    del response["birdseye_url"]
                     transcript.append(dict(
                         program=program.splitlines(),
                         page=page.title,

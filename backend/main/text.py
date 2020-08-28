@@ -222,12 +222,16 @@ class Step(ABC):
     is_step = True
     messages = ()
     tests = {}
+    expected_code_source = None
 
     def __init__(self, *args):
         self.args = args
         self.input, self.result, self.code_source, self.console = args
 
     def check_with_messages(self):
+        if self.expected_code_source not in (None, self.code_source):
+            return False
+
         result = self.check()
         if not isinstance(result, dict):
             result = bool(result)

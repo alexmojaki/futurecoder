@@ -205,9 +205,7 @@ In fact, it's time to introduce a new tool to help you understand programs. Clic
         """
 
         program_in_text = False
-
-        def check(self):
-            return super().check() and self.code_source == "snoop"
+        expected_code_source = "snoop"
 
     class print_first_character(ExerciseStep):
         """
@@ -806,10 +804,9 @@ about the input being valid.
 
 class try_less_than_in_shell(Step):
     comparators_type = None
+    expected_code_source = "shell"
 
     def check(self):
-        if self.code_source != "shell":
-            return False
         for node in ast.walk(self.tree):
             if (
                     isinstance(node, ast.Compare) and
@@ -830,11 +827,10 @@ The opposite of the equals operator `==` is the *not equals* operator `!=`. If y
 
         program = "1 != 2"
 
+        expected_code_source = "shell"
+
         def check(self):
-            return (
-                    self.code_source == "shell"
-                    and search_ast(self.tree, ast.NotEq())
-            )
+            return search_ast(self.tree, ast.NotEq())
 
     class brokn_kyboard(VerbatimStep):
         """

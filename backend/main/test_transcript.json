@@ -5,7 +5,6 @@
             "'literally anything'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>Awesome, you're trying out your own experiments!\nThat's a great sign. Keep it up.\nJust letting you know that you do need to eventually type <code>1+2</code> for the book to move forward.</p>",
             "passed": false,
             "result": [
@@ -31,7 +30,6 @@
             "1+2"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -57,7 +55,6 @@
             "3 x 4"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n\n<pre><code>3 * 4\n</code></pre>",
             "passed": false,
             "result": [
@@ -95,7 +92,6 @@
             "5 - 6"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -121,7 +117,6 @@
             "'hello'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -147,7 +142,6 @@
             "'hello' + 'world'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -173,7 +167,6 @@
             "'hello world'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>You must still add two or more strings together.</p>",
             "passed": false,
             "result": [
@@ -199,7 +192,6 @@
             "'hello ' + 'world'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -225,7 +217,6 @@
             "word = 'Hello'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -243,7 +234,6 @@
             "word"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -269,7 +259,6 @@
             "'word'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -295,7 +284,6 @@
             "sunshine"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -329,7 +317,6 @@
             "foo = 3"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>Put <code>your_name</code> before the <code>=</code> to create a variable called <code>your_name</code>.</p>",
             "passed": false,
             "result": [
@@ -347,7 +334,6 @@
             "your_name = ''"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>For this exercise, choose a non-empty string</p>",
             "passed": false,
             "result": [
@@ -365,7 +351,6 @@
             "your_name = 3"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>You've got the <code>your_name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
             "passed": false,
             "result": [
@@ -383,7 +368,6 @@
             "your_name = ' Alex'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>For this exercise, choose a name that doesn't start with a space.</p>",
             "passed": false,
             "result": [
@@ -401,7 +385,6 @@
             "your_name = 'Alex'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -419,7 +402,6 @@
             "'Hello ' + your_name"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -445,7 +427,6 @@
             "word + your_name"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -471,7 +452,6 @@
             "word + ' ' + your_name"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -497,7 +477,6 @@
             "word = 'Goodbye'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -515,7 +494,6 @@
             "word + ' ' + your_name"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -541,7 +519,6 @@
             "print(word + ' ' + your_name)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -571,7 +548,6 @@
             "print(word + ' ' + name)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -608,7 +584,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -639,7 +614,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -674,7 +648,6 @@
             "for character in name: print(character)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -733,7 +706,6 @@
             "print(character)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -775,7 +747,6 @@
             "    print('---')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -877,7 +848,6 @@
             "print('---')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -945,7 +915,6 @@
             "  print('---')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -985,7 +954,6 @@
             "    print('---' + character)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1045,7 +1013,6 @@
             "    print(name)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1106,7 +1073,6 @@
             "print(hello)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1144,7 +1110,6 @@
             "    print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1206,7 +1171,6 @@
             "    line = line + char"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1264,7 +1228,6 @@
             "    print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1326,7 +1289,6 @@
             "    print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1389,7 +1351,6 @@
             "print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1430,7 +1391,6 @@
             "print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>You're almost there! Just add a few more characters to your strings.\nYour loop is perfect.</p>",
             "passed": false,
             "result": [
@@ -1483,7 +1443,6 @@
             "print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>Well done, this solution is correct! However, it can be improved.\nYou only need to use one loop - using more is inefficient.\nYou can reuse the variable containing the line of <code>-</code> and <code>+</code>.</p>",
             "passed": false,
             "result": [
@@ -1532,7 +1491,6 @@
             "print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1583,7 +1541,6 @@
             "print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nAnd you used a nested loop (a loop inside a loop) which we haven't even covered yet!\nHowever, in this case a nested loop is inefficient.\nYou can make a variable containing spaces and reuse that in each line.</p>",
             "passed": false,
             "result": [
@@ -1666,7 +1623,6 @@
             "print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1744,7 +1700,6 @@
             "    print(spaces + char)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>Almost there! You have one space too many before each letter.\nMake sure that the first time your loop calls <code>print</code>\nyour variable which will contain the spaces is an empty string.\nCheck the order of your code.</p>",
             "passed": false,
             "result": [
@@ -1806,7 +1761,6 @@
             "    spaces += ' '"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1867,7 +1821,6 @@
             "print(condition)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1905,7 +1858,6 @@
             "    print('This does not')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1935,7 +1887,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1965,7 +1916,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -1998,7 +1948,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2034,7 +1983,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2069,7 +2017,6 @@
             "print(new_sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2104,7 +2051,6 @@
             "print(new_sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2330,7 +2276,6 @@
             "print(new_sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2360,7 +2305,6 @@
             "    print('No')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2390,7 +2334,6 @@
             "    print('No')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2422,7 +2365,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2454,7 +2396,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2487,7 +2428,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2529,7 +2469,6 @@
             "print(sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2570,7 +2509,6 @@
             "print(new_sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
             "passed": false,
             "result": [
@@ -2607,7 +2545,6 @@
             "print(new_sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2648,7 +2585,6 @@
             "print(new_sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
             "passed": false,
             "result": [
@@ -2686,7 +2622,6 @@
             "print(new_sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2714,7 +2649,6 @@
             "print('ab' + 'c' == 'a' + 'bc')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2756,7 +2690,6 @@
             "print(1 + 2 = 3)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2793,7 +2726,6 @@
             "print(new_name)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2830,7 +2762,6 @@
             "print(new_name)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2869,7 +2800,6 @@
             "print(opposite_dna)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2910,7 +2840,6 @@
             "print(opposite_dna)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2949,7 +2878,6 @@
             "print(opposite_dna)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -2975,7 +2903,6 @@
             "1 != 2"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3006,7 +2933,6 @@
             "print(new_sentence)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3032,7 +2958,6 @@
             "1 < 2"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3058,7 +2983,6 @@
             "'1' < '2'"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3097,7 +3021,6 @@
             "print(grade)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3136,7 +3059,6 @@
             "print(first)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3165,7 +3087,6 @@
             "    print(word)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3217,7 +3138,6 @@
             "print(things)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3249,7 +3169,6 @@
             "print(total)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3280,7 +3199,6 @@
             "print(total)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3310,7 +3228,6 @@
             "print(double)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3341,7 +3258,6 @@
             "print(big_numbers)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3374,7 +3290,6 @@
             "print(found)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3405,7 +3320,6 @@
             "print(words[3])"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3455,7 +3369,6 @@
             "words[4]"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3490,7 +3403,6 @@
             "    print(i)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3592,7 +3504,6 @@
             "    print(words[index])"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3678,7 +3589,6 @@
             "        print(i)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>You're almost there! However, this prints all the indices,\nnot just the first one.</p>",
             "passed": false,
             "result": [
@@ -3718,7 +3628,6 @@
             "print(answer)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>You're almost there! However, this prints the <em>last</em> index,\nnot the first one.</p>",
             "passed": false,
             "result": [
@@ -3749,7 +3658,6 @@
             "        break"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3780,7 +3688,6 @@
             "    print(char1 + ' ' + char2)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3859,7 +3766,6 @@
             "    print(char1 + ' ' + char2)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3934,7 +3840,6 @@
             "print(print)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3968,7 +3873,6 @@
             "print(callable(len))"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -3996,7 +3900,6 @@
             "f()"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4041,7 +3944,6 @@
             "print(printed)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4076,7 +3978,6 @@
             "length = len(things)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4120,7 +4021,6 @@
             "print(word.upper())"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4155,7 +4055,6 @@
             "word.append('!')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4189,7 +4088,6 @@
             "max([21, 55, 4, 91, 62, 49])"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4217,7 +4115,6 @@
             "print(nums)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4243,7 +4140,6 @@
             "dir([])"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4281,7 +4177,6 @@
             "print(big_numbers)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4327,7 +4222,6 @@
             "print(list2)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4405,7 +4299,6 @@
             "print(list2)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4474,7 +4367,6 @@
             "        print(number)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4616,7 +4508,6 @@
             "    print('---')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -4782,7 +4673,6 @@
             "    print('---')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -5040,7 +4930,6 @@
             "print(1 + \"x\")"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>You can't add together strings and numbers. Use <code>print()</code> with several arguments\nas shown above, e.g. <code>print(x, y, z)</code>. It'll even add spaces for you!</p>",
             "passed": false,
             "result": [
@@ -5088,7 +4977,6 @@
             "    print('----------')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>Your solution is too long. You only need a few lines of code for this problem.\nUse a nested loop so that you don't need to repeat yourself.\nThe computer will do the repetition for you!</p>",
             "passed": false,
             "result": [
@@ -8658,7 +8546,6 @@
             "2 x 3"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "<p>To multiply numbers, use <code>*</code></p>",
             "passed": false,
             "result": [
@@ -8701,7 +8588,6 @@
             "    print('----------')"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -14579,7 +14465,6 @@
             "            print(player1, 'vs', player2)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -14746,7 +14631,6 @@
             "                print(c1 + c2 + c3 + c4)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -14898,7 +14782,6 @@
             "    print(line)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -14935,6 +14818,77 @@
         "step": "upside_down_triangle_exercise"
     },
     {
+        "page": "Introducing Birdseye",
+        "program": [
+            "a = 2",
+            "b = 3",
+            "c = 4",
+            "d = 5",
+            "print(a * b + c * d)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "26"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "first_birdseye_example"
+    },
+    {
+        "page": "Introducing Birdseye",
+        "program": [
+            "word = 'Amazing'",
+            "vowels = []",
+            "consonants = []",
+            "for letter in word:",
+            "    if letter.lower() in 'aeiou':",
+            "        vowels.append(letter)",
+            "    else:",
+            "        consonants.append(letter)",
+            "print(vowels)",
+            "print(consonants)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "['A', 'a', 'i']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "['m', 'z', 'n', 'g']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "step_name_here"
+    },
+    {
         "page": "Defining Functions",
         "program": [
             "def greet(name):",
@@ -14944,7 +14898,6 @@
             "greet(\"Bob\")"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -14983,7 +14936,6 @@
             "greet(\"Bob\")"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -15038,7 +14990,6 @@
             "say_hello(\"Bob\")"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -15093,7 +15044,6 @@
             "say_hello(\"Bob\")"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -15145,7 +15095,6 @@
             "    print(x)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -15167,7 +15116,6 @@
             "print_many(\"Hello\", 3)"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -15213,7 +15161,6 @@
             "print_many(3, \"Hello\")"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [
@@ -15262,7 +15209,6 @@
             "print_twice(\"Hello\")"
         ],
         "response": {
-            "birdseye_url": null,
             "message": "",
             "passed": true,
             "result": [

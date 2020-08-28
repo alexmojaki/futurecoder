@@ -910,8 +910,7 @@ the slider left or right. You can also see the values of variables on the right.
     __program_indented__
         """
 
-        def check(self):
-            return super().check() and self.code_source == "pythontutor"
+        expected_code_source = "pythontutor"
 
         def program(self):
             all_numbers = [2, 4, 8, 1, 9, 7]
