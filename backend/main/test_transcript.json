@@ -15197,7 +15197,7 @@
         "step": "swap_parameters"
     },
     {
-        "page": "Defining Functions",
+        "page": "Calling Functions Within Functions",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -15237,7 +15237,7 @@
         "step": "print_twice_call_print_many"
     },
     {
-        "page": "Defining Functions",
+        "page": "Calling Functions Within Functions",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -15337,7 +15337,7 @@
         "step": "see_stack_in_snoop"
     },
     {
-        "page": "Defining Functions",
+        "page": "Calling Functions Within Functions",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -15377,7 +15377,7 @@
         "step": "see_stack_in_pythontutor"
     },
     {
-        "page": "Defining Functions",
+        "page": "Calling Functions Within Functions",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",

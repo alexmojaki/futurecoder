@@ -221,6 +221,12 @@ We still want `thing = "Hello"` and `n = 3`.
 
             print_many(3, "Hello")
 
+    final_text = """
+Perfect! Now you have a solid foundation of the basics of defining functions.
+"""
+
+
+class CallingFunctionsWithinFunctions(Page):
     class print_twice_call_print_many(VerbatimStep):
         """
 The body of a function can contain anything, including function calls. In fact we've already done that by calling
@@ -243,7 +249,10 @@ __program_indented__
 
     class see_stack_in_snoop(print_twice_call_print_many):
         text = """
-Run the program again with Snoop to see how it shows the function calls.
+It's important to get a good sense of what's going on here and to know how
+to explore function calls, so we're going to try this out in each debugger.
+
+First, run the program again with Snoop.
         """
 
         expected_code_source = "snoop"
