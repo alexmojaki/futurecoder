@@ -87,7 +87,7 @@ class AppComponent extends React.Component {
     const showSnoop = page_index > snoopPageIndex ||
       (page_index === snoopPageIndex && step_index >= 1);
     const showPythonTutor = page_index >= _.findIndex(pages, {slug: "UnderstandingProgramsWithPythonTutor"});
-    const showBirdseye = true;
+    const showBirdseye = page_index >= _.findIndex(pages, {slug: "IntroducingBirdseye"});
 
     return <div className="book-container">
       <div className="book-text markdown-body">
@@ -185,7 +185,7 @@ class AppComponent extends React.Component {
               width={20}
               height={20}
               alt="birdseye logo"
-              style={{position: "relative", top: "-2px"}}/>} Birdseye
+              style={{position: "relative", top: "-2px"}}/>} Bird's Eye
           </button>}
 
         </div>

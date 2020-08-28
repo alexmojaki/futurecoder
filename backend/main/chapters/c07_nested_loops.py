@@ -619,11 +619,13 @@ Wow, you're an artist too!
 
 
 class IntroducingBirdseye(Page):
+    title = "Understanding Programs with Bird's Eye"
+
     class first_birdseye_example(VerbatimStep):
         """
-You've seen snoop and pythontutor. futurecoder comes with one last tool to analyse programs as they run, called *birdseye* (as in bird's eye view).
+You've seen Snoop and Python Tutor. futurecoder comes with one last tool to analyse programs as they run, called *Bird's Eye*.
 
-Here's an example program to run. Copy it into the editor and click the birdseye button. This will open a new browser tab with the visualisation.
+Here's an example program to run. Copy it into the editor and click the Bird's Eye button. This will open a new browser tab with the visualisation.
 
 __program_indented__
         """
@@ -639,13 +641,13 @@ __program_indented__
 
     class step_name_here(VerbatimStep):
         """
-While the other tools show how code runs line by line and the values of variables, birdseye shows you the value of every expression in a program. This lets you see how a complex expression is broken down into smaller sub-expressions
+While the other tools show how code runs line by line and the values of variables, Bird's Eye shows you the value of every expression in a program. This lets you see how a complex expression is broken down into smaller sub-expressions
 and what the value of each one is.
 
 Hover your mouse over the various boxed expressions in the last line of the program.
 As each box is highlighted, its value is shown at the bottom of the screen. Clicking on the box will stick it on a panel so you can see several expression values at once and move your mouse around freely.
 
-In this case birdseye shows that the expression:
+In this case Bird's Eye shows that the expression:
 
     a * b + c * d
 
@@ -659,7 +661,7 @@ rather than
 
 In other words, Python follows the usual order of operations in maths, rather than just evaluating from left to right.
 
-Note that there are some expressions that birdseye doesn't put in a box. In this case `2`, `3`, `4`, `5`, and `print` are all expressions as well, but their values are obvious and boxing them would just be clutter.
+Note that there are some expressions that Bird's Eye doesn't put in a box. In this case `2`, `3`, `4`, `5`, and `print` are all expressions as well, but their values are obvious and boxing them would just be clutter.
 
 Here's a more complicated example to try out:
 
