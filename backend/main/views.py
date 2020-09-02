@@ -1,3 +1,4 @@
+import inspect
 import json
 import logging
 import traceback
@@ -5,6 +6,7 @@ from datetime import datetime
 from io import StringIO
 from pathlib import Path
 from random import shuffle
+from textwrap import dedent
 from tokenize import Untokenizer, generate_tokens
 from typing import get_type_hints
 from uuid import uuid4
@@ -25,7 +27,7 @@ from markdown import markdown
 from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
-from main.text import ExerciseStep, clean_program, page_slugs_list, pages
+from main.text import ExerciseStep, clean_program, page_slugs_list, pages, clean_solution_function
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
 
@@ -184,7 +186,7 @@ class API:
         page = pages[page_slugs_list[page_index]]
         step = getattr(page, page.step_names[step_index])
         if issubclass(step, ExerciseStep):
-            program = clean_program(step.solution, function_name=step.function_name)
+            program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
         else:
             program = step.program
 

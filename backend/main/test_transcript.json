@@ -15415,5 +15415,95 @@
             ]
         },
         "step": "see_stack_in_birdseye"
+    },
+    {
+        "page": "Returning Values From Functions",
+        "program": [
+            "def double(x):",
+            "    return x * 2",
+            "",
+            "number = 5",
+            "twice = double(number)",
+            "print(number)",
+            "print(twice)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "10"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "first_return"
+    },
+    {
+        "page": "Returning Values From Functions",
+        "program": [
+            "def double(x):",
+            "    return x * 2",
+            "",
+            "number = 5",
+            "double(number)",
+            "print(number)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "losing_return_value"
+    },
+    {
+        "page": "Returning Values From Functions",
+        "program": [
+            "def double(x):",
+            "    return x * 2",
+            "",
+            "def quadruple(x):",
+            "    return double(double(x))"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "quadruple_exercise"
     }
 ]

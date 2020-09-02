@@ -9,6 +9,7 @@ from functools import partial
 from importlib import import_module
 from pathlib import Path
 from textwrap import dedent, indent
+from types import FunctionType
 from typing import Type, Union, get_type_hints
 
 from astcheck import is_ast_like
@@ -25,27 +26,42 @@ from main.exercises import (
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
 
 
-def clean_program(program, *, inputs=None, function_name=None):
-    if callable(program):
+def get_solution_function(solution):
+    if inspect.signature(solution).parameters:
+        return solution
+    else:
+        return solution()
+
+
+def clean_program(program, *, inputs=None):
+    if isinstance(program, FunctionType):
         inputs = inputs_string(inputs or {})
         source = dedent(inspect.getsource(program))
-        if function_name:
-            assert source.count("def solution(self, ") == 1
-            params = ", ".join(list(inspect.signature(program).parameters.keys())[1:])
-            program = re.sub(
-                "(@returns_stdout\n)?"
-                r"def solution\(self, .+?\):",
-                f"def {function_name}({params}):",
-                source,
-            )
+        lines = source.splitlines()
+        func = get_solution_function(program)
+        if func != program:
+            assert lines[0] == "def solution():"
+            assert lines[-1] == f"    return {func.__name__}"
+            source = dedent("\n".join(lines[1:-1]))
+            program = clean_solution_function(func, source)
         else:
             atok = ASTTokens(source, parse=True)
             func = atok.tree.body[0]
-            lines = source.splitlines()[func.body[0].first_token.start[0] - 1:]
+            lines = lines[func.body[0].first_token.start[0] - 1:]
             program = inputs + '\n' + dedent('\n'.join(lines))
         compile(program, "<program>", "exec")  # check validity
     no_weird_whitespace(program)
     return program.strip()
+
+
+def clean_solution_function(func, source):
+    params = ", ".join(list(inspect.signature(func).parameters.keys())[1:])
+    return re.sub(
+        f"(@returns_stdout\n)?"
+        rf"def {func.__name__}\(_, .+?\):",
+        rf"def {func.__name__}({params}):",
+        source,
+    )
 
 
 def clean_step_class(cls, clean_inner=True):
@@ -61,8 +77,9 @@ def clean_step_class(cls, clean_inner=True):
     if solution:
         assert cls.tests
         # noinspection PyUnresolvedReferences
+        cls.solution = get_solution_function(solution)
         inputs = list(cls.test_values())[0][0]
-        program = clean_program(solution, inputs=inputs, function_name=cls.function_name)
+        program = clean_program(solution, inputs=inputs)
     else:
         program = clean_program(program)
     assert program
@@ -275,13 +292,13 @@ class Step(ABC):
 
 
 class ExerciseStep(Step):
-    function_name = None
-
     def check(self):
         if self.code_source == "shell":
             return False
 
-        if self.function_name is None:
+        function_name = self.solution.__name__
+
+        if function_name == "solution":
             return check_exercise(
                 self.input,
                 self.solution,
@@ -290,18 +307,18 @@ class ExerciseStep(Step):
                 functionise=True,
             )
         else:
-            if self.function_name not in self.console.locals:
-                return dict(message=f"You must define a function `{self.function_name}`")
+            if function_name not in self.console.locals:
+                return dict(message=f"You must define a function `{function_name}`")
 
-            func = self.console.locals[self.function_name]
+            func = self.console.locals[function_name]
             if not inspect.isfunction(func):
-                return dict(message=f"`{self.function_name}` is not a function.")
+                return dict(message=f"`{function_name}` is not a function.")
 
             actual_num_params = len(inspect.signature(func).parameters)
             needed_num_params = len(inspect.signature(self.solution).parameters)
             if actual_num_params != needed_num_params:
                 return dict(
-                    message=f"`{self.function_name}` should have "
+                    message=f"`{function_name}` should have "
                             f"{needed_num_params} parameter{'s' * (needed_num_params > 1)}, but it has "
                             f"{actual_num_params}."
                 )

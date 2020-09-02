@@ -140,7 +140,6 @@ For example, `print_twice("Hello")` should output:
 
 You can test your function by calling it after the function definition, but it's not required.
 """
-        function_name = "print_twice"
 
         hints = """
 There's no clever problem solving here, this is just about following the recipe for defining a function.
@@ -152,13 +151,16 @@ Look at the other functions defined above for help.
 Use the parameter inside the function body.
 Make sure the body is indented.
 The body needs two statements or a very simple loop.
-Make sure that you don't call your function inside the function body. Check your indentation.
+Make sure that you don't call `print_twice` inside the function body of `print_twice`. Check your indentation.
 """
 
-        @returns_stdout
-        def solution(self, x: str):
-            print(x)
-            print(x)
+        def solution():
+            @returns_stdout
+            def print_twice(_, x: str):
+                print(x)
+                print(x)
+
+            return print_twice
 
         tests = {
             "Hello": "Hello\nHello\n",
@@ -170,7 +172,17 @@ Make sure that you don't call your function inside the function body. Check your
 Functions can have many parameters. Here's an example:
 
 __program_indented__
+"""
 
+        def program(self):
+            def print_many(thing, n):
+                for _ in range(n):
+                    print(thing)
+
+            print_many("Hello", 3)
+
+    class swap_parameters(VerbatimStep):
+        """
 Note the commas used to separate parameters in the function definition and arguments in the function call,
 and the correspondence between the definition and the call:
 
@@ -186,18 +198,6 @@ So calling `print_many("Hello", 3)` is like running:
     for _ in range(n):
         print(thing)
 
-Try it now.
-"""
-
-        def program(self):
-            def print_many(thing, n):
-                for _ in range(n):
-                    print(thing)
-
-            print_many("Hello", 3)
-
-    class swap_parameters(VerbatimStep):
-        """
 Now for another simple exercise. Swap around the parameters in the function definition header so that it says:
 
     def print_many(n, thing):
@@ -295,6 +295,93 @@ Finally, run the program with Bird's Eye.
 Bird's Eye only shows one frame (function call) at a time. At first you see the global frame.
 At the bottom is the call to `print_twice`. Click on the little blue arrow to take
 you into that frame, and then click on the next one to enter `print_many`.
-
-Well done! You've reached the end of the course for now. More coming soon!
 """
+
+
+class ReturningValuesFromFunctions(Page):
+    class first_return(VerbatimStep):
+        """
+Functions can be especially useful when they *return* values, rather than just printing them. Try this example:
+
+__program_indented__
+        """
+
+        def program(self):
+            def double(x):
+                return x * 2
+
+            number = 5
+            twice = double(number)
+            print(number)
+            print(twice)
+
+    class losing_return_value(VerbatimStep):
+        """
+Here we passed `number` (which has value `5`) as the argument `x` to the function `double`, and `double` *returned*
+`x * 2`, i.e. `5 * 2`, i.e. `10`, which became the value of the variable `twice`. The special keyword `return` inside
+`double` makes `double(number)` an expression with a value - specifically the value which was returned.
+It's a bit like `twice = double(number)` is equivalent to `double = number * 2`, although that's not
+exactly what happens.
+
+Note that `double(number)` *didn't change `number`*. At the end, `number` is still `5`. Rather, `double(number)`
+returned a new value. It's crucial that the program made use of that returned value, in this case by storing
+it in a variable. Immediately printing it with `print(double(number))` also works. On the other hand,
+this doesn't work:
+
+__program_indented__
+        """
+
+        def program(self):
+            def double(x):
+                return x * 2
+
+            number = 5
+            double(number)
+            print(number)
+
+    class quadruple_exercise(ExerciseStep):
+        """
+Here `double(number)` still returned `10`, but we didn't make use of that so it was lost. `number` is still `5`.
+
+Write a function `quadruple` which takes one argument and returns that argument multiplied by 4.
+You must only use the `double` function - no numbers or multiplication are allowed directly in the body
+of `quadruple`.
+        """
+
+        hints = """
+To multiply by 4, multiply by 2 twice.
+That means you need to call `double` twice.
+Make sure you use the returned value from `double` each time.
+Make sure you have all the parts of a function definition.
+That includes `def`, `()`, and `:`.
+Make sure your function is named `quadruple`.
+Make sure it accepts one parameter in between the parentheses `()`.
+Use the parameter inside the function body.
+Make sure the body is indented.
+Make sure you `return` something at the end.
+Look at the definition of `double` for an example.
+Make sure that you don't call `quadruple` inside the function body of `quadruple`. Check your indentation.
+"""
+
+        def solution():
+            def double(x):
+                return x * 2
+
+            def quadruple(_, x: int):
+                return double(double(x))
+
+            return quadruple
+
+        tests = {3: 12, 10: 40}
+
+    final_text = """
+Well done! Here are two possible solutions:
+
+    def quadruple(x):
+        x = double(x)
+        x = double(x)
+        return x
+
+    def quadruple(x):
+        return double(double(x))
+        """

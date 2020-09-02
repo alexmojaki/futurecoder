@@ -5,6 +5,8 @@ import snoop
 from dryenv import DryEnv, populate_globals
 from littleutils import setup_quick_console_logging
 from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.executing import ExecutingIntegration
+from sentry_sdk.integrations.pure_eval import PureEvalIntegration
 
 setup_quick_console_logging()
 
@@ -51,7 +53,7 @@ snoop.install(enabled=Root.DEBUG, out=sys.__stderr__, columns=['thread'])
 
 sentry_sdk.init(
     dsn=Root.SENTRY_DSN,
-    integrations=[DjangoIntegration()],
+    integrations=[DjangoIntegration(), PureEvalIntegration(), ExecutingIntegration()],
     send_default_pii=True
 )
 
