@@ -14,7 +14,7 @@ from typing import Type, Union, get_type_hints
 
 from astcheck import is_ast_like
 from asttokens import ASTTokens
-from littleutils import setattrs
+from littleutils import setattrs, only
 from markdown import markdown
 
 from main.exercises import (
@@ -296,6 +296,22 @@ class Step(ABC):
         if remove_spaces:
             inp = re.sub(r'\s', '', inp)
         return re.match(pattern + '$', inp)
+
+    @property
+    def function_tree(self):
+        # We define this here so MessageSteps implicitly inheriting from ExerciseStep don't complain it doesn't exist
+        # noinspection PyUnresolvedReferences
+        function_name = self.solution.__name__
+
+        if function_name == "solution":
+            raise ValueError("This exercise doesn't require defining a function")
+
+        return only(
+            node
+            for node in ast.walk(self.tree)
+            if isinstance(node, ast.FunctionDef)
+            if node.name == function_name
+        )
 
 
 class ExerciseStep(Step):

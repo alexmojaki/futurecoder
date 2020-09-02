@@ -15488,6 +15488,24 @@
     {
         "page": "Returning Values From Functions",
         "program": [
+            "def quadruple(x):",
+            "    return x * 4"
+        ],
+        "response": {
+            "message": "<p>You cannot use <code>*</code>, <code>+</code>, or even any numbers inside <code>quadruple</code>.\nYou must call <code>double</code> to solve the problem.</p>",
+            "passed": false,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "quadruple_exercise"
+    },
+    {
+        "page": "Returning Values From Functions",
+        "program": [
             "def double(x):",
             "    return x * 2",
             "",
@@ -15685,6 +15703,25 @@
             ]
         },
         "step": "surround_exercise"
+    },
+    {
+        "page": "Testing Functions",
+        "program": [
+            "def alert(string, level):",
+            "    marks = '!' * level",
+            "    return f'{marks} {string} {marks}'"
+        ],
+        "response": {
+            "message": "<p>You cannot use string concatenation/formatting/interpolation/multiplication or f-strings in <code>alert</code>.\nYou must call <code>surround</code> to solve the problem.</p>",
+            "passed": false,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "step_name_here"
     },
     {
         "page": "Testing Functions",

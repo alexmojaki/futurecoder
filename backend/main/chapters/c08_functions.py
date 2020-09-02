@@ -1,9 +1,10 @@
 # flake8: NOQA E501
+import ast
 import inspect
 from textwrap import indent
 
 from main.exercises import assert_equal
-from main.text import ExerciseStep, Page, VerbatimStep
+from main.text import ExerciseStep, Page, VerbatimStep, MessageStep
 from main.utils import returns_stdout
 
 
@@ -377,6 +378,25 @@ Make sure that you don't call `quadruple` inside the function body of `quadruple
 
         tests = {3: 12, 10: 40}
 
+        class used_multiply(ExerciseStep, MessageStep):
+            """
+            You cannot use `*`, `+`, or even any numbers inside `quadruple`.
+            You must call `double` to solve the problem.
+            """
+            after_success = True
+
+            def check(self):
+                return any(
+                    isinstance(node, (ast.Mult, ast.Add, ast.Num))
+                    for node in ast.walk(self.function_tree)
+                )
+
+            def solution():
+                def quadruple(_, x: int):
+                    return x * 4
+
+                return quadruple
+
     final_text = """
 Well done! Here are two possible solutions:
 
@@ -544,6 +564,28 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
                 return string
 
             return alert
+
+        class used_format(ExerciseStep, MessageStep):
+            """
+            You cannot use string concatenation/formatting/interpolation/multiplication or f-strings in `alert`.
+            You must call `surround` to solve the problem.
+            """
+            after_success = True
+
+            def check(self):
+                return any(
+                    isinstance(node, (ast.Mod, ast.Add, ast.Mult, ast.JoinedStr))
+                    or getattr(node, "attr", "") == "format"
+                    or getattr(node, "id", "") == "format"
+                    for node in ast.walk(self.function_tree)
+                )
+
+            def solution():
+                def alert(_, string: str, level: int):
+                    marks = '!' * level
+                    return f'{marks} {string} {marks}'
+
+                return alert
 
     final_text = """
 Great work! These tools will be very helpful in coming chapters.
