@@ -54,12 +54,19 @@ def clean_program(program, *, inputs=None):
     return program.strip()
 
 
+def basic_signature(func, remove_first=False):
+    param_names = list(inspect.signature(func).parameters.keys())
+    if remove_first:
+        param_names = param_names[1:]
+    joined = ", ".join(param_names)
+    return f'({joined})'
+
+
 def clean_solution_function(func, source):
-    params = ", ".join(list(inspect.signature(func).parameters.keys())[1:])
     return re.sub(
         f"(@returns_stdout\n)?"
         rf"def {func.__name__}\(_, .+?\):",
-        rf"def {func.__name__}({params}):",
+        rf"def {func.__name__}{basic_signature(func, remove_first=True)}:",
         source,
     )
 
@@ -314,13 +321,14 @@ class ExerciseStep(Step):
             if not inspect.isfunction(func):
                 return dict(message=f"`{function_name}` is not a function.")
 
-            actual_num_params = len(inspect.signature(func).parameters)
-            needed_num_params = len(inspect.signature(self.solution).parameters)
-            if actual_num_params != needed_num_params:
+            actual_signature = basic_signature(func)
+            needed_signature = basic_signature(self.solution)
+            if actual_signature != needed_signature:
                 return dict(
-                    message=f"`{function_name}` should have "
-                            f"{needed_num_params} parameter{'s' * (needed_num_params > 1)}, but it has "
-                            f"{actual_num_params}."
+                    message=f"The signature should be:\n\n"
+                            f"    def {function_name}{needed_signature}:\n\n"
+                            f"not:\n\n"
+                            f"    def {function_name}{actual_signature}:"
                 )
 
             return check_exercise(

@@ -169,6 +169,14 @@ def generate_for_type(typ):
     }[typ]
 
 
+# This function is shown to the user, keep it simple
+def assert_equal(actual, expected):
+    if actual == expected:
+        print("OK")
+    else:
+        print("Error!", actual, "!=", expected)
+
+
 def main():
     program = """
 name = 'World'

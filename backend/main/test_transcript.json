@@ -15505,5 +15505,209 @@
             ]
         },
         "step": "quadruple_exercise"
+    },
+    {
+        "page": "Testing Functions",
+        "program": [
+            "def double(x):",
+            "    return x * 2",
+            "",
+            "assert_equal(double(2), 4)",
+            "assert_equal(double(5), 10)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "introducing_assert_equal"
+    },
+    {
+        "page": "Testing Functions",
+        "program": [
+            "def double(x):",
+            "    return x * 3",
+            "",
+            "assert_equal(double(2), 4)",
+            "assert_equal(double(5), 10)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Error!"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "6"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "!="
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "4"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Error!"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "15"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "!="
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "10"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "make_tests_fail"
+    },
+    {
+        "page": "Testing Functions",
+        "program": [
+            "def double(x):",
+            "    return x * 2",
+            "",
+            "def quadruple(x):",
+            "    return double(double(x))",
+            "",
+            "assert_equal(quadruple(2), 8)",
+            "assert_equal(quadruple(5), 20)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "complete_quadruple_tests"
+    },
+    {
+        "page": "Testing Functions",
+        "program": [
+            "def surround(string, sides):",
+            "    return sides + string + sides"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "surround_exercise"
+    },
+    {
+        "page": "Testing Functions",
+        "program": [
+            "def surround(string, sides):",
+            "    return sides + string + sides",
+            "",
+            "def alert(string, level):",
+            "    string = surround(string, ' ')",
+            "    for _ in range(level):",
+            "        string = surround(string, '!')",
+            "    return string"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "step_name_here"
     }
 ]

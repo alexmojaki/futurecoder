@@ -1,5 +1,8 @@
 # flake8: NOQA E501
+import inspect
+from textwrap import indent
 
+from main.exercises import assert_equal
 from main.text import ExerciseStep, Page, VerbatimStep
 from main.utils import returns_stdout
 
@@ -146,7 +149,7 @@ There's no clever problem solving here, this is just about following the recipe 
 Make sure you have all the parts of a function listed above.
 That includes `def`, `()`, and `:`.
 Make sure your function is named `print_twice`.
-Make sure it accepts one parameter in between the parentheses `()`.
+Make sure it accepts one parameter called `x` in between the parentheses `()`.
 Look at the other functions defined above for help.
 Use the parameter inside the function body.
 Make sure the body is indented.
@@ -343,7 +346,7 @@ __program_indented__
         """
 Here `double(number)` still returned `10`, but we didn't make use of that so it was lost. `number` is still `5`.
 
-Write a function `quadruple` which takes one argument and returns that argument multiplied by 4.
+Write a function `quadruple` which takes one argument `x` and returns that argument multiplied by 4.
 You must only use the `double` function - no numbers or multiplication are allowed directly in the body
 of `quadruple`.
         """
@@ -355,7 +358,7 @@ Make sure you use the returned value from `double` each time.
 Make sure you have all the parts of a function definition.
 That includes `def`, `()`, and `:`.
 Make sure your function is named `quadruple`.
-Make sure it accepts one parameter in between the parentheses `()`.
+Make sure it accepts one parameter called `x` in between the parentheses `()`.
 Use the parameter inside the function body.
 Make sure the body is indented.
 Make sure you `return` something at the end.
@@ -384,4 +387,164 @@ Well done! Here are two possible solutions:
 
     def quadruple(x):
         return double(double(x))
+        """
+
+
+class TestingFunctions(Page):
+    class introducing_assert_equal(VerbatimStep):
+        text = f"""
+An important part of writing programs is testing that they work correctly. You can do this manually, e.g. by checking that
+`print(double(5))` prints `10`, but this kind of thing can get tedious quickly.
+It's helpful to actually write programs that test your programs. This is called *automated testing*,
+and the programs are called *tests*.
+
+Here's a simple function `assert_equal` to help us write tests:
+
+{indent(inspect.getsource(assert_equal), "    ")}
+
+This isn't a standard part of python (although similar functions are), but we've added it to your coding environment
+so you can always use it. Here's an example of using it for you to try out:
+
+__program_indented__
+        """
+
+        def program(self):
+            def double(x):
+                return x * 2
+
+            assert_equal(double(2), 4)
+            assert_equal(double(5), 10)
+
+    class make_tests_fail(VerbatimStep):
+        """
+The OKs tell us that the tests passed. Our `double` function seems to be working correctly. Change it to return
+`x * 3` instead and see what happens.
+"""
+
+        program_in_text = False
+
+        def program(self):
+            def double(x):
+                return x * 3
+
+            assert_equal(double(2), 4)
+            assert_equal(double(5), 10)
+
+    class complete_quadruple_tests(VerbatimStep):
+        """
+Excellent! Our tests failed! Of course that's not usually a good thing, but it tells us that the tests are
+doing their job. They will make sure that our implementation of `double` is correct.
+
+Let's practice this new concept. Below is the function `quadruple` from before with some incomplete tests.
+Fix the program by adding the missing arguments to `assert_equal`.
+
+    def double(x):
+        return x * 2
+
+    def quadruple(x):
+        return double(double(x))
+
+    assert_equal(quadruple(2))
+    assert_equal(quadruple(5))
+        """
+
+        program_in_text = False
+
+        def program(self):
+            def double(x):
+                return x * 2
+
+            def quadruple(x):
+                return double(double(x))
+
+            assert_equal(quadruple(2), 8)
+            assert_equal(quadruple(5), 20)
+
+    class surround_exercise(ExerciseStep):
+        """
+Another useful thing about the tests is that anyone can read them and see clear, unambiguous examples
+of what the function does. This is helpful when a function is complicated and difficult to describe in English.
+
+For example, here are some tests:
+
+    assert_equal(surround("more", "++"), "++more++")
+    assert_equal(surround("the same", "="), "=the same=")
+
+I don't need to explain what `surround` does, you can see for yourself.
+
+Write a function `surround` that passes these tests and starts like this:
+
+    def surround(string, sides):
+        """
+
+        hints = """
+The argument `sides` should be added before and after `string`.
+Use string concatenation to do this.
+Make sure the body is indented.
+Make sure you `return` something at the end.
+Make sure that you don't call `surround` inside the function body of `surround`. Check your indentation.
+"""
+
+        tests = {
+            ("more", "++"): "++more++",
+            ("the same", "="): "=the same=",
+        }
+
+        def solution():
+            def surround(_, string: str, sides: str):
+                return sides + string + sides
+
+            return surround
+
+    class step_name_here(ExerciseStep):
+        """
+Perfect! Now write a function `alert` that passes these tests:
+
+    assert_equal(alert("Warning", 2), "!! Warning !!")
+    assert_equal(alert("DANGER", 4), "!!!! DANGER !!!!")
+
+The body of `alert` is not allowed to contain `+`. Use `surround` instead. Your function should start like this:
+
+    def alert(string, level):
+        """
+
+        hints = """
+`string` should be surrounded by one space and `level` exclamation marks (`!`) on each side.
+Include the definition of `surround` from before in your program and call it in `alert`.
+Use `surround` for the spaces.
+Use `surround` for the exclamation marks.
+You're not allowed to combine several exclamation marks into one string, so call `surround` several times.
+That is, call surround once for each pair of exclamation marks.
+So call `surround(..., '!')` several times.
+Use a loop to call it several times.
+Use `range(n)` to make your loop have `n` iterations.
+Make sure you use the return value from `surround`.
+Think of how you would build up strings with `+=`. Repeatedly update the same variable, building up your result.
+That is, write `something = surround(something, '!')` in your loop.
+Make sure you `return` something at the end of `alert`.
+Make sure you don't `return` inside the loop, but after it. Check your indentation.
+Make sure that you don't call `alert` inside the function body of `alert`. Check your indentation.
+"""
+
+        tests = {
+            ("Warning", 2): "!! Warning !!",
+            ("DANGER", 4): "!!!! DANGER !!!!",
+        }
+
+        # TODO catch return inside loop
+
+        def solution():
+            def surround(string, sides):
+                return sides + string + sides
+
+            def alert(_, string: str, level: int):
+                string = surround(string, ' ')
+                for _ in range(level):
+                    string = surround(string, '!')
+                return string
+
+            return alert
+
+    final_text = """
+Great work! These tools will be very helpful in coming chapters.
         """

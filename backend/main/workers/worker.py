@@ -8,6 +8,7 @@ from time import sleep
 
 import stack_data
 
+from main.exercises import assert_equal
 from main.text import pages
 from main.utils import print_exception
 from main.workers.limits import set_limits
@@ -16,6 +17,7 @@ from main.workers.utils import internal_error_result, make_result, output_buffer
 log = logging.getLogger(__name__)
 
 console = InteractiveConsole()
+console.locals = {"assert_equal": assert_equal}
 
 
 def execute(code_obj):
@@ -32,7 +34,7 @@ def runner(code_source, code):
         code += "\n"  # Allow compiling single-line compound statements
     else:
         mode = "exec"
-        console.locals = {}
+        console.locals = {"assert_equal": assert_equal}
 
     filename = "my_program.py"
     linecache.cache[filename] = (

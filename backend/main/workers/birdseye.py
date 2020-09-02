@@ -20,7 +20,7 @@ def exec_birdseye(filename, code):
     eye = BirdsEye("sqlite://")
     traced_file = eye.compile(code, filename)
     eye._trace('<module>', filename, traced_file, traced_file.code, 'module', code)
-    console.locals = eye._trace_methods_dict(traced_file)
+    console.locals.update(eye._trace_methods_dict(traced_file))
 
     nodes_by_lineno = {
         node.lineno: node
