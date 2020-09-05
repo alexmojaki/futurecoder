@@ -124,6 +124,12 @@ In some cases you don't want the full program in the text. For example if the fu
 
 This is for when the student needs to solve a problem on their own, and statically analysing a submission won't do - you need to run the code with different inputs to verify that it's correct.
 
+The first thing you need is a `solution` method. This is specified instead of `program`, which will be generated from `solution`. The difference is that in the end `program` is a string which represents a complete correct submission and is used for example in tests, whereas `solution` remains a callable.
+
+There are two kinds of exercises. In the first kind, the user should submit a program that runs at the module level and typically prints something. Later on in the course students learn about functions and so exercises require writing a function with a specific signature that typically returns something. The type of exercise determines what the `solution` method should look like.
+
+##### Non-function exercises
+
 For example, a user will typically be given text like:
 
 > Time for an exercise! Given a number `foo` and a string `bar`, e.g:
@@ -139,7 +145,7 @@ For example, a user will typically be given text like:
 >     spam
 >     spam
 
-The first thing you need is a `solution` method. This is specified instead of `program`, which will be generated from `solution`. It should have function parameters corresponding to the inputs of the exercise. In this case, the `solution` method is:
+The `solution` method should have function parameters corresponding to the inputs of the exercise. In this case, the `solution` method is:
 
 ```python
 def solution(self, foo: int, bar: str):
@@ -147,7 +153,59 @@ def solution(self, foo: int, bar: str):
         print(bar)
 ```
 
-The user must then start their program with variable definitions for `foo` and `bar`. They don't need to use the exact values in the example, just the names. These will be stripped from the program to produce a function which can take any inputs and thus be tested and compared to the solution. The user may try to write a program which always just prints `spam` 5 times, so we need to make sure they've written a properly generic program.
+The user must then start their program with variable definitions for `foo` and `bar`. They don't need to use the exact values in the example, just the names. Under the hood the program will be converted to a function by stripping the initial variable definitions. This function can then take any inputs and thus be tested and compared to the solution. The user may try to write a program which always just prints `spam` 5 times, so we need to make sure they've written a properly generic program.
+
+When the user asks for a solution, they will just see:
+
+```python
+for _ in range(foo):
+    print(bar)
+```
+
+A similar program (with some inputs) becomes the `program` attribute used for testing.
+
+Because `solution` doesn't return anything, the decorator `@returns_stdout` is applied automatically so that when it's tested against the user submission we check that the same things are printed.
+
+###### Function exercises
+
+The above example as a function exercise would be something like:
+
+> Time for an exercise! Write a function `spammer` that starts like this:
+> 
+>     def spammer(foo, bar):
+>
+> which prints `bar` `foo` times, e.g:
+>
+>     spam
+>     spam
+>     spam
+>     spam
+>     spam
+
+Now the `solution` method should return a local function matching the requirements:
+
+```python
+def solution(self):
+    def spammer(foo: int, bar: str):
+        for _ in range(foo):
+            print(bar)
+    
+    return spammer
+```
+
+This looks a bit redundant, but it's helpful when the solution contains multiple functions, and the main one calls others. The `program` string needs to contain them all, so they can't be defined outside `solution`.
+
+When the user asks for a solution, they will just see:
+
+```python
+def spammer(foo, bar):
+    for _ in range(foo):
+        print(bar)
+```
+
+If the function returns something rather than just printing, it's good for the text to contain some example 'tests' using `assert_equal` - see the Testing Functions chapter.
+
+##### Testing solutions 
 
 The next thing the `ExerciseStep` needs is `tests`. This is a list of inputs to pass to the solution and their corresponding expected outputs. The inputs can be a tuple of arguments, a dict of keyword arguments, or a single argument if the solution only takes one. The value of `tests` can be a list of pairs or a dict if the inputs are hashable.
 
