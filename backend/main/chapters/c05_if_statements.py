@@ -5,7 +5,6 @@ from abc import ABC
 from textwrap import dedent
 
 from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast
-from main.utils import returns_stdout
 
 
 class IntroducingIfStatements(Page):
@@ -105,7 +104,6 @@ You only need to add a few lines to the existing program. All the existing code 
 The code that you add should be very similar to the existing code.
         """
 
-        @returns_stdout
         def solution(self, sentence: str, excited: bool, confused: bool):
             if excited:
                 sentence += '!'
@@ -260,7 +258,6 @@ Make sure that the code inside `if include:` *doesn't* run after the first itera
 That means `include` should be `False` after the first iteration.
         """
 
-        @returns_stdout
         def solution(self, sentence: str):
             include = True
             new_sentence = ''
@@ -406,7 +403,6 @@ Fix this by adding an `else` clause to the `if` so that if `excited` is false, a
 is added to the end of the sentence instead of an exclamation mark (`!`).
         """
 
-        @returns_stdout
         def solution(self, sentence: str, excited: bool):
             if excited:
                 char = '!'
@@ -440,7 +436,6 @@ That means that your `if` condition needs to be a variable that changes inside t
 In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter.
         """
 
-        @returns_stdout
         def solution(self, sentence: str):
             upper = True
             new_sentence = ''
@@ -460,7 +455,6 @@ In the first iteration you need an uppercase letter. In the following iterations
         }
 
         class two_loops(too_many_compound):
-            @returns_stdout
             def solution(self, sentence: str):
                 new_sentence = ''
 
@@ -499,7 +493,6 @@ You will need to use the variable in the `if` condition and also assign to the s
 Combine that flipping `if/else` with the one that chooses an uppercase or lowercase character.
         """
 
-        @returns_stdout
         def solution(self, sentence: str):
             upper = True
             new_sentence = ''
@@ -519,7 +512,6 @@ Combine that flipping `if/else` with the one that chooses an uppercase or lowerc
         }
 
         class two_ifs(too_many_compound):
-            @returns_stdout
             def solution(self, sentence: str):
                 upper = True
                 new_sentence = ''
@@ -600,7 +592,6 @@ Now extend the program to also replace `e` with `3` and `a` with `@`.
 You just need to add a few lines of code that are very similar to existing ones.
 """
 
-        @returns_stdout
         def solution(self, name: str):
             new_name = ''
             for c in name:
@@ -698,7 +689,6 @@ Now fix the program to replace all characters correctly.
             "Now make the same kind of change to the code swapping G and C."
         ]
 
-        @returns_stdout
         def solution(self, dna: str):
             opposite_dna = ''
             for char in dna:
@@ -904,7 +894,6 @@ Try writing a program which prints the smallest of just `x1` and `x2`.
 All you need is a few uses of `<`, `if`, and maybe `else`.
 """
 
-        @returns_stdout
         def solution(self, x1: str, x2: str, x3: str):
             if x1 < x2:
                 if x1 < x3:

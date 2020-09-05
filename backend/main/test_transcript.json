@@ -187,6 +187,9 @@
         "step": "hello_world_space"
     },
     {
+        "get_solution": [
+            "'hello ' + 'world'"
+        ],
         "page": "Adding Strings",
         "program": [
             "'hello ' + 'world'"
@@ -447,6 +450,9 @@
         "step": "word_plus_name"
     },
     {
+        "get_solution": [
+            "word + ' ' + your_name"
+        ],
         "page": "Using Variables",
         "program": [
             "word + ' ' + your_name"
@@ -947,6 +953,10 @@
         "step": "mismatched_indentations"
     },
     {
+        "get_solution": [
+            "for character in name:",
+            "    print('---' + character)"
+        ],
         "page": "Basic For Loop Exercises",
         "program": [
             "name = 'World'",
@@ -1006,6 +1016,10 @@
         "step": "loop_exercise_1"
     },
     {
+        "get_solution": [
+            "for _ in name:",
+            "    print(name)"
+        ],
         "page": "Basic For Loop Exercises",
         "program": [
             "name = 'World'",
@@ -1219,6 +1233,12 @@
         "step": "name_triangle_missing_last_line"
     },
     {
+        "get_solution": [
+            "line = ''",
+            "for char in name:",
+            "    line = line + char + ' '",
+            "    print(line)"
+        ],
         "page": "Building Up Strings Exercises",
         "program": [
             "name = 'World'",
@@ -1280,6 +1300,12 @@
         "step": "name_triangle_spaced"
     },
     {
+        "get_solution": [
+            "line = ''",
+            "for char in name:",
+            "    line = char + line",
+            "    print(line)"
+        ],
         "page": "Building Up Strings Exercises",
         "program": [
             "name = 'World'",
@@ -1341,6 +1367,13 @@
         "step": "name_triangle_backwards"
     },
     {
+        "get_solution": [
+            "line = ''",
+            "for _ in name:",
+            "    line += '-'",
+            "print(name)",
+            "print(line)"
+        ],
         "page": "Building Up Strings Exercises",
         "program": [
             "name = 'World'",
@@ -1479,6 +1512,15 @@
         "step": "name_box"
     },
     {
+        "get_solution": [
+            "line = ''",
+            "for _ in name:",
+            "    line += '-'",
+            "line = '+-' + line + '-+'",
+            "print(line)",
+            "print('| ' + name + ' |')",
+            "print(line)"
+        ],
         "page": "Building Up Strings Exercises",
         "program": [
             "name = 'World'",
@@ -1609,6 +1651,17 @@
         "step": "name_box_2"
     },
     {
+        "get_solution": [
+            "line = '+' + name + '+'",
+            "spaces = ''",
+            "for _ in name:",
+            "    spaces += ' '",
+            "",
+            "print(line)",
+            "for char in name:",
+            "    print(char + spaces + char)",
+            "print(line)"
+        ],
         "page": "Building Up Strings Exercises",
         "program": [
             "name = 'World'",
@@ -1752,6 +1805,12 @@
         "step": "diagonal_name_bonus_challenge"
     },
     {
+        "get_solution": [
+            "spaces = ''",
+            "for char in name:",
+            "    print(spaces + char)",
+            "    spaces += ' '"
+        ],
         "page": "Building Up Strings Exercises",
         "program": [
             "name = 'World'",
@@ -1936,6 +1995,13 @@
         "step": "excited_false_example"
     },
     {
+        "get_solution": [
+            "if excited:",
+            "    sentence += '!'",
+            "if confused:",
+            "    sentence += '?'",
+            "print(sentence)"
+        ],
         "page": "Introducing If Statements",
         "program": [
             "sentence = 'Hello'",
@@ -2263,6 +2329,16 @@
         "step": "print_tail_snoop"
     },
     {
+        "get_solution": [
+            "include = True",
+            "new_sentence = ''",
+            "for char in sentence:",
+            "    if include:",
+            "        new_sentence += char",
+            "    include = False",
+            "",
+            "print(new_sentence)"
+        ],
         "page": "Understanding Programs With Snoop",
         "program": [
             "sentence = 'Hello there'",
@@ -2529,6 +2605,19 @@
         "step": "capitalise"
     },
     {
+        "get_solution": [
+            "upper = True",
+            "new_sentence = ''",
+            "for char in sentence:",
+            "    if upper:",
+            "        char = char.upper()",
+            "    else:",
+            "        char = char.lower()",
+            "    new_sentence += char",
+            "    upper = False",
+            "",
+            "print(new_sentence)"
+        ],
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "sentence = 'HELLO THERE'",
@@ -2605,6 +2694,20 @@
         "step": "spongebob"
     },
     {
+        "get_solution": [
+            "upper = True",
+            "new_sentence = ''",
+            "for char in sentence:",
+            "    if upper:",
+            "        char = char.upper()",
+            "        upper = False",
+            "    else:",
+            "        char = char.lower()",
+            "        upper = True",
+            "    new_sentence += char",
+            "",
+            "print(new_sentence)"
+        ],
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "sentence = 'One more exercise, and then you can relax.'",
@@ -2746,6 +2849,19 @@
         "step": "if_equals_replacing_characters"
     },
     {
+        "get_solution": [
+            "new_name = ''",
+            "for c in name:",
+            "    if c == 'e':",
+            "        c = '3'",
+            "    if c == 's':",
+            "        c = '$'",
+            "    if c == 'a':",
+            "        c = '@'",
+            "    new_name += c",
+            "",
+            "print(new_name)"
+        ],
         "page": "The Equality Operator",
         "program": [
             "name = 'kesha'",
@@ -2820,6 +2936,23 @@
         "step": "dna_example"
     },
     {
+        "get_solution": [
+            "opposite_dna = ''",
+            "for char in dna:",
+            "    if char == 'A':",
+            "        char = 'T'",
+            "    else:",
+            "        if char == 'T':",
+            "            char = 'A'",
+            "    if char == 'G':",
+            "        char = 'C'",
+            "    else:",
+            "        if char == 'C':",
+            "            char = 'G'",
+            "    opposite_dna += char",
+            "",
+            "print(opposite_dna)"
+        ],
         "page": "Introducing <code>elif</code>",
         "program": [
             "dna = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
@@ -3041,6 +3174,19 @@
         "step": "grades_example"
     },
     {
+        "get_solution": [
+            "if x1 < x2:",
+            "    if x1 < x3:",
+            "        first = x1",
+            "    else:",
+            "        first = x3",
+            "else:",
+            "    if x2 < x3:",
+            "        first = x2",
+            "    else:",
+            "        first = x3",
+            "print(first)"
+        ],
         "page": "Other Comparison Operators",
         "program": [
             "x1 = 'Charlie'",
@@ -3189,6 +3335,13 @@
         "step": "numbers_sum"
     },
     {
+        "get_solution": [
+            "total = ''",
+            "for word in words:",
+            "    total += word",
+            "",
+            "print(total)"
+        ],
         "page": "Introducing Lists",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
@@ -3219,6 +3372,12 @@
         "step": "strings_sum"
     },
     {
+        "get_solution": [
+            "double = []",
+            "for number in numbers:",
+            "    double += [number * 2]",
+            "print(double)"
+        ],
         "page": "Introducing Lists",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
@@ -3248,6 +3407,13 @@
         "step": "double_numbers"
     },
     {
+        "get_solution": [
+            "big_numbers = []",
+            "for number in numbers:",
+            "    if number > 5:",
+            "        big_numbers.append(number)",
+            "print(big_numbers)"
+        ],
         "page": "Introducing Lists",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
@@ -3278,6 +3444,14 @@
         "step": "filter_numbers"
     },
     {
+        "get_solution": [
+            "found = False",
+            "for thing in things:",
+            "    if thing == thing_to_find:",
+            "        found = True",
+            "",
+            "print(found)"
+        ],
         "page": "Using <code>break</code> to end a loop early",
         "program": [
             "things = ['This', 'is', 'a', 'list']",
@@ -3648,6 +3822,12 @@
         "step": "index_exercise"
     },
     {
+        "get_solution": [
+            "for i in range(len(things)):",
+            "    if to_find == things[i]:",
+            "        print(i)",
+            "        break"
+        ],
         "page": "Getting Elements at a Position",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
@@ -3678,6 +3858,12 @@
         "step": "index_exercise"
     },
     {
+        "get_solution": [
+            "for i in range(len(string1)):",
+            "    char1 = string1[i]",
+            "    char2 = string2[i]",
+            "    print(char1 + ' ' + char2)"
+        ],
         "page": "Getting Elements at a Position",
         "program": [
             "string1 = 'Hello'",
@@ -3740,6 +3926,28 @@
         "step": "zip_exercise"
     },
     {
+        "get_solution": [
+            "length1 = len(string1)",
+            "length2 = len(string2)",
+            "",
+            "if length1 > length2:",
+            "    length = length1",
+            "else:",
+            "    length = length2",
+            "",
+            "for i in range(length):",
+            "    if i < len(string1):",
+            "        char1 = string1[i]",
+            "    else:",
+            "        char1 = ' '",
+            "",
+            "    if i < len(string2):",
+            "        char2 = string2[i]",
+            "    else:",
+            "        char2 = ' '",
+            "",
+            "    print(char1 + ' ' + char2)"
+        ],
         "page": "Getting Elements at a Position",
         "program": [
             "string1 = 'Goodbye'",
@@ -4083,6 +4291,9 @@
         "step": "no_append_for_str"
     },
     {
+        "get_solution": [
+            "max([21, 55, 4, 91, 62, 49])"
+        ],
         "page": "Functions And Methods For Lists",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
@@ -4108,6 +4319,11 @@
         "step": "sum_list"
     },
     {
+        "get_solution": [
+            "nums = [1, 2, 3, 4, 5]",
+            "nums.insert(2, 9)",
+            "print(nums)"
+        ],
         "page": "Functions And Methods For Lists",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
@@ -8578,6 +8794,14 @@
         "step": "times_table_exercise"
     },
     {
+        "get_solution": [
+            "for left in range(12):",
+            "    left += 1",
+            "    for right in range(12):",
+            "        right += 1",
+            "        print(left, 'x', right, '=', left * right)",
+            "    print('----------')"
+        ],
         "page": "Introducing Nested Loops",
         "program": [
             "for left in range(12):",
@@ -14456,6 +14680,12 @@
         "step": "times_table_exercise"
     },
     {
+        "get_solution": [
+            "for player1 in players:",
+            "    for player2 in players:",
+            "        if player1 != player2:",
+            "            print(player1, 'vs', player2)"
+        ],
         "page": "Introducing Nested Loops",
         "program": [
             "players = ['Alice', 'Bob', 'Charlie']",
@@ -14621,6 +14851,13 @@
         "step": "player_vs_player_exercise"
     },
     {
+        "get_solution": [
+            "for c1 in letters:",
+            "    for c2 in letters:",
+            "        for c3 in letters:",
+            "            for c4 in letters:",
+            "                print(c1 + c2 + c3 + c4)"
+        ],
         "page": "Introducing Nested Loops",
         "program": [
             "letters = 'AB'",
@@ -14771,6 +15008,14 @@
         "step": "crack_password_exercise"
     },
     {
+        "get_solution": [
+            "for i in range(size):",
+            "    length = size - i",
+            "    line = ''",
+            "    for _ in range(length):",
+            "        line += 'O'",
+            "    print(line)"
+        ],
         "page": "Introducing Nested Loops",
         "program": [
             "size = 3",
@@ -14980,6 +15225,14 @@
         "step": "how_are_you"
     },
     {
+        "get_solution": [
+            "def say_hello(name):",
+            "    print(\"Hello \" + name + \"!\")",
+            "    print(\"How are you?\")",
+            "",
+            "say_hello(\"Alice\")",
+            "say_hello(\"Bob\")"
+        ],
         "page": "Defining Functions",
         "program": [
             "def say_hello(name):",
@@ -15034,6 +15287,14 @@
         "step": "change_function_name"
     },
     {
+        "get_solution": [
+            "def say_hello(person_name):",
+            "    print(\"Hello \" + person_name + \"!\")",
+            "    print(\"How are you?\")",
+            "",
+            "say_hello(\"Alice\")",
+            "say_hello(\"Bob\")"
+        ],
         "page": "Defining Functions",
         "program": [
             "def say_hello(person_name):",
@@ -15088,6 +15349,11 @@
         "step": "change_parameter_name"
     },
     {
+        "get_solution": [
+            "def print_twice(x):",
+            "    print(x)",
+            "    print(x)"
+        ],
         "page": "Defining Functions",
         "program": [
             "def print_twice(x):",
@@ -15152,6 +15418,13 @@
         "step": "print_many"
     },
     {
+        "get_solution": [
+            "def print_many(n, thing):",
+            "    for _ in range(n):",
+            "        print(thing)",
+            "",
+            "print_many(3, \"Hello\")"
+        ],
         "page": "Defining Functions",
         "program": [
             "def print_many(n, thing):",
@@ -15504,6 +15777,10 @@
         "step": "quadruple_exercise"
     },
     {
+        "get_solution": [
+            "def quadruple(x):",
+            "    return double(double(x))"
+        ],
         "page": "Returning Values From Functions",
         "program": [
             "def double(x):",
@@ -15687,6 +15964,10 @@
         "step": "complete_quadruple_tests"
     },
     {
+        "get_solution": [
+            "def surround(string, sides):",
+            "    return sides + string + sides"
+        ],
         "page": "Testing Functions",
         "program": [
             "def surround(string, sides):",
@@ -15724,6 +16005,13 @@
         "step": "step_name_here"
     },
     {
+        "get_solution": [
+            "def alert(string, level):",
+            "    string = surround(string, ' ')",
+            "    for _ in range(level):",
+            "        string = surround(string, '!')",
+            "    return string"
+        ],
         "page": "Testing Functions",
         "program": [
             "def surround(string, sides):",

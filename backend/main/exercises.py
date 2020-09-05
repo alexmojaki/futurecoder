@@ -175,27 +175,3 @@ def assert_equal(actual, expected):
         print("OK")
     else:
         print("Error!", actual, "!=", expected)
-
-
-def main():
-    program = """
-name = 'World'
-print('Hello ' + name)
-    """
-
-    @returns_stdout
-    def solution(name):
-        print('Hello ' + name)
-
-    def test(func):
-        check_result(func, {"name": "World"}, "Hello World\n")
-        check_result(func, {"name": "Bob"}, "Hello Bob\n")
-
-    def generate_inputs():
-        return {"name": generate_string()}
-
-    print(check_exercise(program, solution, test, generate_inputs, functionise=True))
-
-
-if __name__ == '__main__':
-    main()

@@ -5,7 +5,6 @@ from textwrap import indent
 
 from main.exercises import assert_equal
 from main.text import ExerciseStep, Page, VerbatimStep, MessageStep
-from main.utils import returns_stdout
 
 
 class DefiningFunctions(Page):
@@ -158,9 +157,8 @@ The body needs two statements or a very simple loop.
 Make sure that you don't call `print_twice` inside the function body of `print_twice`. Check your indentation.
 """
 
-        def solution():
-            @returns_stdout
-            def print_twice(_, x: str):
+        def solution(self):
+            def print_twice(x: str):
                 print(x)
                 print(x)
 
@@ -367,11 +365,11 @@ Look at the definition of `double` for an example.
 Make sure that you don't call `quadruple` inside the function body of `quadruple`. Check your indentation.
 """
 
-        def solution():
+        def solution(self):
             def double(x):
                 return x * 2
 
-            def quadruple(_, x: int):
+            def quadruple(x: int):
                 return double(double(x))
 
             return quadruple
@@ -391,8 +389,8 @@ Make sure that you don't call `quadruple` inside the function body of `quadruple
                     for node in ast.walk(self.function_tree)
                 )
 
-            def solution():
-                def quadruple(_, x: int):
+            def solution(self):
+                def quadruple(x: int):
                     return x * 4
 
                 return quadruple
@@ -510,8 +508,8 @@ Make sure that you don't call `surround` inside the function body of `surround`.
             ("the same", "="): "=the same=",
         }
 
-        def solution():
-            def surround(_, string: str, sides: str):
+        def solution(self):
+            def surround(string: str, sides: str):
                 return sides + string + sides
 
             return surround
@@ -553,11 +551,11 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
 
         # TODO catch return inside loop
 
-        def solution():
+        def solution(self):
             def surround(string, sides):
                 return sides + string + sides
 
-            def alert(_, string: str, level: int):
+            def alert(string: str, level: int):
                 string = surround(string, ' ')
                 for _ in range(level):
                     string = surround(string, '!')
@@ -580,8 +578,8 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
                     for node in ast.walk(self.function_tree)
                 )
 
-            def solution():
-                def alert(_, string: str, level: int):
+            def solution(self):
+                def alert(string: str, level: int):
                     marks = '!' * level
                     return f'{marks} {string} {marks}'
 

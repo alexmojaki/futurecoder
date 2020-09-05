@@ -3,7 +3,6 @@ import ast
 from textwrap import dedent
 
 from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep
-from main.utils import returns_stdout
 
 
 class IntroducingForLoops(Page):
@@ -156,7 +155,6 @@ You should only use one print, since each print outputs on a different line.
 You will need to use `+`.
         """
 
-        @returns_stdout
         def solution(self, name: str):
             for character in name:
                 print('---' + character)
@@ -201,7 +199,6 @@ The solution looks very similar to the other programs we've seen in this section
 The for loop will create a variable such as `character`, but the program doesn't need to use it.
         """
 
-        @returns_stdout
         def solution(self, name: str):
             for _ in name:
                 print(name)
@@ -315,7 +312,6 @@ You will need to use one more `+`.
 You will need to use a string consisting of one space: `' '`.
         """
 
-        @returns_stdout
         def solution(self, name: str):
             line = ''
             for char in name:
@@ -356,7 +352,6 @@ You need to add the character before the string, instead of after.
 3 + 7 is equal to 7 + 3. Same for all numbers. Is this also true for strings?
         """
 
-        @returns_stdout
         def solution(self, name: str):
             line = ''
             for char in name:
@@ -407,7 +402,6 @@ You will need to build up a string of dashes (`-`) one character at a time.
 The for loop will create a variable such as `char`, but the program doesn't need to use it.
         """
 
-        @returns_stdout
         def solution(self, name: str):
             line = ''
             for _ in name:
@@ -469,7 +463,6 @@ Note that there is a space between the name and the pipes (`|`).
             """),
         ]
 
-        @returns_stdout
         def solution(self, name: str):
             line = ''
             for _ in name:
@@ -497,7 +490,6 @@ Note that there is a space between the name and the pipes (`|`).
             You're almost there! Just add a few more characters to your strings.
             Your loop is perfect.
             """
-            @returns_stdout
             def solution(self, name: str):
                 line = ''
                 for _ in name:
@@ -531,7 +523,6 @@ Note that there is a space between the name and the pipes (`|`).
             def check(self):
                 return sum(isinstance(node, ast.For) for node in ast.walk(self.tree)) > 1
 
-            @returns_stdout
             def solution(self, name: str):
                 line = ''
                 for _ in name:
@@ -565,7 +556,6 @@ Create a variable containing the spaces in the middle and use it many times.
 Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.
         """
 
-        @returns_stdout
         def solution(self, name: str):
             line = '+' + name + '+'
             spaces = ''
@@ -612,7 +602,6 @@ b   b
                             if isinstance(inner, ast.For) and outer != inner:
                                 return True
 
-            @returns_stdout
             def solution(self, name: str):
                 line = '+' + name + '+'
                 print(line)
@@ -652,7 +641,6 @@ Since the first letter should have no spaces before it, you need to add a space 
 
         # TODO automatically catch print with multiple args?
 
-        @returns_stdout
         def solution(self, name: str):
             spaces = ''
             for char in name:
@@ -681,7 +669,6 @@ B
             your variable which will contain the spaces is an empty string.
             Check the order of your code.
             """
-            @returns_stdout
             def solution(self, name: str):
                 spaces = ''
                 for char in name:
