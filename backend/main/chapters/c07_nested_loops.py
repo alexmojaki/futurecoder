@@ -634,7 +634,7 @@ __program_indented__
             d = 5
             print(a * b + c * d)
 
-    class step_name_here(VerbatimStep):
+    class birdseye_loop_example(VerbatimStep):
         """
 While the other tools show how code runs line by line and the values of variables, Bird's Eye shows you the value of every expression in a program. This lets you see how a complex expression is broken down into smaller sub-expressions
 and what the value of each one is.
