@@ -142,13 +142,10 @@ For example, a user will typically be given text like:
 The first thing you need is a `solution` method. This is specified instead of `program`, which will be generated from `solution`. It should have function parameters corresponding to the inputs of the exercise. In this case, the `solution` method is:
 
 ```python
-@returns_stdout
 def solution(self, foo: int, bar: str):
     for _ in range(foo):
         print(bar)
 ```
-
-The decorator `@returns_stdout` is required because the user is simply being asked to print something, not write a proper function with a return value.
 
 The user must then start their program with variable definitions for `foo` and `bar`. They don't need to use the exact values in the example, just the names. These will be stripped from the program to produce a function which can take any inputs and thus be tested and compared to the solution. The user may try to write a program which always just prints `spam` 5 times, so we need to make sure they've written a properly generic program.
 

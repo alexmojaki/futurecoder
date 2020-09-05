@@ -6,7 +6,6 @@ from typing import List
 
 from main.exercises import generate_list, generate_string
 from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast
-from main.utils import returns_stdout
 
 
 class IntroducingLists(Page):
@@ -82,7 +81,6 @@ The problem is that 0. You can't add 0 to a string because numbers and strings a
 Is there a similar concept among strings to 0? A blank initial value?
 """
 
-        @returns_stdout
         def solution(self, words: List[str]):
             total = ''
             for word in words:
@@ -138,7 +136,6 @@ You can make a list with one element `x` by just writing `[x]`.
 You can add an element to a list by adding a list containing one element.
         """
 
-        @returns_stdout
         def solution(self, numbers: List[int]):
             double = []
             for number in numbers:
@@ -185,7 +182,6 @@ Use a comparison operator to test if a number is big enough to add.
 
         # TODO enforce not using +=
 
-        @returns_stdout
         def solution(self, numbers: List[int]):
             big_numbers = []
             for number in numbers:
@@ -234,7 +230,6 @@ Don't use an `else`.
 There is no reason to ever set the variable to `False` inside the loop.
         """
 
-        @returns_stdout
         def solution(self, things, thing_to_find):
             found = False
             for thing in things:
@@ -392,7 +387,6 @@ You need to use `break`.
             not just the first one.
             """
 
-            @returns_stdout
             def solution(self, things, to_find):
                 for i in range(len(things)):
                     if to_find == things[i]:
@@ -409,7 +403,6 @@ You need to use `break`.
             not the first one.
             """
 
-            @returns_stdout
             def solution(self, things, to_find):
                 answer = None
                 for i in range(len(things)):
@@ -422,7 +415,6 @@ You need to use `break`.
                 (([0, 1, 2, 3, 4, 5, 6, 6], 6), 7),
             ]
 
-        @returns_stdout
         def solution(self, things, to_find):
             for i in range(len(things)):
                 if to_find == things[i]:
@@ -478,7 +470,6 @@ You will need to index both strings.
 You will need to pass the same index to both strings each time to retrieve matching characters.
 """
 
-        @returns_stdout
         def solution(self, string1, string2):
             for i in range(len(string1)):
                 char1 = string1[i]
@@ -586,7 +577,6 @@ output:
 
         # TODO catch user writing string1 < string2
 
-        @returns_stdout
         def solution(self, string1, string2):
             length1 = len(string1)
             length2 = len(string2)

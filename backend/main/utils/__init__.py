@@ -4,7 +4,7 @@ import re
 import sys
 import threading
 import traceback
-from functools import lru_cache
+from functools import lru_cache, partial
 from io import StringIO
 
 import stack_data
@@ -36,6 +36,9 @@ def no_weird_whitespace(string):
 
 
 def returns_stdout(func):
+    if getattr(func, "returns_stdout", False):
+        return func
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         original = sys.stdout
@@ -47,7 +50,27 @@ def returns_stdout(func):
             sys.stdout = original
 
     wrapper.returns_stdout = True
-    return wrapper
+    if isinstance(func, NoMethodWrapper):
+        return NoMethodWrapper(wrapper)
+    else:
+        return wrapper
+
+
+class NoMethodWrapper:
+    def __init__(self, func):
+        functools.update_wrapper(self, func)
+        self.func = func
+        self.__name__ = func.__name__
+
+    def __call__(self, *args, **kwargs):
+        return self.func(*args, **kwargs)
+
+
+def bind_self(func):
+    if isinstance(func, NoMethodWrapper):
+        return func
+    else:
+        return partial(func, None)
 
 
 def snake(camel_string):

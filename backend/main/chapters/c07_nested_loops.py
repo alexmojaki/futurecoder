@@ -3,7 +3,6 @@ from typing import List
 
 from main.exercises import generate_string
 from main.text import ExerciseStep, MessageStep, Page, VerbatimStep
-from main.utils import returns_stdout
 
 
 class IntroducingNestedLoops(Page):
@@ -120,7 +119,6 @@ Remember to print a line with the correct number of dashes after each section.
 Make sure each line is in the correct loop and has the right amount of indentation.
         """
 
-        @returns_stdout
         def solution(self):
             for left in range(12):
                 left += 1
@@ -378,7 +376,6 @@ Every player is going to play against every other player twice: once where they 
 Note that "Alice vs Bob" and "Bob vs Alice" are both in the list, but there's no "Alice vs Alice" - we don't want anyone playing with themselves.
         """
 
-        @returns_stdout
         def solution(self, players: List[str]):
             for player1 in players:
                 for player2 in players:
@@ -443,7 +440,6 @@ You have to go deeper.
 
         # TODO check for spaces between letters in output
 
-        @returns_stdout
         def solution(self, letters: str):
             for c1 in letters:
                 for c2 in letters:
@@ -587,7 +583,6 @@ You need numbers that count down, like 5, 4, 3, 2, 1. There is a way to do this 
 What formula converts 0 into 5, 1 into 4, 2, into 3, etc?
 """
 
-        @returns_stdout
         def solution(self, size: int):
             for i in range(size):
                 length = size - i

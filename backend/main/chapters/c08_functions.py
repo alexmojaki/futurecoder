@@ -5,7 +5,6 @@ from textwrap import indent
 
 from main.exercises import assert_equal
 from main.text import ExerciseStep, Page, VerbatimStep, MessageStep
-from main.utils import returns_stdout
 
 
 class DefiningFunctions(Page):
@@ -159,7 +158,6 @@ Make sure that you don't call `print_twice` inside the function body of `print_t
 """
 
         def solution(self):
-            @returns_stdout
             def print_twice(x: str):
                 print(x)
                 print(x)

@@ -1,12 +1,10 @@
 from __future__ import annotations
 
 import ast
-import functools
 import inspect
 import re
 from abc import ABC, abstractmethod
 from copy import deepcopy
-from functools import partial
 from importlib import import_module
 from pathlib import Path
 from textwrap import dedent, indent
@@ -24,25 +22,7 @@ from main.exercises import (
     generate_for_type,
     inputs_string,
 )
-from main.utils import no_weird_whitespace, snake, unwrapped_markdown
-
-
-class NoMethodWrapper:
-    def __init__(self, func):
-        self.func = func
-        self.__name__ = func.__name__
-        functools.update_wrapper(self, func)
-        self.__signature__ = inspect.signature(func)
-
-    def __call__(self, *args, **kwargs):
-        return self.func(*args, **kwargs)
-
-
-def bind_self(func):
-    if isinstance(func, NoMethodWrapper):
-        return func
-    else:
-        return partial(func, None)
+from main.utils import no_weird_whitespace, snake, unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
 
 
 def clean_program(program, cls):
@@ -67,6 +47,10 @@ def clean_program(program, cls):
             inputs = inputs_string(inputs)
             program = inputs + '\n' + dedent('\n'.join(lines))
         compile(program, "<program>", "exec")  # check validity
+
+        if not any(isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))):
+            func = returns_stdout(func)
+
     no_weird_whitespace(program)
     return program.strip(), func
 
@@ -78,7 +62,6 @@ def basic_signature(func):
 
 def clean_solution_function(func, source):
     return re.sub(
-        f"(@returns_stdout\n)?"
         rf"def {func.__name__}\(.+?\):",
         rf"def {func.__name__}{basic_signature(func)}:",
         source,
