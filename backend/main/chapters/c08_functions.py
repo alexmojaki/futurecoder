@@ -160,7 +160,7 @@ Make sure that you don't call `print_twice` inside the function body of `print_t
 
         def solution(self):
             @returns_stdout
-            def print_twice(_, x: str):
+            def print_twice(x: str):
                 print(x)
                 print(x)
 
@@ -371,7 +371,7 @@ Make sure that you don't call `quadruple` inside the function body of `quadruple
             def double(x):
                 return x * 2
 
-            def quadruple(_, x: int):
+            def quadruple(x: int):
                 return double(double(x))
 
             return quadruple
@@ -392,7 +392,7 @@ Make sure that you don't call `quadruple` inside the function body of `quadruple
                 )
 
             def solution(self):
-                def quadruple(_, x: int):
+                def quadruple(x: int):
                     return x * 4
 
                 return quadruple
@@ -511,7 +511,7 @@ Make sure that you don't call `surround` inside the function body of `surround`.
         }
 
         def solution(self):
-            def surround(_, string: str, sides: str):
+            def surround(string: str, sides: str):
                 return sides + string + sides
 
             return surround
@@ -557,7 +557,7 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
             def surround(string, sides):
                 return sides + string + sides
 
-            def alert(_, string: str, level: int):
+            def alert(string: str, level: int):
                 string = surround(string, ' ')
                 for _ in range(level):
                     string = surround(string, '!')
@@ -581,7 +581,7 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
                 )
 
             def solution(self):
-                def alert(_, string: str, level: int):
+                def alert(string: str, level: int):
                     marks = '!' * level
                     return f'{marks} {string} {marks}'
 

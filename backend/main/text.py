@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import functools
 import inspect
 import re
 from abc import ABC, abstractmethod
@@ -26,13 +27,31 @@ from main.exercises import (
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
 
 
+class NoMethodWrapper:
+    def __init__(self, func):
+        self.func = func
+        self.__name__ = func.__name__
+        functools.update_wrapper(self, func)
+        self.__signature__ = inspect.signature(func)
+
+    def __call__(self, *args, **kwargs):
+        return self.func(*args, **kwargs)
+
+
+def bind_self(func):
+    if isinstance(func, NoMethodWrapper):
+        return func
+    else:
+        return partial(func, None)
+
+
 def clean_program(program, cls):
     func = program
     if isinstance(program, FunctionType):
         source = dedent(inspect.getsource(program))
         lines = source.splitlines()
         if lines[-1].strip().startswith("return "):
-            func = program(None)
+            func = NoMethodWrapper(program(None))
             assert lines[0] == "def solution(self):"
             assert lines[-1] == f"    return {func.__name__}"
             source = dedent("\n".join(lines[1:-1]))
@@ -52,19 +71,16 @@ def clean_program(program, cls):
     return program.strip(), func
 
 
-def basic_signature(func, remove_first=False):
-    param_names = list(inspect.signature(func).parameters.keys())
-    if remove_first:
-        param_names = param_names[1:]
-    joined = ", ".join(param_names)
+def basic_signature(func):
+    joined = ", ".join(inspect.signature(func).parameters)
     return f'({joined})'
 
 
 def clean_solution_function(func, source):
     return re.sub(
         f"(@returns_stdout\n)?"
-        rf"def {func.__name__}\(_, .+?\):",
-        rf"def {func.__name__}{basic_signature(func, remove_first=True)}:",
+        rf"def {func.__name__}\(.+?\):",
+        rf"def {func.__name__}{basic_signature(func)}:",
         source,
     )
 
@@ -123,8 +139,8 @@ def clean_step_class(cls, clean_inner=True):
 
                 if inner_cls.after_success and issubclass(inner_cls, ExerciseStep):
                     check_exercise(
-                        partial(inner_cls.solution, None),
-                        partial(cls.solution, None),
+                        bind_self(inner_cls.solution),
+                        bind_self(cls.solution),
                         cls.test_exercise,
                         cls.generate_inputs,
                     )
@@ -355,7 +371,7 @@ class ExerciseStep(Step):
 
     @classmethod
     def arg_names(cls):
-        return list(inspect.signature(cls.solution).parameters)[1:]
+        return list(inspect.signature(bind_self(cls.solution)).parameters)
 
     @classmethod
     def test_values(cls):
