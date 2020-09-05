@@ -186,7 +186,10 @@ class API:
         page = pages[page_slugs_list[page_index]]
         step = getattr(page, page.step_names[step_index])
         if issubclass(step, ExerciseStep):
-            program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
+            if step.solution.__name__ == "solution":
+                program, _ = clean_program(step.solution, None)
+            else:
+                program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
         else:
             program = step.program
 
