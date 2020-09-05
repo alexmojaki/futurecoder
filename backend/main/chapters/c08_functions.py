@@ -158,7 +158,7 @@ The body needs two statements or a very simple loop.
 Make sure that you don't call `print_twice` inside the function body of `print_twice`. Check your indentation.
 """
 
-        def solution():
+        def solution(self):
             @returns_stdout
             def print_twice(_, x: str):
                 print(x)
@@ -367,7 +367,7 @@ Look at the definition of `double` for an example.
 Make sure that you don't call `quadruple` inside the function body of `quadruple`. Check your indentation.
 """
 
-        def solution():
+        def solution(self):
             def double(x):
                 return x * 2
 
@@ -391,7 +391,7 @@ Make sure that you don't call `quadruple` inside the function body of `quadruple
                     for node in ast.walk(self.function_tree)
                 )
 
-            def solution():
+            def solution(self):
                 def quadruple(_, x: int):
                     return x * 4
 
@@ -510,7 +510,7 @@ Make sure that you don't call `surround` inside the function body of `surround`.
             ("the same", "="): "=the same=",
         }
 
-        def solution():
+        def solution(self):
             def surround(_, string: str, sides: str):
                 return sides + string + sides
 
@@ -553,7 +553,7 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
 
         # TODO catch return inside loop
 
-        def solution():
+        def solution(self):
             def surround(string, sides):
                 return sides + string + sides
 
@@ -580,7 +580,7 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
                     for node in ast.walk(self.function_tree)
                 )
 
-            def solution():
+            def solution(self):
                 def alert(_, string: str, level: int):
                     marks = '!' * level
                     return f'{marks} {string} {marks}'

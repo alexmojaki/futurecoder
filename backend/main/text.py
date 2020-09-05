@@ -26,32 +26,30 @@ from main.exercises import (
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown
 
 
-def get_solution_function(solution):
-    if inspect.signature(solution).parameters:
-        return solution
-    else:
-        return solution()
-
-
-def clean_program(program, *, inputs=None):
+def clean_program(program, cls):
+    func = program
     if isinstance(program, FunctionType):
-        inputs = inputs_string(inputs or {})
         source = dedent(inspect.getsource(program))
         lines = source.splitlines()
-        func = get_solution_function(program)
-        if func != program:
-            assert lines[0] == "def solution():"
+        if lines[-1].strip().startswith("return "):
+            func = program(None)
+            assert lines[0] == "def solution(self):"
             assert lines[-1] == f"    return {func.__name__}"
             source = dedent("\n".join(lines[1:-1]))
             program = clean_solution_function(func, source)
         else:
             atok = ASTTokens(source, parse=True)
-            func = atok.tree.body[0]
-            lines = lines[func.body[0].first_token.start[0] - 1:]
+            func_node = atok.tree.body[0]
+            lines = lines[func_node.body[0].first_token.start[0] - 1:]
+            if hasattr(cls, "test_values"):
+                inputs = list(cls.test_values())[0][0]
+            else:
+                inputs = {}
+            inputs = inputs_string(inputs)
             program = inputs + '\n' + dedent('\n'.join(lines))
         compile(program, "<program>", "exec")  # check validity
     no_weird_whitespace(program)
-    return program.strip()
+    return program.strip(), func
 
 
 def basic_signature(func, remove_first=False):
@@ -83,12 +81,9 @@ def clean_step_class(cls, clean_inner=True):
 
     if solution:
         assert cls.tests
-        # noinspection PyUnresolvedReferences
-        cls.solution = get_solution_function(solution)
-        inputs = list(cls.test_values())[0][0]
-        program = clean_program(solution, inputs=inputs)
+        program, cls.solution = clean_program(solution, cls)
     else:
-        program = clean_program(program)
+        program, _ = clean_program(program, cls)
     assert program
 
     if isinstance(hints, str):
