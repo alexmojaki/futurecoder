@@ -514,7 +514,7 @@ Make sure that you don't call `surround` inside the function body of `surround`.
 
             return surround
 
-    class step_name_here(ExerciseStep):
+    class alert_exercise(ExerciseStep):
         """
 Perfect! Now write a function `alert` that passes these tests:
 

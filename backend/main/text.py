@@ -69,6 +69,8 @@ def clean_solution_function(func, source):
 
 
 def clean_step_class(cls, clean_inner=True):
+    assert cls.__name__ != "step_name_here"
+
     text = cls.text or cls.__doc__
     program = cls.program
     hints = cls.hints
