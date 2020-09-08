@@ -594,7 +594,7 @@ Well done! This was a hard one. One possible solution looks like this:
 Unlike the other two boolean operators `and` and `or`,
 which are used in between two booleans (called *binary* operators),
 `not` is used before only one boolean (called a *unary* operator).
-It negates the statement to which it is applied. Try in the shell:
+It negates the expression to which it is applied, a bit like a minus sign. Try in the shell:
 
 __program_indented__
         """
