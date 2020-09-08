@@ -1,6 +1,7 @@
 # flake8: NOQA E501
 
 from typing import List
+import random
 
 from main.exercises import assert_equal
 from main.text import ExerciseStep, Page, VerbatimStep
@@ -562,6 +563,14 @@ Don't forget the `else` part!
                 else:
                     print("No winners.")
             return diagonal_winner
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "row1": [random.choice(["X", "O"]) for _ in range(3)],
+                "row2": [random.choice(["X", "O"]) for _ in range(3)],
+                "row3": [random.choice(["X", "O"]) for _ in range(3)]
+            }
 
         tests = [
             ((["X", "O", "X"], ["X", "X", "O"], ["O", "O", "X"]), """\
