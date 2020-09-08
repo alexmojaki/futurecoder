@@ -181,7 +181,7 @@ Try inspecting the code with Bird's Eye. Inspect the `return` statements of each
 
     class AnExercise(ExerciseStep):
         """
-When we inspect it with Birdseye, we can see that:
+When we inspect it with Bird's Eye, we can see that:
 
     name == "Alice" or "Bob"
 
