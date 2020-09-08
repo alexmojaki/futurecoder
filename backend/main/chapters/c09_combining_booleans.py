@@ -173,7 +173,7 @@ Replace the `return` line in the code with the above line, and try running it ag
         text = """
 The second and third tests fail! Our function seems to be doing the wrong thing:
 it returns `"Bob"` (a string, not a boolean!) when `name` is `"Bob"` or `"Charlie"`. What is going on?
-Try inspecting the code with Birdseye. Inspect the `return` statements of each `is_friend` calls carefully.
+Try inspecting the code with Bird's Eye. Inspect the `return` statements of each `is_friend` call carefully.
 (Use the blue arrow buttons)
         """
 
