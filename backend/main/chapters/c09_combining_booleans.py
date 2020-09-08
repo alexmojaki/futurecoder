@@ -231,7 +231,7 @@ including all strings (such as `"Bob"`) except the empty string which is 'falsy'
 Yes! In [Functions and Methods for Lists](/course/?page=FunctionsAndMethodsForLists) we mentioned the `in`
 operator, which you can use with a list like this:
 
-    if name in ["Alice", "Bob", "Charlie"]:
+    return name in ["Alice", "Bob", "Charlie"]
 
 But you can't always get rid of `or` like that.
 
