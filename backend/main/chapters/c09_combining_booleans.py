@@ -359,11 +359,11 @@ As before, we can simplify this solution to:
 
 In Python,
 
-    if 0 <= x and x <= 100:
+    0 <= x and x <= 100
 
 can also be written as a short hand:
 
-    if 0 <= x <= 100:
+    0 <= x <= 100
     
 So the solution can be simplified to its final form:
 
