@@ -18,7 +18,7 @@ Here's a simple example: imagine you have two friends, Alice and Bob.
 The function below accepts one parameter, `name`, and checks if the person with the given name is among your friends.
 Below its definition, we test the function on three different inputs with `assert_equal` from the previous chapter.
 After that, we have an example program that uses this function interactively.
-Type and run the code in the editor:
+Copy and run the code in the editor:
 
 __program_indented__
         """
@@ -35,7 +35,6 @@ __program_indented__
             assert_equal(is_friend("Bob"), True)
             assert_equal(is_friend("Charlie"), False)
 
-            # Interactive program
             print("What is your name?")
             your_name = input()
             print("Hello " + your_name + "!")
@@ -51,7 +50,6 @@ meaning it's an operator (like `+` or `-`) which combines two booleans (`True` o
 The expression `A or B` is `True` if either `A` or `B` is `True`, i.e. if `A` is `True` or `B` is `True`, or both.
 It's only `False` if neither `A` nor `B` is `True`, i.e. both are `False`.
 
-Let's try some examples in the shell.
 Try the following in the shell. Think about what you expect it to return:
 
 __program_indented__
@@ -577,8 +575,8 @@ No winners.
 """),
         ]
 
-    class IntroducingNot(VerbatimStep):
-        """
+
+    final_text = """
 Well done! This was a hard one. One possible solution looks like this:
 
     def diagonal_winner(row1, row2, row3):
@@ -590,7 +588,14 @@ Well done! This was a hard one. One possible solution looks like this:
             print(middle + " wins!")
         else:
             print("No winners.")
+"""
 
+
+class IntroducingNotPage(Page):
+    title = "Introducing Not"
+
+    class IntroducingNot(VerbatimStep):
+        """
 Unlike the other two boolean operators `and` and `or`,
 which are used in between two booleans (called *binary* operators),
 `not` is used before only one boolean (called a *unary* operator).
