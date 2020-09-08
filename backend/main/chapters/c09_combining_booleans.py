@@ -395,9 +395,8 @@ Check if the three row entries are equal to each other.
 You need to make two separate checks using `==`, then connect them using `and`.
                 """
 
-        def solution():
-            @returns_stdout
-            def is_winning_row(_, row: List[str]):
+        def solution(self):
+            def is_winning_row(row: List[str]):
                 if row[0] == row[1] and row[0] == row[2]:
                     print("We have a winner!")
                 else:
