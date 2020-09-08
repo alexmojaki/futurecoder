@@ -477,7 +477,7 @@ which priority we intend with our code when there is ambiguity.
 class MultiLineExpressions(Page):
     class TrueOrFalseAndFalse(VerbatimStep):
         """
-Our code for checking a tic-tac-toe board for a winning row will get quite long.
+Our code for checking a tic-tac-toe board will get quite long.
 Thankfully Python allows us to write a single, long expression on multiple lines,
 as long as it is within parentheses.
 We can go to the next line right after a boolean operator.
@@ -496,37 +496,6 @@ Remember to always wrap your multi-line expressions inside parentheses to be saf
 
 
 class CombiningAndWithOr(Page):
-    class CheckTheWholeBoard(VerbatimStep):
-        """
-The tic-tac-toe board can be represented by 3 rows.
-If we have a winning row, it's either row 1, OR row 2, OR row 3.
-For each row, we can reuse our row-checking code from before
-(with parentheses around it):
-
-    (row[0] == row[1] and row[0] == row[2])
-
-To fit all 3 row checks on multiple lines,
-we need one extra set of parentheses around the whole thing, after `if`.
-We break lines after the boolean operators `or` which are connecting the bigger blocks.
-Type and run this code, make sure you understand the complex boolean expression:
-
-__program_indented__
-        """
-        def program(self):
-            def is_winning_board(row1, row2, row3):
-                if (
-                    (row1[0] == row1[1] and row1[0] == row1[2]) or
-                    (row2[0] == row2[1] and row2[0] == row2[2]) or
-                    (row3[0] == row3[1] and row3[0] == row3[2])
-                ):
-                    print("We have a winner!")
-
-            row1 = ["X", "O", "X"]
-            row2 = ["X", "X", "X"]
-            row3 = ["O", "O", "X"]
-
-            is_winning_board(row1, row2, row3)
-
     class DiagonalWinnerExercise(ExerciseStep):
         """
 Exercise: write a function `diagonal_winner` to check if there's a diagonal winner on a tic-tac-toe board.
@@ -545,9 +514,9 @@ then `diagonal_winner(row1, row2, row3)` should print `X wins!`
 How many diagonals are there on the board? What do they have in common?
 Which entries of `row1, row2, row3` make up each diagonal?
 Similar to how we checked a row, check that the 3 entries on a diagonal are equal to each other, using `and`.
-Similar to how we checked three rows together, check the two diagonals together, using `or`.
-As before, use a multi-line boolean expression where `if` contains lines that are connected with `or`. Only 2 lines 
-needed.
+Check the two diagonals together, using `or`.
+Use a multi-line boolean expression where `if` contains lines that are connected with `or`. Only 2 lines 
+needed. Take care of your parentheses carefully!
 Don't forget the `else` part!
         """
 
@@ -583,7 +552,6 @@ O wins!
 No winners.
 """),
         ]
-
 
     final_text = """
 Well done! This was a hard one. One possible solution looks like this:
