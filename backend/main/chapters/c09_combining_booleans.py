@@ -177,8 +177,7 @@ Try inspecting the code with Bird's Eye. Inspect the `return` statements of each
 (Use the blue arrow buttons)
         """
 
-        def check(self):
-            return super().check() and self.code_source == "birdseye"
+        expected_code_source = "birdseye"
 
     class AnExercise(ExerciseStep):
         """
