@@ -154,7 +154,7 @@ A common mistake is to write this instead:
 
     return name == "Alice" or "Bob"
 
-It makes sense if you read it like English: "If `name` is equal to either "Alice" or "Bob", then return True...".
+It makes sense if you read it like English: "If `name` is equal to either `"Alice"` or `"Bob"`, then return `True`...".
 But Python is not English, and that's not how `or` works.
 
 Replace the `return` line in the code with the above line, and try running it again.
