@@ -612,7 +612,65 @@ __program_indented__
         """
         program = "not (True or True)"
 
-    final_text = """
+    class NotExercise(ExerciseStep):
+        """
 We see that `not (True or True)` evaluates to `not (True)` which is `False`.
 Because of the parentheses, `or` gets evaluated first.
+
+Exercise: Suppose you're writing a program which processes images. Only certain types of file can be processed.
+If the user gives you a file that can't be processed, you want to show an error:
+
+    if invalid_image(filename):
+        print("I can't process " + filename)
+
+Suppose that .png and .jpg files cannot be processed, but other file types can.
+Here's an example function to do that:
+
+    def invalid_image(filename):
+        if filename.endswith(".png") or filename.endswith(".jpg"):
+            return False
+        else:
+            return True
+
+    assert_equal(invalid_image("dog.png"), False)
+    assert_equal(invalid_image("cat.jpg"), False)
+    assert_equal(invalid_image("invoice.pdf"), True)
+
+This is longer than it needs to be. Rewrite `invalid_image` so that the body is a single line `return <expression>`,
+i.e. no `if` statement. It should pass the same tests.
+        """
+
+        def solution():
+            def invalid_image(_, filename: str):
+                return not (filename.endswith(".png") or filename.endswith(".jpg"))
+            return invalid_image
+
+        tests = {
+            "dog.png": False,
+            "invoice.pdf": True,
+            "cat.jpg": False,
+        }
+
+    final_text = """
+Well done! Here are two valid solutions:
+
+    def invalid_image(filename):
+        return not (filename.endswith(".png") or filename.endswith(".jpg"))
+
+    def invalid_image(filename):
+        return not filename.endswith(".png") and not filename.endswith(".jpg")
+
+(if you're curious, these are equivalent because of something called De Morgan's law)
+
+Also notice that this is another general pattern that can be simplified: if your code has the form:
+
+    if x:
+        return False
+    else:
+        return True
+
+where `x` itself is a boolean, then it can be simplified to:
+
+    return not x
+
     """
