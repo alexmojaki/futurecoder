@@ -5,7 +5,6 @@ import random
 
 from main.exercises import assert_equal
 from main.text import ExerciseStep, Page, VerbatimStep
-from main.utils import returns_stdout
 
 
 class IntroducingOr(Page):
@@ -17,8 +16,6 @@ Now we want to combine booleans to check for more complex conditions.
 
 Here's a simple example: imagine you have two friends, Alice and Bob.
 The function below accepts one parameter, `name`, and checks if the person with the given name is among your friends.
-Below its definition, we test the function on three different inputs with `assert_equal` from the previous chapter.
-After that, we have an example program that uses this function interactively.
 Copy and run the code in the editor:
 
 __program_indented__
@@ -35,12 +32,6 @@ __program_indented__
             assert_equal(is_friend("Alice"), True)
             assert_equal(is_friend("Bob"), True)
             assert_equal(is_friend("Charlie"), False)
-
-            print("What is your name?")
-            your_name = input()
-            print("Hello " + your_name + "!")
-            if is_friend(your_name):
-                print("I have a friend called " + your_name + "!")
 
     class TrueOrTrue(VerbatimStep):
         """
@@ -91,9 +82,6 @@ with:
 
 As you can see, `is_friend` will return `True` only when `name` is Alice or Bob.
 The `or` is used in between the two booleans `name == "Alice"` and `name == "Bob"`.
-
-Now let's focus completely on the function `is_friend`.
-Delete the interactive program that comes after the three tests, and run the code again.
         """
         program_in_text = False
 
@@ -256,8 +244,8 @@ What are the two conditions on `x` where you should return `False`?
 Use an if-else block, and connect the two conditions with `or`.
         """
 
-        def solution():
-            def is_valid_percentage(_, x: int):
+        def solution(self):
+            def is_valid_percentage(x: int):
                 if x < 0 or x > 100:
                     return False
                 else:
@@ -315,6 +303,7 @@ __program_indented__
         """
         program = "False and False"
 
+    # noinspection PyChainedComparisons
     class AndExercise(ExerciseStep):
         """
 Exercise: rewrite the `is_valid_percentage` function from before, using `and` instead of `or`.
@@ -326,8 +315,8 @@ You will have to reverse the `return` statements accordingly.
 You will have to change the comparison operators too.
         """
 
-        def solution():
-            def is_valid_percentage(_, x: int):
+        def solution(self):
+            def is_valid_percentage(x: int):
                 if 0 <= x and x <= 100:
                     return True
                 else:
@@ -520,9 +509,8 @@ needed. Take care of your parentheses carefully!
 Don't forget the `else` part!
         """
 
-        def solution():
-            @returns_stdout
-            def diagonal_winner(_, row1: List[str], row2: List[str], row3: List[str]):
+        def solution(self):
+            def diagonal_winner(row1: List[str], row2: List[str], row3: List[str]):
                 middle = row2[1]
                 if (
                     (middle == row1[0] and middle == row3[2]) or
@@ -640,8 +628,8 @@ This is longer than it needs to be. Rewrite `invalid_image` so that the body is 
 i.e. no `if` statement. It should pass the same tests.
         """
 
-        def solution():
-            def invalid_image(_, filename: str):
+        def solution(self):
+            def invalid_image(filename: str):
                 return not (filename.endswith(".png") or filename.endswith(".jpg"))
             return invalid_image
 
