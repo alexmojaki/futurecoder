@@ -16598,7 +16598,7 @@
         "step": "TicTacToeWinningRow"
     },
     {
-        "page": "Multi-line expressions and statements",
+        "page": "Multi-line statements",
         "program": [
             "is_friend = name == \"Alice\" or",
             "            name == \"Bob\""
@@ -16636,7 +16636,7 @@
         "step": "invalid_multiline"
     },
     {
-        "page": "Multi-line expressions and statements",
+        "page": "Multi-line statements",
         "program": [
             "name = \"Bob\"",
             "",
@@ -16755,7 +16755,7 @@
         "step": "AndHasHigherPriority"
     },
     {
-        "page": "Introducing Not",
+        "page": "Introducing <code>not</code>",
         "program": [
             "not True"
         ],
@@ -16780,7 +16780,7 @@
         "step": "IntroducingNot"
     },
     {
-        "page": "Introducing Not",
+        "page": "Introducing <code>not</code>",
         "program": [
             "not False"
         ],
@@ -16805,9 +16805,10 @@
         "step": "NotFalse"
     },
     {
-        "page": "Introducing Not",
+        "page": "Introducing <code>not</code>",
         "program": [
-            "not True or True"
+            "b = True",
+            "print(not b or b)"
         ],
         "response": {
             "message": "",
@@ -16830,32 +16831,11 @@
         "step": "NotTrueOrTrue"
     },
     {
-        "page": "Introducing Not",
-        "program": [
-            "not (True or True)"
+        "get_solution": [
+            "def invalid_image(filename):",
+            "    return not (filename.endswith(\".png\") or filename.endswith(\".jpg\"))"
         ],
-        "response": {
-            "message": "",
-            "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": "False"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "NotPriority"
-    },
-    {
-        "page": "Introducing Not",
+        "page": "Introducing <code>not</code>",
         "program": [
             "def invalid_image(filename):",
             "    return not (filename.endswith(\".png\") or filename.endswith(\".jpg\"))"
@@ -16870,6 +16850,6 @@
                 }
             ]
         },
-        "step": "NotExercise"
+        "step": "NotPriority"
     }
 ]
