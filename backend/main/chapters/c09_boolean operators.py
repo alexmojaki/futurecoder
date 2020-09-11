@@ -1,5 +1,5 @@
 # flake8: NOQA E501
-
+from textwrap import dedent
 from typing import List
 import random
 
@@ -634,7 +634,7 @@ or:
 
 
 class IntroducingNotPage(Page):
-    title = "Introducing Not"
+    title = "Introducing `not`"
 
     class IntroducingNot(VerbatimStep):
         """
@@ -657,30 +657,46 @@ __program_indented__
 
     class NotTrueOrTrue(VerbatimStep):
         """
-What is the priority of `not` compared to `and` and `or`? Let us turn to the shell again. Evaluate:
+What is the priority of `not` compared to `and` and `or`? Try the following in Bird's Eye:
 
     __program_indented__
         """
-        program = "not True or True"
 
-    class NotPriority(VerbatimStep):
+        expected_code_source = "birdseye"
+
+        def program(self):
+            b = True
+            print(not b or b)
+
+    class NotPriority(ExerciseStep):
         """
-We see that `not True or True` is interpreted by Python as:
+You can see in Bird's Eye that
+
+    not True or True
+
+is interpreted by Python as
 
     (not True) or True
 
-which evaluates to `False or True` , which is `True`.
-So, `not` has higher priority than `or` if there are no parentheses.
-Now run this in the shell:
+rather than:
 
-__program_indented__
-        """
-        program = "not (True or True)"
+    not (True or True)
 
-    class NotExercise(ExerciseStep):
-        """
-We see that `not (True or True)` evaluates to `not (True)` which is `False`.
-Because of the parentheses, `or` gets evaluated first.
+So, `not` has higher priority than `or` if there are no parentheses. It's the same as how
+
+    -1 + 2
+
+means:
+
+    (-1) + 2
+
+rather than
+
+    -(1 + 2)
+
+`not` also has higher priority than `and`.
+
+Again, the main thing to remember is to use parentheses or extra variables when in doubt.
 
 Exercise: Suppose you're writing a program which processes images. Only certain types of file can be processed.
 If the user gives you a file that can't be processed, you want to show an error:
@@ -705,6 +721,37 @@ This is longer than it needs to be. Rewrite `invalid_image` so that the body is 
 i.e. no `if` statement. It should pass the same tests.
         """
 
+        hints = [
+            dedent("""
+            What if you were instead asked to simplify this related but opposite function?
+            
+                def valid_image(filename):
+                    if filename.endswith(".png") or filename.endswith(".jpg"):
+                        return True
+                    else:
+                        return False
+            
+                assert_equal(valid_image("dog.png"), True)
+                assert_equal(valid_image("cat.jpg"), True)
+                assert_equal(valid_image("invoice.pdf"), False)
+            """),
+            "In that case there is a standard simplification trick you can apply that we discussed a few pages ago.",
+            'In particular the `returns` are redundant because `filename.endswith(".png") or filename.endswith(".jpg")` '
+            'is already the desired boolean.',
+            dedent("""
+            So you can just write:
+
+                def valid_image(filename):
+                    return filename.endswith(".png") or filename.endswith(".jpg")
+            """),
+            "For the real exercise, you can do something similar.",
+            "The difference in the real exercise is that the result is reversed.",
+            "That is, `invalid_image` returns `True` when `valid_image` returns `False` and vice versa.",
+            "Remember what `not` does?",
+        ]
+
+        # TODO disallow if, otherwise the solution in the text works!
+
         def solution(self):
             def invalid_image(filename: str):
                 return not (filename.endswith(".png") or filename.endswith(".jpg"))
@@ -712,9 +759,16 @@ i.e. no `if` statement. It should pass the same tests.
 
         tests = {
             "dog.png": False,
-            "invoice.pdf": True,
             "cat.jpg": False,
+            "invoice.pdf": True,
         }
+
+        @classmethod
+        def generate_inputs(cls):
+            result = generate_string()
+            if random.random() < 0.5:
+                result += random.choice([".png", ".jpg"])
+            return {"filename": result}
 
     final_text = """
 Well done! Here are two valid solutions:
@@ -737,5 +791,4 @@ Also notice that this is another general pattern that can be simplified: if your
 where `x` itself is a boolean, then it can be simplified to:
 
     return not x
-
     """
