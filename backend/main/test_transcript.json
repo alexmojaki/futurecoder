@@ -15131,7 +15131,7 @@
                 }
             ]
         },
-        "step": "step_name_here"
+        "step": "birdseye_loop_example"
     },
     {
         "page": "Defining Functions",
@@ -16002,7 +16002,7 @@
                 }
             ]
         },
-        "step": "step_name_here"
+        "step": "alert_exercise"
     },
     {
         "get_solution": [
@@ -16033,6 +16033,843 @@
                 }
             ]
         },
-        "step": "step_name_here"
+        "step": "alert_exercise"
+    },
+    {
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "def is_friend(name):",
+            "    if name == \"Alice\":",
+            "        return True",
+            "    elif name == \"Bob\":",
+            "        return True",
+            "    else:",
+            "        return False",
+            "",
+            "assert_equal(is_friend(\"Alice\"), True)",
+            "assert_equal(is_friend(\"Bob\"), True)",
+            "assert_equal(is_friend(\"Charlie\"), False)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "InputAliceBob"
+    },
+    {
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "True or True"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "TrueOrTrue"
+    },
+    {
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "True or False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "TrueOrFalse"
+    },
+    {
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "False or False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "FalseOrFalse"
+    },
+    {
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "def is_friend(name):",
+            "    if name == \"Alice\" or name == \"Bob\":",
+            "        return True",
+            "    else:",
+            "        return False",
+            "",
+            "assert_equal(is_friend(\"Alice\"), True)",
+            "assert_equal(is_friend(\"Bob\"), True)",
+            "assert_equal(is_friend(\"Charlie\"), False)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "ImprovingWithOr"
+    },
+    {
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "def is_friend(name):",
+            "    return name == \"Alice\" or name == \"Bob\"",
+            "",
+            "assert_equal(is_friend(\"Alice\"), True)",
+            "assert_equal(is_friend(\"Bob\"), True)",
+            "assert_equal(is_friend(\"Charlie\"), False)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "FurtherImprovement"
+    },
+    {
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "def is_friend(name):",
+            "    return name == \"Alice\" or \"Bob\"",
+            "",
+            "assert_equal(is_friend(\"Alice\"), True)",
+            "assert_equal(is_friend(\"Bob\"), True)",
+            "assert_equal(is_friend(\"Charlie\"), False)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Error!"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "Bob"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "!="
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Error!"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "Bob"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "!="
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "ACommonMistake"
+    },
+    {
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "def is_friend(name):",
+            "    return name == \"Alice\" or \"Bob\"",
+            "",
+            "assert_equal(is_friend(\"Alice\"), True)",
+            "assert_equal(is_friend(\"Bob\"), True)",
+            "assert_equal(is_friend(\"Charlie\"), False)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Error!"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "Bob"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "!="
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Error!"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "Bob"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "!="
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "InspectWithBirdseye"
+    },
+    {
+        "get_solution": [
+            "def is_valid_percentage(x):",
+            "    if x < 0 or x > 100:",
+            "        return False",
+            "    else:",
+            "        return True"
+        ],
+        "page": "Introducing <code>or</code>",
+        "program": [
+            "def is_valid_percentage(x):",
+            "    if x < 0 or x > 100:",
+            "        return False",
+            "    else:",
+            "        return True"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "AnExercise"
+    },
+    {
+        "page": "Introducing <code>and</code>",
+        "program": [
+            "True and True"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "TrueAndTrue"
+    },
+    {
+        "page": "Introducing <code>and</code>",
+        "program": [
+            "True and False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "TrueAndFalse"
+    },
+    {
+        "page": "Introducing <code>and</code>",
+        "program": [
+            "False and False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "FalseAndFalse"
+    },
+    {
+        "get_solution": [
+            "def is_valid_percentage(x):",
+            "    if 0 <= x and x <= 100:",
+            "        return True",
+            "    else:",
+            "        return False"
+        ],
+        "page": "Introducing <code>and</code>",
+        "program": [
+            "def is_valid_percentage(x):",
+            "    if 0 <= x and x <= 100:",
+            "        return True",
+            "    else:",
+            "        return False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "AndExercise"
+    },
+    {
+        "get_solution": [
+            "def all_equal(row):",
+            "    return row[0] == row[1] and row[0] == row[2]"
+        ],
+        "page": "Introducing <code>and</code>",
+        "program": [
+            "def all_equal(row):",
+            "    return row[0] == row[1] and row[0] == row[2]"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "TicTacToeWinningRow"
+    },
+    {
+        "page": "Multi-line expressions and statements",
+        "program": [
+            "is_friend = name == \"Alice\" or",
+            "            name == \"Bob\""
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "red",
+                    "text": "Traceback (most recent call last):\n"
+                },
+                {
+                    "color": "red",
+                    "text": "  File \"my_program.py\", line 1\n"
+                },
+                {
+                    "color": "red",
+                    "text": "    is_friend = name == \"Alice\" or\n"
+                },
+                {
+                    "color": "red",
+                    "text": "                                 ^\n"
+                },
+                {
+                    "color": "red",
+                    "text": "SyntaxError: invalid syntax\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "invalid_multiline"
+    },
+    {
+        "page": "Multi-line expressions and statements",
+        "program": [
+            "name = \"Bob\"",
+            "",
+            "is_friend = name == \"Alice\" or \\",
+            "            name == \"Bob\"",
+            "print(is_friend)",
+            "",
+            "is_friend = (name == \"Alice\" or",
+            "             name == \"Bob\")",
+            "print(is_friend)",
+            "",
+            "is_friend = [name == \"Alice\",",
+            "             name == \"Bob\"]",
+            "print(is_friend)",
+            "",
+            "print(name == \"Alice\" or",
+            "      name == \"Bob\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[False, True]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "valid_multiline"
+    },
+    {
+        "page": "Combining <code>and</code> and <code>or</code>",
+        "program": [
+            "True or False and False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "CombiningAndOr"
+    },
+    {
+        "get_solution": [
+            "def diagonal_winner(row1, row2, row3):",
+            "    middle = row2[1]",
+            "    return (",
+            "            (middle == row1[0] and middle == row3[2]) or",
+            "            (middle == row1[2] and middle == row3[0])",
+            "    )"
+        ],
+        "page": "Combining <code>and</code> and <code>or</code>",
+        "program": [
+            "def diagonal_winner(row1, row2, row3):",
+            "    middle = row2[1]",
+            "    return (",
+            "            (middle == row1[0] and middle == row3[2]) or",
+            "            (middle == row1[2] and middle == row3[0])",
+            "    )"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "AndHasHigherPriority"
+    },
+    {
+        "page": "Introducing Not",
+        "program": [
+            "not True"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "IntroducingNot"
+    },
+    {
+        "page": "Introducing Not",
+        "program": [
+            "not False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "NotFalse"
+    },
+    {
+        "page": "Introducing Not",
+        "program": [
+            "not True or True"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "NotTrueOrTrue"
+    },
+    {
+        "page": "Introducing Not",
+        "program": [
+            "not (True or True)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "NotPriority"
+    },
+    {
+        "page": "Introducing Not",
+        "program": [
+            "def invalid_image(filename):",
+            "    return not (filename.endswith(\".png\") or filename.endswith(\".jpg\"))"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "NotExercise"
     }
 ]

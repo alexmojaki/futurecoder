@@ -3,12 +3,13 @@
 from typing import List
 import random
 
-from main.exercises import assert_equal
+from main.exercises import assert_equal, generate_string
 from main.text import ExerciseStep, Page, VerbatimStep
-from main.utils import returns_stdout
 
 
 class IntroducingOr(Page):
+    title = "Introducing `or`"
+
     class InputAliceBob(VerbatimStep):
         """
 We learned about *booleans* (`True` and `False`) when we introduced If statements.
@@ -17,8 +18,6 @@ Now we want to combine booleans to check for more complex conditions.
 
 Here's a simple example: imagine you have two friends, Alice and Bob.
 The function below accepts one parameter, `name`, and checks if the person with the given name is among your friends.
-Below its definition, we test the function on three different inputs with `assert_equal` from the previous chapter.
-After that, we have an example program that uses this function interactively.
 Copy and run the code in the editor:
 
 __program_indented__
@@ -35,12 +34,6 @@ __program_indented__
             assert_equal(is_friend("Alice"), True)
             assert_equal(is_friend("Bob"), True)
             assert_equal(is_friend("Charlie"), False)
-
-            print("What is your name?")
-            your_name = input()
-            print("Hello " + your_name + "!")
-            if is_friend(your_name):
-                print("I have a friend called " + your_name + "!")
 
     class TrueOrTrue(VerbatimStep):
         """
@@ -91,9 +84,6 @@ with:
 
 As you can see, `is_friend` will return `True` only when `name` is Alice or Bob.
 The `or` is used in between the two booleans `name == "Alice"` and `name == "Bob"`.
-
-Now let's focus completely on the function `is_friend`.
-Delete the interactive program that comes after the three tests, and run the code again.
         """
         program_in_text = False
 
@@ -115,8 +105,11 @@ We can do even better. Notice that
     name == "Alice" or name == "Bob"
 
 is a boolean, and both `return` statements are returning booleans `True` or `False`.
-The function returns `True` when `name == "Alice" or name == "Bob"` is `True`,
-and it returns `False` when `name == "Alice" or name == "Bob"` is `False`.
+The function:
+
+ - returns `True` when `name == "Alice" or name == "Bob"` is `True`, and
+ - returns `False` when `name == "Alice" or name == "Bob"` is `False`.
+
 So we could simply return the boolean `name == "Alice" or name == "Bob"` itself in both cases!
 
 This is a common pattern for simplifying your code. If you ever find yourself writing code like:
@@ -130,7 +123,7 @@ where `x` itself is a boolean, you can always simplify this block of code to:
 
     return x
 
-Now in the editor, make the appropriate simplification as explained above, and run your code again.
+Apply this simplification to the code yourself, and run it again.
         """
 
         program_in_text = False
@@ -153,7 +146,10 @@ A common mistake is to write this instead:
 
     return name == "Alice" or "Bob"
 
-It makes sense if you read it like English: "If `name` is equal to either `"Alice"` or `"Bob"`, then return `True`...".
+It makes sense if you read it like English:
+
+> `return` whether `name` is equal to either `"Alice"` or `"Bob"`
+
 But Python is not English, and that's not how `or` works.
 
 Replace the `return` line in the code with the above line, and try running it again.
@@ -192,11 +188,7 @@ the way we think in English, but rather:
 
     (name == "Alice") or ("Bob")
 
-What then happens is:
-
-- `name == "Alice"` evaluates to `False`,
-- `name == "Alice" or "Bob"` evaluates to `"Bob"`, and
--  `return "Bob"` returns the string "Bob", instead of a boolean value, which is what we originally intended.
+which evaluates to `"Bob"` when `name == "Alice"` is `False`.
 
 Perhaps you feel like this:
 
@@ -206,8 +198,7 @@ The only thing you really need to know is this: Until you know what you're doing
 make sure you put booleans on both sides of `or`, because it's a boolean operator.
 `name == "Alice" or "Bob"` breaks that rule.
 
-If you're curious, the answers are below, but you can skip them if you want.
-Make sure to read the Exercise that comes afterwards!
+If you're curious, the answers are below, but you can skip them if you want and move onto the exercise below.
 
 ----
 
@@ -220,11 +211,6 @@ otherwise it's `B`.
 You can see for yourself that if `A` and `B` are booleans then the two definitions are equivalent.
 In this example `A` is `name == "Alice"` which is `False`, so `A or B` is `B` which is `"Bob"`.
 
-> Why does `if "Bob"` run the body? Again, `"Bob"` isn't a boolean!
-
-Python actually lets you treat anything like a boolean. Most things are equivalent to `True` in this context,
-including all strings (such as `"Bob"`) except the empty string which is 'falsy'.
-
 > Is there a better way to write the condition without repeating `name ==` each time?
 
 Yes! In [Functions and Methods for Lists](/course/?page=FunctionsAndMethodsForLists) we mentioned the `in`
@@ -236,11 +222,8 @@ But you can't always get rid of `or` like that.
 
 ----
 
-Exercise: A percentage number is valid if it is between 0 and 100 (including 0 and 100).
-Using `or`, write a function named `is_valid_percentage`, accepting one number argument `x`,
-that checks the validity of a given percentage number:
-it should return `True` if the argument `x` is between 0 and 100 (inclusive), return `False` otherwise.
-
+Exercise: Write a function named `is_valid_percentage`, accepting one numerical argument `x`.
+It should return `True` if `x` is between 0 and 100 (inclusive), and return `False` otherwise.
 Your function should use `or`, and pass these tests:
 
     assert_equal(is_valid_percentage(-1), False)
@@ -252,16 +235,24 @@ Your function should use `or`, and pass these tests:
         """
         hints = """
 Remember, you can use comparison operators `<, >, <=, >=, ==` to produce booleans.
-What are the two conditions on `x` where you should return `False`?
-Use an if-else block, and connect the two conditions with `or`.
+You need to check how `x` compares to 0 and how it compares to 100.
+You need to combine the two comparisons into one boolean using `or`.
+Above we used a trick so that the whole function body was just `return <comparison> or <comparison>`. But that won't work here!
+You need to use an `if` statement.
+You need to have a `return False` and a `return True`.
+If you have something like `x >= 0 or x <= 100`, you're on the wrong track. That's going to be true for *any* value of `x`. After all, 101 is greater than 0!
         """
 
-        def solution():
-            def is_valid_percentage(_, x: int):
+        # TODO disallow and, in, chaining, and multiple ifs
+        # TODO catch wrong comparisons
+
+        def solution(self):
+            def is_valid_percentage(x: int):
                 if x < 0 or x > 100:
                     return False
                 else:
                     return True
+
             return is_valid_percentage
 
         tests = {
@@ -273,24 +264,17 @@ Use an if-else block, and connect the two conditions with `or`.
         }
 
     final_text = """
-Good job! The typical solution looks like:
-
-    def is_valid_percentage(x):
-        if x < 0 or x > 100:
-            return False
-        else:
-            return True
-            
+Good job!
 """
 
 
-class AnExerciseUsingOr(Page):
-    title = "Introducing And"
+class IntroducingAnd(Page):
+    title = "Introducing `and`"
 
     class TrueAndTrue(VerbatimStep):
         """
 Another boolean operator in Python is `and`.
-The statement `A and B` is true only if BOTH `A` and `B` are true. Otherwise it's false.
+The expression `A and B` is `True` only if BOTH `A` and `B` are `True`. Otherwise it's `False`.
 Try it in the shell:
 
 __program_indented__
@@ -315,23 +299,44 @@ __program_indented__
         """
         program = "False and False"
 
+    # noinspection PyChainedComparisons
     class AndExercise(ExerciseStep):
         """
-Exercise: rewrite the `is_valid_percentage` function from before, using `and` instead of `or`.
-It should still work exactly as before, accepting a number parameter `x`, and passing the same tests.
+Let's practice now. Previously we wrote a function `is_valid_percentage` using `or`. Here's an example
+solution:
+
+    def is_valid_percentage(x):
+        if x < 0 or x > 100:
+            return False
+        else:
+            return True
+
+    assert_equal(is_valid_percentage(-1), False)
+    assert_equal(is_valid_percentage(0), True)
+    assert_equal(is_valid_percentage(50), True)
+    assert_equal(is_valid_percentage(100), True)
+    assert_equal(is_valid_percentage(101), False)
+
+Rewrite this function using `and` instead.
         """
+
         hints = """
+If you have something like `x < 0 and x > 100`, you're on the wrong track. That's going to be `False` for *any* value of `x`!
+The solution with `and` is different in several ways from the solution with `or`.
 Our solution with `or` first determines if `x` is an invalid percentage, else concludes validity. Using `and` will do this in reverse.
 You will have to reverse the `return` statements accordingly.
 You will have to change the comparison operators too.
         """
 
-        def solution():
-            def is_valid_percentage(_, x: int):
+        # TODO disallow or, in, multiple ifs
+
+        def solution(self):
+            def is_valid_percentage(x: int):
                 if 0 <= x and x <= 100:
                     return True
                 else:
                     return False
+
             return is_valid_percentage
 
         tests = {
@@ -342,195 +347,252 @@ You will have to change the comparison operators too.
             101: False,
         }
 
-    final_text = """
-Awesome! A typical solution looks like:
+    class TicTacToeWinningRow(ExerciseStep):
+        """
+Awesome! Here's one possible solution:
 
     def is_valid_percentage(x):
         if 0 <= x and x <= 100:
             return True
         else:
             return False
-            
+
 As before, we can simplify this solution to:
 
     def is_valid_percentage(x):
         return 0 <= x and x <= 100
 
-In Python,
+There's another trick to improve this further called comparison chaining. Any condition like this:
 
-    0 <= x and x <= 100
+    a < b and b < c
 
-can also be written as a short hand:
+can be shortened by removing the extra `and b` into:
 
-    0 <= x <= 100
-    
-So the solution can be simplified to its final form:
+    a < b < c
+
+This works for any comparison operators, including `==`, and the two operators can even be different.
+So the solution can be simplified to:
 
     def is_valid_percentage(x):
         return 0 <= x <= 100
-        
-    """
 
+Next exercise: given a list of three elements, check if all three elements are equal.
 
-class TicTacToeExercise(Page):
-    class TicTacToeWinningRow(ExerciseStep):
+    def all_equal(row):
+        ...
+
+    assert_equal(all_equal(["X", "X", "X"]), True)
+    assert_equal(all_equal(["O", "O", "O"]), True)
+    assert_equal(all_equal(["X", "O", "X"]), False)
         """
-Exercise: check if a row of tic-tac-toe represents a winner, using `and`.
-If you've never heard of tic-tac-toe, you can read about it
-[here](https://en.wikipedia.org/wiki/Tic-tac-toe) and play a few games against a
-computer opponent [here](https://playtictactoe.org/).
 
-We will use a list of strings "X" and "O" to represent a row of tic-tac-toe:
-
-    row = ["X", "O", "O"]
-
-Write a function `is_winning_row` taking one argument `row` like above (a list of 3 strings),
-which prints `We have a winner!` if `row` is a winning row. Otherwise print `Not a winning row.`
-        """
         hints = """
-There are only two winning rows: ["X", "X", "X"] and ["O", "O", "O"].
-You will need to use `and`, `if`, `==` and list indexing.
-Check if the three row entries are equal to each other.
-You need to make two separate checks using `==`, then connect them using `and`.
+The list will always have 3 elements.
+That means you don't need to use a loop.
+Remember that you can get the first element using `row[0]`.
+The first element, second element, and third element all need to be equal.
+That means the first element should be equal to the second element and also the third element.
                 """
 
         def solution(self):
-            def is_winning_row(row: List[str]):
-                if row[0] == row[1] and row[0] == row[2]:
-                    print("We have a winner!")
-                else:
-                    print("Not a winning row.")
-            return is_winning_row
+            def all_equal(row: List[str]):
+                return row[0] == row[1] and row[0] == row[2]
+
+            return all_equal
 
         tests = [
-            (["O", "O", "O"], """\
-We have a winner!
-"""),
-            (["X", "X", "X"], """\
-We have a winner!
-"""),
-            (["O", "X", "O"], """\
-Not a winning row.
-"""),
-            (["O", "O", "X"], """\
-Not a winning row.
-"""),
-            (["X", "O", "O"], """\
-Not a winning row.
-""")
+            (["O", "O", "O"], True),
+            (["X", "X", "X"], True),
+            (["O", "X", "O"], False),
+            (["O", "O", "X"], False),
+            (["X", "O", "O"], False)
         ]
+
+        @classmethod
+        def generate_inputs(cls):
+            if random.random() < 0.5:
+                row = [generate_string()] * 3
+            else:
+                row = [generate_string() for _ in range(3)]
+            return {"row": row}
+
+    final_text = """
+Good job. There are many possible correct solutions here:
+
+    def all_equal(row):
+        return row[0] == row[1] and row[0] == row[2]
+
+or using comparison chaining again:
+
+        return row[0] == row[1] == row[2]
+
+or check that it's equal to a list containing the first element three times:
+
+        return row == [row[0], row[0], row[0]]
+"""
+
+
+class MultiLineExpressions(Page):
+    title = "Multi-line statements"
+
+    class invalid_multiline(VerbatimStep):
+        """
+Our code lines are starting to get quite long.
+Thankfully Python offers a few ways to spread out one statement across many lines,
+but it's not automatic. You have to make sure Python understands that's what you're doing.
+For example, this code is invalid syntax and will give you an error:
+
+__program_indented__
+        """
+        program = """\
+is_friend = name == "Alice" or
+            name == "Bob"
+"""
+
+        def check(self):
+            return "SyntaxError: invalid syntax" in self.result
+
+    class valid_multiline(VerbatimStep):
+        """
+Python tries to intepret this as two separate lines of code and gets confused. You need to tell it that
+the first line is continuing onto the second line.
+
+One way to do this is by adding `\\` at the end of the line to 'escape' the line break.
+
+Another way is to ensure that the line break is contained within some kind of brackets. Then the line
+continuation is implied because Python will wait till all brackets have been closed before
+considering a line to be complete. If you already have brackets because for example you're calling a function
+or making a list, you may not need to do anything! Otherwise you can add brackets to any expression
+to imply the line continuation.
+
+Here are some examples. Pay close attention to the details.
+
+__program_indented__
+        """
+
+        def program(self):
+            name = "Bob"
+
+            is_friend = name == "Alice" or \
+                        name == "Bob"
+            print(is_friend)
+
+            is_friend = (name == "Alice" or
+                         name == "Bob")
+            print(is_friend)
+
+            is_friend = [name == "Alice",
+                         name == "Bob"]
+            print(is_friend)
+
+            print(name == "Alice" or
+                  name == "Bob")
+
+    final_text = """
+So if you get a mysterious `SyntaxError`, make sure that you haven't improperly broken up any lines!
+    """
+
+
+class CombiningAndAndOr(Page):
+    title = "Combining `and` and `or`"
 
     class CombiningAndOr(VerbatimStep):
         """
-Good job. There are many possible correct solutions here. One solution:
+If you use both `and` and `or` in a single expression, it's a lot like combining `*` and `+`.
+The operators are evaluated in a specific order.
 
-    def is_winning_row(row):
-        if row[0] == row[1] and row[0] == row[2]:
-            print("We have a winner!")
-        else:
-            print("Not a winning row.")
-
-Another one is by using a list of the winning lists to do the check:
-
-    if row in [["X", "X", "X"], ["O", "O", "O"]]:
-
-Before we expand this idea to the whole tic-tac-toe board,
-let's explore how `and` and `or` interact when combined, using 3 booleans.
-Which one has higher priority? Try the following code in the shell.
+For example, try the following code in the shell.
 What do you expect?
 
 __program_indented__
         """
+
+        expected_code_source = "shell"
         program = "True or False and False"
 
-    class AndHasHigherPriority(VerbatimStep):
+    class AndHasHigherPriority(ExerciseStep):
         """
-If you read it casually from left to right, you may think:
-
-- `True or False` would evaluate to `True`,
-- then it would reduce to `True and False`, which evaluates to `False`.
-
-However, this is not the case! Because `and` has a higher priority in evaluation than `or`, so
+If you read it casually from left to right, you may think that:
 
     True or False and False
 
 is equivalent to
 
+    (True or False) and False
+
+but it's actually equivalent to
+
     True or (False and False)
 
-which evaluates to `True` (what's in parentheses will be evaluated first).
+This is because `and` has a higher priority than `or`.
+This is important because the first interpretation reduces to `True and False` which is `False`, while the second
+interpretation reduces to `True or False` which is `True`!
+You can try both options with parentheses in the shell to confirm.
 
-So we should always use parentheses to be safe.
+**The lesson here is to be extra careful when combining operators.** Either add parentheses to be safe or
+break up your expression into smaller parts and assign each part to a variable.
+This will make your code clear, readable, and unambiguous, and will save you from painful mistakes.
 
-Now evaluate in the shell the command:
+Time for an exercise. Suppose you're writing a program to play tic-tac-toe,
+also known as noughts and crosses or Xs and Os. If you've never heard of tic-tac-toe, you can read the rules
+and play a few games [here](https://gametable.org/games/tic-tac-toe/).
 
-__program_indented__
-        """
-        program = "(True or False) and False"
+We need to check if someone has won a game. Our function `all_equal` is already helpful for checking rows.
 
-    final_text = """
-Therefore we should play it safe and always use parentheses to indicate
-which priority we intend with our code when there is ambiguity.
-    """
+Write a function to check if someone has won a game by placing 3 of the same pieces on one of the diagonal lines.
+The board is given as 3 lists of 3 strings each, and the function should return a boolean.
 
+    def diagonal_winner(row1, row2, row3):
+        ...
 
-class MultiLineExpressions(Page):
-    class TrueOrFalseAndFalse(VerbatimStep):
-        """
-Our code for checking a tic-tac-toe board will get quite long.
-Thankfully Python allows us to write a single, long expression on multiple lines,
-as long as it is within parentheses.
-We can go to the next line right after a boolean operator.
-Type and run this code in the editor:
+    assert_equal(
+        diagonal_winner(
+            ['X', 'O', 'X'],
+            ['X', 'X', 'O'],
+            ['O', 'O', 'X']
+        ),
+        True
+    )
 
-    print(True or
-    False and
-    False)
-        """
-        program_in_text = False
-        program = "print(True or False and False)"
+    assert_equal(
+        diagonal_winner(
+            ['X', 'X', 'O'],
+            ['X', 'O', 'O'],
+            ['O', 'X', 'X']
+        ),
+        True
+    )
 
-    final_text = """
-Remember to always wrap your multi-line expressions inside parentheses to be safe.
-    """
-
-
-class CombiningAndWithOr(Page):
-    class DiagonalWinnerExercise(ExerciseStep):
-        """
-Exercise: write a function `diagonal_winner` to check if there's a diagonal winner on a tic-tac-toe board.
-As before, the board is given as 3 rows: `row1, row2, row3`, which the function takes as arguments.
-Print out `X wins!` or `O wins!` depending on which player has a winning diagonal.
-Otherwise print `No winners.`
-For example, if
-
-    row1 = ["X", "O", "X"]
-    row2 = ["X", "X", "O"]
-    row3 = ["O", "O", "X"]
-
-then `diagonal_winner(row1, row2, row3)` should print `X wins!`
+    assert_equal(
+        diagonal_winner(
+            ['O', 'X', 'O'],
+            ['X', 'X', 'X'],
+            ['O', 'O', 'X']
+        ),
+        False
+    )
         """
         hints = """
-How many diagonals are there on the board? What do they have in common?
+How many diagonals are there on the board?
 Which entries of `row1, row2, row3` make up each diagonal?
-Similar to how we checked a row, check that the 3 entries on a diagonal are equal to each other, using `and`.
+Every list always has 3 entries, so no need for a loop.
+There are two problems to solve here: checking for a win in a specific diagonal, and combining the checks for each diagonal.
+One problem can be solved using `and`, the other using `or`.
+There's a lot of similarity with the `all_equal` function. You can even call that function to help! But then you have to include its definition.
+Similar to `all_equal`, check that the 3 entries on a diagonal are equal to each other, e.g. by using `and`.
 Check the two diagonals together, using `or`.
-Use a multi-line boolean expression where `if` contains lines that are connected with `or`. Only 2 lines 
-needed. Take care of your parentheses carefully!
-Don't forget the `else` part!
         """
 
-        def solution():
-            @returns_stdout
-            def diagonal_winner(_, row1: List[str], row2: List[str], row3: List[str]):
+        # TODO disallow multiple ifs
+
+        def solution(self):
+            def diagonal_winner(row1: List[str], row2: List[str], row3: List[str]):
                 middle = row2[1]
-                if (
-                    (middle == row1[0] and middle == row3[2]) or
-                    (middle == row1[2] and middle == row3[0])
-                ):
-                    print(middle + " wins!")
-                else:
-                    print("No winners.")
+                return (
+                        (middle == row1[0] and middle == row3[2]) or
+                        (middle == row1[2] and middle == row3[0])
+                )
+
             return diagonal_winner
 
         @classmethod
@@ -542,29 +604,32 @@ Don't forget the `else` part!
             }
 
         tests = [
-            ((["X", "O", "X"], ["X", "X", "O"], ["O", "O", "X"]), """\
-X wins!
-"""),
-            ((["X", "O", "O"], ["X", "O", "X"], ["O", "X", "X"]), """\
-O wins!
-"""),
-            ((["X", "O", "X"], ["X", "O", "X"], ["O", "O", "X"]), """\
-No winners.
-"""),
+            ((["X", "O", "X"],
+              ["X", "X", "O"],
+              ["O", "O", "X"]), True),
+            ((["X", "O", "O"],
+              ["X", "O", "X"],
+              ["O", "X", "X"]), True),
+            ((["X", "O", "X"],
+              ["X", "O", "X"],
+              ["O", "O", "X"]), False),
         ]
 
     final_text = """
-Well done! This was a hard one. One possible solution looks like this:
+Well done! This was a hard one. Here are some possible solutions:
 
     def diagonal_winner(row1, row2, row3):
         middle = row2[1]
-        if (
+        return (
             (middle == row1[0] and middle == row3[2]) or
             (middle == row1[2] and middle == row3[0])
-        ):
-            print(middle + " wins!")
-        else:
-            print("No winners.")
+        )
+
+or:
+
+        diagonal1 = all_equal([row1[0], row2[1], row3[2]])
+        diagonal2 = all_equal([row3[0], row2[1], row1[2]])
+        return diagonal1 or diagonal2
 """
 
 
@@ -640,8 +705,8 @@ This is longer than it needs to be. Rewrite `invalid_image` so that the body is 
 i.e. no `if` statement. It should pass the same tests.
         """
 
-        def solution():
-            def invalid_image(_, filename: str):
+        def solution(self):
+            def invalid_image(filename: str):
                 return not (filename.endswith(".png") or filename.endswith(".jpg"))
             return invalid_image
 
