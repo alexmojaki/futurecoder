@@ -43,6 +43,8 @@ class StepsTestCase(TestCase):
                         page_index=page_index,
                         step_index=step_index,
                     )
+                    if "state" not in response:
+                        self.fail(response)
                     state = response.pop("state")
                     for line in response["result"]:
                         line["text"] = normalise_output(line["text"])

@@ -2,7 +2,7 @@
 import ast
 from textwrap import dedent
 
-from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep
+from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast
 
 
 class IntroducingForLoops(Page):
@@ -521,7 +521,7 @@ Note that there is a space between the name and the pipes (`|`).
             after_success = True
 
             def check(self):
-                return sum(isinstance(node, ast.For) for node in ast.walk(self.tree)) > 1
+                return search_ast(self.tree, ast.For) > 1
 
             def solution(self, name: str):
                 line = ''
@@ -596,11 +596,11 @@ b   b
             after_success = True
 
             def check(self):
-                for outer in ast.walk(self.tree):
-                    if isinstance(outer, ast.For):
-                        for inner in ast.walk(outer):
-                            if isinstance(inner, ast.For) and outer != inner:
-                                return True
+                return search_ast(
+                    self.tree,
+                    ast.For,
+                    lambda outer: search_ast(outer, ast.For)
+                )
 
             def solution(self, name: str):
                 line = '+' + name + '+'

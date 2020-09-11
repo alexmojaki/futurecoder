@@ -405,9 +405,21 @@ class MessageStep(Step, ABC):
         return cls(*step.args).check()
 
 
-def search_ast(node, template):
-    return any(
-        is_ast_like(child, template)
+def search_ast(node, template, predicate=lambda n: True):
+    """
+    Returns the number of descendants of `node` that match `template`
+    (either a type or tuple that is passed to `isinstance`,
+    or a partial AST that is passed to `is_ast_like`)
+    and satisfy the optional predicate.
+    """
+    return sum(
+        (
+            isinstance(child, template)
+            if isinstance(template, (type, tuple)) else
+            is_ast_like(child, template)
+        )
+        and predicate(child)
+        and child != node
         for child in ast.walk(node)
     )
 

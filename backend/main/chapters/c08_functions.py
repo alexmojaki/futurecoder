@@ -4,7 +4,7 @@ import inspect
 from textwrap import indent
 
 from main.exercises import assert_equal
-from main.text import ExerciseStep, Page, VerbatimStep, MessageStep
+from main.text import ExerciseStep, Page, VerbatimStep, MessageStep, search_ast
 
 
 class DefiningFunctions(Page):
@@ -384,9 +384,9 @@ Make sure that you don't call `quadruple` inside the function body of `quadruple
             after_success = True
 
             def check(self):
-                return any(
-                    isinstance(node, (ast.Mult, ast.Add, ast.Num))
-                    for node in ast.walk(self.function_tree)
+                return search_ast(
+                    self.function_tree,
+                    (ast.Mult, ast.Add, ast.Num)
                 )
 
             def solution(self):
@@ -571,11 +571,10 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
             after_success = True
 
             def check(self):
-                return any(
-                    isinstance(node, (ast.Mod, ast.Add, ast.Mult, ast.JoinedStr))
-                    or getattr(node, "attr", "") == "format"
-                    or getattr(node, "id", "") == "format"
-                    for node in ast.walk(self.function_tree)
+                return (
+                    search_ast(self.function_tree, (ast.Mod, ast.Add, ast.Mult, ast.JoinedStr)) or
+                    search_ast(self.function_tree, ast.Name, lambda node: node.id == "format") or
+                    search_ast(self.function_tree, ast.Attribute, lambda node: node.attr == "format")
                 )
 
             def solution(self):

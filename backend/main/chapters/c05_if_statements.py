@@ -287,10 +287,7 @@ class too_many_compound(MessageStep, ExerciseStep, ABC):
 
     def check(self):
         return any(
-            sum(
-                isinstance(node, typ)
-                for node in ast.walk(self.tree)
-            ) > 1
+            search_ast(self.tree, typ) > 1
             for typ in [ast.If, ast.For]
         )
 
@@ -820,7 +817,7 @@ The opposite of the equals operator `==` is the *not equals* operator `!=`. If y
         expected_code_source = "shell"
 
         def check(self):
-            return search_ast(self.tree, ast.NotEq())
+            return search_ast(self.tree, ast.NotEq)
 
     class brokn_kyboard(VerbatimStep):
         """
