@@ -7,6 +7,7 @@ import threading
 import traceback
 import xml.etree.ElementTree as etree
 from functools import lru_cache, partial
+from html import unescape
 from io import StringIO
 
 import pygments
@@ -150,12 +151,13 @@ class HighlightPythonExtension(Extension):
 class HighlightPythonTreeProcessor(Treeprocessor):
     def run(self, root):
         for node in root.findall(".//pre/code"):
+            text = unescape(node.text)
             try:
-                ast.parse(node.text)
+                ast.parse(text)
             except SyntaxError:
                 continue
 
-            highlighted = pygments.highlight(node.text, lexer, html_formatter)
+            highlighted = pygments.highlight(text, lexer, html_formatter)
             tail = node.tail
             node.clear()
             node.set("class", "codehilite")
