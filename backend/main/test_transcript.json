@@ -1460,58 +1460,6 @@
         "step": "name_box"
     },
     {
-        "page": "Building Up Strings Exercises",
-        "program": [
-            "name = 'World'",
-            "line = ''",
-            "for _ in name:",
-            "    line += '-'",
-            "line = '+-' + line + '-+'",
-            "print(line)",
-            "print('| ' + name + ' |')",
-            "line = ''",
-            "for _ in name:",
-            "    line += '-'",
-            "line = '+-' + line + '-+'",
-            "print(line)"
-        ],
-        "response": {
-            "message": "<p>Well done, this solution is correct! However, it can be improved.\nYou only need to use one loop - using more is inefficient.\nYou can reuse the variable containing the line of <code>-</code> and <code>+</code>.</p>",
-            "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": "+-------+"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "| World |"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "+-------+"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "name_box"
-    },
-    {
         "get_solution": [
             "line = ''",
             "for _ in name:",
@@ -1567,88 +1515,6 @@
             ]
         },
         "step": "name_box"
-    },
-    {
-        "page": "Building Up Strings Exercises",
-        "program": [
-            "name = 'World'",
-            "line = '+' + name + '+'",
-            "print(line)",
-            "for char in name:",
-            "    inner_line = char",
-            "    for _ in name:",
-            "        inner_line += ' '",
-            "    inner_line += char",
-            "    print(inner_line)",
-            "print(line)"
-        ],
-        "response": {
-            "message": "<p>Well done, this solution is correct!\nAnd you used a nested loop (a loop inside a loop) which we haven't even covered yet!\nHowever, in this case a nested loop is inefficient.\nYou can make a variable containing spaces and reuse that in each line.</p>",
-            "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": "+World+"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "W     W"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "o     o"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "r     r"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "l     l"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "d     d"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "+World+"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "name_box_2"
     },
     {
         "get_solution": [
@@ -2565,46 +2431,6 @@
         "step": "else_full_stop"
     },
     {
-        "page": "<code>if</code> and <code>else</code>",
-        "program": [
-            "sentence = 'HELLO THERE'",
-            "new_sentence = ''",
-            "",
-            "include = True",
-            "for char in sentence:",
-            "    if include:",
-            "        new_sentence += char.upper()",
-            "    include = False",
-            "",
-            "include = False",
-            "for char in sentence:",
-            "    if include:",
-            "        new_sentence += char.lower()",
-            "    include = True",
-            "",
-            "print(new_sentence)"
-        ],
-        "response": {
-            "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
-            "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": "Hello there"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "capitalise"
-    },
-    {
         "get_solution": [
             "upper = True",
             "new_sentence = ''",
@@ -2652,46 +2478,6 @@
             ]
         },
         "step": "capitalise"
-    },
-    {
-        "page": "<code>if</code> and <code>else</code>",
-        "program": [
-            "sentence = 'One more exercise, and then you can relax.'",
-            "upper = True",
-            "new_sentence = ''",
-            "for char in sentence:",
-            "    if upper:",
-            "        char = char.upper()",
-            "    else:",
-            "        char = char.lower()",
-            "",
-            "    if upper:",
-            "        upper = False",
-            "    else:",
-            "        upper = True",
-            "    new_sentence += char",
-            "",
-            "print(new_sentence)"
-        ],
-        "response": {
-            "message": "<p>Well done, this solution is correct!\nHowever, it can be improved. You only need to use one loop and one <code>if/else</code>.</p>",
-            "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": "OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX."
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "spongebob"
     },
     {
         "get_solution": [

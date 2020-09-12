@@ -243,6 +243,7 @@ class Disallowed:
                 label = f"more than {max_count} {label}"
             message = "Well done, you have found a solution! However, for this exercise and your learning, " \
                       f"you're not allowed to use {label}."
+        message = dedent(message).strip()
         self.template = template
         self.message = message
         self.max_count = max_count

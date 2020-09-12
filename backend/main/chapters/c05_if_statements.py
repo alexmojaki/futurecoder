@@ -1,10 +1,9 @@
 # flake8: NOQA E501
 import ast
 import random
-from abc import ABC
 from textwrap import dedent
 
-from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast
+from main.text import ExerciseStep, Page, Step, VerbatimStep, search_ast, Disallowed
 
 
 class IntroducingIfStatements(Page):
@@ -278,20 +277,6 @@ Great job! You're working with increasingly complex programs.
 """
 
 
-class too_many_compound(MessageStep, ExerciseStep, ABC):
-    text = """
-    Well done, this solution is correct!
-    However, it can be improved. You only need to use one loop and one `if/else`.
-    """
-    after_success = True
-
-    def check(self):
-        return any(
-            search_ast(self.tree, typ) > 1
-            for typ in [ast.If, ast.For]
-        )
-
-
 class IfAndElse(Page):
     title = "`if` and `else`"
 
@@ -451,23 +436,10 @@ In the first iteration you need an uppercase letter. In the following iterations
             'goodbye': 'Goodbye',
         }
 
-        class two_loops(too_many_compound):
-            def solution(self, sentence: str):
-                new_sentence = ''
-
-                include = True
-                for char in sentence:
-                    if include:
-                        new_sentence += char.upper()
-                    include = False
-
-                include = False
-                for char in sentence:
-                    if include:
-                        new_sentence += char.lower()
-                    include = True
-
-                print(new_sentence)
+        disallowed = [
+            Disallowed(ast.For, max_count=1, label="`for`"),
+            Disallowed(ast.If, max_count=1, label="`if/else`"),
+        ]
 
     class spongebob(ExerciseStep):
         """
@@ -508,23 +480,10 @@ Combine that flipping `if/else` with the one that chooses an uppercase or lowerc
             'One more exercise, and then you can relax.': 'OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.',
         }
 
-        class two_ifs(too_many_compound):
-            def solution(self, sentence: str):
-                upper = True
-                new_sentence = ''
-                for char in sentence:
-                    if upper:
-                        char = char.upper()
-                    else:
-                        char = char.lower()
-
-                    if upper:
-                        upper = False
-                    else:
-                        upper = True
-                    new_sentence += char
-
-                print(new_sentence)
+        disallowed = [
+            Disallowed(ast.For, max_count=1, label="`for`"),
+            Disallowed(ast.If, max_count=1, label="`if/else`"),
+        ]
 
     final_text = """
 Perfect! Take a moment to be proud of what you've achieved. Can you feel your brain growing?
