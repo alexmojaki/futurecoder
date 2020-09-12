@@ -9,6 +9,7 @@ import xml.etree.ElementTree as etree
 from functools import lru_cache, partial
 from html import unescape
 from io import StringIO
+from textwrap import dedent
 
 import pygments
 import stack_data
@@ -160,7 +161,11 @@ class HighlightPythonTreeProcessor(Treeprocessor):
     def run(self, root):
         for node in root.findall(".//pre/code"):
             text = unescape(node.text)
-            if not (is_valid_syntax(text) or is_valid_syntax(text + "\n 0")):
+            if not (
+                    is_valid_syntax(text) or
+                    is_valid_syntax(text + "\n 0") or
+                    is_valid_syntax(dedent(text))
+            ):
                 continue
 
             highlighted = pygments.highlight(text, lexer, html_formatter)
