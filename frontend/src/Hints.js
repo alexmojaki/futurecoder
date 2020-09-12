@@ -88,17 +88,19 @@ const ConfirmSolution = () => <>
 const Solution = ({solution}) =>
   <div>
     <pre>
-    {solution.tokens.map((token, tokenIndex) =>
-      <span
-        className={
-          `solution-token-${solution.mask[tokenIndex]
-            ? "hidden" : "visible"}`
-        }
-        key={tokenIndex}
-      >
-        {token}
-      </span>
-    )}
+      <code>
+        {solution.tokens.map((token, tokenIndex) =>
+          <span
+            className={
+              `solution-token-${solution.mask[tokenIndex]
+                ? "hidden" : "visible"}`
+            }
+            key={tokenIndex}
+          >
+            {token}
+          </span>
+        )}
+    </code>
     </pre>
     {solution.maskedIndices.length > 0 &&
     <p>

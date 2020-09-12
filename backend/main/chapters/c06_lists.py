@@ -445,8 +445,8 @@ By the way, indexing and `len()` also work on strings. Try them out in the shell
 
 Here's another exercise. Given two strings of equal length, e.g:
 
-    string1 = "Hello"
-    string2 = "World"
+    string1 = 'Hello'
+    string2 = 'World'
 
 print them vertically side by side, with a space between each character:
 
@@ -519,8 +519,8 @@ Your next challenge is to fix this problem by filling in 'missing' characters wi
 
 For example, for:
 
-    string1 = "Goodbye"
-    string2 = "World"
+    string1 = 'Goodbye'
+    string2 = 'World'
 
 output:
 
@@ -534,8 +534,8 @@ output:
 
 and for:
 
-    string1 = "Hello"
-    string2 = "Elizabeth"
+    string1 = 'Hello'
+    string2 = 'Elizabeth'
 
 output:
 
