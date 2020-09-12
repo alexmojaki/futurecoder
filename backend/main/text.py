@@ -5,11 +5,12 @@ import inspect
 import re
 from abc import ABC, abstractmethod
 from copy import deepcopy
+from functools import cached_property
 from importlib import import_module
 from pathlib import Path
 from textwrap import dedent, indent
 from types import FunctionType
-from typing import Type, Union, get_type_hints
+from typing import Type, Union, get_type_hints, List
 
 from astcheck import is_ast_like
 from asttokens import ASTTokens
@@ -234,6 +235,21 @@ class Page(metaclass=PageMeta):
         return cls.index
 
 
+class Disallowed:
+    def __init__(self, template, *, label="", message="", max_count=0, predicate=lambda n: True, function_only=False):
+        assert bool(label) ^ bool(message)
+        if not message:
+            if max_count > 0:
+                label = f"more than {max_count} {label}"
+            message = "Well done, you have found a solution! However, for this exercise and your learning, " \
+                      f"you're not allowed to use {label}."
+        self.template = template
+        self.message = message
+        self.max_count = max_count
+        self.predicate = predicate
+        self.function_only = function_only
+
+
 class Step(ABC):
     text = ""
     program = ""
@@ -243,6 +259,7 @@ class Step(ABC):
     messages = ()
     tests = {}
     expected_code_source = None
+    disallowed: List[Disallowed] = []
 
     def __init__(self, *args):
         self.args = args
@@ -258,13 +275,21 @@ class Step(ABC):
         for message_cls in self.messages:
             if result == message_cls.after_success and message_cls.check_message(self):
                 return message_cls.message()
+        if result is True:
+            for d in self.disallowed:
+                if search_ast(
+                    self.function_tree if d.function_only else self.tree,
+                    d.template,
+                    d.predicate
+                ) > d.max_count:
+                    return dict(message=d.message)
         return result
 
     @abstractmethod
     def check(self) -> Union[bool, dict]:
         raise NotImplementedError
 
-    @property
+    @cached_property
     def tree(self):
         return ast.parse(self.input)
 
@@ -293,7 +318,7 @@ class Step(ABC):
             inp = re.sub(r'\s', '', inp)
         return re.match(pattern + '$', inp)
 
-    @property
+    @cached_property
     def function_tree(self):
         # We define this here so MessageSteps implicitly inheriting from ExerciseStep don't complain it doesn't exist
         # noinspection PyUnresolvedReferences
