@@ -142,8 +142,7 @@ __program_indented__
             if excited:
                 new_sentence = ''
                 for char in sentence:
-                    new_sentence += char
-                    new_sentence += '!'
+                    new_sentence += char + '!'
                 sentence = new_sentence
 
             print(sentence)
