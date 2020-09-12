@@ -5,6 +5,7 @@ import re
 import sys
 import threading
 import traceback
+import xml.etree.ElementTree as etree
 from functools import lru_cache, partial
 from io import StringIO
 
@@ -17,7 +18,6 @@ from markdown.treeprocessors import Treeprocessor
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
-import xml.etree.ElementTree as etree
 
 lexer = get_lexer_by_name("python3")
 monokai = get_style_by_name("monokai")
@@ -149,7 +149,7 @@ class HighlightPythonExtension(Extension):
 
 class HighlightPythonTreeProcessor(Treeprocessor):
     def run(self, root):
-        for node in root.iter("code"):
+        for node in root.findall(".//pre/code"):
             try:
                 ast.parse(node.text)
             except SyntaxError:
