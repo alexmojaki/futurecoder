@@ -15,7 +15,6 @@ from typing import Type, Union, get_type_hints, List
 from astcheck import is_ast_like
 from asttokens import ASTTokens
 from littleutils import setattrs, only
-from markdown import markdown
 
 from main.exercises import (
     check_exercise,
@@ -23,7 +22,8 @@ from main.exercises import (
     generate_for_type,
     inputs_string,
 )
-from main.utils import no_weird_whitespace, snake, unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
+from main.utils import no_weird_whitespace, snake, unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self, \
+    highlighted_markdown
 
 
 def clean_program(program, cls):
@@ -90,7 +90,7 @@ def clean_step_class(cls, clean_inner=True):
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
-    hints = [markdown(hint) for hint in hints]
+    hints = [highlighted_markdown(hint) for hint in hints]
 
     if "__program_" in text:
         text = text.replace("__program__", program)
@@ -102,7 +102,7 @@ def clean_step_class(cls, clean_inner=True):
 
     assert "__program_" not in text
 
-    text = markdown(dedent(text).strip())
+    text = highlighted_markdown(dedent(text).strip())
 
     messages = []
     if clean_inner:
@@ -165,7 +165,7 @@ class PageMeta(type):
 
         assert isinstance(cls.final_text, str)
         no_weird_whitespace(cls.final_text)
-        cls.final_text = markdown(cls.final_text.strip())
+        cls.final_text = highlighted_markdown(cls.final_text.strip())
         cls.step_names.append("final_text")
         cls.step_texts.append(cls.final_text)
 

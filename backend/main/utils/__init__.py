@@ -1,22 +1,29 @@
+import ast
 import functools
 import os
 import re
 import sys
 import threading
 import traceback
+import xml.etree.ElementTree as etree
 from functools import lru_cache, partial
+from html import unescape
 from io import StringIO
+from textwrap import dedent
 
+import pygments
 import stack_data
 from littleutils import strip_required_prefix, strip_required_suffix, withattrs
 from markdown import markdown
+from markdown.extensions import Extension
+from markdown.treeprocessors import Treeprocessor
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
 
-get_lexer_by_name("python3")
-get_style_by_name("monokai")
-str(HtmlFormatter)
+lexer = get_lexer_by_name("python3")
+monokai = get_style_by_name("monokai")
+html_formatter = HtmlFormatter(nowrap=True)
 
 internal_dir = os.path.dirname(os.path.dirname(
     (lambda: 0).__code__.co_filename
@@ -84,7 +91,7 @@ assert snake('fooBar') == snake('FooBar') == 'foo_bar'
 
 
 def unwrapped_markdown(s):
-    s = markdown(s)
+    s = highlighted_markdown(s)
     s = strip_required_prefix(s, "<p>")
     s = strip_required_suffix(s, "</p>")
     return s
@@ -135,3 +142,39 @@ def thread_separate_lru_cache(*cache_args, **cache_kwargs):
         return wrapper
 
     return decorator
+
+
+class HighlightPythonExtension(Extension):
+    def extendMarkdown(self, md):
+        md.treeprocessors.register(HighlightPythonTreeProcessor(), "highlight_python", 0)
+
+
+def is_valid_syntax(text):
+    try:
+        ast.parse(text)
+        return True
+    except SyntaxError:
+        return False
+
+
+class HighlightPythonTreeProcessor(Treeprocessor):
+    def run(self, root):
+        for node in root.findall(".//pre/code"):
+            text = unescape(node.text)
+            if not (
+                    is_valid_syntax(text) or
+                    is_valid_syntax(text + "\n 0") or
+                    is_valid_syntax(dedent(text))
+            ):
+                continue
+
+            highlighted = pygments.highlight(text, lexer, html_formatter)
+            tail = node.tail
+            node.clear()
+            node.set("class", "codehilite")
+            node.append(etree.fromstring(f"<span>{highlighted}</span>"))
+            node.tail = tail
+
+
+def highlighted_markdown(text):
+    return markdown(text, extensions=[HighlightPythonExtension()])

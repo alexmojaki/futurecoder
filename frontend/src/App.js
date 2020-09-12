@@ -2,6 +2,7 @@ import React from 'react';
 import Terminal from './shell/Terminal';
 import {rpc} from "./rpc";
 import "./css/main.scss"
+import "./css/pygments.css"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
 import {bookSetState, bookState, closeMessage, movePage, moveStep, ranCode, setDeveloperMode, stepIndex} from "./book/store";
@@ -205,6 +206,7 @@ class AppComponent extends React.Component {
                 editor.renderer.setScrollMargin(10);
                 editor.renderer.setPadding(10);
               }}
+              fontSize="12pt"
             />
           </div>
           <div className="terminal">

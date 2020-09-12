@@ -55,7 +55,7 @@
             "3 x 4"
         ],
         "response": {
-            "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n\n<pre><code>3 * 4\n</code></pre>",
+            "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
             "passed": false,
             "result": [
                 {
@@ -1908,8 +1908,7 @@
             "if excited:",
             "    new_sentence = ''",
             "    for char in sentence:",
-            "        new_sentence += char",
-            "        new_sentence += '!'",
+            "        new_sentence += char + '!'",
             "    sentence = new_sentence",
             "",
             "print(sentence)"

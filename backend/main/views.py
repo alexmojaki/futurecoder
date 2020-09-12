@@ -23,11 +23,11 @@ from django.views import View
 from django.views.generic import CreateView
 from django_user_agents.utils import get_user_agent
 from littleutils import select_attrs, only
-from markdown import markdown
 from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
 from main.text import ExerciseStep, clean_program, page_slugs_list, pages, clean_solution_function
+from main.utils import highlighted_markdown
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
 
@@ -131,7 +131,7 @@ class API:
 
         return dict(
             result=output_parts,
-            message=markdown(result["message"]),
+            message=highlighted_markdown(result["message"]),
             state=self.current_state(),
             birdseye_url=birdseye_url,
             passed=passed,
