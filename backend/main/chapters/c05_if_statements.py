@@ -829,7 +829,7 @@ __program_indented__
         """
 
         def program(self):
-            sentence = "The e key on my keyboard is broken"
+            sentence = 'The e key on my keyboard is broken'
             new_sentence = ''
             for c in sentence:
                 if c != 'e':
@@ -858,22 +858,20 @@ Here's a practical example of `<` in action for you to try:
 
 __program_indented__
 
-Recall that `elif percentage < 40` after `if percentage < 20` means "if the percentage wasn't less than 20 and also is less than 40", so it will pass for all numbers from 20 to 39 inclusive. Similarly a 'C' is for percentages from 40 to 59, and an 'A' is for any number 80 and up.
+Recall that `elif percentage < 60` after `if percentage < 40` means "if the percentage wasn't less than 40 and also is less than 60", so it will pass for all numbers from 40 to 59 inclusive. Similarly a 'B' is for percentages from 60 to 79, and an 'A' is for any number 80 and up.
         """
 
         def program(self):
             percentage = 73
 
-            if percentage < 20:
-                grade = "F"
-            elif percentage < 40:
-                grade = "D"
+            if percentage < 40:
+                grade = 'F'
             elif percentage < 60:
-                grade = "C"
+                grade = 'C'
             elif percentage < 80:
-                grade = "B"
+                grade = 'B'
             else:
-                grade = "A"
+                grade = 'A'
 
             print(grade)
 
