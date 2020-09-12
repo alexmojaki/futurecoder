@@ -148,13 +148,19 @@ class HighlightPythonExtension(Extension):
         md.treeprocessors.register(HighlightPythonTreeProcessor(), "highlight_python", 0)
 
 
+def is_valid_syntax(text):
+    try:
+        ast.parse(text)
+        return True
+    except SyntaxError:
+        return False
+
+
 class HighlightPythonTreeProcessor(Treeprocessor):
     def run(self, root):
         for node in root.findall(".//pre/code"):
             text = unescape(node.text)
-            try:
-                ast.parse(text)
-            except SyntaxError:
+            if not (is_valid_syntax(text) or is_valid_syntax(text + "\n 0")):
                 continue
 
             highlighted = pygments.highlight(text, lexer, html_formatter)
