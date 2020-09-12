@@ -155,7 +155,7 @@ class HighlightPythonTreeProcessor(Treeprocessor):
             except SyntaxError:
                 continue
 
-            highlighted = pygments.highlight(node.text, lexer, html_formatter).strip()
+            highlighted = pygments.highlight(node.text, lexer, html_formatter)
             tail = node.tail
             node.clear()
             node.set("class", "codehilite")
