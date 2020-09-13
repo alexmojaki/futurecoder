@@ -288,7 +288,7 @@ You can use snoop to see the difference.
 
 
 class GettingElementsAtPosition(Page):
-    title = "Getting Elements at a Position"
+    title = "Getting elements at a position, `range()`, and `len()`"
 
     class introducing_subscripting(VerbatimStep):
         """

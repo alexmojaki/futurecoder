@@ -3267,7 +3267,7 @@
         "step": "list_contains_exercise"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -3321,7 +3321,7 @@
         "step": "introducing_subscripting"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words[4]"
         ],
@@ -3354,7 +3354,7 @@
         "step": "index_error"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "for i in range(10):",
             "    print(i)"
@@ -3452,7 +3452,7 @@
         "step": "introducing_len_and_range"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -3537,7 +3537,7 @@
         "step": "range_len"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -3574,7 +3574,7 @@
         "step": "index_exercise"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -3611,7 +3611,7 @@
             "        print(i)",
             "        break"
         ],
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -3647,7 +3647,7 @@
             "    char2 = string2[i]",
             "    print(char1 + ' ' + char2)"
         ],
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "string1 = 'Hello'",
             "string2 = 'World'",
@@ -3731,7 +3731,7 @@
             "",
             "    print(char1 + ' ' + char2)"
         ],
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "string1 = 'Goodbye'",
             "string2 = 'World'",
