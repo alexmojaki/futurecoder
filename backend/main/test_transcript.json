@@ -4077,7 +4077,7 @@
         "get_solution": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
-        "page": "Functions And Methods For Lists",
+        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
@@ -4107,7 +4107,7 @@
             "nums.insert(2, 9)",
             "print(nums)"
         ],
-        "page": "Functions And Methods For Lists",
+        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
             "nums.insert(2, 9)",
@@ -4134,7 +4134,7 @@
         "step": "list_insert"
     },
     {
-        "page": "Functions And Methods For Lists",
+        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
         "program": [
             "dir([])"
         ],
@@ -4204,7 +4204,7 @@
         "step": "run_with_python_tutor"
     },
     {
-        "page": "<code>==</code> vs <code>is</code>",
+        "page": "<code>==</code> vs <code>is</code>, and Having Multiple Names for One Value",
         "program": [
             "list1 = [1, 2, 3]",
             "list2 = [1, 2, 3]",
@@ -4281,7 +4281,7 @@
         "step": "two_separate_lists"
     },
     {
-        "page": "<code>==</code> vs <code>is</code>",
+        "page": "<code>==</code> vs <code>is</code>, and Having Multiple Names for One Value",
         "program": [
             "list1 = [1, 2, 3]",
             "list2 = list1",

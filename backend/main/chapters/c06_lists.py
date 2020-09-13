@@ -737,6 +737,7 @@ __program_indented__
 
 
 class FunctionsAndMethodsForLists(Page):
+    title = "Functions and Methods for Lists and Strings, and How to Find Information with Google and more"
 
     # TODO this is quite the information dump and I'd like it to be a little more interactive,
     # but users don't need to know these functions off by heart.
@@ -924,7 +925,7 @@ Depending on your program, the two runs may produce different results.
 
 
 class EqualsVsIs(Page):
-    title = "`==` vs `is`"
+    title = "`==` vs `is`, and Having Multiple Names for One Value"
 
     class two_separate_lists(VerbatimStep):
         """
