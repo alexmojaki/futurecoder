@@ -876,13 +876,13 @@ Note that in most cases, methods which modify a list in place (`append`, `insert
 
 Modifying a value directly is called *mutation* - types of values which can be mutated are *mutable*, while those that can't are *immutable*. Strings are immutable - they don't have any methods like `append` or even subscript assignment. You simply can't change a string - you can only create new strings and use those instead. That means that this is a useless statement on its own:
 
-    word.upper()
+    word.lower()
 
-The string referred to by `word` isn't modified, instead `word.upper()` returned a new string which was immediately discarded. If you want to change the value that `word` refers to, you have to assign a new value to the variable:
+The string referred to by `word` isn't modified, instead `word.lower()` returned a new string which was immediately discarded. If you want to change the value that `word` refers to, you have to assign a new value to the variable:
 
-    word = word.upper()
+    word = word.lower()
 
-Or you can use `word.upper()` immediately in a larger expression, e.g.
+Or you can use `word.lower()` immediately in a larger expression, e.g.
 
     if word.lower() == 'yes':
         """
