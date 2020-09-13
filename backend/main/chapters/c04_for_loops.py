@@ -2,7 +2,7 @@
 import ast
 from textwrap import dedent
 
-from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep
+from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast, Disallowed
 
 
 class IntroducingForLoops(Page):
@@ -512,29 +512,17 @@ Note that there is a space between the name and the pipes (`|`).
 """,
             }
 
-        class multiple_loops(ExerciseStep, MessageStep):
-            """
-            Well done, this solution is correct! However, it can be improved.
-            You only need to use one loop - using more is inefficient.
-            You can reuse the variable containing the line of `-` and `+`.
-            """
-            after_success = True
-
-            def check(self):
-                return sum(isinstance(node, ast.For) for node in ast.walk(self.tree)) > 1
-
-            def solution(self, name: str):
-                line = ''
-                for _ in name:
-                    line += '-'
-                line = '+-' + line + '-+'
-                print(line)
-                print('| ' + name + ' |')
-                line = ''
-                for _ in name:
-                    line += '-'
-                line = '+-' + line + '-+'
-                print(line)
+        disallowed = [
+            Disallowed(
+                ast.For,
+                max_count=1,
+                message="""
+                    Well done, this solution is correct! However, it can be improved.
+                    You only need to use one loop - using more is inefficient.
+                    You can reuse the variable containing the line of `-` and `+`.
+                    """,
+            )
+        ]
 
     class name_box_2(ExerciseStep):
         """
@@ -586,32 +574,18 @@ b   b
 """,
         }
 
-        class nested_loop(MessageStep, ExerciseStep):
-            """
-            Well done, this solution is correct!
-            And you used a nested loop (a loop inside a loop) which we haven't even covered yet!
-            However, in this case a nested loop is inefficient.
-            You can make a variable containing spaces and reuse that in each line.
-            """
-            after_success = True
-
-            def check(self):
-                for outer in ast.walk(self.tree):
-                    if isinstance(outer, ast.For):
-                        for inner in ast.walk(outer):
-                            if isinstance(inner, ast.For) and outer != inner:
-                                return True
-
-            def solution(self, name: str):
-                line = '+' + name + '+'
-                print(line)
-                for char in name:
-                    inner_line = char
-                    for _ in name:
-                        inner_line += ' '
-                    inner_line += char
-                    print(inner_line)
-                print(line)
+        disallowed = [
+            Disallowed(
+                ast.For,
+                predicate=lambda outer: search_ast(outer, ast.For),
+                message="""
+                    Well done, this solution is correct!
+                    And you used a nested loop (a loop inside a loop) which we haven't even covered yet!
+                    However, in this case a nested loop is inefficient.
+                    You can make a variable containing spaces and reuse that in each line.
+                """
+            ),
+        ]
 
     class diagonal_name_bonus_challenge(ExerciseStep):
         """

@@ -1,10 +1,11 @@
 # flake8: NOQA E501
+import ast
 from textwrap import dedent
 from typing import List
 import random
 
 from main.exercises import assert_equal, generate_string
-from main.text import ExerciseStep, Page, VerbatimStep
+from main.text import ExerciseStep, Page, VerbatimStep, Disallowed
 
 
 class IntroducingOr(Page):
@@ -243,7 +244,13 @@ You need to have a `return False` and a `return True`.
 If you have something like `x >= 0 or x <= 100`, you're on the wrong track. That's going to be true for *any* value of `x`. After all, 101 is greater than 0!
         """
 
-        # TODO disallow and, in, chaining, and multiple ifs
+        disallowed = [
+            Disallowed(ast.And, label="`and`"),
+            Disallowed(ast.In, label="`in`"),
+            Disallowed(ast.If, label="`if`", max_count=1),
+            Disallowed(ast.Compare, label="comparison chaining", predicate=lambda node: len(node.ops) > 1),
+        ]
+
         # TODO catch wrong comparisons
 
         def solution(self):
@@ -328,7 +335,11 @@ You will have to reverse the `return` statements accordingly.
 You will have to change the comparison operators too.
         """
 
-        # TODO disallow or, in, multiple ifs
+        disallowed = [
+            Disallowed(ast.Or, label="`or`"),
+            Disallowed(ast.In, label="`in`"),
+            Disallowed(ast.If, label="`if`", max_count=1),
+        ]
 
         def solution(self):
             def is_valid_percentage(x: int):
@@ -583,7 +594,9 @@ Similar to `all_equal`, check that the 3 entries on a diagonal are equal to each
 Check the two diagonals together, using `or`.
         """
 
-        # TODO disallow multiple ifs
+        disallowed = [
+            Disallowed(ast.If, label="`if`"),
+        ]
 
         def solution(self):
             def diagonal_winner(row1: List[str], row2: List[str], row3: List[str]):
@@ -750,11 +763,14 @@ i.e. no `if` statement. It should pass the same tests.
             "Remember what `not` does?",
         ]
 
-        # TODO disallow if, otherwise the solution in the text works!
+        disallowed = [
+            Disallowed(ast.If, label="`if`"),
+        ]
 
         def solution(self):
             def invalid_image(filename: str):
                 return not (filename.endswith(".png") or filename.endswith(".jpg"))
+
             return invalid_image
 
         tests = {
