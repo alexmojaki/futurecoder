@@ -60,6 +60,8 @@ class word_must_be_hello(VerbatimStep):
 
 
 class UsingVariables(Page):
+    title = "Using Variables and `print()`"
+
     class name_assign(Step):
         """
 Previously we made a variable called `word` with the value `'Hello'` with this code:

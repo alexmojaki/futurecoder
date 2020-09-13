@@ -288,7 +288,7 @@ You can use snoop to see the difference.
 
 
 class GettingElementsAtPosition(Page):
-    title = "Getting Elements at a Position"
+    title = "Getting elements at a position, `range()`, and `len()`"
 
     class introducing_subscripting(VerbatimStep):
         """
@@ -737,6 +737,7 @@ __program_indented__
 
 
 class FunctionsAndMethodsForLists(Page):
+    title = "Functions and Methods for Lists and Strings, and How to Find Information with Google and more"
 
     # TODO this is quite the information dump and I'd like it to be a little more interactive,
     # but users don't need to know these functions off by heart.
@@ -876,13 +877,13 @@ Note that in most cases, methods which modify a list in place (`append`, `insert
 
 Modifying a value directly is called *mutation* - types of values which can be mutated are *mutable*, while those that can't are *immutable*. Strings are immutable - they don't have any methods like `append` or even subscript assignment. You simply can't change a string - you can only create new strings and use those instead. That means that this is a useless statement on its own:
 
-    word.upper()
+    word.lower()
 
-The string referred to by `word` isn't modified, instead `word.upper()` returned a new string which was immediately discarded. If you want to change the value that `word` refers to, you have to assign a new value to the variable:
+The string referred to by `word` isn't modified, instead `word.lower()` returned a new string which was immediately discarded. If you want to change the value that `word` refers to, you have to assign a new value to the variable:
 
-    word = word.upper()
+    word = word.lower()
 
-Or you can use `word.upper()` immediately in a larger expression, e.g.
+Or you can use `word.lower()` immediately in a larger expression, e.g.
 
     if word.lower() == 'yes':
         """
@@ -924,7 +925,7 @@ Depending on your program, the two runs may produce different results.
 
 
 class EqualsVsIs(Page):
-    title = "`==` vs `is`"
+    title = "`==` vs `is`, and Having Multiple Names for One Value"
 
     class two_separate_lists(VerbatimStep):
         """

@@ -315,7 +315,7 @@
         "step": "sunshine_undefined_check"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "foo = 3"
         ],
@@ -332,7 +332,7 @@
         "step": "name_assign"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "your_name = ''"
         ],
@@ -349,7 +349,7 @@
         "step": "name_assign"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "your_name = 3"
         ],
@@ -366,7 +366,7 @@
         "step": "name_assign"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "your_name = ' Alex'"
         ],
@@ -383,7 +383,7 @@
         "step": "name_assign"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "your_name = 'Alex'"
         ],
@@ -400,7 +400,7 @@
         "step": "name_assign"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "'Hello ' + your_name"
         ],
@@ -425,7 +425,7 @@
         "step": "hello_plus_name"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "word + your_name"
         ],
@@ -453,7 +453,7 @@
         "get_solution": [
             "word + ' ' + your_name"
         ],
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "word + ' ' + your_name"
         ],
@@ -478,7 +478,7 @@
         "step": "word_plus_name_with_space"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "word = 'Goodbye'"
         ],
@@ -495,7 +495,7 @@
         "step": "word_assign_goodbye"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "word + ' ' + your_name"
         ],
@@ -520,7 +520,7 @@
         "step": "goodbye_plus_name"
     },
     {
-        "page": "Using Variables",
+        "page": "Using Variables and <code>print()</code>",
         "program": [
             "print(word + ' ' + your_name)"
         ],
@@ -3267,7 +3267,7 @@
         "step": "list_contains_exercise"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -3321,7 +3321,7 @@
         "step": "introducing_subscripting"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words[4]"
         ],
@@ -3354,7 +3354,7 @@
         "step": "index_error"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "for i in range(10):",
             "    print(i)"
@@ -3452,7 +3452,7 @@
         "step": "introducing_len_and_range"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -3537,7 +3537,7 @@
         "step": "range_len"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -3574,7 +3574,7 @@
         "step": "index_exercise"
     },
     {
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -3611,7 +3611,7 @@
             "        print(i)",
             "        break"
         ],
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -3647,7 +3647,7 @@
             "    char2 = string2[i]",
             "    print(char1 + ' ' + char2)"
         ],
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "string1 = 'Hello'",
             "string2 = 'World'",
@@ -3731,7 +3731,7 @@
             "",
             "    print(char1 + ' ' + char2)"
         ],
-        "page": "Getting Elements at a Position",
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "string1 = 'Goodbye'",
             "string2 = 'World'",
@@ -4077,7 +4077,7 @@
         "get_solution": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
-        "page": "Functions And Methods For Lists",
+        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
@@ -4107,7 +4107,7 @@
             "nums.insert(2, 9)",
             "print(nums)"
         ],
-        "page": "Functions And Methods For Lists",
+        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
             "nums.insert(2, 9)",
@@ -4134,7 +4134,7 @@
         "step": "list_insert"
     },
     {
-        "page": "Functions And Methods For Lists",
+        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
         "program": [
             "dir([])"
         ],
@@ -4204,7 +4204,7 @@
         "step": "run_with_python_tutor"
     },
     {
-        "page": "<code>==</code> vs <code>is</code>",
+        "page": "<code>==</code> vs <code>is</code>, and Having Multiple Names for One Value",
         "program": [
             "list1 = [1, 2, 3]",
             "list2 = [1, 2, 3]",
@@ -4281,7 +4281,7 @@
         "step": "two_separate_lists"
     },
     {
-        "page": "<code>==</code> vs <code>is</code>",
+        "page": "<code>==</code> vs <code>is</code>, and Having Multiple Names for One Value",
         "program": [
             "list1 = [1, 2, 3]",
             "list2 = list1",
