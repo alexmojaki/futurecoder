@@ -2843,7 +2843,7 @@
     {
         "page": "Other Comparison Operators",
         "program": [
-            "sentence = \"The e key on my keyboard is broken\"",
+            "sentence = 'The e key on my keyboard is broken'",
             "new_sentence = ''",
             "for c in sentence:",
             "    if c != 'e':",
@@ -2925,16 +2925,14 @@
         "program": [
             "percentage = 73",
             "",
-            "if percentage < 20:",
-            "    grade = \"F\"",
-            "elif percentage < 40:",
-            "    grade = \"D\"",
+            "if percentage < 40:",
+            "    grade = 'F'",
             "elif percentage < 60:",
-            "    grade = \"C\"",
+            "    grade = 'C'",
             "elif percentage < 80:",
-            "    grade = \"B\"",
+            "    grade = 'B'",
             "else:",
-            "    grade = \"A\"",
+            "    grade = 'A'",
             "",
             "print(grade)"
         ],
@@ -4358,6 +4356,164 @@
             ]
         },
         "step": "same_list"
+    },
+    {
+        "page": "Modifying While Iterating",
+        "program": [
+            "numbers = [10, 7, 8, 3, 12, 15]",
+            "for i in range(len(numbers)):",
+            "    number = numbers[i]",
+            "    if number <= 10:",
+            "        numbers.pop(i)",
+            "print(numbers)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "red",
+                    "text": "Traceback (most recent call last):\n"
+                },
+                {
+                    "color": "red",
+                    "text": " File \"my_program.py\", line 3, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "-->    3 | \u001b[38;5;15m\u001b[39m\u001b[38;5;15mnumber\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15;48;5;24mnumbers\u001b[39;49m\u001b[38;5;15;48;5;24m[\u001b[39;49m\u001b[38;5;15;48;5;24mi\u001b[39;49m\u001b[38;5;15;48;5;24m]\u001b[39;49m\n"
+                },
+                {
+                    "color": "red",
+                    "text": "IndexError: list index out of range\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "run_broken_with_python_tutor"
+    },
+    {
+        "page": "Modifying While Iterating",
+        "program": [
+            "numbers = [10, 7, 8, 3, 12, 15]",
+            "for number in numbers:",
+            "    if number <= 10:",
+            "        numbers.remove(number)",
+            "print(numbers)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[7, 3, 12, 15]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "remove_instead_of_pop"
+    },
+    {
+        "page": "Modifying While Iterating",
+        "program": [
+            "numbers = [10, 7, 8, 3, 12, 15]",
+            "for number in numbers.copy():",
+            "    if number <= 10:",
+            "        numbers.remove(number)",
+            "print(numbers)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[12, 15]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "make_copy"
+    },
+    {
+        "page": "Modifying While Iterating",
+        "program": [
+            "numbers = [10, 7, 8, 3, 12, 15]",
+            "big_numbers = numbers.copy()",
+            "",
+            "for number in numbers:",
+            "    if number <= 10:",
+            "        big_numbers.remove(number)",
+            "print(big_numbers)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[12, 15]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "make_copy2"
+    },
+    {
+        "page": "Modifying While Iterating",
+        "program": [
+            "numbers = [10, 7, 8, 3, 12, 15]",
+            "big_numbers = []",
+            "",
+            "for number in numbers:",
+            "    if number > 10:",
+            "        big_numbers.append(number)",
+            "print(big_numbers)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[12, 15]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "make_new_list"
     },
     {
         "page": "Introducing Nested Loops",

@@ -1013,57 +1013,103 @@ If you come across this kind of problem and you're still having trouble understa
 
 
 class ModifyingWhileIterating(Page):
-    final_text = """
-Consider this program. It loops through a numbers and removes the ones smaller than 10. Or at least, it tries to. I recommend running it with Python Tutor.
+    class run_broken_with_python_tutor(VerbatimStep):
+        """
+Consider this program. It loops through a list of numbers and removes the ones smaller than 10. Or at least, it tries to.
+Run it with Python Tutor.
 
-    numbers = [10, 7, 8, 3, 12, 15]
-    for i in range(len(numbers)):
-        number = numbers[i]
-        if number <= 10:
-            numbers.pop(i)
-    print(numbers)
+__program_indented__
 
 (remember that `numbers.pop(i)` removes the element from `numbers` at index `i`)
+        """
 
+        expected_code_source = "pythontutor"
+
+        def program(self):
+            numbers = [10, 7, 8, 3, 12, 15]
+            for i in range(len(numbers)):
+                number = numbers[i]
+                if number <= 10:
+                    numbers.pop(i)
+            print(numbers)
+
+    class remove_instead_of_pop(VerbatimStep):
+        """
 As it runs, it clearly skips even looking at 7 or 3 and doesn't remove them, and at the end it fails when it tries to access an index that's too high. Can you see why this happens?
 
 The index variable `i` runs through the usual values 0, 1, 2, ... as it's supposed to, but as the list changes those are no longer the positions we want. For example in the first iteration `i` is 0 and `number` is 10, which gets removed. This shifts the rest of the numbers left one position, so now 7 is in position 0. But then in the next iteration `i` is 1, and `numbers[i]` is 8. 7 got skipped. 
 
 We could try writing the program to use `remove` instead of `pop` so we don't have to use indices. It even looks nicer this way.
 
-    numbers = [10, 7, 8, 3, 12, 15]
-    for number in numbers:
-        if number <= 10:
-            numbers.remove(number)
-    print(numbers)
+__program_indented__
+        """
 
-But it turns out this does the same thing, for the same reason. Iterating over a list still goes through the indices under the hood.
+        def program(self):
+            numbers = [10, 7, 8, 3, 12, 15]
+            for number in numbers:
+                if number <= 10:
+                    numbers.remove(number)
+            print(numbers)
+
+    class make_copy(VerbatimStep):
+        """
+But it turns out this does nearly the same thing - it doesn't end in an error, but it still doesn't remove 7 or 3.
+This happens for the same reason - iterating over a list still goes through the indices under the hood.
 
 The lesson here is to ***never modify something while you iterate over it***. Keep mutation and looping separate.
 
 The good news is that there are many ways to solve this. You can instead just loop over a copy, as in:
 
     for number in numbers.copy():
+        """
 
+        program_in_text = False
+
+        def program(self):
+            numbers = [10, 7, 8, 3, 12, 15]
+            for number in numbers.copy():
+                if number <= 10:
+                    numbers.remove(number)
+            print(numbers)
+
+    class make_copy2(VerbatimStep):
+        """
 Now the list being modified and the list being itererated over are separate objects, even if they start out with equal contents.
 
 Similarly, you could loop over the original and modify a copy:
 
-    numbers = [10, 7, 8, 3, 12, 15]
-    big_numbers = numbers.copy()
+__program_indented__
+        """
 
-    for number in numbers:
-        if number <= 10:
-            big_numbers.remove(number)
-    print(big_numbers)
+        def program(self):
+            numbers = [10, 7, 8, 3, 12, 15]
+            big_numbers = numbers.copy()
 
+            for number in numbers:
+                if number <= 10:
+                    big_numbers.remove(number)
+            print(big_numbers)
+
+    class make_new_list(VerbatimStep):
+        """
 Or you could build up a new list from scratch. In this case, we've already done a similar thing in an exercise:
 
-    numbers = [10, 7, 8, 3, 12, 15]
-    big_numbers = []
+__program_indented__
+        """
 
-    for number in numbers:
-        if number > 10:
-            big_numbers.append(number)
-    print(big_numbers)
-"""
+        def program(self):
+            numbers = [10, 7, 8, 3, 12, 15]
+            big_numbers = []
+
+            for number in numbers:
+                if number > 10:
+                    big_numbers.append(number)
+            print(big_numbers)
+
+    final_text = """
+To reiterate, ***never modify something while you iterate over it***. Your options are:
+
+- Modify a copy
+- Iterate over a copy
+- Don't modify anything, make a new version instead.
+    """
