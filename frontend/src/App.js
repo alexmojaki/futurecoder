@@ -206,7 +206,10 @@ class AppComponent extends React.Component {
                 editor.renderer.setScrollMargin(10);
                 editor.renderer.setPadding(10);
               }}
-              fontSize="12pt"
+              fontSize="15px"
+              setOptions={{
+                fontFamily: "monospace"
+              }}
             />
           </div>
           <div className="terminal">

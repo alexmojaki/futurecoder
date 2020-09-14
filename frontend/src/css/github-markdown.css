@@ -218,7 +218,7 @@
 .markdown-body code,
 .markdown-body kbd,
 .markdown-body pre {
-  font-family: monospace,monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 
@@ -382,8 +382,8 @@
 
 .markdown-body code,
 .markdown-body pre {
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-  font-size: 12px;
+  font-family: monospace;
+  font-size: 15px;
 }
 
 .markdown-body pre {
@@ -689,7 +689,7 @@
   background-color: rgba(27,31,35,.05);
   display: inline-block;
   border-radius: 3px;
-  font-size: 85%;
+  font-size: 15px;
   margin: 0;
   padding: .2em .4em;
 }
@@ -721,7 +721,7 @@
 .markdown-body pre {
   background-color: rgb(46, 46, 46);
   border-radius: 3px;
-  font-size: 85%;
+  font-size: 15px;
   line-height: 1.45;
   overflow: auto;
   padding: 16px;
@@ -737,13 +737,6 @@
   overflow: visible;
   padding: 0;
   word-wrap: normal;
-}
-
-.markdown-body .commit-tease-sha {
-  color: #444d56;
-  display: inline-block;
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-  font-size: 90%;
 }
 
 .markdown-body .blob-wrapper {
@@ -764,7 +757,7 @@
   -webkit-user-select: none;
   color: rgba(27,31,35,.3);
   cursor: pointer;
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-family: monospace;
   font-size: 12px;
   line-height: 20px;
   min-width: 50px;
@@ -795,7 +788,7 @@
 
 .markdown-body .blob-code-inner {
   color: #24292e;
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-family: monospace;
   font-size: 12px;
   overflow: visible;
   white-space: pre;
