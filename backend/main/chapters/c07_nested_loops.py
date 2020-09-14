@@ -399,7 +399,7 @@ Charlie vs Bob
             """
              )]
 
-    class crack_password_exercise(ExerciseStep):
+    class player_vs_player_bonus(ExerciseStep):
         """
 Well done! If you'd like a bonus challenge, remove the repetition and only output each pair of players once, e.g:
 
@@ -407,6 +407,53 @@ Well done! If you'd like a bonus challenge, remove the repetition and only outpu
     Alice vs Charlie
     Bob vs Charlie
 
+        """
+
+        def solution(self, players: List[str]):
+            for i in range(len(players)):
+                for j in range(i + 1, len(players)):
+                    print(players[i], 'vs', players[j])
+
+        hints = """
+This is similar to the previous exercise, you'll need a for loop inside a for loop like before.
+This time, in your loops you need to use `range` and `len`, and use indexing to access the list entries.
+Look at the desired output: `Alice vs Bob`: `Alice` comes before `Bob` in the `players` list.
+Similarly in `Alice vs Charlie` `Alice` comes before `Charlie`, and in `Bob vs Charlie` `Bob` comes before `Charlie` in 
+`players`.
+We don't want to print `Bob vs Alice` because `Bob` comes AFTER `Alice` in `players`.
+The only pairs we want to print are those where the left player comes before the right player in the list.
+How can we express this relation in terms of the list indexes of the two for-loops?
+Once you figure out the relation, you can express it with an `if` statement, or inside the second `range` expression.
+                """
+
+        tests = [
+            (["Alice", "Bob", "Charlie"], """\
+Alice vs Bob
+Alice vs Charlie
+Bob vs Charlie
+            """
+             )]
+
+    final_text = """
+Excellent! The most basic solution goes like this:
+ 
+    for i in range(len(players)):
+        for j in range(len(players)):
+            if i < j:
+                print(players[i], 'vs', players[j])
+
+For a more elegant solution, you can change the second `range` expression, so that
+the `if` condition is automatically satisfied and we avoid unnecessary computation:
+
+    for i in range(len(players)):
+        for j in range(i + 1, len(players)):
+            print(players[i], 'vs', players[j])
+    """
+
+
+class Exercises(Page):
+    class crack_password_exercise(ExerciseStep):
+        """
 For your next exercise, you need to crack a password. You know that it's exactly four letters long and that only a few letters are possible, which you've written down:
 
     letters = "ABCD"
