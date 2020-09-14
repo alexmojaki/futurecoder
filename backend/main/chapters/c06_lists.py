@@ -121,7 +121,6 @@ Define a boolean variable BEFORE the for loop. Then change its value INSIDE the 
         """
 
         # TODO: MessageStep: catch the "obvious solution" where the user adds the separator after the last word?
-        # TODO: is overriding generate_inputs needed?
 
         def solution(self, words: List[str], separator: str):
             total = ''
@@ -137,7 +136,7 @@ Define a boolean variable BEFORE the for loop. Then change its value INSIDE the 
 
         tests = [
             ((['This', 'is', 'a', 'list'], ' - '), 'This - is - a - list'),
-            ((['The', 'quick', 'brown', 'fox', 'jumps'], ' - '), 'The - quick - brown - fox - jumps'),
+            ((['The', 'quick', 'brown', 'fox', 'jumps'], '**'), 'The**quick**brown**fox**jumps'),
         ]
 
     final_text = """
