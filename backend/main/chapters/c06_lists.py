@@ -116,10 +116,8 @@ This is tricky! Using a for loop, how can you perform an operation at all steps 
 What if you reversed it? Add the separator first, add the word second?
 This way, you have to add the separator at each step except the FIRST step.
 The solution is somewhat similar to the program from the "Understanding Programs with Snoop" section.
-This can be done with a for loop (with an if statement inside) and a boolean variable (to keep track of whether we 
-are at the first step or not).
-Define a boolean variable BEFORE the for loop. Then change its value INSIDE the loop (after adding 
-the necessary strings).
+This can be done with a for loop (with an if statement inside) and a boolean variable (to keep track of whether we are at the first step or not).
+Define a boolean variable BEFORE the for loop. Then change its value INSIDE the loop (after adding the necessary strings).
         """
 
         # TODO: MessageStep: catch the "obvious solution" where the user adds the separator after the last word?
@@ -145,6 +143,8 @@ the necessary strings).
     final_text = """
 Congratulations! That was very tricky! One solution looks like this:
 
+    words = ['This', 'is', 'a', 'list']
+    separator = ' - '
     total = ''
     not_first = False
 
