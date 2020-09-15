@@ -401,7 +401,9 @@ Charlie vs Bob
 
     class player_vs_player_bonus(ExerciseStep):
         """
-Well done! If you'd like a bonus challenge, remove the repetition and only output each pair of players once, e.g:
+Well done! If you'd like a bonus challenge, print only those pairs that are in
+the same left-to-right order as they are in `players`, starting with pairs containing the leftmost person
+in `players` and moving right; e.g:
 
     Alice vs Bob
     Alice vs Charlie
@@ -411,18 +413,18 @@ Well done! If you'd like a bonus challenge, remove the repetition and only outpu
 
         def solution(self, players: List[str]):
             for i in range(len(players)):
-                for j in range(i + 1, len(players)):
-                    print(players[i], 'vs', players[j])
+                for j in range(len(players)):
+                    if i < j:
+                        print(players[i], 'vs', players[j])
 
         hints = """
 This is similar to the previous exercise, you'll need a for loop inside a for loop like before.
 This time, in your loops you need to use `range` and `len`, and use indexing to access the list entries.
 Look at the desired output: `Alice vs Bob`: `Alice` comes before `Bob` in the `players` list.
-Similarly in `Alice vs Charlie` `Alice` comes before `Charlie`, and in `Bob vs Charlie` `Bob` comes before `Charlie` in `players`.
 We don't want to print `Bob vs Alice` because `Bob` comes AFTER `Alice` in `players`.
 The only pairs we want to print are those where the left player comes before the right player in the list.
 How can we express this relation in terms of the list indexes of the two for-loops?
-Once you figure out the relation, you can express it with an `if` statement, or inside the second `range` expression.
+Once you figure out the relation, you can express it with an `if` statement.
                 """
 
         tests = [
@@ -431,24 +433,22 @@ Alice vs Bob
 Alice vs Charlie
 Bob vs Charlie
             """
+             ),
+            (["Frank", "Dave", "Emily"], """\
+Frank vs Dave
+Frank vs Emily
+Dave vs Emily
+            """
              )]
 
     final_text = """
-Excellent! The most basic solution goes like this:
+Excellent! The solution goes like this:
  
     players = ["Alice", "Bob", "Charlie"]
     for i in range(len(players)):
         for j in range(len(players)):
             if i < j:
                 print(players[i], 'vs', players[j])
-
-For a more elegant solution, you can change the second `range` expression, so that
-the `if` condition is automatically satisfied and we avoid unnecessary computation:
-
-    players = ["Alice", "Bob", "Charlie"]
-    for i in range(len(players)):
-        for j in range(i + 1, len(players)):
-            print(players[i], 'vs', players[j])
     """
 
 
