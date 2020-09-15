@@ -93,9 +93,10 @@ Is there a similar concept among strings to 0? A blank initial value?
             (['The', 'quick', 'brown', 'fox', 'jumps'], 'Thequickbrownfoxjumps'),
         ]
 
-    class double_numbers(ExerciseStep):
+    class strings_sum_bonus(ExerciseStep):
         """
-Optional bonus challenge: extend the program to insert a separator string *between* each word.
+Optional Bonus challenge: extend the program to insert a separator string *between* each word.
+If not, you can just continue to the [next page](/course/?page=BuildingNewLists) now.
 For example, given
 
     words = ['This', 'is', 'a', 'list']
@@ -105,6 +106,61 @@ it would output:
 
     This - is - a - list
 
+        """
+        hints = """
+This is similar to the previous exercise. You can start with your solution from that.
+You need to modify the string that you are adding at each step.
+In addition to each word in the list, you also have to add the separator.
+But you don't want to add the separator after adding the last word in the list.
+Unfortunately there is no "subtraction" with strings; you can't add the last separator then remove it.
+This is tricky! Using a for loop, how can you perform an operation at all steps except the last? Well, you can't (for now).
+What if you reversed it? Add the separator first, add the word second?
+This way, you have to add the separator at each step except the FIRST step.
+The solution is somewhat similar to the program from the "Understanding Programs with Snoop" section.
+This can be done with a for loop (with an if statement inside) and a boolean variable (to keep track of whether we are at the first step or not).
+Define a boolean variable BEFORE the for loop. Then change its value INSIDE the loop (after adding the necessary strings).
+        """
+
+        # TODO: MessageStep: catch the "obvious solution" where the user adds the separator after the last word?
+
+        def solution(self, words: List[str], separator: str):
+            total = ''
+            not_first = False
+
+            for word in words:
+                if not_first:
+                    total += separator
+                total += word
+                not_first = True
+
+            print(total)
+
+        tests = [
+            ((['This', 'is', 'a', 'list'], ' - '), 'This - is - a - list'),
+            ((['The', 'quick', 'brown', 'fox', 'jumps'], '**'), 'The**quick**brown**fox**jumps'),
+        ]
+
+    final_text = """
+Congratulations! That was very tricky! One solution looks like this:
+
+    words = ['This', 'is', 'a', 'list']
+    separator = ' - '
+    total = ''
+    not_first = False
+
+    for word in words:
+        if not_first:
+            total += ' - '
+        total += word
+        not_first = True
+
+    print(total)
+        """
+
+
+class BuildingNewLists(Page):
+    class double_numbers(ExerciseStep):
+        """
 Lists and strings have a lot in common.
 For example, you can add two lists to combine them together into a new list.
 You can also create an empty list that has no elements.
@@ -529,8 +585,8 @@ output:
     o r
     d l
     b d
-    y  
-    e  
+    y
+    e
 
 and for:
 
@@ -755,7 +811,7 @@ Let's review how to work with lists. Suppose we have a list `nums = [1, 2, 3]`. 
 Here's some new things. Try them out in the shell.
 
 - **`subscript assignment`**: Set a value at an index. `nums[0] = 9` changes the list to `[9, 2, 3]`.
-- **`join`**: Add a list of strings with a separator in between. This is a method of strings (the separator) which takes an iterable of strings as an argument. `'--'.join(['apples', 'oranges', 'bananas'])` returns `'apples--oranges--bananas'`. You can also use an empty string if you don't want a separator, e.g. `''.join(['apples', 'oranges', 'bananas'])` returns `'applesorangesbananas'`. 
+- **`join`**: Add a list of strings with a separator in between. This is a method of strings (the separator) which takes an iterable of strings as an argument. `'--'.join(['apples', 'oranges', 'bananas'])` returns `'apples--oranges--bananas'`. You can also use an empty string if you don't want a separator, e.g. `''.join(['apples', 'oranges', 'bananas'])` returns `'applesorangesbananas'`.
 - **`sum`**: Add a list of numbers. `sum(nums)` is 6.
 - **`in`**: A comparison operator that checks if a value is in a list. `2 in nums` is `True`, but `4 in nums` is `False`.
 - **`index`**: Returns the first index of a value in a list. `[7, 8, 9, 8].index(8)` is 1. Raises an error if the value isn't there.
@@ -818,7 +874,7 @@ But suppose you don't want the 9 to be at the end, you want it to go between the
 
     [1, 2, 9, 3, 4, 5]
 
-Replace the middle line (i.e. the call to `append`) with the right function/method call to do that. 
+Replace the middle line (i.e. the call to `append`) with the right function/method call to do that.
         """
 
         hints = """
@@ -852,7 +908,7 @@ It can also be useful to Google things like "python list tutorial", e.g. if:
 - It's been a while since you learned about lists and you need a reminder.
 - You're struggling to solve a problem with lists and you need to go back to basics and strengthen your foundations.
 
-There are also ways to find information without any googling. Try `__program__` in the shell.  
+There are also ways to find information without any googling. Try `__program__` in the shell.
         """
 
         program = "dir([])"
@@ -1038,7 +1094,7 @@ __program_indented__
         """
 As it runs, it clearly skips even looking at 7 or 3 and doesn't remove them, and at the end it fails when it tries to access an index that's too high. Can you see why this happens?
 
-The index variable `i` runs through the usual values 0, 1, 2, ... as it's supposed to, but as the list changes those are no longer the positions we want. For example in the first iteration `i` is 0 and `number` is 10, which gets removed. This shifts the rest of the numbers left one position, so now 7 is in position 0. But then in the next iteration `i` is 1, and `numbers[i]` is 8. 7 got skipped. 
+The index variable `i` runs through the usual values 0, 1, 2, ... as it's supposed to, but as the list changes those are no longer the positions we want. For example in the first iteration `i` is 0 and `number` is 10, which gets removed. This shifts the rest of the numbers left one position, so now 7 is in position 0. But then in the next iteration `i` is 1, and `numbers[i]` is 8. 7 got skipped.
 
 We could try writing the program to use `remove` instead of `pop` so we don't have to use indices. It even looks nicer this way.
 
