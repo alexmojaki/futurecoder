@@ -95,8 +95,11 @@ Is there a similar concept among strings to 0? A blank initial value?
 
     class strings_sum_bonus(ExerciseStep):
         """
-Optional Bonus challenge: extend the program to insert a separator string *between* each word.
-If not, you can just continue to the [next page](/course/?page=BuildingNewLists) now.
+Excellent!
+
+If you'd like, you can just continue to the [next page](/course/?page=BuildingNewLists) now.
+
+For an optional bonus challenge: extend the program to insert a separator string *between* each word.
 For example, given
 
     words = ['This', 'is', 'a', 'list']
@@ -105,20 +108,29 @@ For example, given
 it would output:
 
     This - is - a - list
-
         """
+
         hints = """
 This is similar to the previous exercise. You can start with your solution from that.
-You need to modify the string that you are adding at each step.
-In addition to each word in the list, you also have to add the separator.
+This exercise doesn't require anything fancy and the final solution can be quite simple. But it's tricky to get it right and you need to think about the approach carefully.
+In each iteration, in addition to a word in the list, you also have to add the separator.
 But you don't want to add the separator after adding the last word in the list.
 Unfortunately there is no "subtraction" with strings; you can't add the last separator then remove it.
-This is tricky! Using a for loop, how can you perform an operation at all steps except the last? Well, you can't (for now).
-What if you reversed it? Add the separator first, add the word second?
-This way, you have to add the separator at each step except the FIRST step.
-The solution is somewhat similar to the program from the "Understanding Programs with Snoop" section.
-This can be done with a for loop (with an if statement inside) and a boolean variable (to keep track of whether we are at the first step or not).
-Define a boolean variable BEFORE the for loop. Then change its value INSIDE the loop (after adding the necessary strings).
+Let's back up. The final result should contain each word, and `n - 1` separators, where `n` is the number of words.
+So you want to add a separator in every iteration except one.
+You can skip adding the separator in one particular iteration using an `if` statement.
+Later on you will learn a way to iterate over a list and check if you're in the last iteration, but right now you have no way of doing that.
+However, the iteration you skip doesn't have to be the last one!
+You *can* write a program that checks if you're in the *first* iteration of a loop.
+Just make a boolean variable to keep track of this. No need for any comparison operators or numbers.
+We looked at programs that did something like this [here](/course/?page=UnderstandingProgramsWithSnoop).
+So if you only skip adding the separator in the first iteration, you will have `n - 1` separators. Now you just need to think carefully about how to make sure the separators are in the right place.
+Forgetting the loop for a moment, you need to add the following to the string in this order: the first word, the separator, the second word, the separator, the third word, etc.
+That means that in the first iteration, you just add the first word. In the second iteration, you add the separator, then the second word. In the third iteration, you add the separator, then the third word. And so on.
+So inside your loop, add the separator first, add the word after.
+Skip adding the separator in the first iteration by checking a boolean variable.
+Create the boolean variable before the loop, then change it inside the loop.
+Only change it in the loop after checking it, or you won't be able to skip the first iteration.
         """
 
         # TODO: MessageStep: catch the "obvious solution" where the user adds the separator after the last word?
@@ -150,7 +162,7 @@ Congratulations! That was very tricky! One solution looks like this:
 
     for word in words:
         if not_first:
-            total += ' - '
+            total += separator
         total += word
         not_first = True
 

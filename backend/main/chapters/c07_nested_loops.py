@@ -605,15 +605,16 @@ O
     class player_vs_player_bonus(ExerciseStep):
         """
 Wow, you're an artist too!
-If you'd like, you can just continue to the [next page](/course/?page=IntroducingBirdseye) now.
 
-If you'd like a bonus challenge, given a list of strings, print only those pairs that are in
-the same left-to-right order as they are in `players`, starting with pairs containing the leftmost person
-in `players` and moving right; e.g: given
+If you'd like, you can just continue to the [next page](/course/?page=IntroducingBirdseye) now. Or you can do a bonus challenge!
+
+Like the earlier exercise, you're organising a tournament for a game. You have a list of player names:
 
     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
 
-your program should print
+This time, each pair of players should only appear once. Specifically, print only those pairs that are in
+the same left-to-right order as they are in `players`, starting with pairs containing the leftmost person
+in `players` and moving right. For example, for the above, your program should print
 
     Charlie vs Alice
     Charlie vs Dylan
@@ -631,12 +632,17 @@ your program should print
                         print(players[i], 'vs', players[j])
 
         hints = """
-This is similar to the previous exercise, you'll need a for loop inside a for loop like before.
-This time, in your loops you need to use `range` and `len`, and use indexing to access the list entries.
+You'll need a for loop inside a for loop like before.
+This time something like `for player1 in players:` won't be enough.
+Your program needs to use the *positions* of the players in the list.
+That means you need to loop over the positions and use indexing (subscripting) to access the list entries.
+To loop over the positions, use `range`...
+...and `len`.
 Look at the desired output: `Charlie vs Alice`: `Charlie` comes before `Alice` in the `players` list.
 We don't want to print `Alice vs Charlie` because `Alice` comes AFTER `Charlie` in `players`.
 The only pairs we want to print are those where the left player comes before the right player in the list.
-How can we express this relation in terms of the list indexes of the two for-loops?
+How can we express this relation in terms of the list indices of the two for-loops?
+You need to use a comparison operator.
 Once you figure out the relation, you can express it with an `if` statement.
 """
 
