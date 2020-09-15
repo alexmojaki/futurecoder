@@ -399,60 +399,6 @@ Charlie vs Bob
             """
              )]
 
-    class player_vs_player_bonus(ExerciseStep):
-        """
-Well done! If you'd like a bonus challenge, print only those pairs that are in
-the same left-to-right order as they are in `players`, starting with pairs containing the leftmost person
-in `players` and moving right; e.g:
-
-    Alice vs Bob
-    Alice vs Charlie
-    Bob vs Charlie
-
-        """
-
-        def solution(self, players: List[str]):
-            for i in range(len(players)):
-                for j in range(len(players)):
-                    if i < j:
-                        print(players[i], 'vs', players[j])
-
-        hints = """
-This is similar to the previous exercise, you'll need a for loop inside a for loop like before.
-This time, in your loops you need to use `range` and `len`, and use indexing to access the list entries.
-Look at the desired output: `Alice vs Bob`: `Alice` comes before `Bob` in the `players` list.
-We don't want to print `Bob vs Alice` because `Bob` comes AFTER `Alice` in `players`.
-The only pairs we want to print are those where the left player comes before the right player in the list.
-How can we express this relation in terms of the list indexes of the two for-loops?
-Once you figure out the relation, you can express it with an `if` statement.
-                """
-
-        tests = [
-            (["Alice", "Bob", "Charlie"], """\
-Alice vs Bob
-Alice vs Charlie
-Bob vs Charlie
-            """
-             ),
-            (["Frank", "Dave", "Emily"], """\
-Frank vs Dave
-Frank vs Emily
-Dave vs Emily
-            """
-             )]
-
-    final_text = """
-Excellent! The solution goes like this:
- 
-    players = ["Alice", "Bob", "Charlie"]
-    for i in range(len(players)):
-        for j in range(len(players)):
-            if i < j:
-                print(players[i], 'vs', players[j])
-    """
-
-
-class Exercises(Page):
     class crack_password_exercise(ExerciseStep):
         """
 For your next exercise, you need to crack a password. You know that it's exactly four letters long and that only a few letters are possible, which you've written down:
@@ -656,8 +602,75 @@ O
     """
         }
 
-    final_text = """
+    class player_vs_player_bonus(ExerciseStep):
+        """
 Wow, you're an artist too!
+If you'd like, you can just continue to the [next page](/course/?page=IntroducingBirdseye) now.
+
+If you'd like a bonus challenge, given a list of strings, print only those pairs that are in
+the same left-to-right order as they are in `players`, starting with pairs containing the leftmost person
+in `players` and moving right; e.g: given
+
+    players = ['Charlie', 'Alice', 'Dylan', 'Bob']
+
+your program should print
+
+    Charlie vs Alice
+    Charlie vs Dylan
+    Charlie vs Bob
+    Alice vs Dylan
+    Alice vs Bob
+    Dylan vs Bob
+
+        """
+
+        def solution(self, players: List[str]):
+            for i in range(len(players)):
+                for j in range(len(players)):
+                    if i < j:
+                        print(players[i], 'vs', players[j])
+
+        hints = """
+This is similar to the previous exercise, you'll need a for loop inside a for loop like before.
+This time, in your loops you need to use `range` and `len`, and use indexing to access the list entries.
+Look at the desired output: `Charlie vs Alice`: `Charlie` comes before `Alice` in the `players` list.
+We don't want to print `Alice vs Charlie` because `Alice` comes AFTER `Charlie` in `players`.
+The only pairs we want to print are those where the left player comes before the right player in the list.
+How can we express this relation in terms of the list indexes of the two for-loops?
+Once you figure out the relation, you can express it with an `if` statement.
+"""
+
+        tests = [
+            (["Alice", "Bob", "Charlie"], """\
+Alice vs Bob
+Alice vs Charlie
+Bob vs Charlie
+            """
+            ),
+            (["Frank", "Dave", "Emily"], """\
+Frank vs Dave
+Frank vs Emily
+Dave vs Emily
+            """
+            ),
+            (["Charlie", "Alice", "Dylan", "Bob"], """\
+Charlie vs Alice
+Charlie vs Dylan
+Charlie vs Bob
+Alice vs Dylan
+Alice vs Bob
+Dylan vs Bob
+            """
+            )]
+
+    final_text = """
+Excellent! The solution goes like this:
+
+    players = ['Charlie', 'Alice', 'Dylan', 'Bob']
+    for i in range(len(players)):
+        for j in range(len(players)):
+            if i < j:
+                print(players[i], 'vs', players[j])
 """
 
 

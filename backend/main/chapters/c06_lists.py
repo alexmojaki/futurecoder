@@ -96,6 +96,7 @@ Is there a similar concept among strings to 0? A blank initial value?
     class strings_sum_bonus(ExerciseStep):
         """
 Optional Bonus challenge: extend the program to insert a separator string *between* each word.
+If not, you can just continue to the [next page](/course/?page=BuildingNewLists) now.
 For example, given
 
     words = ['This', 'is', 'a', 'list']
