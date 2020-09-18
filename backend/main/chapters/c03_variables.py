@@ -185,7 +185,7 @@ class WritingPrograms(Page):
         """
 It's time to stop doing everything in the shell. In the top right you can see the *editor*. This is a place where you can write and run longer programs. The shell is great and you should keep using it to explore, but the editor is where real programs live.
 
-Copy the program below into the editor, then click the 'Run' button:
+Type the program below into the editor, then click the 'Run' button:
 
     __program_indented__
         """

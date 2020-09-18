@@ -191,7 +191,8 @@ class UnderstandingProgramsWithSnoop(Page):
         """
 Run this program:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
     class print_tail_snoop(print_tail_base):
@@ -348,6 +349,7 @@ Now change `excited` to `False` and run it again.
         """
 Here's a broken program:
 
+    __copyable__
     sentence = 'Hello World'
     excited = True
 
@@ -526,7 +528,8 @@ removing a single `=` from the previous program?
         """
 Let's use `==` in an `if` statement. In this program, the `if` body runs only when `c` is the character `'s'`. See for yourself.
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
@@ -593,7 +596,8 @@ into its opposite version to make the copy.
 
 We're going to repeat that process. Let's try the same kind of program we just wrote:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
@@ -782,7 +786,8 @@ The opposite of the equals operator `==` is the *not equals* operator `!=`. If y
         """
 Here's a cute little program using `!=`:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):

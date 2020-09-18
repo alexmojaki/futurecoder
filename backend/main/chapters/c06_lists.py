@@ -178,6 +178,7 @@ For example, you can add two lists to combine them together into a new list.
 You can also create an empty list that has no elements.
 Check for yourself:
 
+    __copyable__
     numbers = [1, 2] + [3, 4]
     print(numbers)
     new_numbers = []
@@ -966,6 +967,7 @@ The button opens a new tab with a visualisation from [pythontutor.com](http://py
 There you can navigate through the program step by step with the "Prev" or "Next" buttons, or drag
 the slider left or right. You can also see the values of variables on the right.
 
+    __copyable__
     __program_indented__
         """
 
@@ -1000,7 +1002,8 @@ class EqualsVsIs(Page):
 It's time to learn some technical details that are often misunderstood and lead to errors.
 Run this program:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
@@ -1087,7 +1090,8 @@ class ModifyingWhileIterating(Page):
 Consider this program. It loops through a list of numbers and removes the ones smaller than 10. Or at least, it tries to.
 Run it with Python Tutor.
 
-__program_indented__
+    __copyable__
+    __program_indented__
 
 (remember that `numbers.pop(i)` removes the element from `numbers` at index `i`)
         """

@@ -21,7 +21,8 @@ Here's a simple example: imagine you have two friends, Alice and Bob.
 The function below accepts one parameter, `name`, and checks if the person with the given name is among your friends.
 Copy and run the code in the editor:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
         def program(self):
             def is_friend(name):
@@ -227,6 +228,7 @@ Exercise: Write a function named `is_valid_percentage`, accepting one numerical 
 It should return `True` if `x` is between 0 and 100 (inclusive), and return `False` otherwise.
 Your function should use `or`, and pass these tests:
 
+    __copyable__
     assert_equal(is_valid_percentage(-1), False)
     assert_equal(is_valid_percentage(0), True)
     assert_equal(is_valid_percentage(50), True)
@@ -312,6 +314,7 @@ __program_indented__
 Let's practice now. Previously we wrote a function `is_valid_percentage` using `or`. Here's an example
 solution:
 
+    __copyable__
     def is_valid_percentage(x):
         if x < 0 or x > 100:
             return False
@@ -389,6 +392,7 @@ So the solution can be simplified to:
 
 Next exercise: given a list of three elements, check if all three elements are equal.
 
+    __copyable__
     def all_equal(row):
         ...
 
@@ -478,7 +482,8 @@ to imply the line continuation.
 
 Here are some examples. Pay close attention to the details.
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
@@ -553,6 +558,7 @@ We need to check if someone has won a game. Our function `all_equal` is already 
 Write a function to check if someone has won a game by placing 3 of the same pieces on one of the diagonal lines.
 The board is given as 3 lists of 3 strings each, and the function should return a boolean.
 
+    __copyable__
     def diagonal_winner(row1, row2, row3):
         ...
 
@@ -720,6 +726,7 @@ If the user gives you a file that can't be processed, you want to show an error:
 Suppose that .png and .jpg files cannot be processed, but other file types can.
 Here's an example function to do that:
 
+    __copyable__
     def invalid_image(filename):
         if filename.endswith(".png") or filename.endswith(".jpg"):
             return False

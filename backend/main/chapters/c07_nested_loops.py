@@ -689,7 +689,8 @@ You've seen Snoop and Python Tutor. futurecoder comes with one last tool to anal
 
 Here's an example program to run. Copy it into the editor and click the Bird's Eye button. This will open a new browser tab with the visualisation.
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         expected_code_source = "birdseye"
@@ -727,7 +728,8 @@ Note that there are some expressions that Bird's Eye doesn't put in a box. In th
 
 Here's a more complicated example to try out:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         expected_code_source = "birdseye"
