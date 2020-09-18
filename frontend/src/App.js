@@ -95,7 +95,18 @@ class AppComponent extends React.Component {
         <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
         {page.steps.slice(0, step_index + 1).map((part, index) =>
           <div key={index} id={`step-text-${index}`}>
-            <div dangerouslySetInnerHTML={{__html: part.text}}/>
+            <div dangerouslySetInnerHTML={{__html: part.text}}
+                 onClick={(event) => {
+                   // https://stackoverflow.com/questions/54109790/how-to-add-onclick-event-to-a-string-rendered-by-dangerouslysetinnerhtml-in-reac
+                   const button = event.target.closest("button");
+                   if (button && event.currentTarget.contains(button) && button.textContent === "Copy") {
+                     const codeElement = button.closest("code");
+                     let codeText = codeElement.textContent;
+                     codeText = codeText.substring(0, codeText.length - "\nCopy".length);
+                     bookSetState("editorContent", codeText);
+                   }
+                 }}
+            />
             <hr/>
           </div>
         )}

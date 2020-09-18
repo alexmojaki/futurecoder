@@ -154,6 +154,7 @@ just by looking at the indentation.
 
 Alternatively, you can put an `if` inside a `for`:
 
+    __copyable__
     sentence = 'Hello World'
     excited = True
 

@@ -51,8 +51,18 @@
     color: black;
   }
 
-  pre code {
-    color: #f8f8f2;
+  pre {
+    position: relative;
+
+    button {
+      position: absolute;
+      right: 0.5em;
+      top: 0.5em;
+    }
+
+    code {
+      color: #f8f8f2;
+    }
   }
 
   .terminal p code {
