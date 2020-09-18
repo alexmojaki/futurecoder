@@ -3156,12 +3156,60 @@
     },
     {
         "get_solution": [
+            "total = ''",
+            "not_first = False",
+            "",
+            "for word in words:",
+            "    if not_first:",
+            "        total += separator",
+            "    total += word",
+            "    not_first = True",
+            "",
+            "print(total)"
+        ],
+        "page": "Introducing Lists",
+        "program": [
+            "words = ['This', 'is', 'a', 'list']",
+            "separator = ' - '",
+            "total = ''",
+            "not_first = False",
+            "",
+            "for word in words:",
+            "    if not_first:",
+            "        total += separator",
+            "    total += word",
+            "    not_first = True",
+            "",
+            "print(total)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "This - is - a - list"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "strings_sum_bonus"
+    },
+    {
+        "get_solution": [
             "double = []",
             "for number in numbers:",
             "    double += [number * 2]",
             "print(double)"
         ],
-        "page": "Introducing Lists",
+        "page": "Building New Lists",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
             "double = []",
@@ -3197,7 +3245,7 @@
             "        big_numbers.append(number)",
             "print(big_numbers)"
         ],
-        "page": "Introducing Lists",
+        "page": "Building New Lists",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
             "big_numbers = []",
@@ -15002,6 +15050,105 @@
             ]
         },
         "step": "upside_down_triangle_exercise"
+    },
+    {
+        "get_solution": [
+            "for i in range(len(players)):",
+            "    for j in range(len(players)):",
+            "        if i < j:",
+            "            print(players[i], 'vs', players[j])"
+        ],
+        "page": "Introducing Nested Loops",
+        "program": [
+            "players = ['Alice', 'Bob', 'Charlie']",
+            "for i in range(len(players)):",
+            "    for j in range(len(players)):",
+            "        if i < j:",
+            "            print(players[i], 'vs', players[j])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Alice"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "vs"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "Bob"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Alice"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "vs"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "Charlie"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Bob"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "vs"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "Charlie"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "player_vs_player_bonus"
     },
     {
         "page": "Understanding Programs with Bird's Eye",
