@@ -8,7 +8,12 @@ export const HintsPopup = ({hints, numHints, requestingSolution, solution}) => {
     return null;
   }
   return (
-    <div className="custom-popup">
+    <div className="custom-popup"
+         onCopy={(event) => {
+           alert("Copying from the hints/solution area is not allowed!");
+           event.preventDefault();
+         }}
+    >
       <Popup
         trigger={<img src={hintIcon} className="hint-icon" alt="Hint button"/>}
       >
