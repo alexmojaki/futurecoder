@@ -168,6 +168,7 @@ class PageMeta(type):
         cls.final_text = highlighted_markdown(cls.final_text.strip())
         cls.step_names.append("final_text")
         cls.step_texts.append(cls.final_text)
+        assert "__copyable__" not in str(cls.step_texts)
 
     @property
     def slug(cls):

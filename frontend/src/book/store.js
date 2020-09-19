@@ -119,14 +119,24 @@ export const ranCode = makeAction(
         processing: false,
       };
     }
-    if (value.message && state.pastMessages.indexOf(value.message) === -1) {
-      animateScroll.scrollToBottom({duration: 1000, delay: 500});
-      state = ipush(state, "messages", value.message);
-      state = ipush(state, "pastMessages", value.message);
-    }
+    state = addMessageToState(state, value.message);
     return state;
   },
 );
+
+const addMessageToState = (state, message) => {
+  if (message && state.pastMessages.indexOf(message) === -1) {
+      animateScroll.scrollToBottom({duration: 1000, delay: 500});
+      state = ipush(state, "messages", message);
+      state = ipush(state, "pastMessages", message);
+    }
+  return state;
+}
+
+export const addMessage = makeAction(
+  'ADD_MESSAGE',
+  (state, {value}) => addMessageToState(state, value)
+)
 
 export const closeMessage = makeAction(
   'CLOSE_MESSAGE',

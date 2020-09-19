@@ -161,19 +161,30 @@ class HighlightPythonTreeProcessor(Treeprocessor):
     def run(self, root):
         for node in root.findall(".//pre/code"):
             text = unescape(node.text)
-            if not (
+
+            prefix = "__copyable__\n"
+            if copyable := text.startswith(prefix):
+                text = strip_required_prefix(text, prefix)
+
+            if (
                     is_valid_syntax(text) or
                     is_valid_syntax(text + "\n 0") or
                     is_valid_syntax(dedent(text))
             ):
-                continue
+                self.highlight_node(node, text)
 
-            highlighted = pygments.highlight(text, lexer, html_formatter)
-            tail = node.tail
-            node.clear()
-            node.set("class", "codehilite")
-            node.append(etree.fromstring(f"<span>{highlighted}</span>"))
-            node.tail = tail
+            if copyable:
+                node.append(etree.fromstring('<button class="btn btn-primary">Copy</button>'))
+                node.set("class", node.get("class") + " copyable")
+
+    @staticmethod
+    def highlight_node(node, text):
+        highlighted = pygments.highlight(text, lexer, html_formatter)
+        tail = node.tail
+        node.clear()
+        node.set("class", "codehilite")
+        node.append(etree.fromstring(f"<span>{highlighted}</span>"))
+        node.tail = tail
 
 
 def highlighted_markdown(text):

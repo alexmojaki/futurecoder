@@ -5,7 +5,17 @@ import "./css/main.scss"
 import "./css/pygments.css"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
-import {bookSetState, bookState, closeMessage, movePage, moveStep, ranCode, setDeveloperMode, stepIndex} from "./book/store";
+import {
+  addMessage,
+  bookSetState,
+  bookState,
+  closeMessage,
+  movePage,
+  moveStep,
+  ranCode,
+  setDeveloperMode,
+  stepIndex
+} from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-python";
@@ -91,11 +101,23 @@ class AppComponent extends React.Component {
     const showBirdseye = page_index >= _.findIndex(pages, {slug: "IntroducingBirdseye"});
 
     return <div className="book-container">
-      <div className="book-text markdown-body">
+      <div className="book-text markdown-body"
+           onCopy={checkCopy}>
         <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
         {page.steps.slice(0, step_index + 1).map((part, index) =>
           <div key={index} id={`step-text-${index}`}>
-            <div dangerouslySetInnerHTML={{__html: part.text}}/>
+            <div dangerouslySetInnerHTML={{__html: part.text}}
+                 onClick={(event) => {
+                   // https://stackoverflow.com/questions/54109790/how-to-add-onclick-event-to-a-string-rendered-by-dangerouslysetinnerhtml-in-reac
+                   const button = event.target.closest("button");
+                   if (button && event.currentTarget.contains(button) && button.textContent === "Copy") {
+                     const codeElement = button.closest("code");
+                     let codeText = codeElement.textContent;
+                     codeText = codeText.substring(0, codeText.length - "\nCopy".length);
+                     bookSetState("editorContent", codeText);
+                   }
+                 }}
+            />
             <hr/>
           </div>
         )}
@@ -301,6 +323,37 @@ const SettingsModal = ({user}) => (
     <p>Enables the "Reverse step" and "Skip step" buttons.</p>
   </div>
 )
+
+const checkCopy = () => {
+  const selection = document.getSelection();
+  const codeElement = (node) => node.parentElement.closest("code");
+  if (
+    [...document.querySelectorAll(".book-text code")]
+      .filter(node => selection.containsNode(node))
+      .concat([
+        codeElement(selection.anchorNode),
+        codeElement(selection.focusNode),
+      ])
+      .some((node) => node && !node.classList.contains("copyable"))
+  ) {
+    addMessage(`
+      <div>
+        <p><strong>STOP!</strong></p>
+        <p>
+        Try to avoid copy pasting code. You will learn, absorb, and remember better if you
+        type in the code yourself.
+        </p>
+        <p>
+        When copying is appropriate, there will be a button to click to make it easy.
+        If there's no button, try typing.
+        </p>
+        <p>
+        Having said that, we're not going to force you. Copy if you really want to.
+        </p>
+      </div>
+   `);
+  }
+}
 
 
 export const App = connect(
