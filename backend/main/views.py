@@ -12,6 +12,7 @@ from typing import get_type_hints
 from uuid import uuid4
 
 import birdseye.server
+import pygments
 import requests
 from birdseye import eye
 from django.conf import settings
@@ -27,7 +28,7 @@ from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
 from main.text import ExerciseStep, clean_program, page_slugs_list, pages, clean_solution_function
-from main.utils import highlighted_markdown
+from main.utils import highlighted_markdown, lexer, html_formatter, shuffled
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
 
@@ -210,6 +211,17 @@ class API:
             tokens=tokens,
             maskedIndices=masked_indices,
             mask=mask,
+            lines=shuffled([
+                dict(
+                    id=str(i),
+                    content=line,
+                )
+                for i, line in enumerate(
+                    pygments.highlight(program, lexer, html_formatter)
+                        .splitlines()
+                )
+                if line.strip()
+            ]),
         )
 
     def submit_feedback(self, title, description, state):

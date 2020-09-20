@@ -9,6 +9,7 @@ import xml.etree.ElementTree as etree
 from functools import lru_cache, partial
 from html import unescape
 from io import StringIO
+from random import shuffle
 from textwrap import dedent
 
 import pygments
@@ -189,3 +190,9 @@ class HighlightPythonTreeProcessor(Treeprocessor):
 
 def highlighted_markdown(text):
     return markdown(text, extensions=[HighlightPythonExtension()])
+
+
+def shuffled(it):
+    result = list(it)
+    shuffle(result)
+    return result

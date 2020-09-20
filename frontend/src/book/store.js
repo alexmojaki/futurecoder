@@ -30,11 +30,12 @@ const initialState = {
   editorContent: "",
   messages: [],
   pastMessages: [],
-  requestingSolution: false,
+  requestingSolution: 0,
   solution: {
     tokens: [],
     maskedIndices: [],
     mask: [],
+    lines: [],
   }
 };
 
@@ -149,7 +150,8 @@ export const getSolution = () => {
       step_index: stepIndex(),
     },
     (data) => {
-      setState('solution', data)
+      setState('solution', data);
+      setState('requestingSolution', 2);
     },
   );
 }
@@ -171,3 +173,14 @@ export const setDeveloperMode = (value) => {
   rpc("set_developer_mode", {value});
   setState("user.developerMode", value);
 }
+
+export const reorderSolutionLines = makeAction(
+  "REORDER_SOLUTION_LINES",
+  (state, {startIndex, endIndex}) => {
+    const result = Array.from(state.solution.lines);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+    return iset(state, "solution.lines", result);
+  },
+  (startIndex, endIndex) => ({startIndex, endIndex})
+)

@@ -144,6 +144,12 @@
   color: black;
 }
 
+.markdown-body .parsons-droppable pre {
+  margin-bottom: 2px;
+  padding: 8px;
+  user-select: none;
+}
+
 // Spinner from loading.io
 
 .lds-ellipsis {
