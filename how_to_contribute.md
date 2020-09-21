@@ -1,6 +1,6 @@
 # How to contribute
 
-For starters, try using the platform to see what it's like. You can go straight to the [demo site](https://futurecoder.io/) and quickly sign up for an account. See the [Controls](README.md#controls) section for instructions on enabling developer mode, this will allow you to skip or replay steps in a page to allow exploring more freely and quickly.
+For starters, try using the platform to see what it's like. You can go straight to the [site](https://futurecoder.io/) and quickly sign up for an account. See the [Controls](README.md#controls) section for instructions on enabling developer mode, this will allow you to skip or replay steps in a page to allow exploring more freely and quickly.
 
 Please [open an issue](https://github.com/alexmojaki/futurecoder/issues/new) about anything that's confusing, could be done better, or doesn't work. All suggestions and feedback are welcome. Tell me what interests you!
 
