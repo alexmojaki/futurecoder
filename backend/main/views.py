@@ -28,7 +28,7 @@ from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
 from main.text import ExerciseStep, clean_program, page_slugs_list, pages, clean_solution_function
-from main.utils import highlighted_markdown, lexer, html_formatter, shuffled
+from main.utils import highlighted_markdown, lexer, html_formatter, shuffled_well
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
 
@@ -211,7 +211,7 @@ class API:
             tokens=tokens,
             maskedIndices=masked_indices,
             mask=mask,
-            lines=shuffled([
+            lines=shuffled_well([
                 dict(
                     id=str(i),
                     content=line,
