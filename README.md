@@ -6,7 +6,7 @@
 
 This is a platform/course for people to teach themselves programming in Python, especially complete beginners at programming.
 
-You can try a demo here: https://futurecoder.herokuapp.com/
+You can try it out here: https://futurecoder.io/
 
 Currently this is a work in progress. While most of the groundwork is in place, there is a lot to do to make this a complete course ready for users. All kinds of help are needed and greatly appreciated - please consider [contributing](how_to_contribute.md)!
 
