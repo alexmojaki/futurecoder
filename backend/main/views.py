@@ -1,18 +1,12 @@
-import inspect
 import json
 import logging
 import traceback
 from datetime import datetime
-from io import StringIO
 from pathlib import Path
-from random import shuffle
-from textwrap import dedent
-from tokenize import Untokenizer, generate_tokens
 from typing import get_type_hints
 from uuid import uuid4
 
 import birdseye.server
-import pygments
 import requests
 from birdseye import eye
 from django.conf import settings
@@ -27,8 +21,8 @@ from littleutils import select_attrs, only
 from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
-from main.text import ExerciseStep, clean_program, page_slugs_list, pages, clean_solution_function
-from main.utils import highlighted_markdown, lexer, html_formatter, shuffled_well
+from main.text import page_slugs_list, pages
+from main.utils import highlighted_markdown
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
 
@@ -184,45 +178,10 @@ class API:
         self.user.save()
 
     def get_solution(self, page_index, step_index: int):
+        # TODO deprecated
         page = pages[page_slugs_list[page_index]]
         step = getattr(page, page.step_names[step_index])
-        if issubclass(step, ExerciseStep):
-            if step.solution.__name__ == "solution":
-                program, _ = clean_program(step.solution, None)
-            else:
-                program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
-        else:
-            program = step.program
-
-        untokenizer = Untokenizer()
-        tokens = generate_tokens(StringIO(program).readline)
-        untokenizer.untokenize(tokens)
-        tokens = untokenizer.tokens
-
-        masked_indices = []
-        mask = [False] * len(tokens)
-        for i, token in enumerate(tokens):
-            if not token.isspace():
-                masked_indices.append(i)
-                mask[i] = True
-        shuffle(masked_indices)
-
-        return dict(
-            tokens=tokens,
-            maskedIndices=masked_indices,
-            mask=mask,
-            lines=shuffled_well([
-                dict(
-                    id=str(i),
-                    content=line,
-                )
-                for i, line in enumerate(
-                    pygments.highlight(program, lexer, html_formatter)
-                        .splitlines()
-                )
-                if line.strip()
-            ]),
-        )
+        return step.get_solution
 
     def submit_feedback(self, title, description, state):
         """Create an issue on github.com using the given parameters."""

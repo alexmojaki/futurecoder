@@ -402,6 +402,8 @@ You will need to build up a string of dashes (`-`) one character at a time.
 The for loop will create a variable such as `char`, but the program doesn't need to use it.
         """
 
+        parsons_solution = True
+
         def solution(self, name: str):
             line = ''
             for _ in name:
@@ -462,6 +464,8 @@ Note that there is a space between the name and the pipes (`|`).
             (i.e. no spaces around `World`)
             """),
         ]
+
+        parsons_solution = True
 
         def solution(self, name: str):
             line = ''
@@ -544,6 +548,8 @@ Create a variable containing the spaces in the middle and use it many times.
 Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.
         """
 
+        parsons_solution = True
+
         def solution(self, name: str):
             line = '+' + name + '+'
             spaces = ''
@@ -614,6 +620,8 @@ Since the first letter should have no spaces before it, you need to add a space 
         """
 
         # TODO automatically catch print with multiple args?
+
+        parsons_solution = True
 
         def solution(self, name: str):
             spaces = ''

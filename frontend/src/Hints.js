@@ -1,5 +1,5 @@
 import React from "react";
-import {bookSetState, getSolution, reorderSolutionLines, revealSolutionToken, showHint} from "./book/store";
+import {bookSetState, reorderSolutionLines, revealSolutionToken, showHint} from "./book/store";
 import hintIcon from "./img/hint.png";
 import Popup from "reactjs-popup";
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
@@ -64,22 +64,24 @@ const Hints = ({hints, numHints, requestingSolution, solution}) =>
 const RequestSolution1 = ({requestingSolution, solution}) => {
   if (requestingSolution === 0) {
     return (
-      <button onClick={() => bookSetState("requestingSolution", 1)} className="btn btn-primary">
-        Show shuffled solution
+      <button onClick={() => bookSetState("requestingSolution", solution.lines ? 1 : 3)} className="btn btn-primary">
+        Show {solution.lines && "shuffled"} solution
       </button>
     )
-  } else if (solution.tokens.length === 0) {
+  } else if (requestingSolution === 1) {
     return <ConfirmSolution1/>
   } else {
     return <>
-      <Parsons lines={solution.lines}/>
-      <p>{" "}</p>
-      <p>
-        Above is an example solution with the lines out of order. You can drag them around to reorder them.
-        Finding a correct order is up to you, and we won't will tell you if you get it right.
-        Experimenting and running partial solutions in the editor may help you figure it out.
-        You still need to type a correct solution into the editor and run it to continue.
-      </p>
+      {solution.lines && <>
+        <Parsons lines={solution.lines}/>
+        <p>{" "}</p>
+        <p>
+          Above is an example solution with the lines out of order. You can drag them around to reorder them.
+          Finding a correct order is up to you, and we won't will tell you if you get it right.
+          Experimenting and running partial solutions in the editor may help you figure it out.
+          You still need to type a correct solution into the editor and run it to continue.
+        </p>
+      </>}
       <RequestSolution2
         requestingSolution={requestingSolution}
         solution={solution}
@@ -92,7 +94,7 @@ const RequestSolution1 = ({requestingSolution, solution}) => {
 const RequestSolution2 = ({requestingSolution, solution}) => {
   if (requestingSolution === 2) {
     return <button onClick={() => bookSetState("requestingSolution", 3)} className="btn btn-primary">
-      Show unscrambled solution
+        Show {solution.lines && "unscrambled"} solution
     </button>
   } else if (requestingSolution === 3) {
     return <ConfirmSolution2/>
@@ -106,7 +108,7 @@ const RequestSolution2 = ({requestingSolution, solution}) => {
 const ConfirmSolution1 = () => <>
   <p>Are you sure?</p>
   <p>
-    <button onClick={getSolution} className="btn btn-primary">
+    <button onClick={() => bookSetState("requestingSolution", 2)} className="btn btn-primary">
       Yes
     </button>
     {" "}

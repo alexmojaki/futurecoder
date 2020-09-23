@@ -84,7 +84,6 @@ class AppComponent extends React.Component {
       editorContent,
       messages,
       pages,
-      solution,
       requestingSolution,
       user,
       rpcError,
@@ -247,7 +246,7 @@ class AppComponent extends React.Component {
         hints={step.hints}
         numHints={numHints}
         requestingSolution={requestingSolution}
-        solution={solution}
+        solution={step.solution}
       />
 
       <MenuPopup

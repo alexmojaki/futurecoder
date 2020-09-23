@@ -258,6 +258,8 @@ Make sure that the code inside `if include:` *doesn't* run after the first itera
 That means `include` should be `False` after the first iteration.
         """
 
+        parsons_solution = True
+
         def solution(self, sentence: str):
             include = True
             new_sentence = ''
@@ -387,6 +389,8 @@ Fix this by adding an `else` clause to the `if` so that if `excited` is false, a
 is added to the end of the sentence instead of an exclamation mark (`!`).
         """
 
+        parsons_solution = True
+
         def solution(self, sentence: str, excited: bool):
             if excited:
                 char = '!'
@@ -419,6 +423,8 @@ Your `if/else` needs to execute different bodies depending on which iteration of
 That means that your `if` condition needs to be a variable that changes inside the loop.
 In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter.
         """
+
+        parsons_solution = True
 
         def solution(self, sentence: str):
             upper = True
@@ -463,6 +469,8 @@ First write a small program which takes a boolean variable and flips it, i.e. if
 You will need to use the variable in the `if` condition and also assign to the same variable in the body.
 Combine that flipping `if/else` with the one that chooses an uppercase or lowercase character.
         """
+
+        parsons_solution = True
 
         def solution(self, sentence: str):
             upper = True
@@ -550,6 +558,8 @@ Now extend the program to also replace `e` with `3` and `a` with `@`.
         hints = """
 You just need to add a few lines of code that are very similar to existing ones.
 """
+
+        parsons_solution = True
 
         def solution(self, name: str):
             new_name = ''
@@ -648,6 +658,8 @@ Now fix the program to replace all characters correctly.
             """),
             "Now make the same kind of change to the code swapping G and C."
         ]
+
+        parsons_solution = True
 
         def solution(self, dna: str):
             opposite_dna = ''
@@ -852,6 +864,8 @@ it should print `Alice`.
 Try writing a program which prints the smallest of just `x1` and `x2`.
 All you need is a few uses of `<`, `if`, and maybe `else`.
 """
+
+        parsons_solution = True
 
         def solution(self, x1: str, x2: str, x3: str):
             if x1 < x2:
