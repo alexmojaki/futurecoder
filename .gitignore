@@ -120,6 +120,9 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# Jetbrains tools
+.idea/
+
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -130,3 +133,6 @@ dmypy.json
 
 backend/static/
 backend/main/tests/error_screenshot.png
+
+# temporary local files
+tmp/
