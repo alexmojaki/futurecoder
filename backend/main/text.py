@@ -22,6 +22,7 @@ from main.exercises import (
     generate_for_type,
     inputs_string,
 )
+from main.linting import lint
 from main.utils import no_weird_whitespace, snake, unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self, \
     highlighted_markdown
 
@@ -274,9 +275,11 @@ class Step(ABC):
         result = self.check()
         if not isinstance(result, dict):
             result = bool(result)
+
         for message_cls in self.messages:
             if result == message_cls.after_success and message_cls.check_message(self):
                 return message_cls.message()
+
         if result is True:
             for d in self.disallowed:
                 if search_ast(
@@ -285,6 +288,15 @@ class Step(ABC):
                     d.predicate
                 ) > d.max_count:
                     return dict(message=d.message)
+
+            return True
+
+        if self.code_source != "shell":
+            if not isinstance(result, dict):
+                result = {}
+
+            result.setdefault("messages", []).extend(lint(self.tree))
+
         return result
 
     @abstractmethod

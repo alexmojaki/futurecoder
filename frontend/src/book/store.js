@@ -119,7 +119,9 @@ export const ranCode = makeAction(
         processing: false,
       };
     }
-    state = addMessageToState(state, value.message);
+    for (const message of value.messages) {
+      state = addMessageToState(state, message);
+    }
     return state;
   },
 );

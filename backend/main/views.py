@@ -131,7 +131,7 @@ class API:
 
         return dict(
             result=output_parts,
-            message=highlighted_markdown(result["message"]),
+            messages=list(map(highlighted_markdown, result["messages"])),
             state=self.current_state(),
             birdseye_url=birdseye_url,
             passed=passed,

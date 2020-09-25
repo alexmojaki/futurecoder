@@ -110,7 +110,7 @@ def run_code(entry, input_queue, result_queue):
         sys.stdout = orig_stdout
         sys.stderr = orig_stderr
 
-    message = ""
+    messages = []
     passed = False
     output = output_buffer.string()
 
@@ -119,13 +119,15 @@ def run_code(entry, input_queue, result_queue):
         step_result = page.check_step(entry, output, console)
         if isinstance(step_result, dict):
             passed = step_result.get("passed", False)
-            message = step_result.get("message", "")
+            messages = step_result.get("messages", [])
+            if "message" in step_result:
+                messages.append(step_result["message"])
         else:
             passed = step_result
 
     result_queue.put(make_result(
         passed=passed,
-        message=message,
+        messages=messages,
         output=output,
         birdseye_objects=birdseye_objects,
     ))

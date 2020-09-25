@@ -46,7 +46,7 @@ json_encoder = DecentJSONEncoder()
 
 def make_result(
         passed=False,
-        message='',
+        messages=(),
         awaiting_input=False,
         output=None,
         output_parts=None,
@@ -61,7 +61,7 @@ def make_result(
 
     result = dict(
         passed=passed,
-        message=message,
+        messages=messages,
         awaiting_input=awaiting_input,
         output=output,
         output_parts=output_parts,

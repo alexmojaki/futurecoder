@@ -30,6 +30,7 @@ psutil = "^5.7.0"
 dryenv = "^0.0.1"
 stack_data = "^0.0.7"
 jsonfield = "^3.1.0"
+pyflakes = "^2.2.0"
 
 [tool.poetry.extras]
 production = ["gevent", "gunicorn", "psycopg2"]

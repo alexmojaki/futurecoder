@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 from django.test import Client, TestCase
+from littleutils import only
 
 from main.text import pages
 from main.workers import master
@@ -58,18 +59,23 @@ class StepsTestCase(TestCase):
                     transcript.append(transcript_item)
                     is_message = substep in step.messages
                     if is_message:
+                        response["message"] = only(response.pop("messages"))
                         self.assertEqual(response["message"], substep.text, transcript_item)
-                    elif step.hints:
-                        solution_response = api(
-                            "get_solution",
-                            page_index=page_index,
-                            step_index=step_index,
-                        )
-                        get_solution = "".join(solution_response["tokens"])
-                        assert "def solution(" not in get_solution
-                        assert "returns_stdout" not in get_solution
-                        assert get_solution.strip() in program
-                        transcript_item["get_solution"] = get_solution.splitlines()
+                    else:
+                        self.assertEqual(response.pop("messages"), [])
+                        response["message"] = ""
+
+                        if step.hints:
+                            solution_response = api(
+                                "get_solution",
+                                page_index=page_index,
+                                step_index=step_index,
+                            )
+                            get_solution = "".join(solution_response["tokens"])
+                            assert "def solution(" not in get_solution
+                            assert "returns_stdout" not in get_solution
+                            assert get_solution.strip() in program
+                            transcript_item["get_solution"] = get_solution.splitlines()
                     self.assertEqual(
                         response["passed"],
                         not is_message,

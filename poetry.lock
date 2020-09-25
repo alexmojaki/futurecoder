@@ -510,10 +510,10 @@ email = ["email-validator (>=1.0.3)"]
 typing_extensions = ["typing-extensions (>=3.7.2)"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "passive checker of Python programs"
 name = "pyflakes"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.2.0"
 
@@ -749,7 +749,7 @@ brotli = ["brotli"]
 production = ["gevent", "gunicorn", "psycopg2"]
 
 [metadata]
-content-hash = "9ef6043a507302669167edfd3860fc0e44684549f3e2154218b1e69af66321d2"
+content-hash = "1aea8acae259571e804663c9e765db81e906a02a5a42508763336707a85f4a42"
 lock-version = "1.0"
 python-versions = "^3.8"
 
