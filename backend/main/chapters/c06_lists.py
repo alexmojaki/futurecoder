@@ -135,6 +135,8 @@ Only change it in the loop after checking it, or you won't be able to skip the f
 
         # TODO: MessageStep: catch the "obvious solution" where the user adds the separator after the last word?
 
+        parsons_solution = True
+
         def solution(self, words: List[str], separator: str):
             total = ''
             not_first = False
@@ -251,6 +253,8 @@ Use a comparison operator to test if a number is big enough to add.
 
         # TODO enforce not using +=
 
+        parsons_solution = True
+
         def solution(self, numbers: List[int]):
             big_numbers = []
             for number in numbers:
@@ -298,6 +302,8 @@ That means that once you set the variable to `True`, it should never be set to a
 Don't use an `else`.
 There is no reason to ever set the variable to `False` inside the loop.
         """
+
+        parsons_solution = True
 
         def solution(self, things, thing_to_find):
             found = False
@@ -645,6 +651,8 @@ output:
         ]
 
         # TODO catch user writing string1 < string2
+
+        parsons_solution = True
 
         def solution(self, string1, string2):
             length1 = len(string1)

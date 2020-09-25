@@ -14,6 +14,7 @@
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-ace": "^8.0.0",
+    "react-beautiful-dnd": "^13.0.0",
     "react-console-emulator": "^3.0.4",
     "react-dom": "^16.11.0",
     "react-redux": "^7.1.3",

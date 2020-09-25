@@ -17,6 +17,7 @@ const initialState = {
           text: "",
           hints: [],
           slug: "loading_placeholder",
+          solution: null,
         }
       ],
     }
@@ -30,12 +31,7 @@ const initialState = {
   editorContent: "",
   messages: [],
   pastMessages: [],
-  requestingSolution: false,
-  solution: {
-    tokens: [],
-    maskedIndices: [],
-    mask: [],
-  }
+  requestingSolution: 0,
 };
 
 
@@ -113,8 +109,7 @@ export const ranCode = makeAction(
       state = {
         ...state,
         ..._.pick(initialState, (
-          "numHints messages solution " +
-          "requestingSolution").split(" ")),
+          "numHints messages requestingSolution").split(" ")),
         server: value.state,
         processing: false,
       };
@@ -143,26 +138,17 @@ export const closeMessage = makeAction(
   (state, {value}) => iremove(state, "messages", value)
 )
 
-export const getSolution = () => {
-  rpc("get_solution", {
-      page_index: localState.page_index,
-      step_index: stepIndex(),
-    },
-    (data) => {
-      setState('solution', data)
-    },
-  );
-}
-
 export const revealSolutionToken = makeAction(
   "REVEAL_SOLUTION_TOKEN",
   (state) => {
-    const indices = state.solution.maskedIndices;
+    const solution_path = ["pages", state.page_index, "steps", stepIndex(state), "solution"];
+    const indices_path = [...solution_path, "maskedIndices"]
+    const indices = _.get(state, indices_path);
     if (!indices.length) {
       return state;
     }
-    state = iremove(state, "solution.maskedIndices", 0);
-    state = iset(state, ["solution", "mask", indices[0]], false);
+    state = iremove(state, indices_path, 0);
+    state = iset(state, [...solution_path, "mask", indices[0]], false);
     return state;
   }
 )
@@ -171,3 +157,15 @@ export const setDeveloperMode = (value) => {
   rpc("set_developer_mode", {value});
   setState("user.developerMode", value);
 }
+
+export const reorderSolutionLines = makeAction(
+  "REORDER_SOLUTION_LINES",
+  (state, {startIndex, endIndex}) => {
+    const path = ["pages", state.page_index, "steps", stepIndex(state), "solution", "lines"];
+    const result = Array.from(_.get(state, path));
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+    return iset(state, path, result);
+  },
+  (startIndex, endIndex) => ({startIndex, endIndex})
+)

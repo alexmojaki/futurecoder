@@ -7,11 +7,15 @@ from abc import ABC, abstractmethod
 from copy import deepcopy
 from functools import cached_property
 from importlib import import_module
+from io import StringIO
 from pathlib import Path
+from random import shuffle
 from textwrap import dedent, indent
+from tokenize import Untokenizer, generate_tokens
 from types import FunctionType
-from typing import Type, Union, get_type_hints, List
+from typing import Type, Union, List, get_type_hints
 
+import pygments
 from astcheck import is_ast_like
 from asttokens import ASTTokens
 from littleutils import setattrs, only
@@ -22,8 +26,8 @@ from main.exercises import (
     generate_for_type,
     inputs_string,
 )
-from main.utils import no_weird_whitespace, snake, unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self, \
-    highlighted_markdown
+from main.utils import highlighted_markdown, lexer, html_formatter, shuffled_well, no_weird_whitespace, snake, \
+    unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
 
 
 def clean_program(program, cls):
@@ -139,6 +143,54 @@ def clean_step_class(cls, clean_inner=True):
              messages=messages,
              hints=hints)
 
+    if hints:
+        cls.get_solution = get_solution(cls)
+
+
+def get_solution(step):
+    if issubclass(step, ExerciseStep):
+        if step.solution.__name__ == "solution":
+            program, _ = clean_program(step.solution, None)
+        else:
+            program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
+    else:
+        program = step.program
+
+    untokenizer = Untokenizer()
+    tokens = generate_tokens(StringIO(program).readline)
+    untokenizer.untokenize(tokens)
+    tokens = untokenizer.tokens
+
+    masked_indices = []
+    mask = [False] * len(tokens)
+    for i, token in enumerate(tokens):
+        if not token.isspace():
+            masked_indices.append(i)
+            mask[i] = True
+    shuffle(masked_indices)
+
+    if step.parsons_solution:
+        lines = shuffled_well([
+            dict(
+                id=str(i),
+                content=line,
+            )
+            for i, line in enumerate(
+                pygments.highlight(program, lexer, html_formatter)
+                    .splitlines()
+            )
+            if line.strip()
+        ])
+    else:
+        lines = None
+
+    return dict(
+        tokens=tokens,
+        maskedIndices=masked_indices,
+        mask=mask,
+        lines=lines,
+    )
+
 
 pages = {}
 page_slugs_list = []
@@ -206,6 +258,7 @@ class PageMeta(type):
                 text=text,
                 name=name,
                 hints=getattr(step, "hints", []),
+                solution=getattr(step, "get_solution", None),
             )
             for name, text, step in
             zip(self.step_names, self.step_texts, self.steps)
@@ -262,6 +315,8 @@ class Step(ABC):
     tests = {}
     expected_code_source = None
     disallowed: List[Disallowed] = []
+    parsons_solution = False
+    get_solution = None
 
     def __init__(self, *args):
         self.args = args

@@ -119,6 +119,8 @@ Remember to print a line with the correct number of dashes after each section.
 Make sure each line is in the correct loop and has the right amount of indentation.
         """
 
+        parsons_solution = True
+
         def solution(self):
             for left in range(12):
                 left += 1
@@ -576,6 +578,8 @@ You need to use a for loop inside a for loop.
 You need numbers that count down, like 5, 4, 3, 2, 1. There is a way to do this with `range`, and you can easily look it up, but it's also easy to use a normal range and do some very simple maths to convert numbers counting up into numbers counting down.
 What formula converts 0 into 5, 1 into 4, 2, into 3, etc?
 """
+
+        parsons_solution = True
 
         def solution(self, size: int):
             for i in range(size):

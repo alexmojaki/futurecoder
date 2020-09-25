@@ -313,6 +313,10 @@
   font-size: 32px;
 }
 
+.markdown-body h1 code {
+  font-size: 85%;
+}
+
 .markdown-body h1,
 .markdown-body h2 {
   font-weight: 600;

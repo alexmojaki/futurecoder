@@ -59,17 +59,16 @@ class StepsTestCase(TestCase):
                     is_message = substep in step.messages
                     if is_message:
                         self.assertEqual(response["message"], substep.text, transcript_item)
-                    elif step.hints:
-                        solution_response = api(
-                            "get_solution",
-                            page_index=page_index,
-                            step_index=step_index,
-                        )
-                        get_solution = "".join(solution_response["tokens"])
+                    elif step.get_solution:
+                        get_solution = "".join(step.get_solution["tokens"])
                         assert "def solution(" not in get_solution
                         assert "returns_stdout" not in get_solution
                         assert get_solution.strip() in program
                         transcript_item["get_solution"] = get_solution.splitlines()
+                        if step.parsons_solution:
+                            is_function = transcript_item["get_solution"][0].startswith("def ")
+                            assert len(step.get_solution["lines"]) >= 4 + is_function
+
                     self.assertEqual(
                         response["passed"],
                         not is_message,

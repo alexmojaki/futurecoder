@@ -9,6 +9,8 @@ import xml.etree.ElementTree as etree
 from functools import lru_cache, partial
 from html import unescape
 from io import StringIO
+from itertools import combinations
+from random import shuffle
 from textwrap import dedent
 
 import pygments
@@ -189,3 +191,26 @@ class HighlightPythonTreeProcessor(Treeprocessor):
 
 def highlighted_markdown(text):
     return markdown(text, extensions=[HighlightPythonExtension()])
+
+
+def shuffled(it):
+    result = list(it)
+    shuffle(result)
+    return result
+
+
+def shuffled_well(seq):
+    original = range(len(seq))
+    permutations = {
+        tuple(shuffled(original))
+        for _ in range(10)
+    }
+
+    def inversions(perm):
+        return sum(
+            perm[i] > perm[j]
+            for i, j in combinations(original, 2)
+        )
+
+    permutation = sorted(permutations, key=inversions)[-2]
+    return [seq[i] for i in permutation]
