@@ -20,7 +20,7 @@ export default {
   },
   inputArea: {
     display: 'inline-flex',
-    width: '100%'
+    width: 'calc(100% - 2.5em)'
   },
   promptLabel: {
     // paddingTop: '3px',
