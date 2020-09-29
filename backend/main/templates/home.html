@@ -1,4 +1,6 @@
 {% load static %}
+{% load sass_tags %}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,11 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>future_coder: learn python from scratch</title>
     <link href="https://fonts.googleapis.com/css?family=Heebo:400,400i,500,700|Titillium+Web:600" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/brochure/style.css' %}">
+    <!--link rel="stylesheet" href="{% static 'css/brochure/style.css' %}"-->
+    <link rel="stylesheet" href="{% sass_src 'css/brochure/style.scss' %}"/>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
 </head>
-<body>
+<body onload="AOS.init()">
 <div class="body-wrap boxed-container">
     <div style="position:fixed; z-index:0; top:0; left:0; width:100%; height:100%;">
         <canvas id="canvas" style="width:100%; height:100%;"></canvas>
@@ -44,8 +48,11 @@
                         <h3 class="hero-paragraph is-revealing" data-aos="fade-right" data-aos-delay="400">
                             Learn Python from scratch.
                         </h3>
-                        <a class="button button-primary button-block" style="width:fit-content;" href="#" data-aos="fade-in" data-aos-delay="3000">
-                            Let's start
+                        <a class="button button-primary button-block" style="width:fit-content;display:inline-block;margin-right:20px;" href="#" data-aos="fade-in" data-aos-delay="2900">
+                            <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i> Let's start
+                        </a>
+                        <a class="button button-primary button-block" style="width:fit-content;display:inline-block;" href="https://github.com/alexmojaki/futurecoder" data-aos="fade-in" data-aos-delay="3000">
+                            <i class="fab fa-github"></i> View the repo on Github
                         </a>
                         <!--div class="hero-form field field-grouped is-revealing">
                             <div class="control control-expanded">
@@ -57,38 +64,8 @@
                         </div-->
                     </div>
                     <div class="hero-illustration">
-                        <div class="hero-square hero-square-1 is-moving-object is-rotating">
-                            <img width="220" height="220" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-square hero-square-2 is-moving-object is-rotating">
-                            <img width="88" height="88" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-square hero-square-3 is-moving-object is-rotating">
-                            <img width="64" height="64" src="{% static 'img/terminal.png' %}">
-                        </div>
                         <div class="hero-square hero-square-4 is-moving-object is-rotating">
-                            <img width="320" height="320" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-square hero-square-5 is-moving-object is-rotating">
-                            <img width="141" height="140" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-square hero-square-6 is-moving-object is-rotating">
-                            <img width="128" height="128" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-square hero-square-7 is-moving-object is-rotating">
-                            <img width="64" height="64" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-square hero-square-8 is-moving-object is-rotating">
-                            <img width="40" height="40" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-dots hero-dots-1 is-moving-object is-translating" data-translating-factor="160">
-                            <img width="279" height="97" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-dots hero-dots-2 is-moving-object is-translating" data-translating-factor="120">
-                            <img width="138" height="132" src="{% static 'img/terminal.png' %}">
-                        </div>
-                        <div class="hero-dots hero-dots-3 is-moving-object is-translating" data-translating-factor="160">
-                            <img width="98" height="59" src="{% static 'img/terminal.png' %}">
+                            <img width="640" height="540" src="{% static 'img/terminal.png' %}">
                         </div>
                     </div>
                 </div>
@@ -159,6 +136,45 @@
                     </div>
                 </div>
             </div>
+            <br/>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="800" data-aos-offset="300" data-aos-once="true">
+            <br/>
+            <div class="container">
+                <div style="position:relative;display:inline-block;" class="hero-copy">
+                    <h2>Want to stay posted on future_coder?</h2>
+                </div>
+                <div style="position:relative;display:inline-block;" class="hero-copy">
+                    <form method="post">
+                        {% crispy form %}
+                        <br/>
+                        <button type="submit" class="button button-primary button-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <br/>
+        </section>
+        <section>
+            <div class="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-offset="50" data-aos-once="true">
+                <div style="position:relative;display:inline-block;" class="hero-copy">
+                    <img src="{% static 'logo/bordered.png' %}" style="width:200px;max-width:30vw;position:absolute;top:-350px;right:40px;">
+                </div>
+                <div style="position:relative;display:inline-block;" class="hero-copy">
+
+                    <h2>About</h2>
+                    <p>
+                        future_coder is about allow a larger percentage of the world access to the mysterious
+                        sub-world of coding. This specific sub-world may be perceived as particularly daunting, but we
+                        know there great joy and power to be found inside. Thus, this platform was created.
+                    </p>
+                    <img style="width:64px; display: inline-block;" src="{% static 'img/icons/python.png' %}">&nbsp;&nbsp;
+                    <img style="width:64px; display: inline-block;" src="{% static 'img/icons/django.png' %}">&nbsp;&nbsp;
+                    <img style="width:64px; display: inline-block;" src="{% static 'img/icons/react.png' %}">&nbsp;&nbsp;
+                    <br/><br/>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -215,7 +231,7 @@
 <script src="{% static 'js/main.js' %}"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init();
+    // document.onload = AOS.init();
 </script>
 <script type="text/javascript" src="{% static 'js/warpspeed.min.js' %}"></script>
 <script>
