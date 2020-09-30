@@ -41,12 +41,10 @@ import birdseyeIcon from "./img/birdseye_icon.png";
 import _ from "lodash";
 
 
-class AppComponent extends React.Component {
-  constructor(props) {
-    super(props)
-    this.terminal = React.createRef()
-  }
+export const terminalRef = React.createRef();
 
+
+class AppComponent extends React.Component {
   runCode({code, source}) {
     const shell = source === "shell";
     if (!shell && !code) {
@@ -61,18 +59,13 @@ class AppComponent extends React.Component {
       {code, source, page_index: bookState.page_index, step_index: stepIndex()},
       (data) => {
         if (!shell) {
-          this.terminal.current.clearStdout();
+          terminalRef.current.clearStdout();
         }
         bookSetState("processing", false);
 
         ranCode(data);
-        const terminal = this.terminal.current;
-        terminal.pushToStdout(data.result);
-        animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
-        terminal.focusTerminal();
-        
-        if (data.birdseye_url) {
-          window.open(data.birdseye_url);
+        if (!data.prediction.choices) {
+          showCodeResult(data);
         }
       },
     );
@@ -236,7 +229,7 @@ class AppComponent extends React.Component {
           <div className="terminal">
             <Terminal
               onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
-              ref={this.terminal}
+              ref={terminalRef}
             />
           </div>
         </div>
@@ -361,3 +354,15 @@ export const App = connect(
     rpcError: state.rpc.error,
   }),
 )(AppComponent);
+
+
+export const showCodeResult = (data) => {
+  const terminal = terminalRef.current;
+  terminal.pushToStdout(data.result);
+  animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
+  terminal.focusTerminal();
+
+  if (data.birdseye_url) {
+    window.open(data.birdseye_url);
+  }
+}

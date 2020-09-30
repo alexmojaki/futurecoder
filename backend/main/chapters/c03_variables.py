@@ -7,6 +7,15 @@ from astcheck import is_ast_like
 from main.text import MessageStep, Page, Step, VerbatimStep
 
 
+class word_must_be_hello(VerbatimStep):
+    def check(self):
+        if self.console.locals.get("word") != "Hello":
+            return dict(
+                message="Oops, you need to set `word = 'Hello'` before we can continue."
+            )
+        return super().check()
+
+
 class IntroducingVariables(Page):
 
     class word_assign(VerbatimStep):
@@ -20,14 +29,15 @@ __program_indented__
 
         program = "word = 'Hello'"
 
-    class word_check(VerbatimStep):
+    class word_check(word_must_be_hello):
         """
 This creates a variable with the name `word` that refers to the string value `'Hello'`.
 
-Check now that this is true by simply running `__program__` in the shell by itself.
+Now see what happens when you run `__program__` in the shell by itself.
         """
 
         program = "word"
+        predicted_output_choices = ["word", "'word'", "Hello", "'Hello'"]
 
     class word_string_check(VerbatimStep):
         """
@@ -35,6 +45,7 @@ Good. For comparison, run `__program__` in the shell by itself, with the quotes.
         """
 
         program = "'word'"
+        predicted_output_choices = ["word", "'word'", "Hello", "'Hello'"]
 
     class sunshine_undefined_check(VerbatimStep):
         """
@@ -44,19 +55,12 @@ Similarly, `'sunshine'` is `'sunshine'`, but what's `__program__` without quotes
         """
 
         program = "sunshine"
+        predicted_output_choices = ["sunshine", "'sunshine'", "Hello", "'Hello'"]
+        correct_output = "Error"
 
     final_text = """
 The answer is that `sunshine` looks like a variable, so Python tries to look up its value, but since we never defined a variable with that name we get an error.
 """
-
-
-class word_must_be_hello(VerbatimStep):
-    def check(self):
-        if self.console.locals.get("word") != "Hello":
-            return dict(
-                message="Oops, you need to set `word = 'Hello'` before we can continue."
-            )
-        return super().check()
 
 
 class UsingVariables(Page):

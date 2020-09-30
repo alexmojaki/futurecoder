@@ -146,6 +146,9 @@ def clean_step_class(cls, clean_inner=True):
     if hints:
         cls.get_solution = get_solution(cls)
 
+    if cls.predicted_output_choices:
+        cls.predicted_output_choices.append("Error")
+
 
 def get_solution(step):
     if issubclass(step, ExerciseStep):
@@ -317,6 +320,8 @@ class Step(ABC):
     disallowed: List[Disallowed] = []
     parsons_solution = False
     get_solution = None
+    predicted_output_choices = None
+    correct_output = None
 
     def __init__(self, *args):
         self.args = args
@@ -503,6 +508,24 @@ def search_ast(node, template, predicate=lambda n: True):
         and predicate(child)
         and child != node
         for child in ast.walk(node)
+    )
+
+
+def prediction(step, entry, passed):
+    if passed and step.predicted_output_choices:
+        choices = step.predicted_output_choices
+        if step.correct_output:
+            answer = step.correct_output
+        else:
+            answer = entry.output.rstrip()
+            assert answer in choices
+        assert answer
+    else:
+        answer = choices = None
+
+    return dict(
+        choices=choices,
+        answer=answer,
     )
 
 

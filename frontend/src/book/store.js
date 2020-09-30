@@ -2,6 +2,7 @@ import {ipush, iremove, iset, redact} from "../frontendlib";
 import {rpc} from "../rpc";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
+import {terminalRef} from "../App";
 
 const initialState = {
   server: {
@@ -32,6 +33,13 @@ const initialState = {
   messages: [],
   pastMessages: [],
   requestingSolution: 0,
+  prediction: {
+    choices: null,
+    answer: "",
+    userChoice: "",
+    state: "hidden",
+    codeResult: {},
+  },
 };
 
 
@@ -108,13 +116,33 @@ export const ranCode = makeAction(
 
       state = {
         ...state,
-        ..._.pick(initialState, (
-          "numHints messages requestingSolution").split(" ")),
-        server: value.state,
+        ..._.pick(initialState,
+          "numHints messages requestingSolution".split(" ")),
+        prediction: {
+          ...value.prediction,
+          userChoice: "",
+          state: value.prediction.choices ? "waiting" : "hidden",
+          codeResult: value,
+        },
         processing: false,
       };
     }
     state = addMessageToState(state, value.message);
+    if (value.prediction.choices) {
+      setTimeout(() => {
+        const element = document.getElementsByClassName("output-prediction")[0];
+        setState("prediction.height", element.scrollHeight + "px");
+      }, 100);
+      const scrollInterval = setInterval(() => {
+        animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current});
+      }, 30);
+      setTimeout(() => clearInterval(scrollInterval), 1300);
+    } else {
+      state = {
+        ...state,
+        server: value.state,
+      }
+    }
     return state;
   },
 );
