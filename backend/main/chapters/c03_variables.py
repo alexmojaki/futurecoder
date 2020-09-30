@@ -81,6 +81,9 @@ Now make a variable called `your_name` whose value is another string.
 
         class assigned_something_else(MessageStep):
             """Put `your_name` before the `=` to create a variable called `your_name`."""
+
+            # TODO this doesn't work if the user enters invalid syntax, e.g.
+            # your name = 3, because check quits early due to a SyntaxError
             program = "foo = 3"
 
             def check(self):
@@ -125,6 +128,8 @@ You can use variables in calculations just like you would use literals. For exam
 
 __program_indented__
         """
+
+        # TODO add predicted output: requires computing choices in worker
 
         program = "'Hello ' + your_name"
 
@@ -224,6 +229,15 @@ Often you will use variables to store the results of calculations. This will hel
 
     __program_indented__
         """
+        
+        predicted_output_choices = [
+            "sentence",
+            "word + ' ' + name",
+            "Hello + ' ' + World",
+            "'Hello' + ' ' + 'World'",
+            "Hello World",
+            "'Hello World'",
+        ]
 
         def program(self):
             word = 'Hello'
@@ -239,6 +253,15 @@ Now `sentence` has the value `'Hello World'` which can be used multiple times. N
     print(sentence)
         """
         program_in_text = False
+
+        predicted_output_choices = [
+            "Hello World\n"
+            "Hello World",
+            "Hello World\n"
+            "Goodbye World",
+            "Goodbye World\n"
+            "Goodbye World",
+        ]
 
         # noinspection PyUnusedLocal
         def program(self):

@@ -232,8 +232,17 @@ Before we look at some more loops, we need to quickly learn another concept. Loo
 
 __program_indented__
 
-What do you think the line `hello = hello + '!'` does? What do you think the program will output? Make a prediction, then run it to find out.
+What do you think the line `hello = hello + '!'` does? Run the program to find out.
         """
+
+        predicted_output_choices = [
+            "Hello\n"
+            "Hello",
+            "Hello\n"
+            "Hello!",
+            "Hello!\n"
+            "Hello!",
+        ]
 
         def program(self):
             hello = 'Hello'
@@ -253,12 +262,36 @@ or:
     temp = hello
     hello = temp + '!'
 
-This is very useful in a loop. Think about what this program will do, then run it:
+This is very useful in a loop. Try out this program:
 
 __program_indented__
 
 By the way, `''` is called the *empty string* - a string containing no characters.
         """
+
+        predicted_output_choices = [
+            "W\n"
+            "o\n"
+            "r\n"
+            "l\n"
+            "d",
+            "World",
+            "W\n"
+            "Wo\n"
+            "Wor\n"
+            "Worl\n"
+            "World\n",
+            "World\n"
+            "Worl\n"
+            "Wor\n"
+            "Wo\n"
+            "W\n",
+            "World\n"
+            "World\n"
+            "World\n"
+            "World\n"
+            "World\n",
+        ]
 
         def program(self):
             name = 'World'
@@ -269,10 +302,27 @@ By the way, `''` is called the *empty string* - a string containing no character
 
     class name_triangle_missing_last_line(VerbatimStep):
         """
-The details in the above program are important. What goes wrong if you swap the last two lines and run this program instead?
+The details in the above program are important. What happens if you swap the last two lines and run this program instead?
 
 __program_indented__
         """
+
+        predicted_output_choices = [
+            "W\n"
+            "Wo\n"
+            "Wor\n"
+            "Worl\n"
+            "World\n",
+            "Wo\n"
+            "Wor\n"
+            "Worl\n"
+            "World\n",
+            "\n"
+            "W\n"
+            "Wo\n"
+            "Wor\n"
+            "Worl\n"
+        ]
 
         def program(self):
             name = 'World'

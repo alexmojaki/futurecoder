@@ -65,6 +65,7 @@ export const OutputPrediction = (
 ) => {
   if (state === "hidden") return null;
 
+  const confettiActive = state === "showingResult" && answer === userChoice;
   return <div
     className="output-prediction"
     style={{
@@ -86,28 +87,7 @@ export const OutputPrediction = (
             )
         }
       </strong>
-      <Confetti
-        active={state === "showingResult" && answer === userChoice}
-        config={{
-          angle: "360",
-          spread: 360,
-          startVelocity: "32",
-          elementCount: "117",
-          dragFriction: "0.13",
-          duration: "2500",
-          stagger: "5",
-          width: "17px",
-          height: "18px",
-          perspective: "0px",
-          colors: [
-            "#a864fd",
-            "#29cdff",
-            "#78ff44",
-            "#ff718d",
-            "#fdff6a",
-          ]
-        }}
-      />
+      <CorrectConfetti active={confettiActive}/>
     </div>
     <RadioGroup
       choices={choices}
@@ -135,5 +115,30 @@ export const OutputPrediction = (
         Submit
       </button>
     </div>
+    <CorrectConfetti active={confettiActive}/>
   </div>
 }
+
+const CorrectConfetti = ({active}) =>
+  <Confetti
+    active={active}
+    config={{
+      angle: "360",
+      spread: 360,
+      startVelocity: "32",
+      elementCount: "117",
+      dragFriction: "0.13",
+      duration: "2500",
+      stagger: "5",
+      width: "17px",
+      height: "18px",
+      perspective: "0px",
+      colors: [
+        "#a864fd",
+        "#29cdff",
+        "#78ff44",
+        "#ff718d",
+        "#fdff6a",
+      ]
+    }}
+  />

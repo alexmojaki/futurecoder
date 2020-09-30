@@ -148,6 +148,10 @@ def clean_step_class(cls, clean_inner=True):
 
     if cls.predicted_output_choices:
         cls.predicted_output_choices.append("Error")
+        cls.predicted_output_choices = [
+            s.rstrip()
+            for s in cls.predicted_output_choices
+        ]
 
 
 def get_solution(step):
@@ -518,7 +522,7 @@ def prediction(step, entry, passed):
             answer = step.correct_output
         else:
             answer = entry.output.rstrip()
-            assert answer in choices
+            assert answer in choices, (answer, choices)
         assert answer
     else:
         answer = choices = None

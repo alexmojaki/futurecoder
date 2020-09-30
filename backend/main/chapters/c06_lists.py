@@ -423,6 +423,55 @@ This gives us an alternative way to loop over a list:
 __program_indented__
         """
 
+        predicted_output_choices = ["""\
+This
+is
+a
+list
+""", """\
+0
+1
+2
+3
+""", """\
+0
+This
+1
+is
+2
+a
+3
+list
+""", """\
+This
+0
+is
+1
+a
+2
+list
+3
+""", """\
+0
+1
+2
+3
+This
+is
+a
+list
+""", """\
+This
+is
+a
+list
+0
+1
+2
+3
+""",
+                                    ]
+
         def program(self):
             words = ['This', 'is', 'a', 'list']
 
