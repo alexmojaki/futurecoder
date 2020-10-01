@@ -43,6 +43,22 @@ Then run the program again.
         """
 
         program_in_text = False
+        predicted_output_choices = [
+            """\
+Hello Alice!
+How are you?
+Hello Bob!
+How are you?
+""", """\
+Hello Alice!
+Hello Bob!
+How are you?
+""", """\
+Hello Alice!
+How are you?
+Hello Bob!
+"""
+        ]
 
         def program(self):
             def greet(name):
@@ -176,6 +192,28 @@ Functions can have many parameters. Here's an example:
 __program_indented__
 """
 
+        predicted_output_choices = [
+            """\
+3
+3
+3
+""", """\
+3
+""", """\
+Hello
+Hello
+Hello
+""", """\
+Hello
+""", """\
+H
+e
+l
+l
+o
+"""
+        ]
+
         def program(self):
             def print_many(thing, n):
                 for _ in range(n):
@@ -308,6 +346,12 @@ Functions can be especially useful when they *return* values, rather than just p
 __program_indented__
         """
 
+        predicted_output_choices = [
+            "5\n5",
+            "5\n10",
+            "10\n10",
+        ]
+
         def program(self):
             def double(x):
                 return x * 2
@@ -328,10 +372,12 @@ exactly what happens.
 Note that `double(number)` *didn't change `number`*. At the end, `number` is still `5`. Rather, `double(number)`
 returned a new value. It's crucial that the program made use of that returned value, in this case by storing
 it in a variable. Immediately printing it with `print(double(number))` also works. On the other hand,
-this doesn't work:
+try this:
 
 __program_indented__
         """
+
+        predicted_output_choices = ["5", "10"]
 
         def program(self):
             def double(x):
@@ -426,6 +472,23 @@ so you can always use it. Here's an example of using it for you to try out:
 __program_indented__
         """
 
+        predicted_output_choices = [
+            """\
+Error! 4 != 4
+Error! 10 != 10
+""", """\
+Error! 2 != 4
+Error! 5 != 10
+""", """\
+Error! 2 != 4
+""", """\
+OK
+OK
+""", """\
+OK
+"""
+        ]
+
         def program(self):
             def double(x):
                 return x * 2
@@ -440,6 +503,21 @@ The OKs tell us that the tests passed. Our `double` function seems to be working
 """
 
         program_in_text = False
+        predicted_output_choices = [
+            """\
+Error! 4 != 4
+Error! 10 != 10
+""", """\
+Error! 6 != 4
+Error! 15 != 10
+""", """\
+Error! 4 != 6
+Error! 10 != 15
+""", """\
+OK
+OK
+""",
+]
 
         def program(self):
             def double(x):
