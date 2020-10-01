@@ -1,7 +1,7 @@
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircle, faDotCircle} from "@fortawesome/free-solid-svg-icons";
-import {bookSetState} from "./book/store";
+import {bookSetState, scrollToNextStep} from "./book/store";
 import {showCodeResult, terminalRef} from "./App";
 import Confetti from "react-dom-confetti";
 import {animateScroll} from "react-scroll";
@@ -102,6 +102,7 @@ export const OutputPrediction = (
         disabled={!userChoice}
         onClick={() => {
           bookSetState("server", codeResult.state);
+          scrollToNextStep();
           bookSetState("prediction.state", "showingResult");
           setTimeout(() => animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current}))
           setTimeout(() => {

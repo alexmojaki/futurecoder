@@ -102,17 +102,21 @@ export const showHint = makeAction(
   },
 );
 
+export const scrollToNextStep = () => {
+  setTimeout(() =>
+      scroller.scrollTo(`step-text-${stepIndex()}`, {
+        duration: 1000,
+        smooth: true,
+      }),
+    500,
+  )
+};
+
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
     if (value.passed) {
-      setTimeout(() =>
-          scroller.scrollTo(`step-text-${stepIndex()}`, {
-            duration: 1000,
-            smooth: true,
-          }),
-        500,
-      )
+      scrollToNextStep();
 
       state = {
         ...state,
