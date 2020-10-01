@@ -234,7 +234,7 @@ export default class Terminal extends Component {
               <div/>
             </div>}
 
-            {bookState.prediction.state !== "waiting" &&
+            {bookState.prediction.state !== "waiting" && bookState.prediction.state !== "showingResult" &&
             <input
               ref={this.terminalInput}
               name={'react-console-emulator__input'}

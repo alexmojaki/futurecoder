@@ -101,13 +101,13 @@ export const OutputPrediction = (
         className="btn btn-primary"
         disabled={!userChoice}
         onClick={() => {
-          showCodeResult(codeResult);
           bookSetState("server", codeResult.state);
           bookSetState("prediction.state", "showingResult");
           setTimeout(() => animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current}))
           setTimeout(() => {
             bookSetState("prediction.state", "fading");
             bookSetState("prediction.height", 0);
+            showCodeResult(codeResult);
           }, 3000);
           setTimeout(() => bookSetState("prediction.state", "hidden"), 4000);
         }}
