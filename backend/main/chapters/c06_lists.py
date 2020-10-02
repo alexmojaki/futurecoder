@@ -814,12 +814,9 @@ __program_indented__
 
 
 class FunctionsAndMethodsForLists(Page):
-    title = "Functions and Methods for Lists and Strings, and How to Find Information with Google and more"
+    title = "Functions and Methods for Lists"
 
-    # TODO this is quite the information dump and I'd like it to be a little more interactive,
-    # but users don't need to know these functions off by heart.
-
-    class sum_list(Step):
+    class append_vs_concatenate(VerbatimStep):
         """
 Let's review how to work with lists. Suppose we have a list `nums = [1, 2, 3]`. You can use:
 
@@ -829,16 +826,367 @@ Let's review how to work with lists. Suppose we have a list `nums = [1, 2, 3]`. 
 - **`subscripting`**: Get a value at an index. `nums[0]` is 1, `nums[1]` is 2, `nums[2]` is 3.
 - **`+`**: Concatenates lists. `nums + [4, 5]` is `[1, 2, 3, 4, 5]`.
 
-Here's some new things. Try them out in the shell.
+Note that `nums.append(4)` modifies the existing list `nums`, while `nums + [4, 5]` does not.
+To preserve the value of `nums + [4, 5]` we must assign it to a *new variable*.
+Type and run the following code in the editor:
+
+__program_indented__
+        """
+
+        def program(self):
+            nums = [1, 2, 3]
+            new_nums = nums + [4, 5]
+            print(new_nums)
+            print(nums)
+            nums.append(4)
+            print(nums)
+
+    class pop_remove_index_subscript_assignment(ExerciseStep):
+        """
+As you see, `+` does not modify `nums`, but `append` does. (`new_nums` is not affected by the change in `nums`.)
+
+Here's some new things. Try them out in the shell. Again suppose we have a list `nums = [1, 2, 3]`.
 
 - **`subscript assignment`**: Set a value at an index. `nums[0] = 9` changes the list to `[9, 2, 3]`.
-- **`join`**: Add a list of strings with a separator in between. This is a method of strings (the separator) which takes an iterable of strings as an argument. `'--'.join(['apples', 'oranges', 'bananas'])` returns `'apples--oranges--bananas'`. You can also use an empty string if you don't want a separator, e.g. `''.join(['apples', 'oranges', 'bananas'])` returns `'applesorangesbananas'`.
-- **`sum`**: Add a list of numbers. `sum(nums)` is 6.
-- **`in`**: A comparison operator that checks if a value is in a list. `2 in nums` is `True`, but `4 in nums` is `False`.
 - **`index`**: Returns the first index of a value in a list. `[7, 8, 9, 8].index(8)` is 1. Raises an error if the value isn't there.
+- **`pop`**: Removes and returns an element at a given index. `nums.pop(1)` removes `nums[1]` (which is `2`) from the list and returns it. Without an argument, i.e. just `nums.pop()`, it will remove and return the last element.
+- **`remove`**: Removes the first occurrence of the given element. `nums.remove(3)` will leave `nums` as `[1, 2]`. Raises an error if the value doesn't exist.
 
-You may recognise some of these from your exercises. I assure you that those exercises were not pointless, as you've now learned valuable fundamental skills. For example, you can use `in` to check if a list contains 5, but there's no similarly easy way to check for a number bigger than 5.
+Now you will solve four exercises about the new functions and methods you learned.
+Below is a list of correct and incorrect lines of code, mixed together.
+Each exercise has a solution that includes one (and only one) of the lines below.
+In each exercise you need to find the correct line from the list below that achieves the result described,
+and use it to write the solution. (Sometimes you can use the correct line exactly as it is,
+sometimes you will have to add a little bit more to it.)
 
+    x[len(x)] = x[0]
+    x[len(x) - 1] = x[0]
+    x[len(x) + 1] = x[0]
+    x + x[0]
+    [x] + x[0]
+    x + [x[0]]
+    [x] + [x[0]]
+    x + x.pop(0)
+    [x] + x.pop(0)
+    x + [x.pop(0)]
+    [x] + [x.pop(0)]
+    x.pop(x.append(0))
+    x.append(x.pop(0))
+    x.append(x[0])
+    x.append(x.index(0))
+    x.index(x.append(0))
+    x.pop(x.index(0))
+    x.index(x.pop(0))
+
+Write a program which takes a list `x` of strings, and modifies `x` to move the first element to the end,
+keeping the length of `x` the same, then prints `x`.
+For example, if `x = ['a', 'b', 'c']` then the code should modify `x` to `['b', 'c', 'a']` and print it.
+
+The solution has exactly three lines of code, one of which is from the list above.
+Find the correct line, write your solution in the editor, and then run the code.
+        """
+
+        # TODO: this was the only way I could make it to pass. It doesn't like mutating x as part of solution.
+        # I tried writing generate_inputs as in list_contains_exercise but could not make it work.
+        # Probably I should be trying to emulate list_insert(Step) but I'm not sure how to write the check method.
+        # I had to make x a List[str] or List[int] to avoid "solution is missing one positional argument" error.
+        # Same issues continue down in all the exercises, sorry about that.
+        # It would be great if it worked on any kind of list.
+        # Also would be nice to have some MessageStep s for similar but wrong choices.
+        def solution(self, x: List[str]):
+            y = x.copy()
+            y.append(y.pop(0))
+            print(y)
+
+        tests = [
+            (['This', 'is', 'a', 'list'], ['is', 'a', 'list', 'This']),
+            (['The', 'quick', 'brown', 'fox', 'jumps'], ['quick', 'brown', 'fox', 'jumps', 'The']),
+        ]
+
+    class subscript_assignment_exercise(ExerciseStep):
+        """
+Good job. Next exercise:
+
+Write a program that takes a list `x` of strings and modifies `x` to overwrite
+the last element with the first element, keeping the length of `x` the same, then prints `x`.
+For example, if `x = ['a', 'b', 'c']` then the code should modify it to `['a', 'b', 'a']` and print it.
+
+The solution is exactly three lines of code, one of which is from the list above.
+Find the correct line, write your solution in the editor, and then run the code.
+        """
+
+        def solution(self, x: List[str]):
+            y = x.copy()
+            y[len(y) - 1] = y[0]
+            print(y)
+
+        tests = [
+            (['This', 'is', 'a', 'list'], ['This', 'is', 'a', 'This']),
+            (['The', 'quick', 'brown', 'fox', 'jumps'], ['The', 'quick', 'brown', 'fox', 'The']),
+        ]
+
+    class negative_index_concatenation_exercise(ExerciseStep):
+        """
+Excellent!
+
+You might realize that accessing the last element via `x[len(x) - 1]` is a bit cumbersome. The same can be achieved by `x[-1]`.
+Similarly, the second to last element `x[len(x) - 2]` is equivalent to `x[-2]`, and so on.
+Python allows us to count the index backwards too, starting at the last element with `-1`:
+
+    # TODO: table goes here explaining negative indexing
+
+Next exercise:
+
+Write a program that takes a list `x` of strings and creates a new list `y`, which is the same as the original
+list `x` but also has the first element repeated at the end (length increases by 1), and prints `y`.
+For example, if `x = ['a', 'b', 'c']` then the code should make a new list `y` that is equal to `['a', 'b', 'c', 'a']`
+and print it. It should not modify the original list `x` in any way.
+
+The solution is exactly three lines of code, one of which *uses* a line from the list above.
+Find the correct line, use it in your solution in the editor, and then run the code.
+        """
+
+        # TODO: is it possible to check that the user did not modify x, i.e. did not use append/pop? Using 'disallowed'?
+        def solution(self, x: List[str]):
+            y = x + [x[0]]
+            print(y)
+
+        tests = [
+            (['This', 'is', 'a', 'list'], ['This', 'is', 'a', 'list', 'This']),
+            (['The', 'quick', 'brown', 'fox', 'jumps'], ['The', 'quick', 'brown', 'fox', 'jumps', 'The']),
+        ]
+
+    class remove_exercise(ExerciseStep):
+        """
+Great work. Now the final exercise:
+
+Write a program that takes a list `x` of numbers that contains 0,
+modifies `x` in a way that is equivalent to: `x.remove(0)`, and then prints `x`.
+For example, if `x = [1, 2, 0, 3]` then the code should modify `x` to `[1, 2, 3]` and print it.
+
+The solution is exactly three lines long, one of which is from the list above.
+Find the correct line, include it in your solution and run the code.
+        """
+
+        def solution(self, x: List[int]):
+            y = x.copy()
+            y.pop(y.index(0))
+            print(y)
+
+        tests = [
+            ([1, 2, 0, 3], [1, 2, 3]),
+            ([0, 1, 2], [1, 2]),
+        ]
+
+        @classmethod
+        def generate_inputs(cls):
+            x = generate_list(int)
+            random_index = random.randint(0, len(x) - 1)
+            x[random_index] = 0
+            return dict(
+                x=x,
+            )
+
+    final_text = """
+Great job!
+    """
+
+
+class MoreListFunctionsAndMethods(Page):
+    title = "More List Functions and Methods"
+
+    class count_in_sorted_sum(ExerciseStep):
+        """
+Here are a few more useful functions/methods. Suppose `nums = [28, 99, 10, 81, 59, 64]`
+
+- **`sorted`**: Takes an iterable and returns a list of the elements in order. `sorted(nums)` returns `[10, 28, 59, 64, 81, 99]`.
+- **`in`**: A comparison operator that checks if a value is in a list. `28 in nums` is `True`, but `4 in nums` is `False`.
+- **`sum`**: Add a list of numbers. `sum([1, 2, 3])` is 6.
+- **`count`**: Returns the number of times the argument appears in the list. `[1, 2, 3, 2, 7, 2, 5].count(2)` is 3.
+
+You may recognise some of these from your exercises. I assure you that those exercises were not pointless,
+as you've now learned valuable fundamental skills. For example, you can use `in` to check if a list contains 5,
+but there's no similarly easy way to check for a number bigger than 5.
+
+Now you will solve another set of four exercises about these new functions and methods, just like before.
+Again, correct and incorrect solutions are mixed together, and you must choose the correct line of code,
+include it in your solution (you will have to add a little bit more to it) and run your code.
+
+    sum(len(x))
+    sum(range(x))
+    sum(range(len(x)))
+    sum(len(range(x)))
+    sum(range(x)) + 1
+    sum(range(x + 1))
+    sum(x) / len(x)
+    sum(x) / range(x)
+    sum(x) / range(len(x))
+    sum(x) / len(range(x))
+    sorted(x)[1]
+    sorted(x)[2]
+    sorted(x)[-1]
+    sorted(x)[-2]
+    x.count(1) >= 0
+    x.count(1) > 0
+    x.count(1) > 1
+
+Write a program that takes a list `x` of numbers and prints `True` if `1 in x`, prints `False` otherwise.
+
+The solution is exactly 2 lines long, one of which uses a line from the list above.
+Find the correct line, use it in your solution in the editor and run the code.
+        """
+
+        def solution(self, x: List[int]):
+            print(x.count(1) > 0)
+
+        tests = [
+            ([1, 2, 0, 3], True),
+            ([0, 2, 3], False),
+        ]
+
+    class average_exercise(ExerciseStep):
+        """
+Excellent work! Next exercise:
+
+Write a program that takes a list `x` of numbers and prints the average of all the numbers in `x`.
+
+The solution is exactly two lines long, one of which uses a line from the list above.
+Find the correct line, use it in your solution in the editor, and run the code.
+        """
+
+        def solution(self, x: List[int]):
+            print(sum(x) / len(x))
+
+        tests = [
+            ([1, 2, 0, 3], 1.5),
+            ([6, 3, -3], 2.0),
+        ]
+
+    class sum_range_exercise(ExerciseStep):
+        """
+Good job! Next exercise:
+
+Write a program that takes a positive number `x` and prints the value of the sum: `1 + 2 + 3 + ... + x`.
+
+The solution is exactly two lines long, one of which uses a line from the list above.
+Find the correct line, use it in your solution and run the code.
+        """
+
+        def solution(self, x: int):
+            print(sum(range(x + 1)))
+
+        tests = [
+            (1, 1),
+            (2, 3),
+            (3, 6),
+            (4, 10),
+        ]
+
+    class second_smallest_in_list_exercise(ExerciseStep):
+        """
+Excellent. And the last one:
+
+Write a program that takes a list of numbers `x` and prints the *second smallest value* in `x`.
+
+The solution is exactly two lines long, one of which uses a line from the list above.
+Find the correct line, use it in your solution and run the code.
+        """
+
+        def solution(self, x: List[int]):
+            print(sorted(x)[1])
+
+        tests = [
+            ([1, 2, 0, 3], 1),
+            ([5, 3, 2], 3),
+            ([4, -2, -1, 10], -1),
+        ]
+
+    final_text = """
+Congratulations! You are now a master of list methods and functions!
+    """
+
+
+class StringMethodsUnderstandingMutation(Page):
+    title = "String Methods, Understanding Mutation"
+
+    class string_in_step(VerbatimStep):
+        """
+You've already seen that `len` and subscripting work with strings, a bit as if strings are lists of characters.
+Strings also support some of the new methods we've learned, not just for characters but for any substring.
+For example, try the following in the shell. What do you expect it to return?
+
+__program_indented__
+        """
+
+        program = "'the' in 'feed the dog and the cat'"
+
+    class string_count_index(VerbatimStep):
+        """
+`in` works on strings like it does on lists! The command returned `True` because `the` occurs in `feed the dog and the cat` as a *substring*.
+How about `count` and `index`? Type and run this code in the editor:
+
+__program_indented__
+        """
+
+        def program(self):
+            string = 'feed the dog and the cat'
+            print(string.count('the'))
+            print(string.index('the'))
+
+    class mutation_string_append(VerbatimStep):
+        """
+Again these two methods also work on strings similar to how they work on lists.
+`index` returns the *beginning index* of the search word `'the'` in the longer string
+`'feed the dog and the cat'`, which is `5`.
+TODO: table goes here explaining string index
+
+Note that in most cases, methods which *modify a list in place* (`append`, `insert`, `remove`) merely return `None`,
+while the remaining functions/methods return a new useful value without changing the original argument.
+The only exception is the `pop` method.
+
+Modifying a value directly is called *mutation* - types of values which can be mutated are *mutable*,
+while those that can't are *immutable*. Lists are mutable.
+Strings are immutable - they don't have any methods like `append` or even subscript assignment.
+Try and see for yourself in the shell:
+
+__program_indented__
+        """
+        program = "'Python'.append(' is cool!')"
+
+    class string_lower_upper(VerbatimStep):
+        """
+You simply can't change a string - you can only create new strings and use those instead.
+That means that this is a useless statement on its own:
+
+    word.lower()
+
+The string referred to by `word` isn't modified, instead `word.lower()` returned a new string which was immediately discarded.
+If you want to change the value that `word` refers to, you have to assign a new value to the variable. Type and run in the editor:
+
+__program_indented__
+        """
+
+        def program(self):
+            sentence = "Python rocks!"
+            new_sentence = sentence.upper()
+            print(sentence)
+            print(new_sentence)
+
+    final_text = """
+Observe that `sentence.upper()` does not change the original `sentence`, because strings are immutable!
+
+You can also use `word.lower()` immediately in a larger expression, e.g.
+
+    if word.lower() == 'yes':
+
+    """
+
+
+class HowToFindInformationWithGoogleAndMore(Page):
+    title = "How to Find Information with Google, and more"
+
+    class sum_list(Step):
+        """
 It's useful to know these functions, but it's not easy to learn them all, and there's many more. A more important skill is being able to look things up. For example, here are some typical ways you might Google the above functions if you forgot their names:
 
 - `append`
@@ -936,33 +1284,6 @@ There are also ways to find information without any googling. Try `__program__` 
 
     final_text = """
 `dir()` returns a list of the argument's attributes, which are mostly methods. Many will start with `__` which you can ignore for now - scroll to the end of the list and you'll see some familiar methods.
-
-Here are a few more useful functions/methods. Suppose `nums = [28, 99, 10, 81, 59, 64]`
-
-- **`sorted`**: Takes an iterable and returns a list of the elements in order. `sorted(nums)` returns `[10, 28, 59, 64, 81, 99]`.
-- **`pop`**: Removes and returns an element at a given index. `nums.pop(3)` removes `nums[3]` (`81`) from the list and returns it. Without an argument, i.e. just `nums.pop()`, it will remove and return the last element.
-- **`remove`**: Removes the first occurrence of the given element. `nums.remove(10)` will leave `nums` as `[28, 99, 81, 59, 64]`. Raises an error if the value doesn't exist. Equivalent to `nums.pop(nums.index(10))`.
-- **`count`**: Returns the number of times the argument appears in the list. `[1, 2, 3, 2, 7, 2, 5].count(2)` is 3.
-
-You've already seen that `len` and subscripting work with strings, a bit as if strings are lists of characters. Strings also support some of the new methods we've learned, not just for characters but for any substring. For example:
-
-- `'the' in 'feed the dog and the cat'` is `True`
-- `'feed the dog and the cat'.count('the')` is 2
-- `'feed the dog and the cat'.index('the')` is 5
-
-Note that in most cases, methods which modify a list in place (`append`, `insert`, `remove`) merely return `None`, while the remaining functions/methods return a new useful value without changing the original argument. The only exception is the `pop` method.
-
-Modifying a value directly is called *mutation* - types of values which can be mutated are *mutable*, while those that can't are *immutable*. Strings are immutable - they don't have any methods like `append` or even subscript assignment. You simply can't change a string - you can only create new strings and use those instead. That means that this is a useless statement on its own:
-
-    word.lower()
-
-The string referred to by `word` isn't modified, instead `word.lower()` returned a new string which was immediately discarded. If you want to change the value that `word` refers to, you have to assign a new value to the variable:
-
-    word = word.lower()
-
-Or you can use `word.lower()` immediately in a larger expression, e.g.
-
-    if word.lower() == 'yes':
         """
 
 
