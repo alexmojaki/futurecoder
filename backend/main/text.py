@@ -173,7 +173,7 @@ def get_stdout(program):
 def get_solution(step):
     if issubclass(step, ExerciseStep):
         if step.solution.__name__ == "solution":
-            program, _ = clean_program(step.solution, None)
+            program, _ = clean_program(step.solution, None)  # noqa
         else:
             program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
     else:
@@ -482,16 +482,26 @@ class VerbatimStep(Step):
     program_in_text = True
 
     def check(self):
-        if is_ast_like(self.tree, ast.parse(self.program)):
+        if self.truncated_trees_match(
+                self.tree,
+                ast.parse(self.program),
+        ):
             return True
 
-        if is_ast_like(ast.parse(self.input.lower()), ast.parse(self.program.lower())):
+        if self.truncated_trees_match(
+                ast.parse(self.input.lower()),
+                ast.parse(self.program.lower()),
+        ):
             return dict(
                 message="Python is case sensitive! That means that small and capital letters "
                         "matter and changing them changes the meaning of the program. The strings "
                         "`'hello'` and `'Hello'` are different, as are the variable names "
                         "`word` and `Word`."
             )
+
+    def truncated_trees_match(self, input_tree, program_tree):
+        del input_tree.body[len(program_tree.body):]
+        return is_ast_like(input_tree, program_tree)
 
 
 class MessageStep(Step, ABC):
