@@ -827,10 +827,11 @@ Let's review how to work with lists. Suppose we have a list `nums = [1, 2, 3]`. 
 - **`+`**: Concatenates lists. `nums + [4, 5]` is `[1, 2, 3, 4, 5]`.
 
 Note that `nums.append(4)` modifies the existing list `nums`, while `nums + [4, 5]` does not.
-To preserve the value of `nums + [4, 5]` we must assign it to a *new variable*.
-Type and run the following code in the editor:
+One way to preserve the value of `nums + [4, 5]` is to assign it to a *new variable*.
+Run the following code:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
