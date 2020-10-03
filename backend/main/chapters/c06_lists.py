@@ -842,7 +842,7 @@ Run the following code:
             nums.append(4)
             print(nums)
 
-    class pop_remove_index_subscript_assignment(ExerciseStep):
+    class pop_remove_index_subscript_assignment(VerbatimStep):
         """
 As you see, `+` does not modify `nums`, but `append` does. (`new_nums` is not affected by the change in `nums`.)
 
@@ -857,8 +857,7 @@ Now you will solve four exercises about the new functions and methods you learne
 Below is a list of correct and incorrect lines of code, mixed together.
 Each exercise has a solution that includes one (and only one) of the lines below.
 In each exercise you need to find the correct line from the list below that achieves the result described,
-and use it to write the solution. (Sometimes you can use the correct line exactly as it is,
-sometimes you will have to add a little bit more to it.)
+and replace the indicated part with it to write the solution.
 
     x[len(x)] = x[0]
     x[len(x) - 1] = x[0]
@@ -879,58 +878,54 @@ sometimes you will have to add a little bit more to it.)
     x.pop(x.index(0))
     x.index(x.pop(0))
 
-Write a program which takes a list `x` of strings, and modifies `x` to move the first element to the end,
+First exercise:
+
+Write a program which takes a list `x`, and modifies `x` to move the first element to the end,
 keeping the length of `x` the same, then prints `x`.
 For example, if `x = ['a', 'b', 'c']` then the code should modify `x` to `['b', 'c', 'a']` and print it.
+Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
 
-The solution has exactly three lines of code, one of which is from the list above.
-Find the correct line, write your solution in the editor, and then run the code.
+    __copyable__
+    x = ['a', 'b', 'c']
+    (insert_one_line_from_above)
+    print(x)
         """
 
-        # TODO: this was the only way I could make it to pass. It doesn't like mutating x as part of solution.
-        # I tried writing generate_inputs as in list_contains_exercise but could not make it work.
-        # Probably I should be trying to emulate list_insert(Step) but I'm not sure how to write the check method.
-        # I had to make x a List[str] or List[int] to avoid "solution is missing one positional argument" error.
-        # Same issues continue down in all the exercises, sorry about that.
-        # It would be great if it worked on any kind of list.
-        # Also would be nice to have some MessageStep s for similar but wrong choices.
-        def solution(self, x: List[str]):
-            y = x.copy()
-            y.append(y.pop(0))
-            print(y)
+        program_in_text = False
 
-        tests = [
-            (['This', 'is', 'a', 'list'], ['is', 'a', 'list', 'This']),
-            (['The', 'quick', 'brown', 'fox', 'jumps'], ['quick', 'brown', 'fox', 'jumps', 'The']),
-        ]
+        def program(self):
+            x = ['a', 'b', 'c']
+            x.append(x.pop(0))
+            print(x)
 
-    class subscript_assignment_exercise(ExerciseStep):
+    class subscript_assignment_exercise(VerbatimStep):
         """
 Good job. Next exercise:
 
-Write a program that takes a list `x` of strings and modifies `x` to overwrite
+Write a program that takes a list `x` and modifies `x` to overwrite
 the last element with the first element, keeping the length of `x` the same, then prints `x`.
 For example, if `x = ['a', 'b', 'c']` then the code should modify it to `['a', 'b', 'a']` and print it.
+Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
 
-The solution is exactly three lines of code, one of which is from the list above.
-Find the correct line, write your solution in the editor, and then run the code.
+    __copyable__
+    x = ['a', 'b', 'c']
+    (insert_one_line_from_above)
+    print(x)
         """
 
-        def solution(self, x: List[str]):
-            y = x.copy()
-            y[len(y) - 1] = y[0]
-            print(y)
+        program_in_text = False
 
-        tests = [
-            (['This', 'is', 'a', 'list'], ['This', 'is', 'a', 'This']),
-            (['The', 'quick', 'brown', 'fox', 'jumps'], ['The', 'quick', 'brown', 'fox', 'The']),
-        ]
+        def program(self):
+            x = ['a', 'b', 'c']
+            x[len(x) - 1] = x[0]
+            print(x)
 
-    class negative_index_concatenation_exercise(ExerciseStep):
+    class negative_index_concatenation_exercise(VerbatimStep):
         """
 Excellent!
 
-You might realize that accessing the last element via `x[len(x) - 1]` is a bit cumbersome. The same can be achieved by `x[-1]`.
+You might realize that accessing the last element via `x[len(x) - 1]` is a bit cumbersome.
+The same can be achieved by `x[-1]`.
 Similarly, the second to last element `x[len(x) - 2]` is equivalent to `x[-2]`, and so on.
 Python allows us to count the index backwards too, starting at the last element with `-1`:
 
@@ -938,55 +933,46 @@ Python allows us to count the index backwards too, starting at the last element 
 
 Next exercise:
 
-Write a program that takes a list `x` of strings and creates a new list `y`, which is the same as the original
+Write a program that takes a list `x` and creates a new list `y`, which is the same as the original
 list `x` but also has the first element repeated at the end (length increases by 1), and prints `y`.
-For example, if `x = ['a', 'b', 'c']` then the code should make a new list `y` that is equal to `['a', 'b', 'c', 'a']`
-and print it. It should not modify the original list `x` in any way.
+For example, if `x = ['a', 'b', 'c']` then the code should make a new list `y`
+that is equal to `['a', 'b', 'c', 'a']`and print it.
+Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
 
-The solution is exactly three lines of code, one of which *uses* a line from the list above.
-Find the correct line, use it in your solution in the editor, and then run the code.
+    __copyable__
+    x = ['a', 'b', 'c']
+    y = (insert_one_line_from_above)
+    print(y)
         """
 
-        # TODO: is it possible to check that the user did not modify x, i.e. did not use append/pop? Using 'disallowed'?
-        def solution(self, x: List[str]):
+        program_in_text = False
+
+        def program(self):
+            x = ['a', 'b', 'c']
             y = x + [x[0]]
             print(y)
 
-        tests = [
-            (['This', 'is', 'a', 'list'], ['This', 'is', 'a', 'list', 'This']),
-            (['The', 'quick', 'brown', 'fox', 'jumps'], ['The', 'quick', 'brown', 'fox', 'jumps', 'The']),
-        ]
-
-    class remove_exercise(ExerciseStep):
+    class remove_exercise(VerbatimStep):
         """
 Great work. Now the final exercise:
 
 Write a program that takes a list `x` of numbers that contains 0,
 modifies `x` in a way that is equivalent to: `x.remove(0)`, and then prints `x`.
 For example, if `x = [1, 2, 0, 3]` then the code should modify `x` to `[1, 2, 3]` and print it.
+Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
 
-The solution is exactly three lines long, one of which is from the list above.
-Find the correct line, include it in your solution and run the code.
+    __copyable__
+    x = [1, 2, 0, 3]
+    (insert_one_line_from_above)
+    print(x)
         """
 
-        def solution(self, x: List[int]):
-            y = x.copy()
-            y.pop(y.index(0))
-            print(y)
+        program_in_text = False
 
-        tests = [
-            ([1, 2, 0, 3], [1, 2, 3]),
-            ([0, 1, 2], [1, 2]),
-        ]
-
-        @classmethod
-        def generate_inputs(cls):
-            x = generate_list(int)
-            random_index = random.randint(0, len(x) - 1)
-            x[random_index] = 0
-            return dict(
-                x=x,
-            )
+        def program(self):
+            x = [1, 2, 0, 3]
+            x.pop(x.index(0))
+            print(x)
 
     final_text = """
 Great job!
@@ -996,7 +982,7 @@ Great job!
 class MoreListFunctionsAndMethods(Page):
     title = "More List Functions and Methods"
 
-    class count_in_sorted_sum(ExerciseStep):
+    class count_in_sorted_sum(VerbatimStep):
         """
 Here are a few more useful functions/methods. Suppose `nums = [28, 99, 10, 81, 59, 64]`
 
@@ -1011,7 +997,7 @@ but there's no similarly easy way to check for a number bigger than 5.
 
 Now you will solve another set of four exercises about these new functions and methods, just like before.
 Again, correct and incorrect solutions are mixed together, and you must choose the correct line of code,
-include it in your solution (you will have to add a little bit more to it) and run your code.
+replace the indicated part with it in your solution and run your code.
 
     sum(len(x))
     sum(range(x))
@@ -1031,76 +1017,83 @@ include it in your solution (you will have to add a little bit more to it) and r
     x.count(1) > 0
     x.count(1) > 1
 
-Write a program that takes a list `x` of numbers and prints `True` if `1 in x`, prints `False` otherwise.
+First exercise:
 
-The solution is exactly 2 lines long, one of which uses a line from the list above.
-Find the correct line, use it in your solution in the editor and run the code.
+Write a program that takes a list `x` of numbers and prints `True` if `1 in x`, prints `False` otherwise.
+Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+
+    __copyable__
+    x = [1, 2, 0, 3]
+    y = (insert_one_line_from_above)
+    print(y)
         """
 
-        def solution(self, x: List[int]):
-            print(x.count(1) > 0)
+        program_in_text = False
 
-        tests = [
-            ([1, 2, 0, 3], True),
-            ([0, 2, 3], False),
-        ]
+        def program(self):
+            x = [1, 2, 0, 3]
+            y = x.count(1) > 0
+            print(y)
 
-    class average_exercise(ExerciseStep):
+    class average_exercise(VerbatimStep):
         """
 Excellent work! Next exercise:
 
 Write a program that takes a list `x` of numbers and prints the average of all the numbers in `x`.
+Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
 
-The solution is exactly two lines long, one of which uses a line from the list above.
-Find the correct line, use it in your solution in the editor, and run the code.
+    __copyable__
+    x = [15, 12, -6, 3]
+    y = (insert_one_line_from_above)
+    print(y)
         """
 
-        def solution(self, x: List[int]):
-            print(sum(x) / len(x))
+        program_in_text = False
 
-        tests = [
-            ([1, 2, 0, 3], 1.5),
-            ([6, 3, -3], 2.0),
-        ]
+        def program(self):
+            x = [15, 12, -6, 3]
+            y = sum(x) / len(x)
+            print(y)
 
-    class sum_range_exercise(ExerciseStep):
+    class sum_range_exercise(VerbatimStep):
         """
 Good job! Next exercise:
 
 Write a program that takes a positive number `x` and prints the value of the sum: `1 + 2 + 3 + ... + x`.
+Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
 
-The solution is exactly two lines long, one of which uses a line from the list above.
-Find the correct line, use it in your solution and run the code.
+    __copyable__
+    x = 100
+    y = (insert_one_line_from_above)
+    print(y)
         """
 
-        def solution(self, x: int):
-            print(sum(range(x + 1)))
+        program_in_text = False
 
-        tests = [
-            (1, 1),
-            (2, 3),
-            (3, 6),
-            (4, 10),
-        ]
+        def program(self):
+            x = 100
+            y = sum(range(x + 1))
+            print(y)
 
-    class second_smallest_in_list_exercise(ExerciseStep):
+    class second_smallest_in_list_exercise(VerbatimStep):
         """
 Excellent. And the last one:
 
 Write a program that takes a list of numbers `x` and prints the *second smallest value* in `x`.
+Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
 
-The solution is exactly two lines long, one of which uses a line from the list above.
-Find the correct line, use it in your solution and run the code.
+    __copyable__
+    x = [12, -6, 2, -1, 3]
+    y = (insert_one_line_from_above)
+    print(y)
         """
 
-        def solution(self, x: List[int]):
-            print(sorted(x)[1])
+        program_in_text = False
 
-        tests = [
-            ([1, 2, 0, 3], 1),
-            ([5, 3, 2], 3),
-            ([4, -2, -1, 10], -1),
-        ]
+        def program(self):
+            x = [1, 2, 0, 3]
+            y = sorted(x)[1]
+            print(y)
 
     final_text = """
 Congratulations! You are now a master of list methods and functions!
