@@ -853,11 +853,10 @@ Here's some new things. Try them out in the shell. Again suppose we have a list 
 - **`pop`**: Removes and returns an element at a given index. `nums.pop(1)` removes `nums[1]` (which is `2`) from the list and returns it. Without an argument, i.e. just `nums.pop()`, it will remove and return the last element.
 - **`remove`**: Removes the first occurrence of the given element. `nums.remove(3)` will leave `nums` as `[1, 2]`. Raises an error if the value doesn't exist.
 
-Now you will solve four exercises about the new functions and methods you learned.
-Below is a list of correct and incorrect lines of code, mixed together.
-Each exercise has a solution that includes one (and only one) of the lines below.
-In each exercise you need to find the correct line from the list below that achieves the result described,
-and replace the indicated part with it to write the solution.
+Now you will solve four short exercises involving these concepts.
+Below is a list of correct and incorrect lines of code mixed together.
+Each upcoming exercise has a solution that includes exactly one of the lines below,
+and you must find the correct line from the list.
 
     x[len(x)] = x[0]
     x[len(x) - 1] = x[0]
@@ -878,17 +877,14 @@ and replace the indicated part with it to write the solution.
     x.pop(x.index(0))
     x.index(x.pop(0))
 
-First exercise:
-
-Write a program which takes a list `x`, and modifies `x` to move the first element to the end,
-keeping the length of `x` the same, then prints `x`.
-For example, if `x = ['a', 'b', 'c']` then the code should modify `x` to `['b', 'c', 'a']` and print it.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+Here is an incomplete program:
 
     __copyable__
     x = ['a', 'b', 'c']
     (insert_one_line_from_above)
     print(x)
+
+Replace the middle line with one line from the list above. The final program should modify `x` to move the first element to the end, so that it prints `['b', 'c', 'a']`.
         """
 
         program_in_text = False
@@ -900,17 +896,15 @@ Here is the provided code for you to use. Replace the indicated part with a line
 
     class subscript_assignment_exercise(VerbatimStep):
         """
-Good job. Next exercise:
-
-Write a program that takes a list `x` and modifies `x` to overwrite
-the last element with the first element, keeping the length of `x` the same, then prints `x`.
-For example, if `x = ['a', 'b', 'c']` then the code should modify it to `['a', 'b', 'a']` and print it.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+Good job. For the next exercise, start with the same incomplete program:
 
     __copyable__
     x = ['a', 'b', 'c']
     (insert_one_line_from_above)
     print(x)
+
+Choose a line of code from the list that overwrites the last element of `x` with the first element,
+so now it should print `['a', 'b', 'a']`.
         """
 
         program_in_text = False
@@ -924,7 +918,7 @@ Here is the provided code for you to use. Replace the indicated part with a line
         """
 Excellent!
 
-You might realize that accessing the last element via `x[len(x) - 1]` is a bit cumbersome.
+You might realize that working with the last element via `x[len(x) - 1]` is a bit cumbersome.
 The same can be achieved by `x[-1]`.
 Similarly, the second to last element `x[len(x) - 2]` is equivalent to `x[-2]`, and so on.
 Python allows us to count the index backwards too, starting at the last element with `-1`:
@@ -933,16 +927,15 @@ Python allows us to count the index backwards too, starting at the last element 
 
 Next exercise:
 
-Write a program that takes a list `x` and creates a new list `y`, which is the same as the original
-list `x` but also has the first element repeated at the end (length increases by 1), and prints `y`.
-For example, if `x = ['a', 'b', 'c']` then the code should make a new list `y`
-that is equal to `['a', 'b', 'c', 'a']`and print it.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+This time, rather than modifying the list `x`, you will create a new list `y`:
 
     __copyable__
     x = ['a', 'b', 'c']
     y = (insert_one_line_from_above)
     print(y)
+
+`y` should be the same as `x` but also have the first element repeated at the end.
+Therefore the program will print `['a', 'b', 'c', 'a']`.
         """
 
         program_in_text = False
@@ -956,15 +949,12 @@ Here is the provided code for you to use. Replace the indicated part with a line
         """
 Great work. Now the final exercise:
 
-Write a program that takes a list `x` of numbers that contains 0,
-modifies `x` in a way that is equivalent to: `x.remove(0)`, and then prints `x`.
-For example, if `x = [1, 2, 0, 3]` then the code should modify `x` to `[1, 2, 3]` and print it.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
-
     __copyable__
     x = [1, 2, 0, 3]
-    (insert_one_line_from_above)
+    x.remove(0)
     print(x)
+
+Replace the middle line `x.remove(0)` with a line from the list that does the same thing.
         """
 
         program_in_text = False
