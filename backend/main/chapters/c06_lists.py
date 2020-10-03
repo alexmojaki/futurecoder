@@ -1175,7 +1175,7 @@ class HowToFindInformationWithGoogleAndMore(Page):
 
     class sum_list(Step):
         """
-It's useful to know these functions, but it's not easy to learn them all, and there's many more. A more important skill is being able to look things up. For example, here are some typical ways you might Google the above functions if you forgot their names:
+It's useful to know the functions we just covered, but it's not easy to learn them all, and there's many more. A more important skill is being able to look things up. For example, here are some typical ways you might Google the above functions if you forgot their names:
 
 - `append`
     - python add element to list
@@ -1184,9 +1184,6 @@ It's useful to know these functions, but it's not easy to learn them all, and th
     - python size of list
     - python number of elements in list
     - python how many characters in string
-- `join`
-    - python combine list of strings with separator
-    - python add together list of strings with string in between
 - `sum`
     - python add list of numbers
     - python total of numbers
@@ -1197,7 +1194,7 @@ It's useful to know these functions, but it's not easy to learn them all, and th
     - python get position of element
     - python get index of value
 
-Let's practice this skill now. Find a function/method that returns the value in a list which is bigger than any other value. For example, given the list `[21, 55, 4, 91, 62, 49]`, it will return `91`. You should write the answer in the shell as a single small expression. For example, if you were looking for the function `sum`, you could write `sum([21, 55, 4, 91, 62, 49])`. Don't solve this manually with a loop.
+Let's practice this skill now. Find a function/method that returns the value in a list which is bigger than any other value. For example, given the list `[21, 55, 4, 91, 62, 49]`, it will return `91`. You should write the answer in the shell as a single small expression. For example, if you were looking for the function `sum`, you could write `sum([21, 55, 4, 91, 62, 49])`. Don't solve this manually with a loop. Note that the function you're looking for hasn't been mentioned here before.
     """
 
         hints = """
@@ -1231,7 +1228,7 @@ But suppose you don't want the 9 to be at the end, you want it to go between the
 
     [1, 2, 9, 3, 4, 5]
 
-Replace the middle line (i.e. the call to `append`) with the right function/method call to do that.
+Replace the middle line `nums.append(9)` with the right function/method call to do that.
         """
 
         hints = """
