@@ -379,21 +379,6 @@ class Step(ABC):
     def stmt(self):
         return self.tree.body[0]
 
-    def tree_matches(self, template):
-        if is_ast_like(self.tree, ast.parse(template)):
-            return True
-
-        if is_ast_like(ast.parse(self.input.lower()), ast.parse(template.lower())):
-            return dict(
-                message="Python is case sensitive! That means that small and capital letters "
-                        "matter and changing them changes the meaning of the program. The strings "
-                        "`'hello'` and `'Hello'` are different, as are the variable names "
-                        "`word` and `Word`."
-            )
-
-    def matches_program(self):
-        return self.tree_matches(self.program)
-
     def input_matches(self, pattern, remove_spaces=True):
         inp = self.input.rstrip()
         if remove_spaces:
@@ -497,7 +482,16 @@ class VerbatimStep(Step):
     program_in_text = True
 
     def check(self):
-        return self.matches_program()
+        if is_ast_like(self.tree, ast.parse(self.program)):
+            return True
+
+        if is_ast_like(ast.parse(self.input.lower()), ast.parse(self.program.lower())):
+            return dict(
+                message="Python is case sensitive! That means that small and capital letters "
+                        "matter and changing them changes the meaning of the program. The strings "
+                        "`'hello'` and `'Hello'` are different, as are the variable names "
+                        "`word` and `Word`."
+            )
 
 
 class MessageStep(Step, ABC):
