@@ -133,10 +133,6 @@ export const ranCode = makeAction(
     }
     state = addMessageToState(state, value.message);
     if (value.prediction.choices) {
-      setTimeout(() => {
-        const element = document.getElementsByClassName("output-prediction")[0];
-        setState("prediction.height", element.scrollHeight + "px");
-      }, 100);
       const scrollInterval = setInterval(() => {
         animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current});
       }, 30);

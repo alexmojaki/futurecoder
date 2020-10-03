@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircle, faDotCircle} from "@fortawesome/free-solid-svg-icons";
 import {bookSetState, scrollToNextStep} from "./book/store";
@@ -50,74 +50,80 @@ const RadioGroup = (
   </div>
 );
 
-export const OutputPrediction = (
-  {
-    prediction:
-      {
-        choices,
-        codeResult,
-        state,
-        userChoice,
-        answer,
-        height
-      }
+export class OutputPrediction extends Component {
+  componentDidMount() {
+    setTimeout(() => {
+      const element = document.getElementsByClassName("output-prediction")[0];
+      bookSetState("prediction.height", element.scrollHeight + "px");
+    }, 100);
   }
-) => {
-  if (state === "hidden") return null;
 
-  const confettiActive = state === "showingResult" && answer === userChoice;
-  return <div
-    className="output-prediction"
-    style={{
-      height: height,
-      opacity: state === "waiting" || state === "showingResult" ? 1 : 0,
-    }}
-  >
-    <div>
-      <strong>
-        {
-          state === "waiting" ?
-            "What do you think the result will be?"
-            :
-            (
-              userChoice === answer ?
-                "Correct!"
-                :
-                "Sorry, wrong answer. Try again next time!"
-            )
-        }
-      </strong>
+  render() {
+    const {
+      choices,
+      codeResult,
+      state,
+      userChoice,
+      answer,
+      height
+    } = this.props.prediction;
+    const confettiActive = state === "showingResult" && answer === userChoice;
+    return <div
+      className="output-prediction"
+      style={{
+        height: height,
+        opacity: state === "waiting" || state === "showingResult" ? 1 : 0,
+      }}
+    >
+      <div>
+        <strong>
+          {
+            state === "waiting" ?
+              "What do you think the result will be?"
+              :
+              (
+                userChoice === answer ?
+                  "Correct!"
+                  :
+                  "Sorry, wrong answer. Try again next time!"
+              )
+          }
+        </strong>
+        <CorrectConfetti active={confettiActive}/>
+      </div>
+      <RadioGroup
+        choices={choices}
+        onChange={value => state === "waiting" && bookSetState("prediction.userChoice", value)}
+        value={userChoice}
+        correctAnswer={answer}
+        submitted={state === "showingResult" || state === "fading"}
+      />
+      <div style={{opacity: state === "waiting" ? 1 : 0}}>
+        <button
+          className="btn btn-primary"
+          disabled={!userChoice}
+          onClick={() => {
+            bookSetState("server", codeResult.state);
+            scrollToNextStep();
+            bookSetState("prediction.state", "showingResult");
+            setTimeout(() => animateScroll.scrollToBottom({
+              duration: 30,
+              container: terminalRef.current.terminalRoot.current
+            }))
+            setTimeout(() => {
+              bookSetState("prediction.state", "fading");
+              bookSetState("prediction.height", 0);
+              showCodeResult(codeResult);
+            }, 3000);
+            setTimeout(() => bookSetState("prediction.state", "hidden"), 4000);
+          }}
+        >
+          Submit
+        </button>
+      </div>
       <CorrectConfetti active={confettiActive}/>
     </div>
-    <RadioGroup
-      choices={choices}
-      onChange={value => state === "waiting" && bookSetState("prediction.userChoice", value)}
-      value={userChoice}
-      correctAnswer={answer}
-      submitted={state === "showingResult" || state === "fading"}
-    />
-    <div style={{opacity: state === "waiting" ? 1 : 0}}>
-      <button
-        className="btn btn-primary"
-        disabled={!userChoice}
-        onClick={() => {
-          bookSetState("server", codeResult.state);
-          scrollToNextStep();
-          bookSetState("prediction.state", "showingResult");
-          setTimeout(() => animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current}))
-          setTimeout(() => {
-            bookSetState("prediction.state", "fading");
-            bookSetState("prediction.height", 0);
-            showCodeResult(codeResult);
-          }, 3000);
-          setTimeout(() => bookSetState("prediction.state", "hidden"), 4000);
-        }}
-      >
-        Submit
-      </button>
-    </div>
-    <CorrectConfetti active={confettiActive}/>
-  </div>
+  }
 }
 
 const CorrectConfetti = ({active}) =>

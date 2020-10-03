@@ -248,7 +248,11 @@ export default class Terminal extends Component {
             }
           </div>
 
-          <OutputPrediction prediction={bookState.prediction}/>
+          {
+            bookState.prediction.state !== "hidden" &&
+            <OutputPrediction prediction={bookState.prediction}/>
+
+          }
         </div>
       </div>
     )
