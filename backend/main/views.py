@@ -134,8 +134,8 @@ class API:
             birdseye_url=birdseye_url,
             passed=passed,
             prediction=dict(
-                choices=step.predicted_output_choices,
-                answer=step.correct_output,
+                choices=getattr(step, "predicted_output_choices", None),
+                answer=getattr(step, "correct_output", None),
             ),
         )
 
