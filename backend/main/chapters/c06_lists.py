@@ -1097,19 +1097,21 @@ class StringMethodsUnderstandingMutation(Page):
         """
 You've already seen that `len` and subscripting work with strings, a bit as if strings are lists of characters.
 Strings also support some of the new methods we've learned, not just for characters but for any substring.
-For example, try the following in the shell. What do you expect it to return?
+For example, try the following:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
-        program = "'the' in 'feed the dog and the cat'"
+        program = "print('the' in 'feed the dog and the cat')"
 
     class string_count_index(VerbatimStep):
         """
 `in` works on strings like it does on lists! The command returned `True` because `the` occurs in `feed the dog and the cat` as a *substring*.
-How about `count` and `index`? Type and run this code in the editor:
+How about `count` and `index`?
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
@@ -1131,9 +1133,10 @@ The only exception is the `pop` method.
 Modifying a value directly is called *mutation* - types of values which can be mutated are *mutable*,
 while those that can't are *immutable*. Lists are mutable.
 Strings are immutable - they don't have any methods like `append` or even subscript assignment.
-Try and see for yourself in the shell:
+See for yourself:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
         program = "'Python'.append(' is cool!')"
 
@@ -1145,9 +1148,10 @@ That means that this is a useless statement on its own:
     word.lower()
 
 The string referred to by `word` isn't modified, instead `word.lower()` returned a new string which was immediately discarded.
-If you want to change the value that `word` refers to, you have to assign a new value to the variable. Type and run in the editor:
+If you want to change the value that `word` refers to, you have to assign a new value to the variable:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
@@ -1157,7 +1161,7 @@ __program_indented__
             print(new_sentence)
 
     final_text = """
-Observe that `sentence.upper()` does not change the original `sentence`, because strings are immutable!
+Observe that `sentence.upper()` does not change the original `sentence`.
 
 You can also use `word.lower()` immediately in a larger expression, e.g.
 
