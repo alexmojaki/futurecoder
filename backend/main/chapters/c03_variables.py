@@ -38,6 +38,7 @@ Now see what happens when you run `__program__` in the shell by itself.
 
         program = "word"
         predicted_output_choices = ["word", "'word'", "Hello", "'Hello'"]
+        correct_output = "'Hello'"
 
     class word_string_check(VerbatimStep):
         """
@@ -46,6 +47,7 @@ Good. For comparison, run `__program__` in the shell by itself, with the quotes.
 
         program = "'word'"
         predicted_output_choices = ["word", "'word'", "Hello", "'Hello'"]
+        correct_output = "'word'"
 
     class sunshine_undefined_check(VerbatimStep):
         """

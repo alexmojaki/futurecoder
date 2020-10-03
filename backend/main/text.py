@@ -25,6 +25,7 @@ from main.exercises import (
     check_result,
     generate_for_type,
     inputs_string,
+    assert_equal,
 )
 from main.utils import highlighted_markdown, lexer, html_formatter, shuffled_well, no_weird_whitespace, snake, \
     unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
@@ -152,6 +153,21 @@ def clean_step_class(cls, clean_inner=True):
             s.rstrip()
             for s in cls.predicted_output_choices
         ]
+        if not cls.correct_output:
+            cls.correct_output = get_stdout(cls.program).rstrip()
+            assert cls.correct_output in cls.predicted_output_choices
+            assert cls.correct_output != "Error"
+        assert cls.correct_output
+
+
+@returns_stdout
+def get_stdout(program):
+    if "\n" in program:
+        mode = "exec"
+    else:
+        mode = "single"
+    code = compile(program, "", mode)
+    exec(code, {"assert_equal": assert_equal})
 
 
 def get_solution(step):
@@ -512,24 +528,6 @@ def search_ast(node, template, predicate=lambda n: True):
         and predicate(child)
         and child != node
         for child in ast.walk(node)
-    )
-
-
-def prediction(step, entry, passed):
-    if passed and step.predicted_output_choices:
-        choices = step.predicted_output_choices
-        if step.correct_output:
-            answer = step.correct_output
-        else:
-            answer = entry.output.rstrip()
-            assert answer in choices, (answer, choices)
-        assert answer
-    else:
-        answer = choices = None
-
-    return dict(
-        choices=choices,
-        answer=answer,
     )
 
 

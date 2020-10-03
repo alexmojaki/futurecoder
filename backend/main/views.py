@@ -21,7 +21,7 @@ from littleutils import select_attrs, only
 from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
-from main.text import page_slugs_list, pages, prediction
+from main.text import page_slugs_list, pages
 from main.utils import highlighted_markdown
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
@@ -133,7 +133,10 @@ class API:
             state=self.current_state(),
             birdseye_url=birdseye_url,
             passed=passed,
-            prediction=prediction(step, entry, passed),
+            prediction=dict(
+                choices=step.predicted_output_choices,
+                answer=step.correct_output,
+            ),
         )
 
     def load_data(self):
