@@ -853,11 +853,10 @@ Here's some new things. Try them out in the shell. Again suppose we have a list 
 - **`pop`**: Removes and returns an element at a given index. `nums.pop(1)` removes `nums[1]` (which is `2`) from the list and returns it. Without an argument, i.e. just `nums.pop()`, it will remove and return the last element.
 - **`remove`**: Removes the first occurrence of the given element. `nums.remove(3)` will leave `nums` as `[1, 2]`. Raises an error if the value doesn't exist.
 
-Now you will solve four exercises about the new functions and methods you learned.
-Below is a list of correct and incorrect lines of code, mixed together.
-Each exercise has a solution that includes one (and only one) of the lines below.
-In each exercise you need to find the correct line from the list below that achieves the result described,
-and replace the indicated part with it to write the solution.
+Now you will solve four short exercises involving these concepts.
+Below is a list of correct and incorrect lines of code mixed together.
+Each upcoming exercise has a solution that includes exactly one of the lines below,
+and you must find the correct line from the list.
 
     x[len(x)] = x[0]
     x[len(x) - 1] = x[0]
@@ -878,17 +877,14 @@ and replace the indicated part with it to write the solution.
     x.pop(x.index(0))
     x.index(x.pop(0))
 
-First exercise:
-
-Write a program which takes a list `x`, and modifies `x` to move the first element to the end,
-keeping the length of `x` the same, then prints `x`.
-For example, if `x = ['a', 'b', 'c']` then the code should modify `x` to `['b', 'c', 'a']` and print it.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+Here is an incomplete program:
 
     __copyable__
     x = ['a', 'b', 'c']
     (insert_one_line_from_above)
     print(x)
+
+Replace the middle line with one line from the list above. The final program should modify `x` to move the first element to the end, so that it prints `['b', 'c', 'a']`.
         """
 
         program_in_text = False
@@ -900,17 +896,15 @@ Here is the provided code for you to use. Replace the indicated part with a line
 
     class subscript_assignment_exercise(VerbatimStep):
         """
-Good job. Next exercise:
-
-Write a program that takes a list `x` and modifies `x` to overwrite
-the last element with the first element, keeping the length of `x` the same, then prints `x`.
-For example, if `x = ['a', 'b', 'c']` then the code should modify it to `['a', 'b', 'a']` and print it.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+Good job. For the next exercise, start with the same incomplete program:
 
     __copyable__
     x = ['a', 'b', 'c']
     (insert_one_line_from_above)
     print(x)
+
+Choose a line of code from the list that overwrites the last element of `x` with the first element,
+so now it should print `['a', 'b', 'a']`.
         """
 
         program_in_text = False
@@ -924,7 +918,7 @@ Here is the provided code for you to use. Replace the indicated part with a line
         """
 Excellent!
 
-You might realize that accessing the last element via `x[len(x) - 1]` is a bit cumbersome.
+You might realize that working with the last element via `x[len(x) - 1]` is a bit cumbersome.
 The same can be achieved by `x[-1]`.
 Similarly, the second to last element `x[len(x) - 2]` is equivalent to `x[-2]`, and so on.
 Python allows us to count the index backwards too, starting at the last element with `-1`:
@@ -933,16 +927,15 @@ Python allows us to count the index backwards too, starting at the last element 
 
 Next exercise:
 
-Write a program that takes a list `x` and creates a new list `y`, which is the same as the original
-list `x` but also has the first element repeated at the end (length increases by 1), and prints `y`.
-For example, if `x = ['a', 'b', 'c']` then the code should make a new list `y`
-that is equal to `['a', 'b', 'c', 'a']`and print it.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+This time, rather than modifying the list `x`, you will create a new list `y`:
 
     __copyable__
     x = ['a', 'b', 'c']
     y = (insert_one_line_from_above)
     print(y)
+
+`y` should be the same as `x` but also have the first element repeated at the end.
+Therefore the program will print `['a', 'b', 'c', 'a']`.
         """
 
         program_in_text = False
@@ -956,15 +949,12 @@ Here is the provided code for you to use. Replace the indicated part with a line
         """
 Great work. Now the final exercise:
 
-Write a program that takes a list `x` of numbers that contains 0,
-modifies `x` in a way that is equivalent to: `x.remove(0)`, and then prints `x`.
-For example, if `x = [1, 2, 0, 3]` then the code should modify `x` to `[1, 2, 3]` and print it.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
-
     __copyable__
     x = [1, 2, 0, 3]
-    (insert_one_line_from_above)
+    x.remove(0)
     print(x)
+
+Replace the middle line `x.remove(0)` with a line from the list that does the same thing.
         """
 
         program_in_text = False
@@ -1101,25 +1091,27 @@ Congratulations! You are now a master of list methods and functions!
 
 
 class StringMethodsUnderstandingMutation(Page):
-    title = "String Methods, Understanding Mutation"
+    title = "String Methods and Immutability"
 
     class string_in_step(VerbatimStep):
         """
 You've already seen that `len` and subscripting work with strings, a bit as if strings are lists of characters.
 Strings also support some of the new methods we've learned, not just for characters but for any substring.
-For example, try the following in the shell. What do you expect it to return?
+For example, try the following:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
-        program = "'the' in 'feed the dog and the cat'"
+        program = "print('the' in 'feed the dog and the cat')"
 
     class string_count_index(VerbatimStep):
         """
 `in` works on strings like it does on lists! The command returned `True` because `the` occurs in `feed the dog and the cat` as a *substring*.
-How about `count` and `index`? Type and run this code in the editor:
+How about `count` and `index`?
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
@@ -1141,9 +1133,10 @@ The only exception is the `pop` method.
 Modifying a value directly is called *mutation* - types of values which can be mutated are *mutable*,
 while those that can't are *immutable*. Lists are mutable.
 Strings are immutable - they don't have any methods like `append` or even subscript assignment.
-Try and see for yourself in the shell:
+See for yourself:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
         program = "'Python'.append(' is cool!')"
 
@@ -1155,9 +1148,10 @@ That means that this is a useless statement on its own:
     word.lower()
 
 The string referred to by `word` isn't modified, instead `word.lower()` returned a new string which was immediately discarded.
-If you want to change the value that `word` refers to, you have to assign a new value to the variable. Type and run in the editor:
+If you want to change the value that `word` refers to, you have to assign a new value to the variable:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         def program(self):
@@ -1167,7 +1161,7 @@ __program_indented__
             print(new_sentence)
 
     final_text = """
-Observe that `sentence.upper()` does not change the original `sentence`, because strings are immutable!
+Observe that `sentence.upper()` does not change the original `sentence`.
 
 You can also use `word.lower()` immediately in a larger expression, e.g.
 
@@ -1181,7 +1175,7 @@ class HowToFindInformationWithGoogleAndMore(Page):
 
     class sum_list(Step):
         """
-It's useful to know these functions, but it's not easy to learn them all, and there's many more. A more important skill is being able to look things up. For example, here are some typical ways you might Google the above functions if you forgot their names:
+It's useful to know the functions we just covered, but it's not easy to learn them all, and there's many more. A more important skill is being able to look things up. For example, here are some typical ways you might Google the above functions if you forgot their names:
 
 - `append`
     - python add element to list
@@ -1190,9 +1184,6 @@ It's useful to know these functions, but it's not easy to learn them all, and th
     - python size of list
     - python number of elements in list
     - python how many characters in string
-- `join`
-    - python combine list of strings with separator
-    - python add together list of strings with string in between
 - `sum`
     - python add list of numbers
     - python total of numbers
@@ -1203,7 +1194,7 @@ It's useful to know these functions, but it's not easy to learn them all, and th
     - python get position of element
     - python get index of value
 
-Let's practice this skill now. Find a function/method that returns the value in a list which is bigger than any other value. For example, given the list `[21, 55, 4, 91, 62, 49]`, it will return `91`. You should write the answer in the shell as a single small expression. For example, if you were looking for the function `sum`, you could write `sum([21, 55, 4, 91, 62, 49])`. Don't solve this manually with a loop.
+Let's practice this skill now. Find a function/method that returns the value in a list which is bigger than any other value. For example, given the list `[21, 55, 4, 91, 62, 49]`, it will return `91`. You should write the answer in the shell as a single small expression. For example, if you were looking for the function `sum`, you could write `sum([21, 55, 4, 91, 62, 49])`. Don't solve this manually with a loop. Note that the function you're looking for hasn't been mentioned here before.
     """
 
         hints = """
@@ -1237,7 +1228,7 @@ But suppose you don't want the 9 to be at the end, you want it to go between the
 
     [1, 2, 9, 3, 4, 5]
 
-Replace the middle line (i.e. the call to `append`) with the right function/method call to do that.
+Replace the middle line `nums.append(9)` with the right function/method call to do that.
         """
 
         hints = """
