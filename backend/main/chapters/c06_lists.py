@@ -1091,7 +1091,7 @@ Congratulations! You are now a master of list methods and functions!
 
 
 class StringMethodsUnderstandingMutation(Page):
-    title = "String Methods, Understanding Mutation"
+    title = "String Methods and Immutability"
 
     class string_in_step(VerbatimStep):
         """
