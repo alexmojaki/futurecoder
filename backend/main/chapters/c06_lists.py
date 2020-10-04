@@ -1127,7 +1127,10 @@ How about `count` and `index`?
 Again these two methods also work on strings similar to how they work on lists.
 `index` returns the *beginning index* of the search word `'the'` in the longer string
 `'feed the dog and the cat'`, which is `5`.
-TODO: table goes here explaining string index
+
+|  0   |  1   |  2   |  3   |  4   | **5** |  6   |  7   |  8   | ...  |
+| :--: | :--: | :--: | :--: | :--: | :---: | :--: | :--: | :--: | :--: |
+|  f   |  e   |  e   |  d   |      | **t** |  h   |  e   |      | ...  |
 
 Note that in most cases, methods which *modify a list in place* (`append`, `insert`, `remove`) merely return `None`,
 while the remaining functions/methods return a new useful value without changing the original argument.
