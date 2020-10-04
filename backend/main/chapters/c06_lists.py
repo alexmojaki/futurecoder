@@ -822,7 +822,7 @@ Let's review how to work with lists. Suppose we have a list `nums = [1, 2, 3]`. 
 
 - **`append`**: Add an element to the end of the list. `nums.append(4)` changes the list to `[1, 2, 3, 4]`.
 - **`len`**: Returns the number of elements. `len(nums)` is `3`.
-- **`range`**: `range(n)` is an object similar to the list of numbers from 0 to `n - 1`. In particular, `range(len(nums))` is like `[0, 1, 2]`.
+- **`range`**: `range(n)` is an object similar to the list of numbers from 0 to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.
 - **`subscripting`**: Get a value at an index. `nums[0]` is 1, `nums[1]` is 2, `nums[2]` is 3.
 - **`+`**: Concatenates lists. `nums + [4, 5]` is `[1, 2, 3, 4, 5]`.
 
@@ -844,7 +844,7 @@ Run the following code:
 
     class pop_remove_index_subscript_assignment(VerbatimStep):
         """
-As you see, `+` does not modify `nums`, but `append` does. (`new_nums` is not affected by the change in `nums`.)
+As you can see, `+` does not modify `nums`, but `append` does.
 
 Here's some new things. Try them out in the shell. Again suppose we have a list `nums = [1, 2, 3]`.
 
@@ -900,6 +900,7 @@ Moving the first element to the end requires two things.
 Removing the first element...
 and adding it to the end.
 Which functions/methods can you use for this?
+Remember that the first index is 0.
 """
 
     class subscript_assignment_exercise(VerbatimStep):
@@ -926,8 +927,8 @@ so now it should print `['a', 'b', 'a']`.
 Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, then one line copied exactly from the list (no additions), and `print(x)`.
 You need to get the value of the first element in `x`...
 and assign that value to the last position in `x`.
-Which function/method allows you to assign a value at a specific index in the list?
-How can you access the first and last elements in `x`?
+How do you assign a value at a specific index in the list?
+What are the indices of the first and last last elements in `x`?
 """
 
     class negative_index_concatenation_exercise(VerbatimStep):
@@ -966,9 +967,10 @@ Therefore the program will print `['a', 'b', 'c', 'a']`.
 
         hints = """
 Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
-Which function/method allows you to create a new list?
-Start with the original list `x`.
-Then add something to it.
+Which lines of code create a new list rather than modifying?
+`x` is a list. Each element of `x` is a string.
+You can add lists together, you can add strings together, but you can't add a string and a list.
+How do you make a list containing one element?
 """
 
     class remove_exercise(VerbatimStep):
@@ -993,9 +995,11 @@ Replace the middle line `x.remove(0)` with a line from the list that does the sa
         hints = """
 Your solution should have exactly three statements: `x = [1, 2, 0, 3]`, one line copied exactly from the list (no additions), and `print(x)`.
 What does `x.remove(0)` do?
-Which function/method can do the same thing?
-Does that function/method need something else to work?
-Maybe another function/method?
+It removes an element!
+Which function/method can also remove an element?
+The other function/method can't simply be told 'remove 0', it needs a different kind of information.
+Specifically, it needs to be told where 0 is.
+Which function/method provides that kind of information?
 """
 
     final_text = """
@@ -1045,21 +1049,25 @@ Here is a program:
 
     __copyable__
     x = [1, 2, 0, 3]
-    print(1 in x)
+    y = 1 in x
+    print(y)
 
-Replace the part `1 in x` with one line from the list above that does the same thing.
+Replace the part `1 in x` (leave in the `y = `) with one line from the list above that does the same thing.
         """
 
         program_in_text = False
 
         def program(self):
             x = [1, 2, 0, 3]
-            print(x.count(1) > 0)
+            y = x.count(1) > 0
+            print(y)
 
         hints = """
-Your solution should have exactly two statements: `x = [1, 2, 0, 3]` and `print()` where one line is copied exactly from the list above and put inside the parentheses.
-When is `1 in x` true?
-What other function/method can tell us the same thing? And how?
+Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
+When is `1 in x` True?
+When `1` is in `x`!
+Could be that `1` is in `x` once, or twice, or three times...
+...but not zero times!
 """
 
     class average_exercise(VerbatimStep):
@@ -1072,7 +1080,7 @@ Excellent work! For the next exercise, start with this incomplete program:
     print(y)
 
 Replace the part after `y = ` with one line from the list above.
-The final program should print the average of the numbers in `x`.
+The final program should print the average (technically the *mean*) of the numbers in `x`.
         """
 
         program_in_text = False
@@ -1084,9 +1092,10 @@ The final program should print the average of the numbers in `x`.
 
         hints = """
 Your solution should have exactly three statements: `x = [15, 12, -6, 3]`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
+If you're not sure, look up how to calculate the average/mean.
 To calculate the average of numbers in `x` we need two things.
-Which two functions/methods can do those?
-How do you use those two together, to calculate the average?
+Which two functions/methods give you those two things?
+How do you combine those two things to calculate the average?
 """
 
     class sum_range_exercise(VerbatimStep):
@@ -1099,7 +1108,7 @@ Good job! For the next exercise, start with this incomplete program:
     print(y)
 
 Replace the part after `y = ` with one line from the list above.
-The final program should print the value of the sum: `1 + 2 + 3 + ... + x`.
+The final program should print the result of adding up all the numbers from `1` to `x` inclusive, i.e. `1 + 2 + 3 + ... + x`.
         """
 
         program_in_text = False
@@ -1112,7 +1121,8 @@ The final program should print the value of the sum: `1 + 2 + 3 + ... + x`.
         hints = """
 Your solution should have exactly three statements: `x = 100`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
 What function/method can be used to add up things?
-Which function/method gives us something similar to the list of numbers `1, 2, 3, ..., x`?
+Which function/method gives us the numbers `1, 2, 3, ..., x`?
+You have to make a small tweak, otherwise that last number `x` will be left out.
 """
 
     class second_smallest_in_list_exercise(VerbatimStep):
@@ -1138,6 +1148,8 @@ The final program should print the *second smallest value* in `x`.
         hints = """
 Your solution should have exactly three statements: `x = [12, -6, 2, -1, 3]`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
 The numbers in `x` seem to be all out of order. Can you do something about that?
+If you figured that part out, try using that function in the shell to play around with it.
+How would you use that function to get the smallest value in a list? What about the biggest?
 After that, how can you get the *second* smallest value?
 """
 
