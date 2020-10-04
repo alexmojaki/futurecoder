@@ -741,18 +741,6 @@ Here's a more complicated example to try out:
 
         expected_code_source = "birdseye"
 
-        # TODO if they run this code without birdseye they get shown the answer
-        # predicted_output_choices = [
-        #     "['A', 'a', 'i']\n"
-        #     "['m', 'z', 'n', 'g']",
-        #     "['a', 'a', 'i']\n"
-        #     "['m', 'z', 'n', 'g']",
-        #     "['a', 'i']\n"
-        #     "['m', 'z', 'n', 'g']",
-        #     "['a', 'i']\n"
-        #     "['A', 'm', 'z', 'n', 'g']",
-        # ]
-
         def program(self):
             word = 'Amazing'
             vowels = []
