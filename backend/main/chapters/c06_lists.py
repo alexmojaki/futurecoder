@@ -894,6 +894,14 @@ Replace the middle line with one line from the list above. The final program sho
             x.append(x.pop(0))
             print(x)
 
+        hints = """
+Moving the first element to the end requires two things: removing the first element, and adding it to the end.
+Which function/method can remove and return the first element?
+Then which function/method can add that element to the end?
+You need to use `pop` and `append`.
+Make sure you choose the line that applies these two operations in the right order!
+"""
+
     class subscript_assignment_exercise(VerbatimStep):
         """
 Good job. For the next exercise, start with the same incomplete program:
@@ -913,6 +921,15 @@ so now it should print `['a', 'b', 'a']`.
             x = ['a', 'b', 'c']
             x[len(x) - 1] = x[0]
             print(x)
+
+        hints = """
+Which function/method allows you to assign a value to a specific position in the list?
+You need to use subscript assignment.
+How do you assign a value to the last position in `x`?
+You need to use `len(x)` to access the last element.
+Which line in the list above involving `len(x)` accesses the last position correctly?
+Remember the list index starts counting from 0.
+"""
 
     class negative_index_concatenation_exercise(VerbatimStep):
         """
@@ -948,6 +965,16 @@ Therefore the program will print `['a', 'b', 'c', 'a']`.
             y = x + [x[0]]
             print(y)
 
+        hints = """
+Which function/method allows you to create a new list?
+You may be tempted to use `append` but that modifies the original list `x`.
+You need to use `+`. Remember this requires two lists.
+Start with the original list `x`. Then add another list to it.
+How do you get the first element of `x`? And then turn it into a second list?
+`x.pop(0)` will give us the first element, but it modifies the original list, which we need unchanged.
+Which line from the list above correctly turns the first element into a second list?
+"""
+
     class remove_exercise(VerbatimStep):
         """
 Great work. Now the final exercise:
@@ -966,6 +993,15 @@ Replace the middle line `x.remove(0)` with a line from the list that does the sa
             x = [1, 2, 0, 3]
             x.pop(x.index(0))
             print(x)
+
+        hints = """
+`x.remove(0)` finds the first occurrence of `0` in `x` and removes it.
+What other function/method can remove an element from a list?
+`pop` can remove an element, but it requires an index.
+Is there a function/method that can find the index of the first occurrence of an element?
+`index` can do that.
+Which line from the list above applies these two operations in the correct order?
+"""
 
     final_text = """
 Great job!
@@ -988,9 +1024,9 @@ You may recognise some of these from your exercises. I assure you that those exe
 as you've now learned valuable fundamental skills. For example, you can use `in` to check if a list contains 5,
 but there's no similarly easy way to check for a number bigger than 5.
 
-Now you will solve another set of four exercises about these new functions and methods, just like before.
-Again, correct and incorrect solutions are mixed together, and you must choose the correct line of code,
-replace the indicated part with it in your solution and run your code.
+Now you will solve another set of four exercises involving these new concepts.
+Again, correct and incorrect lines of code are mixed together,
+and you must choose the correct line from the list.
 
     sum(len(x))
     sum(range(x))
@@ -1010,35 +1046,41 @@ replace the indicated part with it in your solution and run your code.
     x.count(1) > 0
     x.count(1) > 1
 
-First exercise:
-
-Write a program that takes a list `x` of numbers and prints `True` if `1 in x`, prints `False` otherwise.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+Here is a program:
 
     __copyable__
     x = [1, 2, 0, 3]
-    y = (insert_one_line_from_above)
-    print(y)
+    print(1 in x)
+
+Replace the part `1 in x` with one line from the list above that does the same thing.
         """
 
         program_in_text = False
 
         def program(self):
             x = [1, 2, 0, 3]
-            y = x.count(1) > 0
-            print(y)
+            print(x.count(1) > 0)
+
+        hints = """
+`1 in x` is `True` if `x` contains the number `1`, `False` otherwise.
+What other function/method can tell us if `x` contains `1`?
+`count` can do that.
+Which line from the list above involving `count` correctly detects `1 in x`?
+If `x` contains `1`, then the count of `1` should be at least one.
+That is, it must be greater than zero.
+"""
 
     class average_exercise(VerbatimStep):
         """
-Excellent work! Next exercise:
-
-Write a program that takes a list `x` of numbers and prints the average of all the numbers in `x`.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+Excellent work! For the next exercise, start with this incomplete program:
 
     __copyable__
     x = [15, 12, -6, 3]
     y = (insert_one_line_from_above)
     print(y)
+
+Replace the part after `y = ` with one line from the list above.
+The final program should print the average of the numbers in `x`.
         """
 
         program_in_text = False
@@ -1048,17 +1090,26 @@ Here is the provided code for you to use. Replace the indicated part with a line
             y = sum(x) / len(x)
             print(y)
 
+        hints = """
+To calculate the average of numbers in `x` we need two things.
+We need to add up all the numbers in `x`, and we need how many numbers in `x` there are.
+Which two functions/methods can do that?
+`sum` and `len`.
+Which line from the list above correctly calculates the average?
+The average is calculated by dividing the total sum by the number of elements.
+"""
+
     class sum_range_exercise(VerbatimStep):
         """
-Good job! Next exercise:
-
-Write a program that takes a positive number `x` and prints the value of the sum: `1 + 2 + 3 + ... + x`.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
+Good job! For the next exercise, start with this incomplete program:
 
     __copyable__
     x = 100
     y = (insert_one_line_from_above)
     print(y)
+
+Replace the part after `y = ` with one line from the list above.
+The final program should print the value of the sum: `1 + 2 + 3 + ... + x`.
         """
 
         program_in_text = False
@@ -1068,25 +1119,44 @@ Here is the provided code for you to use. Replace the indicated part with a line
             y = sum(range(x + 1))
             print(y)
 
+        hints = """
+One function/method we need to use is already mentioned in the exercise.
+It's `sum`. Which other function/method do we need?
+How can we `sum` the numbers `1, 2, 3, ..., x`? If only we had a list of these numbers.
+Since we are adding them up, a list of the numbers `0, 1, 2, 3, ..., x` would also work.
+Which function/method gives us something similar to the list of numbers `0, 1, 2, 3, ..., x`?
+Remember that `range(x)` is similar to `[0, 1, 2, ..., x - 1]`.
+That's very close to what we need, but not quite.
+Which line from the list above correctly uses `range` to give us `[0, 1, 2, ..., x]`?
+"""
+
     class second_smallest_in_list_exercise(VerbatimStep):
         """
 Excellent. And the last one:
-
-Write a program that takes a list of numbers `x` and prints the *second smallest value* in `x`.
-Here is the provided code for you to use. Replace the indicated part with a line from the list above, then run the code.
 
     __copyable__
     x = [12, -6, 2, -1, 3]
     y = (insert_one_line_from_above)
     print(y)
+
+Replace the part after `y = ` with one line from the list above.
+The final program should print the *second smallest value* in `x`.
         """
 
         program_in_text = False
 
         def program(self):
-            x = [1, 2, 0, 3]
+            x = [12, -6, 2, -1, 3]
             y = sorted(x)[1]
             print(y)
+
+        hints = """
+To find the second smallest value in `x` we can order the numbers in `x` from smallest to largest.
+Which function/method can order the numbers in `x` like that?
+It's `sorted`.
+Then how do we access the *second* element in `sorted(x)`?
+Remember the list index starts counting from 0.
+"""
 
     final_text = """
 Congratulations! You are now a master of list methods and functions!
