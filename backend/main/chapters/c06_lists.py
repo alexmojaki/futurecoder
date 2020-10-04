@@ -920,10 +920,13 @@ Excellent!
 
 You might realize that working with the last element via `x[len(x) - 1]` is a bit cumbersome.
 The same can be achieved by `x[-1]`.
-Similarly, the second to last element `x[len(x) - 2]` is equivalent to `x[-2]`, and so on.
+Similarly, the second to last element `x[len(x) - 2]` can be written as `x[-2]`, and so on.
 Python allows us to count the index backwards too, starting at the last element with `-1`:
 
-    # TODO: table goes here explaining negative indexing
+| Index     | First elt. | Second elt. | Third elt.  | ... | 2nd to last elt. | Last elt.  |
+|-----------|------------|-------------|-------------|-----|------------------|------------|
+| Forwards  | `0`        | `1`         | `2`         | ... | `len(x) - 2`     |`len(x) - 1`|
+| Backwards | `-len(x)`  |`-len(x) + 1`|`-len(x) + 2`| ... | `-2`             |  `-1`      |
 
 Next exercise:
 
