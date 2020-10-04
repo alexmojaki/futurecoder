@@ -895,11 +895,11 @@ Replace the middle line with one line from the list above. The final program sho
             print(x)
 
         hints = """
-Moving the first element to the end requires two things: removing the first element, and adding it to the end.
-Which function/method can remove and return the first element?
-Then which function/method can add that element to the end?
-You need to use `pop` and `append`.
-Make sure you choose the line that applies these two operations in the right order!
+Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, then one line copied exactly from the list (no additions), and `print(x)`.        
+Moving the first element to the end requires two things.
+Removing the first element...
+and adding it to the end.
+Which functions/methods can you use for this?
 """
 
     class subscript_assignment_exercise(VerbatimStep):
@@ -923,12 +923,11 @@ so now it should print `['a', 'b', 'a']`.
             print(x)
 
         hints = """
-Which function/method allows you to assign a value to a specific position in the list?
-You need to use subscript assignment.
-How do you assign a value to the last position in `x`?
-You need to use `len(x)` to access the last element.
-Which line in the list above involving `len(x)` accesses the last position correctly?
-Remember the list index starts counting from 0.
+Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, then one line copied exactly from the list (no additions), and `print(x)`.
+You need to get the value of the first element in `x`...
+and assign that value to the last position in `x`.
+Which function/method allows you to assign a value at a specific index in the list?
+How can you access the first and last elements in `x`?
 """
 
     class negative_index_concatenation_exercise(VerbatimStep):
@@ -966,13 +965,10 @@ Therefore the program will print `['a', 'b', 'c', 'a']`.
             print(y)
 
         hints = """
+Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
 Which function/method allows you to create a new list?
-You may be tempted to use `append` but that modifies the original list `x`.
-You need to use `+`. Remember this requires two lists.
-Start with the original list `x`. Then add another list to it.
-How do you get the first element of `x`? And then turn it into a second list?
-`x.pop(0)` will give us the first element, but it modifies the original list, which we need unchanged.
-Which line from the list above correctly turns the first element into a second list?
+Start with the original list `x`.
+Then add something to it.
 """
 
     class remove_exercise(VerbatimStep):
@@ -995,12 +991,11 @@ Replace the middle line `x.remove(0)` with a line from the list that does the sa
             print(x)
 
         hints = """
-`x.remove(0)` finds the first occurrence of `0` in `x` and removes it.
-What other function/method can remove an element from a list?
-`pop` can remove an element, but it requires an index.
-Is there a function/method that can find the index of the first occurrence of an element?
-`index` can do that.
-Which line from the list above applies these two operations in the correct order?
+Your solution should have exactly three statements: `x = [1, 2, 0, 3]`, one line copied exactly from the list (no additions), and `print(x)`.
+What does `x.remove(0)` do?
+Which function/method can do the same thing?
+Does that function/method need something else to work?
+Maybe another function/method?
 """
 
     final_text = """
@@ -1062,12 +1057,9 @@ Replace the part `1 in x` with one line from the list above that does the same t
             print(x.count(1) > 0)
 
         hints = """
-`1 in x` is `True` if `x` contains the number `1`, `False` otherwise.
-What other function/method can tell us if `x` contains `1`?
-`count` can do that.
-Which line from the list above involving `count` correctly detects `1 in x`?
-If `x` contains `1`, then the count of `1` should be at least one.
-That is, it must be greater than zero.
+Your solution should have exactly two statements: `x = [1, 2, 0, 3]` and `print()` where one line is copied exactly from the list above and put inside the parentheses.
+When is `1 in x` true?
+What other function/method can tell us the same thing? And how?
 """
 
     class average_exercise(VerbatimStep):
@@ -1091,12 +1083,10 @@ The final program should print the average of the numbers in `x`.
             print(y)
 
         hints = """
+Your solution should have exactly three statements: `x = [15, 12, -6, 3]`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
 To calculate the average of numbers in `x` we need two things.
-We need to add up all the numbers in `x`, and we need how many numbers in `x` there are.
-Which two functions/methods can do that?
-`sum` and `len`.
-Which line from the list above correctly calculates the average?
-The average is calculated by dividing the total sum by the number of elements.
+Which two functions/methods can do those?
+How do you use those two together, to calculate the average?
 """
 
     class sum_range_exercise(VerbatimStep):
@@ -1120,14 +1110,9 @@ The final program should print the value of the sum: `1 + 2 + 3 + ... + x`.
             print(y)
 
         hints = """
-One function/method we need to use is already mentioned in the exercise.
-It's `sum`. Which other function/method do we need?
-How can we `sum` the numbers `1, 2, 3, ..., x`? If only we had a list of these numbers.
-Since we are adding them up, a list of the numbers `0, 1, 2, 3, ..., x` would also work.
-Which function/method gives us something similar to the list of numbers `0, 1, 2, 3, ..., x`?
-Remember that `range(x)` is similar to `[0, 1, 2, ..., x - 1]`.
-That's very close to what we need, but not quite.
-Which line from the list above correctly uses `range` to give us `[0, 1, 2, ..., x]`?
+Your solution should have exactly three statements: `x = 100`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
+What function/method can be used to add up things?
+Which function/method gives us something similar to the list of numbers `1, 2, 3, ..., x`?
 """
 
     class second_smallest_in_list_exercise(VerbatimStep):
@@ -1151,11 +1136,9 @@ The final program should print the *second smallest value* in `x`.
             print(y)
 
         hints = """
-To find the second smallest value in `x` we can order the numbers in `x` from smallest to largest.
-Which function/method can order the numbers in `x` like that?
-It's `sorted`.
-Then how do we access the *second* element in `sorted(x)`?
-Remember the list index starts counting from 0.
+Your solution should have exactly three statements: `x = [12, -6, 2, -1, 3]`, `y = ` followed by one line copied exactly from the list, and `print(y)`.
+The numbers in `x` seem to be all out of order. Can you do something about that?
+After that, how can you get the *second* smallest value?
 """
 
     final_text = """
