@@ -6,7 +6,7 @@ from django.db import migrations
 def forwards_func(apps, _schema_editor):
     User = apps.get_model("main", "User")
     for user in User.objects.all():
-        user.json["pages_progress"]["FunctionsAndMethodsForLists"]["step_name"] = "append_vs_concatenate"
+        user.json["pages_progress"]["FunctionsAndMethodsForLists"] = {"step_name": "append_vs_concatenate"}
         user.save()
 
 
