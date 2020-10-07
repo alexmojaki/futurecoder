@@ -81,6 +81,7 @@ class AppComponent extends React.Component {
       user,
       rpcError,
       page_index,
+      prediction,
     } = this.props;
     const page = pages[page_index];
     const step_index = stepIndex();
@@ -141,6 +142,7 @@ class AppComponent extends React.Component {
       <div className="ide">
         <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
           <button
+            disabled={prediction.state === "waiting"}
             className="btn btn-primary"
             onClick={() => {
               this.runCode({source: "editor"});
@@ -153,6 +155,7 @@ class AppComponent extends React.Component {
 
           {showSnoop &&
           <button
+            disabled={prediction.state === "waiting"}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "snoop"})
@@ -165,6 +168,7 @@ class AppComponent extends React.Component {
 
           {showPythonTutor &&
           <button
+            disabled={prediction.state === "waiting"}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "pythontutor"});
@@ -190,17 +194,20 @@ class AppComponent extends React.Component {
 
           {showBirdseye &&
           <button
+            disabled={prediction.state === "waiting"}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "birdseye"})
             }}
           >
-            {<img
+            <img
               src={birdseyeIcon}
               width={20}
               height={20}
               alt="birdseye logo"
-              style={{position: "relative", top: "-2px"}}/>} Bird's Eye
+              style={{position: "relative", top: "-2px"}}
+            />
+            Bird's Eye
           </button>}
 
         </div>
@@ -224,6 +231,7 @@ class AppComponent extends React.Component {
               setOptions={{
                 fontFamily: "monospace"
               }}
+              readOnly={prediction.state === "waiting"}
             />
           </div>
           <div className="terminal">
