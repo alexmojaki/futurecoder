@@ -74,6 +74,19 @@ export class OutputPrediction extends Component {
       height
     } = this.props.prediction;
     const confettiActive = state === "showingResult" && answer === userChoice;
+    let message;
+    if (state === "waiting") {
+      if (wrongAnswers.length === 0) {
+        message = "What do you think the result will be?";
+      } else {
+        message = "Oops, that's not right. You can try one more time!";
+      }
+    } else if (userChoice === answer) {
+      message = "Correct!";
+    } else {
+      message = "Sorry, wrong answer. Try again next time!";
+    }
+
     return <div
       className="output-prediction"
       style={{
@@ -82,19 +95,7 @@ export class OutputPrediction extends Component {
       }}
     >
       <div>
-        <strong>
-          {
-            state === "waiting" ?
-              "What do you think the result will be?"
-              :
-              (
-                userChoice === answer ?
-                  "Correct!"
-                  :
-                  "Sorry, wrong answer. Try again next time!"
-              )
-          }
-        </strong>
+        <strong>{message}</strong>
         <CorrectConfetti active={confettiActive}/>
       </div>
       <RadioGroup
