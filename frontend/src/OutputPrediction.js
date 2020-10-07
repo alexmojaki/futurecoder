@@ -1,10 +1,11 @@
 import React, {Component} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircle, faDotCircle} from "@fortawesome/free-solid-svg-icons";
-import {bookSetState, scrollToNextStep} from "./book/store";
+import {bookSetState, scrollToNextStep, bookStatePush} from "./book/store";
 import {showCodeResult, terminalRef} from "./App";
 import Confetti from "react-dom-confetti";
 import {animateScroll} from "react-scroll";
+import _ from "lodash";
 
 const RadioButton = ({onChange, label, status}) => (
   <div className={"prediction-choice prediction-" + status}
@@ -24,17 +25,16 @@ const RadioGroup = (
     onChange,
     value,
     correctAnswer,
+    wrongAnswers,
     submitted
   }) => (
   <div>
     {choices.map((label, i) => {
       let status = "";
-      if (submitted) {
-        if (correctAnswer === label) {
-          status = "correct";
-        } else if (value === label) {
-          status = "wrong";
-        }
+      if (_.includes(wrongAnswers, label)) {
+        status = "wrong";
+      } else if (submitted && correctAnswer === label) {
+        status = "correct";
       } else if (value === label) {
         status = "selected";
       }
@@ -65,6 +65,7 @@ export class OutputPrediction extends Component {
       state,
       userChoice,
       answer,
+      wrongAnswers,
       height
     } = this.props.prediction;
     const confettiActive = state === "showingResult" && answer === userChoice;
@@ -93,9 +94,14 @@ export class OutputPrediction extends Component {
       </div>
       <RadioGroup
         choices={choices}
-        onChange={value => state === "waiting" && bookSetState("prediction.userChoice", value)}
+        onChange={value =>
+          state === "waiting" &&
+          !_.includes(wrongAnswers, value) &&
+          bookSetState("prediction.userChoice", value)
+        }
         value={userChoice}
         correctAnswer={answer}
+        wrongAnswers={wrongAnswers}
         submitted={state === "showingResult" || state === "fading"}
       />
       <div style={{opacity: state === "waiting" ? 1 : 0}}>
@@ -103,6 +109,13 @@ export class OutputPrediction extends Component {
           className="btn btn-primary"
           disabled={!userChoice}
           onClick={() => {
+            if (userChoice !== answer) {
+              bookStatePush("prediction.wrongAnswers", userChoice);
+              if (wrongAnswers.length === 0) {
+                bookSetState("prediction.userChoice", null);
+                return;
+              }
+            }
             bookSetState("server", codeResult.state);
             scrollToNextStep();
             bookSetState("prediction.state", "showingResult");

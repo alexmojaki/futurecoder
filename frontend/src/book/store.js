@@ -36,6 +36,7 @@ const initialState = {
   prediction: {
     choices: null,
     answer: "",
+    wrongAnswers: [],
     userChoice: "",
     state: "hidden",
     codeResult: {},
@@ -43,9 +44,9 @@ const initialState = {
 };
 
 
-const {reducer, makeAction, setState, localState} = redact('book', initialState, {dispatched: true});
+const {reducer, makeAction, setState, localState, statePush} = redact('book', initialState, {dispatched: true});
 
-export {reducer as bookReducer, setState as bookSetState, localState as bookState};
+export {reducer as bookReducer, setState as bookSetState, localState as bookState, statePush as bookStatePush};
 
 export const stepIndex = (state = localState) => state.server.pages_progress[state.page_index];
 
@@ -125,6 +126,7 @@ export const ranCode = makeAction(
         prediction: {
           ...value.prediction,
           userChoice: "",
+          wrongAnswers: [],
           state: value.prediction.choices ? "waiting" : "hidden",
           codeResult: value,
         },
