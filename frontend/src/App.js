@@ -94,6 +94,7 @@ class AppComponent extends React.Component {
     const showPythonTutor = page_index >= _.findIndex(pages, {slug: "UnderstandingProgramsWithPythonTutor"});
     const showBirdseye = page_index >= _.findIndex(pages, {slug: "IntroducingBirdseye"});
 
+    const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
       <div className="book-text markdown-body"
            onCopy={checkCopy}>
@@ -143,7 +144,7 @@ class AppComponent extends React.Component {
       <div className="ide">
         <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
           <button
-            disabled={prediction.state === "waiting"}
+            disabled={cantUseEditor}
             className="btn btn-primary"
             onClick={() => {
               this.runCode({source: "editor"});
@@ -156,7 +157,7 @@ class AppComponent extends React.Component {
 
           {showSnoop &&
           <button
-            disabled={prediction.state === "waiting"}
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "snoop"})
@@ -169,7 +170,7 @@ class AppComponent extends React.Component {
 
           {showPythonTutor &&
           <button
-            disabled={prediction.state === "waiting"}
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "pythontutor"});
@@ -195,7 +196,7 @@ class AppComponent extends React.Component {
 
           {showBirdseye &&
           <button
-            disabled={prediction.state === "waiting"}
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "birdseye"})
@@ -232,7 +233,7 @@ class AppComponent extends React.Component {
               setOptions={{
                 fontFamily: "monospace"
               }}
-              readOnly={prediction.state === "waiting"}
+              readOnly={cantUseEditor}
             />
           </div>
           <div className="terminal">
