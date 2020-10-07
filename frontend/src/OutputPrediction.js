@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCircle, faDotCircle} from "@fortawesome/free-solid-svg-icons";
-import {bookSetState, scrollToNextStep, bookStatePush} from "./book/store";
+import {faCheck, faCircle, faDotCircle, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {bookSetState, bookStatePush, scrollToNextStep} from "./book/store";
 import {showCodeResult, terminalRef} from "./App";
 import Confetti from "react-dom-confetti";
 import {animateScroll} from "react-scroll";
@@ -11,7 +11,12 @@ const RadioButton = ({onChange, label, status}) => (
   <div className={"prediction-choice prediction-" + status}
        onClick={onChange}>
     <FontAwesomeIcon
-      icon={status === "selected" ? faDotCircle : faCircle}
+      icon={{
+        selected: faDotCircle,
+        wrong: faTimes,
+        correct: faCheck,
+        "": faCircle,
+      }[status]}
     />
     <div className="prediction-label" style={{color: label === "Error" ? "red" : "white"}}>
       {label}
