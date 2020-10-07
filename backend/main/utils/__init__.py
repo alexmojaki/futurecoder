@@ -190,7 +190,7 @@ class HighlightPythonTreeProcessor(Treeprocessor):
 
 
 def highlighted_markdown(text):
-    return markdown(text, extensions=[HighlightPythonExtension()])
+    return markdown(text, extensions=[HighlightPythonExtension(), 'tables'])
 
 
 def shuffled(it):

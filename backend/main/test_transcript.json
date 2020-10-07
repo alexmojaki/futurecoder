@@ -4274,10 +4274,441 @@
         "step": "no_append_for_str"
     },
     {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "nums = [1, 2, 3]",
+            "new_nums = nums + [4, 5]",
+            "print(new_nums)",
+            "print(nums)",
+            "nums.append(4)",
+            "print(nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3, 4, 5]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3, 4]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "append_vs_concatenate"
+    },
+    {
+        "get_solution": [
+            "x = ['a', 'b', 'c']",
+            "x.append(x.pop(0))",
+            "print(x)"
+        ],
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "x = ['a', 'b', 'c']",
+            "x.append(x.pop(0))",
+            "print(x)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "['b', 'c', 'a']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "pop_remove_index_subscript_assignment"
+    },
+    {
+        "get_solution": [
+            "x = ['a', 'b', 'c']",
+            "x[len(x) - 1] = x[0]",
+            "print(x)"
+        ],
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "x = ['a', 'b', 'c']",
+            "x[len(x) - 1] = x[0]",
+            "print(x)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "['a', 'b', 'a']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "subscript_assignment_exercise"
+    },
+    {
+        "get_solution": [
+            "x = ['a', 'b', 'c']",
+            "y = x + [x[0]]",
+            "print(y)"
+        ],
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "x = ['a', 'b', 'c']",
+            "y = x + [x[0]]",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "['a', 'b', 'c', 'a']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "negative_index_concatenation_exercise"
+    },
+    {
+        "get_solution": [
+            "x = [1, 2, 0, 3]",
+            "x.pop(x.index(0))",
+            "print(x)"
+        ],
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "x = [1, 2, 0, 3]",
+            "x.pop(x.index(0))",
+            "print(x)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "remove_exercise"
+    },
+    {
+        "get_solution": [
+            "x = [1, 2, 0, 3]",
+            "y = x.count(1) > 0",
+            "print(y)"
+        ],
+        "page": "More List Functions and Methods",
+        "program": [
+            "x = [1, 2, 0, 3]",
+            "y = x.count(1) > 0",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "count_in_sorted_sum"
+    },
+    {
+        "get_solution": [
+            "x = [15, 12, -6, 3]",
+            "y = sum(x) / len(x)",
+            "print(y)"
+        ],
+        "page": "More List Functions and Methods",
+        "program": [
+            "x = [15, 12, -6, 3]",
+            "y = sum(x) / len(x)",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "6.0"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "average_exercise"
+    },
+    {
+        "get_solution": [
+            "x = 100",
+            "y = sum(range(x + 1))",
+            "print(y)"
+        ],
+        "page": "More List Functions and Methods",
+        "program": [
+            "x = 100",
+            "y = sum(range(x + 1))",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "5050"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "sum_range_exercise"
+    },
+    {
+        "get_solution": [
+            "x = [12, -6, 2, -1, 3]",
+            "y = sorted(x)[1]",
+            "print(y)"
+        ],
+        "page": "More List Functions and Methods",
+        "program": [
+            "x = [12, -6, 2, -1, 3]",
+            "y = sorted(x)[1]",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "-1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "second_smallest_in_list_exercise"
+    },
+    {
+        "page": "String Methods and Immutability",
+        "program": [
+            "print('the' in 'feed the dog and the cat')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_in_step"
+    },
+    {
+        "page": "String Methods and Immutability",
+        "program": [
+            "string = 'feed the dog and the cat'",
+            "print(string.count('the'))",
+            "print(string.index('the'))"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_count_index"
+    },
+    {
+        "page": "String Methods and Immutability",
+        "program": [
+            "'Python'.append(' is cool!')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "red",
+                    "text": "Traceback (most recent call last):\n"
+                },
+                {
+                    "color": "red",
+                    "text": " File \"my_program.py\", line 1, in <module>\n"
+                },
+                {
+                    "color": "red",
+                    "text": "-->    1 | \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mPython\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;197m.\u001b[39m\u001b[38;5;15mappend\u001b[39m\u001b[38;5;15m(\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;186m is cool!\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
+                },
+                {
+                    "color": "red",
+                    "text": "AttributeError: 'str' object has no attribute 'append'\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "mutation_string_append"
+    },
+    {
+        "page": "String Methods and Immutability",
+        "program": [
+            "sentence = \"Python rocks!\"",
+            "new_sentence = sentence.upper()",
+            "print(sentence)",
+            "print(new_sentence)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Python rocks!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "PYTHON ROCKS!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_lower_upper"
+    },
+    {
         "get_solution": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
-        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
+        "page": "How to Find Information with Google, and more",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
@@ -4307,7 +4738,7 @@
             "nums.insert(2, 9)",
             "print(nums)"
         ],
-        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
+        "page": "How to Find Information with Google, and more",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
             "nums.insert(2, 9)",
@@ -4334,7 +4765,7 @@
         "step": "list_insert"
     },
     {
-        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
+        "page": "How to Find Information with Google, and more",
         "program": [
             "dir([])"
         ],
