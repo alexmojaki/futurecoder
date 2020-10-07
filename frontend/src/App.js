@@ -66,6 +66,7 @@ class AppComponent extends React.Component {
         ranCode(data);
         if (!data.prediction.choices) {
           showCodeResult(data);
+          terminalRef.current.focusTerminal();
         }
       },
     );
@@ -368,7 +369,6 @@ export const showCodeResult = (data) => {
   const terminal = terminalRef.current;
   terminal.pushToStdout(data.result);
   animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
-  terminal.focusTerminal();
 
   if (data.birdseye_url) {
     window.open(data.birdseye_url);
