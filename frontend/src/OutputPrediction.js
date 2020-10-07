@@ -87,6 +87,7 @@ export class OutputPrediction extends Component {
       message = "Sorry, wrong answer. Try again next time!";
     }
 
+    const userFailed = wrongAnswers.length === 2;
     return <div
       className="output-prediction"
       style={{
@@ -110,16 +111,22 @@ export class OutputPrediction extends Component {
         <CorrectConfetti active={confettiActive}/>
         <div><strong>{message}</strong></div>
         <button
-          style={{opacity: state === "waiting" ? 1 : 0}}
+          style={{
+            opacity:
+              state === "waiting" ||
+              (state === "showingResult" && userFailed)
+                ? 1 : 0
+          }}
           className="btn btn-primary"
-          disabled={!userChoice}
+          disabled={!userChoice && !userFailed}
           onClick={() => {
-            if (userChoice !== answer) {
+            if (userChoice !== answer && !userFailed) {
               bookStatePush("prediction.wrongAnswers", userChoice);
-              if (wrongAnswers.length === 0) {
-                bookSetState("prediction.userChoice", null);
-                return;
+              bookSetState("prediction.userChoice", null);
+              if (wrongAnswers.length === 1) {
+                bookSetState("prediction.state", "showingResult");
               }
+              return;
             }
             bookSetState("server", codeResult.state);
             scrollToNextStep();
@@ -127,16 +134,17 @@ export class OutputPrediction extends Component {
             setTimeout(() => animateScroll.scrollToBottom({
               duration: 30,
               container: terminalRef.current.terminalRoot.current
-            }))
+            }));
+            const timeToFade = userFailed ? 0 : 3000;
             setTimeout(() => {
               bookSetState("prediction.state", "fading");
               bookSetState("prediction.height", 0);
               showCodeResult(codeResult);
-            }, 3000);
-            setTimeout(() => bookSetState("prediction.state", "hidden"), 4000);
+            }, timeToFade);
+            setTimeout(() => bookSetState("prediction.state", "hidden"), timeToFade + 1000);
           }}
         >
-          Submit
+          {userFailed ? "OK" : "Submit"}
         </button>
       </div>
     </div>
