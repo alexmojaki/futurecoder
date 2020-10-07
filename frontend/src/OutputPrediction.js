@@ -94,10 +94,6 @@ export class OutputPrediction extends Component {
         opacity: state === "waiting" || state === "showingResult" ? 1 : 0,
       }}
     >
-      <div>
-        <strong>{message}</strong>
-        <CorrectConfetti active={confettiActive}/>
-      </div>
       <RadioGroup
         choices={choices}
         onChange={value =>
@@ -110,8 +106,11 @@ export class OutputPrediction extends Component {
         wrongAnswers={wrongAnswers}
         submitted={state === "showingResult" || state === "fading"}
       />
-      <div style={{opacity: state === "waiting" ? 1 : 0}}>
+      <div className="submit-prediction">
+        <CorrectConfetti active={confettiActive}/>
+        <div><strong>{message}</strong></div>
         <button
+          style={{opacity: state === "waiting" ? 1 : 0}}
           className="btn btn-primary"
           disabled={!userChoice}
           onClick={() => {
@@ -140,7 +139,6 @@ export class OutputPrediction extends Component {
           Submit
         </button>
       </div>
-      <CorrectConfetti active={confettiActive}/>
     </div>
   }
 }

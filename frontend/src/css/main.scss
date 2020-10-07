@@ -84,6 +84,7 @@
   height: 0;
   transition: all 1s linear;
   overflow: hidden;
+  margin-bottom: 6em;
 
   &.show {
     opacity: 1;
@@ -122,6 +123,26 @@
     &.prediction-selected {
       border: 2px #0090ff solid;
       background: #003866;
+    }
+  }
+
+  .submit-prediction {
+    position: fixed;
+    bottom: 2vh;
+    background:rgb(33, 33, 33);;
+    padding: 0.5em 0 0.5em 1em;
+    border: 2px #464f52 solid;
+    border-radius: 4px;
+    width: 40vw;
+
+    button {
+      margin-top: 0.5em;
+
+      &:disabled {
+        opacity: 1;
+        background: #1c58b1;
+        border-color: #1c58b1;
+      }
     }
   }
 }
