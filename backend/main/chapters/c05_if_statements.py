@@ -61,6 +61,11 @@ Here's a more interesting example for you to run:
 __program_indented__
         """
 
+        predicted_output_choices = [
+            'Hello World',
+            'Hello World!',
+        ]
+
         def program(self):
             sentence = 'Hello World'
             excited = True
@@ -75,6 +80,11 @@ __program_indented__
 Change `excited = True` to `excited = False` and run the program again to see what the difference is.
         """
         program_in_text = False
+
+        predicted_output_choices = [
+            'Hello World',
+            'Hello World!',
+        ]
 
         def program(self):
             sentence = 'Hello World'
@@ -133,6 +143,17 @@ that you're *really* excited:
 
 __program_indented__
         """
+        predicted_output_choices = [
+            'Hello World',
+            '!!!!!!!!!!!',
+            'Hello World!!!!!!!!!!!',
+            '!!!!!!!!!!!Hello World',
+            'Hello World!',
+            '!Hello World',
+            '!Hello World!',
+            'H!e!l!l!o! !W!o!r!l!d!',
+            '!H!e!l!l!o! !W!o!r!l!d',
+        ]
 
         def program(self):
             sentence = 'Hello World'
@@ -194,12 +215,18 @@ Run this program:
     __copyable__
     __program_indented__
         """
+        predicted_output_choices = [
+            'Hello World',
+            'ello World',
+            'Hello Worl',
+            'H',
+            'd',
+        ]
 
     class print_tail_snoop(print_tail_base):
         """
-As you can see, it prints everything but the first character. Take some time to understand how this works.
-
-In fact, it's time to introduce a new tool to help you understand programs. Click the 'Snoop' button to run the same program while also showing what's happening.
+Programs are starting to get complicated!
+It's time to introduce a new tool to help you understand programs. Click the 'Snoop' button to run the same program while also showing what's happening.
         """
 
         program_in_text = False
@@ -368,6 +395,12 @@ Spoilers below! Have you figured it out?
 What happens if you change `excited` to `False`?
         """
         program_in_text = False
+
+        predicted_output_choices = [
+            'Hello World',
+            'Hello World!',
+        ]
+        correct_output = "Error"
 
         # noinspection PyUnboundLocalVariable
         def program(self):
@@ -834,6 +867,8 @@ __program_indented__
 
 Recall that `elif percentage < 60` after `if percentage < 40` means "if the percentage wasn't less than 40 and also is less than 60", so it will pass for all numbers from 40 to 59 inclusive. Similarly a 'B' is for percentages from 60 to 79, and an 'A' is for any number 80 and up.
         """
+
+        predicted_output_choices = ["F", "C", "B", "A"]
 
         def program(self):
             percentage = 73

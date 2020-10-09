@@ -239,6 +239,16 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "'Hello'",
+                "choices": [
+                    "word",
+                    "'word'",
+                    "Hello",
+                    "'Hello'",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -264,6 +274,16 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "'word'",
+                "choices": [
+                    "word",
+                    "'word'",
+                    "Hello",
+                    "'Hello'",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -289,6 +309,16 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "sunshine",
+                    "'sunshine'",
+                    "Hello",
+                    "'Hello'",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "red",
@@ -592,6 +622,18 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello World",
+                "choices": [
+                    "sentence",
+                    "word + ' ' + name",
+                    "Hello + ' ' + World",
+                    "'Hello' + ' ' + 'World'",
+                    "Hello World",
+                    "'Hello World'",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -622,6 +664,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello World\nHello World",
+                "choices": [
+                    "Hello World\nHello World",
+                    "Hello World\nGoodbye World",
+                    "Goodbye World\nGoodbye World",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1089,6 +1140,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello\nHello!",
+                "choices": [
+                    "Hello\nHello",
+                    "Hello\nHello!",
+                    "Hello!\nHello!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1126,6 +1186,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "W\nWo\nWor\nWorl\nWorld",
+                "choices": [
+                    "W\no\nr\nl\nd",
+                    "World",
+                    "W\nWo\nWor\nWorl\nWorld",
+                    "World\nWorl\nWor\nWo\nW",
+                    "World\nWorld\nWorld\nWorld\nWorld",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1187,6 +1258,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "\nW\nWo\nWor\nWorl",
+                "choices": [
+                    "W\nWo\nWor\nWorl\nWorld",
+                    "Wo\nWor\nWorl\nWorld",
+                    "\nW\nWo\nWor\nWorl",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1814,6 +1894,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello World!",
+                "choices": [
+                    "Hello World",
+                    "Hello World!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1843,6 +1931,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello World",
+                "choices": [
+                    "Hello World",
+                    "Hello World!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1916,6 +2012,21 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "H!e!l!l!o! !W!o!r!l!d!",
+                "choices": [
+                    "Hello World",
+                    "!!!!!!!!!!!",
+                    "Hello World!!!!!!!!!!!",
+                    "!!!!!!!!!!!Hello World",
+                    "Hello World!",
+                    "!Hello World",
+                    "!Hello World!",
+                    "H!e!l!l!o! !W!o!r!l!d!",
+                    "!H!e!l!l!o! !W!o!r!l!d",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1950,6 +2061,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "ello World",
+                "choices": [
+                    "Hello World",
+                    "ello World",
+                    "Hello Worl",
+                    "H",
+                    "d",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -2371,6 +2493,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "Hello World",
+                    "Hello World!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "red",
@@ -2939,6 +3069,16 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "B",
+                "choices": [
+                    "F",
+                    "C",
+                    "B",
+                    "A",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -3511,6 +3651,18 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "0\nThis\n1\nis\n2\na\n3\nlist",
+                "choices": [
+                    "This\nis\na\nlist",
+                    "0\n1\n2\n3",
+                    "0\nThis\n1\nis\n2\na\n3\nlist",
+                    "This\n0\nis\n1\na\n2\nlist\n3",
+                    "0\n1\n2\n3\nThis\nis\na\nlist",
+                    "This\nis\na\nlist\n0\n1\n2\n3",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -15702,6 +15854,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?",
+                "choices": [
+                    "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?",
+                    "Hello Alice!\nHello Bob!\nHow are you?",
+                    "Hello Alice!\nHow are you?\nHello Bob!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -15903,6 +16064,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello\nHello\nHello",
+                "choices": [
+                    "3\n3\n3",
+                    "3",
+                    "Hello\nHello\nHello",
+                    "Hello",
+                    "H\ne\nl\nl\no",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16222,6 +16394,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "5\n10",
+                "choices": [
+                    "5\n5",
+                    "5\n10",
+                    "10\n10",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16260,6 +16441,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "5",
+                "choices": [
+                    "5",
+                    "10",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16332,6 +16521,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "OK\nOK",
+                "choices": [
+                    "Error! 4 != 4\nError! 10 != 10",
+                    "Error! 2 != 4\nError! 5 != 10",
+                    "Error! 2 != 4",
+                    "OK\nOK",
+                    "OK",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16369,6 +16569,16 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Error! 6 != 4\nError! 15 != 10",
+                "choices": [
+                    "Error! 4 != 4\nError! 10 != 10",
+                    "Error! 6 != 4\nError! 15 != 10",
+                    "Error! 4 != 6\nError! 10 != 15",
+                    "OK\nOK",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16613,6 +16823,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16638,6 +16856,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16663,6 +16889,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16999,6 +17233,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -17024,6 +17266,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -17049,6 +17299,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -17281,6 +17539,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -17306,6 +17572,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",

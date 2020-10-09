@@ -46,21 +46,21 @@ meaning it's an operator (like `+` or `-`) which combines two booleans (`True` o
 The expression `A or B` is `True` if either `A` or `B` is `True`, i.e. if `A` is `True` or `B` is `True`, or both.
 It's only `False` if neither `A` nor `B` is `True`, i.e. both are `False`.
 
-Try the following in the shell. Think about what you expect it to return:
+Try the following in the shell.
 
 __program_indented__
         """
         program = "True or True"
+        predicted_output_choices = ["True", "False"]
 
     class TrueOrFalse(VerbatimStep):
         """
 Good, now try:
 
 __program_indented__
-
-What do you expect?
         """
         program = "True or False"
+        predicted_output_choices = ["True", "False"]
 
     class FalseOrFalse(VerbatimStep):
         """
@@ -69,6 +69,7 @@ Finally, try:
 __program_indented__
         """
         program = "False or False"
+        predicted_output_choices = ["True", "False"]
 
     class ImprovingWithOr(VerbatimStep):
         """
@@ -289,6 +290,7 @@ Try it in the shell:
 __program_indented__
         """
         program = "True and True"
+        predicted_output_choices = ["True", "False"]
 
     class TrueAndFalse(VerbatimStep):
         """
@@ -299,6 +301,7 @@ __program_indented__
 What do you expect?
         """
         program = "True and False"
+        predicted_output_choices = ["True", "False"]
 
     class FalseAndFalse(VerbatimStep):
         """
@@ -307,6 +310,7 @@ Finally, try:
 __program_indented__
         """
         program = "False and False"
+        predicted_output_choices = ["True", "False"]
 
     # noinspection PyChainedComparisons
     class AndExercise(ExerciseStep):
@@ -665,6 +669,7 @@ It negates the expression to which it is applied, a bit like a minus sign. Try i
 __program_indented__
         """
         program = "not True"
+        predicted_output_choices = ["True", "False"]
 
     class NotFalse(VerbatimStep):
         """
@@ -673,6 +678,7 @@ Now try the following:
 __program_indented__
         """
         program = "not False"
+        predicted_output_choices = ["True", "False"]
 
     class NotTrueOrTrue(VerbatimStep):
         """

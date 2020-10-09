@@ -13,6 +13,9 @@ You've seen that the indented body of an `if` or a loop can contain any kind of 
 __program_indented__
         """
 
+        # TODO after adding quotes chapter:
+        #   collapse first three steps into one, add predicted output
+
         def program(self):
             for letter in "ABC":
                 print(letter)

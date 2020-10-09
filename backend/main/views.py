@@ -66,11 +66,14 @@ class API:
 
     def run_code(self, code, source, page_index, step_index):
         page_slug = page_slugs_list[page_index]
+        page = pages[page_slug]
+        step_name = pages[page_slug].step_names[step_index]
+        step = getattr(page, step_name)
         entry_dict = dict(
             input=code,
             source=source,
             page_slug=page_slug,
-            step_name=pages[page_slug].step_names[step_index],
+            step_name=step_name,
             user_id=self.user.id,
         )
 
@@ -130,6 +133,10 @@ class API:
             state=self.current_state(),
             birdseye_url=birdseye_url,
             passed=passed,
+            prediction=dict(
+                choices=getattr(step, "predicted_output_choices", None),
+                answer=getattr(step, "correct_output", None),
+            ) if passed else dict(choice=None, answer=None),
         )
 
     def load_data(self):

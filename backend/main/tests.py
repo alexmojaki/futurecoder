@@ -45,10 +45,14 @@ class StepsTestCase(TestCase):
                     )
                     if "state" not in response:
                         self.fail(response)
+
                     state = response.pop("state")
                     for line in response["result"]:
                         line["text"] = normalise_output(line["text"])
                     del response["birdseye_url"]
+                    if not response["prediction"]["choices"]:
+                        del response["prediction"]
+
                     transcript_item = dict(
                         program=program.splitlines(),
                         page=page.title,

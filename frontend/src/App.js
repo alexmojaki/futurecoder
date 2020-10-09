@@ -41,12 +41,10 @@ import birdseyeIcon from "./img/birdseye_icon.png";
 import _ from "lodash";
 
 
-class AppComponent extends React.Component {
-  constructor(props) {
-    super(props)
-    this.terminal = React.createRef()
-  }
+export const terminalRef = React.createRef();
 
+
+class AppComponent extends React.Component {
   runCode({code, source}) {
     const shell = source === "shell";
     if (!shell && !code) {
@@ -61,18 +59,14 @@ class AppComponent extends React.Component {
       {code, source, page_index: bookState.page_index, step_index: stepIndex()},
       (data) => {
         if (!shell) {
-          this.terminal.current.clearStdout();
+          terminalRef.current.clearStdout();
         }
         bookSetState("processing", false);
 
         ranCode(data);
-        const terminal = this.terminal.current;
-        terminal.pushToStdout(data.result);
-        animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
-        terminal.focusTerminal();
-        
-        if (data.birdseye_url) {
-          window.open(data.birdseye_url);
+        if (!data.prediction.choices) {
+          showCodeResult(data);
+          terminalRef.current.focusTerminal();
         }
       },
     );
@@ -88,6 +82,7 @@ class AppComponent extends React.Component {
       user,
       rpcError,
       page_index,
+      prediction,
     } = this.props;
     const page = pages[page_index];
     const step_index = stepIndex();
@@ -99,6 +94,7 @@ class AppComponent extends React.Component {
     const showPythonTutor = page_index >= _.findIndex(pages, {slug: "UnderstandingProgramsWithPythonTutor"});
     const showBirdseye = page_index >= _.findIndex(pages, {slug: "IntroducingBirdseye"});
 
+    const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
       <div className="book-text markdown-body"
            onCopy={checkCopy}>
@@ -148,6 +144,7 @@ class AppComponent extends React.Component {
       <div className="ide">
         <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
           <button
+            disabled={cantUseEditor}
             className="btn btn-primary"
             onClick={() => {
               this.runCode({source: "editor"});
@@ -160,6 +157,7 @@ class AppComponent extends React.Component {
 
           {showSnoop &&
           <button
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "snoop"})
@@ -172,6 +170,7 @@ class AppComponent extends React.Component {
 
           {showPythonTutor &&
           <button
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "pythontutor"});
@@ -197,17 +196,20 @@ class AppComponent extends React.Component {
 
           {showBirdseye &&
           <button
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "birdseye"})
             }}
           >
-            {<img
+            <img
               src={birdseyeIcon}
               width={20}
               height={20}
               alt="birdseye logo"
-              style={{position: "relative", top: "-2px"}}/>} Bird's Eye
+              style={{position: "relative", top: "-2px"}}
+            />
+            Bird's Eye
           </button>}
 
         </div>
@@ -231,12 +233,13 @@ class AppComponent extends React.Component {
               setOptions={{
                 fontFamily: "monospace"
               }}
+              readOnly={cantUseEditor}
             />
           </div>
           <div className="terminal">
             <Terminal
               onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
-              ref={this.terminal}
+              ref={terminalRef}
             />
           </div>
         </div>
@@ -361,3 +364,14 @@ export const App = connect(
     rpcError: state.rpc.error,
   }),
 )(AppComponent);
+
+
+export const showCodeResult = (data) => {
+  const terminal = terminalRef.current;
+  terminal.pushToStdout(data.result);
+  animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
+
+  if (data.birdseye_url) {
+    window.open(data.birdseye_url);
+  }
+}

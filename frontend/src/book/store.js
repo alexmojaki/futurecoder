@@ -2,6 +2,7 @@ import {ipush, iremove, iset, redact} from "../frontendlib";
 import {rpc} from "../rpc";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
+import {terminalRef} from "../App";
 
 const initialState = {
   server: {
@@ -32,12 +33,20 @@ const initialState = {
   messages: [],
   pastMessages: [],
   requestingSolution: 0,
+  prediction: {
+    choices: null,
+    answer: "",
+    wrongAnswers: [],
+    userChoice: "",
+    state: "hidden",
+    codeResult: {},
+  },
 };
 
 
-const {reducer, makeAction, setState, localState} = redact('book', initialState, {dispatched: true});
+const {reducer, makeAction, setState, localState, statePush} = redact('book', initialState, {dispatched: true});
 
-export {reducer as bookReducer, setState as bookSetState, localState as bookState};
+export {reducer as bookReducer, setState as bookSetState, localState as bookState, statePush as bookStatePush};
 
 export const stepIndex = (state = localState) => state.server.pages_progress[state.page_index];
 
@@ -94,27 +103,48 @@ export const showHint = makeAction(
   },
 );
 
+export const scrollToNextStep = () => {
+  setTimeout(() =>
+      scroller.scrollTo(`step-text-${stepIndex()}`, {
+        duration: 1000,
+        smooth: true,
+      }),
+    500,
+  )
+};
+
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
     if (value.passed) {
-      setTimeout(() =>
-          scroller.scrollTo(`step-text-${stepIndex()}`, {
-            duration: 1000,
-            smooth: true,
-          }),
-        500,
-      )
+      scrollToNextStep();
 
       state = {
         ...state,
-        ..._.pick(initialState, (
-          "numHints messages requestingSolution").split(" ")),
-        server: value.state,
+        ..._.pick(initialState,
+          "numHints messages requestingSolution".split(" ")),
+        prediction: {
+          ...value.prediction,
+          userChoice: "",
+          wrongAnswers: [],
+          state: value.prediction.choices ? "waiting" : "hidden",
+          codeResult: value,
+        },
         processing: false,
       };
     }
     state = addMessageToState(state, value.message);
+    if (value.prediction.choices) {
+      const scrollInterval = setInterval(() => {
+        animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current});
+      }, 30);
+      setTimeout(() => clearInterval(scrollInterval), 1300);
+    } else {
+      state = {
+        ...state,
+        server: value.state,
+      }
+    }
     return state;
   },
 );

@@ -25,6 +25,7 @@ from main.exercises import (
     check_result,
     generate_for_type,
     inputs_string,
+    assert_equal,
 )
 from main.utils import highlighted_markdown, lexer, html_formatter, shuffled_well, no_weird_whitespace, snake, \
     unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
@@ -146,11 +147,33 @@ def clean_step_class(cls, clean_inner=True):
     if hints:
         cls.get_solution = get_solution(cls)
 
+    if cls.predicted_output_choices:
+        cls.predicted_output_choices.append("Error")
+        cls.predicted_output_choices = [
+            s.rstrip()
+            for s in cls.predicted_output_choices
+        ]
+        if not cls.correct_output:
+            cls.correct_output = get_stdout(cls.program).rstrip()
+            assert cls.correct_output in cls.predicted_output_choices
+            assert cls.correct_output != "Error"
+        assert cls.correct_output
+
+
+@returns_stdout
+def get_stdout(program):
+    if "\n" in program:
+        mode = "exec"
+    else:
+        mode = "single"
+    code = compile(program, "", mode)
+    exec(code, {"assert_equal": assert_equal})
+
 
 def get_solution(step):
     if issubclass(step, ExerciseStep):
         if step.solution.__name__ == "solution":
-            program, _ = clean_program(step.solution, None)
+            program, _ = clean_program(step.solution, None)  # noqa
         else:
             program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
     else:
@@ -317,6 +340,8 @@ class Step(ABC):
     disallowed: List[Disallowed] = []
     parsons_solution = False
     get_solution = None
+    predicted_output_choices = None
+    correct_output = None
 
     def __init__(self, *args):
         self.args = args
@@ -353,21 +378,6 @@ class Step(ABC):
     @property
     def stmt(self):
         return self.tree.body[0]
-
-    def tree_matches(self, template):
-        if is_ast_like(self.tree, ast.parse(template)):
-            return True
-
-        if is_ast_like(ast.parse(self.input.lower()), ast.parse(template.lower())):
-            return dict(
-                message="Python is case sensitive! That means that small and capital letters "
-                        "matter and changing them changes the meaning of the program. The strings "
-                        "`'hello'` and `'Hello'` are different, as are the variable names "
-                        "`word` and `Word`."
-            )
-
-    def matches_program(self):
-        return self.tree_matches(self.program)
 
     def input_matches(self, pattern, remove_spaces=True):
         inp = self.input.rstrip()
@@ -472,7 +482,26 @@ class VerbatimStep(Step):
     program_in_text = True
 
     def check(self):
-        return self.matches_program()
+        if self.truncated_trees_match(
+                self.tree,
+                ast.parse(self.program),
+        ):
+            return True
+
+        if self.truncated_trees_match(
+                ast.parse(self.input.lower()),
+                ast.parse(self.program.lower()),
+        ):
+            return dict(
+                message="Python is case sensitive! That means that small and capital letters "
+                        "matter and changing them changes the meaning of the program. The strings "
+                        "`'hello'` and `'Hello'` are different, as are the variable names "
+                        "`word` and `Word`."
+            )
+
+    def truncated_trees_match(self, input_tree, program_tree):
+        del input_tree.body[len(program_tree.body):]
+        return is_ast_like(input_tree, program_tree)
 
 
 class MessageStep(Step, ABC):
