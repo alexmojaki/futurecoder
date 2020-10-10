@@ -68,7 +68,9 @@ class TracebackSerializer:
                     continue
                 yield self.format_frame(item)
             else:
-                yield self.format_repeated_frames(item)
+                yield dict(
+                    type="repeated_frames", data=self.format_repeated_frames(item)
+                )
 
     def format_repeated_frames(self, repeated_frames: RepeatedFrames) -> List[dict]:
         counts = sorted(

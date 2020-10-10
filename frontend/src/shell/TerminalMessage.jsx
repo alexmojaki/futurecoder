@@ -42,7 +42,10 @@ const Tracebacks = ({tracebacks}) =>
         <div className="traceback" key={tracebackIndex}>
           {
             traceback.frames.map((frame, frameIndex) =>
-              <Frame frame={frame} index={frameIndex} key={frameIndex}/>
+              frame.type === "frame" ?
+                <Frame frame={frame} index={frameIndex} key={frameIndex}/>
+                :
+                <RepeatedFrames data={frame.data}/>
             )
           }
           <div className="traceback-exception">
@@ -86,4 +89,18 @@ const Frame = ({frame, index}) =>
       }
       </tbody>
     </table>
+  </div>
+
+
+const RepeatedFrames = ({data}) =>
+  <div className="traceback-repeated-frames">
+    <div>Similar frames skipped:</div>
+    <ul>
+      {
+        data.map(item =>
+        <li>
+          {`${item.name} at line ${item.lineno} - ${item.count} times`}
+        </li>)
+      }
+    </ul>
   </div>
