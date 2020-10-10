@@ -52,6 +52,7 @@ def make_result(
         output_parts=None,
         birdseye_objects=None,
         error=None,
+        traceback_info=None,
 ):
     if output is None:
         output = output_buffer.string()
@@ -67,6 +68,7 @@ def make_result(
         output_parts=output_parts,
         birdseye_objects=birdseye_objects,
         error=error,
+        traceback_info=traceback_info,
     )
     # Check that JSON encoding works here
     # because failures in the queue pickling are silent

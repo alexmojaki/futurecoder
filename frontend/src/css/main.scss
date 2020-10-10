@@ -147,6 +147,43 @@
   }
 }
 
+.tracebacks-container {
+  .traceback {
+    .traceback-frame {
+      border: 1px solid grey;
+      border-radius: 8px;
+      padding: 0.5em;
+      margin-top: 3px;
+
+      .traceback-frame-name {
+        font-weight: bold;
+      }
+
+      table {
+        margin-top: 0.25em;
+      }
+
+      .traceback-line-content {
+        padding-left: 8px;
+      }
+
+      .traceback-lineno {
+        background: #2F3129;
+        color: #8F908A;
+        min-width: 32px;
+        padding-right: 11px;
+        text-align: right;
+      }
+
+    }
+    .traceback-exception {
+      font-size: 120%;
+      color: red;
+      padding: 0.5em;
+    }
+  }
+}
+
 // override react-popup
 .custom-popup {
   > .popup-content {

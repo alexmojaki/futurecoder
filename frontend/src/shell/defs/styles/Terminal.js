@@ -8,7 +8,7 @@ export default {
     borderRadius: '5px',
     overflow: 'auto',
     cursor: 'text',
-    background: '#212121',
+    background: 'rgb(39, 40, 34)',
     backgroundSize: 'cover'
   },
   content: {

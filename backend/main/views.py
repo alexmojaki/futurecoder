@@ -95,6 +95,10 @@ class API:
 
         output_parts = result["output_parts"]
         if not result["awaiting_input"]:
+            if result["traceback_info"]:
+                output_parts.append(
+                    dict(isTraceback=True, data=result["traceback_info"])
+                )
             output_parts.append(dict(text=">>> ", color="white"))
 
         birdseye_url = None
