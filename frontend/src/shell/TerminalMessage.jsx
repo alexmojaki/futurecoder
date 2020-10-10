@@ -12,16 +12,19 @@ export default class TerminalMessage extends Component {
 
     if (content.isTraceback) {
       return <div className="tracebacks-container">
+        <div className="traceback-exception">
+          <strong>Error traceback:</strong>
+        </div>
         {
           content.data.map((traceback, tracebackIndex) =>
-          <div className="traceback" key={tracebackIndex}>
-            {
-              traceback.frames.map((frame, frameIndex) =>
-                <div className="traceback-frame" key={frameIndex}>
-                  <div className="traceback-frame-name">{frame.name}:</div>
-                  <table className="traceback-lines-table">
-                    <tbody>
-                    {
+              <div className="traceback" key={tracebackIndex}>
+                {
+                  traceback.frames.map((frame, frameIndex) =>
+                    <div className="traceback-frame" key={frameIndex}>
+                      <div className="traceback-frame-name">{frame.name}:</div>
+                      <table className="traceback-lines-table">
+                        <tbody>
+                        {
                       frame.lines.map(line =>
                         <tr key={line.lineno}>
                           <td className="traceback-lineno">{line.lineno}</td>
