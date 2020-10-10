@@ -11,57 +11,7 @@ export default class TerminalMessage extends Component {
     let {content} = this.props;
 
     if (content.isTraceback) {
-      return <div className="tracebacks-container">
-        <div className="traceback-exception">
-          <strong>Error traceback:</strong>
-        </div>
-        {
-          content.data.map((traceback, tracebackIndex) =>
-            <div className="traceback" key={tracebackIndex}>
-              {
-                traceback.frames.map((frame, frameIndex) =>
-                  <div className="traceback-frame" key={frameIndex}>
-                    {frameIndex > 0 && <div className="traceback-frame-name">{frame.name}:</div>}
-                    <table className="traceback-lines-table">
-                      <tbody>
-                      {
-                        frame.lines.map(line =>
-                          <tr key={line.lineno}>
-                            <td className="traceback-lineno">{line.lineno}</td>
-                            <td className="traceback-line-content codehilite"
-                                dangerouslySetInnerHTML={{__html: line.content}}/>
-                          </tr>
-                        )
-                      }
-                      </tbody>
-                    </table>
-                    <table className="traceback-variables-table">
-                      <tbody>
-                      {
-                        frame.variables.map((variable, variableIndex) =>
-                          <tr key={variableIndex}>
-                            <td className="traceback-variable-name codehilite"
-                                dangerouslySetInnerHTML={{__html: variable.name}}/>
-                            <td className="traceback-variable-value codehilite"
-                                dangerouslySetInnerHTML={{__html: variable.value}}/>
-                          </tr>
-                        )
-                      }
-                      </tbody>
-                    </table>
-                  </div>
-                )
-              }
-              <div className="traceback-exception">
-                <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
-              </div>
-              {
-                traceback.tail && <div className="traceback-tail">{traceback.tail}</div>
-              }
-            </div>
-          )
-        }
-      </div>
+      return <Tracebacks tracebacks={content.data}/>
     }
 
     let color = "white";
@@ -80,3 +30,60 @@ export default class TerminalMessage extends Component {
     />
   }
 }
+
+
+const Tracebacks = ({tracebacks}) =>
+  <div className="tracebacks-container">
+    <div className="traceback-exception">
+      <strong>Error traceback:</strong>
+    </div>
+    {
+      tracebacks.map((traceback, tracebackIndex) =>
+        <div className="traceback" key={tracebackIndex}>
+          {
+            traceback.frames.map((frame, frameIndex) =>
+              <Frame frame={frame} index={frameIndex} key={frameIndex}/>
+            )
+          }
+          <div className="traceback-exception">
+            <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
+          </div>
+          {
+            traceback.tail && <div className="traceback-tail">{traceback.tail}</div>
+          }
+        </div>
+      )
+    }
+  </div>
+
+const Frame = ({frame, index}) =>
+  <div className="traceback-frame">
+    {index > 0 && <div className="traceback-frame-name">{frame.name}:</div>}
+    <table className="traceback-lines-table">
+      <tbody>
+      {
+        frame.lines.map(line =>
+          <tr key={line.lineno}>
+            <td className="traceback-lineno">{line.lineno}</td>
+            <td className="traceback-line-content codehilite"
+                dangerouslySetInnerHTML={{__html: line.content}}/>
+          </tr>
+        )
+      }
+      </tbody>
+    </table>
+    <table className="traceback-variables-table">
+      <tbody>
+      {
+        frame.variables.map((variable, variableIndex) =>
+          <tr key={variableIndex}>
+            <td className="traceback-variable-name codehilite"
+                dangerouslySetInnerHTML={{__html: variable.name}}/>
+            <td className="traceback-variable-value codehilite"
+                dangerouslySetInnerHTML={{__html: variable.value}}/>
+          </tr>
+        )
+      }
+      </tbody>
+    </table>
+  </div>
