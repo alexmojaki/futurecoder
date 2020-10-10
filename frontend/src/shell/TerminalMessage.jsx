@@ -37,8 +37,10 @@ export default class TerminalMessage extends Component {
                     {
                       frame.variables.map((variable, variableIndex) =>
                         <tr key={variableIndex}>
-                          <td className="traceback-variable-name">{variable.name}</td>
-                          <td className="traceback-variable-value">{variable.value}</td>
+                          <td className="traceback-variable-name codehilite"
+                              dangerouslySetInnerHTML={{__html: variable.name}}/>
+                          <td className="traceback-variable-value codehilite"
+                              dangerouslySetInnerHTML={{__html: variable.value}}/>
                         </tr>
                       )
                     }

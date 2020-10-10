@@ -3,6 +3,7 @@ import traceback
 from collections import Counter
 from typing import Union, Iterable, List
 
+import pygments
 from cheap_repr import cheap_repr
 from executing import Source
 from pygments.formatters.html import HtmlFormatter
@@ -15,7 +16,7 @@ from stack_data import (
     RepeatedFrames,
 )
 
-from main.utils import internal_dir
+from main.utils import internal_dir, is_valid_syntax, lexer
 
 pygments_style = style_with_executing_node("monokai", "bg:#005080")
 pygments_formatter = HtmlFormatter(
@@ -116,9 +117,16 @@ class TracebackSerializer:
 
     def format_variable(self, var: Variable) -> dict:
         return dict(
-            name=var.name,
-            value=cheap_repr(var.value),
+            name=maybe_highlight(var.name),
+            value=maybe_highlight(cheap_repr(var.value)),
         )
+
+
+def maybe_highlight(text):
+    if is_valid_syntax(text):
+        return pygments.highlight(text, lexer, pygments_formatter)
+    else:
+        return text
 
 
 def test():
