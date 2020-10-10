@@ -21,7 +21,7 @@ export default class TerminalMessage extends Component {
               {
                 traceback.frames.map((frame, frameIndex) =>
                   <div className="traceback-frame" key={frameIndex}>
-                    <div className="traceback-frame-name">{frame.name}:</div>
+                    {frameIndex > 0 && <div className="traceback-frame-name">{frame.name}:</div>}
                     <table className="traceback-lines-table">
                       <tbody>
                       {
