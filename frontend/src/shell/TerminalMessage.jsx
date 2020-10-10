@@ -19,13 +19,26 @@ export default class TerminalMessage extends Component {
               traceback.frames.map((frame, frameIndex) =>
                 <div className="traceback-frame" key={frameIndex}>
                   <div className="traceback-frame-name">{frame.name}:</div>
-                  <table>
+                  <table className="traceback-lines-table">
                     <tbody>
                     {
                       frame.lines.map(line =>
                         <tr key={line.lineno}>
                           <td className="traceback-lineno">{line.lineno}</td>
-                          <td className="traceback-line-content codehilite" dangerouslySetInnerHTML={{__html: line.content}}/>
+                          <td className="traceback-line-content codehilite"
+                              dangerouslySetInnerHTML={{__html: line.content}}/>
+                        </tr>
+                      )
+                    }
+                    </tbody>
+                  </table>
+                  <table className="traceback-variables-table">
+                    <tbody>
+                    {
+                      frame.variables.map((variable, variableIndex) =>
+                        <tr key={variableIndex}>
+                          <td className="traceback-variable-name">{variable.name}</td>
+                          <td className="traceback-variable-value">{variable.value}</td>
                         </tr>
                       )
                     }

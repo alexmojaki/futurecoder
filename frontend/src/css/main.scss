@@ -163,6 +163,19 @@
         margin-top: 0.25em;
       }
 
+      .traceback-variables-table {
+        td {
+          border: 1px solid grey;
+          padding: 4px;
+          white-space: pre;
+        }
+
+        td.traceback-variable-name {
+          padding-right: 2em;
+        }
+
+      }
+
       .traceback-line-content {
         padding-left: 8px;
         white-space: pre;
