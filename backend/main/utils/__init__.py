@@ -23,6 +23,12 @@ from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
 
+site_packages = strip_required_suffix(pygments.__file__, "pygments/__init__.py")
+sys.path.append(site_packages + "didyoumean/")
+
+from didyoumean.didyoumean_internal import get_suggestions_for_exception  # noqa
+
+
 lexer = get_lexer_by_name("python3")
 monokai = get_style_by_name("monokai")
 html_formatter = HtmlFormatter(nowrap=True)

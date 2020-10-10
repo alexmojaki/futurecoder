@@ -4,6 +4,8 @@ import resource
 from functools import lru_cache
 from importlib import import_module
 
+from main.utils import get_suggestions_for_exception
+
 
 def patch_cwd():
     """
@@ -36,10 +38,15 @@ def set_limits():
     except ValueError:
         pass
 
-    from main.workers import birdseye, snoop
-    str([snoop, birdseye])
-
     patch_cwd()
+
+    # Trigger imports before limiting access to files
+    from main.workers import birdseye, snoop  # noqa
+
+    try:
+        sdfsdfsdfsd  # noqa
+    except NameError as e:
+        list(get_suggestions_for_exception(e, e.__traceback__))
 
     resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
 

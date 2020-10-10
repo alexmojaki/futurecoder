@@ -22,6 +22,14 @@ test = ["astroid", "pytest"]
 
 [[package]]
 category = "main"
+description = "Logic to have suggestions in case of errors (NameError, AttributeError, ImportError, TypeError, etc)."
+name = "bettererrormessages"
+optional = false
+python-versions = "*"
+version = "0.4"
+
+[[package]]
+category = "main"
 description = "Graphical Python debugger which lets you easily view the values of all evaluated expressions"
 name = "birdseye"
 optional = false
@@ -749,7 +757,7 @@ brotli = ["brotli"]
 production = ["gevent", "gunicorn", "psycopg2"]
 
 [metadata]
-content-hash = "9ef6043a507302669167edfd3860fc0e44684549f3e2154218b1e69af66321d2"
+content-hash = "f77314c8e46a13d248ff712d264989616d8eab171fe3ba0ddd7e2ca6bc4fb766"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -761,6 +769,10 @@ astcheck = [
 asttokens = [
     {file = "asttokens-2.0.3-py2.py3-none-any.whl", hash = "sha256:f58af645756597143629a4ac1fe78bc670b4429018ad741ac1f4cfd4504fc436"},
     {file = "asttokens-2.0.3.tar.gz", hash = "sha256:284831ac3e33be743ca6ac018316b66abfd8b1a49d6366ce6c7b1fd07504a21b"},
+]
+bettererrormessages = [
+    {file = "BetterErrorMessages-0.4-py2-none-any.whl", hash = "sha256:1ec7e7e1614668ace08811f0aeefda50317e5a3e000b50162f86590a9bcdc720"},
+    {file = "BetterErrorMessages-0.4.tar.gz", hash = "sha256:f565984d39c18bfbd5175792f9f1c0d2bf30333a66c48247e7dd9fb2d2030f70"},
 ]
 birdseye = [
     {file = "birdseye-0.8.4.tar.gz", hash = "sha256:34fbf3a042f257e981cb0d4849d279457269d212851404b19bf9635af71e0701"},

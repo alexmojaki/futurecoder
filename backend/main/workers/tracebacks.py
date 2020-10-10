@@ -5,7 +5,6 @@ from typing import Union, Iterable, List
 
 import pygments
 from cheap_repr import cheap_repr
-from executing import Source
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
     style_with_executing_node,
@@ -16,13 +15,23 @@ from stack_data import (
     RepeatedFrames,
 )
 
-from main.utils import internal_dir, is_valid_syntax, lexer
+from main.utils import is_valid_syntax, lexer, get_suggestions_for_exception
 
 pygments_style = style_with_executing_node("monokai", "bg:#005080")
 pygments_formatter = HtmlFormatter(
     style=pygments_style,
     nowrap=True,
 )
+
+
+def didyoumean_suggestions(e) -> List[str]:
+    if "maximum recursion depth exceeded" in str(e):
+        return []
+    return [
+        suggestion
+        for suggestion in get_suggestions_for_exception(e, e.__traceback__)
+        if 1
+    ]
 
 
 class TracebackSerializer:
@@ -44,6 +53,7 @@ class TracebackSerializer:
                     message=traceback._some_str(e),
                 ),
                 tail="",
+                didyoumean=didyoumean_suggestions(e),
             )
         )
         return result

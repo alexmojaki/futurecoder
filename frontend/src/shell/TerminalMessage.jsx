@@ -52,6 +52,19 @@ const Tracebacks = ({tracebacks}) =>
             <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
           </div>
           {
+            traceback.didyoumean.length > 0 &&
+              <div className="traceback-didyoumean">
+                <i>Did you mean...</i>
+                <ul>
+                  {
+                    traceback.didyoumean.map((suggestion, suggestionIndex) =>
+                    <li key={suggestionIndex}>{suggestion}?</li>
+                    )
+                  }
+                </ul>
+              </div>
+          }
+          {
             traceback.tail && <div className="traceback-tail">{traceback.tail}</div>
           }
         </div>
@@ -97,8 +110,8 @@ const RepeatedFrames = ({data}) =>
     <div>Similar frames skipped:</div>
     <ul>
       {
-        data.map(item =>
-        <li>
+        data.map((item, itemIndex) =>
+        <li key={itemIndex}>
           {`${item.name} at line ${item.lineno} - ${item.count} times`}
         </li>)
       }
