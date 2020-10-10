@@ -55,6 +55,9 @@ export default class TerminalMessage extends Component {
               <div className="traceback-exception">
                 <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
               </div>
+              {
+                traceback.tail && <div className="traceback-tail">{traceback.tail}</div>
+              }
             </div>
           )
         }
