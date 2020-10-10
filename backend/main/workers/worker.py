@@ -51,7 +51,7 @@ def runner(code_source, code):
         code_obj = compile(code, filename, mode)
     except SyntaxError:
         print_exception()
-        return {}
+        return None, {}
 
     birdseye_objects = None
 
