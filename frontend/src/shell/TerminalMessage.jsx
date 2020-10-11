@@ -135,7 +135,7 @@ const RepeatedFrames = ({data}) =>
       {
         data.map((item, itemIndex) =>
         <li key={itemIndex}>
-          {`${item.name} at line ${item.lineno} - ${item.count} times`}
+          {`${item.name} at line ${item.lineno} (${item.count} times)`}
         </li>)
       }
     </ul>
