@@ -22,11 +22,15 @@ console.locals = {"assert_equal": assert_equal}
 
 
 def execute(code_obj):
+    sys.setrecursionlimit(100)
     try:
         # noinspection PyTypeChecker
         exec(code_obj, console.locals)
     except Exception as e:
+        sys.setrecursionlimit(1000)
         return TracebackSerializer().format_exception(e)
+    finally:
+        sys.setrecursionlimit(1000)
 
 
 def runner(code_source, code):
