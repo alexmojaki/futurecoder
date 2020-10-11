@@ -48,7 +48,7 @@ const Tracebacks = ({tracebacks}) =>
               frame.type === "frame" ?
                 <Frame frame={frame} key={frameIndex}/>
                 :
-                <RepeatedFrames data={frame.data}/>
+                <RepeatedFrames data={frame.data} key={frameIndex}/>
             )
           }
           <div>
