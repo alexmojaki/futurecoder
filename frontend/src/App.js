@@ -36,7 +36,7 @@ import {animateScroll} from "react-scroll";
 import {HintsPopup} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import {ErrorModal, FeedbackModal} from "./Feedback";
+import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import _ from "lodash";
 
@@ -300,6 +300,7 @@ const MenuPopup = ({user}) =>
             trigger={<a href="#"><FontAwesomeIcon icon={faBug}/> Feedback </a>}
             modal
             closeOnDocumentClick
+            contentStyle={feedbackContentStyle}
           >
             {close => <FeedbackModal close={close}/>}
           </Popup>
