@@ -67,7 +67,8 @@ const Tracebacks = ({tracebacks}) =>
               arrow={false}
               contentStyle={{
                 width: "30em",
-                border: "10px solid grey"
+                border: "10px solid grey",
+                zIndex: 5
               }}
             >
               <div className="markdown-body friendly-traceback-popup"
