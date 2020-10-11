@@ -46,7 +46,7 @@ const Tracebacks = ({tracebacks}) =>
           {
             traceback.frames.map((frame, frameIndex) =>
               frame.type === "frame" ?
-                <Frame frame={frame} index={frameIndex} key={frameIndex}/>
+                <Frame frame={frame} key={frameIndex}/>
                 :
                 <RepeatedFrames data={frame.data}/>
             )
@@ -95,9 +95,9 @@ const Tracebacks = ({tracebacks}) =>
     }
   </div>
 
-const Frame = ({frame, index}) =>
+const Frame = ({frame}) =>
   <div className="traceback-frame">
-    {index > 0 && <div className="traceback-frame-name">{frame.name}:</div>}
+    {frame.name !== "<module>" && <div className="traceback-frame-name">{frame.name}:</div>}
     <table className="traceback-lines-table">
       <tbody>
       {
