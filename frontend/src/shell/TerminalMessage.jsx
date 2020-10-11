@@ -14,7 +14,7 @@ export default class TerminalMessage extends Component {
     let {content} = this.props;
 
     if (content.isTraceback) {
-      return <Tracebacks tracebacks={content.data}/>
+      return <Tracebacks {...content}/>
     }
 
     let color = "white";
@@ -35,16 +35,23 @@ export default class TerminalMessage extends Component {
 }
 
 
-const Tracebacks = ({tracebacks}) =>
-  <div className="tracebacks-container">
-    <div className="traceback-exception">
-      <strong>Error traceback:</strong>
-    </div>
+const Tracebacks = ({tracebacks, codeSource}) => {
+  const simple = (
+    codeSource === "shell"
+    && tracebacks.length === 1
+    && tracebacks[0].frames.length === 1
+  );
+  return <div className="tracebacks-container">
+    {!simple &&
+      <div className="traceback-exception">
+        <strong>Error traceback:</strong>
+      </div>
+    }
     {
       tracebacks.map((traceback, tracebackIndex) =>
         <div className="traceback" key={tracebackIndex}>
           {
-            traceback.frames.map((frame, frameIndex) =>
+            !simple && traceback.frames.map((frame, frameIndex) =>
               frame.type === "frame" ?
                 <Frame frame={frame} key={frameIndex}/>
                 :
@@ -77,16 +84,16 @@ const Tracebacks = ({tracebacks}) =>
           </div>
           {
             traceback.didyoumean.length > 0 &&
-              <div className="traceback-didyoumean">
-                <i>Did you mean...</i>
-                <ul>
-                  {
-                    traceback.didyoumean.map((suggestion, suggestionIndex) =>
+            <div className="traceback-didyoumean">
+              <i>Did you mean...</i>
+              <ul>
+                {
+                  traceback.didyoumean.map((suggestion, suggestionIndex) =>
                     <li key={suggestionIndex}>{suggestion}?</li>
-                    )
-                  }
-                </ul>
-              </div>
+                  )
+                }
+              </ul>
+            </div>
           }
           {
             traceback.tail && <div className="traceback-tail">{traceback.tail}</div>
@@ -94,7 +101,8 @@ const Tracebacks = ({tracebacks}) =>
         </div>
       )
     }
-  </div>
+  </div>;
+}
 
 const Frame = ({frame}) =>
   <div className="traceback-frame">

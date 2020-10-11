@@ -95,22 +95,6 @@ class API:
 
         output_parts = result["output_parts"]
         if not result["awaiting_input"]:
-            traceback_info = result["traceback_info"]
-            if traceback_info:
-                if (
-                    source == "shell"
-                    and len(traceback_info) == 1
-                    and len(traceback_info[0]["frames"]) == 1
-                    and not traceback_info[0]["didyoumean"]
-                ):
-                    exception = traceback_info[0]["exception"]
-                    output_parts.append(
-                        dict(text=f"{exception['type']}: {exception['message']}\n", color="red")
-                    )
-                else:
-                    output_parts.append(
-                        dict(isTraceback=True, data=traceback_info)
-                    )
             output_parts.append(dict(text=">>> ", color="white"))
 
         birdseye_url = None

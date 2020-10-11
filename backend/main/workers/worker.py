@@ -68,7 +68,18 @@ def runner(code_source, code):
     else:
         traceback_info = execute(code_obj)
 
-    return traceback_info, birdseye_objects
+    if traceback_info:
+        exception = traceback_info[-1]["exception"]
+        traceback_info = dict(
+            isTraceback=True,
+            codeSource=code_source,
+            tracebacks=traceback_info,
+            text=f"{exception['type']}: {exception['message']}",
+            color="red",
+        )
+        output_buffer.parts.append(traceback_info)
+
+    return birdseye_objects
 
 
 def worker_loop_in_thread(*args):
@@ -110,7 +121,7 @@ def run_code(entry, input_queue, result_queue):
     try:
         sys.stdout = output_buffer.stdout
         sys.stderr = output_buffer.stderr
-        traceback_info, birdseye_objects = runner(entry['source'], entry['input'])
+        birdseye_objects = runner(entry['source'], entry['input'])
     finally:
         sys.stdout = orig_stdout
         sys.stderr = orig_stderr
@@ -133,5 +144,4 @@ def run_code(entry, input_queue, result_queue):
         message=message,
         output=output,
         birdseye_objects=birdseye_objects,
-        traceback_info=traceback_info,
     ))
