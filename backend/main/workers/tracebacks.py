@@ -5,6 +5,8 @@ from typing import Union, Iterable, List
 
 import pygments
 from cheap_repr import cheap_repr
+from friendly_traceback.core import get_traceback_info
+from markdown import markdown
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
     style_with_executing_node,
@@ -34,6 +36,13 @@ def didyoumean_suggestions(e) -> List[str]:
     ]
 
 
+def friendly_traceback_info(e):
+    info = get_traceback_info(type(e), e, e.__traceback__)
+    generic = info["generic"]
+    case = info.get("cause", "").replace("\n", "\n\n")
+    return markdown(generic + "\n\n" + case)
+
+
 class TracebackSerializer:
     def format_exception(self, e) -> List[dict]:
         if e.__cause__ is not None:
@@ -54,6 +63,7 @@ class TracebackSerializer:
                 ),
                 tail="",
                 didyoumean=didyoumean_suggestions(e),
+                friendly=friendly_traceback_info(e),
             )
         )
         return result

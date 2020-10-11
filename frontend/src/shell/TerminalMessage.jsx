@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import AnsiUp from "ansi_up";
 
 import sourceStyles from './defs/styles/TerminalMessage'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
+import Popup from "reactjs-popup";
 
 const ansi_up = new AnsiUp();
 
@@ -48,8 +51,28 @@ const Tracebacks = ({tracebacks}) =>
                 <RepeatedFrames data={frame.data}/>
             )
           }
-          <div className="traceback-exception">
-            <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
+          <div>
+            <span className="traceback-exception">
+              <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
+            </span>
+            {" "}
+            <Popup
+              trigger={
+                <span className="friendly-traceback-info">
+                  <FontAwesomeIcon icon={faInfoCircle}/>
+                </span>
+              }
+              position="top right"
+              on={['hover', 'focus']}
+              arrow={false}
+              contentStyle={{
+                width: "30em",
+                border: "10px solid grey"
+              }}
+            >
+              <div className="markdown-body friendly-traceback-popup"
+                   dangerouslySetInnerHTML={{__html: traceback.friendly}}/>
+            </Popup>
           </div>
           {
             traceback.didyoumean.length > 0 &&
