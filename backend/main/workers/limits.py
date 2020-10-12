@@ -42,6 +42,7 @@ def set_limits():
 
     # Trigger imports before limiting access to files
     from main.workers import birdseye, snoop  # noqa
+    from friendly_traceback.runtime_errors import type_error, attribute_error  # noqa
 
     try:
         sdfsdfsdfsd  # noqa

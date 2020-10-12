@@ -39,7 +39,7 @@ def didyoumean_suggestions(e) -> List[str]:
 def friendly_traceback_info(e):
     info = get_traceback_info(type(e), e, e.__traceback__)
     generic = info["generic"]
-    case = info.get("cause", "").replace("\n", "\n\n")
+    case = info.get("cause", "")
     return markdown(generic + "\n\n" + case)
 
 

@@ -31,7 +31,7 @@ dryenv = "^0.0.1"
 stack_data = "^0.0.7"
 jsonfield = "^3.1.0"
 BetterErrorMessages = "^0.4"
-friendly-traceback = "^0.1.1"
+friendly-traceback = { git = "https://github.com/aroberge/friendly-traceback.git", rev = "08e88187" }
 
 [tool.poetry.extras]
 production = ["gevent", "gunicorn", "psycopg2"]

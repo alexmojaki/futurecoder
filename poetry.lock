@@ -277,8 +277,12 @@ description = "Friendlier tracebacks in any language."
 name = "friendly-traceback"
 optional = false
 python-versions = ">=3.6"
-version = "0.1.1"
+version = "0.1.1a0"
 
+[package.source]
+reference = "08e88187bbf2bb9d3d21f5bea6baa2e2d64b5248"
+type = "git"
+url = "https://github.com/aroberge/friendly-traceback.git"
 [[package]]
 category = "main"
 description = "Clean single-source support for Python 3 and 2"
@@ -765,7 +769,7 @@ brotli = ["brotli"]
 production = ["gevent", "gunicorn", "psycopg2"]
 
 [metadata]
-content-hash = "1dc662b91d9d19251505150dad90480074b790b82dc440bc08fce2d530b62f8e"
+content-hash = "eef40071db7e395f8f9bf5555a92ad896e664720c30c9070c6b3c4be3d50665b"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -886,10 +890,7 @@ flask-humanize = [
     {file = "Flask-Humanize-0.3.0.tar.gz", hash = "sha256:f65a7b4cfcdeee1b1987f40af0f0e10f99f95423bf04e04720e7c086ea9f3d49"},
     {file = "Flask_Humanize-0.3.0-py2-none-any.whl", hash = "sha256:7beda034d191fd98db3dd1247b4ed94830d6bfbfa48d095732b158208bffa5d0"},
 ]
-friendly-traceback = [
-    {file = "friendly-traceback-0.1.1.tar.gz", hash = "sha256:4a3404f282b5016af5a6dd5a9ca4264c6d8825311daae19c851c77102466a55a"},
-    {file = "friendly_traceback-0.1.1-py3-none-any.whl", hash = "sha256:768e0783c346a39960c618bd9e5c961a79ea8107c0e503e0f7c3c8a488dc4d3f"},
-]
+friendly-traceback = []
 future = [
     {file = "future-0.18.2.tar.gz", hash = "sha256:b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"},
 ]
