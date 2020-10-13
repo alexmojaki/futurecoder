@@ -152,8 +152,12 @@ class TracebackSerializer:
         )
 
     def format_variables(self, frame_info: FrameInfo) -> Iterable[str]:
-        for var in sorted(frame_info.variables, key=lambda v: v.name):
-            yield self.format_variable(var)
+        try:
+            for var in sorted(frame_info.variables, key=lambda v: v.name):
+                yield self.format_variable(var)
+        except Exception:
+            log.exception("Error in getting frame variables")
+            return []
 
     def format_variable(self, var: Variable) -> dict:
         return dict(
