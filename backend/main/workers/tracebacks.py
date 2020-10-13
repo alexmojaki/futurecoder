@@ -33,11 +33,11 @@ log = logging.getLogger(__name__)
 def didyoumean_suggestions(e) -> List[str]:
     if "maximum recursion depth exceeded" in str(e):
         return []
-    return [
-        suggestion
-        for suggestion in get_suggestions_for_exception(e, e.__traceback__)
-        if 1
-    ]
+    try:
+        return list(get_suggestions_for_exception(e, e.__traceback__))
+    except Exception:
+        log.exception("Failed to get didyoumean suggestions")
+        return []
 
 
 def friendly_traceback_info(e):
