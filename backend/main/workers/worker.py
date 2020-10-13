@@ -6,13 +6,13 @@ from code import InteractiveConsole
 from threading import Thread
 from time import sleep
 
+import friendly_traceback.source_cache
 import stack_data
 
 from main.exercises import assert_equal
 from main.text import pages
-from main.utils import print_exception
 from main.workers.limits import set_limits
-from main.workers.tracebacks import TracebackSerializer
+from main.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
 from main.workers.utils import internal_error_result, make_result, output_buffer
 
 log = logging.getLogger(__name__)
@@ -51,10 +51,12 @@ def runner(code_source, code):
 
     stack_data.Source._class_local('__source_cache', {}).pop(filename, None)
 
+    friendly_traceback.source_cache.cache.replace({filename: code})
+
     try:
         code_obj = compile(code, filename, mode)
-    except SyntaxError:
-        print_exception()
+    except SyntaxError as e:
+        print_friendly_syntax_error(e)
         return {}
 
     birdseye_objects = None

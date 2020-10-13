@@ -1,13 +1,15 @@
 import json
 import logging
+import sys
 import traceback
 from collections import Counter
 from typing import Union, Iterable, List
 
 import pygments
 from cheap_repr import cheap_repr
-from friendly_traceback.core import get_generic_explanation
+from friendly_traceback.core import get_generic_explanation, get_message
 from friendly_traceback.info_specific import get_likely_cause
+from friendly_traceback.syntax_errors import analyze_syntax
 from markdown import markdown
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
@@ -40,25 +42,51 @@ def didyoumean_suggestions(e) -> List[str]:
         return []
 
 
-def friendly_traceback_info(e):
-    etype = type(e)
+def friendly_generic(e):
     try:
-        generic = get_generic_explanation(etype.__name__, etype, e)
+        return get_generic_explanation(type(e).__name__, type(e), e)
     except Exception:
         log.exception("Failed to get generic friendly explanation")
         return ""
 
+
+def friendly_runtime_cause(e):
     info = {}
     frame = e.__traceback__.tb_frame
     try:
-        get_likely_cause(etype, e, info, frame)
+        get_likely_cause(type(e), e, info, frame)
     except Exception:
         log.exception("Failed to get likely cause of exception")
-        cause = ""
+        return ""
     else:
-        cause = info.get("cause", "")
+        return info.get("cause", "")
 
-    return markdown(generic + "\n\n" + cause)
+
+def friendly_syntax_cause(e):
+    info = {"message": get_message(type(e).__name__, e)}
+    try:
+        analyze_syntax.set_cause_syntax(type(e), e, info)
+    except Exception:
+        log.exception("Failed to get likely cause of exception")
+        return ""
+    else:
+        return info.get("cause", "")
+
+
+def print_friendly_syntax_error(e):
+    lines = iter(traceback.format_exception(*sys.exc_info()))
+    for line in lines:
+        if line.strip().startswith('File "my_program.py"'):
+            break
+    print(
+        f"""\
+{''.join(lines).rstrip()}
+at line {e.lineno}
+
+{friendly_generic(e)}
+{friendly_syntax_cause(e)}""",
+        file=sys.stderr,
+    )
 
 
 class TracebackSerializer:
@@ -81,7 +109,9 @@ class TracebackSerializer:
                 ),
                 tail="",
                 didyoumean=didyoumean_suggestions(e),
-                friendly=friendly_traceback_info(e),
+                friendly=markdown(
+                    friendly_generic(e) + "\n\n" + friendly_runtime_cause(e)
+                ),
             )
         )
         return result

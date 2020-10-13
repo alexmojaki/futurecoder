@@ -109,24 +109,6 @@ def format_exception_string():
     return ''.join(traceback.format_exception_only(*sys.exc_info()[:2]))
 
 
-class Formatter(stack_data.Formatter):
-    def format_frame(self, frame):
-        if frame.filename.startswith(internal_dir):
-            return
-        yield from super().format_frame(frame)
-
-
-formatter = Formatter(
-    options=stack_data.Options(before=0, after=0),
-    pygmented=True,
-    show_executing_node=True,
-)
-
-
-def print_exception():
-    formatter.print_exception()
-
-
 def row_to_dict(row):
     d = row.__dict__.copy()
     del d["_sa_instance_state"]
