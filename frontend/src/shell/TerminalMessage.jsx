@@ -63,7 +63,7 @@ const Tracebacks = ({tracebacks, codeSource}) => {
               <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
             </span>
             {" "}
-            <Popup
+            {traceback.friendly && <Popup
               trigger={
                 <span className="friendly-traceback-info">
                   <FontAwesomeIcon icon={faInfoCircle}/>
@@ -80,7 +80,7 @@ const Tracebacks = ({tracebacks, codeSource}) => {
             >
               <div className="markdown-body friendly-traceback-popup"
                    dangerouslySetInnerHTML={{__html: traceback.friendly}}/>
-            </Popup>
+            </Popup>}
           </div>
           {
             traceback.didyoumean.length > 0 &&

@@ -1,11 +1,13 @@
 import json
+import logging
 import traceback
 from collections import Counter
 from typing import Union, Iterable, List
 
 import pygments
 from cheap_repr import cheap_repr
-from friendly_traceback.core import get_traceback_info
+from friendly_traceback.core import get_generic_explanation
+from friendly_traceback.info_specific import get_likely_cause
 from markdown import markdown
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
@@ -25,6 +27,8 @@ pygments_formatter = HtmlFormatter(
     nowrap=True,
 )
 
+log = logging.getLogger(__name__)
+
 
 def didyoumean_suggestions(e) -> List[str]:
     if "maximum recursion depth exceeded" in str(e):
@@ -37,10 +41,24 @@ def didyoumean_suggestions(e) -> List[str]:
 
 
 def friendly_traceback_info(e):
-    info = get_traceback_info(type(e), e, e.__traceback__)
-    generic = info["generic"]
-    case = info.get("cause", "")
-    return markdown(generic + "\n\n" + case)
+    etype = type(e)
+    try:
+        generic = get_generic_explanation(etype.__name__, etype, e)
+    except Exception:
+        log.exception("Failed to get generic friendly explanation")
+        return ""
+
+    info = {}
+    frame = e.__traceback__.tb_frame
+    try:
+        get_likely_cause(etype, e, info, frame)
+    except Exception:
+        log.exception("Failed to get likely cause of exception")
+        cause = ""
+    else:
+        cause = info.get("cause", "")
+
+    return markdown(generic + "\n\n" + cause)
 
 
 class TracebackSerializer:
