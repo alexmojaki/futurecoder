@@ -231,7 +231,8 @@ class AppComponent extends React.Component {
               }}
               fontSize="15px"
               setOptions={{
-                fontFamily: "monospace"
+                fontFamily: "monospace",
+                showPrintMargin: false,
               }}
               readOnly={cantUseEditor}
             />
