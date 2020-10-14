@@ -214,7 +214,7 @@ class AppComponent extends React.Component {
 
         </div>
         <div className="editor-and-terminal">
-          <div className={"editor " + (showEditor ? "" : "invisible")}>
+          {showEditor && <div className="editor">
             <AceEditor
               mode="python"
               theme="monokai"
@@ -236,8 +236,8 @@ class AppComponent extends React.Component {
               }}
               readOnly={cantUseEditor}
             />
-          </div>
-          <div className="terminal">
+          </div>}
+          <div className="terminal" style={{height: showEditor ? "49%" : "100%"}}>
             <Terminal
               onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
               ref={terminalRef}

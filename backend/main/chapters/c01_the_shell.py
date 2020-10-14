@@ -5,7 +5,7 @@ from main.text import MessageStep, Page, Step, VerbatimStep
 class IntroducingTheShell(Page):
     class first_expression(VerbatimStep):
         """
-At the bottom right of the screen is the *shell*. This is a place for running small bits of Python code. Just type in some code, press enter, and it'll run! Try it now:
+On the right is the *shell*. This is a place for running small bits of Python code. Just type in some code, press enter, and it'll run! Try it now:
 
 1. Click anywhere on the shell (the black area).
 2. Type `__program__`
