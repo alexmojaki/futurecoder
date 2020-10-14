@@ -50,27 +50,24 @@ def friendly_generic(e):
         return ""
 
 
-def friendly_runtime_cause(e):
-    info = {}
-    frame = e.__traceback__.tb_frame
+def _friendly_cause(e, setter):
+    info = {"message": get_message(type(e).__name__, e)}
     try:
-        get_likely_cause(type(e), e, info, frame)
+        setter(info)
     except Exception:
         log.exception("Failed to get likely cause of exception")
         return ""
     else:
         return info.get("cause", "")
+
+
+def friendly_runtime_cause(e):
+    frame = e.__traceback__.tb_frame
+    return _friendly_cause(e, lambda info: get_likely_cause(type(e), e, info, frame))
 
 
 def friendly_syntax_cause(e):
-    info = {"message": get_message(type(e).__name__, e)}
-    try:
-        analyze_syntax.set_cause_syntax(type(e), e, info)
-    except Exception:
-        log.exception("Failed to get likely cause of exception")
-        return ""
-    else:
-        return info.get("cause", "")
+    return _friendly_cause(e, lambda info: analyze_syntax.set_cause_syntax(type(e), e, info))
 
 
 def print_friendly_syntax_error(e):
