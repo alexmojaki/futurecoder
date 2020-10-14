@@ -1,3 +1,4 @@
+import html
 import json
 import logging
 import sys
@@ -197,7 +198,7 @@ def maybe_highlight(text):
     if is_valid_syntax(text):
         return pygments.highlight(text, lexer, pygments_formatter)
     else:
-        return text
+        return html.escape(text)
 
 
 def test():
