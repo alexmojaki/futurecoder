@@ -239,16 +239,6 @@
         "response": {
             "message": "",
             "passed": true,
-            "prediction": {
-                "answer": "'Hello'",
-                "choices": [
-                    "word",
-                    "'word'",
-                    "Hello",
-                    "'Hello'",
-                    "Error"
-                ]
-            },
             "result": [
                 {
                     "color": "white",
