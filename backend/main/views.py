@@ -136,7 +136,7 @@ class API:
             prediction=dict(
                 choices=getattr(step, "predicted_output_choices", None),
                 answer=getattr(step, "correct_output", None),
-            ) if passed else dict(choice=None, answer=None),
+            ) if passed else dict(choices=None, answer=None),
         )
 
     def load_data(self):
