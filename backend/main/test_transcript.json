@@ -2510,7 +2510,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, the unknown name is <code>char</code>.\nThe Python builtin <code>'chr'</code> has a similar name. </p>",
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, the unknown name is <code>char</code>.\nThe Python builtin <code>chr</code> has a similar name. </p>",
                             "tail": ""
                         }
                     ]
