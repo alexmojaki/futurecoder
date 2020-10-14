@@ -60,23 +60,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nYou might want to report this case to\nhttps://github.com/aroberge/friendly-traceback/issues\n\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    3 x 4\n"
-                },
-                {
-                    "color": "red",
-                    "text": "      ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: invalid syntax\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -311,20 +299,36 @@
             },
             "result": [
                 {
+                    "codeSource": "shell",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 1, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    1 | \u001b[38;5;15msunshine\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "NameError: name 'sunshine' is not defined\n"
+                    "isTraceback": true,
+                    "text": "NameError: name 'sunshine' is not defined",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "name 'sunshine' is not defined",
+                                "type": "NameError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">sunshine</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": []
+                                }
+                            ],
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -758,23 +762,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nIn this case, the line identified above\nwas expected to begin a new indented block.\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 2\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    print(character)\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "IndentationError: expected an indented block\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -967,23 +959,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "    print('---')\n               ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nIn this case, the line identified above is\nless indented than the preceding one,\nand is not aligned vertically with another block of code.\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 3\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    print('---')\n"
-                },
-                {
-                    "color": "red",
-                    "text": "               ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "IndentationError: unindent does not match any outer indentation level\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -2493,20 +2473,47 @@
             },
             "result": [
                 {
+                    "codeSource": "editor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 6, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    6 | \u001b[38;5;15msentence\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15mchar\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "NameError: name 'char' is not defined\n"
+                    "isTraceback": true,
+                    "text": "NameError: name 'char' is not defined",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [
+                                "'chr' (builtin)"
+                            ],
+                            "exception": {
+                                "message": "name 'char' is not defined",
+                                "type": "NameError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">sentence</span> <span class=\"o\">+=</span> <span class=\"n\">char</span>",
+                                            "is_current": true,
+                                            "lineno": 6,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">excited</span>\n",
+                                            "value": "<span class=\"kc\">False</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">sentence</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hello World&#39;</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -2703,15 +2710,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n       a_function(invalid=something)\n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -3508,20 +3511,41 @@
             "passed": true,
             "result": [
                 {
+                    "codeSource": "shell",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 1, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    1 | \u001b[38;5;15mwords\u001b[39m\u001b[38;5;15m[\u001b[39m\u001b[38;5;141m4\u001b[39m\u001b[38;5;15m]\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "IndexError: list index out of range\n"
+                    "isTraceback": true,
+                    "text": "IndexError: list index out of range",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "list index out of range",
+                                "type": "IndexError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">words</span><span class=\"p\">[</span><span class=\"mi\">4</span><span class=\"p\">]</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">words</span>\n",
+                                            "value": "<span class=\"p\">[</span><span class=\"s1\">&#39;This&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;is&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;a&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;list&#39;</span><span class=\"p\">]</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.\nReminder: the first item of a sequence is at index 0.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4093,20 +4117,43 @@
                     "text": "\n"
                 },
                 {
+                    "codeSource": "editor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 3, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    3 | \u001b[38;5;15;48;5;24mf\u001b[39;49m\u001b[38;5;15;48;5;24m(\u001b[39;49m\u001b[38;5;15;48;5;24m)\u001b[39;49m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "TypeError: 'str' object is not callable\n"
+                    "isTraceback": true,
+                    "text": "TypeError: 'str' object is not callable",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [
+                                "'str[value]'"
+                            ],
+                            "exception": {
+                                "message": "'str' object is not callable",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n n-ExecutingNode\">f</span><span class=\"p p-ExecutingNode\">()</span>",
+                                            "is_current": true,
+                                            "lineno": 3,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">f</span>\n",
+                                            "value": "<span class=\"s1\">&#39;a string&#39;</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>I suspect that you had an object of this type, a string (<code>str</code>),\nfollowed by what looked like a tuple, '(...)',\nwhich Python took as an indication of a function call.\nPerhaps you had a missing comma before the tuple.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4171,20 +4218,43 @@
                     "text": "\n"
                 },
                 {
+                    "codeSource": "editor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 2, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    2 | \u001b[38;5;15mlength\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15;48;5;24mlen\u001b[39;49m\u001b[38;5;15;48;5;24m(\u001b[39;49m\u001b[38;5;15;48;5;24mthings\u001b[39;49m\u001b[38;5;15;48;5;24m)\u001b[39;49m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "TypeError: object of type 'NoneType' has no len()\n"
+                    "isTraceback": true,
+                    "text": "TypeError: object of type 'NoneType' has no len()",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [
+                                "implement \"__len__\" on NoneType"
+                            ],
+                            "exception": {
+                                "message": "object of type 'NoneType' has no len()",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">length</span> <span class=\"o\">=</span> <span class=\"nb nb-ExecutingNode\">len</span><span class=\"p p-ExecutingNode\">(</span><span class=\"n n-ExecutingNode\">things</span><span class=\"p p-ExecutingNode\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 2,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">things</span>\n",
+                                            "value": "<span class=\"kc\">None</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>I do not recognize this case. Please report it to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4240,20 +4310,41 @@
             "passed": true,
             "result": [
                 {
+                    "codeSource": "editor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 2, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    2 | \u001b[38;5;15;48;5;24mword\u001b[39;49m\u001b[38;5;197;48;5;24m.\u001b[39;49m\u001b[38;5;15;48;5;24mappend\u001b[39;49m\u001b[38;5;15m(\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;186m!\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "AttributeError: 'str' object has no attribute 'append'\n"
+                    "isTraceback": true,
+                    "text": "AttributeError: 'str' object has no attribute 'append'",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "'str' object has no attribute 'append'",
+                                "type": "AttributeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n n-ExecutingNode\">word</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39;!&#39;</span><span class=\"p\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 2,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">word</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hello&#39;</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>In your program, the object is <code>str</code> and the attribute is <code>append</code>.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4635,20 +4726,36 @@
             "passed": true,
             "result": [
                 {
+                    "codeSource": "shell",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 1, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    1 | \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mPython\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;197m.\u001b[39m\u001b[38;5;15mappend\u001b[39m\u001b[38;5;15m(\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;186m is cool!\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "AttributeError: 'str' object has no attribute 'append'\n"
+                    "isTraceback": true,
+                    "text": "AttributeError: 'str' object has no attribute 'append'",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "'str' object has no attribute 'append'",
+                                "type": "AttributeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"s1\">&#39;Python&#39;</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": []
+                                }
+                            ],
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>In your program, the object is <code>str</code> and the attribute is <code>append</code>.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4993,20 +5100,49 @@
             "passed": true,
             "result": [
                 {
+                    "codeSource": "pythontutor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 3, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    3 | \u001b[38;5;15m\u001b[39m\u001b[38;5;15mnumber\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15;48;5;24mnumbers\u001b[39;49m\u001b[38;5;15;48;5;24m[\u001b[39;49m\u001b[38;5;15;48;5;24mi\u001b[39;49m\u001b[38;5;15;48;5;24m]\u001b[39;49m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "IndexError: list index out of range\n"
+                    "isTraceback": true,
+                    "text": "IndexError: list index out of range",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "list index out of range",
+                                "type": "IndexError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">number</span> <span class=\"o\">=</span> <span class=\"n n-ExecutingNode\">numbers</span><span class=\"p p-ExecutingNode\">[</span><span class=\"n n-ExecutingNode\">i</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "is_current": true,
+                                            "lineno": 3,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">i</span>\n",
+                                            "value": "<span class=\"mi\">4</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">number</span>\n",
+                                            "value": "<span class=\"mi\">15</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">numbers</span>\n",
+                                            "value": "<span class=\"p\">[</span><span class=\"mi\">7</span><span class=\"p\">,</span> <span class=\"mi\">3</span><span class=\"p\">,</span> <span class=\"mi\">12</span><span class=\"p\">,</span> <span class=\"mi\">15</span><span class=\"p\">]</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.\nReminder: the first item of a sequence is at index 0.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -5712,20 +5848,36 @@
             "passed": false,
             "result": [
                 {
+                    "codeSource": "shell",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 1, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    1 | \u001b[38;5;15mprint\u001b[39m\u001b[38;5;15m(\u001b[39m\u001b[38;5;141m1\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m+\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mx\u001b[39m\u001b[38;5;186m\"\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "TypeError: unsupported operand type(s) for +: 'int' and 'str'\n"
+                    "isTraceback": true,
+                    "text": "TypeError: unsupported operand type(s) for +: 'int' and 'str'",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "unsupported operand type(s) for +: 'int' and 'str'",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi\">1</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;x&quot;</span><span class=\"p\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": []
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>)</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -9309,43 +9461,6 @@
                 {
                     "color": "white",
                     "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "times_table_exercise"
-    },
-    {
-        "page": "Introducing Nested Loops",
-        "program": [
-            "2 x 3"
-        ],
-        "response": {
-            "message": "<p>To multiply numbers, use <code>*</code></p>",
-            "passed": false,
-            "result": [
-                {
-                    "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"my_program.py\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    2 x 3\n"
-                },
-                {
-                    "color": "red",
-                    "text": "      ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: invalid syntax\n"
                 },
                 {
                     "color": "white",
@@ -17376,23 +17491,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n"
-                },
-                {
-                    "color": "red",
-                    "text": "                                 ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: invalid syntax\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
