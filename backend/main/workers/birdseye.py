@@ -53,8 +53,8 @@ def exec_birdseye(filename, code):
 
     find_code(traced_file.code)
 
-    execute(traced_file.code)
+    traceback_info = execute(traced_file.code)
     with eye.db.session_scope() as session:
         objects = session.query(eye.db.Call, eye.db.Function).all()
         calls, functions = [rows_to_dicts(set(column)) for column in zip(*objects)]
-    return dict(calls=calls, functions=functions)
+    return traceback_info, dict(calls=calls, functions=functions)

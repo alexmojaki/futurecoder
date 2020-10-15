@@ -36,7 +36,7 @@ import {animateScroll} from "react-scroll";
 import {HintsPopup} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import {ErrorModal, FeedbackModal} from "./Feedback";
+import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import _ from "lodash";
 
@@ -214,7 +214,7 @@ class AppComponent extends React.Component {
 
         </div>
         <div className="editor-and-terminal">
-          <div className={"editor " + (showEditor ? "" : "invisible")}>
+          {showEditor && <div className="editor">
             <AceEditor
               mode="python"
               theme="monokai"
@@ -231,12 +231,13 @@ class AppComponent extends React.Component {
               }}
               fontSize="15px"
               setOptions={{
-                fontFamily: "monospace"
+                fontFamily: "monospace",
+                showPrintMargin: false,
               }}
               readOnly={cantUseEditor}
             />
-          </div>
-          <div className="terminal">
+          </div>}
+          <div className="terminal" style={{height: showEditor ? "49%" : "100%"}}>
             <Terminal
               onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
               ref={terminalRef}
@@ -300,6 +301,7 @@ const MenuPopup = ({user}) =>
             trigger={<a href="#"><FontAwesomeIcon icon={faBug}/> Feedback </a>}
             modal
             closeOnDocumentClick
+            contentStyle={feedbackContentStyle}
           >
             {close => <FeedbackModal close={close}/>}
           </Popup>

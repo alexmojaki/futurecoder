@@ -163,7 +163,12 @@ export default class Terminal extends Component {
       this.props.noAutomaticStdout
     );
 
-    this.setState(toUpdate)
+    this.setState(toUpdate);
+    const input = this.terminalInput.current;
+    setTimeout(() => {
+      // Move cursor to end
+      input.selectionStart = input.selectionEnd = 10000;
+    }, 30);
   }
 
   /* istanbul ignore next: Covered by interactivity tests */

@@ -124,6 +124,19 @@ Make sure each line is in the correct loop and has the right amount of indentati
 
         parsons_solution = True
 
+        def check(self):
+            try:
+                return super().check()
+            except SyntaxError:
+                lines = self.result.splitlines()
+                if (
+                    len(lines) >= 3
+                    and lines[2].strip() == "SyntaxError: invalid syntax"
+                    and lines[1].strip() == "^"
+                    and lines[0][lines[1].index("^")] == "x"
+                ):
+                    return dict(message="To multiply numbers, use `*`")
+
         def solution(self):
             for left in range(12):
                 left += 1
@@ -176,29 +189,6 @@ as shown above, e.g. `print(x, y, z)`. It'll even add spaces for you!
 
             def check(self):
                 return "TypeError: unsupported operand type(s) for +: " in self.result
-
-        class used_x_to_multiply(MessageStep):
-            """To multiply numbers, use `*`"""
-
-            program = "2 x 3"
-
-            def check(self):
-                """
-                Check for a traceback like:
-                    2 x 3
-                      ^
-                SyntaxError: invalid syntax
-
-                It might be better to try replacing x with * and see if
-                it becomes valid syntax
-                """
-                lines = self.result.strip().splitlines()
-                return (
-                        len(lines) >= 3 and
-                        lines[-1] == "SyntaxError: invalid syntax" and
-                        lines[-2].strip() == "^" and
-                        lines[-3][lines[-2].index("^")] == "x"
-                )
 
         tests = {
             (): """\

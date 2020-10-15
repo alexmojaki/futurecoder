@@ -31,8 +31,7 @@
       width: 100%;
       position: absolute;
       bottom: 0;
-      top: 51%;
-      
+
       > div[name=react-console-emulator] {
         height: 100%;
         min-height: unset !important;
@@ -63,10 +62,6 @@
     code {
       color: #f8f8f2;
     }
-  }
-
-  .terminal p code {
-    color: white;
   }
 
   .book-text {
@@ -147,6 +142,65 @@
   }
 }
 
+.tracebacks-container {
+  .traceback {
+    .traceback-frame {
+      border: 1px solid grey;
+      border-radius: 8px;
+      padding: 0.5em;
+      margin-top: 3px;
+
+      .traceback-frame-name {
+        font-weight: bold;
+      }
+
+      table {
+        margin-top: 0.25em;
+      }
+
+      .traceback-variables-table {
+        td {
+          border: 1px solid grey;
+          padding: 4px;
+          white-space: pre;
+        }
+
+        td.traceback-variable-name {
+          padding-right: 2em;
+        }
+
+      }
+
+      .traceback-line-content {
+        padding-left: 8px;
+        white-space: pre;
+      }
+
+      .traceback-lineno {
+        background: #2F3129;
+        color: #8F908A;
+        min-width: 32px;
+        padding-right: 11px;
+        text-align: right;
+      }
+
+    }
+
+    .traceback-repeated-frames {
+      margin: 1.5em;
+    }
+  }
+  .traceback-exception {
+    font-size: 120%;
+    color: red;
+    padding: 0.5em;
+  }
+
+  .traceback-tail {
+    margin: 1em;
+  }
+}
+
 // override react-popup
 .custom-popup {
   > .popup-content {
@@ -159,11 +213,6 @@
       display: none;
     }
   }
-}
-
-.popup-content {
-  max-height: 90vh;
-  overflow: auto;
 }
 
 .my-popup-content {

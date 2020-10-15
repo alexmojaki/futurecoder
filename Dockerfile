@@ -26,6 +26,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     python3.8-distutils \
     gcc \
     postgresql-client-12 \
+    git \
     libpq-dev
 
 RUN ln -s /usr/bin/python3.8 /usr/local/bin/python
