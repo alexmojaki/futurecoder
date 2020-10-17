@@ -73,6 +73,7 @@ In code, a step is a class inheriting from `main.text.Step` declared inside a `P
     - Once all hints have been revealed, the problem should be significantly easier, but you don't want to give it all away. There should still be a decent amount of thinking or work still required. After all, if the users want the full solution, they can still get that.
 - Zero or more `MessageStep` classes declared inside, detailed further down.
 - `predicted_output_choices` (optional) is a list of strings representing possible answers to a multiple choice question "What do you think the result will be?" which is presented when the user runs the correct code just before being shown the output. This helps users engage more thoughtfully with the material and is best suited to `VerbatimStep`s.
+    - Use this when users can reasonably be expected to guess or figure out the answer based on information they've already been given. If there's a little uncertainty, that's fine.
     - Currently only a static list is possible.
     - An extra option "Error" is always added automatically at the end.
     - The list you provide must have at least two options.
