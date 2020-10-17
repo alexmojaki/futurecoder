@@ -348,9 +348,6 @@ class Step(ABC):
         self.input, self.result, self.code_source, self.console = args
 
     def check_with_messages(self):
-        if self.expected_code_source not in (None, self.code_source):
-            return False
-
         result = self.check()
         if not isinstance(result, dict):
             result = bool(result)
@@ -365,6 +362,10 @@ class Step(ABC):
                     d.predicate
                 ) > d.max_count:
                     return dict(message=d.message)
+
+        if result and self.expected_code_source not in (None, self.code_source):
+            return dict(message="The code is correct, but you didn't run it as instructed.")
+
         return result
 
     @abstractmethod
