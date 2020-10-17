@@ -88,9 +88,11 @@ statements are shown in full:
   </tr>
   <tr>
     <td>
+    
 Several debuggers are provided, including [snoop](https://github.com/alexmojaki/snoop)...
     </td>
     <td>
+    
 [...birdseye...](https://github.com/alexmojaki/birdseye)
     </td>
   </tr>
@@ -106,6 +108,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
   </tr>
   <tr>
     <td colspan="2">
+    
 ...and [Python Tutor](http://pythontutor.com/)
     </td>
   </tr>
