@@ -63,6 +63,11 @@ suggestions.
 </td>
 <td>
 
+![executing](images/executing.png)
+
+Tracebacks can even highlight the exact operation that failed, not just the line. They also ensure that multiline
+statements are shown in full.
+
 </td>
   </tr>
   <tr>
