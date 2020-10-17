@@ -141,7 +141,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
     2. Run `npm install` to download dependencies.
     3. Run `npm start` to start the frontend development server.
 5. Go to http://localhost:3000/accounts/login/ and login with the email "admin@example.com" and the password "admin".
-6. You should be redirected to http://localhost:3000/course/ and see the start of the course: "Introducing The Shell".
+6. You should be redirected to http://localhost:3000/toc/ and see the Table of Contents.
 
 ## Controls
 
