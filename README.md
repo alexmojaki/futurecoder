@@ -145,15 +145,9 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 
 ## Controls
 
-The course consists of *pages* and each of them has a subject. When user open the website and click *Go to the Course*, they will be straightly led to the table of contents, where all pages are listed. User can choose any page whose subject is appealing to you to start from. User can also go back to TOC from each page by clicking *Table of Contents* in the menu. If your last page is anything but the first page, a link to that page is given at the top of the TOC to easily get back to where you were. Each page consists of *steps* and each step requires that the user runs some code that satisfies the requirements of that step. Once they succeed, they are shown the next step. Once they complete all the steps in a page, they are shown the "Next" button to move forward to the next page and the "Previous" button to review completed pages. Your progress on each page is recorded separately. Whenever you open a page, you are immediately on whichever step you reached previously. Besides, the page you move to is recorded as well. Opening simply `/course/` will take you to the page you were last on. Hopefully these basics (without the formal details) should become intuitively clear to the user as they try to use the site.
-
 To explore the course more freely:
 
 1. Click the hamburger menu icon in the top left.
 2. Click Settings.
 3. Turn Developer mode on.
 4. This should give you two red buttons floating at the bottom of the screen. They change the currently active step, so you can move forward without having to complete exercises or backwards to test a step again.
-
-At the beginning of the course only the shell is available to encourage quick exploration. After a few pages an editor is introduced to allow running full programs.
-
-The course provides three debuggers to specially run code: snoop, PythonTutor, and birdseye. Each should only become available starting from a specific page which introduces that tool. No such page has been written yet for birdseye, so for now it's immediately available when the editor is introduced.
