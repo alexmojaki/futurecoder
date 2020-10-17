@@ -67,8 +67,21 @@ In code, a step is a class inheriting from `main.text.Step` declared inside a `P
     - If the `text` contains `__program__` or `__program_indented__`, that will be replaced by the `program`.
  
    You can define `program` as a string or a method. A string is good if the program is really short or contains invalid syntax. A method is better in other cases so that editors can work with it nicely. It will be converted to a string automatically.
-- `hints` (optional) is a list of markdown strings which the user can reveal one by one to gradually guide them to a solution. For brevity you can provide a single string which will be split by newlines.
+- `hints` (optional) is a list of markdown strings which the user can reveal one by one to gradually guide them to a solution.
+    - For brevity you can provide a single string which will be split by newlines.
+    - Plenty of small hints is generally good. You want the user to find the solution themselves. Hints should provide just enough information to make the problem manageable but no more. A possible goal is to unblock some tiny misconception which might be holding them back or ask a question which may lead to an 'aha!' moment.
+    - Once all hints have been revealed, the problem should be significantly easier, but you don't want to give it all away. There should still be a decent amount of thinking or work still required. After all, if the users want the full solution, they can still get that.
 - Zero or more `MessageStep` classes declared inside, detailed further down.
+- `predicted_output_choices` (optional) is a list of strings representing possible answers to a multiple choice question "What do you think the result will be?" which is presented when the user runs the correct code just before being shown the output. This helps users engage more thoughtfully with the material and is best suited to `VerbatimStep`s.
+    - Currently only a static list is possible.
+    - An extra option "Error" is always added automatically at the end.
+    - The list you provide must have at least two options.
+    - Providing lots of plausible options is good, there's no need to make this easy. The user will get two attempts and will still move on if they fail.
+    - The correct answer is selected automatically when the step is constructed by running `program`. If this isn't possible (typically because the correct answer is "Error") then set `correct_output` to the correct answer - either `"Error"` or an element of the list `predicted_output_choices`.
+- `parsons_solution = True` if the user should be shown a *Parsons problem* (i.e. shuffled lines) when they first request a solution. This is good when:
+    - The solution has at least 4 lines at a bare minimum, although in most cases you need at least 5 lines. Blank lines and function headers don't count.
+    - Solving the Parsons problem isn't trivial. An example is `crack_password_exercise` - putting those lines in the correct order is too easy without thinking about what the program is doing. On the other hand, the gradual solution reveal shows the structure of the program even while all the text is hidden, which could lead to a much more helpful 'aha!' moment. The problem can still be easy, but the user should be required to think a bit about how the program works to solve it.
+- `expected_code_source` if to enforce that the code is run in the shell or with a particular debugger.
 
 #### Generating steps automatically
 
