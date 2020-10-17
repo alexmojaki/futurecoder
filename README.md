@@ -16,6 +16,10 @@ The course is a fully interactive 'book' which requires the user to run code in 
 
 ![full](images/full.png)
 
+This requires a mixture of solving problems or simply typing and running provided code. In the latter case, the user is often kept engaged by being asked to predict the output in a simple multiple choice question:
+
+![predict_output](images/predict_output.png)
+
 The code at each step is checked automatically. Common mistakes can be caught and pointed out to the student. If needed, the student can get small hints to gradually guide them to the solution:
 
 ![hints](images/hints.png)
@@ -24,7 +28,11 @@ If they're still really stuck, they can reveal the solution bit by bit:
 
 ![solution](images/solution.png)
 
-Tracebacks are more helpful than usual, highlighting the exact operation which failed and ensuring that the right amount of context is visible for multiline statements:
+Or in some cases solve a *Parsons problem* instead, where they have to put a shuffled solution in the correct order:
+
+![parsons](images/parsons.png)
+
+Tracebacks are more helpful than usual, with several enhancements including beginner friendly explanations and suggestions:
 
 ![traceback](images/traceback.png)
 
