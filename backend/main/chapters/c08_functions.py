@@ -627,7 +627,7 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
             ("DANGER", 4): "!!!! DANGER !!!!",
         }
 
-        # TODO catch return inside loop
+        # TODO message: catch return inside loop
 
         def solution(self):
             def surround(string, sides):

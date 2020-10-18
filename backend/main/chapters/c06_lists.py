@@ -5,7 +5,15 @@ from textwrap import dedent
 from typing import List
 
 from main.exercises import generate_list, generate_string
-from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast
+from main.text import (
+    ExerciseStep,
+    MessageStep,
+    Page,
+    Step,
+    VerbatimStep,
+    search_ast,
+    Disallowed,
+)
 
 
 class IntroducingLists(Page):
@@ -133,7 +141,7 @@ Create the boolean variable before the loop, then change it inside the loop.
 Only change it in the loop after checking it, or you won't be able to skip the first iteration.
         """
 
-        # TODO: MessageStep: catch the "obvious solution" where the user adds the separator after the last word?
+        # TODO message: catch the "obvious solution" where the user adds the separator after the last word?
 
         parsons_solution = True
 
@@ -251,7 +259,10 @@ Use an `if` statement.
 Use a comparison operator to test if a number is big enough to add.
         """
 
-        # TODO enforce not using +=
+        disallowed = Disallowed(
+            ast.AugAssign,
+            message="Well done, that's correct! However, you should use `.append()` instead of `+=`.",
+        )
 
         parsons_solution = True
 
@@ -699,7 +710,7 @@ output:
             "You will need to set e.g. `char1 = ' '` when `string1[i]` is not valid.",
         ]
 
-        # TODO catch user writing string1 < string2
+        # TODO message: catch user writing string1 < string2 instead of comparing lengths
 
         parsons_solution = True
 

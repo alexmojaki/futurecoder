@@ -254,7 +254,7 @@ If you have something like `x >= 0 or x <= 100`, you're on the wrong track. That
             Disallowed(ast.Compare, label="comparison chaining", predicate=lambda node: len(node.ops) > 1),
         ]
 
-        # TODO catch wrong comparisons
+        # TODO message: catch wrong comparisons
 
         def solution(self):
             def is_valid_percentage(x: int):

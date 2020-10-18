@@ -1,8 +1,9 @@
 # flake8: NOQA E501
+import ast
 from typing import List
 
 from main.exercises import generate_string
-from main.text import ExerciseStep, MessageStep, Page, VerbatimStep
+from main.text import ExerciseStep, MessageStep, Page, VerbatimStep, Disallowed
 
 
 class IntroducingNestedLoops(Page):
@@ -145,7 +146,7 @@ Make sure each line is in the correct loop and has the right amount of indentati
                     print(left, 'x', right, '=', left * right)
                 print('----------')
 
-        # TODO handle left += 1 in inner loop
+        # TODO message: catch left += 1 in inner loop instead of the outer loop
 
         class too_long(MessageStep):
             """
@@ -427,7 +428,7 @@ One for loop inside another for loop is no longer enough.
 You have to go deeper. 
         """
 
-        # TODO check for spaces between letters in output
+        # TODO message: catch spaces between letters in output, e.g. print(c1, c2, c3, c4)
 
         def solution(self, letters: str):
             for c1 in letters:
@@ -582,7 +583,7 @@ What formula converts 0 into 5, 1 into 4, 2, into 3, etc?
                     line += 'O'
                 print(line)
 
-        # TODO disallow *
+        disallowed = Disallowed(ast.Mult, label="`*`")
 
         tests = {
             3: """\

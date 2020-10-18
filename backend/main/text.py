@@ -159,6 +159,9 @@ def clean_step_class(cls, clean_inner=True):
             assert cls.correct_output != "Error"
         assert cls.correct_output
 
+    if isinstance(cls.disallowed, Disallowed):
+        cls.disallowed = [cls.disallowed]
+
 
 @returns_stdout
 def get_stdout(program):

@@ -669,7 +669,7 @@ The body of the loop needs to print the spaces and letter, and also add a space.
 Since the first letter should have no spaces before it, you need to add a space after printing a letter.
         """
 
-        # TODO automatically catch print with multiple args?
+        # TODO message: catch print(spaces, char) instead of print(spaces + char)
 
         parsons_solution = True
 
