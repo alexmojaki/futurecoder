@@ -902,17 +902,118 @@ Run the following code:
             nums.append(4)
             print(nums)
 
-    class pop_remove_index_subscript_assignment(VerbatimStep):
+    class subscript_assignment_predict(VerbatimStep):
         """
 As you can see, `+` does not modify `nums`, but `append` does.
 
-Here's some new things. Try them out in the shell. Again suppose we have a list `nums = [1, 2, 3]`.
+Here's some new things.
 
-- **`subscript assignment`**: Set a value at an index. `nums[0] = 9` changes the list to `[9, 2, 3]`.
-- **`index`**: Returns the first index of a value in a list. `[7, 8, 9, 8].index(8)` is 1. Raises an error if the value isn't there.
-- **`pop`**: Removes and returns an element at a given index. `nums.pop(1)` removes `nums[1]` (which is `2`) from the list and returns it. Without an argument, i.e. just `nums.pop()`, it will remove and return the last element.
-- **`remove`**: Removes the first occurrence of the given element. `nums.remove(3)` will leave `nums` as `[1, 2]`. Raises an error if the value doesn't exist.
+**`subscript assignment`**: Set a value at an index (replacing the value that was there before) using the syntax
 
+    some_list[index] = new_value
+
+Raises an error if `index` is not a valid index of `some_list`. For example, run this program:
+
+__program_indented__
+        """
+
+        predicted_output_choices = [
+            "[9, 1, 2, 3]",
+            "[1, 9, 2, 3]",
+            "[1, 2, 9, 3]",
+            "[9, 2, 3]",
+            "[1, 9, 3]",
+            "[1, 2, 9]",
+        ]
+
+        def program(self):
+            nums = [1, 2, 3]
+            nums[1] = 9
+            print(nums)
+
+    class index_predict_exercise(VerbatimStep):
+        """
+**`index`**: Returns the first index of a value in a list using the syntax
+
+    some_list.index(value)
+
+Raises an error if the value isn't there. For example run this line in the shell:
+
+__program_indented__
+        """
+
+        predicted_output_choices = [
+            "[7, 8]",
+            "[7, 8, 9]",
+            "[7, 8, 9, 8]",
+            "1",
+            "2",
+            "3",
+        ]
+
+        expected_code_source = "shell"
+
+        program = "[7, 8, 9, 8].index(8)"
+
+    class pop_predict_exercise(VerbatimStep):
+        """
+**`pop`**: Removes and returns an element at a given *index* using the syntax
+
+    some_list.pop(index)
+
+Without an argument, i.e. just `some_list.pop()`, it will remove and return the last element.
+Raises an error if `index` is not a valid index of `some_list`. For example run this program:
+
+__program_indented__
+        """
+
+        predicted_output_choices = [
+            "1\n"
+            "[1, 3]",
+            "2\n"
+            "[1, 3]",
+            "1\n"
+            "[2, 3]",
+            "2\n"
+            "[2, 3]",
+            "1\n"
+            "[2, 1, 3]",
+            "2\n"
+            "[2, 1, 3]",
+        ]
+
+        def program(self):
+            nums = [1, 2, 3]
+            print(nums.pop(1))
+            print(nums)
+
+    class remove_predict_exercise(VerbatimStep):
+        """
+**`remove`**: Removes the first occurrence of the given *value* using the syntax
+
+    some_list.remove(value)
+
+Raises an error if the value isn't in the list. For example run this program:
+
+__program_indented__
+        """
+
+        predicted_output_choices = [
+            "[1, 2]",
+            "[1, 3]",
+            "[2, 3]",
+            "1",
+            "2",
+            "3",
+        ]
+
+        def program(self):
+            nums = [1, 2, 3]
+            nums.remove(1)
+            print(nums)
+
+    class pop_remove_index_subscript_assignment(VerbatimStep):
+        """
 Now you will solve four short exercises involving these concepts.
 Below is a list of correct and incorrect lines of code mixed together.
 Each upcoming exercise has a solution that includes exactly one of the lines below,
@@ -1070,15 +1171,93 @@ Great job!
 class MoreListFunctionsAndMethods(Page):
     title = "More List Functions and Methods"
 
+    class sorted_predict_exercise(VerbatimStep):
+        """
+Here are a few more useful functions/methods.
+
+**`sorted`**: Takes an iterable and returns a list of the elements in order from smallest to largest, using the syntax
+
+    sorted(some_list)
+
+For example run this line in the shell:
+
+__program_indented__
+        """
+
+        predicted_output_choices = [
+            "[99, 81, 64, 59, 28, 10]",
+            "[10, 81, 64, 28, 59, 99]",
+            "[10, 28, 59, 64, 81, 99]",
+            "[28, 99, 10, 81, 59, 64]"
+        ]
+
+        expected_code_source = "shell"
+
+        program = "sorted([28, 99, 10, 81, 59, 64])"
+
+    class in_predict_exercise(VerbatimStep):
+        """
+**`in`**: A comparison operator that checks if a value is in a list, using the syntax
+
+    value in some_list
+
+For example run this program:
+
+__program_indented__
+        """
+
+        predicted_output_choices = [
+            "True\n"
+            "False",
+            "False\n"
+            "True",
+            "True\n"
+            "True",
+            "False\n"
+            "False",
+        ]
+
+        def program(self):
+            nums = [28, 99, 10, 81, 59, 64]
+            print(54 in nums)
+            print(28 in nums)
+
+    class sum_predict_exercise(VerbatimStep):
+        """
+**`sum`**: Add up an iterable of numbers using the syntax
+
+    sum(some_list)
+
+For example run this line in the shell:
+
+__program_indented__
+        """
+
+        predicted_output_choices = ["10", "12", "7"]
+        expected_code_source = "shell"
+
+        def program(self):
+            sum([5, 3, 4])
+
+    class count_predict_exercise(VerbatimStep):
+        """
+**`count`**: Returns the number of times the argument appears in the list using the syntax
+
+    some_list.count(value)
+
+For example run this line in the shell:
+
+__program_indented__
+        """
+
+        predicted_output_choices = ["0", "1", "2", "3"]
+
+        expected_code_source = "shell"
+
+        program = "[1, 2, 3, 2, 7, 2, 5].count(2)"
+
     class count_in_sorted_sum(VerbatimStep):
         """
-Here are a few more useful functions/methods. Suppose `nums = [28, 99, 10, 81, 59, 64]`
-
-- **`sorted`**: Takes an iterable and returns a list of the elements in order. `sorted(nums)` returns `[10, 28, 59, 64, 81, 99]`.
-- **`in`**: A comparison operator that checks if a value is in a list. `28 in nums` is `True`, but `4 in nums` is `False`.
-- **`sum`**: Add a list of numbers. `sum([1, 2, 3])` is 6.
-- **`count`**: Returns the number of times the argument appears in the list. `[1, 2, 3, 2, 7, 2, 5].count(2)` is 3.
-
 You may recognise some of these from your exercises. I assure you that those exercises were not pointless,
 as you've now learned valuable fundamental skills. For example, you can use `in` to check if a list contains 5,
 but there's no similarly easy way to check for a number bigger than 5.
