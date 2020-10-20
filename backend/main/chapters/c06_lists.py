@@ -908,7 +908,7 @@ As you can see, `+` does not modify `nums`, but `append` does.
 
 Here's some new things.
 
-**`subscript assignment`**: Set a value at an index using the syntax
+**`subscript assignment`**: Set a value at an index (replacing the value that was there before) using the syntax
 
     some_list[index] = new_value
 
@@ -917,7 +917,14 @@ Raises an error if `index` is not a valid index of `some_list`. For example, run
 __program_indented__
         """
 
-        predicted_output_choices = ["[1, 9, 2, 3]", "[9, 2, 3]", "[1, 9, 3]"]
+        predicted_output_choices = [
+            "[9, 1, 2, 3]",
+            "[1, 9, 2, 3]",
+            "[1, 2, 9, 3]",
+            "[9, 2, 3]",
+            "[1, 9, 3]",
+            "[1, 2, 9]",
+        ]
 
         def program(self):
             nums = [1, 2, 3]
@@ -935,7 +942,14 @@ Raises an error if the value isn't there. For example run this line in the shell
 __program_indented__
         """
 
-        predicted_output_choices = ["[7, 8]", "1", "[7, 8, 9, 8]", "3"]
+        predicted_output_choices = [
+            "[7, 8]",
+            "[7, 8, 9]",
+            "[7, 8, 9, 8]",
+            "1",
+            "2",
+            "3",
+        ]
 
         expected_code_source = "shell"
 
@@ -943,7 +957,7 @@ __program_indented__
 
     class pop_predict_exercise(VerbatimStep):
         """
-**`pop`**: Removes and returns an element at a given index using the syntax
+**`pop`**: Removes and returns an element at a given *index* using the syntax
 
     some_list.pop(index)
 
@@ -955,11 +969,17 @@ __program_indented__
 
         predicted_output_choices = [
             "1\n"
-            "[2, 3]",
-            "2\n"
             "[1, 3]",
             "2\n"
-            "[1, 2, 3]",
+            "[1, 3]",
+            "1\n"
+            "[2, 3]",
+            "2\n"
+            "[2, 3]",
+            "1\n"
+            "[2, 1, 3]",
+            "2\n"
+            "[2, 1, 3]",
         ]
 
         def program(self):
@@ -969,20 +989,27 @@ __program_indented__
 
     class remove_predict_exercise(VerbatimStep):
         """
-**`remove`**: Removes the first occurrence of the given value using the syntax
+**`remove`**: Removes the first occurrence of the given *value* using the syntax
 
     some_list.remove(value)
 
-Raises an error if the value doesn't exist. For example run this program:
+Raises an error if the value isn't in the list. For example run this program:
 
 __program_indented__
         """
 
-        predicted_output_choices = ["[1, 2]", "[1, 3]", "3"]
+        predicted_output_choices = [
+            "[1, 2]",
+            "[1, 3]",
+            "[2, 3]",
+            "1",
+            "2",
+            "3",
+        ]
 
         def program(self):
             nums = [1, 2, 3]
-            nums.remove(3)
+            nums.remove(1)
             print(nums)
 
     class pop_remove_index_subscript_assignment(VerbatimStep):
@@ -1148,7 +1175,7 @@ class MoreListFunctionsAndMethods(Page):
         """
 Here are a few more useful functions/methods.
 
-**`sorted`**: Takes an iterable and returns a list of the elements in order, smallest to largest, using the syntax
+**`sorted`**: Takes an iterable and returns a list of the elements in order from smallest to largest, using the syntax
 
     sorted(some_list)
 
@@ -1197,21 +1224,20 @@ __program_indented__
 
     class sum_predict_exercise(VerbatimStep):
         """
-**`sum`**: Add a list of numbers using the syntax
+**`sum`**: Add up an iterable of numbers using the syntax
 
     sum(some_list)
 
-For example run this program:
+For example run this line in the shell:
 
 __program_indented__
         """
 
         predicted_output_choices = ["10", "12", "7"]
+        expected_code_source = "shell"
 
         def program(self):
-            nums = [5, 3, 4]
-            total = sum(nums)
-            print(total)
+            sum([5, 3, 4])
 
     class count_predict_exercise(VerbatimStep):
         """
