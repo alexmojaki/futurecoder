@@ -1175,7 +1175,7 @@ class MoreListFunctionsAndMethods(Page):
         """
 Here are a few more useful functions/methods.
 
-**`sorted`**: Takes an iterable and returns a list of the elements in order, smallest to largest, using the syntax
+**`sorted`**: Takes an iterable and returns a list of the elements in order from smallest to largest, using the syntax
 
     sorted(some_list)
 
@@ -1224,21 +1224,20 @@ __program_indented__
 
     class sum_predict_exercise(VerbatimStep):
         """
-**`sum`**: Add a list of numbers using the syntax
+**`sum`**: Add up an iterable of numbers using the syntax
 
     sum(some_list)
 
-For example run this program:
+For example run this line in the shell:
 
 __program_indented__
         """
 
         predicted_output_choices = ["10", "12", "7"]
+        expected_code_source = "shell"
 
         def program(self):
-            nums = [5, 3, 4]
-            total = sum(nums)
-            print(total)
+            sum([5, 3, 4])
 
     class count_predict_exercise(VerbatimStep):
         """
