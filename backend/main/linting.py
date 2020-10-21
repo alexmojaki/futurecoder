@@ -20,8 +20,8 @@ Maybe you used the wrong variable in its place? If you don't need it, just remov
 **Is literal**
 
 You used the is/is not statement for comparison. You should have rather used the `==` / `!=` statements,
-which are used to compare constant literals (str, bytes, int, float, tuple)- referring to equality. 
-The is/is not statement checks if objects refer to the same instance (address in memory).
+which can be used to compare anything. The is/is not statement checks if objects refer to the same instance 
+(address in memory) and should not be used for literals.
     """,
 
     RedefinedWhileUnused: """
@@ -88,8 +88,8 @@ def lint(code):
     ch = checker.Checker(function_tree, builtins=["assert_equal"])
     ch.messages.sort(key=lambda m: m.lineno)
     for message in ch.messages:
-        if type(message) in MESSAGES:  # type(message) is the key component of dictionary
-            message_format = MESSAGES[type(message)]  # message_format is the value component of the dictionary
+        if type(message) in MESSAGES:
+            message_format = MESSAGES[type(message)]
             yield message_format.format(*message.message_args)
 
 # to do at later stage: ReturnWithArgsInsideGenerator, AssertTuple
