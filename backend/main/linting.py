@@ -16,7 +16,7 @@ Maybe you used the wrong variable in its place? If you don't need it, just remov
     """,
     IsLiteral: """
 **Is literal**
-You used the is/is not statement for comparison. You should have rather used the == / != statements,
+You used the is/is not statement for comparison. You should have rather used the `==` / `!=` statements,
 which are used to compare constant literals (str, bytes, int, float, tuple)- referring to equality. 
 The is/is not statement checks if objects refer to the same instance (address in memory).
     """,
