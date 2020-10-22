@@ -10,6 +10,8 @@ The easiest way to contribute concretely is to write learning material for the c
 
 Beyond that, there's plenty of coding work to do on the platform, including frontend, backend, and devops work. See the [list of issues](https://github.com/alexmojaki/futurecoder/issues) for some ideas, or open a new one if you want. The main priority is to choose something that interests you. If nothing really does, pick something from the ["good first issue" label](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) - these are easier and will help you become familiar with the project.
 
+Consider adding your thoughts and ideas to [issues labeled 'discussion'](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3Adiscussion). Or [come have a chat about anything on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-irqxk6og-tS2RqTp679MQAlUCmmnAZw).
+
 ## Testing
 
 Run `./manage.py test` in the backend folder.
@@ -30,9 +32,15 @@ After the code finishes running, it checks the `Page` and `Step` that the user i
 
 Take a look at [the issues labeled "course material"](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3A%22course+material%22). These include discussions that need opinions/ideas and small tweaks that need to be made to existing content.
 
-If you want to write fresh content, see [this issue](https://github.com/alexmojaki/futurecoder/issues/23) for the central discussion and additional guidance. This is a good place to dump rough ideas and snippets.
+If you want to write fresh content, see [this issue](https://github.com/alexmojaki/futurecoder/issues/92) for the central discussion.
+
+Before writing anything, it's a good idea to go through some of the course to get a feel for the style. Reading all the hints on a few exercises would also help. See the [developer mode instructions](https://github.com/alexmojaki/futurecoder#controls) to quickly move back and forth between steps.
+
+It can be helpful to read through existing textbooks and such to find inspiration for material. Make sure you have permission to copy their ideas (even if you rephrase it into different words) or that it's permissively licensed. If you're not sure, ask them. I don't want anyone to accuse us of plagiarism.
 
 If you want to contribute a solid bit of course with actual text, code, and exercises, open a new issue with a proposal draft just in markdown. Don't jump to implementing it in Python.
+
+If you have some partial ideas you'd like to talk about but don't feel ready to open an issue, [come chat on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-irqxk6og-tS2RqTp679MQAlUCmmnAZw).
 
 ## How to implement course content in Python
 
