@@ -1185,15 +1185,15 @@ __program_indented__
         """
 
         predicted_output_choices = [
-            "[99, 81, 64, 59, 28, 10]",
-            "[10, 81, 64, 28, 59, 99]",
-            "[10, 28, 59, 64, 81, 99]",
-            "[28, 99, 10, 81, 59, 64]"
+            "[9, 8, 6, 5, 2, 1]",
+            "[1, 8, 6, 2, 5, 9]",
+            "[1, 2, 5, 6, 8, 9]",
+            "[2, 9, 1, 8, 5, 6]"
         ]
 
         expected_code_source = "shell"
 
-        program = "sorted([28, 99, 10, 81, 59, 64])"
+        program = "sorted([2, 9, 1, 8, 5, 6])"
 
     class in_predict_exercise(VerbatimStep):
         """
@@ -1218,9 +1218,9 @@ __program_indented__
         ]
 
         def program(self):
-            nums = [28, 99, 10, 81, 59, 64]
-            print(54 in nums)
-            print(28 in nums)
+            nums = [2, 9, 1, 8, 5, 64]
+            print(7 in nums)
+            print(2 in nums)
 
     class sum_predict_exercise(VerbatimStep):
         """
