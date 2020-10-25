@@ -5698,7 +5698,7 @@
         "step": "single_quote_exercise"
     },
     {
-        "page": "Introducing f-strings",
+        "page": "f-strings",
         "program": [
             "name = \"Alice\"",
             "friend = 'Bob'",
@@ -5741,7 +5741,7 @@
         "step": "introduce_f_strings"
     },
     {
-        "page": "Introducing f-strings",
+        "page": "f-strings",
         "program": [
             "name = \"Alice\"",
             "age = 20",
@@ -5816,7 +5816,7 @@
             "age = 20",
             "print(f'Hello {name}. You are {age} years old.')"
         ],
-        "page": "Introducing f-strings",
+        "page": "f-strings",
         "program": [
             "name = \"Alice\"",
             "age = 20",
@@ -5843,7 +5843,7 @@
         "step": "basic_f_string_exercise"
     },
     {
-        "page": "Introducing f-strings",
+        "page": "f-strings",
         "program": [
             "f\"2 * 3 + 4 is equal to {2 * 3 + 4}\""
         ],
@@ -5871,7 +5871,7 @@
         "get_solution": [
             "print(f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\")"
         ],
-        "page": "Introducing f-strings",
+        "page": "f-strings",
         "program": [
             "people = ['Alice', 'Bob', 'Charlie']",
             "print(f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\")"
