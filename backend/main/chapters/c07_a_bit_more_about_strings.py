@@ -61,6 +61,7 @@ The equality operator `==` compares the *contents* of the strings.
 
 For this exercise, write a program that prints the following text from the Zen of Python:
 
+    __copyable__
     Special cases aren't special enough to break the rules.
         """
 
@@ -80,6 +81,7 @@ Excellent!
 
 Now write a program that prints the following quote exactly (including the double quotes):
 
+    __copyable__
     "Talk is cheap. Show me the code." - Linus Torvalds
         """
 

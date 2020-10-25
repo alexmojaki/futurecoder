@@ -162,10 +162,12 @@ class HighlightPythonTreeProcessor(Treeprocessor):
                     is_valid_syntax(dedent(text))
             ):
                 self.highlight_node(node, text)
+            else:
+                node.text = text
 
             if copyable:
                 node.append(etree.fromstring('<button class="btn btn-primary">Copy</button>'))
-                node.set("class", node.get("class") + " copyable")
+                node.set("class", node.get("class", "") + " copyable")
 
     @staticmethod
     def highlight_node(node, text):
