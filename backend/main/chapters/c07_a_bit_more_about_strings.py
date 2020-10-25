@@ -1,6 +1,7 @@
 # flake8: NOQA E501
+import ast
 from typing import List
-from main.text import ExerciseStep, VerbatimStep, Page, Step
+from main.text import ExerciseStep, VerbatimStep, Page, Step, Disallowed
 
 
 class SingleAndDoubleQuotesInStrings(Page):
@@ -101,43 +102,79 @@ But if your string contains `'` then use `"` to define it and vice versa.
 
 
 class IntroducingFstrings(Page):
-    title = "Introducing f-strings"
+    title = "f-strings"
 
-    class concatenate_string_number(VerbatimStep):
+    class introduce_f_strings(VerbatimStep):
         """
 So far we have been combining strings by concatenating them using `+`, like:
 
+    __copyable__
     name = "Alice"
     friend = 'Bob'
     meal = "lunch"
     print(name + " went to " + meal + " with " + friend + '.')
 
-However this gets a bit cumbersome and it does not let us easily combine strings and numbers.
-For example run the following program:
+However this gets a bit cumbersome. We can write the same thing more elegantly using an *f-string*.
+Replace the last line of the program above with the line below and run it.
+Make sure you include the `f` before the string.
+
+    print(f"{name} went to {meal} with {friend}.")
+        """
+
+        program_in_text = False
+        # TODO message: catch forgetting the f
+
+        def program(self):
+            name = "Alice"
+            friend = 'Bob'
+            meal = "lunch"
+            print(f"{name} went to {meal} with {friend}.")
+
+        predicted_output_choices = [
+            'f"{name} went to {meal} with {friend}."',
+            '"{name} went to {meal} with {friend}."',
+            '{name} went to {meal} with {friend}.',
+            "'name' went to 'meal' with 'friend'.",
+            'name went to meal with friend.',
+            '''"Alice" went to "lunch" with 'Bob'.''',
+            ''''Alice' went to 'lunch' with 'Bob'.''',
+            '"Alice went to lunch with Bob."',
+            'Alice went to lunch with Bob.',
+        ]
+
+    class concatenate_string_number(VerbatimStep):
+        """
+The syntax of an f-string starts with `f` followed by a string.
+The f-string can contain names of variables inside curly brackets `{}`.
+They will be replaced with the values of those variables converted to strings.
+The variables can be anything: strings, numbers, lists, etc.
+
+Therefore f-strings let you easily combine strings and numbers, which can't
+just be added together. For example run the following program:
 
     __copyable__
     __program_indented__
         """
 
+        predicted_output_choices = [
+            '"Hello " + name + ". You are " + age + " years old."',
+            'Hello name. You are age years old.',
+            'Hello Alice. You are 20 years old.',
+            "Hello 'Alice'. You are 20 years old.",
+        ]
+        correct_output = "Error"
+
+        # noinspection PyTypeChecker
         def program(self):
             name = "Alice"
             age = 20
             print("Hello " + name + ". You are " + age + " years old.")
 
-    class introduce_f_strings(VerbatimStep):
+    class basic_f_string_exercise(VerbatimStep):
         """
-This fails because we cannot use `+` between the string `". You are "` and the number `age`.
-Thankfully Python allows us to overcome this with *f-strings*.
-The syntax of an f-string starts with `f` followed by a string:
+This fails because we cannot use `+` between the string `"Hello Alice. You are "` and the number `age`.
 
-    name = "Alice"
-    print(f'Hello {name}!')
-
-The string can contain names of variables inside curly brackets `{}`.
-When printed, they will be replaced with the values of those variables.
-The variables can be strings, or even numbers!
-
-As an exercise, fix the last line of the previous program in the editor by using an f-string.
+Fix this by replacing the concatenation (`+`) with an f-string.
         """
 
         hints = """
@@ -148,6 +185,8 @@ How many pairs of curly brackets do you need?
 
         program_in_text = False
 
+        # TODO message: catch forgetting the f
+
         def program(self):
             name = "Alice"
             age = 20
@@ -155,43 +194,47 @@ How many pairs of curly brackets do you need?
 
     class eval_expr_inside_f_string(VerbatimStep):
         """
-In addition to variables, an f-string can also contain Python expressions to be evaluated inside curly brackets.
-We can evaluate an f-string in the shell like any other expression. Run this line in the shell:
+In addition to variables, an f-string can actually contain any Python expression inside curly brackets.
+Try this in the shell:
 
 __program_indented__
         """
 
         expected_code_source = "shell"
 
-        program = 'f"{2 * 3 + 4}"'
+        program = 'f"2 * 3 + 4 is equal to {2 * 3 + 4}"'
 
     class fix_broken_program(ExerciseStep):
         """
 As you can see we can define an f-string using double quotes too, like we can a normal string.
-Moreover numbers that are calculated inside an f-string are then converted to strings.
+And like quotes, f-strings are just notation. Once they are evaluated the computer forgets
+that an f-string was used, it just stores the final result as a normal string.
 
-Here is a broken program:
+Here is a very broken program:
 
+    __copyable__
     people = ["Alice", "Bob", "Charlie"]
     print('There are' + people.length() + 'people waiting, the first one's name is' + people.1 + '.')
 
-Fix this by using an f-string and correcting the wrong syntax.
+Fix it!
 Your solution should work for any list of strings named `people`.
-It should print the correct number of people in the list, and the name of the first person in the list.
-It should also have proper spacing between words. For example, in the above case it should print:
+For example, in the above case it should print:
 
     There are 3 people waiting, the first one's name is Alice.
         """
 
         hints = """
-There are three problems with the expression inside `print`.
+There are four problems with the expression inside `print`.
 There is a problem with the syntax that finds the number of people.
 Then one of the strings has a problem with the quotes.
 Also there is a problem with the syntax that finds the first person's name.
-Did you forget to properly use curly brackets in your f-string?
+And you can't add strings and numbers together!
+Did you properly use curly brackets in your f-string?
         """
 
-        # TODO: disallow bad solution using + and str(): 'There are ' + str(len(people)) + ...
+        disallowed = Disallowed(ast.Add, label="`+`")
+        # TODO message: catch forgetting the f
+
         def solution(self, people: List[str]):
             print(f"There are {len(people)} people waiting, the first one's name is {people[0]}.")
 

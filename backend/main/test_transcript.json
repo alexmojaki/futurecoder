@@ -5701,12 +5701,65 @@
         "page": "Introducing f-strings",
         "program": [
             "name = \"Alice\"",
+            "friend = 'Bob'",
+            "meal = \"lunch\"",
+            "print(f\"{name} went to {meal} with {friend}.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "Alice went to lunch with Bob.",
+                "choices": [
+                    "f\"{name} went to {meal} with {friend}.\"",
+                    "\"{name} went to {meal} with {friend}.\"",
+                    "{name} went to {meal} with {friend}.",
+                    "'name' went to 'meal' with 'friend'.",
+                    "name went to meal with friend.",
+                    "\"Alice\" went to \"lunch\" with 'Bob'.",
+                    "'Alice' went to 'lunch' with 'Bob'.",
+                    "\"Alice went to lunch with Bob.\"",
+                    "Alice went to lunch with Bob.",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Alice went to lunch with Bob."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "introduce_f_strings"
+    },
+    {
+        "page": "Introducing f-strings",
+        "program": [
+            "name = \"Alice\"",
             "age = 20",
             "print(\"Hello \" + name + \". You are \" + age + \" years old.\")"
         ],
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "\"Hello \" + name + \". You are \" + age + \" years old.\"",
+                    "Hello name. You are age years old.",
+                    "Hello Alice. You are 20 years old.",
+                    "Hello 'Alice'. You are 20 years old.",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "codeSource": "editor",
@@ -5787,12 +5840,12 @@
                 }
             ]
         },
-        "step": "introduce_f_strings"
+        "step": "basic_f_string_exercise"
     },
     {
         "page": "Introducing f-strings",
         "program": [
-            "f\"{2 * 3 + 4}\""
+            "f\"2 * 3 + 4 is equal to {2 * 3 + 4}\""
         ],
         "response": {
             "message": "",
@@ -5800,7 +5853,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'10'"
+                    "text": "'2 * 3 + 4 is equal to 10'"
                 },
                 {
                     "color": "white",
