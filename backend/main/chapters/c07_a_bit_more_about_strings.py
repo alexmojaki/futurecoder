@@ -17,7 +17,7 @@ What happens if we want to define a string that contains an apostrophe? Try this
 __program_indented__
         """
 
-        program = "'Alice's Diner'"
+        program = "print('Alice's Diner')"
 
         def check(self):
             return self.input.count("'") == 3 and "SyntaxError" in self.result
@@ -30,21 +30,16 @@ Then the remaining text `s Diner'` is invalid syntax and Python does not underst
 
 Thankfully Python allows us to define strings in another way, using double quotes `"` instead:
 
-    name = "Alice"
-
-Go ahead and fix the `restaurant` string using double quotes, and rerun the program.
+__program_indented__
         """
 
-        program_in_text = False
-
-        def program(self):
-            restaurant = "Alice's Diner"
-            print('We are going to ' + restaurant + ' for lunch.')
+        program = '''print("Alice's Diner")'''
 
     class single_double_quotes_equal(VerbatimStep):
         """
-You might wonder if there is a difference between strings defined using single quotes and using double quotes.
-`print` gets rid of the quotes, so compare them in the shell using `==`:
+Remember that quotes are just part of the human notation for strings.
+They are not stored as an actual part of the string.
+Try this in the shell:
 
 __program_indented__
         """
@@ -52,15 +47,13 @@ __program_indented__
         expected_code_source = "shell"
 
         program = """'Alice' == "Alice" """
+        predicted_output_choices = ["True", "False"]
 
     class double_quote_exercise(VerbatimStep):
         """
 As you can see Python considers the same string defined by single or double quotes as the same.
-They would both print `Alice` (the shell will display `"Alice"` as `'Alice'` though).
-The quotes act as a sort of *container* for the string.
-The equality operator `==` compares the *contents* of the strings.
 
-For this exercise, write a program that prints the following text from the Zen of Python:
+Now write a program that prints the following text from the Zen of Python:
 
     __copyable__
     Special cases aren't special enough to break the rules.
@@ -69,6 +62,8 @@ For this exercise, write a program that prints the following text from the Zen o
         hints = """
 How should you define the string?
 With single quotes, or with double quotes?
+You only need one string.
+No need to add strings together.
         """
 
         program_in_text = False
@@ -80,7 +75,7 @@ With single quotes, or with double quotes?
         """
 Excellent!
 
-Now write a program that prints the following quote exactly (including the double quotes):
+Now print the following quote exactly (including the double quotes):
 
     __copyable__
     "Talk is cheap. Show me the code." - Linus Torvalds
@@ -100,9 +95,10 @@ What if the string contains double quotes?
     final_text = """
 Good job!
 
-From now on you can use either single or double quotes to define your strings, however you like it.
-If your string contains `'` then use `"` to define it; and vice versa.
+In most cases you can use either single or double quotes to define your strings, however you like it.
+But if your string contains `'` then use `"` to define it and vice versa.
         """
+
 
 class IntroducingFstrings(Page):
     title = "Introducing f-strings"
