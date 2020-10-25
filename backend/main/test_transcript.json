@@ -5561,19 +5561,18 @@
     {
         "page": "Single and Double Quotes in Strings",
         "program": [
-            "restaurant = \"'Alice's Diner'\"",
-            "print('We are going to ' + restaurant + ' for lunch.')"
+            "'Alice's Diner'"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "We are going to 'Alice's Diner' for lunch."
+                    "color": "red",
+                    "text": "    'Alice's Diner'\n           ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
                 },
                 {
-                    "color": "white",
+                    "color": "red",
                     "text": "\n"
                 },
                 {

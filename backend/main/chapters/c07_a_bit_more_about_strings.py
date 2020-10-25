@@ -1,25 +1,26 @@
 # flake8: NOQA E501
 from typing import List
-from main.text import ExerciseStep, VerbatimStep, Page
+from main.text import ExerciseStep, VerbatimStep, Page, Step
 
 
 class SingleAndDoubleQuotesInStrings(Page):
     title = "Single and Double Quotes in Strings"
 
-    class single_quotes_apostrophe(VerbatimStep):
+    class single_quotes_apostrophe(Step):
         """
 We have been defining strings using single quotes up until now, like:
 
     name = 'Alice'
 
-What happens if we want to define a string that contains an apostrophe? Run this program:
+What happens if we want to define a string that contains an apostrophe? Try this:
 
 __program_indented__
         """
 
-        def program(self):
-            restaurant = "'Alice's Diner'"
-            print('We are going to ' + restaurant + ' for lunch.')
+        program = "'Alice's Diner'"
+
+        def check(self):
+            return self.input.count("'") == 3 and "SyntaxError" in self.result
 
     class double_quotes(VerbatimStep):
         """
