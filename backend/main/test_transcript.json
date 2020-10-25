@@ -5561,7 +5561,7 @@
     {
         "page": "Single and Double Quotes in Strings",
         "program": [
-            "'Alice's Diner'"
+            "print('Alice's Diner')"
         ],
         "response": {
             "message": "",
@@ -5569,7 +5569,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    'Alice's Diner'\n           ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
                 },
                 {
                     "color": "red",
@@ -5586,8 +5586,7 @@
     {
         "page": "Single and Double Quotes in Strings",
         "program": [
-            "restaurant = \"Alice's Diner\"",
-            "print('We are going to ' + restaurant + ' for lunch.')"
+            "print(\"Alice's Diner\")"
         ],
         "response": {
             "message": "",
@@ -5595,7 +5594,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "We are going to Alice's Diner for lunch."
+                    "text": "Alice's Diner"
                 },
                 {
                     "color": "white",
@@ -5617,6 +5616,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
