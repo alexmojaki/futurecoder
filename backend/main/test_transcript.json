@@ -4376,6 +4376,168 @@
         "step": "append_vs_concatenate"
     },
     {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "nums = [1, 2, 3]",
+            "nums[1] = 9",
+            "print(nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[1, 9, 3]",
+                "choices": [
+                    "[9, 1, 2, 3]",
+                    "[1, 9, 2, 3]",
+                    "[1, 2, 9, 3]",
+                    "[9, 2, 3]",
+                    "[1, 9, 3]",
+                    "[1, 2, 9]",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 9, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "subscript_assignment_predict"
+    },
+    {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "[7, 8, 9, 8].index(8)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "1",
+                "choices": [
+                    "[7, 8]",
+                    "[7, 8, 9]",
+                    "[7, 8, 9, 8]",
+                    "1",
+                    "2",
+                    "3",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "index_predict_exercise"
+    },
+    {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "nums = [1, 2, 3]",
+            "print(nums.pop(1))",
+            "print(nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "2\n[1, 3]",
+                "choices": [
+                    "1\n[1, 3]",
+                    "2\n[1, 3]",
+                    "1\n[2, 3]",
+                    "2\n[2, 3]",
+                    "1\n[2, 1, 3]",
+                    "2\n[2, 1, 3]",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[1, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "pop_predict_exercise"
+    },
+    {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "nums = [1, 2, 3]",
+            "nums.remove(1)",
+            "print(nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[2, 3]",
+                "choices": [
+                    "[1, 2]",
+                    "[1, 3]",
+                    "[2, 3]",
+                    "1",
+                    "2",
+                    "3",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[2, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "remove_predict_exercise"
+    },
+    {
         "get_solution": [
             "x = ['a', 'b', 'c']",
             "x.append(x.pop(0))",
@@ -4502,6 +4664,155 @@
             ]
         },
         "step": "remove_exercise"
+    },
+    {
+        "page": "More List Functions and Methods",
+        "program": [
+            "sorted([2, 9, 1, 8, 5, 6])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[1, 2, 5, 6, 8, 9]",
+                "choices": [
+                    "[9, 8, 6, 5, 2, 1]",
+                    "[1, 8, 6, 2, 5, 9]",
+                    "[1, 2, 5, 6, 8, 9]",
+                    "[2, 9, 1, 8, 5, 6]",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 2, 5, 6, 8, 9]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "sorted_predict_exercise"
+    },
+    {
+        "page": "More List Functions and Methods",
+        "program": [
+            "nums = [2, 9, 1, 8, 5, 64]",
+            "print(7 in nums)",
+            "print(2 in nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "False\nTrue",
+                "choices": [
+                    "True\nFalse",
+                    "False\nTrue",
+                    "True\nTrue",
+                    "False\nFalse",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "in_predict_exercise"
+    },
+    {
+        "page": "More List Functions and Methods",
+        "program": [
+            "sum([5, 3, 4])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "12",
+                "choices": [
+                    "10",
+                    "12",
+                    "7",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "12"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "sum_predict_exercise"
+    },
+    {
+        "page": "More List Functions and Methods",
+        "program": [
+            "[1, 2, 3, 2, 7, 2, 5].count(2)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "3",
+                "choices": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "count_predict_exercise"
     },
     {
         "get_solution": [
@@ -5246,6 +5557,344 @@
             ]
         },
         "step": "make_new_list"
+    },
+    {
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "print('Alice's Diner')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "red",
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "single_quotes_apostrophe"
+    },
+    {
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "print(\"Alice's Diner\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Alice's Diner"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_quotes"
+    },
+    {
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "'Alice' == \"Alice\""
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "single_double_quotes_equal"
+    },
+    {
+        "get_solution": [
+            "print(\"Special cases aren't special enough to break the rules.\")"
+        ],
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "print(\"Special cases aren't special enough to break the rules.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Special cases aren't special enough to break the rules."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_quote_exercise"
+    },
+    {
+        "get_solution": [
+            "print('\"Talk is cheap. Show me the code.\" - Linus Torvalds')"
+        ],
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "print('\"Talk is cheap. Show me the code.\" - Linus Torvalds')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "\"Talk is cheap. Show me the code.\" - Linus Torvalds"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "single_quote_exercise"
+    },
+    {
+        "page": "f-strings",
+        "program": [
+            "name = \"Alice\"",
+            "friend = 'Bob'",
+            "meal = \"lunch\"",
+            "print(f\"{name} went to {meal} with {friend}.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "Alice went to lunch with Bob.",
+                "choices": [
+                    "f\"{name} went to {meal} with {friend}.\"",
+                    "\"{name} went to {meal} with {friend}.\"",
+                    "{name} went to {meal} with {friend}.",
+                    "'name' went to 'meal' with 'friend'.",
+                    "name went to meal with friend.",
+                    "\"Alice\" went to \"lunch\" with 'Bob'.",
+                    "'Alice' went to 'lunch' with 'Bob'.",
+                    "\"Alice went to lunch with Bob.\"",
+                    "Alice went to lunch with Bob.",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Alice went to lunch with Bob."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "introduce_f_strings"
+    },
+    {
+        "page": "f-strings",
+        "program": [
+            "name = \"Alice\"",
+            "age = 20",
+            "print(\"Hello \" + name + \". You are \" + age + \" years old.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "\"Hello \" + name + \". You are \" + age + \" years old.\"",
+                    "Hello name. You are age years old.",
+                    "Hello Alice. You are 20 years old.",
+                    "Hello 'Alice'. You are 20 years old.",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "codeSource": "editor",
+                    "color": "red",
+                    "isTraceback": true,
+                    "text": "TypeError: can only concatenate str (not \"int\") to str",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "can only concatenate str (not \"int\") to str",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hello &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">name</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. You are &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">age</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; years old.&quot;</span><span class=\"p\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 3,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">age</span>\n",
+                                            "value": "<span class=\"mi\">20</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">name</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Alice&#39;</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>You tried to concatenate (add) two different types of objects:\na string (<code>str</code>) and an integer (<code>int</code>)</p>",
+                            "tail": ""
+                        }
+                    ]
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "concatenate_string_number"
+    },
+    {
+        "get_solution": [
+            "name = \"Alice\"",
+            "age = 20",
+            "print(f'Hello {name}. You are {age} years old.')"
+        ],
+        "page": "f-strings",
+        "program": [
+            "name = \"Alice\"",
+            "age = 20",
+            "print(f'Hello {name}. You are {age} years old.')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Hello Alice. You are 20 years old."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "basic_f_string_exercise"
+    },
+    {
+        "page": "f-strings",
+        "program": [
+            "f\"2 * 3 + 4 is equal to {2 * 3 + 4}\""
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "'2 * 3 + 4 is equal to 10'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "eval_expr_inside_f_string"
+    },
+    {
+        "get_solution": [
+            "print(f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\")"
+        ],
+        "page": "f-strings",
+        "program": [
+            "people = ['Alice', 'Bob', 'Charlie']",
+            "print(f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "There are 3 people waiting, the first one's name is Alice."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "fix_broken_program"
     },
     {
         "page": "Introducing Nested Loops",
