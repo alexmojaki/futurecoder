@@ -174,7 +174,7 @@ just be added together. For example run the following program:
         """
 This fails because we cannot use `+` between the string `"Hello Alice. You are "` and the number `age`.
 
-Fix this by replacing the concatenation (`+`) with an f-string.
+Fix this by replacing all the string concatenations (+) with a single f-string.
         """
 
         hints = """
