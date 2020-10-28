@@ -115,7 +115,10 @@ description = "Better version of repr/reprlib for short, cheap string representa
 name = "cheap-repr"
 optional = false
 python-versions = "*"
-version = "0.4.1"
+version = "0.4.4"
+
+[package.extras]
+tests = ["django", "numpy (>=1.16.3)", "pandas (>=0.24.2)", "pytest"]
 
 [[package]]
 category = "main"
@@ -766,7 +769,7 @@ description = "Powerful debugging tools for Python"
 name = "snoop"
 optional = false
 python-versions = "*"
-version = "0.2.4"
+version = "0.2.5"
 
 [package.dependencies]
 asttokens = "*"
@@ -960,7 +963,7 @@ chardet = [
     {file = "chardet-3.0.4.tar.gz", hash = "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"},
 ]
 cheap-repr = [
-    {file = "cheap_repr-0.4.1.tar.gz", hash = "sha256:675e6fc43bcad39f796f588d492bbc402baa4efde164fdb1b3f50264779278a6"},
+    {file = "cheap_repr-0.4.4.tar.gz", hash = "sha256:181ea3731b9a056ba31184f3e0de7dd9d593a84978d3a5b1ab98ef7c1c1bfd08"},
 ]
 click = [
     {file = "click-7.1.1-py2.py3-none-any.whl", hash = "sha256:e345d143d80bf5ee7534056164e5e112ea5e22716bbb1ce727941f4c8b471b9a"},
@@ -1304,7 +1307,7 @@ six = [
     {file = "six-1.14.0.tar.gz", hash = "sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"},
 ]
 snoop = [
-    {file = "snoop-0.2.4.tar.gz", hash = "sha256:89a60f95fac717cd7e4af7674478c6c31d33e40a159452a6db7c609993e535c9"},
+    {file = "snoop-0.2.5.tar.gz", hash = "sha256:20fb1fd672e8fe96fd78a91dd88b79329f5ebcb8dcc470dffb2fdff17cc00fdf"},
 ]
 sqlalchemy = [
     {file = "SQLAlchemy-1.3.15.tar.gz", hash = "sha256:c4cca4aed606297afbe90d4306b49ad3a4cd36feb3f87e4bfd655c57fd9ef445"},
