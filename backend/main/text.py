@@ -74,7 +74,7 @@ def clean_solution_function(func, source):
     )
 
 
-def clean_step_class(cls, clean_inner=True):
+def clean_step_class(cls):
     assert cls.__name__ != "step_name_here"
 
     text = cls.text or cls.__doc__
@@ -110,33 +110,29 @@ def clean_step_class(cls, clean_inner=True):
     text = highlighted_markdown(dedent(text).strip())
 
     messages = []
-    if clean_inner:
-        for name, inner_cls in inspect.getmembers(cls):
-            if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)):
-                continue
+    for name, inner_cls in inspect.getmembers(cls):
+        if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)):
+            continue
+        assert issubclass(inner_cls, MessageStep)
 
-            if issubclass(inner_cls, MessageStep):
-                inner_cls.tests = inner_cls.tests or cls.tests
-                clean_step_class(inner_cls)
+        inner_cls.tests = inner_cls.tests or cls.tests
+        clean_step_class(inner_cls)
 
-                # noinspection PyAbstractClass
-                class inner_cls(inner_cls, cls):
-                    __name__ = inner_cls.__name__
-                    __qualname__ = inner_cls.__qualname__
-                    __module__ = inner_cls.__module__
-                    program_in_text = inner_cls.program_in_text
+        # noinspection PyAbstractClass
+        class inner_cls(inner_cls, cls):
+            __name__ = inner_cls.__name__
+            __qualname__ = inner_cls.__qualname__
+            __module__ = inner_cls.__module__
 
-                messages.append(inner_cls)
+        messages.append(inner_cls)
 
-                if inner_cls.after_success and issubclass(inner_cls, ExerciseStep):
-                    check_exercise(
-                        bind_self(inner_cls.solution),
-                        bind_self(cls.solution),
-                        cls.test_exercise,
-                        cls.generate_inputs,
-                    )
-
-            clean_step_class(inner_cls, clean_inner=False)
+        if inner_cls.after_success and issubclass(inner_cls, ExerciseStep):
+            check_exercise(
+                bind_self(inner_cls.solution),
+                bind_self(cls.solution),
+                cls.test_exercise,
+                cls.generate_inputs,
+            )
 
     setattrs(cls,
              text=text,
