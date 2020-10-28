@@ -5,6 +5,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.expected_conditions import text_to_be_present_in_element
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -80,7 +81,9 @@ print(words[3])"""
     )
 
     # Run code in editor
-    driver.find_element_by_css_selector("#editor textarea").send_keys(code)
+    editor = driver.find_element_by_css_selector("#editor textarea")
+    editor.send_keys(Keys.BACK_SPACE)
+    editor.send_keys(code)
     driver.find_element_by_css_selector(".editor-buttons .btn-primary").click()
 
     # Check result in terminal
@@ -100,4 +103,25 @@ list
     assert (
         "In general, you can get the element"
         in driver.find_element_by_css_selector(".book-text").text
+    )
+
+    # Run with snoop
+    # If the line numbers are off, make sure the editor was clear before
+    # entering code. Maybe add more BACK_SPACEs. Don't know why it starts out not clear
+    driver.find_element_by_css_selector(".editor-buttons .btn-success").click()
+    WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, "print"))
+    assert (
+        driver.find_element(*locator).text
+        == """\
+    1 | words = ['This', 'is', 'a', 'list']
+ ...... len(words) = 4
+    3 | print(words[0])
+This
+    4 | print(words[1])
+is
+    5 | print(words[2])
+a
+    6 | print(words[3])
+list
+>>> """
     )
