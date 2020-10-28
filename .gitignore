@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 backend/static/
+backend/main/tests/error_screenshot.png
