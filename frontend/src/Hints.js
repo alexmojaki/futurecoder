@@ -40,7 +40,7 @@ export const HintsPopup = ({hints, numHints, requestingSolution, solution}) => {
 const Hints = ({hints, numHints, requestingSolution, solution}) =>
   <div className="markdown-body">
     {hints.slice(0, numHints).map((hint, index) =>
-      <div>
+      <div className="hint-body">
         <div key={index} dangerouslySetInnerHTML={{__html: hint}}/>
         <hr/>
       </div>
@@ -177,7 +177,7 @@ const Parsons = ({lines}) =>
 
 
 const Solution = ({solution}) =>
-  <div>
+  <div className="gradual-solution">
     <pre>
       <code>
         {solution.tokens.map((token, tokenIndex) =>

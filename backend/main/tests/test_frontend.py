@@ -55,9 +55,10 @@ def _tests(driver):
     )
 
     # Reverse until at first step
-    button = driver.find_element_by_class_name("button-reverse-step")
+    reverse_button = driver.find_element_by_class_name("button-reverse-step")
+    skip_button = driver.find_element_by_class_name("button-skip-step")
     for _ in range(10):
-        button.click()
+        reverse_button.click()
         if (
             "In general, you can get the element"
             not in driver.find_element_by_css_selector(".book-text").text
@@ -82,9 +83,9 @@ print(words[3])"""
 
     # Run code in editor
     editor = driver.find_element_by_css_selector("#editor textarea")
-    editor.send_keys(Keys.BACK_SPACE)
-    editor.send_keys(code)
-    driver.find_element_by_css_selector(".editor-buttons .btn-primary").click()
+    run_button = driver.find_element_by_css_selector(".editor-buttons .btn-primary")
+    snoop_button = driver.find_element_by_css_selector(".editor-buttons .btn-success")
+    run_code(editor, run_button, code)
 
     # Check result in terminal
     locator = (By.CLASS_NAME, "terminal")
@@ -106,9 +107,7 @@ list
     )
 
     # Run with snoop
-    # If the line numbers are off, make sure the editor was clear before
-    # entering code. Maybe add more BACK_SPACEs. Don't know why it starts out not clear
-    driver.find_element_by_css_selector(".editor-buttons .btn-success").click()
+    snoop_button.click()
     WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, "print"))
     assert (
         driver.find_element(*locator).text
@@ -125,3 +124,121 @@ a
 list
 >>> """
     )
+
+    # No hint button present
+    assert not driver.find_elements_by_class_name("hint-icon")
+
+    # Skip forward to exercise
+    for _ in range(3):
+        skip_button.click()
+        sleep(0.1)
+
+    assert (
+        "Let's get some exercise!"
+        in driver.find_element_by_css_selector(".book-text").text
+    )
+
+    show_hints_and_solution(driver, num_hints=9, parsons=False)
+
+    # Hidden solution contains correct text
+    code = driver.find_element_by_css_selector(".gradual-solution code")
+    assert (
+        code.text
+        == """\
+for i in range(len(things)):
+    if to_find == things[i]:
+        print(i)
+        break"""
+    )
+
+    # Click button repeatedly to reveal solution
+    get_hint_button = driver.find_element_by_css_selector(".hints-popup .btn-primary")
+    assert get_hint_button.text == "Reveal"
+    for i in range(25):
+        assert len(code.find_elements_by_class_name("solution-token-hidden")) == 25 - i
+        assert len(code.find_elements_by_class_name("solution-token-visible")) == 12 + i
+        get_hint_button.click()
+
+    # Click outside hints popup to close
+    driver.find_element_by_class_name("popup-overlay").click()
+
+    # No messages visible
+    assert not driver.find_elements_by_class_name("book-message")
+
+    # Run code which triggers a message
+    # Here we leave out indentation because ace adds some
+    run_code(editor, run_button, """\
+things = ['on', 'the', 'way', 'to', 'the', 'store']
+to_find = 'the'
+
+for i in range(len(things)):
+if to_find == things[i]:
+print(i)
+""")
+
+    # Now we have a message
+    assert (
+        driver.find_element_by_css_selector(".book-message .card-body").text
+        == "You're almost there! However, this prints all the indices, not just the first one."
+    )
+
+    # Fix the solution
+    editor.send_keys("        break")
+    run_button.click()
+    sleep(0.2)
+
+    # Step has passed, message has disappeared
+    assert not driver.find_elements_by_class_name("book-message")
+
+    # Skip to zip_longest exercise
+    skip_button.click()
+
+    # This exercise has a Parsons problem
+    show_hints_and_solution(driver, num_hints=10, parsons=True)
+
+
+def show_hints_and_solution(driver, *, num_hints, parsons):
+    # No hints popup visible
+    assert not driver.find_elements_by_class_name("hints-popup")
+
+    # Click hint lightbulb
+    driver.find_element_by_class_name("hint-icon").click()
+
+    # Show all hints
+    for hint_num in range(num_hints):
+        assert len(driver.find_elements_by_class_name("hint-body")) == hint_num
+        get_hint_button = driver.find_element_by_css_selector(
+            ".hints-popup .btn-primary"
+        )
+        assert get_hint_button.text == (
+            "Get a hint" if hint_num == 0 else "Get another hint"
+        )
+        get_hint_button.click()
+
+    # All hints are shown
+    assert len(driver.find_elements_by_class_name("hint-body")) == num_hints
+
+    # Click 'Show solution'
+    get_hint_button = driver.find_element_by_css_selector(".hints-popup .btn-primary")
+    assert get_hint_button.text == ("Show shuffled solution" if parsons else "Show solution")
+    get_hint_button.click()
+
+    # Solution not yet visible
+    assert not driver.find_elements_by_css_selector(".gradual-solution")
+    assert not driver.find_elements_by_css_selector(".parsons-droppable")
+
+    # Are you sure? Click 'Yes'
+    get_hint_button = driver.find_element_by_css_selector(".hints-popup .btn-primary")
+    assert get_hint_button.text == "Yes"
+    get_hint_button.click()
+
+    # Exactly one kind of solution visible
+    assert bool(driver.find_elements_by_css_selector(".gradual-solution")) == (not parsons)
+    assert bool(driver.find_elements_by_css_selector(".parsons-droppable")) == parsons
+
+
+def run_code(editor, run_button, text):
+    editor.send_keys(Keys.CONTROL + "a")
+    editor.send_keys(Keys.BACK_SPACE)
+    editor.send_keys(text)
+    run_button.click()
