@@ -263,7 +263,7 @@ class AppComponent extends React.Component {
 }
 
 const StepButton = ({delta, label}) =>
-  <button className="btn btn-danger btn-sm"
+  <button className={`btn btn-danger btn-sm button-${label.replace(" ", "-").toLowerCase()}`}
           onClick={() => moveStep(delta)}>
     {label}
   </button>
