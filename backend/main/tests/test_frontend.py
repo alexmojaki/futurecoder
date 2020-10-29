@@ -46,6 +46,20 @@ def _tests(driver):
     locator = (By.CSS_SELECTOR, ".book-text h1")
     WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, "Getting"))
 
+    # Empty shell
+    await_result(driver, "", ">>> ")
+
+    # Run code in shell, check result
+    driver.find_element_by_css_selector(".terminal input").send_keys("12345\n")
+    await_result(
+        driver,
+        "",
+        """\
+>>> 12345
+12345
+>>> """,
+    )
+
     # Check title and beginning of text
     assert driver.find_element(*locator).text.startswith(
         "Getting elements at a position"
@@ -88,11 +102,10 @@ print(words[3])"""
     run_code(editor, run_button, code)
 
     # Check result in terminal
-    locator = (By.CLASS_NAME, "terminal")
-    WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, "This"))
-    assert (
-        driver.find_element(*locator).text
-        == """\
+    await_result(
+        driver,
+        "This",
+        """\
 This
 is
 a
@@ -108,10 +121,10 @@ list
 
     # Run with snoop
     snoop_button.click()
-    WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, "print"))
-    assert (
-        driver.find_element(*locator).text
-        == """\
+    await_result(
+        driver,
+        "print",
+        """\
     1 | words = ['This', 'is', 'a', 'list']
  ...... len(words) = 4
     3 | print(words[0])
@@ -265,3 +278,10 @@ def run_code(editor, run_button, text):
     editor.send_keys(Keys.BACK_SPACE)
     editor.send_keys(text)
     run_button.click()
+
+
+def await_result(driver, part, full):
+    locator = (By.CLASS_NAME, "terminal")
+
+    WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, part))
+    assert driver.find_element(*locator).text == full
