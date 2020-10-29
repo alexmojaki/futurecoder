@@ -196,6 +196,29 @@ print(i)
     # This exercise has a Parsons problem
     show_hints_and_solution(driver, num_hints=10, parsons=True)
 
+    assert {
+        node.text
+        for node in driver.find_elements_by_css_selector(".parsons-droppable code")
+    } == set(
+        """\
+length1 = len(string1)
+length2 = len(string2)
+if length1 > length2:
+    length = length1
+else:
+    length = length2
+for i in range(length):
+    if i < len(string1):
+        char1 = string1[i]
+    else:
+        char1 = ' '
+    if i < len(string2):
+        char2 = string2[i]
+    else:
+        char2 = ' '
+    print(char1 + ' ' + char2)""".splitlines()
+    )
+
 
 def show_hints_and_solution(driver, *, num_hints, parsons):
     # No hints popup visible
