@@ -54,6 +54,41 @@ def _tests(driver):
         "Looping is great"
     )
 
+    # Reverse button exists (developer mode is on)
+    assert driver.find_elements_by_class_name("button-reverse-step"), "Is developer mode on?"
+
+    # Click on menu
+    driver.find_element_by_class_name("menu-icon").click()
+    assert (
+        driver.find_element_by_class_name("menu-popup").text
+        == """\
+admin@example.com
+Sign out
+Settings
+Feedback
+Table of Contents"""
+    )
+
+    # Open settings
+    driver.find_element_by_link_text("Settings").click()
+
+    # Turn off developer mode
+    developer_mode_togle = driver.find_element_by_css_selector(".settings-modal label")
+    developer_mode_togle.click()
+
+    # Reverse button is gone
+    assert not driver.find_elements_by_class_name("button-reverse-step")
+
+    # Turn developer mode back on
+    developer_mode_togle.click()
+
+    # Buttons exist again
+    reverse_button = driver.find_element_by_class_name("button-reverse-step")
+    skip_button = driver.find_element_by_class_name("button-skip-step")
+
+    # Escape settings
+    driver.find_element_by_tag_name("html").send_keys(Keys.ESCAPE)
+
     # Empty shell
     await_result(driver, "", ">>> ")
 
@@ -69,8 +104,6 @@ def _tests(driver):
     )
 
     # Reverse until at first step
-    reverse_button = driver.find_element_by_class_name("button-reverse-step")
-    skip_button = driver.find_element_by_class_name("button-skip-step")
     for _ in range(10):
         reverse_button.click()
         if (
