@@ -46,6 +46,14 @@ def _tests(driver):
     locator = (By.CSS_SELECTOR, ".book-text h1")
     WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, "Getting"))
 
+    # Check title and beginning of text
+    assert driver.find_element(*locator).text.startswith(
+        "Getting elements at a position"
+    )
+    assert driver.find_element_by_css_selector(".book-text p").text.startswith(
+        "Looping is great"
+    )
+
     # Empty shell
     await_result(driver, "", ">>> ")
 
@@ -58,14 +66,6 @@ def _tests(driver):
 >>> 12345
 12345
 >>> """,
-    )
-
-    # Check title and beginning of text
-    assert driver.find_element(*locator).text.startswith(
-        "Getting elements at a position"
-    )
-    assert driver.find_element_by_css_selector(".book-text p").text.startswith(
-        "Looping is great"
     )
 
     # Reverse until at first step
@@ -179,6 +179,30 @@ for i in range(len(things)):
     assert not driver.find_elements_by_class_name("book-message")
 
     # Run code which triggers a message
+    run_code(editor, run_button, "12345")
+
+    # Now we have a message
+    assert (
+        driver.find_element_by_css_selector(".book-message .card-body").text
+        == """\
+Your code should start like this:
+things = '...'
+to_find = '...'"""
+    )
+
+    # Close the message
+    driver.find_element_by_css_selector(".book-message .card-header").click()
+
+    # No messages visible
+    assert not driver.find_elements_by_class_name("book-message")
+
+    # Run the same code again
+    run_code(editor, run_button, "12345")
+
+    # Message doesn't come back
+    assert not driver.find_elements_by_class_name("book-message")
+
+    # Run code which triggers a different message
     # Here we leave out indentation because ace adds some
     run_code(editor, run_button, """\
 things = ['on', 'the', 'way', 'to', 'the', 'store']
@@ -230,6 +254,34 @@ for i in range(length):
     else:
         char2 = ' '
     print(char1 + ' ' + char2)""".splitlines()
+    )
+
+    # Click outside hints popup to close
+    driver.find_element_by_class_name("popup-overlay").click()
+
+    # Cannot go to next page yet
+    assert not driver.find_elements_by_class_name("next-button")
+
+    # Next button appears after completing last step
+    # Scroll to end of page to get skip button out of the way
+    skip_button.click()
+    sleep(0.1)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    sleep(0.1)
+    driver.find_element_by_class_name("next-button").click()
+
+    # On next page
+    sleep(0.1)
+    assert (
+        driver.find_element_by_css_selector(".book-text h1").text
+        == "Terminology: Calling functions and methods"
+    )
+
+    # Back to previous page
+    driver.find_element_by_class_name("previous-button").click()
+    sleep(0.1)
+    assert driver.find_element_by_css_selector(".book-text h1").text.startswith(
+        "Getting elements at a position"
     )
 
 
