@@ -407,8 +407,7 @@ The computer will do the repetition for you!
 
         class added_str_and_int(MessageStep):
             """
-You can't add together strings and numbers. Use `print()` with several arguments
-as shown above, e.g. `print(x, y, z)`. It'll even add spaces for you!
+You can't add together strings and numbers. Use an f-string.
             """
 
             def program(self):
