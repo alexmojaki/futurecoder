@@ -4316,7 +4316,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>In your program, the object is <code>str</code> and the attribute is <code>append</code>.</p>",
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>",
                             "tail": ""
                         }
                     ]
@@ -5038,7 +5038,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>In your program, the object is <code>str</code> and the attribute is <code>append</code>.</p>",
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>",
                             "tail": ""
                         }
                     ]

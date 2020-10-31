@@ -52,7 +52,7 @@ def friendly_generic(e):
 
 
 def _friendly_cause(e, setter):
-    info = {"message": get_message(type(e).__name__, e)}
+    info = {"message": get_message(type(e).__name__, e), "generic": ""}
     try:
         setter(info)
     except Exception:

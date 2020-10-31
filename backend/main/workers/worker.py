@@ -51,7 +51,7 @@ def runner(code_source, code):
 
     stack_data.Source._class_local('__source_cache', {}).pop(filename, None)
 
-    friendly_traceback.source_cache.cache.replace({filename: code})
+    friendly_traceback.source_cache.cache.add(filename, code)
 
     try:
         code_obj = compile(code, filename, mode)
