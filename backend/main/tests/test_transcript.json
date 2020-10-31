@@ -52,43 +52,6 @@
     {
         "page": "Introducing The Shell",
         "program": [
-            "3 x 4"
-        ],
-        "response": {
-            "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
-            "passed": false,
-            "result": [
-                {
-                    "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"my_program.py\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    3 x 4\n"
-                },
-                {
-                    "color": "red",
-                    "text": "      ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: invalid syntax\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "more_calculation"
-    },
-    {
-        "page": "Introducing The Shell",
-        "program": [
             "5 - 6"
         ],
         "response": {
@@ -264,6 +227,16 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "'word'",
+                "choices": [
+                    "word",
+                    "'word'",
+                    "Hello",
+                    "'Hello'",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -289,22 +262,48 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "sunshine",
+                    "'sunshine'",
+                    "Hello",
+                    "'Hello'",
+                    "Error"
+                ]
+            },
             "result": [
                 {
+                    "codeSource": "shell",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 1, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    1 | \u001b[38;5;15msunshine\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "NameError: name 'sunshine' is not defined\n"
+                    "isTraceback": true,
+                    "text": "NameError: name 'sunshine' is not defined",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "name 'sunshine' is not defined",
+                                "type": "NameError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">sunshine</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": []
+                                }
+                            ],
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, the unknown name is <code>sunshine</code>.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -592,6 +591,18 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello World",
+                "choices": [
+                    "sentence",
+                    "word + ' ' + name",
+                    "Hello + ' ' + World",
+                    "'Hello' + ' ' + 'World'",
+                    "Hello World",
+                    "'Hello World'",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -622,6 +633,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello World\nHello World",
+                "choices": [
+                    "Hello World\nHello World",
+                    "Hello World\nGoodbye World",
+                    "Goodbye World\nGoodbye World",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -717,23 +737,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nIn this case, the line identified above\nwas expected to begin a new indented block.\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 2\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    print(character)\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "IndentationError: expected an indented block\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -926,23 +934,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "    print('---')\n               ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nIn this case, the line identified above is\nless indented than the preceding one,\nand is not aligned vertically with another block of code.\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 3\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    print('---')\n"
-                },
-                {
-                    "color": "red",
-                    "text": "               ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "IndentationError: unindent does not match any outer indentation level\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -1089,6 +1085,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello\nHello!",
+                "choices": [
+                    "Hello\nHello",
+                    "Hello\nHello!",
+                    "Hello!\nHello!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1126,6 +1131,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "W\nWo\nWor\nWorl\nWorld",
+                "choices": [
+                    "W\no\nr\nl\nd",
+                    "World",
+                    "W\nWo\nWor\nWorl\nWorld",
+                    "World\nWorl\nWor\nWo\nW",
+                    "World\nWorld\nWorld\nWorld\nWorld",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1187,6 +1203,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "\nW\nWo\nWor\nWorl",
+                "choices": [
+                    "W\nWo\nWor\nWorl\nWorld",
+                    "Wo\nWor\nWorl\nWorld",
+                    "\nW\nWo\nWor\nWorl",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1814,6 +1839,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello World!",
+                "choices": [
+                    "Hello World",
+                    "Hello World!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1843,6 +1876,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello World",
+                "choices": [
+                    "Hello World",
+                    "Hello World!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1916,6 +1957,21 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "H!e!l!l!o! !W!o!r!l!d!",
+                "choices": [
+                    "Hello World",
+                    "!!!!!!!!!!!",
+                    "Hello World!!!!!!!!!!!",
+                    "!!!!!!!!!!!Hello World",
+                    "Hello World!",
+                    "!Hello World",
+                    "!Hello World!",
+                    "H!e!l!l!o! !W!o!r!l!d!",
+                    "!H!e!l!l!o! !W!o!r!l!d",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -1950,6 +2006,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "ello World",
+                "choices": [
+                    "Hello World",
+                    "ello World",
+                    "Hello Worl",
+                    "H",
+                    "d",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -2371,22 +2438,57 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "Hello World",
+                    "Hello World!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
+                    "codeSource": "editor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 6, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    6 | \u001b[38;5;15msentence\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15mchar\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "NameError: name 'char' is not defined\n"
+                    "isTraceback": true,
+                    "text": "NameError: name 'char' is not defined",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [
+                                "'chr' (builtin)"
+                            ],
+                            "exception": {
+                                "message": "name 'char' is not defined",
+                                "type": "NameError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">sentence</span> <span class=\"o\">+=</span> <span class=\"n\">char</span>",
+                                            "is_current": true,
+                                            "lineno": 6,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">excited</span>\n",
+                                            "value": "<span class=\"kc\">False</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">sentence</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hello World&#39;</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, the unknown name is <code>char</code>.\nThe Python builtin <code>chr</code> has a similar name. </p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -2583,15 +2685,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n       a_function(invalid=something)\n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -2939,6 +3037,16 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "B",
+                "choices": [
+                    "F",
+                    "C",
+                    "B",
+                    "A",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -3378,20 +3486,41 @@
             "passed": true,
             "result": [
                 {
+                    "codeSource": "shell",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 1, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    1 | \u001b[38;5;15mwords\u001b[39m\u001b[38;5;15m[\u001b[39m\u001b[38;5;141m4\u001b[39m\u001b[38;5;15m]\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "IndexError: list index out of range\n"
+                    "isTraceback": true,
+                    "text": "IndexError: list index out of range",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "list index out of range",
+                                "type": "IndexError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">words</span><span class=\"p\">[</span><span class=\"mi\">4</span><span class=\"p\">]</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">words</span>\n",
+                                            "value": "<span class=\"p\">[</span><span class=\"s1\">&#39;This&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;is&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;a&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;list&#39;</span><span class=\"p\">]</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.\nReminder: the first item of a sequence is at index 0.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -3511,6 +3640,18 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "0\nThis\n1\nis\n2\na\n3\nlist",
+                "choices": [
+                    "This\nis\na\nlist",
+                    "0\n1\n2\n3",
+                    "0\nThis\n1\nis\n2\na\n3\nlist",
+                    "This\n0\nis\n1\na\n2\nlist\n3",
+                    "0\n1\n2\n3\nThis\nis\na\nlist",
+                    "This\nis\na\nlist\n0\n1\n2\n3",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -3951,20 +4092,43 @@
                     "text": "\n"
                 },
                 {
+                    "codeSource": "editor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 3, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    3 | \u001b[38;5;15;48;5;24mf\u001b[39;49m\u001b[38;5;15;48;5;24m(\u001b[39;49m\u001b[38;5;15;48;5;24m)\u001b[39;49m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "TypeError: 'str' object is not callable\n"
+                    "isTraceback": true,
+                    "text": "TypeError: 'str' object is not callable",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [
+                                "'str[value]'"
+                            ],
+                            "exception": {
+                                "message": "'str' object is not callable",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n n-ExecutingNode\">f</span><span class=\"p p-ExecutingNode\">()</span>",
+                                            "is_current": true,
+                                            "lineno": 3,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">f</span>\n",
+                                            "value": "<span class=\"s1\">&#39;a string&#39;</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>I suspect that you had an object of this type, a string (<code>str</code>),\nfollowed by what looked like a tuple, '(...)',\nwhich Python took as an indication of a function call.\nPerhaps you had a missing comma before the tuple.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4029,20 +4193,43 @@
                     "text": "\n"
                 },
                 {
+                    "codeSource": "editor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 2, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    2 | \u001b[38;5;15mlength\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15;48;5;24mlen\u001b[39;49m\u001b[38;5;15;48;5;24m(\u001b[39;49m\u001b[38;5;15;48;5;24mthings\u001b[39;49m\u001b[38;5;15;48;5;24m)\u001b[39;49m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "TypeError: object of type 'NoneType' has no len()\n"
+                    "isTraceback": true,
+                    "text": "TypeError: object of type 'NoneType' has no len()",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [
+                                "implement \"__len__\" on NoneType"
+                            ],
+                            "exception": {
+                                "message": "object of type 'NoneType' has no len()",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">length</span> <span class=\"o\">=</span> <span class=\"nb nb-ExecutingNode\">len</span><span class=\"p p-ExecutingNode\">(</span><span class=\"n n-ExecutingNode\">things</span><span class=\"p p-ExecutingNode\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 2,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">things</span>\n",
+                                            "value": "<span class=\"kc\">None</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>I do not recognize this case. Please report it to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4098,20 +4285,41 @@
             "passed": true,
             "result": [
                 {
+                    "codeSource": "editor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 2, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    2 | \u001b[38;5;15;48;5;24mword\u001b[39;49m\u001b[38;5;197;48;5;24m.\u001b[39;49m\u001b[38;5;15;48;5;24mappend\u001b[39;49m\u001b[38;5;15m(\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;186m!\u001b[39m\u001b[38;5;186m'\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "AttributeError: 'str' object has no attribute 'append'\n"
+                    "isTraceback": true,
+                    "text": "AttributeError: 'str' object has no attribute 'append'",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "'str' object has no attribute 'append'",
+                                "type": "AttributeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n n-ExecutingNode\">word</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39;!&#39;</span><span class=\"p\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 2,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">word</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hello&#39;</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>In your program, the object is <code>str</code> and the attribute is <code>append</code>.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4122,10 +4330,768 @@
         "step": "no_append_for_str"
     },
     {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "nums = [1, 2, 3]",
+            "new_nums = nums + [4, 5]",
+            "print(new_nums)",
+            "print(nums)",
+            "nums.append(4)",
+            "print(nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3, 4, 5]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3, 4]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "append_vs_concatenate"
+    },
+    {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "nums = [1, 2, 3]",
+            "nums[1] = 9",
+            "print(nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[1, 9, 3]",
+                "choices": [
+                    "[9, 1, 2, 3]",
+                    "[1, 9, 2, 3]",
+                    "[1, 2, 9, 3]",
+                    "[9, 2, 3]",
+                    "[1, 9, 3]",
+                    "[1, 2, 9]",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 9, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "subscript_assignment_predict"
+    },
+    {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "[7, 8, 9, 8].index(8)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "1",
+                "choices": [
+                    "[7, 8]",
+                    "[7, 8, 9]",
+                    "[7, 8, 9, 8]",
+                    "1",
+                    "2",
+                    "3",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "index_predict_exercise"
+    },
+    {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "nums = [1, 2, 3]",
+            "print(nums.pop(1))",
+            "print(nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "2\n[1, 3]",
+                "choices": [
+                    "1\n[1, 3]",
+                    "2\n[1, 3]",
+                    "1\n[2, 3]",
+                    "2\n[2, 3]",
+                    "1\n[2, 1, 3]",
+                    "2\n[2, 1, 3]",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "[1, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "pop_predict_exercise"
+    },
+    {
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "nums = [1, 2, 3]",
+            "nums.remove(1)",
+            "print(nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[2, 3]",
+                "choices": [
+                    "[1, 2]",
+                    "[1, 3]",
+                    "[2, 3]",
+                    "1",
+                    "2",
+                    "3",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[2, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "remove_predict_exercise"
+    },
+    {
+        "get_solution": [
+            "x = ['a', 'b', 'c']",
+            "x.append(x.pop(0))",
+            "print(x)"
+        ],
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "x = ['a', 'b', 'c']",
+            "x.append(x.pop(0))",
+            "print(x)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "['b', 'c', 'a']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "pop_remove_index_subscript_assignment"
+    },
+    {
+        "get_solution": [
+            "x = ['a', 'b', 'c']",
+            "x[len(x) - 1] = x[0]",
+            "print(x)"
+        ],
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "x = ['a', 'b', 'c']",
+            "x[len(x) - 1] = x[0]",
+            "print(x)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "['a', 'b', 'a']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "subscript_assignment_exercise"
+    },
+    {
+        "get_solution": [
+            "x = ['a', 'b', 'c']",
+            "y = x + [x[0]]",
+            "print(y)"
+        ],
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "x = ['a', 'b', 'c']",
+            "y = x + [x[0]]",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "['a', 'b', 'c', 'a']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "negative_index_concatenation_exercise"
+    },
+    {
+        "get_solution": [
+            "x = [1, 2, 0, 3]",
+            "x.pop(x.index(0))",
+            "print(x)"
+        ],
+        "page": "Functions and Methods for Lists",
+        "program": [
+            "x = [1, 2, 0, 3]",
+            "x.pop(x.index(0))",
+            "print(x)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 2, 3]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "remove_exercise"
+    },
+    {
+        "page": "More List Functions and Methods",
+        "program": [
+            "sorted([2, 9, 1, 8, 5, 6])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[1, 2, 5, 6, 8, 9]",
+                "choices": [
+                    "[9, 8, 6, 5, 2, 1]",
+                    "[1, 8, 6, 2, 5, 9]",
+                    "[1, 2, 5, 6, 8, 9]",
+                    "[2, 9, 1, 8, 5, 6]",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[1, 2, 5, 6, 8, 9]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "sorted_predict_exercise"
+    },
+    {
+        "page": "More List Functions and Methods",
+        "program": [
+            "nums = [2, 9, 1, 8, 5, 64]",
+            "print(7 in nums)",
+            "print(2 in nums)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "False\nTrue",
+                "choices": [
+                    "True\nFalse",
+                    "False\nTrue",
+                    "True\nTrue",
+                    "False\nFalse",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "in_predict_exercise"
+    },
+    {
+        "page": "More List Functions and Methods",
+        "program": [
+            "sum([5, 3, 4])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "12",
+                "choices": [
+                    "10",
+                    "12",
+                    "7",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "12"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "sum_predict_exercise"
+    },
+    {
+        "page": "More List Functions and Methods",
+        "program": [
+            "[1, 2, 3, 2, 7, 2, 5].count(2)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "3",
+                "choices": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "count_predict_exercise"
+    },
+    {
+        "get_solution": [
+            "x = [1, 2, 0, 3]",
+            "y = x.count(1) > 0",
+            "print(y)"
+        ],
+        "page": "More List Functions and Methods",
+        "program": [
+            "x = [1, 2, 0, 3]",
+            "y = x.count(1) > 0",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "count_in_sorted_sum"
+    },
+    {
+        "get_solution": [
+            "x = [15, 12, -6, 3]",
+            "y = sum(x) / len(x)",
+            "print(y)"
+        ],
+        "page": "More List Functions and Methods",
+        "program": [
+            "x = [15, 12, -6, 3]",
+            "y = sum(x) / len(x)",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "6.0"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "average_exercise"
+    },
+    {
+        "get_solution": [
+            "x = 100",
+            "y = sum(range(x + 1))",
+            "print(y)"
+        ],
+        "page": "More List Functions and Methods",
+        "program": [
+            "x = 100",
+            "y = sum(range(x + 1))",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "5050"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "sum_range_exercise"
+    },
+    {
+        "get_solution": [
+            "x = [12, -6, 2, -1, 3]",
+            "y = sorted(x)[1]",
+            "print(y)"
+        ],
+        "page": "More List Functions and Methods",
+        "program": [
+            "x = [12, -6, 2, -1, 3]",
+            "y = sorted(x)[1]",
+            "print(y)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "-1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "second_smallest_in_list_exercise"
+    },
+    {
+        "page": "String Methods and Immutability",
+        "program": [
+            "print('the' in 'feed the dog and the cat')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_in_step"
+    },
+    {
+        "page": "String Methods and Immutability",
+        "program": [
+            "string = 'feed the dog and the cat'",
+            "print(string.count('the'))",
+            "print(string.index('the'))"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_count_index"
+    },
+    {
+        "page": "String Methods and Immutability",
+        "program": [
+            "'Python'.append(' is cool!')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "codeSource": "shell",
+                    "color": "red",
+                    "isTraceback": true,
+                    "text": "AttributeError: 'str' object has no attribute 'append'",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "'str' object has no attribute 'append'",
+                                "type": "AttributeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"s1\">&#39;Python&#39;</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": []
+                                }
+                            ],
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>In your program, the object is <code>str</code> and the attribute is <code>append</code>.</p>",
+                            "tail": ""
+                        }
+                    ]
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "mutation_string_append"
+    },
+    {
+        "page": "String Methods and Immutability",
+        "program": [
+            "sentence = \"Python rocks!\"",
+            "new_sentence = sentence.upper()",
+            "print(sentence)",
+            "print(new_sentence)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Python rocks!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "PYTHON ROCKS!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_lower_upper"
+    },
+    {
         "get_solution": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
-        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
+        "page": "How to Find Information with Google, and more",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
@@ -4155,7 +5121,7 @@
             "nums.insert(2, 9)",
             "print(nums)"
         ],
-        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
+        "page": "How to Find Information with Google, and more",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
             "nums.insert(2, 9)",
@@ -4182,7 +5148,7 @@
         "step": "list_insert"
     },
     {
-        "page": "Functions and Methods for Lists and Strings, and How to Find Information with Google and more",
+        "page": "How to Find Information with Google, and more",
         "program": [
             "dir([])"
         ],
@@ -4420,20 +5386,49 @@
             "passed": true,
             "result": [
                 {
+                    "codeSource": "pythontutor",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 3, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    3 | \u001b[38;5;15m\u001b[39m\u001b[38;5;15mnumber\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m=\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;15;48;5;24mnumbers\u001b[39;49m\u001b[38;5;15;48;5;24m[\u001b[39;49m\u001b[38;5;15;48;5;24mi\u001b[39;49m\u001b[38;5;15;48;5;24m]\u001b[39;49m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "IndexError: list index out of range\n"
+                    "isTraceback": true,
+                    "text": "IndexError: list index out of range",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "list index out of range",
+                                "type": "IndexError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n\">number</span> <span class=\"o\">=</span> <span class=\"n n-ExecutingNode\">numbers</span><span class=\"p p-ExecutingNode\">[</span><span class=\"n n-ExecutingNode\">i</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "is_current": true,
+                                            "lineno": 3,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">i</span>\n",
+                                            "value": "<span class=\"mi\">4</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">number</span>\n",
+                                            "value": "<span class=\"mi\">15</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">numbers</span>\n",
+                                            "value": "<span class=\"p\">[</span><span class=\"mi\">7</span><span class=\"p\">,</span> <span class=\"mi\">3</span><span class=\"p\">,</span> <span class=\"mi\">12</span><span class=\"p\">,</span> <span class=\"mi\">15</span><span class=\"p\">]</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.\nReminder: the first item of a sequence is at index 0.</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -4562,6 +5557,344 @@
             ]
         },
         "step": "make_new_list"
+    },
+    {
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "print('Alice's Diner')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "red",
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "single_quotes_apostrophe"
+    },
+    {
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "print(\"Alice's Diner\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Alice's Diner"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_quotes"
+    },
+    {
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "'Alice' == \"Alice\""
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "single_double_quotes_equal"
+    },
+    {
+        "get_solution": [
+            "print(\"Special cases aren't special enough to break the rules.\")"
+        ],
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "print(\"Special cases aren't special enough to break the rules.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Special cases aren't special enough to break the rules."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_quote_exercise"
+    },
+    {
+        "get_solution": [
+            "print('\"Talk is cheap. Show me the code.\" - Linus Torvalds')"
+        ],
+        "page": "Single and Double Quotes in Strings",
+        "program": [
+            "print('\"Talk is cheap. Show me the code.\" - Linus Torvalds')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "\"Talk is cheap. Show me the code.\" - Linus Torvalds"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "single_quote_exercise"
+    },
+    {
+        "page": "f-strings",
+        "program": [
+            "name = \"Alice\"",
+            "friend = 'Bob'",
+            "meal = \"lunch\"",
+            "print(f\"{name} went to {meal} with {friend}.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "Alice went to lunch with Bob.",
+                "choices": [
+                    "f\"{name} went to {meal} with {friend}.\"",
+                    "\"{name} went to {meal} with {friend}.\"",
+                    "{name} went to {meal} with {friend}.",
+                    "'name' went to 'meal' with 'friend'.",
+                    "name went to meal with friend.",
+                    "\"Alice\" went to \"lunch\" with 'Bob'.",
+                    "'Alice' went to 'lunch' with 'Bob'.",
+                    "\"Alice went to lunch with Bob.\"",
+                    "Alice went to lunch with Bob.",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Alice went to lunch with Bob."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "introduce_f_strings"
+    },
+    {
+        "page": "f-strings",
+        "program": [
+            "name = \"Alice\"",
+            "age = 20",
+            "print(\"Hello \" + name + \". You are \" + age + \" years old.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "\"Hello \" + name + \". You are \" + age + \" years old.\"",
+                    "Hello name. You are age years old.",
+                    "Hello Alice. You are 20 years old.",
+                    "Hello 'Alice'. You are 20 years old.",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "codeSource": "editor",
+                    "color": "red",
+                    "isTraceback": true,
+                    "text": "TypeError: can only concatenate str (not \"int\") to str",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "can only concatenate str (not \"int\") to str",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hello &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">name</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. You are &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">age</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; years old.&quot;</span><span class=\"p\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 3,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">age</span>\n",
+                                            "value": "<span class=\"mi\">20</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">name</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Alice&#39;</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>You tried to concatenate (add) two different types of objects:\na string (<code>str</code>) and an integer (<code>int</code>)</p>",
+                            "tail": ""
+                        }
+                    ]
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "concatenate_string_number"
+    },
+    {
+        "get_solution": [
+            "name = \"Alice\"",
+            "age = 20",
+            "print(f'Hello {name}. You are {age} years old.')"
+        ],
+        "page": "f-strings",
+        "program": [
+            "name = \"Alice\"",
+            "age = 20",
+            "print(f'Hello {name}. You are {age} years old.')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Hello Alice. You are 20 years old."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "basic_f_string_exercise"
+    },
+    {
+        "page": "f-strings",
+        "program": [
+            "f\"2 * 3 + 4 is equal to {2 * 3 + 4}\""
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "'2 * 3 + 4 is equal to 10'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "eval_expr_inside_f_string"
+    },
+    {
+        "get_solution": [
+            "print(f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\")"
+        ],
+        "page": "f-strings",
+        "program": [
+            "people = ['Alice', 'Bob', 'Charlie']",
+            "print(f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "There are 3 people waiting, the first one's name is Alice."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "fix_broken_program"
     },
     {
         "page": "Introducing Nested Loops",
@@ -5139,20 +6472,36 @@
             "passed": false,
             "result": [
                 {
+                    "codeSource": "shell",
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": " File \"my_program.py\", line 1, in <module>\n"
-                },
-                {
-                    "color": "red",
-                    "text": "-->    1 | \u001b[38;5;15mprint\u001b[39m\u001b[38;5;15m(\u001b[39m\u001b[38;5;141m1\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;197m+\u001b[39m\u001b[38;5;15m \u001b[39m\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mx\u001b[39m\u001b[38;5;186m\"\u001b[39m\u001b[38;5;15m)\u001b[39m\n"
-                },
-                {
-                    "color": "red",
-                    "text": "TypeError: unsupported operand type(s) for +: 'int' and 'str'\n"
+                    "isTraceback": true,
+                    "text": "TypeError: unsupported operand type(s) for +: 'int' and 'str'",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "unsupported operand type(s) for +: 'int' and 'str'",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi\">1</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;x&quot;</span><span class=\"p\">)</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": []
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>)</p>",
+                            "tail": ""
+                        }
+                    ]
                 },
                 {
                     "color": "white",
@@ -8736,43 +10085,6 @@
                 {
                     "color": "white",
                     "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "times_table_exercise"
-    },
-    {
-        "page": "Introducing Nested Loops",
-        "program": [
-            "2 x 3"
-        ],
-        "response": {
-            "message": "<p>To multiply numbers, use <code>*</code></p>",
-            "passed": false,
-            "result": [
-                {
-                    "color": "red",
-                    "text": "Traceback (most recent call last):\n"
-                },
-                {
-                    "color": "red",
-                    "text": "  File \"my_program.py\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    2 x 3\n"
-                },
-                {
-                    "color": "red",
-                    "text": "      ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: invalid syntax\n"
                 },
                 {
                     "color": "white",
@@ -15271,6 +16583,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?",
+                "choices": [
+                    "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?",
+                    "Hello Alice!\nHello Bob!\nHow are you?",
+                    "Hello Alice!\nHow are you?\nHello Bob!",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -15472,6 +16793,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Hello\nHello\nHello",
+                "choices": [
+                    "3\n3\n3",
+                    "3",
+                    "Hello\nHello\nHello",
+                    "Hello",
+                    "H\ne\nl\nl\no",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -15791,6 +17123,15 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "5\n10",
+                "choices": [
+                    "5\n5",
+                    "5\n10",
+                    "10\n10",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -15829,6 +17170,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "5",
+                "choices": [
+                    "5",
+                    "10",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -15901,6 +17250,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "OK\nOK",
+                "choices": [
+                    "Error! 4 != 4\nError! 10 != 10",
+                    "Error! 2 != 4\nError! 5 != 10",
+                    "Error! 2 != 4",
+                    "OK\nOK",
+                    "OK",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -15938,6 +17298,16 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "Error! 6 != 4\nError! 15 != 10",
+                "choices": [
+                    "Error! 4 != 4\nError! 10 != 10",
+                    "Error! 6 != 4\nError! 15 != 10",
+                    "Error! 4 != 6\nError! 10 != 15",
+                    "OK\nOK",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16182,6 +17552,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16207,6 +17585,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16232,6 +17618,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16568,6 +17962,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16593,6 +17995,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16618,6 +18028,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16697,23 +18115,11 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "Traceback (most recent call last):\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
                 },
                 {
                     "color": "red",
-                    "text": "  File \"my_program.py\", line 1\n"
-                },
-                {
-                    "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n"
-                },
-                {
-                    "color": "red",
-                    "text": "                                 ^\n"
-                },
-                {
-                    "color": "red",
-                    "text": "SyntaxError: invalid syntax\n"
+                    "text": "\n"
                 },
                 {
                     "color": "white",
@@ -16850,6 +18256,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",
@@ -16875,6 +18289,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "color": "white",

@@ -36,17 +36,15 @@ import {animateScroll} from "react-scroll";
 import {HintsPopup} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import {ErrorModal, FeedbackModal} from "./Feedback";
+import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import _ from "lodash";
 
 
-class AppComponent extends React.Component {
-  constructor(props) {
-    super(props)
-    this.terminal = React.createRef()
-  }
+export const terminalRef = React.createRef();
 
+
+class AppComponent extends React.Component {
   runCode({code, source}) {
     const shell = source === "shell";
     if (!shell && !code) {
@@ -61,18 +59,14 @@ class AppComponent extends React.Component {
       {code, source, page_index: bookState.page_index, step_index: stepIndex()},
       (data) => {
         if (!shell) {
-          this.terminal.current.clearStdout();
+          terminalRef.current.clearStdout();
         }
         bookSetState("processing", false);
 
         ranCode(data);
-        const terminal = this.terminal.current;
-        terminal.pushToStdout(data.result);
-        animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
-        terminal.focusTerminal();
-        
-        if (data.birdseye_url) {
-          window.open(data.birdseye_url);
+        if (!data.prediction.choices) {
+          showCodeResult(data);
+          terminalRef.current.focusTerminal();
         }
       },
     );
@@ -84,11 +78,11 @@ class AppComponent extends React.Component {
       editorContent,
       messages,
       pages,
-      solution,
       requestingSolution,
       user,
       rpcError,
       page_index,
+      prediction,
     } = this.props;
     const page = pages[page_index];
     const step_index = stepIndex();
@@ -100,6 +94,7 @@ class AppComponent extends React.Component {
     const showPythonTutor = page_index >= _.findIndex(pages, {slug: "UnderstandingProgramsWithPythonTutor"});
     const showBirdseye = page_index >= _.findIndex(pages, {slug: "IntroducingBirdseye"});
 
+    const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
       <div className="book-text markdown-body"
            onCopy={checkCopy}>
@@ -136,10 +131,16 @@ class AppComponent extends React.Component {
         }
         <div>
           {page_index > 0 &&
-          <button className="btn btn-primary btn-sm" onClick={() => movePage(-1)}>Previous</button>}
+          <button className="btn btn-primary btn-sm previous-button"
+                  onClick={() => movePage(-1)}>
+            Previous
+          </button>}
           {" "}
           {page_index < pages.length - 1 && step_index === page.steps.length - 1 &&
-          <button className="btn btn-success" onClick={() => movePage(+1)}>Next</button>}
+          <button className="btn btn-success next-button"
+                  onClick={() => movePage(+1)}>
+            Next
+          </button>}
         </div>
         <br/>
         {
@@ -149,6 +150,7 @@ class AppComponent extends React.Component {
       <div className="ide">
         <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
           <button
+            disabled={cantUseEditor}
             className="btn btn-primary"
             onClick={() => {
               this.runCode({source: "editor"});
@@ -161,6 +163,7 @@ class AppComponent extends React.Component {
 
           {showSnoop &&
           <button
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "snoop"})
@@ -173,6 +176,7 @@ class AppComponent extends React.Component {
 
           {showPythonTutor &&
           <button
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "pythontutor"});
@@ -198,22 +202,25 @@ class AppComponent extends React.Component {
 
           {showBirdseye &&
           <button
+            disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
               this.runCode({source: "birdseye"})
             }}
           >
-            {<img
+            <img
               src={birdseyeIcon}
               width={20}
               height={20}
               alt="birdseye logo"
-              style={{position: "relative", top: "-2px"}}/>} Bird's Eye
+              style={{position: "relative", top: "-2px"}}
+            />
+            Bird's Eye
           </button>}
 
         </div>
         <div className="editor-and-terminal">
-          <div className={"editor " + (showEditor ? "" : "invisible")}>
+          {showEditor && <div className="editor">
             <AceEditor
               mode="python"
               theme="monokai"
@@ -230,14 +237,16 @@ class AppComponent extends React.Component {
               }}
               fontSize="15px"
               setOptions={{
-                fontFamily: "monospace"
+                fontFamily: "monospace",
+                showPrintMargin: false,
               }}
+              readOnly={cantUseEditor}
             />
-          </div>
-          <div className="terminal">
+          </div>}
+          <div className="terminal" style={{height: showEditor ? "49%" : "100%"}}>
             <Terminal
               onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
-              ref={this.terminal}
+              ref={terminalRef}
             />
           </div>
         </div>
@@ -247,7 +256,7 @@ class AppComponent extends React.Component {
         hints={step.hints}
         numHints={numHints}
         requestingSolution={requestingSolution}
-        solution={solution}
+        solution={step.solution}
       />
 
       <MenuPopup
@@ -260,7 +269,7 @@ class AppComponent extends React.Component {
 }
 
 const StepButton = ({delta, label}) =>
-  <button className="btn btn-danger btn-sm"
+  <button className={`btn btn-danger btn-sm button-${label.replace(" ", "-").toLowerCase()}`}
           onClick={() => moveStep(delta)}>
     {label}
   </button>
@@ -298,6 +307,7 @@ const MenuPopup = ({user}) =>
             trigger={<a href="#"><FontAwesomeIcon icon={faBug}/> Feedback </a>}
             modal
             closeOnDocumentClick
+            contentStyle={feedbackContentStyle}
           >
             {close => <FeedbackModal close={close}/>}
           </Popup>
@@ -362,3 +372,14 @@ export const App = connect(
     rpcError: state.rpc.error,
   }),
 )(AppComponent);
+
+
+export const showCodeResult = (data) => {
+  const terminal = terminalRef.current;
+  terminal.pushToStdout(data.result);
+  animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
+
+  if (data.birdseye_url) {
+    window.open(data.birdseye_url);
+  }
+}

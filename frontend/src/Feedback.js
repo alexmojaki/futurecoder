@@ -105,8 +105,15 @@ export const ErrorModal = ({error}) => {
       open={true}
       closeOnDocumentClick
       onClose={() => rpcStateSet("error", null)}
+      contentStyle={feedbackContentStyle}
     >
       {close => <FeedbackModal close={close} error={error}/>}
     </Popup>
   )
 };
+
+
+export const feedbackContentStyle = {
+  maxHeight: "90vh",
+  overflow: "auto",
+}

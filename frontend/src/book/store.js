@@ -2,6 +2,7 @@ import {ipush, iremove, iset, redact} from "../frontendlib";
 import {rpc} from "../rpc";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
+import {terminalRef} from "../App";
 
 const initialState = {
   server: {
@@ -17,6 +18,7 @@ const initialState = {
           text: "",
           hints: [],
           slug: "loading_placeholder",
+          solution: null,
         }
       ],
     }
@@ -30,18 +32,21 @@ const initialState = {
   editorContent: "",
   messages: [],
   pastMessages: [],
-  requestingSolution: false,
-  solution: {
-    tokens: [],
-    maskedIndices: [],
-    mask: [],
-  }
+  requestingSolution: 0,
+  prediction: {
+    choices: null,
+    answer: "",
+    wrongAnswers: [],
+    userChoice: "",
+    state: "hidden",
+    codeResult: {},
+  },
 };
 
 
-const {reducer, makeAction, setState, localState} = redact('book', initialState, {dispatched: true});
+const {reducer, makeAction, setState, localState, statePush} = redact('book', initialState, {dispatched: true});
 
-export {reducer as bookReducer, setState as bookSetState, localState as bookState};
+export {reducer as bookReducer, setState as bookSetState, localState as bookState, statePush as bookStatePush};
 
 export const stepIndex = (state = localState) => state.server.pages_progress[state.page_index];
 
@@ -98,29 +103,50 @@ export const showHint = makeAction(
   },
 );
 
+export const scrollToNextStep = () => {
+  setTimeout(() =>
+      scroller.scrollTo(`step-text-${stepIndex()}`, {
+        duration: 1000,
+        smooth: true,
+      }),
+    500,
+  )
+};
+
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
     if (value.passed) {
-      setTimeout(() =>
-          scroller.scrollTo(`step-text-${stepIndex()}`, {
-            duration: 1000,
-            smooth: true,
-          }),
-        500,
-      )
+      scrollToNextStep();
 
       state = {
         ...state,
-        ..._.pick(initialState, (
-          "numHints messages solution " +
-          "requestingSolution").split(" ")),
-        server: value.state,
+        ..._.pick(initialState,
+          "numHints messages requestingSolution".split(" ")),
+        prediction: {
+          ...value.prediction,
+          userChoice: "",
+          wrongAnswers: [],
+          state: value.prediction.choices ? "waiting" : "hidden",
+          codeResult: value,
+        },
         processing: false,
       };
     }
     for (const message of value.messages) {
       state = addMessageToState(state, message);
+    }
+
+    if (value.prediction.choices) {
+      const scrollInterval = setInterval(() => {
+        animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current});
+      }, 30);
+      setTimeout(() => clearInterval(scrollInterval), 1300);
+    } else {
+      state = {
+        ...state,
+        server: value.state,
+      }
     }
     return state;
   },
@@ -145,26 +171,17 @@ export const closeMessage = makeAction(
   (state, {value}) => iremove(state, "messages", value)
 )
 
-export const getSolution = () => {
-  rpc("get_solution", {
-      page_index: localState.page_index,
-      step_index: stepIndex(),
-    },
-    (data) => {
-      setState('solution', data)
-    },
-  );
-}
-
 export const revealSolutionToken = makeAction(
   "REVEAL_SOLUTION_TOKEN",
   (state) => {
-    const indices = state.solution.maskedIndices;
+    const solution_path = ["pages", state.page_index, "steps", stepIndex(state), "solution"];
+    const indices_path = [...solution_path, "maskedIndices"]
+    const indices = _.get(state, indices_path);
     if (!indices.length) {
       return state;
     }
-    state = iremove(state, "solution.maskedIndices", 0);
-    state = iset(state, ["solution", "mask", indices[0]], false);
+    state = iremove(state, indices_path, 0);
+    state = iset(state, [...solution_path, "mask", indices[0]], false);
     return state;
   }
 )
@@ -173,3 +190,15 @@ export const setDeveloperMode = (value) => {
   rpc("set_developer_mode", {value});
   setState("user.developerMode", value);
 }
+
+export const reorderSolutionLines = makeAction(
+  "REORDER_SOLUTION_LINES",
+  (state, {startIndex, endIndex}) => {
+    const path = ["pages", state.page_index, "steps", stepIndex(state), "solution", "lines"];
+    const result = Array.from(_.get(state, path));
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+    return iset(state, path, result);
+  },
+  (startIndex, endIndex) => ({startIndex, endIndex})
+)

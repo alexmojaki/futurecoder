@@ -31,8 +31,7 @@
       width: 100%;
       position: absolute;
       bottom: 0;
-      top: 51%;
-      
+
       > div[name=react-console-emulator] {
         height: 100%;
         min-height: unset !important;
@@ -65,12 +64,140 @@
     }
   }
 
-  .terminal p code {
-    color: white;
-  }
-
   .book-text {
     margin-bottom: 3em;
+  }
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+.output-prediction {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  transition: all 1s linear;
+  overflow: hidden;
+  margin-bottom: 6em;
+
+  &.show {
+    opacity: 1;
+  }
+
+  &.fading {
+    opacity: 0;
+  }
+
+  .prediction-choice {
+    // Center radio button vertically against multiline text
+    display: flex;
+    align-items: center;
+
+    margin: 5px;
+    padding: 8px 5px 8px 15px;
+    border-radius: 4px;
+    border: 2px #464f52 solid;
+
+    .prediction-label {
+      white-space: pre;
+      display: inline-block;
+      margin-left: 15px;
+    }
+
+    &.prediction-correct {
+      border: 2px #56ff94 solid;
+      background: #004200;
+    }
+
+    &.prediction-wrong {
+      border: 2px #ff0000 solid;
+      background: #660000;
+    }
+
+    &.prediction-selected {
+      border: 2px #0090ff solid;
+      background: #003866;
+    }
+  }
+
+  .submit-prediction {
+    position: fixed;
+    bottom: 2vh;
+    background:rgb(33, 33, 33);;
+    padding: 0.5em 0 0.5em 1em;
+    border: 2px #464f52 solid;
+    border-radius: 4px;
+    width: 40vw;
+
+    button {
+      margin-top: 0.5em;
+
+      &:disabled {
+        opacity: 1;
+        background: #1c58b1;
+        border-color: #1c58b1;
+      }
+    }
+  }
+}
+
+.tracebacks-container {
+  .traceback {
+    .traceback-frame {
+      border: 1px solid grey;
+      border-radius: 8px;
+      padding: 0.5em;
+      margin-top: 3px;
+
+      .traceback-frame-name {
+        font-weight: bold;
+      }
+
+      table {
+        margin-top: 0.25em;
+      }
+
+      .traceback-variables-table {
+        td {
+          border: 1px solid grey;
+          padding: 4px;
+          white-space: pre;
+        }
+
+        td.traceback-variable-name {
+          padding-right: 2em;
+        }
+
+      }
+
+      .traceback-line-content {
+        padding-left: 8px;
+        white-space: pre;
+      }
+
+      .traceback-lineno {
+        background: #2F3129;
+        color: #8F908A;
+        min-width: 32px;
+        padding-right: 11px;
+        text-align: right;
+      }
+
+    }
+
+    .traceback-repeated-frames {
+      margin: 1.5em;
+    }
+  }
+  .traceback-exception {
+    font-size: 120%;
+    color: red;
+    padding: 0.5em;
+  }
+
+  .traceback-tail {
+    margin: 1em;
   }
 }
 
@@ -86,11 +213,6 @@
       display: none;
     }
   }
-}
-
-.popup-content {
-  max-height: 90vh;
-  overflow: auto;
 }
 
 .my-popup-content {
@@ -128,6 +250,7 @@
   overflow: auto;
   max-height: 80vh;
   max-width: 40vw;
+  user-select: none;
 }
 
 .settings-modal {
@@ -140,8 +263,14 @@
 }
 
 .solution-token-hidden, .solution-token-hidden::selection {
-  background: black;
-  color: black;
+  background: #555;
+  color: #555;
+}
+
+.markdown-body .parsons-droppable pre {
+  margin-bottom: 2px;
+  padding: 8px;
+  user-select: none;
 }
 
 // Spinner from loading.io

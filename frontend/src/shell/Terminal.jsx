@@ -10,6 +10,7 @@ import scrollHistory from './handlers/scrollHistory'
 import sourceStyles from './defs/styles/Terminal'
 import types from './defs/types/Terminal'
 import {bookState} from "../book/store";
+import {OutputPrediction} from "../OutputPrediction";
 
 export default class Terminal extends Component {
   constructor(props) {
@@ -43,7 +44,8 @@ export default class Terminal extends Component {
   focusTerminal() {
     // Only focus the terminal if text isn't being copied
     const isTextSelected = window.getSelection().type === 'Range';
-    if (!isTextSelected) this.terminalInput.current.focus()
+    const input = this.terminalInput.current;
+    if (!isTextSelected && input) input.focus()
   }
 
   /* istanbul ignore next: Covered by interactivity tests */
@@ -91,7 +93,7 @@ export default class Terminal extends Component {
 
   pushToStdout(message, rawInput) {
     const {stdout, history} = this.state;
-    
+
     if (message instanceof Array) {
       stdout.push(...message);
     } else {
@@ -161,7 +163,12 @@ export default class Terminal extends Component {
       this.props.noAutomaticStdout
     );
 
-    this.setState(toUpdate)
+    this.setState(toUpdate);
+    const input = this.terminalInput.current;
+    setTimeout(() => {
+      // Move cursor to end
+      input.selectionStart = input.selectionEnd = 10000;
+    }, 30);
   }
 
   /* istanbul ignore next: Covered by interactivity tests */
@@ -232,6 +239,7 @@ export default class Terminal extends Component {
               <div/>
             </div>}
 
+            {bookState.prediction.state !== "waiting" && bookState.prediction.state !== "showingResult" &&
             <input
               ref={this.terminalInput}
               name={'react-console-emulator__input'}
@@ -242,7 +250,14 @@ export default class Terminal extends Component {
               autoComplete={'off'}
               disabled={bookState.processing}
             />
+            }
           </div>
+
+          {
+            bookState.prediction.state !== "hidden" &&
+            <OutputPrediction prediction={bookState.prediction}/>
+
+          }
         </div>
       </div>
     )
