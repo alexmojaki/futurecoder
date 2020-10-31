@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 import pytest
+from littleutils import only
 
 from main.text import pages
 from main.workers import master
@@ -41,9 +42,8 @@ def test_steps(api):
                     page_index=page_index,
                     step_index=step_index,
                 )
-                if "state" not in response:
-                    pytest.fail(response)
 
+                assert "state" in response
                 state = response.pop("state")
                 for line in response["result"]:
                     line["text"] = normalise_output(line["text"])
@@ -59,19 +59,25 @@ def test_steps(api):
                 )
                 transcript.append(transcript_item)
                 is_message = substep in step.messages
+
                 if is_message:
+                    response["message"] = only(response.pop("messages"))
                     assert response["message"] == substep.text
-                elif step.get_solution:
-                    get_solution = "".join(step.get_solution["tokens"])
-                    assert "def solution(" not in get_solution
-                    assert "returns_stdout" not in get_solution
-                    assert get_solution.strip() in program
-                    transcript_item["get_solution"] = get_solution.splitlines()
-                    if step.parsons_solution:
-                        is_function = transcript_item["get_solution"][0].startswith(
-                            "def "
-                        )
-                        assert len(step.get_solution["lines"]) >= 4 + is_function
+                else:
+                    assert response.pop("messages") == []
+                    response["message"] = ""
+
+                    if step.get_solution:
+                        get_solution = "".join(step.get_solution["tokens"])
+                        assert "def solution(" not in get_solution
+                        assert "returns_stdout" not in get_solution
+                        assert get_solution.strip() in program
+                        transcript_item["get_solution"] = get_solution.splitlines()
+                        if step.parsons_solution:
+                            is_function = transcript_item["get_solution"][0].startswith(
+                                "def "
+                            )
+                            assert len(step.get_solution["lines"]) >= 4 + is_function
 
                 assert response["passed"] == (not is_message)
                 assert step_index + response["passed"] == state["pages_progress"][page_index]
