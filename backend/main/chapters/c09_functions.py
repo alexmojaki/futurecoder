@@ -23,7 +23,7 @@ Run the code to see what happens.
 
         def program(self):
             def greet(name):
-                print("Hello " + name + "!")
+                print(f"Hello {name}!")
 
             greet("Alice")
             greet("Bob")
@@ -36,7 +36,7 @@ which can contain one or more statements.
 Add another statement to the function so that it looks like this:
 
     def greet(name):
-        print("Hello " + name + "!")
+        print(f"Hello {name}!")
         print("How are you?")
 
 Then run the program again.
@@ -62,7 +62,7 @@ Hello Bob!
 
         def program(self):
             def greet(name):
-                print("Hello " + name + "!")
+                print(f"Hello {name}!")
                 print("How are you?")
 
             greet("Alice")
@@ -74,11 +74,11 @@ Note how the output of the program changed. `How are you?` is printed twice. You
 equivalent to this:
 
     name = "Alice"
-    print("Hello " + name + "!")
+    print(f"Hello {name}!")
     print("How are you?")
 
     name = "Bob"
-    print("Hello " + name + "!")
+    print(f"Hello {name}!")
     print("How are you?")
 
 This shows one of the most useful things about functions. They let you reuse the same code multiple times without
@@ -113,7 +113,7 @@ You should still call the function twice after defining it, with arguments `"Ali
 
         def program(self):
             def say_hello(name):
-                print("Hello " + name + "!")
+                print(f"Hello {name}!")
                 print("How are you?")
 
             say_hello("Alice")
@@ -139,7 +139,7 @@ You should still have two statements in the function body, including `print("How
 
         def program(self):
             def say_hello(person_name):
-                print("Hello " + person_name + "!")
+                print(f"Hello {person_name}!")
                 print("How are you?")
 
             say_hello("Alice")
@@ -627,8 +627,6 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
             ("DANGER", 4): "!!!! DANGER !!!!",
         }
 
-        # TODO message: catch return inside loop
-
         def solution(self):
             def surround(string, sides):
                 return sides + string + sides
@@ -640,6 +638,32 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
                 return string
 
             return alert
+
+        class catch_return_inside_loop(MessageStep):
+            """
+In the `alert` function, you placed your `return` statement at the wrong place!
+Pay attention to your indentations in `alert`. You might be ending a loop too early with `return`.
+            """
+
+            def solution(self):
+                def surround(string, sides):
+                    return sides + string + sides
+
+                def alert(string: str, level: int):
+                    string = surround(string, ' ')
+                    for _ in range(level):
+                        string = surround(string, '!')
+                        return string
+
+                return alert
+
+            def check(self):
+                for node in ast.walk(self.tree):
+                    if isinstance(node, ast.For):
+                        for inner in ast.walk(node):
+                            if isinstance(inner, ast.Return):
+                                return True
+                return False
 
         class used_format(ExerciseStep, MessageStep):
             """

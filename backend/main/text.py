@@ -351,7 +351,7 @@ class Step(ABC):
         if not isinstance(result, dict):
             result = bool(result)
         for message_cls in self.messages:
-            if result == message_cls.after_success and message_cls.check_message(self):
+            if (result is True) == message_cls.after_success and message_cls.check_message(self):
                 return message_cls.message()
         if result is True:
             for d in self.disallowed:
