@@ -12,52 +12,95 @@ class IntroducingNestedLoops(Page):
 You've seen that the indented body of an `if` or a loop can contain any kind of statement, including more `if` statements and loops. In particular a loop can contain another loop. Here's an example:
 
 __program_indented__
-        """
 
-        # TODO after adding quotes chapter:
-        #   collapse first three steps into one, add predicted output
-
-        def program(self):
-            for letter in "ABC":
-                print(letter)
-                for number in range(4):
-                    print(number)
-
-    class first_nested_loop_with_line(VerbatimStep):
-        """
 This is called a *nested loop*. Nothing about it is really new, it's just worth understanding properly because it can be very useful for writing interesting programs.
-
-Let's add a line to separate sections of the output:
-
-__program_indented__
         """
 
         def program(self):
             for letter in "ABC":
                 print(letter)
                 for number in range(4):
-                    print(number)
+                    print(f'{letter} {number}')
                 print('---')
 
-    class first_nested_loop_with_two_arg_print(VerbatimStep):
-        """
-Make sure you fully grasp what's going on. `print(letter)` and `print('---')` each run 3 times, because their indentation puts them in the *outer loop*. `print(number)` is called 3 × 4 = 12 times, because it's in the *inner loop* `for number in range(4):` which has 4 iterations but is itself in the outer loop so it runs 3 times.
-
-One more tweak:
-
-__program_indented__
-        """
-
-        def program(self):
-            for letter in "ABC":
-                print(letter)
-                for number in range(4):
-                    print(letter, number)
-                print('---')
+        predicted_output_choices = [
+            """\
+A 0
+A 1
+A 2
+A 3
+---
+B 0
+B 1
+B 2
+B 3
+---
+C 0
+C 1
+C 2
+C 3
+---
+""", """\
+A
+A 0
+A 1
+A 2
+A 3
+---
+B
+B 0
+B 1
+B 2
+B 3
+---
+C
+C 0
+C 1
+C 2
+C 3
+---
+""", """\
+A 1
+A 2
+A 3
+A 4
+---
+B 1
+B 2
+B 3
+B 4
+---
+C 1
+C 2
+C 3
+C 4
+---
+""", """\
+A
+B
+C
+---
+A 0
+B 0
+C 0
+---
+A 1
+B 1
+C 1
+---
+A 2
+B 2
+C 2
+---
+A 3
+B 3
+C 3
+"""
+        ]
 
     class times_table_exercise(ExerciseStep):
         """
-`print(letter, number)` gives `print` two arguments. `print` can take any number of arguments, and it will output them all on the same line, with spaces in between. If you try using `print(letter + ' ' + number)` instead you'll get an error, because you can't add strings and numbers. We'll come back to that later.
+Make sure you fully grasp what's going on. `print(letter)` and `print('---')` each run 3 times, because their indentation puts them in the *outer loop*. `print(f'{letter} {number}')` is called 3 × 4 = 12 times, because it's in the *inner loop* `for number in range(4):` which has 4 iterations but is itself in the outer loop so it runs 3 times.
 
 Let's put this to use! Suppose you're a teacher and you need to print out all the multiplication tables from 1 to 12 for your students. You don't want to write them manually, but you can write a program to do it for you! Your program output should look like this including the lines of dashes:
 
@@ -118,7 +161,7 @@ You want something like `for x in range(n):`.
 This will start with `x = 0`, but there's an easy workaround for that.
 You can just add 1 to `x`.
 Use `*` to multiply numbers.
-Use `print()` with several arguments separated by commas to print several things on one line.
+Use an f-string with several variables.
 Remember to print a line with the correct number of dashes after each section.
 Make sure each line is in the correct loop and has the right amount of indentation.
         """
@@ -143,10 +186,194 @@ Make sure each line is in the correct loop and has the right amount of indentati
                 left += 1
                 for right in range(12):
                     right += 1
-                    print(left, 'x', right, '=', left * right)
+                    print(f'{left} x {right} = {left * right}')
                 print('----------')
 
-        # TODO message: catch left += 1 in inner loop instead of the outer loop
+        class adding_one_in_wrong_loop(ExerciseStep, MessageStep):
+            """
+You added 1 to your outer loop variable at the wrong place!
+Where should you do that instead to fix it?
+            """
+
+            def solution(self):
+                for left in range(12):
+                    for right in range(12):
+                        left += 1
+                        right += 1
+                        print(f'{left} x {right} = {left * right}')
+                    print('----------')
+
+            def check(self):
+                result = ''
+                for left in range(12):
+                    for right in range(12):
+                        left += 1
+                        right += 1
+                        result += f"{left} x {right} = {left * right}"
+                        result += '\n'
+                    result += '----------\n'
+                return self.result == result
+
+            tests = {
+                (): """\
+1 x 1 = 1
+2 x 2 = 4
+3 x 3 = 9
+4 x 4 = 16
+5 x 5 = 25
+6 x 6 = 36
+7 x 7 = 49
+8 x 8 = 64
+9 x 9 = 81
+10 x 10 = 100
+11 x 11 = 121
+12 x 12 = 144
+----------
+2 x 1 = 2
+3 x 2 = 6
+4 x 3 = 12
+5 x 4 = 20
+6 x 5 = 30
+7 x 6 = 42
+8 x 7 = 56
+9 x 8 = 72
+10 x 9 = 90
+11 x 10 = 110
+12 x 11 = 132
+13 x 12 = 156
+----------
+3 x 1 = 3
+4 x 2 = 8
+5 x 3 = 15
+6 x 4 = 24
+7 x 5 = 35
+8 x 6 = 48
+9 x 7 = 63
+10 x 8 = 80
+11 x 9 = 99
+12 x 10 = 120
+13 x 11 = 143
+14 x 12 = 168
+----------
+4 x 1 = 4
+5 x 2 = 10
+6 x 3 = 18
+7 x 4 = 28
+8 x 5 = 40
+9 x 6 = 54
+10 x 7 = 70
+11 x 8 = 88
+12 x 9 = 108
+13 x 10 = 130
+14 x 11 = 154
+15 x 12 = 180
+----------
+5 x 1 = 5
+6 x 2 = 12
+7 x 3 = 21
+8 x 4 = 32
+9 x 5 = 45
+10 x 6 = 60
+11 x 7 = 77
+12 x 8 = 96
+13 x 9 = 117
+14 x 10 = 140
+15 x 11 = 165
+16 x 12 = 192
+----------
+6 x 1 = 6
+7 x 2 = 14
+8 x 3 = 24
+9 x 4 = 36
+10 x 5 = 50
+11 x 6 = 66
+12 x 7 = 84
+13 x 8 = 104
+14 x 9 = 126
+15 x 10 = 150
+16 x 11 = 176
+17 x 12 = 204
+----------
+7 x 1 = 7
+8 x 2 = 16
+9 x 3 = 27
+10 x 4 = 40
+11 x 5 = 55
+12 x 6 = 72
+13 x 7 = 91
+14 x 8 = 112
+15 x 9 = 135
+16 x 10 = 160
+17 x 11 = 187
+18 x 12 = 216
+----------
+8 x 1 = 8
+9 x 2 = 18
+10 x 3 = 30
+11 x 4 = 44
+12 x 5 = 60
+13 x 6 = 78
+14 x 7 = 98
+15 x 8 = 120
+16 x 9 = 144
+17 x 10 = 170
+18 x 11 = 198
+19 x 12 = 228
+----------
+9 x 1 = 9
+10 x 2 = 20
+11 x 3 = 33
+12 x 4 = 48
+13 x 5 = 65
+14 x 6 = 84
+15 x 7 = 105
+16 x 8 = 128
+17 x 9 = 153
+18 x 10 = 180
+19 x 11 = 209
+20 x 12 = 240
+----------
+10 x 1 = 10
+11 x 2 = 22
+12 x 3 = 36
+13 x 4 = 52
+14 x 5 = 70
+15 x 6 = 90
+16 x 7 = 112
+17 x 8 = 136
+18 x 9 = 162
+19 x 10 = 190
+20 x 11 = 220
+21 x 12 = 252
+----------
+11 x 1 = 11
+12 x 2 = 24
+13 x 3 = 39
+14 x 4 = 56
+15 x 5 = 75
+16 x 6 = 96
+17 x 7 = 119
+18 x 8 = 144
+19 x 9 = 171
+20 x 10 = 200
+21 x 11 = 231
+22 x 12 = 264
+----------
+12 x 1 = 12
+13 x 2 = 26
+14 x 3 = 42
+15 x 4 = 60
+16 x 5 = 80
+17 x 6 = 102
+18 x 7 = 126
+19 x 8 = 152
+20 x 9 = 180
+21 x 10 = 210
+22 x 11 = 242
+23 x 12 = 276
+----------
+"""
+            }
 
         class too_long(MessageStep):
             """
@@ -376,7 +603,7 @@ Note that "Alice vs Bob" and "Bob vs Alice" are both in the list, but there's no
             for player1 in players:
                 for player2 in players:
                     if player1 != player2:
-                        print(player1, 'vs', player2)
+                        print(f'{player1} vs {player2}')
 
         hints = """
 Think about how you would do this manually and systematically, with a pencil and paper.
@@ -392,6 +619,21 @@ Bob vs Alice
 Bob vs Charlie
 Charlie vs Alice
 Charlie vs Bob
+            """
+             ),
+            (['Charlie', 'Alice', 'Dylan', 'Bob'], """\
+Charlie vs Alice
+Charlie vs Dylan
+Charlie vs Bob
+Alice vs Charlie
+Alice vs Dylan
+Alice vs Bob
+Dylan vs Charlie
+Dylan vs Alice
+Dylan vs Bob
+Bob vs Charlie
+Bob vs Alice
+Bob vs Dylan
             """
              )]
 
@@ -427,8 +669,6 @@ That applies to all for loops.
 One for loop inside another for loop is no longer enough.
 You have to go deeper. 
         """
-
-        # TODO message: catch spaces between letters in output, e.g. print(c1, c2, c3, c4)
 
         def solution(self, letters: str):
             for c1 in letters:
@@ -627,7 +867,7 @@ in `players` and moving right. For example, for the above, your program should p
             for i in range(len(players)):
                 for j in range(len(players)):
                     if i < j:
-                        print(players[i], 'vs', players[j])
+                        print(f'{players[i]} vs {players[j]}')
 
         hints = """
 You'll need a for loop inside a for loop like before.
@@ -674,7 +914,7 @@ Excellent! The solution goes like this:
     for i in range(len(players)):
         for j in range(len(players)):
             if i < j:
-                print(players[i], 'vs', players[j])
+                print(f'{players[i]} vs {players[j]}')
 """
 
 
