@@ -203,17 +203,6 @@ Where should you do that instead to fix it?
                         print(f'{left} x {right} = {left * right}')
                     print('----------')
 
-            def check(self):
-                result = ''
-                for left in range(12):
-                    for right in range(12):
-                        left += 1
-                        right += 1
-                        result += f"{left} x {right} = {left * right}"
-                        result += '\n'
-                    result += '----------\n'
-                return self.result == result
-
             tests = {
                 (): """\
 1 x 1 = 1
