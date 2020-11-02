@@ -61,6 +61,11 @@ Here's a more interesting example for you to run:
 __program_indented__
         """
 
+        predicted_output_choices = [
+            'Hello World',
+            'Hello World!',
+        ]
+
         def program(self):
             sentence = 'Hello World'
             excited = True
@@ -75,6 +80,11 @@ __program_indented__
 Change `excited = True` to `excited = False` and run the program again to see what the difference is.
         """
         program_in_text = False
+
+        predicted_output_choices = [
+            'Hello World',
+            'Hello World!',
+        ]
 
         def program(self):
             sentence = 'Hello World'
@@ -133,6 +143,17 @@ that you're *really* excited:
 
 __program_indented__
         """
+        predicted_output_choices = [
+            'Hello World',
+            '!!!!!!!!!!!',
+            'Hello World!!!!!!!!!!!',
+            '!!!!!!!!!!!Hello World',
+            'Hello World!',
+            '!Hello World',
+            '!Hello World!',
+            'H!e!l!l!o! !W!o!r!l!d!',
+            '!H!e!l!l!o! !W!o!r!l!d',
+        ]
 
         def program(self):
             sentence = 'Hello World'
@@ -194,12 +215,18 @@ Run this program:
     __copyable__
     __program_indented__
         """
+        predicted_output_choices = [
+            'Hello World',
+            'ello World',
+            'Hello Worl',
+            'H',
+            'd',
+        ]
 
     class print_tail_snoop(print_tail_base):
         """
-As you can see, it prints everything but the first character. Take some time to understand how this works.
-
-In fact, it's time to introduce a new tool to help you understand programs. Click the 'Snoop' button to run the same program while also showing what's happening.
+Programs are starting to get complicated!
+It's time to introduce a new tool to help you understand programs. Click the 'Snoop' button to run the same program while also showing what's happening.
         """
 
         program_in_text = False
@@ -257,6 +284,8 @@ That means `include` should be `True` at that point.
 Make sure that the code inside `if include:` *doesn't* run after the first iteration.
 That means `include` should be `False` after the first iteration.
         """
+
+        parsons_solution = True
 
         def solution(self, sentence: str):
             include = True
@@ -367,6 +396,12 @@ What happens if you change `excited` to `False`?
         """
         program_in_text = False
 
+        predicted_output_choices = [
+            'Hello World',
+            'Hello World!',
+        ]
+        correct_output = "Error"
+
         # noinspection PyUnboundLocalVariable
         def program(self):
             sentence = 'Hello World'
@@ -386,6 +421,8 @@ If `excited` is true then `char` is defined and everything runs fine. But otherw
 Fix this by adding an `else` clause to the `if` so that if `excited` is false, a full stop (`.`)
 is added to the end of the sentence instead of an exclamation mark (`!`).
         """
+
+        parsons_solution = True
 
         def solution(self, sentence: str, excited: bool):
             if excited:
@@ -419,6 +456,8 @@ Your `if/else` needs to execute different bodies depending on which iteration of
 That means that your `if` condition needs to be a variable that changes inside the loop.
 In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter.
         """
+
+        parsons_solution = True
 
         def solution(self, sentence: str):
             upper = True
@@ -463,6 +502,8 @@ First write a small program which takes a boolean variable and flips it, i.e. if
 You will need to use the variable in the `if` condition and also assign to the same variable in the body.
 Combine that flipping `if/else` with the one that chooses an uppercase or lowercase character.
         """
+
+        parsons_solution = True
 
         def solution(self, sentence: str):
             upper = True
@@ -550,6 +591,8 @@ Now extend the program to also replace `e` with `3` and `a` with `@`.
         hints = """
 You just need to add a few lines of code that are very similar to existing ones.
 """
+
+        parsons_solution = True
 
         def solution(self, name: str):
             new_name = ''
@@ -648,6 +691,8 @@ Now fix the program to replace all characters correctly.
             """),
             "Now make the same kind of change to the code swapping G and C."
         ]
+
+        parsons_solution = True
 
         def solution(self, dna: str):
             opposite_dna = ''
@@ -823,6 +868,8 @@ __program_indented__
 Recall that `elif percentage < 60` after `if percentage < 40` means "if the percentage wasn't less than 40 and also is less than 60", so it will pass for all numbers from 40 to 59 inclusive. Similarly a 'B' is for percentages from 60 to 79, and an 'A' is for any number 80 and up.
         """
 
+        predicted_output_choices = ["F", "C", "B", "A"]
+
         def program(self):
             percentage = 73
 
@@ -852,6 +899,8 @@ it should print `Alice`.
 Try writing a program which prints the smallest of just `x1` and `x2`.
 All you need is a few uses of `<`, `if`, and maybe `else`.
 """
+
+        parsons_solution = True
 
         def solution(self, x1: str, x2: str, x3: str):
             if x1 < x2:

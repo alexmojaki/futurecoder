@@ -232,8 +232,17 @@ Before we look at some more loops, we need to quickly learn another concept. Loo
 
 __program_indented__
 
-What do you think the line `hello = hello + '!'` does? What do you think the program will output? Make a prediction, then run it to find out.
+What do you think the line `hello = hello + '!'` does? Run the program to find out.
         """
+
+        predicted_output_choices = [
+            "Hello\n"
+            "Hello",
+            "Hello\n"
+            "Hello!",
+            "Hello!\n"
+            "Hello!",
+        ]
 
         def program(self):
             hello = 'Hello'
@@ -253,12 +262,36 @@ or:
     temp = hello
     hello = temp + '!'
 
-This is very useful in a loop. Think about what this program will do, then run it:
+This is very useful in a loop. Try out this program:
 
 __program_indented__
 
 By the way, `''` is called the *empty string* - a string containing no characters.
         """
+
+        predicted_output_choices = [
+            "W\n"
+            "o\n"
+            "r\n"
+            "l\n"
+            "d",
+            "World",
+            "W\n"
+            "Wo\n"
+            "Wor\n"
+            "Worl\n"
+            "World\n",
+            "World\n"
+            "Worl\n"
+            "Wor\n"
+            "Wo\n"
+            "W\n",
+            "World\n"
+            "World\n"
+            "World\n"
+            "World\n"
+            "World\n",
+        ]
 
         def program(self):
             name = 'World'
@@ -269,10 +302,27 @@ By the way, `''` is called the *empty string* - a string containing no character
 
     class name_triangle_missing_last_line(VerbatimStep):
         """
-The details in the above program are important. What goes wrong if you swap the last two lines and run this program instead?
+The details in the above program are important. What happens if you swap the last two lines and run this program instead?
 
 __program_indented__
         """
+
+        predicted_output_choices = [
+            "W\n"
+            "Wo\n"
+            "Wor\n"
+            "Worl\n"
+            "World\n",
+            "Wo\n"
+            "Wor\n"
+            "Worl\n"
+            "World\n",
+            "\n"
+            "W\n"
+            "Wo\n"
+            "Wor\n"
+            "Worl\n"
+        ]
 
         def program(self):
             name = 'World'
@@ -402,6 +452,8 @@ You will need to build up a string of dashes (`-`) one character at a time.
 The for loop will create a variable such as `char`, but the program doesn't need to use it.
         """
 
+        parsons_solution = True
+
         def solution(self, name: str):
             line = ''
             for _ in name:
@@ -462,6 +514,8 @@ Note that there is a space between the name and the pipes (`|`).
             (i.e. no spaces around `World`)
             """),
         ]
+
+        parsons_solution = True
 
         def solution(self, name: str):
             line = ''
@@ -544,6 +598,8 @@ Create a variable containing the spaces in the middle and use it many times.
 Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created spaces.
         """
 
+        parsons_solution = True
+
         def solution(self, name: str):
             line = '+' + name + '+'
             spaces = ''
@@ -613,7 +669,9 @@ The body of the loop needs to print the spaces and letter, and also add a space.
 Since the first letter should have no spaces before it, you need to add a space after printing a letter.
         """
 
-        # TODO automatically catch print with multiple args?
+        # TODO message: catch print(spaces, char) instead of print(spaces + char)
+
+        parsons_solution = True
 
         def solution(self, name: str):
             spaces = ''

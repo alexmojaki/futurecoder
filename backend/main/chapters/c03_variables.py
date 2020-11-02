@@ -7,6 +7,15 @@ from astcheck import is_ast_like
 from main.text import MessageStep, Page, Step, VerbatimStep
 
 
+class word_must_be_hello(VerbatimStep):
+    def check(self):
+        if self.console.locals.get("word") != "Hello":
+            return dict(
+                message="Oops, you need to set `word = 'Hello'` before we can continue."
+            )
+        return super().check()
+
+
 class IntroducingVariables(Page):
 
     class word_assign(VerbatimStep):
@@ -20,11 +29,11 @@ __program_indented__
 
         program = "word = 'Hello'"
 
-    class word_check(VerbatimStep):
+    class word_check(word_must_be_hello):
         """
 This creates a variable with the name `word` that refers to the string value `'Hello'`.
 
-Check now that this is true by simply running `__program__` in the shell by itself.
+Now see what happens when you run `__program__` in the shell by itself.
         """
 
         program = "word"
@@ -35,6 +44,8 @@ Good. For comparison, run `__program__` in the shell by itself, with the quotes.
         """
 
         program = "'word'"
+        predicted_output_choices = ["word", "'word'", "Hello", "'Hello'"]
+        correct_output = "'word'"
 
     class sunshine_undefined_check(VerbatimStep):
         """
@@ -44,19 +55,12 @@ Similarly, `'sunshine'` is `'sunshine'`, but what's `__program__` without quotes
         """
 
         program = "sunshine"
+        predicted_output_choices = ["sunshine", "'sunshine'", "Hello", "'Hello'"]
+        correct_output = "Error"
 
     final_text = """
 The answer is that `sunshine` looks like a variable, so Python tries to look up its value, but since we never defined a variable with that name we get an error.
 """
-
-
-class word_must_be_hello(VerbatimStep):
-    def check(self):
-        if self.console.locals.get("word") != "Hello":
-            return dict(
-                message="Oops, you need to set `word = 'Hello'` before we can continue."
-            )
-        return super().check()
 
 
 class UsingVariables(Page):
@@ -77,6 +81,9 @@ Now make a variable called `your_name` whose value is another string.
 
         class assigned_something_else(MessageStep):
             """Put `your_name` before the `=` to create a variable called `your_name`."""
+
+            # TODO this doesn't work if the user enters invalid syntax, e.g.
+            # your name = 3, because check quits early due to a SyntaxError
             program = "foo = 3"
 
             def check(self):
@@ -121,6 +128,8 @@ You can use variables in calculations just like you would use literals. For exam
 
 __program_indented__
         """
+
+        # TODO add predicted output: requires computing choices in worker
 
         program = "'Hello ' + your_name"
 
@@ -220,6 +229,15 @@ Often you will use variables to store the results of calculations. This will hel
 
     __program_indented__
         """
+        
+        predicted_output_choices = [
+            "sentence",
+            "word + ' ' + name",
+            "Hello + ' ' + World",
+            "'Hello' + ' ' + 'World'",
+            "Hello World",
+            "'Hello World'",
+        ]
 
         def program(self):
             word = 'Hello'
@@ -235,6 +253,15 @@ Now `sentence` has the value `'Hello World'` which can be used multiple times. N
     print(sentence)
         """
         program_in_text = False
+
+        predicted_output_choices = [
+            "Hello World\n"
+            "Hello World",
+            "Hello World\n"
+            "Goodbye World",
+            "Goodbye World\n"
+            "Goodbye World",
+        ]
 
         # noinspection PyUnusedLocal
         def program(self):

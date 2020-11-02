@@ -1,13 +1,8 @@
-import inspect
 import json
 import logging
 import traceback
 from datetime import datetime
-from io import StringIO
 from pathlib import Path
-from random import shuffle
-from textwrap import dedent
-from tokenize import Untokenizer, generate_tokens
 from typing import get_type_hints
 from uuid import uuid4
 
@@ -26,7 +21,7 @@ from littleutils import select_attrs, only
 from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
-from main.text import ExerciseStep, clean_program, page_slugs_list, pages, clean_solution_function
+from main.text import page_slugs_list, pages
 from main.utils import highlighted_markdown
 from main.utils.django import PlaceHolderForm
 from main.workers.master import worker_result
@@ -71,11 +66,14 @@ class API:
 
     def run_code(self, code, source, page_index, step_index):
         page_slug = page_slugs_list[page_index]
+        page = pages[page_slug]
+        step_name = pages[page_slug].step_names[step_index]
+        step = getattr(page, step_name)
         entry_dict = dict(
             input=code,
             source=source,
             page_slug=page_slug,
-            step_name=pages[page_slug].step_names[step_index],
+            step_name=step_name,
             user_id=self.user.id,
         )
 
@@ -135,6 +133,10 @@ class API:
             state=self.current_state(),
             birdseye_url=birdseye_url,
             passed=passed,
+            prediction=dict(
+                choices=getattr(step, "predicted_output_choices", None),
+                answer=getattr(step, "correct_output", None),
+            ) if passed else dict(choices=None, answer=None),
         )
 
     def load_data(self):
@@ -183,34 +185,10 @@ class API:
         self.user.save()
 
     def get_solution(self, page_index, step_index: int):
+        # TODO deprecated
         page = pages[page_slugs_list[page_index]]
         step = getattr(page, page.step_names[step_index])
-        if issubclass(step, ExerciseStep):
-            if step.solution.__name__ == "solution":
-                program, _ = clean_program(step.solution, None)
-            else:
-                program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
-        else:
-            program = step.program
-
-        untokenizer = Untokenizer()
-        tokens = generate_tokens(StringIO(program).readline)
-        untokenizer.untokenize(tokens)
-        tokens = untokenizer.tokens
-
-        masked_indices = []
-        mask = [False] * len(tokens)
-        for i, token in enumerate(tokens):
-            if not token.isspace():
-                masked_indices.append(i)
-                mask[i] = True
-        shuffle(masked_indices)
-
-        return dict(
-            tokens=tokens,
-            maskedIndices=masked_indices,
-            mask=mask,
-        )
+        return step.get_solution
 
     def submit_feedback(self, title, description, state):
         """Create an issue on github.com using the given parameters."""

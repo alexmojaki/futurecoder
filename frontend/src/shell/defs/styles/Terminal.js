@@ -8,7 +8,7 @@ export default {
     borderRadius: '5px',
     overflow: 'auto',
     cursor: 'text',
-    background: '#212121',
+    background: 'rgb(39, 40, 34)',
     backgroundSize: 'cover'
   },
   content: {
@@ -20,7 +20,7 @@ export default {
   },
   inputArea: {
     display: 'inline-flex',
-    width: '100%'
+    width: 'calc(100% - 2.5em)'
   },
   promptLabel: {
     // paddingTop: '3px',

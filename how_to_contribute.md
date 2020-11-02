@@ -10,6 +10,8 @@ The easiest way to contribute concretely is to write learning material for the c
 
 Beyond that, there's plenty of coding work to do on the platform, including frontend, backend, and devops work. See the [list of issues](https://github.com/alexmojaki/futurecoder/issues) for some ideas, or open a new one if you want. The main priority is to choose something that interests you. If nothing really does, pick something from the ["good first issue" label](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) - these are easier and will help you become familiar with the project.
 
+Consider adding your thoughts and ideas to [issues labeled 'discussion'](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3Adiscussion). Or [come have a chat about anything on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-irqxk6og-tS2RqTp679MQAlUCmmnAZw).
+
 ## Testing
 
 Run `./manage.py test` in the backend folder.
@@ -30,9 +32,15 @@ After the code finishes running, it checks the `Page` and `Step` that the user i
 
 Take a look at [the issues labeled "course material"](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3A%22course+material%22). These include discussions that need opinions/ideas and small tweaks that need to be made to existing content.
 
-If you want to write fresh content, see [this issue](https://github.com/alexmojaki/futurecoder/issues/23) for the central discussion and additional guidance. This is a good place to dump rough ideas and snippets.
+If you want to write fresh content, see [this issue](https://github.com/alexmojaki/futurecoder/issues/92) for the central discussion.
+
+Before writing anything, it's a good idea to go through some of the course to get a feel for the style. Reading all the hints on a few exercises would also help. See the [developer mode instructions](https://github.com/alexmojaki/futurecoder#controls) to quickly move back and forth between steps.
+
+It can be helpful to read through existing textbooks and such to find inspiration for material. Make sure you have permission to copy their ideas (even if you rephrase it into different words) or that it's permissively licensed. If you're not sure, ask them. I don't want anyone to accuse us of plagiarism.
 
 If you want to contribute a solid bit of course with actual text, code, and exercises, open a new issue with a proposal draft just in markdown. Don't jump to implementing it in Python.
+
+If you have some partial ideas you'd like to talk about but don't feel ready to open an issue, [come chat on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-irqxk6og-tS2RqTp679MQAlUCmmnAZw).
 
 ## How to implement course content in Python
 
@@ -67,8 +75,22 @@ In code, a step is a class inheriting from `main.text.Step` declared inside a `P
     - If the `text` contains `__program__` or `__program_indented__`, that will be replaced by the `program`.
  
    You can define `program` as a string or a method. A string is good if the program is really short or contains invalid syntax. A method is better in other cases so that editors can work with it nicely. It will be converted to a string automatically.
-- `hints` (optional) is a list of markdown strings which the user can reveal one by one to gradually guide them to a solution. For brevity you can provide a single string which will be split by newlines.
+- `hints` (optional) is a list of markdown strings which the user can reveal one by one to gradually guide them to a solution.
+    - For brevity you can provide a single string which will be split by newlines.
+    - Plenty of small hints is generally good. You want the user to find the solution themselves. Hints should provide just enough information to make the problem manageable but no more. A possible goal is to unblock some tiny misconception which might be holding them back or ask a question which may lead to an 'aha!' moment.
+    - Once all hints have been revealed, the problem should be significantly easier, but you don't want to give it all away. There should still be a decent amount of thinking or work still required. After all, if the users want the full solution, they can still get that.
 - Zero or more `MessageStep` classes declared inside, detailed further down.
+- `predicted_output_choices` (optional) is a list of strings representing possible answers to a multiple choice question "What do you think the result will be?" which is presented when the user runs the correct code just before being shown the output. This helps users engage more thoughtfully with the material and is best suited to `VerbatimStep`s.
+    - Use this when users can reasonably be expected to guess or figure out the answer based on information they've already been given. If there's a little uncertainty, that's fine.
+    - Currently only a static list is possible.
+    - An extra option "Error" is always added automatically at the end.
+    - The list you provide must have at least two options.
+    - Providing lots of plausible options is good, there's no need to make this easy. The user will get two attempts and will still move on if they fail.
+    - The correct answer is selected automatically when the step is constructed by running `program`. If this isn't possible (typically because the correct answer is "Error") then set `correct_output` to the correct answer - either `"Error"` or an element of the list `predicted_output_choices`.
+- `parsons_solution = True` if the user should be shown a *Parsons problem* (i.e. shuffled lines) when they first request a solution. This is good when:
+    - The solution has at least 4 lines at a bare minimum, although in most cases you need at least 5 lines. Blank lines and function headers don't count.
+    - Solving the Parsons problem isn't trivial. An example is `crack_password_exercise` - putting those lines in the correct order is too easy without thinking about what the program is doing. On the other hand, the gradual solution reveal shows the structure of the program even while all the text is hidden, which could lead to a much more helpful 'aha!' moment. The problem can still be easy, but the user should be required to think a bit about how the program works to solve it.
+- `expected_code_source` if to enforce that the code is run in the shell or with a particular debugger.
 
 #### Generating steps automatically
 
@@ -242,6 +264,8 @@ A `MessageStep` class is declared inside a regular `Step` class. It checks for m
 
 The default use case is to point out a mistake that prevented the user from advancing. In this case, the message `check` method will only be called if the outer step `check` returned False. This way you don't have to worry about showing the user a message "here's why you failed" when they actually succeeded.
 
-The other case is when they technically solved the problem as described but you don't want them to pass because they used some sneaky trick or otherwise missed the intended solution. In this case the message `check` will only be called if the outer step `check` returned True. To indicate this, set `after_success = True` in the message class.
+These kinds of `MessageStep`s are valuable because they help the user and protect them from getting stuck, but they are generally based on hypothetical guesses about what mistakes users might make. Guessing is hard, so don't spend too much time on writing these. A good start is just to guess what might be useful and take note in the code with a comment starting *exactly* with `TODO message`. Now anyone can search for that if they feel like implementing a bunch of deferred messages.
+
+The other case is when they technically solved the problem as described but you don't want them to pass because they used some sneaky trick or otherwise missed the intended solution. In this case the message `check` will only be called if the outer step `check` returned True. To indicate this, set `after_success = True` in the message class. Often an easier alternative is to set the `disallowed` attribute on the main `Step` - see the source code for examples and more info.
 
 Any `Step` class declared inside another `Step` class (so typically an inner `MessageStep`) will automatically inherit from the outer `Step` class. This makes it easy to reuse methods from the outer class in the inner class, for example you only need to define `generate_inputs` once. Of course this can also lead to some weird side effects, so be aware of it. This is part of the system that I feel iffy about for obvious reasons, so it may change.

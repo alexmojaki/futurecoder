@@ -313,6 +313,10 @@
   font-size: 32px;
 }
 
+.markdown-body h1 code {
+  font-size: 85%;
+}
+
 .markdown-body h1,
 .markdown-body h2 {
   font-weight: 600;
@@ -719,7 +723,7 @@
 
 .markdown-body .highlight pre,
 .markdown-body pre {
-  background-color: rgb(46, 46, 46);
+  background-color: rgb(39, 40, 34);
   border-radius: 3px;
   font-size: 15px;
   line-height: 1.45;

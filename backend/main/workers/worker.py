@@ -6,12 +6,13 @@ from code import InteractiveConsole
 from threading import Thread
 from time import sleep
 
+import friendly_traceback.source_cache
 import stack_data
 
 from main.exercises import assert_equal
 from main.text import pages
-from main.utils import print_exception
 from main.workers.limits import set_limits
+from main.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
 from main.workers.utils import internal_error_result, make_result, output_buffer
 
 log = logging.getLogger(__name__)
@@ -21,11 +22,15 @@ console.locals = {"assert_equal": assert_equal}
 
 
 def execute(code_obj):
+    sys.setrecursionlimit(100)
     try:
         # noinspection PyTypeChecker
         exec(code_obj, console.locals)
-    except Exception:
-        print_exception()
+    except Exception as e:
+        sys.setrecursionlimit(1000)
+        return TracebackSerializer().format_exception(e)
+    finally:
+        sys.setrecursionlimit(1000)
 
 
 def runner(code_source, code):
@@ -46,22 +51,35 @@ def runner(code_source, code):
 
     stack_data.Source._class_local('__source_cache', {}).pop(filename, None)
 
+    friendly_traceback.source_cache.cache.add(filename, code)
+
     try:
         code_obj = compile(code, filename, mode)
-    except SyntaxError:
-        print_exception()
+    except SyntaxError as e:
+        print_friendly_syntax_error(e)
         return {}
 
     birdseye_objects = None
 
     if code_source == "snoop":
         from main.workers.snoop import exec_snoop
-        exec_snoop(filename, code, code_obj)
+        traceback_info = exec_snoop(filename, code, code_obj)
     elif code_source == "birdseye":
         from main.workers.birdseye import exec_birdseye
-        birdseye_objects = exec_birdseye(filename, code)
+        traceback_info, birdseye_objects = exec_birdseye(filename, code)
     else:
-        execute(code_obj)
+        traceback_info = execute(code_obj)
+
+    if traceback_info:
+        exception = traceback_info[-1]["exception"]
+        traceback_info = dict(
+            isTraceback=True,
+            codeSource=code_source,
+            tracebacks=traceback_info,
+            text=f"{exception['type']}: {exception['message']}",
+            color="red",
+        )
+        output_buffer.parts.append(traceback_info)
 
     return birdseye_objects
 

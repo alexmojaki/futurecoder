@@ -9,6 +9,8 @@ import xml.etree.ElementTree as etree
 from functools import lru_cache, partial
 from html import unescape
 from io import StringIO
+from itertools import combinations
+from random import shuffle
 from textwrap import dedent
 
 import pygments
@@ -20,6 +22,12 @@ from markdown.treeprocessors import Treeprocessor
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
+
+site_packages = strip_required_suffix(pygments.__file__, "pygments/__init__.py")
+sys.path.append(site_packages + "didyoumean/")
+
+from didyoumean.didyoumean_internal import get_suggestions_for_exception  # noqa
+
 
 lexer = get_lexer_by_name("python3")
 monokai = get_style_by_name("monokai")
@@ -101,24 +109,6 @@ def format_exception_string():
     return ''.join(traceback.format_exception_only(*sys.exc_info()[:2]))
 
 
-class Formatter(stack_data.Formatter):
-    def format_frame(self, frame):
-        if frame.filename.startswith(internal_dir):
-            return
-        yield from super().format_frame(frame)
-
-
-formatter = Formatter(
-    options=stack_data.Options(before=0, after=0),
-    pygmented=True,
-    show_executing_node=True,
-)
-
-
-def print_exception():
-    formatter.print_exception()
-
-
 def row_to_dict(row):
     d = row.__dict__.copy()
     del d["_sa_instance_state"]
@@ -172,10 +162,12 @@ class HighlightPythonTreeProcessor(Treeprocessor):
                     is_valid_syntax(dedent(text))
             ):
                 self.highlight_node(node, text)
+            else:
+                node.text = text
 
             if copyable:
                 node.append(etree.fromstring('<button class="btn btn-primary">Copy</button>'))
-                node.set("class", node.get("class") + " copyable")
+                node.set("class", node.get("class", "") + " copyable")
 
     @staticmethod
     def highlight_node(node, text):
@@ -188,4 +180,27 @@ class HighlightPythonTreeProcessor(Treeprocessor):
 
 
 def highlighted_markdown(text):
-    return markdown(text, extensions=[HighlightPythonExtension()])
+    return markdown(text, extensions=[HighlightPythonExtension(), 'tables'])
+
+
+def shuffled(it):
+    result = list(it)
+    shuffle(result)
+    return result
+
+
+def shuffled_well(seq):
+    original = range(len(seq))
+    permutations = {
+        tuple(shuffled(original))
+        for _ in range(10)
+    }
+
+    def inversions(perm):
+        return sum(
+            perm[i] > perm[j]
+            for i, j in combinations(original, 2)
+        )
+
+    permutation = sorted(permutations, key=inversions)[-2]
+    return [seq[i] for i in permutation]

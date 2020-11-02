@@ -7,11 +7,15 @@ from abc import ABC, abstractmethod
 from copy import deepcopy
 from functools import cached_property
 from importlib import import_module
+from io import StringIO
 from pathlib import Path
+from random import shuffle
 from textwrap import dedent, indent
+from tokenize import Untokenizer, generate_tokens
 from types import FunctionType
-from typing import Type, Union, get_type_hints, List
+from typing import Type, Union, List, get_type_hints
 
+import pygments
 from astcheck import is_ast_like
 from asttokens import ASTTokens
 from littleutils import setattrs, only
@@ -21,10 +25,11 @@ from main.exercises import (
     check_result,
     generate_for_type,
     inputs_string,
+    assert_equal,
 )
 from main.linting import lint
-from main.utils import no_weird_whitespace, snake, unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self, \
-    highlighted_markdown
+from main.utils import highlighted_markdown, lexer, html_formatter, shuffled_well, no_weird_whitespace, snake, \
+    unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
 
 
 def clean_program(program, cls):
@@ -70,7 +75,7 @@ def clean_solution_function(func, source):
     )
 
 
-def clean_step_class(cls, clean_inner=True):
+def clean_step_class(cls):
     assert cls.__name__ != "step_name_here"
 
     text = cls.text or cls.__doc__
@@ -106,39 +111,108 @@ def clean_step_class(cls, clean_inner=True):
     text = highlighted_markdown(dedent(text).strip())
 
     messages = []
-    if clean_inner:
-        for name, inner_cls in inspect.getmembers(cls):
-            if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)):
-                continue
+    for name, inner_cls in inspect.getmembers(cls):
+        if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)):
+            continue
+        assert issubclass(inner_cls, MessageStep)
 
-            if issubclass(inner_cls, MessageStep):
-                inner_cls.tests = inner_cls.tests or cls.tests
-                clean_step_class(inner_cls)
+        inner_cls.tests = inner_cls.tests or cls.tests
+        clean_step_class(inner_cls)
 
-                # noinspection PyAbstractClass
-                class inner_cls(inner_cls, cls):
-                    __name__ = inner_cls.__name__
-                    __qualname__ = inner_cls.__qualname__
-                    __module__ = inner_cls.__module__
-                    program_in_text = inner_cls.program_in_text
+        # noinspection PyAbstractClass
+        class inner_cls(inner_cls, cls):
+            __name__ = inner_cls.__name__
+            __qualname__ = inner_cls.__qualname__
+            __module__ = inner_cls.__module__
 
-                messages.append(inner_cls)
+        messages.append(inner_cls)
 
-                if inner_cls.after_success and issubclass(inner_cls, ExerciseStep):
-                    check_exercise(
-                        bind_self(inner_cls.solution),
-                        bind_self(cls.solution),
-                        cls.test_exercise,
-                        cls.generate_inputs,
-                    )
-
-            clean_step_class(inner_cls, clean_inner=False)
+        if inner_cls.after_success and issubclass(inner_cls, ExerciseStep):
+            check_exercise(
+                bind_self(inner_cls.solution),
+                bind_self(cls.solution),
+                cls.test_exercise,
+                cls.generate_inputs,
+            )
 
     setattrs(cls,
              text=text,
              program=program,
              messages=messages,
              hints=hints)
+
+    if hints:
+        cls.get_solution = get_solution(cls)
+
+    if cls.predicted_output_choices:
+        cls.predicted_output_choices.append("Error")
+        cls.predicted_output_choices = [
+            s.rstrip()
+            for s in cls.predicted_output_choices
+        ]
+        if not cls.correct_output:
+            cls.correct_output = get_stdout(cls.program).rstrip()
+            assert cls.correct_output in cls.predicted_output_choices
+            assert cls.correct_output != "Error"
+        assert cls.correct_output
+
+    if isinstance(cls.disallowed, Disallowed):
+        cls.disallowed = [cls.disallowed]
+
+
+@returns_stdout
+def get_stdout(program):
+    if "\n" in program:
+        mode = "exec"
+    else:
+        mode = "single"
+    code = compile(program, "", mode)
+    exec(code, {"assert_equal": assert_equal})
+
+
+def get_solution(step):
+    if issubclass(step, ExerciseStep):
+        if step.solution.__name__ == "solution":
+            program, _ = clean_program(step.solution, None)  # noqa
+        else:
+            program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
+    else:
+        program = step.program
+
+    untokenizer = Untokenizer()
+    tokens = generate_tokens(StringIO(program).readline)
+    untokenizer.untokenize(tokens)
+    tokens = untokenizer.tokens
+
+    masked_indices = []
+    mask = [False] * len(tokens)
+    for i, token in enumerate(tokens):
+        if not token.isspace():
+            masked_indices.append(i)
+            mask[i] = True
+    shuffle(masked_indices)
+
+    if step.parsons_solution:
+        lines = shuffled_well([
+            dict(
+                id=str(i),
+                content=line,
+            )
+            for i, line in enumerate(
+                pygments.highlight(program, lexer, html_formatter)
+                    .splitlines()
+            )
+            if line.strip()
+        ])
+    else:
+        lines = None
+
+    return dict(
+        tokens=tokens,
+        maskedIndices=masked_indices,
+        mask=mask,
+        lines=lines,
+    )
 
 
 pages = {}
@@ -207,6 +281,7 @@ class PageMeta(type):
                 text=text,
                 name=name,
                 hints=getattr(step, "hints", []),
+                solution=getattr(step, "get_solution", None),
             )
             for name, text, step in
             zip(self.step_names, self.step_texts, self.steps)
@@ -263,15 +338,16 @@ class Step(ABC):
     tests = {}
     expected_code_source = None
     disallowed: List[Disallowed] = []
+    parsons_solution = False
+    get_solution = None
+    predicted_output_choices = None
+    correct_output = None
 
     def __init__(self, *args):
         self.args = args
         self.input, self.result, self.code_source, self.console = args
 
     def check_with_messages(self):
-        if self.expected_code_source not in (None, self.code_source):
-            return False
-
         result = self.check()
         if not isinstance(result, dict):
             result = bool(result)
@@ -288,6 +364,9 @@ class Step(ABC):
                     d.predicate
                 ) > d.max_count:
                     return dict(message=d.message)
+
+            if self.expected_code_source not in (None, self.code_source):
+                return dict(message="The code is correct, but you didn't run it as instructed.")
 
             return True
 
@@ -310,21 +389,6 @@ class Step(ABC):
     @property
     def stmt(self):
         return self.tree.body[0]
-
-    def tree_matches(self, template):
-        if is_ast_like(self.tree, ast.parse(template)):
-            return True
-
-        if is_ast_like(ast.parse(self.input.lower()), ast.parse(template.lower())):
-            return dict(
-                message="Python is case sensitive! That means that small and capital letters "
-                        "matter and changing them changes the meaning of the program. The strings "
-                        "`'hello'` and `'Hello'` are different, as are the variable names "
-                        "`word` and `Word`."
-            )
-
-    def matches_program(self):
-        return self.tree_matches(self.program)
 
     def input_matches(self, pattern, remove_spaces=True):
         inp = self.input.rstrip()
@@ -429,7 +493,26 @@ class VerbatimStep(Step):
     program_in_text = True
 
     def check(self):
-        return self.matches_program()
+        if self.truncated_trees_match(
+                self.tree,
+                ast.parse(self.program),
+        ):
+            return True
+
+        if self.truncated_trees_match(
+                ast.parse(self.input.lower()),
+                ast.parse(self.program.lower()),
+        ):
+            return dict(
+                message="Python is case sensitive! That means that small and capital letters "
+                        "matter and changing them changes the meaning of the program. The strings "
+                        "`'hello'` and `'Hello'` are different, as are the variable names "
+                        "`word` and `Word`."
+            )
+
+    def truncated_trees_match(self, input_tree, program_tree):
+        del input_tree.body[len(program_tree.body):]
+        return is_ast_like(input_tree, program_tree)
 
 
 class MessageStep(Step, ABC):
