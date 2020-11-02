@@ -16,9 +16,9 @@ for pd in x:
     """
     assert lint_tree(code_import_shadowed_by_loop_var) == [
         """
-**Import `pd` from line `2` shadowed by loop variable**
+**Import `pd` shadowed by loop variable**
 
-The name of the loop variable `pd` should be changed in line `2` as it redefines the `pd` module.
+The name of the loop variable `pd` should be changed as it redefines the `pd` module imported earlier.
 Choose a different loop variable to avoid this error.
 """
     ]
@@ -35,7 +35,7 @@ def write_to_file(text, filename):
         """
 **Unused import `random`**
 
-You imported a module `random` but never used it. Did you forget to use it?
+You imported `random` but never used it. Did you forget to use it?
 Maybe you used the wrong variable in its place? If you don't need the import, just remove it entirely.
     """
     ]
@@ -76,6 +76,7 @@ x='a'
 
 You used the `is`/`is not` operator to compare with a literal (e.g. a string or number).
 You should have rather used the `==` / `!=` operator.
+
 The `is` operator checks if two expressions refer to the exact same object.
 You rarely want to use them, certainly not for basic data types like strings and numbers.
 In those cases they will seem to work sometimes (e.g. for small numbers) and mysteriously
@@ -116,7 +117,7 @@ print(BaseThing('hi'))
         """
 **Import made using `*` **
 
-`from X import *` imports everything from a module `X` into the current namespace.
+`from base import *` imports everything from the module `base` into the current namespace.
 This creates a bunch of invisible unknown variables.
 It makes it hard to read and understand code and see where things come from.
 
@@ -134,7 +135,7 @@ def f():
         """
 **Import made using `*` **
 
-`from X import *` imports everything from a module `X` into the current namespace.
+`from module import *` imports everything from the module `module` into the current namespace.
 This creates a bunch of invisible unknown variables.
 It makes it hard to read and understand code and see where things come from.
 
