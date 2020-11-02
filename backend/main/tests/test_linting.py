@@ -76,7 +76,7 @@ x='a'
 
 You used the `is`/`is not` operator to compare with a literal (e.g. a string or number).
 You should have rather used the `==` / `!=` operator.
-The `is`/ operator checks if two expressions refer to the exact same object.
+The `is` operator checks if two expressions refer to the exact same object.
 You rarely want to use them, certainly not for basic data types like strings and numbers.
 In those cases they will seem to work sometimes (e.g. for small numbers) and mysteriously
 fail on other occasions.
