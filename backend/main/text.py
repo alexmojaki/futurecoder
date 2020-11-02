@@ -347,13 +347,16 @@ class Step(ABC):
         self.args = args
         self.input, self.result, self.code_source, self.console = args
 
-    def check_with_messages(self):
+    def clean_check(self) -> Union[bool, dict]:
         result = self.check()
         if not isinstance(result, dict):
             result = bool(result)
+        return result
 
+    def check_with_messages(self):
+        result = self.clean_check()
         for message_cls in self.messages:
-            if result == message_cls.after_success and message_cls.check_message(self):
+            if (result is True) == message_cls.after_success and (message_cls.check_message(self) is True):
                 return message_cls.message()
 
         if result is True:
@@ -524,7 +527,7 @@ class MessageStep(Step, ABC):
 
     @classmethod
     def check_message(cls, step):
-        return cls(*step.args).check()
+        return cls(*step.args).clean_check()
 
 
 def search_ast(node, template, predicate=lambda n: True):

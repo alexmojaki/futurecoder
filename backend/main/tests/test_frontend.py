@@ -17,7 +17,7 @@ def test_frontend():
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     driver = webdriver.Chrome(options=options)
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(5)
     try:
         _tests(driver)
     except:
@@ -96,7 +96,7 @@ Table of Contents"""
     driver.find_element_by_css_selector(".terminal input").send_keys("12345\n")
     await_result(
         driver,
-        "",
+        "12345\n12345",
         """\
 >>> 12345
 12345
