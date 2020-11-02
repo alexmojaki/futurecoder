@@ -8,7 +8,7 @@ MESSAGES = {
 **Unused import `{0}`**
 
 You imported a module `{0}` but never used it. Did you forget to use it?
-Maybe you used the wrong import in its place? If you don't need it, just remove it entirely.
+Maybe you used the wrong variable in its place? If you don't need the import, just remove it entirely.
     """,
     UnusedVariable: """
 **Unused variable `{0}`**
@@ -17,48 +17,39 @@ You defined a variable `{0}` but never used it. Did you forget to use it?
 Maybe you used the wrong variable in its place? If you don't need it, just remove it entirely.
     """,
     IsLiteral: """
-**Is literal**
+**`is` comparison with literal**
 
-You used the is/is not statement for comparison. You should have rather used the `==` / `!=` statements,
-which can be used to compare anything. The is/is not statement checks if objects refer to the same instance 
-(address in memory) and should not be used for literals.
+You used the `is`/`is not` operator to compare with a literal (e.g. a string or number).
+You should have rather used the `==` / `!=` operator.
+The `is` operator checks if two expressions refer to the exact same object.
+You rarely want to use them, certainly not for basic data types like strings and numbers.
+In those cases they will seem to work sometimes (e.g. for small numbers) and mysteriously
+fail on other occasions.
     """,
 
     RedefinedWhileUnused: """
-**Redefined `{0}` while unused on line `{1}`**
+**Redefined `{0}` without using it**
 
-This error occurs when a function, class or method is redefined.
-The function `{0}` has not been called however it has been redefined on line `{1}`
-Make sure that all functions have different names if they are different. Also remember to call the function.
+You defined `{0}` on line `{1}`, but before ever using it you redefined it,
+overwriting the original definition.
+
+In general your functions and classes should have different names.
+Check that you use everything you define, e.g. that you called your functions.
     """,
     ImportShadowedByLoopVar: """
-**Import `{0}` from line '{1}` shadowed by loop variable**
+**Import `{0}` from line `{1}` shadowed by loop variable**
 
-The name of the loop variable `{0}` should be changed in line`{1}` as it redefines the `{0}` module.
+The name of the loop variable `{0}` should be changed in line `{1}` as it redefines the `{0}` module.
 Choose a different loop variable to avoid this error.
 """,
-    ImportStarUsed: """
-**Import made using * **
-
-This * import is used to import everything from a designated module under the current 
-module, allowing the use of various objects from the imported module- without having to prefix them with the module's 
-name. Refrain from using this type of import statement and rather explicitly import a few statements that you may 
-require instead.  
-""",
     ImportStarNotPermitted: """
-**Import made using * **
+**Import made using `*` **
 
-This * import is used to import everything from a designated module under the current 
-module, allowing the use of various objects from the imported module- without having to prefix them with the module's 
-name. Refrain from using this type of import statement and rather explicitly import a few statements that you may 
-require instead.
-""",
+`from X import *` imports everything from a module `X` into the current namespace.
+This creates a bunch of invisible unknown variables.
+It makes it hard to read and understand code and see where things come from.
 
-    DuplicateArgument: """
-**Duplicate argument `{0}` in function definition**
-
-Two or more parameters in a function definition have the same name.
-All names in the function definition should be distinct. Change one of the names so that all parameters are unique.
+Avoid this kind of import and instead explicitly import exactly the names you need.
 """,
 
     MultiValueRepeatedKeyLiteral: """
@@ -71,11 +62,13 @@ Check your code again and change the repeated key to something unique.
 }
 
 
-def lint(code):
+def lint(tree):
     # Wrap the whole module in a function
     # so that pyflakes thinks global variables are local variables
     # and reports when they are unused
-    function_tree = ast.parse(code)
+    function_tree = ast.parse("def f(): 0")
+    function_tree.body[0].body = tree.body
+
     ch = checker.Checker(function_tree, builtins=["assert_equal"])
     ch.messages.sort(key=lambda m: m.lineno)
     for message in ch.messages:

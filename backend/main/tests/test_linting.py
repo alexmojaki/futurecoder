@@ -1,5 +1,5 @@
 import ast
-from .linting import lint
+from main.linting import lint
 
 
 def lint_tree(code):
@@ -16,9 +16,9 @@ for pd in x:
     """
     assert lint_tree(code_import_shadowed_by_loop_var) == [
         """
-**Import `pd` from line '2` shadowed by loop variable**
+**Import `pd` from line `2` shadowed by loop variable**
 
-The name of the loop variable `pd` should be changed in line`2` as it redefines the `pd` module.
+The name of the loop variable `pd` should be changed in line `2` as it redefines the `pd` module.
 Choose a different loop variable to avoid this error.
 """
     ]
@@ -36,7 +36,7 @@ def write_to_file(text, filename):
 **Unused import `random`**
 
 You imported a module `random` but never used it. Did you forget to use it?
-Maybe you used the wrong import in its place? If you don't need it, just remove it entirely.
+Maybe you used the wrong variable in its place? If you don't need the import, just remove it entirely.
     """
     ]
 
@@ -51,10 +51,8 @@ def write_random_to_file():
         file.write(str(no))
     return no
 
-def write_random():
-    random_no = write_random_to_file()
-    print ("A random number was written to random.txt")
-
+random_no = write_random_to_file()
+print ("A random number was written to random.txt")
 """
     assert lint_tree(code_unused_var) == [
         """
@@ -74,11 +72,14 @@ x='a'
 """
     assert lint_tree(code_is_literal) == [
         """
-**Is literal**
+**`is` comparison with literal**
 
-You used the is/is not statement for comparison. You should have rather used the `==` / `!=` statements,
-which can be used to compare anything. The is/is not statement checks if objects refer to the same instance 
-(address in memory) and should not be used for literals.
+You used the `is`/`is not` operator to compare with a literal (e.g. a string or number).
+You should have rather used the `==` / `!=` operator.
+The `is`/ operator checks if two expressions refer to the exact same object.
+You rarely want to use them, certainly not for basic data types like strings and numbers.
+In those cases they will seem to work sometimes (e.g. for small numbers) and mysteriously
+fail on other occasions.
     """
     ]
 
@@ -95,11 +96,13 @@ def is_positive(number: int) -> bool:
     """
     assert lint_tree(code_redefined_while_unused) == [
         """
-**Redefined `is_positive` while unused on line `2`**
+**Redefined `is_positive` without using it**
 
-This error occurs when a function, class or method is redefined.
-The function `is_positive` has not been called however it has been redefined on line `2`
-Make sure that all functions have different names if they are different. Also remember to call the function.
+You defined `is_positive` on line `2`, but before ever using it you redefined it,
+overwriting the original definition.
+
+In general your functions and classes should have different names.
+Check that you use everything you define, e.g. that you called your functions.
     """
     ]
 
@@ -111,12 +114,13 @@ print(BaseThing('hi'))
 """
     assert lint_tree(code_import_star) == [
         """
-**Import made using * **
+**Import made using `*` **
 
-This * import is used to import everything from a designated module under the current 
-module, allowing the use of various objects from the imported module- without having to prefix them with the module's 
-name. Refrain from using this type of import statement and rather explicitly import a few statements that you may 
-require instead.  
+`from X import *` imports everything from a module `X` into the current namespace.
+This creates a bunch of invisible unknown variables.
+It makes it hard to read and understand code and see where things come from.
+
+Avoid this kind of import and instead explicitly import exactly the names you need.
 """
     ]
 
@@ -128,34 +132,20 @@ def f():
 """
     assert lint_tree(code_import_star_not_permitted) == [
         """
-**Import made using * **
+**Import made using `*` **
 
-This * import is used to import everything from a designated module under the current 
-module, allowing the use of various objects from the imported module- without having to prefix them with the module's 
-name. Refrain from using this type of import statement and rather explicitly import a few statements that you may 
-require instead.
-"""
-    ]
+`from X import *` imports everything from a module `X` into the current namespace.
+This creates a bunch of invisible unknown variables.
+It makes it hard to read and understand code and see where things come from.
 
-
-def test_duplicate_argument():
-    code_duplicate_argument = """
-def format_name(first_name, last_name, first_name='Grant'):
-    pass
-"""
-    assert lint_tree(code_duplicate_argument) == [
-        """
-**Duplicate argument `first_name` in function definition**
-
-Two or more parameters in a function definition have the same name.
-All names in the function definition should be distinct. Change one of the names so that all parameters are unique.
+Avoid this kind of import and instead explicitly import exactly the names you need.
 """
     ]
 
 
 def test_multi_value_repeated_key_literal():
     code_multi_value_repeated_key = """
-dict={'a':1,'b':2,'a':3}
+print({'a':1,'b':2,'a':3})
 """
     assert lint_tree(code_multi_value_repeated_key) == [
         """
