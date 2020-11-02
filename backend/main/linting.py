@@ -1,7 +1,7 @@
 import ast
 from pyflakes import checker
 from pyflakes.messages import UnusedImport, UnusedVariable, IsLiteral, RedefinedWhileUnused, ImportShadowedByLoopVar, \
-    ImportStarUsed, ImportStarUsage, ImportStarNotPermitted, DuplicateArgument, MultiValueRepeatedKeyLiteral
+    ImportStarUsed, ImportStarNotPermitted, DuplicateArgument, MultiValueRepeatedKeyLiteral
 
 MESSAGES = {
     UnusedImport: """
@@ -38,21 +38,12 @@ The name of the loop variable `{0}` should be changed in line`{1}` as it redefin
 Choose a different loop variable to avoid this error.
 """,
     ImportStarUsed: """
-
 **Import made using * **
 
 This * import is used to import everything from a designated module under the current 
 module, allowing the use of various objects from the imported module- without having to prefix them with the module's 
 name. Refrain from using this type of import statement and rather explicitly import a few statements that you may 
 require instead.  
-""",
-    ImportStarUsage: """
-**Import made using * **
-
-This * import is used to import everything from a designated module under the current 
-module, allowing the use of various objects from the imported module- without having to prefix them with the module's 
-name. Refrain from using this type of import statement and rather explicitly import a few statements that you may 
-require instead.   
 """,
     ImportStarNotPermitted: """
 **Import made using * **
@@ -64,7 +55,7 @@ require instead.
 """,
 
     DuplicateArgument: """
-**Duplicate argument `{0}` in function definition'**
+**Duplicate argument `{0}` in function definition**
 
 Two or more parameters in a function definition have the same name.
 All names in the function definition should be distinct. Change one of the names so that all parameters are unique.
@@ -73,7 +64,7 @@ All names in the function definition should be distinct. Change one of the names
     MultiValueRepeatedKeyLiteral: """
 **Dictionary key `{0}` repeated with different values**
 
-A dictionary cannot have multiple entries for the same key. 
+A dictionary cannot have multiple entries for the same key.
 Check your code again and change the repeated key to something unique.
 """,
 
