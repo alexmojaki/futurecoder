@@ -80,7 +80,6 @@ Tracebacks are more helpful than usual, with several enhancements:
 - Beginner friendly explanations provided by [friendly-traceback](https://github.com/aroberge/friendly-traceback) (shown when hovering over the little `i` icon)
 - Showing multiline statements in full thanks to [stack_data](https://github.com/alexmojaki/stack_data) without showing unnecessary extra lines
 
-suggestions:
 </td>
 <td>
 Common mistakes can be caught and pointed out to the student. This includes specific checks in some steps as well as linting tailored for beginners.
