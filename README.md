@@ -4,7 +4,9 @@
 
 <h1 align="center"><code>futurecoder</code></h1>
 
-This is a platform/course for people to teach themselves programming in Python, especially complete beginners at programming.
+This is a free platform/course for people to teach themselves programming in Python, especially complete beginners at programming.
+It is carefully designed to reduce frustration and guide the user while still ensuring that they learn how to solve problems.
+The goal is for as many people as possible to learn programming.
 
 You can try it out here: https://futurecoder.io/
 
@@ -33,7 +35,7 @@ This requires a mixture of solving problems or simply typing and running provide
 user is often kept engaged by being asked to predict the output in a simple multiple choice question:
     </td>
     <td>
-The code at each step is checked automatically. Common mistakes can be caught and pointed out to the student. If
+The code at each step is checked automatically. If
 needed, the student can get small hints to gradually guide them to the solution:
     </td>
   </tr>
@@ -69,12 +71,18 @@ order:
   <tr>
 
 <td>
-Tracebacks are more helpful than usual, with several enhancements including beginner friendly explanations and
+Tracebacks are more helpful than usual, with several enhancements:
+
+- Highlighting the exact operation that failed, not just the line, using [executing](https://github.com/alexmojaki/executing)
+- Tables of local variables and simple expressions evaluated by [pure_eval](https://github.com/alexmojaki/pure_eval)
+- Suggestions for fixes provided by [DidYouMean](https://github.com/SylvainDe/DidYouMean-Python)
+- Beginner friendly explanations provided by [friendly-traceback](https://github.com/aroberge/friendly-traceback) (shown when hovering over the little `i` icon)
+- Showing multiline statements in full thanks to [stack_data](https://github.com/alexmojaki/stack_data) without showing unnecessary extra lines
+
 suggestions:
 </td>
 <td>
-Tracebacks can even highlight the exact operation that failed, not just the line. They also ensure that multiline
-statements are shown in full:
+Common mistakes can be caught and pointed out to the student. This includes specific checks in some steps as well as linting tailored for beginners.
 </td>
   </tr>
   <tr>
@@ -85,7 +93,7 @@ statements are shown in full:
 </td>
 <td>
 
-![executing](images/executing.png)
+![executing](images/messages.png)
 </td>
   </tr>
   <tr>
