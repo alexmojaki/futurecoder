@@ -54,6 +54,7 @@ needed, the student can get small hints to gradually guide them to the solution:
 If they're still really stuck, they can reveal the solution bit by bit:
 </td>
 <td>
+
 Or in some cases solve a *Parsons problem* instead, where they have to put a shuffled solution in the correct
 order:
 </td>
