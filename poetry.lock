@@ -12,7 +12,7 @@ description = "Annotate AST trees with source code positions"
 name = "asttokens"
 optional = false
 python-versions = "*"
-version = "2.0.3"
+version = "2.0.4"
 
 [package.dependencies]
 six = "*"
@@ -903,7 +903,7 @@ brotli = ["brotli"]
 production = ["gevent", "gunicorn", "psycopg2"]
 
 [metadata]
-content-hash = "728f6aee3c781344b55089c3bd7dba110ec9e1b3d2c42e5ccc4ecd2f60c61587"
+content-hash = "3f29e7f8065f2730f3a82d1cb2660f2eb9588fddaf12785024f55f5a7b72a26a"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -913,8 +913,8 @@ astcheck = [
     {file = "astcheck-0.2.5.tar.gz", hash = "sha256:ba9987e8dfe6c2b9ea6720ab8fbdb5aa00fdfa2908017be8a272b2a4b663397d"},
 ]
 asttokens = [
-    {file = "asttokens-2.0.3-py2.py3-none-any.whl", hash = "sha256:f58af645756597143629a4ac1fe78bc670b4429018ad741ac1f4cfd4504fc436"},
-    {file = "asttokens-2.0.3.tar.gz", hash = "sha256:284831ac3e33be743ca6ac018316b66abfd8b1a49d6366ce6c7b1fd07504a21b"},
+    {file = "asttokens-2.0.4-py2.py3-none-any.whl", hash = "sha256:766d3352908730efb20b95ae22db0f1cb1bedb67c6071fcffb5c236ea673f2f7"},
+    {file = "asttokens-2.0.4.tar.gz", hash = "sha256:a42e57e28f2ac1c85ed9b1f84109401427e5c63c04f61d15b8842b027eec5128"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
