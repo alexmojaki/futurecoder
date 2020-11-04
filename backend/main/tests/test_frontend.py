@@ -174,11 +174,37 @@ list
     # No hint button present
     assert not driver.find_elements_by_class_name("hint-icon")
 
-    # Skip forward to exercise
-    for _ in range(3):
+    # Skip forward to output prediction step
+    for _ in range(2):
         skip_button.click()
         sleep(0.1)
 
+    assert (
+        "range(n) is similar to the list"
+        in driver.find_element_by_css_selector(".book-text").text
+    )
+
+    # Correct answer first time
+    predict_output(driver, editor, run_button, 2, None)
+
+    # Wait for question to disappear, start again
+    sleep(3)
+    reverse_button.click()
+
+    # Correct answer second time
+    predict_output(driver, editor, run_button, 1, 2)
+
+    # Wait for question to disappear, start again
+    sleep(3)
+    reverse_button.click()
+
+    # Two wrong answers
+    predict_output(driver, editor, run_button, 0, 1)
+
+    # Click OK
+    driver.find_element_by_css_selector(".submit-prediction button").click()
+
+    # Course has moved on to next step
     assert (
         "Let's get some exercise!"
         in driver.find_element_by_css_selector(".book-text").text
@@ -370,3 +396,84 @@ def await_result(driver, part, full):
 
     WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, part))
     assert driver.find_element(*locator).text == full
+
+
+def force_click(driver, element):
+    driver.execute_script("arguments[0].click();", element)
+
+
+def predict_output(driver, editor, run_button, first_choice, second_choice):
+    is_correct = second_choice is None
+    # Run the verbatim code
+    run_code(
+        editor,
+        run_button,
+        """\
+words = ['This', 'is', 'a', 'list']
+
+for index in range(len(words)):
+print(index)
+print(words[index])
+                """,
+    )
+    sleep(2)
+
+    # Check the choices
+    choices = driver.find_elements_by_class_name("prediction-choice")
+    assert len(choices) == 7
+
+    # Click first choice
+    choice = choices[first_choice]
+    choice.click()
+
+    # Choice is highlighted in blue
+    check_choice_status(driver, first_choice, "selected")
+
+    # Click Submit
+    driver.find_element_by_css_selector(".submit-prediction button").click()
+    sleep(0.1)
+
+    check_choice_status(driver, first_choice, "correct" if is_correct else "wrong")
+
+    if is_correct:
+        bottom_text = "Correct!"
+    else:
+        bottom_text = "Oops, that's not right. You can try one more time!\nSubmit"
+    assert driver.find_element_by_css_selector(".submit-prediction").text == bottom_text
+
+    if is_correct:
+        return
+
+    is_correct = second_choice == 2
+
+    # Click second choice
+    choice = choices[second_choice]
+    force_click(driver, choice)
+
+    # Choice is highlighted in blue
+    check_choice_status(driver, first_choice, "wrong")
+    check_choice_status(driver, second_choice, "selected")
+
+    # Click Submit
+    driver.find_element_by_css_selector(".submit-prediction button").click()
+    sleep(0.1)
+
+    check_choice_status(driver, first_choice, "wrong")
+    check_choice_status(driver, second_choice, "correct" if is_correct else "wrong")
+
+    if is_correct:
+        bottom_text = "Correct!"
+    else:
+        bottom_text = "Sorry, wrong answer. Try again next time!\nOK"
+    assert driver.find_element_by_css_selector(".submit-prediction").text == bottom_text
+
+
+def check_choice_status(driver, choice_index, status):
+    choices = driver.find_elements_by_class_name("prediction-choice")
+    choice = choices[choice_index]
+    assert choice.get_attribute("class") == (
+        f"prediction-choice prediction-{status}"
+    ), [
+        choice.get_attribute("class")
+        for choice in driver.find_elements_by_class_name("prediction-choice")
+    ]
