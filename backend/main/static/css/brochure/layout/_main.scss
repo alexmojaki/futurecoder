@@ -28,13 +28,6 @@ main {
 }
 
 @include media('>medium') {
-  .section-inner {
-    padding-top: 88px;
-    padding-bottom: 88px;
-  }
-}
-
-@include media('>medium') {
   .half-col {
     position: relative;
     display: inline-block;
