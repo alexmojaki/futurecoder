@@ -34,3 +34,32 @@ main {
         padding-bottom: 88px;
     }
 }
+
+@include media( '>medium' ) {
+    .half-col {
+        position:relative;
+        display:inline-block;
+        padding-right: 48px;
+        min-width: 512px;
+        width: 512px;
+    }
+}
+
+
+
+//    ABOUT
+
+#about-logo{
+    width:200px;
+    max-width:30vw;
+    position:absolute;
+    top:-350px;
+    right:40px;
+}
+
+.tech-stack-icon{
+    width: 48px;
+    margin: 10px;
+    display: inline-block;
+    filter: grayscale(1) brightness(2);
+}

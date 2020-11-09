@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+#logo{
+    width: 50px;
+}
+
 .header-links {
     display: inline-flex;
 
@@ -28,6 +32,14 @@
         @include anchor-aspect(header);
         line-height: 16px;
         padding: 8px 24px;
+    }
+}
+
+.hero-inner{
+    .button-block{
+        width:fit-content;
+        display:inline-block;
+        margin:10px 10px 10px 0;
     }
 }
 

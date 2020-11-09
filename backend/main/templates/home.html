@@ -28,9 +28,7 @@
             <div class="site-header-inner">
                 <div class="brand header-brand">
                     <h1 class="m-0">
-                        <a href="#">
-                            <img src="{% static 'logo/bordered.png' %}" style="width:50px;" data-aos="fade-right" data-aos-delay="100">
-                        </a>
+                        <img id="logo" src="{% static 'logo/bordered.png' %}" data-aos="fade-right" data-aos-delay="100">
                     </h1>
                 </div>
             </div>
@@ -41,17 +39,17 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-inner">
-                    <div class="hero-copy">
+                    <div class="half-col">
                         <h1 class="hero-title mt-0 is-revealing" data-aos="fade-right" data-aos-delay="300">
                             future_coder
                         </h1>
                         <h3 class="hero-paragraph is-revealing" data-aos="fade-right" data-aos-delay="400">
                             Learn Python from scratch.
                         </h3>
-                        <a class="button button-primary button-block" style="width:fit-content;display:inline-block;margin-right:20px;" href="/toc/" data-aos="fade-in" data-aos-delay="2900">
+                        <a class="button button-primary button-block" href="/toc/" data-aos="fade-in" data-aos-delay="2900">
                             <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i> Let's start
                         </a>
-                        <a class="button button-primary button-block" style="width:fit-content;display:inline-block;" href="https://github.com/alexmojaki/futurecoder" data-aos="fade-in" data-aos-delay="3000">
+                        <a class="button button-primary button-block" href="https://github.com/alexmojaki/futurecoder" data-aos="fade-in" data-aos-delay="3000">
                             <i class="fab fa-github"></i> View the repo on Github
                         </a>
                         <!--div class="hero-form field field-grouped is-revealing">
@@ -139,13 +137,13 @@
             <br/>
         </section>
 
-        <section data-aos="fade-up" data-aos-duration="800" data-aos-offset="300" data-aos-once="true">
+        <section id="" data-aos="fade-up" data-aos-duration="800" data-aos-offset="300" data-aos-once="true">
             <br/>
             <div class="container">
-                <div style="position:relative;display:inline-block;" class="hero-copy">
+                <div class="half-col">
                     <h2>Want to stay posted on future_coder?</h2>
                 </div>
-                <div style="position:relative;display:inline-block;" class="hero-copy">
+                <div class="half-col">
                     <form method="post">
                         {% crispy form %}
                         <br/>
@@ -156,21 +154,22 @@
             <br/>
             <br/>
         </section>
-        <section>
+        <section id="about">
             <div class="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-offset="50" data-aos-once="true">
-                <div style="position:relative;display:inline-block;" class="hero-copy">
-                    <img src="{% static 'logo/bordered.png' %}" style="width:200px;max-width:30vw;position:absolute;top:-350px;right:40px;">
+                <div class="half-col">
+                    <img id="about-logo" src="{% static 'logo/bordered.png' %}">
                 </div>
-                <div style="position:relative;display:inline-block;" class="hero-copy">
+                <div class="half-col">
                     <h2>About</h2>
                     <p>
                         future_coder is about allow a larger percentage of the world access to the mysterious
                         sub-world of coding. This specific sub-world may be perceived as particularly daunting, but we
                         know there great joy and power to be found inside. Thus, this platform was created.
                     </p>
-                    <img style="width:64px; display: inline-block;" src="{% static 'img/icons/python.png' %}">&nbsp;&nbsp;
-                    <img style="width:64px; display: inline-block;" src="{% static 'img/icons/django.png' %}">&nbsp;&nbsp;
-                    <img style="width:64px; display: inline-block;" src="{% static 'img/icons/react.png' %}">&nbsp;&nbsp;
+                    <h3>Tech stack</h3>
+                    <img class="tech-stack-icon" src="{% static 'img/icons/python.png' %}">
+                    <img class="tech-stack-icon" src="{% static 'img/icons/django.png' %}">
+                    <img class="tech-stack-icon" src="{% static 'img/icons/react.png' %}">
                     <br/><br/>
                 </div>
             </div>
