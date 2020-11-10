@@ -69,42 +69,37 @@ def destroy_dangerous_functions():
 
     del signal.sigwait.__doc__
 
-    bad_module_names = "signal _signal".split()
+    bad_module_names = "signal _signal ctypes _ctypes".split()
 
-    func = None
     get_referrers = gc.get_referrers
 
-    funcs = [
+    funcs = {
         get_referrers,
         gc.get_referents,
         gc.get_objects,
         os.system,
         *[v for k, v in os.__dict__.items() if k.startswith("exec")],
-    ]
-    expected_refs = [locals(), funcs]
+    }
 
     for module_name in bad_module_names:
         module = import_module(module_name)
-        funcs += [
+        funcs.update(
             value for value in module.__dict__.values()
             if inspect.isroutine(value)
             if getattr(value, "__module__", None) in bad_module_names
-        ]
+        )
+        module.__dict__.clear()
 
-    for func in funcs:
+    for func in list(funcs):
+        funcs.remove(func)
         for ref in get_referrers(func):
-            if ref in expected_refs:
-                continue
-
             if isinstance(ref, dict):
                 for key in list(ref):
                     if ref[key] == func:
                         del ref[key]
 
-            if isinstance(ref, list):
+            if isinstance(ref, (list, set)):
                 while func in ref:
                     ref.remove(func)
 
-        # TODO failing in production
-        # for ref in get_referrers(func):
-        #     assert ref in expected_refs
+        assert not get_referrers(func)
