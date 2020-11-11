@@ -47,19 +47,19 @@ class Main(Scene):
         self.play(ApplyMethod(logo.to_edge, UP))
 
         spacer = Text("space").set_fill(opacity=0).set_stroke(opacity=0)
-        group = (
+        (
             VGroup(
-                Text("Learn to code for free"),
+                slogan := Text("Learn to code for free"),
                 spacer,
-                Text("Interactive and engaging"),
-                BulletedList(
+                interactive := Text("Interactive and engaging"),
+                interactive_points := BulletedList(
                     "Type and run code at every step",
                     "Answer multiple choice questions",
                     "Solve exercises",
                 ),
                 spacer,
-                Text("Makes learning easy, not frustrating"),
-                BulletedList(
+                easy := Text("Makes learning easy, not frustrating"),
+                easy_points := BulletedList(
                     "Points out mistakes",
                     "Gives you tools to find and understand problems",
                     "Gradually guides you to a solution",
@@ -71,14 +71,15 @@ class Main(Scene):
             .next_to(logo, DOWN)
             .shift(DOWN * 0.5)
         )
-        flat = []
-        for obj in group:
-            if obj is spacer:
-                continue
-            if isinstance(obj, Text):
-                flat.append(obj)
-            else:
-                flat.extend(obj)
-        for obj in flat:
+
+        self.play(Write(slogan))
+
+        for obj in [
+            interactive,
+            easy,
+            *interactive_points,
+            *easy_points,
+        ]:
             self.play(FadeInFrom(obj, DOWN * 0.5))
-            self.wait()
+
+        self.wait(10)
