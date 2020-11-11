@@ -1,14 +1,28 @@
 from manim import *
 
+Text = PangoText
+
 
 class Logo(Scene):
     def construct(self):
+        title = Text("futurecoder", font="monospace")
+
         lines = [
-            Line(LEFT + direction, ORIGIN - direction * 0.06).set_stroke(width=20)
+            Line(LEFT + direction, ORIGIN - direction * 0.06).set_stroke(width=5)
             for direction in [UP, DOWN]
         ]
-        chevron = VGroup(*lines)
-        chevrons = [chevron.copy().shift(LEFT * distance * 2) for distance in [2, 1, 0]]
+        scale_factor = 0.3
+        chevrons = (
+            VGroup(
+                *[
+                    VGroup(*lines).copy().shift(LEFT * distance * 2)
+                    for distance in [2, 1, 0]
+                ]
+            )
+            .scale(scale_factor)
+            .next_to(title, LEFT)
+            .shift(LEFT * scale_factor)
+        )
         self.play(
             LaggedStart(
                 *[
@@ -16,11 +30,17 @@ class Logo(Scene):
                     for chevron in chevrons
                 ],
                 lag_ratio=0.1
-            )
+            ),
         )
         self.play(
-            ApplyMethod(chevrons[0].shift, RIGHT * 2),
-            ApplyMethod(chevrons[1].shift, RIGHT),
+            *[
+                ApplyMethod(chevron.shift, RIGHT * (3 - i) * scale_factor)
+                for i, chevron in enumerate(chevrons)
+            ],
+            *[
+                FadeInFrom(char, LEFT * (len(title) + 1 - i) / len(title) / 2)
+                for i, char in enumerate(title.chars)
+            ]
         )
         self.wait()
 
