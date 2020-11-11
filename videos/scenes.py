@@ -3,7 +3,7 @@ from manim import *
 Text = PangoText
 
 
-class Logo(Scene):
+class Main(Scene):
     def construct(self):
         title = Text("futurecoder", font="monospace")
 
@@ -42,16 +42,13 @@ class Logo(Scene):
                 for i, char in enumerate(title.chars)
             ]
         )
-        self.wait()
 
+        logo = VGroup(chevrons, title)
+        self.play(ApplyMethod(logo.to_edge, UP))
 
-class Futurecoder(Scene):
-    def construct(self):
         spacer = Text("space").set_fill(opacity=0).set_stroke(opacity=0)
         group = (
             VGroup(
-                Text("futurecoder", font="monospace"),
-                spacer,
                 Text("Learn to code for free"),
                 spacer,
                 Text("Interactive and engaging"),
@@ -70,7 +67,9 @@ class Futurecoder(Scene):
                 ),
             )
             .arrange(DOWN, aligned_edge=LEFT)
-            .set_height(config.frame_height * 0.9)
+            .set_height(config["frame_height"] * 0.7)
+            .next_to(logo, DOWN)
+            .shift(DOWN * 0.5)
         )
         flat = []
         for obj in group:
