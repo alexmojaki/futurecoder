@@ -130,3 +130,5 @@ dmypy.json
 
 backend/static/
 backend/main/tests/error_screenshot.png
+
+videos/media/
