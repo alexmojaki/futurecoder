@@ -25,16 +25,19 @@ main {
   position: relative; /* To always display inner elements above pseudo decorative stuff */
 }
 
-//@include media('>medium') {
-//  .half-col {
-//    position: relative;
-//    display: inline-block;
-//    padding-right: 48px;
-//    min-width: 512px;
-//    width: 512px;
-//  }
-//}
+.container{
+  display:flex;
+}
 
+.container .col{
+  padding: 0 20px;
+  flex: 1;
+}
+
+.spacer{
+  height: 30px;
+  width: 100%;
+}
 
 
 //    EMAIL
