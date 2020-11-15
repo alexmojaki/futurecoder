@@ -2,8 +2,15 @@
   padding-top: 48px;
 }
 
+.hero-title{
+  font-size: 69px;
+}
+
 .hero-paragraph {
-  margin-bottom: 32px;
+  color: hsl(263,45%,7%);
+  background: #ddd;
+  width: fit-content;
+  padding: 0 11px;
 }
 
 .hero-illustration {
@@ -85,10 +92,6 @@
 }
 
 @include media('>medium') {
-  .hero {
-    padding-top: 80px;
-  }
-
   .hero-inner {
     /* Split hero in two parts */
     display: flex;

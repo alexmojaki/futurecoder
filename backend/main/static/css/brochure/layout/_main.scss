@@ -23,8 +23,6 @@ main {
 
 .section-inner {
   position: relative; /* To always display inner elements above pseudo decorative stuff */
-  padding-top: 64px;
-  padding-bottom: 64px;
 }
 
 @include media('>medium') {
