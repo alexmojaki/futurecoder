@@ -25,14 +25,24 @@ main {
   position: relative; /* To always display inner elements above pseudo decorative stuff */
 }
 
-@include media('>medium') {
-  .half-col {
-    position: relative;
-    display: inline-block;
-    padding-right: 48px;
-    min-width: 512px;
-    width: 512px;
-  }
+//@include media('>medium') {
+//  .half-col {
+//    position: relative;
+//    display: inline-block;
+//    padding-right: 48px;
+//    min-width: 512px;
+//    width: 512px;
+//  }
+//}
+
+
+
+//    EMAIL
+
+#email-newsletter input{
+  padding: 6px 12px;
+  font-size: 0.8em;
+  margin-bottom: 16px;
 }
 
 
@@ -41,9 +51,10 @@ main {
 #about-logo {
   width: 200px;
   max-width: 30vw;
-  position: absolute;
-  top: -350px;
-  right: 40px;
+  float:right;
+  //position: absolute;
+  //top: -350px;
+  //right: 40px;
 }
 
 .tech-stack-icon {

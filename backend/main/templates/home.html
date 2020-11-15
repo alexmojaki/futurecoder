@@ -127,43 +127,38 @@
                         </div-->
                     </div>
                     <div class="hero-illustration">
-                        <div class="hero-square hero-square-4 is-moving-object is-rotating">
+                        <div id="hero-image" class="is-moving-object is-rotating">
                             <img width="640" height="540" src="{% static 'img/terminal.png' %}">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container" data-aos="fade-down" data-aos-duration="1800" data-aos-delay="3000" data-aos-offset="-800px">
-                <div class="content">
-                    <a href="#email-newsletter" class="no-text-decoration text-center"><h3>⇓</h3></a>
-                </div>
+            <div class="container" style="justify-content: center" data-aos="fade-down" data-aos-duration="1800" data-aos-delay="3000" data-aos-offset="-800px">
+                <a href="#email-newsletter" class="no-text-decoration text-center"><h3>⇓</h3></a>
             </div>
         </section>
 
         <section id="email-newsletter" data-aos="fade-up" data-aos-duration="800" data-aos-offset="300">
-            <br/>
             <div class="container">
-                <div class="half-col">
-                    <h2>Want to stay posted on futurecoder?</h2>
+                <div class="col">
+                    <h2 class="marginless text-right">Want to stay posted on futurecoder?</h2>
                 </div>
-                <div class="half-col">
+                <div class="col">
                     <form method="post">
                         {% crispy form %}
-                        <br/>
                         <button type="submit" class="button button-primary button-block">Submit</button>
                     </form>
                 </div>
             </div>
-            <br/>
-            <br/>
         </section>
+
         <section id="about">
             <div class="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-offset="50">
-                <div class="half-col">
+                <div class="col">
                     <img id="about-logo" src="{% static 'logo/bordered.png' %}">
                 </div>
-                <div class="half-col">
-                    <h2>About</h2>
+                <div class="col">
+                    <h2 class="marginless">About</h2>
                     <p>
                         futurecoder is about allowing a larger percentage of the world access to the mysterious
                         sub-world of coding. This specific sub-world may be perceived as particularly daunting, but we
@@ -177,6 +172,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="site-footer">
