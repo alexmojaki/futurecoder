@@ -5,6 +5,8 @@ Text = PangoText
 
 class Main(Scene):
     def construct(self):
+        self.wait(0.5)
+
         title = Text("futurecoder", font="monospace")
 
         lines = [
@@ -82,4 +84,4 @@ class Main(Scene):
         ]:
             self.play(FadeInFrom(obj, DOWN * 0.5))
 
-        self.wait(10)
+        self.wait(1)
