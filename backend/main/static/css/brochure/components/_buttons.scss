@@ -15,12 +15,15 @@
     cursor: pointer;
     justify-content: center;
     padding: 16px 36px;
-	height: 48px;
     text-align: center;
     white-space: nowrap;
 
     &:active {
         outline: 0;
+    }
+
+    &.big{
+        font-size: 20px;
     }
 }
 
