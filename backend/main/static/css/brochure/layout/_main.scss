@@ -1,0 +1,68 @@
+.is-boxed {
+  background: lighten(color(bg, 1), 4%);
+}
+
+.body-wrap {
+  background: color(bg, 1);
+  // overflow: hidden;
+  /* Sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.boxed-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  @include shadow;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.section-inner {
+  position: relative; /* To always display inner elements above pseudo decorative stuff */
+}
+
+.container{
+  display:flex;
+}
+
+.container .col{
+  padding: 0 20px;
+  flex: 1;
+}
+
+.spacer{
+  height: 30px;
+  width: 100%;
+}
+
+
+//    EMAIL
+
+#email-newsletter input{
+  padding: 6px 12px;
+  font-size: 0.8em;
+  margin-bottom: 16px;
+}
+
+
+//    ABOUT
+
+#about-logo {
+  width: 200px;
+  max-width: 30vw;
+  float:right;
+  //position: absolute;
+  //top: -350px;
+  //right: 40px;
+}
+
+.tech-stack-icon {
+  width: 48px;
+  margin: 10px;
+  display: inline-block;
+  filter: grayscale(1) brightness(2);
+}

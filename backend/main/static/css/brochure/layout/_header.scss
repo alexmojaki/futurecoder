@@ -1,0 +1,53 @@
+.site-header {
+  position: relative;
+  padding: 24px 0;
+}
+
+.site-header-inner {
+  position: relative; /* To display all elements above the background color */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#logo {
+  width: 50px;
+}
+
+.header-links {
+  display: inline-flex;
+
+  li {
+    display: inline-flex;
+  }
+
+  a:not(.button) {
+    @include font-size(7, mobile, true, true, true);
+    @if (get-font-size(7, desktop) != get-font-size(7, mobile)) {
+      @include media('>medium') {
+        @include font-size(7, desktop, true, true, true);
+      }
+    }
+    @include font-weight(bold);
+    @include anchor-aspect(header);
+    line-height: 16px;
+    padding: 8px 24px;
+  }
+}
+
+.hero-inner {
+  .button-block {
+    width: fit-content;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+  }
+}
+
+title {
+  font-size: 44px;
+}
+
+
+.navbar{
+  padding: 10px 0
+}

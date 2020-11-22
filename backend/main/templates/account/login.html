@@ -9,15 +9,8 @@
 
   {% include "socialaccount/snippets/login_extra.html" %}
 
-  <style>
-      body {
-          background: midnightblue;
-      }
-  </style>
-
   <!--suppress HtmlFormInputWithoutLabel -->
-  <div class="signup-form">
-    <form class="login" method="POST" action="{% url 'account_login' %}">
+    <form method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
       {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
@@ -53,6 +46,5 @@
       <div class="text-center"><a href="{{ signup_url }}">Need an account?</a></div>
 
     </form>
-  </div>
 
 {% endblock %}

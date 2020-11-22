@@ -1,0 +1,29 @@
+.feature {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.features-wrap {
+  &:first-child {
+    margin-top: -12px;
+  }
+
+  &:last-child {
+    margin-bottom: -12px;
+  }
+}
+
+.features-inner {
+  padding-left: 25px;
+  max-width: 400px;
+}
+
+.feature-header {
+  display: flex;
+  align-items: center;
+}
+
+.features-inner{
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
