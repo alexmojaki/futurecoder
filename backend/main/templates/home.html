@@ -10,17 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>futurecoder: learn python from scratch</title>
     <link href="https://fonts.googleapis.com/css?family=Heebo:400,400i,500,700|Titillium+Web:600" rel="stylesheet">
-    <!--link rel="stylesheet" href="{% static 'css/brochure/style.css' %}"-->
     <link rel="stylesheet" href="{% sass_src 'css/brochure/style.scss' %}"/>
+    <link rel="stylesheet" href="{% sass_src 'css/home.scss' %}"/>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
 </head>
 <body onload="AOS.init({once:true})">
-<div class="body-wrap boxed-container">
+<div class="body-wrap boxed-container home-page">
     <div style="position:fixed; z-index:0; top:0; left:0; width:100%; height:100%;">
         <canvas id="canvas" style="width:100%; height:100%;"></canvas>
         <script type="text/javascript">new WarpSpeed("canvas");</script>
+    </div>
+
+    <div class="container" data-aos="fade-right" data-aos-delay="0">
+      {% include "messages.html" %}
     </div>
 
     <header class="site-header">
@@ -148,9 +152,12 @@
         </section>
 
         <section id="email-newsletter" data-aos="fade-up" data-aos-duration="800" data-aos-offset="300">
+            <div class="container"  data-aos="fade-right" data-aos-delay="0">
+              {% include "messages.html" %}
+            </div>
             <div class="container">
                 <div class="col">
-                    <h2 class="marginless text-right">Want to stay posted on futurecoder?</h2>
+                    <h2 class="marginless text-right">Want to receive updates about futurecoder?</h2>
                 </div>
                 <div class="col">
                     <form method="post">
