@@ -514,7 +514,10 @@ class VerbatimStep(Step):
             )
 
     def truncated_trees_match(self, input_tree, program_tree):
-        del input_tree.body[len(program_tree.body):]
+        input_tree = ast.Module(
+            body=input_tree.body[len(program_tree.body):],
+            type_ignores=[],
+        )
         return is_ast_like(input_tree, program_tree)
 
 
