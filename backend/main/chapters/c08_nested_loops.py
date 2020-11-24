@@ -3,7 +3,14 @@ import ast
 from typing import List
 
 from main.exercises import generate_string
-from main.text import ExerciseStep, MessageStep, Page, VerbatimStep, Disallowed
+from main.text import (
+    ExerciseStep,
+    MessageStep,
+    Page,
+    VerbatimStep,
+    Disallowed,
+    search_ast,
+)
 
 
 class IntroducingNestedLoops(Page):
@@ -994,11 +1001,11 @@ you should print `d`.
         """
 
         def solution(self, strings: List[str]):
-            print(strings[1][0])
+            string = strings[1]
+            print(string[0])
 
         hints = """
 How can you access the second string in the list?
-What list method/function is used to do that?
 Then how do you access a particular letter in a string?
 Remember that the indexing of lists and strings are very similar.
 """
@@ -1011,7 +1018,6 @@ Remember that the indexing of lists and strings are very similar.
         """
 You may have solved it like this:
 
-    strings = ["abc", "def", "ghi"]
     string = strings[1]
     print(string[0])
 
@@ -1019,25 +1025,28 @@ There's a shorter way. `strings[1]` is an expression like any other, and subscri
 can be used on any expression, not just variables.
 So you can skip the intermediate variable and just do it in one line:
 
-    strings = ["abc", "def", "ghi"]
     print(strings[1][0])
 
 Take a good look at this syntax. If it looks new and fancy, it's not.
 It's just the usual syntax for subscripting, applied twice.
 
-Using this syntax, modify the program to print the last letter of the second-to-last string in a list.
+Using this syntax, modify the program to print the last letter of the second-to-last string in the list `strings`.
 You must use a single expression like above, and you are not allowed to use `len`.
-Your solution should work for lists of any length and strings of any positive length.
-For example, for
-
-    __copyable__
-    strings = ["abc", "de", "fghi", "jklmn", "o"]
-
-it should print `n`.
+Your solution should work for any non-empty list of strings.
+For the previous example input it should print `f`.
         """
 
         def solution(self, strings: List[str]):
             print(strings[-2][-1])
+
+        def check(self):
+            # Basically the above solution is the only option
+            # The only reason this isn't a VerbatimStep is to allow strings to be a loose parameter
+            return super().check() and \
+                search_ast(
+                    self.tree,
+                    ast.parse("print(strings[-2][-1])").body[0],
+                )
 
         hints = """
 This is very similar to the previous exercise.
@@ -1057,7 +1066,7 @@ Make sure you are not confusing the order of the list index and the string index
 Well done!
 
 Applying subscripting twice can be even more powerful.
-We can use it on not only a list of strings, but on *a list of lists* (of strings) too.
+We can use it on not only a list of strings, but on *a list of lists* too.
 For example, what does the following program print?
 
 __program_indented__
