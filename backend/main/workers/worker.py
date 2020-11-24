@@ -9,6 +9,7 @@ from time import sleep
 import friendly_traceback.source_cache
 import stack_data
 
+from main import simple_settings
 from main.exercises import assert_equal
 from main.text import pages
 from main.workers.limits import set_limits
@@ -101,7 +102,8 @@ def worker_loop(task_queue, input_queue, result_queue):
     input_queue.empty()
     task_queue.empty()
 
-    set_limits()
+    if simple_settings.Root.SET_LIMITS:
+        set_limits()
 
     while True:
         entry = task_queue.get()
