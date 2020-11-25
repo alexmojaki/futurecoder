@@ -12836,8 +12836,8 @@
             "    ]",
             "]",
             "for page in book:",
-            "    for sentence in page:",
-            "        print(sentence)",
+            "    for line in page:",
+            "        print(line)",
             "    print('---')"
         ],
         "response": {
@@ -12847,9 +12847,7 @@
                 "answer": "The cat stretched.\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\nKelly twirled in circles,\nshe opened the door.\n---\nAaron made a picture.\n---",
                 "choices": [
                     "The cat stretched.\n---\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\n---\nKelly twirled in circles,\n---\nshe opened the door.\n---\nAaron made a picture.\n---",
-                    "The cat stretched.\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\nKelly twirled in circles,\n---\nshe opened the door.\nAaron made a picture.\n---",
                     "The cat stretched.\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\nKelly twirled in circles,\nshe opened the door.\n---\nAaron made a picture.\n---",
-                    "The cat stretched.\nJacob stood on his tiptoes.\nThe car turned the corner.\n---\nKelly twirled in circles,\nshe opened the door.\nAaron made a picture.\n---",
                     "The cat stretched. Jacob stood on his tiptoes.\n---\nThe car turned the corner. Kelly twirled in circles, she opened the door.\n---\nAaron made a picture.\n---",
                     "Error"
                 ]
@@ -12953,8 +12951,8 @@
             "    ]",
             "]",
             "for page in book:",
-            "    for sentence in page:",
-            "        print(sentence)",
+            "    for line in page:",
+            "        print(line)",
             "    print('---')"
         ],
         "response": {

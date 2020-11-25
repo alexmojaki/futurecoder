@@ -1149,8 +1149,11 @@ Use birdseye if you're having trouble.
         """
 Excellent! You now understand nested subscripting very well.
 
-Let us combine our knowledge of nested loops with nested lists.
-Start with the following nested list (resembling pages in a book):
+You can use a nested loop to iterate over each element and sub-element of a nested list.
+For example, consider this nested list.
+You can imagine that it represents a book, where each sublist is a page and each string within
+is a line in that page.
+It could also represent a library, where each list is a book, and each string is a page.
 
     __copyable__
     book = [
@@ -1168,11 +1171,11 @@ Start with the following nested list (resembling pages in a book):
         ]
     ]
 
-Now add the following nested loop. What will the output look like?
+Click the button to copy the list into the editor, then type in the following nested loop.
 
     for page in book:
-        for sentence in page:
-            print(sentence)
+        for line in page:
+            print(line)
         print('---')
 
         """
@@ -1195,8 +1198,8 @@ Now add the following nested loop. What will the output look like?
                 ]
             ]
             for page in book:
-                for sentence in page:
-                    print(sentence)
+                for line in page:
+                    print(line)
                 print('---')
 
         predicted_output_choices = ["""\
@@ -1218,27 +1221,8 @@ Jacob stood on his tiptoes.
 ---
 The car turned the corner.
 Kelly twirled in circles,
----
-she opened the door.
-Aaron made a picture.
----
-""", """\
-The cat stretched.
-Jacob stood on his tiptoes.
----
-The car turned the corner.
-Kelly twirled in circles,
 she opened the door.
 ---
-Aaron made a picture.
----
-""", """\
-The cat stretched.
-Jacob stood on his tiptoes.
-The car turned the corner.
----
-Kelly twirled in circles,
-she opened the door.
 Aaron made a picture.
 ---
 """, """\
@@ -1254,7 +1238,7 @@ Aaron made a picture.
         """
 Run the program again in Python Tutor.
 Examine what `book` looks like, and what `book[0]`, `book[1]` and `book[2]` are.
-Look at how `page` and `sentence` variables advance.
+Look at how `page` and `line` variables advance.
         """
 
         program_in_text = False
@@ -1277,18 +1261,18 @@ Look at how `page` and `sentence` variables advance.
                 ]
             ]
             for page in book:
-                for sentence in page:
-                    print(sentence)
+                for line in page:
+                    print(line)
                 print('---')
 
     final_text = """
 We can still use all the list methods and functions we learned before.
-For example we can add a new sentence to the last page of `book` with `append`,
+For example we can add a new line to the last page of `book` with `append`,
 to come after `"Aaron made a picture."`:
 
     book[2].append("The car pulled into the garage.")
 
-After all, the sublist `book[2]` is still a list for all intents and purposes!
+After all, the sublist `book[2]` is still a list like any other!
 
 On the next page we will exercise more with nested lists.
         """
