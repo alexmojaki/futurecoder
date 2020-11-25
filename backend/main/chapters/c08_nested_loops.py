@@ -1,5 +1,7 @@
 # flake8: NOQA E501
 import ast
+from string import ascii_lowercase
+from random import randint, choice
 from typing import List
 
 from main.exercises import generate_string
@@ -1580,6 +1582,15 @@ you'll discover a hidden message from the Zen of Python!
                 for string in strings:
                     line += string[i]
                 print(line)
+
+        @classmethod
+        def generate_inputs(cls):
+            strlen, listlen = randint(1, 10), randint(1, 10)
+            letters = ascii_lowercase + ' '
+            strings = [''.join([choice(letters) for _ in range(strlen)]) for _ in range(listlen)]
+            return dict(
+                strings=strings,
+            )
 
         hints = """
 You'll need to go through the first letters, then the second letters, and so on.
