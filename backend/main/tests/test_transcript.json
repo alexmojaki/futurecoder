@@ -12661,6 +12661,643 @@
         "step": "birdseye_loop_example"
     },
     {
+        "get_solution": [
+            "string = strings[1]",
+            "print(string[0])"
+        ],
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = ['abc', 'def', 'ghi']",
+            "string = strings[1]",
+            "print(string[0])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_list_exercise"
+    },
+    {
+        "get_solution": [
+            "print(strings[-2][-1])"
+        ],
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = ['abc', 'de', 'fghi', 'jklmn', 'o']",
+            "print(strings[-2][-1])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "n"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_subscripting"
+    },
+    {
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = [",
+            "    [",
+            "        \"hello there\",",
+            "        \"how are you\",",
+            "    ],",
+            "    [",
+            "        \"goodbye world\",",
+            "        \"hello world\",",
+            "    ]",
+            "]",
+            "print(strings[1][0])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "goodbye world",
+                "choices": [
+                    "hello there",
+                    "how are you",
+                    "goodbye world",
+                    "hello world",
+                    "hello there\nhow are you",
+                    "goodbye world\nhello world",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "goodbye world"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "first_nested_list_example"
+    },
+    {
+        "get_solution": [
+            "print(strings[1][0][0])"
+        ],
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
+            "print(strings[1][0][0])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "g"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "triple_subscripting"
+    },
+    {
+        "page": "Introducing Nested Lists",
+        "program": [
+            "book = [",
+            "    [",
+            "        \"The cat stretched.\",",
+            "        \"Jacob stood on his tiptoes.\"",
+            "    ],",
+            "    [",
+            "        \"The car turned the corner.\",",
+            "        \"Kelly twirled in circles,\",",
+            "        \"she opened the door.\"",
+            "    ],",
+            "    [",
+            "        \"Aaron made a picture.\"",
+            "    ]",
+            "]",
+            "for page in book:",
+            "    for sentence in page:",
+            "        print(sentence)",
+            "    print('---')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "The cat stretched.\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\nKelly twirled in circles,\nshe opened the door.\n---\nAaron made a picture.\n---",
+                "choices": [
+                    "The cat stretched.\n---\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\n---\nKelly twirled in circles,\n---\nshe opened the door.\n---\nAaron made a picture.\n---",
+                    "The cat stretched.\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\nKelly twirled in circles,\n---\nshe opened the door.\nAaron made a picture.\n---",
+                    "The cat stretched.\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\nKelly twirled in circles,\nshe opened the door.\n---\nAaron made a picture.\n---",
+                    "The cat stretched.\nJacob stood on his tiptoes.\nThe car turned the corner.\n---\nKelly twirled in circles,\nshe opened the door.\nAaron made a picture.\n---",
+                    "The cat stretched. Jacob stood on his tiptoes.\n---\nThe car turned the corner. Kelly twirled in circles, she opened the door.\n---\nAaron made a picture.\n---",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "The cat stretched."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Jacob stood on his tiptoes."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "The car turned the corner."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Kelly twirled in circles,"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "she opened the door."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Aaron made a picture."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "nested_list_nested_loop_example"
+    },
+    {
+        "page": "Introducing Nested Lists",
+        "program": [
+            "book = [",
+            "    [",
+            "        \"The cat stretched.\",",
+            "        \"Jacob stood on his tiptoes.\"",
+            "    ],",
+            "    [",
+            "        \"The car turned the corner.\",",
+            "        \"Kelly twirled in circles,\",",
+            "        \"she opened the door.\"",
+            "    ],",
+            "    [",
+            "        \"Aaron made a picture.\"",
+            "    ]",
+            "]",
+            "for page in book:",
+            "    for sentence in page:",
+            "        print(sentence)",
+            "    print('---')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "The cat stretched."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Jacob stood on his tiptoes."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "The car turned the corner."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Kelly twirled in circles,"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "she opened the door."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Aaron made a picture."
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "nested_list_loop_python_tutor"
+    },
+    {
+        "get_solution": [
+            "for sublist in strings:",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            print(string)"
+        ],
+        "page": "More on nested lists, combining nested lists with nested loops",
+        "program": [
+            "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
+            "word = 'hello'",
+            "for sublist in strings:",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            print(string)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "hello there"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "hello world"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_contains_word_exercise"
+    },
+    {
+        "get_solution": [
+            "for sublist in strings:",
+            "    present = False",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            present = True",
+            "    print(present)"
+        ],
+        "page": "More on nested lists, combining nested lists with nested loops",
+        "program": [
+            "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
+            "word = 'goodbye'",
+            "for sublist in strings:",
+            "    present = False",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            present = True",
+            "    print(present)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "sublist_contains_word_exercise"
+    },
+    {
+        "get_solution": [
+            "present = False",
+            "for sublist in strings:",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            present = True",
+            "print(present)"
+        ],
+        "page": "More on nested lists, combining nested lists with nested loops",
+        "program": [
+            "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
+            "word = 'are'",
+            "present = False",
+            "for sublist in strings:",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            present = True",
+            "print(present)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "list_contains_word_exercise"
+    },
+    {
+        "get_solution": [
+            "for i in range(len(strings[0])):",
+            "    line = \"\"",
+            "    for string in strings:",
+            "        line += string[i]",
+            "    print(line)"
+        ],
+        "page": "More on nested lists, combining nested lists with nested loops",
+        "program": [
+            "strings = ['abc', 'def', 'ghi']",
+            "for i in range(len(strings[0])):",
+            "    line = \"\"",
+            "    for string in strings:",
+            "        line += string[i]",
+            "    print(line)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "adg"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "beh"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "cfi"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "zip_strings_list_exercise"
+    },
+    {
+        "get_solution": [
+            "lengths = []",
+            "for string in strings:",
+            "    lengths.append(len(string))",
+            "length = max(lengths)",
+            "",
+            "for i in range(length):",
+            "    line = \"\"",
+            "    for string in strings:",
+            "        if i >= len(string):",
+            "            line += \" \"",
+            "        else:",
+            "            line += string[i]",
+            "    print(line)"
+        ],
+        "page": "More on nested lists, combining nested lists with nested loops",
+        "program": [
+            "strings = ['abcqwe', 'def', 'ghiq']",
+            "lengths = []",
+            "for string in strings:",
+            "    lengths.append(len(string))",
+            "length = max(lengths)",
+            "",
+            "for i in range(length):",
+            "    line = \"\"",
+            "    for string in strings:",
+            "        if i >= len(string):",
+            "            line += \" \"",
+            "        else:",
+            "            line += string[i]",
+            "    print(line)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "adg"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "beh"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "cfi"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "q q"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "w  "
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "e  "
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "zip_longest_strings_exercise"
+    },
+    {
         "page": "Defining Functions",
         "program": [
             "def greet(name):",
