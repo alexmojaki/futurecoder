@@ -12692,6 +12692,32 @@
         "step": "string_list_exercise"
     },
     {
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = [\"abc\", \"def\", \"ghi\"]",
+            "print(strings[1][0])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_subscripting"
+    },
+    {
         "get_solution": [
             "print(strings[-2][-1])"
         ],
@@ -12718,42 +12744,38 @@
                 }
             ]
         },
-        "step": "double_subscripting"
+        "step": "double_subscripting_exercise"
     },
     {
         "page": "Introducing Nested Lists",
         "program": [
-            "strings = [",
-            "    [",
-            "        \"hello there\",",
-            "        \"how are you\",",
-            "    ],",
-            "    [",
-            "        \"goodbye world\",",
-            "        \"hello world\",",
-            "    ]",
-            "]",
+            "strings = [['hello', 'there'], ['how', 'are', 'you']]",
             "print(strings[1][0])"
         ],
         "response": {
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "goodbye world",
+                "answer": "how",
                 "choices": [
-                    "hello there",
-                    "how are you",
-                    "goodbye world",
-                    "hello world",
-                    "hello there\nhow are you",
-                    "goodbye world\nhello world",
+                    "hello",
+                    "there",
+                    "how",
+                    "are",
+                    "you",
+                    "['hello', 'there']",
+                    "['how', 'are', 'you']",
+                    "h",
+                    "t",
+                    "e",
+                    "a",
                     "Error"
                 ]
             },
             "result": [
                 {
                     "color": "white",
-                    "text": "goodbye world"
+                    "text": "how"
                 },
                 {
                     "color": "white",
@@ -12769,12 +12791,12 @@
     },
     {
         "get_solution": [
-            "print(strings[1][0][0])"
+            "print(strings[1][2][0])"
         ],
         "page": "Introducing Nested Lists",
         "program": [
-            "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
-            "print(strings[1][0][0])"
+            "strings = [['hello', 'there'], ['how', 'are', 'you']]",
+            "print(strings[1][2][0])"
         ],
         "response": {
             "message": "",
@@ -12782,7 +12804,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "g"
+                    "text": "y"
                 },
                 {
                     "color": "white",

@@ -12,6 +12,7 @@ from main.text import (
     VerbatimStep,
     Disallowed,
     search_ast,
+    Step,
 )
 
 
@@ -1016,7 +1017,7 @@ Remember that the indexing of lists and strings are very similar.
             (["Alice", "went", "to", "school"], 'w')
         ]
 
-    class double_subscripting(ExerciseStep):
+    class double_subscripting(Step):
         """
 You may have solved it like this:
 
@@ -1031,7 +1032,24 @@ So you can skip the intermediate variable and just do it in one line:
 
 Take a good look at this syntax. If it looks new and fancy, it's not.
 It's just the usual syntax for subscripting, applied twice.
+Try it in birdseye to see how Python breaks it down into smaller pieces.
+        """
 
+        expected_code_source = "birdseye"
+        program_in_text = False
+
+        def program(self):
+            strings = ["abc", "def", "ghi"]
+            print(strings[1][0])
+
+        def check(self):
+            return search_ast(
+                self.tree,
+                ast.Subscript(value=ast.Subscript()),
+            )
+
+    class double_subscripting_exercise(ExerciseStep):
+        """
 Using this syntax, modify the program to print the last letter of the second-to-last string in the list `strings`.
 You must use a single expression like above, and you are not allowed to use `len`.
 Your solution should work for any non-empty list of strings.
@@ -1054,9 +1072,11 @@ For the previous example input it should print `f`.
 This is very similar to the previous exercise.
 Do you remember how to access the last position of a list (without using `len`)?
 Similarly how do you access the second-to-last position in a list?
+If you can't remember, you can Google it!
 Indexing works similarly on lists and strings.
 Do you get an `index out of range` error? Is it for a string, or a list? Why?
 Make sure you are not confusing the order of the list index and the string index.
+Use birdseye if you're having trouble.
 """
         tests = [
             (["abc", "de", "fghi", "jklmn", "o"], 'n'),
@@ -1075,61 +1095,28 @@ __program_indented__
         """
 
         def program(self):
-            strings = [
-                [
-                    "hello there",
-                    "how are you",
-                ],
-                [
-                    "goodbye world",
-                    "hello world",
-                ]
-            ]
+            strings = [['hello', 'there'], ['how', 'are', 'you']]
             print(strings[1][0])
 
-        predicted_output_choices = ["""\
-hello there
-""", """\
-how are you
-""", """\
-goodbye world
-""", """\
-hello world
-""", """\
-hello there
-how are you
-""", """\
-goodbye world
-hello world
-"""]
+        predicted_output_choices = [
+            "hello", "there", "how", "are", "you",
+            "['hello', 'there']", "['how', 'are', 'you']",
+            'h', 't', 'e', 'a',
+        ]
 
     class triple_subscripting(ExerciseStep):
         """
 As you can see Python allows us to have *nested lists*: a list where each element is another list (we refer to them as *sublists*).
-This idea is very powerful and it will allow us to create more complicated and interesting programs.
 
 We can use subscripting even more than twice.
 Write a program that takes a nested list `strings` like above,
-and prints the **first letter of the first string in the second sublist**.
-Use only a single expression like in the previous exercise. For example, if
-
-    __copyable__
-    strings = [
-        [
-            "hello there",
-            "how are you",
-        ],
-        [
-            "goodbye world",
-            "hello world",
-        ]
-    ]
-
-it should print `g`.
+and prints the **first letter of the third string in the second sublist**.
+Use only a single expression like in the previous exercise.
+For example, for the list above, it should print `y`.
         """
 
-        def solution(self, strings: List[str]):
-            print(strings[1][0][0])
+        def solution(self, strings: List[List[str]]):
+            print(strings[1][2][0])
 
         hints = """
 This is very similar to the previous exercises.
@@ -1137,19 +1124,11 @@ How many times do you need to use subscripting?
 First you need to access a sublist.
 Then a string in that sublist.
 Then a letter in that string.
+Use birdseye if you're having trouble.
         """
 
         tests = [
-            ([
-                [
-                    "hello there",
-                    "how are you",
-                ],
-                [
-                    "goodbye world",
-                    "hello world",
-                ]
-            ], 'g'),
+            ([['hello', 'there'], ['how', 'are', 'you']], 'y'),
             ([
                 [
                     "The cat stretched.",
@@ -1163,7 +1142,7 @@ Then a letter in that string.
                 [
                     "Aaron made a picture."
                 ]
-            ], "T")
+            ], "s")
         ]
 
     class nested_list_nested_loop_example(VerbatimStep):
