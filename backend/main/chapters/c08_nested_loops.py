@@ -1145,10 +1145,16 @@ Use birdseye if you're having trouble.
             ], "s")
         ]
 
-    class nested_list_nested_loop_example(VerbatimStep):
-        """
+    final_text = """
 Excellent! You now understand nested subscripting very well.
 
+On the next page we will exercise more with nested lists.
+        """
+
+
+class LoopingOverNestedLists(Page):
+    class nested_list_nested_loop_example(VerbatimStep):
+        """
 You can use a nested loop to iterate over each element and sub-element of a nested list.
 For example, consider this nested list.
 You can imagine that it represents a book, where each sublist is a page and each string within
@@ -1236,50 +1242,22 @@ Aaron made a picture.
 
     class nested_list_loop_python_tutor(VerbatimStep):
         """
-Run the program again in Python Tutor.
-Examine what `book` looks like, and what `book[0]`, `book[1]` and `book[2]` are.
-Look at how `page` and `line` variables advance.
-        """
+Run the following program in Python Tutor.
+Examine what `matrix` looks like, and what `matrix[0]`, `matrix[1]` and `matrix[2]` are.
+Look at how `row` and `num` variables advance.
 
-        program_in_text = False
+    __copyable__
+    __program_indented__
+        """
 
         expected_code_source = "pythontutor"
 
         def program(self):
-            book = [
-                [
-                    "The cat stretched.",
-                    "Jacob stood on his tiptoes."
-                ],
-                [
-                    "The car turned the corner.",
-                    "Kelly twirled in circles,",
-                    "she opened the door."
-                ],
-                [
-                    "Aaron made a picture."
-                ]
-            ]
-            for page in book:
-                for line in page:
-                    print(line)
+            matrix = [[1, 2, 3], [4, 5, 6]]
+            for row in matrix:
+                for num in row:
+                    print(num)
                 print('---')
-
-    final_text = """
-We can still use all the list methods and functions we learned before.
-For example we can add a new line to the last page of `book` with `append`,
-to come after `"Aaron made a picture."`:
-
-    book[2].append("The car pulled into the garage.")
-
-After all, the sublist `book[2]` is still a list like any other!
-
-On the next page we will exercise more with nested lists.
-        """
-
-
-class MoreOnNestedLists(Page):
-    title = "More on nested lists, combining nested lists with nested loops"
 
     class string_contains_word_exercise(ExerciseStep):
         """
