@@ -1156,7 +1156,7 @@ to come after `'you'`:
     
 After all, the sublist `strings[1]` is still a list like any other!
 
-On the next page we will exercise more with nested lists.
+On the next page we will learn about looping over nested lists.
         """
 
 
