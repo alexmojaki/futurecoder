@@ -12819,43 +12819,32 @@
         "step": "triple_subscripting"
     },
     {
-        "page": "Introducing Nested Lists",
+        "page": "Looping Over Nested Lists",
         "program": [
-            "book = [",
-            "    [",
-            "        \"The cat stretched.\",",
-            "        \"Jacob stood on his tiptoes.\"",
-            "    ],",
-            "    [",
-            "        \"The car turned the corner.\",",
-            "        \"Kelly twirled in circles,\",",
-            "        \"she opened the door.\"",
-            "    ],",
-            "    [",
-            "        \"Aaron made a picture.\"",
-            "    ]",
-            "]",
-            "for page in book:",
-            "    for line in page:",
-            "        print(line)",
+            "numbers = [[1, 2, 3], [4, 5], [6], []]",
+            "for sublist in numbers:",
+            "    for num in sublist:",
+            "        print(num)",
             "    print('---')"
         ],
         "response": {
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "The cat stretched.\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\nKelly twirled in circles,\nshe opened the door.\n---\nAaron made a picture.\n---",
+                "answer": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---",
                 "choices": [
-                    "The cat stretched.\n---\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\n---\nKelly twirled in circles,\n---\nshe opened the door.\n---\nAaron made a picture.\n---",
-                    "The cat stretched.\nJacob stood on his tiptoes.\n---\nThe car turned the corner.\nKelly twirled in circles,\nshe opened the door.\n---\nAaron made a picture.\n---",
-                    "The cat stretched. Jacob stood on his tiptoes.\n---\nThe car turned the corner. Kelly twirled in circles, she opened the door.\n---\nAaron made a picture.\n---",
+                    "1\n---\n2\n---\n3\n---\n4\n---\n5\n---\n6\n---",
+                    "1\n2\n3\n---\n4\n5\n---\n6\n---\n---",
+                    "1\n2\n3\n---\n4\n5\n---\n6\n---",
+                    "1 2 3\n---\n4 5\n---\n6\n---\n---",
+                    "1 2 3\n---\n4 5\n---\n6\n---",
                     "Error"
                 ]
             },
             "result": [
                 {
                     "color": "white",
-                    "text": "The cat stretched."
+                    "text": "1"
                 },
                 {
                     "color": "white",
@@ -12863,7 +12852,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "Jacob stood on his tiptoes."
+                    "text": "2"
                 },
                 {
                     "color": "white",
@@ -12871,31 +12860,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "---"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "The car turned the corner."
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "Kelly twirled in circles,"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "she opened the door."
+                    "text": "3"
                 },
                 {
                     "color": "white",
@@ -12911,7 +12876,39 @@
                 },
                 {
                     "color": "white",
-                    "text": "Aaron made a picture."
+                    "text": "4"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "6"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
                 },
                 {
                     "color": "white",
@@ -12934,25 +12931,12 @@
         "step": "nested_list_nested_loop_example"
     },
     {
-        "page": "Introducing Nested Lists",
+        "page": "Looping Over Nested Lists",
         "program": [
-            "book = [",
-            "    [",
-            "        \"The cat stretched.\",",
-            "        \"Jacob stood on his tiptoes.\"",
-            "    ],",
-            "    [",
-            "        \"The car turned the corner.\",",
-            "        \"Kelly twirled in circles,\",",
-            "        \"she opened the door.\"",
-            "    ],",
-            "    [",
-            "        \"Aaron made a picture.\"",
-            "    ]",
-            "]",
-            "for page in book:",
-            "    for line in page:",
-            "        print(line)",
+            "numbers = [[1, 2, 3], [4, 5], [6], []]",
+            "for sublist in numbers:",
+            "    for num in sublist:",
+            "        print(num)",
             "    print('---')"
         ],
         "response": {
@@ -12961,7 +12945,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "The cat stretched."
+                    "text": "1"
                 },
                 {
                     "color": "white",
@@ -12969,7 +12953,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "Jacob stood on his tiptoes."
+                    "text": "2"
                 },
                 {
                     "color": "white",
@@ -12977,31 +12961,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "---"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "The car turned the corner."
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "Kelly twirled in circles,"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "she opened the door."
+                    "text": "3"
                 },
                 {
                     "color": "white",
@@ -13017,7 +12977,39 @@
                 },
                 {
                     "color": "white",
-                    "text": "Aaron made a picture."
+                    "text": "4"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "6"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
                 },
                 {
                     "color": "white",
@@ -13046,7 +13038,7 @@
             "        if word in string:",
             "            print(string)"
         ],
-        "page": "More on nested lists, combining nested lists with nested loops",
+        "page": "Looping Over Nested Lists",
         "program": [
             "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
             "word = 'hello'",
@@ -13092,7 +13084,7 @@
             "            present = True",
             "    print(present)"
         ],
-        "page": "More on nested lists, combining nested lists with nested loops",
+        "page": "Looping Over Nested Lists",
         "program": [
             "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
             "word = 'goodbye'",
@@ -13140,7 +13132,7 @@
             "            present = True",
             "print(present)"
         ],
-        "page": "More on nested lists, combining nested lists with nested loops",
+        "page": "Looping Over Nested Lists",
         "program": [
             "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
             "word = 'are'",
@@ -13179,7 +13171,7 @@
             "        line += string[i]",
             "    print(line)"
         ],
-        "page": "More on nested lists, combining nested lists with nested loops",
+        "page": "Looping Over Nested Lists",
         "program": [
             "strings = ['abc', 'def', 'ghi']",
             "for i in range(len(strings[0])):",
@@ -13240,7 +13232,7 @@
             "            line += string[i]",
             "    print(line)"
         ],
-        "page": "More on nested lists, combining nested lists with nested loops",
+        "page": "Looping Over Nested Lists",
         "program": [
             "strings = ['abcqwe', 'def', 'ghiq']",
             "lengths = []",

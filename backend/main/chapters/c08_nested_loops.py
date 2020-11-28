@@ -1157,112 +1157,99 @@ class LoopingOverNestedLists(Page):
         """
 You can use a nested loop to iterate over each element and sub-element of a nested list.
 For example, consider this nested list.
-You can imagine that it represents a book, where each sublist is a page and each string within
-is a line in that page.
-It could also represent a library, where each list is a book, and each string is a page.
 
     __copyable__
-    book = [
-        [
-            "The cat stretched.",
-            "Jacob stood on his tiptoes."
-        ],
-        [
-            "The car turned the corner.",
-            "Kelly twirled in circles,",
-            "she opened the door."
-        ],
-        [
-            "Aaron made a picture."
-        ]
-    ]
+    numbers = [[1, 2, 3], [4, 5], [6], []]
 
 Click the button to copy the list into the editor, then type in the following nested loop.
 
-    for page in book:
-        for line in page:
-            print(line)
+    for sublist in numbers:
+        for num in sublist:
+            print(num)
         print('---')
 
+Look carefully at the code. Note that the outer loop creates a variable `sublist`
+and the inner loop iterates over the same variable. This is a common pattern.
+Now run the code.
         """
 
         program_in_text = False
 
         def program(self):
-            book = [
-                [
-                    "The cat stretched.",
-                    "Jacob stood on his tiptoes."
-                ],
-                [
-                    "The car turned the corner.",
-                    "Kelly twirled in circles,",
-                    "she opened the door."
-                ],
-                [
-                    "Aaron made a picture."
-                ]
-            ]
-            for page in book:
-                for line in page:
-                    print(line)
-                print('---')
-
-        predicted_output_choices = ["""\
-The cat stretched.
----
-Jacob stood on his tiptoes.
----
-The car turned the corner.
----
-Kelly twirled in circles,
----
-she opened the door.
----
-Aaron made a picture.
----
-""", """\
-The cat stretched.
-Jacob stood on his tiptoes.
----
-The car turned the corner.
-Kelly twirled in circles,
-she opened the door.
----
-Aaron made a picture.
----
-""", """\
-The cat stretched. Jacob stood on his tiptoes.
----
-The car turned the corner. Kelly twirled in circles, she opened the door.
----
-Aaron made a picture.
----
-"""]
-
-    class nested_list_loop_python_tutor(VerbatimStep):
-        """
-Run the following program in Python Tutor.
-Examine what `matrix` looks like, and what `matrix[0]`, `matrix[1]` and `matrix[2]` are.
-Look at how `row` and `num` variables advance.
-
-    __copyable__
-    __program_indented__
-        """
-
-        expected_code_source = "pythontutor"
-
-        def program(self):
-            matrix = [[1, 2, 3], [4, 5, 6]]
-            for row in matrix:
-                for num in row:
+            numbers = [[1, 2, 3], [4, 5], [6], []]
+            for sublist in numbers:
+                for num in sublist:
                     print(num)
                 print('---')
 
+        predicted_output_choices = ["""\
+1
+---
+2
+---
+3
+---
+4
+---
+5
+---
+6
+---
+""", """\
+1
+2
+3
+---
+4
+5
+---
+6
+---
+---
+""", """\
+1
+2
+3
+---
+4
+5
+---
+6
+---
+""", """\
+1 2 3
+---
+4 5
+---
+6
+---
+---
+""", """\
+1 2 3
+---
+4 5
+---
+6
+---
+"""]
+
+    class nested_list_loop_python_tutor(nested_list_nested_loop_example):
+        text = """
+Now run the same program again in Python Tutor.
+
+Examine what `numbers` looks like, and what `numbers[0]` up to `numbers[3]` are.
+Look at how `sublist` and `num` variables advance.
+        """
+
+        expected_code_source = "pythontutor"
+        predicted_output_choices = None
+
     class string_contains_word_exercise(ExerciseStep):
         """
-Write a program to print every string in a nested list `strings` that contains the given `word`.
-It should work for any `word` and `strings`. For example, if
+Now let's solve some problems using this kind of loop.
+
+Suppose we have a nested list of strings like the one below,
+and we want to search for a particular `word` deep within the list.
 
     __copyable__
     strings = [
@@ -1277,7 +1264,12 @@ It should work for any `word` and `strings`. For example, if
     ]
     word = "hello"
 
-then your program should print
+You can imagine that `strings` represents a book, where each sublist is a page and each string within
+is a line in that page.
+It could also represent a library, where each list is a book, and each string is a page.
+
+Write a program to print every string that contains `word`.
+It should work for any `word` and `strings`. For the example above, it should print
 
     hello there
     hello world
@@ -1285,7 +1277,7 @@ then your program should print
 Remember that there is a specific way to check if a string contains another string. If you can't remember how, Google it!
         """
 
-        def solution(self, strings: List[str], word: str):
+        def solution(self, strings: List[List[str]], word: str):
             for sublist in strings:
                 for string in sublist:
                     if word in string:
@@ -1293,8 +1285,10 @@ Remember that there is a specific way to check if a string contains another stri
 
         hints = """
 How do you check if a string contains a word?
-How can you access each string in each sublist of a nested list?
 Make sure to check whether **the string** contains the word, not the sublist.
+How can you access each string in each sublist of a nested list?
+You need to use a nested loop.
+The loops should follow the same pattern as the example at the beginning of the page. 
         """
 
         tests = [
@@ -1338,9 +1332,13 @@ The car turned the corner.
 
     class sublist_contains_word_exercise(ExerciseStep):
         """
-Next, print a boolean for each sublist in `strings` to indicate **whether that sublist contains a string that contains `word`.**
-(Notice that simply checking whether `word` is in a sublist does not accomplish this.)
-Your program should work for any `word` and any nested list `strings`. For example, if
+Nice!
+
+Now let's change the exercise slightly. This time the output should tell us which *sublists* contain `word`,
+rather than which inner strings. In particular, we want to print a boolean for each sublist:
+`True` if the sublist contains the word in any of its strings, `False` if it's not there at all.
+
+Given these example inputs:
 
     __copyable__
     strings = [
@@ -1360,9 +1358,13 @@ then your program should print
     False
     True
 
+Note that `word in sublist` won't work. For example, `"hello" in ["hello there", "how are you"]` is `False`
+because `"hello"` is not *equal* to either of the two elements of that list, even though it is in one of them.
         """
 
-        def solution(self, strings: List[str], word: str):
+        parsons_solution = True
+
+        def solution(self, strings: List[List[str]], word: str):
             for sublist in strings:
                 present = False
                 for string in sublist:
@@ -1372,8 +1374,14 @@ then your program should print
 
         hints = """
 For each sublist, define a boolean.
-What should be the initial value for the boolean?
 Go through a sublist, update the boolean accordingly.
+Only print the boolean once for each sublist.
+What should be the initial value for the boolean?
+What if one of the sublists is empty? What should you print for that sublist?
+If you find the word in a string, the boolean should be set to `True`.
+What if a string doesn't contain the word?
+Doesn't matter! It doesn't change whether any other string might contain the word.
+In other words, don't set the boolean to `False` except at the beginning.
         """
 
         tests = [
@@ -1429,7 +1437,7 @@ False
 
     class list_contains_word_exercise(ExerciseStep):
         """
-Well done.
+Well done!
 
 Next, print only one boolean to indicate if `word` is present in any string in the entire nested list at all. For example, if
 
@@ -1449,7 +1457,9 @@ Next, print only one boolean to indicate if `word` is present in any string in t
 your program should print `False`.
         """
 
-        def solution(self, strings: List[str], word: str):
+        parsons_solution = True
+
+        def solution(self, strings: List[List[str]], word: str):
             present = False
             for sublist in strings:
                 for string in sublist:
@@ -1459,9 +1469,10 @@ your program should print `False`.
 
         hints = """
 This is very similar to the previous exercise.
+When should you print the boolean?
+Remember you want to print it only once.
 Instead of defining a boolean for each sublist, define only one boolean for the entire list.
 When and how should you modify the boolean?
-There is an opportunity to stop a loop early with `break` (although this is not necessary).
         """
 
         tests = [
@@ -1495,7 +1506,7 @@ There is an opportunity to stop a loop early with `break` (although this is not 
 
     class zip_strings_list_exercise(ExerciseStep):
         """
-Well done!
+Excellent!
 
 For this exercise you are given a list of strings of **equal length**.
 Write a program that prints the first letter of each string put together on one line,
