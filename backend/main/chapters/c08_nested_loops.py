@@ -1148,6 +1148,14 @@ Use birdseye if you're having trouble.
     final_text = """
 Excellent! You now understand nested subscripting very well.
 
+We can still use all the list methods and functions we learned before.
+For example we can add a new word to the last sublist of `strings` with `append`,
+to come after `'you'`:
+
+    strings[1].append("today?")
+    
+After all, the sublist `strings[1]` is still a list like any other!
+
 On the next page we will exercise more with nested lists.
         """
 
