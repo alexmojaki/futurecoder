@@ -1,9 +1,19 @@
 # flake8: NOQA E501
 import ast
+from string import ascii_lowercase
+from random import randint, choice
 from typing import List
 
 from main.exercises import generate_string
-from main.text import ExerciseStep, MessageStep, Page, VerbatimStep, Disallowed
+from main.text import (
+    ExerciseStep,
+    MessageStep,
+    Page,
+    VerbatimStep,
+    Disallowed,
+    search_ast,
+    Step,
+)
 
 
 class IntroducingNestedLoops(Page):
@@ -980,3 +990,665 @@ Note that:
 3. The values recorded for the expressions `vowels` and `consonants` depend on which box you look at. In the lines after the loop, they contain all the letters, but inside the loop they only contain some, and exactly how many depends on which iteration you're on.
 4. In `vowels.append(letter)`, you see what the values of those variables were *at that moment*. That means that `letter` is about to be appended to `vowels` but this hasn't happened yet, so `vowels` doesn't contain `letter`.
         """
+
+
+class IntroducingNestedLists(Page):
+    class string_list_exercise(ExerciseStep):
+        """
+Exercise: given a list of strings, print the first letter of the second string in the list. For example, given:
+
+    __copyable__
+    strings = ["abc", "def", "ghi"]
+
+you should print `d`.
+        """
+
+        def solution(self, strings: List[str]):
+            string = strings[1]
+            print(string[0])
+
+        hints = """
+How can you access the second string in the list?
+Then how do you access a particular letter in a string?
+Remember that the indexing of lists and strings are very similar.
+"""
+        tests = [
+            (["abc", "def", "ghi"], 'd'),
+            (["Alice", "went", "to", "school"], 'w')
+        ]
+
+    class double_subscripting(Step):
+        """
+You may have solved it like this:
+
+    string = strings[1]
+    print(string[0])
+
+There's a shorter way. `strings[1]` is an expression like any other, and subscripting like `[0]`
+can be used on any expression, not just variables.
+So you can skip the intermediate variable and just do it in one line:
+
+    print(strings[1][0])
+
+Take a good look at this syntax. If it looks new and fancy, it's not.
+It's just the usual syntax for subscripting, applied twice.
+Try it in birdseye to see how Python breaks it down into smaller pieces.
+        """
+
+        expected_code_source = "birdseye"
+        program_in_text = False
+
+        def program(self):
+            strings = ["abc", "def", "ghi"]
+            print(strings[1][0])
+
+        def check(self):
+            return search_ast(
+                self.tree,
+                ast.Subscript(value=ast.Subscript()),
+            )
+
+    class double_subscripting_exercise(ExerciseStep):
+        """
+Using this syntax, modify the program to print the last letter of the second-to-last string in the list `strings`.
+You must use a single expression like above, and you are not allowed to use `len`.
+Your solution should work for any non-empty list of strings.
+For the previous example input it should print `f`.
+        """
+
+        def solution(self, strings: List[str]):
+            print(strings[-2][-1])
+
+        def check(self):
+            # Basically the above solution is the only option
+            # The only reason this isn't a VerbatimStep is to allow strings to be a loose parameter
+            return super().check() and \
+                search_ast(
+                    self.tree,
+                    ast.parse("print(strings[-2][-1])").body[0],
+                )
+
+        hints = """
+This is very similar to the previous exercise.
+Do you remember how to access the last position of a list (without using `len`)?
+Similarly how do you access the second-to-last position in a list?
+If you can't remember, you can Google it!
+Indexing works similarly on lists and strings.
+Do you get an `index out of range` error? Is it for a string, or a list? Why?
+Make sure you are not confusing the order of the list index and the string index.
+Use birdseye if you're having trouble.
+"""
+        tests = [
+            (["abc", "de", "fghi", "jklmn", "o"], 'n'),
+            (["Alice", "went", "to", "school"], 'o')
+        ]
+
+    class first_nested_list_example(VerbatimStep):
+        """
+Well done!
+
+Applying subscripting twice can be even more powerful.
+We can use it on not only a list of strings, but on *a list of lists* too.
+For example, what does the following program print?
+
+__program_indented__
+        """
+
+        def program(self):
+            strings = [['hello', 'there'], ['how', 'are', 'you']]
+            print(strings[1][0])
+
+        predicted_output_choices = [
+            "hello", "there", "how", "are", "you",
+            "['hello', 'there']", "['how', 'are', 'you']",
+            'h', 't', 'e', 'a',
+        ]
+
+    class triple_subscripting(ExerciseStep):
+        """
+As you can see Python allows us to have *nested lists*: a list where each element is another list (we refer to them as *sublists*).
+
+We can use subscripting even more than twice.
+Write a program that takes a nested list `strings` like above,
+and prints the **first letter of the third string in the second sublist**.
+Use only a single expression like in the previous exercise.
+For example, for the list above, it should print `y`.
+        """
+
+        def solution(self, strings: List[List[str]]):
+            print(strings[1][2][0])
+
+        hints = """
+This is very similar to the previous exercises.
+How many times do you need to use subscripting?
+First you need to access a sublist.
+Then a string in that sublist.
+Then a letter in that string.
+Use birdseye if you're having trouble.
+        """
+
+        tests = [
+            ([['hello', 'there'], ['how', 'are', 'you']], 'y'),
+            ([
+                [
+                    "The cat stretched.",
+                    "Jacob stood on his tiptoes."
+                ],
+                [
+                    "The car turned the corner.",
+                    "Kelly twirled in circles,",
+                    "she opened the door."
+                ],
+                [
+                    "Aaron made a picture."
+                ]
+            ], "s")
+        ]
+
+    final_text = """
+Excellent! You now understand nested subscripting very well.
+
+We can still use all the list methods and functions we learned before.
+For example we can add a new word to the last sublist of `strings` with `append`,
+to come after `'you'`:
+
+    strings[1].append("today?")
+    
+After all, the sublist `strings[1]` is still a list like any other!
+
+On the next page we will learn about looping over nested lists.
+        """
+
+
+class LoopingOverNestedLists(Page):
+    class nested_list_nested_loop_example(VerbatimStep):
+        """
+You can use a nested loop to iterate over each element and sub-element of a nested list.
+For example, consider this nested list.
+
+    __copyable__
+    numbers = [[1, 2, 3], [4, 5], [6], []]
+
+Click the button to copy the list into the editor, then type in the following nested loop.
+
+    for sublist in numbers:
+        for num in sublist:
+            print(num)
+        print('---')
+
+Look carefully at the code. Note that the outer loop creates a variable `sublist`
+and the inner loop iterates over the same variable. This is a common pattern.
+Now run the code.
+        """
+
+        program_in_text = False
+
+        def program(self):
+            numbers = [[1, 2, 3], [4, 5], [6], []]
+            for sublist in numbers:
+                for num in sublist:
+                    print(num)
+                print('---')
+
+        predicted_output_choices = ["""\
+1
+---
+2
+---
+3
+---
+4
+---
+5
+---
+6
+---
+""", """\
+1
+2
+3
+---
+4
+5
+---
+6
+---
+---
+""", """\
+1
+2
+3
+---
+4
+5
+---
+6
+---
+""", """\
+1 2 3
+---
+4 5
+---
+6
+---
+---
+""", """\
+1 2 3
+---
+4 5
+---
+6
+---
+"""]
+
+    class nested_list_loop_python_tutor(nested_list_nested_loop_example):
+        text = """
+Now run the same program again in Python Tutor.
+
+Examine what `numbers` looks like, and what `numbers[0]` up to `numbers[3]` are.
+Look at how `sublist` and `num` variables advance.
+        """
+
+        expected_code_source = "pythontutor"
+        predicted_output_choices = None
+
+    class string_contains_word_exercise(ExerciseStep):
+        """
+Now let's solve some problems using this kind of loop.
+
+Suppose we have a nested list of strings like the one below,
+and we want to search for a particular `word` deep within the list.
+
+    __copyable__
+    strings = [
+        [
+            "hello there",
+            "how are you",
+        ],
+        [
+            "goodbye world",
+            "hello world",
+        ]
+    ]
+    word = "hello"
+
+You can imagine that `strings` represents a book, where each sublist is a page and each string within
+is a line in that page.
+It could also represent a library, where each list is a book, and each string is a page.
+
+Write a program to print every string that contains `word`.
+It should work for any `word` and `strings`. For the example above, it should print
+
+    hello there
+    hello world
+
+Remember that there is a specific way to check if a string contains another string. If you can't remember how, Google it!
+        """
+
+        def solution(self, strings: List[List[str]], word: str):
+            for sublist in strings:
+                for string in sublist:
+                    if word in string:
+                        print(string)
+
+        hints = """
+How do you check if a string contains a word?
+Make sure to check whether **the string** contains the word, not the sublist.
+How can you access each string in each sublist of a nested list?
+You need to use a nested loop.
+The loops should follow the same pattern as the example at the beginning of the page. 
+        """
+
+        tests = [
+            (
+                (
+                    [
+                        [
+                            "hello there",
+                            "how are you",
+                        ],
+                        [
+                            "goodbye world",
+                            "hello world",
+                        ]
+                    ], "hello"
+                ), """\
+hello there
+hello world
+"""),
+            (
+                (
+                    [
+                        [
+                            "The cat stretched.",
+                            "Jacob stood on his tiptoes."
+                        ],
+                        [
+                            "The car turned the corner.",
+                            "Kelly twirled in circles,",
+                            "she opened the door."
+                        ],
+                        [
+                            "Aaron made a picture."
+                        ]
+                    ], "The"
+                ), """\
+The cat stretched.
+The car turned the corner.
+""")
+        ]
+
+    class sublist_contains_word_exercise(ExerciseStep):
+        """
+Nice!
+
+Now let's change the exercise slightly. This time the output should tell us which *sublists* contain `word`,
+rather than which inner strings. In particular, we want to print a boolean for each sublist:
+`True` if the sublist contains the word in any of its strings, `False` if it's not there at all.
+
+Given these example inputs:
+
+    __copyable__
+    strings = [
+        [
+            "hello there",
+            "how are you",
+        ],
+        [
+            "goodbye world",
+            "hello world",
+        ]
+    ]
+    word = "goodbye"
+
+then your program should print
+
+    False
+    True
+
+Note that `word in sublist` won't work. For example, `"hello" in ["hello there", "how are you"]` is `False`
+because `"hello"` is not *equal* to either of the two elements of that list, even though it is in one of them.
+        """
+
+        parsons_solution = True
+
+        def solution(self, strings: List[List[str]], word: str):
+            for sublist in strings:
+                present = False
+                for string in sublist:
+                    if word in string:
+                        present = True
+                print(present)
+
+        hints = """
+For each sublist, define a boolean.
+Go through a sublist, update the boolean accordingly.
+Only print the boolean once for each sublist.
+What should be the initial value for the boolean?
+What if one of the sublists is empty? What should you print for that sublist?
+If you find the word in a string, the boolean should be set to `True`.
+What if a string doesn't contain the word?
+Doesn't matter! It doesn't change whether any other string might contain the word.
+In other words, don't set the boolean to `False` except at the beginning.
+        """
+
+        tests = [
+            (
+                (
+                    [
+                        [
+                            "hello there",
+                            "how are you",
+                        ],
+                        [
+                            "goodbye world",
+                            "hello world",
+                        ]
+                    ], "goodbye"
+                ), """\
+False
+True
+"""),
+            (
+                (
+                    [
+                        [
+                            "hello there",
+                            "how are you",
+                        ],
+                        [
+                            "goodbye world",
+                            "hello world",
+                        ]
+                    ], "hello"
+                ), """\
+True
+True
+"""),
+            (
+                (
+                    [
+                        [
+                            "hello there",
+                            "how are you",
+                        ],
+                        [
+                            "goodbye world",
+                            "hello world",
+                        ]
+                    ], "Python"
+                ), """\
+False
+False
+""")
+        ]
+
+    class list_contains_word_exercise(ExerciseStep):
+        """
+Well done!
+
+Next, print only one boolean to indicate if `word` is present in any string in the entire nested list at all. For example, if
+
+    __copyable__
+    strings = [
+        [
+            "hello there",
+            "how are you",
+        ],
+        [
+            "goodbye world",
+            "hello world",
+        ]
+    ]
+    word = "Python"
+
+your program should print `False`.
+        """
+
+        parsons_solution = True
+
+        def solution(self, strings: List[List[str]], word: str):
+            present = False
+            for sublist in strings:
+                for string in sublist:
+                    if word in string:
+                        present = True
+            print(present)
+
+        hints = """
+This is very similar to the previous exercise.
+When should you print the boolean?
+Remember you want to print it only once.
+Instead of defining a boolean for each sublist, define only one boolean for the entire list.
+When and how should you modify the boolean?
+        """
+
+        tests = [
+            (
+                (
+                    [
+                        [
+                            "hello there",
+                            "how are you",
+                        ],
+                        [
+                            "goodbye world",
+                            "hello world",
+                        ]
+                    ], "are"
+                ), "True"),
+            (
+                (
+                    [
+                        [
+                            "hello there",
+                            "how are you",
+                        ],
+                        [
+                            "goodbye world",
+                            "hello world",
+                        ]
+                    ], "Python"
+                ), "False")
+        ]
+
+    class zip_strings_list_exercise(ExerciseStep):
+        """
+Excellent!
+
+[Earlier in the course](/course/?page=GettingElementsAtPosition) there was an exercise
+to print two strings vertically side by side, like this:
+
+    H W
+    e o
+    l r
+    l l
+    o d
+
+Now we're going to generalize this to a list of strings, rather than just two.
+
+For this exercise you are given a list of strings of **equal length**.
+Write a program that prints the first letter of each string on one line,
+then the second letter of each string on the next line, and so on. For example, if
+
+    strings = ["abc", "def", "ghi"]
+
+then your program should print
+
+    adg
+    beh
+    cfi
+
+Your program should work for any such list. In particular, if you use the following list,
+you'll discover a hidden message from the Zen of Python!
+
+    __copyable__
+    strings = ["  b n", "f ete", "liths", "astat", "t ene", "  r d"]
+
+Note that this time you shouldn't add spaces between letters in the output.
+        """
+
+        def solution(self, strings: List[str]):
+            for i in range(len(strings[0])):
+                line = ""
+                for string in strings:
+                    line += string[i]
+                print(line)
+
+        @classmethod
+        def generate_inputs(cls):
+            strlen, listlen = randint(1, 10), randint(1, 10)
+            strings = [generate_string(strlen) for _ in range(listlen)]
+            return dict(
+                strings=strings,
+            )
+
+        hints = """
+This is NOT similar to the previous exercises on this page.
+Think about the solution when there's just two strings. How can you generalize it to a list of strings?
+You'll need to go through the first letters, then the second letters, and so on.
+You'll have to use a loop, but how long should the loop take?
+Remember that strings in the list have equal lengths.
+For each position (first, second etc.) define a new string.
+What should that string be initially?
+For each position (first, second etc.) you'll have to go through each string in the list.
+You'll need another loop inside the one you have.
+        """
+
+        tests = [
+            (["abc", "def", "ghi"], """\
+adg
+beh
+cfi
+"""),
+            (["  b n", "f ete", "liths", "astat", "t ene", "  r d"], """\
+ flat 
+  is  
+better
+ than 
+nested
+""")
+        ]
+
+    class zip_longest_strings_exercise(ExerciseStep):
+        text = """
+Excellent! If you'd like, you can just continue to the [next page](/course/?page=DefiningFunctions) now.
+Or you can do a bonus challenge!
+
+Now let's generalize the previous exercise to strings of unequal length. Once again you are given a list of strings.
+Like before, write a program that prints the first letter of each string together on one line,
+then the second letters together on the next line, and so on.
+But this time, if a string does not have enough letters, it should print a space.
+
+For example, if
+
+    strings = ["abcqwe", "def", "ghiq"]
+
+your program should print
+
+    adg
+    beh
+    cfi
+    q q
+    w  
+    e  
+        """
+
+        def solution(self, strings: List[str]):
+            lengths = []
+            for string in strings:
+                lengths.append(len(string))
+            length = max(lengths)
+
+            for i in range(length):
+                line = ""
+                for string in strings:
+                    if i >= len(string):
+                        line += " "
+                    else:
+                        line += string[i]
+                print(line)
+
+        hints = """
+Since the strings can have different lengths, this is a bit tricky.
+For how long should your outer loop go this time?
+Before you start handling the strings, it might be a good idea to find the longest string length first.
+The rest is very similar to the previous exercise.
+The only difference is that now you have to determine whether to add a letter from a string, or a space.
+        """
+
+        tests = [
+            (["abcqwe", "def", "ghiq"], """\
+adg
+beh
+cfi
+q q
+w  
+e  
+""")
+        ]
+
+    final_text = """
+You have mastered nested lists and how to combine them with nested loops.
+Brilliant! You now have extremely powerful programming tools in your tool belt.
+    """

@@ -103,7 +103,10 @@ class UserProcess:
         # TODO cancel if result was cancelled by a newer handle_entry
         result = None
         while result is None:
-            timeout = 10 if self.fresh_process else 3
+            if simple_settings.Root.SET_LIMITS:
+                timeout = 10 if self.fresh_process else 3
+            else:
+                timeout = None
             try:
                 result = self.result_queue.get(timeout=timeout)
                 assert (result is None) == self.fresh_process

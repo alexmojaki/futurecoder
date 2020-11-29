@@ -16,6 +16,7 @@ class Root(DryEnv):
 
     SEPARATE_WORKER_PROCESS = False
     MASTER_URL = "http://localhost:5000/"
+    SET_LIMITS = True
 
     SAVE_CODE_ENTRIES = True
 

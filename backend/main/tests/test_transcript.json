@@ -12661,6 +12661,655 @@
         "step": "birdseye_loop_example"
     },
     {
+        "get_solution": [
+            "string = strings[1]",
+            "print(string[0])"
+        ],
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = ['abc', 'def', 'ghi']",
+            "string = strings[1]",
+            "print(string[0])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_list_exercise"
+    },
+    {
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = [\"abc\", \"def\", \"ghi\"]",
+            "print(strings[1][0])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "d"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_subscripting"
+    },
+    {
+        "get_solution": [
+            "print(strings[-2][-1])"
+        ],
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = ['abc', 'de', 'fghi', 'jklmn', 'o']",
+            "print(strings[-2][-1])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "n"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_subscripting_exercise"
+    },
+    {
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = [['hello', 'there'], ['how', 'are', 'you']]",
+            "print(strings[1][0])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "how",
+                "choices": [
+                    "hello",
+                    "there",
+                    "how",
+                    "are",
+                    "you",
+                    "['hello', 'there']",
+                    "['how', 'are', 'you']",
+                    "h",
+                    "t",
+                    "e",
+                    "a",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "how"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "first_nested_list_example"
+    },
+    {
+        "get_solution": [
+            "print(strings[1][2][0])"
+        ],
+        "page": "Introducing Nested Lists",
+        "program": [
+            "strings = [['hello', 'there'], ['how', 'are', 'you']]",
+            "print(strings[1][2][0])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "y"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "triple_subscripting"
+    },
+    {
+        "page": "Looping Over Nested Lists",
+        "program": [
+            "numbers = [[1, 2, 3], [4, 5], [6], []]",
+            "for sublist in numbers:",
+            "    for num in sublist:",
+            "        print(num)",
+            "    print('---')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---",
+                "choices": [
+                    "1\n---\n2\n---\n3\n---\n4\n---\n5\n---\n6\n---",
+                    "1\n2\n3\n---\n4\n5\n---\n6\n---\n---",
+                    "1\n2\n3\n---\n4\n5\n---\n6\n---",
+                    "1 2 3\n---\n4 5\n---\n6\n---\n---",
+                    "1 2 3\n---\n4 5\n---\n6\n---",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "4"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "6"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "nested_list_nested_loop_example"
+    },
+    {
+        "page": "Looping Over Nested Lists",
+        "program": [
+            "numbers = [[1, 2, 3], [4, 5], [6], []]",
+            "for sublist in numbers:",
+            "    for num in sublist:",
+            "        print(num)",
+            "    print('---')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "3"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "4"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "5"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "6"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "---"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "nested_list_loop_python_tutor"
+    },
+    {
+        "get_solution": [
+            "for sublist in strings:",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            print(string)"
+        ],
+        "page": "Looping Over Nested Lists",
+        "program": [
+            "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
+            "word = 'hello'",
+            "for sublist in strings:",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            print(string)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "hello there"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "hello world"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "string_contains_word_exercise"
+    },
+    {
+        "get_solution": [
+            "for sublist in strings:",
+            "    present = False",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            present = True",
+            "    print(present)"
+        ],
+        "page": "Looping Over Nested Lists",
+        "program": [
+            "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
+            "word = 'goodbye'",
+            "for sublist in strings:",
+            "    present = False",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            present = True",
+            "    print(present)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "sublist_contains_word_exercise"
+    },
+    {
+        "get_solution": [
+            "present = False",
+            "for sublist in strings:",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            present = True",
+            "print(present)"
+        ],
+        "page": "Looping Over Nested Lists",
+        "program": [
+            "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
+            "word = 'are'",
+            "present = False",
+            "for sublist in strings:",
+            "    for string in sublist:",
+            "        if word in string:",
+            "            present = True",
+            "print(present)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "list_contains_word_exercise"
+    },
+    {
+        "get_solution": [
+            "for i in range(len(strings[0])):",
+            "    line = \"\"",
+            "    for string in strings:",
+            "        line += string[i]",
+            "    print(line)"
+        ],
+        "page": "Looping Over Nested Lists",
+        "program": [
+            "strings = ['abc', 'def', 'ghi']",
+            "for i in range(len(strings[0])):",
+            "    line = \"\"",
+            "    for string in strings:",
+            "        line += string[i]",
+            "    print(line)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "adg"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "beh"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "cfi"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "zip_strings_list_exercise"
+    },
+    {
+        "get_solution": [
+            "lengths = []",
+            "for string in strings:",
+            "    lengths.append(len(string))",
+            "length = max(lengths)",
+            "",
+            "for i in range(length):",
+            "    line = \"\"",
+            "    for string in strings:",
+            "        if i >= len(string):",
+            "            line += \" \"",
+            "        else:",
+            "            line += string[i]",
+            "    print(line)"
+        ],
+        "page": "Looping Over Nested Lists",
+        "program": [
+            "strings = ['abcqwe', 'def', 'ghiq']",
+            "lengths = []",
+            "for string in strings:",
+            "    lengths.append(len(string))",
+            "length = max(lengths)",
+            "",
+            "for i in range(length):",
+            "    line = \"\"",
+            "    for string in strings:",
+            "        if i >= len(string):",
+            "            line += \" \"",
+            "        else:",
+            "            line += string[i]",
+            "    print(line)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "adg"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "beh"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "cfi"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "q q"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "w  "
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "e  "
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "zip_longest_strings_exercise"
+    },
+    {
         "page": "Defining Functions",
         "program": [
             "def greet(name):",
