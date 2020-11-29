@@ -560,42 +560,58 @@ and play a few games [here](https://gametable.org/games/tic-tac-toe/).
 We need to check if someone has won a game. Our function `all_equal` is already helpful for checking rows.
 
 Write a function to check if someone has won a game by placing 3 of the same pieces on one of the diagonal lines.
-The board is given as 3 lists of 3 strings each, and the function should return a boolean.
+The board is given as a nested list `board` of 3 sublists, each sublist containing 3 strings, representing a row. For example:
+
+    board = [
+        ['X', 'O', 'X'],
+        ['X', 'X', 'O'],
+        ['O', 'O', 'X']
+    ]
+
+The function should return a boolean: `True` if one of the diagonals have 3 of the same pieces, `False` otherwise.
+Click the Copy button to get started with the code below.
+We provided some tests for you, your job is to replace the `...` with your code.
 
     __copyable__
-    def diagonal_winner(row1, row2, row3):
+    def diagonal_winner(board):
         ...
 
     assert_equal(
         diagonal_winner(
-            ['X', 'O', 'X'],
-            ['X', 'X', 'O'],
-            ['O', 'O', 'X']
+            [
+                ['X', 'O', 'X'],
+                ['X', 'X', 'O'],
+                ['O', 'O', 'X']
+            ]
         ),
         True
     )
 
     assert_equal(
         diagonal_winner(
-            ['X', 'X', 'O'],
-            ['X', 'O', 'O'],
-            ['O', 'X', 'X']
+            [
+                ['X', 'X', 'O'],
+                ['X', 'O', 'O'],
+                ['O', 'X', 'X']
+            ]
         ),
         True
     )
 
     assert_equal(
         diagonal_winner(
-            ['O', 'X', 'O'],
-            ['X', 'X', 'X'],
-            ['O', 'O', 'X']
+            [
+                ['O', 'X', 'O'],
+                ['X', 'X', 'X'],
+                ['O', 'O', 'X']
+            ]
         ),
         False
     )
         """
         hints = """
 How many diagonals are there on the board?
-Which entries of `row1, row2, row3` make up each diagonal?
+Which entries of the three sublists make up each diagonal? How can you access these entries?
 Every list always has 3 entries, so no need for a loop.
 There are two problems to solve here: checking for a win in a specific diagonal, and combining the checks for each diagonal.
 One problem can be solved using `and`, the other using `or`.
@@ -609,49 +625,50 @@ Check the two diagonals together, using `or`.
         ]
 
         def solution(self):
-            def diagonal_winner(row1: List[str], row2: List[str], row3: List[str]):
-                middle = row2[1]
+            def diagonal_winner(board: List[List[str]]):
+                middle = board[1][1]
                 return (
-                        (middle == row1[0] and middle == row3[2]) or
-                        (middle == row1[2] and middle == row3[0])
+                        (middle == board[0][0] and middle == board[2][2]) or
+                        (middle == board[0][2] and middle == board[2][0])
                 )
 
             return diagonal_winner
 
         @classmethod
         def generate_inputs(cls):
+            row1 = [random.choice(["X", "O"]) for _ in range(3)]
+            row2 = [random.choice(["X", "O"]) for _ in range(3)]
+            row3 = [random.choice(["X", "O"]) for _ in range(3)]
             return {
-                "row1": [random.choice(["X", "O"]) for _ in range(3)],
-                "row2": [random.choice(["X", "O"]) for _ in range(3)],
-                "row3": [random.choice(["X", "O"]) for _ in range(3)]
+                "board": [row1, row2, row3]
             }
 
         tests = [
-            ((["X", "O", "X"],
+            ([["X", "O", "X"],
               ["X", "X", "O"],
-              ["O", "O", "X"]), True),
-            ((["X", "O", "O"],
+              ["O", "O", "X"]], True),
+            ([["X", "O", "O"],
               ["X", "O", "X"],
-              ["O", "X", "X"]), True),
-            ((["X", "O", "X"],
+              ["O", "X", "X"]], True),
+            ([["X", "O", "X"],
               ["X", "O", "X"],
-              ["O", "O", "X"]), False),
+              ["O", "O", "X"]], False),
         ]
 
     final_text = """
 Well done! This was a hard one. Here are some possible solutions:
 
     def diagonal_winner(row1, row2, row3):
-        middle = row2[1]
+        middle = board[1][1]
         return (
-            (middle == row1[0] and middle == row3[2]) or
-            (middle == row1[2] and middle == row3[0])
+                (middle == board[0][0] and middle == board[2][2]) or
+                (middle == board[0][2] and middle == board[2][0])
         )
 
 or:
 
-        diagonal1 = all_equal([row1[0], row2[1], row3[2]])
-        diagonal2 = all_equal([row3[0], row2[1], row1[2]])
+        diagonal1 = all_equal([board[0][0], board[1][1], board[2][2]])
+        diagonal2 = all_equal([board[2][0], board[1][1], board[0][2]])
         return diagonal1 or diagonal2
 """
 
