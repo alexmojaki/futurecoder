@@ -1516,8 +1516,19 @@ When and how should you modify the boolean?
         """
 Excellent!
 
+[Earlier in the course](/course/?page=GettingElementsAtPosition) there was an exercise
+to print two strings vertically side by side, like this:
+
+    H W
+    e o
+    l r
+    l l
+    o d
+
+Now we're going to generalize this to a list of strings, rather than just two.
+
 For this exercise you are given a list of strings of **equal length**.
-Write a program that prints the first letter of each string put together on one line,
+Write a program that prints the first letter of each string on one line,
 then the second letter of each string on the next line, and so on. For example, if
 
     strings = ["abc", "def", "ghi"]
@@ -1534,6 +1545,7 @@ you'll discover a hidden message from the Zen of Python!
     __copyable__
     strings = ["  b n", "f ete", "liths", "astat", "t ene", "  r d"]
 
+Note that this time you shouldn't add spaces between letters in the output.
         """
 
         def solution(self, strings: List[str]):
@@ -1546,13 +1558,14 @@ you'll discover a hidden message from the Zen of Python!
         @classmethod
         def generate_inputs(cls):
             strlen, listlen = randint(1, 10), randint(1, 10)
-            letters = ascii_lowercase + ' '
-            strings = [''.join([choice(letters) for _ in range(strlen)]) for _ in range(listlen)]
+            strings = [generate_string(strlen) for _ in range(listlen)]
             return dict(
                 strings=strings,
             )
 
         hints = """
+This is NOT similar to the previous exercises on this page.
+Think about the solution when there's just two strings. How can you generalize it to a list of strings?
 You'll need to go through the first letters, then the second letters, and so on.
 You'll have to use a loop, but how long should the loop take?
 Remember that strings in the list have equal lengths.
@@ -1578,7 +1591,7 @@ nested
         ]
 
     class zip_longest_strings_exercise(ExerciseStep):
-        """
+        text = """
 Excellent! If you'd like, you can just continue to the [next page](/course/?page=DefiningFunctions) now.
 Or you can do a bonus challenge!
 
@@ -1597,8 +1610,8 @@ your program should print
     beh
     cfi
     q q
-    w
-    e
+    w  
+    e  
         """
 
         def solution(self, strings: List[str]):
