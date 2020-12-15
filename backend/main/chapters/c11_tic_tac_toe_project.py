@@ -176,7 +176,7 @@ Be on the lookout for `' '` and remember to return `False` if there are no winni
               ["X", "O", "O", "O", "O"]], False),
         ]
 
-        class catch_empty_row(MessageStep):
+        class catch_empty_row(ExerciseStep, MessageStep):
             """
 Keep in mind that some entries might be `' '`. An empty row is not a winning row.
             """
@@ -196,12 +196,20 @@ Keep in mind that some entries might be `' '`. An empty row is not a winning row
 
                 return row_winner
 
-            def check(self):
-                return not (
-                        "== ' '" in self.input or
-                        "!= ' '" in self.input or
-                        '== " "' in self.input or
-                        '!= " "' in self.input)
+            tests = [
+                ([[" ", " ", " "],
+                  ["A", "A", "B"],
+                  ["B", "B", "A"]], True),
+                ([["S", "S", "S", "S"],
+                  [" ", " ", " ", " "],
+                  ["S", "S", "M", "S"],
+                  ["M", "M", " ", "S"]], True),
+                ([["X", "O", " ", "X", "X"],
+                  ["X", "O", " ", "X", "X"],
+                  [" ", "O", "O", "O", " "],
+                  ["X", "X", "X", "X", " "],
+                  [" ", " ", " ", " ", " "]], True),
+            ]
 
     class column_winner(ExerciseStep):
         """
