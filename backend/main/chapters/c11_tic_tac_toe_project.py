@@ -8,8 +8,10 @@ from main.text import ExerciseStep, Page, MessageStep, Disallowed
 
 
 def generate_board(board_type):
-    winning, size = choice([True, False]), randint(3, 10)
-    char1, char2 = choice(ascii_uppercase), choice(ascii_uppercase)
+    winning = choice([True, False])
+    size = randint(3, 10)
+    char1 = choice(ascii_uppercase)
+    char2 = choice(ascii_uppercase)
     chars = [char1, char2, ' ']
     board = [[choice(chars) for _ in range(size)] for _ in range(size)]
 
