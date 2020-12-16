@@ -7,11 +7,15 @@ from main.text import ExerciseStep, Page, MessageStep
 
 
 class IntroducingTicTacToe(Page):
-    title = "Introduction to the project, and the `winner` function"
+    title = "Checking the board for winners"
 
     class intro_row_winner(ExerciseStep):
         """
-In this large project you will develop a text-based interactive tic-tac-toe game to be played by 2 human players.
+You've done many short exercises solving one little problem. Now we're going to tackle a larger, more complex
+project which will really test your knowledge and require combining many smaller parts together.
+It's going to be so fun!
+
+You will develop a text-based interactive tic-tac-toe game to be played by 2 human players.
 Here is a small preview of what the finished game will look like in play:
 
      123
@@ -37,18 +41,17 @@ Here is a small preview of what the finished game will look like in play:
 
 We will break up the project into several small functions, which will be exercises.
 
-You will use many of the concepts you have learned so far: strings, indexing and subscripting with lists,
+You will use many of the concepts you have learned so far: strings,
 nested lists, nested loops, `range`, calling functions within functions, comparisons, and booleans.
 
 Along the way you will also learn some new concepts: `input`, the newline character, types in Python, and `while` loops.
 
 Here is a rough outline of the project:
 
-- three functions `row_winner`, `column_winner`,  `diagonal_winner`  that check the whole board for winning rows, columns, diagonals respectively
+- three functions `row_winner`, `column_winner`,  `diagonal_winner`  that check the whole board for winning rows, columns, and diagonals
 - a function `winner` that checks the whole board for a winner, combining the above functions
 - a function `format_board` that displays the current state of the game
 - a function `get_coordinate` that takes user input to play a move,
-- a function `next_player` that tracks which player's turn to play it is,
 - finally a `main` function that puts it all together and runs the game interactively.
 - Later on we will add further improvements.
 
@@ -65,7 +68,7 @@ Empty squares will be represented by a space, i.e. `' '`. For example:
     ]
 
 However to make things more interesting your code will need to work for square boards of any size
-(4x4, 5x5, etc) where players can be represented by any two strings, e.g.
+(4x4, 5x5, etc) where players can be represented by any strings, e.g.
 
     board = [
         ['A', 'B', 'A', 'A'],
@@ -74,24 +77,13 @@ However to make things more interesting your code will need to work for square b
         [' ', 'A', 'B', ' ']
     ]
 
-We want a function `row_winner`, which takes an argument `board` like above and
-returns `True` if `board` contains a winning row of either piece, `False` otherwise.
-
-One naive way to achieve this for 3x3 boards is:
-
-    def row_winner(board):
-        return ['O', 'O', 'O'] in board or ['X', 'X', 'X'] in board
-
-There are some issues with this solution:
-it won't work for pieces other than `'X'` and `'O'`, and it won't work for boards of other sizes.
-Also this approach won't work for `column_winner` or `diagonal_winner` later.
-
-I'd like you to find a better solution. Write a `row_winner` that works for any two
-different characters as pieces (except `' '` of course), and for boards of arbitrary size.
-A winning row would have the same character in all its entries (except `' '`).
-Here are some tests it should pass (feel free to add more):
+Write a function `row_winner` which returns `True` if `board` contains
+a winning row, i.e. a horizontal line which has the same character in all its entries (except `' '`):
 
     __copyable__
+    def row_winner(board):
+        ...
+
     assert_equal(
         row_winner(
             [
@@ -114,19 +106,24 @@ Here are some tests it should pass (feel free to add more):
         True
     )
 
+In the second example, `O` wins in the bottom row.
         """
 
         hints = """
-You need to check every row, so you'll need a loop.
+You need to check every row in the board, so you'll need a loop for that.
 How can you check if all entries in a row are equal to each other?
-If you don't know the size of a row, you'll have to loop all the way through it.
-So you'll end up using nested loops!
+That's a self contained problem on its own. You can start by forgetting about the whole board and just checking a single row.
+You could even write a function which just does this, although you don't have to. 
+Since the row could have any size, you'll have to loop all the way through it.
 For each row, define a boolean. Then loop through that row, updating the boolean accordingly.
 You can use the first entry `row[0]` in a row to compare all the row entries to it.
 Think carefully about what the initial value of the boolean should be, and under what conditions you should change its value.
 After looping through a row, if you determined that all its entries are equal, then return `True` (ending the outer loop early).
-Be on the lookout for `' '` and remember to return `False` if there are no winning rows!
+Make sure you don't return `True` for a row filled with spaces.
+Make sure you return `False` if there are no winning rows
 """
+
+        parsons_solution = True
 
         def solution(self):
             def row_winner(board: List[List[str]]):
@@ -171,9 +168,9 @@ Be on the lookout for `' '` and remember to return `False` if there are no winni
               [" ", "M", " ", "S"]], True),
             ([["X", "O", " ", "X", "X"],
               ["X", "O", " ", "X", "X"],
-              [" ", "O", "O", "O", " "],
+              [" ", "O", "X", "X", " "],
               ["X", "X", "X", "X", " "],
-              ["X", "O", "O", "O", "O"]], False),
+              ["X", "O", "O", "X", "O"]], False),
         ]
 
         class catch_empty_row(ExerciseStep, MessageStep):
@@ -200,7 +197,18 @@ Keep in mind that some entries might be `' '`. An empty row is not a winning row
                 ([[" ", " ", " "],
                   ["A", "A", "B"],
                   ["B", "B", "A"]], True),
+                ([[" ", "A", " "],
+                  ["A", "A", "B"],
+                  ["B", "B", "A"]], False),
                 ([["S", "S", "S", "S"],
+                  [" ", " ", " ", " "],
+                  ["S", "S", "M", "S"],
+                  ["M", "M", " ", "S"]], True),
+                ([["S", "S", "M", "S"],
+                  [" ", " ", "M", " "],
+                  ["S", "S", "M", "S"],
+                  ["M", "M", " ", "S"]], False),
+                ([["S", "S", "M", "S"],
                   [" ", " ", " ", " "],
                   ["S", "S", "M", "S"],
                   ["M", "M", " ", "S"]], True),
@@ -213,13 +221,14 @@ Keep in mind that some entries might be `' '`. An empty row is not a winning row
 
     class column_winner(ExerciseStep):
         """
-Great job! Now let us move on to the next function.
+Great job!
 
-Write a function `column_winner`, which takes an argument `board` as before and
-returns `True` if `board` contains a winning *column* of either piece, `False` otherwise.
-Again we provide some tests, add more of your own:
+Now write a similar function `column_winner` which checks for a winning *column* (a vertical line) of either piece:
 
     __copyable__
+    def column_winner(board):
+        ...
+
     assert_equal(
         column_winner(
             [
@@ -242,20 +251,27 @@ Again we provide some tests, add more of your own:
         True
     )
 
+Here `O` won in the second column of the second board.
         """
 
         hints = """
 You can start by imitating `row_winner` above, then change it to make it work with columns.
 You can't loop through the columns of `board` as simply as its rows.
-To loop through the columns, what should be the bounds of your loop?
+What *is* a column of a nested list? The first column consists of the first element of the first row, the first element of the second row, etc.
+Looping through all columns means looking at the first element of every row, then the second element of every row, etc.
+So you need to loop through numbers representing the positions first, second, etc. 
 How do you find the number of columns in `board`?
-Remember that `board` is a nested list, so you'll have to use double subscripting to access what you need.
-Define a boolean for each column, then update it accordingly inside the inner loop.
-For each column, what should `piece` be?
+That covers the outer loop, which goes through each column. Then you need an inner loop to go thread each element in the column.
 The different entries of a column are NOT on the same row. So how can you access them?
+You can loop through rows of the board and find the element corresponding to that row and the current column.
 To access all the entries of, say, the 5th column, you can loop through all the rows, and access the 5th element in each row.
-The rest of the logic is very similar to `row_winner`. Watch out for `' '` and remember to return `False` at the end if needed!
+Define a boolean for each column, then update it accordingly inside the inner loop.
+The rest of the logic is very similar to `row_winner`.
+Watch out for `' '`.
+Remember to return `False` at the end if needed.
 """
+
+        parsons_solution = True
 
         def solution(self):
             def column_winner(board: List[List[str]]):
@@ -299,8 +315,8 @@ The rest of the logic is very similar to `row_winner`. Watch out for `' '` and r
               ["S", "M", "S", " "],
               ["S", "S", "M", "S"],
               ["S", "M", " ", "S"]], True),
-            ([["X", "O", " ", "X", "X"],
-              ["X", "O", "O", "X", "X"],
+            ([["X", "O", " ", "X", "O"],
+              ["O", "O", "O", "O", "O"],
               ["X", "O", "O", "O", " "],
               ["X", "O", "O", "X", " "],
               ["O", "X", " ", "O", "O"]], False),
