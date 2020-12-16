@@ -658,7 +658,7 @@ Check the two diagonals together, using `or`.
     final_text = """
 Well done! This was a hard one. Here are some possible solutions:
 
-    def diagonal_winner(row1, row2, row3):
+    def diagonal_winner(board):
         middle = board[1][1]
         return (
                 (middle == board[0][0] and middle == board[2][2]) or
