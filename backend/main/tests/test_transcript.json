@@ -15020,20 +15020,20 @@
     },
     {
         "get_solution": [
-            "def diagonal_winner(row1, row2, row3):",
-            "    middle = row2[1]",
+            "def diagonal_winner(board):",
+            "    middle = board[1][1]",
             "    return (",
-            "            (middle == row1[0] and middle == row3[2]) or",
-            "            (middle == row1[2] and middle == row3[0])",
+            "            (middle == board[0][0] and middle == board[2][2]) or",
+            "            (middle == board[0][2] and middle == board[2][0])",
             "    )"
         ],
         "page": "Combining <code>and</code> and <code>or</code>",
         "program": [
-            "def diagonal_winner(row1, row2, row3):",
-            "    middle = row2[1]",
+            "def diagonal_winner(board):",
+            "    middle = board[1][1]",
             "    return (",
-            "            (middle == row1[0] and middle == row3[2]) or",
-            "            (middle == row1[2] and middle == row3[0])",
+            "            (middle == board[0][0] and middle == board[2][2]) or",
+            "            (middle == board[0][2] and middle == board[2][0])",
             "    )"
         ],
         "response": {
@@ -15161,5 +15161,210 @@
             ]
         },
         "step": "NotPriority"
+    },
+    {
+        "page": "Checking the board for winners",
+        "program": [
+            "def row_winner(board):",
+            "    for row in board:",
+            "        all_equal = True",
+            "        piece = row[0]",
+            "        for entry in row:",
+            "            if piece != entry:",
+            "                all_equal = False",
+            "                break",
+            "        if all_equal:",
+            "            return True",
+            "    return False"
+        ],
+        "response": {
+            "message": "<p>Keep in mind that some entries might be <code>' '</code>. An empty row is not a winning row.</p>",
+            "passed": false,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "intro_row_winner"
+    },
+    {
+        "get_solution": [
+            "def row_winner(board):",
+            "    for row in board:",
+            "        all_equal = True",
+            "        piece = row[0]",
+            "        for entry in row:",
+            "            if entry == ' ' or piece != entry:",
+            "                all_equal = False",
+            "                break",
+            "        if all_equal:",
+            "            return True",
+            "    return False"
+        ],
+        "page": "Checking the board for winners",
+        "program": [
+            "def row_winner(board):",
+            "    for row in board:",
+            "        all_equal = True",
+            "        piece = row[0]",
+            "        for entry in row:",
+            "            if entry == ' ' or piece != entry:",
+            "                all_equal = False",
+            "                break",
+            "        if all_equal:",
+            "            return True",
+            "    return False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "intro_row_winner"
+    },
+    {
+        "get_solution": [
+            "def column_winner(board):",
+            "    for col in range(len(board[0])):",
+            "        all_equal = True",
+            "        piece = board[0][col]",
+            "        for row in board:",
+            "            if row[col] == ' ' or row[col] != piece:",
+            "                all_equal = False",
+            "                break",
+            "        if all_equal:",
+            "            return True",
+            "    return False"
+        ],
+        "page": "Checking the board for winners",
+        "program": [
+            "def column_winner(board):",
+            "    for col in range(len(board[0])):",
+            "        all_equal = True",
+            "        piece = board[0][col]",
+            "        for row in board:",
+            "            if row[col] == ' ' or row[col] != piece:",
+            "                all_equal = False",
+            "                break",
+            "        if all_equal:",
+            "            return True",
+            "    return False"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "column_winner"
+    },
+    {
+        "get_solution": [
+            "def diagonal_winner(board):",
+            "    all_equal1 = True",
+            "    all_equal2 = True",
+            "    topleft = board[0][0]",
+            "    topright = board[0][-1]",
+            "    for i in range(len(board)):",
+            "        if board[i][i] == ' ' or board[i][i] != topleft:",
+            "            all_equal1 = False",
+            "        if board[i][-i - 1] == ' ' or board[i][-i - 1] != topright:",
+            "            all_equal2 = False",
+            "    return all_equal1 or all_equal2"
+        ],
+        "page": "Checking the board for winners",
+        "program": [
+            "def diagonal_winner(board):",
+            "    all_equal1 = True",
+            "    all_equal2 = True",
+            "    topleft = board[0][0]",
+            "    topright = board[0][-1]",
+            "    for i in range(len(board)):",
+            "        if board[i][i] == ' ' or board[i][i] != topleft:",
+            "            all_equal1 = False",
+            "        if board[i][-i - 1] == ' ' or board[i][-i - 1] != topright:",
+            "            all_equal2 = False",
+            "    return all_equal1 or all_equal2"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "diagonal_winner"
+    },
+    {
+        "get_solution": [
+            "def winner(board):",
+            "    return row_winner(board) or column_winner(board) or diagonal_winner(board)"
+        ],
+        "page": "Checking the board for winners",
+        "program": [
+            "def row_winner(board):",
+            "    for row in board:",
+            "        all_equal = True",
+            "        piece = row[0]",
+            "        for entry in row:",
+            "            if entry == ' ' or piece != entry:",
+            "                all_equal = False",
+            "                break",
+            "        if all_equal:",
+            "            return True",
+            "    return False",
+            "",
+            "def column_winner(board):",
+            "    for col in range(len(board[0])):",
+            "        all_equal = True",
+            "        piece = board[0][col]",
+            "        for row in board:",
+            "            if row[col] == ' ' or row[col] != piece:",
+            "                all_equal = False",
+            "                break",
+            "        if all_equal:",
+            "            return True",
+            "    return False",
+            "",
+            "def diagonal_winner(board):",
+            "    all_equal1 = True",
+            "    all_equal2 = True",
+            "    topleft = board[0][0]",
+            "    topright = board[0][-1]",
+            "    for i in range(len(board)):",
+            "        if board[i][i] == ' ' or board[i][i] != topleft:",
+            "            all_equal1 = False",
+            "        if board[i][-i - 1] == ' ' or board[i][-i - 1] != topright:",
+            "            all_equal2 = False",
+            "    return all_equal1 or all_equal2",
+            "",
+            "def winner(board):",
+            "    return row_winner(board) or column_winner(board) or diagonal_winner(board)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "winner"
     }
 ]
