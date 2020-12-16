@@ -442,41 +442,37 @@ Click the Copy button, and fill in the blanks for your `winner` function.
     def winner(board):
         ...
 
+    def winning_line(strings):
+        piece = strings[0]
+        if piece == ' ':
+            return False
+        for entry in strings:
+            if piece != entry:
+                return False
+        return True
+
     def row_winner(board):
         for row in board:
-            all_equal = True
-            piece = row[0]
-            for entry in row:
-                if entry == ' ' or piece != entry:
-                    all_equal = False
-                    break
-            if all_equal:
+            if winning_line(row):
                 return True
         return False
 
     def column_winner(board):
         for col in range(len(board[0])):
-            all_equal = True
-            piece = board[0][col]
+            column = []
             for row in board:
-                if row[col] == ' ' or row[col] != piece:
-                    all_equal = False
-                    break
-            if all_equal:
+                column.append(row[col])
+            if winning_line(column):
                 return True
         return False
 
     def diagonal_winner(board):
-        all_equal1 = True
-        all_equal2 = True
-        topleft = board[0][0]
-        topright = board[0][-1]
+        diagonal1 = []
+        diagonal2 = []
         for i in range(len(board)):
-            if board[i][i] == ' ' or board[i][i] != topleft:
-                all_equal1 = False
-            if board[i][-i - 1] == ' ' or board[i][-i - 1] != topright:
-                all_equal2 = False
-        return all_equal1 or all_equal2
+            diagonal1.append(board[i][i])
+            diagonal2.append(board[i][i])
+        return winning_line(diagonal1) or winning_line(diagonal2)
 
     assert_equal(
         winner(
@@ -526,41 +522,37 @@ into the `winner` function, just call those functions.
 """)
 
         def solution(self):
+            def winning_line(strings):
+                piece = strings[0]
+                if piece == ' ':
+                    return False
+                for entry in strings:
+                    if piece != entry:
+                        return False
+                return True
+
             def row_winner(board):
                 for row in board:
-                    all_equal = True
-                    piece = row[0]
-                    for entry in row:
-                        if entry == ' ' or piece != entry:
-                            all_equal = False
-                            break
-                    if all_equal:
+                    if winning_line(row):
                         return True
                 return False
 
             def column_winner(board):
                 for col in range(len(board[0])):
-                    all_equal = True
-                    piece = board[0][col]
+                    column = []
                     for row in board:
-                        if row[col] == ' ' or row[col] != piece:
-                            all_equal = False
-                            break
-                    if all_equal:
+                        column.append(row[col])
+                    if winning_line(column):
                         return True
                 return False
 
             def diagonal_winner(board):
-                all_equal1 = True
-                all_equal2 = True
-                topleft = board[0][0]
-                topright = board[0][-1]
+                diagonal1 = []
+                diagonal2 = []
                 for i in range(len(board)):
-                    if board[i][i] == ' ' or board[i][i] != topleft:
-                        all_equal1 = False
-                    if board[i][-i - 1] == ' ' or board[i][-i - 1] != topright:
-                        all_equal2 = False
-                return all_equal1 or all_equal2
+                    diagonal1.append(board[i][i])
+                    diagonal2.append(board[i][i])
+                return winning_line(diagonal1) or winning_line(diagonal2)
 
             def winner(board: List[List[str]]):
                 return row_winner(board) or column_winner(board) or diagonal_winner(board)
