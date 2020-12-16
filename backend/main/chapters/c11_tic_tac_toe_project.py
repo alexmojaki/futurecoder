@@ -7,6 +7,31 @@ from random import choice, randint
 from main.text import ExerciseStep, Page, MessageStep, Disallowed
 
 
+def generate_board(board_type):
+    winning, size = choice([True, False]), randint(3, 10)
+    char1, char2 = choice(ascii_uppercase), choice(ascii_uppercase)
+    chars = [char1, char2, ' ']
+    board = [[choice(chars) for _ in range(size)] for _ in range(size)]
+
+    if winning:
+        winning_piece = choice([char1, char2])
+        if board_type == 'row':
+            row = randint(0, size - 1)
+            board[row] = [winning_piece for _ in range(size)]
+        if board_type == 'col':
+            col = randint(0, size - 1)
+            for i in range(size):
+                board[i][col] = winning_piece
+        if board_type == 'diag':
+            diag = choice([True, False])
+            for i in range(size):
+                if diag:
+                    board[i][i] = winning_piece
+                else:
+                    board[i][-i - 1] = winning_piece
+    return board
+
+
 class IntroducingTicTacToe(Page):
     title = "Checking the board for winners"
 
@@ -143,20 +168,8 @@ Make sure you return `False` if there are no winning rows
 
         @classmethod
         def generate_inputs(cls):
-            winning = choice([True, False])
-            size = randint(3, 10)
-            char1 = choice(ascii_uppercase)
-            char2 = choice(ascii_uppercase)
-            chars = [char1, char2, ' ']
-            board = [[choice(chars) for _ in range(size)] for _ in range(size)]
-
-            if winning:
-                row = randint(0, size - 1)
-                winning_piece = choice([char1, char2])
-                board[row] = [winning_piece for _ in range(size)]
-
             return {
-                "board": board
+                "board": generate_board('row')
             }
 
         tests = [
@@ -291,21 +304,8 @@ Remember to return `False` at the end if needed.
 
         @classmethod
         def generate_inputs(cls):
-            winning = choice([True, False])
-            size = randint(3, 10)
-            char1 = choice(ascii_uppercase)
-            char2 = choice(ascii_uppercase)
-            chars = [char1, char2, ' ']
-            board = [[choice(chars) for _ in range(size)] for _ in range(size)]
-
-            if winning:
-                column = randint(0, size - 1)
-                winning_piece = choice([char1, char2])
-                for i in range(size):
-                    board[i][column] = winning_piece
-
             return {
-                "board": board
+                "board": generate_board('col')
             }
 
         tests = [
@@ -400,24 +400,8 @@ You can use one loop and check both diagonals at the same time. Or you can use o
 
         @classmethod
         def generate_inputs(cls):
-            winning = choice([True, False])
-            size = randint(3, 10)
-            char1 = choice(ascii_uppercase)
-            char2 = choice(ascii_uppercase)
-            chars = [char1, char2, ' ']
-            board = [[choice(chars) for _ in range(size)] for _ in range(size)]
-
-            if winning:
-                diag = choice([True, False])
-                winning_piece = choice([char1, char2])
-                for i in range(size):
-                    if diag:
-                        board[i][i] = winning_piece
-                    else:
-                        board[i][-i-1] = winning_piece
-
             return {
-                "board": board
+                "board": generate_board('diag')
             }
 
         tests = [
@@ -583,32 +567,8 @@ into the `winner` function, just call those functions.
 
         @classmethod
         def generate_inputs(cls):
-            winning = choice([True, False])
-            size = randint(3, 10)
-            char1 = choice(ascii_uppercase)
-            char2 = choice(ascii_uppercase)
-            chars = [char1, char2, ' ']
-            board = [[choice(chars) for _ in range(size)] for _ in range(size)]
-
-            if winning:
-                winning_piece = choice([char1, char2])
-                winner = choice(['row', 'col', 'diag'])
-                random = randint(0, size - 1)
-                if winner == 'row':
-                    board[random] = [winning_piece for _ in range(size)]
-                if winner == 'col':
-                    for i in range(size):
-                        board[i][random] = winning_piece
-                if winner == 'diag':
-                    diag = choice([True, False])
-                    for i in range(size):
-                        if diag:
-                            board[i][i] = winning_piece
-                        else:
-                            board[i][-i-1] = winning_piece
-
             return {
-                "board": board
+                "board": generate_board(choice(['row', 'col', 'diag']))
             }
 
         tests = [
