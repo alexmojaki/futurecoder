@@ -1,9 +1,10 @@
 # flake8: NOQA E501
+import ast
 from string import ascii_uppercase
 from typing import List
 from random import choice, randint
 
-from main.text import ExerciseStep, Page, MessageStep
+from main.text import ExerciseStep, Page, MessageStep, Disallowed
 
 
 class IntroducingTicTacToe(Page):
@@ -335,11 +336,12 @@ Finally we need to check for winning diagonals. You already wrote a function to 
                 (middle == board[0][2] and middle == board[2][0])
         )
 
-Now write a `diagonal_winner` that works for *square boards* of arbitrary size.
-Your function should work for any square sizes: 4-by-4, 5-by-5, and so on...
-Some tests are provided, add more of your own tests:
+Now write a `diagonal_winner` that works for square boards of any size: 4-by-4, 5-by-5, and so on...
 
     __copyable__
+    def diagonal_winner(board):
+        ...
+
     assert_equal(
         diagonal_winner(
             [
@@ -362,6 +364,7 @@ Some tests are provided, add more of your own tests:
         False
     )
 
+In the first example, `X` won in the diagonal going from the bottom left to the top right.
         """
 
         hints = """
@@ -375,9 +378,10 @@ Do you see a pattern in those double subscripts? Get some paper and pen, work it
 Now focus on the other diagonal (from top right to bottom left). There is a pattern in the subscripts again, but it's a little bit more difficult.
 Do you remember negative indexing? It might be helpful here.
 Once you get the hang of the patterns, use the same ideas from before to check if all entries are equal.
-For the top-left to bottom-right diagonal, you can use the top-left board entry`board[0][0]` to compare all the entries to it. Something similar for the other diagonal...
-For each diagonal define a boolean, and use a loop to go through the entries in that diagonal, updating that diagonal's boolean accordingly.
+You can use one loop and check both diagonals at the same time. Or you can use one loop for each diagonal.
 """
+
+        parsons_solution = True
 
         def solution(self):
             def diagonal_winner(board: List[List[str]]):
@@ -442,7 +446,10 @@ Bravo! That was quite tough.
 Now we can put the three functions together! Write a function `winner` that takes an argument `board` as before,
 and returns `True` if `board` contains either a winning row, column or diagonal, `False` otherwise.
 
-We added the codes of `row_winner`, `column_winner` and `diagonal_winner` functions, along with some tests for `winner` (feel free to add more).
+Your solution should work by calling the three functions. `winner` itself should not do any
+looping, subscripting, etc.
+
+Here is some code for `row_winner`, `column_winner` and `diagonal_winner`, along with some tests for `winner`.
 Click the Copy button, and fill in the blanks for your `winner` function.
 
     __copyable__
@@ -523,6 +530,14 @@ The solution is quite short! Simply use the three functions correctly.
 Think about possible cases. When does `winner(board)` return `False`? When does it return `True`?
 How can you use the three functions and a boolean operator together to get the result you need?
 """
+
+        disallowed = Disallowed((ast.For, ast.Subscript), function_only=True, message="""
+Your solution should work by calling the three functions. `winner` itself should not do any
+looping, subscripting, etc. It should be very short.
+
+Copy the `row_winner` and other functions and leave them as they are. Don't copy code from them
+into the `winner` function, just call those functions. 
+""")
 
         def solution(self):
             def row_winner(board):
