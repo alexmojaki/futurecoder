@@ -79,6 +79,10 @@
   height: 0;
   transition: all 1s linear;
   overflow: hidden;
+
+  // Between firefox and chrome, one seems to only use padding,
+  // while the other only uses margin
+  padding-bottom: 6em;
   margin-bottom: 6em;
 
   &.show {
