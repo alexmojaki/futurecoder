@@ -182,7 +182,7 @@ class AppComponent extends React.Component {
               this.runCode({source: "pythontutor"});
               window.open(
                 'https://pythontutor.com/iframe-embed.html#code=' +
-                escape(bookState.editorContent) +
+                encodeURIComponent(bookState.editorContent) +
                 '&codeDivHeight=600' +
                 '&codeDivWidth=600' +
                 '&cumulative=false' +
