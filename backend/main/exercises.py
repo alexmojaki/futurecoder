@@ -174,4 +174,4 @@ def assert_equal(actual, expected):
     if actual == expected:
         print("OK")
     else:
-        print("Error!", actual, "!=", expected)
+        print(f"Error! {repr(actual)} != {repr(expected)}")
