@@ -14294,6 +14294,257 @@
         "step": "alert_exercise"
     },
     {
+        "page": "<code>return</code> ends the function call",
+        "program": [
+            "def foo():",
+            "    return 1",
+            "    return 2",
+            "",
+            "print(foo())"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "1",
+                "choices": [
+                    "1",
+                    "2",
+                    "[1, 2]",
+                    "1\n2",
+                    "1 2",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "double_return_in_one_function"
+    },
+    {
+        "page": "<code>return</code> ends the function call",
+        "program": [
+            "def double_numbers(numbers):",
+            "    for x in numbers:",
+            "        return x * 2",
+            "",
+            "assert_equal(double_numbers([1, 2, 3]), [2, 4, 6])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Error!"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "2"
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "!="
+                },
+                {
+                    "color": "white",
+                    "text": " "
+                },
+                {
+                    "color": "white",
+                    "text": "[2, 4, 6]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "cannot_return_multiple_values"
+    },
+    {
+        "page": "<code>return</code> ends the function call",
+        "program": [
+            "def foo():",
+            "    for letter in 'abc':",
+            "        for number in range(3):",
+            "            print(f\"{letter} {number}\")",
+            "            if letter == 'b':",
+            "                return letter",
+            "",
+            "foo()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "a 0\na 1\na 2\nb 0",
+                "choices": [
+                    "a 0\na 1\na 2",
+                    "a 0\na 1\na 2\nb 0",
+                    "a 0\na 1\na 2\nb 0\nb 1\nb 2",
+                    "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2",
+                    "a 0\na 1\na 2\nb 0\nb 1\nb 2\nc 0\nc 1\nc 2",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "a 0"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "a 1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "a 2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "b 0"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "return_ends_whole_function"
+    },
+    {
+        "page": "<code>return</code> ends the function call",
+        "program": [
+            "def foo():",
+            "    for letter in 'abc':",
+            "        for number in range(3):",
+            "            print(f\"{letter} {number}\")",
+            "            if letter == 'b':",
+            "                break",
+            "",
+            "foo()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2",
+                "choices": [
+                    "a 0\na 1\na 2",
+                    "a 0\na 1\na 2\nb 0",
+                    "a 0\na 1\na 2\nb 0\nb 1\nb 2",
+                    "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2",
+                    "a 0\na 1\na 2\nb 0\nb 1\nb 2\nc 0\nc 1\nc 2",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "a 0"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "a 1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "a 2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "b 0"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "c 0"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "c 1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "c 2"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "break_vs_return"
+    },
+    {
         "page": "Introducing <code>or</code>",
         "program": [
             "def is_friend(name):",

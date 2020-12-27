@@ -689,3 +689,209 @@ Pay attention to your indentations in `alert`. You might be ending a loop too ea
     final_text = """
 Great work! These tools will be very helpful in coming chapters.
         """
+
+
+class MoreOnReturn(Page):
+    title = "`return` ends the function call"
+
+    class double_return_in_one_function(VerbatimStep):
+        """
+Sometimes `return` can be a source of confusion and mistakes for new learners.
+Let's learn more about how it works.
+
+Run this code:
+
+    __copyable__
+    __program_indented__
+        """
+
+        predicted_output_choices = [
+            """\
+1
+""", """\
+2
+""", """\
+[1, 2]
+""", """\
+1
+2
+""", """\
+1 2
+"""
+        ]
+
+        def program(self):
+            def foo():
+                return 1
+                return 2
+
+            print(foo())
+
+    class cannot_return_multiple_values(VerbatimStep):
+        """
+Once a `return` statement is executed, the function will stop, and the rest of the code is ignored.
+This means that any code immediately after a `return` in the same block is *unreachable*:
+`return 2` can *never* be reached no matter how many times we run this function!
+
+***One, and only one `return` can be executed per function call, then execution stops.***
+
+Multiple `return` statements can still be useful when used properly, e.g. in an `if-else` block:
+
+    if condition:
+        return value1
+    else:
+        return value2
+
+A common mistake is to misunderstand what `return` does in `for` loops. Try the following:
+
+    __copyable__
+    __program_indented__
+        """
+
+        def program(self):
+            def double_numbers(numbers):
+                for x in numbers:
+                    return x * 2
+
+            assert_equal(double_numbers([1, 2, 3]), [2, 4, 6])
+
+    class return_ends_whole_function(VerbatimStep):
+        """
+At first it may look intuitive to `return` one value for each iteration in a `for` loop.
+But it doesn't work like that!
+If you inspect the code with Snoop or Python tutor you can see that the function returns 2 in the first
+loop iteration and then ends immediately.
+
+Even when there's only one `return` statement, it will get executed only once and return one value.
+If you want to return several values, return a list:
+
+    __copyable__
+    def double_numbers(numbers):
+        doubles = []
+        for x in numbers:
+            doubles.append(x * 2)
+        return doubles
+
+    assert_equal(double_numbers([1, 2, 3]), [2, 4, 6])
+
+What happens if there are nested loops? Try the following function:
+
+    __copyable__
+    __program_indented__
+        """
+
+        def program(self):
+            def foo():
+                for letter in 'abc':
+                    for number in range(3):
+                        print(f"{letter} {number}")
+                        if letter == 'b':
+                            return letter
+
+            foo()
+
+        predicted_output_choices = [
+            """\
+a 0
+a 1
+a 2
+""", """\
+a 0
+a 1
+a 2
+b 0
+""", """\
+a 0
+a 1
+a 2
+b 0
+b 1
+b 2
+""", """\
+a 0
+a 1
+a 2
+b 0
+c 0
+c 1
+c 2
+""", """\
+a 0
+a 1
+a 2
+b 0
+b 1
+b 2
+c 0
+c 1
+c 2
+"""
+        ]
+
+    class break_vs_return(VerbatimStep):
+        """
+As before, `return` ***stops the whole function***, including all loops.
+
+Previously we showed [how to stop a loop with `break`](/course/?page=UsingBreak).
+Change `return letter` to `break` and see what the difference is.
+        """
+
+        program_in_text = False
+
+        def program(self):
+            def foo():
+                for letter in 'abc':
+                    for number in range(3):
+                        print(f"{letter} {number}")
+                        if letter == 'b':
+                            break
+
+            foo()
+
+        predicted_output_choices = [
+            """\
+a 0
+a 1
+a 2
+""", """\
+a 0
+a 1
+a 2
+b 0
+""", """\
+a 0
+a 1
+a 2
+b 0
+b 1
+b 2
+""", """\
+a 0
+a 1
+a 2
+b 0
+c 0
+c 1
+c 2
+""", """\
+a 0
+a 1
+a 2
+b 0
+b 1
+b 2
+c 0
+c 1
+c 2
+"""
+        ]
+
+    final_text = """
+Unlike `return`, `break` only stops the innermost loop in which it is used, in this case `for number in range(3):`.
+Here's exactly what happens:
+
+- For `letter = b`, the line `print(f"{letter} {number}")` is executed only for `number = 0`, 
+- then the inner loop is stopped by `break`, but 
+- the outer loop continues its execution, moving on to the next letter `c`
+- which is executed in full since it does not trigger the `break` statement.
+    """
