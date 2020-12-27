@@ -14087,31 +14087,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Error!"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "6"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "!="
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "4"
+                    "text": "Error! 6 != 4"
                 },
                 {
                     "color": "white",
@@ -14119,31 +14095,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "Error!"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "15"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "!="
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "10"
+                    "text": "Error! 15 != 10"
                 },
                 {
                     "color": "white",
@@ -14348,31 +14300,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Error!"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "2"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "!="
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "[2, 4, 6]"
+                    "text": "Error! 2 != [2, 4, 6]"
                 },
                 {
                     "color": "white",
@@ -14813,31 +14741,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "Error!"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "Bob"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "!="
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "True"
+                    "text": "Error! 'Bob' != True"
                 },
                 {
                     "color": "white",
@@ -14845,31 +14749,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "Error!"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "Bob"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "!="
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "False"
+                    "text": "Error! 'Bob' != False"
                 },
                 {
                     "color": "white",
@@ -14907,31 +14787,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "Error!"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "Bob"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "!="
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "True"
+                    "text": "Error! 'Bob' != True"
                 },
                 {
                     "color": "white",
@@ -14939,31 +14795,7 @@
                 },
                 {
                     "color": "white",
-                    "text": "Error!"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "Bob"
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "!="
-                },
-                {
-                    "color": "white",
-                    "text": " "
-                },
-                {
-                    "color": "white",
-                    "text": "False"
+                    "text": "Error! 'Bob' != False"
                 },
                 {
                     "color": "white",

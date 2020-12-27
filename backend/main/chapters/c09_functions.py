@@ -466,6 +466,8 @@ Here's a simple function `assert_equal` to help us write tests:
 
 {indent(inspect.getsource(assert_equal), "    ")}
 
+(What's that function `repr`? Try `print(f"{{'abc'}} {{repr('abc')}}")` to see one difference, but don't worry about it too much.)
+
 This isn't a standard part of python (although similar functions are), but we've added it to your coding environment
 so you can always use it. Here's an example of using it for you to try out:
 
