@@ -14,11 +14,17 @@ Consider adding your thoughts and ideas to [issues labeled 'discussion'](https:/
 
 ## Testing
 
-Run `./manage.py test` in the backend folder.
+Run `pytest` in the backend folder with the poetry virtualenv active. 
 
-The tests run through the course, submitting the solution/program for each step (and each of its message steps) and ensuring that the response is as expected. It then records all the requests and responses. By default, this record is compared to `test_transcript.json` for equality.
+If you get a weird syntax error, check that you're in the backend folder.
 
-If you make some changes to the course, the tests will likely fail the comparison to `test_transcript.json`. Run the tests again with the environment variable `FIX_TESTS=1` to update the file. Then check that the git diff looks sensible.
+## `test_steps`
+
+The full test suite is quite slow, particularly `test_frontend`. When you are only writing course content, it's enough to run `pytest -k test_steps`.
+
+This test runs through the course, submitting the solution/program for each step (and each of its message steps) and ensuring that the response is as expected. It then records all the requests and responses. By default, this record is compared to `test_transcript.json` for equality.
+
+If you make some changes to the course, the tests will likely fail the comparison to `test_transcript.json`. Run the test again with the environment variable `FIX_TESTS=1` to update the file. Then check that the git diff looks sensible.
 
 ## System overview
 
