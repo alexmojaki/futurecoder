@@ -65,7 +65,9 @@ Steps are the building blocks of the course, and this is where things get intere
 
 In code, a step is a class inheriting from `main.text.Step` declared inside a `Page` class. It has:
 
-- `text`. This is a string containing markdown displayed to the user. Typically this is declared just in the docstring of the class, but you can set the `text` class attribute directly if needed.
+- `text`. This is a string containing markdown displayed to the user. Typically this is declared just in the docstring of the class, but you can set the `text` class attribute directly if needed, e.g. if you want to use an f-string instead of a plain string literal.
+    - A code block is indicated by indentation. If the code is valid Python syntax, it will be syntax highlighted.
+    - By default users are expected to type in code for better retention. Sometimes they should be allowed to copy code, particularly if it's long and doesn't contain new concepts that students need to practice. In this case code should be preceded by an indented line `__copyable__`. Otherwise, make sure typing in the code isn't too tedious!
 - A `check` method which determines if the user submitted the right code, discussed more below.
 - A `program`, which is a string containing Python code which would solve this step and allow the user to advance, i.e. it passes the `check` method. This has several uses:
     - It shows readers of the code what you expect users to enter for this step.
