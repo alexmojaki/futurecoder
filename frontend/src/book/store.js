@@ -55,11 +55,15 @@ const set_page = (index) => {
   rpc("set_page", {index});
 };
 
+const redirectToLogin = () => {
+  window.location = '/accounts/login/?next='
+    + window.location.pathname
+    + window.location.search;
+}
+
 const loadData = (data) => {
   if (!data.user) {
-    window.location = '/accounts/login/?next='
-      + window.location.pathname
-      + window.location.search;
+    redirectToLogin();
   }
   setState("pages", data.pages);
   setState("server", data.state);
@@ -75,7 +79,16 @@ const loadData = (data) => {
   set_page(pageIndex);
 }
 
-rpc("load_data", {}, loadData);
+rpc(
+  "load_data",
+  {},
+  loadData,
+  (response) => {
+    if (response.response.status === 403) {
+      redirectToLogin()
+    }
+  },
+);
 
 export const moveStep = (delta) => {
   rpc("move_step",
