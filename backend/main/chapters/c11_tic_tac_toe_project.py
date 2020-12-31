@@ -765,7 +765,7 @@ You need to build up a string for the whole board. Start with an empty string.
 For each row, add the characters from that row to the string.
 You'll need nested loops.
 When you reach the end of a row, you need to add a newline before the next row.
-`'\\n'`  just like any other character! You can add it as usual with `+`.
+`'\\n'` is just like any other character! You can add it as usual with `+`.
 Notice that the end of the last row is different than the others.
 Before you add a newline, you'll need to check if it's the last row or not.
 Your outer loop should loop over the length of the board.
