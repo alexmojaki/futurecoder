@@ -4,7 +4,7 @@ from string import ascii_uppercase
 from typing import List
 from random import choice, randint
 
-from main.text import ExerciseStep, Page, MessageStep, Disallowed
+from main.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
 
 
 def generate_board(board_type):
@@ -589,3 +589,346 @@ Great work!
 Now we have the code to determine a winning state on the board.
 Next we will tackle the problem of displaying the board on the screen.
 """
+
+
+class NewlinesAndFormatBoard(Page):
+    title = "Introducing the newline character, and `format_board`"
+
+    class one_way_to_print_board(VerbatimStep):
+        """
+Next we want to tackle the problem of displaying the tic-tac-toe board. Here's one way to do this:
+
+    __copyable__
+    def print_board(board):
+        for row in board:
+            print("".join(row))
+
+    print_board([
+        ['X', 'O', 'X'],
+        [' ', 'O', 'O'],
+        [' ', 'X', ' ']
+    ])
+
+(What's `"".join`? Google it!)
+        """
+
+        program_in_text = False
+
+        def program(self):
+            def print_board(board):
+                for row in board:
+                    print("".join(row))
+
+            print_board([
+                ['X', 'O', 'X'],
+                [' ', 'O', 'O'],
+                [' ', 'X', ' ']
+            ])
+
+    class invalid_multi_line_string(VerbatimStep):
+        """
+This is a good start but ideally we'd like a function which *returns* a string rather than printing it.
+This way other code can make easy use of the string in different ways. We might want to manipulate the string
+(e.g. draw a box around it or extract only the first few lines), we might want to send it somewhere other than the screen
+(e.g. a file) and in this particular case we want to be able to test it with `assert_equal`. This doesn't work:
+
+    assert_equal(print_board([...]), "...")
+
+because `print_board` doesn't use `return` so it just returns `None` by default.
+So instead we want code like this:
+
+    def format_board(board):
+        ...
+        return ...
+
+    assert_equal(format_board([...]), "...")
+
+Then `print(format_board(board))` should print something like what we saw at the beginning.
+But how do we return a string with multiple lines? And how do we test it? We'd like to do something like this:
+
+    __copyable__
+    assert_equal(
+        format_board([
+            ['X', 'O', 'X'],
+            [' ', 'O', 'O'],
+            [' ', 'X', ' ']
+        ]),
+        "XOX
+          OO
+          X "
+    )
+
+See for yourself how this doesn't work.
+        """
+
+        program_in_text = False
+
+        program = """\
+assert_equal(
+    format_board([
+        ['X', 'O', 'X'],
+        [' ', 'O', 'O'],
+        [' ', 'X', ' ']
+    ]),
+    "XOX
+      OO
+      X "
+)"""
+
+        def check(self):
+            return 'SyntaxError' in self.result
+
+    class multi_line_strings_triple_quotes(VerbatimStep):
+        """
+Normally a string literal has to be on one line, so this is invalid:
+
+    string = "First line
+    Second line"
+    print(string)
+
+But Python provides a way! The solution is to use *triple quotes*, i.e. three quote characters in a row
+(either `'''` or `\"""`) around the contents of the string:
+
+__program_indented__
+        """
+
+        def program(self):
+            string = """First line
+            Second line"""
+            print(string)
+
+    class discovering_newline(VerbatimStep):
+        """
+Hooray! A *triple quoted string* is allowed to span many lines and they will be shown in the output.
+
+Like single and double quotes, triple quotes are just another kind of notation, not a new kind of string.
+`\"""abc\"""` is the same thing as `"abc"`.
+
+However `string` does contain something new. Run `string` in the shell to see.
+        """
+
+        program_in_text = False
+
+        expected_code_source = "shell"
+
+        program = "string"
+
+        def check(self):
+            if self.console.locals.get("string") != "First line\nSecond line":
+                return dict(
+                    message="Oops, you need to set `string = 'First line\nSecond line'` before we can continue."
+                )
+            return super().check()
+
+    class introducing_newline(VerbatimStep):
+        """
+There's the secret!
+
+`\\n` represents a ***newline*** character. This is just another character, like a letter or a space (`' '`).
+It's the character between two separate lines that you type in by pressing Enter on your keyboard.
+Again, `\\n` *represents* the newline character within a Python string literal.
+The string doesn't actually contain `\\` and `n`, it just contains one character. Check this in the shell:
+
+    len('\\n')
+        """
+
+        program_in_text = False
+
+        expected_code_source = "shell"
+
+        program = "len('\\n')"
+
+        predicted_output_choices = ["1", "2"]
+
+    class format_board_simple(ExerciseStep):
+        """
+Now use the newline character to write the function `format_board` (your solution should work for a square `board` of any size):
+
+    __copyable__
+    def format_board(board):
+        ...
+
+    assert_equal(
+        format_board([
+            ['X', 'O', 'X'],
+            ['O', ' ', ' '],
+            [' ', 'X', 'O']
+        ]),
+        'XOX\\nO  \\n XO'
+    )
+
+        """
+
+        hints = """
+Look carefully at the test case we provided. It shows you all you need!
+You need to build up a string for the whole board. Start with an empty string.
+For each row, add the characters from that row to the string.
+You'll need nested loops.
+When you reach the end of a row, you need to add a newline before the next row.
+`'\\n'`  just like any other character! You can add it as usual with `+`.
+Notice that the end of the last row is different than the others.
+Before you add a newline, you'll need to check if it's the last row or not.
+Your outer loop should loop over the length of the board.
+Then check if you are at the last index or not.
+"""
+
+        def solution(self):
+            def format_board(board: List[List[str]]):
+                result = ''
+                for i in range(len(board)):
+                    for char in board[i]:
+                        result += char
+                    if i != len(board) - 1:
+                        result += '\n'
+                return result
+
+            return format_board
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "board": generate_board('row')
+            }
+
+        tests = [
+            ([[" ", " ", " "],
+              ["X", "X", "O"],
+              ["O", "O", "X"]], "   \nXXO\nOOX"),
+            ([["X", "X", "X", "X"],
+              ["O", "O", "X", " "],
+              [" ", "X", "O", "O"],
+              [" ", "O", " ", "O"]], "XXXX\nOOX \n XOO\n O O"),
+            ([["X", "O", " ", "X", "X"],
+              ["X", "O", " ", "X", "X"],
+              [" ", "O", "X", "X", " "],
+              ["X", "X", "X", "X", " "],
+              ["X", "O", "O", "X", "O"]], "XO XX\nXO XX\n OXX \nXXXX \nXOOXO"),
+        ]
+
+    class format_board_bonus_challenge(ExerciseStep):
+        """
+Excellent! A typical solution looks like:
+
+    def format_board(board):
+        result = ''
+        for i in range(len(board)):
+            for char in board[i]:
+                result += char
+            if i != len(board) - 1:
+                result += '\\n'
+        return result
+
+If you looked up how `join` works and used it in your solution, that's great!
+You might have solved it with something like this:
+
+    def format_board(board):
+        joined_rows = []
+        for row in board:
+            joined_rows.append("".join(row))
+        return "\\n".join(joined_rows)
+
+If you'd like, you can just continue to the next page now. Or you can do a bonus challenge!
+
+Write an improved version of `format_board` that displays row and column numbers: for example, if we are given
+
+    board = [
+        ['X', 'O', 'X'],
+        [' ', 'O', 'O'],
+        [' ', 'X', ' ']
+    ]
+
+then `format_board` should return a string that, when printed, displays the board like:
+
+     123
+    1XOX
+    2 OO
+    3 X
+
+Once again it should work for a square `board` of *any size*.
+
+To add the row and column numbers as strings, you'll need Python's built-in `str` function.
+You haven't learned it yet, but it's part of the challenge! (Feel free to Google it!)
+For this exercise, all you need to know is that if you give it a number, it converts the number to a string:
+`str(5)` returns the string `'5'`. Feel free to experiment with it in the shell.
+
+We provide one test as before:
+
+    __copyable__
+    def format_board(board):
+        ...
+
+    assert_equal(
+        format_board([
+            ['X', 'O', 'X'],
+            ['O', ' ', ' '],
+            [' ', 'X', 'O']
+        ]),
+        ' 123\\n1XOX\\n2O  \\n3 XO'
+    )
+
+        """
+
+        hints = """
+Start with your `format_board` from the previous exercise.
+What else do you need to add to your existing solution?
+Once again you can examine the test case we provided for clues.
+How many rows and columns are there now, compared to before?
+There is one additional row, and one additional column compared to last time.
+Think about where in your code you should add the top row of column numbers.
+The top row will have to be handled first, separately from the nested loop that handles the rest.
+Notice that the top row always starts with a space.
+Then it has consecutive numbers in increasing order: `123456...`
+To add all these numbers, you will have to use a loop with `range`. Remember `range` starts counting from zero.
+If you use `+` between a string and a number you'll get an error!
+Use `str` to convert the numbers to strings.
+Don't forget to add a newline after you are done with the top row!
+To add the row number at the beginning of each row, use the index from the outer loop.
+Add the row number first, then use the inner loop to add the rest of the characters like before.
+Once again, don't forget to check for the last row when you are adding newlines.
+"""
+
+        def solution(self):
+            def format_board(board: List[List[str]]):
+                result = ' '
+                for i in range(len(board)):
+                    result += str(i + 1)
+                result += '\n'
+                for i in range(len(board)):
+                    result += str(i + 1)
+                    for char in board[i]:
+                        result += char
+                    if i != len(board) - 1:
+                        result += '\n'
+                return result
+
+            return format_board
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "board": generate_board('row')
+            }
+
+        tests = [
+            ([[" ", " ", " "],
+              ["X", "X", "O"],
+              ["O", "O", "X"]], " 123\n1   \n2XXO\n3OOX"),
+            ([["X", "X", "X", "X"],
+              ["O", "O", "X", " "],
+              [" ", "X", "O", "X"],
+              [" ", "O", " ", "X"]], " 1234\n1XXXX\n2OOX \n3 XOX\n4 O X"),
+            ([["X", "O", " ", "X", "X"],
+              ["X", "O", " ", "X", "X"],
+              [" ", "O", "X", "X", " "],
+              ["X", "X", "X", "X", " "],
+              ["X", "O", "O", "X", "O"]], " 12345\n1XO XX\n2XO XX\n3 OXX \n4XXXX \n5XOOXO"),
+        ]
+
+    final_text = """
+Great work! That was quite challenging.
+
+Now you mastered how to build up a string of multiple lines of text, and solved the problem of displaying the board to the players. 
+
+Next you will learn more about types in Python and how to convert them (like you did with `str` just now), 
+and how to get input from the players. You are already about halfway done with the project. Keep going!
+    """
