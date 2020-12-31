@@ -599,20 +599,10 @@ class NewlinesAndFormatBoard(Page):
 Next we want to tackle the problem of displaying the tic-tac-toe board. Here's one way to do this:
 
     __copyable__
-    def print_board(board):
-        for row in board:
-            print("".join(row))
-
-    print_board([
-        ['X', 'O', 'X'],
-        [' ', 'O', 'O'],
-        [' ', 'X', ' ']
-    ])
+    __program_indented__
 
 (What's `"".join`? Google it!)
         """
-
-        program_in_text = False
 
         def program(self):
             def print_board(board):
@@ -716,7 +706,7 @@ However `string` does contain something new. Run `string` in the shell to see.
         def check(self):
             if self.console.locals.get("string") != "First line\nSecond line":
                 return dict(
-                    message="Oops, you need to set `string = 'First line\nSecond line'` before we can continue."
+                    message="Oops, you need to set `string = 'First line\\nSecond line'` before we can continue."
                 )
             return super().check()
 
