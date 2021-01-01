@@ -1,5 +1,7 @@
 # How to contribute
 
+This page explains how to help build the futurecoder platform by writing code or course material. If you'd like to donate money to keep servers running, please do so at [open collective](https://opencollective.com/futurecoder).
+
 For starters, try using the platform to see what it's like. You can go straight to the [site](https://futurecoder.io/) and quickly sign up for an account. See the [Controls](README.md#controls) section for instructions on enabling developer mode, this will allow you to skip or replay steps in a page to allow exploring more freely and quickly.
 
 Please [open an issue](https://github.com/alexmojaki/futurecoder/issues/new) about anything that's confusing, could be done better, or doesn't work. All suggestions and feedback are welcome. Tell me what interests you!
