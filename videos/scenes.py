@@ -85,3 +85,36 @@ class Main(Scene):
             self.play(FadeInFrom(obj, DOWN * 0.5))
 
         self.wait(1)
+
+
+class Help(Scene):
+    def construct(self):
+        self.wait(0.5)
+
+        spacer = Text("space").set_fill(opacity=0).set_stroke(opacity=0)
+        (
+            VGroup(
+                title := Text("How to help"),
+                spacer,
+                points := BulletedList(
+                    *"""\
+Share futurecoder with your friends
+Use the site and give us feedback
+Donate to keep servers running
+Contribute code on GitHub
+Write course content
+""".splitlines()
+                ),
+            )
+            .arrange(DOWN, aligned_edge=LEFT)
+            .set_height(config["frame_height"] * 0.7)
+        )
+
+        self.play(Write(title))
+
+        self.wait(1)
+
+        for obj in points:
+            self.play(FadeInFrom(obj, DOWN * 0.5))
+
+        self.wait(1)
