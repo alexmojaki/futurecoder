@@ -592,7 +592,7 @@ Next we will tackle the problem of displaying the board on the screen.
 
 
 class NewlinesAndFormatBoard(Page):
-    title = "Introducing the newline character, and `format_board`"
+    title = "The newline character, `format_board`"
 
     class one_way_to_print_board(VerbatimStep):
         """
@@ -655,7 +655,7 @@ assert_equal(
 )"""
 
         def check(self):
-            return 'SyntaxError' in self.result
+            return 'SyntaxError: EOL while scanning string literal' in self.result
 
     class multi_line_strings_triple_quotes(VerbatimStep):
         """
@@ -691,9 +691,11 @@ However `string` does contain something new. Run `__program__` in the shell to s
         program = "string"
 
         def check(self):
-            if self.console.locals.get("string") != "First line\nSecond line":
+            string = self.console.locals.get("string", "")
+            if not (isinstance(string, str) and '\n' in string):
                 return dict(
-                    message="Oops, you need to set `string = 'First line\\nSecond line'` and then run `string` again before we can continue."
+                    message="Oops, `string` doesn't have the right value. "
+                            "Run the program from the previous step again."
                 )
             return super().check()
 
@@ -703,10 +705,11 @@ There's the secret!
 
 `\\n` represents a ***newline*** character. This is just another character, like a letter or a space (`' '`).
 It's the character between two separate lines that you type in by pressing Enter on your keyboard.
+
 Again, `\\n` *represents* the newline character within a Python string literal.
 The string doesn't actually contain `\\` and `n`, it just contains one character. Check this in the shell:
 
-`__program__`
+    __program_indented__
         """
 
         expected_code_source = "shell"
@@ -738,7 +741,7 @@ Now use the newline character to write the function `format_board` (your solutio
 Look carefully at the test case we provided. It shows you all you need!
 You need to build up a string for the whole board. Start with an empty string.
 For each row, add the characters from that row to the string.
-You'll need nested loops.
+You'll need a nested loop.
 When you reach the end of a row, you need to add a newline before the next row.
 `'\\n'` is just like any other character! You can add it as usual with `+`.
 Notice that the end of the last row is different than the others.
@@ -746,6 +749,8 @@ Before you add a newline, you'll need to check if it's the last row or not.
 Your outer loop should loop over the length of the board.
 Then check if you are at the last index or not.
 """
+
+        parsons_solution = True
 
         def solution(self):
             def format_board(board: List[List[str]]):
