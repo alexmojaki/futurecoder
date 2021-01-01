@@ -637,21 +637,10 @@ Then `print(format_board(board))` should print something like what we saw at the
 But how do we return a string with multiple lines? And how do we test it? We'd like to do something like this:
 
     __copyable__
-    assert_equal(
-        format_board([
-            ['X', 'O', 'X'],
-            [' ', 'O', 'O'],
-            [' ', 'X', ' ']
-        ]),
-        "XOX
-          OO
-          X "
-    )
+    __program_indented__
 
 See for yourself how this doesn't work.
         """
-
-        program_in_text = False
 
         program = """\
 assert_equal(
@@ -694,10 +683,8 @@ Hooray! A *triple quoted string* is allowed to span many lines and they will be 
 Like single and double quotes, triple quotes are just another kind of notation, not a new kind of string.
 `\"""abc\"""` is the same thing as `"abc"`.
 
-However `string` does contain something new. Run `string` in the shell to see.
+However `string` does contain something new. Run `__program__` in the shell to see.
         """
-
-        program_in_text = False
 
         expected_code_source = "shell"
 
@@ -706,7 +693,7 @@ However `string` does contain something new. Run `string` in the shell to see.
         def check(self):
             if self.console.locals.get("string") != "First line\nSecond line":
                 return dict(
-                    message="Oops, you need to set `string = 'First line\\nSecond line'` before we can continue."
+                    message="Oops, you need to set `string = 'First line\\nSecond line'` and then run `string` again before we can continue."
                 )
             return super().check()
 
@@ -719,10 +706,8 @@ It's the character between two separate lines that you type in by pressing Enter
 Again, `\\n` *represents* the newline character within a Python string literal.
 The string doesn't actually contain `\\` and `n`, it just contains one character. Check this in the shell:
 
-    len('\\n')
+`__program__`
         """
-
-        program_in_text = False
 
         expected_code_source = "shell"
 
