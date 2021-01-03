@@ -15651,32 +15651,26 @@
     {
         "get_solution": [
             "def format_board(board):",
-            "    result = ' '",
-            "    for i in range(len(board)):",
-            "        result += str(i + 1)",
-            "    result += '\\n'",
-            "    for i in range(len(board)):",
-            "        result += str(i + 1)",
-            "        for char in board[i]:",
-            "            result += char",
-            "        if i != len(board) - 1:",
-            "            result += '\\n'",
-            "    return result"
+            "    joined_rows = []",
+            "    for row in board:",
+            "        joined_rows.append(\"|\".join(row))",
+            "    lines = []",
+            "    for _ in board[0]:",
+            "        lines.append(\"-\")",
+            "    line = f'\\n{\"+\".join(lines)}\\n'",
+            "    return line.join(joined_rows)"
         ],
         "page": "The newline character, <code>format_board</code>",
         "program": [
             "def format_board(board):",
-            "    result = ' '",
-            "    for i in range(len(board)):",
-            "        result += str(i + 1)",
-            "    result += '\\n'",
-            "    for i in range(len(board)):",
-            "        result += str(i + 1)",
-            "        for char in board[i]:",
-            "            result += char",
-            "        if i != len(board) - 1:",
-            "            result += '\\n'",
-            "    return result"
+            "    joined_rows = []",
+            "    for row in board:",
+            "        joined_rows.append(\"|\".join(row))",
+            "    lines = []",
+            "    for _ in board[0]:",
+            "        lines.append(\"-\")",
+            "    line = f'\\n{\"+\".join(lines)}\\n'",
+            "    return line.join(joined_rows)"
         ],
         "response": {
             "message": "",
