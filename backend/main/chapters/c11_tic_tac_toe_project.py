@@ -809,7 +809,7 @@ You might have solved it with something like this:
 
 If you'd like, you can just continue to the next page now. Or you can do a bonus challenge!
 
-Write an improved version of `format_board` that displays row and column numbers: for example, if we are given
+Write an improved version of `format_board` that displays row and column separators. For example, if
 
     board = [
         ['X', 'O', 'X'],
@@ -817,21 +817,17 @@ Write an improved version of `format_board` that displays row and column numbers
         [' ', 'X', ' ']
     ]
 
-then `format_board` should return a string that, when printed, displays the board like:
+then `print(format_board(board))` should print
 
-     123
-    1XOX
-    2 OO
-    3 X
+    X|O|X
+    -+-+-
+     |O|O
+    -+-+-
+     |X|
 
 Once again it should work for a square `board` of *any size*.
 
-To add the row and column numbers as strings, you'll need Python's built-in `str` function.
-You haven't learned it yet, but it's part of the challenge! (Feel free to Google it!)
-For this exercise, all you need to know is that if you give it a number, it converts the number to a string:
-`str(5)` returns the string `'5'`. Feel free to experiment with it in the shell.
-
-We provide one test as before:
+You are strongly encouraged to use `join` on this exercise. We provide one test as before, you can write additional tests:
 
     __copyable__
     def format_board(board):
@@ -843,43 +839,36 @@ We provide one test as before:
             ['O', ' ', ' '],
             [' ', 'X', 'O']
         ]),
-        ' 123\\n1XOX\\n2O  \\n3 XO'
+        'X|O|X\\n-+-+-\\nO| | \\n-+-+-\\n |X|O'
     )
 
         """
 
         hints = """
-Start with your `format_board` from the previous exercise.
-What else do you need to add to your existing solution?
-Once again you can examine the test case we provided for clues.
-How many rows and columns are there now, compared to before?
-There is one additional row, and one additional column compared to last time.
-Think about where in your code you should add the top row of column numbers.
-The top row will have to be handled first, separately from the nested loop that handles the rest.
-Notice that the top row always starts with a space.
-Then it has consecutive numbers in increasing order: `123456...`
-To add all these numbers, you will have to use a loop with `range`. Remember `range` starts counting from zero.
-If you use `+` between a string and a number you'll get an error!
-Use `str` to convert the numbers to strings.
-Don't forget to add a newline after you are done with the top row!
-To add the row number at the beginning of each row, use the index from the outer loop.
-Add the row number first, then use the inner loop to add the rest of the characters like before.
-Once again, don't forget to check for the last row when you are adding newlines.
+There are two types of lines to be displayed: one type has the pieces joined by `|`s in between them, the other type has `-`s joined by `+`s in between them.
+Both of these types of lines can be built up by using `join` appropriately.
+For example, how can you convert a row `['X', 'O', 'X']` into `'X|O|X'` using `join`?
+Similarly, how can you obtain `'-+-+-'` using `join`? To what list should you apply `join`?
+Once you figured out how to build up both types of lines, how can you join them to obtain the final result?
+Notice that the lines with the pieces can be different...
+But the line with the `+-`  signs is always the same.
+You can use `join` on the lines themselves!
+The lines with the pieces can be joined together with the `+-` line in between them (with newlines added in appropriate places).
+To do that, first you need to keep the lines with the pieces stored in a list as you are building them.
+Then apply `join` to that list, with the `+-` line as separator.
+To add the newlines to the `+-` line correctly, take a look at the test case we provided.
 """
 
         def solution(self):
             def format_board(board: List[List[str]]):
-                result = ' '
-                for i in range(len(board)):
-                    result += str(i + 1)
-                result += '\n'
-                for i in range(len(board)):
-                    result += str(i + 1)
-                    for char in board[i]:
-                        result += char
-                    if i != len(board) - 1:
-                        result += '\n'
-                return result
+                joined_rows = []
+                for row in board:
+                    joined_rows.append("|".join(row))
+                lines = []
+                for _ in board[0]:
+                    lines.append("-")
+                line = f'\n{"+".join(lines)}\n'
+                return line.join(joined_rows)
 
             return format_board
 
@@ -892,16 +881,17 @@ Once again, don't forget to check for the last row when you are adding newlines.
         tests = [
             ([[" ", " ", " "],
               ["X", "X", "O"],
-              ["O", "O", "X"]], " 123\n1   \n2XXO\n3OOX"),
+              ["O", "O", "X"]], " | | \n-+-+-\nX|X|O\n-+-+-\nO|O|X"),
             ([["X", "X", "X", "X"],
               ["O", "O", "X", " "],
               [" ", "X", "O", "X"],
-              [" ", "O", " ", "X"]], " 1234\n1XXXX\n2OOX \n3 XOX\n4 O X"),
+              [" ", "O", " ", "X"]], "X|X|X|X\n-+-+-+-\nO|O|X| \n-+-+-+-\n |X|O|X\n-+-+-+-\n |O| |X"),
             ([["X", "O", " ", "X", "X"],
               ["X", "O", " ", "X", "X"],
               [" ", "O", "X", "X", " "],
               ["X", "X", "X", "X", " "],
-              ["X", "O", "O", "X", "O"]], " 12345\n1XO XX\n2XO XX\n3 OXX \n4XXXX \n5XOOXO"),
+              ["X", "O", "O", "X", "O"]],
+             "X|O| |X|X\n-+-+-+-+-\nX|O| |X|X\n-+-+-+-+-\n |O|X|X| \n-+-+-+-+-\nX|X|X|X| \n-+-+-+-+-\nX|O|O|X|O"),
         ]
 
     final_text = """
@@ -909,6 +899,6 @@ Great work! That was quite challenging.
 
 Now you mastered how to build up a string of multiple lines of text, and solved the problem of displaying the board to the players. 
 
-Next you will learn more about types in Python and how to convert them (like you did with `str` just now), 
-and how to get input from the players. You are already about halfway done with the project. Keep going!
+Next you will learn more about types in Python and how to convert them, and how to get input from the players. 
+You are already about halfway done with the project. Keep going!
     """
