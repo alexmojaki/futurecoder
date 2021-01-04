@@ -750,6 +750,8 @@ Your outer loop should loop over the length of the board.
 Then check if you are at the last index or not.
 """
 
+        # TODO message step for trailing newline?
+
         parsons_solution = True
 
         def solution(self):
@@ -849,15 +851,19 @@ There are two types of lines to be displayed: one type has the pieces joined by 
 Both of these types of lines can be built up by using `join` appropriately.
 For example, how can you convert a row `['X', 'O', 'X']` into `'X|O|X'` using `join`?
 Similarly, how can you obtain `'-+-+-'` using `join`? To what list should you apply `join`?
-Once you figured out how to build up both types of lines, how can you join them to obtain the final result?
-Notice that the lines with the pieces can be different...
-But the line with the `+-`  signs is always the same.
+Once you figured out how to build up both types of lines, how can you combine them to obtain the final result?
+Notice that the lines with the `+-`  signs are always the same.
+And there is one line with `+-` separating every consecutive pair of lines with pieces.
 You can use `join` on the lines themselves!
 The lines with the pieces can be joined together with the `+-` line in between them (with newlines added in appropriate places).
 To do that, first you need to keep the lines with the pieces stored in a list as you are building them.
 Then apply `join` to that list, with the `+-` line as separator.
 To add the newlines to the `+-` line correctly, take a look at the test case we provided.
 """
+
+        parsons_solution = True
+
+        # TODO link to next page
 
         def solution(self):
             def format_board(board: List[List[str]]):
@@ -897,7 +903,7 @@ To add the newlines to the `+-` line correctly, take a look at the test case we 
     final_text = """
 Great work! That was quite challenging.
 
-Now you mastered how to build up a string of multiple lines of text, and solved the problem of displaying the board to the players. 
+Now you have mastered how to build up a string of multiple lines of text, and solved the problem of displaying the board to the players. 
 
 Next you will learn more about types in Python and how to convert them, and how to get input from the players. 
 You are already about halfway done with the project. Keep going!
