@@ -29,7 +29,9 @@ def _tests(driver):
     driver.get("http://localhost:3000/")
 
     # Open TOC
-    driver.find_element_by_link_text("Go to the course").click()
+    # Actually clicking the button is hard because the page is animated
+    button = driver.find_element_by_link_text("Start coding")
+    driver.get(button.get_attribute("href"))
 
     # Go to page
     driver.find_element_by_partial_link_text("Getting elements at a position").click()

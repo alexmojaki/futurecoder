@@ -152,7 +152,7 @@ def clean_step_class(cls):
         ]
         if not cls.correct_output:
             cls.correct_output = get_stdout(cls.program).rstrip()
-            assert cls.correct_output in cls.predicted_output_choices
+            assert cls.correct_output in cls.predicted_output_choices, repr(cls.correct_output)
             assert cls.correct_output != "Error"
         assert cls.correct_output
 
@@ -162,11 +162,9 @@ def clean_step_class(cls):
 
 @returns_stdout
 def get_stdout(program):
-    if "\n" in program:
-        mode = "exec"
-    else:
-        mode = "single"
-    code = compile(program, "", mode)
+    if "\n" not in program:
+        program = f"print(repr({program}))"
+    code = compile(program, "", "exec")
     exec(code, {"assert_equal": assert_equal})
 
 

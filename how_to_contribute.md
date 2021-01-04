@@ -1,5 +1,9 @@
 # How to contribute
 
+This page explains how to help build the futurecoder platform by writing code or course material.
+
+**If you'd like to donate money to keep servers running, please do so at [open collective](https://opencollective.com/futurecoder).**
+
 For starters, try using the platform to see what it's like. You can go straight to the [site](https://futurecoder.io/) and quickly sign up for an account. See the [Controls](README.md#controls) section for instructions on enabling developer mode, this will allow you to skip or replay steps in a page to allow exploring more freely and quickly.
 
 Please [open an issue](https://github.com/alexmojaki/futurecoder/issues/new) about anything that's confusing, could be done better, or doesn't work. All suggestions and feedback are welcome. Tell me what interests you!
@@ -14,11 +18,17 @@ Consider adding your thoughts and ideas to [issues labeled 'discussion'](https:/
 
 ## Testing
 
-Run `./manage.py test` in the backend folder.
+Run `pytest` in the backend folder with the poetry virtualenv active. 
 
-The tests run through the course, submitting the solution/program for each step (and each of its message steps) and ensuring that the response is as expected. It then records all the requests and responses. By default, this record is compared to `test_transcript.json` for equality.
+If you get a weird syntax error, check that you're in the backend folder.
 
-If you make some changes to the course, the tests will likely fail the comparison to `test_transcript.json`. Run the tests again with the environment variable `FIX_TESTS=1` to update the file. Then check that the git diff looks sensible.
+## `test_steps`
+
+The full test suite is quite slow, particularly `test_frontend`. When you are only writing course content, it's enough to run `pytest -k test_steps`.
+
+This test runs through the course, submitting the solution/program for each step (and each of its message steps) and ensuring that the response is as expected. It then records all the requests and responses. By default, this record is compared to `test_transcript.json` for equality.
+
+If you make some changes to the course, the tests will likely fail the comparison to `test_transcript.json`. Run the test again with the environment variable `FIX_TESTS=1` to update the file. Then check that the git diff looks sensible.
 
 ## System overview
 
@@ -65,7 +75,9 @@ Steps are the building blocks of the course, and this is where things get intere
 
 In code, a step is a class inheriting from `main.text.Step` declared inside a `Page` class. It has:
 
-- `text`. This is a string containing markdown displayed to the user. Typically this is declared just in the docstring of the class, but you can set the `text` class attribute directly if needed.
+- `text`. This is a string containing markdown displayed to the user. Typically this is declared just in the docstring of the class, but you can set the `text` class attribute directly if needed, e.g. if you want to use an f-string instead of a plain string literal.
+    - A code block is indicated by indentation. If the code is valid Python syntax, it will be syntax highlighted.
+    - By default users are expected to type in code for better retention. Sometimes they should be allowed to copy code, particularly if it's long and doesn't contain new concepts that students need to practice. In this case code should be preceded by an indented line `__copyable__`. Otherwise, make sure typing in the code isn't too tedious!
 - A `check` method which determines if the user submitted the right code, discussed more below.
 - A `program`, which is a string containing Python code which would solve this step and allow the user to advance, i.e. it passes the `check` method. This has several uses:
     - It shows readers of the code what you expect users to enter for this step.
