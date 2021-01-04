@@ -100,7 +100,7 @@ def clean_step_class(cls):
 
     if "__program_" in text:
         text = text.replace("__program__", program)
-        indented = indent(program, '    ')
+        indented = indent(program, '    ').replace("\\", "\\\\")
         text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
     else:
         assert not cls.program_in_text, "Either include __program__ or __program_indented__ in the text, " \

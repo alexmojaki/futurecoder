@@ -15445,5 +15445,243 @@
             ]
         },
         "step": "winner"
+    },
+    {
+        "page": "The newline character, <code>format_board</code>",
+        "program": [
+            "def print_board(board):",
+            "    for row in board:",
+            "        print(\"\".join(row))",
+            "",
+            "print_board([",
+            "    ['X', 'O', 'X'],",
+            "    [' ', 'O', 'O'],",
+            "    [' ', 'X', ' ']",
+            "])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "XOX"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": " OO"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": " X "
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "one_way_to_print_board"
+    },
+    {
+        "page": "The newline character, <code>format_board</code>",
+        "program": [
+            "assert_equal(",
+            "    format_board([",
+            "        ['X', 'O', 'X'],",
+            "        [' ', 'O', 'O'],",
+            "        [' ', 'X', ' ']",
+            "    ]),",
+            "    \"XOX",
+            "      OO",
+            "      X \"",
+            ")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "red",
+                    "text": "    \"XOX\n       ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou starting writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n"
+                },
+                {
+                    "color": "red",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "invalid_multi_line_string"
+    },
+    {
+        "page": "The newline character, <code>format_board</code>",
+        "program": [
+            "string = \"\"\"First line",
+            "Second line\"\"\"",
+            "print(string)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "First line\nSecond line"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "multi_line_strings_triple_quotes"
+    },
+    {
+        "page": "The newline character, <code>format_board</code>",
+        "program": [
+            "string"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "'First line\\nSecond line'"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "discovering_newline"
+    },
+    {
+        "page": "The newline character, <code>format_board</code>",
+        "program": [
+            "len('\\n')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "1",
+                "choices": [
+                    "1",
+                    "2",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "introducing_newline"
+    },
+    {
+        "get_solution": [
+            "def format_board(board):",
+            "    result = ''",
+            "    for i in range(len(board)):",
+            "        for char in board[i]:",
+            "            result += char",
+            "        if i != len(board) - 1:",
+            "            result += '\\n'",
+            "    return result"
+        ],
+        "page": "The newline character, <code>format_board</code>",
+        "program": [
+            "def format_board(board):",
+            "    result = ''",
+            "    for i in range(len(board)):",
+            "        for char in board[i]:",
+            "            result += char",
+            "        if i != len(board) - 1:",
+            "            result += '\\n'",
+            "    return result"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "format_board_simple"
+    },
+    {
+        "get_solution": [
+            "def format_board(board):",
+            "    joined_rows = []",
+            "    for row in board:",
+            "        joined_rows.append(\"|\".join(row))",
+            "    lines = []",
+            "    for _ in board[0]:",
+            "        lines.append(\"-\")",
+            "    line = f'\\n{\"+\".join(lines)}\\n'",
+            "    return line.join(joined_rows)"
+        ],
+        "page": "The newline character, <code>format_board</code>",
+        "program": [
+            "def format_board(board):",
+            "    joined_rows = []",
+            "    for row in board:",
+            "        joined_rows.append(\"|\".join(row))",
+            "    lines = []",
+            "    for _ in board[0]:",
+            "        lines.append(\"-\")",
+            "    line = f'\\n{\"+\".join(lines)}\\n'",
+            "    return line.join(joined_rows)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "format_board_bonus_challenge"
     }
 ]
