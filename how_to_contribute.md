@@ -14,7 +14,7 @@ The easiest way to contribute concretely is to write learning material for the c
 
 Beyond that, there's plenty of coding work to do on the platform, including frontend, backend, and devops work. See the [list of issues](https://github.com/alexmojaki/futurecoder/issues) for some ideas, or open a new one if you want. The main priority is to choose something that interests you. If nothing really does, pick something from the ["good first issue" label](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) - these are easier and will help you become familiar with the project.
 
-Consider adding your thoughts and ideas to [issues labeled 'discussion'](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3Adiscussion). Or [come have a chat about anything on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-kbu4i92r-BrK~_BkH3QRMjQQfBgG3CQ).
+Consider adding your thoughts and ideas to [issues labeled 'discussion'](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3Adiscussion). Or [come have a chat about anything on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-l0zxo9d3-mimh7iTSaDB07hnePMNGFw).
 
 ## Testing
 
@@ -50,7 +50,7 @@ It can be helpful to read through existing textbooks and such to find inspiratio
 
 If you want to contribute a solid bit of course with actual text, code, and exercises, open a new issue with a proposal draft just in markdown. Don't jump to implementing it in Python.
 
-If you have some partial ideas you'd like to talk about but don't feel ready to open an issue, [come chat on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-kbu4i92r-BrK~_BkH3QRMjQQfBgG3CQ).
+If you have some partial ideas you'd like to talk about but don't feel ready to open an issue, [come chat on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-l0zxo9d3-mimh7iTSaDB07hnePMNGFw).
 
 ## How to implement course content in Python
 
