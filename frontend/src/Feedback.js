@@ -4,6 +4,7 @@ import {rpc} from "./rpc";
 import {redact} from "./frontendlib/redact"
 import {stateSet as rpcStateSet} from "./rpc/store";
 import Popup from "reactjs-popup";
+import _ from "lodash";
 
 
 export const FeedbackModal = ({close, error}) => {
@@ -72,11 +73,12 @@ ${error.traceback}
           className="btn btn-primary"
           disabled={!(title.value && description.value)}
           onClick={() => {
+            const state = _.omit(redact.store.getState(), "book.pages")
             rpc("submit_feedback",
               {
                 title: title.value,
                 description: description.value + descriptionExtra,
-                state: redact.store.getState(),
+                state: state,
               });
             close();
           }}
