@@ -1,0 +1,20 @@
+name: Pytest
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: set up Poetry in the backend folder, run tests
+      working-directory: ./backend
+      run: |
+        export PATH=$HOME/.poetry/bin/:$PATH
+        ./setup.sh
+        poetry run pytest -k 'not test_frontend'
