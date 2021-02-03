@@ -93,6 +93,28 @@ ${error.traceback}
           Cancel
         </button>
       </div>
+      <br/>
+      <br/>
+      <div>
+        Alternatively, you can contact us directly:
+        <ul>
+          <li>
+            <a href="mailto:hello@futurecoder.io">
+              Email hello@futurecoder.io
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/alexmojaki/futurecoder/issues/new">
+              Open an issue on GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://join.slack.com/t/futurecoder/shared_invite/zt-l0zxo9d3-mimh7iTSaDB07hnePMNGFw">
+              Chat on Slack
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
