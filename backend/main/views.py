@@ -3,6 +3,7 @@ import logging
 import traceback
 from datetime import datetime
 from pathlib import Path
+from time import sleep
 from typing import get_type_hints
 from uuid import uuid4
 
@@ -261,6 +262,10 @@ class HomePageView(SuccessMessageMixin, CreateView):
         class Meta:
             model = ListEmail
             fields = ["email"]
+
+
+def timeout_view(request):
+    sleep(35)
 
 
 def fix_birdseye_server():

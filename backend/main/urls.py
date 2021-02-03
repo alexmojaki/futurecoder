@@ -18,7 +18,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.generic import TemplateView
 
 from main.text import chapters
-from main.views import FrontendAppView, HomePageView, api_view
+from main.views import FrontendAppView, HomePageView, api_view, timeout_view
 
 home_view = HomePageView.as_view()
 urlpatterns = [
@@ -27,4 +27,5 @@ urlpatterns = [
     path('', home_view),
     path('course/', ensure_csrf_cookie(FrontendAppView.as_view())),
     path('toc/', TemplateView.as_view(template_name="toc.html", extra_context=dict(chapters=chapters))),
+    path('timeout/', timeout_view),
 ]
