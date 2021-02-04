@@ -17,15 +17,16 @@
     margin: 30px;
 
     .feature-header {
-      position: relative;
-      right: 45px;
+      padding: 0 30px;
 
       * {
         display: inline-block;
       }
 
       .feature-line {
-        margin: 10px 5px;
+        position: fixed;
+        right: -30px;
+        margin-top: 56px;
         height: 4px;
         background: white;
         width: 50px;
@@ -37,13 +38,13 @@
 
 
 
+.feature-text:nth-of-type(2n + 1){
+  text-align: right !important;
 
-.feature-text:nth-of-type(2n + 1) {
-  text-align: right;
+}
 
-  .feature-header {
-    left: 45px !important;
-  }
+.feature:nth-of-type(2n + 1) .feature-line {
+  left: -30px !important;
 }
 
 .feature-image:nth-of-type(2n + 1) {

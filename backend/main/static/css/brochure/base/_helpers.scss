@@ -482,9 +482,13 @@
 	float: left;
 }
 
-.flex{
-	display: flex;
+@media (min-width: 640px) {
+	.flex{
+		display: flex;
+	}
 }
+
+
 
 .center-content{
 	justify-content: center;
