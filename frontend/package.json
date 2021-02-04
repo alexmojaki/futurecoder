@@ -9,7 +9,7 @@
     "@sentry/browser": "^5.15.4",
     "ansi_up": "^4.0.4",
     "axios": "^0.21.1",
-    "http-proxy-middleware": "latest",
+    "http-proxy-middleware": "^1.0.6",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
