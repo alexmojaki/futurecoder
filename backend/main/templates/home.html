@@ -56,12 +56,12 @@
                         </h3>
 
 
-                        <div class="features-inner section-inner">
-                            <div class="features-wrap">
-                                <div class="feature" data-aos="fade-up" data-aos-delay="2000" data-aos-offset="-200px">
-                                    <div class="feature-inner">
-                                        <div class="feature-header mb-16">
-                                            <div class="feature-icon mr-16">
+                        <div class="bullets-inner section-inner">
+                            <div class="bullets-wrap">
+                                <div class="bullet" data-aos="fade-up" data-aos-delay="2000" data-aos-offset="-200px">
+                                    <div class="bullet-inner">
+                                        <div class="bullet-header mb-16">
+                                            <div class="bullet-icon mr-16">
                                                 <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
                                                     <g fill="none" fill-rule="nonzero">
                                                         <path d="M16 9c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4z" fill="#4353FF"/>
@@ -72,15 +72,15 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                            <h4 class="feature-title m-0">Redefines interactive learning</h4>
+                                            <h4 class="bullet-title m-0">Redefines interactive learning</h4>
                                         </div>
                                         <!--p class="text-sm mb-0">...</p-->
                                     </div>
                                 </div>
-                                <div class="feature" data-aos="fade-up" data-aos-delay="2100" data-aos-offset="-200px">
-                                    <div class="feature-inner">
-                                        <div class="feature-header mb-16">
-                                            <div class="feature-icon mr-16">
+                                <div class="bullet" data-aos="fade-up" data-aos-delay="2100" data-aos-offset="-200px">
+                                    <div class="bullet-inner">
+                                        <div class="bullet-header mb-16">
+                                            <div class="bullet-icon mr-16">
                                                 <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
                                                     <g fill-rule="nonzero" fill="none">
                                                         <path d="M7 8H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1zM19 8h-6a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1z" fill="#4353FF"/>
@@ -93,15 +93,15 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                            <h4 class="feature-title m-0">Free & Open Source</h4>
+                                            <h4 class="bullet-title m-0">Free & Open Source</h4>
                                         </div>
                                         <!--p class="text-sm mb-0">...</p-->
                                     </div>
                                 </div>
-                                <div class="feature" data-aos="fade-up" data-aos-delay="2200" data-aos-offset="-200px">
-                                    <div class="feature-inner">
-                                        <div class="feature-header mb-16">
-                                            <div class="feature-icon mr-16">
+                                <div class="bullet" data-aos="fade-up" data-aos-delay="2200" data-aos-offset="-200px">
+                                    <div class="bullet-inner">
+                                        <div class="bullet-header mb-16">
+                                            <div class="bullet-icon mr-16">
                                                 <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
                                                     <g fill-rule="nonzero" fill="none">
                                                         <path d="M4 12H0V5a5.006 5.006 0 0 1 5-5h7v4H5a1 1 0 0 0-1 1v7z" fill="#43F1FF"/>
@@ -110,7 +110,7 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                            <h4 class="feature-title m-0">Designed with care for beginners</h4>
+                                            <h4 class="bullet-title m-0">Designed with care for beginners</h4>
                                         </div>
                                         <!--p class="text-sm mb-0">...</p-->
                                     </div>
@@ -143,7 +143,7 @@
 
             <div class="spacer"></div>
 
-            <div class="container" style="justify-content: center" data-aos="fade-down" data-aos-duration="1800" data-aos-delay="3000" data-aos-offset="-800px">
+            <div class="container flex" style="justify-content: center" data-aos="fade-down" data-aos-duration="1800" data-aos-delay="3000" data-aos-offset="-800px">
                 <div id="scroll-animation">
                     <a href="#header-end-anchor"><span></span></a>
                 </div>
@@ -152,8 +152,111 @@
 
         </section>
 
-        <section id="email-newsletter" data-aos="fade-up" data-aos-duration="800" data-aos-offset="300">
-            <div class="container center-content">
+
+
+        <section id="features">
+            <div class="container">
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-offset="200">
+                    <h1 class="center-text">Take a peek inside!</h1>
+                </div>
+                <div class="spacer"></div>
+
+                <div>
+                    <div class="feature flex" >
+                        <div class="feature-image" data-aos="fade-left" data-aos-duration="800">
+                            <img src="{% static 'img/features/layout.png' %}">
+                        </div>
+                        <div class="feature-text" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+                            <div class="feature-header">
+                                <div class="feature-line"></div>
+                                <h3>Fully Interactive</h3>
+                            </div>
+                            <p>
+                                Users must run code in the provided editor or shell and answer questions to advance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature flex">
+                        <div class="feature-text" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                            <div class="feature-header">
+                                <h3>Easy Debugging</h3>
+                                <div class="feature-line">
+                                </div>
+                            </div>
+                            <p>
+                                With a single click, users can run powerful debuggers to visualise execution and find problems.
+                                There are three debuggers, each with their own strengths:
+                                <a href="http://pythontutor.com/">Python Tutor</a>, <a href="https://github.com/alexmojaki/snoop">Snoop</a>, and
+                                <a href="https://github.com/alexmojaki/birdseye">Bird's Eye</a> (pictured).
+                            </p>
+                        </div>
+                        <div class="feature-image" data-aos="fade-right" data-aos-duration="800">
+                            <img src="{% static 'img/features/birdseye.png' %}">
+                        </div>
+                    </div>
+
+                    <div class="feature flex">
+                        <div class="feature-image" data-aos="fade-left" data-aos-duration="800">
+                            <img src="{% static 'img/features/traceback.png' %}">
+                        </div>
+                        <div class="feature-text" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+                            <div class="feature-header">
+                                <div class="feature-line"></div>
+                                <h3>Enhanced Error Messages</h3>
+                            </div>
+                            <p>
+                                Normal Python tracebacks are intimidating to beginners.
+                                futurecoder removes the fear and makes them helpful instead.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature flex">
+                        <div class="feature-text" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                            <div class="feature-header">
+                                <h3>Parsons Problems</h3>
+                                <div class="feature-line"></div>
+                            </div>
+                            <p>
+                                If a student is stuck trying to solve an exercise, and they've exhausted all the hints,
+                                they can try putting the shuffled solution in the correct order instead.
+                                This ensures they still apply their mind while reducing frustration.
+                            </p>
+                        </div>
+                        <div class="feature-image" data-aos="fade-right" data-aos-duration="800">
+                            <img src="{% static 'img/features/parsons.png' %}">
+                        </div>
+                    </div>
+
+                    <div class="feature flex">
+                        <div class="feature-image" data-aos="fade-left" data-aos-duration="800">
+                            <img src="{% static 'img/features/solution.png' %}">
+                        </div>
+                        <div class="feature-text" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+                            <div class="feature-header">
+                                <div class="feature-line"></div>
+                                <h3>Solution Breadcrumbs</h3>
+                            </div>
+                            <p>
+                                As a last resort, students can gradually reveal the solution until they have enough
+                                information to fill in the remaining gaps themselves.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h4 class="center-text" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        This is just a sample of the features.
+                        <br>For more, <a href="#demo-vid">watch the video below</a> for more information or
+                        <a href="/toc/">get started immediately!</a>
+                    </h4>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="demo-vid" data-aos="fade-up" data-aos-duration="800" data-aos-offset="300">
+            <div class="container flex center-content">
               <div>
                 <h2>Watch a demo of the features and benefits:</h2>
 
@@ -162,13 +265,13 @@
                         allowfullscreen></iframe>
               </div>
             </div>
+        </section>
 
-            <div class="spacer"></div>
-
-            <div class="container"  data-aos="fade-right" data-aos-delay="0">
+        <section id="email-newsletter" data-aos="fade-up" data-aos-duration="800" data-aos-offset="300">
+            <div class="container flex"  data-aos="fade-right" data-aos-delay="0">
               {% include "messages.html" %}
             </div>
-            <div class="container">
+            <div class="container flex">
                 <div class="col">
                     <h2 class="marginless text-right">Want to receive updates about futurecoder?</h2>
                 </div>
@@ -182,28 +285,28 @@
         </section>
 
         <section id="about">
-            <div class="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-offset="50">
+            <div class="container flex" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-offset="50">
                 <div class="col">
                     <img class="floating-anim-6" id="about-logo" src="{% static 'logo/bordered.png' %}">
                 </div>
                 <div class="col">
                     <h2 class="marginless">About</h2>
                     <p>
-                        We believe current learn-to-code platforms could be so much better.
-                        We also believe Python is the best language to start programming in.
-                        And hence, futurecoder was born: <b>a free, open-source platform for
-                        complete beginners to teach themselves programming, in Python.</b>
+                        <b>futurecoder is a free and open-source platform and course for
+                        complete beginners to teach themselves programming in Python.</b>
                     </p>
                     <h5>The long-term goals of futurecoder are ambitious:</h5>
                     <ul>
-                        <li>Revolutionise computing education</li>
+                        <li>Revolutionise computing education. We believe current learn-to-code platforms could be so much better.</li>
                         <li>Make the best learning resource possible which everyone can contribute to and improve</li>
-                        <li>Allow anyone to learn programming, regardless of background or talent</li>
+                        <li>Allow anyone to learn programming on their own, regardless of background or talent</li>
                     </ul>
                     <h5>We mean to achieve this by:</h5>
                     <ul>
-                        <li>Equipping students with powerful tools, seamlessly integrated</li>
-                        <li>Focusing on fundamentals first</li>
+                        <li>Keeping students engaged and interested as they learn to write real code</li>
+                        <li>Providing powerful tools that are easy to use to prevent frustration</li>
+                        <li>Teaching Python, widely considered to be the best language to learn first
+                            as well as the most popular language in real applications.</li>
                         <li>Consistently iterating with an open-source codebase</li>
                     </ul>
                 </div>
@@ -211,7 +314,7 @@
         </section>
 
         <section id="contribute" data-aos="fade-up" data-aos-duration="800">
-            <div class="container">
+            <div class="container flex">
                 <div class="col">
                     <p class="text-right">
                         This is very much a work in progress. While most of the
@@ -221,14 +324,62 @@
                 </div>
                 <div class="col">
 
-                    <img class="tech-stack-icon float-left floating-anim-5" src="{% static 'img/icons/python.png' %}">
-                    <img class="tech-stack-icon float-left floating-anim-6" src="{% static 'img/icons/django.png' %}">
-                    <img class="tech-stack-icon float-left floating-anim-7" src="{% static 'img/icons/react.png' %}">
-                    <h2 class="marginless">Interested in contributing?</h2>
+                    <img class="tech-stack-icon floating-anim-5" src="{% static 'img/icons/python.png' %}">
+                    <img class="tech-stack-icon floating-anim-6" src="{% static 'img/icons/django.png' %}">
+                    <img class="tech-stack-icon floating-anim-7" src="{% static 'img/icons/react.png' %}">
+                    <h3 class="marginless">Interested in contributing code or course content?</h3>
                     <br>
-                    <a href="https://github.com/alexmojaki/futurecoder/blob/master/how_to_contribute.md" class="button button-primary button-block float-left">
-                        <i class="fab fa-github"></i>&nbsp&nbsp Check out the contribution guide on Github
+                    <a href="https://github.com/alexmojaki/futurecoder/blob/master/how_to_contribute.md" class="button button-primary button-block">
+                        <i class="fab fa-github"></i>&nbsp&nbsp Check out the contribution guide on GitHub
                     </a>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+
+            <div class="container flex">
+                <div class="col">
+                    <p class="text-right">
+                        This site currently runs on low-cost hardware and cannot
+                        handle a large number of users simultaneously.
+                        We want to avoid displaying ads or restricting content to paid
+                        users, so please consider donating
+                        to keep servers running and allow more users to start learning.
+                    </p>
+                </div>
+                <div class="col">
+                    <h3>Keep futurecoder alive!</h3>
+                    <a href="https://opencollective.com/futurecoder" class="button button-complimentary-color button-block">
+                        <i class="fas fa-donate"></i>&nbsp&nbsp Donate on open collective
+                    </a>
+                </div>
+            </div>
+
+            <div class="container flex">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <h3>Contact Us</h3>
+                    <p>
+                        <i class="fab fa-slack"></i>&nbsp&nbsp
+                        <a href="https://join.slack.com/t/futurecoder/shared_invite/zt-l0zxo9d3-mimh7iTSaDB07hnePMNGFw">
+                            Chat on Slack
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fab fa-github"></i>&nbsp&nbsp
+                        <a href="https://github.com/alexmojaki/futurecoder/issues/new">
+                            Open an Issue on GitHub
+                        </a>
+                    </p>
+                    <p>
+                    <p>
+                    <i class="fas fa-envelope"></i>&nbsp&nbsp
+                        <a href="mailto:hello@futurecoder.io">
+                            hello@futurecoder.io
+                        </a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -252,9 +403,9 @@
                 </g>
             </svg -->
         </div>
-        <div class="container">
+        <div class="container flex">
             <div class="site-footer-inner has-top-divider">
-                <div class="footer-copyright">&copy; 2020</div>
+                <div class="footer-copyright">&copy; 2021 Alex Hall</div>
                 <!--ul class="footer-social-links list-reset">
                     <li>
                         <a href="#">
