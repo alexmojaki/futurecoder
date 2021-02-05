@@ -41,11 +41,11 @@ needed, the student can get small hints to gradually guide them to the solution:
   </tr>
   <tr>
     <td>
-    
+
 ![predict_output](images/predict_output.png)
     </td>
     <td>
-    
+
 ![hints](images/hints.png)
     </td>
   </tr>
@@ -61,7 +61,7 @@ order:
   </tr>
   <tr>
     <td>
-    
+
 ![solution](images/solution.png)
 </td>
 <td>
@@ -98,33 +98,33 @@ Common mistakes can be caught and pointed out to the student. This includes spec
   </tr>
   <tr>
     <td>
-    
+
 Several debuggers are provided, including [snoop](https://github.com/alexmojaki/snoop)...
     </td>
     <td>
-    
+
 [...birdseye...](https://github.com/alexmojaki/birdseye)
     </td>
   </tr>
     <tr>
     <td>
-    
+
 ![snoop](images/snoop.png)
     </td>
     <td>
-    
+
 ![birdseye](images/birdseye.png)
     </td>
   </tr>
   <tr>
     <td colspan="2">
-    
+
 ...and [Python Tutor](http://pythontutor.com/)
     </td>
   </tr>
   <tr>
     <td colspan="2">
-    
+
 ![pythontutor](images/pythontutor.png)
     </td>
   </tr>
@@ -140,15 +140,32 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
     4. Skip the following two steps, everything should be running now.
 3. In the `backend` folder:
     1. Ensure the `python` command points to Python 3.8.
-    2. Run `./setup.sh`. This will:
-        1. Install `poetry` if needed.
-        2. Create a virtualenv and install Python dependencies.
-        3. Create a sqlite database, run migrations, and create a user.
+
+    2. If you are on Linux, run `./setup.sh`.
+
+        If you are on Windows: (in a Powershell window with "Run as Administrator")
+
+        1. Run `Set-ExecutionPolicy -ExecutionPolicy Bypass` to enable running scripts in Powershell.
+        2. Run `.\setup.ps1`.
+
+    	This will:
+
+		- Install `poetry` if needed.
+		- Create a virtualenv and install Python dependencies.
+		- Create a sqlite database, run migrations, and create a user.
+
     3. Activate the virtualenv with `poetry shell`.
-    4. Run the backend development server with `./manage.py runserver`.
+
+    4. Run the backend development server with `python manage.py runserver`.
 4. In the `frontend` folder:
-    1. Ensure you have recent versions of `node` and `npm`.
-    2. Run `npm install` to download dependencies.
+    1. Ensure you have version 12 of `node` and 6 of `npm`.
+
+       If you are on Windows: (in a Powershell window with "Run as Administrator")
+
+       1. Run `npm install --global windows-build-tools`.
+
+    2. Run `npm ci` to download dependencies.
+
     3. Run `npm start` to start the frontend development server.
 5. Go to http://localhost:3000/accounts/login/ and login with the email "admin@example.com" and the password "admin".
 6. You should be redirected to http://localhost:3000/toc/ and see the Table of Contents.
