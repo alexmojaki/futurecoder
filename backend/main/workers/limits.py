@@ -1,6 +1,5 @@
 import inspect
 import os
-import resource
 from functools import lru_cache
 from importlib import import_module
 
@@ -27,6 +26,7 @@ def patch_cwd():
 
 
 def set_limits():
+    import resource
     destroy_dangerous_functions()
 
     usage = resource.getrusage(resource.RUSAGE_SELF)
