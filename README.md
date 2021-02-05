@@ -16,6 +16,8 @@ Alternatively, [come have a chat on slack](https://join.slack.com/t/futurecoder/
 
 ## Features
 
+For a fuller demonstration and explanation, [watch this video](https://www.youtube.com/watch?v=un1BrrV57PA&feature=youtu.be).
+
 <table>
   <tr>
     <td colspan="2">
@@ -141,7 +143,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 3. In the `backend` folder:
     1. Ensure the `python` command points to Python 3.8.
 
-    2. If you are on Linux, run `./setup.sh`.
+    2. If you are on Linux/OSX, run `./setup.sh`.
 
         If you are on Windows: (in a Powershell window with "Run as Administrator")
 
@@ -157,18 +159,23 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
     3. Activate the virtualenv with `poetry shell`.
 
     4. Run the backend development server with `python manage.py runserver`.
+
+        - If you get `ModuleNotFoundError: No module named 'resource'` then set the environment variable `SET_LIMITS` to `0`.
+
 4. In the `frontend` folder:
     1. Ensure you have version 12 of `node` and 6 of `npm`.
 
        If you are on Windows: (in a Powershell window with "Run as Administrator")
 
-       1. Run `npm install --global windows-build-tools`.
+       - Run `npm install --global windows-build-tools`.
 
     2. Run `npm ci` to download dependencies.
 
     3. Run `npm start` to start the frontend development server.
 5. Go to http://localhost:3000/accounts/login/ and login with the email "admin@example.com" and the password "admin".
 6. You should be redirected to http://localhost:3000/toc/ and see the Table of Contents.
+
+To learn more about the system, see the [contributing guide](how_to_contribute.md).
 
 ## Controls
 
