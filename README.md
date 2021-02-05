@@ -140,23 +140,32 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
     4. Skip the following two steps, everything should be running now.
 3. In the `backend` folder:
     1. Ensure the `python` command points to Python 3.8.
-    2. If you are on Linux or Mac, run `./setup.sh`.
-    If you are on Windows:
-        1. Open a Powershell window with "Run as Administrator."
-        2. Run `Set-ExecutionPolicy -ExecutionPolicy Bypass` to enable running scripts in Powershell.
-        3. Run `.\setup.ps1`.
 
-    This will:
-          1. Install `poetry` if needed.
-          2. Create a virtualenv and install Python dependencies.
-          3. Create a sqlite database, run migrations, and create a user.
+    2. If you are on Linux, run `./setup.sh`.
+
+        If you are on Windows: (in a Powershell window with "Run as Administrator")
+
+        1. Run `Set-ExecutionPolicy -ExecutionPolicy Bypass` to enable running scripts in Powershell.
+        2. Run `.\setup.ps1`.
+
+    	This will:
+
+		- Install `poetry` if needed.
+		- Create a virtualenv and install Python dependencies.
+		- Create a sqlite database, run migrations, and create a user.
+
     3. Activate the virtualenv with `poetry shell`.
+
     4. Run the backend development server with `python manage.py runserver`.
 4. In the `frontend` folder:
-    1. Ensure you have version 12 of `node` and version 6 of `npm`.
-    If you are on Windows: (in a Powershell window with "Run as Administrator")
-        1. Run `npm install --global windows-build-tools`.
+    1. Ensure you have version 12 of `node` and 6 of `npm`.
+
+       If you are on Windows: (in a Powershell window with "Run as Administrator")
+
+       1. Run `npm install --global windows-build-tools`.
+
     2. Run `npm ci` to download dependencies.
+
     3. Run `npm start` to start the frontend development server.
 5. Go to http://localhost:3000/accounts/login/ and login with the email "admin@example.com" and the password "admin".
 6. You should be redirected to http://localhost:3000/toc/ and see the Table of Contents.
