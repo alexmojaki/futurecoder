@@ -21,7 +21,7 @@ jobs:
     - name: Bring up docker cluster
       run: |
         touch .env
-        docker-compose up -d postgres
+        docker-compose up -d database
         sleep 10
         docker-compose up -d
     - name: Install chromedriver
