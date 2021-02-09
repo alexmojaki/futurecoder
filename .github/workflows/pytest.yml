@@ -18,3 +18,14 @@ jobs:
         export PATH=$HOME/.poetry/bin/:$PATH
         ./setup.sh
         poetry run pytest -k 'not test_frontend'
+    - name: Bring up docker cluster
+      run: docker-compose up -d
+    - name: Install chromedriver
+      uses: nanasess/setup-chromedriver@master
+    - name: Test frontend
+      working-directory: ./backend
+      run: |
+        export DISPLAY=:99
+        chromedriver --url-base=/wd/hub &
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+        poetry run pytest -k 'test_frontend'
