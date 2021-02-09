@@ -19,7 +19,9 @@ jobs:
         ./setup.sh
         poetry run pytest -k 'not test_frontend'
     - name: Bring up docker cluster
-      run: docker-compose up -d
+      run: |
+        touch .env
+        docker-compose up -d
     - name: Install chromedriver
       uses: nanasess/setup-chromedriver@master
     - name: Test frontend
