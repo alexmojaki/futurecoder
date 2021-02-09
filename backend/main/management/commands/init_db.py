@@ -20,6 +20,7 @@ class Command(BaseCommand):
             first_name="Admin",
             last_name="Adminson",
             email="admin@example.com",
+            developer_mode=True,
         )
 
         print("Modifying site")
