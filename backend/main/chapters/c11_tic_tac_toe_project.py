@@ -1,15 +1,15 @@
 # flake8: NOQA E501
 import ast
+from random import choice, randint
 from string import ascii_uppercase
 from typing import List
-from random import choice, randint
 
-from main.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep, Step
+from main.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
 
 
 def generate_board(board_type):
     winning = choice([True, False])
-    size = randint(3, 10)
+    size = randint(3, 9)
     char1 = choice(ascii_uppercase)
     char2 = choice(ascii_uppercase)
     chars = [char1, char2, ' ']
@@ -907,13 +907,13 @@ Next you will learn more about types in Python and how to convert them, and how 
 You are already about halfway done with the project. Keep going!
     """
 
-class Types(Page):
 
+class Types(Page):
     class five_different_types(VerbatimStep):
         """
-So far we have been working with various kinds of data: strings, lists, numbers and most recently booleans.
-Python will recognize and treat different values such as `'Hello World'` and `23` differently.
-We can see how Python recognizes these values. There is a command `type` that reveals it:
+So far we've seen various kinds of data: strings, lists, numbers and booleans.
+These are called *types*. Every value has a type which affects how it behaves
+and can be revealed with the `type` function:
 
     __copyable__
     __program_indented__
@@ -929,17 +929,19 @@ We can see how Python recognizes these values. There is a command `type` that re
     class check_type_manually(VerbatimStep):
         """
 Python reports first that `type('Hello World')` is `<class 'str'>`. Don't worry about `class` for now.
-Python is telling us that the type of a string is `str`, which is short for *string*.
+`str` is short for *string*.
 
-Then `True` is `bool` (short for *boolean*) and `[1, 2, 3]` has type `list`.
+Then `True` is a `bool` (short for *boolean*) and `[1, 2, 3]` has type `list`.
 
 Note that there are two types for numbers:
 
 - `int`, short for 'integer', is for whole numbers, meaning no fractions or decimal points.
 - `float`, short for 'floating point number', is for numbers with a decimal point and maybe a fractional part
 
-In most cases you don't have to worry about the difference, as you can mix the two when doing maths.
-Let us verify one of these in the shell:
+In most cases you don't have to worry about the different types of number, as you can mix the two when doing maths.
+
+Types are values which can be used in various ways, just like other values.
+For example, try this in the shell:
 
 __program_indented__
         """
@@ -950,8 +952,10 @@ __program_indented__
 
     class different_types_look_same(VerbatimStep):
         """
-Sometimes different types can look the same when printed, even though they are different when evaluated:
+Values with different types are usually quite different from each other, but they can look the same when printed,
+which can be confusing. Try this:
 
+    __copyable__
     __program_indented__
 
 (You can use `print(repr(123))` and `print(repr('123'))` to tell the difference. What's `repr`? Google it!)
@@ -964,9 +968,12 @@ Sometimes different types can look the same when printed, even though they are d
 
     class plus_has_two_meanings(VerbatimStep):
         """
-Operators such as `+` have different meanings for `str` and `int`:
+Different types have different methods and support different operators.
+The same method or operator can also mean different things.
+For example, see how `+` has different meanings for `str` and `int`:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         predicted_output_choices = [
@@ -988,7 +995,8 @@ For two integers `+` acts as addition, whereas for two strings it acts as string
 Python automatically figures out the meaning of `+` from the types of the inputs.
 Similarly `<` acts differently on two strings and two integers:
 
-__program_indented__
+    __copyable__
+    __program_indented__
         """
 
         predicted_output_choices = [
@@ -1004,11 +1012,14 @@ __program_indented__
 
     class less_than_sorting_strings(VerbatimStep):
         """
-So `<` acts as the usual "less than" between two integers, because `13` is less than `120`,
-but it acts as the dictionary ordering between two strings: `13` is alphabetically after `120`.
-Let's see this in more detail. `<` is used by default in the list function `sorted`:
+So `<` acts as the usual 'less than' between two integers, because `13` is less than `120`,
+but it acts as the dictionary ordering between two strings: `13` is 'alphabetically' after `120`
+because `3` comes after `2`.
 
-__program_indented__
+See what difference this makes when sorting a list:
+
+    __copyable__
+    __program_indented__
         """
 
         predicted_output_choices = [
@@ -1044,10 +1055,6 @@ __program_indented__
 
     class fixing_type_errors_with_conversion(ExerciseStep):
         """
-***Using `+` between a `str` and an `int` is an error!***
-
-    TypeError: unsupported operand type(s) for +: 'int' and 'str'
-
 Using a string instead of an integer in `range` like `range('5')`,
 or in list subscripting like `list['3']` will also lead to an error.
 
@@ -1061,7 +1068,7 @@ Using this new knowledge, fix this broken program:
     __copyable__
     number = '3'
     for i in range(number):
-        print('Starting... ' + (i + 1))
+        print('Starting... ' + i + 1)
     print('Go!')
 
 The correct program should print:
@@ -1077,7 +1084,9 @@ Your solution should work for any value of the variable `number`.
 
         hints = """
 At what points is this code broken?
-Use the type functions on the broken variables to convert the wrong types to the correct ones!
+There are values that need to be converted to a different type.
+Specifically there's a `str` that needs to be converted to an `int`.
+And an `int` that needs to be converted to a `str`.
         """
 
         tests = [
@@ -1097,6 +1106,8 @@ Starting... 3
 Go!
             """),
         ]
+
+        disallowed = Disallowed(ast.JoinedStr, label="f-strings")
 
         def solution(self, number: str):
             for i in range(int(number)):
@@ -1184,6 +1195,11 @@ Add each row's string to the list, then join the list with a newline character.
         ]
 
     final_text = """
-You learned about types in Python and how to avoid common type problems by converting types.
+Excellent!
+
+By the way, when you need to concatenate strings and numbers, remember that you can also
+use f-strings. They often look nicer.
+
+You've learned about types in Python and how to avoid common errors by converting types.
 Keep going with the rest of the project!
     """
