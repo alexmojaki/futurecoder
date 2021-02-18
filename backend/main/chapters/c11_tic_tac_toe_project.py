@@ -1,15 +1,15 @@
 # flake8: NOQA E501
 import ast
+from random import choice, randint
 from string import ascii_uppercase
 from typing import List
-from random import choice, randint
 
 from main.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
 
 
 def generate_board(board_type):
     winning = choice([True, False])
-    size = randint(3, 10)
+    size = randint(3, 9)
     char1 = choice(ascii_uppercase)
     char2 = choice(ascii_uppercase)
     chars = [char1, char2, ' ']
@@ -809,7 +809,7 @@ You might have solved it with something like this:
             joined_rows.append("".join(row))
         return "\\n".join(joined_rows)
 
-If you'd like, you can just continue to the next page now. Or you can do a bonus challenge!
+If you'd like, you can just continue to the [next page](/course/?page=Types) now. Or you can do a bonus challenge!
 
 Write an improved version of `format_board` that displays row and column separators. For example, if
 
@@ -863,8 +863,6 @@ To add the newlines to the `+-` line correctly, take a look at the test case we 
 
         parsons_solution = True
 
-        # TODO link to next page
-
         def solution(self):
             def format_board(board: List[List[str]]):
                 joined_rows = []
@@ -907,4 +905,301 @@ Now you have mastered how to build up a string of multiple lines of text, and so
 
 Next you will learn more about types in Python and how to convert them, and how to get input from the players. 
 You are already about halfway done with the project. Keep going!
+    """
+
+
+class Types(Page):
+    class five_different_types(VerbatimStep):
+        """
+So far we've seen various kinds of data: strings, lists, numbers and booleans.
+These are called *types*. Every value has a type which affects how it behaves
+and can be revealed with the `type` function:
+
+    __copyable__
+    __program_indented__
+        """
+
+        def program(self):
+            print(type('Hello World'))
+            print(type(23))
+            print(type(True))
+            print(type([1, 2, 3]))
+            print(type(4.56))
+
+    class check_type_manually(VerbatimStep):
+        """
+Python reports first that `type('Hello World')` is `<class 'str'>`. Don't worry about `class` for now.
+`str` is short for *string*.
+
+Then `True` is a `bool` (short for *boolean*) and `[1, 2, 3]` has type `list`.
+
+Note that there are two types for numbers:
+
+- `int`, short for 'integer', is for whole numbers, meaning no fractions or decimal points.
+- `float`, short for 'floating point number', is for numbers with a decimal point and maybe a fractional part
+
+In most cases you don't have to worry about the different types of number, as you can mix the two when doing maths.
+
+Types are values which can be used in various ways, just like other values.
+For example, try this in the shell:
+
+__program_indented__
+        """
+
+        expected_code_source = 'shell'
+
+        program = 'type(3) == int'
+
+    class different_types_look_same(VerbatimStep):
+        """
+Values with different types are usually quite different from each other, but they can look the same when printed,
+which can be confusing. Try this:
+
+    __copyable__
+    __program_indented__
+
+(You can use `print(repr(123))` and `print(repr('123'))` to tell the difference. What's `repr`? Google it!)
+        """
+
+        def program(self):
+            print('123')
+            print(123)
+            print(123 == '123')
+
+    class plus_has_two_meanings(VerbatimStep):
+        """
+Different types have different methods and support different operators.
+The same method or operator can also mean different things.
+For example, see how `+` has different meanings for `str` and `int`:
+
+    __copyable__
+    __program_indented__
+        """
+
+        predicted_output_choices = [
+            "579\n579",
+            "579\n'579'",
+            "123456\n123456",
+            "123456\n'123456'",
+            "579\n123456",
+            "579\n'123456'",
+        ]
+
+        def program(self):
+            print(123 + 456)
+            print('123' + '456')
+
+    class less_than_has_two_meanings(VerbatimStep):
+        """
+For two integers `+` acts as addition, whereas for two strings it acts as string concatenation.
+Python automatically figures out the meaning of `+` from the types of the inputs.
+Similarly `<` acts differently on two strings and two integers:
+
+    __copyable__
+    __program_indented__
+        """
+
+        predicted_output_choices = [
+            "True\nTrue",
+            "True\nFalse",
+            "False\nTrue",
+            "False\nFalse",
+        ]
+
+        def program(self):
+            print(13 < 120)
+            print('13' < '120')
+
+    class less_than_sorting_strings(VerbatimStep):
+        """
+So `<` acts as the usual 'less than' between two integers, because `13` is less than `120`,
+but it acts as the dictionary ordering between two strings: `13` is 'alphabetically' after `120`
+because `3` comes after `2`.
+
+See what difference this makes when sorting a list:
+
+    __copyable__
+    __program_indented__
+        """
+
+        predicted_output_choices = [
+            "[0, 13, 120]\n['0', '120', '13']",
+            "[0, 13, 120]\n['13', '120', '0']",
+            "[0, 13, 120]\n['120', '13', '0']",
+            "[120, 13, 0]\n['0', '120', '13']",
+            "[120, 13, 0]\n['13', '120', '0']",
+            "[120, 13, 0]\n['120', '13', '0']",
+        ]
+
+        def program(self):
+            print(sorted([120, 13, 0]))
+            print(sorted(['120', '13', '0']))
+
+    class common_type_errors(VerbatimStep):
+        """
+What happens if you use an operator between a `str` and an `int`? Try in the shell:
+
+__program_indented__
+        """
+
+        correct_output = "Error"
+
+        predicted_output_choices = ["46", "'46'", "1234", "'1234'"]
+
+        expected_code_source = "shell"
+
+        program = "12 + '34'"
+
+        def check(self):
+            return "TypeError: unsupported operand type(s) for +: 'int' and 'str'" in self.result
+
+    class fixing_type_errors_with_conversion(ExerciseStep):
+        """
+Using a string instead of an integer in `range` like `range('5')`,
+or in list subscripting like `list['3']` will also lead to an error.
+
+Most of these problems can be solved by converting the string to an integer by using `int` as a function:
+`int('5')` will return the integer `5`.
+Similarly an integer can be converted to a string by using `str` as a function:
+`str(5)` will return the string `'5'`.
+
+Using this new knowledge, fix this broken program:
+
+    __copyable__
+    number = '3'
+    for i in range(number):
+        print('Starting... ' + i + 1)
+    print('Go!')
+
+The correct program should print:
+
+    Starting... 1
+    Starting... 2
+    Starting... 3
+    Go!
+
+Your solution should work for any value of the variable `number`.
+
+        """
+
+        hints = """
+At what points is this code broken?
+There are values that need to be converted to a different type.
+Specifically there's a `str` that needs to be converted to an `int`.
+And an `int` that needs to be converted to a `str`.
+        """
+
+        tests = [
+            ('1', """\
+Starting... 1
+Go!
+            """),
+            ('2', """\
+Starting... 1
+Starting... 2
+Go!
+            """),
+            ('3', """\
+Starting... 1
+Starting... 2
+Starting... 3
+Go!
+            """),
+        ]
+
+        disallowed = Disallowed(ast.JoinedStr, label="f-strings")
+
+        def solution(self, number: str):
+            for i in range(int(number)):
+                print('Starting... ' + str(i + 1))
+            print('Go!')
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "number": str(randint(1, 10))
+            }
+
+    class format_board_with_numbers(ExerciseStep):
+        """
+Write an improved version of `format_board` that has row and column numbers like this:
+
+     123
+    1XOX
+    2 OO
+    3 X
+
+It should work for boards of any size. We provide a test case:
+
+    __copyable__
+    def format_board(board):
+        ...
+
+    assert_equal(
+        format_board([
+            ['X', 'O', 'X'],
+            ['O', ' ', ' '],
+            [' ', 'X', 'O']
+        ]),
+        ' 123\\n1XOX\\n2O  \\n3 XO'
+    )
+
+        """
+
+        hints = """
+You can start by using the ideas from your previous solution to `format_board`. Using `join` is highly recommended!
+The first line has to be treated separately from the rest.
+Remember that `range` yields numbers in the way: 0, 1, 2, ...
+We want numbers on the first line like this: 1, 2, 3...
+Each number has to be converted to a string before being added to the first row!
+For the rows of the board itself, do something similar.
+Start with a list consisting only of the first line that you built above.
+Add each row's string to the list, then join the list with a newline character.
+        """
+
+        parsons_solution = True
+
+        def solution(self):
+            def format_board(board: List[List[str]]):
+                first_row = ' '
+                for i in range(len(board)):
+                    first_row += str(i + 1)
+                joined_rows = [first_row]
+                for i in range(len(board)):
+                    joined_row = str(i + 1) + ''.join(board[i])
+                    joined_rows.append(joined_row)
+                return "\n".join(joined_rows)
+
+            return format_board
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "board": generate_board('row')
+            }
+
+        tests = [
+            ([[" ", " ", " "],
+              ["X", "X", "O"],
+              ["O", "O", "X"]], " 123\n1   \n2XXO\n3OOX"),
+            ([["X", "X", "X", "X"],
+              ["O", "O", "X", " "],
+              [" ", "X", "O", "X"],
+              [" ", "O", " ", "X"]], " 1234\n1XXXX\n2OOX \n3 XOX\n4 O X"),
+            ([["X", "O", " ", "X", "X"],
+              ["X", "O", " ", "X", "X"],
+              [" ", "O", "X", "X", " "],
+              ["X", "X", "X", "X", " "],
+              ["X", "O", "O", "X", "O"]],
+             " 12345\n1XO XX\n2XO XX\n3 OXX \n4XXXX \n5XOOXO"),
+        ]
+
+    final_text = """
+Excellent!
+
+By the way, when you need to concatenate strings and numbers, remember that you can also
+use f-strings. They often look nicer.
+
+You've learned about types in Python and how to avoid common errors by converting types.
+Keep going with the rest of the project!
     """
