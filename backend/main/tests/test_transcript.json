@@ -3501,7 +3501,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">words</span><span class=\"p\">[</span><span class=\"mi\">4</span><span class=\"p\">]</span>",
+                                            "content": "<span class=\"n n-ExecutingNode\">words</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
@@ -5027,7 +5027,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"s1\">&#39;Python&#39;</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
+                                            "content": "<span class=\"s1 s1-ExecutingNode\">&#39;Python&#39;</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
@@ -6096,7 +6096,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi\">1</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;x&quot;</span><span class=\"p\">)</span>",
+                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi mi-ExecutingNode\">1</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;x&quot;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
@@ -15984,7 +15984,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"mi\">12</span> <span class=\"o\">+</span> <span class=\"s1\">&#39;34&#39;</span>",
+                                            "content": "<span class=\"mi mi-ExecutingNode\">12</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;34&#39;</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
