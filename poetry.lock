@@ -896,8 +896,8 @@ production = ["gevent", "gunicorn", "psycopg2"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.8"
-content-hash = "42616aa4e9072187e053fbfd2c36986ac982c162f0da489fbc3b699161a58d9e"
+python-versions = "^3.9"
+content-hash = "0328c1d58239d5df14dd864c9271086bd65e9234574269a4ec525dbb69fd31bc"
 
 [metadata.files]
 astcheck = [

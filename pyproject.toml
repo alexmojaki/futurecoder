@@ -5,7 +5,7 @@ description = ""
 authors = ["Alex Hall <alex.mojaki@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 birdseye = "@latest"
 snoop = "@latest"
 asttokens = "@latest"
