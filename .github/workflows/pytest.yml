@@ -1,0 +1,37 @@
+name: Pytest
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: set up Poetry in the backend folder, run tests
+      working-directory: ./backend
+      run: |
+        export PATH=$HOME/.poetry/bin/:$PATH
+        ./setup.sh
+        poetry run pytest -k 'not test_frontend'
+    - name: Bring up docker cluster
+      run: |
+        touch .env
+        docker-compose up -d database
+        sleep 10
+        docker-compose up -d
+    - name: Install chromedriver
+      uses: nanasess/setup-chromedriver@master
+    - name: Test frontend
+      working-directory: ./backend
+      run: |
+        export PATH=$HOME/.poetry/bin/:$PATH
+        export DISPLAY=:99
+        chromedriver --url-base=/wd/hub &
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+        docker ps
+        poetry run pytest -k 'test_frontend'

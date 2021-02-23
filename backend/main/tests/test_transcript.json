@@ -15683,5 +15683,406 @@
             ]
         },
         "step": "format_board_bonus_challenge"
+    },
+    {
+        "page": "Types",
+        "program": [
+            "print(type('Hello World'))",
+            "print(type(23))",
+            "print(type(True))",
+            "print(type([1, 2, 3]))",
+            "print(type(4.56))"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "<class 'str'>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "<class 'int'>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "<class 'bool'>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "<class 'list'>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "<class 'float'>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "five_different_types"
+    },
+    {
+        "page": "Types",
+        "program": [
+            "type(3) == int"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "check_type_manually"
+    },
+    {
+        "page": "Types",
+        "program": [
+            "print('123')",
+            "print(123)",
+            "print(123 == '123')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "123"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "123"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "different_types_look_same"
+    },
+    {
+        "page": "Types",
+        "program": [
+            "print(123 + 456)",
+            "print('123' + '456')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "579\n123456",
+                "choices": [
+                    "579\n579",
+                    "579\n'579'",
+                    "123456\n123456",
+                    "123456\n'123456'",
+                    "579\n123456",
+                    "579\n'123456'",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "579"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "123456"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "plus_has_two_meanings"
+    },
+    {
+        "page": "Types",
+        "program": [
+            "print(13 < 120)",
+            "print('13' < '120')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "True\nFalse",
+                "choices": [
+                    "True\nTrue",
+                    "True\nFalse",
+                    "False\nTrue",
+                    "False\nFalse",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "True"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "False"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "less_than_has_two_meanings"
+    },
+    {
+        "page": "Types",
+        "program": [
+            "print(sorted([120, 13, 0]))",
+            "print(sorted(['120', '13', '0']))"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[0, 13, 120]\n['0', '120', '13']",
+                "choices": [
+                    "[0, 13, 120]\n['0', '120', '13']",
+                    "[0, 13, 120]\n['13', '120', '0']",
+                    "[0, 13, 120]\n['120', '13', '0']",
+                    "[120, 13, 0]\n['0', '120', '13']",
+                    "[120, 13, 0]\n['13', '120', '0']",
+                    "[120, 13, 0]\n['120', '13', '0']",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[0, 13, 120]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "['0', '120', '13']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "less_than_sorting_strings"
+    },
+    {
+        "page": "Types",
+        "program": [
+            "12 + '34'"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "46",
+                    "'46'",
+                    "1234",
+                    "'1234'",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "codeSource": "shell",
+                    "color": "red",
+                    "isTraceback": true,
+                    "text": "TypeError: unsupported operand type(s) for +: 'int' and 'str'",
+                    "tracebacks": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "unsupported operand type(s) for +: 'int' and 'str'",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"mi\">12</span> <span class=\"o\">+</span> <span class=\"s1\">&#39;34&#39;</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": []
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>)</p>",
+                            "tail": ""
+                        }
+                    ]
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "common_type_errors"
+    },
+    {
+        "get_solution": [
+            "for i in range(int(number)):",
+            "    print('Starting... ' + str(i + 1))",
+            "print('Go!')"
+        ],
+        "page": "Types",
+        "program": [
+            "number = '1'",
+            "for i in range(int(number)):",
+            "    print('Starting... ' + str(i + 1))",
+            "print('Go!')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "Starting... 1"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Go!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "fixing_type_errors_with_conversion"
+    },
+    {
+        "get_solution": [
+            "def format_board(board):",
+            "    first_row = ' '",
+            "    for i in range(len(board)):",
+            "        first_row += str(i + 1)",
+            "    joined_rows = [first_row]",
+            "    for i in range(len(board)):",
+            "        joined_row = str(i + 1) + ''.join(board[i])",
+            "        joined_rows.append(joined_row)",
+            "    return \"\\n\".join(joined_rows)"
+        ],
+        "page": "Types",
+        "program": [
+            "def format_board(board):",
+            "    first_row = ' '",
+            "    for i in range(len(board)):",
+            "        first_row += str(i + 1)",
+            "    joined_rows = [first_row]",
+            "    for i in range(len(board)):",
+            "        joined_row = str(i + 1) + ''.join(board[i])",
+            "        joined_rows.append(joined_row)",
+            "    return \"\\n\".join(joined_rows)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "format_board_with_numbers"
     }
 ]

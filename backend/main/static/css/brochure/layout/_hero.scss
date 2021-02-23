@@ -43,3 +43,36 @@
     margin: 0 auto;
   }
 }
+
+
+//  BULLETS
+
+.bullet {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.bullets-wrap {
+  &:first-child {
+    margin-top: -12px;
+  }
+
+  &:last-child {
+    margin-bottom: -12px;
+  }
+}
+
+.bullets-inner {
+  padding-left: 25px;
+  max-width: 400px;
+}
+
+.bullet-header {
+  display: flex;
+  align-items: center;
+}
+
+.bullets-inner{
+  padding-top: 32px;
+  padding-bottom: 32px;
+}

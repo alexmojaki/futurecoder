@@ -1,4 +1,4 @@
-const proxy = require("http-proxy-middleware");
+const {createProxyMiddleware} = require("http-proxy-middleware");
 
 const routes = [
   "/accounts",
@@ -12,6 +12,6 @@ const routes = [
 
 module.exports = function(app) {
   routes.forEach(function(route) {
-    app.use(proxy(route, { target: "http://localhost:8000/" }));
+    app.use(createProxyMiddleware(route, { target: "http://localhost:8000/" }));
   });
 };

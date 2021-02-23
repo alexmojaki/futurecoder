@@ -70,6 +70,7 @@ const Tracebacks = ({tracebacks, codeSource}) => {
                 </span>
               }
               position="top right"
+              keepTooltipInside={true}
               on={['hover', 'focus']}
               arrow={false}
               contentStyle={{

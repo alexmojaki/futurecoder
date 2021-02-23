@@ -1,5 +1,5 @@
 # Stage 1 - Build frontend
-FROM node:12 as build-frontend
+FROM node:14.15.4 as build-frontend
 WORKDIR /usr/src/app
 COPY frontend/package-lock.json frontend/package.json ./frontend/
 
