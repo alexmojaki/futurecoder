@@ -45,6 +45,8 @@ WORKDIR /usr/src/app/backend
 RUN ./manage.py compilescss
 RUN ./manage.py collectstatic --noinput
 
+RUN rm -f /usr/lib/python3/dist-packages/.wh*
+
 EXPOSE 3000
 
 CMD ["bash", "./entrypoint.sh"]
