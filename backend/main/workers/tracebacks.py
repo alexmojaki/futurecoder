@@ -8,7 +8,7 @@ from typing import Union, Iterable, List
 
 import pygments
 from cheap_repr import cheap_repr
-from friendly_traceback.core import get_generic_explanation, get_message
+from friendly_traceback.core import FriendlyTraceback
 from friendly_traceback.info_specific import get_likely_cause
 from friendly_traceback.syntax_errors import analyze_syntax
 from markdown import markdown
@@ -42,17 +42,27 @@ def didyoumean_suggestions(e) -> List[str]:
         log.exception("Failed to get didyoumean suggestions")
         return []
 
+def get_generic_explanation(e):
+    ft = FriendlyTraceback(type(e), e, e.__traceback__)
+    ft.compile_info()
+    return ft.info["generic"]
+
+def get_message(e):
+    ft = FriendlyTraceback(type(e), e, e.__traceback__)
+    ft.compile_info()
+    return ft.info["message"]
+
 
 def friendly_generic(e):
     try:
-        return get_generic_explanation(type(e).__name__, type(e), e)
+        return get_generic_explanation(e)
     except Exception:
         log.exception("Failed to get generic friendly explanation")
         return ""
 
 
 def _friendly_cause(e, setter):
-    info = {"message": get_message(type(e).__name__, e), "generic": ""}
+    info = {"message": get_message(e), "generic": ""}
     try:
         setter(info)
     except Exception:
@@ -68,7 +78,7 @@ def friendly_runtime_cause(e):
 
 
 def friendly_syntax_cause(e):
-    return _friendly_cause(e, lambda info: analyze_syntax.set_cause_syntax(type(e), e, info))
+    return _friendly_cause(e, lambda info: analyze_syntax.set_cause_syntax(e,e.__traceback__))
 
 
 def print_friendly_syntax_error(e):
