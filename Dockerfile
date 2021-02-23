@@ -11,7 +11,7 @@ WORKDIR build
 RUN sed -i s:/static/:/static_backend/:g index.html
 
 # Stage 2 - Setup server
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN apt-get update
 
