@@ -17,13 +17,13 @@ pure_eval = "@latest"
 dryenv = "@latest"
 Django = "^2.2.7"
 django-sass-processor = "^0.7.4"
-libsass = "^0.19.4"
+libsass = "^0.20.1"
 django-compressor = "^2.3"
 markdown = "^3.1.1"
 astcheck = "^0.2.5"
 django-allauth = "^0.42.0"
 django-user-agents = "^0.4.0"
-gevent = {version = "^1.4", optional = true}
+gevent = {version = "^20.4.0", optional = true}
 gunicorn = {version = "^19.9", optional = true}
 psycopg2 = {version = "^2.8.4", optional = true}
 whitenoise = "^5.0.1"
@@ -35,7 +35,7 @@ psutil = "^5.7.0"
 jsonfield = "^3.1.0"
 pyflakes = "^2.2.0"
 BetterErrorMessages = "^0.4"
-friendly-traceback = "^0.1.7"
+friendly-traceback = "0.1.7"
 
 [tool.poetry.extras]
 production = ["gevent", "gunicorn", "psycopg2"]
