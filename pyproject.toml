@@ -35,7 +35,7 @@ psutil = "^5.7.0"
 jsonfield = "^3.1.0"
 pyflakes = "^2.2.0"
 BetterErrorMessages = "^0.4"
-friendly-traceback = "0.1.7"
+friendly-traceback = "^0.1.7"
 
 [tool.poetry.extras]
 production = ["gevent", "gunicorn", "psycopg2"]
