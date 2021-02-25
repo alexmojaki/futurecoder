@@ -11,7 +11,7 @@ WORKDIR build
 RUN sed -i s:/static/:/static_backend/:g index.html
 
 # Stage 2 - Setup server
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN apt-get update
 
@@ -21,15 +21,15 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)"-pgdg 
 RUN apt-get update
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    python3.8-dev \
+    python3.9-dev \
     vim \
-    python3.8-distutils \
+    python3.9-distutils \
     gcc \
     postgresql-client-12 \
     git \
     libpq-dev
 
-RUN ln -s /usr/bin/python3.8 /usr/local/bin/python
+RUN ln -s /usr/bin/python3.9 /usr/local/bin/python
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python get-pip.py
 RUN pip install poetry

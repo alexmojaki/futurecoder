@@ -934,7 +934,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print('---')\n               ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nIn this case, the line identified above is\nless indented than the preceding one,\nand is not aligned vertically with another block of code.\n"
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nIn this case, the line identified above is\nless indented than the preceding one,\nand is not aligned vertically with another block of code.\n"
                 },
                 {
                     "color": "red",
@@ -2685,7 +2685,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n       a_function(invalid=something)\n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n"
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n       a_function(invalid=something)\n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n"
                 },
                 {
                     "color": "red",
@@ -3501,7 +3501,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">words</span><span class=\"p\">[</span><span class=\"mi\">4</span><span class=\"p\">]</span>",
+                                            "content": "<span class=\"n n-ExecutingNode\">words</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
@@ -5027,7 +5027,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"s1\">&#39;Python&#39;</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
+                                            "content": "<span class=\"s1 s1-ExecutingNode\">&#39;Python&#39;</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
@@ -5158,7 +5158,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
+                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
                 },
                 {
                     "color": "white",
@@ -6096,7 +6096,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi\">1</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;x&quot;</span><span class=\"p\">)</span>",
+                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi mi-ExecutingNode\">1</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;x&quot;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
@@ -14998,7 +14998,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n                                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
                 },
                 {
                     "color": "red",
@@ -15515,7 +15515,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    \"XOX\n       ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou starting writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n"
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou starting writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n"
                 },
                 {
                     "color": "red",
@@ -15984,7 +15984,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"mi\">12</span> <span class=\"o\">+</span> <span class=\"s1\">&#39;34&#39;</span>",
+                                            "content": "<span class=\"mi mi-ExecutingNode\">12</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;34&#39;</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
