@@ -141,7 +141,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
     3. Run `docker-compose up`.
     4. Skip the following two steps, everything should be running now.
 3. In the `backend` folder:
-    1. Ensure the `python` command points to Python 3.8.
+    1. Ensure the `python` command points to Python 3.9.
 
     2. If you are on Linux/OSX, run `./setup.sh`.
 
