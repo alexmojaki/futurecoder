@@ -3,6 +3,7 @@ import logging
 import traceback
 from datetime import datetime
 from pathlib import Path
+from threading import Thread
 from time import sleep
 from typing import get_type_hints
 from uuid import uuid4
@@ -145,6 +146,8 @@ class API:
         if user.is_anonymous:
             return {}
 
+        Thread(target=self.warmup_user_process).start()
+
         return dict(
             pages=[
                 dict(**select_attrs(page, "slug title index"), steps=page.step_dicts)
@@ -157,6 +160,18 @@ class API:
             ),
             page_index=pages[self.user.page_slug].index,
         )
+
+    def warmup_user_process(self):
+        page_slug = page_slugs_list[0]
+        step_name = pages[page_slug].step_names[0]
+        entry_dict = dict(
+            input="# dummy startup code",
+            source="shell",
+            page_slug=page_slug,
+            step_name=step_name,
+            user_id=self.user.id,
+        )
+        worker_result(entry_dict)
 
     def set_developer_mode(self, value: bool):
         self.user.developer_mode = value
