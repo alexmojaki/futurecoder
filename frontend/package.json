@@ -11,7 +11,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@sentry/browser": "^5.30.0",
-    "ansi_up": "^4.0.4",
+    "ansi_up": "^5.0.0",
     "axios": "^0.21.1",
     "http-proxy-middleware": "^1.0.6",
     "lodash": "^4.17.20",
