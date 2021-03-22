@@ -8,9 +8,8 @@ from typing import Union, Iterable, List
 
 import pygments
 from cheap_repr import cheap_repr
-from friendly_traceback.core import get_generic_explanation, get_message
-from friendly_traceback.info_specific import get_likely_cause
-from friendly_traceback.syntax_errors import analyze_syntax
+from friendly.core import FriendlyTraceback
+from friendly.info_specific import get_likely_cause
 from markdown import markdown
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
@@ -43,16 +42,17 @@ def didyoumean_suggestions(e) -> List[str]:
         return []
 
 
-def friendly_generic(e):
+def friendly_generic(fr:FriendlyTraceback):
     try:
-        return get_generic_explanation(type(e).__name__, type(e), e)
+        return fr.info["generic"]
     except Exception:
         log.exception("Failed to get generic friendly explanation")
         return ""
 
 
-def _friendly_cause(e, setter):
-    info = {"message": get_message(type(e).__name__, e), "generic": ""}
+def _friendly_cause(e, fr:FriendlyTraceback,setter):
+
+    info = {"message": fr.info['message'], "generic": ""}
     try:
         setter(info)
     except Exception:
@@ -62,17 +62,15 @@ def _friendly_cause(e, setter):
         return info.get("cause", "")
 
 
-def friendly_runtime_cause(e):
+def friendly_runtime_cause(e,fr):
     frame = e.__traceback__.tb_frame
-    return _friendly_cause(e, lambda info: get_likely_cause(type(e), e, info, frame))
-
-
-def friendly_syntax_cause(e):
-    return _friendly_cause(e, lambda info: analyze_syntax.set_cause_syntax(type(e), e, info))
+    return _friendly_cause(e,fr, lambda info: get_likely_cause(type(e), e, info, frame))
 
 
 def print_friendly_syntax_error(e):
     lines = iter(traceback.format_exception(*sys.exc_info()))
+    fr = FriendlyTraceback(type(e),e,e.__traceback__)
+    fr.compile_info()
     for line in lines:
         if line.strip().startswith('File "my_program.py"'):
             break
@@ -81,8 +79,8 @@ def print_friendly_syntax_error(e):
 {''.join(lines).rstrip()}
 at line {e.lineno}
 
-{friendly_generic(e)}
-{friendly_syntax_cause(e)}""",
+{friendly_generic(fr)}
+""",
         file=sys.stderr,
     )
 
@@ -97,6 +95,9 @@ class TracebackSerializer:
             result[-1]["tail"] = traceback._context_message
         else:
             result = []
+        # create FriendlyTraceback object
+        fr = FriendlyTraceback(type(e), e, e.__traceback__)
+        fr.compile_info()
 
         result.append(
             dict(
@@ -108,7 +109,7 @@ class TracebackSerializer:
                 tail="",
                 didyoumean=didyoumean_suggestions(e),
                 friendly=markdown(
-                    friendly_generic(e) + "\n\n" + friendly_runtime_cause(e)
+                    friendly_generic(fr) + "\n\n" + friendly_runtime_cause(e,fr)
                 ),
             )
         )
