@@ -300,7 +300,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, the unknown name is <code>sunshine</code>.</p>",
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>",
                             "tail": ""
                         }
                     ]
@@ -737,7 +737,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nIn this case, the line identified above\nwas expected to begin a new indented block.\n"
+                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\n"
                 },
                 {
                     "color": "red",
@@ -934,7 +934,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nIn this case, the line identified above is\nless indented than the preceding one,\nand is not aligned vertically with another block of code.\n"
+                    "text": "    print('---')\n               ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\n"
                 },
                 {
                     "color": "red",
@@ -2485,7 +2485,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, the unknown name is <code>char</code>.\nThe Python builtin <code>chr</code> has a similar name. </p>",
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>",
                             "tail": ""
                         }
                     ]
@@ -2685,7 +2685,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n       a_function(invalid=something)\n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n"
+                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\n"
                 },
                 {
                     "color": "red",
@@ -3517,7 +3517,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.\nReminder: the first item of a sequence is at index 0.</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>",
                             "tail": ""
                         }
                     ]
@@ -4125,7 +4125,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>I suspect that you had an object of this type, a string (<code>str</code>),\nfollowed by what looked like a tuple, '(...)',\nwhich Python took as an indication of a function call.\nPerhaps you had a missing comma before the tuple.</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>",
                             "tail": ""
                         }
                     ]
@@ -4226,7 +4226,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>I do not recognize this case. Please report it to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>",
                             "tail": ""
                         }
                     ]
@@ -5158,7 +5158,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
+                    "text": "['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
                 },
                 {
                     "color": "white",
@@ -5425,7 +5425,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.\nReminder: the first item of a sequence is at index 0.</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>",
                             "tail": ""
                         }
                     ]
@@ -5569,7 +5569,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\n"
                 },
                 {
                     "color": "red",
@@ -5797,7 +5797,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>You tried to concatenate (add) two different types of objects:\na string (<code>str</code>) and an integer (<code>int</code>)</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>",
                             "tail": ""
                         }
                     ]
@@ -6107,7 +6107,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>)</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>",
                             "tail": ""
                         }
                     ]
@@ -14998,7 +14998,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI make an effort below to guess what caused the problem\nbut I might guess incorrectly.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\n"
                 },
                 {
                     "color": "red",
@@ -15515,7 +15515,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou starting writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n"
+                    "text": "    \"XOX\n       ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\n"
                 },
                 {
                     "color": "red",
@@ -15995,7 +15995,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by tring to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>)</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>",
                             "tail": ""
                         }
                     ]
