@@ -1,5 +1,7 @@
 import inspect
+import linecache
 import os
+import sys
 from functools import lru_cache
 from importlib import import_module
 
@@ -29,15 +31,6 @@ def set_limits():
     import resource
     destroy_dangerous_functions()
 
-    usage = resource.getrusage(resource.RUSAGE_SELF)
-
-    # TODO tests can exceed this time since the process is not restarted, causing failure
-    max_time = int(usage.ru_utime + usage.ru_stime) + 2
-    try:
-        resource.setrlimit(resource.RLIMIT_CPU, (max_time, max_time))
-    except ValueError:
-        pass
-
     patch_cwd()
 
     # Trigger imports before limiting access to files
@@ -58,6 +51,22 @@ def set_limits():
         sdfsdfsdfsd  # noqa
     except NameError as e:
         list(get_suggestions_for_exception(e, e.__traceback__))
+
+    # Put all modules in linecache so that tracebacks work
+    for mod in list(sys.modules.values()):
+        try:
+            linecache.getlines(mod.__file__, mod.__dict__)
+        except Exception:
+            pass
+
+    usage = resource.getrusage(resource.RUSAGE_SELF)
+
+    # TODO tests can exceed this time since the process is not restarted, causing failure
+    max_time = int(usage.ru_utime + usage.ru_stime) + 2
+    try:
+        resource.setrlimit(resource.RLIMIT_CPU, (max_time, max_time))
+    except ValueError:
+        pass
 
     resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
 
