@@ -5,11 +5,9 @@ import sys
 import traceback
 from collections import Counter
 from typing import Union, Iterable, List
-
 import pygments
 from cheap_repr import cheap_repr
 from friendly.core import FriendlyTraceback
-from friendly.info_specific import get_likely_cause
 from markdown import markdown
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
@@ -31,12 +29,14 @@ pygments_formatter = HtmlFormatter(
 
 log = logging.getLogger(__name__)
 
+
 def get_friendly_object(e):
     try:
         fr = FriendlyTraceback(type(e), e, e.__traceback__)
         return fr
     except (Exception, SystemExit):
         log.exception("Failed to build FriendlyTraceback object")
+
 
 def didyoumean_suggestions(e) -> List[str]:
     if "maximum recursion depth exceeded" in str(e):
@@ -48,7 +48,7 @@ def didyoumean_suggestions(e) -> List[str]:
         return []
 
 
-def friendly_generic(fr:FriendlyTraceback):
+def friendly_generic(fr: FriendlyTraceback):
     try:
         fr.assign_generic()
         return fr.info["generic"]
@@ -57,21 +57,30 @@ def friendly_generic(fr:FriendlyTraceback):
         return ""
 
 
-def _friendly_cause(fr:FriendlyTraceback,setter):
+def friendly_syntax_cause(fr: FriendlyTraceback):
     try:
+        fr.set_cause_syntax()
+        return fr.info["cause"]
+        # return _friendly_cause(e, lambda info: analyze_syntax.set_cause_syntax(type(e), e))
+    except Exception:
+        log.exception("Failed to get syntax cause of exception")
+
+
+def _friendly_cause(fr: FriendlyTraceback):
+    try:
+        cause = str()
         fr.assign_cause()
-        info = {"message": fr.info['message'], "generic": ""}
-        setter(info)
+        if "cause" in fr.info:
+            cause = fr.info["cause"]
     except Exception:
         log.exception("Failed to get likely cause of exception")
         return ""
     else:
-        return info.get("cause", "")
+        return cause
 
 
-def friendly_runtime_cause(e,fr):
-    frame = e.__traceback__.tb_frame
-    return _friendly_cause(fr, lambda info: get_likely_cause(type(e), e, info, frame))
+def friendly_runtime_cause(fr):
+    return _friendly_cause(fr)
 
 
 def print_friendly_syntax_error(e):
@@ -86,11 +95,10 @@ def print_friendly_syntax_error(e):
 at line {e.lineno}
 
 {friendly_generic(fr)}
+{friendly_syntax_cause(fr)}
 """,
         file=sys.stderr,
     )
-
-
 class TracebackSerializer:
     def format_exception(self, e) -> List[dict]:
         if e.__cause__ is not None:
@@ -114,7 +122,7 @@ class TracebackSerializer:
                 tail="",
                 didyoumean=didyoumean_suggestions(e),
                 friendly=markdown(
-                    friendly_generic(fr) + "\n\n" + friendly_runtime_cause(e,fr)
+                    friendly_generic(fr) + "\n\n" + friendly_runtime_cause(fr)
                 ),
             )
         )
@@ -132,7 +140,7 @@ class TracebackSerializer:
         )
 
     def format_stack_data(
-        self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
+            self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
     ) -> Iterable[dict]:
         for item in stack:
             if isinstance(item, FrameInfo):
