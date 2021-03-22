@@ -31,6 +31,12 @@ pygments_formatter = HtmlFormatter(
 
 log = logging.getLogger(__name__)
 
+def get_friendly_object(e):
+    try:
+        fr = FriendlyTraceback(type(e), e, e.__traceback__)
+        return fr
+    except (Exception, SystemExit):
+        log.exception("Failed to build FriendlyTraceback object")
 
 def didyoumean_suggestions(e) -> List[str]:
     if "maximum recursion depth exceeded" in str(e):
@@ -44,16 +50,17 @@ def didyoumean_suggestions(e) -> List[str]:
 
 def friendly_generic(fr:FriendlyTraceback):
     try:
+        fr.assign_generic()
         return fr.info["generic"]
     except Exception:
         log.exception("Failed to get generic friendly explanation")
         return ""
 
 
-def _friendly_cause(e, fr:FriendlyTraceback,setter):
-
-    info = {"message": fr.info['message'], "generic": ""}
+def _friendly_cause(fr:FriendlyTraceback,setter):
     try:
+        fr.assign_cause()
+        info = {"message": fr.info['message'], "generic": ""}
         setter(info)
     except Exception:
         log.exception("Failed to get likely cause of exception")
@@ -64,13 +71,12 @@ def _friendly_cause(e, fr:FriendlyTraceback,setter):
 
 def friendly_runtime_cause(e,fr):
     frame = e.__traceback__.tb_frame
-    return _friendly_cause(e,fr, lambda info: get_likely_cause(type(e), e, info, frame))
+    return _friendly_cause(fr, lambda info: get_likely_cause(type(e), e, info, frame))
 
 
 def print_friendly_syntax_error(e):
     lines = iter(traceback.format_exception(*sys.exc_info()))
-    fr = FriendlyTraceback(type(e),e,e.__traceback__)
-    fr.compile_info()
+    fr = get_friendly_object(e)
     for line in lines:
         if line.strip().startswith('File "my_program.py"'):
             break
@@ -96,8 +102,7 @@ class TracebackSerializer:
         else:
             result = []
         # create FriendlyTraceback object
-        fr = FriendlyTraceback(type(e), e, e.__traceback__)
-        fr.compile_info()
+        fr = get_friendly_object(e)
 
         result.append(
             dict(
