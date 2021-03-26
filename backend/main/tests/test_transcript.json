@@ -934,7 +934,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print('---')\n               ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nThe line identified above is less indented than expected.\n\n"
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nThe line identified above is less indented than expected.\n\n"
                 },
                 {
                     "color": "red",
@@ -2685,7 +2685,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n        a_function(invalid=...)\n\nwhere `invalid` is not a valid identifier (variable name) in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n"
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n        a_function(invalid=...)\n\nwhere `invalid` is not a valid identifier (variable name) in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n"
                 },
                 {
                     "color": "red",
@@ -3517,7 +3517,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>words</code>,\na <code>list</code> of length <code>4</code>.\nThe largest valid index of <code>words</code> is <code>3</code>.</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
@@ -4125,7 +4125,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>The parenthesis <code>()</code> following <code>f</code> are interpreted\nby Python as a function call for <code>f</code>.\nHowever, <code>f</code> is not a function but an object of type <code>str</code>.</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
@@ -4226,7 +4226,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>No information is known about this exception.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>\n<p>If you are using the Friendly console, use <code>www()</code> to\ndo an Internet search for this particular case.</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
@@ -4316,7 +4316,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>The object <code>word</code> has no attribute named <code>append</code>.\nThe following are some of its known attributes:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
@@ -5038,7 +5038,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>The object <code>'Python'</code> has no attribute named <code>append</code>.\nThe following are some of its known attributes:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
@@ -5158,7 +5158,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
+                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
                 },
                 {
                     "color": "white",
@@ -5425,7 +5425,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
@@ -5797,7 +5797,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to concatenate (add) two different types of objects:\na string (<code>str</code>) and an integer (<code>int</code>).</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
@@ -6107,7 +6107,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>).</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
@@ -14998,7 +14998,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n                                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby Friendly-traceback, please report this case to\nhttps://github.com/aroberge/friendly-traceback/issues\n\n\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby Friendly-traceback, please report this case to\nhttps://github.com/aroberge/friendly-traceback/issues\n\n\n"
                 },
                 {
                     "color": "red",
@@ -15515,7 +15515,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    \"XOX\n       ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n"
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n"
                 },
                 {
                     "color": "red",
@@ -15995,7 +15995,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>).\nPerhaps you forgot to convert the string <code>'34'</code> into an integer (<code>int</code>).</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
                             "tail": ""
                         }
                     ]
