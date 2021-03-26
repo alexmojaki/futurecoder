@@ -3517,7 +3517,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>words</code>,\na <code>list</code> of length <code>4</code>.\nThe largest valid index of <code>words</code> is <code>3</code>.</p>",
                             "tail": ""
                         }
                     ]
@@ -4125,7 +4125,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>The parenthesis <code>()</code> following <code>f</code> are interpreted\nby Python as a function call for <code>f</code>.\nHowever, <code>f</code> is not a function but an object of type <code>str</code>.</p>",
                             "tail": ""
                         }
                     ]
@@ -4226,7 +4226,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>No information is known about this exception.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>\n<p>If you are using the Friendly console, use <code>www()</code> to\ndo an Internet search for this particular case.</p>",
                             "tail": ""
                         }
                     ]
@@ -4316,7 +4316,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>The object <code>word</code> has no attribute named <code>append</code>.\nThe following are some of its known attributes:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
                             "tail": ""
                         }
                     ]
@@ -5038,7 +5038,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>The object <code>'Python'</code> has no attribute named <code>append</code>.\nThe following are some of its known attributes:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
                             "tail": ""
                         }
                     ]
@@ -5425,7 +5425,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>",
                             "tail": ""
                         }
                     ]
@@ -5797,7 +5797,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to concatenate (add) two different types of objects:\na string (<code>str</code>) and an integer (<code>int</code>).</p>",
                             "tail": ""
                         }
                     ]
@@ -6107,7 +6107,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>).</p>",
                             "tail": ""
                         }
                     ]
@@ -15995,7 +15995,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>Internal error for Friendly-traceback.\nPlease report this example to\nhttps://github.com/aroberge/friendly-traceback/issues</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>).\nPerhaps you forgot to convert the string <code>'34'</code> into an integer (<code>int</code>).</p>",
                             "tail": ""
                         }
                     ]

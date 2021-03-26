@@ -4,8 +4,10 @@ import os
 import sys
 from functools import lru_cache
 from importlib import import_module
-
-from main.utils import get_suggestions_for_exception
+import friendly.runtime_errors
+import friendly.syntax_errors
+from main.workers.tracebacks import TracebackSerializer
+from main.workers.utils import import_submodules
 
 
 def patch_cwd():
@@ -35,22 +37,14 @@ def set_limits():
 
     # Trigger imports before limiting access to files
     from main.workers import birdseye, snoop  # noqa
-    from friendly_traceback.runtime_errors import (  # noqa
-        type_error,
-        attribute_error,
-        stdlib,
-    )
-    from friendly_traceback.syntax_errors import (  # noqa
-        analyze_syntax,
-        line_analyzer,
-        message_analyzer,
-        source_analyzer,
-    )
+    import_submodules(friendly.runtime_errors)
+    import_submodules(friendly.syntax_errors)
 
-    try:
-        sdfsdfsdfsd  # noqa
-    except NameError as e:
-        list(get_suggestions_for_exception(e, e.__traceback__))
+    for bad_code in ["nameerror", "syntax error", "1 + '2'", "list.set", "[][0]", "{}[0]"]:
+        try:
+            eval(bad_code)  # noqa
+        except Exception as e:
+            TracebackSerializer().format_exception(e)
 
     # Put all modules in linecache so that tracebacks work
     for mod in list(sys.modules.values()):
