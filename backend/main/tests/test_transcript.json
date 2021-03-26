@@ -5415,12 +5415,24 @@
                                             "value": "<span class=\"mi\">4</span>\n"
                                         },
                                         {
+                                            "name": "<span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">numbers</span><span class=\"p\">)</span>\n",
+                                            "value": "<span class=\"mi\">4</span>\n"
+                                        },
+                                        {
                                             "name": "<span class=\"n\">number</span>\n",
                                             "value": "<span class=\"mi\">15</span>\n"
                                         },
                                         {
+                                            "name": "<span class=\"n\">number</span> <span class=\"o\">&lt;=</span> <span class=\"mi\">10</span>\n",
+                                            "value": "<span class=\"kc\">False</span>\n"
+                                        },
+                                        {
                                             "name": "<span class=\"n\">numbers</span>\n",
                                             "value": "<span class=\"p\">[</span><span class=\"mi\">7</span><span class=\"p\">,</span> <span class=\"mi\">3</span><span class=\"p\">,</span> <span class=\"mi\">12</span><span class=\"p\">,</span> <span class=\"mi\">15</span><span class=\"p\">]</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">numbers</span><span class=\"p\">))</span>\n",
+                                            "value": "<span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"mi\">0</span><span class=\"p\">,</span> <span class=\"mi\">4</span><span class=\"p\">)</span>\n"
                                         }
                                     ]
                                 }
@@ -5786,6 +5798,14 @@
                                     "name": "<module>",
                                     "type": "frame",
                                     "variables": [
+                                        {
+                                            "name": "<span class=\"s2\">&quot;Hello &quot;</span> <span class=\"o\">+</span> <span class=\"n\">name</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hello Alice&#39;</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"s2\">&quot;Hello &quot;</span> <span class=\"o\">+</span> <span class=\"n\">name</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;. You are &quot;</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hello Alice. You are &#39;</span>\n"
+                                        },
                                         {
                                             "name": "<span class=\"n\">age</span>\n",
                                             "value": "<span class=\"mi\">20</span>\n"
