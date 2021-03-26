@@ -30,12 +30,16 @@ pygments_formatter = HtmlFormatter(
 log = logging.getLogger(__name__)
 
 
-def get_friendly_object(e):
+def friendly_message(e, double_newline: bool):
     try:
         fr = FriendlyTraceback(type(e), e, e.__traceback__)
-        return fr
+        fr.assign_generic()
+        fr.assign_cause()
+
+        return fr.info["generic"] + "\n" + double_newline * "\n" + fr.info.get("cause", "")
     except (Exception, SystemExit):
-        log.exception("Failed to build FriendlyTraceback object")
+        log.exception("Failed to build friendly message")
+        return ""
 
 
 def didyoumean_suggestions(e) -> List[str]:
@@ -48,44 +52,8 @@ def didyoumean_suggestions(e) -> List[str]:
         return []
 
 
-def friendly_generic(fr: FriendlyTraceback):
-    try:
-        fr.assign_generic()
-        return fr.info["generic"]
-    except Exception:
-        log.exception("Failed to get generic friendly explanation")
-        return ""
-
-
-def friendly_syntax_cause(fr: FriendlyTraceback):
-    try:
-        fr.set_cause_syntax()
-        return fr.info["cause"]
-        # return _friendly_cause(e, lambda info: analyze_syntax.set_cause_syntax(type(e), e))
-    except Exception:
-        log.exception("Failed to get syntax cause of exception")
-
-
-def _friendly_cause(fr: FriendlyTraceback):
-    try:
-        cause = str()
-        fr.assign_cause()
-        if "cause" in fr.info:
-            cause = fr.info["cause"]
-    except Exception:
-        log.exception("Failed to get likely cause of exception")
-        return ""
-    else:
-        return cause
-
-
-def friendly_runtime_cause(fr):
-    return _friendly_cause(fr)
-
-
 def print_friendly_syntax_error(e):
     lines = iter(traceback.format_exception(*sys.exc_info()))
-    fr = get_friendly_object(e)
     for line in lines:
         if line.strip().startswith('File "my_program.py"'):
             break
@@ -94,11 +62,12 @@ def print_friendly_syntax_error(e):
 {''.join(lines).rstrip()}
 at line {e.lineno}
 
-{friendly_generic(fr)}
-{friendly_syntax_cause(fr)}
+{friendly_message(e, double_newline=False)}
 """,
         file=sys.stderr,
     )
+
+
 class TracebackSerializer:
     def format_exception(self, e) -> List[dict]:
         if e.__cause__ is not None:
@@ -109,8 +78,6 @@ class TracebackSerializer:
             result[-1]["tail"] = traceback._context_message
         else:
             result = []
-        # create FriendlyTraceback object
-        fr = get_friendly_object(e)
 
         result.append(
             dict(
@@ -121,9 +88,7 @@ class TracebackSerializer:
                 ),
                 tail="",
                 didyoumean=didyoumean_suggestions(e),
-                friendly=markdown(
-                    friendly_generic(fr) + "\n\n" + friendly_runtime_cause(fr)
-                ),
+                friendly=markdown(friendly_message(e, double_newline=True)),
             )
         )
         return result
