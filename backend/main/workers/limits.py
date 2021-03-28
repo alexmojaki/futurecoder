@@ -1,9 +1,13 @@
 import inspect
+import linecache
 import os
+import sys
 from functools import lru_cache
 from importlib import import_module
-
-from main.utils import get_suggestions_for_exception
+import friendly.runtime_errors
+import friendly.syntax_errors
+from main.workers.tracebacks import TracebackSerializer
+from main.workers.utils import import_submodules
 
 
 def patch_cwd():
@@ -29,6 +33,26 @@ def set_limits():
     import resource
     destroy_dangerous_functions()
 
+    patch_cwd()
+
+    # Trigger imports before limiting access to files
+    from main.workers import birdseye, snoop  # noqa
+    import_submodules(friendly.runtime_errors)
+    import_submodules(friendly.syntax_errors)
+
+    for bad_code in ["nameerror", "syntax error", "1 + '2'", "list.set", "[][0]", "{}[0]"]:
+        try:
+            eval(bad_code)  # noqa
+        except Exception as e:
+            TracebackSerializer().format_exception(e)
+
+    # Put all modules in linecache so that tracebacks work
+    for mod in list(sys.modules.values()):
+        try:
+            linecache.getlines(mod.__file__, mod.__dict__)
+        except Exception:
+            pass
+
     usage = resource.getrusage(resource.RUSAGE_SELF)
 
     # TODO tests can exceed this time since the process is not restarted, causing failure
@@ -37,27 +61,6 @@ def set_limits():
         resource.setrlimit(resource.RLIMIT_CPU, (max_time, max_time))
     except ValueError:
         pass
-
-    patch_cwd()
-
-    # Trigger imports before limiting access to files
-    from main.workers import birdseye, snoop  # noqa
-    from friendly_traceback.runtime_errors import (  # noqa
-        type_error,
-        attribute_error,
-        stdlib,
-    )
-    from friendly_traceback.syntax_errors import (  # noqa
-        analyze_syntax,
-        line_analyzer,
-        message_analyzer,
-        source_analyzer,
-    )
-
-    try:
-        sdfsdfsdfsd  # noqa
-    except NameError as e:
-        list(get_suggestions_for_exception(e, e.__traceback__))
 
     resource.setrlimit(resource.RLIMIT_NOFILE, (0, 0))
 

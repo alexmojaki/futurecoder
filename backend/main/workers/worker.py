@@ -6,7 +6,7 @@ from code import InteractiveConsole
 from threading import Thread
 from time import sleep
 
-import friendly_traceback.source_cache
+import friendly.source_cache
 import stack_data
 
 from main import simple_settings
@@ -52,7 +52,7 @@ def runner(code_source, code):
 
     stack_data.Source._class_local('__source_cache', {}).pop(filename, None)
 
-    friendly_traceback.source_cache.cache.add(filename, code)
+    friendly.source_cache.cache.add(filename, code)
 
     try:
         code_obj = compile(code, filename, mode)
