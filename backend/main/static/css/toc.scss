@@ -1,28 +1,37 @@
-body {
-    color: #333;
-    background-color: #fff;
-}
 
 .toc {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     padding-bottom: 30px;
+    color: #eee;
+    background-color: #222;
 
     div.container, h1, h2, h3, p, a {
         font-family: inherit;
         font-size: inherit;
         line-height: inherit;
     }
+
+    a:hover {
+        color: #007053;
+        text-decoration: underline;
+    }
+
+    a {
+        color: #00bc8c;
+        text-decoration: none;
+        background-color: transparent;
+    }
 }
 
 .toc-header {
     position: relative;
     padding: 40px 0 50px 0;
-    color: #cdbfe3;
+    color: rgba(255, 255, 255, 0.6);
     text-align: center;
     text-shadow: 0 1px 0;
-    background-color: #6f5499;
+    background-color: #444;
     text-align: left;
 
     h1 {
