@@ -25,16 +25,17 @@
                 <div class="row">
                     <div class="col-md-9" role="main">
                         <div class="toc-section">
-                            {% if user.page.index_prop %}
-                            <p><strong>You were last on the page
-                                <a href="/course/">
-                                    {{ user.page.title_prop|safe }}
-                                </a>.
-                            </strong></p>
-                            {% endif %}
+
                             <h1 id="toc-toc">
                                 Table of Contents
                             </h1>
+                            {% if user.page.index_prop %}
+                                <div class="text-right"><strong>You were last on the page
+                                    <a href="/course/">
+                                        {{ user.page.title_prop|safe }}
+                                    </a>.
+                                </strong></div>
+                            {% endif %}
                             <ol class="toc-ol">
                                 {% for chapter in chapters %}
                                 <li>
