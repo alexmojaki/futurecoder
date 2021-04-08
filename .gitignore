@@ -137,3 +137,6 @@ backend/main/tests/error_screenshot.png
 # temporary local files
 tmp/
 videos/media/
+
+# vscode's settings
+.vscode/

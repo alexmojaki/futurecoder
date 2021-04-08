@@ -139,8 +139,15 @@ def monitor_processes():
     history = deque([], MONITOR.NUM_MEASUREMENTS)
     while True:
         sleep(MONITOR.SLEEP_TIME)
-        percent = psutil.virtual_memory().percent
-        history.append(percent)
+        memory = psutil.virtual_memory()
+        log.info(f"Current memory stats: {memory}")
+        percentages = {
+            key: f"{value / memory.total:.1%}"
+            for key, value in memory._asdict().items()
+            if key not in "total percent"
+        }
+        log.info(f"Current memory percentages: {percentages}")
+        history.append(memory.percent)
         log.info(f"Recent memory usage: {history}")
         log.info(f"Number of user processes: {len(user_processes)}")
         if (
