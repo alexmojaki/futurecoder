@@ -29,10 +29,8 @@ class Root(DryEnv):
 
 class MONITOR(DryEnv):
     ACTIVE = False
-    THRESHOLD = 90
-    MIN_PROCESSES = 1
-    NUM_MEASUREMENTS = 3
     SLEEP_TIME = 5
+    MAX_SINCE = 60 * 60
 
 
 class GITHUB_APP(DryEnv):

@@ -136,31 +136,16 @@ except RuntimeError:
 
 
 def monitor_processes():
-    history = deque([], MONITOR.NUM_MEASUREMENTS)
     while True:
         sleep(MONITOR.SLEEP_TIME)
-        memory = psutil.virtual_memory()
-        log.info(f"Current memory stats: {memory}")
-        percentages = {
-            key: f"{value / memory.total:.1%}"
-            for key, value in memory._asdict().items()
-            if key not in "total percent"
-        }
-        log.info(f"Current memory percentages: {percentages}")
-        history.append(memory.percent)
-        log.info(f"Recent memory usage: {history}")
         log.info(f"Number of user processes: {len(user_processes)}")
-        if (
-                len(history) == history.maxlen
-                and min(history) > MONITOR.THRESHOLD
-                and len(user_processes) > MONITOR.MIN_PROCESSES
-        ):
-            oldest = min(user_processes.values(), key=lambda p: p.last_used)
-            log.info(f"Terminating process last used {int(time() - oldest.last_used)} seconds ago")
-            del user_processes[oldest.user_id]
-            with oldest.lock:
-                oldest.close()
-            history.clear()
+        for user_id, process in list(user_processes.items()):
+            since = int(time() - process.last_used)
+            if since > MONITOR.MAX_SINCE:
+                log.info(f"Terminating process of user {user_id} last used {since} seconds ago")
+                del user_processes[user_id]
+                with process.lock:
+                    process.close()
 
 
 @lru_cache()
