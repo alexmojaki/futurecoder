@@ -165,7 +165,7 @@ class API:
         page_slug = page_slugs_list[0]
         step_name = pages[page_slug].step_names[0]
         entry_dict = dict(
-            input="# dummy startup code",
+            input="'dummy startup code'",
             source="shell",
             page_slug=page_slug,
             step_name=step_name,

@@ -28,8 +28,9 @@ class Root(DryEnv):
 
 
 class MONITOR(DryEnv):
+    PROCESS_HISTORY_SIZE = 3
     ACTIVE = False
-    SLEEP_TIME = 5
+    SLEEP_TIME = 15
     MAX_SINCE = 60 * 60
 
 

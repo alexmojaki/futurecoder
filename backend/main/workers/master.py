@@ -1,4 +1,5 @@
 import atexit
+import json
 import logging
 import multiprocessing
 import queue
@@ -11,6 +12,7 @@ from time import sleep, time
 import flask
 import psutil
 import sentry_sdk
+from littleutils import select_attrs, DecentJSONEncoder, select_keys
 
 from main import simple_settings
 from main.simple_settings import MONITOR
@@ -34,6 +36,7 @@ class UserProcess:
         self.fresh_process = True
         self.last_used = float('inf')
         self.start_process()
+        self.history = deque(maxlen=MONITOR.PROCESS_HISTORY_SIZE)
 
         atexit.register(self.cleanup)
 
@@ -65,6 +68,10 @@ class UserProcess:
     def ps(self):
         return psutil.Process(self.process.pid)
 
+    @property
+    def time_since_last_used(self):
+        return int(time() - self.last_used)
+
     def start_process(self):
         self.cleanup(in_background=True)
         self.fresh_process = True
@@ -81,6 +88,8 @@ class UserProcess:
 
     def handle_entry(self, entry):
         self.last_used = time()
+        history_item = dict(start_time=self.last_used, entry=entry)
+        self.history.append(history_item)
         if entry["source"] == "shell":
             if self.awaiting_input:
                 self.input_queue.put(entry["input"])
@@ -92,11 +101,16 @@ class UserProcess:
 
             self.task_queue.put(entry)
 
-    def await_result(self):
         result = self._await_result()
         if result["error"] and result["error"]["sentry_event"]:
             sentry_sdk.capture_event(result["error"]["sentry_event"])
         self.awaiting_input = result["awaiting_input"]
+
+        history_item.update(
+            end_time=time(),
+            elapsed=time() - history_item["start_time"],
+            result=select_keys(result, "passed output awaiting_input"),
+        )
         return result
 
     def _await_result(self):
@@ -139,13 +153,48 @@ def monitor_processes():
     while True:
         sleep(MONITOR.SLEEP_TIME)
         log.info(f"Number of user processes: {len(user_processes)}")
-        for user_id, process in list(user_processes.items()):
-            since = int(time() - process.last_used)
-            if since > MONITOR.MAX_SINCE:
-                log.info(f"Terminating process of user {user_id} last used {since} seconds ago")
-                del user_processes[user_id]
-                with process.lock:
-                    process.close()
+        for func in [kill_old_processes, dump_process_info]:
+            try:
+                func()
+            except Exception:
+                log.exception(f"Error in {func.__name__}")
+
+
+def kill_old_processes():
+    for user_id, process in list(user_processes.items()):
+        since = process.time_since_last_used
+        if since > MONITOR.MAX_SINCE:
+            log.info(f"Terminating process of user {user_id} last used {since} seconds ago")
+            del user_processes[user_id]
+            with process.lock:
+                process.close()
+
+
+def dump_process_info():
+    user_processes_by_pid = {p.process.pid: p for p in user_processes.values()}
+
+    def user_process_info(pid):
+        if pid not in user_processes_by_pid:
+            return None
+        user_process = user_processes_by_pid[pid]
+        return select_attrs(
+            user_process,
+            "user_id time_since_last_used awaiting_input fresh_process history",
+        )
+
+    process_infos = [
+        dict(
+            **p.as_dict(["cmdline", "pid", "status"]),
+            user_process=user_process_info(p.pid),
+            memory_info=p.memory_info()._asdict(),
+            cpu_times=p.cpu_times()._asdict(),
+        )
+        for p in psutil.process_iter()
+        if p
+    ]
+    log.info(
+        f"Process info dump: {json.dumps(process_infos, cls=DecentJSONEncoder)}"
+    )
 
 
 @lru_cache()
@@ -167,8 +216,7 @@ def run():
         user_process = user_processes[user_id]
         user_process.user_id = user_id
         with user_process.lock:
-            user_process.handle_entry(entry)
-            return user_process.await_result()
+            return user_process.handle_entry(entry)
     except Exception:
         return internal_error_result()
 
