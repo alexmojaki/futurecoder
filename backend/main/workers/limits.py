@@ -46,12 +46,26 @@ def set_limits():
         except Exception as e:
             TracebackSerializer().format_exception(e)
 
-    # Put all modules in linecache so that tracebacks work
-    for mod in list(sys.modules.values()):
+    # Put some modules in linecache so that tracebacks work
+    for name, mod in list(sys.modules.items()):
         try:
-            linecache.getlines(mod.__file__, mod.__dict__)
+            if name.startswith(
+                (
+                    "main",
+                    "birdseye",
+                    "snoop",
+                    "friendly",
+                    "executing",
+                    "pure_eval",
+                    "stack_data",
+                    "asttokens",
+                )
+            ):
+                linecache.getlines(mod.__file__, mod.__dict__)
         except Exception:
             pass
+
+    print(f"Size of linecache: {sys.getsizeof(linecache.cache)}")
 
     usage = resource.getrusage(resource.RUSAGE_SELF)
 
