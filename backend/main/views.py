@@ -3,7 +3,6 @@ import logging
 import traceback
 from datetime import datetime
 from pathlib import Path
-from threading import Thread
 from time import sleep
 from typing import get_type_hints
 from uuid import uuid4
@@ -66,145 +65,100 @@ class API:
     def user(self) -> User:
         return self.request.user
 
-    def run_code(self, code, source, page_index, step_index):
-        page_slug = page_slugs_list[page_index]
+    def run_code(self, code, source, page_slug, step_name):
         page = pages[page_slug]
-        step_name = pages[page_slug].step_names[step_index]
         step = getattr(page, step_name)
-        entry_dict = dict(
+        entry = dict(
             input=code,
             source=source,
             page_slug=page_slug,
             step_name=step_name,
-            user_id=self.user.id,
+            user_id=self.user.id,  # TODO remove
         )
 
-        entry = None
-        if settings.SAVE_CODE_ENTRIES:
-            entry = CodeEntry.objects.create(**entry_dict)
+        result = worker_result(entry)
 
-        result = worker_result(entry_dict)
-
-        if settings.SAVE_CODE_ENTRIES:
-            entry.output = result["output"]
-            entry.save()
-
-        if result["error"]:
-            return dict(error=result["error"])
-
-        if passed := result["passed"]:
-            self.move_step(page_index, step_index + 1)
-
-        output_parts = result["output_parts"]
         if not result["awaiting_input"]:
-            output_parts.append(dict(text=">>> ", color="white"))
+            result["output_parts"].append(dict(text=">>> ", color="white"))
 
-        birdseye_url = None
-        birdseye_objects = result["birdseye_objects"]
-        if birdseye_objects:
-            functions = birdseye_objects["functions"]
-            top_old_function_id = only(
-                f["id"]
-                for f in functions
-                if f["name"] == "<module>"
-            )
-            function_ids = [d.pop('id') for d in functions]
-            functions = [eye.db.Function(**{**d, 'hash': uuid4().hex}) for d in functions]
-            with eye.db.session_scope() as session:
-                for func in functions:
-                    session.add(func)
-                session.commit()
-                function_ids = {old: func.id for old, func in zip(function_ids, functions)}
-
-                call_id = None
-                for call in birdseye_objects["calls"]:
-                    old_function_id = call["function_id"]
-                    is_top_call = old_function_id == top_old_function_id
-                    call["function_id"] = function_ids[old_function_id]
-                    call["start_time"] = datetime.fromisoformat(call["start_time"])
-                    call = eye.db.Call(**call)
-                    session.add(call)
-                    if is_top_call:
-                        call_id = call.id
-
-            birdseye_url = f"/birdseye/call/{call_id}"
-
-        return dict(
-            result=output_parts,
+        result.update(
             messages=list(map(highlighted_markdown, result["messages"])),
-            state=self.current_state(),
-            birdseye_url=birdseye_url,
-            passed=passed,
             prediction=dict(
                 choices=getattr(step, "predicted_output_choices", None),
                 answer=getattr(step, "correct_output", None),
-            ) if passed else dict(choices=None, answer=None),
+            )
+            if result["passed"]
+            else dict(choices=None, answer=None),
+            entry=entry,
         )
 
-    def load_data(self):
+        return result
+
+    def ran_code_entry(self, entry, output):
+        # TODO call in frontend, add passed and maybe other info
+        if settings.SAVE_CODE_ENTRIES:
+            CodeEntry.objects.create(**entry, output=output, user=self.user)
+
+    def insert_birdseye_objects(self, functions, calls):
+        top_old_function_id = only(
+            f["id"] for f in functions if f["name"] == "<module>"
+        )
+        function_ids = [d.pop("id") for d in functions]
+        functions = [eye.db.Function(**{**d, "hash": uuid4().hex}) for d in functions]
+        with eye.db.session_scope() as session:
+            for func in functions:
+                session.add(func)
+            session.commit()
+            function_ids = {old: func.id for old, func in zip(function_ids, functions)}
+
+            call_id = None
+            for call in calls:
+                old_function_id = call["function_id"]
+                is_top_call = old_function_id == top_old_function_id
+                call["function_id"] = function_ids[old_function_id]
+                call["start_time"] = datetime.fromisoformat(call["start_time"])
+                call = eye.db.Call(**call)
+                session.add(call)
+                if is_top_call:
+                    call_id = call.id
+
+        return f"/birdseye/call/{call_id}"
+
+    def get_pages(self):
+        return dict(
+            pages={
+                slug: dict(
+                    **select_attrs(page, "slug title index step_names"),
+                    steps=page.step_dicts,
+                )
+                for slug, page in pages.items()
+            },
+            pageSlugsList=page_slugs_list,
+        )
+
+    def get_user(self):
         user = self.user
         if user.is_anonymous:
             return {}
 
-        Thread(target=self.warmup_user_process).start()
-
         return dict(
-            pages=[
-                dict(**select_attrs(page, "slug title index"), steps=page.step_dicts)
-                for page in pages.values()
-            ],
-            state=self.current_state(),
-            user=dict(
-                email=user.email,
-                developerMode=user.developer_mode,
-            ),
-            page_index=pages[self.user.page_slug].index,
+            email=user.email,
+            developerMode=user.developer_mode,
+            pageSlug=user.page_slug,
+            pagesProgress=user.json["pages_progress"],
         )
-
-    def warmup_user_process(self):
-        page_slug = page_slugs_list[0]
-        step_name = pages[page_slug].step_names[0]
-        entry_dict = dict(
-            input="'dummy startup code'",
-            source="shell",
-            page_slug=page_slug,
-            step_name=step_name,
-            user_id=self.user.id,
-        )
-        worker_result(entry_dict)
 
     def set_developer_mode(self, value: bool):
         self.user.developer_mode = value
         self.user.save()
 
-    def current_state(self):
-        pages_progress = self.user.pages_progress
-        return dict(
-            pages_progress=[
-                page.step_names.index(pages_progress[page_slug]["step_name"])
-                for page_slug, page in pages.items()
-            ],
-        )
-
-    def move_step(self, page_index, step_index: int):
-        page_slug = page_slugs_list[page_index]
-        step_names = pages[page_slug].step_names
-        if 0 <= step_index < len(step_names):
-            new_step_name = step_names[step_index]
-            self.user.pages_progress[page_slug]["step_name"] = new_step_name
-            self.user.save()
-
-        return self.current_state()
-
-    def set_page(self, index):
-        self.user.page_slug = page_slugs_list[index]
+    def set_pages_progress(self, pages_progress):
+        self.user.json["pages_progress"] = pages_progress
         self.user.save()
 
-    def get_solution(self, page_index, step_index: int):
-        # TODO deprecated
-        page = pages[page_slugs_list[page_index]]
-        step = getattr(page, page.step_names[step_index])
-        return step.get_solution
+    def set_page(self, page_slug):
+        self.user.page_slug = page_slug
+        self.user.save()
 
     def submit_feedback(self, title, description, state):
         """Create an issue on github.com using the given parameters."""

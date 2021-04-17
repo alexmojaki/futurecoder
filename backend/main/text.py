@@ -276,13 +276,14 @@ class PageMeta(type):
     def step_dicts(self):
         return [
             dict(
+                index=index,
                 text=text,
                 name=name,
                 hints=getattr(step, "hints", []),
                 solution=getattr(step, "get_solution", None),
             )
-            for name, text, step in
-            zip(self.step_names, self.step_texts, self.steps)
+            for index, (name, text, step) in
+            enumerate(zip(self.step_names, self.step_texts, self.steps))
         ]
 
 

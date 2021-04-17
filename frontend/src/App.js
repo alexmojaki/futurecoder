@@ -9,12 +9,11 @@ import {
   addMessage,
   bookSetState,
   bookState,
-  closeMessage,
+  closeMessage, currentPage, currentStep, currentStepName,
   movePage,
   moveStep,
   ranCode,
   setDeveloperMode,
-  stepIndex
 } from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -38,7 +37,6 @@ import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
-import _ from "lodash";
 
 
 export const terminalRef = React.createRef();
@@ -56,12 +54,23 @@ class AppComponent extends React.Component {
     bookSetState("processing", true);
     rpc(
       "run_code",
-      {code, source, page_index: bookState.page_index, step_index: stepIndex()},
+      {code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()},
       (data) => {
         if (!shell) {
           terminalRef.current.clearStdout();
         }
         bookSetState("processing", false);
+
+        if (source === "birdseye") {
+          rpc("insert_birdseye_objects", data.birdseye_objects, ({result}) => {
+            if (bookState.prediction.state === "hidden") {
+              window.open(result);
+            } else {
+              bookSetState("prediction.codeResult.birdseyeUrl", result);
+            }
+          });
+          delete data.birdseye_objects;
+        }
 
         ranCode(data);
         if (!data.prediction.choices) {
@@ -81,18 +90,20 @@ class AppComponent extends React.Component {
       requestingSolution,
       user,
       rpcError,
-      page_index,
       prediction,
     } = this.props;
-    const page = pages[page_index];
-    const step_index = stepIndex();
-    const step = page.steps[step_index];
-    const showEditor = page_index >= _.findIndex(pages, {slug: "WritingPrograms"});
-    const snoopPageIndex = _.findIndex(pages, {slug: "UnderstandingProgramsWithSnoop"});
-    const showSnoop = page_index > snoopPageIndex ||
-      (page_index === snoopPageIndex && step_index >= 1);
-    const showPythonTutor = page_index >= _.findIndex(pages, {slug: "UnderstandingProgramsWithPythonTutor"});
-    const showBirdseye = page_index >= _.findIndex(pages, {slug: "IntroducingBirdseye"});
+    const page = currentPage();
+    const step = currentStep();
+    const step_index = step.index;
+    let showEditor, showSnoop, showPythonTutor, showBirdseye;
+    if (step.text.length) {
+      showEditor = page.index >= pages.WritingPrograms.index;
+      const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
+      showSnoop = page.index > snoopPageIndex ||
+        (page.index === snoopPageIndex && step_index >= 1);
+      showPythonTutor = page.index >= pages.UnderstandingProgramsWithPythonTutor.index;
+      showBirdseye = page.index >= pages.IntroducingBirdseye.index;
+    }
 
     const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
@@ -130,13 +141,13 @@ class AppComponent extends React.Component {
           )
         }
         <div>
-          {page_index > 0 &&
+          {page.index > 0 &&
           <button className="btn btn-primary btn-sm previous-button"
                   onClick={() => movePage(-1)}>
             Previous
           </button>}
           {" "}
-          {page_index < pages.length - 1 && step_index === page.steps.length - 1 &&
+          {page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1 &&
           <button className="btn btn-success next-button"
                   onClick={() => movePage(+1)}>
             Next
@@ -374,12 +385,16 @@ export const App = connect(
 )(AppComponent);
 
 
-export const showCodeResult = (data) => {
+export const showCodeResult = ({birdseyeUrl, output_parts, passed}) => {
   const terminal = terminalRef.current;
-  terminal.pushToStdout(data.result);
+  terminal.pushToStdout(output_parts);
   animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
 
-  if (data.birdseye_url) {
-    window.open(data.birdseye_url);
+  if (passed) {
+    moveStep(1);
+  }
+
+  if (birdseyeUrl) {
+    window.open(birdseyeUrl);
   }
 }

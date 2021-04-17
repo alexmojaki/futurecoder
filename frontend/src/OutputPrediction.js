@@ -128,7 +128,6 @@ export class OutputPrediction extends Component {
               }
               return;
             }
-            bookSetState("server", codeResult.state);
             scrollToNextStep();
             bookSetState("prediction.state", "showingResult");
             setTimeout(() => animateScroll.scrollToBottom({
