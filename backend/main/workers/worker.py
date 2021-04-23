@@ -76,19 +76,17 @@ def runner(code_source, code):
     return birdseye_objects
 
 
-def worker_loop(task_queue, input_queue, result_queue):
-    while True:
-        entry = task_queue.get()
-        try:
-            run_code(entry, input_queue, result_queue)
-        except Exception:
-            result_queue.put(internal_error_result())
+def run_code_catch_errors(entry, input_callback, result_callback):
+    try:
+        run_code(entry, input_callback, result_callback)
+    except Exception:
+        result_callback(internal_error_result())
 
 
-def run_code(entry, input_queue, result_queue):
+def run_code(entry, input_callback, result_callback):
     def readline():
-        result_queue.put(make_result(awaiting_input=True))
-        return input_queue.get()
+        result_callback(make_result(awaiting_input=True))
+        return input_callback()
 
     sys.stdin.readline = readline
 
@@ -127,7 +125,7 @@ def run_code(entry, input_queue, result_queue):
     else:
         prediction = None
 
-    result_queue.put(make_result(
+    result_callback(make_result(
         passed=passed,
         messages=messages,
         output=output,

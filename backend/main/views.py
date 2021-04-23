@@ -64,16 +64,8 @@ class API:
     def user(self) -> User:
         return self.request.user
 
-    def run_code(self, code, source, page_slug, step_name):
-        entry = dict(
-            input=code,
-            source=source,
-            page_slug=page_slug,
-            step_name=step_name,
-        )
-        result = run_code_entry(entry)
-        result["entry"] = entry
-        return result
+    def run_code(self, entry):
+        return run_code_entry(entry)
 
     def ran_code_entry(self, entry, output):
         # TODO call in frontend, add passed and maybe other info

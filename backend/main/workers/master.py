@@ -7,7 +7,7 @@ from multiprocessing import Process, Queue
 from threading import Thread, RLock
 
 from main.workers.utils import internal_error_result, make_result
-from main.workers.worker import worker_loop
+from main.workers.worker import run_code_catch_errors
 
 TESTING = False
 
@@ -114,3 +114,9 @@ def run_code_entry(entry):
             return user_process.handle_entry(entry)
     except Exception:
         return internal_error_result()
+
+
+def worker_loop(task_queue, input_queue, result_queue):
+    while True:
+        entry = task_queue.get()
+        run_code_catch_errors(entry, input_queue.get, result_queue.put)

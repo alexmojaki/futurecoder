@@ -52,9 +52,10 @@ class AppComponent extends React.Component {
       return;
     }
     bookSetState("processing", true);
+    const entry = {input: code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
     rpc(
       "run_code",
-      {code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()},
+      {entry},
       (data) => {
         if (!shell) {
           terminalRef.current.clearStdout();
