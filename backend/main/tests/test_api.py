@@ -39,15 +39,18 @@ def test_steps(api):
                     "run_code",
                     code=program,
                     source=code_source,
-                    page_index=page_index,
-                    step_index=step_index,
+                    page_slug=page.slug,
+                    step_name=step_name,
                 )
 
-                assert "state" in response
-                state = response.pop("state")
+                response["result"] = response.pop("output_parts")
                 for line in response["result"]:
                     line["text"] = normalise_output(line["text"])
-                del response["birdseye_url"]
+                del response["birdseye_objects"]
+                del response["awaiting_input"]
+                del response["entry"]
+                del response["error"]
+                del response["output"]
                 if not response["prediction"]["choices"]:
                     del response["prediction"]
 
@@ -80,7 +83,6 @@ def test_steps(api):
                             assert len(step.get_solution["lines"]) >= 4 + is_function
 
                 assert response["passed"] == (not is_message)
-                assert step_index + response["passed"] == state["pages_progress"][page_index]
 
     path = Path(__file__).parent / "test_transcript.json"
     if os.environ.get("FIX_TESTS", 0):

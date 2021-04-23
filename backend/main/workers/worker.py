@@ -1,18 +1,14 @@
 import linecache
 import logging
-import os
 import sys
 from code import InteractiveConsole
-from threading import Thread
-from time import sleep
 
 import friendly.source_cache
 import stack_data
 
-from main import simple_settings
 from main.exercises import assert_equal
 from main.text import pages
-from main.workers.limits import set_limits
+from main.utils import highlighted_markdown
 from main.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
 from main.workers.utils import internal_error_result, make_result, output_buffer
 
@@ -23,15 +19,10 @@ console.locals = {"assert_equal": assert_equal}
 
 
 def execute(code_obj):
-    sys.setrecursionlimit(100)
     try:
-        # noinspection PyTypeChecker
         exec(code_obj, console.locals)
     except Exception as e:
-        sys.setrecursionlimit(1000)
         return TracebackSerializer().format_exception(e)
-    finally:
-        sys.setrecursionlimit(1000)
 
 
 def runner(code_source, code):
@@ -85,32 +76,13 @@ def runner(code_source, code):
     return birdseye_objects
 
 
-def worker_loop_in_thread(*args):
-    Thread(target=worker_loop, args=args).start()
-
-
 def worker_loop(task_queue, input_queue, result_queue):
-    os.environ.clear()
-    os.environ.update(
-        OUTDATED_IGNORE="1",
-    )
-
-    # Open the queue files before setting the file limit
-    sleep(0.01)
-    result_queue.put(None)
-    sleep(0.01)
-    input_queue.empty()
-    task_queue.empty()
-
-    if simple_settings.Root.SET_LIMITS:
-        set_limits()
-
     while True:
         entry = task_queue.get()
         try:
             run_code(entry, input_queue, result_queue)
         except Exception:
-            result_queue.put(internal_error_result(sentry_offline=True))
+            result_queue.put(internal_error_result())
 
 
 def run_code(entry, input_queue, result_queue):
@@ -134,20 +106,31 @@ def run_code(entry, input_queue, result_queue):
     passed = False
     output = output_buffer.string()
 
+    page = pages[entry['page_slug']]
+    step = getattr(page, entry["step_name"])
+
     if entry['step_name'] != "final_text":
-        page = pages[entry['page_slug']]
         step_result = page.check_step(entry, output, console)
         if isinstance(step_result, dict):
             passed = step_result.get("passed", False)
             messages = step_result.get("messages", [])
             if "message" in step_result:
-                messages.append(step_result["message"])
+                messages.append(highlighted_markdown(step_result["message"]))
         else:
             passed = step_result
+
+    if passed:
+        prediction = dict(
+            choices=getattr(step, "predicted_output_choices", None),
+            answer=getattr(step, "correct_output", None),
+        )
+    else:
+        prediction = None
 
     result_queue.put(make_result(
         passed=passed,
         messages=messages,
         output=output,
         birdseye_objects=birdseye_objects,
+        prediction=prediction,
     ))

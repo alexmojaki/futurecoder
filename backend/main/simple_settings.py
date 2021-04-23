@@ -14,10 +14,6 @@ setup_quick_console_logging()
 class Root(DryEnv):
     DEBUG = True
 
-    SEPARATE_WORKER_PROCESS = False
-    MASTER_URL = "http://localhost:5000/"
-    SET_LIMITS = True
-
     SAVE_CODE_ENTRIES = True
 
     SENTRY_DSN = ""
@@ -25,13 +21,6 @@ class Root(DryEnv):
     GITHUB_TOKEN = ""
 
     DISABLE_HTTPS = False
-
-
-class MONITOR(DryEnv):
-    PROCESS_HISTORY_SIZE = 3
-    ACTIVE = False
-    SLEEP_TIME = 15
-    MAX_SINCE = 60 * 60
 
 
 class GITHUB_APP(DryEnv):

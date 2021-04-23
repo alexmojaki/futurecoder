@@ -11,9 +11,6 @@ from .worker import console, execute
 
 birdseye.bird.get_unfrozen_datetime = datetime.now
 
-# Import necessary files before limit is set
-str(BirdsEye("sqlite://").db)
-
 
 def exec_birdseye(filename, code):
     # Create database in memory

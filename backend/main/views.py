@@ -23,9 +23,8 @@ from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
 from main.text import page_slugs_list, pages
-from main.utils import highlighted_markdown
 from main.utils.django import PlaceHolderForm
-from main.workers.master import worker_result
+from main.workers.master import run_code_entry
 
 log = logging.getLogger(__name__)
 
@@ -66,32 +65,14 @@ class API:
         return self.request.user
 
     def run_code(self, code, source, page_slug, step_name):
-        page = pages[page_slug]
-        step = getattr(page, step_name)
         entry = dict(
             input=code,
             source=source,
             page_slug=page_slug,
             step_name=step_name,
-            user_id=self.user.id,  # TODO remove
         )
-
-        result = worker_result(entry)
-
-        if not result["awaiting_input"]:
-            result["output_parts"].append(dict(text=">>> ", color="white"))
-
-        result.update(
-            messages=list(map(highlighted_markdown, result["messages"])),
-            prediction=dict(
-                choices=getattr(step, "predicted_output_choices", None),
-                answer=getattr(step, "correct_output", None),
-            )
-            if result["passed"]
-            else dict(choices=None, answer=None),
-            entry=entry,
-        )
-
+        result = run_code_entry(entry)
+        result["entry"] = entry
         return result
 
     def ran_code_entry(self, entry, output):
