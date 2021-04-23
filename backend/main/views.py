@@ -18,11 +18,11 @@ from django.http import HttpResponse, JsonResponse
 from django.views import View
 from django.views.generic import CreateView
 from django_user_agents.utils import get_user_agent
-from littleutils import select_attrs, only
+from littleutils import only
 from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
-from main.text import page_slugs_list, pages
+from main.text import get_pages
 from main.utils.django import PlaceHolderForm
 from main.workers.master import run_code_entry
 
@@ -31,7 +31,12 @@ log = logging.getLogger(__name__)
 
 def api_view(request, method_name):
     try:
-        method = getattr(API(request), method_name)
+        if method_name == "get_pages":
+            method = get_pages
+        elif method_name == "run_code":
+            method = run_code_entry
+        else:
+            method = getattr(API(request), method_name)
         body = request.body
         body = body.decode('utf8')
         args = json.loads(body)
@@ -64,9 +69,6 @@ class API:
     def user(self) -> User:
         return self.request.user
 
-    def run_code(self, entry):
-        return run_code_entry(entry)
-
     def ran_code_entry(self, entry, output):
         # TODO call in frontend, add passed and maybe other info
         if settings.SAVE_CODE_ENTRIES:
@@ -96,18 +98,6 @@ class API:
                     call_id = call.id
 
         return f"/birdseye/call/{call_id}"
-
-    def get_pages(self):
-        return dict(
-            pages={
-                slug: dict(
-                    **select_attrs(page, "slug title index step_names"),
-                    steps=page.step_dicts,
-                )
-                for slug, page in pages.items()
-            },
-            pageSlugsList=page_slugs_list,
-        )
 
     def get_user(self):
         user = self.user

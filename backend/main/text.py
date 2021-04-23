@@ -18,7 +18,7 @@ from typing import Type, Union, List, get_type_hints
 import pygments
 from astcheck import is_ast_like
 from asttokens import ASTTokens
-from littleutils import setattrs, only
+from littleutils import setattrs, only, select_attrs
 
 from main.exercises import (
     check_exercise,
@@ -564,3 +564,18 @@ def load_chapters():
 
 
 chapters = list(load_chapters())
+
+serialized_pages = {
+    slug: dict(
+        **select_attrs(page, "slug title index step_names"),
+        steps=page.step_dicts,
+    )
+    for slug, page in pages.items()
+}
+
+
+def get_pages():
+    return dict(
+        pages=serialized_pages,
+        pageSlugsList=page_slugs_list,
+    )
