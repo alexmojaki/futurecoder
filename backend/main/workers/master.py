@@ -1,12 +1,11 @@
 import atexit
 import logging
 import multiprocessing
-import queue
 from functools import lru_cache
 from multiprocessing import Process, Queue
 from threading import Thread, RLock
 
-from main.workers.utils import internal_error_result, make_result
+from main.workers.utils import internal_error_result
 from main.workers.worker import run_code_catch_errors
 
 TESTING = False
@@ -76,27 +75,9 @@ class UserProcess:
 
             self.task_queue.put(entry)
 
-        result = self._await_result()
+        result = self.result_queue.get()
         self.awaiting_input = result["awaiting_input"]
 
-        return result
-
-    def _await_result(self):
-        # TODO cancel if result was cancelled by a newer handle_entry
-        result = None
-        while result is None:
-            try:
-                result = self.result_queue.get()
-            except queue.Empty:
-                self.start_process()
-                result = make_result(
-                    output_parts=[
-                        dict(color='red', text='The process died.\n'),
-                        dict(color='red', text='Your code probably took too long.\n'),
-                        dict(color='red', text='Maybe you have an infinite loop?\n'),
-                    ],
-                    output='The process died.',
-                )
         return result
 
 
