@@ -1,6 +1,5 @@
 import atexit
 import logging
-import multiprocessing
 from functools import lru_cache
 from multiprocessing import Process, Queue
 from threading import Thread, RLock
@@ -79,13 +78,6 @@ class UserProcess:
         self.awaiting_input = result["awaiting_input"]
 
         return result
-
-
-try:
-    multiprocessing.set_start_method("spawn")
-except RuntimeError:
-    # noinspection PyArgumentList
-    assert multiprocessing.get_start_method() == "spawn"
 
 
 def run_code_entry(entry):
