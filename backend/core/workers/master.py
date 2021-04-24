@@ -4,10 +4,8 @@ from functools import lru_cache
 from multiprocessing import Process, Queue
 from threading import Thread, RLock
 
-from main.workers.utils import internal_error_result
-from main.workers.worker import run_code_catch_errors
-
-TESTING = False
+from core.workers.utils import internal_error_result
+from core.workers.worker import run_code_catch_errors
 
 log = logging.getLogger(__name__)
 
@@ -69,7 +67,7 @@ class UserProcess:
             else:
                 self.task_queue.put(entry)
         else:
-            if not TESTING and self.awaiting_input:
+            if self.awaiting_input:
                 self.start_process()
 
             self.task_queue.put(entry)

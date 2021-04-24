@@ -20,15 +20,15 @@ from astcheck import is_ast_like
 from asttokens import ASTTokens
 from littleutils import setattrs, only, select_attrs
 
-from main.exercises import (
+from core.exercises import (
     check_exercise,
     check_result,
     generate_for_type,
     inputs_string,
     assert_equal,
 )
-from main.linting import lint
-from main.utils import highlighted_markdown, lexer, html_formatter, shuffled_well, no_weird_whitespace, snake, \
+from core.linting import lint
+from core.utils import highlighted_markdown, lexer, html_formatter, shuffled_well, no_weird_whitespace, snake, \
     unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
 
 
@@ -556,7 +556,7 @@ def load_chapters():
     path: Path
     for path in sorted(chapters_dir.glob("c*.py")):
         module_name = path.stem
-        full_module_name = "main.chapters." + module_name
+        full_module_name = "core.chapters." + module_name
         module = import_module(full_module_name)
         title = module_name[4:].replace("_", " ").title()
         chapter_pages = [p for p in pages.values() if p.__module__ == full_module_name]

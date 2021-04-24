@@ -13,6 +13,7 @@
     "@sentry/browser": "^5.30.0",
     "ansi_up": "^5.0.0",
     "axios": "^0.21.1",
+    "comlink": "^4.3.0",
     "http-proxy-middleware": "^1.0.6",
     "lodash": "^4.17.21",
     "react": "^16.14.0",
@@ -53,5 +54,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "worker-loader": "^3.0.8"
+  }
 }

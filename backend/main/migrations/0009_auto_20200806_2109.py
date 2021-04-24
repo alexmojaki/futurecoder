@@ -2,7 +2,7 @@
 
 from django.db import migrations
 
-from main.text import pages
+from core.text import pages
 
 
 def forwards_func(apps, _schema_editor):

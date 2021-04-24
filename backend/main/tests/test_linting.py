@@ -1,5 +1,5 @@
 import ast
-from main.linting import lint
+from core.linting import lint
 
 
 def lint_tree(code):

@@ -1,8 +1,6 @@
 import sys
 import traceback
 
-import sentry_sdk
-
 
 class SysStream:
     def __init__(self, output, color):
@@ -75,8 +73,6 @@ def make_result(
 
 
 def internal_error_result():
-    sentry_sdk.capture_exception()
-
     tb = traceback.format_exc()
     output = f"""
 INTERNAL ERROR IN COURSE:

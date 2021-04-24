@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from main.text import page_slugs_list, pages
+from core.text import page_slugs_list
 from jsonfield import JSONField
 
 

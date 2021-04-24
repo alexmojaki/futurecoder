@@ -3,8 +3,8 @@ import ast
 import inspect
 from textwrap import indent
 
-from main.exercises import assert_equal
-from main.text import ExerciseStep, Page, VerbatimStep, MessageStep, search_ast
+from core.exercises import assert_equal
+from core.text import ExerciseStep, Page, VerbatimStep, MessageStep, search_ast
 
 
 class DefiningFunctions(Page):

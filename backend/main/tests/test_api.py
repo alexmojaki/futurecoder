@@ -4,13 +4,11 @@ import re
 from pathlib import Path
 
 import pytest
+from django.conf import settings
 from littleutils import only
 
-from main.text import pages
-from main.workers import master
-from main.workers.worker import run_code
-
-master.TESTING = True
+from core.text import pages
+from core.workers.worker import run_code
 
 
 @pytest.fixture
@@ -25,6 +23,8 @@ def api(admin_client):
 
 
 def test_steps(api):
+    settings.DEBUG = True
+
     transcript = []
     for page_index, page in enumerate(pages.values()):
         for step_index, step_name in enumerate(page.step_names[:-1]):

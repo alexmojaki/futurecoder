@@ -4,8 +4,8 @@ from textwrap import dedent
 from typing import List
 import random
 
-from main.exercises import assert_equal, generate_string
-from main.text import ExerciseStep, Page, VerbatimStep, Disallowed
+from core.exercises import assert_equal, generate_string
+from core.text import ExerciseStep, Page, VerbatimStep, Disallowed
 
 
 class IntroducingOr(Page):

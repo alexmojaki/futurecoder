@@ -19,7 +19,7 @@ from stack_data import (
     RepeatedFrames,
 )
 
-from main.utils import is_valid_syntax, lexer, get_suggestions_for_exception
+from core.utils import is_valid_syntax, lexer, get_suggestions_for_exception
 
 pygments_style = style_with_executing_node("monokai", "bg:#005080")
 pygments_formatter = HtmlFormatter(

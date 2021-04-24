@@ -22,9 +22,9 @@ from littleutils import only
 from sentry_sdk import capture_exception
 
 from main.models import CodeEntry, ListEmail, User
-from main.text import get_pages
-from main.utils.django import PlaceHolderForm
-from main.workers.master import run_code_entry
+from core.text import get_pages
+from main.utils import PlaceHolderForm
+from core.workers.master import run_code_entry
 
 log = logging.getLogger(__name__)
 
@@ -33,7 +33,7 @@ def api_view(request, method_name):
     try:
         if method_name == "get_pages":
             method = get_pages
-        elif method_name == "run_code":
+        elif method_name == "run_code" and settings.DEBUG:
             method = run_code_entry
         else:
             method = getattr(API(request), method_name)

@@ -4,8 +4,8 @@ from string import ascii_lowercase
 from random import randint, choice
 from typing import List
 
-from main.exercises import generate_string
-from main.text import (
+from core.exercises import generate_string
+from core.text import (
     ExerciseStep,
     MessageStep,
     Page,

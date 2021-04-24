@@ -4,7 +4,7 @@ from random import choice, randint
 from string import ascii_uppercase
 from typing import List
 
-from main.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
+from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
 
 
 def generate_board(board_type):

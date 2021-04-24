@@ -1,7 +1,7 @@
 # flake8: NOQA E501
 import ast
 from typing import List
-from main.text import ExerciseStep, VerbatimStep, Page, Step, Disallowed
+from core.text import ExerciseStep, VerbatimStep, Page, Step, Disallowed
 
 
 class SingleAndDoubleQuotesInStrings(Page):

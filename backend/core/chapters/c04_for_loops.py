@@ -2,7 +2,7 @@
 import ast
 from textwrap import dedent
 
-from main.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast, Disallowed
+from core.text import ExerciseStep, MessageStep, Page, Step, VerbatimStep, search_ast, Disallowed
 
 
 class IntroducingForLoops(Page):

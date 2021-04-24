@@ -5,7 +5,7 @@ from datetime import datetime
 import birdseye.bird
 from birdseye.bird import BirdsEye
 
-from main.utils import rows_to_dicts
+from core.utils import rows_to_dicts
 
 from .worker import console, execute
 

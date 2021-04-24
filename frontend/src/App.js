@@ -38,6 +38,11 @@ import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import Worker from "worker-loader!./Worker.js";
+import * as Comlink from 'comlink';
+
+const pyodideAPI = Comlink.wrap(new Worker());
 
 export const terminalRef = React.createRef();
 
@@ -53,33 +58,36 @@ class AppComponent extends React.Component {
     }
     bookSetState("processing", true);
     const entry = {input: code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
-    rpc(
-      "run_code",
-      {entry},
-      (data) => {
-        if (!shell) {
-          terminalRef.current.clearStdout();
-        }
-        bookSetState("processing", false);
 
-        if (source === "birdseye") {
-          rpc("insert_birdseye_objects", data.birdseye_objects, ({result}) => {
-            if (bookState.prediction.state === "hidden") {
-              window.open(result);
-            } else {
-              bookSetState("prediction.codeResult.birdseyeUrl", result);
-            }
-          });
-          delete data.birdseye_objects;
-        }
+    const onSuccess = (data) => {
+      if (!shell) {
+        terminalRef.current.clearStdout();
+      }
+      bookSetState("processing", false);
 
-        ranCode(data);
-        if (!data.prediction.choices) {
-          showCodeResult(data);
-          terminalRef.current.focusTerminal();
-        }
-      },
-    );
+      if (source === "birdseye") {
+        rpc("insert_birdseye_objects", data.birdseye_objects, ({result}) => {
+          if (bookState.prediction.state === "hidden") {
+            window.open(result);
+          } else {
+            bookSetState("prediction.codeResult.birdseyeUrl", result);
+          }
+        });
+        delete data.birdseye_objects;
+      }
+
+      ranCode(data);
+      if (!data.prediction.choices) {
+        showCodeResult(data);
+        terminalRef.current.focusTerminal();
+      }
+    }
+
+    if (process.env.NODE_ENV !== 'development') {
+      pyodideAPI.runCode(entry).then(onSuccess);
+    } else {
+      rpc("run_code", {entry}, onSuccess);
+    }
   }
 
   render() {

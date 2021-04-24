@@ -6,11 +6,11 @@ from code import InteractiveConsole
 import friendly.source_cache
 import stack_data
 
-from main.exercises import assert_equal
-from main.text import pages
-from main.utils import highlighted_markdown
-from main.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
-from main.workers.utils import internal_error_result, make_result, output_buffer
+from core.exercises import assert_equal
+from core.text import pages
+from core.utils import highlighted_markdown
+from core.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
+from core.workers.utils import internal_error_result, make_result, output_buffer
 
 log = logging.getLogger(__name__)
 
@@ -54,10 +54,10 @@ def runner(code_source, code):
     birdseye_objects = None
 
     if code_source == "snoop":
-        from main.workers.snoop import exec_snoop
+        from core.workers.snoop import exec_snoop
         traceback_info = exec_snoop(filename, code, code_obj)
     elif code_source == "birdseye":
-        from main.workers.birdseye import exec_birdseye
+        from core.workers.birdseye import exec_birdseye
         traceback_info, birdseye_objects = exec_birdseye(filename, code)
     else:
         traceback_info = execute(code_obj)
@@ -84,6 +84,9 @@ def run_code_catch_errors(entry, input_callback, result_callback):
 
 
 def run_code(entry, input_callback, result_callback):
+    if hasattr(entry, "to_py"):
+        entry = entry.to_py()
+
     def readline():
         result_callback(make_result(awaiting_input=True))
         return input_callback()
