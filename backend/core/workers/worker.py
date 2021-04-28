@@ -2,8 +2,8 @@ import linecache
 import logging
 import sys
 from code import InteractiveConsole
+from types import ModuleType
 
-import friendly.source_cache
 import stack_data
 
 from core.exercises import assert_equal
@@ -11,6 +11,10 @@ from core.text import pages
 from core.utils import highlighted_markdown
 from core.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
 from core.workers.utils import internal_error_result, make_result, output_buffer
+
+sys.modules["friendly.theme.friendly_rich"] = ModuleType("friendly.theme.friendly_rich")
+
+import friendly.source_cache
 
 log = logging.getLogger(__name__)
 

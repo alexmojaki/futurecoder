@@ -25,7 +25,6 @@ with zipfile.ZipFile(fd) as zf:
 
 sys.path.append(package_path)
 
-import rich.style  # noqa prevents recursion error in import
 from core.workers.worker import run_code_catch_errors  # noqa trigger imports
 print("Python core ready!")
 `)

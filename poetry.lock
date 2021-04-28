@@ -315,7 +315,7 @@ humanize = ">=0.5.1"
 
 [[package]]
 name = "friendly"
-version = "0.3.12"
+version = "0.3.43"
 description = "Friendlier tracebacks in any language."
 category = "main"
 optional = false
@@ -324,7 +324,7 @@ python-versions = ">=3.6"
 [package.dependencies]
 asttokens = ">=2.0.4"
 executing = ">=0.5.3"
-pure-eval = ">=0.1.1"
+pure-eval = ">=0.2.1"
 pygments = ">=2.6"
 rich = ">=9.12"
 
@@ -1100,8 +1100,8 @@ flask-humanize = [
     {file = "Flask_Humanize-0.3.0-py2-none-any.whl", hash = "sha256:7beda034d191fd98db3dd1247b4ed94830d6bfbfa48d095732b158208bffa5d0"},
 ]
 friendly = [
-    {file = "friendly-0.3.12-py3-none-any.whl", hash = "sha256:68a6f2df781a0562633b887a2650d142e20e0ae8cf9313f3755bf276344f73c2"},
-    {file = "friendly-0.3.12.tar.gz", hash = "sha256:68f18b73db4ed4d321298f4fe78421e196b7d2b92065e8fdc0690e38877fa77c"},
+    {file = "friendly-0.3.43-py3-none-any.whl", hash = "sha256:4f77f5ae2d8a087b100b09266103242bc1f7394f547dc16b2a861aefef9fde46"},
+    {file = "friendly-0.3.43.tar.gz", hash = "sha256:a87a6badf61f488c1f75c8a2d5c5049466ece92396ecb9885d9ad5ec5502aee4"},
 ]
 gevent = [
     {file = "gevent-20.12.1-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:0f9fa230c5878704b9e286ad5038bac3b70d293bf10e9efa8b2ae1d7d80e7e08"},
