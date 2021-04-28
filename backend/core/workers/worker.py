@@ -9,12 +9,14 @@ import stack_data
 from core.exercises import assert_equal
 from core.text import pages
 from core.utils import highlighted_markdown
-from core.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
 from core.workers.utils import internal_error_result, make_result, output_buffer
 
-sys.modules["friendly.theme.friendly_rich"] = ModuleType("friendly.theme.friendly_rich")
+friendly_rich = "friendly.theme.friendly_rich"
+assert friendly_rich not in sys.modules
+sys.modules[friendly_rich] = ModuleType(friendly_rich)
 
 import friendly.source_cache
+from core.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
 
 log = logging.getLogger(__name__)
 
