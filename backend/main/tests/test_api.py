@@ -8,6 +8,7 @@ from django.conf import settings
 from littleutils import only
 
 from core.text import pages
+from core.utils import highlighted_markdown
 from core.workers.worker import run_code
 
 
@@ -108,7 +109,7 @@ def normalise_response(response, is_message, substep):
 
     if is_message:
         response["message"] = only(response.pop("messages"))
-        assert response["message"] == substep.text
+        assert response["message"] == highlighted_markdown(substep.text)
     else:
         assert response.pop("messages") == []
         response["message"] = ""

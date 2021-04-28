@@ -5,7 +5,7 @@ import inspect
 import re
 from abc import ABC, abstractmethod
 from copy import deepcopy
-from functools import cached_property
+from functools import cached_property, lru_cache
 from importlib import import_module
 from io import StringIO
 from pathlib import Path
@@ -17,7 +17,6 @@ from typing import Type, Union, List, get_type_hints
 
 import pygments
 from astcheck import is_ast_like
-from asttokens import ASTTokens
 from littleutils import setattrs, only, select_attrs
 
 from core.exercises import (
@@ -44,9 +43,10 @@ def clean_program(program, cls):
             source = dedent("\n".join(lines[1:-1]))
             program = clean_solution_function(func, source)
         else:
-            atok = ASTTokens(source, parse=True)
-            func_node = atok.tree.body[0]
-            lines = lines[func_node.body[0].first_token.start[0] - 1:]
+            tree = ast.parse(source)
+            func_node = tree.body[0]
+            assert isinstance(func_node, ast.FunctionDef)
+            lines = lines[func_node.body[0].lineno - 1 :]
             if hasattr(cls, "test_values"):
                 inputs = list(cls.test_values())[0][0]
             else:
@@ -96,7 +96,6 @@ def clean_step_class(cls):
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
-    hints = [highlighted_markdown(hint) for hint in hints]
 
     if "__program_" in text:
         text = text.replace("__program__", program)
@@ -108,7 +107,7 @@ def clean_step_class(cls):
 
     assert "__program_" not in text
 
-    text = highlighted_markdown(dedent(text).strip())
+    text = dedent(text).strip()
 
     messages = []
     for name, inner_cls in inspect.getmembers(cls):
@@ -220,7 +219,6 @@ page_slugs_list = []
 class PageMeta(type):
     final_text = None
     step_names = []
-    step_texts = []
 
     def __init__(cls, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -229,19 +227,20 @@ class PageMeta(type):
         pages[cls.slug] = cls
         page_slugs_list.append(cls.slug)
         cls.step_names = []
-        cls.step_texts = []
         for key, value in cls.__dict__.items():
             if getattr(value, "is_step", False):
                 clean_step_class(value)
                 cls.step_names.append(key)
-                cls.step_texts.append(value.text)
 
         assert isinstance(cls.final_text, str)
         no_weird_whitespace(cls.final_text)
-        cls.final_text = highlighted_markdown(cls.final_text.strip())
         cls.step_names.append("final_text")
-        cls.step_texts.append(cls.final_text)
-        assert "__copyable__" not in str(cls.step_texts)
+
+    def step_texts(cls):
+        result = [step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
+        result = [highlighted_markdown(text) for text in result]
+        assert "__copyable__" not in str(result)
+        return result
 
     @property
     def slug(cls):
@@ -279,11 +278,11 @@ class PageMeta(type):
                 index=index,
                 text=text,
                 name=name,
-                hints=getattr(step, "hints", []),
+                hints=[highlighted_markdown(hint) for hint in getattr(step, "hints", [])],
                 solution=getattr(step, "get_solution", None),
             )
             for index, (name, text, step) in
-            enumerate(zip(self.step_names, self.step_texts, self.steps))
+            enumerate(zip(self.step_names, self.step_texts(), self.steps))
         ]
 
 
@@ -565,17 +564,16 @@ def load_chapters():
 
 chapters = list(load_chapters())
 
-serialized_pages = {
-    slug: dict(
-        **select_attrs(page, "slug title index step_names"),
-        steps=page.step_dicts,
-    )
-    for slug, page in pages.items()
-}
 
-
+@lru_cache
 def get_pages():
     return dict(
-        pages=serialized_pages,
+        pages={
+            slug: dict(
+                **select_attrs(page, "slug title index step_names"),
+                steps=page.step_dicts,
+            )
+            for slug, page in pages.items()
+        },
         pageSlugsList=page_slugs_list,
     )
