@@ -8,7 +8,6 @@ from typing import Union, Iterable, List
 import pygments
 from cheap_repr import cheap_repr
 from friendly.core import FriendlyTraceback
-from markdown import markdown
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
     style_with_executing_node,
@@ -70,6 +69,8 @@ at line {e.lineno}
 
 class TracebackSerializer:
     def format_exception(self, e) -> List[dict]:
+        from markdown import markdown
+
         if e.__cause__ is not None:
             result = self.format_exception(e.__cause__)
             result[-1]["tail"] = traceback._cause_message

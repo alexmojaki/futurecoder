@@ -5,19 +5,13 @@ import re
 import sys
 import threading
 import traceback
-import xml.etree.ElementTree as etree
 from functools import lru_cache, partial
-from html import unescape
 from io import StringIO
 from itertools import combinations
 from random import shuffle
-from textwrap import dedent
 
 import pygments
 from littleutils import strip_required_prefix, strip_required_suffix, withattrs
-from markdown import markdown
-from markdown.extensions import Extension
-from markdown.treeprocessors import Treeprocessor
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
@@ -133,11 +127,6 @@ def thread_separate_lru_cache(*cache_args, **cache_kwargs):
     return decorator
 
 
-class HighlightPythonExtension(Extension):
-    def extendMarkdown(self, md):
-        md.treeprocessors.register(HighlightPythonTreeProcessor(), "highlight_python", 0)
-
-
 def is_valid_syntax(text):
     try:
         ast.parse(text)
@@ -146,39 +135,10 @@ def is_valid_syntax(text):
         return False
 
 
-class HighlightPythonTreeProcessor(Treeprocessor):
-    def run(self, root):
-        for node in root.findall(".//pre/code"):
-            text = unescape(node.text)
-
-            prefix = "__copyable__\n"
-            if copyable := text.startswith(prefix):
-                text = strip_required_prefix(text, prefix)
-
-            if (
-                    is_valid_syntax(text) or
-                    is_valid_syntax(text + "\n 0") or
-                    is_valid_syntax(dedent(text))
-            ):
-                self.highlight_node(node, text)
-            else:
-                node.text = text
-
-            if copyable:
-                node.append(etree.fromstring('<button class="btn btn-primary">Copy</button>'))
-                node.set("class", node.get("class", "") + " copyable")
-
-    @staticmethod
-    def highlight_node(node, text):
-        highlighted = pygments.highlight(text, lexer, html_formatter)
-        tail = node.tail
-        node.clear()
-        node.set("class", "codehilite")
-        node.append(etree.fromstring(f"<span>{highlighted}</span>"))
-        node.tail = tail
-
-
 def highlighted_markdown(text):
+    from markdown import markdown
+    from .markdown_extensions import HighlightPythonExtension
+
     return markdown(text, extensions=[HighlightPythonExtension(), 'markdown.extensions.tables'])
 
 
