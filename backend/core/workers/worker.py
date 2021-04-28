@@ -114,7 +114,7 @@ def run_code(entry, input_callback, result_callback):
     output = output_buffer.string()
 
     page = pages[entry['page_slug']]
-    step = getattr(page, entry["step_name"])
+    step = page.get_step(entry["step_name"])
 
     if entry['step_name'] != "final_text":
         step_result = page.check_step(entry, output, console)

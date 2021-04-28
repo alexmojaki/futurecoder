@@ -77,6 +77,7 @@ def clean_solution_function(func, source):
 
 def clean_step_class(cls):
     assert cls.__name__ != "step_name_here"
+    assert not cls.cleaned
 
     text = cls.text or cls.__doc__
     program = cls.program
@@ -135,6 +136,7 @@ def clean_step_class(cls):
             )
 
     setattrs(cls,
+             cleaned=True,
              text=text,
              program=program,
              messages=messages,
@@ -229,12 +231,17 @@ class PageMeta(type):
         cls.step_names = []
         for key, value in cls.__dict__.items():
             if getattr(value, "is_step", False):
-                clean_step_class(value)
                 cls.step_names.append(key)
 
         assert isinstance(cls.final_text, str)
         no_weird_whitespace(cls.final_text)
         cls.step_names.append("final_text")
+
+    def get_step(cls, step_name):
+        step = getattr(cls, step_name)
+        if step_name != "final_text" and not step.cleaned:
+            clean_step_class(step)
+        return step
 
     def step_texts(cls):
         result = [step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
@@ -269,7 +276,7 @@ class PageMeta(type):
 
     @property
     def steps(self):
-        return [getattr(self, step_name) for step_name in self.step_names]
+        return [self.get_step(step_name) for step_name in self.step_names]
 
     @property
     def step_dicts(self):
@@ -289,7 +296,7 @@ class PageMeta(type):
 class Page(metaclass=PageMeta):
     @classmethod
     def check_step(cls, code_entry, output, console):
-        step_cls: Type[Step] = getattr(cls, code_entry['step_name'])
+        step_cls: Type[Step] = cls.get_step(code_entry['step_name'])
         step = step_cls(code_entry['input'], output, code_entry['source'], console)
         try:
             return step.check_with_messages()
@@ -340,6 +347,7 @@ class Step(ABC):
     get_solution = None
     predicted_output_choices = None
     correct_output = None
+    cleaned = False
 
     def __init__(self, *args):
         self.args = args

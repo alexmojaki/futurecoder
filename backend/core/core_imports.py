@@ -15,7 +15,7 @@ from core.workers.worker import run_code
 def run_steps():
     for page_index, page in enumerate(pages.values()):
         for step_index, step_name in enumerate(page.step_names[:-1]):
-            step = getattr(page, step_name)
+            step = page.get_step(step_name)
 
             for substep in [*step.messages, step]:
                 program = substep.program
