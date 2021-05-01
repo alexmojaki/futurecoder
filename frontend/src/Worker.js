@@ -1,33 +1,51 @@
 import * as Comlink from 'comlink';
 
-importScripts('https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js');
+async function getPackageBuffer() {
+  const response = await fetch("/static_backend/package.zip");
+  if (!response.ok) {
+    throw `Request for package failed with status ${response.status}: ${response.statusText}`
+  }
+  return await response.arrayBuffer()
+}
 
-async function loadPyodideAndPackages() {
+async function loadPyodideOnly() {
+  console.time("importScripts pyodide")
+  importScripts('https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js');
+  console.timeEnd("importScripts pyodide")
+
+  console.time("loadPyodide")
   await loadPyodide({indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/'});
-  await pyodide.runPythonAsync(`
+  console.timeEnd("loadPyodide")
+
+  pyodide.runPython(`
 import io
 import zipfile
-from js import fetch
 import sys
 
 package_path = "/tmp/package/"
-url = "/static_backend/package.zip"
 
-resp = await fetch(url)
-if not resp.ok:
-    raise OSError(
-        f"Request for {url} failed with status {resp.status}: {resp.statusText}"
-    )
-buffer = await resp.arrayBuffer()
-fd = io.BytesIO(buffer.to_py())
-with zipfile.ZipFile(fd) as zf:
-    zf.extractall(package_path)
-
-sys.path.append(package_path)
-
-from core.workers.worker import run_code_catch_errors  # noqa trigger imports
-print("Python core ready!")
+def load_package_buffer(buffer):
+    fd = io.BytesIO(buffer.to_py())
+    with zipfile.ZipFile(fd) as zf:
+        zf.extractall(package_path)
+    
+    sys.path.append(package_path)
+    
+    from core.workers.worker import run_code_catch_errors  # noqa trigger imports
+    print("Python core ready!")
 `)
+}
+
+
+async function loadPyodideAndPackages() {
+  const buffer = (await Promise.all([
+    loadPyodideOnly(),
+    getPackageBuffer(),
+  ]))[1];
+
+  console.time("load_package_buffer(buffer)")
+  pyodide.globals.get("load_package_buffer")(buffer);
+  console.timeEnd("load_package_buffer(buffer)")
 }
 
 let pyodideReadyPromise = loadPyodideAndPackages();
@@ -48,10 +66,9 @@ const toObject = (x) => {
 const api = {
   async runCode(entry) {
     await pyodideReadyPromise;
-    let resolver;
-    const promise = new Promise(r => resolver = r);
-    pyodide.globals.get("run_code_catch_errors")(entry, null, (result) => resolver(toObject(result.toJs())))
-    return await promise;
+    return await new Promise(resolver =>
+      pyodide.globals.get("run_code_catch_errors")(entry, null, (result) => resolver(toObject(result.toJs())))
+    );
   }
 }
 
