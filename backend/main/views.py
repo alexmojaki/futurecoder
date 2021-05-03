@@ -1,15 +1,11 @@
 import json
 import logging
 import traceback
-from datetime import datetime
 from pathlib import Path
 from time import sleep
 from typing import get_type_hints
-from uuid import uuid4
 
-import birdseye.server
 import requests
-from birdseye import eye
 from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -18,13 +14,12 @@ from django.http import HttpResponse, JsonResponse
 from django.views import View
 from django.views.generic import CreateView
 from django_user_agents.utils import get_user_agent
-from littleutils import only
 from sentry_sdk import capture_exception
 
-from main.models import CodeEntry, ListEmail, User
 from core.text import get_pages
-from main.utils import PlaceHolderForm
 from core.workers.master import run_code_entry
+from main.models import CodeEntry, ListEmail, User
+from main.utils import PlaceHolderForm
 
 log = logging.getLogger(__name__)
 
@@ -73,31 +68,6 @@ class API:
         # TODO call in frontend, add passed and maybe other info
         if settings.SAVE_CODE_ENTRIES:
             CodeEntry.objects.create(**entry, output=output, user=self.user)
-
-    def insert_birdseye_objects(self, functions, calls):
-        top_old_function_id = only(
-            f["id"] for f in functions if f["name"] == "<module>"
-        )
-        function_ids = [d.pop("id") for d in functions]
-        functions = [eye.db.Function(**{**d, "hash": uuid4().hex}) for d in functions]
-        with eye.db.session_scope() as session:
-            for func in functions:
-                session.add(func)
-            session.commit()
-            function_ids = {old: func.id for old, func in zip(function_ids, functions)}
-
-            call_id = None
-            for call in calls:
-                old_function_id = call["function_id"]
-                is_top_call = old_function_id == top_old_function_id
-                call["function_id"] = function_ids[old_function_id]
-                call["start_time"] = datetime.fromisoformat(call["start_time"])
-                call = eye.db.Call(**call)
-                session.add(call)
-                if is_top_call:
-                    call_id = call.id
-
-        return f"/birdseye/call/{call_id}"
 
     def get_user(self):
         user = self.user
@@ -198,14 +168,3 @@ class HomePageView(SuccessMessageMixin, CreateView):
 
 def timeout_view(request):
     sleep(35)
-
-
-def fix_birdseye_server():
-    views = birdseye.server.app.view_functions
-    birdseye.server.app.view_functions = {
-        "call_view": views["ipython_call_view"],
-        "static": views["static"],
-    }
-
-
-fix_birdseye_server()

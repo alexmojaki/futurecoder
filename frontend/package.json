@@ -15,6 +15,7 @@
     "axios": "^0.21.1",
     "comlink": "^4.3.0",
     "http-proxy-middleware": "^1.0.6",
+    "localforage": "^1.9.0",
     "lodash": "^4.17.21",
     "react": "^16.14.0",
     "react-ace": "^8.1.0",

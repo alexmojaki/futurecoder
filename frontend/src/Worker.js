@@ -25,6 +25,7 @@ import sys
 package_path = "/tmp/package/"
 
 def load_package_buffer(buffer):
+    global run_code_catch_errors
     fd = io.BytesIO(buffer.to_py())
     with zipfile.ZipFile(fd) as zf:
         zf.extractall(package_path)

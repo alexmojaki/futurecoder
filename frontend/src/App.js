@@ -37,15 +37,19 @@ import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
+import _ from "lodash";
+import localforage from "localforage";
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import Worker from "worker-loader!./Worker.js";
 import * as Comlink from 'comlink';
+import {stateSet} from "./rpc/store";
 
 const pyodideAPI = Comlink.wrap(new Worker());
 
 export const terminalRef = React.createRef();
 
+localforage.config({name: "birdseye", storeName: "birdseye"});
 
 class AppComponent extends React.Component {
   runCode({code, source}) {
@@ -60,20 +64,36 @@ class AppComponent extends React.Component {
     const entry = {input: code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
 
     const onSuccess = (data) => {
+      if (data.error) {
+        stateSet("error", {...data.error, data, method: "run_code"});
+        return;
+      }
       if (!shell) {
         terminalRef.current.clearStdout();
       }
       bookSetState("processing", false);
 
       if (source === "birdseye") {
-        rpc("insert_birdseye_objects", data.birdseye_objects, ({result}) => {
+        const {store, call_id} = data.birdseye_objects;
+        delete data.birdseye_objects;
+        Promise.all(
+          _.flatMapDeep(
+            _.entries(store),
+            ([rootKey, blob]) =>
+              _.entries(blob)
+                .map(([key, value]) => {
+                  const fullKey = rootKey + "/" + key;
+                  return localforage.setItem(fullKey, value);
+                })
+          )
+        ).then(() => {
+          const url = "/static_backend/birdseye/index.html?call_id=" + call_id;
           if (bookState.prediction.state === "hidden") {
-            window.open(result);
+            window.open(url);
           } else {
-            bookSetState("prediction.codeResult.birdseyeUrl", result);
+            bookSetState("prediction.codeResult.birdseyeUrl", url);
           }
         });
-        delete data.birdseye_objects;
       }
 
       ranCode(data);

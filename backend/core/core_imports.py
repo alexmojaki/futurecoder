@@ -7,7 +7,6 @@ from core.utils import site_packages
 from core.text import pages
 
 sys.modules["django"] = None
-sys.modules["birdseye"] = None
 
 from core.workers.worker import run_code
 
@@ -21,9 +20,7 @@ def run_steps():
                 program = substep.program
 
                 if "\n" in program:
-                    code_source = step.expected_code_source
-                    if code_source in ("birdseye", None):
-                        code_source = "editor"
+                    code_source = step.expected_code_source or "editor"
                 else:
                     code_source = "shell"
 

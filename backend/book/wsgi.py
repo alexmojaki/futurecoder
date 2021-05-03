@@ -11,11 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-import birdseye.server
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'book.settings')
 
-application = DispatcherMiddleware(get_wsgi_application(), {
-    '/birdseye': birdseye.server.app
-})
+application = get_wsgi_application()
