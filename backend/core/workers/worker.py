@@ -122,9 +122,11 @@ def run_code(entry, input_callback, result_callback):
             passed = step_result.get("passed", False)
             messages = step_result.get("messages", [])
             if "message" in step_result:
-                messages.append(highlighted_markdown(step_result["message"]))
+                messages.append(step_result["message"])
         else:
             passed = step_result
+
+    messages = [highlighted_markdown(message) for message in messages]
 
     if passed:
         prediction = dict(
