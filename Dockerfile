@@ -9,6 +9,7 @@ COPY frontend .
 RUN npm run build
 WORKDIR build
 RUN sed -i s:/static/:/static_backend/:g index.html
+RUN sed -i 's:"static/js/:"static_backend/js/:g' static/js/*
 
 # Stage 2 - Setup server
 FROM ubuntu:20.04
@@ -27,6 +28,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     gcc \
     postgresql-client-12 \
     git \
+    zip \
     libpq-dev
 
 RUN ln -s /usr/bin/python3.9 /usr/local/bin/python
@@ -42,6 +44,8 @@ RUN LC_ALL=C.UTF-8 LANG=C.UTF-8 poetry install --extras "production" --no-dev
 COPY --from=build-frontend /usr/src/app/frontend/build ./frontend/build
 COPY ./backend ./backend
 WORKDIR /usr/src/app/backend
+RUN ./package.sh
+RUN zip -j main/static/package.zip /usr/lib/python3/dist-packages/six.py
 RUN ./manage.py compilescss
 RUN ./manage.py collectstatic --noinput
 

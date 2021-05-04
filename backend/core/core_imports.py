@@ -40,7 +40,7 @@ def get_roots():
     mod_names = []
     for module in list(sys.modules.values()):
         try:
-            f = module.__file__
+            f = module.__file__ or ""
         except AttributeError:
             continue
 

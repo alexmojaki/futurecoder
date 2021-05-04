@@ -69,7 +69,7 @@ tests = ["bs4", "selenium", "requests", "pytest"]
 
 [package.source]
 type = "git"
-url = "git@github.com:alexmojaki/birdseye.git"
+url = "https://github.com/alexmojaki/birdseye.git"
 reference = "futurecoder"
 resolved_reference = "81273e689c5460a0b44ec28840e6adcf7fd6dad4"
 
@@ -832,7 +832,7 @@ production = ["gevent", "gunicorn", "psycopg2"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "cd49b42445388243f98a1f4035c7c6f9d23a7a9bb62a1079a963811dbb7a439f"
+content-hash = "e40d8c18e4ad9eaabda42fd56504e64b40c7a02df96db356c5f955727db35263"
 
 [metadata.files]
 astcheck = [

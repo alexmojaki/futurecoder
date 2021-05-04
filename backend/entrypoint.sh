@@ -9,10 +9,4 @@ rm -f /usr/lib/python3/dist-packages/.wh*
 python manage.py migrate
 python manage.py init_db
 
-# If no MASTER_URL is set, start a server in this container,
-# which the web server will contact by default
-if [ -z ${MASTER_URL+x} ]; then
-  ./master_server.sh &
-fi
-
 gunicorn -c gunicorn_config_web.py book.wsgi:application --bind 0.0.0.0:${PORT:-3000}
