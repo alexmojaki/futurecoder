@@ -3,6 +3,7 @@ from time import sleep
 
 import pytest
 from selenium import webdriver
+from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -16,13 +17,24 @@ def test_frontend():
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(options=options)
+    desired_capabilities = DesiredCapabilities.CHROME
+    desired_capabilities["goog:loggingPrefs"] = {"browser": "ALL"}
+    driver = webdriver.Chrome(
+        options=options, desired_capabilities=desired_capabilities
+    )
     driver.implicitly_wait(5)
     try:
         _tests(driver)
     except:
         driver.save_screenshot(str(DIR / "error_screenshot.png"))
         raise
+    finally:
+        print("Browser logs:")
+        print("==============")
+        for entry in driver.get_log("browser"):
+            print(entry["message"])
+        print("==============")
+        print("End Browser logs:")
 
 
 def _tests(driver):
