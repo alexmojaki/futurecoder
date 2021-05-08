@@ -11,6 +11,7 @@ from selenium.webdriver.support.expected_conditions import text_to_be_present_in
 from selenium.webdriver.support.wait import WebDriverWait
 
 assets_dir = Path(__file__).parent / "test_frontend_assets"
+assets_dir.mkdir()
 
 
 def test_frontend():
