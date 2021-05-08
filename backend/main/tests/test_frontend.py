@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.expected_conditions import text_to_be_present_in_element
 from selenium.webdriver.support.wait import WebDriverWait
 
-DIR = Path(__file__).parent
+assets_dir = Path(__file__).parent / "test_frontend_assets"
 
 
 def test_frontend():
@@ -25,16 +25,15 @@ def test_frontend():
     driver.implicitly_wait(5)
     try:
         _tests(driver)
-    except:
-        driver.save_screenshot(str(DIR / "error_screenshot.png"))
-        raise
     finally:
-        print("Browser logs:")
-        print("==============")
-        for entry in driver.get_log("browser"):
-            print(entry["message"])
-        print("==============")
-        print("End Browser logs:")
+        driver.save_screenshot(str(assets_dir / "screenshot.png"))
+        (assets_dir / "state.json").write_text(
+            driver.execute_script("return JSON.stringify(reduxStore.getState())")
+        )
+        (assets_dir / "logs.txt").write_text(
+            "\n".join(entry["message"] for entry in driver.get_log("browser"))
+        )
+        (assets_dir / "page_source.html").write_text(driver.page_source)
 
 
 def _tests(driver):
