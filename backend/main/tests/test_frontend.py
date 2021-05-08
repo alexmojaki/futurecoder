@@ -418,7 +418,10 @@ print(index)
 print(words[index])
                 """,
     )
-    sleep(2)
+
+    locator = (By.CLASS_NAME, "terminal")
+    WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, "This"))
+    sleep(3)
 
     # Check the choices
     choices = driver.find_elements_by_class_name("prediction-choice")
