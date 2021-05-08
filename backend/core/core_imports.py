@@ -6,7 +6,14 @@ from littleutils import strip_required_prefix
 from core.utils import site_packages
 from core.text import pages
 
+# This is imported by cheap_repr
 sys.modules["django"] = None
+
+# These are imported in a local environment but not in docker
+# _virtualenv is imported by a .pth file
+sys.modules["_virtualenv"] = None
+# packaging is conditionally imported by markdown.__meta__
+sys.modules["packaging"] = None
 
 from core.workers.worker import run_code
 
@@ -57,4 +64,4 @@ def get_roots():
 
 
 if __name__ == '__main__':
-    print(" ".join(get_roots()))
+    print("\n".join(get_roots()))
