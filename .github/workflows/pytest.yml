@@ -36,6 +36,6 @@ jobs:
         docker ps
         poetry run pytest -k 'test_frontend'
     - uses: actions/upload-artifact@v2
+      if: always()
       with:
-        name: error-screenshot
         path: '**/test_frontend_assets/'
