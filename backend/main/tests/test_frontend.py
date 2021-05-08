@@ -7,7 +7,7 @@ from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.expected_conditions import text_to_be_present_in_element
+from selenium.webdriver.support.expected_conditions import text_to_be_present_in_element, invisibility_of_element
 from selenium.webdriver.support.wait import WebDriverWait
 
 assets_dir = Path(__file__).parent / "test_frontend_assets"
@@ -201,15 +201,13 @@ list
     # Correct answer first time
     predict_output(driver, editor, run_button, 2, None)
 
-    # Wait for question to disappear, start again
-    sleep(3)
+    # start again
     reverse_button.click()
 
     # Correct answer second time
     predict_output(driver, editor, run_button, 1, 2)
 
-    # Wait for question to disappear, start again
-    sleep(3)
+    # start again
     reverse_button.click()
 
     # Two wrong answers
@@ -418,6 +416,11 @@ def force_click(driver, element):
 
 def predict_output(driver, editor, run_button, first_choice, second_choice):
     is_correct = second_choice is None
+
+    # Ensure there is no previous question still showing
+    locator = (By.CLASS_NAME, "prediction-choice")
+    WebDriverWait(driver, 5).until(invisibility_of_element(locator))
+
     # Run the verbatim code
     run_code(
         editor,
@@ -432,8 +435,8 @@ print(words[index])
     )
 
     locator = (By.CLASS_NAME, "terminal")
-    WebDriverWait(driver, 10).until(text_to_be_present_in_element(locator, "This"))
-    sleep(3)
+    WebDriverWait(driver, 5).until(text_to_be_present_in_element(locator, "This"))
+    sleep(2)
 
     print("Terminal HTML:")
     print(driver.find_element(*locator).get_attribute("outerHTML"))
