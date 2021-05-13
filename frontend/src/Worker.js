@@ -68,12 +68,23 @@ const toObject = (x) => {
   }
 }
 
+const decoder = new TextDecoder();
+
 const api = {
-  async runCode(entry) {
+  async runCode(entry, inputTextArray, inputMetaArray, resultCallback) {
     await pyodideReadyPromise;
-    return await new Promise(resolver =>
-      pyodide.globals.get("run_code_catch_errors")(entry, null, (result) => resolver(toObject(result.toJs())))
-    );
+
+    const inputCallback = () => {
+      Atomics.wait(inputMetaArray, 1, 0);
+      Atomics.store(inputMetaArray, 1, 0);
+      const size = Atomics.exchange(inputMetaArray, 0, 0);
+      const bytes = inputTextArray.slice(0, size);
+      return decoder.decode(bytes) + "\n";
+    }
+
+    const runCodeCatchErrors = pyodide.globals.get("run_code_catch_errors");
+    const resultCallbackToObject = (result) => resultCallback(toObject(result.toJs()));
+    runCodeCatchErrors(entry, inputCallback, resultCallbackToObject)
   }
 }
 

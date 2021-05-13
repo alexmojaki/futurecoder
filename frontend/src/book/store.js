@@ -2,7 +2,7 @@ import {ipush, iremove, iset, redact} from "../frontendlib";
 import {rpc} from "../rpc";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
-import {terminalRef} from "../App";
+import {terminalRef} from "../RunCode";
 
 const initialState = {
   pages: {

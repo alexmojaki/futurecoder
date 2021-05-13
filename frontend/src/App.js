@@ -1,6 +1,5 @@
 import React from 'react';
 import Terminal from './shell/Terminal';
-import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/pygments.css"
 import "./css/github-markdown.css"
@@ -9,10 +8,11 @@ import {
   addMessage,
   bookSetState,
   bookState,
-  closeMessage, currentPage, currentStep, currentStepName,
+  closeMessage,
+  currentPage,
+  currentStep,
   movePage,
   moveStep,
-  ranCode,
   setDeveloperMode,
 } from "./book/store";
 import Popup from "reactjs-popup";
@@ -31,85 +31,15 @@ import {
   faUser,
   faUserGraduate
 } from '@fortawesome/free-solid-svg-icons'
-import {animateScroll} from "react-scroll";
 import {HintsPopup} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
-import _ from "lodash";
-import localforage from "localforage";
+import {runCode, terminalRef} from "./RunCode";
 
-// eslint-disable-next-line import/no-webpack-loader-syntax
-import Worker from "worker-loader!./Worker.js";
-import * as Comlink from 'comlink';
-import {stateSet} from "./rpc/store";
-
-const pyodideAPI = Comlink.wrap(new Worker());
-
-export const terminalRef = React.createRef();
-
-localforage.config({name: "birdseye", storeName: "birdseye"});
 
 class AppComponent extends React.Component {
-  runCode({code, source}) {
-    const shell = source === "shell";
-    if (!shell && !code) {
-      code = bookState.editorContent;
-    }
-    if (!code.trim()) {
-      return;
-    }
-    bookSetState("processing", true);
-    const entry = {input: code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
-
-    const onSuccess = (data) => {
-      if (data.error) {
-        stateSet("error", {...data.error, data, method: "run_code"});
-        return;
-      }
-      if (!shell) {
-        terminalRef.current.clearStdout();
-      }
-      bookSetState("processing", false);
-
-      if (source === "birdseye") {
-        const {store, call_id} = data.birdseye_objects;
-        delete data.birdseye_objects;
-        Promise.all(
-          _.flatMapDeep(
-            _.entries(store),
-            ([rootKey, blob]) =>
-              _.entries(blob)
-                .map(([key, value]) => {
-                  const fullKey = rootKey + "/" + key;
-                  return localforage.setItem(fullKey, value);
-                })
-          )
-        ).then(() => {
-          const url = "/static_backend/birdseye/index.html?call_id=" + call_id;
-          if (bookState.prediction.state === "hidden") {
-            window.open(url);
-          } else {
-            bookSetState("prediction.codeResult.birdseyeUrl", url);
-          }
-        });
-      }
-
-      ranCode(data);
-      if (!data.prediction.choices) {
-        showCodeResult(data);
-        terminalRef.current.focusTerminal();
-      }
-    }
-
-    if (process.env.NODE_ENV !== 'development') {
-      pyodideAPI.runCode(entry).then(onSuccess);
-    } else {
-      rpc("run_code", {entry}, onSuccess);
-    }
-  }
-
   render() {
     const {
       numHints,
@@ -193,7 +123,7 @@ class AppComponent extends React.Component {
             disabled={cantUseEditor}
             className="btn btn-primary"
             onClick={() => {
-              this.runCode({source: "editor"});
+              runCode({source: "editor"});
             }}
           >
             <FontAwesomeIcon icon={faPlay}/> Run
@@ -206,7 +136,7 @@ class AppComponent extends React.Component {
             disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
-              this.runCode({source: "snoop"})
+              runCode({source: "snoop"})
             }}
           >
             <FontAwesomeIcon icon={faBug}/> Snoop
@@ -219,7 +149,7 @@ class AppComponent extends React.Component {
             disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
-              this.runCode({source: "pythontutor"});
+              runCode({source: "pythontutor"});
               window.open(
                 'https://pythontutor.com/iframe-embed.html#code=' +
                 encodeURIComponent(bookState.editorContent) +
@@ -245,7 +175,7 @@ class AppComponent extends React.Component {
             disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
-              this.runCode({source: "birdseye"})
+              runCode({source: "birdseye"})
             }}
           >
             <img
@@ -285,7 +215,7 @@ class AppComponent extends React.Component {
           </div>}
           <div className="terminal" style={{height: showEditor ? "49%" : "100%"}}>
             <Terminal
-              onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
+              onCommand={(cmd) => runCode({code: cmd, source: "shell"})}
               ref={terminalRef}
             />
           </div>
@@ -413,17 +343,3 @@ export const App = connect(
   }),
 )(AppComponent);
 
-
-export const showCodeResult = ({birdseyeUrl, output_parts, passed}) => {
-  const terminal = terminalRef.current;
-  terminal.pushToStdout(output_parts);
-  animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
-
-  if (passed) {
-    moveStep(1);
-  }
-
-  if (birdseyeUrl) {
-    window.open(birdseyeUrl);
-  }
-}

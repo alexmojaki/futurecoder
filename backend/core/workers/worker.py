@@ -1,3 +1,4 @@
+import builtins
 import linecache
 import logging
 import sys
@@ -93,11 +94,17 @@ def run_code(entry, input_callback, result_callback):
     if hasattr(entry, "to_py"):
         entry = entry.to_py()
 
-    def readline():
+    def readline(*_):
         result_callback(make_result(awaiting_input=True))
         return input_callback()
 
     sys.stdin.readline = readline
+
+    def patched_input(prompt=""):
+        print(prompt, end="")
+        return sys.stdin.readline().rstrip("\n")
+
+    builtins.input = patched_input
 
     orig_stdout = sys.stdout
     orig_stderr = sys.stderr

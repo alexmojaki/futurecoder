@@ -75,7 +75,7 @@ export const redact = (name, initialState = {}, { dispatched } = {}) => {
   const delegateReducer = (baseReducer) => (state, action) => baseReducer(reducer(state, action), action);
 
   const localState = new Proxy({}, {
-    get: (_, prop) => redact.store.getState()[name][prop]
+    get: (_, prop) => redact.store?.getState()[name][prop]
   });
 
   return {
