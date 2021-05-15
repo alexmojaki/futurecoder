@@ -9,7 +9,7 @@ import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
 
-const pyodideAPI = Comlink.wrap(new Worker());
+const Runner = Comlink.wrap(new Worker());
 const inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024))
 const inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2))
 const encoder = new TextEncoder();
@@ -20,7 +20,7 @@ let awaitingInput = false;
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
-const runCodeRemote = (entry, onSuccess) => {
+const runCodeRemote = async (entry, onSuccess) => {
   if (true || process.env.NODE_ENV === 'development') {  // TODO
     if (awaitingInput) {
       if (entry.source === "shell") {
@@ -29,7 +29,8 @@ const runCodeRemote = (entry, onSuccess) => {
         // TODO interrupt
       }
     } else {
-      pyodideAPI.runCode(entry, inputTextArray, inputMetaArray, Comlink.proxy(onSuccess));
+      const runner = await new Runner(Comlink.proxy(onSuccess));
+      runner.runCode(entry, inputTextArray, inputMetaArray);
     }
   } else {
     rpc("run_code", {entry}, onSuccess);

@@ -70,8 +70,11 @@ const toObject = (x) => {
 
 const decoder = new TextDecoder();
 
-const api = {
-  async runCode(entry, inputTextArray, inputMetaArray, resultCallback) {
+class Runner {
+  constructor(resultCallback) {
+    this.resultCallback = resultCallback;
+  }
+  async runCode(entry, inputTextArray, inputMetaArray) {
     await pyodideReadyPromise;
 
     const inputCallback = () => {
@@ -83,9 +86,9 @@ const api = {
     }
 
     const runCodeCatchErrors = pyodide.globals.get("run_code_catch_errors");
-    const resultCallbackToObject = (result) => resultCallback(toObject(result.toJs()));
+    const resultCallbackToObject = (result) => this.resultCallback(toObject(result.toJs()));
     runCodeCatchErrors(entry, inputCallback, resultCallbackToObject)
   }
 }
 
-Comlink.expose(api);
+Comlink.expose(Runner);
