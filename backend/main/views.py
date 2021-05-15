@@ -139,7 +139,10 @@ class FrontendAppView(LoginRequiredMixin, View):
     def get(self, _request):
         try:
             with open(Path(__file__).parent / "../../frontend/build/index.html") as f:
-                return HttpResponse(f.read())
+                response = HttpResponse(f.read())
+                response["Cross-Origin-Opener-Policy"] = "same-origin"
+                response["Cross-Origin-Embedder-Policy"] = "require-corp"
+                return response
         except FileNotFoundError:
             return HttpResponse(
                 """

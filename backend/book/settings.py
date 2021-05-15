@@ -133,6 +133,12 @@ STATICFILES_FINDERS = [
     "sass_processor.finders.CssFinder",
 ]
 
+
+def WHITENOISE_ADD_HEADERS_FUNCTION(headers, path, url):
+    headers["Cross-Origin-Opener-Policy"] = "same-origin"
+    headers["Cross-Origin-Embedder-Policy"] = "require-corp"
+
+
 SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r"^.+\.scss$"
 STATIC_ROOT = "static/"
 SASS_PROCESSOR_ROOT = STATIC_ROOT
