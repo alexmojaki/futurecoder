@@ -28,7 +28,7 @@ console.locals = {"assert_equal": assert_equal}
 def execute(code_obj):
     try:
         exec(code_obj, console.locals)
-    except Exception as e:
+    except (Exception, KeyboardInterrupt) as e:
         return TracebackSerializer().format_exception(e)
 
 
@@ -96,7 +96,11 @@ def run_code(entry, input_callback, result_callback):
 
     def readline(*_):
         result_callback(make_result(awaiting_input=True))
-        return input_callback()
+        result = input_callback()
+        if not isinstance(result, str):
+            while True:
+                pass  # wait for the interrupt
+        return result
 
     sys.stdin.readline = readline
 

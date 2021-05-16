@@ -11,13 +11,14 @@ import React from "react";
 
 const Runner = Comlink.wrap(new Worker());
 
-let inputTextArray, inputMetaArray;
+let inputTextArray, inputMetaArray, interruptBuffer = null;
 if (typeof SharedArrayBuffer == "undefined") {
   inputTextArray = null;
   inputMetaArray = null;
 } else {
   inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024));
   inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2));
+  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
 }
 
 const encoder = new TextEncoder();
@@ -30,15 +31,20 @@ localforage.config({name: "birdseye", storeName: "birdseye"});
 
 const runCodeRemote = async (entry, onSuccess) => {
   if (true || process.env.NODE_ENV === 'development') {  // TODO
+    const run = async () => {
+      interruptBuffer[0] = 2;
+      interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+      const runner = await new Runner(Comlink.proxy(onSuccess));
+      runner.runCode(entry, inputTextArray, inputMetaArray, interruptBuffer);
+    }
     if (awaitingInput) {
       if (entry.source === "shell") {
         writeInput(entry.input);
       } else {
-        // TODO interrupt
+        await run();
       }
     } else {
-      const runner = await new Runner(Comlink.proxy(onSuccess));
-      runner.runCode(entry, inputTextArray, inputMetaArray);
+      await run();
     }
   } else {
     rpc("run_code", {entry}, onSuccess);

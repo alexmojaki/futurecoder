@@ -74,17 +74,26 @@ class Runner {
   constructor(resultCallback) {
     this.resultCallback = resultCallback;
   }
-  async runCode(entry, inputTextArray, inputMetaArray) {
+  async runCode(entry, inputTextArray, inputMetaArray, interruptBuffer) {
     await pyodideReadyPromise;
 
     const inputCallback = () => {
-      Atomics.wait(inputMetaArray, 1, 0);
+      while (true) {
+        if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
+          if (interruptBuffer[0] === 2) {
+            return null;
+          }
+        } else {
+          break
+        }
+      }
       Atomics.store(inputMetaArray, 1, 0);
       const size = Atomics.exchange(inputMetaArray, 0, 0);
       const bytes = inputTextArray.slice(0, size);
       return decoder.decode(bytes) + "\n";
     }
 
+    pyodide.setInterruptBuffer(interruptBuffer);
     const runCodeCatchErrors = pyodide.globals.get("run_code_catch_errors");
     const resultCallbackToObject = (result) => this.resultCallback(toObject(result.toJs()));
     runCodeCatchErrors(entry, inputCallback, resultCallbackToObject)
