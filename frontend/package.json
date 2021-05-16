@@ -50,10 +50,7 @@
   },
   "browserslist": {
     "production": [
-      "chrome",
-      "firefox",
-      "edge",
-      "opera"
+      "supports sharedarraybuffer"
     ],
     "development": [
       "last 1 chrome version",
