@@ -10,8 +10,16 @@ import {animateScroll} from "react-scroll";
 import React from "react";
 
 const Runner = Comlink.wrap(new Worker());
-const inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024))
-const inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2))
+
+let inputTextArray, inputMetaArray;
+if (typeof SharedArrayBuffer == "undefined") {
+  inputTextArray = null;
+  inputMetaArray = null;
+} else {
+  inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024));
+  inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2));
+}
+
 const encoder = new TextEncoder();
 
 export const terminalRef = React.createRef();
