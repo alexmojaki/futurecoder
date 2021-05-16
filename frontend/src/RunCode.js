@@ -30,7 +30,9 @@ let awaitingInput = false;
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
 const runCodeRemote = async (entry, onSuccess) => {
-  if (true || process.env.NODE_ENV === 'development') {  // TODO
+  if (process.env.REACT_APP_RUN_CODE_ON_SERVER?.length) {
+    rpc("run_code", {entry}, onSuccess);
+  } else {
     const run = async () => {
       interruptBuffer[0] = 2;
       interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
@@ -46,8 +48,6 @@ const runCodeRemote = async (entry, onSuccess) => {
     } else {
       await run();
     }
-  } else {
-    rpc("run_code", {entry}, onSuccess);
   }
 }
 
