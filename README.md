@@ -160,8 +160,6 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 
     4. Run the backend development server with `python manage.py runserver`.
 
-        - If you get `ModuleNotFoundError: No module named 'resource'` then set the environment variable `SET_LIMITS` to `0`.
-
 4. In the `frontend` folder:
     1. Ensure you have version 14.15.4 (lts/fermium) of `node` and version 7.5.2 of `npm`.
 

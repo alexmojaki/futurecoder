@@ -6,7 +6,7 @@ authors = ["Alex Hall <alex.mojaki@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-birdseye = "@latest"
+birdseye = {git = "https://github.com/alexmojaki/birdseye.git", branch = "futurecoder"}
 snoop = "@latest"
 asttokens = "@latest"
 cheap_repr = "@latest"
@@ -35,7 +35,7 @@ psutil = "^5.7.0"
 jsonfield = "^3.1.0"
 pyflakes = "^2.2.0"
 BetterErrorMessages = "^0.4"
-friendly = "^0.3.12"
+friendly = "^0.3.43"
 
 [tool.poetry.extras]
 production = ["gevent", "gunicorn", "psycopg2"]

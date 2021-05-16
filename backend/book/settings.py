@@ -19,6 +19,7 @@ from django.contrib.messages import constants as messages
 import birdseye
 import dj_database_url
 
+from core.utils import site_packages
 from main.simple_settings import *
 
 BASE_DIR = Path(__file__).parent.parent
@@ -122,6 +123,7 @@ USE_TZ = True
 
 STATIC_URL = "/static_backend/"
 STATICFILES_DIRS = [
+    ("birdseye", str(site_packages + "birdseye/static")),
     str(BASE_DIR.parent / f"frontend/build/static")
 ]
 
@@ -130,6 +132,12 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     "sass_processor.finders.CssFinder",
 ]
+
+
+def WHITENOISE_ADD_HEADERS_FUNCTION(headers, path, url):
+    headers["Cross-Origin-Opener-Policy"] = "same-origin"
+    headers["Cross-Origin-Embedder-Policy"] = "require-corp"
+
 
 SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r"^.+\.scss$"
 STATIC_ROOT = "static/"

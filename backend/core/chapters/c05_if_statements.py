@@ -3,7 +3,7 @@ import ast
 import random
 from textwrap import dedent
 
-from main.text import ExerciseStep, Page, Step, VerbatimStep, search_ast, Disallowed
+from core.text import ExerciseStep, Page, Step, VerbatimStep, search_ast, Disallowed
 
 
 class IntroducingIfStatements(Page):

@@ -133,6 +133,8 @@ dmypy.json
 
 backend/static/
 backend/main/tests/error_screenshot.png
+backend/main/static/package.zip
+backend/main/tests/test_frontend_assets
 
 # temporary local files
 tmp/

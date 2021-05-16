@@ -8,7 +8,6 @@ from typing import Union, Iterable, List
 import pygments
 from cheap_repr import cheap_repr
 from friendly.core import FriendlyTraceback
-from markdown import markdown
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
     style_with_executing_node,
@@ -19,7 +18,7 @@ from stack_data import (
     RepeatedFrames,
 )
 
-from main.utils import is_valid_syntax, lexer, get_suggestions_for_exception
+from core.utils import is_valid_syntax, lexer, get_suggestions_for_exception
 
 pygments_style = style_with_executing_node("monokai", "bg:#005080")
 pygments_formatter = HtmlFormatter(
@@ -70,6 +69,8 @@ at line {e.lineno}
 
 class TracebackSerializer:
     def format_exception(self, e) -> List[dict]:
+        from markdown import markdown
+
         if e.__cause__ is not None:
             result = self.format_exception(e.__cause__)
             result[-1]["tail"] = traceback._cause_message

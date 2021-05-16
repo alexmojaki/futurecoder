@@ -3,26 +3,38 @@ from time import sleep
 
 import pytest
 from selenium import webdriver
+from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.expected_conditions import text_to_be_present_in_element
+from selenium.webdriver.support.expected_conditions import text_to_be_present_in_element, invisibility_of_element
 from selenium.webdriver.support.wait import WebDriverWait
 
-DIR = Path(__file__).parent
+assets_dir = Path(__file__).parent / "test_frontend_assets"
+assets_dir.mkdir(exist_ok=True)
 
 
 def test_frontend():
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(options=options)
+    desired_capabilities = DesiredCapabilities.CHROME
+    desired_capabilities["goog:loggingPrefs"] = {"browser": "ALL"}
+    driver = webdriver.Chrome(
+        options=options, desired_capabilities=desired_capabilities
+    )
     driver.implicitly_wait(5)
     try:
         _tests(driver)
-    except:
-        driver.save_screenshot(str(DIR / "error_screenshot.png"))
-        raise
+    finally:
+        driver.save_screenshot(str(assets_dir / "screenshot.png"))
+        (assets_dir / "state.json").write_text(
+            driver.execute_script("return JSON.stringify(reduxStore.getState())")
+        )
+        (assets_dir / "logs.txt").write_text(
+            "\n".join(entry["message"] for entry in driver.get_log("browser"))
+        )
+        (assets_dir / "page_source.html").write_text(driver.page_source)
 
 
 def _tests(driver):
@@ -189,15 +201,13 @@ list
     # Correct answer first time
     predict_output(driver, editor, run_button, 2, None)
 
-    # Wait for question to disappear, start again
-    sleep(3)
+    # start again
     reverse_button.click()
 
     # Correct answer second time
     predict_output(driver, editor, run_button, 1, 2)
 
-    # Wait for question to disappear, start again
-    sleep(3)
+    # start again
     reverse_button.click()
 
     # Two wrong answers
@@ -406,6 +416,11 @@ def force_click(driver, element):
 
 def predict_output(driver, editor, run_button, first_choice, second_choice):
     is_correct = second_choice is None
+
+    # Ensure there is no previous question still showing
+    locator = (By.CLASS_NAME, "prediction-choice")
+    WebDriverWait(driver, 5).until(invisibility_of_element(locator))
+
     # Run the verbatim code
     run_code(
         editor,
@@ -418,7 +433,13 @@ print(index)
 print(words[index])
                 """,
     )
+
+    locator = (By.CLASS_NAME, "terminal")
+    WebDriverWait(driver, 5).until(text_to_be_present_in_element(locator, "This"))
     sleep(2)
+
+    print("Terminal HTML:")
+    print(driver.find_element(*locator).get_attribute("outerHTML"))
 
     # Check the choices
     choices = driver.find_elements_by_class_name("prediction-choice")

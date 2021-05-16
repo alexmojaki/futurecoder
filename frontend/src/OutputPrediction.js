@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck, faCircle, faDotCircle, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {bookSetState, bookStatePush, scrollToNextStep} from "./book/store";
-import {showCodeResult, terminalRef} from "./App";
+import {showCodeResult, terminalRef} from "./RunCode";
 import Confetti from "react-dom-confetti";
 import {animateScroll} from "react-scroll";
 import _ from "lodash";
@@ -128,7 +128,6 @@ export class OutputPrediction extends Component {
               }
               return;
             }
-            bookSetState("server", codeResult.state);
             scrollToNextStep();
             bookSetState("prediction.state", "showingResult");
             setTimeout(() => animateScroll.scrollToBottom({

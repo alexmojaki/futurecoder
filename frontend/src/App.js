@@ -1,6 +1,5 @@
 import React from 'react';
 import Terminal from './shell/Terminal';
-import {rpc} from "./rpc";
 import "./css/main.scss"
 import "./css/pygments.css"
 import "./css/github-markdown.css"
@@ -10,11 +9,11 @@ import {
   bookSetState,
   bookState,
   closeMessage,
+  currentPage,
+  currentStep,
   movePage,
   moveStep,
-  ranCode,
   setDeveloperMode,
-  stepIndex
 } from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -32,46 +31,15 @@ import {
   faUser,
   faUserGraduate
 } from '@fortawesome/free-solid-svg-icons'
-import {animateScroll} from "react-scroll";
 import {HintsPopup} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
-import _ from "lodash";
-
-
-export const terminalRef = React.createRef();
+import {runCode, terminalRef} from "./RunCode";
 
 
 class AppComponent extends React.Component {
-  runCode({code, source}) {
-    const shell = source === "shell";
-    if (!shell && !code) {
-      code = bookState.editorContent;
-    }
-    if (!code.trim()) {
-      return;
-    }
-    bookSetState("processing", true);
-    rpc(
-      "run_code",
-      {code, source, page_index: bookState.page_index, step_index: stepIndex()},
-      (data) => {
-        if (!shell) {
-          terminalRef.current.clearStdout();
-        }
-        bookSetState("processing", false);
-
-        ranCode(data);
-        if (!data.prediction.choices) {
-          showCodeResult(data);
-          terminalRef.current.focusTerminal();
-        }
-      },
-    );
-  }
-
   render() {
     const {
       numHints,
@@ -81,18 +49,20 @@ class AppComponent extends React.Component {
       requestingSolution,
       user,
       rpcError,
-      page_index,
       prediction,
     } = this.props;
-    const page = pages[page_index];
-    const step_index = stepIndex();
-    const step = page.steps[step_index];
-    const showEditor = page_index >= _.findIndex(pages, {slug: "WritingPrograms"});
-    const snoopPageIndex = _.findIndex(pages, {slug: "UnderstandingProgramsWithSnoop"});
-    const showSnoop = page_index > snoopPageIndex ||
-      (page_index === snoopPageIndex && step_index >= 1);
-    const showPythonTutor = page_index >= _.findIndex(pages, {slug: "UnderstandingProgramsWithPythonTutor"});
-    const showBirdseye = page_index >= _.findIndex(pages, {slug: "IntroducingBirdseye"});
+    const page = currentPage();
+    const step = currentStep();
+    const step_index = step.index;
+    let showEditor, showSnoop, showPythonTutor, showBirdseye;
+    if (step.text.length) {
+      showEditor = page.index >= pages.WritingPrograms.index;
+      const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
+      showSnoop = page.index > snoopPageIndex ||
+        (page.index === snoopPageIndex && step_index >= 1);
+      showPythonTutor = page.index >= pages.UnderstandingProgramsWithPythonTutor.index;
+      showBirdseye = page.index >= pages.IntroducingBirdseye.index;
+    }
 
     const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
@@ -130,13 +100,13 @@ class AppComponent extends React.Component {
           )
         }
         <div>
-          {page_index > 0 &&
+          {page.index > 0 &&
           <button className="btn btn-primary btn-sm previous-button"
                   onClick={() => movePage(-1)}>
             Previous
           </button>}
           {" "}
-          {page_index < pages.length - 1 && step_index === page.steps.length - 1 &&
+          {page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1 &&
           <button className="btn btn-success next-button"
                   onClick={() => movePage(+1)}>
             Next
@@ -153,7 +123,7 @@ class AppComponent extends React.Component {
             disabled={cantUseEditor}
             className="btn btn-primary"
             onClick={() => {
-              this.runCode({source: "editor"});
+              runCode({source: "editor"});
             }}
           >
             <FontAwesomeIcon icon={faPlay}/> Run
@@ -166,7 +136,7 @@ class AppComponent extends React.Component {
             disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
-              this.runCode({source: "snoop"})
+              runCode({source: "snoop"})
             }}
           >
             <FontAwesomeIcon icon={faBug}/> Snoop
@@ -179,7 +149,7 @@ class AppComponent extends React.Component {
             disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
-              this.runCode({source: "pythontutor"});
+              runCode({source: "pythontutor"});
               window.open(
                 'https://pythontutor.com/iframe-embed.html#code=' +
                 encodeURIComponent(bookState.editorContent) +
@@ -205,7 +175,7 @@ class AppComponent extends React.Component {
             disabled={cantUseEditor}
             className="btn btn-success"
             onClick={() => {
-              this.runCode({source: "birdseye"})
+              runCode({source: "birdseye"})
             }}
           >
             <img
@@ -245,7 +215,7 @@ class AppComponent extends React.Component {
           </div>}
           <div className="terminal" style={{height: showEditor ? "49%" : "100%"}}>
             <Terminal
-              onCommand={(cmd) => this.runCode({code: cmd, source: "shell"})}
+              onCommand={(cmd) => runCode({code: cmd, source: "shell"})}
               ref={terminalRef}
             />
           </div>
@@ -373,13 +343,3 @@ export const App = connect(
   }),
 )(AppComponent);
 
-
-export const showCodeResult = (data) => {
-  const terminal = terminalRef.current;
-  terminal.pushToStdout(data.result);
-  animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
-
-  if (data.birdseye_url) {
-    window.open(data.birdseye_url);
-  }
-}

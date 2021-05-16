@@ -4,7 +4,7 @@ import re
 
 from astcheck import is_ast_like
 
-from main.text import MessageStep, Page, Step, VerbatimStep
+from core.text import MessageStep, Page, Step, VerbatimStep
 
 
 class word_must_be_hello(VerbatimStep):

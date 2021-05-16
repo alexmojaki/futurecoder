@@ -43,3 +43,4 @@ export const store = createStore(
 
 dispatcher.store = store;
 redact.store = store;
+window.reduxStore = store;

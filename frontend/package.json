@@ -7,22 +7,25 @@
     "npm": ">= 7.5.2"
   },
   "dependencies": {
+    "@craco/craco": "^6.1.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@sentry/browser": "^5.30.0",
     "ansi_up": "^5.0.0",
     "axios": "^0.21.1",
+    "comlink": "^4.3.0",
     "http-proxy-middleware": "^1.0.6",
+    "localforage": "^1.9.0",
     "lodash": "^4.17.21",
-    "react": "^16.14.0",
+    "react": "^17.0.2",
     "react-ace": "^8.1.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-console-emulator": "^3.0.5",
-    "react-dom": "^16.14.0",
+    "react-dom": "^17.0.2",
     "react-dom-confetti": "^0.2.0",
     "react-redux": "^7.2.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^4.0.3",
     "react-scroll": "^1.8.2",
     "react-toggle": "^4.1.2",
     "reactjs-popup": "^1.5.0",
@@ -33,25 +36,28 @@
     "sass": "^1.32.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "env": {
+      "browser": true,
+      "es2020": true
+    }
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "supports sharedarraybuffer"
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 firefox version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "worker-loader": "^3.0.8"
+  }
 }

@@ -1,20 +1,23 @@
+import builtins
 import linecache
 import logging
-import os
 import sys
 from code import InteractiveConsole
-from threading import Thread
-from time import sleep
+from types import ModuleType
 
-import friendly.source_cache
 import stack_data
 
-from main import simple_settings
-from main.exercises import assert_equal
-from main.text import pages
-from main.workers.limits import set_limits
-from main.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
-from main.workers.utils import internal_error_result, make_result, output_buffer
+from core.exercises import assert_equal
+from core.text import pages
+from core.utils import highlighted_markdown
+from core.workers.utils import internal_error_result, make_result, output_buffer
+
+friendly_rich = "friendly.theme.friendly_rich"
+assert friendly_rich not in sys.modules
+sys.modules[friendly_rich] = ModuleType(friendly_rich)
+
+import friendly.source_cache
+from core.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
 
 log = logging.getLogger(__name__)
 
@@ -23,15 +26,10 @@ console.locals = {"assert_equal": assert_equal}
 
 
 def execute(code_obj):
-    sys.setrecursionlimit(100)
     try:
-        # noinspection PyTypeChecker
         exec(code_obj, console.locals)
-    except Exception as e:
-        sys.setrecursionlimit(1000)
+    except (Exception, KeyboardInterrupt) as e:
         return TracebackSerializer().format_exception(e)
-    finally:
-        sys.setrecursionlimit(1000)
 
 
 def runner(code_source, code):
@@ -63,10 +61,10 @@ def runner(code_source, code):
     birdseye_objects = None
 
     if code_source == "snoop":
-        from main.workers.snoop import exec_snoop
+        from core.workers.snoop import exec_snoop
         traceback_info = exec_snoop(filename, code, code_obj)
     elif code_source == "birdseye":
-        from main.workers.birdseye import exec_birdseye
+        from core.workers.birdseye import exec_birdseye
         traceback_info, birdseye_objects = exec_birdseye(filename, code)
     else:
         traceback_info = execute(code_obj)
@@ -85,40 +83,32 @@ def runner(code_source, code):
     return birdseye_objects
 
 
-def worker_loop_in_thread(*args):
-    Thread(target=worker_loop, args=args).start()
+def run_code_catch_errors(entry, input_callback, result_callback):
+    try:
+        run_code(entry, input_callback, result_callback)
+    except Exception:
+        result_callback(internal_error_result())
 
 
-def worker_loop(task_queue, input_queue, result_queue):
-    os.environ.clear()
-    os.environ.update(
-        OUTDATED_IGNORE="1",
-    )
+def run_code(entry, input_callback, result_callback):
+    if hasattr(entry, "to_py"):
+        entry = entry.to_py()
 
-    # Open the queue files before setting the file limit
-    sleep(0.01)
-    result_queue.put(None)
-    sleep(0.01)
-    input_queue.empty()
-    task_queue.empty()
-
-    if simple_settings.Root.SET_LIMITS:
-        set_limits()
-
-    while True:
-        entry = task_queue.get()
-        try:
-            run_code(entry, input_queue, result_queue)
-        except Exception:
-            result_queue.put(internal_error_result(sentry_offline=True))
-
-
-def run_code(entry, input_queue, result_queue):
-    def readline():
-        result_queue.put(make_result(awaiting_input=True))
-        return input_queue.get()
+    def readline(*_):
+        result_callback(make_result(awaiting_input=True))
+        result = input_callback()
+        if not isinstance(result, str):
+            while True:
+                pass  # wait for the interrupt
+        return result
 
     sys.stdin.readline = readline
+
+    def patched_input(prompt=""):
+        print(prompt, end="")
+        return sys.stdin.readline().rstrip("\n")
+
+    builtins.input = patched_input
 
     orig_stdout = sys.stdout
     orig_stderr = sys.stderr
@@ -134,8 +124,10 @@ def run_code(entry, input_queue, result_queue):
     passed = False
     output = output_buffer.string()
 
+    page = pages[entry['page_slug']]
+    step = page.get_step(entry["step_name"])
+
     if entry['step_name'] != "final_text":
-        page = pages[entry['page_slug']]
         step_result = page.check_step(entry, output, console)
         if isinstance(step_result, dict):
             passed = step_result.get("passed", False)
@@ -145,9 +137,20 @@ def run_code(entry, input_queue, result_queue):
         else:
             passed = step_result
 
-    result_queue.put(make_result(
+    messages = [highlighted_markdown(message) for message in messages]
+
+    if passed:
+        prediction = dict(
+            choices=getattr(step, "predicted_output_choices", None),
+            answer=getattr(step, "correct_output", None),
+        )
+    else:
+        prediction = None
+
+    result_callback(make_result(
         passed=passed,
         messages=messages,
         output=output,
         birdseye_objects=birdseye_objects,
+        prediction=prediction,
     ))

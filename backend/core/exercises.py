@@ -8,7 +8,7 @@ from textwrap import indent
 
 from littleutils import only
 
-from main.utils import format_exception_string, returns_stdout
+from core.utils import format_exception_string, returns_stdout
 
 
 class ExerciseError(Exception):

@@ -4,8 +4,8 @@ import random
 from textwrap import dedent
 from typing import List
 
-from main.exercises import generate_list, generate_string
-from main.text import (
+from core.exercises import generate_list, generate_string
+from core.text import (
     ExerciseStep,
     MessageStep,
     Page,

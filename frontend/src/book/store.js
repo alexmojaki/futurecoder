@@ -2,30 +2,35 @@ import {ipush, iremove, iset, redact} from "../frontendlib";
 import {rpc} from "../rpc";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
-import {terminalRef} from "../App";
+import {terminalRef} from "../RunCode";
 
 const initialState = {
-  server: {
-    pages_progress: [0],
-  },
-  page_index: 0,
-  pages: [
-    {
+  pages: {
+    loading_placeholder: {
       title: "Loading...",
       slug: "loading_placeholder",
+      index: 0,
       steps: [
         {
+          index: 0,
           text: "",
           hints: [],
-          slug: "loading_placeholder",
+          name: "loading_placeholder",
           solution: null,
         }
       ],
-    }
-  ],
+    },
+  },
+  pageSlugsList: ["loading_placeholder"],
   user: {
     email: "",
     developerMode: false,
+    pagesProgress: {
+      loading_placeholder: {
+        step_name: "loading_placeholder",
+      }
+    },
+    pageSlug: "loading_placeholder",
   },
   processing: false,
   numHints: 0,
@@ -48,11 +53,56 @@ const {reducer, makeAction, setState, localState, statePush} = redact('book', in
 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState, statePush as bookStatePush};
 
-export const stepIndex = (state = localState) => state.server.pages_progress[state.page_index];
+const isLoaded = (state) => state.user.email.length && state.pageSlugsList.length > 1
 
-const set_page = (index) => {
-  setState("page_index", index);
-  rpc("set_page", {index});
+export const currentPage = (state = localState) => {
+  if (!isLoaded(state)) {
+    return initialState.pages.loading_placeholder;
+  }
+  return state.pages[state.user.pageSlug];
+};
+
+const pageProgress = (state = localState) => {
+  if (!isLoaded(state)) {
+    return initialState.user.pagesProgress.loading_placeholder;
+  }
+  return state.user.pagesProgress[state.user.pageSlug];
+};
+
+export const currentStepName = (state = localState) => pageProgress(state).step_name;
+export const currentStep = (state = localState) =>
+  _.find(currentPage(state).steps, {name: currentStepName(state)});
+
+export const setPage = (page_slug) => {
+  setState("user.pageSlug", page_slug);
+  afterSetPage(page_slug);
+};
+
+const afterSetPage = (page_slug, state = localState) => {
+  scroller.scrollTo(`step-text-${currentStep(state).index}`, {delay: 0, duration: 0});
+  rpc("set_page", {page_slug});
+}
+
+export const setPageIndex = (pageIndex) => {
+  setPage(localState.pageSlugsList[pageIndex]);
+};
+
+export const movePage = (delta) => {
+  setPageIndex(currentPage().index + delta);
+};
+
+export const moveStep = (delta) => {
+  const stepIndex = currentStep().index + delta;
+  const step = currentPage().steps[stepIndex];
+  if (!step) {
+    return;
+  }
+  setState(["user", "pagesProgress", localState.user.pageSlug, "step_name"], step.name);
+  rpc("set_pages_progress",
+    {
+      pages_progress: localState.user.pagesProgress,
+    },
+  );
 };
 
 const redirectToLogin = () => {
@@ -61,50 +111,72 @@ const redirectToLogin = () => {
     + window.location.search;
 }
 
-const loadData = (data) => {
-  if (!data.user) {
-    redirectToLogin();
+const loadPages = makeAction(
+  "LOAD_PAGES",
+  (state, {value: {pages, pageSlugsList}}) => {
+    return loadUserAndPages({
+      ...state,
+      pages,
+      pageSlugsList,
+    });
+  },
+)
+
+const loadUser = makeAction(
+  "LOAD_USER",
+  (state, {value: user}) => {
+    if (!user.email) {
+      redirectToLogin();
+    }
+    return loadUserAndPages({
+      ...state,
+      user,
+    });
+  },
+)
+
+const loadUserAndPages = (state) => {
+  if (!isLoaded(state)) {
+    return state;
   }
-  setState("pages", data.pages);
-  setState("server", data.state);
-  setState("user", data.user);
-  const pageSlug = new URLSearchParams(window.location.search).get('page');
-  let pageIndex;
-  if (pageSlug != null) {
-    // Allow either page index or page slug in URL
-    pageIndex = parseInt(pageSlug) || parseInt(_.findIndex(data.pages, {slug: pageSlug}));
-  } else {
-    pageIndex = data.page_index;
-  }
-  set_page(pageIndex);
+  let {
+    user: {pagesProgress, pageSlug},
+    pages,
+    pageSlugsList
+  } = state;
+  pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlug;
+  pagesProgress = _.fromPairs(
+    pageSlugsList.map(slug =>
+      [
+        slug,
+        pagesProgress[slug] || {step_name: pages[slug].steps[0].name}
+      ]
+    )
+  )
+  state = {...state, user: {...state.user, pagesProgress, pageSlug}};
+  afterSetPage(pageSlug, state);
+  return state;
 }
 
+const on403 = (response) => {
+  if (response.status === 403) {
+    redirectToLogin();
+  }
+};
+
 rpc(
-  "load_data",
+  "get_user",
   {},
-  loadData,
-  (response) => {
-    if (response.response.status === 403) {
-      redirectToLogin()
-    }
-  },
+  loadUser,
+  on403,
 );
 
-export const moveStep = (delta) => {
-  rpc("move_step",
-    {
-      page_index: localState.page_index,
-      step_index: stepIndex() + delta
-    },
-    (result) => setState("server", result),
-  );
-};
-
-export const movePage = (delta) => {
-  set_page(localState.page_index + delta);
-  scroller.scrollTo(`step-text-${stepIndex()}`, {delay: 0, duration: 0})
-};
-
+rpc(
+  "get_pages",
+  {},
+  loadPages,
+  on403,
+);
 
 export const showHint = makeAction(
   'SHOW_HINT',
@@ -118,7 +190,7 @@ export const showHint = makeAction(
 
 export const scrollToNextStep = () => {
   setTimeout(() =>
-      scroller.scrollTo(`step-text-${stepIndex()}`, {
+      scroller.scrollTo(`step-text-${currentStep().index}`, {
         duration: 1000,
         smooth: true,
       }),
@@ -155,11 +227,6 @@ export const ranCode = makeAction(
         animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current});
       }, 30);
       setTimeout(() => clearInterval(scrollInterval), 1300);
-    } else {
-      state = {
-        ...state,
-        server: value.state,
-      }
     }
     return state;
   },
@@ -187,7 +254,7 @@ export const closeMessage = makeAction(
 export const revealSolutionToken = makeAction(
   "REVEAL_SOLUTION_TOKEN",
   (state) => {
-    const solution_path = ["pages", state.page_index, "steps", stepIndex(state), "solution"];
+    const solution_path = ["pages", state.user.pageSlug, "steps", currentStep(state).index, "solution"];
     const indices_path = [...solution_path, "maskedIndices"]
     const indices = _.get(state, indices_path);
     if (!indices.length) {
@@ -207,7 +274,7 @@ export const setDeveloperMode = (value) => {
 export const reorderSolutionLines = makeAction(
   "REORDER_SOLUTION_LINES",
   (state, {startIndex, endIndex}) => {
-    const path = ["pages", state.page_index, "steps", stepIndex(state), "solution", "lines"];
+    const path = ["pages", state.user.pageSlug, "steps", currentStep(state).index, "solution", "lines"];
     const result = Array.from(_.get(state, path));
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);

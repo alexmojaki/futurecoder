@@ -17,7 +17,7 @@ from django.urls import path
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.generic import TemplateView
 
-from main.text import chapters
+from core.text import chapters
 from main.views import FrontendAppView, HomePageView, api_view, timeout_view
 
 home_view = HomePageView.as_view()

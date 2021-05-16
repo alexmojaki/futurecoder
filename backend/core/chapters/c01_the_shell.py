@@ -2,7 +2,7 @@
 import ast
 from textwrap import dedent
 
-from main.text import MessageStep, Page, Step, VerbatimStep, search_ast
+from core.text import MessageStep, Page, Step, VerbatimStep, search_ast
 
 
 class IntroducingTheShell(Page):
