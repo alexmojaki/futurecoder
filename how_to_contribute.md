@@ -8,7 +8,7 @@ For starters, try using the platform to see what it's like. You can go straight 
 
 Please [open an issue](https://github.com/alexmojaki/futurecoder/issues/new) about anything that's confusing, could be done better, or doesn't work. All suggestions and feedback are welcome. Tell me what interests you!
 
-If the demo site isn't working, or you want to make and test changes, try [running the server locally](README.md#running-locally).
+If the site isn't working, or you want to make and test changes, try [running the server locally](README.md#running-locally).
 
 The easiest way to contribute concretely is to write learning material for the course and participate in related discussions. This doesn't require any expertise beyond knowing how Python works. See [Helping with course content](#helping-with-course-content) for more information.
 
@@ -22,7 +22,7 @@ Run `pytest` in the backend folder with the poetry virtualenv active.
 
 If you get a weird syntax error, check that you're in the backend folder.
 
-## `test_steps`
+### `test_steps`
 
 The full test suite is quite slow, particularly `test_frontend`. When you are only writing course content, it's enough to run `pytest -k test_steps`.
 
@@ -30,11 +30,18 @@ This test runs through the course, submitting the solution/program for each step
 
 If you make some changes to the course, the tests will likely fail the comparison to `test_transcript.json`. Run the test again with the environment variable `FIX_TESTS=1` to update the file. Then check that the git diff looks sensible.
 
+## Reloading Python code in `backend/core`
+
+Most of the interesting Python code is in `backend/core`. This includes running the user's code, checking if it passes the current step, and providing helpful debuggers, tracebacks, and linting. By default, this actually runs in the browser with [pyodide](https://pyodide.org/). If you make any significant changes to code in `backend/core`, there are two ways to see the effects of the changes:
+
+- Before running the frontend server with `npm start`, set the environment variable `REACT_APP_RUN_CODE_ON_SERVER=1`. This will run the user's code in the Django server instead of in the browser, and the server will automatically reload when code changes are detected.
+- Or if you want to test your changes in the context of pyodide: run `./package.sh` within the `backend` folder. This creates a fresh `backend/main/static/package.zip` file which contains all the code in `backend/core` along with all required dependencies. Refresh the page in the browser so that it downloads this code again and restarts pyodide.
+
+If you only make changes to the course content under `chapters`, then the above is not necessary to see changes in the text, as this is always loaded from the server. But if you add a step or change actual code such as how the step is checked, you will need to reload as above.
+
 ## System overview
 
-The course UI is written in React. It communicates with the web server using the `rpc` function, e.g. `rpc("run_code", {code, source}, onSuccess)`. This eventually reaches a method in the `API` class, e.g. `def run_code(self, code, source):`.
-
-Running code specifically sends a request from the web server to the workers master server. This forwards the request to a process associated with that user's ID, starting a new process if necessary. Every user has their own process, which holds the state of the shell or the currently running program (which may be awaiting `input()`). The processes are isolated from each other and everything else, they can easily be terminated, and they have limitations on CPU time usage and file access. You can disable these limitations by setting the environment variable `SET_LIMITS` to `0`, which is handy for debugging.
+The course UI is written in React. It communicates with the web server using the `rpc` function, e.g. `rpc("run_code", {entry}, onSuccess)`. This eventually reaches a method in the `API` class, e.g. `def run_code(self, entry):`.
 
 After the code finishes running, it checks the `Page` and `Step` that the user is currently on, and calls the `Step.check` method. In most cases this is a `VerbatimStep` - the user is supposed to enter exactly the code in the text, using the AST to check for equality. Next most common is an `ExerciseStep` where a function has to pass tests and produce the same output as a given solution. The result of `Step.check` determines if the user succeeded and advances to the next step. It may also return a message to show the user, e.g. if they made a common mistake.
 
