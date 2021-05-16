@@ -5,7 +5,8 @@
 import * as Comlink from 'comlink';
 
 async function getPackageBuffer() {
-  const response = await fetch("/static_backend/package.zip");
+  const cache = process.env.NODE_ENV === "development" ? "no-store" : "default";
+  const response = await fetch("/static_backend/package.zip", {cache});
   if (!response.ok) {
     throw `Request for package failed with status ${response.status}: ${response.statusText}`
   }
