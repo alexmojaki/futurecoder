@@ -13,6 +13,7 @@ import {
   currentStep,
   movePage,
   moveStep,
+  setDatabaseValue,
   setDeveloperMode,
 } from "./book/store";
 import Popup from "reactjs-popup";
@@ -94,9 +95,22 @@ class AppComponent extends React.Component {
                         requireDisplayName: false,
                       }
                     ],
+                    autoUpgradeAnonymousUsers: true,
                     callbacks: {
                       // Avoid redirects after sign-in.
                       signInSuccessWithAuthResult: () => false,
+
+                      // Ignore merge conflicts when upgrading anonymous users and continue signing in
+                      // The store will merge the user data
+                      signInFailure: (error) => {
+                        if (error.code === 'firebaseui/anonymous-upgrade-merge-conflict') {
+
+                          // Note the upgrade in the old anonymous account
+                          setDatabaseValue(["upgradedFromAnonymous"], true);
+
+                          firebase.auth().signInWithCredential(error.credential);
+                        }
+                      }
                     }
                   }}
                   firebaseAuth={firebase.auth()}

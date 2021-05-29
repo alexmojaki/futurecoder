@@ -127,10 +127,7 @@ const loadPages = makeAction(
 const loadUser = makeAction(
   "LOAD_USER",
   (state, {value: user}) => {
-    return loadUserAndPages({
-      ...state,
-      user,
-    });
+    return loadUserAndPages({...state, user}, state.user);
   },
 )
 
@@ -138,6 +135,8 @@ const database = firebase.database();
 
 firebase.auth().onAuthStateChanged(async (user) => {
   if (user) {
+    // TODO ideally we'd set a listener on the user instead of just getting it once
+    //   to sync changes made on multiple devices
     const snapshot = await database.ref('users/' + user.uid).get();
     const userData = snapshot.exists() ? snapshot.val() : {};
     loadUser({
@@ -150,37 +149,60 @@ firebase.auth().onAuthStateChanged(async (user) => {
   }
 });
 
-const setDatabaseValue = (path, value) => {
+export const setDatabaseValue = (path, value) => {
   const pathString = ["users", firebase.auth().currentUser.uid, ...path].join("/");
   firebase.database().ref(pathString).set(value);
 }
 
 const setUserStateAndDatabase = (path, value) => {
+  if (typeof path === "string") {
+    path = [path];
+  }
   setState(["user", ...path], value);
-  const pathString = ["users", firebase.auth().currentUser.uid, ...path].join("/");
-  firebase.database().ref(pathString).set(value);
+  setDatabaseValue(path, value);
 }
 
-const loadUserAndPages = (state) => {
+const loadUserAndPages = (state, previousUser = {}) => {
   if (!isLoaded(state)) {
     return state;
   }
   let {
-    user: {pagesProgress, pageSlug},
+    user: {pagesProgress, pageSlug, uid, developerMode},
     pages,
     pageSlugsList
   } = state;
-  pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlug || pageSlugsList[0];
+
+  developerMode = developerMode || previousUser.developerMode || false;
+  const updates = {developerMode};
+
+  pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlug;
+  if (!pageSlug && previousUser.uid && previousUser.pageSlug !== "loading_placeholder") {
+    pageSlug = previousUser.pageSlug;
+  }
+  pageSlug = pageSlug || pageSlugsList[0];
+
   pagesProgress = pagesProgress || {};
-  pagesProgress = _.fromPairs(
-    pageSlugsList.map(slug =>
-      [
-        slug,
-        pagesProgress[slug] || {step_name: pages[slug].steps[0].name}
-      ]
-    )
-  )
-  state = {...state, user: {...state.user, pagesProgress, pageSlug}};
+  pageSlugsList.forEach(slug => {
+    const steps = pages[slug].steps;
+    let step_name = pagesProgress[slug]?.step_name || steps[0].name;
+    if (previousUser.uid) {
+      const progress = previousUser.pagesProgress[slug];
+      if (progress) {
+        const findStepIndex = (name) => _.find(steps, {name})?.index || 0
+        const previousIndex = findStepIndex(progress.step_name);
+        const currentIndex =  findStepIndex(step_name);
+        if (previousIndex > currentIndex) {
+          step_name = progress.step_name;
+          updates[`pagesProgress/${slug}/step_name`] = step_name;
+        }
+      }
+    }
+    pagesProgress[slug] = {step_name};
+  });
+
+  firebase.database().ref(`users/${uid}`).update(updates);
+
+  state = {...state, user: {...state.user, pagesProgress, pageSlug, developerMode}};
   afterSetPage(pageSlug, state);
   return state;
 }
