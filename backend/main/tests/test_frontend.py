@@ -71,16 +71,16 @@ def _tests(driver):
     # Reverse button exists (developer mode is on)
     assert driver.find_elements_by_class_name("button-reverse-step"), "Is developer mode on?"
 
+    assert driver.find_element_by_class_name("navbar").text == "admin@example.com\nTable of Contents"
+
     # Click on menu
-    driver.find_element_by_class_name("menu-icon").click()
+    driver.find_element_by_css_selector(".nav-item.custom-popup").click()
     assert (
         driver.find_element_by_class_name("menu-popup").text
         == """\
-admin@example.com
 Sign out
 Settings
-Feedback
-Table of Contents"""
+Feedback"""
     )
 
     # Open settings

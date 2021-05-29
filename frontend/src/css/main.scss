@@ -66,7 +66,25 @@
 
   .book-text {
     margin-bottom: 3em;
+    margin-top: calc(1vh + 50px)
   }
+
+  .navbar {
+    position: fixed;
+    left: 2vw;
+    top: 0;
+    padding-top: 1vh;
+    border-bottom: 1px solid lightgray;
+    width: 46vw;
+    z-index: 5;
+    height: 50px;
+
+    > * {
+      padding-right: 1em;
+      padding-left: 0;
+    }
+}
+
 }
 
 .btn:disabled {
@@ -222,20 +240,15 @@
 .my-popup-content {
   background: white;
   z-index: 2;
-  padding: 0.5em;
-}
-
-.menu-icon {
-  position: fixed;
-  top: 10px;
-  right: 10px;
+  padding: 1em;
+  border: solid 1px lightgray;
 }
 
 .menu-popup {
   @extend .my-popup-content;
   position: fixed;
   top: 50px;
-  right: 50px;
+  left: 2vw;
 }
 
 .hint-icon {

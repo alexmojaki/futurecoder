@@ -66,6 +66,17 @@ class AppComponent extends React.Component {
 
     const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <span className="nav-item custom-popup">
+          <MenuPopup user={user}/>
+        </span>
+        <span className="nav-item navbar-text">
+          <FontAwesomeIcon icon={faUser}/> {user.email}
+        </span>
+        <a className="nav-item nav-link" href="/toc/">
+          <FontAwesomeIcon icon={faListOl}/> Table of Contents
+        </a>
+      </nav>
       <div className="book-text markdown-body"
            onCopy={checkCopy}>
         <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
@@ -229,10 +240,6 @@ class AppComponent extends React.Component {
         solution={step.solution}
       />
 
-      <MenuPopup
-        user={user}
-      />
-
       <ErrorModal error={rpcError}/>
     </div>
   }
@@ -253,15 +260,13 @@ const StepButtons = () =>
 
 
 const MenuPopup = ({user}) =>
-  <div className="custom-popup">
     <Popup
       trigger={
-        <button className="btn menu-icon">
+        <button className="btn btn-sm btn-outline-secondary">
           <FontAwesomeIcon icon={faBars} size="lg"/>
         </button>}
     >
       <div className="menu-popup">
-        <p><FontAwesomeIcon icon={faUser}/> {user.email}</p>
         <p><a href="/accounts/logout/"> <FontAwesomeIcon icon={faSignOutAlt}/> Sign out</a></p>
         <p>
           <Popup
@@ -282,10 +287,8 @@ const MenuPopup = ({user}) =>
             {close => <FeedbackModal close={close}/>}
           </Popup>
         </p>
-        <p><a href="/toc/"> <FontAwesomeIcon icon={faListOl}/> Table of Contents</a></p>
       </div>
     </Popup>
-  </div>
 
 
 const SettingsModal = ({user}) => (
