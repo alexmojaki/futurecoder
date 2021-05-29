@@ -37,6 +37,8 @@ import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import {runCode, terminalRef} from "./RunCode";
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 
 class AppComponent extends React.Component {
@@ -71,7 +73,36 @@ class AppComponent extends React.Component {
           <MenuPopup user={user}/>
         </span>
         <span className="nav-item navbar-text">
-          <FontAwesomeIcon icon={faUser}/> {user.email}
+          {
+            user.email ?
+              <><FontAwesomeIcon icon={faUser}/> {user.email}</>
+              :
+              <Popup
+                trigger={
+                  <button className="btn btn-primary">
+                    <FontAwesomeIcon icon={faUser}/> Login / Sign up
+                  </button>
+                }
+                modal
+                closeOnDocumentClick
+              >
+                <StyledFirebaseAuth
+                  uiConfig={{
+                    signInOptions: [
+                      {
+                        provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                        requireDisplayName: false,
+                      }
+                    ],
+                    callbacks: {
+                      // Avoid redirects after sign-in.
+                      signInSuccessWithAuthResult: () => false,
+                    }
+                  }}
+                  firebaseAuth={firebase.auth()}
+                />
+              </Popup>
+          }
         </span>
         <a className="nav-item nav-link" href="/toc/">
           <FontAwesomeIcon icon={faListOl}/> Table of Contents
@@ -266,11 +297,24 @@ const MenuPopup = ({user}) =>
           <FontAwesomeIcon icon={faBars} size="lg"/>
         </button>}
     >
-      <div className="menu-popup">
-        <p><a href="/accounts/logout/"> <FontAwesomeIcon icon={faSignOutAlt}/> Sign out</a></p>
+      {close => <div className="menu-popup">
+        <p><button
+          className="btn btn-danger"
+          onClick={() => {
+            close();
+            bookSetState("user.uid", null)
+            firebase.auth().signOut();
+          }}
+        >
+          <FontAwesomeIcon icon={faSignOutAlt}/> Sign out
+        </button></p>
         <p>
           <Popup
-            trigger={<a href="#"><FontAwesomeIcon icon={faCog}/> Settings </a>}
+            trigger={
+              <button className="btn btn-primary">
+                <FontAwesomeIcon icon={faCog}/> Settings
+              </button>
+              }
             modal
             closeOnDocumentClick
           >
@@ -279,7 +323,11 @@ const MenuPopup = ({user}) =>
         </p>
         <p>
           <Popup
-            trigger={<a href="#"><FontAwesomeIcon icon={faBug}/> Feedback </a>}
+            trigger={
+              <button className="btn btn-success">
+                <FontAwesomeIcon icon={faBug}/> Feedback
+              </button>
+            }
             modal
             closeOnDocumentClick
             contentStyle={feedbackContentStyle}
@@ -287,7 +335,7 @@ const MenuPopup = ({user}) =>
             {close => <FeedbackModal close={close}/>}
           </Popup>
         </p>
-      </div>
+      </div>}
     </Popup>
 
 

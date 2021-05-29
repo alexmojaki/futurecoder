@@ -3,6 +3,18 @@ import {rpc} from "../rpc";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
 import {terminalRef} from "../RunCode";
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
+
+firebase.initializeApp({
+  apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
+  authDomain: "futurecoder-io.firebaseapp.com",
+  projectId: "futurecoder-io",
+  storageBucket: "futurecoder-io.appspot.com",
+  messagingSenderId: "361930705093",
+  appId: "1:361930705093:web:dda41fee927c949daf88ac"
+});
 
 const initialState = {
   pages: {
@@ -23,6 +35,7 @@ const initialState = {
   },
   pageSlugsList: ["loading_placeholder"],
   user: {
+    uid: null,
     email: "",
     developerMode: false,
     pagesProgress: {
@@ -53,7 +66,7 @@ const {reducer, makeAction, setState, localState, statePush} = redact('book', in
 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState, statePush as bookStatePush};
 
-const isLoaded = (state) => state.user.email.length && state.pageSlugsList.length > 1
+const isLoaded = (state) => state.user.uid && state.pageSlugsList.length > 1
 
 export const currentPage = (state = localState) => {
   if (!isLoaded(state)) {
@@ -80,7 +93,7 @@ export const setPage = (page_slug) => {
 
 const afterSetPage = (page_slug, state = localState) => {
   scroller.scrollTo(`step-text-${currentStep(state).index}`, {delay: 0, duration: 0});
-  rpc("set_page", {page_slug});
+  setDatabaseValue(["pageSlug"], page_slug);
 }
 
 export const setPageIndex = (pageIndex) => {
@@ -97,19 +110,8 @@ export const moveStep = (delta) => {
   if (!step) {
     return;
   }
-  setState(["user", "pagesProgress", localState.user.pageSlug, "step_name"], step.name);
-  rpc("set_pages_progress",
-    {
-      pages_progress: localState.user.pagesProgress,
-    },
-  );
+  setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
 };
-
-const redirectToLogin = () => {
-  window.location = '/accounts/login/?next='
-    + window.location.pathname
-    + window.location.search;
-}
 
 const loadPages = makeAction(
   "LOAD_PAGES",
@@ -125,15 +127,39 @@ const loadPages = makeAction(
 const loadUser = makeAction(
   "LOAD_USER",
   (state, {value: user}) => {
-    if (!user.email) {
-      redirectToLogin();
-    }
     return loadUserAndPages({
       ...state,
       user,
     });
   },
 )
+
+const database = firebase.database();
+
+firebase.auth().onAuthStateChanged(async (user) => {
+  if (user) {
+    const snapshot = await database.ref('users/' + user.uid).get();
+    const userData = snapshot.exists() ? snapshot.val() : {};
+    loadUser({
+      uid: user.uid,
+      email: user.email,
+      ...userData,
+    });
+  } else {
+    firebase.auth().signInAnonymously();
+  }
+});
+
+const setDatabaseValue = (path, value) => {
+  const pathString = ["users", firebase.auth().currentUser.uid, ...path].join("/");
+  firebase.database().ref(pathString).set(value);
+}
+
+const setUserStateAndDatabase = (path, value) => {
+  setState(["user", ...path], value);
+  const pathString = ["users", firebase.auth().currentUser.uid, ...path].join("/");
+  firebase.database().ref(pathString).set(value);
+}
 
 const loadUserAndPages = (state) => {
   if (!isLoaded(state)) {
@@ -144,7 +170,8 @@ const loadUserAndPages = (state) => {
     pages,
     pageSlugsList
   } = state;
-  pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlug;
+  pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlug || pageSlugsList[0];
+  pagesProgress = pagesProgress || {};
   pagesProgress = _.fromPairs(
     pageSlugsList.map(slug =>
       [
@@ -158,24 +185,10 @@ const loadUserAndPages = (state) => {
   return state;
 }
 
-const on403 = (response) => {
-  if (response.status === 403) {
-    redirectToLogin();
-  }
-};
-
-rpc(
-  "get_user",
-  {},
-  loadUser,
-  on403,
-);
-
 rpc(
   "get_pages",
   {},
   loadPages,
-  on403,
 );
 
 export const showHint = makeAction(
@@ -267,8 +280,7 @@ export const revealSolutionToken = makeAction(
 )
 
 export const setDeveloperMode = (value) => {
-  rpc("set_developer_mode", {value});
-  setState("user.developerMode", value);
+  setUserStateAndDatabase("developerMode", value);
 }
 
 export const reorderSolutionLines = makeAction(
