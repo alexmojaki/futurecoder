@@ -28,13 +28,13 @@ def test_frontend():
         _tests(driver)
     finally:
         driver.save_screenshot(str(assets_dir / "screenshot.png"))
-        (assets_dir / "state.json").write_text(
-            driver.execute_script("return JSON.stringify(reduxStore.getState())")
-        )
         (assets_dir / "logs.txt").write_text(
             "\n".join(entry["message"] for entry in driver.get_log("browser"))
         )
         (assets_dir / "page_source.html").write_text(driver.page_source)
+        (assets_dir / "state.json").write_text(
+            driver.execute_script("return JSON.stringify(reduxStore.getState())")
+        )
 
 
 def _tests(driver):
