@@ -73,17 +73,18 @@ def make_result(
 
 
 def internal_error_result():
+    from snoop.utils import truncate
+
     tb = traceback.format_exc()
-    output = f"""
-INTERNAL ERROR IN COURSE:
-=========================
+    exception_string = "".join(
+        traceback.format_exception_only(*sys.exc_info()[:2])
+    )
 
-{tb}
-
-This is an error in our code, not yours.
-"""
     return make_result(
-        output=output,
-        output_parts=[dict(color="red", text=output)],
-        error=dict(traceback=tb),
+        output="",
+        output_parts=[],
+        error=dict(
+            details=tb,
+            title=f"Error running Python code: {truncate(exception_string, 100, '...')}",
+        ),
     )

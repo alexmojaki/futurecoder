@@ -18,7 +18,7 @@ from sentry_sdk import capture_exception
 
 from core.text import get_pages
 from core.workers.master import run_code_entry
-from main.models import CodeEntry, ListEmail, User
+from main.models import ListEmail
 from main.utils import PlaceHolderForm
 
 log = logging.getLogger(__name__)
@@ -60,45 +60,12 @@ class API:
     def __init__(self, request):
         self.request = request
 
-    @property
-    def user(self) -> User:
-        return self.request.user
-
-    def ran_code_entry(self, entry, output):
-        # TODO call in frontend, add passed and maybe other info
-        if settings.SAVE_CODE_ENTRIES:
-            CodeEntry.objects.create(**entry, output=output, user=self.user)
-
-    def get_user(self):
-        user = self.user
-        if user.is_anonymous:
-            return {}
-
-        return dict(
-            email=user.email,
-            developerMode=user.developer_mode,
-            pageSlug=user.page_slug,
-            pagesProgress=user.json["pages_progress"],
-        )
-
-    def set_developer_mode(self, value: bool):
-        self.user.developer_mode = value
-        self.user.save()
-
-    def set_pages_progress(self, pages_progress):
-        self.user.json["pages_progress"] = pages_progress
-        self.user.save()
-
-    def set_page(self, page_slug):
-        self.user.page_slug = page_slug
-        self.user.save()
-
-    def submit_feedback(self, title, description, state):
+    def submit_feedback(self, title, description, state, email):
         """Create an issue on github.com using the given parameters."""
 
         body = f"""
 **User Issue**
-Email: {self.user.email}
+Email: {email or "(not given)"}
 User Agent: {get_user_agent(self.request)}
 
 {description}

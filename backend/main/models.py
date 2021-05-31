@@ -13,13 +13,3 @@ class User(AbstractUser):
 
 class ListEmail(models.Model):
     email = models.EmailField()
-
-
-class CodeEntry(models.Model):
-    timestamp = models.DateTimeField(auto_now=True)
-    input = models.TextField()
-    output = models.TextField(null=True)
-    source = models.CharField(max_length=32)
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='code_entries', null=True)
-    page_slug = models.CharField(max_length=128)
-    step_name = models.CharField(max_length=128)

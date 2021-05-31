@@ -5,29 +5,24 @@ import {redact} from "./frontendlib/redact"
 import {stateSet as rpcStateSet} from "./rpc/store";
 import Popup from "reactjs-popup";
 import _ from "lodash";
+import {bookState} from "./book/store";
 
 
 export const FeedbackModal = ({close, error}) => {
   let initialTitle, instructions, descriptionExtra;
   if (error) {
-    initialTitle = `Error in RPC method ${error.method}`;
-    const details = `
-Method: ${error.method}
-Request data: ${JSON.stringify(error.data, null, 4)}
-
-${error.traceback}
-`;
-    descriptionExtra = "\n\n```" + details + "```";
+    initialTitle = error.title;
+    descriptionExtra = "\n\n```" + error.details + "```";
     instructions = <>
       <h3>Report error</h3>
       <p>
-        There was an error processing your request on the server!
+        Oops, something went wrong!
         Please describe what you were just doing and what steps someone can take
         to reproduce the problem, then click Submit. Or click Cancel to not send a report.
       </p>
       <details>
         <summary>Click for error details</summary>
-        <pre>{details}</pre>
+        <pre>{error.details}</pre>
       </details>
 
     </>
@@ -44,6 +39,14 @@ ${error.traceback}
       </ul>
     </>
   }
+  const email = useInput(bookState.user.email || "", {
+    placeholder: 'Email (optional, publicly visible)',
+    type: 'text',
+    className: 'form-control',
+    style: {
+      width: "100%",
+    },
+  });
   const title = useInput(initialTitle, {
     placeholder: 'Title',
     type: 'text',
@@ -64,6 +67,8 @@ ${error.traceback}
     <div style={{margin: "1em"}}>
       {instructions}
 
+      <div>{email.input}</div>
+      <br/>
       <div>{title.input}</div>
       <br/>
       <div>{description.input}</div>
@@ -79,6 +84,7 @@ ${error.traceback}
                 title: title.value,
                 description: description.value + descriptionExtra,
                 state: state,
+                email: email.value,
               });
             close();
           }}
