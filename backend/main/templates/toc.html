@@ -29,13 +29,6 @@
                             <h1 id="toc-toc">
                                 Table of Contents
                             </h1>
-                            {% if user.page.index_prop %}
-                                <div class="text-right"><strong>You were last on the page
-                                    <a href="/course/">
-                                        {{ user.page.title_prop|safe }}
-                                    </a>.
-                                </strong></div>
-                            {% endif %}
                             <ol class="toc-ol">
                                 {% for chapter in chapters %}
                                 <li>
