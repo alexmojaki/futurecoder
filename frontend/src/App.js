@@ -93,7 +93,11 @@ class AppComponent extends React.Component {
                       {
                         provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
                         requireDisplayName: false,
-                      }
+                      },
+                      // TODO not working because of cross origin isolation
+                      // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                      // firebase.auth.GithubAuthProvider.PROVIDER_ID,
                     ],
                     autoUpgradeAnonymousUsers: true,
                     callbacks: {
