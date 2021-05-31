@@ -7,7 +7,6 @@ from typing import get_type_hints
 
 import requests
 from django.conf import settings
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.forms import ModelForm
 from django.http import HttpResponse, JsonResponse
@@ -97,7 +96,7 @@ User Agent: {get_user_agent(self.request)}
         assert r.status_code == 201
 
 
-class FrontendAppView(LoginRequiredMixin, View):
+class FrontendAppView(View):
     """
     Serves the compiled frontend entry point (only works if you have run `yarn
     run build`).

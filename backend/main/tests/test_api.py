@@ -13,9 +13,9 @@ from core.workers.worker import run_code
 
 
 @pytest.fixture
-def api(admin_client):
+def api(client):
     def post(method, **kwargs):
-        response = admin_client.post(
+        response = client.post(
             f"/api/{method}/", data=kwargs, content_type="application/json"
         )
         return response.json()

@@ -39,22 +39,10 @@ def test_frontend():
 
 def _tests(driver):
     driver.get("http://localhost:3000/")
-
-    # Open TOC
-    # Actually clicking the button is hard because the page is animated
-    button = driver.find_element_by_link_text("Start coding")
-    driver.get(button.get_attribute("href"))
+    driver.get("http://localhost:3000/toc/")
 
     # Go to page
     driver.find_element_by_partial_link_text("Getting elements at a position").click()
-
-    # Page redirects to login
-    # Use the credentials from init_db
-    driver.find_element_by_css_selector("input[type=email]").send_keys(
-        "admin@example.com"
-    )
-    driver.find_element_by_css_selector("input[type=password]").send_keys("admin")
-    driver.find_element_by_css_selector("button[type=submit]").click()
 
     # Wait for page to load
     locator = (By.CSS_SELECTOR, ".book-text h1")
@@ -68,10 +56,10 @@ def _tests(driver):
         "Looping is great"
     )
 
-    # Reverse button exists (developer mode is on)
-    assert driver.find_elements_by_class_name("button-reverse-step"), "Is developer mode on?"
+    # Reverse buttons don't exist (developer mode is off)
+    assert not driver.find_elements_by_class_name("button-reverse-step"), "Is developer mode on?"
 
-    assert driver.find_element_by_class_name("navbar").text == "admin@example.com\nTable of Contents"
+    assert driver.find_element_by_class_name("navbar").text.strip() == "Login / Sign up\nTable of Contents"
 
     # Click on menu
     driver.find_element_by_css_selector(".nav-item.custom-popup").click()
@@ -84,19 +72,15 @@ Feedback"""
     )
 
     # Open settings
-    driver.find_element_by_link_text("Settings").click()
+    settings_button = driver.find_element_by_css_selector(".menu-popup .btn.btn-primary")
+    assert settings_button.text.strip() == "Settings"
+    settings_button.click()
 
-    # Turn off developer mode
+    # Turn on developer mode
     developer_mode_togle = driver.find_element_by_css_selector(".settings-modal label")
     developer_mode_togle.click()
 
-    # Reverse button is gone
-    assert not driver.find_elements_by_class_name("button-reverse-step")
-
-    # Turn developer mode back on
-    developer_mode_togle.click()
-
-    # Buttons exist again
+    # Reverse buttons exist now
     reverse_button = driver.find_element_by_class_name("button-reverse-step")
     skip_button = driver.find_element_by_class_name("button-skip-step")
 

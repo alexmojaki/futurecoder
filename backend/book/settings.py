@@ -34,8 +34,6 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -43,12 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'sass_processor',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
     'django_user_agents',
     'crispy_forms',
 ]
@@ -69,7 +61,6 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'book.middleware.DomainRedirectMiddleware',
@@ -89,7 +80,6 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -143,49 +133,9 @@ SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r"^.+\.scss$"
 STATIC_ROOT = "static/"
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
-AUTH_USER_MODEL = 'main.User'
-LOGIN_REDIRECT_URL = '/toc/'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
-ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
 
 SITE_ID = 1
 
-SOCIALACCOUNT_PROVIDERS = {
-    'github': {
-        'APP': {
-            'client_id': GITHUB_APP.ID,
-            'secret': GITHUB_APP.SECRET,
-        }
-    },
-    'google': {
-        'SCOPE': [
-            'profile',
-            'email',
-        ],
-        'AUTH_PARAMS': {
-            'access_type': 'offline',
-        }
-    },
-    'facebook': {
-        'METHOD': 'js_sdk',
-        'SCOPE': ['email'],
-        'APP': {
-            'client_id': FACEBOOK_APP.ID,
-            'secret': FACEBOOK_APP.SECRET,
-        },
-    },
-}
 
 try:
     multiprocessing.set_start_method("spawn")

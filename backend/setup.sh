@@ -7,4 +7,3 @@ poetry --version || curl -sSL https://raw.githubusercontent.com/sdispater/poetry
 poetry install
 
 poetry run ./manage.py migrate
-poetry run ./manage.py init_db
