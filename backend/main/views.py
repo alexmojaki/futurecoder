@@ -5,14 +5,12 @@ from pathlib import Path
 from time import sleep
 from typing import get_type_hints
 
-import requests
 from django.conf import settings
 from django.contrib.messages.views import SuccessMessageMixin
 from django.forms import ModelForm
 from django.http import HttpResponse, JsonResponse
 from django.views import View
 from django.views.generic import CreateView
-from django_user_agents.utils import get_user_agent
 from sentry_sdk import capture_exception
 
 from core.text import get_pages
@@ -30,7 +28,7 @@ def api_view(request, method_name):
         elif method_name == "run_code" and settings.DEBUG:
             method = run_code_entry
         else:
-            method = getattr(API(request), method_name)
+            raise ValueError(method_name)
         body = request.body
         body = body.decode('utf8')
         args = json.loads(body)
@@ -53,47 +51,6 @@ def api_view(request, method_name):
             )
         )
     return JsonResponse(result)
-
-
-class API:
-    def __init__(self, request):
-        self.request = request
-
-    def submit_feedback(self, title, description, state, email):
-        """Create an issue on github.com using the given parameters."""
-
-        body = f"""
-**User Issue**
-Email: {email or "(not given)"}
-User Agent: {get_user_agent(self.request)}
-
-{description}
-
-<details>
-
-<summary>Redux state</summary>
-
-<p>
-
-```json
-{json.dumps(state, indent=2)}
-```
-
-</p>
-</details>
-        """
-
-        r = requests.post(
-            'https://api.github.com/repos/alexmojaki/futurecoder/issues',
-            json={'title': title,
-                  'body': body,
-                  'labels': ['user', 'bug']},
-            headers=dict(
-                Authorization='token ' + settings.GITHUB_TOKEN,
-            ),
-        )
-
-        assert r.status_code == 201
 
 
 class FrontendAppView(View):

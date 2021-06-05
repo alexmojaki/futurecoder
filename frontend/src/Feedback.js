@@ -1,11 +1,11 @@
 import React from 'react';
 import {useInput} from "./frontendlib/HookInput";
-import {rpc} from "./rpc";
 import {redact} from "./frontendlib/redact"
 import {stateSet as rpcStateSet} from "./rpc/store";
 import Popup from "reactjs-popup";
 import _ from "lodash";
 import {bookState} from "./book/store";
+import axios from "axios";
 
 
 export const FeedbackModal = ({close, error}) => {
@@ -79,13 +79,35 @@ export const FeedbackModal = ({close, error}) => {
           disabled={!(title.value && description.value)}
           onClick={() => {
             const state = _.omit(redact.store.getState(), "book.pages")
-            rpc("submit_feedback",
+            const body = `
+**User Issue**
+Email: ${email.value || "(not given)"}
+User Agent: ${navigator.userAgent}
+
+${description.value + descriptionExtra}
+
+<details>
+
+<summary>Redux state</summary>
+
+<p>
+
+\`\`\`json
+${JSON.stringify(state)}
+\`\`\`
+
+</p>
+</details>`
+            axios.post(
+              'https://api.github.com/repos/alexmojaki/alexmojaki/issues',
+              {title: title.value, body, labels: ['user', 'bug']},
               {
-                title: title.value,
-                description: description.value + descriptionExtra,
-                state: state,
-                email: email.value,
-              });
+                headers: {
+                  Authorization: 'token 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',
+                  Accept : 'application/vnd.github.v3+json'
+                }
+              }
+            );
             close();
           }}
         >
