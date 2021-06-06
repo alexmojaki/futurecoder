@@ -166,7 +166,11 @@ firebase.auth().onAuthStateChanged(async (user) => {
 });
 
 export const setDatabaseValue = (path, value) => {
-  const pathString = ["users", firebase.auth().currentUser.uid, ...path].join("/");
+  const currentUser = firebase.auth().currentUser;
+  if (!currentUser) {
+    return;
+  }
+  const pathString = ["users", currentUser.uid, ...path].join("/");
   firebase.database().ref(pathString).set(value);
 }
 
