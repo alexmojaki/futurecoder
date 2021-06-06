@@ -1,11 +1,12 @@
 import {ipush, iremove, iset, redact} from "../frontendlib";
-import {rpc} from "../rpc";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
 import {terminalRef} from "../RunCode";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
+import pagesUrl from "./pages.json.load_by_url"
+import axios from "axios";
 
 firebase.initializeApp({
   apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
@@ -17,6 +18,7 @@ firebase.initializeApp({
 });
 
 const initialState = {
+  route: "course",
   pages: {
     loading_placeholder: {
       title: "Loading...",
@@ -94,7 +96,19 @@ export const setPage = (page_slug) => {
 const afterSetPage = (page_slug, state = localState) => {
   scroller.scrollTo(`step-text-${currentStep(state).index}`, {delay: 0, duration: 0});
   setDatabaseValue(["pageSlug"], page_slug);
+  window.location.hash = page_slug;
 }
+
+export const navigate = () => {
+  const hash = window.location.hash.substring(1);
+  if (hash === "toc") {
+    setState("route", "toc");
+  } else if (_.includes(localState.pageSlugsList, hash)) {
+    setState("route", "main");
+    setPage(hash);
+  }
+};
+window.addEventListener("hashchange", navigate);
 
 export const setPageIndex = (pageIndex) => {
   setPage(localState.pageSlugsList[pageIndex]);
@@ -123,6 +137,8 @@ const loadPages = makeAction(
     });
   },
 )
+
+axios.get(pagesUrl).then((response) => loadPages(response.data));
 
 const loadUser = makeAction(
   "LOAD_USER",
@@ -175,11 +191,18 @@ const loadUserAndPages = (state, previousUser = {}) => {
   developerMode = developerMode || previousUser.developerMode || false;
   const updates = {developerMode};
 
-  pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlug;
-  if (!pageSlug && previousUser.uid && previousUser.pageSlug !== "loading_placeholder") {
-    pageSlug = previousUser.pageSlug;
+  const hash = window.location.hash.substring(1);
+
+  if (!pageSlug) {
+    if (previousUser.uid && previousUser.pageSlug !== "loading_placeholder") {
+      pageSlug = previousUser.pageSlug;
+    } else if (_.includes(pageSlugsList, hash)) {
+      pageSlug = hash;
+    } else {
+      // Check URL parameters for legacy URLs, otherwise default to first page
+      pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlugsList[0];
+    }
   }
-  pageSlug = pageSlug || pageSlugsList[0];
 
   pagesProgress = pagesProgress || {};
   pageSlugsList.forEach(slug => {
@@ -203,15 +226,11 @@ const loadUserAndPages = (state, previousUser = {}) => {
   firebase.database().ref(`users/${uid}`).update(updates);
 
   state = {...state, user: {...state.user, pagesProgress, pageSlug, developerMode}};
-  afterSetPage(pageSlug, state);
+  if (hash !== "toc") {
+    afterSetPage(pageSlug, state);
+  }
   return state;
 }
-
-rpc(
-  "get_pages",
-  {},
-  loadPages,
-);
 
 export const showHint = makeAction(
   'SHOW_HINT',

@@ -40,6 +40,7 @@ import birdseyeIcon from "./img/birdseye_icon.png";
 import {runCode, terminalRef} from "./RunCode";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import {TableOfContents} from "./TableOfContents";
 
 
 class AppComponent extends React.Component {
@@ -53,7 +54,11 @@ class AppComponent extends React.Component {
       user,
       rpcError,
       prediction,
+      route,
     } = this.props;
+    if (route === "toc") {
+      return <TableOfContents/>
+    }
     const page = currentPage();
     const step = currentStep();
     const step_index = step.index;
@@ -122,7 +127,7 @@ class AppComponent extends React.Component {
               </Popup>
           }
         </span>
-        <a className="nav-item nav-link" href="/toc/">
+        <a className="nav-item nav-link" href="#toc">
           <FontAwesomeIcon icon={faListOl}/> Table of Contents
         </a>
       </nav>

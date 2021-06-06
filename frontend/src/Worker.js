@@ -3,10 +3,10 @@
 // https://github.com/facebook/create-react-app/issues/8014
 
 import * as Comlink from 'comlink';
+import pythonCoreUrl from "./python_core.tar"
 
 async function getPackageBuffer() {
-  const cache = process.env.NODE_ENV === "development" ? "no-store" : "default";
-  const response = await fetch("/static_backend/package.zip", {cache});
+  const response = await fetch(pythonCoreUrl);
   if (!response.ok) {
     throw `Request for package failed with status ${response.status}: ${response.statusText}`
   }
@@ -24,15 +24,16 @@ async function loadPyodideOnly() {
 
   pyodide.runPython(`
 import io
-import zipfile
+import tarfile
 import sys
 
 package_path = "/tmp/package/"
+tarfile.TarFile.chown = lambda *_, **__: None
 
 def load_package_buffer(buffer):
     global run_code_catch_errors
     fd = io.BytesIO(buffer.to_py())
-    with zipfile.ZipFile(fd) as zf:
+    with tarfile.TarFile(fileobj=fd) as zf:
         zf.extractall(package_path)
     
     sys.path.append(package_path)

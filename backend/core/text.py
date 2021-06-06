@@ -303,19 +303,6 @@ class Page(metaclass=PageMeta):
         except SyntaxError:
             return False
 
-    # Workaround for Django templates which can't see metaclass properties
-    @classmethod
-    def title_prop(cls):
-        return cls.title
-
-    @classmethod
-    def slug_prop(cls):
-        return cls.slug
-
-    @classmethod
-    def index_prop(cls):
-        return cls.index
-
 
 class Disallowed:
     def __init__(self, template, *, label="", message="", max_count=0, predicate=lambda n: True, function_only=False):
@@ -564,10 +551,14 @@ def load_chapters():
     for path in sorted(chapters_dir.glob("c*.py")):
         module_name = path.stem
         full_module_name = "core.chapters." + module_name
-        module = import_module(full_module_name)
+        import_module(full_module_name)
         title = module_name[4:].replace("_", " ").title()
-        chapter_pages = [p for p in pages.values() if p.__module__ == full_module_name]
-        yield title, module, chapter_pages
+        chapter_pages = [
+            select_attrs(page, "title slug")
+            for page in pages.values()
+            if page.__module__ == full_module_name
+        ]
+        yield dict(title=title, pages=chapter_pages)
 
 
 chapters = list(load_chapters())

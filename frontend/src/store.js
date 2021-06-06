@@ -8,7 +8,7 @@ import {
   redact,
   dispatcher
 } from "./frontendlib";
-import {bookReducer} from "./book/store";
+import {bookReducer, navigate} from "./book/store";
 
 import createSentryMiddleware from "redux-sentry-middleware";
 import * as Sentry from "@sentry/browser";
@@ -44,3 +44,5 @@ export const store = createStore(
 dispatcher.store = store;
 redact.store = store;
 window.reduxStore = store;
+
+navigate();
