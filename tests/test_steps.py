@@ -3,8 +3,6 @@ import os
 import re
 from pathlib import Path
 
-import pytest
-from django.conf import settings
 from littleutils import only
 
 from core.text import pages
@@ -12,20 +10,7 @@ from core.utils import highlighted_markdown
 from core.workers.worker import run_code
 
 
-@pytest.fixture
-def api(client):
-    def post(method, **kwargs):
-        response = client.post(
-            f"/api/{method}/", data=kwargs, content_type="application/json"
-        )
-        return response.json()
-
-    return post
-
-
-def test_steps(api):
-    settings.DEBUG = True
-
+def test_steps():
     transcript = []
     for page_index, page in enumerate(pages.values()):
         for step_index, step_name in enumerate(page.step_names[:-1]):
@@ -46,20 +31,14 @@ def test_steps(api):
                     page_slug=page.slug,
                     step_name=step_name,
                 )
-                response = api("run_code", entry=entry)
-
-                normalise_response(response, is_message, substep)
-
-                raw_response = {}
+                response = {}
 
                 def result_callback(r):
-                    nonlocal raw_response
-                    raw_response = r
+                    nonlocal response
+                    response = r
 
                 run_code(entry, input_callback=None, result_callback=result_callback)
-                normalise_response(raw_response, is_message, substep)
-
-                assert response == raw_response
+                normalise_response(response, is_message, substep)
 
                 transcript_item = dict(
                     program=program.splitlines(),

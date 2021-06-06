@@ -86,7 +86,7 @@ def tarfile_filter(tar_info):
 
 def main():
     this_dir = Path(__file__).parent
-    frontend_src = this_dir / "../../frontend/src"
+    frontend_src = this_dir / "../frontend/src"
     json_to_file(get_pages(), frontend_src / "book/pages.json.load_by_url")
     json_to_file(chapters, frontend_src / "chapters.json")
     roots = get_roots()

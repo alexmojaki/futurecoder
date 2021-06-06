@@ -1,7 +1,6 @@
 import {createStore, applyMiddleware, compose, combineReducers} from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
-import {rpcReducer} from "./rpc/store";
 import {connect} from "react-redux";
 import {
   TextContainer,
@@ -24,7 +23,6 @@ TextContainer.connect = connect;
 
 const reducer = delegateReducer(
   combineReducers({
-    rpc: rpcReducer,
     book: bookReducer,
   })
 );

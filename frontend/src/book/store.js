@@ -17,6 +17,7 @@ firebase.initializeApp({
 });
 
 const initialState = {
+  error: null,
   route: "course",
   pages: {
     loading_placeholder: {

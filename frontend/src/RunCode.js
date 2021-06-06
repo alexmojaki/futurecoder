@@ -1,9 +1,7 @@
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import Worker from "worker-loader!./Worker.js";
 import * as Comlink from 'comlink';
-import {rpc} from "./rpc";
 import {bookSetState, bookState, currentStepName, moveStep, ranCode} from "./book/store";
-import {stateSet} from "./rpc/store";
 import _ from "lodash";
 import localforage from "localforage";
 import {animateScroll} from "react-scroll";
@@ -31,7 +29,7 @@ localforage.config({name: "birdseye", storeName: "birdseye"});
 
 const runCodeRemote = async (entry, onSuccess) => {
   if (process.env.REACT_APP_RUN_CODE_ON_SERVER?.length) {
-    rpc("run_code", {entry}, onSuccess);
+    throw Error("not currently implemented")
   } else {
     const run = async () => {
       interruptBuffer[0] = 2;
@@ -64,7 +62,7 @@ export const runCode = ({code, source}) => {
 
   const onSuccess = (data) => {
     if (data.error) {
-      stateSet("error", {...data.error, data, method: "run_code"});
+      bookSetState("error", {...data.error});
       return;
     }
     awaitingInput = data.awaiting_input;
@@ -87,7 +85,7 @@ export const runCode = ({code, source}) => {
               })
         )
       ).then(() => {
-        const url = "/static_backend/birdseye/index.html?call_id=" + call_id;
+        const url = "birdseye/?call_id=" + call_id;
         if (bookState.prediction.state === "hidden") {
           window.open(url);
         } else {

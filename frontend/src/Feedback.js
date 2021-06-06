@@ -1,10 +1,9 @@
 import React from 'react';
 import {useInput} from "./frontendlib/HookInput";
 import {redact} from "./frontendlib/redact"
-import {stateSet as rpcStateSet} from "./rpc/store";
 import Popup from "reactjs-popup";
 import _ from "lodash";
-import {bookState} from "./book/store";
+import {bookSetState, bookState} from "./book/store";
 import axios from "axios";
 
 
@@ -156,7 +155,7 @@ export const ErrorModal = ({error}) => {
     <Popup
       open={true}
       closeOnDocumentClick
-      onClose={() => rpcStateSet("error", null)}
+      onClose={() => bookSetState("error", null)}
       contentStyle={feedbackContentStyle}
     >
       {close => <FeedbackModal close={close} error={error}/>}

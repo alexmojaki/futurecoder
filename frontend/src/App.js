@@ -38,7 +38,7 @@ import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import {runCode, terminalRef} from "./RunCode";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import {TableOfContents} from "./TableOfContents";
 
@@ -52,7 +52,7 @@ class AppComponent extends React.Component {
       pages,
       requestingSolution,
       user,
-      rpcError,
+      error,
       prediction,
       route,
     } = this.props;
@@ -294,7 +294,7 @@ class AppComponent extends React.Component {
         solution={step.solution}
       />
 
-      <ErrorModal error={rpcError}/>
+      <ErrorModal error={error}/>
     </div>
   }
 }
@@ -413,7 +413,6 @@ const checkCopy = () => {
 export const App = connect(
   state => ({
     ...state.book,
-    rpcError: state.rpc.error,
   }),
 )(AppComponent);
 
