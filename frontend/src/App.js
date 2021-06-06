@@ -13,7 +13,7 @@ import {
   currentStep,
   movePage,
   moveStep,
-  setDatabaseValue,
+  updateDatabase,
   setDeveloperMode,
 } from "./book/store";
 import Popup from "reactjs-popup";
@@ -115,7 +115,7 @@ class AppComponent extends React.Component {
                         if (error.code === 'firebaseui/anonymous-upgrade-merge-conflict') {
 
                           // Note the upgrade in the old anonymous account
-                          setDatabaseValue(["upgradedFromAnonymous"], true);
+                          updateDatabase({upgradedFromAnonymous: true});
 
                           firebase.auth().signInWithCredential(error.credential);
                         }

@@ -4,7 +4,6 @@ import _ from "lodash";
 import {terminalRef} from "../RunCode";
 import firebase from "firebase/app";
 import "firebase/auth";
-import "firebase/database";
 import pagesUrl from "./pages.json.load_by_url"
 import axios from "axios";
 
@@ -93,10 +92,10 @@ export const setPage = (page_slug) => {
   afterSetPage(page_slug);
 };
 
-const afterSetPage = (page_slug, state = localState) => {
+const afterSetPage = (pageSlug, state = localState) => {
   scroller.scrollTo(`step-text-${currentStep(state).index}`, {delay: 0, duration: 0});
-  setDatabaseValue(["pageSlug"], page_slug);
-  window.location.hash = page_slug;
+  updateDatabase({pageSlug});
+  window.location.hash = pageSlug;
 }
 
 export const navigate = () => {
@@ -147,14 +146,11 @@ const loadUser = makeAction(
   },
 )
 
-const database = firebase.database();
-
 firebase.auth().onAuthStateChanged(async (user) => {
   if (user) {
     // TODO ideally we'd set a listener on the user instead of just getting it once
     //   to sync changes made on multiple devices
-    const snapshot = await database.ref('users/' + user.uid).get();
-    const userData = snapshot.exists() ? snapshot.val() : {};
+    const userData = await databaseRequest("GET");
     loadUser({
       uid: user.uid,
       email: user.email,
@@ -165,13 +161,23 @@ firebase.auth().onAuthStateChanged(async (user) => {
   }
 });
 
-export const setDatabaseValue = (path, value) => {
+const databaseRequest = async (method, data={}) => {
   const currentUser = firebase.auth().currentUser;
   if (!currentUser) {
     return;
   }
-  const pathString = ["users", currentUser.uid, ...path].join("/");
-  firebase.database().ref(pathString).set(value);
+  const auth = await currentUser.getIdToken();
+  const response = await axios.request({
+    url: `https://futurecoder-io-default-rtdb.firebaseio.com/users/${currentUser.uid}.json`,
+    params: {auth},
+    method,
+    data,
+  })
+  return response.data;
+}
+
+export const updateDatabase = (updates) => {
+  return databaseRequest("PATCH", updates);
 }
 
 const setUserStateAndDatabase = (path, value) => {
@@ -179,7 +185,7 @@ const setUserStateAndDatabase = (path, value) => {
     path = [path];
   }
   setState(["user", ...path], value);
-  setDatabaseValue(path, value);
+  updateDatabase({[path.join("/")]: value});
 }
 
 const loadUserAndPages = (state, previousUser = {}) => {
@@ -227,7 +233,7 @@ const loadUserAndPages = (state, previousUser = {}) => {
     pagesProgress[slug] = {step_name};
   });
 
-  firebase.database().ref(`users/${uid}`).update(updates);
+  updateDatabase(updates);
 
   state = {...state, user: {...state.user, pagesProgress, pageSlug, developerMode}};
   if (hash !== "toc") {
