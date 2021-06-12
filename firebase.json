@@ -8,7 +8,7 @@
     ],
     "headers": [
       {
-        "regex": "course.*",
+        "regex": ".*course.*",
         "headers": [
           {
             "key": "Cross-Origin-Opener-Policy",
