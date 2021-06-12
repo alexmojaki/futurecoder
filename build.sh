@@ -6,6 +6,7 @@ rm -rf dist || true
 mkdir -p dist/course/
 
 export PYTHONPATH=.
+source $HOME/.poetry/env
 
 BIRDSEYE=`poetry run python -c '
 import birdseye

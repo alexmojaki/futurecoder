@@ -3,6 +3,7 @@
 set -eux
 
 ./setup.sh
+source $HOME/.poetry/env
 
 cd frontend
 npm ci
