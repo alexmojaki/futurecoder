@@ -1,0 +1,33 @@
+name: Pytest
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Set up Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Install chromedriver
+      uses: nanasess/setup-chromedriver@master
+    - name: Build and run tests
+      run: |
+        ./ci_build_test.sh
+    - name: Upload test artifacts
+      uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        path: '**/test_frontend_assets/'
+    - name: Deploy
+      uses: FirebaseExtended/action-hosting-deploy@v0
+      if: always()
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FUTURECODER_IO }}'
+        projectId: futurecoder-io
+        channelId: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/master' && 'live' || '' }}

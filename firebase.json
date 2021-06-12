@@ -21,5 +21,10 @@
         ]
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": "3000"
+    }
   }
 }
