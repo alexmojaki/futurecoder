@@ -1,4 +1,4 @@
-name: Pytest
+name: Build, test, deploy
 on: [push, pull_request]
 jobs:
   test:
@@ -15,18 +15,21 @@ jobs:
         node-version: '14'
     - name: Install chromedriver
       uses: nanasess/setup-chromedriver@master
-    - name: Build and run tests
-      run: |
-        ./ci_build_test.sh
+    - name: Build
+      id: build
+      run: ./full_build.sh
+    - name: Test
+      run: ./ci_test.sh
     - name: Upload test artifacts
       uses: actions/upload-artifact@v2
-      if: always()
+      if: steps.build.outcome == 'success'
       with:
         path: '**/test_frontend_assets/'
     - name: Deploy
       uses: FirebaseExtended/action-hosting-deploy@v0
-      if: success() && github.event_name == 'push' && github.ref == 'refs/heads/master'
+      if: steps.build.outcome == 'success'
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
         firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FUTURECODER_IO }}'
         projectId: futurecoder-io
+        channelId: ${{ job.status == 'success' && github.event_name == 'push' && github.ref == 'refs/heads/master' && 'live' || github.ref }}
