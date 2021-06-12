@@ -30,4 +30,4 @@ jobs:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
         firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FUTURECODER_IO }}'
         projectId: futurecoder-io
-        channelId: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/master' && 'live' || '' }}
+        channelId: ${{ job.status == 'success' && github.event_name == 'push' && github.ref == 'refs/heads/master' && 'live' || '' }}
