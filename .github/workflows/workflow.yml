@@ -25,9 +25,8 @@ jobs:
         path: '**/test_frontend_assets/'
     - name: Deploy
       uses: FirebaseExtended/action-hosting-deploy@v0
-      if: always()
+      if: success() && github.event_name == 'push' && github.ref == 'refs/heads/master'
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
         firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FUTURECODER_IO }}'
         projectId: futurecoder-io
-        channelId: ${{ job.status == 'success' && github.event_name == 'push' && github.ref == 'refs/heads/master' && 'live' || '' }}
