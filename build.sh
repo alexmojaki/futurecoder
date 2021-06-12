@@ -18,7 +18,7 @@ cp -r $BIRDSEYE/static/ dist/course/birdseye/
 poetry run python core/generate_static_files.py
 
 cd frontend
-npm run build
+CI=false npm run build
 cd ..
 
 cp -r frontend/build/* dist/course/
