@@ -842,7 +842,7 @@ O
         """
 Wow, you're an artist too!
 
-If you'd like, you can just continue to the [next page](/course/?page=IntroducingBirdseye) now. Or you can do a bonus challenge!
+If you'd like, you can just continue to the [next page](#IntroducingBirdseye) now. Or you can do a bonus challenge!
 
 Like the earlier exercise, you're organising a tournament for a game. You have a list of player names:
 
@@ -1516,7 +1516,7 @@ When and how should you modify the boolean?
         """
 Excellent!
 
-[Earlier in the course](/course/?page=GettingElementsAtPosition) there was an exercise
+[Earlier in the course](#GettingElementsAtPosition) there was an exercise
 to print two strings vertically side by side, like this:
 
     H W
@@ -1592,7 +1592,7 @@ nested
 
     class zip_longest_strings_exercise(ExerciseStep):
         text = """
-Excellent! If you'd like, you can just continue to the [next page](/course/?page=DefiningFunctions) now.
+Excellent! If you'd like, you can just continue to the [next page](#DefiningFunctions) now.
 Or you can do a bonus challenge!
 
 Now let's generalize the previous exercise to strings of unequal length. Once again you are given a list of strings.

@@ -216,7 +216,7 @@ In this example `A` is `name == "Alice"` which is `False`, so `A or B` is `B` wh
 
 > Is there a better way to write the condition without repeating `name ==` each time?
 
-Yes! In [Functions and Methods for Lists](/course/?page=FunctionsAndMethodsForLists) we mentioned the `in`
+Yes! In [Functions and Methods for Lists](#FunctionsAndMethodsForLists) we mentioned the `in`
 operator, which you can use with a list like this:
 
     return name in ["Alice", "Bob", "Charlie"]

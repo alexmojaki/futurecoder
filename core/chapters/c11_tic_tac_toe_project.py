@@ -809,7 +809,7 @@ You might have solved it with something like this:
             joined_rows.append("".join(row))
         return "\\n".join(joined_rows)
 
-If you'd like, you can just continue to the [next page](/course/?page=Types) now. Or you can do a bonus challenge!
+If you'd like, you can just continue to the [next page](#Types) now. Or you can do a bonus challenge!
 
 Write an improved version of `format_board` that displays row and column separators. For example, if
 

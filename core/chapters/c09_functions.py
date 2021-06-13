@@ -834,7 +834,7 @@ c 2
         """
 As before, `return` ***stops the whole function***, including all loops.
 
-Previously we showed [how to stop a loop with `break`](/course/?page=UsingBreak).
+Previously we showed [how to stop a loop with `break`](#UsingBreak).
 Change `return letter` to `break` and see what the difference is.
         """
 

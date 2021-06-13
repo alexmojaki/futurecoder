@@ -105,7 +105,7 @@ Is there a similar concept among strings to 0? A blank initial value?
         """
 Excellent!
 
-If you'd like, you can just continue to the [next page](/course/?page=BuildingNewLists) now.
+If you'd like, you can just continue to the [next page](#BuildingNewLists) now.
 
 For an optional bonus challenge: extend the program to insert a separator string *between* each word.
 For example, given
@@ -131,7 +131,7 @@ Later on you will learn a way to iterate over a list and check if you're in the 
 However, the iteration you skip doesn't have to be the last one!
 You *can* write a program that checks if you're in the *first* iteration of a loop.
 Just make a boolean variable to keep track of this. No need for any comparison operators or numbers.
-We looked at programs that did something like this [here](/course/?page=UnderstandingProgramsWithSnoop).
+We looked at programs that did something like this [here](#UnderstandingProgramsWithSnoop).
 So if you only skip adding the separator in the first iteration, you will have `n - 1` separators. Now you just need to think carefully about how to make sure the separators are in the right place.
 Forgetting the loop for a moment, you need to add the following to the string in this order: the first word, the separator, the second word, the separator, the third word, etc.
 That means that in the first iteration, you just add the first word. In the second iteration, you add the separator, then the second word. In the third iteration, you add the separator, then the third word. And so on.

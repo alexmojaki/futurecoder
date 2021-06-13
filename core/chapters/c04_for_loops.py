@@ -648,7 +648,7 @@ b   b
 Sweet! You're really getting the hang of this!
 
 If you want you can do one more optional bonus challenge below.
-If not, you can just continue to the [next page](/course/?page=BasicTerminology) now.
+If not, you can just continue to the [next page](#BasicTerminology) now.
 You can come back and do this later if you want.
 
 Try writing a program that outputs the given `name` in a diagonal line, e.g:
