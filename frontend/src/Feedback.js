@@ -98,7 +98,7 @@ ${JSON.stringify(state)}
 </p>
 </details>`
             axios.post(
-              'https://api.github.com/repos/alexmojaki/alexmojaki/issues',
+              'https://api.github.com/repos/alexmojaki/futurecoder/issues',
               {title: title.value, body, labels: ['user', 'bug']},
               {
                 headers: {
