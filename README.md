@@ -134,33 +134,9 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 
 ## Running locally
 
-1. Fork the repository, and clone your fork.
-2. If you want to run the system using Docker, which may be easier and will more closely resemble the production environment:
-    1. Ensure you have docker and docker-compose installed.
-    2. Create an empty file called `.env` in the repo root.
-    3. Run `docker-compose up`.
-    4. Skip the following two steps, everything should be running now.
-3. In the `backend` folder:
-    1. Ensure the `python` command points to Python 3.9.
-
-    2. If you are on Linux/OSX, run `./setup.sh`.
-
-        If you are on Windows: (in a Powershell window with "Run as Administrator")
-
-        1. Run `Set-ExecutionPolicy -ExecutionPolicy Bypass` to enable running scripts in Powershell.
-        2. Run `.\setup.ps1`.
-
-    	This will:
-
-		- Install `poetry` if needed.
-		- Create a virtualenv and install Python dependencies.
-		- Create a sqlite database, run migrations, and create a user.
-
-    3. Activate the virtualenv with `poetry shell`.
-
-    4. Run the backend development server with `python manage.py runserver`.
-
-4. In the `frontend` folder:
+1. Install Python 3.9 and [poetry](https://python-poetry.org/docs/#installation).
+2. Run `PYTHONPATH=. poetry run python core/generate_static_files.py` 
+3. In the `frontend` folder:
     1. Ensure you have version 14.15.4 (lts/fermium) of `node` and version 7.5.2 of `npm`.
 
        If you are on Windows: (in a Powershell window with "Run as Administrator")
@@ -170,8 +146,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
     2. Run `npm ci` to download dependencies.
 
     3. Run `npm start` to start the frontend development server.
-5. Go to http://localhost:3000/accounts/login/ and login with the email "admin@example.com" and the password "admin".
-6. You should be redirected to http://localhost:3000/toc/ and see the Table of Contents.
+4. Go to http://localhost:3000/course/
 
 To learn more about the system, see the [contributing guide](how_to_contribute.md).
 

@@ -2,13 +2,11 @@
 
 This page explains how to help build the futurecoder platform by writing code or course material.
 
-**If you'd like to donate money to keep servers running, please do so at [open collective](https://opencollective.com/futurecoder).**
+**If you'd like to donate money, please do so at [open collective](https://opencollective.com/futurecoder).**
 
 For starters, try using the platform to see what it's like. You can go straight to the [site](https://futurecoder.io/) and quickly sign up for an account. See the [Controls](README.md#controls) section for instructions on enabling developer mode, this will allow you to skip or replay steps in a page to allow exploring more freely and quickly.
 
 Please [open an issue](https://github.com/alexmojaki/futurecoder/issues/new) about anything that's confusing, could be done better, or doesn't work. All suggestions and feedback are welcome. Tell me what interests you!
-
-If the site isn't working, or you want to make and test changes, try [running the server locally](README.md#running-locally).
 
 The easiest way to contribute concretely is to write learning material for the course and participate in related discussions. This doesn't require any expertise beyond knowing how Python works. See [Helping with course content](#helping-with-course-content) for more information.
 
@@ -18,9 +16,7 @@ Consider adding your thoughts and ideas to [issues labeled 'discussion'](https:/
 
 ## Testing
 
-Run `pytest` in the backend folder with the poetry virtualenv active. 
-
-If you get a weird syntax error, check that you're in the backend folder.
+Run `pytest tests` with the poetry virtualenv active. 
 
 ### `test_steps`
 
@@ -30,20 +26,14 @@ This test runs through the course, submitting the solution/program for each step
 
 If you make some changes to the course, the tests will likely fail the comparison to `test_transcript.json`. Run the test again with the environment variable `FIX_TESTS=1` to update the file. Then check that the git diff looks sensible.
 
-## Reloading Python code in `backend/core`
-
-Most of the interesting Python code is in `backend/core`. This includes running the user's code, checking if it passes the current step, and providing helpful debuggers, tracebacks, and linting. By default, this actually runs in the browser with [pyodide](https://pyodide.org/). If you make any significant changes to code in `backend/core`, there are two ways to see the effects of the changes:
-
-- Before running the frontend server with `npm start`, set the environment variable `REACT_APP_RUN_CODE_ON_SERVER=1`. This will run the user's code in the Django server instead of in the browser, and the server will automatically reload when code changes are detected.
-- Or if you want to test your changes in the context of pyodide: run `./package.sh` within the `backend` folder. This creates a fresh `backend/main/static/package.zip` file which contains all the code in `backend/core` along with all required dependencies. Refresh the page in the browser so that it downloads this code again and restarts pyodide.
-
-If you only make changes to the course content under `chapters`, then the above is not necessary to see changes in the text, as this is always loaded from the server. But if you add a step or change actual code such as how the step is checked, you will need to reload as above.
-
+<!--
+TODO update
 ## System overview
 
 The course UI is written in React. It communicates with the web server using the `rpc` function, e.g. `rpc("run_code", {entry}, onSuccess)`. This eventually reaches a method in the `API` class, e.g. `def run_code(self, entry):`.
 
 After the code finishes running, it checks the `Page` and `Step` that the user is currently on, and calls the `Step.check` method. In most cases this is a `VerbatimStep` - the user is supposed to enter exactly the code in the text, using the AST to check for equality. Next most common is an `ExerciseStep` where a function has to pass tests and produce the same output as a given solution. The result of `Step.check` determines if the user succeeded and advances to the next step. It may also return a message to show the user, e.g. if they made a common mistake.
+-->
 
 ## Helping with course content
 
@@ -63,13 +53,13 @@ If you have some partial ideas you'd like to talk about but don't feel ready to 
 
 ### Chapters
 
-To the user, a chapter is a group of pages in the table of contents. In the code, a chapter is a single Python file under `backend/main/chapters`. To add a new chapter, just add a new file and follow the naming pattern. The title of the chapter for the table of contents will be derived automatically from the filename.
+To the user, a chapter is a group of pages in the table of contents. In the code, a chapter is a single Python file under `core/chapters`. To add a new chapter, just add a new file and follow the naming pattern. The title of the chapter for the table of contents will be derived automatically from the filename.
 
 ### Pages
 
 To the user, a page is a group of steps that can be viewed all at once. You can jump to any page in the table of contents, or use the Previous/Next buttons to go back and forth.
 
-In code, a page is a class in a chapter file inheriting from `main.text.Page`. Pages have the following:
+In code, a page is a class in a chapter file inheriting from `core.text.Page`. Pages have the following:
 
 - A `slug`, which by default is just the class name. This is used in various places in the system to identify the page, e.g. it's stored in the database to identify which page a user last visited. If you blindly rename a page class you will break existing data. If you must do so, set the `slug` class attribute to the original class name.
 - A `title`, which is what the user sees. By default this is derived from the class name. You can override it by setting the `title` class attribute, which can include markdown.
@@ -80,7 +70,7 @@ In code, a page is a class in a chapter file inheriting from `main.text.Page`. P
 
 Steps are the building blocks of the course, and this is where things get interesting. A step is some text containing information and instructions or an exercise for the user plus logic to check that they have completed the step correctly. Users must complete steps (by running code) to advance through the course.
 
-In code, a step is a class inheriting from `main.text.Step` declared inside a `Page` class. It has:
+In code, a step is a class inheriting from `core.text.Step` declared inside a `Page` class. It has:
 
 - `text`. This is a string containing markdown displayed to the user. Typically this is declared just in the docstring of the class, but you can set the `text` class attribute directly if needed, e.g. if you want to use an f-string instead of a plain string literal.
     - A code block is indicated by indentation. If the code is valid Python syntax, it will be syntax highlighted.
@@ -113,7 +103,7 @@ In code, a step is a class inheriting from `main.text.Step` declared inside a `P
 
 #### Generating steps automatically
 
-The fastest way to get started implementing steps is to open `backend/main/generate_steps.py`, replace `input_text` a markdown draft, and run the script. This will generate a series of `VerbatimStep`s (see below) where each indented code block becomes the program for one step. This won't usually be exactly what you need, but it gets a lot of the boring boilerplate out of the way.
+The fastest way to get started implementing steps is to open `core/generate_steps.py`, replace `input_text` a markdown draft, and run the script. This will generate a series of `VerbatimStep`s (see below) where each indented code block becomes the program for one step. This won't usually be exactly what you need, but it gets a lot of the boring boilerplate out of the way.
 
 #### The `check` method
 
@@ -124,7 +114,7 @@ The `check` method almost always returns a boolean: `True` if the user entered t
 In most cases you want to inherit from `VerbatimStep` or `ExerciseStep`, which implement `check` for you but have additional requirements. If you want to implement `check` yourself, here are the attributes you can use from `self`:
 
 - `input`: the code the user entered as a string.
-- `tree`: the AST parsed from `input`. This is what you should use most often, especially with the helper functions `main.text.search_ast`, `astcheck.is_ast_like`, and `ast.walk`. The best place to learn about the Python AST is https://greentreesnakes.readthedocs.io/.
+- `tree`: the AST parsed from `input`. This is what you should use most often, especially with the helper functions `core.text.search_ast`, `astcheck.is_ast_like`, and `ast.walk`. The best place to learn about the Python AST is https://greentreesnakes.readthedocs.io/.
 - `result`: the output of the user's program. This is a string containing both stdout and stderr. It's therefore a good way to check if a particular exception was raised.
 - `code_source`: a string equal to either `"shell"`, `"editor"`, `"snoop"`, `"pythontutor"`, or `"birdseye"` indicating how the user ran the code. This is useful when you want to force the user to run code a certain way, e.g. to see a debugger in action or encourage exploration in the shell.
 - `console.locals` is a dict of the variables created by the program.
