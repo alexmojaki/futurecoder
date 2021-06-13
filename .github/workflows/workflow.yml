@@ -17,6 +17,8 @@ jobs:
       uses: nanasess/setup-chromedriver@master
     - name: Build
       id: build
+      env:
+        REACT_APP_FEEDBACK_GITHUB_TOKEN: ${{ secrets.REACT_APP_FEEDBACK_GITHUB_TOKEN }}
       run: ./full_build.sh
     - name: Test
       run: ./ci_test.sh

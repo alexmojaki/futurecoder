@@ -102,7 +102,7 @@ ${JSON.stringify(state)}
               {title: title.value, body, labels: ['user', 'bug']},
               {
                 headers: {
-                  Authorization: 'token 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',
+                  Authorization: 'token ' + process.env.REACT_APP_FEEDBACK_GITHUB_TOKEN,
                   Accept : 'application/vnd.github.v3+json'
                 }
               }
