@@ -1,3 +1,24 @@
+"""
+Run this file to generate files under frontend/src:
+
+- chapters.json
+- python_core.tar
+- book/pages.json.load_by_url
+
+When developing, you generally want this to run any time you make a change to the code.
+You probably want a file watcher utility to do this for you automatically.
+For example, you could use watchdog (https://github.com/gorakhargosh/watchdog):
+
+    pip install 'watchdog[watchmedo]'
+    PYTHONPATH=. watchmedo shell-command core \
+        --recursive \
+        --ignore-directories \
+        --ignore-pattern '*~' \
+        --drop \
+        --command "python core/generate_static_files.py"
+"""
+
+
 import os
 import sys
 import tarfile
@@ -71,6 +92,7 @@ def tarfile_filter(tar_info):
 
 
 def main():
+    print("Generating files...")
     this_dir = Path(__file__).parent
     frontend_src = this_dir / "../frontend/src"
 
@@ -100,6 +122,8 @@ def main():
         for filename in ("__init__.py", "_mapping.py", "python.py"):
             arcname = str("pygments/lexers/" + filename)
             tar.add(Path(site_packages) / arcname, arcname=arcname)
+
+    print("Done.")
 
 
 if __name__ == "__main__":
