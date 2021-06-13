@@ -75,3 +75,12 @@
     ))
   }
 }())
+
+function submitEmail() {
+  const email = document.getElementById("email-input").value;
+  fetch("https://futurecoder-io-default-rtdb.firebaseio.com/email_list.json", {
+    method: "POST",
+    body: JSON.stringify({email, timestamp: new Date().toISOString()}),
+  });
+  document.getElementById("email-success").style.display = "block";
+}
