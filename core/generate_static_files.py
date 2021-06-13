@@ -1,27 +1,13 @@
+import os
 import sys
-
-# This is imported by cheap_repr
 import tarfile
 from pathlib import Path
 
-sys.modules["django"] = None  # noqa
+from littleutils import strip_required_prefix, json_to_file
 
-# These are imported in a local environment but not in docker
-# _virtualenv is imported by a .pth file
-sys.modules["_virtualenv"] = None  # noqa
-# packaging is conditionally imported by markdown.__meta__
-sys.modules["packaging"] = None  # noqa
-
-# Keep other imports after here to make sure that everything can be imported fine
-# after blocking the above
-
-import os
-
-from littleutils import strip_required_prefix, json_to_file, string_to_file
-
-from core.workers.worker import run_code
-from core.utils import site_packages
 from core.text import pages, get_pages, chapters
+from core.utils import site_packages
+from core.workers.worker import run_code
 
 
 def run_steps():
@@ -87,10 +73,21 @@ def tarfile_filter(tar_info):
 def main():
     this_dir = Path(__file__).parent
     frontend_src = this_dir / "../frontend/src"
+
     json_to_file(get_pages(), frontend_src / "book/pages.json.load_by_url")
     json_to_file(chapters, frontend_src / "chapters.json")
+
     roots = get_roots()
-    string_to_file("\n".join(roots), this_dir / "core_imports.txt")  # TODO
+    core_imports = "\n".join(roots)
+    core_imports_path = this_dir / "core_imports.txt"
+    if os.environ.get("FIX_CORE_IMPORTS"):
+        core_imports_path.write_text(core_imports)
+    elif core_imports_path.read_text() != core_imports:
+        raise ValueError(
+            f"core_imports.txt is out of date, run with FIX_CORE_IMPORTS=1.\n"
+            f"{core_imports}\n!=\n{core_imports_path.read_text()}"
+        )
+
     with tarfile.open(frontend_src / "python_core.tar", "w") as tar:
         tar.add(this_dir, arcname=this_dir.stem, recursive=True, filter=tarfile_filter)
         for root in roots:

@@ -1,3 +1,4 @@
+_virtualenv.py
 astcheck.py
 asttokens
 birdseye
@@ -7,6 +8,7 @@ executing
 friendly
 littleutils
 markdown
+packaging
 pkg_resources
 pure_eval
 pyflakes
