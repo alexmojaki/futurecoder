@@ -19,6 +19,7 @@ jobs:
       id: build
       env:
         REACT_APP_FEEDBACK_GITHUB_TOKEN: ${{ secrets.REACT_APP_FEEDBACK_GITHUB_TOKEN }}
+        REACT_APP_SENTRY_DSN: https://37b1f01452b54bf4a0fe88656070998f@o871617.ingest.sentry.io/5824691
       run: ./full_build.sh
     - name: Test
       run: ./ci_test.sh
