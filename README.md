@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="backend/main/static/logo/bordered2.png" width="300px" height="300px" alt="logo">
+  <img src="homepage/static/logo/bordered2.png" width="300px" height="300px" alt="logo">
 </p>
 
 <h1 align="center"><code>futurecoder</code></h1>
