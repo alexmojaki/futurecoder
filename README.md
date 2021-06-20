@@ -135,8 +135,9 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 ## Running locally
 
 1. Install Python 3.8 and [poetry](https://python-poetry.org/docs/#installation).
-2. Run `PYTHONPATH=. poetry run python core/generate_static_files.py` 
-3. In the `frontend` folder:
+2. Run `poetry install` to install Python dependencies.
+3. Run `PYTHONPATH=. poetry run python core/generate_static_files.py` 
+4. In the `frontend` folder:
     1. Ensure you have version 14.15.4 (lts/fermium) of `node` and version 7.5.2 of `npm`.
 
        If you are on Windows: (in a Powershell window with "Run as Administrator")
@@ -146,7 +147,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
     2. Run `npm ci` to download dependencies.
 
     3. Run `npm start` to start the frontend development server.
-4. Go to http://localhost:3000/course/
+5. Go to http://localhost:3000/course/
 
 To learn more about the system, see the [contributing guide](how_to_contribute.md).
 
