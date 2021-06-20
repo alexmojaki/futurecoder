@@ -1,0 +1,578 @@
+from __future__ import annotations
+
+import ast
+import inspect
+import re
+from abc import ABC, abstractmethod
+from copy import deepcopy
+from functools import cached_property, lru_cache
+from importlib import import_module
+from io import StringIO
+from pathlib import Path
+from random import shuffle
+from textwrap import dedent, indent
+from tokenize import Untokenizer, generate_tokens
+from types import FunctionType
+from typing import Type, Union, List, get_type_hints
+
+import pygments
+from astcheck import is_ast_like
+from littleutils import setattrs, only, select_attrs
+
+from core.exercises import (
+    check_exercise,
+    check_result,
+    generate_for_type,
+    inputs_string,
+    assert_equal,
+)
+from core.linting import lint
+from core.utils import highlighted_markdown, lexer, html_formatter, shuffled_well, no_weird_whitespace, snake, \
+    unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
+
+
+def clean_program(program, cls):
+    func = program
+    if isinstance(program, FunctionType):
+        source = dedent(inspect.getsource(program))
+        lines = source.splitlines()
+        if lines[-1].strip().startswith("return "):
+            func = NoMethodWrapper(program(None))
+            assert lines[0] == "def solution(self):"
+            assert lines[-1] == f"    return {func.__name__}"
+            source = dedent("\n".join(lines[1:-1]))
+            program = clean_solution_function(func, source)
+        else:
+            tree = ast.parse(source)
+            func_node = tree.body[0]
+            assert isinstance(func_node, ast.FunctionDef)
+            lines = lines[func_node.body[0].lineno - 1 :]
+            if hasattr(cls, "test_values"):
+                inputs = list(cls.test_values())[0][0]
+            else:
+                inputs = {}
+            inputs = inputs_string(inputs)
+            program = inputs + '\n' + dedent('\n'.join(lines))
+        compile(program, "<program>", "exec")  # check validity
+
+        if not any(isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))):
+            func = returns_stdout(func)
+
+    no_weird_whitespace(program)
+    return program.strip(), func
+
+
+def basic_signature(func):
+    joined = ", ".join(inspect.signature(func).parameters)
+    return f'({joined})'
+
+
+def clean_solution_function(func, source):
+    return re.sub(
+        rf"def {func.__name__}\(.+?\):",
+        rf"def {func.__name__}{basic_signature(func)}:",
+        source,
+    )
+
+
+def clean_step_class(cls):
+    assert cls.__name__ != "step_name_here"
+    assert not cls.cleaned
+
+    text = cls.text or cls.__doc__
+    program = cls.program
+    hints = cls.hints
+
+    solution = cls.__dict__.get("solution", "")
+    assert bool(solution) ^ bool(program)
+    assert text
+    no_weird_whitespace(text)
+
+    if solution:
+        assert cls.tests
+        program, cls.solution = clean_program(solution, cls)
+    else:
+        program, _ = clean_program(program, cls)
+    assert program
+
+    if isinstance(hints, str):
+        hints = hints.strip().splitlines()
+
+    if "__program_" in text:
+        text = text.replace("__program__", program)
+        indented = indent(program, '    ').replace("\\", "\\\\")
+        text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
+    else:
+        assert not cls.program_in_text, "Either include __program__ or __program_indented__ in the text, " \
+                                        "or set program_in_text = False in the class."
+
+    assert "__program_" not in text
+
+    text = dedent(text).strip()
+
+    messages = []
+    for name, inner_cls in inspect.getmembers(cls):
+        if not (isinstance(inner_cls, type) and issubclass(inner_cls, Step)):
+            continue
+        assert issubclass(inner_cls, MessageStep)
+
+        inner_cls.tests = inner_cls.tests or cls.tests
+        clean_step_class(inner_cls)
+
+        # noinspection PyAbstractClass
+        class inner_cls(inner_cls, cls):
+            __name__ = inner_cls.__name__
+            __qualname__ = inner_cls.__qualname__
+            __module__ = inner_cls.__module__
+
+        messages.append(inner_cls)
+
+        if inner_cls.after_success and issubclass(inner_cls, ExerciseStep):
+            check_exercise(
+                bind_self(inner_cls.solution),
+                bind_self(cls.solution),
+                cls.test_exercise,
+                cls.generate_inputs,
+            )
+
+    setattrs(cls,
+             cleaned=True,
+             text=text,
+             program=program,
+             messages=messages,
+             hints=hints)
+
+    if hints:
+        cls.get_solution = get_solution(cls)
+
+    if cls.predicted_output_choices:
+        cls.predicted_output_choices.append("Error")
+        cls.predicted_output_choices = [
+            s.rstrip()
+            for s in cls.predicted_output_choices
+        ]
+        if not cls.correct_output:
+            cls.correct_output = get_stdout(cls.program).rstrip()
+            assert cls.correct_output in cls.predicted_output_choices, repr(cls.correct_output)
+            assert cls.correct_output != "Error"
+        assert cls.correct_output
+
+    if isinstance(cls.disallowed, Disallowed):
+        cls.disallowed = [cls.disallowed]
+
+
+@returns_stdout
+def get_stdout(program):
+    if "\n" not in program:
+        program = f"print(repr({program}))"
+    code = compile(program, "", "exec")
+    exec(code, {"assert_equal": assert_equal})
+
+
+def get_solution(step):
+    if issubclass(step, ExerciseStep):
+        if step.solution.__name__ == "solution":
+            program, _ = clean_program(step.solution, None)  # noqa
+        else:
+            program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
+    else:
+        program = step.program
+
+    untokenizer = Untokenizer()
+    tokens = generate_tokens(StringIO(program).readline)
+    untokenizer.untokenize(tokens)
+    tokens = untokenizer.tokens
+
+    masked_indices = []
+    mask = [False] * len(tokens)
+    for i, token in enumerate(tokens):
+        if not token.isspace():
+            masked_indices.append(i)
+            mask[i] = True
+    shuffle(masked_indices)
+
+    if step.parsons_solution:
+        lines = shuffled_well([
+            dict(
+                id=str(i),
+                content=line,
+            )
+            for i, line in enumerate(
+                pygments.highlight(program, lexer, html_formatter)
+                    .splitlines()
+            )
+            if line.strip()
+        ])
+    else:
+        lines = None
+
+    return dict(
+        tokens=tokens,
+        maskedIndices=masked_indices,
+        mask=mask,
+        lines=lines,
+    )
+
+
+pages = {}
+page_slugs_list = []
+
+
+class PageMeta(type):
+    final_text = None
+    step_names = []
+
+    def __init__(cls, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if cls.__name__ == "Page":
+            return
+        pages[cls.slug] = cls
+        page_slugs_list.append(cls.slug)
+        cls.step_names = []
+        for key, value in cls.__dict__.items():
+            if getattr(value, "is_step", False):
+                cls.step_names.append(key)
+
+        assert isinstance(cls.final_text, str)
+        no_weird_whitespace(cls.final_text)
+        cls.step_names.append("final_text")
+
+    def get_step(cls, step_name):
+        step = getattr(cls, step_name)
+        if step_name != "final_text" and not step.cleaned:
+            clean_step_class(step)
+        return step
+
+    def step_texts(cls):
+        result = [step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
+        result = [highlighted_markdown(text) for text in result]
+        assert "__copyable__" not in str(result)
+        return result
+
+    @property
+    def slug(cls):
+        return cls.__dict__.get("slug", cls.__name__)
+
+    @property
+    def title(cls):
+        return unwrapped_markdown(cls.__dict__.get(
+            "title",
+            snake(cls.slug)
+                .replace("_", " ")
+                .title()
+        ))
+
+    @property
+    def index(self):
+        return page_slugs_list.index(self.slug)
+
+    @property
+    def next_page(self):
+        return pages[page_slugs_list[self.index + 1]]
+
+    @property
+    def previous_page(self):
+        return pages[page_slugs_list[self.index - 1]]
+
+    @property
+    def steps(self):
+        return [self.get_step(step_name) for step_name in self.step_names]
+
+    @property
+    def step_dicts(self):
+        return [
+            dict(
+                index=index,
+                text=text,
+                name=name,
+                hints=[highlighted_markdown(hint) for hint in getattr(step, "hints", [])],
+                solution=getattr(step, "get_solution", None),
+            )
+            for index, (name, text, step) in
+            enumerate(zip(self.step_names, self.step_texts(), self.steps))
+        ]
+
+
+class Page(metaclass=PageMeta):
+    @classmethod
+    def check_step(cls, code_entry, output, console):
+        step_cls: Type[Step] = cls.get_step(code_entry['step_name'])
+        step = step_cls(code_entry['input'], output, code_entry['source'], console)
+        try:
+            return step.check_with_messages()
+        except SyntaxError:
+            return False
+
+
+class Disallowed:
+    def __init__(self, template, *, label="", message="", max_count=0, predicate=lambda n: True, function_only=False):
+        assert bool(label) ^ bool(message)
+        if not message:
+            if max_count > 0:
+                label = f"more than {max_count} {label}"
+            message = "Well done, you have found a solution! However, for this exercise and your learning, " \
+                      f"you're not allowed to use {label}."
+        message = dedent(message).strip()
+        self.template = template
+        self.message = message
+        self.max_count = max_count
+        self.predicate = predicate
+        self.function_only = function_only
+
+
+class Step(ABC):
+    text = ""
+    program = ""
+    program_in_text = False
+    hints = ()
+    is_step = True
+    messages = ()
+    tests = {}
+    expected_code_source = None
+    disallowed: List[Disallowed] = []
+    parsons_solution = False
+    get_solution = None
+    predicted_output_choices = None
+    correct_output = None
+    cleaned = False
+
+    def __init__(self, *args):
+        self.args = args
+        self.input, self.result, self.code_source, self.console = args
+
+    def clean_check(self) -> Union[bool, dict]:
+        result = self.check()
+        if not isinstance(result, dict):
+            result = bool(result)
+        return result
+
+    def check_with_messages(self):
+        result = self.clean_check()
+        for message_cls in self.messages:
+            if (result is True) == message_cls.after_success and (message_cls.check_message(self) is True):
+                return message_cls.message()
+
+        if result is True:
+            for d in self.disallowed:
+                if search_ast(
+                    self.function_tree if d.function_only else self.tree,
+                    d.template,
+                    d.predicate
+                ) > d.max_count:
+                    return dict(message=d.message)
+
+            if self.expected_code_source not in (None, self.code_source):
+                return dict(message="The code is correct, but you didn't run it as instructed.")
+
+            return True
+
+        if self.code_source != "shell":
+            if not isinstance(result, dict):
+                result = {}
+
+            result.setdefault("messages", []).extend(lint(self.tree))
+
+        return result
+
+    @abstractmethod
+    def check(self) -> Union[bool, dict]:
+        raise NotImplementedError
+
+    @cached_property
+    def tree(self):
+        return ast.parse(self.input)
+
+    @property
+    def stmt(self):
+        return self.tree.body[0]
+
+    def input_matches(self, pattern, remove_spaces=True):
+        inp = self.input.rstrip()
+        if remove_spaces:
+            inp = re.sub(r'\s', '', inp)
+        return re.match(pattern + '$', inp)
+
+    @cached_property
+    def function_tree(self):
+        # We define this here so MessageSteps implicitly inheriting from ExerciseStep don't complain it doesn't exist
+        # noinspection PyUnresolvedReferences
+        function_name = self.solution.__name__
+
+        if function_name == "solution":
+            raise ValueError("This exercise doesn't require defining a function")
+
+        return only(
+            node
+            for node in ast.walk(self.tree)
+            if isinstance(node, ast.FunctionDef)
+            if node.name == function_name
+        )
+
+
+class ExerciseStep(Step):
+    def check(self):
+        if self.code_source == "shell":
+            return False
+
+        function_name = self.solution.__name__
+
+        if function_name == "solution":
+            return check_exercise(
+                self.input,
+                self.solution,
+                self.test_exercise,
+                self.generate_inputs,
+                functionise=True,
+            )
+        else:
+            if function_name not in self.console.locals:
+                return dict(message=f"You must define a function `{function_name}`")
+
+            func = self.console.locals[function_name]
+            if not inspect.isfunction(func):
+                return dict(message=f"`{function_name}` is not a function.")
+
+            actual_signature = basic_signature(func)
+            needed_signature = basic_signature(self.solution)
+            if actual_signature != needed_signature:
+                return dict(
+                    message=f"The signature should be:\n\n"
+                            f"    def {function_name}{needed_signature}:\n\n"
+                            f"not:\n\n"
+                            f"    def {function_name}{actual_signature}:"
+                )
+
+            return check_exercise(
+                func,
+                self.solution,
+                self.test_exercise,
+                self.generate_inputs,
+            )
+
+    @abstractmethod
+    def solution(self, *args, **kwargs):
+        raise NotImplementedError
+
+    @classmethod
+    def arg_names(cls):
+        return list(inspect.signature(bind_self(cls.solution)).parameters)
+
+    @classmethod
+    def test_values(cls):
+        tests = cls.tests
+        if isinstance(tests, dict):
+            tests = tests.items()
+        for inputs, result in tests:
+            if not isinstance(inputs, dict):
+                if not isinstance(inputs, tuple):
+                    inputs = (inputs,)
+                arg_names = cls.arg_names()
+                assert len(arg_names) == len(inputs)
+                inputs = dict(zip(arg_names, inputs))
+            inputs = deepcopy(inputs)
+            yield inputs, result
+
+    @classmethod
+    def test_exercise(cls, func):
+        for inputs, result in cls.test_values():
+            check_result(func, inputs, result)
+
+    @classmethod
+    def generate_inputs(cls):
+        return {
+            name: generate_for_type(typ)
+            for name, typ in get_type_hints(cls.solution).items()
+        }
+
+
+class VerbatimStep(Step):
+    program_in_text = True
+
+    def check(self):
+        if self.truncated_trees_match(
+                self.tree,
+                ast.parse(self.program),
+        ):
+            return True
+
+        if self.truncated_trees_match(
+                ast.parse(self.input.lower()),
+                ast.parse(self.program.lower()),
+        ):
+            return dict(
+                message="Python is case sensitive! That means that small and capital letters "
+                        "matter and changing them changes the meaning of the program. The strings "
+                        "`'hello'` and `'Hello'` are different, as are the variable names "
+                        "`word` and `Word`."
+            )
+
+    def truncated_trees_match(self, input_tree, program_tree):
+        input_tree = ast.Module(
+            body=input_tree.body[:len(program_tree.body)],
+            type_ignores=[],
+        )
+        return is_ast_like(input_tree, program_tree)
+
+
+class MessageStep(Step, ABC):
+    after_success = False
+
+    @classmethod
+    def message(cls):
+        return dict(message=cls.text)
+
+    @classmethod
+    def check_message(cls, step):
+        return cls(*step.args).clean_check()
+
+
+def search_ast(node, template, predicate=lambda n: True):
+    """
+    Returns the number of descendants of `node` that match `template`
+    (either a type or tuple that is passed to `isinstance`,
+    or a partial AST that is passed to `is_ast_like`)
+    and satisfy the optional predicate.
+    """
+    return sum(
+        (
+            isinstance(child, template)
+            if isinstance(template, (type, tuple)) else
+            is_ast_like(child, template)
+        )
+        and predicate(child)
+        and child != node
+        for child in ast.walk(node)
+    )
+
+
+def load_chapters():
+    chapters_dir = Path(__file__).parent / "chapters"
+    path: Path
+    for path in sorted(chapters_dir.glob("c*.py")):
+        module_name = path.stem
+        full_module_name = "core.chapters." + module_name
+        import_module(full_module_name)
+        title = module_name[4:].replace("_", " ").title()
+        chapter_pages = [
+            select_attrs(page, "title slug")
+            for page in pages.values()
+            if page.__module__ == full_module_name
+        ]
+        yield dict(title=title, pages=chapter_pages)
+
+
+chapters = list(load_chapters())
+
+
+@lru_cache
+def get_pages():
+    return dict(
+        pages={
+            slug: dict(
+                **select_attrs(page, "slug title index step_names"),
+                steps=page.step_dicts,
+            )
+            for slug, page in pages.items()
+        },
+        pageSlugsList=page_slugs_list,
+    )

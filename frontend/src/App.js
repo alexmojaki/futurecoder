@@ -13,6 +13,7 @@ import {
   currentStep,
   movePage,
   moveStep,
+  updateDatabase,
   setDeveloperMode,
 } from "./book/store";
 import Popup from "reactjs-popup";
@@ -37,6 +38,9 @@ import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import {runCode, terminalRef} from "./RunCode";
+import firebase from "firebase/app";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import {TableOfContents} from "./TableOfContents";
 
 
 class AppComponent extends React.Component {
@@ -48,9 +52,13 @@ class AppComponent extends React.Component {
       pages,
       requestingSolution,
       user,
-      rpcError,
+      error,
       prediction,
+      route,
     } = this.props;
+    if (route === "toc") {
+      return <TableOfContents/>
+    }
     const page = currentPage();
     const step = currentStep();
     const step_index = step.index;
@@ -66,6 +74,63 @@ class AppComponent extends React.Component {
 
     const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <span className="nav-item custom-popup">
+          <MenuPopup user={user}/>
+        </span>
+        <span className="nav-item navbar-text">
+          {
+            user.email ?
+              <><FontAwesomeIcon icon={faUser}/> {user.email}</>
+              :
+              <Popup
+                trigger={
+                  <button className="btn btn-primary">
+                    <FontAwesomeIcon icon={faUser}/> Login / Sign up
+                  </button>
+                }
+                modal
+                closeOnDocumentClick
+              >
+                <StyledFirebaseAuth
+                  uiConfig={{
+                    signInOptions: [
+                      {
+                        provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                        requireDisplayName: false,
+                      },
+                      // TODO not working because of cross origin isolation
+                      // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                      // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                    ],
+                    autoUpgradeAnonymousUsers: true,
+                    callbacks: {
+                      // Avoid redirects after sign-in.
+                      signInSuccessWithAuthResult: () => false,
+
+                      // Ignore merge conflicts when upgrading anonymous users and continue signing in
+                      // The store will merge the user data
+                      signInFailure: (error) => {
+                        if (error.code === 'firebaseui/anonymous-upgrade-merge-conflict') {
+
+                          // Note the upgrade in the old anonymous account
+                          updateDatabase({upgradedFromAnonymous: true});
+
+                          firebase.auth().signInWithCredential(error.credential);
+                        }
+                      }
+                    }
+                  }}
+                  firebaseAuth={firebase.auth()}
+                />
+              </Popup>
+          }
+        </span>
+        <a className="nav-item nav-link" href="#toc">
+          <FontAwesomeIcon icon={faListOl}/> Table of Contents
+        </a>
+      </nav>
       <div className="book-text markdown-body"
            onCopy={checkCopy}>
         <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
@@ -229,11 +294,7 @@ class AppComponent extends React.Component {
         solution={step.solution}
       />
 
-      <MenuPopup
-        user={user}
-      />
-
-      <ErrorModal error={rpcError}/>
+      <ErrorModal error={error}/>
     </div>
   }
 }
@@ -253,19 +314,30 @@ const StepButtons = () =>
 
 
 const MenuPopup = ({user}) =>
-  <div className="custom-popup">
     <Popup
       trigger={
-        <button className="btn menu-icon">
+        <button className="btn btn-sm btn-outline-secondary">
           <FontAwesomeIcon icon={faBars} size="lg"/>
         </button>}
     >
-      <div className="menu-popup">
-        <p><FontAwesomeIcon icon={faUser}/> {user.email}</p>
-        <p><a href="/accounts/logout/"> <FontAwesomeIcon icon={faSignOutAlt}/> Sign out</a></p>
+      {close => <div className="menu-popup">
+        <p><button
+          className="btn btn-danger"
+          onClick={() => {
+            close();
+            bookSetState("user.uid", null)
+            firebase.auth().signOut();
+          }}
+        >
+          <FontAwesomeIcon icon={faSignOutAlt}/> Sign out
+        </button></p>
         <p>
           <Popup
-            trigger={<a href="#"><FontAwesomeIcon icon={faCog}/> Settings </a>}
+            trigger={
+              <button className="btn btn-primary">
+                <FontAwesomeIcon icon={faCog}/> Settings
+              </button>
+              }
             modal
             closeOnDocumentClick
           >
@@ -274,7 +346,11 @@ const MenuPopup = ({user}) =>
         </p>
         <p>
           <Popup
-            trigger={<a href="#"><FontAwesomeIcon icon={faBug}/> Feedback </a>}
+            trigger={
+              <button className="btn btn-success">
+                <FontAwesomeIcon icon={faBug}/> Feedback
+              </button>
+            }
             modal
             closeOnDocumentClick
             contentStyle={feedbackContentStyle}
@@ -282,10 +358,8 @@ const MenuPopup = ({user}) =>
             {close => <FeedbackModal close={close}/>}
           </Popup>
         </p>
-        <p><a href="/toc/"> <FontAwesomeIcon icon={faListOl}/> Table of Contents</a></p>
-      </div>
+      </div>}
     </Popup>
-  </div>
 
 
 const SettingsModal = ({user}) => (
@@ -339,7 +413,6 @@ const checkCopy = () => {
 export const App = connect(
   state => ({
     ...state.book,
-    rpcError: state.rpc.error,
   }),
 )(AppComponent);
 

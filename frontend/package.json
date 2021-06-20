@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "/course/",
   "private": true,
   "engines": {
     "node": ">= 14.15.4",
@@ -15,6 +16,7 @@
     "ansi_up": "^5.0.0",
     "axios": "^0.21.1",
     "comlink": "^4.3.0",
+    "firebase": "^8.6.3",
     "http-proxy-middleware": "^1.0.6",
     "localforage": "^1.9.0",
     "lodash": "^4.17.21",
@@ -24,6 +26,7 @@
     "react-console-emulator": "^3.0.5",
     "react-dom": "^17.0.2",
     "react-dom-confetti": "^0.2.0",
+    "react-firebaseui": "^5.0.2",
     "react-redux": "^7.2.2",
     "react-scripts": "^4.0.3",
     "react-scroll": "^1.8.2",

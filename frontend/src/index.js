@@ -4,10 +4,6 @@ import {App} from './App';
 import {Provider} from "react-redux";
 import {store} from "./store";
 
-if (window.location.pathname === "/") {
-  window.location = "/home";
-}
-
 ReactDOM.render(
   typeof SharedArrayBuffer == "undefined" ?
     <div className="container">

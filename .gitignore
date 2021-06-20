@@ -131,10 +131,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-backend/static/
-backend/main/tests/error_screenshot.png
-backend/main/static/package.zip
-backend/main/tests/test_frontend_assets
+tests/test_frontend_assets
 
 # temporary local files
 tmp/
@@ -142,3 +139,9 @@ videos/media/
 
 # vscode's settings
 .vscode/
+
+homepage/static/css/*.css
+homepage/static/css/**/*.css
+*.css.map
+
+.firebase

@@ -1,10 +1,24 @@
 import {ipush, iremove, iset, redact} from "../frontendlib";
-import {rpc} from "../rpc";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
 import {terminalRef} from "../RunCode";
+import firebase from "firebase/app";
+import "firebase/auth";
+import pagesUrl from "./pages.json.load_by_url"
+import axios from "axios";
+
+firebase.initializeApp({
+  apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
+  authDomain: "futurecoder-io.firebaseapp.com",
+  projectId: "futurecoder-io",
+  storageBucket: "futurecoder-io.appspot.com",
+  messagingSenderId: "361930705093",
+  appId: "1:361930705093:web:dda41fee927c949daf88ac"
+});
 
 const initialState = {
+  error: null,
+  route: "course",
   pages: {
     loading_placeholder: {
       title: "Loading...",
@@ -23,6 +37,7 @@ const initialState = {
   },
   pageSlugsList: ["loading_placeholder"],
   user: {
+    uid: null,
     email: "",
     developerMode: false,
     pagesProgress: {
@@ -53,7 +68,7 @@ const {reducer, makeAction, setState, localState, statePush} = redact('book', in
 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState, statePush as bookStatePush};
 
-const isLoaded = (state) => state.user.email.length && state.pageSlugsList.length > 1
+const isLoaded = (state) => state.user.uid && state.pageSlugsList.length > 1
 
 export const currentPage = (state = localState) => {
   if (!isLoaded(state)) {
@@ -78,10 +93,22 @@ export const setPage = (page_slug) => {
   afterSetPage(page_slug);
 };
 
-const afterSetPage = (page_slug, state = localState) => {
+const afterSetPage = (pageSlug, state = localState) => {
   scroller.scrollTo(`step-text-${currentStep(state).index}`, {delay: 0, duration: 0});
-  rpc("set_page", {page_slug});
+  updateDatabase({pageSlug});
+  window.location.hash = pageSlug;
 }
+
+export const navigate = () => {
+  const hash = window.location.hash.substring(1);
+  if (hash === "toc") {
+    setState("route", "toc");
+  } else if (_.includes(localState.pageSlugsList, hash)) {
+    setState("route", "main");
+    setPage(hash);
+  }
+};
+window.addEventListener("hashchange", navigate);
 
 export const setPageIndex = (pageIndex) => {
   setPage(localState.pageSlugsList[pageIndex]);
@@ -97,19 +124,8 @@ export const moveStep = (delta) => {
   if (!step) {
     return;
   }
-  setState(["user", "pagesProgress", localState.user.pageSlug, "step_name"], step.name);
-  rpc("set_pages_progress",
-    {
-      pages_progress: localState.user.pagesProgress,
-    },
-  );
+  setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
 };
-
-const redirectToLogin = () => {
-  window.location = '/accounts/login/?next='
-    + window.location.pathname
-    + window.location.search;
-}
 
 const loadPages = makeAction(
   "LOAD_PAGES",
@@ -122,61 +138,110 @@ const loadPages = makeAction(
   },
 )
 
+axios.get(pagesUrl).then((response) => loadPages(response.data));
+
 const loadUser = makeAction(
   "LOAD_USER",
   (state, {value: user}) => {
-    if (!user.email) {
-      redirectToLogin();
-    }
-    return loadUserAndPages({
-      ...state,
-      user,
-    });
+    return loadUserAndPages({...state, user}, state.user);
   },
 )
 
-const loadUserAndPages = (state) => {
+firebase.auth().onAuthStateChanged(async (user) => {
+  if (user) {
+    // TODO ideally we'd set a listener on the user instead of just getting it once
+    //   to sync changes made on multiple devices
+    const userData = await databaseRequest("GET");
+    loadUser({
+      uid: user.uid,
+      email: user.email,
+      ...userData,
+    });
+  } else {
+    firebase.auth().signInAnonymously();
+  }
+});
+
+const databaseRequest = async (method, data={}) => {
+  const currentUser = firebase.auth().currentUser;
+  if (!currentUser) {
+    return;
+  }
+  const auth = await currentUser.getIdToken();
+  const response = await axios.request({
+    url: `https://futurecoder-io-default-rtdb.firebaseio.com/users/${currentUser.uid}.json`,
+    params: {auth},
+    method,
+    data,
+  })
+  return response.data;
+}
+
+export const updateDatabase = (updates) => {
+  return databaseRequest("PATCH", updates);
+}
+
+const setUserStateAndDatabase = (path, value) => {
+  if (typeof path === "string") {
+    path = [path];
+  }
+  setState(["user", ...path], value);
+  updateDatabase({[path.join("/")]: value});
+}
+
+const loadUserAndPages = (state, previousUser = {}) => {
   if (!isLoaded(state)) {
     return state;
   }
   let {
-    user: {pagesProgress, pageSlug},
+    user: {pagesProgress, pageSlug, uid, developerMode},
     pages,
     pageSlugsList
   } = state;
-  pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlug;
-  pagesProgress = _.fromPairs(
-    pageSlugsList.map(slug =>
-      [
-        slug,
-        pagesProgress[slug] || {step_name: pages[slug].steps[0].name}
-      ]
-    )
-  )
-  state = {...state, user: {...state.user, pagesProgress, pageSlug}};
-  afterSetPage(pageSlug, state);
+
+  developerMode = developerMode || previousUser.developerMode || false;
+  const updates = {developerMode};
+
+  const hash = window.location.hash.substring(1);
+
+  if (!pageSlug) {
+    if (previousUser.uid && previousUser.pageSlug !== "loading_placeholder") {
+      pageSlug = previousUser.pageSlug;
+    } else if (_.includes(pageSlugsList, hash)) {
+      pageSlug = hash;
+    } else {
+      // Check URL parameters for legacy URLs, otherwise default to first page
+      pageSlug = new URLSearchParams(window.location.search).get('page') || pageSlugsList[0];
+    }
+  }
+
+  pagesProgress = pagesProgress || {};
+  pageSlugsList.forEach(slug => {
+    const steps = pages[slug].steps;
+    let step_name = pagesProgress[slug]?.step_name || steps[0].name;
+    if (previousUser.uid) {
+      const progress = previousUser.pagesProgress[slug];
+      if (progress) {
+        const findStepIndex = (name) => _.find(steps, {name})?.index || 0
+        const previousIndex = findStepIndex(progress.step_name);
+        const currentIndex =  findStepIndex(step_name);
+        if (previousIndex > currentIndex) {
+          step_name = progress.step_name;
+          updates[`pagesProgress/${slug}/step_name`] = step_name;
+        }
+      }
+    }
+    pagesProgress[slug] = {step_name};
+  });
+
+  updateDatabase(updates);
+
+  state = {...state, user: {...state.user, pagesProgress, pageSlug, developerMode}};
+  if (hash !== "toc") {
+    afterSetPage(pageSlug, state);
+  }
   return state;
 }
-
-const on403 = (response) => {
-  if (response.status === 403) {
-    redirectToLogin();
-  }
-};
-
-rpc(
-  "get_user",
-  {},
-  loadUser,
-  on403,
-);
-
-rpc(
-  "get_pages",
-  {},
-  loadPages,
-  on403,
-);
 
 export const showHint = makeAction(
   'SHOW_HINT',
@@ -267,8 +332,7 @@ export const revealSolutionToken = makeAction(
 )
 
 export const setDeveloperMode = (value) => {
-  rpc("set_developer_mode", {value});
-  setState("user.developerMode", value);
+  setUserStateAndDatabase("developerMode", value);
 }
 
 export const reorderSolutionLines = makeAction(
