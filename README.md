@@ -134,7 +134,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 
 ## Running locally
 
-1. Install Python 3.9 and [poetry](https://python-poetry.org/docs/#installation).
+1. Install Python 3.8 and [poetry](https://python-poetry.org/docs/#installation).
 2. Run `PYTHONPATH=. poetry run python core/generate_static_files.py` 
 3. In the `frontend` folder:
     1. Ensure you have version 14.15.4 (lts/fermium) of `node` and version 7.5.2 of `npm`.
