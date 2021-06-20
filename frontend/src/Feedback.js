@@ -136,7 +136,7 @@ ${JSON.stringify(state)}
             </a>
           </li>
           <li>
-            <a href="https://join.slack.com/t/futurecoder/shared_invite/zt-l0zxo9d3-mimh7iTSaDB07hnePMNGFw">
+            <a href="https://join.slack.com/t/futurecoder/shared_invite/zt-rrm3h61j-6TC~NAprq7ZD9JsYwPLRag">
               Chat on Slack
             </a>
           </li>

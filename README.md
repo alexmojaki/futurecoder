@@ -12,7 +12,7 @@ You can try it out here: https://futurecoder.io/
 
 Currently this is a work in progress. While most of the groundwork is in place, there is a lot to do to make this a complete course ready for users. **All kinds of help are needed and greatly appreciated - please consider [contributing](how_to_contribute.md) or [donating](https://opencollective.com/futurecoder)!**
 
-Alternatively, [come have a chat on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-l0zxo9d3-mimh7iTSaDB07hnePMNGFw).
+Alternatively, [come have a chat on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-rrm3h61j-6TC~NAprq7ZD9JsYwPLRag).
 
 ## Features
 
