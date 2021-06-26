@@ -9,16 +9,15 @@ import {
 } from "./frontendlib";
 import {bookReducer, navigate} from "./book/store";
 
-import createSentryMiddleware from "redux-sentry-middleware";
-import * as Sentry from "@sentry/browser";
+import * as Sentry from "@sentry/react";
 
 const sentryDsn = process.env.REACT_APP_SENTRY_DSN;
 if (sentryDsn) {
   console.log('Configuring sentry');
-  Sentry.init({dsn: sentryDsn});
+  Sentry.init({dsn: sentryDsn, normalizeDepth: 5});
 }
 
-const {delegateReducer, stateSet} = redact("root");
+const {delegateReducer} = redact("root");
 
 TextContainer.connect = connect;
 
@@ -31,13 +30,16 @@ const reducer = delegateReducer(
 // noinspection JSUnresolvedVariable
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+const sentryReduxEnhancer = Sentry.createReduxEnhancer({});
+
 export const store = createStore(
   reducer,
-  composeEnhancers(applyMiddleware(
-    thunk,
-    logger,
-    createSentryMiddleware(Sentry),
-  ))
+  composeEnhancers(
+    applyMiddleware(
+      thunk,
+      logger,
+    ),
+    sentryReduxEnhancer)
 );
 
 dispatcher.store = store;

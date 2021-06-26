@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@sentry/browser": "^5.30.0",
+    "@sentry/react": "^6.7.2",
     "ansi_up": "^5.0.0",
     "axios": "^0.21.1",
     "comlink": "^4.3.0",
@@ -34,7 +34,6 @@
     "reactjs-popup": "^1.5.0",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
-    "redux-sentry-middleware": "^0.1.8",
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.8"
   },
