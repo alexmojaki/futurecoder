@@ -10,12 +10,12 @@ You probably want a file watcher utility to do this for you automatically.
 For example, you could use watchdog (https://github.com/gorakhargosh/watchdog):
 
     pip install 'watchdog[watchmedo]'
-    PYTHONPATH=. watchmedo shell-command core \
+    watchmedo shell-command core \
         --recursive \
         --ignore-directories \
         --ignore-pattern '*~' \
         --drop \
-        --command "python core/generate_static_files.py"
+        --command "python -m core.generate_static_files"
 """
 
 
