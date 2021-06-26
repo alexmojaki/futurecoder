@@ -29,6 +29,9 @@ def stub_module(name):
 stub_module("urllib3")
 stub_module("certifi")
 stub_module("friendly.theme.friendly_rich")
+stub_module("rich")
+
+sys.modules["rich"].__file__ = pygments.__file__  # to satisfy friendly
 
 import friendly.source_cache  # noqa
 import friendly.core  # noqa

@@ -300,7 +300,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, <code>sunshine</code> is an unknown name.\nI have no additional information for you.</p>",
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, no object with the name <code>sunshine</code> exists.\nI have no additional information for you.</p>",
                             "tail": ""
                         }
                     ]
@@ -2485,7 +2485,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, <code>char</code> is an unknown name.\nThe Python builtin <code>chr</code> has a similar name.</p>",
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, no object with the name <code>char</code> exists.\nThe Python builtin <code>chr</code> has a similar name.</p>",
                             "tail": ""
                         }
                     ]
@@ -3517,7 +3517,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>words</code>,\na <code>list</code> of length <code>4</code>.\nThe largest valid index of <code>words</code> is <code>3</code>.</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>words</code>,\na <code>list</code> of length <code>4</code>.\nThe valid index values of <code>words</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
                             "tail": ""
                         }
                     ]
@@ -5437,7 +5437,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you are try to get an item from a list,\na tuple, or a similar object (sequence), by using an index which\ndoes not exists; typically, this is because the index you give\nis greater than the length of the sequence.</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>",
                             "tail": ""
                         }
                     ]
@@ -15018,7 +15018,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n                                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI am guessing that you wrote `or` by mistake.\nRemoving it and writing `is_friend = name == \"Alice\"` seems to fix the error.\n\n"
                 },
                 {
                     "color": "red",
