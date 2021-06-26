@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "email_list": {
+      "$email_entry": {
+        ".write": "!data.exists()"
+      }
+    }
+  }
+}
