@@ -5,17 +5,9 @@ set -eux
 rm -rf dist || true
 mkdir -p dist/course/
 
-export PYTHONPATH=.
 source $HOME/.poetry/env
 
-BIRDSEYE=`poetry run python -c '
-import birdseye
-from pathlib import Path
-print(Path(birdseye.__file__).parent)
-'`
-cp -r $BIRDSEYE/static/ dist/course/birdseye/
-
-poetry run python core/generate_static_files.py
+poetry run python -m core.generate_static_files
 
 cd frontend
 CI=false npm run build

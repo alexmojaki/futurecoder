@@ -19,10 +19,12 @@ For example, you could use watchdog (https://github.com/gorakhargosh/watchdog):
 """
 
 import os
+import shutil
 import sys
 import tarfile
 from pathlib import Path
 
+import birdseye
 from littleutils import strip_required_prefix, json_to_file
 
 from core.text import pages, get_pages, chapters
@@ -96,10 +98,15 @@ def tarfile_filter(tar_info):
 def main():
     print("Generating files...")
     this_dir = Path(__file__).parent
-    frontend_src = this_dir / "../frontend/src"
+    frontend = this_dir / "../frontend"
+    frontend_src = frontend / "src"
 
     json_to_file(get_pages(), frontend_src / "book/pages.json.load_by_url")
     json_to_file(chapters, frontend_src / "chapters.json")
+
+    birdseye_dest = frontend / "public/birdseye"
+    shutil.rmtree(birdseye_dest, ignore_errors=True)
+    shutil.copytree(Path(birdseye.__file__).parent / "static", birdseye_dest, dirs_exist_ok=True)
 
     roots = get_roots()
     core_imports = "\n".join(roots)
