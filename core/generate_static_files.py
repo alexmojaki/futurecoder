@@ -18,18 +18,19 @@ For example, you could use watchdog (https://github.com/gorakhargosh/watchdog):
         --command "python -m core.generate_static_files"
 """
 
-
 import os
 import sys
 import tarfile
 from pathlib import Path
 
-import sentry_sdk  # noqa imported lazily
 from littleutils import strip_required_prefix, json_to_file
 
 from core.text import pages, get_pages, chapters
 from core.utils import site_packages
 from core.workers.worker import run_code
+
+str("import sentry_sdk after core.utils for stubs")
+import sentry_sdk  # noqa imported lazily
 
 
 def run_steps():
