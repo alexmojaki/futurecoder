@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 from time import sleep
 
@@ -9,6 +10,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.expected_conditions import text_to_be_present_in_element, invisibility_of_element
 from selenium.webdriver.support.wait import WebDriverWait
+
+del sys.modules["urllib3"]  # so that stub_module doesn't complain
 
 assets_dir = Path(__file__).parent / "test_frontend_assets"
 assets_dir.mkdir(exist_ok=True)
