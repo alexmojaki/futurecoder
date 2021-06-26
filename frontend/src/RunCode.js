@@ -6,6 +6,7 @@ import _ from "lodash";
 import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
+import * as Sentry from "@sentry/react";
 
 const Runner = Comlink.wrap(new Worker());
 
@@ -61,8 +62,11 @@ export const runCode = ({code, source}) => {
   const entry = {input: code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
 
   const onSuccess = (data) => {
-    if (data.error) {
-      bookSetState("error", {...data.error});
+    const {error} = data;
+    if (error) {
+      Sentry.captureEvent(error.sentry_event);
+      delete error.sentry_event;
+      bookSetState("error", {...error});
       return;
     }
     awaitingInput = data.awaiting_input;

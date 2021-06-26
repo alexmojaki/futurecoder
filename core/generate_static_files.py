@@ -24,6 +24,7 @@ import sys
 import tarfile
 from pathlib import Path
 
+import sentry_sdk  # noqa imported lazily
 from littleutils import strip_required_prefix, json_to_file
 
 from core.text import pages, get_pages, chapters

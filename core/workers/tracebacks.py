@@ -5,9 +5,9 @@ import sys
 import traceback
 from collections import Counter
 from typing import Union, Iterable, List
+
 import pygments
 from cheap_repr import cheap_repr
-from friendly.core import FriendlyTraceback
 from pygments.formatters.html import HtmlFormatter
 from stack_data import (
     style_with_executing_node,
@@ -18,7 +18,7 @@ from stack_data import (
     RepeatedFrames,
 )
 
-from core.utils import is_valid_syntax, lexer, get_suggestions_for_exception
+from core.utils import is_valid_syntax, lexer, get_suggestions_for_exception, friendly
 
 pygments_style = style_with_executing_node("monokai", "bg:#005080")
 pygments_formatter = HtmlFormatter(
@@ -31,7 +31,7 @@ log = logging.getLogger(__name__)
 
 def friendly_message(e, double_newline: bool):
     try:
-        fr = FriendlyTraceback(type(e), e, e.__traceback__)
+        fr = friendly.core.FriendlyTraceback(type(e), e, e.__traceback__)
         fr.assign_generic()
         fr.assign_cause()
 

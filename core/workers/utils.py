@@ -1,3 +1,4 @@
+import os
 import sys
 import traceback
 
@@ -72,6 +73,25 @@ def make_result(
     return result
 
 
+def get_exception_event():
+    import sentry_sdk
+
+    os.environ["SENTRY_RELEASE"] = "stubbed"  # TODO get git commit?
+
+    event = {}
+
+    def transport(e):
+        nonlocal event
+        event = e
+
+    client = sentry_sdk.Client(transport=transport)
+    hub = sentry_sdk.Hub(client)
+    hub.capture_exception()
+
+    assert event
+    return event
+
+
 def internal_error_result():
     from snoop.utils import truncate
 
@@ -86,5 +106,6 @@ def internal_error_result():
         error=dict(
             details=tb,
             title=f"Error running Python code: {truncate(exception_string, 100, '...')}",
+            sentry_event=get_exception_event(),
         ),
     )

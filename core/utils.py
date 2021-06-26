@@ -9,6 +9,7 @@ from functools import lru_cache, partial
 from io import StringIO
 from itertools import combinations
 from random import shuffle
+from types import ModuleType
 
 import pygments
 from littleutils import strip_required_prefix, strip_required_suffix, withattrs
@@ -21,6 +22,16 @@ sys.path.append(site_packages + "didyoumean")
 
 from didyoumean.didyoumean_internal import get_suggestions_for_exception  # noqa
 
+def stub_module(name):
+    assert name not in sys.modules
+    sys.modules[name] = ModuleType(name)
+
+stub_module("urllib3")
+stub_module("certifi")
+stub_module("friendly.theme.friendly_rich")
+
+import friendly.source_cache  # noqa
+import friendly.core  # noqa
 
 lexer = get_lexer_by_name("python3")
 monokai = get_style_by_name("monokai")
