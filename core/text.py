@@ -13,7 +13,7 @@ from random import shuffle
 from textwrap import dedent, indent
 from tokenize import Untokenizer, generate_tokens
 from types import FunctionType
-from typing import Type, Union, List, get_type_hints
+from typing import Union, List, get_type_hints
 
 import pygments
 from astcheck import is_ast_like
@@ -294,15 +294,7 @@ class PageMeta(type):
 
 
 class Page(metaclass=PageMeta):
-    @classmethod
-    def check_step(cls, code_entry, output, console):
-        step_cls: Type[Step] = cls.get_step(code_entry['step_name'])
-        step = step_cls(code_entry['input'], output, code_entry['source'], console)
-        try:
-            return step.check_with_messages()
-        except SyntaxError:
-            return False
-
+    pass
 
 class Disallowed:
     def __init__(self, template, *, label="", message="", max_count=0, predicate=lambda n: True, function_only=False):

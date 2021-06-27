@@ -60,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "raw-loader": "^4.0.2",
     "worker-loader": "^3.0.8"
   }
 }

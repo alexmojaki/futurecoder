@@ -4,6 +4,7 @@
 
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar"
+import loadPythonString from "!!raw-loader!./load.py"
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -12,6 +13,8 @@ async function getPackageBuffer() {
   }
   return await response.arrayBuffer()
 }
+
+let runCodeCatchErrors;
 
 async function loadPyodideOnly() {
   console.time("importScripts pyodide")
@@ -22,25 +25,7 @@ async function loadPyodideOnly() {
   await loadPyodide({indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/'});
   console.timeEnd("loadPyodide")
 
-  pyodide.runPython(`
-import io
-import tarfile
-import sys
-
-package_path = "/tmp/package/"
-tarfile.TarFile.chown = lambda *_, **__: None
-
-def load_package_buffer(buffer):
-    global run_code_catch_errors
-    fd = io.BytesIO(buffer.to_py())
-    with tarfile.TarFile(fileobj=fd) as zf:
-        zf.extractall(package_path)
-    
-    sys.path.append(package_path)
-    
-    from core.workers.worker import run_code_catch_errors  # noqa trigger imports
-    print("Python core ready!")
-`)
+  pyodide.runPython(loadPythonString)
 }
 
 
@@ -53,6 +38,9 @@ async function loadPyodideAndPackages() {
   console.time("load_package_buffer(buffer)")
   pyodide.globals.get("load_package_buffer")(buffer);
   console.timeEnd("load_package_buffer(buffer)")
+
+  runCodeCatchErrors = pyodide.globals.get("run_code_catch_internal_errors");
+  console.assert(runCodeCatchErrors);
 }
 
 let pyodideReadyPromise = loadPyodideAndPackages();
@@ -96,7 +84,6 @@ class Runner {
     }
 
     pyodide.setInterruptBuffer(interruptBuffer);
-    const runCodeCatchErrors = pyodide.globals.get("run_code_catch_errors");
     const resultCallbackToObject = (result) => this.resultCallback(toObject(result.toJs()));
     runCodeCatchErrors(entry, inputCallback, resultCallbackToObject)
   }

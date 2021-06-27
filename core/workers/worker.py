@@ -3,6 +3,7 @@ import linecache
 import logging
 import sys
 from code import InteractiveConsole
+from contextlib import redirect_stdout, redirect_stderr
 
 import stack_data
 
@@ -76,7 +77,7 @@ def runner(code_source, code):
     return birdseye_objects
 
 
-def run_code_catch_errors(entry, input_callback, result_callback):
+def run_code_catch_internal_errors(entry, input_callback, result_callback):
     try:
         run_code(entry, input_callback, result_callback)
     except Exception:
@@ -87,6 +88,54 @@ def run_code(entry, input_callback, result_callback):
     if hasattr(entry, "to_py"):
         entry = entry.to_py()
 
+    patch_stdin(input_callback, result_callback)
+
+    with redirect_stdout(output_buffer.stdout), redirect_stderr(output_buffer.stderr):
+        birdseye_objects = runner(entry["source"], entry["input"])
+
+    output = output_buffer.string()
+
+    page = pages[entry["page_slug"]]
+    step_cls = page.get_step(entry["step_name"])
+    step_instance = step_cls(entry["input"], output, entry["source"], console)
+
+    step_result = False
+    if entry["step_name"] != "final_text":
+        try:
+            step_result = step_instance.check_with_messages()
+        except SyntaxError:
+            pass
+
+    messages = []
+    passed = step_result
+    if isinstance(step_result, dict):
+        passed = step_result.get("passed", False)
+        messages = step_result.get("messages", [])
+        if "message" in step_result:
+            messages.append(step_result["message"])
+
+    messages = [highlighted_markdown(message) for message in messages]
+
+    if passed:
+        prediction = dict(
+            choices=getattr(step_cls, "predicted_output_choices", None),
+            answer=getattr(step_cls, "correct_output", None),
+        )
+    else:
+        prediction = None
+
+    result_callback(
+        make_result(
+            passed=passed,
+            messages=messages,
+            output=output,
+            birdseye_objects=birdseye_objects,
+            prediction=prediction,
+        )
+    )
+
+
+def patch_stdin(input_callback, result_callback):
     def readline(*_):
         result_callback(make_result(awaiting_input=True))
         result = input_callback()
@@ -102,48 +151,3 @@ def run_code(entry, input_callback, result_callback):
         return sys.stdin.readline().rstrip("\n")
 
     builtins.input = patched_input
-
-    orig_stdout = sys.stdout
-    orig_stderr = sys.stderr
-    try:
-        sys.stdout = output_buffer.stdout
-        sys.stderr = output_buffer.stderr
-        birdseye_objects = runner(entry['source'], entry['input'])
-    finally:
-        sys.stdout = orig_stdout
-        sys.stderr = orig_stderr
-
-    messages = []
-    passed = False
-    output = output_buffer.string()
-
-    page = pages[entry['page_slug']]
-    step = page.get_step(entry["step_name"])
-
-    if entry['step_name'] != "final_text":
-        step_result = page.check_step(entry, output, console)
-        if isinstance(step_result, dict):
-            passed = step_result.get("passed", False)
-            messages = step_result.get("messages", [])
-            if "message" in step_result:
-                messages.append(step_result["message"])
-        else:
-            passed = step_result
-
-    messages = [highlighted_markdown(message) for message in messages]
-
-    if passed:
-        prediction = dict(
-            choices=getattr(step, "predicted_output_choices", None),
-            answer=getattr(step, "correct_output", None),
-        )
-    else:
-        prediction = None
-
-    result_callback(make_result(
-        passed=passed,
-        messages=messages,
-        output=output,
-        birdseye_objects=birdseye_objects,
-        prediction=prediction,
-    ))

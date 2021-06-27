@@ -5,7 +5,7 @@ from multiprocessing import Process, Queue
 from threading import Thread, RLock
 
 from core.workers.utils import internal_error_result
-from core.workers.worker import run_code_catch_errors
+from core.workers.worker import run_code_catch_internal_errors
 
 log = logging.getLogger(__name__)
 
@@ -90,4 +90,4 @@ def run_code_entry(entry):
 def worker_loop(task_queue, input_queue, result_queue):
     while True:
         entry = task_queue.get()
-        run_code_catch_errors(entry, input_queue.get, result_queue.put)
+        run_code_catch_internal_errors(entry, input_queue.get, result_queue.put)
