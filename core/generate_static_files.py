@@ -29,7 +29,7 @@ from littleutils import strip_required_prefix, json_to_file
 
 from core.text import pages, get_pages, chapters
 from core.utils import site_packages
-from core.workers.worker import run_code
+from core.workers.worker import check_entry
 
 str("import sentry_sdk after core.utils for stubs")
 import sentry_sdk  # noqa imported lazily
@@ -55,7 +55,7 @@ def run_steps():
                     step_name=step_name,
                 )
 
-                run_code(entry, input_callback=None, result_callback=lambda _: 0)
+                check_entry(entry, input_callback=None, result_callback=lambda _: 0)
 
 
 def get_roots():

@@ -39,7 +39,7 @@ async function loadPyodideAndPackages() {
   pyodide.globals.get("load_package_buffer")(buffer);
   console.timeEnd("load_package_buffer(buffer)")
 
-  runCodeCatchErrors = pyodide.globals.get("run_code_catch_internal_errors");
+  runCodeCatchErrors = pyodide.globals.get("check_entry_catch_internal_errors");
   console.assert(runCodeCatchErrors);
 }
 

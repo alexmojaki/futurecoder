@@ -26,7 +26,7 @@ def execute(code_obj):
         return TracebackSerializer().format_exception(e)
 
 
-def runner(code_source, code):
+def run_code(code_source, code):
     if code_source == "shell":
         mode = "single"
         code += "\n"  # Allow compiling single-line compound statements
@@ -52,14 +52,15 @@ def runner(code_source, code):
         print_friendly_syntax_error(e)
         return {}
 
-    birdseye_objects = None
+    result = {}
 
     if code_source == "snoop":
         from core.workers.snoop import exec_snoop
         traceback_info = exec_snoop(filename, code, code_obj)
     elif code_source == "birdseye":
         from core.workers.birdseye import exec_birdseye
-        traceback_info, birdseye_objects = exec_birdseye(filename, code)
+
+        traceback_info, result["birdseye_objects"] = exec_birdseye(filename, code)
     else:
         traceback_info = execute(code_obj)
 
@@ -74,52 +75,46 @@ def runner(code_source, code):
         )
         output_buffer.parts.append(traceback_info)
 
-    return birdseye_objects
+    return result
 
 
-def run_code_catch_internal_errors(entry, input_callback, result_callback):
+def check_entry_catch_internal_errors(entry, input_callback, result_callback):
     try:
-        run_code(entry, input_callback, result_callback)
+        check_entry(entry, input_callback, result_callback)
     except Exception:
         result_callback(internal_error_result())
 
 
-def run_code(entry, input_callback, result_callback):
+def check_entry(entry, input_callback, result_callback):
     if hasattr(entry, "to_py"):
         entry = entry.to_py()
 
     patch_stdin(input_callback, result_callback)
 
     with redirect_stdout(output_buffer.stdout), redirect_stderr(output_buffer.stderr):
-        birdseye_objects = runner(entry["source"], entry["input"])
+        run_results = run_code(entry["source"], entry["input"])
 
     output = output_buffer.string()
 
     page = pages[entry["page_slug"]]
     step_cls = page.get_step(entry["step_name"])
-    step_instance = step_cls(entry["input"], output, entry["source"], console)
 
     step_result = False
     if entry["step_name"] != "final_text":
+        step_instance = step_cls(entry["input"], output, entry["source"], console)
         try:
             step_result = step_instance.check_with_messages()
         except SyntaxError:
             pass
 
-    messages = []
-    passed = step_result
-    if isinstance(step_result, dict):
-        passed = step_result.get("passed", False)
-        messages = step_result.get("messages", [])
-        if "message" in step_result:
-            messages.append(step_result["message"])
-
-    messages = [highlighted_markdown(message) for message in messages]
+    step_result = normalise_step_result(step_result)
+    passed = step_result["passed"]
+    messages = [highlighted_markdown(message) for message in step_result["messages"]]
 
     if passed:
         prediction = dict(
-            choices=getattr(step_cls, "predicted_output_choices", None),
-            answer=getattr(step_cls, "correct_output", None),
+            choices=step_cls.predicted_output_choices,
+            answer=step_cls.correct_output,
         )
     else:
         prediction = None
@@ -129,10 +124,24 @@ def run_code(entry, input_callback, result_callback):
             passed=passed,
             messages=messages,
             output=output,
-            birdseye_objects=birdseye_objects,
             prediction=prediction,
+            **run_results,
         )
     )
+
+
+def normalise_step_result(step_result):
+    if not isinstance(step_result, dict):
+        assert isinstance(step_result, bool)
+        step_result = dict(passed=step_result, messages=[])
+
+    step_result.setdefault("passed", False)
+
+    messages = step_result.setdefault("messages", [])
+    if "message" in step_result:
+        messages.append(step_result.pop("message"))
+
+    return step_result
 
 
 def patch_stdin(input_callback, result_callback):
