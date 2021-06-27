@@ -89,7 +89,7 @@ export const runCode = ({code, source}) => {
               })
         )
       ).then(() => {
-        const url = "birdseye/?call_id=" + call_id;
+        const url = "/course/birdseye/?call_id=" + call_id;
         if (bookState.prediction.state === "hidden") {
           window.open(url);
         } else {
