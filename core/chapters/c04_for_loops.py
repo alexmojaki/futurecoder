@@ -488,7 +488,7 @@ Note that there is a space between the name and the pipes (`|`).
         """
 
         hints = [
-            "You did all the hard stuff in the previous exercise. Now it's just some simple string concatenation.",
+            "You did all the hard stuff in the previous exercise. Now it's just some simple adding of strings.",
             "You only need one for loop - the one used to make the line of dashes from the previous exercise.",
             "Don't try and do everything at once. Break the problem up into smaller, easier subproblems.",
             dedent("""\
