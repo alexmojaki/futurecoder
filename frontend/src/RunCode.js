@@ -69,10 +69,10 @@ export const runCode = ({code, source}) => {
       bookSetState("error", {...error});
       return;
     }
-    awaitingInput = data.awaiting_input;
-    if (!shell) {
+    if (!shell && !awaitingInput) {
       terminalRef.current.clearStdout();
     }
+    awaitingInput = data.awaiting_input;
     bookSetState("processing", false);
 
     if (source === "birdseye") {
