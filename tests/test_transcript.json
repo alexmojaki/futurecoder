@@ -16104,5 +16104,88 @@
             ]
         },
         "step": "format_board_with_numbers"
+    },
+    {
+        "page": "Interactive Programs with <code>input()</code>",
+        "program": [
+            "print('Type your name, then press Enter:')",
+            "name = input()",
+            "print(f'Hello {name}!')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "<input: there>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Hello there!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "first_input"
+    },
+    {
+        "get_solution": [
+            "super_secret_number = 7",
+            "print(\"What number am I thinking of?\")",
+            "guess = input()",
+            "if int(guess) == super_secret_number:",
+            "    print(\"Amazing! Are you psychic?\")",
+            "else:",
+            "    print(\"Nope!\")"
+        ],
+        "page": "Interactive Programs with <code>input()</code>",
+        "program": [
+            "super_secret_number = 7",
+            "print(\"What number am I thinking of?\")",
+            "guess = input()",
+            "if int(guess) == super_secret_number:",
+            "    print(\"Amazing! Are you psychic?\")",
+            "else:",
+            "    print(\"Nope!\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "<input: 7>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Amazing! Are you psychic?"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "convert_input_to_int"
     }
 ]

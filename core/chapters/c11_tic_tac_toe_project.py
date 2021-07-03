@@ -1203,3 +1203,99 @@ use f-strings. They often look nicer.
 You've learned about types in Python and how to avoid common errors by converting types.
 Keep going with the rest of the project!
     """
+
+
+class InteractiveProgramsWithInput(Page):
+    title = "Interactive Programs with `input()`"
+
+    class first_input(VerbatimStep):
+        """
+The programs we have written so far are not interactive.
+To make our interactive Tic-tac-toe game, we will need a method of receiving input from the players.
+Python allows us to do that with the built-in `input` function. Run this program:
+
+    __copyable__
+    __program_indented__
+
+When `name = input()` runs, the program actually stops and waits for you to type in the shell and press Enter,
+so you will need to do that for it to complete.
+        """
+
+        stdin_input = "there"
+
+        def program(self):
+            print('Type your name, then press Enter:')
+            name = input()
+            print(f'Hello {name}!')
+
+    class convert_input_to_int(ExerciseStep):
+        """
+Whatever you typed in (not including pressing Enter at the end) is returned from the `input()` function as a string.
+
+It's essential to understand that `input()` ***always returns a string***, no matter what the user typed in.
+It's up to you to convert that string to the type you need.
+Forgetting this detail is a common source of confusing bugs.
+
+For example, this program looks fine at a glance, but if you try it out you'll see that it doesn't actually work:
+
+    __copyable__
+    super_secret_number = 7
+    print("What number am I thinking of?")
+    guess = input()
+    if guess == super_secret_number:
+        print("Amazing! Are you psychic?")
+    else:
+        print("Nope!")
+
+Fix the program so that when the user inputs `7` the program prints `Amazing! Are you psychic?` as expected.
+        """
+
+        hints = """
+`input()` always returns a string.
+A string that looks like a number is still a string, not a number.
+In `super_secret_number = 7`, `7` is a number, not a string.
+That makes `super_secret_number` also a number.
+A string cannot equal a number.
+To check that two values are equal, make sure they're the same type first.
+So to compare a number and a string, first convert the number to a string or convert the string to a number.
+You learned how to convert between strings and numbers in the previous page.
+Use `int()` to convert to an integer (whole number) or `str()` to convert to a string.
+        """
+
+        def solution(self):
+            super_secret_number = 7
+            print("What number am I thinking of?")
+            guess = input()
+            if int(guess) == super_secret_number:
+                print("Amazing! Are you psychic?")
+            else:
+                print("Nope!")
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "stdin_input": str(randint(1, 10))
+            }
+
+        tests = [
+            ({"stdin_input": "7"}, "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?"),
+            ({"stdin_input": "0"}, "What number am I thinking of?\n<input: 0>\nNope!"),
+            ({"stdin_input": "1"}, "What number am I thinking of?\n<input: 1>\nNope!"),
+        ]
+
+    final_text = """
+Perfect!
+
+There's at least three fixes that would work here. You can convert the input to a number:
+
+    if int(guess) == super_secret_number:
+
+or convert the correct answer to a string:
+
+    if guess == str(super_secret_number):
+
+or just make it a string to begin with:
+
+    super_secret_number = '7'
+
+    """

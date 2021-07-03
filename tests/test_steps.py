@@ -6,7 +6,7 @@ from pathlib import Path
 from littleutils import only
 
 from core.text import pages
-from core.utils import highlighted_markdown
+from core.utils import highlighted_markdown, make_test_input_callback
 from core.workers.worker import check_entry
 
 
@@ -37,7 +37,11 @@ def test_steps():
                     nonlocal response
                     response = r
 
-                check_entry(entry, input_callback=None, result_callback=result_callback)
+                check_entry(
+                    entry,
+                    input_callback=make_test_input_callback(step.stdin_input),
+                    result_callback=result_callback,
+                )
                 normalise_response(response, is_message, substep)
 
                 transcript_item = dict(
