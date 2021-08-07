@@ -16187,5 +16187,117 @@
             ]
         },
         "step": "convert_input_to_int"
+    },
+    {
+        "page": "Nested List Assignment: Playing Moves on the Board",
+        "program": [
+            "def play_move(board, player):",
+            "    board[1] = player",
+            "",
+            "def play_game():",
+            "    game_board = [\" \", \" \", \" \"]",
+            "    play_move(game_board, \"X\")",
+            "    print(game_board)",
+            "",
+            "play_game()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[' ', 'X', ' ']",
+                "choices": [
+                    "",
+                    "X",
+                    "' '",
+                    "'X'",
+                    "[' ']",
+                    "['X']",
+                    "[' ', ' ', ' ']",
+                    "['X', ' ', ' ']",
+                    "[' ', 'X', ' ']",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[' ', 'X', ' ']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "modify_list_in_function"
+    },
+    {
+        "page": "Nested List Assignment: Playing Moves on the Board",
+        "program": [
+            "def play_move(board, player):",
+            "    row = board[1]",
+            "    row[0] = player",
+            "",
+            "def play_game():",
+            "    board = [",
+            "        [\" \", \" \", \" \"],",
+            "        [\" \", \" \", \" \"],",
+            "        [\" \", \" \", \" \"],",
+            "    ]",
+            "    play_move(board, \"X\")",
+            "    print(board)",
+            "",
+            "play_game()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[[' ', ' ', ' '], ['X', ' ', ' '], [' ', ' ', ' ']]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "nested_assignment_two_lines"
+    },
+    {
+        "get_solution": [
+            "def play_move(board, player):",
+            "    row = int(input()) - 1",
+            "    col = int(input()) - 1",
+            "    board[row][col] = player"
+        ],
+        "page": "Nested List Assignment: Playing Moves on the Board",
+        "program": [
+            "def play_move(board, player):",
+            "    row = int(input()) - 1",
+            "    col = int(input()) - 1",
+            "    board[row][col] = player"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "nested_assignment_input"
     }
 ]

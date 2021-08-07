@@ -1,10 +1,13 @@
 # flake8: NOQA E501
 import ast
+from copy import deepcopy
 from random import choice, randint
 from string import ascii_uppercase
+from textwrap import dedent
 from typing import List
 
 from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
+from core.utils import returns_stdout
 
 
 def generate_board(board_type):
@@ -1304,3 +1307,269 @@ or just make it a string to begin with:
     super_secret_number = '7'
 
     """
+
+
+class NestedListAssignment(Page):
+    title = "Nested List Assignment: Playing Moves on the Board"
+
+    class modify_list_in_function(VerbatimStep):
+        """
+We've seen how to get input from the user, now let's use that to actually put pieces
+on the board and play the game. For starters, try out this code:
+
+    __copyable__
+    __program_indented__
+        """
+
+        predicted_output_choices = [
+            " ",
+            "X",
+            "' '",
+            "'X'",
+            "[' ']",
+            "['X']",
+            "[' ', ' ', ' ']",
+            "['X', ' ', ' ']",
+            "[' ', 'X', ' ']",
+        ]
+
+        def program(self):
+            def play_move(board, player):
+                board[1] = player
+
+            def play_game():
+                game_board = [" ", " ", " "]
+                play_move(game_board, "X")
+                print(game_board)
+
+            play_game()
+
+    class nested_assignment_two_lines(VerbatimStep):
+        """
+Note how calling `play_move(game_board, 'X')` actually *modifies* `game_board` directly.
+The variable `board` inside the call to `play_move` and
+the variable `game_board` inside the call to `play_game` point to the same list object.
+There's no copying. Python Tutor is good at showing this with arrows.
+
+This also means that in this case there's no need for `play_move` to return anything,
+it can just modify `board` and the caller (`play_game` in this case) will see the effect.
+
+However, our board is two dimensional, represented by a nested list.
+So we need to assign `player` to an element of an inner list, something like this:
+
+    __copyable__
+    __program_indented__
+        """
+
+        def program(self):
+            def play_move(board, player):
+                row = board[1]
+                row[0] = player
+
+            def play_game():
+                board = [
+                    [" ", " ", " "],
+                    [" ", " ", " "],
+                    [" ", " ", " "],
+                ]
+                play_move(board, "X")
+                print(board)
+
+            play_game()
+
+    class nested_assignment_input(ExerciseStep):
+        r"""
+These two lines:
+
+    row = board[1]
+    row[0] = player
+
+can be combined into one:
+
+    board[1][0] = player
+
+The two pieces of code are pretty much exactly equivalent. Python first evaluates
+`board[1]` to *get* the inner list, while the `[0] = ...` sets an element of `board[1]`.
+You can see the value of `board[1]` in Bird's Eye because it's an expression,
+and you could actually replace it with any other expression.
+
+Now you know how to set elements in nested lists, it's time to make this interactive!
+Write your own version of `play_move` that takes input from the user
+to determine where to play, instead of always playing at `board[1][0]`.
+It should call `input()` twice, so the user can give the row and the column
+as two separate numbers. Also, our users are not programmers, so they start counting from 1,
+not 0.
+
+For example, if the user types in these inputs:
+
+    2
+    1
+
+that means they want to play a move in the second row and first column, which is the same
+as our original example.
+
+Here is some starting code:
+
+    __copyable__
+    def format_board(board):
+        first_row = ' '
+        for i in range(len(board)):
+            first_row += str(i + 1)
+        joined_rows = [first_row]
+        for i in range(len(board)):
+            joined_row = str(i + 1) + ''.join(board[i])
+            joined_rows.append(joined_row)
+        return "\n".join(joined_rows)
+
+    def play_game():
+        board = [
+            [' ', ' ', ' '],
+            [' ', ' ', ' '],
+            [' ', ' ', ' '],
+        ]
+        print(format_board(board))
+        print('\nX to play:\n')
+        play_move(board, 'X')
+        print(format_board(board))
+        print('\nO to play:\n')
+        play_move(board, 'O')
+        print(format_board(board))
+
+    def play_move(board, player):
+        ...
+
+    play_game()
+
+This calls `play_move` twice so the user will need to enter two pairs of numbers.
+Here's an example of what a 'game' should look like:
+
+     123
+    1
+    2
+    3
+
+    X to play:
+
+    2
+    1
+     123
+    1
+    2X
+    3
+
+    O to play:
+
+    1
+    3
+     123
+    1  O
+    2X
+    3
+
+You don't need to use the provided code exactly, it's just to give you a feeling of what's happening.
+The important thing is that your `play_move` function modifies the `board` argument correctly.
+It doesn't need to return or print anything, that will not be checked.
+
+You can assume that the user will always enter valid numbers. Later we will learn how to deal
+with invalid inputs, like numbers out of range or inputs that aren't numbers at all.
+        """
+
+        hints = """
+Your function needs to call `input()` twice. Input isn't passed to `play_move` as an argument.
+`input()` always returns a string.
+A string that looks like a number is still a string, not a number.
+List indices have to be numbers, not strings.
+If the board is 3x3, the user might input 1, 2, or 3 for each coordinate.
+What are the valid indices of a list of length 3?
+You need to take the input of 1, 2, or 3 and turn it into 0, 1, or 2.
+You also need to be able to handle bigger boards, like 9x9 or beyond.
+You can't do maths with strings, only numbers.
+How can you convert a string to a number?
+Once you've got two numbers, you need to modify the nested list `board` with them.
+The code for this has been shown to you above.
+You just need to use the numbers from user input instead of the hardcoded 1 and 0.
+You can use nested subscripting in one line, or do it in two steps.
+        """
+
+        no_returns_stdout = True
+
+        def solution(self):
+            def play_move(board, player):
+                row = int(input()) - 1
+                col = int(input()) - 1
+                board[row][col] = player
+
+            return play_move
+
+        @classmethod
+        def wrap_solution(cls, func):
+            @returns_stdout
+            def wrapper(**kwargs):
+                board = kwargs["board"] = deepcopy(kwargs["board"])
+
+                def format_board():
+                    first_row = ' '
+                    for i in range(len(board)):
+                        first_row += str(i + 1)
+                    joined_rows = [first_row]
+                    for i in range(len(board)):
+                        joined_row = str(i + 1) + ''.join(board[i])
+                        joined_rows.append(joined_row)
+                    return "\n".join(joined_rows)
+
+                func(**kwargs)
+                print(format_board())
+            return wrapper
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "stdin_input": [str(randint(1, 3)), str(randint(1, 3))],
+                "player": choice(ascii_uppercase),
+                "board": generate_board(choice(["row", "col", "diag"])),
+            }
+
+        tests = [
+            (
+                {
+                    "stdin_input": ["2", "1"],
+                    "board": [
+                        [" ", " ", " "],
+                        [" ", " ", " "],
+                        [" ", " ", " "],
+                    ],
+                    "player": "X",
+                },
+                dedent("""\
+                <input: 2>
+                <input: 1>
+                 123
+                1   
+                2X  
+                3   
+                """),
+            ),
+            (
+                {
+                    "stdin_input": ["1", "3"],
+                    "board": [
+                        [" ", " ", " "],
+                        ["X", " ", " "],
+                        [" ", " ", " "],
+                    ],
+                    "player": "O",
+                },
+                dedent("""\
+                <input: 1>
+                <input: 3>
+                 123
+                1  O
+                2X  
+                3   
+                """),
+            ),
+        ]
+
+    final_text = """
+Brilliant! You're almost ready to put it all together, keep going!
+"""

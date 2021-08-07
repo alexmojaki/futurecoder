@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import ast
 import inspect
+import itertools
 import re
 import traceback
 from abc import ABC, abstractmethod
@@ -74,7 +75,9 @@ def clean_program(program, cls):
         func = NoMethodWrapper(func)
         func = add_stdin_input_arg(func)
 
-        if not any(isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))):
+        if not any(
+            isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))
+        ) and not getattr(cls, "no_returns_stdout", False):
             func = returns_stdout(func)
 
     no_weird_whitespace(program)
@@ -454,13 +457,14 @@ class ExerciseStep(Step):
 
     @classmethod
     def check_exercise(cls, submission, functionise=False):
-        cls.test_exercise(cls.solution)
+        solution = cls.wrap_solution(cls.solution)
+        cls.test_exercise(solution, cls.test_values())
         inputs = [cls.generate_inputs() for _ in range(10)]
-        expected_generated_results = [cls.solution(**inp) for inp in inputs]
+        expected_generated_results = [solution(**inp) for inp in inputs]
 
         if functionise:
             try:
-                initial_names, func = make_function(submission, cls.solution)
+                initial_names, func = make_function(submission, solution)
             except InvalidInitialCode:
                 # There should be an exception in the usual output
                 return False
@@ -471,7 +475,7 @@ class ExerciseStep(Step):
             initial_names["stdin_input"] = cls.stdin_input
 
             try:
-                expected_result = cls.solution(**initial_names)
+                expected_result = solution(**initial_names)
             except Exception:
                 traceback.print_exc()
                 return dict(
@@ -479,21 +483,29 @@ class ExerciseStep(Step):
                     "try using values like the example."
                 )
             try:
-                check_result(func, initial_names, expected_result)
+                cls.check_result(func, initial_names, expected_result)
             except:
                 # Assume that the user can tell that the output is wrong
                 return False
         else:
+            submission = cls.wrap_solution(submission)
             func = cls._patch_streams(submission)
 
         try:
-            cls.test_exercise(func)
-            for inp, result in zip(inputs, expected_generated_results):
-                check_result(func, inp, result)
+            cls.test_exercise(
+                func,
+                itertools.chain(
+                    cls.test_values(), zip(inputs, expected_generated_results)
+                ),
+            )
         except ExerciseError as e:
             return dict(message=str(e))
 
         return True
+
+    @classmethod
+    def wrap_solution(cls, func):
+        return func
 
     @abstractmethod
     def solution(self, *args, **kwargs):
@@ -519,9 +531,13 @@ class ExerciseStep(Step):
             yield inputs, result
 
     @classmethod
-    def test_exercise(cls, func):
-        for inputs, result in cls.test_values():
-            check_result(func, inputs, result)
+    def test_exercise(cls, func, values):
+        for inputs, result in values:
+            cls.check_result(func, inputs, result)
+
+    @classmethod
+    def check_result(cls, func, inputs, result):
+        check_result(func, inputs, result)
 
     @classmethod
     def generate_inputs(cls):
