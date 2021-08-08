@@ -537,7 +537,7 @@ class ExerciseStep(Step):
 
     @classmethod
     def check_result(cls, func, inputs, result):
-        check_result(func, inputs, result)
+        return check_result(func, inputs, result)
 
     @classmethod
     def generate_inputs(cls):

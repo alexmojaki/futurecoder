@@ -6,6 +6,7 @@ from string import ascii_uppercase
 from textwrap import dedent
 from typing import List
 
+from core.exercises import assert_equal, ExerciseError
 from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
 from core.utils import returns_stdout
 
@@ -1572,4 +1573,225 @@ You can use nested subscripting in one line, or do it in two steps.
 
     final_text = """
 Brilliant! You're almost ready to put it all together, keep going!
+"""
+
+
+class MakingTheBoard(Page):
+    title = "Making the Board"
+
+    class naive_make_board(VerbatimStep):
+        """
+So far the board has been provided for you as a nested list.
+But for the full program, you need to create it yourself.
+Should be easy, right? Here's some code to do that:
+
+    __copyable__
+    __program_indented__
+
+It's close, but there's a subtle problem with it.
+Make sure you understand the code,
+and bonus points if you can spot the bug!
+If not, don't feel bad or waste too much time on it.
+        """
+
+        def program(self):
+            def make_board(size):
+                row = []
+                for _ in range(size):
+                    row.append(' ')
+                board = []
+                for _ in range(size):
+                    board.append(row)
+                return board
+
+            def test():
+                board = make_board(3)
+                assert_equal(board, [
+                    [' ', ' ', ' '],
+                    [' ', ' ', ' '],
+                    [' ', ' ', ' '],
+                ])
+                board[0][0] = 'X'
+                assert_equal(board, [
+                    ['X', ' ', ' '],
+                    [' ', ' ', ' '],
+                    [' ', ' ', ' '],
+                ])
+
+            test()
+
+    class fix_make_board(ExerciseStep):
+        """
+Can you see what happened?
+
+Every row got an `'X'` in the first position!
+It's as if the code actually did this:
+
+    board[0][0] = 'X'
+    board[1][0] = 'X'
+    board[2][0] = 'X'
+
+Try and figure out what's wrong by yourself.
+But again, it's tricky, so don't drive yourself crazy over it.
+
+If you want, here's some hints:
+
+ - Try running the code through some debuggers.
+ - Experiment. Make changes to the code and see what happens.
+ - No, the code didn't do 3 assignments like I suggested above. There was just one list assignment.
+ - There's no hidden loops or anything.
+ - How many lists does `board` contain? 3?
+ - The previous page has a subtle hint at what happened.
+ - There is a page from a previous chapter where this kind of problem is explained directly.
+ - Specifically [this page](#EqualsVsIs).
+ - Try running the code with Python Tutor.
+
+OK, if you're ready, here's the answer.
+
+The list `row` was only created once, and reused several times.
+`board` contains the same list three times. Not copies, just one list in three places.
+It's like it did this:
+
+    board = [row, row, row]
+
+Which means that this code:
+
+    board[0][0] = 'X'
+
+is equivalent to:
+
+    row[0] = 'X'
+
+which affects 'all the lists' in `board` because they're all just the one list `row`.
+In other words, the above line is *also* equivalent to each of these two lines:
+
+    board[1][0] = 'X'
+    board[2][0] = 'X'
+
+because `row` is `board[0]`, `board[1]`, and `board[2]` all at once.
+
+Your job now is to fix `make_board` to not have this problem.
+It should still return a list of length `size` where each
+element is also list of length `size` where each element is the string `' '`.
+The sublists should all be separate list objects, not the same
+list repeated.
+        """
+
+        parsons_solution = True
+
+        hints = """
+The existing code is almost correct.
+There are several ways to solve this.
+Some solutions involve adding something small.
+You can also rearrange the code without adding or removing anything (except spaces).
+The problem is that a single list `row` is used several times.
+So one solution is to make copies of `row` which will all be separate.
+Another solution is to make a new `row` from scratch each time.
+There are a few ways to copy a list in Python with a tiny bit of code.
+Making a new row each time can be done by just rearranging the code.
+"""
+
+        def solution(self):
+            def make_board(size):
+                board = []
+                for _ in range(size):
+                    row = []
+                    for _ in range(size):
+                        row.append(' ')
+                    board.append(row)
+                return board
+
+            return make_board
+
+        tests = {
+            2: [
+                [' ', ' '],
+                [' ', ' ']
+            ],
+            3: [
+                [' ', ' ', ' '],
+                [' ', ' ', ' '],
+                [' ', ' ', ' '],
+            ],
+        }
+
+        @classmethod
+        def generate_inputs(cls):
+            return dict(size=randint(4, 12))
+
+        @classmethod
+        def check_result(cls, func, inputs, expected_result):
+            result = super().check_result(func, inputs, expected_result)
+            if len(result) != len(set(map(id, result))):
+                raise ExerciseError("The sublists in the result are not all separate objects")
+
+    final_text = """
+Well done!
+
+This could be solved by moving the first loop inside the second to make a new `row` each time:
+
+    def make_board(size):
+        board = []
+        for _ in range(size):
+            row = []
+            for _ in range(size):
+                row.append(' ')
+            board.append(row)
+        return board
+
+Another way is to make a copy of `row` each time, e.g. keep the original code but change one line:
+
+    board.append(row.copy())
+
+You can also copy `row` with `row[:]` or `list(row)`. But it's important to know that
+all these methods make a *shallow copy* of the list.
+That means they copy the whole list at the top level, without making copies of each element.
+That's fine in this case where `row` only contains strings which can't be modified
+and don't need copying. But if the elements are mutable objects like lists,
+as is the case with `board`, you may run into the same problem again.
+Here's an example:
+
+    __copyable__
+    def make_board(size):
+        row = []
+        for _ in range(size):
+            row.append(' ')
+        board = []
+        for _ in range(size):
+            board.append(row.copy())
+        return board
+    
+    def make_cube(size):
+        cube = []
+        board = make_board(size)
+        for _ in range(size):
+            cube.append(board.copy())
+        return cube
+    
+    def test():
+        cube = make_cube(2)
+        print(cube)
+        cube[0][0][0] = 'X'
+        print(cube)
+        print(cube[0] is cube[1])
+        print(cube[0][0] is cube[0][1])
+        print(cube[0][0] is cube[1][0])
+    
+    test()
+
+Here each element of `cube` is a separate list, a copy of `board`.
+And within each of those copies, each element is also a separate list, a copy of `row`.
+But the shallow copies of `board` all have the same first element as each other (the first copy of `row`),
+the same second element, and so on.
+Changing `make_board` won't fix anything here, the solution is to either:
+
+- Call `make_board` repeatedly to make a new `board` each time, or
+- Use the `deepcopy` function instead of `board.copy()`.
+  `deepcopy` makes copies at every level of nested objects.
+
+If you're still confused, don't worry.
+This is just preparing you to deal with your code behaving weirdly in the future.
+You're not required to understand this right now and this lesson will still be valuable.
+
+Either way, we're ready to make the full game. You can do it!
 """

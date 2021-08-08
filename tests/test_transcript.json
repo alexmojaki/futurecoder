@@ -16299,5 +16299,95 @@
             ]
         },
         "step": "nested_assignment_input"
+    },
+    {
+        "page": "Making the Board",
+        "program": [
+            "def make_board(size):",
+            "    row = []",
+            "    for _ in range(size):",
+            "        row.append(' ')",
+            "    board = []",
+            "    for _ in range(size):",
+            "        board.append(row)",
+            "    return board",
+            "",
+            "def test():",
+            "    board = make_board(3)",
+            "    assert_equal(board, [",
+            "        [' ', ' ', ' '],",
+            "        [' ', ' ', ' '],",
+            "        [' ', ' ', ' '],",
+            "    ])",
+            "    board[0][0] = 'X'",
+            "    assert_equal(board, [",
+            "        ['X', ' ', ' '],",
+            "        [' ', ' ', ' '],",
+            "        [' ', ' ', ' '],",
+            "    ])",
+            "",
+            "test()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Error! [['X', ' ', ' '], ['X', ' ', ' '], ['X', ' ', ' ']] != [['X', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "naive_make_board"
+    },
+    {
+        "get_solution": [
+            "def make_board(size):",
+            "    board = []",
+            "    for _ in range(size):",
+            "        row = []",
+            "        for _ in range(size):",
+            "            row.append(' ')",
+            "        board.append(row)",
+            "    return board"
+        ],
+        "page": "Making the Board",
+        "program": [
+            "def make_board(size):",
+            "    board = []",
+            "    for _ in range(size):",
+            "        row = []",
+            "        for _ in range(size):",
+            "            row.append(' ')",
+            "        board.append(row)",
+            "    return board"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "fix_make_board"
     }
 ]

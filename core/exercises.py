@@ -85,10 +85,10 @@ def check_result(func, inputs, expected_result):
     except Exception as e:
         result = format_exception_string()
 
-    result = clean_result(result)
+    cleaned_result = clean_result(result)
     expected_result = clean_result(expected_result)
 
-    if result != expected_result:
+    if cleaned_result != expected_result:
         inputs.pop("stdin_input", None)
         if inputs:
             message = f"""\
@@ -102,13 +102,14 @@ your code outputs:"""
 
         message += f"""
 
-{result}
+{cleaned_result}
 
 when it should output:
 
 {expected_result}
 """
         raise ExerciseError(message)
+    return result
 
 
 def generate_string(length=None):
