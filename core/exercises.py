@@ -64,7 +64,7 @@ def match_returns_stdout(func, solution):
 def clean_result(result):
     if not isinstance(result, str):
         result = repr(result)
-    result = result.rstrip()
+    result = '\n'.join(line.rstrip() for line in result.rstrip().splitlines())
     result = result or '<nothing>'
     result = indent(result, '    ')
     return result

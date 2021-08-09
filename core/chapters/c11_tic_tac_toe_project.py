@@ -1,5 +1,6 @@
 # flake8: NOQA E501
 import ast
+import itertools
 from copy import deepcopy
 from random import choice, randint
 from string import ascii_uppercase
@@ -8,7 +9,7 @@ from typing import List
 
 from core.exercises import assert_equal, ExerciseError
 from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
-from core.utils import returns_stdout
+from core.utils import returns_stdout, shuffled
 
 
 def generate_board(board_type):
@@ -83,8 +84,8 @@ Here is a rough outline of the project:
 - three functions `row_winner`, `column_winner`,  `diagonal_winner`  that check the whole board for winning rows, columns, and diagonals
 - a function `winner` that checks the whole board for a winner, combining the above functions
 - a function `format_board` that displays the current state of the game
-- a function `get_coordinate` that takes user input to play a move,
-- finally a `main` function that puts it all together and runs the game interactively.
+- a function `play_move` that takes user input to play a move,
+- finally a `play_game` function that puts it all together and runs the game interactively.
 - Later on we will add further improvements.
 
 Let's get started!
@@ -475,7 +476,7 @@ Click the Copy button, and fill in the blanks for your `winner` function.
         diagonal2 = []
         for i in range(len(board)):
             diagonal1.append(board[i][i])
-            diagonal2.append(board[i][i])
+            diagonal2.append(board[i][-i-1])
         return winning_line(diagonal1) or winning_line(diagonal2)
 
     assert_equal(
@@ -1133,7 +1134,7 @@ Write an improved version of `format_board` that has row and column numbers like
     2 OO
     3 X
 
-It should work for boards of any size. We provide a test case:
+It should work for boards of any single-digit size. Here's a test case:
 
     __copyable__
     def format_board(board):
@@ -1794,4 +1795,448 @@ This is just preparing you to deal with your code behaving weirdly in the future
 You're not required to understand this right now and this lesson will still be valuable.
 
 Either way, we're ready to make the full game. You can do it!
+"""
+
+
+class TheFullTicTacToeGame(Page):
+    title = "The Full Tic-Tac-Toe Game"
+
+    class the_full_game(ExerciseStep):
+        """
+It's time to put it all together! Below is some code to get started.
+
+It includes implementations of the various functions we defined in previous pages for solving parts
+of the problem, using some tricks you haven't learned yet to make them shorter. Don't change them.
+
+Your task is to implement `play_game` correctly. The current implementation shows what
+should happen at the start of the game, but it's obviously incomplete.
+The solution should work for any board size and continue the game until it's finished.
+The last thing that `play_game` should do is either call `print_winner(player)`
+if `winner(board)` is true, or call `print_draw()` if the board is filled up with no winner.
+
+You can assume that the user will only enter valid inputs,
+i.e. numbers from 1 to `board_size` to choose a cell on the board that isn't already taken.
+
+    __copyable__
+    def winning_line(strings):
+        strings = set(strings)
+        return len(strings) == 1 and ' ' not in strings
+
+    def row_winner(board):
+        return any(winning_line(row) for row in board)
+
+    def column_winner(board):
+        return row_winner(zip(*board))
+
+    def main_diagonal_winner(board):
+        return winning_line(row[i] for i, row in enumerate(board))
+
+    def diagonal_winner(board):
+        return main_diagonal_winner(board) or main_diagonal_winner(reversed(board))
+
+    def winner(board):
+        return row_winner(board) or column_winner(board) or diagonal_winner(board)
+
+    def format_board(board):
+        size = len(board)
+        line = f'\n  {"+".join("-" * size)}\n'
+        rows = [f'{i + 1} {"|".join(row)}' for i, row in enumerate(board)]
+        return f'  {" ".join(str(i + 1) for i in range(size))}\n{line.join(rows)}'
+
+    def play_move(board, player):
+        print(f'{player} to play:')
+        row = int(input()) - 1
+        col = int(input()) - 1
+        board[row][col] = player
+        print(format_board(board))
+
+    def make_board(size):
+        return [[' '] * size for _ in range(size)]
+
+    def print_winner(player):
+        print(f'{player} wins!')
+
+    def print_draw():
+        print("It's a draw!")
+
+    def play_game(board_size, player1, player2):
+        board = make_board(board_size)
+        print(format_board(board))
+
+        play_move(board, player1)
+        play_move(board, player2)
+        play_move(board, player1)
+        play_move(board, player2)
+
+    play_game(3, 'X', 'O')
+        """
+
+        parsons_solution = True
+
+        hints = """
+        TODO
+"""
+
+        def solution(self):
+            def winning_line(strings):
+                strings = set(strings)
+                return len(strings) == 1 and ' ' not in strings
+
+            def row_winner(board):
+                return any(winning_line(row) for row in board)
+
+            def column_winner(board):
+                return row_winner(zip(*board))
+
+            def main_diagonal_winner(board):
+                return winning_line(row[i] for i, row in enumerate(board))
+
+            def diagonal_winner(board):
+                return main_diagonal_winner(board) or main_diagonal_winner(reversed(board))
+
+            def winner(board):
+                return row_winner(board) or column_winner(board) or diagonal_winner(board)
+
+            def format_board(board):
+                size = len(board)
+                line = f'\n  {"+".join("-" * size)}\n'
+                rows = [f'{i + 1} {"|".join(row)}' for i, row in enumerate(board)]
+                return f'  {" ".join(str(i + 1) for i in range(size))}\n{line.join(rows)}'
+
+            def play_move(board, player):
+                print(f'{player} to play:')
+                row = int(input()) - 1
+                col = int(input()) - 1
+                board[row][col] = player
+                print(format_board(board))
+
+            def make_board(size):
+                return [[' '] * size for _ in range(size)]
+
+            def print_winner(player):
+                print(f'{player} wins!')
+
+            def print_draw():
+                print("It's a draw!")
+
+            def play_game(board_size, player1, player2):
+                board = make_board(board_size)
+                print(format_board(board))
+
+                player = player1
+                for _ in range(board_size * board_size):
+                    play_move(board, player)
+
+                    if winner(board):
+                        print_winner(player)
+                        return
+
+                    if player == player1:
+                        player = player2
+                    else:
+                        player = player1
+
+                print_draw()
+
+            return play_game
+
+        @classmethod
+        def wrap_solution(cls, func):
+            return returns_stdout(func)
+
+        tests = [
+            (dict(board_size=2, player1="A", player2="B", stdin_input=["1", "1", "1", "2", "2", "1"]),
+             """\
+  1 2
+1  | 
+  -+-
+2  | 
+A to play:
+<input: 1>
+<input: 1>
+  1 2
+1 A| 
+  -+-
+2  | 
+B to play:
+<input: 1>
+<input: 2>
+  1 2
+1 A|B
+  -+-
+2  | 
+A to play:
+<input: 2>
+<input: 1>
+  1 2
+1 A|B
+  -+-
+2 A| 
+A wins!
+"""),
+            (dict(board_size=3, player1="X", player2="O",
+                  stdin_input=["1", "1",
+                               "2", "2",
+                               "3", "3",
+                               "1", "3",
+                               "3", "1",
+                               "2", "1",
+                               "3", "2"]),
+             """\
+  1 2 3
+1  | |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 1>
+  1 2 3
+1 X| |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+O to play:
+<input: 2>
+<input: 2>
+  1 2 3
+1 X| |
+  -+-+-
+2  |O|
+  -+-+-
+3  | |
+X to play:
+<input: 3>
+<input: 3>
+  1 2 3
+1 X| |
+  -+-+-
+2  |O|
+  -+-+-
+3  | |X
+O to play:
+<input: 1>
+<input: 3>
+  1 2 3
+1 X| |O
+  -+-+-
+2  |O|
+  -+-+-
+3  | |X
+X to play:
+<input: 3>
+<input: 1>
+  1 2 3
+1 X| |O
+  -+-+-
+2  |O|
+  -+-+-
+3 X| |X
+O to play:
+<input: 2>
+<input: 1>
+  1 2 3
+1 X| |O
+  -+-+-
+2 O|O|
+  -+-+-
+3 X| |X
+X to play:
+<input: 3>
+<input: 2>
+  1 2 3
+1 X| |O
+  -+-+-
+2 O|O|
+  -+-+-
+3 X|X|X
+X wins!
+"""),
+            (dict(board_size=3, player1="X", player2="O",
+                  stdin_input=["1", "2",
+                               "1", "1",
+                               "2", "2",
+                               "2", "1",
+                               "1", "3",
+                               "3", "1"]),
+             """\
+  1 2 3
+1  | |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 2>
+  1 2 3
+1  |X|
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+O to play:
+<input: 1>
+<input: 1>
+  1 2 3
+1 O|X|
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 2>
+<input: 2>
+  1 2 3
+1 O|X|
+  -+-+-
+2  |X|
+  -+-+-
+3  | |
+O to play:
+<input: 2>
+<input: 1>
+  1 2 3
+1 O|X|
+  -+-+-
+2 O|X|
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 3>
+  1 2 3
+1 O|X|X
+  -+-+-
+2 O|X|
+  -+-+-
+3  | |
+O to play:
+<input: 3>
+<input: 1>
+  1 2 3
+1 O|X|X
+  -+-+-
+2 O|X|
+  -+-+-
+3 O| |
+O wins!
+"""),
+            (dict(board_size=3, player1="X", player2="O",
+                  stdin_input=["1", "1",
+                               "1", "2",
+                               "1", "3",
+                               "2", "1",
+                               "2", "3",
+                               "3", "3",
+                               "3", "1",
+                               "2", "2",
+                               "3", "2"]),
+             """\
+  1 2 3
+1  | |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 1>
+  1 2 3
+1 X| |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+O to play:
+<input: 1>
+<input: 2>
+  1 2 3
+1 X|O|
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 3>
+  1 2 3
+1 X|O|X
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+O to play:
+<input: 2>
+<input: 1>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O| |
+  -+-+-
+3  | |
+X to play:
+<input: 2>
+<input: 3>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O| |X
+  -+-+-
+3  | |
+O to play:
+<input: 3>
+<input: 3>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O| |X
+  -+-+-
+3  | |O
+X to play:
+<input: 3>
+<input: 1>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O| |X
+  -+-+-
+3 X| |O
+O to play:
+<input: 2>
+<input: 2>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O|O|X
+  -+-+-
+3 X| |O
+X to play:
+<input: 3>
+<input: 2>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O|O|X
+  -+-+-
+3 X|X|O
+It's a draw!
+"""),
+        ]
+
+        @classmethod
+        def generate_inputs(cls):
+            size = randint(4, 6)
+            points = itertools.product(range(1, size + 1), repeat=2)
+            return dict(
+                board_size=size,
+                player1=choice(ascii_uppercase),
+                player2=choice(ascii_uppercase),
+                stdin_input=list(map(str, itertools.chain.from_iterable(shuffled(points)))),
+            )
+
+    final_text = """
+    TODO
 """
