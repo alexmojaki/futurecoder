@@ -1802,7 +1802,7 @@ class TheFullTicTacToeGame(Page):
     title = "The Full Tic-Tac-Toe Game"
 
     class the_full_game(ExerciseStep):
-        """
+        r"""
 It's time to put it all together! Below is some code to get started.
 
 It includes implementations of the various functions we defined in previous pages for solving parts
@@ -1874,7 +1874,37 @@ i.e. numbers from 1 to `board_size` to choose a cell on the board that isn't alr
         parsons_solution = True
 
         hints = """
-        TODO
+You should use all of the functions `winner`, `format_board` (not counting its use in `play_move`), `play_move`, `make_board`, `print_winner`, and `print_draw` somewhere.
+You only need to mention each of those functions once in your code, although some of them will be called several times as the program runs.
+You will need a for loop to repeatedly play moves.
+You don't need to check if the board has been filled up, because you can always calculate how many moves it takes to fill up the board.
+So you can just use a loop that will run a fixed number of iterations, and inside the loop check if the loop needs to be ended early.
+What's the maximum number of moves that can be played in a 3x3 board? 4x4?
+A loop over a `range` is an easy way to iterate a fixed number of times.
+So you can use `for _ in range(N):` to play at most `N` moves.
+Once there's a winner, you need to end the loop and the game.
+Either `print_winner` or `print_draw` should be called, not both.
+Whichever function is called, it must be called exactly once.
+One easy way to make sure you don't call a function multiple times is to call it outside of any loop.
+We've learned about two ways to make a loop stop.
+One way is `break`, which specifically ends one loop and no more.
+The second way ends not just the loop but the whole function call.
+The second way is `return`.
+Don't play moves in pairs like `play_move(board, player1)` and `play_move(board, player2)` in the sample code.
+Instead, each loop iteration should play one move.
+You need a variable to keep track of which player's turn it is.
+The player should be switched in each loop iteration.
+An `if` statement is a good way to do this.
+Especially combined with an `else`.
+Make sure `player1` plays the first move.
+Only call `print_winner` after checking `winner` with an `if` statement.
+You need to check for the winner inside the loop since you don't know when a player might win.
+Once you call `print_winner`, you can use `return` to end the function.
+Just `return` by itself is fine, `play_game` isn't meant to return a value.
+Don't use `else` after checking for a winner to call `print_draw` if there isn't a winner. Just because no one has won yet doesn't mean it's a draw already.
+`print_draw` should only be called after all moves have been played and there's still no winner.
+So it should be called after the loop, outside of it.
+Check the indentation to make sure `print_draw` isn't in the body of the for loop.
 """
 
         def solution(self):
@@ -2238,5 +2268,7 @@ It's a draw!
             )
 
     final_text = """
-    TODO
+### ***CONGRATULATIONS!!!***
+
+You did it!
 """
