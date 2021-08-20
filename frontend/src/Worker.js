@@ -15,14 +15,16 @@ async function getPackageBuffer() {
 }
 
 let runCodeCatchErrors;
+let pyodide;
 
 async function loadPyodideOnly() {
   console.time("importScripts pyodide")
-  importScripts('https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js');
+  const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.18.0/full/';
+  importScripts(indexURL + 'pyodide.js');
   console.timeEnd("importScripts pyodide")
 
   console.time("loadPyodide")
-  await loadPyodide({indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/'});
+  pyodide = await loadPyodide({indexURL});
   console.timeEnd("loadPyodide")
 
   pyodide.runPython(loadPythonString)
