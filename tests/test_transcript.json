@@ -16104,5 +16104,385 @@
             ]
         },
         "step": "format_board_with_numbers"
+    },
+    {
+        "page": "Interactive Programs with <code>input()</code>",
+        "program": [
+            "print('Type your name, then press Enter:')",
+            "name = input()",
+            "print(f'Hello {name}!')"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "<input: there>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Hello there!"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "first_input"
+    },
+    {
+        "get_solution": [
+            "super_secret_number = 7",
+            "print(\"What number am I thinking of?\")",
+            "guess = input()",
+            "if int(guess) == super_secret_number:",
+            "    print(\"Amazing! Are you psychic?\")",
+            "else:",
+            "    print(\"Nope!\")"
+        ],
+        "page": "Interactive Programs with <code>input()</code>",
+        "program": [
+            "super_secret_number = 7",
+            "print(\"What number am I thinking of?\")",
+            "guess = input()",
+            "if int(guess) == super_secret_number:",
+            "    print(\"Amazing! Are you psychic?\")",
+            "else:",
+            "    print(\"Nope!\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "<input: 7>"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Amazing! Are you psychic?"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "convert_input_to_int"
+    },
+    {
+        "page": "Nested List Assignment: Playing Moves on the Board",
+        "program": [
+            "def play_move(board, player):",
+            "    board[1] = player",
+            "",
+            "def play_game():",
+            "    game_board = [\" \", \" \", \" \"]",
+            "    play_move(game_board, \"X\")",
+            "    print(game_board)",
+            "",
+            "play_game()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[' ', 'X', ' ']",
+                "choices": [
+                    "",
+                    "X",
+                    "' '",
+                    "'X'",
+                    "[' ']",
+                    "['X']",
+                    "[' ', ' ', ' ']",
+                    "['X', ' ', ' ']",
+                    "[' ', 'X', ' ']",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[' ', 'X', ' ']"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "modify_list_in_function"
+    },
+    {
+        "page": "Nested List Assignment: Playing Moves on the Board",
+        "program": [
+            "def play_move(board, player):",
+            "    row = board[1]",
+            "    row[0] = player",
+            "",
+            "def play_game():",
+            "    board = [",
+            "        [\" \", \" \", \" \"],",
+            "        [\" \", \" \", \" \"],",
+            "        [\" \", \" \", \" \"],",
+            "    ]",
+            "    play_move(board, \"X\")",
+            "    print(board)",
+            "",
+            "play_game()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "[[' ', ' ', ' '], ['X', ' ', ' '], [' ', ' ', ' ']]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "nested_assignment_two_lines"
+    },
+    {
+        "get_solution": [
+            "def play_move(board, player):",
+            "    row = int(input()) - 1",
+            "    col = int(input()) - 1",
+            "    board[row][col] = player"
+        ],
+        "page": "Nested List Assignment: Playing Moves on the Board",
+        "program": [
+            "def play_move(board, player):",
+            "    row = int(input()) - 1",
+            "    col = int(input()) - 1",
+            "    board[row][col] = player"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "nested_assignment_input"
+    },
+    {
+        "page": "Making the Board",
+        "program": [
+            "def make_board(size):",
+            "    row = []",
+            "    for _ in range(size):",
+            "        row.append(' ')",
+            "    board = []",
+            "    for _ in range(size):",
+            "        board.append(row)",
+            "    return board",
+            "",
+            "def test():",
+            "    board = make_board(3)",
+            "    assert_equal(board, [",
+            "        [' ', ' ', ' '],",
+            "        [' ', ' ', ' '],",
+            "        [' ', ' ', ' '],",
+            "    ])",
+            "    board[0][0] = 'X'",
+            "    assert_equal(board, [",
+            "        ['X', ' ', ' '],",
+            "        [' ', ' ', ' '],",
+            "        [' ', ' ', ' '],",
+            "    ])",
+            "",
+            "test()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": "OK"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "Error! [['X', ' ', ' '], ['X', ' ', ' '], ['X', ' ', ' ']] != [['X', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "naive_make_board"
+    },
+    {
+        "get_solution": [
+            "def make_board(size):",
+            "    board = []",
+            "    for _ in range(size):",
+            "        row = []",
+            "        for _ in range(size):",
+            "            row.append(' ')",
+            "        board.append(row)",
+            "    return board"
+        ],
+        "page": "Making the Board",
+        "program": [
+            "def make_board(size):",
+            "    board = []",
+            "    for _ in range(size):",
+            "        row = []",
+            "        for _ in range(size):",
+            "            row.append(' ')",
+            "        board.append(row)",
+            "    return board"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "fix_make_board"
+    },
+    {
+        "get_solution": [
+            "def play_game(board_size, player1, player2):",
+            "    board = make_board(board_size)",
+            "    print(format_board(board))",
+            "",
+            "    player = player1",
+            "    for _ in range(board_size * board_size):",
+            "        play_move(board, player)",
+            "",
+            "        if winner(board):",
+            "            print_winner(player)",
+            "            return",
+            "",
+            "        if player == player1:",
+            "            player = player2",
+            "        else:",
+            "            player = player1",
+            "",
+            "    print_draw()"
+        ],
+        "page": "The Full Tic-Tac-Toe Game",
+        "program": [
+            "def winning_line(strings):",
+            "    strings = set(strings)",
+            "    return len(strings) == 1 and ' ' not in strings",
+            "",
+            "def row_winner(board):",
+            "    return any(winning_line(row) for row in board)",
+            "",
+            "def column_winner(board):",
+            "    return row_winner(zip(*board))",
+            "",
+            "def main_diagonal_winner(board):",
+            "    return winning_line(row[i] for i, row in enumerate(board))",
+            "",
+            "def diagonal_winner(board):",
+            "    return main_diagonal_winner(board) or main_diagonal_winner(reversed(board))",
+            "",
+            "def winner(board):",
+            "    return row_winner(board) or column_winner(board) or diagonal_winner(board)",
+            "",
+            "def format_board(board):",
+            "    size = len(board)",
+            "    line = f'\\n  {\"+\".join(\"-\" * size)}\\n'",
+            "    rows = [f'{i + 1} {\"|\".join(row)}' for i, row in enumerate(board)]",
+            "    return f'  {\" \".join(str(i + 1) for i in range(size))}\\n{line.join(rows)}'",
+            "",
+            "def play_move(board, player):",
+            "    print(f'{player} to play:')",
+            "    row = int(input()) - 1",
+            "    col = int(input()) - 1",
+            "    board[row][col] = player",
+            "    print(format_board(board))",
+            "",
+            "def make_board(size):",
+            "    return [[' '] * size for _ in range(size)]",
+            "",
+            "def print_winner(player):",
+            "    print(f'{player} wins!')",
+            "",
+            "def print_draw():",
+            "    print(\"It's a draw!\")",
+            "",
+            "def play_game(board_size, player1, player2):",
+            "    board = make_board(board_size)",
+            "    print(format_board(board))",
+            "",
+            "    player = player1",
+            "    for _ in range(board_size * board_size):",
+            "        play_move(board, player)",
+            "",
+            "        if winner(board):",
+            "            print_winner(player)",
+            "            return",
+            "",
+            "        if player == player1:",
+            "            player = player2",
+            "        else:",
+            "            player = player1",
+            "",
+            "    print_draw()"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "the_full_game"
     }
 ]

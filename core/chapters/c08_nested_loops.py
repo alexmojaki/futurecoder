@@ -675,6 +675,7 @@ You have to go deeper.
                         for c4 in letters:
                             print(c1 + c2 + c3 + c4)
 
+        @classmethod
         def generate_inputs(cls):
             return {"letters": generate_string(2)}
 

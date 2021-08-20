@@ -1,10 +1,15 @@
 # flake8: NOQA E501
 import ast
+import itertools
+from copy import deepcopy
 from random import choice, randint
 from string import ascii_uppercase
+from textwrap import dedent
 from typing import List
 
+from core.exercises import assert_equal, ExerciseError
 from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
+from core.utils import returns_stdout, shuffled
 
 
 def generate_board(board_type):
@@ -46,41 +51,60 @@ It's going to be so fun!
 You will develop a text-based interactive tic-tac-toe game to be played by 2 human players.
 Here is a small preview of what the finished game will look like in play:
 
-     123
+      1 2 3
+    1  | |
+      -+-+-
+    2  | |
+      -+-+-
+    3  | |
+
+    X to play:
     1
+    1
+
+      1 2 3
+    1 X| |
+      -+-+-
+    2  | |
+      -+-+-
+    3  | |
+
+    O to play:
     2
-    3
+    2
 
-    X to play
-    Enter row: 2
-    Enter column: 2
-     123
+      1 2 3
+    1 X| |
+      -+-+-
+    2  |O|
+      -+-+-
+    3  | |
+
+    X to play:
     1
-    2 X
     3
 
-    O to play
-    Enter row: 1
-    Enter column: 3
-     123
-    1  O
-    2 X
-    3
+      1 2 3
+    1 X| |X
+      -+-+-
+    2  |O|
+      -+-+-
+    3  | |
 
 We will break up the project into several small functions, which will be exercises.
 
 You will use many of the concepts you have learned so far: strings,
 nested lists, nested loops, `range`, calling functions within functions, comparisons, and booleans.
 
-Along the way you will also learn some new concepts: `input`, the newline character, types in Python, and `while` loops.
+Along the way you will also learn some new concepts, including newline characters, types, and `input()`.
 
 Here is a rough outline of the project:
 
 - three functions `row_winner`, `column_winner`,  `diagonal_winner`  that check the whole board for winning rows, columns, and diagonals
 - a function `winner` that checks the whole board for a winner, combining the above functions
 - a function `format_board` that displays the current state of the game
-- a function `get_coordinate` that takes user input to play a move,
-- finally a `main` function that puts it all together and runs the game interactively.
+- a function `play_move` that takes user input to play a move,
+- finally a `play_game` function that puts it all together and runs the game interactively.
 - Later on we will add further improvements.
 
 Let's get started!
@@ -471,7 +495,7 @@ Click the Copy button, and fill in the blanks for your `winner` function.
         diagonal2 = []
         for i in range(len(board)):
             diagonal1.append(board[i][i])
-            diagonal2.append(board[i][i])
+            diagonal2.append(board[i][-i-1])
         return winning_line(diagonal1) or winning_line(diagonal2)
 
     assert_equal(
@@ -587,7 +611,6 @@ into the `winner` function, just call those functions.
 Great work!
 
 Now we have the code to determine a winning state on the board.
-Next we will tackle the problem of displaying the board on the screen.
 """
 
 
@@ -1129,7 +1152,7 @@ Write an improved version of `format_board` that has row and column numbers like
     2 OO
     3 X
 
-It should work for boards of any size. We provide a test case:
+It should work for boards of any single-digit size. Here's a test case:
 
     __copyable__
     def format_board(board):
@@ -1203,3 +1226,1067 @@ use f-strings. They often look nicer.
 You've learned about types in Python and how to avoid common errors by converting types.
 Keep going with the rest of the project!
     """
+
+
+class InteractiveProgramsWithInput(Page):
+    title = "Interactive Programs with `input()`"
+
+    class first_input(VerbatimStep):
+        """
+The programs we have written so far are not interactive.
+To make our interactive Tic-tac-toe game, we will need a method of receiving input from the players.
+Python allows us to do that with the built-in `input` function. Run this program:
+
+    __copyable__
+    __program_indented__
+
+When `name = input()` runs, the program actually stops and waits for you to type in the shell and press Enter,
+so you will need to do that for it to complete.
+        """
+
+        stdin_input = "there"
+
+        def program(self):
+            print('Type your name, then press Enter:')
+            name = input()
+            print(f'Hello {name}!')
+
+        def check(self):
+            if KeyboardInterrupt.__name__ in self.result:
+                return False
+            return super().check()
+
+    class convert_input_to_int(ExerciseStep):
+        """
+Whatever you typed in (not including pressing Enter at the end) is returned from the `input()` function as a string.
+
+It's essential to understand that `input()` ***always returns a string***, no matter what the user typed in.
+It's up to you to convert that string to the type you need.
+Forgetting this detail is a common source of confusing bugs.
+
+For example, this program looks fine at a glance, but if you try it out you'll see that it doesn't actually work:
+
+    __copyable__
+    super_secret_number = 7
+    print("What number am I thinking of?")
+    guess = input()
+    if guess == super_secret_number:
+        print("Amazing! Are you psychic?")
+    else:
+        print("Nope!")
+
+Fix the program so that when the user inputs `7` the program prints `Amazing! Are you psychic?` as expected.
+        """
+
+        hints = """
+`input()` always returns a string.
+A string that looks like a number is still a string, not a number.
+In `super_secret_number = 7`, `7` is a number, not a string.
+That makes `super_secret_number` also a number.
+A string cannot equal a number.
+To check that two values are equal, make sure they're the same type first.
+So to compare a number and a string, first convert the number to a string or convert the string to a number.
+You learned how to convert between strings and numbers in the previous page.
+Use `int()` to convert to an integer (whole number) or `str()` to convert to a string.
+        """
+
+        def solution(self):
+            super_secret_number = 7
+            print("What number am I thinking of?")
+            guess = input()
+            if int(guess) == super_secret_number:
+                print("Amazing! Are you psychic?")
+            else:
+                print("Nope!")
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "stdin_input": str(randint(1, 10))
+            }
+
+        tests = [
+            ({"stdin_input": "7"}, "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?"),
+            ({"stdin_input": "0"}, "What number am I thinking of?\n<input: 0>\nNope!"),
+            ({"stdin_input": "1"}, "What number am I thinking of?\n<input: 1>\nNope!"),
+        ]
+
+    final_text = """
+Perfect!
+
+There's at least three fixes that would work here. You can convert the input to a number:
+
+    if int(guess) == super_secret_number:
+
+or convert the correct answer to a string:
+
+    if guess == str(super_secret_number):
+
+or just make it a string to begin with:
+
+    super_secret_number = '7'
+
+    """
+
+
+class NestedListAssignment(Page):
+    title = "Nested List Assignment: Playing Moves on the Board"
+
+    class modify_list_in_function(VerbatimStep):
+        """
+We've seen how to get input from the user, now let's use that to actually put pieces
+on the board and play the game. For starters, try out this code:
+
+    __copyable__
+    __program_indented__
+        """
+
+        predicted_output_choices = [
+            " ",
+            "X",
+            "' '",
+            "'X'",
+            "[' ']",
+            "['X']",
+            "[' ', ' ', ' ']",
+            "['X', ' ', ' ']",
+            "[' ', 'X', ' ']",
+        ]
+
+        def program(self):
+            def play_move(board, player):
+                board[1] = player
+
+            def play_game():
+                game_board = [" ", " ", " "]
+                play_move(game_board, "X")
+                print(game_board)
+
+            play_game()
+
+    class nested_assignment_two_lines(VerbatimStep):
+        """
+Note how calling `play_move(game_board, 'X')` actually *modifies* `game_board` directly.
+The variable `board` inside the call to `play_move` and
+the variable `game_board` inside the call to `play_game` point to the same list object.
+There's no copying. Python Tutor is good at showing this with arrows.
+
+This also means that in this case there's no need for `play_move` to return anything,
+it can just modify `board` and the caller (`play_game` in this case) will see the effect.
+
+However, our board is two dimensional, represented by a nested list.
+So we need to assign `player` to an element of an inner list, something like this:
+
+    __copyable__
+    __program_indented__
+        """
+
+        def program(self):
+            def play_move(board, player):
+                row = board[1]
+                row[0] = player
+
+            def play_game():
+                board = [
+                    [" ", " ", " "],
+                    [" ", " ", " "],
+                    [" ", " ", " "],
+                ]
+                play_move(board, "X")
+                print(board)
+
+            play_game()
+
+    class nested_assignment_input(ExerciseStep):
+        r"""
+These two lines:
+
+    row = board[1]
+    row[0] = player
+
+can be combined into one:
+
+    board[1][0] = player
+
+The two pieces of code are pretty much exactly equivalent. Python first evaluates
+`board[1]` to *get* the inner list, while the `[0] = ...` sets an element of `board[1]`.
+You can see the value of `board[1]` in Bird's Eye because it's an expression,
+and you could actually replace it with any other expression.
+
+Now you know how to set elements in nested lists, it's time to make this interactive!
+Write your own version of `play_move` that takes input from the user
+to determine where to play, instead of always playing at `board[1][0]`.
+It should call `input()` twice, so the user can give the row and the column
+as two separate numbers. Also, our users are not programmers, so they start counting from 1,
+not 0.
+
+For example, if the user types in these inputs:
+
+    2
+    1
+
+that means they want to play a move in the second row and first column, which is the same
+as our original example.
+
+Here is some starting code:
+
+    __copyable__
+    def format_board(board):
+        first_row = ' '
+        for i in range(len(board)):
+            first_row += str(i + 1)
+        joined_rows = [first_row]
+        for i in range(len(board)):
+            joined_row = str(i + 1) + ''.join(board[i])
+            joined_rows.append(joined_row)
+        return "\n".join(joined_rows)
+
+    def play_game():
+        board = [
+            [' ', ' ', ' '],
+            [' ', ' ', ' '],
+            [' ', ' ', ' '],
+        ]
+        print(format_board(board))
+        print('\nX to play:\n')
+        play_move(board, 'X')
+        print(format_board(board))
+        print('\nO to play:\n')
+        play_move(board, 'O')
+        print(format_board(board))
+
+    def play_move(board, player):
+        ...
+
+    play_game()
+
+This calls `play_move` twice so the user will need to enter two pairs of numbers.
+Here's an example of what a 'game' should look like:
+
+     123
+    1
+    2
+    3
+
+    X to play:
+
+    2
+    1
+     123
+    1
+    2X
+    3
+
+    O to play:
+
+    1
+    3
+     123
+    1  O
+    2X
+    3
+
+You don't need to use the provided code exactly, it's just to give you a feeling of what's happening.
+The important thing is that your `play_move` function modifies the `board` argument correctly.
+It doesn't need to return or print anything, that will not be checked.
+
+You can assume that the user will always enter valid numbers. Later we will learn how to deal
+with invalid inputs, like numbers out of range or inputs that aren't numbers at all.
+        """
+
+        hints = """
+Your function needs to call `input()` twice. Input isn't passed to `play_move` as an argument.
+`input()` always returns a string.
+A string that looks like a number is still a string, not a number.
+List indices have to be numbers, not strings.
+If the board is 3x3, the user might input 1, 2, or 3 for each coordinate.
+What are the valid indices of a list of length 3?
+You need to take the input of 1, 2, or 3 and turn it into 0, 1, or 2.
+You also need to be able to handle bigger boards, like 9x9 or beyond.
+You can't do maths with strings, only numbers.
+How can you convert a string to a number?
+Once you've got two numbers, you need to modify the nested list `board` with them.
+The code for this has been shown to you above.
+You just need to use the numbers from user input instead of the hardcoded 1 and 0.
+You can use nested subscripting in one line, or do it in two steps.
+        """
+
+        no_returns_stdout = True
+
+        def solution(self):
+            def play_move(board, player):
+                row = int(input()) - 1
+                col = int(input()) - 1
+                board[row][col] = player
+
+            return play_move
+
+        @classmethod
+        def wrap_solution(cls, func):
+            @returns_stdout
+            def wrapper(**kwargs):
+                board = kwargs["board"] = deepcopy(kwargs["board"])
+
+                def format_board():
+                    first_row = ' '
+                    for i in range(len(board)):
+                        first_row += str(i + 1)
+                    joined_rows = [first_row]
+                    for i in range(len(board)):
+                        joined_row = str(i + 1) + ''.join(board[i])
+                        joined_rows.append(joined_row)
+                    return "\n".join(joined_rows)
+
+                func(**kwargs)
+                print(format_board())
+            return wrapper
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "stdin_input": [str(randint(1, 3)), str(randint(1, 3))],
+                "player": choice(ascii_uppercase),
+                "board": generate_board(choice(["row", "col", "diag"])),
+            }
+
+        tests = [
+            (
+                {
+                    "stdin_input": ["2", "1"],
+                    "board": [
+                        [" ", " ", " "],
+                        [" ", " ", " "],
+                        [" ", " ", " "],
+                    ],
+                    "player": "X",
+                },
+                dedent("""\
+                <input: 2>
+                <input: 1>
+                 123
+                1   
+                2X  
+                3   
+                """),
+            ),
+            (
+                {
+                    "stdin_input": ["1", "3"],
+                    "board": [
+                        [" ", " ", " "],
+                        ["X", " ", " "],
+                        [" ", " ", " "],
+                    ],
+                    "player": "O",
+                },
+                dedent("""\
+                <input: 1>
+                <input: 3>
+                 123
+                1  O
+                2X  
+                3   
+                """),
+            ),
+        ]
+
+    final_text = """
+Brilliant! You're almost ready to put it all together, keep going!
+"""
+
+
+class MakingTheBoard(Page):
+    title = "Making the Board"
+
+    class naive_make_board(VerbatimStep):
+        """
+So far the board has been provided for you as a nested list.
+But for the full program, you need to create it yourself.
+Should be easy, right? Here's some code to do that:
+
+    __copyable__
+    __program_indented__
+
+It's close, but there's a subtle problem with it.
+Make sure you understand the code,
+and bonus points if you can spot the bug!
+If not, don't feel bad or waste too much time on it.
+        """
+
+        def program(self):
+            def make_board(size):
+                row = []
+                for _ in range(size):
+                    row.append(' ')
+                board = []
+                for _ in range(size):
+                    board.append(row)
+                return board
+
+            def test():
+                board = make_board(3)
+                assert_equal(board, [
+                    [' ', ' ', ' '],
+                    [' ', ' ', ' '],
+                    [' ', ' ', ' '],
+                ])
+                board[0][0] = 'X'
+                assert_equal(board, [
+                    ['X', ' ', ' '],
+                    [' ', ' ', ' '],
+                    [' ', ' ', ' '],
+                ])
+
+            test()
+
+    class fix_make_board(ExerciseStep):
+        """
+Can you see what happened?
+
+Every row got an `'X'` in the first position!
+It's as if the code actually did this:
+
+    board[0][0] = 'X'
+    board[1][0] = 'X'
+    board[2][0] = 'X'
+
+Try and figure out what's wrong by yourself.
+But again, it's tricky, so don't drive yourself crazy over it.
+
+If you want, here's some hints:
+
+ - Try running the code through some debuggers.
+ - Experiment. Make changes to the code and see what happens.
+ - No, the code didn't do 3 assignments like I suggested above. There was just one list assignment.
+ - There's no hidden loops or anything.
+ - How many lists does `board` contain? 3?
+ - The previous page has a subtle hint at what happened.
+ - There is a page from a previous chapter where this kind of problem is explained directly.
+ - Specifically [this page](#EqualsVsIs).
+ - Try running the code with Python Tutor.
+
+OK, if you're ready, here's the answer.
+
+The list `row` was only created once, and reused several times.
+`board` contains the same list three times. Not copies, just one list in three places.
+It's like it did this:
+
+    board = [row, row, row]
+
+Which means that this code:
+
+    board[0][0] = 'X'
+
+is equivalent to:
+
+    row[0] = 'X'
+
+which affects 'all the lists' in `board` because they're all just the one list `row`.
+In other words, the above line is *also* equivalent to each of these two lines:
+
+    board[1][0] = 'X'
+    board[2][0] = 'X'
+
+because `row` is `board[0]`, `board[1]`, and `board[2]` all at once.
+
+Your job now is to fix `make_board` to not have this problem.
+It should still return a list of length `size` where each
+element is also list of length `size` where each element is the string `' '`.
+The sublists should all be separate list objects, not the same
+list repeated.
+        """
+
+        parsons_solution = True
+
+        hints = """
+The existing code is almost correct.
+There are several ways to solve this.
+Some solutions involve adding something small.
+You can also rearrange the code without adding or removing anything (except spaces).
+The problem is that a single list `row` is used several times.
+So one solution is to make copies of `row` which will all be separate.
+Another solution is to make a new `row` from scratch each time.
+There are a few ways to copy a list in Python with a tiny bit of code.
+Making a new row each time can be done by just rearranging the code.
+"""
+
+        def solution(self):
+            def make_board(size):
+                board = []
+                for _ in range(size):
+                    row = []
+                    for _ in range(size):
+                        row.append(' ')
+                    board.append(row)
+                return board
+
+            return make_board
+
+        tests = {
+            2: [
+                [' ', ' '],
+                [' ', ' ']
+            ],
+            3: [
+                [' ', ' ', ' '],
+                [' ', ' ', ' '],
+                [' ', ' ', ' '],
+            ],
+        }
+
+        @classmethod
+        def generate_inputs(cls):
+            return dict(size=randint(4, 12))
+
+        @classmethod
+        def check_result(cls, func, inputs, expected_result):
+            result = super().check_result(func, inputs, expected_result)
+            if len(result) != len(set(map(id, result))):
+                raise ExerciseError("The sublists in the result are not all separate objects")
+
+    final_text = """
+Well done!
+
+This could be solved by moving the first loop inside the second to make a new `row` each time:
+
+    def make_board(size):
+        board = []
+        for _ in range(size):
+            row = []
+            for _ in range(size):
+                row.append(' ')
+            board.append(row)
+        return board
+
+Another way is to make a copy of `row` each time, e.g. keep the original code but change one line:
+
+    board.append(row.copy())
+
+You can also copy `row` with `row[:]` or `list(row)`. But it's important to know that
+all these methods make a *shallow copy* of the list.
+That means they copy the whole list at the top level, without making copies of each element.
+That's fine in this case where `row` only contains strings which can't be modified
+and don't need copying. But if the elements are mutable objects like lists,
+as is the case with `board`, you may run into the same problem again.
+Here's an example:
+
+    __copyable__
+    def make_board(size):
+        row = []
+        for _ in range(size):
+            row.append(' ')
+        board = []
+        for _ in range(size):
+            board.append(row.copy())
+        return board
+    
+    def make_cube(size):
+        cube = []
+        board = make_board(size)
+        for _ in range(size):
+            cube.append(board.copy())
+        return cube
+    
+    def test():
+        cube = make_cube(2)
+        print(cube)
+        cube[0][0][0] = 'X'
+        print(cube)
+        print(cube[0] is cube[1])
+        print(cube[0][0] is cube[0][1])
+        print(cube[0][0] is cube[1][0])
+    
+    test()
+
+Here each element of `cube` is a separate list, a copy of `board`.
+And within each of those copies, each element is also a separate list, a copy of `row`.
+But the shallow copies of `board` all have the same first element as each other (the first copy of `row`),
+the same second element, and so on.
+Changing `make_board` won't fix anything here, the solution is to either:
+
+- Call `make_board` repeatedly to make a new `board` each time, or
+- Use the `deepcopy` function instead of `board.copy()`.
+  `deepcopy` makes copies at every level of nested objects.
+
+If you're still confused, don't worry.
+This is just preparing you to deal with your code behaving weirdly in the future.
+You're not required to understand this right now and this lesson will still be valuable.
+
+Either way, we're ready to make the full game. You can do it!
+"""
+
+
+class TheFullTicTacToeGame(Page):
+    title = "The Full Tic-Tac-Toe Game"
+
+    class the_full_game(ExerciseStep):
+        r"""
+It's time to put it all together! Below is some code to get started.
+
+It includes implementations of the various functions we defined in previous pages for solving parts
+of the problem, using some tricks you haven't learned yet to make them shorter. Don't change them.
+
+Your task is to implement `play_game` correctly. The current implementation shows what
+should happen at the start of the game, but it's obviously incomplete.
+The solution should work for any board size and continue the game until it's finished.
+The last thing that `play_game` should do is either call `print_winner(player)`
+if `winner(board)` is true, or call `print_draw()` if the board is filled up with no winner.
+
+You can assume that the user will only enter valid inputs,
+i.e. numbers from 1 to `board_size` to choose a cell on the board that isn't already taken.
+
+    __copyable__
+    def winning_line(strings):
+        strings = set(strings)
+        return len(strings) == 1 and ' ' not in strings
+
+    def row_winner(board):
+        return any(winning_line(row) for row in board)
+
+    def column_winner(board):
+        return row_winner(zip(*board))
+
+    def main_diagonal_winner(board):
+        return winning_line(row[i] for i, row in enumerate(board))
+
+    def diagonal_winner(board):
+        return main_diagonal_winner(board) or main_diagonal_winner(reversed(board))
+
+    def winner(board):
+        return row_winner(board) or column_winner(board) or diagonal_winner(board)
+
+    def format_board(board):
+        size = len(board)
+        line = f'\n  {"+".join("-" * size)}\n'
+        rows = [f'{i + 1} {"|".join(row)}' for i, row in enumerate(board)]
+        return f'  {" ".join(str(i + 1) for i in range(size))}\n{line.join(rows)}'
+
+    def play_move(board, player):
+        print(f'{player} to play:')
+        row = int(input()) - 1
+        col = int(input()) - 1
+        board[row][col] = player
+        print(format_board(board))
+
+    def make_board(size):
+        return [[' '] * size for _ in range(size)]
+
+    def print_winner(player):
+        print(f'{player} wins!')
+
+    def print_draw():
+        print("It's a draw!")
+
+    def play_game(board_size, player1, player2):
+        board = make_board(board_size)
+        print(format_board(board))
+
+        play_move(board, player1)
+        play_move(board, player2)
+        play_move(board, player1)
+        play_move(board, player2)
+
+    play_game(3, 'X', 'O')
+        """
+
+        parsons_solution = True
+
+        hints = """
+You should use all of the functions `winner`, `format_board` (not counting its use in `play_move`), `play_move`, `make_board`, `print_winner`, and `print_draw` somewhere.
+You only need to mention each of those functions once in your code, although some of them will be called several times as the program runs.
+You will need a for loop to repeatedly play moves.
+You don't need to check if the board has been filled up, because you can always calculate how many moves it takes to fill up the board.
+So you can just use a loop that will run a fixed number of iterations, and inside the loop check if the loop needs to be ended early.
+What's the maximum number of moves that can be played in a 3x3 board? 4x4?
+A loop over a `range` is an easy way to iterate a fixed number of times.
+So you can use `for _ in range(N):` to play at most `N` moves.
+Once there's a winner, you need to end the loop and the game.
+Either `print_winner` or `print_draw` should be called, not both.
+Whichever function is called, it must be called exactly once.
+One easy way to make sure you don't call a function multiple times is to call it outside of any loop.
+We've learned about two ways to make a loop stop.
+One way is `break`, which specifically ends one loop and no more.
+The second way ends not just the loop but the whole function call.
+The second way is `return`.
+Don't play moves in pairs like `play_move(board, player1)` and `play_move(board, player2)` in the sample code.
+Instead, each loop iteration should play one move.
+You need a variable to keep track of which player's turn it is.
+The player should be switched in each loop iteration.
+An `if` statement is a good way to do this.
+Especially combined with an `else`.
+Make sure `player1` plays the first move.
+Only call `print_winner` after checking `winner` with an `if` statement.
+You need to check for the winner inside the loop since you don't know when a player might win.
+Once you call `print_winner`, you can use `return` to end the function.
+Just `return` by itself is fine, `play_game` isn't meant to return a value.
+Don't use `else` after checking for a winner to call `print_draw` if there isn't a winner. Just because no one has won yet doesn't mean it's a draw already.
+`print_draw` should only be called after all moves have been played and there's still no winner.
+So it should be called after the loop, outside of it.
+Check the indentation to make sure `print_draw` isn't in the body of the for loop.
+"""
+
+        def solution(self):
+            def winning_line(strings):
+                strings = set(strings)
+                return len(strings) == 1 and ' ' not in strings
+
+            def row_winner(board):
+                return any(winning_line(row) for row in board)
+
+            def column_winner(board):
+                return row_winner(zip(*board))
+
+            def main_diagonal_winner(board):
+                return winning_line(row[i] for i, row in enumerate(board))
+
+            def diagonal_winner(board):
+                return main_diagonal_winner(board) or main_diagonal_winner(reversed(board))
+
+            def winner(board):
+                return row_winner(board) or column_winner(board) or diagonal_winner(board)
+
+            def format_board(board):
+                size = len(board)
+                line = f'\n  {"+".join("-" * size)}\n'
+                rows = [f'{i + 1} {"|".join(row)}' for i, row in enumerate(board)]
+                return f'  {" ".join(str(i + 1) for i in range(size))}\n{line.join(rows)}'
+
+            def play_move(board, player):
+                print(f'{player} to play:')
+                row = int(input()) - 1
+                col = int(input()) - 1
+                board[row][col] = player
+                print(format_board(board))
+
+            def make_board(size):
+                return [[' '] * size for _ in range(size)]
+
+            def print_winner(player):
+                print(f'{player} wins!')
+
+            def print_draw():
+                print("It's a draw!")
+
+            def play_game(board_size, player1, player2):
+                board = make_board(board_size)
+                print(format_board(board))
+
+                player = player1
+                for _ in range(board_size * board_size):
+                    play_move(board, player)
+
+                    if winner(board):
+                        print_winner(player)
+                        return
+
+                    if player == player1:
+                        player = player2
+                    else:
+                        player = player1
+
+                print_draw()
+
+            return play_game
+
+        @classmethod
+        def wrap_solution(cls, func):
+            return returns_stdout(func)
+
+        tests = [
+            (dict(board_size=2, player1="A", player2="B", stdin_input=["1", "1", "1", "2", "2", "1"]),
+             """\
+  1 2
+1  | 
+  -+-
+2  | 
+A to play:
+<input: 1>
+<input: 1>
+  1 2
+1 A| 
+  -+-
+2  | 
+B to play:
+<input: 1>
+<input: 2>
+  1 2
+1 A|B
+  -+-
+2  | 
+A to play:
+<input: 2>
+<input: 1>
+  1 2
+1 A|B
+  -+-
+2 A| 
+A wins!
+"""),
+            (dict(board_size=3, player1="X", player2="O",
+                  stdin_input=["1", "1",
+                               "2", "2",
+                               "3", "3",
+                               "1", "3",
+                               "3", "1",
+                               "2", "1",
+                               "3", "2"]),
+             """\
+  1 2 3
+1  | |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 1>
+  1 2 3
+1 X| |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+O to play:
+<input: 2>
+<input: 2>
+  1 2 3
+1 X| |
+  -+-+-
+2  |O|
+  -+-+-
+3  | |
+X to play:
+<input: 3>
+<input: 3>
+  1 2 3
+1 X| |
+  -+-+-
+2  |O|
+  -+-+-
+3  | |X
+O to play:
+<input: 1>
+<input: 3>
+  1 2 3
+1 X| |O
+  -+-+-
+2  |O|
+  -+-+-
+3  | |X
+X to play:
+<input: 3>
+<input: 1>
+  1 2 3
+1 X| |O
+  -+-+-
+2  |O|
+  -+-+-
+3 X| |X
+O to play:
+<input: 2>
+<input: 1>
+  1 2 3
+1 X| |O
+  -+-+-
+2 O|O|
+  -+-+-
+3 X| |X
+X to play:
+<input: 3>
+<input: 2>
+  1 2 3
+1 X| |O
+  -+-+-
+2 O|O|
+  -+-+-
+3 X|X|X
+X wins!
+"""),
+            (dict(board_size=3, player1="X", player2="O",
+                  stdin_input=["1", "2",
+                               "1", "1",
+                               "2", "2",
+                               "2", "1",
+                               "1", "3",
+                               "3", "1"]),
+             """\
+  1 2 3
+1  | |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 2>
+  1 2 3
+1  |X|
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+O to play:
+<input: 1>
+<input: 1>
+  1 2 3
+1 O|X|
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 2>
+<input: 2>
+  1 2 3
+1 O|X|
+  -+-+-
+2  |X|
+  -+-+-
+3  | |
+O to play:
+<input: 2>
+<input: 1>
+  1 2 3
+1 O|X|
+  -+-+-
+2 O|X|
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 3>
+  1 2 3
+1 O|X|X
+  -+-+-
+2 O|X|
+  -+-+-
+3  | |
+O to play:
+<input: 3>
+<input: 1>
+  1 2 3
+1 O|X|X
+  -+-+-
+2 O|X|
+  -+-+-
+3 O| |
+O wins!
+"""),
+            (dict(board_size=3, player1="X", player2="O",
+                  stdin_input=["1", "1",
+                               "1", "2",
+                               "1", "3",
+                               "2", "1",
+                               "2", "3",
+                               "3", "3",
+                               "3", "1",
+                               "2", "2",
+                               "3", "2"]),
+             """\
+  1 2 3
+1  | |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 1>
+  1 2 3
+1 X| |
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+O to play:
+<input: 1>
+<input: 2>
+  1 2 3
+1 X|O|
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+X to play:
+<input: 1>
+<input: 3>
+  1 2 3
+1 X|O|X
+  -+-+-
+2  | |
+  -+-+-
+3  | |
+O to play:
+<input: 2>
+<input: 1>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O| |
+  -+-+-
+3  | |
+X to play:
+<input: 2>
+<input: 3>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O| |X
+  -+-+-
+3  | |
+O to play:
+<input: 3>
+<input: 3>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O| |X
+  -+-+-
+3  | |O
+X to play:
+<input: 3>
+<input: 1>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O| |X
+  -+-+-
+3 X| |O
+O to play:
+<input: 2>
+<input: 2>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O|O|X
+  -+-+-
+3 X| |O
+X to play:
+<input: 3>
+<input: 2>
+  1 2 3
+1 X|O|X
+  -+-+-
+2 O|O|X
+  -+-+-
+3 X|X|O
+It's a draw!
+"""),
+        ]
+
+        @classmethod
+        def generate_inputs(cls):
+            size = randint(4, 6)
+            points = itertools.product(range(1, size + 1), repeat=2)
+            return dict(
+                board_size=size,
+                player1=choice(ascii_uppercase),
+                player2=choice(ascii_uppercase),
+                stdin_input=list(map(str, itertools.chain.from_iterable(shuffled(points)))),
+            )
+
+    final_text = """
+### ***CONGRATULATIONS!!!***
+
+You did it!
+"""

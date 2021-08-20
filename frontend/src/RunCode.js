@@ -75,7 +75,7 @@ export const runCode = ({code, source}) => {
     awaitingInput = data.awaiting_input;
     bookSetState("processing", false);
 
-    if (source === "birdseye") {
+    if (data.birdseye_objects) {
       const {store, call_id} = data.birdseye_objects;
       delete data.birdseye_objects;
       Promise.all(

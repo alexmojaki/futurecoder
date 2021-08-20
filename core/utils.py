@@ -1,15 +1,17 @@
 import ast
+import builtins
 import functools
 import os
 import re
 import sys
 import threading
 import traceback
-from functools import lru_cache, partial
+from functools import lru_cache
 from io import StringIO
 from itertools import combinations
 from random import shuffle
 from types import ModuleType
+from typing import Union
 
 import pygments
 from littleutils import strip_required_prefix, strip_required_suffix, withattrs
@@ -61,7 +63,7 @@ def returns_stdout(func):
     if getattr(func, "returns_stdout", False):
         return func
 
-    @functools.wraps(func)
+    @wrap_solution(func)
     def wrapper(*args, **kwargs):
         original = sys.stdout
         sys.stdout = result = StringIO()
@@ -72,10 +74,7 @@ def returns_stdout(func):
             sys.stdout = original
 
     wrapper.returns_stdout = True
-    if isinstance(func, NoMethodWrapper):
-        return NoMethodWrapper(wrapper)
-    else:
-        return wrapper
+    return wrapper
 
 
 class NoMethodWrapper:
@@ -87,12 +86,59 @@ class NoMethodWrapper:
     def __call__(self, *args, **kwargs):
         return self.func(*args, **kwargs)
 
+    @classmethod
+    def match(cls, source, target):
+        if isinstance(source, cls):
+            return cls(target)
+        else:
+            return target
 
-def bind_self(func):
-    if isinstance(func, NoMethodWrapper):
-        return func
-    else:
-        return partial(func, None)
+
+def wrap_solution(func):
+    def decorator(wrapper):
+        wrapper = functools.wraps(func)(wrapper)
+        wrapper = NoMethodWrapper.match(func, wrapper)
+        return wrapper
+
+    return decorator
+
+
+def make_test_input_callback(stdin_input: Union[str, list]):
+    if isinstance(stdin_input, str):
+        stdin_input = stdin_input.splitlines()
+    assert isinstance(stdin_input, list), repr(stdin_input)
+    assert not any("\n" in s for s in stdin_input), repr(stdin_input)
+
+    stdin_input = stdin_input[::-1]
+
+    def input_callback():
+        if stdin_input:
+            result = stdin_input.pop()
+            print(f"<input: {result}>")
+            return result
+        else:
+            raise ValueError("No more test inputs - solution should have finished by now")
+
+    return input_callback
+
+
+def add_stdin_input_arg(func):
+    @wrap_solution(func)
+    def wrapper(stdin_input="", **kwargs):
+        # TODO also deal with sys.stdin directly,
+        #   especially breakpoint()
+
+        input_callback = make_test_input_callback(stdin_input)
+
+        def patched_input(prompt=""):
+            print(prompt, end="")
+            return input_callback()
+
+        builtins.input = patched_input
+
+        return func(**kwargs)
+
+    return NoMethodWrapper.match(func, wrapper)
 
 
 def snake(camel_string):

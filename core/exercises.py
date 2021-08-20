@@ -61,51 +61,10 @@ def match_returns_stdout(func, solution):
     return func
 
 
-def check_exercise(func, solution, test, generate_inputs, functionise=False):
-    test(solution)
-    inputs = [generate_inputs() for _ in range(10)]
-    expected_generated_results = [solution(**inp) for inp in inputs]
-
-    if functionise:
-        try:
-            initial_names, func = make_function(func, solution)
-        except InvalidInitialCode:
-            # There should be an exception in the usual output
-            return False
-        except ExerciseError as e:
-            return dict(message=str(e))
-
-        func = match_returns_stdout(func, solution)
-
-        try:
-            expected_result = solution(**initial_names)
-        except Exception:
-            traceback.print_exc()
-            return dict(message="The values of your input variables are invalid, "
-                                "try using values like the example.")
-
-        try:
-            check_result(func, initial_names, expected_result)
-        except:
-            # Assume that the user can tell that the output is wrong
-            return False
-    else:
-        func = match_returns_stdout(func, solution)
-
-    try:
-        test(func)
-        for inp, result in zip(inputs, expected_generated_results):
-            check_result(func, inp, result)
-    except ExerciseError as e:
-        return dict(message=str(e))
-
-    return True
-
-
 def clean_result(result):
     if not isinstance(result, str):
         result = repr(result)
-    result = result.rstrip()
+    result = '\n'.join(line.rstrip() for line in result.rstrip().splitlines())
     result = result or '<nothing>'
     result = indent(result, '    ')
     return result
@@ -126,23 +85,31 @@ def check_result(func, inputs, expected_result):
     except Exception as e:
         result = format_exception_string()
 
-    result = clean_result(result)
+    cleaned_result = clean_result(result)
     expected_result = clean_result(expected_result)
 
-    if result != expected_result:
-        raise ExerciseError(f"""\
-For these inputs:
+    if cleaned_result != expected_result:
+        inputs.pop("stdin_input", None)
+        if inputs:
+            message = f"""\
+Given these values:
 
 {indented_inputs_string(inputs)}
 
-your code outputs:
+your code outputs:"""
+        else:
+            message = "Your code outputs:"
 
-{result}
+        message += f"""
+
+{cleaned_result}
 
 when it should output:
 
 {expected_result}
-""")
+"""
+        raise ExerciseError(message)
+    return result
 
 
 def generate_string(length=None):

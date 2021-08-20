@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import ast
 import inspect
+import itertools
 import re
+import traceback
 from abc import ABC, abstractmethod
 from copy import deepcopy
 from functools import cached_property, lru_cache
@@ -12,7 +14,7 @@ from pathlib import Path
 from random import shuffle
 from textwrap import dedent, indent
 from tokenize import Untokenizer, generate_tokens
-from types import FunctionType
+from types import MethodType
 from typing import Union, List, get_type_hints
 
 import pygments
@@ -20,24 +22,38 @@ from astcheck import is_ast_like
 from littleutils import setattrs, only, select_attrs
 
 from core.exercises import (
-    check_exercise,
     check_result,
     generate_for_type,
     inputs_string,
     assert_equal,
+    make_function,
+    InvalidInitialCode,
+    ExerciseError,
+    match_returns_stdout,
 )
 from core.linting import lint
-from core.utils import highlighted_markdown, lexer, html_formatter, shuffled_well, no_weird_whitespace, snake, \
-    unwrapped_markdown, returns_stdout, NoMethodWrapper, bind_self
+from core.utils import (
+    highlighted_markdown,
+    lexer,
+    html_formatter,
+    shuffled_well,
+    no_weird_whitespace,
+    snake,
+    unwrapped_markdown,
+    returns_stdout,
+    NoMethodWrapper,
+    add_stdin_input_arg,
+)
 
 
 def clean_program(program, cls):
     func = program
-    if isinstance(program, FunctionType):
+
+    if callable(program):
         source = dedent(inspect.getsource(program))
         lines = source.splitlines()
         if lines[-1].strip().startswith("return "):
-            func = NoMethodWrapper(program(None))
+            func = func()
             assert lines[0] == "def solution(self):"
             assert lines[-1] == f"    return {func.__name__}"
             source = dedent("\n".join(lines[1:-1]))
@@ -49,13 +65,19 @@ def clean_program(program, cls):
             lines = lines[func_node.body[0].lineno - 1 :]
             if hasattr(cls, "test_values"):
                 inputs = list(cls.test_values())[0][0]
+                cls.stdin_input = inputs.pop("stdin_input", [])
             else:
                 inputs = {}
             inputs = inputs_string(inputs)
             program = inputs + '\n' + dedent('\n'.join(lines))
         compile(program, "<program>", "exec")  # check validity
 
-        if not any(isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))):
+        func = NoMethodWrapper(func)
+        func = add_stdin_input_arg(func)
+
+        if not any(
+            isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))
+        ) and not getattr(cls, "no_returns_stdout", False):
             func = returns_stdout(func)
 
     no_weird_whitespace(program)
@@ -90,7 +112,8 @@ def clean_step_class(cls):
 
     if solution:
         assert cls.tests
-        program, cls.solution = clean_program(solution, cls)
+        cls.solution = MethodType(solution, "")
+        program, cls.solution = clean_program(cls.solution, cls)
     else:
         program, _ = clean_program(program, cls)
     assert program
@@ -128,12 +151,7 @@ def clean_step_class(cls):
         messages.append(inner_cls)
 
         if inner_cls.after_success and issubclass(inner_cls, ExerciseStep):
-            check_exercise(
-                bind_self(inner_cls.solution),
-                bind_self(cls.solution),
-                cls.test_exercise,
-                cls.generate_inputs,
-            )
+            cls.check_exercise(inner_cls.solution)
 
     setattrs(cls,
              cleaned=True,
@@ -316,6 +334,7 @@ class Step(ABC):
     text = ""
     program = ""
     program_in_text = False
+    stdin_input = ""
     hints = ()
     is_step = True
     messages = ()
@@ -409,13 +428,7 @@ class ExerciseStep(Step):
         function_name = self.solution.__name__
 
         if function_name == "solution":
-            return check_exercise(
-                self.input,
-                self.solution,
-                self.test_exercise,
-                self.generate_inputs,
-                functionise=True,
-            )
+            return self.check_exercise(self.input, functionise=True)
         else:
             if function_name not in self.console.locals:
                 return dict(message=f"You must define a function `{function_name}`")
@@ -434,12 +447,65 @@ class ExerciseStep(Step):
                             f"    def {function_name}{actual_signature}:"
                 )
 
-            return check_exercise(
+            return self.check_exercise(func)
+
+    @classmethod
+    def _patch_streams(cls, func):
+        func = match_returns_stdout(func, cls.solution)
+        func = add_stdin_input_arg(func)
+        return func
+
+    @classmethod
+    def check_exercise(cls, submission, functionise=False):
+        solution = cls.wrap_solution(cls.solution)
+        cls.test_exercise(solution, cls.test_values())
+        inputs = [cls.generate_inputs() for _ in range(10)]
+        expected_generated_results = [solution(**inp) for inp in inputs]
+
+        if functionise:
+            try:
+                initial_names, func = make_function(submission, solution)
+            except InvalidInitialCode:
+                # There should be an exception in the usual output
+                return False
+            except ExerciseError as e:
+                return dict(message=str(e))
+
+            func = cls._patch_streams(func)
+            initial_names["stdin_input"] = cls.stdin_input
+
+            try:
+                expected_result = solution(**initial_names)
+            except Exception:
+                traceback.print_exc()
+                return dict(
+                    message="The values of your input variables are invalid, "
+                    "try using values like the example."
+                )
+            try:
+                cls.check_result(func, initial_names, expected_result)
+            except:
+                # Assume that the user can tell that the output is wrong
+                return False
+        else:
+            submission = cls.wrap_solution(submission)
+            func = cls._patch_streams(submission)
+
+        try:
+            cls.test_exercise(
                 func,
-                self.solution,
-                self.test_exercise,
-                self.generate_inputs,
+                itertools.chain(
+                    cls.test_values(), zip(inputs, expected_generated_results)
+                ),
             )
+        except ExerciseError as e:
+            return dict(message=str(e))
+
+        return True
+
+    @classmethod
+    def wrap_solution(cls, func):
+        return func
 
     @abstractmethod
     def solution(self, *args, **kwargs):
@@ -447,7 +513,7 @@ class ExerciseStep(Step):
 
     @classmethod
     def arg_names(cls):
-        return list(inspect.signature(bind_self(cls.solution)).parameters)
+        return list(inspect.signature(cls.solution).parameters)
 
     @classmethod
     def test_values(cls):
@@ -465,9 +531,13 @@ class ExerciseStep(Step):
             yield inputs, result
 
     @classmethod
-    def test_exercise(cls, func):
-        for inputs, result in cls.test_values():
-            check_result(func, inputs, result)
+    def test_exercise(cls, func, values):
+        for inputs, result in values:
+            cls.check_result(func, inputs, result)
+
+    @classmethod
+    def check_result(cls, func, inputs, result):
+        return check_result(func, inputs, result)
 
     @classmethod
     def generate_inputs(cls):

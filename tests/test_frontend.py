@@ -424,9 +424,6 @@ print(words[index])
     WebDriverWait(driver, 5).until(text_to_be_present_in_element(locator, "This"))
     sleep(2)
 
-    print("Terminal HTML:")
-    print(driver.find_element(*locator).get_attribute("outerHTML"))
-
     # Check the choices
     choices = driver.find_elements_by_class_name("prediction-choice")
     assert len(choices) == 7
