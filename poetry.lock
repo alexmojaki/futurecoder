@@ -409,8 +409,8 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "~3.8"
-content-hash = "576643b16f1044403f4a7634c5e5250f0b4215f5cba7e440a8096adebdbd71c3"
+python-versions = "~3.9"
+content-hash = "4cea3fda2106e8bd0970c2209b69f97a6de616152aaf422be40cb1ee6ac111bc"
 
 [metadata.files]
 astcheck = [
