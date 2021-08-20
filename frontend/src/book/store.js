@@ -94,7 +94,14 @@ export const setPage = (page_slug) => {
 };
 
 const afterSetPage = (pageSlug, state = localState) => {
-  scroller.scrollTo(`step-text-${currentStep(state).index}`, {delay: 0, duration: 0});
+    setTimeout(() =>
+      scroller.scrollTo(`step-text-${currentStep(state).index}`, {
+        delay: 0,
+        duration: 0,
+        offset: -60,
+      }),
+    120,
+  )
   updateDatabase({pageSlug});
   window.location.hash = pageSlug;
 }
@@ -258,6 +265,7 @@ export const scrollToNextStep = () => {
       scroller.scrollTo(`step-text-${currentStep().index}`, {
         duration: 1000,
         smooth: true,
+        offset: -60,
       }),
     500,
   )
