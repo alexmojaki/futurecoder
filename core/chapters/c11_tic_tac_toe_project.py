@@ -51,33 +51,52 @@ It's going to be so fun!
 You will develop a text-based interactive tic-tac-toe game to be played by 2 human players.
 Here is a small preview of what the finished game will look like in play:
 
-     123
+      1 2 3
+    1  | |
+      -+-+-
+    2  | |
+      -+-+-
+    3  | |
+
+    X to play:
     1
+    1
+
+      1 2 3
+    1 X| |
+      -+-+-
+    2  | |
+      -+-+-
+    3  | |
+
+    O to play:
     2
-    3
+    2
 
-    X to play
-    Enter row: 2
-    Enter column: 2
-     123
+      1 2 3
+    1 X| |
+      -+-+-
+    2  |O|
+      -+-+-
+    3  | |
+
+    X to play:
     1
-    2 X
     3
 
-    O to play
-    Enter row: 1
-    Enter column: 3
-     123
-    1  O
-    2 X
-    3
+      1 2 3
+    1 X| |X
+      -+-+-
+    2  |O|
+      -+-+-
+    3  | |
 
 We will break up the project into several small functions, which will be exercises.
 
 You will use many of the concepts you have learned so far: strings,
 nested lists, nested loops, `range`, calling functions within functions, comparisons, and booleans.
 
-Along the way you will also learn some new concepts: `input`, the newline character, types in Python, and `while` loops.
+Along the way you will also learn some new concepts, including newline characters, types, and `input()`.
 
 Here is a rough outline of the project:
 
@@ -592,7 +611,6 @@ into the `winner` function, just call those functions.
 Great work!
 
 Now we have the code to determine a winning state on the board.
-Next we will tackle the problem of displaying the board on the screen.
 """
 
 
