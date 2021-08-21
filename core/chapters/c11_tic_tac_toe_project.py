@@ -301,7 +301,7 @@ What *is* a column of a nested list? The first column consists of the first elem
 Looping through all columns means looking at the first element of every row, then the second element of every row, etc.
 So you need to loop through numbers representing the positions first, second, etc. 
 How do you find the number of columns in `board`?
-That covers the outer loop, which goes through each column. Then you need an inner loop to go thread each element in the column.
+That covers the outer loop, which goes through each column. Then you need an inner loop to go through each element in the column.
 The different entries of a column are NOT on the same row. So how can you access them?
 You can loop through rows of the board and find the element corresponding to that row and the current column.
 To access all the entries of, say, the 5th column, you can loop through all the rows, and access the 5th element in each row.
