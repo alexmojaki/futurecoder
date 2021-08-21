@@ -1251,11 +1251,6 @@ so you will need to do that for it to complete.
             name = input()
             print(f'Hello {name}!')
 
-        def check(self):
-            if KeyboardInterrupt.__name__ in self.result:
-                return False
-            return super().check()
-
     class convert_input_to_int(ExerciseStep):
         """
 Whatever you typed in (not including pressing Enter at the end) is returned from the `input()` function as a string.
