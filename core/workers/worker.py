@@ -22,7 +22,9 @@ console.locals = {"assert_equal": assert_equal}
 def execute(code_obj):
     try:
         exec(code_obj, console.locals)
-    except (Exception, KeyboardInterrupt) as e:
+    except KeyboardInterrupt:
+        raise
+    except Exception as e:
         return TracebackSerializer().format_exception(e)
 
 
@@ -92,7 +94,16 @@ def check_entry(entry, input_callback, result_callback):
     patch_stdin(input_callback, result_callback)
 
     with redirect_stdout(output_buffer.stdout), redirect_stderr(output_buffer.stderr):
-        run_results = run_code(entry["source"], entry["input"])
+        try:
+            run_results = run_code(entry["source"], entry["input"])
+        except KeyboardInterrupt:
+            result_callback(
+                make_result(
+                    output='',
+                    output_parts=[],
+                )
+            )
+            return
 
     output = output_buffer.string()
 
