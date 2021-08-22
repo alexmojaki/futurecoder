@@ -27,6 +27,8 @@ async function loadPyodideOnly() {
   pyodide = await loadPyodide({indexURL});
   console.timeEnd("loadPyodide")
 
+  pyodide.globals.set("pyodide", pyodide)
+
   pyodide.runPython(loadPythonString)
 }
 
