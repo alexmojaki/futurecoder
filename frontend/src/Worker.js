@@ -85,7 +85,7 @@ class Runner {
       return decoder.decode(bytes) + "\n";
     }
 
-    pyodide.setInterruptBuffer(interruptBuffer);
+    pyodide._module.setInterruptBuffer(interruptBuffer);
     const resultCallbackToObject = (result) => this.resultCallback(toObject(result.toJs()));
     runCodeCatchErrors(entry, inputCallback, resultCallbackToObject)
   }
