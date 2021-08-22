@@ -737,7 +737,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nThe line identified above\nwas expected to begin a new indented block.\n\n"
+                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `2` identified above was expected to begin a new indented block.\n\n"
                 },
                 {
                     "color": "red",
@@ -934,7 +934,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nThe line identified above is less indented than expected.\n\n"
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `3` identified above is less indented than expected.\n\n"
                 },
                 {
                     "color": "red",
@@ -4226,7 +4226,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>No information is known about this exception.\nPlease report this example to\nhttps://github.com/aroberge/friendly/issues</p>\n<p>If you are using the Friendly console, use <code>www()</code> to\ndo an Internet search for this particular case.</p>",
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>No information is known about this exception.\nPlease report this example to\nhttps://github.com/friendly-traceback/friendly-traceback/issues/new\nIf you are using a REPL, use <code>www('bug')</code> to do so.</p>\n<p>If you are using the Friendly console, use <code>www()</code> to\ndo an Internet search for this particular case.</p>",
                             "tail": ""
                         }
                     ]
@@ -5437,7 +5437,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>numbers</code>,\na <code>list</code> of length <code>4</code>.\nThe valid index values of <code>numbers</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
                             "tail": ""
                         }
                     ]
@@ -15018,7 +15018,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI am guessing that you wrote `or` by mistake.\nRemoving it and writing `is_friend = name == \"Alice\"` seems to fix the error.\n\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThe Python keyword `or` can only be used for boolean expressions.\nPerhaps you meant to write\n\n`is_friend = name == \"Alice\" ,`\n\n"
                 },
                 {
                     "color": "red",

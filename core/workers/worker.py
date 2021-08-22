@@ -5,11 +5,12 @@ import sys
 from code import InteractiveConsole
 from contextlib import redirect_stdout, redirect_stderr
 
+import friendly_traceback.source_cache
 import stack_data
 
 from core.exercises import assert_equal
 from core.text import pages
-from core.utils import highlighted_markdown, friendly
+from core.utils import highlighted_markdown
 from core.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
 from core.workers.utils import internal_error_result, make_result, output_buffer
 
@@ -46,7 +47,7 @@ def run_code(code_source, code):
 
     stack_data.Source._class_local('__source_cache', {}).pop(filename, None)
 
-    friendly.source_cache.cache.add(filename, code)
+    friendly_traceback.source_cache.cache.add(filename, code)
 
     try:
         code_obj = compile(code, filename, mode)
