@@ -289,7 +289,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">sunshine</span>",
+                                            "content": "<span class=\"n n-ExecutingNode\">sunshine</span>",
                                             "is_current": true,
                                             "lineno": 1,
                                             "type": "line"
@@ -2465,7 +2465,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">sentence</span> <span class=\"o\">+=</span> <span class=\"n\">char</span>",
+                                            "content": "<span class=\"n\">sentence</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">char</span>",
                                             "is_current": true,
                                             "lineno": 6,
                                             "type": "line"
