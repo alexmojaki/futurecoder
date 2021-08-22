@@ -934,7 +934,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print('---')\n               ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nThe line identified above is less indented than expected.\n\n"
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nThe line identified above is less indented than expected.\n\n"
                 },
                 {
                     "color": "red",
@@ -2685,7 +2685,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n        a_function(invalid=...)\n\nwhere `invalid` is not a valid identifier (variable name) in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n"
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n        a_function(invalid=...)\n\nwhere `invalid` is not a valid identifier (variable name) in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n"
                 },
                 {
                     "color": "red",
@@ -5158,7 +5158,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
+                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']"
                 },
                 {
                     "color": "white",
@@ -15018,7 +15018,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n                                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI am guessing that you wrote `or` by mistake.\nRemoving it and writing `is_friend = name == \"Alice\"` seems to fix the error.\n\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI am guessing that you wrote `or` by mistake.\nRemoving it and writing `is_friend = name == \"Alice\"` seems to fix the error.\n\n"
                 },
                 {
                     "color": "red",
@@ -15535,7 +15535,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    \"XOX\n       ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n"
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n"
                 },
                 {
                     "color": "red",

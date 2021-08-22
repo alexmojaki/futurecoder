@@ -134,7 +134,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 
 ## Running locally
 
-1. Install Python 3.8 and [poetry](https://python-poetry.org/docs/#installation).
+1. Install Python 3.9 and [poetry](https://python-poetry.org/docs/#installation).
 2. Run `poetry install` to install Python dependencies.
 3. Run `poetry run python -m core.generate_static_files`. 
 4. In the `frontend` folder:
