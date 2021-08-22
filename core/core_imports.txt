@@ -5,7 +5,7 @@ birdseye
 cheap_repr
 didyoumean
 executing
-friendly
+friendly_traceback
 littleutils
 markdown
 packaging
