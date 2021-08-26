@@ -36,6 +36,13 @@ def generate_board(board_type):
                     board[i][i] = winning_piece
                 else:
                     board[i][-i - 1] = winning_piece
+    else:
+        diag = choice([True, False])
+        for i in range(size):
+            if diag:
+                board[i][i] = ' '
+            else:
+                board[i][-i - 1] = ' '
     return board
 
 
