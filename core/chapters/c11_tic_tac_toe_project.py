@@ -587,7 +587,7 @@ into the `winner` function, just call those functions.
                 diagonal2 = []
                 for i in range(len(board)):
                     diagonal1.append(board[i][i])
-                    diagonal2.append(board[i][i])
+                    diagonal2.append(board[i][-i - 1])
                 return winning_line(diagonal1) or winning_line(diagonal2)
 
             def winner(board: List[List[str]]):
