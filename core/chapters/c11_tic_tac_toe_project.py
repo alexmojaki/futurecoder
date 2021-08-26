@@ -43,6 +43,11 @@ def generate_board(board_type):
                 board[i][i] = ' '
             else:
                 board[i][-i - 1] = ' '
+        if (size % 2) == 0:
+            if diag:
+                board[0][-1] = ' '
+            else:
+                board[0][0] = ' '
     return board
 
 
