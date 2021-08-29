@@ -106,10 +106,12 @@ const afterSetPage = (pageSlug, state = localState) => {
   window.location.hash = pageSlug;
 }
 
+const specialHash = (hash) => hash === "toc" || hash === "ide";
+
 export const navigate = () => {
   const hash = window.location.hash.substring(1);
-  if (hash === "toc") {
-    setState("route", "toc");
+  if (specialHash(hash)) {
+    setState("route", hash);
   } else if (_.includes(localState.pageSlugsList, hash)) {
     setState("route", "main");
     setPage(hash);
@@ -244,7 +246,7 @@ const loadUserAndPages = (state, previousUser = {}) => {
   updateDatabase(updates);
 
   state = {...state, user: {...state.user, pagesProgress, pageSlug, developerMode}};
-  if (hash !== "toc") {
+  if (!specialHash(hash)) {
     afterSetPage(pageSlug, state);
   }
   return state;

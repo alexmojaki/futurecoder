@@ -1,34 +1,62 @@
-.ide {
-  width: 48vw;
-  height: 97vh;
+.editor-buttons {
+  position: fixed;
+  left: 50vw;
+  top: 1vh;
+}
+
+.full-ide-button {
   position: fixed;
   right: 1vw;
   top: 1vh;
-  bottom: 1vh;
-  
-  display: flex;
-  flex-direction: column;
+  color: white;
+}
 
-  .editor-buttons {
-    margin-bottom: 5px;
-  }
-
-  .editor-and-terminal {
-    flex-grow: 1;
-    width: 100%;
-    position: relative;
+.ide {
+  &.ide-half {
+    left: 50vw;
 
     .editor {
-      height: 49%;
       width: 100%;
-      position: absolute;
-      top: 0;
+      height: 49%;
       bottom: 51%;
     }
 
     .terminal {
       height: 49%;
       width: 100%;
+    }
+  }
+
+  &.ide-full {
+    left: 2vw;
+
+    .editor {
+      height: 100%;
+      width: 49%;
+    }
+
+    .terminal {
+      height: 100%;
+      width: 50.5%;
+      right: 0;
+    }
+  }
+
+  position: fixed;
+  right: 1vw;
+  top: calc(1vh + 50px);
+  bottom: 1vh;
+  
+  .editor-and-terminal {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .editor {
+      position: absolute;
+    }
+
+    .terminal {
       position: absolute;
       bottom: 0;
 

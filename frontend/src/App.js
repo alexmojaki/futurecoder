@@ -25,6 +25,8 @@ import {
   faBars,
   faBug,
   faCog,
+  faCompress,
+  faExpand,
   faListOl,
   faPlay,
   faSignOutAlt,
@@ -42,6 +44,169 @@ import firebase from "firebase/app";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import {TableOfContents} from "./TableOfContents";
 
+
+const EditorButtons = (
+  {
+    disabled,
+    showBirdseye,
+    showEditor,
+    showPythonTutor,
+    showSnoop,
+    fullIde,
+  }) =>
+  <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
+    <button
+      disabled={disabled}
+      className="btn btn-primary"
+      onClick={() => runCode({source: "editor"})}
+    >
+      <FontAwesomeIcon icon={faPlay}/> Run
+    </button>
+
+    {" "}
+
+    {showSnoop &&
+    <button
+      disabled={disabled}
+      className="btn btn-success"
+      onClick={() => runCode({source: "snoop"})}
+    >
+      <FontAwesomeIcon icon={faBug}/> Snoop
+    </button>}
+
+    {" "}
+
+    {showPythonTutor &&
+    <button
+      disabled={disabled}
+      className="btn btn-success"
+      onClick={() => {
+        runCode({source: "pythontutor"});
+        window.open(
+          'https://pythontutor.com/iframe-embed.html#code=' +
+          encodeURIComponent(bookState.editorContent) +
+          '&codeDivHeight=600' +
+          '&codeDivWidth=600' +
+          '&cumulative=false' +
+          '&curInstr=0' +
+          '&heapPrimitives=false' +
+          '&origin=opt-frontend.js' +
+          '&py=3' +
+          '&rawInputLstJSON=%5B%5D' +
+          '&textReferences=false',
+        );
+      }}
+    >
+      <FontAwesomeIcon icon={faUserGraduate}/> Python Tutor
+    </button>}
+
+    {" "}
+
+    {showBirdseye &&
+    <button
+      disabled={disabled}
+      className="btn btn-success"
+      onClick={() => runCode({source: "birdseye"})}
+    >
+      <img
+        src={birdseyeIcon}
+        width={20}
+        height={20}
+        alt="birdseye logo"
+        style={{position: "relative", top: "-2px"}}
+      />
+      Bird's Eye
+    </button>}
+  </div>;
+
+const Editor = ({readOnly, value}) =>
+  <div className="editor">
+    <AceEditor
+      mode="python"
+      theme="monokai"
+      onChange={(value) => bookSetState("editorContent", value)}
+      onLoad={(editor) => {
+        editor.renderer.setScrollMargin(10);
+        editor.renderer.setPadding(10);
+      }}
+      value={value}
+      name="editor"
+      height="100%"
+      width="100%"
+      fontSize="15px"
+      setOptions={{
+        fontFamily: "monospace",
+        showPrintMargin: false,
+      }}
+      readOnly={readOnly}
+    />
+  </div>;
+
+const Shell = () =>
+  <Terminal
+    onCommand={(cmd) => runCode({code: cmd, source: "shell"})}
+    ref={terminalRef}
+  />
+
+const CourseText = (
+  {
+    user,
+    step_index,
+    page,
+    pages,
+    messages
+  }) =>
+  <div className="book-text markdown-body"
+       onCopy={checkCopy}>
+    <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
+    {page.steps.slice(0, step_index + 1).map((part, index) =>
+      <div key={index} id={`step-text-${index}`}>
+        <div dangerouslySetInnerHTML={{__html: part.text}}
+             onClick={(event) => {
+               // https://stackoverflow.com/questions/54109790/how-to-add-onclick-event-to-a-string-rendered-by-dangerouslysetinnerhtml-in-reac
+               const button = event.target.closest("button");
+               if (button && event.currentTarget.contains(button) && button.textContent === "Copy") {
+                 const codeElement = button.closest("code");
+                 let codeText = codeElement.textContent;
+                 codeText = codeText.substring(0, codeText.length - "\nCopy".length);
+                 bookSetState("editorContent", codeText);
+               }
+             }}
+        />
+        <hr/>
+      </div>
+    )}
+    {
+      messages.map((message, index) =>
+        <div key={index} className="card book-message">
+          <div
+            className="card-header"
+            onClick={() => closeMessage(index)}>
+            <FontAwesomeIcon icon={faTimes}/>
+          </div>
+          <div className="card-body"
+               dangerouslySetInnerHTML={{__html: message}}/>
+        </div>
+      )
+    }
+    <div>
+      {page.index > 0 &&
+      <button className="btn btn-primary btn-sm previous-button"
+              onClick={() => movePage(-1)}>
+        Previous
+      </button>}
+      {" "}
+      {page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1 &&
+      <button className="btn btn-success next-button"
+              onClick={() => movePage(+1)}>
+        Next
+      </button>}
+    </div>
+    <br/>
+    {
+      user.developerMode && <StepButtons/>
+    }
+  </div>;
 
 class AppComponent extends React.Component {
   render() {
@@ -62,8 +227,15 @@ class AppComponent extends React.Component {
     const page = currentPage();
     const step = currentStep();
     const step_index = step.index;
+
     let showEditor, showSnoop, showPythonTutor, showBirdseye;
-    if (step.text.length) {
+    const fullIde = route === "ide";
+    if (fullIde) {
+      showEditor = true;
+      showSnoop = true;
+      showPythonTutor = true;
+      showBirdseye = true;
+    } else if (step.text.length) {
       showEditor = page.index >= pages.WritingPrograms.index;
       const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
       showSnoop = page.index > snoopPageIndex ||
@@ -131,168 +303,48 @@ class AppComponent extends React.Component {
           <FontAwesomeIcon icon={faListOl}/> Table of Contents
         </a>
       </nav>
-      <div className="book-text markdown-body"
-           onCopy={checkCopy}>
-        <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
-        {page.steps.slice(0, step_index + 1).map((part, index) =>
-          <div key={index} id={`step-text-${index}`}>
-            <div dangerouslySetInnerHTML={{__html: part.text}}
-                 onClick={(event) => {
-                   // https://stackoverflow.com/questions/54109790/how-to-add-onclick-event-to-a-string-rendered-by-dangerouslysetinnerhtml-in-reac
-                   const button = event.target.closest("button");
-                   if (button && event.currentTarget.contains(button) && button.textContent === "Copy") {
-                     const codeElement = button.closest("code");
-                     let codeText = codeElement.textContent;
-                     codeText = codeText.substring(0, codeText.length - "\nCopy".length);
-                     bookSetState("editorContent", codeText);
-                   }
-                 }}
-            />
-            <hr/>
-          </div>
-        )}
-        {
-          messages.map((message, index) =>
-            <div key={index} className="card book-message">
-              <div
-                className="card-header"
-                onClick={() => closeMessage(index)}>
-                <FontAwesomeIcon icon={faTimes}/>
-              </div>
-              <div className="card-body" 
-                   dangerouslySetInnerHTML={{__html: message}}/>
-            </div>
-          )
-        }
-        <div>
-          {page.index > 0 &&
-          <button className="btn btn-primary btn-sm previous-button"
-                  onClick={() => movePage(-1)}>
-            Previous
-          </button>}
-          {" "}
-          {page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1 &&
-          <button className="btn btn-success next-button"
-                  onClick={() => movePage(+1)}>
-            Next
-          </button>}
-        </div>
-        <br/>
-        {
-          user.developerMode && <StepButtons/>
-        }
-      </div>
-      <div className="ide">
-        <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
-          <button
-            disabled={cantUseEditor}
-            className="btn btn-primary"
-            onClick={() => {
-              runCode({source: "editor"});
-            }}
-          >
-            <FontAwesomeIcon icon={faPlay}/> Run
-          </button>
 
-          {" "}
+      {!fullIde && <CourseText {...{
+        user,
+        step_index,
+        page,
+        pages,
+        messages
+      }}/>}
 
-          {showSnoop &&
-          <button
-            disabled={cantUseEditor}
-            className="btn btn-success"
-            onClick={() => {
-              runCode({source: "snoop"})
-            }}
-          >
-            <FontAwesomeIcon icon={faBug}/> Snoop
-          </button>}
+      <EditorButtons {...{
+        showBirdseye,
+        showEditor,
+        showSnoop,
+        showPythonTutor,
+        fullIde,
+        disabled: cantUseEditor,
+      }}/>
 
-          {" "}
-
-          {showPythonTutor &&
-          <button
-            disabled={cantUseEditor}
-            className="btn btn-success"
-            onClick={() => {
-              runCode({source: "pythontutor"});
-              window.open(
-                'https://pythontutor.com/iframe-embed.html#code=' +
-                encodeURIComponent(bookState.editorContent) +
-                '&codeDivHeight=600' +
-                '&codeDivWidth=600' +
-                '&cumulative=false' +
-                '&curInstr=0' +
-                '&heapPrimitives=false' +
-                '&origin=opt-frontend.js' +
-                '&py=3' +
-                '&rawInputLstJSON=%5B%5D' +
-                '&textReferences=false',
-              );
-            }}
-          >
-            <FontAwesomeIcon icon={faUserGraduate}/> Python Tutor
-          </button>}
-
-          {" "}
-
-          {showBirdseye &&
-          <button
-            disabled={cantUseEditor}
-            className="btn btn-success"
-            onClick={() => {
-              runCode({source: "birdseye"})
-            }}
-          >
-            <img
-              src={birdseyeIcon}
-              width={20}
-              height={20}
-              alt="birdseye logo"
-              style={{position: "relative", top: "-2px"}}
-            />
-            Bird's Eye
-          </button>}
-
-        </div>
+      <div className={`ide ide-${fullIde ? 'full' : 'half'}`}>
         <div className="editor-and-terminal">
-          {showEditor && <div className="editor">
-            <AceEditor
-              mode="python"
-              theme="monokai"
-              onChange={(value) => {
-                bookSetState("editorContent", value);
-              }}
-              value={editorContent}
-              name="editor"
-              height="100%"
-              width="100%"
-              onLoad={(editor) => {
-                editor.renderer.setScrollMargin(10);
-                editor.renderer.setPadding(10);
-              }}
-              fontSize="15px"
-              setOptions={{
-                fontFamily: "monospace",
-                showPrintMargin: false,
-              }}
-              readOnly={cantUseEditor}
-            />
-          </div>}
-          <div className="terminal" style={{height: showEditor ? "49%" : "100%"}}>
-            <Terminal
-              onCommand={(cmd) => runCode({code: cmd, source: "shell"})}
-              ref={terminalRef}
-            />
+          {showEditor &&
+           <Editor value={editorContent} readOnly={cantUseEditor}/>
+          }
+          <div className="terminal" style={{height: showEditor ? undefined : "100%"}}>
+            <Shell/>
           </div>
         </div>
       </div>
 
+      <a className="btn btn-primary full-ide-button"
+         href={fullIde ? "#" + page.slug : "#ide"}>
+        <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
+      </a>
+
+      {!fullIde &&
       <HintsPopup
         hints={step.hints}
         numHints={numHints}
         requestingSolution={requestingSolution}
         solution={step.solution}
       />
+      }
 
       <ErrorModal error={error}/>
     </div>

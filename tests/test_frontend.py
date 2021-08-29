@@ -26,6 +26,7 @@ def test_frontend():
     driver = webdriver.Chrome(
         options=options, desired_capabilities=desired_capabilities
     )
+    driver.set_window_size(1024, 768)
     driver.implicitly_wait(5)
     try:
         _tests(driver)
