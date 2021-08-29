@@ -90,7 +90,13 @@ def check_entry_catch_internal_errors(entry, input_callback, result_callback):
 
 def check_entry(entry, input_callback, result_callback):
     if hasattr(entry, "to_py"):
+        import pyodide_js
         entry = entry.to_py()
+
+        pyodide_js.loadPackagesFromImports(entry["input"]).then(
+            lambda *_: check_entry(entry, input_callback, result_callback)
+        )
+        return
 
     patch_stdin(input_callback, result_callback)
 
