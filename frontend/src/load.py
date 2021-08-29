@@ -2,9 +2,6 @@ import io
 import tarfile
 import sys
 
-import js
-js.pyodide = pyodide
-
 package_path = "/tmp/package/"
 sys.path.append(package_path)
 tarfile.TarFile.chown = lambda *_, **__: None
