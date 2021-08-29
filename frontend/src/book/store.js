@@ -147,11 +147,24 @@ const loadPages = makeAction(
   },
 )
 
+const debouncedSaveEditorContent = _.debounce(
+  editorContent => updateDatabase({editorContent}),
+  3000,
+  {maxWait: 15000},
+);
+
+export function setEditorContent(editorContent) {
+  setState("editorContent", editorContent);
+  // noinspection JSValidateTypes
+  debouncedSaveEditorContent(editorContent);
+}
+
 axios.get(pagesUrl).then((response) => loadPages(response.data));
 
 const loadUser = makeAction(
   "LOAD_USER",
-  (state, {value: user}) => {
+  (state, {value: {editorContent, ...user}}) => {
+    state = iset(state, "editorContent", state.editorContent || editorContent || "");
     return loadUserAndPages({...state, user}, state.user);
   },
 )
@@ -203,7 +216,7 @@ const loadUserAndPages = (state, previousUser = {}) => {
     return state;
   }
   let {
-    user: {pagesProgress, pageSlug, uid, developerMode},
+    user: {pagesProgress, pageSlug, developerMode},
     pages,
     pageSlugsList
   } = state;

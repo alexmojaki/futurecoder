@@ -15,6 +15,7 @@ import {
   moveStep,
   updateDatabase,
   setDeveloperMode,
+  setEditorContent,
 } from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -124,7 +125,7 @@ const Editor = ({readOnly, value}) =>
     <AceEditor
       mode="python"
       theme="monokai"
-      onChange={(value) => bookSetState("editorContent", value)}
+      onChange={setEditorContent}
       onLoad={(editor) => {
         editor.renderer.setScrollMargin(10);
         editor.renderer.setPadding(10);
