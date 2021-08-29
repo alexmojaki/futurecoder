@@ -39,6 +39,7 @@ import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
+import homeIcon from "./img/64.png";
 import {runCode, terminalRef} from "./RunCode";
 import firebase from "firebase/app";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -52,7 +53,6 @@ const EditorButtons = (
     showEditor,
     showPythonTutor,
     showSnoop,
-    fullIde,
   }) =>
   <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
     <button
@@ -247,6 +247,9 @@ class AppComponent extends React.Component {
     const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="/">
+          <img src={homeIcon} width="40" height="40" alt=""/>
+        </a>
         <span className="nav-item custom-popup">
           <MenuPopup user={user}/>
         </span>
