@@ -106,10 +106,12 @@ const afterSetPage = (pageSlug, state = localState) => {
   window.location.hash = pageSlug;
 }
 
+const specialHash = (hash) => hash === "toc" || hash === "ide";
+
 export const navigate = () => {
   const hash = window.location.hash.substring(1);
-  if (hash === "toc") {
-    setState("route", "toc");
+  if (specialHash(hash)) {
+    setState("route", hash);
   } else if (_.includes(localState.pageSlugsList, hash)) {
     setState("route", "main");
     setPage(hash);
@@ -145,11 +147,24 @@ const loadPages = makeAction(
   },
 )
 
+const debouncedSaveEditorContent = _.debounce(
+  editorContent => updateDatabase({editorContent}),
+  3000,
+  {maxWait: 15000},
+);
+
+export function setEditorContent(editorContent) {
+  setState("editorContent", editorContent);
+  // noinspection JSValidateTypes
+  debouncedSaveEditorContent(editorContent);
+}
+
 axios.get(pagesUrl).then((response) => loadPages(response.data));
 
 const loadUser = makeAction(
   "LOAD_USER",
-  (state, {value: user}) => {
+  (state, {value: {editorContent, ...user}}) => {
+    state = iset(state, "editorContent", state.editorContent || editorContent || "");
     return loadUserAndPages({...state, user}, state.user);
   },
 )
@@ -201,7 +216,7 @@ const loadUserAndPages = (state, previousUser = {}) => {
     return state;
   }
   let {
-    user: {pagesProgress, pageSlug, uid, developerMode},
+    user: {pagesProgress, pageSlug, developerMode},
     pages,
     pageSlugsList
   } = state;
@@ -244,7 +259,7 @@ const loadUserAndPages = (state, previousUser = {}) => {
   updateDatabase(updates);
 
   state = {...state, user: {...state.user, pagesProgress, pageSlug, developerMode}};
-  if (hash !== "toc") {
+  if (!specialHash(hash)) {
     afterSetPage(pageSlug, state);
   }
   return state;
