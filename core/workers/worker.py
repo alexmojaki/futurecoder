@@ -1,4 +1,5 @@
 import builtins
+import importlib
 import linecache
 import logging
 import sys
@@ -88,15 +89,39 @@ def check_entry_catch_internal_errors(entry, input_callback, result_callback):
         result_callback(internal_error_result())
 
 
+def install_packages(imports, callback):
+    import pyodide_js  # noqa
+    import micropip    # noqa
+
+    to_package_name = pyodide_js._module._import_name_to_package_name.to_py()
+    packages_names = [to_package_name.get(mod, mod) for mod in imports]
+    future = micropip.install(packages_names)
+    future.add_done_callback(callback)
+
+
 def check_entry(entry, input_callback, result_callback):
     if hasattr(entry, "to_py"):
-        import pyodide_js
         entry = entry.to_py()
 
-        pyodide_js.loadPackagesFromImports(entry["input"]).then(
-            lambda *_: check_entry(entry, input_callback, result_callback)
-        )
-        return
+        import pyodide
+        imports = pyodide.find_imports(entry["input"])
+        to_install = []
+        for module in imports:
+            try:
+                importlib.import_module(module)
+            except ModuleNotFoundError:
+                to_install.append(module)
+        if to_install:
+            import pyodide_js
+
+            # `await` would be nice but trying not to infect everything with async
+            pyodide_js.loadPackage("micropip").then(
+                lambda *_: install_packages(
+                    imports,
+                    lambda *_: check_entry(entry, input_callback, result_callback)
+                )
+            )
+            return
 
     patch_stdin(input_callback, result_callback)
 
