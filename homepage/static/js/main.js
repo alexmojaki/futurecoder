@@ -74,13 +74,28 @@
       150
     ))
   }
+
+  checkUnsubscribe();
 }())
 
-function submitEmail() {
-  const email = document.getElementById("email-input").value;
-  fetch("https://futurecoder-io-default-rtdb.firebaseio.com/email_list.json", {
+function submitEmailGeneric(email, key) {
+  fetch(`https://futurecoder-io-default-rtdb.firebaseio.com/${key}.json`, {
     method: "POST",
     body: JSON.stringify({email, timestamp: new Date().toISOString()}),
   });
+}
+
+function submitEmail() {
+  const email = document.getElementById("email-input").value;
+  submitEmailGeneric(email, "email_list");
   document.getElementById("email-success").style.display = "block";
+}
+
+function checkUnsubscribe() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const email = urlParams.get('email_unsubscribe');
+  if (email) {
+    submitEmailGeneric(email, "email_unsubscribe");
+    alert("Unsubscribed " + email);
+  }
 }
