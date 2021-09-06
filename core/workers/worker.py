@@ -99,29 +99,40 @@ def install_packages(imports, callback):
     future.add_done_callback(callback)
 
 
+def find_imports_to_install(code):
+    import pyodide  # noqa
+
+    imports = pyodide.find_imports(code)
+    to_install = []
+    for module in imports:
+        try:
+            importlib.import_module(module)
+        except ModuleNotFoundError:
+            to_install.append(module)
+    return to_install
+
+
 def check_entry(entry, input_callback, result_callback):
     if hasattr(entry, "to_py"):
         entry = entry.to_py()
 
-        import pyodide
-        imports = pyodide.find_imports(entry["input"])
-        to_install = []
-        for module in imports:
-            try:
-                importlib.import_module(module)
-            except ModuleNotFoundError:
-                to_install.append(module)
-        if to_install:
-            import pyodide_js
+        # Try automatically installing imports but don't interrupt the course
+        # in case of failure, e.g. https://github.com/alexmojaki/futurecoder/issues/175
+        try:
+            to_install = find_imports_to_install(entry["input"])
+            if to_install:
+                import pyodide_js
 
-            # `await` would be nice but trying not to infect everything with async
-            pyodide_js.loadPackage("micropip").then(
-                lambda *_: install_packages(
-                    imports,
-                    lambda *_: check_entry(entry, input_callback, result_callback)
+                # `await` would be nice but trying not to infect everything with async
+                pyodide_js.loadPackage("micropip").then(
+                    lambda *_: install_packages(
+                        to_install,
+                        lambda *_: check_entry(entry, input_callback, result_callback)
+                    )
                 )
-            )
-            return
+                return
+        except Exception:
+            log.exception("Error installing imports")
 
     patch_stdin(input_callback, result_callback)
 
