@@ -14,7 +14,17 @@ import * as Sentry from "@sentry/react";
 const sentryDsn = process.env.REACT_APP_SENTRY_DSN;
 if (sentryDsn) {
   console.log('Configuring sentry');
-  Sentry.init({dsn: sentryDsn, normalizeDepth: 5});
+  Sentry.init({
+    dsn: sentryDsn,
+    normalizeDepth: 5,
+    beforeBreadcrumb(breadcrumb, hint) {
+      const {message} = breadcrumb;
+      if (message.includes("prev state") || message.includes("next state")) {
+        return null;
+      }
+      return breadcrumb;
+    },
+  });
 }
 
 const {delegateReducer} = redact("root");
@@ -30,8 +40,6 @@ const reducer = delegateReducer(
 // noinspection JSUnresolvedVariable
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const sentryReduxEnhancer = Sentry.createReduxEnhancer({});
-
 export const store = createStore(
   reducer,
   composeEnhancers(
@@ -39,7 +47,7 @@ export const store = createStore(
       thunk,
       logger,
     ),
-    sentryReduxEnhancer)
+  )
 );
 
 dispatcher.store = store;
