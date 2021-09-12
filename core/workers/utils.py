@@ -14,7 +14,10 @@ class SysStream:
     def write(self, s):
         if not s:
             return
-        # TODO limit output length
+
+        if isinstance(s, bytes):
+            s = s.decode("utf8", "replace")
+
         self.output.parts.append(
             dict(text=s, color=self.color)
         )
