@@ -1,3 +1,5 @@
+import asyncio
+import functools
 import os
 import sys
 import traceback
@@ -112,3 +114,21 @@ def internal_error_result():
             sentry_event=get_exception_event(),
         ),
     )
+
+
+def run_async(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        try:
+            loop = asyncio.get_running_loop()
+        except RuntimeError:
+            pass
+        else:
+            loop.run_until_complete(result)
+            return
+
+        asyncio.run(result)
+
+
+    return wrapper

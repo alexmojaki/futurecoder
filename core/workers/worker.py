@@ -13,7 +13,7 @@ from core.exercises import assert_equal
 from core.text import pages
 from core.utils import highlighted_markdown
 from core.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
-from core.workers.utils import internal_error_result, make_result, output_buffer
+from core.workers.utils import internal_error_result, make_result, output_buffer, run_async
 
 log = logging.getLogger(__name__)
 
@@ -89,20 +89,7 @@ def check_entry_catch_internal_errors(entry, input_callback, result_callback):
         result_callback(internal_error_result())
 
 
-def install_packages(imports, callback):
-    import pyodide_js  # noqa
-    import micropip    # noqa
-
-    to_package_name = pyodide_js._module._import_name_to_package_name.to_py()
-    packages_names = [to_package_name.get(mod, mod) for mod in imports]
-    future = micropip.install(packages_names)
-    future.add_done_callback(callback)
-
-
-def find_imports_to_install(code):
-    import pyodide  # noqa
-
-    imports = pyodide.find_imports(code)
+def find_imports_to_install(imports):
     to_install = []
     for module in imports:
         try:
@@ -112,25 +99,26 @@ def find_imports_to_install(code):
     return to_install
 
 
-def check_entry(entry, input_callback, result_callback):
+@run_async
+async def check_entry(entry, input_callback, result_callback):
     if hasattr(entry, "to_py"):
         entry = entry.to_py()
 
         # Try automatically installing imports but don't interrupt the course
         # in case of failure, e.g. https://github.com/alexmojaki/futurecoder/issues/175
         try:
-            to_install = find_imports_to_install(entry["input"])
-            if to_install:
-                import pyodide_js
+            import pyodide_js  # noqa
+            import pyodide     # noqa
 
-                # `await` would be nice but trying not to infect everything with async
-                pyodide_js.loadPackage("micropip").then(
-                    lambda *_: install_packages(
-                        to_install,
-                        lambda *_: check_entry(entry, input_callback, result_callback)
-                    )
-                )
-                return
+            imports = pyodide.find_imports(entry["input"])
+            to_install = find_imports_to_install(imports)
+            if to_install:
+                await pyodide_js.loadPackage("micropip")
+                import micropip  # noqa
+
+                to_package_name = pyodide_js._module._import_name_to_package_name.to_py()
+                packages_names = [to_package_name.get(mod, mod) for mod in to_install]
+                await micropip.install(packages_names)
         except Exception:
             log.exception("Error installing imports")
 
