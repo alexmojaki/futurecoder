@@ -149,6 +149,64 @@ const Shell = () =>
     ref={terminalRef}
   />
 
+const Messages = (
+  {
+    messages,
+  }) =>
+  messages.map((message, index) =>
+    <div key={index} className="card book-message">
+      <div
+        className="card-header"
+        onClick={() => closeMessage(index)}>
+        <FontAwesomeIcon icon={faTimes}/>
+      </div>
+      <div className="card-body"
+           dangerouslySetInnerHTML={{__html: message}}/>
+    </div>
+  )
+
+const QuestionWizard = (
+  {
+    messages,
+  }) =>
+  <>
+    <h1>Question Wizard</h1>
+    <p>
+      If you need help, there are many sites like <a href="https://stackoverflow.com/">Stack Overflow</a>
+      and <a href="https://www.reddit.com/r/learnpython/">reddit</a> where you can ask questions.
+      This is a tool to help you write a good quality question that is likely to get answers.
+    </p>
+    <p>
+      Enter and run your code on the right. If you don't have any code because you don't know where to get started,
+      I'm afraid this tool can't help you. You can still ask for help, but it might be good to first
+      read <a href="https://stackoverflow.com/help/dont-ask">What types of questions should I avoid asking?</a>
+    </p>
+    <hr/>
+    {messages.map((message, index) =>
+      <div key={index}>
+        <Markdown html={message}/>
+        <hr/>
+      </div>
+    )}
+  </>
+
+const Markdown = (
+  {
+    html,
+  }) =>
+  <div dangerouslySetInnerHTML={{__html: html}}
+       onClick={(event) => {
+         // https://stackoverflow.com/questions/54109790/how-to-add-onclick-event-to-a-string-rendered-by-dangerouslysetinnerhtml-in-reac
+         const button = event.target.closest("button");
+         if (button && event.currentTarget.contains(button) && button.textContent === "Copy") {
+           const codeElement = button.closest("code");
+           let codeText = codeElement.textContent;
+           codeText = codeText.substring(0, codeText.length - "\nCopy".length);
+           bookSetState("editorContent", codeText);
+         }
+       }}
+  />
+
 const CourseText = (
   {
     user,
@@ -157,39 +215,16 @@ const CourseText = (
     pages,
     messages
   }) =>
-  <div className="book-text markdown-body"
-       onCopy={checkCopy}>
+  <>
     <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
     {page.steps.slice(0, step_index + 1).map((part, index) =>
       <div key={index} id={`step-text-${index}`}>
-        <div dangerouslySetInnerHTML={{__html: part.text}}
-             onClick={(event) => {
-               // https://stackoverflow.com/questions/54109790/how-to-add-onclick-event-to-a-string-rendered-by-dangerouslysetinnerhtml-in-reac
-               const button = event.target.closest("button");
-               if (button && event.currentTarget.contains(button) && button.textContent === "Copy") {
-                 const codeElement = button.closest("code");
-                 let codeText = codeElement.textContent;
-                 codeText = codeText.substring(0, codeText.length - "\nCopy".length);
-                 bookSetState("editorContent", codeText);
-               }
-             }}
-        />
+        <Markdown html={part.text}/>
         <hr/>
       </div>
     )}
-    {
-      messages.map((message, index) =>
-        <div key={index} className="card book-message">
-          <div
-            className="card-header"
-            onClick={() => closeMessage(index)}>
-            <FontAwesomeIcon icon={faTimes}/>
-          </div>
-          <div className="card-body"
-               dangerouslySetInnerHTML={{__html: message}}/>
-        </div>
-      )
-    }
+    <Messages {...{messages}}/>
+
     <div>
       {page.index > 0 &&
       <button className="btn btn-primary btn-sm previous-button"
@@ -207,7 +242,7 @@ const CourseText = (
     {
       user.developerMode && <StepButtons/>
     }
-  </div>;
+  </>;
 
 class AppComponent extends React.Component {
   render() {
@@ -215,6 +250,7 @@ class AppComponent extends React.Component {
       numHints,
       editorContent,
       messages,
+      questionWizard,
       pages,
       requestingSolution,
       user,
@@ -225,13 +261,15 @@ class AppComponent extends React.Component {
     if (route === "toc") {
       return <TableOfContents/>
     }
+    const isQuestionWizard = route === "question";
+    const fullIde = route === "ide";
+
     const page = currentPage();
     const step = currentStep();
     const step_index = step.index;
 
     let showEditor, showSnoop, showPythonTutor, showBirdseye;
-    const fullIde = route === "ide";
-    if (fullIde) {
+    if (fullIde || isQuestionWizard) {
       showEditor = true;
       showSnoop = true;
       showPythonTutor = true;
@@ -305,13 +343,24 @@ class AppComponent extends React.Component {
         </a>
       </nav>
 
-      {!fullIde && <CourseText {...{
-        user,
-        step_index,
-        page,
-        pages,
-        messages
-      }}/>}
+      {!fullIde &&
+      <div className="book-text markdown-body">
+        {isQuestionWizard ?
+          <QuestionWizard {...questionWizard}/>
+          :
+          <div onCopy={checkCopy}>
+            <CourseText {...{
+              user,
+              step_index,
+              page,
+              pages,
+              messages
+            }}/>
+          </div>
+        }
+      </div>
+
+      }
 
       <EditorButtons {...{
         showBirdseye,

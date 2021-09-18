@@ -55,4 +55,4 @@ def exec_snoop(filename, code, code_obj):
     find_code(code_obj)
 
     with tracer:
-        return execute(code_obj)
+        execute(code_obj)

@@ -277,7 +277,14 @@
                     "codeSource": "shell",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "NameError: name 'sunshine' is not defined",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | sunshine",
+                        "           ^^^^^^^^",
+                        "",
+                        "NameError: name 'sunshine' is not defined"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [],
@@ -2451,7 +2458,17 @@
                     "codeSource": "editor",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "NameError: name 'char' is not defined",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 6, in <module>",
+                        "       5 |     char = '!'",
+                        "-->    6 | sentence += char",
+                        "                       ^^^^",
+                        "excited = False",
+                        "sentence = 'Hello World'",
+                        "",
+                        "NameError: name 'char' is not defined"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [
@@ -3489,7 +3506,15 @@
                     "codeSource": "shell",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "IndexError: list index out of range",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | words[4]",
+                        "           ^^^^^^^^",
+                        "words = ['This', 'is', 'a', 'list']",
+                        "",
+                        "IndexError: list index out of range"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [],
@@ -4095,7 +4120,16 @@
                     "codeSource": "editor",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "TypeError: 'str' object is not callable",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 3, in <module>",
+                        "       2 | print(callable(f))",
+                        "-->    3 | f()",
+                        "           ^^^",
+                        "f = 'a string'",
+                        "",
+                        "TypeError: 'str' object is not callable"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [
@@ -4196,7 +4230,16 @@
                     "codeSource": "editor",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "TypeError: object of type 'NoneType' has no len()",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 2, in <module>",
+                        "       1 | things = print([1, 2, 3])",
+                        "-->    2 | length = len(things)",
+                        "                    ^^^^^^^^^^^",
+                        "things = None",
+                        "",
+                        "TypeError: object of type 'NoneType' has no len()"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [
@@ -4288,7 +4331,16 @@
                     "codeSource": "editor",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "AttributeError: 'str' object has no attribute 'append'",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 2, in <module>",
+                        "       1 | word = 'Hello'",
+                        "-->    2 | word.append('!')",
+                        "           ^^^^^^^^^^^",
+                        "word = 'Hello'",
+                        "",
+                        "AttributeError: 'str' object has no attribute 'append'"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [],
@@ -5015,7 +5067,14 @@
                     "codeSource": "shell",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "AttributeError: 'str' object has no attribute 'append'",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | 'Python'.append(' is cool!')",
+                        "           ^^^^^^^^^^^^^^^",
+                        "",
+                        "AttributeError: 'str' object has no attribute 'append'"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [],
@@ -5389,7 +5448,21 @@
                     "codeSource": "pythontutor",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "IndexError: list index out of range",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 3, in <module>",
+                        "       2 | for i in range(len(numbers)):",
+                        "-->    3 |     number = numbers[i]",
+                        "                        ^^^^^^^^^^",
+                        "i = 4",
+                        "len(numbers) = 4",
+                        "number = 15",
+                        "number <= 10 = False",
+                        "numbers = [7, 3, 12, 15]",
+                        "range(len(numbers)) = range(0, 4)",
+                        "",
+                        "IndexError: list index out of range"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [],
@@ -5777,7 +5850,19 @@
                     "codeSource": "editor",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "TypeError: can only concatenate str (not \"int\") to str",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 3, in <module>",
+                        "       2 | age = 20",
+                        "-->    3 | print(\"Hello \" + name + \". You are \" + age + \" years old.\")",
+                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+                        "\"Hello \" + name = 'Hello Alice'",
+                        "\"Hello \" + name + \". You are \" = 'Hello Alice. You are '",
+                        "age = 20",
+                        "name = 'Alice'",
+                        "",
+                        "TypeError: can only concatenate str (not \"int\") to str"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [],
@@ -6104,7 +6189,14 @@
                     "codeSource": "shell",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "TypeError: unsupported operand type(s) for +: 'int' and 'str'",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | print(1 + \"x\")",
+                        "                 ^^^^^^^",
+                        "",
+                        "TypeError: unsupported operand type(s) for +: 'int' and 'str'"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [],
@@ -15992,7 +16084,14 @@
                     "codeSource": "shell",
                     "color": "red",
                     "isTraceback": true,
-                    "text": "TypeError: unsupported operand type(s) for +: 'int' and 'str'",
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | 12 + '34'",
+                        "           ^^^^^^^^^",
+                        "",
+                        "TypeError: unsupported operand type(s) for +: 'int' and 'str'"
+                    ],
                     "tracebacks": [
                         {
                             "didyoumean": [],

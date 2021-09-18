@@ -7,6 +7,7 @@ from collections import Counter
 from typing import Union, Iterable, List
 
 import pygments
+import stack_data
 from cheap_repr import cheap_repr
 from friendly_traceback.core import FriendlyTraceback
 from pygments.formatters.html import HtmlFormatter
@@ -173,6 +174,25 @@ class TracebackSerializer:
             name=maybe_highlight(var.name),
             value=maybe_highlight(cheap_repr(var.value)),
         )
+
+
+class TracebackFormatter(stack_data.Formatter):
+    def format_stack_data(
+            self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
+    ) -> Iterable[str]:
+        from core.workers.snoop import snoop
+
+        for item in stack:
+            if isinstance(item, FrameInfo):
+                if item.filename.startswith(snoop.tracer.internal_directories):
+                    continue
+                yield from self.format_frame(item)
+            else:
+                yield self.format_repeated_frames(item)
+            yield '\n'
+
+    def format_variable_value(self, value) -> str:
+        return cheap_repr(value)
 
 
 def maybe_highlight(text):
