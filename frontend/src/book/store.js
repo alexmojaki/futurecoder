@@ -63,6 +63,8 @@ const initialState = {
   },
   questionWizard: {
     messages: [],
+    requestExpectedOutput: false,
+    expectedOutput: "",
   }
 };
 
@@ -311,7 +313,11 @@ export const ranCode = makeAction(
     }
 
     if (state.route === "question") {
-      state = iset(state, "questionWizard.messages", value.messages);
+      if (value.messages[0] === "__expected_output__") {
+        state = iset(state, "questionWizard.requestExpectedOutput", true);
+      } else {
+        state = iset(state, "questionWizard.messages", value.messages);
+      }
     } else {
       for (const message of value.messages) {
         state = addMessageToState(state, message);

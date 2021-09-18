@@ -62,6 +62,7 @@ export const runCode = ({code, source}) => {
     page_slug: bookState.user.pageSlug,
     step_name: currentStepName(),
     question_wizard: bookState.route === "question",
+    expected_output: bookState.questionWizard.expectedOutput,
   };
 
   const onSuccess = (data) => {

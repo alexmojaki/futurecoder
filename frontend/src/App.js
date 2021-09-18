@@ -168,6 +168,8 @@ const Messages = (
 const QuestionWizard = (
   {
     messages,
+    requestExpectedOutput,
+    expectedOutput,
   }) =>
   <>
     <h1>Question Wizard</h1>
@@ -195,6 +197,36 @@ const QuestionWizard = (
       asking your question.
     </p>
     <hr/>
+    {requestExpectedOutput && <>
+      <p>
+        Good, now enter the output you expect/want from your program below.
+        What would it show if it worked correctly?
+        If it's not supposed to output anything, then add some <code>print()</code> calls to your
+        code so that it would output something useful.
+      </p>
+      <p>
+        When you're done, click 'Run' again to generate your question.
+      </p>
+      <AceEditor
+        onChange={value => bookSetState("questionWizard.expectedOutput", value)}
+        theme={"monokai"}
+        onLoad={(editor) => {
+          editor.renderer.setScrollMargin(10);
+          editor.renderer.setPadding(10);
+        }}
+        width="100%"
+        height="15em"
+        value={expectedOutput}
+        name="expectedOutput"
+        fontSize="15px"
+        setOptions={{
+          fontFamily: "monospace",
+          showPrintMargin: false,
+        }}
+      />
+      <hr/>
+    </>
+    }
     {messages.map((message, index) =>
       <div key={index}>
         <Markdown html={message}/>

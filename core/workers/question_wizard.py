@@ -2,6 +2,7 @@ import ast
 from textwrap import indent
 
 from core.linting import lint
+from core.utils import highlighted_markdown
 
 final_message_format = """
 Great! Here's some final tips:
@@ -14,6 +15,8 @@ Great! Here's some final tips:
 
 If you're really ready, copy and paste the below into the question website,
 and replace the first line with a description of your problem.
+
+You can still change your code or expected output and click Run again to regenerate the question.
 
     __copyable__
     *Explain what you're trying to do and why*
@@ -49,7 +52,18 @@ def question_wizard_check(entry, output):
         messages.extend(lint(tree))
 
     if not messages:
-        if entry["source"] == "editor":
+        if not entry["expected_output"].strip():
+            return ["__expected_output__"]
+
+        if entry["expected_output"].strip() == output.strip():
+            messages.append(
+                "Your output is the same as your expected output! "
+                "If your problem is still there, adjust your code and/or "
+                "your expected output so that the two outputs don't match. "
+                "Make it clear what would be different if the code worked "
+                "the way you want it to."
+            )
+        elif entry["source"] == "editor":
             messages.append(
                 final_message_format.format(
                     indent(entry["input"], " " * 8),
@@ -63,4 +77,5 @@ def question_wizard_check(entry, output):
                 "If you can't, use the 'Run' button to generate the question."
             )
 
+    messages = [highlighted_markdown(message) for message in messages]
     return messages

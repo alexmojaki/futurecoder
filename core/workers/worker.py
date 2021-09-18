@@ -161,7 +161,6 @@ async def check_entry(entry, input_callback, result_callback):
 
     if question_wizard:
         messages = question_wizard_check(entry, output)
-        messages = [highlighted_markdown(message) for message in messages]
         result_callback(
             make_result(
                 messages=messages,
