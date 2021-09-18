@@ -55,9 +55,6 @@ export const runCode = ({code, source}) => {
   if (!shell && !code) {
     code = bookState.editorContent;
   }
-  if (!code.trim()) {
-    return;
-  }
   bookSetState("processing", true);
   const entry = {input: code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
 
