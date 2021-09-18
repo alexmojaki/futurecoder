@@ -122,6 +122,10 @@ async def check_entry(entry, input_callback, result_callback):
         except Exception:
             log.exception("Error installing imports")
 
+    if not entry["input"].strip():
+        result_callback(make_result())
+        return
+
     patch_stdin(input_callback, result_callback)
 
     with redirect_stdout(output_buffer.stdout), redirect_stderr(output_buffer.stderr):

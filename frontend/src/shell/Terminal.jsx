@@ -138,11 +138,8 @@ export default class Terminal extends Component {
         else this.pushToStdout(message)
       }
 
-      if (rawInput) {
-        commandResult.rawInput = rawInput;
-        const res = this.props.onCommand(rawInput, this.pushToStdout);
-        commandResult.result = res;
-      }
+      commandResult.rawInput = rawInput;
+      commandResult.result = this.props.onCommand(rawInput, this.pushToStdout);
 
       this.setState({processing: false}, () => {
         this.clearInput();
