@@ -172,14 +172,17 @@ const QuestionWizard = (
   <>
     <h1>Question Wizard</h1>
     <p>
-      If you need help, there are many sites like <a href="https://stackoverflow.com/">Stack Overflow</a>
-      and <a href="https://www.reddit.com/r/learnpython/">reddit</a> where you can ask questions.
+      If you need help, there are many sites like
+      {" "} <a target="_blank" rel="noreferrer" href="https://stackoverflow.com/">Stack Overflow</a> {" "}
+      and <a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/learnpython/">reddit</a> where
+      you can ask questions.
       This is a tool to help you write a good quality question that is likely to get answers.
     </p>
     <p>
       Enter and run your code on the right. If you don't have any code because you don't know where to get started,
       I'm afraid this tool can't help you. You can still ask for help, but it might be good to first
-      read <a href="https://stackoverflow.com/help/dont-ask">What types of questions should I avoid asking?</a>
+      read <a target="_blank" rel="noreferrer"
+              href="https://stackoverflow.com/help/dont-ask">What types of questions should I avoid asking?</a>
     </p>
     <p>
       If your question is about servers (e.g. Django or Flask), web requests, databases, or a package that can't be
@@ -187,8 +190,9 @@ const QuestionWizard = (
       that doesn't mean that's what your question is <em>about</em>. If you're having a general
       Python/programming/logic problem, then extract that problem from the other stuff.
       Python with Django is still Python. If you can't do that, then
-      read <a href="https://stackoverflow.com/help/dont-ask">How to create a Minimal, Reproducible Example</a>
-      before asking your question.
+      read <a target="_blank" rel="noreferrer"
+              href="https://stackoverflow.com/help/dont-ask">How to create a Minimal, Reproducible Example</a> before
+      asking your question.
     </p>
     <hr/>
     {messages.map((message, index) =>
