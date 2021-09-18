@@ -4,7 +4,16 @@ from textwrap import indent
 from core.linting import lint
 
 final_message_format = """
-Great! Copy and paste this into the question website, and replace the first line with a description of your problem.
+Great! Here's some final tips:
+
+- Make sure the output is showing the problem you have and not something else.
+- Reduce your code to a **minimal** example. Remove any code that isn't directly related to the problem.
+- Run your code through the Snoop, Birdseye, and Python Tutor debuggers to understand what it's doing.
+- Search for your problem online.
+- Read [How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)
+
+If you're really ready, copy and paste the below into the question website,
+and replace the first line with a description of your problem.
 
     __copyable__
     *Explain what you're trying to do and why*

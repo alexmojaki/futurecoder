@@ -181,6 +181,15 @@ const QuestionWizard = (
       I'm afraid this tool can't help you. You can still ask for help, but it might be good to first
       read <a href="https://stackoverflow.com/help/dont-ask">What types of questions should I avoid asking?</a>
     </p>
+    <p>
+      If your question is about servers (e.g. Django or Flask), web requests, databases, or a package that can't be
+      imported here, then this tool won't work. However, just because your current code <em>involves</em> those things,
+      that doesn't mean that's what your question is <em>about</em>. If you're having a general
+      Python/programming/logic problem, then extract that problem from the other stuff.
+      Python with Django is still Python. If you can't do that, then
+      read <a href="https://stackoverflow.com/help/dont-ask">How to create a Minimal, Reproducible Example</a>
+      before asking your question.
+    </p>
     <hr/>
     {messages.map((message, index) =>
       <div key={index}>
