@@ -1,8 +1,10 @@
-import asyncio
 import functools
 import os
 import sys
 import traceback
+from asyncio import get_event_loop
+
+import stack_data
 
 
 class SysStream:
@@ -97,19 +99,21 @@ def get_exception_event():
     return event
 
 
-def internal_error_result():
+def internal_error_result(e: Exception):
     from snoop.utils import truncate
 
-    tb = traceback.format_exc()
-    exception_string = "".join(
-        traceback.format_exception_only(*sys.exc_info()[:2])
-    )
+    try:
+        tb = stack_data.Formatter(show_variables=True).format_exception(e)
+    except:
+        tb = traceback.format_exception(type(e), e, e.__traceback__)
+
+    exception_string = "".join(traceback.format_exception_only(type(e), e))
 
     return make_result(
         output="",
         output_parts=[],
         error=dict(
-            details=tb,
+            details="".join(tb),
             title=f"Error running Python code: {truncate(exception_string, 100, '...')}",
             sentry_event=get_exception_event(),
         ),
@@ -120,15 +124,6 @@ def run_async(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
-        try:
-            loop = asyncio.get_running_loop()
-        except RuntimeError:
-            pass
-        else:
-            loop.run_until_complete(result)
-            return
-
-        asyncio.run(result)
-
+        get_event_loop().run_until_complete(result)
 
     return wrapper

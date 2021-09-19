@@ -1,9 +1,13 @@
+import ast
 import builtins
 import importlib
+import inspect
 import linecache
 import logging
 import sys
+from asyncio import get_event_loop
 from code import InteractiveConsole
+from collections import defaultdict
 from contextlib import redirect_stdout, redirect_stderr
 
 import friendly_traceback.source_cache
@@ -98,10 +102,12 @@ def run_code(code_source, code):
 
 
 def check_entry_catch_internal_errors(entry, input_callback, result_callback):
-    try:
-        check_entry(entry, input_callback, result_callback)
-    except Exception:
-        result_callback(internal_error_result())
+    get_event_loop().set_exception_handler(
+        lambda loop, context: result_callback(
+            internal_error_result(context["exception"])
+        )
+    )
+    check_entry(entry, input_callback, result_callback)
 
 
 def find_imports_to_install(imports):
@@ -218,8 +224,10 @@ def normalise_step_result(step_result):
     return step_result
 
 
+input_nodes = defaultdict(list)
+
+
 def patch_stdin(input_callback, result_callback, question_wizard):
-    # TODO do something if question_wizard
     def readline(*_):
         result_callback(make_result(awaiting_input=True))
         result = input_callback()
@@ -230,8 +238,23 @@ def patch_stdin(input_callback, result_callback, question_wizard):
 
     sys.stdin.readline = readline
 
+    input_nodes.clear()
+
     def patched_input(prompt=""):
         print(prompt, end="")
-        return sys.stdin.readline().rstrip("\n")
+        result = sys.stdin.readline().rstrip("\n")
+
+        try:
+            assert question_wizard
+            frame = inspect.currentframe().f_back
+            assert frame.f_code.co_filename == "my_program.py"
+            ex = stack_data.Source.executing(frame)
+            node = ex.node
+            assert isinstance(node, ast.Call)
+            input_nodes[node].append((result, ex))
+        except Exception:
+            pass
+
+        return result
 
     builtins.input = patched_input

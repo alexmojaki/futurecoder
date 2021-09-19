@@ -1,5 +1,8 @@
 import ast
-from textwrap import indent
+from textwrap import indent, dedent
+
+import asttokens.util
+from littleutils import only
 
 from core.linting import lint
 from core.utils import highlighted_markdown
@@ -31,11 +34,67 @@ You can still change your code or expected output and click Run again to regener
 """
 
 
-def question_wizard_check(entry, output):
-    if entry["source"] == "shell":
+def input_messages():
+    from core.workers.worker import input_nodes
+
+    if not input_nodes:
         return []
 
-    messages = []
+    message = "`input()` makes it harder to ask and answer questions about code. " \
+              "Replace calls to input with strings so that everyone can run the code instantly " \
+              "and get the same results.\n"
+
+    multi_nodes = [node for node, group in input_nodes.items() if len(group) > 1]
+    for node, group in input_nodes.items():
+        strings, exs = zip(*group)
+
+        if len(strings) > 1:
+            if len(multi_nodes) > 1:
+                list_name = f"test_inputs_{multi_nodes.index(node) + 1}"
+            else:
+                list_name = f"test_inputs"
+            list_line = f"{list_name} = {list(strings)}"
+            replacement_text = f"{list_name}.pop(0)"
+        else:
+            list_line = None
+            replacement_text = repr(only(strings))
+
+        source = only({ex.source for ex in exs})
+        text_range = only({ex.text_range() for ex in exs})
+        piece = only(piece for piece in source.pieces if node.lineno in piece and node.end_lineno in piece)
+
+        def piece_lines(lines):
+            return indent(dedent("\n".join(lines[lineno - 1] for lineno in piece)), ' ' * 4)
+
+        replaced_text = asttokens.util.replace(source.text, [(*text_range, replacement_text)])
+        replaced_lines = piece_lines(replaced_text.splitlines())
+        original_lines = piece_lines(source.lines)
+
+        message += f"""
+Replace:
+
+{original_lines}
+
+with
+
+{replaced_lines}
+"""
+        if list_line:
+            message += f"""
+and add
+
+    {list_line}
+
+to the top of your code.
+"""
+    return [message]
+
+
+def question_wizard_check(entry, output):
+    if entry["source"] == "shell":
+        return []  # TODO don't clear messages
+
+    messages = input_messages()
 
     if not output.strip():
         messages.append(
