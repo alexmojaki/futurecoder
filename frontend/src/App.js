@@ -229,7 +229,7 @@ const QuestionWizard = (
     }
     {messages.map((message, index) =>
       <div key={index}>
-        <Markdown html={message}/>
+        <Markdown html={message} copyFunc={text => navigator.clipboard.writeText(text)}/>
         <hr/>
       </div>
     )}
@@ -238,6 +238,7 @@ const QuestionWizard = (
 const Markdown = (
   {
     html,
+    copyFunc,
   }) =>
   <div dangerouslySetInnerHTML={{__html: html}}
        onClick={(event) => {
@@ -247,7 +248,7 @@ const Markdown = (
            const codeElement = button.closest("code");
            let codeText = codeElement.textContent;
            codeText = codeText.substring(0, codeText.length - "\nCopy".length);
-           bookSetState("editorContent", codeText);
+           copyFunc(codeText);
          }
        }}
   />
@@ -264,7 +265,7 @@ const CourseText = (
     <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
     {page.steps.slice(0, step_index + 1).map((part, index) =>
       <div key={index} id={`step-text-${index}`}>
-        <Markdown html={part.text}/>
+        <Markdown html={part.text} copyFunc={text => bookSetState("editorContent", text)}/>
         <hr/>
       </div>
     )}
