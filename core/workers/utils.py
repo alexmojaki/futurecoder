@@ -99,13 +99,35 @@ def get_exception_event():
     return event
 
 
+def safe_traceback(e: Exception):
+    try:
+        return "".join(
+            stack_data.Formatter(show_variables=True, chain=True).format_exception(e)
+        )
+    except Exception:
+        pass
+    try:
+        return "".join(
+            stack_data.Formatter(show_variables=False, chain=True).format_exception(e)
+        )
+    except Exception:
+        pass
+    try:
+        return "".join(
+            stack_data.Formatter(show_variables=True, chain=False).format_exception(e)
+        )
+    except Exception:
+        pass
+    try:
+        return "".join(
+            stack_data.Formatter(show_variables=False, chain=False).format_exception(e)
+        )
+    except Exception:
+        return "".join(traceback.format_exception(type(e), e, e.__traceback__))
+
+
 def internal_error_result(e: Exception):
     from snoop.utils import truncate
-
-    try:
-        tb = stack_data.Formatter(show_variables=True).format_exception(e)
-    except:
-        tb = traceback.format_exception(type(e), e, e.__traceback__)
 
     exception_string = "".join(traceback.format_exception_only(type(e), e))
 
@@ -113,7 +135,7 @@ def internal_error_result(e: Exception):
         output="",
         output_parts=[],
         error=dict(
-            details="".join(tb),
+            details=safe_traceback(e),
             title=f"Error running Python code: {truncate(exception_string, 100, '...')}",
             sentry_event=get_exception_event(),
         ),

@@ -102,7 +102,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "executing"
-version = "0.8.0"
+version = "0.8.1"
 description = "Get the currently executing AST node of a frame, and other information"
 category = "main"
 optional = false
@@ -344,7 +344,7 @@ tests = ["pytest", "littleutils", "prettyprinter", "pprintpp", "numpy (>=1.16.5)
 
 [[package]]
 name = "stack-data"
-version = "0.1.0"
+version = "0.1.1"
 description = "Extract data from python stack frames and tracebacks for informative displays"
 category = "main"
 optional = false
@@ -418,8 +418,8 @@ colorama = [
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
 executing = [
-    {file = "executing-0.8.0-py2.py3-none-any.whl", hash = "sha256:7ef8637519b0c01b69c4a1785a0d13dcc2cf9f0d078804268887edad2b4f26d1"},
-    {file = "executing-0.8.0.tar.gz", hash = "sha256:77ed91874d321338865ea2bf7337636a5de8e9a7f8323527d29c4fad2a1b48f7"},
+    {file = "executing-0.8.1-py2.py3-none-any.whl", hash = "sha256:cfaa61564eff6e7a3afda98ea0ba7c646171d9e325203a159bf29a3c2438c129"},
+    {file = "executing-0.8.1.tar.gz", hash = "sha256:f3dd49578371a633bd1ff5ca0af4afad65e6d549a06eb35ef20df198eced58ef"},
 ]
 flake8 = [
     {file = "flake8-3.8.3-py2.py3-none-any.whl", hash = "sha256:15e351d19611c887e482fb960eae4d44845013cc142d42896e9862f775d8cf5c"},
@@ -500,7 +500,7 @@ snoop = [
     {file = "snoop-0.3.0.tar.gz", hash = "sha256:db09b3f90cca8f73dbe0c26363a479d086a79aef14dd7745b42cc0ae19920ab6"},
 ]
 stack-data = [
-    {file = "stack_data-0.1.0-py3-none-any.whl", hash = "sha256:114f3bf1cb2e6559408ea6ff850b664c603d915354760a0eac27a7e59fb9781c"},
+    {file = "stack_data-0.1.1-py3-none-any.whl", hash = "sha256:83d712365a27f321fdc81f3df1f082e34496048d9675c78189b967329ec74519"},
 ]
 toml = [
     {file = "toml-0.10.1-py2.py3-none-any.whl", hash = "sha256:bda89d5935c2eac546d648028b9901107a595863cb36bae0c73ac804a9b4ce88"},
