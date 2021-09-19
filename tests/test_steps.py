@@ -83,6 +83,9 @@ def normalise_response(response, is_message, substep):
     response["result"] = response.pop("output_parts")
     for line in response["result"]:
         line["text"] = normalise_output(line["text"])
+        if line.get("isTraceback"):
+            line["text"] = line["text"].splitlines()
+
     del response["birdseye_objects"]
     del response["awaiting_input"]
     del response["error"]

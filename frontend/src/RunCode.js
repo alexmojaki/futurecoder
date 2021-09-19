@@ -56,7 +56,14 @@ export const runCode = ({code, source}) => {
     code = bookState.editorContent;
   }
   bookSetState("processing", true);
-  const entry = {input: code, source, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
+  const entry = {
+    input: code,
+    source,
+    page_slug: bookState.user.pageSlug,
+    step_name: currentStepName(),
+    question_wizard: bookState.route === "question",
+    expected_output: bookState.questionWizard.expectedOutput,
+  };
 
   const onSuccess = (data) => {
     const {error} = data;

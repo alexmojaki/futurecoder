@@ -61,6 +61,11 @@ const initialState = {
     state: "hidden",
     codeResult: {},
   },
+  questionWizard: {
+    messages: [],
+    requestExpectedOutput: false,
+    expectedOutput: "",
+  }
 };
 
 
@@ -106,7 +111,7 @@ const afterSetPage = (pageSlug, state = localState) => {
   window.location.hash = pageSlug;
 }
 
-const specialHash = (hash) => hash === "toc" || hash === "ide";
+const specialHash = (hash) => ["toc", "ide", "question"].includes(hash);
 
 export const navigate = () => {
   const hash = window.location.hash.substring(1);
@@ -306,8 +311,17 @@ export const ranCode = makeAction(
         processing: false,
       };
     }
-    for (const message of value.messages) {
-      state = addMessageToState(state, message);
+
+    if (state.route === "question") {
+      if (value.messages[0] === "__expected_output__") {
+        state = iset(state, "questionWizard.requestExpectedOutput", true);
+      } else {
+        state = iset(state, "questionWizard.messages", value.messages);
+      }
+    } else {
+      for (const message of value.messages) {
+        state = addMessageToState(state, message);
+      }
     }
 
     if (value.prediction.choices) {

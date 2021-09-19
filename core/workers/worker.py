@@ -1,9 +1,13 @@
+import ast
 import builtins
 import importlib
+import inspect
 import linecache
 import logging
 import sys
+from asyncio import get_event_loop
 from code import InteractiveConsole
+from collections import defaultdict
 from contextlib import redirect_stdout, redirect_stderr
 
 import friendly_traceback.source_cache
@@ -12,8 +16,18 @@ import stack_data
 from core.exercises import assert_equal
 from core.text import pages
 from core.utils import highlighted_markdown
-from core.workers.tracebacks import TracebackSerializer, print_friendly_syntax_error
-from core.workers.utils import internal_error_result, make_result, output_buffer, run_async
+from core.workers.question_wizard import question_wizard_check
+from core.workers.tracebacks import (
+    TracebackSerializer,
+    print_friendly_syntax_error,
+    TracebackFormatter,
+)
+from core.workers.utils import (
+    internal_error_result,
+    make_result,
+    output_buffer,
+    run_async,
+)
 
 log = logging.getLogger(__name__)
 
@@ -27,7 +41,19 @@ def execute(code_obj):
     except KeyboardInterrupt:
         raise
     except Exception as e:
-        return TracebackSerializer().format_exception(e)
+        output_buffer.parts.append(
+            dict(
+                isTraceback=True,
+                tracebacks=TracebackSerializer().format_exception(e),
+                text="".join(
+                    TracebackFormatter(
+                        options=stack_data.Options(before=1, after=0),
+                        show_variables=True,
+                    ).format_exception(e)
+                ),
+                color="red",
+            )
+        )
 
 
 def run_code(code_source, code):
@@ -60,33 +86,28 @@ def run_code(code_source, code):
 
     if code_source == "snoop":
         from core.workers.snoop import exec_snoop
-        traceback_info = exec_snoop(filename, code, code_obj)
+
+        exec_snoop(filename, code, code_obj)
     elif code_source == "birdseye":
         from core.workers.birdseye import exec_birdseye
 
-        traceback_info, result["birdseye_objects"] = exec_birdseye(filename, code)
+        result["birdseye_objects"] = exec_birdseye(filename, code)
     else:
-        traceback_info = execute(code_obj)
+        execute(code_obj)
 
-    if traceback_info:
-        exception = traceback_info[-1]["exception"]
-        traceback_info = dict(
-            isTraceback=True,
-            codeSource=code_source,
-            tracebacks=traceback_info,
-            text=f"{exception['type']}: {exception['message']}",
-            color="red",
-        )
-        output_buffer.parts.append(traceback_info)
+    if output_buffer.parts and (part := output_buffer.parts[-1]).get("isTraceback"):
+        part["codeSource"] = code_source
 
     return result
 
 
 def check_entry_catch_internal_errors(entry, input_callback, result_callback):
-    try:
-        check_entry(entry, input_callback, result_callback)
-    except Exception:
-        result_callback(internal_error_result())
+    get_event_loop().set_exception_handler(
+        lambda loop, context: result_callback(
+            internal_error_result(context["exception"])
+        )
+    )
+    check_entry(entry, input_callback, result_callback)
 
 
 def find_imports_to_install(imports):
@@ -126,7 +147,9 @@ async def check_entry(entry, input_callback, result_callback):
         result_callback(make_result())
         return
 
-    patch_stdin(input_callback, result_callback)
+    question_wizard = entry.get("question_wizard")
+
+    patch_stdin(input_callback, result_callback, question_wizard)
 
     with redirect_stdout(output_buffer.stdout), redirect_stderr(output_buffer.stderr):
         try:
@@ -141,6 +164,17 @@ async def check_entry(entry, input_callback, result_callback):
             return
 
     output = output_buffer.string()
+
+    if question_wizard:
+        messages = question_wizard_check(entry, output)
+        result_callback(
+            make_result(
+                messages=messages,
+                output=output,
+                **run_results,
+            )
+        )
+        return
 
     page = pages[entry["page_slug"]]
     step_cls = page.get_step(entry["step_name"])
@@ -190,7 +224,10 @@ def normalise_step_result(step_result):
     return step_result
 
 
-def patch_stdin(input_callback, result_callback):
+input_nodes = defaultdict(list)
+
+
+def patch_stdin(input_callback, result_callback, question_wizard):
     def readline(*_):
         result_callback(make_result(awaiting_input=True))
         result = input_callback()
@@ -201,8 +238,23 @@ def patch_stdin(input_callback, result_callback):
 
     sys.stdin.readline = readline
 
+    input_nodes.clear()
+
     def patched_input(prompt=""):
         print(prompt, end="")
-        return sys.stdin.readline().rstrip("\n")
+        result = sys.stdin.readline().rstrip("\n")
+
+        try:
+            assert question_wizard
+            frame = inspect.currentframe().f_back
+            assert frame.f_code.co_filename == "my_program.py"
+            ex = stack_data.Source.executing(frame)
+            node = ex.node
+            assert isinstance(node, ast.Call)
+            input_nodes[node].append((result, ex))
+        except Exception:
+            pass
+
+        return result
 
     builtins.input = patched_input

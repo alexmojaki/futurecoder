@@ -2,10 +2,6 @@ import io
 import sys
 import tarfile
 
-from pyodide.webloop import WebLoop  # noqa
-
-WebLoop().run_forever()
-
 package_path = "/tmp/package/"
 sys.path.append(package_path)
 tarfile.TarFile.chown = lambda *_, **__: None
