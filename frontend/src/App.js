@@ -193,7 +193,8 @@ const QuestionWizard = (
       Python/programming/logic problem, then extract that problem from the other stuff.
       Python with Django is still Python. If you can't do that, then
       read <a target="_blank" rel="noreferrer"
-              href="https://stackoverflow.com/help/dont-ask">How to create a Minimal, Reproducible Example</a> before
+              href="https://stackoverflow.com/help/minimal-reproducible-example">
+      How to create a Minimal, Reproducible Example</a> before
       asking your question.
     </p>
     <hr/>
