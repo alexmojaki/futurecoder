@@ -32,7 +32,7 @@ from core.workers.utils import (
 log = logging.getLogger(__name__)
 
 console = InteractiveConsole()
-console.locals = {"assert_equal": assert_equal}
+console.locals = {"assert_equal": assert_equal, "__name__": "__main__"}
 
 
 def execute(code_obj):
@@ -62,7 +62,7 @@ def run_code(code_source, code):
         code += "\n"  # Allow compiling single-line compound statements
     else:
         mode = "exec"
-        console.locals = {"assert_equal": assert_equal}
+        console.locals = {"assert_equal": assert_equal, "__name__": "__main__"}
 
     filename = "my_program.py"
     linecache.cache[filename] = (

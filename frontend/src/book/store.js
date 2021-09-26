@@ -313,9 +313,10 @@ export const ranCode = makeAction(
     }
 
     if (state.route === "question") {
-      if (value.messages[0] === "__expected_output__") {
+      if (value.messages === "__expected_output__") {
         state = iset(state, "questionWizard.requestExpectedOutput", true);
-      } else {
+        state = iset(state, "questionWizard.messages", []);
+      } else if (Array.isArray(value.messages)) {
         state = iset(state, "questionWizard.messages", value.messages);
       }
     } else {
