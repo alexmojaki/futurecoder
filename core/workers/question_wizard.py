@@ -31,6 +31,10 @@ You can still change your code or expected output and click Run again to regener
     This is the result:
 
 {}
+
+    The expected output is:
+    
+{}
 """
 
 
@@ -92,7 +96,7 @@ to the top of your code.
 
 def question_wizard_check(entry, output):
     if entry["source"] == "shell":
-        return []  # TODO don't clear messages
+        return None
 
     messages = input_messages()
 
@@ -112,7 +116,7 @@ def question_wizard_check(entry, output):
 
     if not messages:
         if not entry["expected_output"].strip():
-            return ["__expected_output__"]
+            return "__expected_output__"
 
         if entry["expected_output"].strip() == output.strip():
             messages.append(
@@ -125,8 +129,9 @@ def question_wizard_check(entry, output):
         elif entry["source"] == "editor":
             messages.append(
                 final_message_format.format(
-                    indent(entry["input"], " " * 8),
-                    indent(output, " " * 8),
+                    indent(entry["input"], " " * 8).rstrip(),
+                    indent(output, " " * 8).rstrip(),
+                    indent(entry["expected_output"], " " * 8).rstrip(),
                 )
             )
         else:
