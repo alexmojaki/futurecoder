@@ -2,7 +2,7 @@
 Run this file to generate files under frontend/src:
 
 - chapters.json
-- python_core.tar
+- python_core.tar.load_by_url
 - book/pages.json.load_by_url
 
 When developing, you generally want this to run any time you make a change to the code.
@@ -119,7 +119,7 @@ def main():
             f"{core_imports}\n!=\n{core_imports_path.read_text()}"
         )
 
-    with tarfile.open(frontend_src / "python_core.tar", "w") as tar:
+    with tarfile.open(frontend_src / "python_core.tar.load_by_url", "w") as tar:
         tar.add(this_dir, arcname=this_dir.stem, recursive=True, filter=tarfile_filter)
         for root in roots:
             tar.add(
