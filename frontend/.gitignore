@@ -22,7 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-pages.json.load_by_url
+*.load_by_url
 chapters.json
 python_core.tar
 public/birdseye/

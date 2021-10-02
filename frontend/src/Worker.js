@@ -3,7 +3,7 @@
 // https://github.com/facebook/create-react-app/issues/8014
 
 import * as Comlink from 'comlink';
-import pythonCoreUrl from "./python_core.tar"
+import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
 
 async function getPackageBuffer() {
