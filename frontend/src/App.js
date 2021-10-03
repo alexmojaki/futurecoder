@@ -31,6 +31,7 @@ import {
   faExpand,
   faListOl,
   faPlay,
+  faQuestionCircle,
   faSignOutAlt,
   faTimes,
   faUser,
@@ -54,7 +55,7 @@ const EditorButtons = (
     showEditor,
     showPythonTutor,
     showSnoop,
-    fullIde,
+    showQuestionButton,
   }) =>
   <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
     <button
@@ -119,6 +120,14 @@ const EditorButtons = (
       />
       Bird's Eye
     </button>}
+
+    {" "}
+
+    {showQuestionButton && !disabled &&
+    <a className="btn btn-success"
+       href={"#question"}>
+      <FontAwesomeIcon icon={faQuestionCircle}/> Ask for help
+    </a>}
   </div>;
 
 const Editor = ({readOnly, value}) =>
@@ -317,12 +326,13 @@ class AppComponent extends React.Component {
     const step = currentStep();
     const step_index = step.index;
 
-    let showEditor, showSnoop, showPythonTutor, showBirdseye;
+    let showEditor, showSnoop, showPythonTutor, showBirdseye, showQuestionButton;
     if (fullIde || isQuestionWizard) {
       showEditor = true;
       showSnoop = true;
       showPythonTutor = true;
       showBirdseye = true;
+      showQuestionButton = !(isQuestionWizard || previousRoute === "question");
     } else if (step.text.length) {
       showEditor = page.index >= pages.WritingPrograms.index;
       const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
@@ -330,6 +340,7 @@ class AppComponent extends React.Component {
         (page.index === snoopPageIndex && step_index >= 1);
       showPythonTutor = page.index >= pages.UnderstandingProgramsWithPythonTutor.index;
       showBirdseye = page.index >= pages.IntroducingBirdseye.index;
+      showQuestionButton = page.index > pages.IntroducingBirdseye.index;
     }
 
     const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
@@ -416,7 +427,7 @@ class AppComponent extends React.Component {
         showEditor,
         showSnoop,
         showPythonTutor,
-        fullIde,
+        showQuestionButton,
         disabled: cantUseEditor,
       }}/>
 
