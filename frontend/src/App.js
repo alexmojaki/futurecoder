@@ -436,7 +436,7 @@ class AppComponent extends React.Component {
         <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
       </a>
 
-      {!fullIde &&
+      {!(fullIde || isQuestionWizard) &&
       <HintsPopup
         hints={step.hints}
         numHints={numHints}
