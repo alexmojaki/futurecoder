@@ -16,6 +16,7 @@ import {
   updateDatabase,
   setDeveloperMode,
   setEditorContent,
+  specialHash,
 } from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -304,6 +305,7 @@ class AppComponent extends React.Component {
       error,
       prediction,
       route,
+      previousRoute,
     } = this.props;
     if (route === "toc") {
       return <TableOfContents/>
@@ -430,7 +432,7 @@ class AppComponent extends React.Component {
       </div>
 
       <a className="btn btn-primary full-ide-button"
-         href={fullIde ? "#" + page.slug : "#ide"}>
+         href={"#" + (!fullIde ? "ide" : (specialHash(previousRoute) ? previousRoute : page.slug))}>
         <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
       </a>
 

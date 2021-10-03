@@ -18,7 +18,8 @@ firebase.initializeApp({
 
 const initialState = {
   error: null,
-  route: "course",
+  route: "main",
+  previousRoute: "main",
   pages: {
     loading_placeholder: {
       title: "Loading...",
@@ -111,10 +112,11 @@ const afterSetPage = (pageSlug, state = localState) => {
   window.location.hash = pageSlug;
 }
 
-const specialHash = (hash) => ["toc", "ide", "question"].includes(hash);
+export const specialHash = (hash) => ["toc", "ide", "question"].includes(hash);
 
 export const navigate = () => {
   const hash = window.location.hash.substring(1);
+  setState("previousRoute", localState.route)
   if (specialHash(hash)) {
     setState("route", hash);
   } else if (_.includes(localState.pageSlugsList, hash)) {
