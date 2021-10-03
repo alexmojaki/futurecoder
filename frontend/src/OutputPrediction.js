@@ -163,7 +163,6 @@ const CorrectConfetti = ({active}) =>
       stagger: "5",
       width: "17px",
       height: "18px",
-      perspective: "0px",
       colors: [
         "#a864fd",
         "#29cdff",
