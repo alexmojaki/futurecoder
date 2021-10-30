@@ -178,6 +178,9 @@ def clean_step_class(cls):
     if isinstance(cls.disallowed, Disallowed):
         cls.disallowed = [cls.disallowed]
 
+    if cls.expected_code_source:
+        assert cls.expected_code_source in expected_code_source_descriptions
+
 
 @returns_stdout
 def get_stdout(program):
@@ -330,6 +333,14 @@ class Disallowed:
         self.function_only = function_only
 
 
+expected_code_source_descriptions = dict(
+    shell="Type your code directly in the shell after `>>>` and press Enter.",
+    birdseye="With your code in the editor, click the Bird's Eye button.",
+    snoop="With your code in the editor, click the Snoop button.",
+    pythontutor="With your code in the editor, click the Python Tutor button.",
+)
+
+
 class Step(ABC):
     text = ""
     program = ""
@@ -373,7 +384,10 @@ class Step(ABC):
                     return dict(message=d.message)
 
             if self.expected_code_source not in (None, self.code_source):
-                return dict(message="The code is correct, but you didn't run it as instructed.")
+                return dict(
+                    message="The code is correct, but you didn't run it as instructed. "
+                    + expected_code_source_descriptions[self.expected_code_source]
+                )
 
             return True
 
