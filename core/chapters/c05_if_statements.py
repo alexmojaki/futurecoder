@@ -170,8 +170,8 @@ __program_indented__
             print(sentence)
 
     final_text = """
-Note how the body of the `if` statement (5 lines) is indented as usual, while the body
-of the `for` loop (2 lines) is indented by an additional 4 spaces in each line to show that
+Note how the body of the `if` statement (4 lines) is indented as usual, while the body
+of the `for` loop (1 line) is indented by an additional 4 spaces in each line to show that
 those lines are within the `for` loop. You can see the overall structure of the program
 just by looking at the indentation.
 
