@@ -131,7 +131,15 @@ export const setPageIndex = (pageIndex) => {
 };
 
 export const movePage = (delta) => {
+  if (delta > 0) {
+    animatePageTransition();
+  }
   setPageIndex(currentPage().index + delta);
+};
+
+const animatePageTransition = () => {
+  document.body.style.animation = 'bodyTransition 0.5s linear';
+  setTimeout(() => document.body.style.animation = '', 500);
 };
 
 export const moveStep = (delta) => {
@@ -140,7 +148,17 @@ export const moveStep = (delta) => {
   if (!step) {
     return;
   }
+  
   setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
+  if (delta > 0) {
+    animateNextStep(stepIndex);
+  }
+};
+
+const animateNextStep = (stepIndex) => {
+  const div = document.getElementById(`step-text-${stepIndex}`);
+  div.style.animation = 'nextStepTransition 5s ease-out';
+  setTimeout(() => div.style.animation = '', 1000);
 };
 
 const loadPages = makeAction(

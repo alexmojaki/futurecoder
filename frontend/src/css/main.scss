@@ -387,3 +387,25 @@
     transform: translate(24px, 0);
   }
 }
+
+// Markdown text transition animation
+
+@keyframes nextStepTransition {
+  from {
+    background-color: lightyellow;
+  }
+  to {
+    background-color: inherit;
+  }
+}
+
+// Body transition
+
+@keyframes bodyTransition {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
