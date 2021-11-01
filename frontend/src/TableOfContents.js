@@ -1,8 +1,10 @@
 import React from 'react';
 import "./css/toc.scss"
 import chapters from "./chapters.json"
+import {bookState} from "./book/store";
 
 export const TableOfContents = () => {
+  const current = bookState.user.pageSlug;
   return (
     <div className="backend bg-dark toc">
       <div className="toc-header">
@@ -30,12 +32,21 @@ export const TableOfContents = () => {
                   <li>
                     <h2>{chapter.title}</h2>
                     <ol>
-                      {chapter.pages.map(page =>
-                        <li>
-                          <a href={"#" + page.slug}
-                             // May have HTML generated from markdown
-                             dangerouslySetInnerHTML={{__html: page.title}}/>
-                        </li>
+                      {chapter.pages.map(page => {
+                        const isCurrent = page.slug === current;
+                          return <li>
+                            <a href={"#" + page.slug}
+                               style={isCurrent ? {
+                                 border: '2px solid white',
+                                 fontWeight: 'bold',
+                                 padding: '5px',
+                                 lineHeight: 2
+                               } : {}}
+                              // May have HTML generated from markdown
+                               dangerouslySetInnerHTML={{__html: page.title}}/>
+                            {isCurrent && " (current)"}
+                          </li>;
+                        }
                       )}
                     </ol>
                   </li>

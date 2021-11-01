@@ -3,6 +3,8 @@ import ast
 import random
 from textwrap import dedent
 
+import pure_eval
+
 from core.text import ExerciseStep, Page, Step, VerbatimStep, search_ast, Disallowed
 
 
@@ -168,8 +170,8 @@ __program_indented__
             print(sentence)
 
     final_text = """
-Note how the body of the `if` statement (5 lines) is indented as usual, while the body
-of the `for` loop (2 lines) is indented by an additional 4 spaces in each line to show that
+Note how the body of the `if` statement (4 lines) is indented as usual, while the body
+of the `for` loop (1 line) is indented by an additional 4 spaces in each line to show that
 those lines are within the `for` loop. You can see the overall structure of the program
 just by looking at the indentation.
 
@@ -802,16 +804,18 @@ class try_less_than_in_shell(Step):
     expected_code_source = "shell"
 
     def check(self):
+        evaluator = pure_eval.Evaluator(self.console.locals)
         for node in ast.walk(self.tree):
-            if (
-                    isinstance(node, ast.Compare) and
-                    isinstance(node.ops[0], (ast.Lt, ast.Gt)) and
-                    isinstance(node.left, ast.Constant) and
-                    isinstance(node.left.value, self.comparators_type) and
-                    isinstance(node.comparators[0], ast.Constant) and
-                    isinstance(node.comparators[0].value, self.comparators_type)
-            ):
-                return True
+            try:
+                if (
+                        isinstance(node, ast.Compare) and
+                        isinstance(node.ops[0], (ast.Lt, ast.Gt)) and
+                        isinstance(evaluator[node.left], self.comparators_type) and
+                        isinstance(evaluator[node.comparators[0]], self.comparators_type)
+                ):
+                    return True
+            except pure_eval.CannotEval:
+                pass
 
 
 class OtherComparisonOperators(Page):
