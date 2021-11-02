@@ -131,16 +131,20 @@ export const setPageIndex = (pageIndex) => {
 };
 
 export const movePage = (delta) => {
-  if (delta > 0) {
-    animatePageTransition();
-  }
   setPageIndex(currentPage().index + delta);
+  if (delta > 0) {
+    animateNextPage();
+  }
 };
 
-const animatePageTransition = () => {
-  document.body.style.animation = 'bodyTransition 0.5s linear';
-  setTimeout(() => document.body.style.animation = '', 500);
-};
+const animateNextPage = () => {
+  const mainDiv = document.querySelector('.book-text.markdown-body');
+  if (!mainDiv) {
+    return;
+  }
+  mainDiv.style.animation = 'page-transition-animation 0.8s ease-out';
+  setTimeout(() => mainDiv.style.animation = '', 800);
+}
 
 export const moveStep = (delta) => {
   const stepIndex = currentStep().index + delta;
@@ -150,15 +154,20 @@ export const moveStep = (delta) => {
   }
   
   setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
-  if (delta > 0) {
-    animateNextStep(stepIndex);
-  }
+  setTimeout(() => {
+    if (delta > 0) {
+      animateNextStep(stepIndex);
+    }
+  }, 1);
 };
 
 const animateNextStep = (stepIndex) => {
   const div = document.getElementById(`step-text-${stepIndex}`);
-  div.style.animation = 'nextStepTransition 5s ease-out';
-  setTimeout(() => div.style.animation = '', 1000);
+  if (!div) {
+    return;
+  }
+  div.style.animation = 'next-step-transition 4s ease-out';
+  setTimeout(() => div.style.animation = '', 2000);
 };
 
 const loadPages = makeAction(

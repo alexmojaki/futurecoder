@@ -390,7 +390,7 @@
 
 // Markdown text transition animation
 
-@keyframes nextStepTransition {
+@keyframes next-step-transition {
   from {
     background-color: lightyellow;
   }
@@ -399,13 +399,14 @@
   }
 }
 
-// Body transition
-
-@keyframes bodyTransition {
-  from {
-    opacity: 0.5;
+@keyframes page-transition-animation {
+  0% {
+    opacity: 0.6;
   }
-  to {
+  40% {
+    opacity: 0.8;
+  }
+  100% {
     opacity: 1;
   }
 }

@@ -275,14 +275,14 @@ const CourseText = (
   <>
     <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
     {page.steps.slice(0, step_index + 1).map((part, index) =>
-      <div key={index} id={`step-text-${index}`}>
+      <div key={index} id={`step-text-${index}`} className={index > 0 ? 'pt-3' : ''}>
         <Markdown html={part.text} copyFunc={text => bookSetState("editorContent", text)}/>
-        <hr/>
+        <hr style={{ margin: '0' }}/>
       </div>
     )}
     <Messages {...{messages}}/>
 
-    <div>
+    <div className='pt-3'>
       {page.index > 0 &&
       <button className="btn btn-primary btn-sm previous-button"
               onClick={() => movePage(-1)}>
@@ -290,7 +290,7 @@ const CourseText = (
       </button>}
       {" "}
       {page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1 &&
-      <button className="btn btn-success next-button"
+      <button className="btn btn-success btn-sm next-button"
               onClick={() => movePage(+1)}>
         Next
       </button>}
