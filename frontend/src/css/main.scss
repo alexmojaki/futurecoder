@@ -391,22 +391,24 @@
 // Markdown text transition animation
 
 @keyframes next-step-transition {
-  from {
-    background-color: lightyellow;
-  }
-  to {
-    background-color: inherit;
-  }
-}
-
-@keyframes page-transition-animation {
   0% {
-    opacity: 0.6;
+    opacity: 0;
+    transform: translateY(40px);
   }
-  40% {
-    opacity: 0.8;
+  60% {
+    transform: translateY(10px);
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes next-step-flash {
+  0% {
+    background-color: lightyellow;
+  }
+  100% {
+    background-color: inherit;
   }
 }

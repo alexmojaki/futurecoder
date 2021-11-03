@@ -47,6 +47,7 @@ const initialState = {
       }
     },
     pageSlug: "loading_placeholder",
+    moveDirection: 1,
   },
   processing: false,
   numHints: 0,
@@ -131,19 +132,12 @@ export const setPageIndex = (pageIndex) => {
 };
 
 export const movePage = (delta) => {
+  setState("user.moveDirection", delta);
   setPageIndex(currentPage().index + delta);
-  if (delta > 0) {
-    animateNextPage();
-  }
 };
 
-const animateNextPage = () => {
-  const mainDiv = document.querySelector('.book-text.markdown-body');
-  if (!mainDiv) {
-    return;
-  }
-  mainDiv.style.animation = 'page-transition-animation 0.8s ease-out';
-  setTimeout(() => mainDiv.style.animation = '', 800);
+export const userMoveDirection = (state = localState) => {
+  return state.user.moveDirection;
 }
 
 export const moveStep = (delta) => {
@@ -154,20 +148,6 @@ export const moveStep = (delta) => {
   }
   
   setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
-  setTimeout(() => {
-    if (delta > 0) {
-      animateNextStep(stepIndex);
-    }
-  }, 1);
-};
-
-const animateNextStep = (stepIndex) => {
-  const div = document.getElementById(`step-text-${stepIndex}`);
-  if (!div) {
-    return;
-  }
-  div.style.animation = 'next-step-transition 4s ease-out';
-  setTimeout(() => div.style.animation = '', 2000);
 };
 
 const loadPages = makeAction(
@@ -211,6 +191,7 @@ firebase.auth().onAuthStateChanged(async (user) => {
     loadUser({
       uid: user.uid,
       email: user.email,
+      moveDirection: 1,
       ...userData,
     });
   } else {

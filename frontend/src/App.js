@@ -17,6 +17,7 @@ import {
   setDeveloperMode,
   setEditorContent,
   specialHash,
+  userMoveDirection,
 } from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -271,35 +272,61 @@ const CourseText = (
     page,
     pages,
     messages
-  }) =>
-  <>
-    <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
-    {page.steps.slice(0, step_index + 1).map((part, index) =>
-      <div key={index} id={`step-text-${index}`} className={index > 0 ? 'pt-3' : ''}>
-        <Markdown html={part.text} copyFunc={text => bookSetState("editorContent", text)}/>
-        <hr style={{ margin: '0' }}/>
-      </div>
-    )}
-    <Messages {...{messages}}/>
+  }) => {
+    const isNextButtonVisible = page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1;
+    const animateEntry = index => {
+      if (userMoveDirection() < 0 || index === 0) {
+        return {};
+      }
+      // animation shorthand: name | duration | easing-function | delay
+      const animation = 'next-step-transition 0.7s ease-out, next-step-flash 3s ease-out 0.7s';
 
-    <div className='pt-3'>
-      {page.index > 0 &&
-      <button className="btn btn-primary btn-sm previous-button"
-              onClick={() => movePage(-1)}>
-        Previous
-      </button>}
-      {" "}
-      {page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1 &&
-      <button className="btn btn-success btn-sm next-button"
-              onClick={() => movePage(+1)}>
-        Next
-      </button>}
-    </div>
-    <br/>
-    {
-      user.developerMode && <StepButtons/>
+      // Animate only the last element if the 'Next' button is visible
+      if (isNextButtonVisible) {
+        if (index === step_index) {
+          return { animation };
+        }
+
+        return {};
+      }
+
+      return { animation };
     }
-  </>;
+
+    return <>
+      <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
+      {page.steps.slice(0, step_index + 1).map((part, index) =>
+        <div
+          key={index}
+          id={`step-text-${index}`}
+          className={index > 0 ? 'pt-3' : ''}
+          style={animateEntry(index)}
+        >
+          <Markdown html={part.text} copyFunc={text => bookSetState("editorContent", text)}/>
+          <hr style={{ margin: '0' }}/>
+        </div>
+      )}
+      <Messages {...{messages}}/>
+      {/* pt-3 is Bootstrap's helper class. Shorthand for padding-top: 1rem. Avialable classes are pt-{1-5} */}
+      <div className='pt-3'>
+        {page.index > 0 &&
+        <button className="btn btn-primary previous-button"
+                onClick={() => movePage(-1)}>
+          Previous
+        </button>}
+        {" "}
+        {isNextButtonVisible &&
+        <button className="btn btn-success next-button"
+                onClick={() => movePage(+1)}>
+          Next
+        </button>}
+      </div>
+      <br/>
+      {
+        user.developerMode && <StepButtons/>
+      }
+    </>;
+  }
 
 class AppComponent extends React.Component {
   render() {
