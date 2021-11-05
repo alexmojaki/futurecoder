@@ -518,12 +518,13 @@ Note that there is a space between the name and the pipes (`|`).
         parsons_solution = True
 
         def solution(self, name: str):
+            name = ' ' + name + ' '
             line = ''
             for _ in name:
                 line += '-'
-            line = '+-' + line + '-+'
+            line = '+' + line + '+'
             print(line)
-            print('| ' + name + ' |')
+            print('|' + name + '|')
             print(line)
 
         tests = {
@@ -541,8 +542,20 @@ Note that there is a space between the name and the pipes (`|`).
 
         class missing_spaces(ExerciseStep, MessageStep):
             """
-            You're almost there! Just add a few more characters to your strings.
+            You're almost there! The only problem is that there's no spaces around `name`.
+            Just add a few more characters to your strings.
             Your loop is perfect.
+
+            Note that you can't fix this by changing the code from e.g.
+
+                name = 'World'
+
+            to
+
+                name = ' World '
+
+            Your code needs to work for any input value of `name`,
+            not just the value you choose.
             """
             def solution(self, name: str):
                 line = ''
