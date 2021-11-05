@@ -47,7 +47,6 @@ const initialState = {
       }
     },
     pageSlug: "loading_placeholder",
-    moveDirection: 1,
   },
   processing: false,
   numHints: 0,
@@ -132,12 +131,21 @@ export const setPageIndex = (pageIndex) => {
 };
 
 export const movePage = (delta) => {
-  setState("user.moveDirection", delta);
   setPageIndex(currentPage().index + delta);
+  if (delta < 0) {
+    removeStepsAnimations();
+  }
 };
 
-export const userMoveDirection = (state = localState) => {
-  return state.user.moveDirection;
+const removeStepsAnimations = () => {
+  const numOfSteps = currentPage().steps.length;
+  for (let i = 1; i <= numOfSteps; i++) {
+    const stepDiv = document.getElementById(`step-text-${i}`);
+    if (!stepDiv) {
+      continue;
+    }
+    stepDiv.style.animation = '';
+  }
 }
 
 export const moveStep = (delta) => {
@@ -146,9 +154,20 @@ export const moveStep = (delta) => {
   if (!step) {
     return;
   }
-  
+
+  if (delta > 0) {
+    animateStep(stepIndex);
+  }
   setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
 };
+
+const animateStep = (stepIndex) => {
+  const stepDiv = document.getElementById(`step-text-${stepIndex}`);
+  if (!stepDiv) {
+    return;
+  }
+  stepDiv.style.animation = 'next-step-transition 0.7s ease-out, next-step-flash 3s ease-out 0.7s';
+}
 
 const loadPages = makeAction(
   "LOAD_PAGES",
@@ -191,7 +210,6 @@ firebase.auth().onAuthStateChanged(async (user) => {
     loadUser({
       uid: user.uid,
       email: user.email,
-      moveDirection: 1,
       ...userData,
     });
   } else {
