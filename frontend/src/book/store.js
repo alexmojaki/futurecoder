@@ -132,21 +132,7 @@ export const setPageIndex = (pageIndex) => {
 
 export const movePage = (delta) => {
   setPageIndex(currentPage().index + delta);
-  if (delta < 0) {
-    removeStepsAnimations();
-  }
 };
-
-const removeStepsAnimations = () => {
-  const numOfSteps = currentPage().steps.length;
-  for (let i = 1; i <= numOfSteps; i++) {
-    const stepDiv = document.getElementById(`step-text-${i}`);
-    if (!stepDiv) {
-      continue;
-    }
-    stepDiv.style.animation = '';
-  }
-}
 
 export const moveStep = (delta) => {
   const stepIndex = currentStep().index + delta;
