@@ -163,9 +163,6 @@ export const moveStep = (delta) => {
 
 const animateStep = (stepIndex) => {
   const stepDiv = document.getElementById(`step-text-${stepIndex}`);
-  if (!stepDiv) {
-    return;
-  }
   stepDiv.style.animation = 'next-step-transition 0.7s ease-out, next-step-flash 3s ease-out 0.7s';
 }
 

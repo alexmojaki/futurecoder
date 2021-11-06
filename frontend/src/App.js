@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Terminal from './shell/Terminal';
 import "./css/main.scss"
 import "./css/pygments.css"
@@ -17,7 +17,6 @@ import {
   setDeveloperMode,
   setEditorContent,
   specialHash,
-  userMoveDirection,
 } from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
