@@ -387,3 +387,28 @@
     transform: translate(24px, 0);
   }
 }
+
+// Markdown text transition animation
+
+@keyframes next-step-transition {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  60% {
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes next-step-flash {
+  0% {
+    background-color: lightyellow;
+  }
+  100% {
+    background-color: inherit;
+  }
+}

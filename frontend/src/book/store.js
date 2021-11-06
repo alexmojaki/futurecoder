@@ -140,8 +140,17 @@ export const moveStep = (delta) => {
   if (!step) {
     return;
   }
+
+  if (delta > 0) {
+    animateStep(stepIndex);
+  }
   setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
 };
+
+const animateStep = (stepIndex) => {
+  const stepDiv = document.getElementById(`step-text-${stepIndex}`);
+  stepDiv.style.animation = 'next-step-transition 0.7s ease-out, next-step-flash 3s ease-out 0.7s';
+}
 
 const loadPages = makeAction(
   "LOAD_PAGES",

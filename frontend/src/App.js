@@ -272,19 +272,24 @@ const CourseText = (
     pages,
     messages
   }) =>
-  <>
+    <>
     <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
-    {page.steps.slice(0, step_index + 1).map((part, index) =>
-      <div key={index} id={`step-text-${index}`}>
+    {page.steps.map((part, index) =>
+      <div
+        key={index}
+        id={`step-text-${index}`}
+        className={index > 0 ? 'pt-3' : ''}
+        style={index > step_index ? {display: 'none'} : {}}
+      >
         <Markdown html={part.text} copyFunc={text => bookSetState("editorContent", text)}/>
-        <hr/>
+        <hr style={{ margin: '0' }}/>
       </div>
     )}
     <Messages {...{messages}}/>
-
-    <div>
+    {/* pt-3 is Bootstrap's helper class. Shorthand for padding-top: 1rem. Available classes are pt-{1-5} */}
+    <div className='pt-3'>
       {page.index > 0 &&
-      <button className="btn btn-primary btn-sm previous-button"
+      <button className="btn btn-primary previous-button"
               onClick={() => movePage(-1)}>
         Previous
       </button>}
@@ -299,7 +304,7 @@ const CourseText = (
     {
       user.developerMode && <StepButtons/>
     }
-  </>;
+  </>
 
 class AppComponent extends React.Component {
   render() {
