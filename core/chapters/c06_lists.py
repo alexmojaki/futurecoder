@@ -417,7 +417,7 @@ So in general, the valid indices are:
 
     [0, 1, 2, ..., len(words) - 2, len(words) - 1]
 
-There's a handy built in function to give you these values, called `range`:
+There's a handy built in function called `range` which gives you these values. Try it by running this code:
 
 __program_indented__
         """
