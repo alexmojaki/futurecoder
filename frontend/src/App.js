@@ -13,7 +13,6 @@ import {
   currentStep,
   movePage,
   moveStep,
-  updateDatabase,
   setDeveloperMode,
   setEditorContent,
   specialHash,
@@ -34,7 +33,6 @@ import {
   faQuestionCircle,
   faSignOutAlt,
   faTimes,
-  faUser,
   faUserGraduate
 } from '@fortawesome/free-solid-svg-icons'
 import {HintsPopup} from "./Hints";
@@ -44,8 +42,8 @@ import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import {runCode, terminalRef} from "./RunCode";
 import firebase from "firebase/app";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import {TableOfContents} from "./TableOfContents";
+import HeaderLoginInfo from "./components/HeaderLoginInfo";
 
 
 const EditorButtons = (
@@ -355,53 +353,7 @@ class AppComponent extends React.Component {
           <MenuPopup user={user}/>
         </span>
         <span className="nav-item navbar-text">
-          {
-            user.email ?
-              <><FontAwesomeIcon icon={faUser}/> {user.email}</>
-              :
-              <Popup
-                trigger={
-                  <button className="btn btn-primary">
-                    <FontAwesomeIcon icon={faUser}/> Login / Sign up
-                  </button>
-                }
-                modal
-                closeOnDocumentClick
-              >
-                <StyledFirebaseAuth
-                  uiConfig={{
-                    signInOptions: [
-                      {
-                        provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                        requireDisplayName: false,
-                      },
-                      // TODO not working because of cross origin isolation
-                      // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                      // firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                    ],
-                    autoUpgradeAnonymousUsers: true,
-                    callbacks: {
-                      // Avoid redirects after sign-in.
-                      signInSuccessWithAuthResult: () => false,
-
-                      // Ignore merge conflicts when upgrading anonymous users and continue signing in
-                      // The store will merge the user data
-                      signInFailure: (error) => {
-                        if (error.code === 'firebaseui/anonymous-upgrade-merge-conflict') {
-
-                          // Note the upgrade in the old anonymous account
-                          updateDatabase({upgradedFromAnonymous: true});
-
-                          firebase.auth().signInWithCredential(error.credential);
-                        }
-                      }
-                    }
-                  }}
-                  firebaseAuth={firebase.auth()}
-                />
-              </Popup>
-          }
+          <HeaderLoginInfo email={user.email}/>
         </span>
         <a className="nav-item nav-link" href="#toc">
           <FontAwesomeIcon icon={faListOl}/> Table of Contents
