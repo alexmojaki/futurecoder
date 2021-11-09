@@ -370,16 +370,16 @@ You will need to use a string consisting of one space: `' '`.
 
         tests = {
             'World': """\
-W 
-W o 
-W o r 
-W o r l 
-W o r l d 
+W
+W o
+W o r
+W o r l
+W o r l d
 """,
             'Bob': """\
-B 
-B o 
-B o b 
+B
+B o
+B o b
 """,
         }
 
@@ -480,11 +480,9 @@ By the way, when you don't need to use a variable, it's common convention to nam
 
 Let's make this fancier. Extend your program to draw a box around the name, like this:
 
-    +-------+
-    | World |
-    +-------+
-
-Note that there is a space between the name and the pipes (`|`).
+    +-----+
+    |World|
+    +-----+
         """
 
         hints = [
@@ -502,23 +500,13 @@ Note that there is a space between the name and the pipes (`|`).
             dedent("""\
             Try writing a program that outputs:
 
-                | World |
-            """),
-            dedent("""\
-            Try writing a program that outputs:
-
-                +-----+
                 |World|
-                +-----+
-
-            (i.e. no spaces around `World`)
             """),
         ]
 
         parsons_solution = True
 
         def solution(self, name: str):
-            name = ' ' + name + ' '
             line = ''
             for _ in name:
                 line += '-'
@@ -529,55 +517,16 @@ Note that there is a space between the name and the pipes (`|`).
 
         tests = {
             "World": """\
-+-------+
-| World |
-+-------+
-""",
-            "Bob": """\
-+-----+
-| Bob |
-+-----+
-""",
-        }
-
-        class missing_spaces(ExerciseStep, MessageStep):
-            """
-            You're almost there! The only problem is that there's no spaces around `name`.
-            Just add a few more characters to your strings.
-            Your loop is perfect.
-
-            Note that you can't fix this by changing the code from e.g.
-
-                name = 'World'
-
-            to
-
-                name = ' World '
-
-            Your code needs to work for any input value of `name`,
-            not just the value you choose.
-            """
-            def solution(self, name: str):
-                line = ''
-                for _ in name:
-                    line += '-'
-                line = '+' + line + '+'
-                print(line)
-                print('|' + name + '|')
-                print(line)
-
-            tests = {
-                "World": """\
 +-----+
 |World|
 +-----+
 """,
-                "Bob": """\
+            "Bob": """\
 +---+
 |Bob|
 +---+
 """,
-            }
+        }
 
         disallowed = [
             Disallowed(
