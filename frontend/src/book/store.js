@@ -189,16 +189,20 @@ firebase.auth().onAuthStateChanged(async (user) => {
   if (user) {
     // TODO ideally we'd set a listener on the user instead of just getting it once
     //   to sync changes made on multiple devices
-    const userData = await databaseRequest("GET");
-    loadUser({
-      uid: user.uid,
-      email: user.email,
-      ...userData,
-    });
+    await updateUserData(user);
   } else {
-    firebase.auth().signInAnonymously();
+    await firebase.auth().signInAnonymously();
   }
 });
+
+export const updateUserData = async (user) => {
+  const userData = await databaseRequest("GET");
+  loadUser({
+    uid: user.uid,
+    email: user.email,
+    ...userData,
+  });
+}
 
 const databaseRequest = async (method, data={}) => {
   const currentUser = firebase.auth().currentUser;
