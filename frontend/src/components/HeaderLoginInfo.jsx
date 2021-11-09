@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
-import {updateDatabase} from "../book/store";
+import {updateDatabase, updateUserData} from "../book/store";
 import Popup from "reactjs-popup";
 
 const HeaderLoginInfo = ({ email }) => {
@@ -33,8 +33,12 @@ const HeaderLoginInfo = ({ email }) => {
           autoUpgradeAnonymousUsers: true,
           callbacks: {
             // Avoid redirects after sign-in.
-            signInSuccessWithAuthResult: () => {
+            signInSuccessWithAuthResult: async (authResult) => {
+              // Popup must be closed before updating user data to avoid memory leaks
               close();
+              if (authResult.user) {
+                await updateUserData(authResult.user);
+              }
               return false;
             },
 
