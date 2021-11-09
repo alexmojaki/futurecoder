@@ -185,7 +185,7 @@ const loadUser = makeAction(
   },
 )
 
-firebase.auth().onAuthStateChanged(async (user) => {
+firebase.auth().onIdTokenChanged(async (user) => {
   if (user) {
     // TODO ideally we'd set a listener on the user instead of just getting it once
     //   to sync changes made on multiple devices

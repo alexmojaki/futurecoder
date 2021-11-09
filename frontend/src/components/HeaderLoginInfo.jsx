@@ -35,7 +35,6 @@ const HeaderLoginInfo = ({ email }) => {
             // Avoid redirects after sign-in.
             signInSuccessWithAuthResult: () => {
               close();
-              window.location.reload();
               return false;
             },
 
