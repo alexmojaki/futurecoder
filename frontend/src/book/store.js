@@ -145,6 +145,7 @@ export const moveStep = (delta) => {
     animateStep(stepIndex);
   }
   setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
+  resetHintCount();
 };
 
 const animateStep = (stepIndex) => {
@@ -284,6 +285,16 @@ const loadUserAndPages = (state, previousUser = {}) => {
   }
   return state;
 }
+
+export const resetHintCount = makeAction(
+  'RESET_HINTS',
+  (state) => {
+    return {
+      ...state,
+      numHints: 0,
+    };
+  },
+);
 
 export const showHint = makeAction(
   'SHOW_HINT',
