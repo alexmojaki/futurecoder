@@ -1444,6 +1444,15 @@
         "step": "name_underlined"
     },
     {
+        "get_solution": [
+            "line = ''",
+            "for _ in name:",
+            "    line += '-'",
+            "line = '+' + line + '+'",
+            "print(line)",
+            "print('|' + name + '|')",
+            "print(line)"
+        ],
         "page": "Building Up Strings Exercises",
         "program": [
             "name = 'World'",
@@ -1456,8 +1465,8 @@
             "print(line)"
         ],
         "response": {
-            "message": "<p>You're almost there! The only problem is that there's no spaces around <code>name</code>.\nJust add a few more characters to your strings.\nYour loop is perfect.</p>\n<p>Note that you can't fix this by changing the code from e.g.</p>\n<pre><code class=\"codehilite\"><span><span class=\"n\">name</span> <span class=\"o\">=</span> <span class=\"s1\">'World'</span>\n</span></code></pre>\n<p>to</p>\n<pre><code class=\"codehilite\"><span><span class=\"n\">name</span> <span class=\"o\">=</span> <span class=\"s1\">' World '</span>\n</span></code></pre>\n<p>Your code needs to work for any input value of <code>name</code>,\nnot just the value you choose.</p>",
-            "passed": false,
+            "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1478,65 +1487,6 @@
                 {
                     "color": "white",
                     "text": "+-----+"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "name_box"
-    },
-    {
-        "get_solution": [
-            "name = ' ' + name + ' '",
-            "line = ''",
-            "for _ in name:",
-            "    line += '-'",
-            "line = '+' + line + '+'",
-            "print(line)",
-            "print('|' + name + '|')",
-            "print(line)"
-        ],
-        "page": "Building Up Strings Exercises",
-        "program": [
-            "name = 'World'",
-            "name = ' ' + name + ' '",
-            "line = ''",
-            "for _ in name:",
-            "    line += '-'",
-            "line = '+' + line + '+'",
-            "print(line)",
-            "print('|' + name + '|')",
-            "print(line)"
-        ],
-        "response": {
-            "message": "",
-            "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": "+-------+"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "| World |"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "+-------+"
                 },
                 {
                     "color": "white",
