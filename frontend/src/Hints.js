@@ -40,7 +40,7 @@ export const HintsPopup = ({hints, numHints, requestingSolution, solution}) => {
 const Hints = ({hints, numHints, requestingSolution, solution}) =>
   <div className="markdown-body">
     {hints.slice(0, numHints).map((hint, index) =>
-      <div className="hint-body">
+      <div className="hint-body" key={index}>
         <div key={index} dangerouslySetInnerHTML={{__html: hint}}/>
         <hr/>
       </div>
@@ -58,6 +58,10 @@ const Hints = ({hints, numHints, requestingSolution, solution}) =>
           />
       }
     </div>
+    {
+      numHints < hints.length &&
+      <span className="small">Shown {numHints} of {hints.length} hints</span>
+    }
   </div>
 
 
