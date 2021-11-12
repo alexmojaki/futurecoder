@@ -58,7 +58,10 @@ const Hints = ({hints, numHints, requestingSolution, solution}) =>
           />
       }
     </div>
-    <span className="float-right">Shown {numHints} of {hints.length} hint(s).</span>
+    {
+      numHints !== hints.length &&
+      <span className="small">Shown {numHints} of {hints.length} hints.</span>
+    }
   </div>
 
 
