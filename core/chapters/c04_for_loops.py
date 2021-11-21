@@ -270,7 +270,7 @@ This is very useful in a loop. Try out this program:
 
 __program_indented__
 
-By the way, `''` is called the *empty string* - a string containing no characters.
+By the way, `''` is called the *empty string* - a string containing no characters. Adding it to another string just gives you the other string unchanged, in the same way that `0 + 5` is just `5`. Don't confuse the empty string with `' '`, which is a non-empty string containing one character: a space.
         """
 
         predicted_output_choices = [
@@ -306,7 +306,31 @@ By the way, `''` is called the *empty string* - a string containing no character
 
     class name_triangle_missing_last_line(VerbatimStep):
         """
-The details in the above program are important. What happens if you swap the last two lines and run this program instead?
+Take your time to make sure you understand this program fully. It's doing something like this:
+
+    line = ''
+
+    char = 'W'
+    line = line + char
+         = ''   + 'W'
+         = 'W'
+    print('W')
+
+    char = 'o'
+    line = line + char
+         = 'W'  + 'o'
+         = 'Wo'
+    print('Wo')
+
+    char = 'r'
+    line = line + char
+         = 'Wo' + 'r'
+         = 'Wor'
+    print('Wor')
+
+    ...
+
+The details are important. What happens if you swap the last two lines and run this program instead?
 
 __program_indented__
         """
