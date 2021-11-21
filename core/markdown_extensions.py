@@ -9,7 +9,7 @@ from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
 
-from core.utils import is_valid_syntax
+from core.utils import is_valid_syntax, check_and_remove_prefix
 
 lexer = get_lexer_by_name("python3")
 monokai = get_style_by_name("monokai")
@@ -17,20 +17,25 @@ html_formatter = HtmlFormatter(nowrap=True)
 
 
 class HighlightPythonTreeProcessor(Treeprocessor):
+    codes = None
+
     def run(self, root):
         for node in root.findall(".//pre/code"):
             text = unescape(node.text)
 
-            prefix = "__copyable__\n"
-            if copyable := text.startswith(prefix):
-                text = strip_required_prefix(text, prefix)
+            # TODO: this assumes that __copyable__ never comes after __no_auto_translate__
+            text, copyable = check_and_remove_prefix(text, "__copyable__\n")
+            text, no_auto_translate = check_and_remove_prefix(text, "__no_auto_translate__\n")
 
-            if (
-                    is_valid_syntax(text) or
-                    is_valid_syntax(text + "\n 0") or
-                    is_valid_syntax(dedent(text))
-            ):
-                self.highlight_node(node, text)
+            for code in [text, text + "\n 0", dedent(text)]:
+                if is_valid_syntax(code):
+                    self.highlight_node(node, text)
+                    self.codes.append(dict(
+                        code=code,
+                        text=text,
+                        no_auto_translate=no_auto_translate,
+                    ))
+                    break
             else:
                 node.text = text
 
@@ -52,5 +57,9 @@ class HighlightPythonTreeProcessor(Treeprocessor):
 
 
 class HighlightPythonExtension(Extension):
+    codes = None
+
     def extendMarkdown(self, md):
-        md.treeprocessors.register(HighlightPythonTreeProcessor(), "highlight_python", 0)
+        processor = HighlightPythonTreeProcessor()
+        processor.codes = self.codes
+        md.treeprocessors.register(processor, "highlight_python", 0)

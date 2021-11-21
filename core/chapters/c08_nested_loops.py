@@ -665,7 +665,7 @@ Suppose again that `letters = "ABCD"`. Imagine you have all possible three-lette
 Remember, a for loop can contain any statement, including another for loop.
 That applies to all for loops.
 One for loop inside another for loop is no longer enough.
-You have to go deeper. 
+You have to go deeper.
         """
 
         def solution(self, letters: str):
@@ -793,6 +793,7 @@ One more exercise. Given a size:
 
 Print out an 'upside down' triangle made of the letter `O` whose sides are as long as the given size, e.g:
 
+    __no_auto_translate__
     OOOOO
     OOOO
     OOO
@@ -806,7 +807,7 @@ Print a line of `size` Os, then `size - 1` Os, etc. down to 1 O. For example pri
 Break this down into subproblems.
 How do you print one line of Os of a given length, and how do you go through all the lengths?
 Building up a line of characters should be very familiar from previous exercises, the only difference is that you have to make it a given length instead of just the same length as another string.
-An easy way to do something `n` times is to loop over `range(n)`. 
+An easy way to do something `n` times is to loop over `range(n)`.
 You need to use a for loop inside a for loop.
 You need numbers that count down, like 5, 4, 3, 2, 1. There is a way to do this with `range`, and you can easily look it up, but it's also easy to use a normal range and do some very simple maths to convert numbers counting up into numbers counting down.
 What formula converts 0 into 5, 1 into 4, 2, into 3, etc?
@@ -1154,7 +1155,7 @@ For example we can add a new word to the last sublist of `strings` with `append`
 to come after `'you'`:
 
     strings[1].append("today?")
-    
+
 After all, the sublist `strings[1]` is still a list like any other!
 
 On the next page we will learn about looping over nested lists.
@@ -1297,7 +1298,7 @@ How do you check if a string contains a word?
 Make sure to check whether **the string** contains the word, not the sublist.
 How can you access each string in each sublist of a nested list?
 You need to use a nested loop.
-The loops should follow the same pattern as the example at the beginning of the page. 
+The loops should follow the same pattern as the example at the beginning of the page.
         """
 
         tests = [
@@ -1536,6 +1537,7 @@ then the second letter of each string on the next line, and so on. For example, 
 
 then your program should print
 
+    __no_auto_translate__
     adg
     beh
     cfi
@@ -1544,6 +1546,7 @@ Your program should work for any such list. In particular, if you use the follow
 you'll discover a hidden message from the Zen of Python!
 
     __copyable__
+    __no_auto_translate__
     strings = ["  b n", "f ete", "liths", "astat", "t ene", "  r d"]
 
 Note that this time you shouldn't add spaces between letters in the output.
@@ -1583,10 +1586,10 @@ beh
 cfi
 """),
             (["  b n", "f ete", "liths", "astat", "t ene", "  r d"], """\
- flat 
-  is  
+ flat
+  is
 better
- than 
+ than
 nested
 """)
         ]
@@ -1603,6 +1606,7 @@ But this time, if a string does not have enough letters, it should print a space
 
 For example, if
 
+    __no_auto_translate__
     strings = ["abcqwe", "def", "ghiq"]
 
 your program should print
@@ -1611,8 +1615,8 @@ your program should print
     beh
     cfi
     q q
-    w  
-    e  
+    w
+    e
         """
 
         def solution(self, strings: List[str]):
@@ -1644,8 +1648,8 @@ adg
 beh
 cfi
 q q
-w  
-e  
+w
+e
 """)
         ]
 
