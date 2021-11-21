@@ -268,6 +268,7 @@ class PageMeta(type):
         result = [step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
         result = [highlighted_markdown(text) for text in result]
         assert "__copyable__" not in str(result)
+        assert "__no_auto_translate__" not in str(result)
         return result
 
     @property
