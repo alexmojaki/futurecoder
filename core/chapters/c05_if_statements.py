@@ -488,7 +488,7 @@ In the first iteration you need an uppercase letter. In the following iterations
         """
 Excellent!!!
 
-One more exercise, and then you can relax. 
+One more exercise, and then you can relax.
 
 Write a program which prints `sentence` mockingly, e.g:
 
@@ -499,7 +499,7 @@ Every second character should be lowercased, the rest should be uppercase.
 
         hints = """
 This is similar to the previous exercise. The difference is when and where you set the condition variable.
-You will need to have a boolean variable which changes with every iteration. 
+You will need to have a boolean variable which changes with every iteration.
 First write a small program which takes a boolean variable and flips it, i.e. if the variable is `True` it becomes `False` and if it starts out `False` it's changed to `True`. No loops, just an `if/else`.
 You will need to use the variable in the `if` condition and also assign to the same variable in the body.
 Combine that flipping `if/else` with the one that chooses an uppercase or lowercase character.
@@ -722,7 +722,7 @@ Now fix the program to replace all characters correctly.
         def generate_inputs(cls):
             return {
                 "dna": "".join(
-                    random.choice("ATGC") 
+                    random.choice("ATGC")
                     for _ in range(random.randrange(20, 30))
                 )
             }
@@ -892,11 +892,11 @@ Recall that `elif percentage < 60` after `if percentage < 40` means "if the perc
         """
 Now for an exercise: write a program that takes three variables `x1`, `x2`, and `x3`, and prints the value of the smallest one. So for:
 
-    x1 = 'Charlie'
-    x2 = 'Alice'
-    x3 = 'Bob'
+    x1 = 30
+    x2 = 10
+    x3 = 20
 
-it should print `Alice`.
+it should print `10`.
         """
 
         hints = """
@@ -957,7 +957,13 @@ Here's another:
     print(first)
 
 These programs (and yours too) all work equally well with numbers and strings,
-but not a mixture.
+but not a mixture. So for:
+
+    x1 = 'Charlie'
+    x2 = 'Alice'
+    x3 = 'Bob'
+
+they will print `Alice` because that's the first string alphabetically.
 
 `<` and `>` evaluate to False if the compared values are equal. For example,
 3 is not less than 3, so `3 < 3` and `3 > 3` are both False.
