@@ -12,6 +12,7 @@ from types import ModuleType
 from typing import Union
 
 import pygments
+from asttokens import ASTTokens
 from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
@@ -154,11 +155,21 @@ def is_valid_syntax(text):
         return False
 
 
-def highlighted_markdown(text):
+def highlighted_markdown_and_codes(text):
     from markdown import markdown
     from .markdown_extensions import HighlightPythonExtension
 
-    return markdown(text, extensions=[HighlightPythonExtension(), 'markdown.extensions.tables'])
+    extension = HighlightPythonExtension()
+    extension.codes = []
+    return markdown(text, extensions=[extension, 'markdown.extensions.tables']), extension.codes
+
+
+def highlighted_markdown(text):
+    return highlighted_markdown_and_codes(text)[0]
+
+
+def markdown_codes(text):
+    return highlighted_markdown_and_codes(text)[1]
 
 
 def shuffled(it):
@@ -182,3 +193,26 @@ def shuffled_well(seq):
 
     permutation = sorted(permutations, key=inversions)[-2]
     return [seq[i] for i in permutation]
+
+
+class MyASTTokens(ASTTokens):
+    def get_text_pos(self, lineno, col_offset):
+        col_offset = self._line_numbers.from_utf8_col(lineno, col_offset)
+        return self._line_numbers.line_to_offset(lineno, col_offset)
+
+    def get_text_range(self, node):
+        return (
+            self.get_text_pos(node.lineno, node.col_offset),
+            self.get_text_pos(node.end_lineno, node.end_col_offset),
+        )
+
+    def get_text(self, node):
+        result = super().get_text(node)
+        assert result == ast.get_source_segment(self._text, node)
+        return result
+
+
+def check_and_remove_prefix(string, prefix):
+    if startswith := string.startswith(prefix):
+        string = strip_required_prefix(string, prefix)
+    return string, startswith

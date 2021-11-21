@@ -25,6 +25,7 @@ You can read the code almost like normal English:
 
 Each character is just a normal string. `character` is a normal variable that is given a new value before the code after the `:` runs. So the code above is equivalent to:
 
+    __no_auto_translate__
     name = 'World'
 
     character = 'W'
@@ -143,6 +144,7 @@ Time for some exercises! Modify this program:
 
 to instead output:
 
+    __no_auto_translate__
     ---W
     ---o
     ---r
@@ -178,12 +180,14 @@ You will need to use `+`.
         """
 Splendid! Now write a program which prints `name` once for each character in `name`. For example, for `name = 'Amy'`, it should output:
 
+    __no_auto_translate__
     Amy
     Amy
     Amy
 
 For `name = 'World'`, it should output:
 
+    __no_auto_translate__
     World
     World
     World
@@ -387,6 +391,7 @@ B o b
         """
 Tremendous! Now modify the program so that each line is backwards, like this:
 
+    __no_auto_translate__
     W
     oW
     roW
@@ -695,6 +700,7 @@ Here's some words you need to know:
 
 An ***expression*** is a piece of code that has a value. For example, in this line of code:
 
+    __no_auto_translate__
     sentence = 'Hello ' + name
 
 there are three expressions:
