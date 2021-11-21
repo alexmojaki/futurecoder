@@ -74,10 +74,12 @@ __program_indented__
 Now modify the program so that it can add up a list of strings instead of numbers.
 For example, given:
 
+    __no_auto_translate__
     words = ['This', 'is', 'a', 'list']
 
 it should print:
 
+    __no_auto_translate__
     Thisisalist
         """
 
@@ -110,11 +112,13 @@ If you'd like, you can just continue to the [next page](#BuildingNewLists) now.
 For an optional bonus challenge: extend the program to insert a separator string *between* each word.
 For example, given
 
+    __no_auto_translate__
     words = ['This', 'is', 'a', 'list']
     separator = ' - '
 
 it would output:
 
+    __no_auto_translate__
     This - is - a - list
         """
 
@@ -165,6 +169,7 @@ Only change it in the loop after checking it, or you won't be able to skip the f
     final_text = """
 Congratulations! That was very tricky! One solution looks like this:
 
+    __no_auto_translate__
     words = ['This', 'is', 'a', 'list']
     separator = ' - '
     total = ''
@@ -291,11 +296,13 @@ class UsingBreak(Page):
 Exercise: write a program which takes a list and a value and checks
 if the list contains the value. For example, given:
 
+    __no_auto_translate__
     things = ['This', 'is', 'a', 'list']
     thing_to_find = 'is'
 
 it should print `True`, but for
 
+    __no_auto_translate__
     thing_to_find = 'other'
 
 it should print `False`.
@@ -496,6 +503,7 @@ Let's get some exercise! Given a list `things` and a value `to_find`,
 print the first index of `to_find` in the list, i.e. the lowest number `i` such that
 `things[i]` is `to_find`. For example, for
 
+    __no_auto_translate__
     things = ['on', 'the', 'way', 'to', 'the', 'store']
     to_find = 'the'
 
@@ -580,6 +588,7 @@ By the way, indexing and `len()` also work on strings. Try them out in the shell
 
 Here's another exercise. Given two strings of equal length, e.g:
 
+    __no_auto_translate__
     string1 = 'Hello'
     string2 = 'World'
 
@@ -654,6 +663,7 @@ Your next challenge is to fix this problem by filling in 'missing' characters wi
 
 For example, for:
 
+    __no_auto_translate__
     string1 = 'Goodbye'
     string2 = 'World'
 
@@ -669,6 +679,7 @@ output:
 
 and for:
 
+    __no_auto_translate__
     string1 = 'Hello'
     string2 = 'Elizabeth'
 
@@ -743,8 +754,8 @@ output:
                     o r
                     d l
                     b d
-                    y  
-                    e  
+                    y
+                    e
                     """),
             ("Hello", "Elizabeth"): dedent("""\
                     H E
@@ -1056,7 +1067,7 @@ Replace the middle line with one line from the list above. The final program sho
             print(x)
 
         hints = """
-Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, then one line copied exactly from the list (no additions), and `print(x)`.        
+Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, then one line copied exactly from the list (no additions), and `print(x)`.
 Moving the first element to the end requires two things.
 Removing the first element...
 and adding it to the end.
@@ -1704,7 +1715,7 @@ You can copy a list with the `copy` method:
 
 This will make the program behave like the first version again.
 
-If you come across this kind of problem and you're still having trouble understanding this stuff, read the essay [Facts and myths about Python names and values](https://nedbatchelder.com/text/names.html). 
+If you come across this kind of problem and you're still having trouble understanding this stuff, read the essay [Facts and myths about Python names and values](https://nedbatchelder.com/text/names.html).
 """
 
 

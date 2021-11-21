@@ -177,7 +177,7 @@ In the second example, `O` wins in the bottom row.
 You need to check every row in the board, so you'll need a loop for that.
 How can you check if all entries in a row are equal to each other?
 That's a self contained problem on its own. You can start by forgetting about the whole board and just checking a single row.
-You could even write a function which just does this, although you don't have to. 
+You could even write a function which just does this, although you don't have to.
 Since the row could have any size, you'll have to loop all the way through it.
 For each row, define a boolean. Then loop through that row, updating the boolean accordingly.
 You can use the first entry `row[0]` in a row to compare all the row entries to it.
@@ -311,7 +311,7 @@ You can start by imitating `row_winner` above, then change it to make it work wi
 You can't loop through the columns of `board` as simply as its rows.
 What *is* a column of a nested list? The first column consists of the first element of the first row, the first element of the second row, etc.
 Looping through all columns means looking at the first element of every row, then the second element of every row, etc.
-So you need to loop through numbers representing the positions first, second, etc. 
+So you need to loop through numbers representing the positions first, second, etc.
 How do you find the number of columns in `board`?
 That covers the outer loop, which goes through each column. Then you need an inner loop to go through each element in the column.
 The different entries of a column are NOT on the same row. So how can you access them?
@@ -554,7 +554,7 @@ Your solution should work by calling the three functions. `winner` itself should
 looping, subscripting, etc. It should be very short.
 
 Copy the `row_winner` and other functions and leave them as they are. Don't copy code from them
-into the `winner` function, just call those functions. 
+into the `winner` function, just call those functions.
 """)
 
         def solution(self):
@@ -936,9 +936,9 @@ To add the newlines to the `+-` line correctly, take a look at the test case we 
     final_text = """
 Great work! That was quite challenging.
 
-Now you have mastered how to build up a string of multiple lines of text, and solved the problem of displaying the board to the players. 
+Now you have mastered how to build up a string of multiple lines of text, and solved the problem of displaying the board to the players.
 
-Next you will learn more about types in Python and how to convert them, and how to get input from the players. 
+Next you will learn more about types in Python and how to convert them, and how to get input from the players.
 You are already about halfway done with the project. Keep going!
     """
 
@@ -1571,9 +1571,9 @@ You can use nested subscripting in one line, or do it in two steps.
                 <input: 2>
                 <input: 1>
                  123
-                1   
-                2X  
-                3   
+                1
+                2X
+                3
                 """),
             ),
             (
@@ -1591,8 +1591,8 @@ You can use nested subscripting in one line, or do it in two steps.
                 <input: 3>
                  123
                 1  O
-                2X  
-                3   
+                2X
+                3
                 """),
             ),
         ]
@@ -1786,14 +1786,14 @@ Here's an example:
         for _ in range(size):
             board.append(row.copy())
         return board
-    
+
     def make_cube(size):
         cube = []
         board = make_board(size)
         for _ in range(size):
             cube.append(board.copy())
         return cube
-    
+
     def test():
         cube = make_cube(2)
         print(cube)
@@ -1802,7 +1802,7 @@ Here's an example:
         print(cube[0] is cube[1])
         print(cube[0][0] is cube[0][1])
         print(cube[0][0] is cube[1][0])
-    
+
     test()
 
 Here each element of `cube` is a separate list, a copy of `board`.
@@ -2003,30 +2003,30 @@ Check the indentation to make sure `print_draw` isn't in the body of the for loo
             (dict(board_size=2, player1="A", player2="B", stdin_input=["1", "1", "1", "2", "2", "1"]),
              """\
   1 2
-1  | 
+1  |
   -+-
-2  | 
+2  |
 A to play:
 <input: 1>
 <input: 1>
   1 2
-1 A| 
+1 A|
   -+-
-2  | 
+2  |
 B to play:
 <input: 1>
 <input: 2>
   1 2
 1 A|B
   -+-
-2  | 
+2  |
 A to play:
 <input: 2>
 <input: 1>
   1 2
 1 A|B
   -+-
-2 A| 
+2 A|
 A wins!
 """),
             (dict(board_size=3, player1="X", player2="O",
