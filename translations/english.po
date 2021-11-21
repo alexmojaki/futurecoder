@@ -69,13 +69,13 @@ msgstr ""
 #.     'hello' + ' world'
 #.     'hello' + ' ' + 'world'
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27world%27
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27+world%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27hello%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27hello+%27
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27hello%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27world%27
 msgid "pages.AddingStrings.steps.final_text.text"
 msgstr ""
 "Well done! Any of the following are valid solutions:\n"
@@ -120,9 +120,9 @@ msgstr ""
 #.     # __code0__:
 #.     word = 'Hello'
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Hello%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
 msgid "pages.UsingVariables.steps.name_assign.text"
 msgstr ""
 "Previously we made a variable called `word` with the value `'Hello'` with this code:\n"
@@ -242,9 +242,9 @@ msgstr ""
 #.     word = 'Goodbye'
 #.     print(sentence)
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sentence
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Goodbye%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sentence
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
 msgid "pages.StoringCalculationsInVariables.steps.sentence_doesnt_change.text"
@@ -442,9 +442,9 @@ msgstr ""
 #.     temp = hello
 #.     hello = temp + '!'
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.temp
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.hello
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.temp
 msgid "pages.BuildingUpStrings.steps.name_triangle.text"
 msgstr ""
 "Python doesn't care that `hello` is on both the left and the right of the `=`, it just does what it would always do if the variables were different: it calculates `hello + '!'` which at the time is `'Hello' + '!'` which is `'Hello!'`, and that becomes the new value of `hello`. If it helps, you can think of that line as split into two steps:\n"
@@ -483,11 +483,11 @@ msgstr ""
 #.         line = line + char
 #.         print(line)
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27World%27
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.line
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27World%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.BuildingUpStringsExercises.steps.name_triangle_spaced.text"
@@ -677,13 +677,13 @@ msgstr ""
 #.     excited = False
 #.     confused = True
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Hello+World%27
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.confused
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.excited
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sentence
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Hello+World%27
 msgid "pages.IntroducingIfStatements.steps.excited_confused_exercise.text"
 msgstr ""
 "Time for an exercise. Modify the program above to include an extra\n"
@@ -727,15 +727,15 @@ msgstr ""
 #.     sentence = new_sentence
 #.     print(sentence)
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.excited
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sentence
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Hello+World%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.excited
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.new_sentence
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sentence
 msgid "pages.CombiningCompoundStatements.steps.final_text.text"
 msgstr ""
 "Note how the body of the `if` statement (4 lines) is indented as usual, while the body\n"
@@ -860,13 +860,13 @@ msgstr ""
 #. 
 #.     print(sentence)
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Hello+World%27
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.excited
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sentence
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Hello+World%27
 msgid "pages.IfAndElse.steps.undefined_char.text"
 msgstr ""
 "Here's a broken program:\n"
@@ -904,7 +904,7 @@ msgid "pages.IfAndElse.steps.spongebob.text"
 msgstr ""
 "Excellent!!!\n"
 "\n"
-"One more exercise, and then you can relax. \n"
+"One more exercise, and then you can relax.\n"
 "\n"
 "Write a program which prints `sentence` mockingly, e.g:\n"
 "\n"
@@ -1120,28 +1120,22 @@ msgstr ""
 #. https://futurecoder.io/course/#OtherComparisonOperators
 #. 
 #.     # __code0__:
-#.     x1 = 'Charlie'
-#.     x2 = 'Alice'
-#.     x3 = 'Bob'
+#.     x1 = 30
+#.     x2 = 10
+#.     x3 = 20
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x1
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x2
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x3
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Bob%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Charlie%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Alice%27
 msgid "pages.OtherComparisonOperators.steps.min_three_exercise.text"
 msgstr ""
 "Now for an exercise: write a program that takes three variables `x1`, `x2`, and `x3`, and prints the value of the smallest one. So for:\n"
 "\n"
 "__code0__\n"
 "\n"
-"it should print `Alice`."
+"it should print `10`."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
 #. 
@@ -1170,6 +1164,17 @@ msgstr ""
 #. 
 #.     print(first)
 #. 
+#.     # __code2__:
+#.     x1 = 'Charlie'
+#.     x2 = 'Alice'
+#.     x3 = 'Bob'
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Alice%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Bob%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Charlie%27
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.first
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x1
@@ -1190,7 +1195,11 @@ msgstr ""
 "__code1__\n"
 "\n"
 "These programs (and yours too) all work equally well with numbers and strings,\n"
-"but not a mixture.\n"
+"but not a mixture. So for:\n"
+"\n"
+"__code2__\n"
+"\n"
+"they will print `Alice` because that's the first string alphabetically.\n"
 "\n"
 "`<` and `>` evaluate to False if the compared values are equal. For example,\n"
 "3 is not less than 3, so `3 < 3` and `3 > 3` are both False.\n"
@@ -1303,9 +1312,9 @@ msgstr ""
 #.     # __code2__:
 #.     [6, 2, 8, 2, 10, 18, 4, 12, 10]
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.new_numbers
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
 msgid "pages.BuildingNewLists.steps.double_numbers.text"
 msgstr ""
 "Lists and strings have a lot in common.\n"
@@ -1339,11 +1348,11 @@ msgstr ""
 #.     # __code3__:
 #.     [9, 6]
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.element
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.some_list
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.element
 msgid "pages.BuildingNewLists.steps.filter_numbers.text"
 msgstr ""
 "Great!\n"
@@ -1408,9 +1417,9 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.found
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.thing_to_find
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.thing
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.thing_to_find
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.things
 msgid "pages.UsingBreak.steps.final_text.text"
@@ -1520,13 +1529,13 @@ msgstr ""
 #.         char2 = string2[i]
 #.         print(char1 + ' ' + char2)
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string1
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string2
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char1
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char2
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string1
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string2
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.text"
 msgstr ""
 "Incredible!\n"
@@ -1666,11 +1675,11 @@ msgstr ""
 #.     # __code0__:
 #.     some_list[index] = new_value
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.index
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.new_value
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.some_list
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.index
 msgid "pages.FunctionsAndMethodsForLists.steps.subscript_assignment_predict.text"
 msgstr ""
 "As you can see, `+` does not modify `nums`, but `append` does.\n"
@@ -1708,9 +1717,9 @@ msgstr ""
 #.     # __code0__:
 #.     some_list.pop(index)
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.some_list
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.index
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.some_list
 msgid "pages.FunctionsAndMethodsForLists.steps.pop_predict_exercise.text"
 msgstr ""
 "**`pop`**: Removes and returns an element at a given *index* using the syntax\n"
@@ -2111,9 +2120,9 @@ msgstr ""
 #.     # __code0__:
 #.     if word.lower() == 'yes':
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27yes%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
 msgid "pages.StringMethodsUnderstandingMutation.steps.final_text.text"
 msgstr ""
 "Observe that `sentence.upper()` does not change the original `sentence`.\n"
@@ -2318,9 +2327,9 @@ msgstr ""
 #.     # __code0__:
 #.     for number in numbers.copy():
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.number
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
 msgid "pages.ModifyingWhileIterating.steps.make_copy.text"
 msgstr ""
 "But it turns out this does nearly the same thing - it doesn't end in an error, but it still doesn't remove 7 or 3.\n"
@@ -2434,21 +2443,21 @@ msgstr ""
 #.     # __code1__:
 #.     print(f"{name} went to {meal} with {friend}.")
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22+went+to+%22
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22+with+%22
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22lunch%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Bob%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22%7Bname%7D+went+to+%7Bmeal%7D+with+%7Bfriend%7D.%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.friend
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Bob%27
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.meal
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22+went+to+%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingFstrings.steps.introduce_f_strings.text"
@@ -2593,13 +2602,13 @@ msgstr ""
 #.     # __code0__:
 #.     players = ["Alice", "Bob", "Charlie"]
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.players
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Charlie%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.players
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_exercise.text"
 msgstr ""
 "Perfect!\n"
@@ -2675,15 +2684,15 @@ msgstr ""
 #.     # __code0__:
 #.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Bob%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Alice%27
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Dylan%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Bob%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Charlie%27
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.players
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Dylan%27
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Alice%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.players
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.text"
 msgstr ""
 "Wow, you're an artist too!\n"
@@ -2714,17 +2723,17 @@ msgstr ""
 #.             if i < j:
 #.                 print(f'{players[i]} vs {players[j]}')
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Alice%27
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Bob%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%7Bplayers%5Bi%5D%7D+vs+%7Bplayers%5Bj%5D%7D%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Dylan%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Charlie%27
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.players
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Dylan%27
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Alice%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%7Bplayers%5Bi%5D%7D+vs+%7Bplayers%5Bj%5D%7D%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.players
 msgid "pages.IntroducingNestedLoops.steps.final_text.text"
 msgstr ""
 "Excellent! The solution goes like this:\n"
@@ -2805,13 +2814,13 @@ msgstr ""
 #.     # __code0__:
 #.     strings = ["abc", "def", "ghi"]
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22def%22
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22abc%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22def%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22ghi%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
 msgid "pages.IntroducingNestedLists.steps.string_list_exercise.text"
 msgstr ""
 "Exercise: given a list of strings, print the first letter of the second string in the list. For example, given:\n"
@@ -2830,9 +2839,9 @@ msgstr ""
 #.     # __code1__:
 #.     print(strings[1][0])
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
 msgid "pages.IntroducingNestedLists.steps.double_subscripting.text"
 msgstr ""
 "You may have solved it like this:\n"
@@ -2884,9 +2893,9 @@ msgstr ""
 #.     # __code0__:
 #.     strings[1].append("today?")
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22today%3F%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
 msgid "pages.IntroducingNestedLists.steps.final_text.text"
 msgstr ""
 "Excellent! You now understand nested subscripting very well.\n"
@@ -2912,9 +2921,9 @@ msgstr ""
 #.     # __code0__:
 #.     numbers = [[1, 2, 3], [4, 5], [6], []]
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.num
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sublist
 msgid "pages.LoopingOverNestedLists.steps.nested_list_nested_loop_example.text"
@@ -2956,19 +2965,19 @@ msgstr ""
 #.     ]
 #.     word = "hello"
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+world%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22goodbye+world%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22how+are+you%22
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+there%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello%22
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+world%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22how+are+you%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
 msgid "pages.LoopingOverNestedLists.steps.string_contains_word_exercise.text"
 msgstr ""
 "Now let's solve some problems using this kind of loop.\n"
@@ -3010,19 +3019,19 @@ msgstr ""
 #.     False
 #.     True
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+world%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22goodbye%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22goodbye+world%22
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+there%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+world%22
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22how+are+you%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22goodbye%22
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+there%22
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.text"
 msgstr ""
 "Nice!\n"
@@ -3058,19 +3067,19 @@ msgstr ""
 #.     ]
 #.     word = "Python"
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+world%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Python%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22goodbye+world%22
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+there%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+world%22
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22how+are+you%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22hello+there%22
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.word
 msgid "pages.LoopingOverNestedLists.steps.list_contains_word_exercise.text"
 msgstr ""
 "Well done!\n"
@@ -3087,13 +3096,13 @@ msgstr ""
 #.     # __code0__:
 #.     strings = ["abc", "def", "ghi"]
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22def%22
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22abc%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22def%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22ghi%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.text"
 msgstr ""
 "Excellent!\n"
@@ -3184,9 +3193,9 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22How+are+you%3F%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.greet
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22Hello+%7Bname%7D%21%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.greet
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.DefiningFunctions.steps.how_are_you.text"
@@ -3211,13 +3220,13 @@ msgstr ""
 #.     print(f"Hello {name}!")
 #.     print("How are you?")
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22How+are+you%3F%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22Hello+%7Bname%7D%21%22
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22How+are+you%3F%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22Hello+%7Bname%7D%21%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.DefiningFunctions.steps.change_function_name.text"
@@ -3434,9 +3443,9 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22Error%21+%7Brepr%28actual%29%7D+%21%3D+%7Brepr%28expected%29%7D%22
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.expected
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22Error%21+%7Brepr%28actual%29%7D+%21%3D+%7Brepr%28expected%29%7D%22
 msgid "pages.TestingFunctions.steps.introducing_assert_equal.text"
 msgstr ""
 "An important part of writing programs is testing that they work correctly. You can do this manually, e.g. by checking that\n"
@@ -3474,9 +3483,9 @@ msgstr ""
 #.     assert_equal(quadruple(2))
 #.     assert_equal(quadruple(5))
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.double
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.double
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quadruple
 msgid "pages.TestingFunctions.steps.complete_quadruple_tests.text"
@@ -3498,17 +3507,17 @@ msgstr ""
 #.     # __code1__:
 #.     def surround(string, sides):
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22the+same%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.surround
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22more%22
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22%2B%2Bmore%2B%2B%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22%3Dthe+same%3D%22
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22more%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22the+same%22
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22%2B%2Bmore%2B%2B%22
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.surround
 msgid "pages.TestingFunctions.steps.surround_exercise.text"
 msgstr ""
 "Another useful thing about the tests is that anyone can read them and see clear, unambiguous examples\n"
@@ -3533,17 +3542,17 @@ msgstr ""
 #.     # __code1__:
 #.     def alert(string, level):
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22%21%21+Warning+%21%21%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22%21%21%21%21+DANGER+%21%21%21%21%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.alert
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22%21%21+Warning+%21%21%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22DANGER%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Warning%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22DANGER%22
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.alert
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 msgid "pages.TestingFunctions.steps.alert_exercise.text"
 msgstr ""
 "Perfect! Now write a function `alert` that passes these tests:\n"
@@ -3587,11 +3596,11 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.condition
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.value1
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.value2
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.condition
 msgid "pages.MoreOnReturn.steps.cannot_return_multiple_values.text"
 msgstr ""
 "Once a `return` statement is executed, the function will stop, and the rest of the code is ignored.\n"
@@ -3623,15 +3632,15 @@ msgstr ""
 #.     # __code1__:
 #.     __program_indented__
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.double_numbers
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.doubles
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
 msgid "pages.MoreOnReturn.steps.return_ends_whole_function.text"
 msgstr ""
 "At first it may look intuitive to `return` one value for each iteration in a `for` loop.\n"
@@ -3728,9 +3737,9 @@ msgstr ""
 #.     if name == "Alice" or name == "Bob":
 #.         return True
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingOr.steps.ImprovingWithOr.text"
@@ -3760,9 +3769,9 @@ msgstr ""
 #.     # __code2__:
 #.     return x
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingOr.steps.FurtherImprovement.text"
@@ -3797,9 +3806,9 @@ msgstr ""
 #.     # __code1__:
 #.     return name == "Alice" or "Bob"
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingOr.steps.ACommonMistake.text"
@@ -3849,15 +3858,15 @@ msgstr ""
 #.     # __code0__:
 #.     name == "Alice" or "Bob"
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Charlie%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingOr.steps.AnExercise.text"
@@ -3959,9 +3968,9 @@ msgstr ""
 #.     assert_equal(is_valid_percentage(100), True)
 #.     assert_equal(is_valid_percentage(101), False)
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
 msgid "pages.IntroducingAnd.steps.AndExercise.text"
 msgstr ""
 "Let's practice now. Previously we wrote a function `is_valid_percentage` using `or`. Here's an example\n"
@@ -4005,9 +4014,9 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.all_equal
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.text"
 msgstr ""
 "Awesome! Here's one possible solution:\n"
@@ -4169,11 +4178,11 @@ msgstr ""
 #.     # __code0__:
 #.     True or False and False
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal_winner
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.text"
 msgstr ""
 "If you read it casually from left to right, you may think that:\n"
@@ -4230,17 +4239,17 @@ msgstr ""
 #.         diagonal2 = all_equal([board[2][0], board[1][1], board[0][2]])
 #.         return diagonal1 or diagonal2
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.middle
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal_winner
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.all_equal
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal2
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal1
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.all_equal
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal2
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal_winner
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.middle
 msgid "pages.CombiningAndAndOr.steps.final_text.text"
 msgstr ""
 "Well done! This was a hard one. Here are some possible solutions:\n"
@@ -4315,23 +4324,23 @@ msgstr ""
 #.     # __code3__:
 #.     -1 + 2
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22I+can%27t+process+%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.filename
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22cat.jpg%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22dog.png%22
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22.jpg%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.invalid_image
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22.png%22
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22I+can%27t+process+%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22cat.jpg%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22dog.png%22
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22invoice.pdf%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.filename
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.invalid_image
 msgid "pages.IntroducingNotPage.steps.NotPriority.text"
 msgstr ""
 "You can see in Bird's Eye that\n"
@@ -4394,13 +4403,13 @@ msgstr ""
 #.     # __code2__:
 #.     return not x
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.filename
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22.jpg%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.invalid_image
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22.png%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.filename
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.invalid_image
 msgid "pages.IntroducingNotPage.steps.final_text.text"
 msgstr ""
 "Well done! Here are two valid solutions:\n"
@@ -4460,11 +4469,11 @@ msgstr ""
 #.         [' ', 'X', 'O']
 #.     ]
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row_winner
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.text"
 msgstr ""
 "You've done many short exercises solving one little problem. Now we're going to tackle a larger, more complex\n"
@@ -4579,9 +4588,9 @@ msgstr ""
 #.         True
 #.     )
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.column_winner
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.text"
 msgstr ""
 "Great job!\n"
@@ -4629,13 +4638,13 @@ msgstr ""
 #.                 (middle == board[0][2] and middle == board[2][0])
 #.         )
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.middle
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal_winner
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.middle
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.text"
 msgstr ""
 "Excellent! That was challenging.\n"
@@ -4720,35 +4729,35 @@ msgstr ""
 #.         True
 #.     )
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.winner
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.column
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.entry
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal_winner
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal2
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.col
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal1
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.winning_line
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row_winner
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.column
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.column_winner
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal1
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal2
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal_winner
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.entry
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.piece
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row_winner
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.winner
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.winning_line
 msgid "pages.IntroducingTicTacToe.steps.winner.text"
 msgstr ""
 "Bravo! That was quite tough.\n"
@@ -4802,11 +4811,11 @@ msgstr ""
 #.     # __code2__:
 #.     __program_indented__
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.print_board
 msgid "pages.NewlinesAndFormatBoard.steps.invalid_multi_line_string.text"
@@ -4888,11 +4897,11 @@ msgstr ""
 #.         'XOX\nO  \n XO'
 #.     )
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27XOX%5CnO++%5Cn+XO%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.text"
 msgstr ""
 "Now use the newline character to write the function `format_board` (your solution should work for a square `board` of any size):\n"
@@ -4941,23 +4950,23 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22%5Cn%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.joined_rows
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.result
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27%5Cn%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27X%7CO%7CX%5Cn-%2B-%2B-%5CnO%7C+%7C+%5Cn-%2B-%2B-%5Cn+%7CX%7CO%27
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27%5Cn%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.joined_rows
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.result
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.text"
 msgstr ""
 "Excellent! A typical solution looks like:\n"
@@ -5113,11 +5122,11 @@ msgstr ""
 #.         print('Starting... ' + i + 1)
 #.     print('Go!')
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Go%21%27
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Starting...+%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.number
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Go%21%27
 msgid "pages.Types.steps.fixing_type_errors_with_conversion.text"
 msgstr ""
 "Using a string instead of an integer in `range` like `range('5')`,\n"
@@ -5157,11 +5166,11 @@ msgstr ""
 #.         ' 123\n1XOX\n2O  \n3 XO'
 #.     )
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27+123%5Cn1XOX%5Cn2O++%5Cn3+XO%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 msgid "pages.Types.steps.format_board_with_numbers.text"
 msgstr ""
 "Write an improved version of `format_board` that has row and column numbers like this:\n"
@@ -5218,13 +5227,13 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Amazing%21+Are+you+psychic%3F%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.guess
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.super_secret_number
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Nope%21%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22What+number+am+I+thinking+of%3F%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.guess
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.super_secret_number
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.text"
 msgstr ""
 "Whatever you typed in (not including pressing Enter at the end) is returned from the `input()` function as a string.\n"
@@ -5349,29 +5358,29 @@ msgstr ""
 #.     2
 #.     1
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27%5CnX+to+play%3A%5Cn%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.joined_row
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22%5Cn%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.joined_rows
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27%5CnO+to+play%3A%5Cn%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27%5CnX+to+play%3A%5Cn%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.first_row
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27%5CnO+to+play%3A%5Cn%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.joined_row
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.joined_rows
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.play_game
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.play_move
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.player
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.play_move
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.text"
 msgstr ""
 "These two lines:\n"
@@ -5583,15 +5592,15 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.make_board
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.cube
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.size
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.make_board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.make_cube
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.cube
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.size
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.test
 msgid "pages.MakingTheBoard.steps.final_text.text"
@@ -5688,63 +5697,63 @@ msgstr ""
 #. 
 #.     play_game(3, 'X', 'O')
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.winner
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal_winner
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.print_winner
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22It%27s+a+draw%21%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.col
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.main_diagonal_winner
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board_size
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.player
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27++%7B%22+%22.join%28str%28i+%2B+1%29+for+i+in+range%28size%29%29%7D%5Cn%7Bline.join%28rows%29%7D%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.winning_line
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row_winner
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22It%27s+a+draw%21%22
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.play_move
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.print_draw
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.player2
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%5Cn++%7B%22%2B%22.join%28%22-%22+%2A+size%29%7D%5Cn%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.line
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.size
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%7Bi+%2B+1%7D+%7B%22%7C%22.join%28row%29%7D%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%7Bplayer%7D+to+play%3A%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.col
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.column_winner
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.diagonal_winner
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.rows
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%5Cn++%7B%22%2B%22.join%28%22-%22+%2A+size%29%7D%5Cn%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%7Bi+%2B+1%7D+%7B%22%7C%22.join%28row%29%7D%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%7Bplayer%7D+to+play%3A%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27%7Bplayer%7D+wins%21%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%27++%7B%22+%22.join%28str%28i+%2B+1%29+for+i+in+range%28size%29%29%7D%5Cn%7Bline.join%28rows%29%7D%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.line
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.main_diagonal_winner
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.make_board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.play_game
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.play_move
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.player
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.player1
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.player2
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.print_draw
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.print_winner
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row_winner
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.rows
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.size
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.strings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.winner
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.winning_line
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.text"
 msgstr ""
 "It's time to put it all together! Below is some code to get started.\n"
@@ -6670,38 +6679,22 @@ msgstr "new_sentence"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
 #. 
 #.     x1 = 'Charlie'
 #.     x2 = 'Alice'
 #.     x3 = 'Bob'
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
+#. 
+#.     x1 = 30
+#.     x2 = 10
+#.     x3 = 20
 msgid "code_bits.x1"
 msgstr "x1"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.final_text.text
-#. 
-#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
-#.     for i in range(len(players)):
-#.         for j in range(len(players)):
-#.             if i < j:
-#.                 print(f'{players[i]} vs {players[j]}')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus.text
-#. 
-#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
-#. 
-#.     x1 = 'Charlie'
-#.     x2 = 'Alice'
-#.     x3 = 'Bob'
-msgid "code_bits.'Charlie'"
-msgstr "'Charlie'"
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
 #. 
 #.     first = x1
@@ -6733,44 +6726,22 @@ msgstr "'Charlie'"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
 #. 
 #.     x1 = 'Charlie'
 #.     x2 = 'Alice'
 #.     x3 = 'Bob'
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
+#. 
+#.     x1 = 30
+#.     x2 = 10
+#.     x3 = 20
 msgid "code_bits.x2"
 msgstr "x2"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.final_text.text
-#. 
-#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
-#.     for i in range(len(players)):
-#.         for j in range(len(players)):
-#.             if i < j:
-#.                 print(f'{players[i]} vs {players[j]}')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus.text
-#. 
-#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
-#. 
-#.     x1 = 'Charlie'
-#.     x2 = 'Alice'
-#.     x3 = 'Bob'
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe.text
-#. 
-#.     name = 'Alice'
-msgid "code_bits.'Alice'"
-msgstr "'Alice'"
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
 #. 
 #.     first = x1
@@ -6802,46 +6773,21 @@ msgstr "'Alice'"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
 #. 
 #.     x1 = 'Charlie'
 #.     x2 = 'Alice'
 #.     x3 = 'Bob'
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
+#. 
+#.     x1 = 30
+#.     x2 = 10
+#.     x3 = 20
 msgid "code_bits.x3"
 msgstr "x3"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
-#. 
-#.     name = "Alice"
-#.     friend = 'Bob'
-#.     meal = "lunch"
-#.     print(name + " went to " + meal + " with " + friend + '.')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.final_text.text
-#. 
-#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
-#.     for i in range(len(players)):
-#.         for j in range(len(players)):
-#.             if i < j:
-#.                 print(f'{players[i]} vs {players[j]}')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus.text
-#. 
-#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise.text
-#. 
-#.     x1 = 'Charlie'
-#.     x2 = 'Alice'
-#.     x3 = 'Bob'
-msgid "code_bits.'Bob'"
-msgstr "'Bob'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
 #. 
@@ -6873,6 +6819,93 @@ msgstr "'Bob'"
 #.     print(first)
 msgid "code_bits.first"
 msgstr "first"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.final_text.text
+#. 
+#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
+#.     for i in range(len(players)):
+#.         for j in range(len(players)):
+#.             if i < j:
+#.                 print(f'{players[i]} vs {players[j]}')
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus.text
+#. 
+#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
+#. 
+#.     x1 = 'Charlie'
+#.     x2 = 'Alice'
+#.     x3 = 'Bob'
+msgid "code_bits.'Charlie'"
+msgstr "'Charlie'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.final_text.text
+#. 
+#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
+#.     for i in range(len(players)):
+#.         for j in range(len(players)):
+#.             if i < j:
+#.                 print(f'{players[i]} vs {players[j]}')
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus.text
+#. 
+#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
+#. 
+#.     x1 = 'Charlie'
+#.     x2 = 'Alice'
+#.     x3 = 'Bob'
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe.text
+#. 
+#.     name = 'Alice'
+msgid "code_bits.'Alice'"
+msgstr "'Alice'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
+#. 
+#.     name = "Alice"
+#.     friend = 'Bob'
+#.     meal = "lunch"
+#.     print(name + " went to " + meal + " with " + friend + '.')
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.final_text.text
+#. 
+#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
+#.     for i in range(len(players)):
+#.         for j in range(len(players)):
+#.             if i < j:
+#.                 print(f'{players[i]} vs {players[j]}')
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus.text
+#. 
+#.     players = ['Charlie', 'Alice', 'Dylan', 'Bob']
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
+#. 
+#.     x1 = 'Charlie'
+#.     x2 = 'Alice'
+#.     x3 = 'Bob'
+msgid "code_bits.'Bob'"
+msgstr "'Bob'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.double_numbers.text
 #. 
