@@ -77,7 +77,7 @@ def main():
                 POEntry(
                     msgid=step_msgid,
                     msgstr=text,
-                    comment="\n\n".join([f"{page_link}", *code_comments, *local_code_bits]),
+                    comment="\n\n".join([f"{page_link}", *code_comments, *sorted(local_code_bits)]),
                 )
             )
 
