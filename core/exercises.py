@@ -137,6 +137,7 @@ def generate_for_type(typ):
 
 
 # This function is shown to the user, keep it simple
+# Its definition is duplicated in App.js to copy it into PythonTutor code
 def assert_equal(actual, expected):
     if actual == expected:
         print("OK")

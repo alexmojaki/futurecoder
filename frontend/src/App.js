@@ -83,9 +83,17 @@ const EditorButtons = (
       className="btn btn-success"
       onClick={() => {
         runCode({source: "pythontutor"});
+        let code = bookState.editorContent;
+        if (code.includes("assert_equal") && !code.includes("def assert_equal(")) {
+          code = 'def assert_equal(actual, expected):\n' +
+            '    if actual == expected:\n' +
+            '        print("OK")\n' +
+            '    else:\n' +
+            '        print(f"Error! {repr(actual)} != {repr(expected)}")\n\n\n' + code;
+        }
         window.open(
           'https://pythontutor.com/iframe-embed.html#code=' +
-          encodeURIComponent(bookState.editorContent) +
+          encodeURIComponent(code) +
           '&codeDivHeight=600' +
           '&codeDivWidth=600' +
           '&cumulative=false' +
