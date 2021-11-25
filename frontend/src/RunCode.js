@@ -112,6 +112,12 @@ export const runCode = ({code, source}) => {
   runCodeRemote(entry, onSuccess);
 }
 
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+    runCode({source: "editor"});
+  }
+});
+
 const writeInput = (string) => {
   const bytes = encoder.encode(string);
   if (bytes.length > inputTextArray.length) {
