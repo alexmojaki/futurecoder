@@ -26,7 +26,7 @@ if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname ===
 }
 
 let firebaseAnalytics;
-if (process.env.REACT_APP_ENABLE_FIREBASE_ANALYTICS) {
+if (window.location.hostname === "futurecoder.io") {
   firebaseAnalytics = firebase.analytics(firebaseApp);
 }
 
