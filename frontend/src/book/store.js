@@ -19,7 +19,7 @@ const firebaseApp = firebase.initializeApp({
 });
 
 let databaseUrl = `https://futurecoder-io-default-rtdb.firebaseio.com`;
-if (process.env.REACT_APP_USE_FIREBASE_EMULATORS) {
+if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname === "localhost") {
   // firebase.database().useEmulator("localhost", 9009);
   databaseUrl = "http://localhost:9009";
   firebase.auth().useEmulator("http://localhost:9099");
