@@ -46,7 +46,7 @@
   right: 1vw;
   top: calc(1vh + 50px);
   bottom: 1vh;
-  
+
   .editor-and-terminal {
     height: 100%;
     width: 100%;
@@ -308,7 +308,7 @@
     bottom: 5px;
     left: 6px;
     font-size: 1.3em;
-  }  
+  }
 }
 
 .solution-token-hidden, .solution-token-hidden::selection {
@@ -411,4 +411,8 @@
   100% {
     background-color: inherit;
   }
+}
+
+.firebase-emulator-warning {
+    display: none;
 }
