@@ -4,17 +4,31 @@ import _ from "lodash";
 import {terminalRef} from "../RunCode";
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/analytics";
 import pagesUrl from "./pages.json.load_by_url"
 import axios from "axios";
 
-firebase.initializeApp({
+const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
   authDomain: "futurecoder-io.firebaseapp.com",
   projectId: "futurecoder-io",
   storageBucket: "futurecoder-io.appspot.com",
   messagingSenderId: "361930705093",
-  appId: "1:361930705093:web:dda41fee927c949daf88ac"
+  appId: "1:361930705093:web:dda41fee927c949daf88ac",
+  measurementId: "G-ZKCE9KY52F",
 });
+
+let databaseUrl = `https://futurecoder-io-default-rtdb.firebaseio.com`;
+if (process.env.REACT_APP_USE_FIREBASE_EMULATORS) {
+  // firebase.database().useEmulator("localhost", 9009);
+  databaseUrl = "http://localhost:9009";
+  firebase.auth().useEmulator("http://localhost:9099");
+}
+
+let firebaseAnalytics;
+if (process.env.REACT_APP_ENABLE_FIREBASE_ANALYTICS) {
+  firebaseAnalytics = firebase.analytics(firebaseApp);
+}
 
 const initialState = {
   error: null,
@@ -211,7 +225,7 @@ const databaseRequest = async (method, data={}) => {
   }
   const auth = await currentUser.getIdToken();
   const response = await axios.request({
-    url: `https://futurecoder-io-default-rtdb.firebaseio.com/users/${currentUser.uid}.json`,
+    url: `${databaseUrl}/users/${currentUser.uid}.json`,
     params: {auth},
     method,
     data,
