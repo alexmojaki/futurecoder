@@ -1,7 +1,16 @@
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import Worker from "worker-loader!./Worker.js";
 import * as Comlink from 'comlink';
-import {bookSetState, bookState, currentStepName, logEvent, moveStep, ranCode} from "./book/store";
+import {
+  bookSetState,
+  bookState,
+  currentStepName,
+  databaseRequest,
+  isProduction,
+  logEvent,
+  moveStep,
+  ranCode
+} from "./book/store";
 import _ from "lodash";
 import localforage from "localforage";
 import {animateScroll} from "react-scroll";
@@ -122,6 +131,24 @@ export const runCode = ({code, source}) => {
     if (!data.prediction.choices) {
       showCodeResult(data);
       terminalRef.current.focusTerminal();
+    }
+
+    if (isProduction) {
+      databaseRequest("POST", {
+        entry,
+        result: {
+          ..._.omit(data, "output_parts"),
+          messages: data.messages.map(m => _.truncate(m, {length: 1000})),
+          output: _.truncate(data.output, {length: 1000}),
+        },
+        state: {
+          developerMode: user.developerMode,
+          page_route: route,
+          num_hints: numHints,
+          requesting_solution: requestingSolution,
+        },
+        timestamp: new Date().toISOString(),
+      }, "code_entries");
     }
   }
 
