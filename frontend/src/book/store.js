@@ -413,3 +413,7 @@ export const reorderSolutionLines = makeAction(
   },
   (startIndex, endIndex) => ({startIndex, endIndex})
 )
+
+export function logEvent(name, data = {}) {
+  firebaseAnalytics?.logEvent(name, data);
+}
