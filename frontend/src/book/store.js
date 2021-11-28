@@ -26,7 +26,8 @@ if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname ===
 }
 
 let firebaseAnalytics;
-if (window.location.hostname === "futurecoder.io") {
+export const isProduction = window.location.hostname === "futurecoder.io";
+if (isProduction) {
   firebaseAnalytics = firebase.analytics(firebaseApp);
 }
 
@@ -218,14 +219,14 @@ export const updateUserData = async (user) => {
   });
 }
 
-const databaseRequest = async (method, data={}) => {
+export const databaseRequest = async (method, data={}, endpoint="users") => {
   const currentUser = firebase.auth().currentUser;
   if (!currentUser) {
     return;
   }
   const auth = await currentUser.getIdToken();
   const response = await axios.request({
-    url: `${databaseUrl}/users/${currentUser.uid}.json`,
+    url: `${databaseUrl}/${endpoint}/${currentUser.uid}.json`,
     params: {auth},
     method,
     data,
@@ -413,3 +414,7 @@ export const reorderSolutionLines = makeAction(
   },
   (startIndex, endIndex) => ({startIndex, endIndex})
 )
+
+export function logEvent(name, data = {}) {
+  firebaseAnalytics?.logEvent(name, data);
+}

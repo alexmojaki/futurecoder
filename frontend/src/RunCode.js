@@ -1,7 +1,16 @@
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import Worker from "worker-loader!./Worker.js";
 import * as Comlink from 'comlink';
-import {bookSetState, bookState, currentStepName, moveStep, ranCode} from "./book/store";
+import {
+  bookSetState,
+  bookState,
+  currentStepName,
+  databaseRequest,
+  isProduction,
+  logEvent,
+  moveStep,
+  ranCode
+} from "./book/store";
 import _ from "lodash";
 import localforage from "localforage";
 import {animateScroll} from "react-scroll";
@@ -52,21 +61,37 @@ const runCodeRemote = async (entry, onSuccess) => {
 
 export const runCode = ({code, source}) => {
   const shell = source === "shell";
+  const {route, user, questionWizard, editorContent, numHints, requestingSolution} = bookState;
   if (!shell && !code) {
-    code = bookState.editorContent;
+    code = editorContent;
   }
   bookSetState("processing", true);
   const entry = {
     input: code,
     source,
-    page_slug: bookState.user.pageSlug,
+    page_slug: user.pageSlug,
     step_name: currentStepName(),
-    question_wizard: bookState.route === "question",
-    expected_output: bookState.questionWizard.expectedOutput,
+    question_wizard: route === "question",
+    expected_output: questionWizard.expectedOutput,
   };
 
   const onSuccess = (data) => {
     const {error} = data;
+
+    logEvent('run_code', {
+      code_source: entry.source,
+      page_slug: entry.page_slug,
+      step_name: entry.step_name,
+      entry_passed: data.passed,
+      has_error: Boolean(error),
+      num_messages: data.messages.length,
+      // user: user.uid,
+      // developerMode: user.developerMode,
+      page_route: route,
+      num_hints: numHints,
+      requesting_solution: requestingSolution,
+    });
+
     if (error) {
       Sentry.captureEvent(error.sentry_event);
       delete error.sentry_event;
@@ -106,6 +131,24 @@ export const runCode = ({code, source}) => {
     if (!data.prediction.choices) {
       showCodeResult(data);
       terminalRef.current.focusTerminal();
+    }
+
+    if (isProduction) {
+      databaseRequest("POST", {
+        entry,
+        result: {
+          ..._.omit(data, "output_parts"),
+          messages: data.messages.map(m => _.truncate(m, {length: 1000})),
+          output: _.truncate(data.output, {length: 1000}),
+        },
+        state: {
+          developerMode: user.developerMode,
+          page_route: route,
+          num_hints: numHints,
+          requesting_solution: requestingSolution,
+        },
+        timestamp: new Date().toISOString(),
+      }, "code_entries");
     }
   }
 

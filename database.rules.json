@@ -6,6 +6,13 @@
         ".write": "auth != null && auth.uid == $uid"
       }
     },
+    "code_entries": {
+      "$uid": {
+        "$code_entry": {
+          ".write": "auth != null && auth.uid == $uid && !data.exists()"
+        }
+      }
+    },
     "email_list": {
       "$email_entry": {
         ".write": "!data.exists()"
