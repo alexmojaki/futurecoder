@@ -42,7 +42,7 @@ Try doing some more calculations now. You can multiply numbers with `*`, divide 
 
         def check(self):
             try:
-                return search_ast(self.stmt, (ast.Mult, ast.Div, ast.Sub))
+                return search_ast(self.tree, (ast.Mult, ast.Div, ast.Sub))
             except SyntaxError:
                 if "x" in self.input:
                     return dict(

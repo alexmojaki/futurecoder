@@ -79,6 +79,13 @@ def run_code(code_source, code):
     try:
         code_obj = compile(code, filename, mode)
     except SyntaxError as e:
+        try:
+            if not ast.parse(code).body:
+                # Code is only comments, which cannot be compiled in 'single' mode
+                return {}
+        except SyntaxError:
+            pass
+
         print_friendly_syntax_error(e)
         return {}
 
