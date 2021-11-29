@@ -408,10 +408,6 @@ class Step(ABC):
     def tree(self):
         return ast.parse(self.input)
 
-    @property
-    def stmt(self):
-        return self.tree.body[0]
-
     def input_matches(self, pattern, remove_spaces=True):
         inp = self.input.rstrip()
         if remove_spaces:

@@ -58,7 +58,7 @@ By the way, if you get stuck, you can click the lightbulb icon in the bottom rig
 
             def check(self):
                 return not search_ast(
-                    self.stmt,
+                    self.tree,
                     ast.BinOp(left=ast.Str(), op=ast.Add(), right=ast.Str()),
                 )
 

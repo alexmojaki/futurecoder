@@ -1529,7 +1529,7 @@ In one word, what's special about `91` in the list `[21, 55, 4, 91, 62, 49]`?
 
         def check(self):
             return search_ast(
-                self.stmt,
+                self.tree,
                 ast.Call(func=ast.Name(id='max')),
             )
 
