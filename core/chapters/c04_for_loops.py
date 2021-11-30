@@ -269,37 +269,51 @@ or:
 This is very useful in a loop. Try out this program:
 
 __program_indented__
-
-By the way, `''` is called the *empty string* - a string containing no characters. Adding it to another string just gives you the other string unchanged, in the same way that `0 + 5` is just `5`. Don't confuse the empty string with `' '`, which is a non-empty string containing one character: a space.
         """
 
         predicted_output_choices = [
+            "-\n"
             "W\n"
+            "-\n"
             "o\n"
+            "-\n"
             "r\n"
+            "-\n"
             "l\n"
+            "-\n"
             "d",
-            "World",
-            "W\n"
-            "Wo\n"
-            "Wor\n"
-            "Worl\n"
-            "World\n",
-            "World\n"
-            "Worl\n"
-            "Wor\n"
-            "Wo\n"
-            "W\n",
-            "World\n"
-            "World\n"
-            "World\n"
-            "World\n"
-            "World\n",
+            "-W\n"
+            "-o\n"
+            "-r\n"
+            "-l\n"
+            "-d",
+            "-World",
+            "-W-o-r-l-d",
+            "-W\n"
+            "-Wo\n"
+            "-Wor\n"
+            "-Worl\n"
+            "-World\n",
+            "-World\n"
+            "-Worl\n"
+            "-Wor\n"
+            "-Wo\n"
+            "-W\n",
+            "-World\n"
+            "-World\n"
+            "-World\n"
+            "-World\n"
+            "-World\n",
+            "-World\n"
+            "--World\n"
+            "---World\n"
+            "----World\n"
+            "-----World\n",
         ]
 
         def program(self):
             name = 'World'
-            line = ''
+            line = '-'
             for char in name:
                 line = line + char
                 print(line)
@@ -308,25 +322,25 @@ By the way, `''` is called the *empty string* - a string containing no character
         """
 Take your time to make sure you understand this program fully. It's doing something like this:
 
-    line = ''
+    line = '-'
 
     char = 'W'
     line = line + char
-         = ''   + 'W'
-         = 'W'
-    print('W')
+         = '-'  + 'W'
+         = '-W'
+    print('-W')
 
     char = 'o'
-    line = line + char
-         = 'W'  + 'o'
-         = 'Wo'
-    print('Wo')
+    line = line  + char
+         = '-W'  + 'o'
+         = '-Wo'
+    print('-Wo')
 
     char = 'r'
-    line = line + char
-         = 'Wo' + 'r'
-         = 'Wor'
-    print('Wor')
+    line = line  + char
+         = '-Wo' + 'r'
+         = '-Wor'
+    print('-Wor')
 
     ...
 
@@ -336,31 +350,112 @@ __program_indented__
         """
 
         predicted_output_choices = [
-            "W\n"
-            "Wo\n"
-            "Wor\n"
-            "Worl\n"
-            "World\n",
-            "Wo\n"
-            "Wor\n"
-            "Worl\n"
-            "World\n",
-            "\n"
-            "W\n"
-            "Wo\n"
-            "Wor\n"
-            "Worl\n"
+            "-W\n"
+            "-Wo\n"
+            "-Wor\n"
+            "-Worl\n"
+            "-World\n",
+            "-Wo\n"
+            "-Wor\n"
+            "-Worl\n"
+            "-World\n",
+            "-\n"
+            "-W\n"
+            "-Wo\n"
+            "-Wor\n"
+            "-Worl\n"
         ]
 
         def program(self):
             name = 'World'
-            line = ''
+            line = '-'
             for char in name:
                 print(line)
                 line = line + char
 
-    final_text = """
+    class empty_string(VerbatimStep):
+        """
 The last character in `name` only gets added to `line` at the end of the loop, after `print(line)` has already run for the last time. So that character and the full `name` never get printed at the bottom of the triangle.
+
+Let's get rid of those `-` characters in the output. You might already be able to guess how.
+
+An *empty string* is a string containing no characters at all.
+It's written as just a pair of quotes surrounding nothing: `''`.
+It's like the zero of strings.
+Adding it to another string just gives you the other string unchanged,
+in the same way that `0 + 5` is just `5`.
+
+Try this in the shell:
+
+__program_indented__
+        """
+
+        expected_code_source = "shell"
+
+        program = "'' + '' + ''"
+
+        predicted_output_choices = [
+            "''",
+            "' '",
+            "'  '",
+            "'   '",
+            "'' + '' + ''",
+            "''''''",
+            "'' '' ''",
+            "' '' '' '",
+            "++",
+        ]
+
+    class name_triangle_empty_string(ExerciseStep):
+        """
+Don't confuse the empty string with `' '`, which is a non-empty string containing one character: a space.
+
+Now fix the original program to get rid of those lines in the output, so that
+for `name = 'World'` it prints:
+
+    __no_auto_translate__
+    W
+    Wo
+    Wor
+    Worl
+    World
+        """
+
+        hints = """
+First make sure you're not working from the broken version of the previous program on this page.
+That is, `line = line + char` should come before `print(line)`.
+Apart from that, you only need to make one ***tiny*** change.
+We want to get rid of the `-`. So just do that. Literally.
+Use an empty string!
+        """
+
+        def solution(self, name: str):
+            line = ''
+            for char in name:
+                line = line + char
+                print(line)
+
+        tests = {
+            'World': """\
+W
+Wo
+Wor
+Worl
+World
+""",
+            'Bob': """\
+B
+Bo
+Bob
+""",
+        }
+
+    final_text = """
+Isn't that pretty?
+
+The pattern of starting with something empty and building it up with a `for` loop is *very* common
+and you're going to get lots of practice with it. Some initial empty values are
+`''`, `0`, and `[]` - an empty list, which you'll see soon.
 """
 
 

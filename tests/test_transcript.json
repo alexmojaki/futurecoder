@@ -1130,7 +1130,7 @@
         "page": "Building Up Strings",
         "program": [
             "name = 'World'",
-            "line = ''",
+            "line = '-'",
             "for char in name:",
             "    line = line + char",
             "    print(line)"
@@ -1139,16 +1139,196 @@
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "W\nWo\nWor\nWorl\nWorld",
+                "answer": "-W\n-Wo\n-Wor\n-Worl\n-World",
                 "choices": [
-                    "W\no\nr\nl\nd",
-                    "World",
-                    "W\nWo\nWor\nWorl\nWorld",
-                    "World\nWorl\nWor\nWo\nW",
-                    "World\nWorld\nWorld\nWorld\nWorld",
+                    "-\nW\n-\no\n-\nr\n-\nl\n-\nd",
+                    "-W\n-o\n-r\n-l\n-d",
+                    "-World",
+                    "-W-o-r-l-d",
+                    "-W\n-Wo\n-Wor\n-Worl\n-World",
+                    "-World\n-Worl\n-Wor\n-Wo\n-W",
+                    "-World\n-World\n-World\n-World\n-World",
+                    "-World\n--World\n---World\n----World\n-----World",
                     "Error"
                 ]
             },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "-W"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "-Wo"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "-Wor"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "-Worl"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "-World"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "name_triangle"
+    },
+    {
+        "page": "Building Up Strings",
+        "program": [
+            "name = 'World'",
+            "line = '-'",
+            "for char in name:",
+            "    print(line)",
+            "    line = line + char"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "-\n-W\n-Wo\n-Wor\n-Worl",
+                "choices": [
+                    "-W\n-Wo\n-Wor\n-Worl\n-World",
+                    "-Wo\n-Wor\n-Worl\n-World",
+                    "-\n-W\n-Wo\n-Wor\n-Worl",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "-"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "-W"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "-Wo"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "-Wor"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": "-Worl"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "name_triangle_missing_last_line"
+    },
+    {
+        "page": "Building Up Strings",
+        "program": [
+            "'' + '' + ''"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "''",
+                "choices": [
+                    "''",
+                    "' '",
+                    "'  '",
+                    "'   '",
+                    "'' + '' + ''",
+                    "''''''",
+                    "'' '' ''",
+                    "' '' '' '",
+                    "++",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "color": "white",
+                    "text": "''"
+                },
+                {
+                    "color": "white",
+                    "text": "\n"
+                },
+                {
+                    "color": "white",
+                    "text": ">>> "
+                }
+            ]
+        },
+        "step": "empty_string"
+    },
+    {
+        "get_solution": [
+            "line = ''",
+            "for char in name:",
+            "    line = line + char",
+            "    print(line)"
+        ],
+        "page": "Building Up Strings",
+        "program": [
+            "name = 'World'",
+            "line = ''",
+            "for char in name:",
+            "    line = line + char",
+            "    print(line)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
             "result": [
                 {
                     "color": "white",
@@ -1196,73 +1376,7 @@
                 }
             ]
         },
-        "step": "name_triangle"
-    },
-    {
-        "page": "Building Up Strings",
-        "program": [
-            "name = 'World'",
-            "line = ''",
-            "for char in name:",
-            "    print(line)",
-            "    line = line + char"
-        ],
-        "response": {
-            "message": "",
-            "passed": true,
-            "prediction": {
-                "answer": "\nW\nWo\nWor\nWorl",
-                "choices": [
-                    "W\nWo\nWor\nWorl\nWorld",
-                    "Wo\nWor\nWorl\nWorld",
-                    "\nW\nWo\nWor\nWorl",
-                    "Error"
-                ]
-            },
-            "result": [
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "W"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "Wo"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "Wor"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": "Worl"
-                },
-                {
-                    "color": "white",
-                    "text": "\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
-        },
-        "step": "name_triangle_missing_last_line"
+        "step": "name_triangle_empty_string"
     },
     {
         "get_solution": [
