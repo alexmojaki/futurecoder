@@ -528,7 +528,7 @@ msgstr ""
 "Isn't that pretty?\n"
 "\n"
 "The pattern of starting with something empty and building it up with a `for` loop is *very* common\n"
-"and you're going to practice it a lot. Some initial empty values are\n"
+"and you're going to get lots of practice with it. Some initial empty values are\n"
 "`''`, `0`, and `[]` - an empty list, which you'll see soon."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
