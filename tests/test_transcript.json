@@ -2768,7 +2768,7 @@
             "result": [
                 {
                     "color": "red",
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nOne of the following two possibilities could be the cause:\n1. You meant to do a comparison with == and wrote = instead.\n2. You called a function with a named argument:\n\n        a_function(invalid=...)\n\nwhere `invalid` is not a valid identifier (variable name) in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n"
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou likely called a function with a named argument:\n\n    a_function(invalid=something) \n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n"
                 },
                 {
                     "color": "red",
