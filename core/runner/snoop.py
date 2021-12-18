@@ -6,27 +6,20 @@ import snoop
 import snoop.formatting
 import snoop.tracer
 
-from .worker import execute
 from ..utils import internal_dir
 
 snoop.tracer.internal_directories += (internal_dir,)
 
 
-class PatchedFrameInfo(snoop.tracer.FrameInfo):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        code = self.frame.f_code
-        self.is_ipython_cell = (
-                code.co_name == '<module>' and
-                code.co_filename == "my_program.py"
-        )
+def exec_snoop(runner, code, code_obj):
+    class PatchedFrameInfo(snoop.tracer.FrameInfo):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.is_ipython_cell = self.frame.f_code == code_obj
 
+    snoop.tracer.FrameInfo = PatchedFrameInfo
 
-snoop.tracer.FrameInfo = PatchedFrameInfo
-
-
-def exec_snoop(filename, code, code_obj):
-    snoop.formatting.Source._class_local('__source_cache', {}).pop(filename, None)
+    snoop.formatting.Source._class_local('__source_cache', {}).pop(runner.filename, None)
 
     config = snoop.Config(
         columns=(),
@@ -55,4 +48,4 @@ def exec_snoop(filename, code, code_obj):
     find_code(code_obj)
 
     with tracer:
-        execute(code_obj)
+        runner.execute(code_obj)

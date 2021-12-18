@@ -14,7 +14,6 @@ async function getPackageBuffer() {
   return await response.arrayBuffer()
 }
 
-let runCodeCatchErrors;
 let pyodide;
 
 async function loadPyodideOnly() {
@@ -30,6 +29,7 @@ async function loadPyodideOnly() {
   pyodide.runPython(loadPythonString)
 }
 
+let check_entry, install_imports;
 
 async function loadPyodideAndPackages() {
   const buffer = (await Promise.all([
@@ -38,11 +38,10 @@ async function loadPyodideAndPackages() {
   ]))[1];
 
   console.time("load_package_buffer(buffer)")
-  pyodide.globals.get("load_package_buffer")(buffer);
+  const load_package_buffer = pyodide.globals.get("load_package_buffer")
+  const result = load_package_buffer(buffer);
+  ({check_entry, install_imports} = toObject(result.toJs()));
   console.timeEnd("load_package_buffer(buffer)")
-
-  runCodeCatchErrors = pyodide.globals.get("check_entry_catch_internal_errors");
-  console.assert(runCodeCatchErrors);
 }
 
 let pyodideReadyPromise = loadPyodideAndPackages();
@@ -63,13 +62,11 @@ const toObject = (x) => {
 const decoder = new TextDecoder();
 
 class Runner {
-  constructor(resultCallback) {
-    this.resultCallback = resultCallback;
-  }
-  async runCode(entry, inputTextArray, inputMetaArray, interruptBuffer) {
+  async runCode(entry, inputTextArray, inputMetaArray, interruptBuffer, outputCallback, inputCallback) {
     await pyodideReadyPromise;
 
-    const inputCallback = () => {
+    const fullInputCallback = () => {
+      inputCallback();
       while (true) {
         if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
           if (interruptBuffer[0] === 2) {
@@ -86,8 +83,13 @@ class Runner {
     }
 
     pyodide._module.setInterruptBuffer(interruptBuffer);
-    const resultCallbackToObject = (result) => this.resultCallback(toObject(result.toJs()));
-    runCodeCatchErrors(entry, inputCallback, resultCallbackToObject)
+
+    // TODO handle errors from install_imports
+    await install_imports(entry.input);
+
+    const outputCallbackToObject = (data) => outputCallback(toObject(data.toJs()).parts);
+    const result = check_entry(entry, fullInputCallback, outputCallbackToObject);
+    return toObject(result.toJs());
   }
 }
 

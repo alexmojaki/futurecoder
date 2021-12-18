@@ -6,9 +6,9 @@ from pathlib import Path
 
 from littleutils import only
 
+from core.checker import check_entry
 from core.text import pages
 from core.utils import highlighted_markdown, make_test_input_callback
-from core.workers.worker import check_entry
 
 
 def test_steps():
@@ -32,17 +32,17 @@ def test_steps():
                     page_slug=page.slug,
                     step_name=step_name,
                 )
-                response = {}
 
-                def result_callback(r):
-                    nonlocal response
-                    response = r
+                output_parts = []
+                def output_callback(data):
+                    output_parts.extend(data["parts"])
 
-                check_entry(
+                response = check_entry(
                     entry,
                     input_callback=make_test_input_callback(step.stdin_input),
-                    result_callback=result_callback,
+                    output_callback=output_callback,
                 )
+                response["output_parts"] = output_parts
                 normalise_response(response, is_message, substep)
 
                 transcript_item = dict(
@@ -91,10 +91,11 @@ def normalise_response(response, is_message, substep):
         {"text": "".join(p["text"] for p in group), "color": color}
         for (color, istb), group in itertools.groupby(response["result"], key=lambda p: (p["color"], p.get("isTraceback")))
     ]
-    del response["birdseye_objects"]
-    del response["awaiting_input"]
-    del response["error"]
-    del response["output"]
+
+    response.pop("birdseye_objects", None)
+    response.pop("awaiting_input", None)
+    response.pop("error", None)
+    response.pop("output", None)
     if not response["prediction"]["choices"]:
         del response["prediction"]
 

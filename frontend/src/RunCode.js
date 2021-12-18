@@ -38,29 +38,46 @@ let awaitingInput = false;
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
 const runCodeRemote = async (entry, onSuccess) => {
-  if (process.env.REACT_APP_RUN_CODE_ON_SERVER?.length) {
-    throw Error("not currently implemented")
-  } else {
-    const run = async () => {
-      interruptBuffer[0] = 2;
-      interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
-      const runner = await new Runner(Comlink.proxy(onSuccess));
-      runner.runCode(entry, inputTextArray, inputMetaArray, interruptBuffer);
-    }
-    if (awaitingInput) {
-      if (entry.source === "shell") {
-        writeInput(entry.input);
-      } else {
-        await run();
-      }
-    } else {
-      await run();
-    }
-  }
+  interruptBuffer[0] = 2;
+  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+  const runner = await new Runner();
+  const result = await runner.runCode(
+    entry,
+    inputTextArray,
+    inputMetaArray,
+    interruptBuffer,
+    Comlink.proxy(outputCallback),
+    Comlink.proxy(inputCallback),
+  );
+  onSuccess(result);
+}
+
+function outputCallback(output_parts) {
+  // TODO hide when there's a prediction
+  console.log(output_parts)
+  showOutputParts(output_parts);
+}
+
+function inputCallback() {
+  awaitingInput = true;
+  bookSetState("processing", false);
 }
 
 export const runCode = ({code, source}) => {
   const shell = source === "shell";
+  if (shell) {
+    if (awaitingInput) {
+      awaitingInput = false;
+      writeInput(code);
+      bookSetState("processing", true);
+      return;
+    }
+  } else {
+    terminalRef.current.clearStdout();
+  }
+
+  awaitingInput = false;
+
   const {route, user, questionWizard, editorContent, numHints, requestingSolution} = bookState;
   if (!shell && !code) {
     code = editorContent;
@@ -84,7 +101,7 @@ export const runCode = ({code, source}) => {
       step_name: entry.step_name,
       entry_passed: data.passed,
       has_error: Boolean(error),
-      num_messages: data.messages.length,
+      num_messages: data.messages?.length,
       // user: user.uid,
       // developerMode: user.developerMode,
       page_route: route,
@@ -98,10 +115,7 @@ export const runCode = ({code, source}) => {
       bookSetState("error", {...error});
       return;
     }
-    if (!shell && !awaitingInput) {
-      terminalRef.current.clearStdout();
-    }
-    awaitingInput = data.awaiting_input;
+
     bookSetState("processing", false);
 
     if (data.birdseye_objects) {
@@ -172,10 +186,14 @@ const writeInput = (string) => {
   Atomics.notify(inputMetaArray, 1);
 }
 
-export const showCodeResult = ({birdseyeUrl, output_parts, passed}) => {
+function showOutputParts(output_parts) {
   const terminal = terminalRef.current;
   terminal.pushToStdout(output_parts);
-  animateScroll.scrollToBottom({duration: 30, container: terminal.terminalRoot.current});
+  animateScroll.scrollToBottom({duration: 0, container: terminal.terminalRoot.current});
+}
+
+export const showCodeResult = ({birdseyeUrl, passed}) => {
+  // TODO showOutputParts of pending parts
 
   if (passed) {
     moveStep(1);

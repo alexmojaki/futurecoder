@@ -6495,7 +6495,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "<input: there>\nHello there!\n>>> "
+                    "text": "Type your name, then press Enter:\n<input: there>\nHello there!\n>>> "
                 }
             ]
         },
@@ -6527,7 +6527,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "<input: 7>\nAmazing! Are you psychic?\n>>> "
+                    "text": "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?\n>>> "
                 }
             ]
         },

@@ -1,18 +1,12 @@
 import html
-import json
 import logging
-import sys
 import traceback
 from collections import Counter
 from typing import Union, Iterable, List
 
-import pygments
 import stack_data
 from cheap_repr import cheap_repr
-from friendly_traceback.core import FriendlyTraceback
-from pygments.formatters.html import HtmlFormatter
 from stack_data import (
-    style_with_executing_node,
     Options,
     Line,
     FrameInfo,
@@ -20,56 +14,18 @@ from stack_data import (
     RepeatedFrames,
 )
 
-from core.utils import is_valid_syntax, lexer, get_suggestions_for_exception
+from core.runner.didyoumean import get_didyoumean_suggestions_func
+from core.runner.friendly_traceback import friendly_message
 
-pygments_style = style_with_executing_node("monokai", "bg:#005080")
-pygments_formatter = HtmlFormatter(
-    style=pygments_style,
-    nowrap=True,
-)
+didyoumean_suggestions = get_didyoumean_suggestions_func(stack_data)
 
 log = logging.getLogger(__name__)
 
 
-def friendly_message(e, double_newline: bool):
-    try:
-        fr = FriendlyTraceback(type(e), e, e.__traceback__)
-        fr.assign_generic()
-        fr.assign_cause()
-
-        return fr.info["generic"] + "\n" + double_newline * "\n" + fr.info.get("cause", "")
-    except (Exception, SystemExit):
-        log.exception("Failed to build friendly message")
-        return ""
-
-
-def didyoumean_suggestions(e) -> List[str]:
-    if "maximum recursion depth exceeded" in str(e):
-        return []
-    try:
-        return list(get_suggestions_for_exception(e, e.__traceback__))
-    except Exception:
-        log.exception("Failed to get didyoumean suggestions")
-        return []
-
-
-def print_friendly_syntax_error(e):
-    lines = iter(traceback.format_exception(*sys.exc_info()))
-    for line in lines:
-        if line.strip().startswith('File "my_program.py"'):
-            break
-    print(
-        f"""\
-{''.join(lines).rstrip()}
-at line {e.lineno}
-
-{friendly_message(e, double_newline=False)}
-""",
-        file=sys.stderr,
-    )
-
-
 class TracebackSerializer:
+    pygments_formatter = None
+    filename = None
+
     def format_exception(self, e) -> List[dict]:
         from markdown import markdown
 
@@ -101,18 +57,20 @@ class TracebackSerializer:
             self.format_stack_data(
                 FrameInfo.stack_data(
                     frame_or_tb,
-                    Options(before=0, after=0, pygments_formatter=pygments_formatter),
+                    Options(
+                        before=0, after=0, pygments_formatter=self.pygments_formatter
+                    ),
                     collapse_repeated_frames=True,
                 )
             )
         )
 
     def format_stack_data(
-            self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
+        self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
     ) -> Iterable[dict]:
         for item in stack:
             if isinstance(item, FrameInfo):
-                if item.filename != "my_program.py":
+                if item.filename != self.filename:
                     continue
                 yield self.format_frame(item)
             else:
@@ -155,7 +113,7 @@ class TracebackSerializer:
             is_current=line.is_current,
             lineno=line.lineno,
             content=line.render(
-                pygmented=True,
+                pygmented=bool(self.pygments_formatter),
                 escape_html=True,
                 strip_leading_indent=True,
             ),
@@ -171,16 +129,19 @@ class TracebackSerializer:
 
     def format_variable(self, var: Variable) -> dict:
         return dict(
-            name=maybe_highlight(var.name),
-            value=maybe_highlight(cheap_repr(var.value)),
+            name=self.format_variable_part(var.name),
+            value=self.format_variable_part(cheap_repr(var.value)),
         )
+
+    def format_variable_part(self, text):
+        return html.escape(text)
 
 
 class TracebackFormatter(stack_data.Formatter):
     def format_stack_data(
-            self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
+        self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
     ) -> Iterable[str]:
-        from core.workers.snoop import snoop
+        from core.runner.snoop import snoop
 
         for item in stack:
             if isinstance(item, FrameInfo):
@@ -195,22 +156,10 @@ class TracebackFormatter(stack_data.Formatter):
         return cheap_repr(value)
 
 
-def maybe_highlight(text):
-    if is_valid_syntax(text):
-        return pygments.highlight(text, lexer, pygments_formatter)
-    else:
-        return html.escape(text)
-
-
-def test():
-    def foo():
-        print(1 / 0)
-
-    try:
-        foo()
-    except Exception as e:
-        print(json.dumps(TracebackSerializer().format_exception(e), indent=4))
-
-
-if __name__ == "__main__":
-    test()
+def format_traceback_stack_data(e):
+    return "".join(
+        TracebackFormatter(
+            options=stack_data.Options(before=1, after=0),
+            show_variables=True,
+        ).format_exception(e)
+    )
