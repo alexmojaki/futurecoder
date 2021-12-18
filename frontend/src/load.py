@@ -13,7 +13,7 @@ def load_package_buffer(buffer):
         zf.extractall(package_path)
 
     from core.checker import check_entry
-    from core.runner.pyodide_helpers import install_imports
+    from core.pyodide_helpers import install_imports
 
     return dict(
         check_entry=check_entry,
