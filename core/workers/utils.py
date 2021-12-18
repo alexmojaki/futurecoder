@@ -2,9 +2,9 @@ import functools
 import os
 import traceback
 
-import stack_data
 from core.runner.utils import truncate_string
 
+TESTING = False
 
 def get_exception_event():
     import sentry_sdk
@@ -26,6 +26,8 @@ def get_exception_event():
 
 
 def safe_traceback(e: Exception):
+    import stack_data
+
     try:
         return "".join(
             stack_data.Formatter(show_variables=True, chain=True).format_exception(e)
@@ -70,5 +72,7 @@ def catch_internal_errors(func):
         try:
             return func(*args, **kwargs)
         except Exception as e:
+            if TESTING:
+                raise
             return internal_error_result(e)
     return wrapper

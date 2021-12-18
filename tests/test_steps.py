@@ -6,10 +6,12 @@ from pathlib import Path
 
 from littleutils import only
 
+import core.workers.utils
 from core.checker import check_entry
 from core.text import pages, get_predictions
 from core.utils import highlighted_markdown, make_test_input_callback
 
+core.workers.utils.TESTING = True
 
 def test_steps():
     transcript = []

@@ -11,17 +11,12 @@ from random import shuffle
 from types import ModuleType
 from typing import Union
 
-import pygments
 from asttokens import ASTTokens
 from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
 
-site_packages = strip_required_suffix(pygments.__file__, f"pygments{os.path.sep}__init__.py")
-sys.path.append(site_packages + "didyoumean")
-
-from didyoumean.didyoumean_internal import get_suggestions_for_exception  # noqa
 
 def stub_module(name):
     assert name not in sys.modules

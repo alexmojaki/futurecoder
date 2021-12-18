@@ -48,4 +48,4 @@ def exec_snoop(runner, code, code_obj):
     find_code(code_obj)
 
     with tracer:
-        runner.execute(code_obj)
+        runner.execute(code_obj, code)

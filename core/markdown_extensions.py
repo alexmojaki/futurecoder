@@ -2,7 +2,6 @@ import xml.etree.ElementTree as etree
 from html import unescape
 from textwrap import dedent
 
-from littleutils import strip_required_prefix
 from markdown.extensions import Extension
 from markdown.treeprocessors import Treeprocessor
 from pygments.formatters import HtmlFormatter

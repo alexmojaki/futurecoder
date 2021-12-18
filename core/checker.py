@@ -2,9 +2,7 @@ import logging
 
 from core.exercises import assert_equal
 from core.runner.friendly_traceback import friendly_syntax_error
-from core.runner.runner import Runner
-from core.runner.stack_data import format_traceback_stack_data
-from core.runner.stack_data_pygments import PygmentsTracebackSerializer
+from core.runner.runner import EnhancedRunner
 from core.text import pages
 from core.utils import highlighted_markdown
 from core.workers.utils import catch_internal_errors
@@ -13,21 +11,16 @@ log = logging.getLogger(__name__)
 
 
 def make_runner():
+    # TODO move into class
     def format_syntax_error(e):
         return friendly_syntax_error(e, result.filename)
 
-    serializer = PygmentsTracebackSerializer()
-
-    result = Runner(
+    result = EnhancedRunner(
         callback=None,
         extra_locals={"assert_equal": assert_equal},
-        format_traceback=format_traceback_stack_data,
         format_syntax_error=format_syntax_error,
-        serialize_traceback=serializer.format_exception,
     )
     result.run = catch_internal_errors(result.run)
-
-    serializer.filename = result.filename
 
     return result
 

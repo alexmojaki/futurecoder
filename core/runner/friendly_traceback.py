@@ -1,6 +1,6 @@
 from friendly_traceback.core import FriendlyTraceback
 
-from core.runner.utils import format_traceback_list
+from core.basic_runner.utils import format_traceback_list
 
 
 def friendly_syntax_error(e, filename):

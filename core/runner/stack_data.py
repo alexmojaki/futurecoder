@@ -14,10 +14,8 @@ from stack_data import (
     RepeatedFrames,
 )
 
-from core.runner.didyoumean import get_didyoumean_suggestions_func
+from core.runner.didyoumean import didyoumean_suggestions
 from core.runner.friendly_traceback import friendly_message
-
-didyoumean_suggestions = get_didyoumean_suggestions_func(stack_data)
 
 log = logging.getLogger(__name__)
 

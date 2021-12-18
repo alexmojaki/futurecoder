@@ -1,6 +1,6 @@
 import ast
 import os
-import traceback
+import executing
 
 
 def strip_required_suffix(string, suffix):
@@ -18,6 +18,9 @@ def strip_required_suffix(string, suffix):
         "String ends with %r, not %r" % (string[-len(suffix):], suffix)
     )
 
+site_packages = strip_required_suffix(
+    executing.__file__, f"executing{os.path.sep}__init__.py"
+)
 
 def truncate(seq, max_length, middle):
     if len(seq) > max_length:
@@ -31,23 +34,9 @@ def truncate_string(string, max_length):
     return truncate(string, max_length, "...")
 
 
-def get_site_packages_path(module):
-    return strip_required_suffix(
-        module.__file__, f"{module.__name__}{os.path.sep}__init__.py"
-    )
-
-
 def is_valid_syntax(text):
     try:
         ast.parse(text)
         return True
     except SyntaxError:
         return False
-
-
-def format_traceback_string(e: Exception):
-    return "".join(format_traceback_list(e))
-
-
-def format_traceback_list(e: Exception):
-    return traceback.format_exception(type(e), e, e.__traceback__)

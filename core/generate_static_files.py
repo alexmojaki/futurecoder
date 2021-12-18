@@ -28,7 +28,7 @@ import birdseye
 from littleutils import strip_required_prefix, json_to_file
 
 from core.text import pages, get_pages, chapters
-from core.utils import site_packages
+from core.runner.utils import site_packages
 from core.checker import check_entry
 
 str("import sentry_sdk after core.utils for stubs")
