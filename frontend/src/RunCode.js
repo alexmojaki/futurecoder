@@ -142,7 +142,7 @@ export const runCode = ({code, source}) => {
     }
 
     ranCode(data);
-    if (!data.prediction.choices) {
+    if (!bookState.prediction.choices) {
       showCodeResult(data);
       terminalRef.current.focusTerminal();
     }

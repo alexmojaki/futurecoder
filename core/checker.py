@@ -43,7 +43,6 @@ def check_entry(entry, input_callback, output_callback):
         passed=False,
         messages=[],
         error=None,
-        prediction=dict(choices=None, answer=None),
     )
 
     if not entry["input"].strip():
@@ -106,12 +105,6 @@ def check_entry(entry, input_callback, output_callback):
         passed=step_result["passed"],
         messages=[highlighted_markdown(message) for message in step_result["messages"]],
     )
-
-    if result["passed"]:
-        result["prediction"] = dict(
-            choices=step_cls.predicted_output_choices,
-            answer=step_cls.correct_output,
-        )
 
     return result
 

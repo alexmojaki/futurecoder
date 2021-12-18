@@ -7,7 +7,7 @@ from pathlib import Path
 from littleutils import only
 
 from core.checker import check_entry
-from core.text import pages
+from core.text import pages, get_predictions
 from core.utils import highlighted_markdown, make_test_input_callback
 
 
@@ -96,6 +96,8 @@ def normalise_response(response, is_message, substep):
     response.pop("awaiting_input", None)
     response.pop("error", None)
     response.pop("output", None)
+
+    response["prediction"] = get_predictions(substep)
     if not response["prediction"]["choices"]:
         del response["prediction"]
 

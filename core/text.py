@@ -163,23 +163,28 @@ def clean_step_class(cls):
     if hints:
         cls.get_solution = get_solution(cls)
 
-    if cls.predicted_output_choices:
-        cls.predicted_output_choices.append("Error")
-        cls.predicted_output_choices = [
-            s.rstrip()
-            for s in cls.predicted_output_choices
-        ]
-        if not cls.correct_output:
-            cls.correct_output = get_stdout(cls.program).rstrip()
-            assert cls.correct_output in cls.predicted_output_choices, repr(cls.correct_output)
-            assert cls.correct_output != "Error"
-        assert cls.correct_output
-
     if isinstance(cls.disallowed, Disallowed):
         cls.disallowed = [cls.disallowed]
 
     if cls.expected_code_source:
         assert cls.expected_code_source in expected_code_source_descriptions
+
+
+def get_predictions(cls):
+    choices = getattr(cls, "predicted_output_choices", None)
+    if not choices:
+        return dict(choices=None, answer=None)
+
+    answer = cls.correct_output
+    choices = [s.rstrip() for s in choices]
+    assert all(choices), choices
+
+    if not answer:
+        answer = get_stdout(cls.program).rstrip()
+        assert answer in choices, repr(answer)
+
+    choices += ["Error"]
+    return dict(choices=choices, answer=answer)
 
 
 @returns_stdout
@@ -309,6 +314,7 @@ class PageMeta(type):
                 name=name,
                 hints=[highlighted_markdown(hint) for hint in getattr(step, "hints", [])],
                 solution=getattr(step, "get_solution", None),
+                prediction=get_predictions(step),
             )
             for index, (name, text, step) in
             enumerate(zip(self.step_names, self.step_texts(), self.steps))

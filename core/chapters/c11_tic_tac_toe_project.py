@@ -1349,7 +1349,6 @@ on the board and play the game. For starters, try out this code:
         """
 
         predicted_output_choices = [
-            " ",
             "X",
             "' '",
             "'X'",
@@ -1358,6 +1357,7 @@ on the board and play the game. For starters, try out this code:
             "[' ', ' ', ' ']",
             "['X', ' ', ' ']",
             "[' ', 'X', ' ']",
+            "[' ', ' ', 'X']",
         ]
 
         def program(self):
