@@ -14,7 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@sentry/react": "^6.7.2",
     "ansi_up": "^5.0.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "comlink": "^4.3.0",
     "firebase": "^8.6.3",
     "http-proxy-middleware": "^1.0.6",
