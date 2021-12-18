@@ -4,6 +4,7 @@ import * as Comlink from 'comlink';
 import {
   bookSetState,
   bookState,
+  currentStep,
   currentStepName,
   databaseRequest,
   isProduction,
@@ -34,6 +35,7 @@ const encoder = new TextEncoder();
 export const terminalRef = React.createRef();
 
 let awaitingInput = false;
+let pendingOutput = [];
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
@@ -52,10 +54,13 @@ const runCodeRemote = async (entry, onSuccess) => {
   onSuccess(result);
 }
 
+
 function outputCallback(output_parts) {
-  // TODO hide when there's a prediction
-  console.log(output_parts)
-  showOutputParts(output_parts);
+  if (currentStep().prediction.choices) {
+    pendingOutput.push(...output_parts);
+  } else {
+    showOutputParts(output_parts);
+  }
 }
 
 function inputCallback() {
@@ -77,6 +82,7 @@ export const runCode = ({code, source}) => {
   }
 
   awaitingInput = false;
+  pendingOutput = [];
 
   const {route, user, questionWizard, editorContent, numHints, requestingSolution} = bookState;
   if (!shell && !code) {
@@ -193,7 +199,9 @@ function showOutputParts(output_parts) {
 }
 
 export const showCodeResult = ({birdseyeUrl, passed}) => {
-  // TODO showOutputParts of pending parts
+  pendingOutput.push({text: '>>> ', color: 'white'});
+  showOutputParts(pendingOutput);
+  pendingOutput = [];
 
   if (passed) {
     moveStep(1);

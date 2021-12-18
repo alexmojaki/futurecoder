@@ -80,10 +80,6 @@ def check_entry(entry, input_callback, output_callback):
     runner._callback = full_callback
     run_results = runner.run(entry["source"], entry["input"])
 
-    # TODO
-    runner.output_buffer.put("stdout", ">>> ")
-    runner.output_buffer.flush()
-
     if run_results.get("interrupted"):
         return result
 

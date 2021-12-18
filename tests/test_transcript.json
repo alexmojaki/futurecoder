@@ -10,7 +10,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'literally anything'\n>>> "
+                    "text": "'literally anything'\n"
                 }
             ]
         },
@@ -27,7 +27,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "3\n>>> "
+                    "text": "3\n"
                 }
             ]
         },
@@ -44,7 +44,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "-1\n>>> "
+                    "text": "-1\n"
                 }
             ]
         },
@@ -61,7 +61,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'hello'\n>>> "
+                    "text": "'hello'\n"
                 }
             ]
         },
@@ -78,7 +78,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'helloworld'\n>>> "
+                    "text": "'helloworld'\n"
                 }
             ]
         },
@@ -95,7 +95,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'hello world'\n>>> "
+                    "text": "'hello world'\n"
                 }
             ]
         },
@@ -115,7 +115,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'hello world'\n>>> "
+                    "text": "'hello world'\n"
                 }
             ]
         },
@@ -129,12 +129,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "word_assign"
     },
@@ -149,7 +144,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'Hello'\n>>> "
+                    "text": "'Hello'\n"
                 }
             ]
         },
@@ -176,7 +171,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'word'\n>>> "
+                    "text": "'word'\n"
                 }
             ]
         },
@@ -239,10 +234,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -256,12 +247,7 @@
         "response": {
             "message": "<p>Put <code>your_name</code> before the <code>=</code> to create a variable called <code>your_name</code>.</p>",
             "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "name_assign"
     },
@@ -273,12 +259,7 @@
         "response": {
             "message": "<p>For this exercise, choose a non-empty string</p>",
             "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "name_assign"
     },
@@ -290,12 +271,7 @@
         "response": {
             "message": "<p>You've got the <code>your_name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
             "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "name_assign"
     },
@@ -307,12 +283,7 @@
         "response": {
             "message": "<p>For this exercise, choose a name that doesn't start with a space.</p>",
             "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "name_assign"
     },
@@ -324,12 +295,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "name_assign"
     },
@@ -344,7 +310,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'Hello Alex'\n>>> "
+                    "text": "'Hello Alex'\n"
                 }
             ]
         },
@@ -361,7 +327,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'HelloAlex'\n>>> "
+                    "text": "'HelloAlex'\n"
                 }
             ]
         },
@@ -381,7 +347,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'Hello Alex'\n>>> "
+                    "text": "'Hello Alex'\n"
                 }
             ]
         },
@@ -395,12 +361,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "word_assign_goodbye"
     },
@@ -415,7 +376,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'Goodbye Alex'\n>>> "
+                    "text": "'Goodbye Alex'\n"
                 }
             ]
         },
@@ -432,7 +393,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Goodbye Alex\n>>> "
+                    "text": "Goodbye Alex\n"
                 }
             ]
         },
@@ -453,7 +414,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello World\nGoodbye World\n>>> "
+                    "text": "Hello World\nGoodbye World\n"
                 }
             ]
         },
@@ -485,7 +446,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello World\n>>> "
+                    "text": "Hello World\n"
                 }
             ]
         },
@@ -516,7 +477,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello World\nHello World\n>>> "
+                    "text": "Hello World\nHello World\n"
                 }
             ]
         },
@@ -534,7 +495,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "W\no\nr\nl\nd\n>>> "
+                    "text": "W\no\nr\nl\nd\n"
                 }
             ]
         },
@@ -553,10 +514,6 @@
                 {
                     "color": "red",
                     "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `2` identified above was expected to begin a new indented block.\n\n\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -577,7 +534,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "W\n---\no\n---\nr\n---\nl\n---\nd\n---\n>>> "
+                    "text": "W\n---\no\n---\nr\n---\nl\n---\nd\n---\n"
                 }
             ]
         },
@@ -598,7 +555,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "W\no\nr\nl\nd\n---\n>>> "
+                    "text": "W\no\nr\nl\nd\n---\n"
                 }
             ]
         },
@@ -618,10 +575,6 @@
                 {
                     "color": "red",
                     "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `3` identified above is less indented than expected.\n\n\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -644,7 +597,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "---W\n---o\n---r\n---l\n---d\n>>> "
+                    "text": "---W\n---o\n---r\n---l\n---d\n"
                 }
             ]
         },
@@ -667,7 +620,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "World\nWorld\nWorld\nWorld\nWorld\n>>> "
+                    "text": "World\nWorld\nWorld\nWorld\nWorld\n"
                 }
             ]
         },
@@ -696,7 +649,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello\nHello!\n>>> "
+                    "text": "Hello\nHello!\n"
                 }
             ]
         },
@@ -731,7 +684,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "-W\n-Wo\n-Wor\n-Worl\n-World\n>>> "
+                    "text": "-W\n-Wo\n-Wor\n-Worl\n-World\n"
                 }
             ]
         },
@@ -761,7 +714,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "-\n-W\n-Wo\n-Wor\n-Worl\n>>> "
+                    "text": "-\n-W\n-Wo\n-Wor\n-Worl\n"
                 }
             ]
         },
@@ -793,7 +746,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "''\n>>> "
+                    "text": "''\n"
                 }
             ]
         },
@@ -820,7 +773,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "W\nWo\nWor\nWorl\nWorld\n>>> "
+                    "text": "W\nWo\nWor\nWorl\nWorld\n"
                 }
             ]
         },
@@ -847,7 +800,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "W \nW o \nW o r \nW o r l \nW o r l d \n>>> "
+                    "text": "W \nW o \nW o r \nW o r l \nW o r l d \n"
                 }
             ]
         },
@@ -874,7 +827,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "W\noW\nroW\nlroW\ndlroW\n>>> "
+                    "text": "W\noW\nroW\nlroW\ndlroW\n"
                 }
             ]
         },
@@ -903,7 +856,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "World\n-----\n>>> "
+                    "text": "World\n-----\n"
                 }
             ]
         },
@@ -936,7 +889,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "+-----+\n|World|\n+-----+\n>>> "
+                    "text": "+-----+\n|World|\n+-----+\n"
                 }
             ]
         },
@@ -973,7 +926,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "+World+\nW     W\no     o\nr     r\nl     l\nd     d\n+World+\n>>> "
+                    "text": "+World+\nW     W\no     o\nr     r\nl     l\nd     d\n+World+\n"
                 }
             ]
         },
@@ -994,7 +947,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": " W\n  o\n   r\n    l\n     d\n>>> "
+                    "text": " W\n  o\n   r\n    l\n     d\n"
                 }
             ]
         },
@@ -1021,7 +974,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "W\n o\n  r\n   l\n    d\n>>> "
+                    "text": "W\n o\n  r\n   l\n    d\n"
                 }
             ]
         },
@@ -1041,7 +994,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\nFalse\n>>> "
+                    "text": "True\nFalse\n"
                 }
             ]
         },
@@ -1062,7 +1015,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "This gets printed\n>>> "
+                    "text": "This gets printed\n"
                 }
             ]
         },
@@ -1091,7 +1044,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello World!\n>>> "
+                    "text": "Hello World!\n"
                 }
             ]
         },
@@ -1120,7 +1073,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello World\n>>> "
+                    "text": "Hello World\n"
                 }
             ]
         },
@@ -1151,7 +1104,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello!?\n>>> "
+                    "text": "Hello!?\n"
                 }
             ]
         },
@@ -1192,7 +1145,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "H!e!l!l!o! !W!o!r!l!d!\n>>> "
+                    "text": "H!e!l!l!o! !W!o!r!l!d!\n"
                 }
             ]
         },
@@ -1229,7 +1182,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "ello World\n>>> "
+                    "text": "ello World\n"
                 }
             ]
         },
@@ -1255,7 +1208,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\nello World\n>>> "
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\nello World\n"
                 }
             ]
         },
@@ -1290,7 +1243,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "H\n>>> "
+                    "text": "H\n"
                 }
             ]
         },
@@ -1311,7 +1264,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Yes\n>>> "
+                    "text": "Yes\n"
                 }
             ]
         },
@@ -1332,7 +1285,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "No\n>>> "
+                    "text": "No\n"
                 }
             ]
         },
@@ -1355,7 +1308,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "HELLO WORLD\n>>> "
+                    "text": "HELLO WORLD\n"
                 }
             ]
         },
@@ -1378,7 +1331,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "hello world\n>>> "
+                    "text": "hello world\n"
                 }
             ]
         },
@@ -1460,10 +1413,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -1488,7 +1437,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello there!\n>>> "
+                    "text": "Hello there!\n"
                 }
             ]
         },
@@ -1529,7 +1478,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello there\n>>> "
+                    "text": "Hello there\n"
                 }
             ]
         },
@@ -1572,7 +1521,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.\n>>> "
+                    "text": "OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.\n"
                 }
             ]
         },
@@ -1591,7 +1540,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\nFalse\nTrue\n>>> "
+                    "text": "True\nFalse\nTrue\n"
                 }
             ]
         },
@@ -1609,10 +1558,6 @@
                 {
                     "color": "red",
                     "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou likely called a function with a named argument:\n\n    a_function(invalid=something) \n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -1636,7 +1581,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "ke$ha\n>>> "
+                    "text": "ke$ha\n"
                 }
             ]
         },
@@ -1677,7 +1622,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "k3$h@\n>>> "
+                    "text": "k3$h@\n"
                 }
             ]
         },
@@ -1707,7 +1652,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "AGAAGGGAG\n>>> "
+                    "text": "AGAAGGGAG\n"
                 }
             ]
         },
@@ -1756,7 +1701,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "TCATCGCAGGAATCAATGTCCTACCGAATA\n>>> "
+                    "text": "TCATCGCAGGAATCAATGTCCTACCGAATA\n"
                 }
             ]
         },
@@ -1786,7 +1731,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "TCATCGCAG\n>>> "
+                    "text": "TCATCGCAG\n"
                 }
             ]
         },
@@ -1803,7 +1748,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -1825,7 +1770,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Th  ky on my kyboard is brokn\n>>> "
+                    "text": "Th  ky on my kyboard is brokn\n"
                 }
             ]
         },
@@ -1842,7 +1787,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -1859,7 +1804,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -1897,7 +1842,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "B\n>>> "
+                    "text": "B\n"
                 }
             ]
         },
@@ -1940,7 +1885,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Alice\n>>> "
+                    "text": "Alice\n"
                 }
             ]
         },
@@ -1960,7 +1905,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "This\nis\na\nlist\n>>> "
+                    "text": "This\nis\na\nlist\n"
                 }
             ]
         },
@@ -1979,7 +1924,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['Hello', 1, 4]\n>>> "
+                    "text": "['Hello', 1, 4]\n"
                 }
             ]
         },
@@ -2002,7 +1947,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "23\n>>> "
+                    "text": "23\n"
                 }
             ]
         },
@@ -2031,7 +1976,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Thisisalist\n>>> "
+                    "text": "Thisisalist\n"
                 }
             ]
         },
@@ -2071,7 +2016,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "This - is - a - list\n>>> "
+                    "text": "This - is - a - list\n"
                 }
             ]
         },
@@ -2098,7 +2043,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[6, 2, 8, 2, 10, 18, 4, 12, 10]\n>>> "
+                    "text": "[6, 2, 8, 2, 10, 18, 4, 12, 10]\n"
                 }
             ]
         },
@@ -2127,7 +2072,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[9, 6]\n>>> "
+                    "text": "[9, 6]\n"
                 }
             ]
         },
@@ -2159,7 +2104,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -2181,7 +2126,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "This\nis\na\nlist\n>>> "
+                    "text": "This\nis\na\nlist\n"
                 }
             ]
         },
@@ -2240,10 +2185,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -2261,7 +2202,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n>>> "
+                    "text": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n"
                 }
             ]
         },
@@ -2294,7 +2235,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "0\nThis\n1\nis\n2\na\n3\nlist\n>>> "
+                    "text": "0\nThis\n1\nis\n2\na\n3\nlist\n"
                 }
             ]
         },
@@ -2315,7 +2256,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1\n4\n>>> "
+                    "text": "1\n4\n"
                 }
             ]
         },
@@ -2338,7 +2279,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "4\n>>> "
+                    "text": "4\n"
                 }
             ]
         },
@@ -2366,7 +2307,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1\n>>> "
+                    "text": "1\n"
                 }
             ]
         },
@@ -2394,7 +2335,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "H W\ne o\nl r\nl l\no d\n>>> "
+                    "text": "H W\ne o\nl r\nl l\no d\n"
                 }
             ]
         },
@@ -2454,7 +2395,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "G W\no o\no r\nd l\nb d\ny  \ne  \n>>> "
+                    "text": "G W\no o\no r\nd l\nb d\ny  \ne  \n"
                 }
             ]
         },
@@ -2472,7 +2413,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "<built-in function len>\n<built-in function print>\n>>> "
+                    "text": "<built-in function len>\n<built-in function print>\n"
                 }
             ]
         },
@@ -2489,7 +2430,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -2557,10 +2498,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -2580,7 +2517,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "3\nNone\n>>> "
+                    "text": "3\nNone\n"
                 }
             ]
         },
@@ -2647,10 +2584,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -2669,7 +2602,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "<built-in method upper of str object at 0xABC>\nHELLO\n>>> "
+                    "text": "<built-in method upper of str object at 0xABC>\nHELLO\n"
                 }
             ]
         },
@@ -2730,10 +2663,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -2755,7 +2684,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[1, 2, 3, 4, 5]\n[1, 2, 3]\n[1, 2, 3, 4]\n>>> "
+                    "text": "[1, 2, 3, 4, 5]\n[1, 2, 3]\n[1, 2, 3, 4]\n"
                 }
             ]
         },
@@ -2786,7 +2715,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[1, 9, 3]\n>>> "
+                    "text": "[1, 9, 3]\n"
                 }
             ]
         },
@@ -2815,7 +2744,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1\n>>> "
+                    "text": "1\n"
                 }
             ]
         },
@@ -2846,7 +2775,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "2\n[1, 3]\n>>> "
+                    "text": "2\n[1, 3]\n"
                 }
             ]
         },
@@ -2877,7 +2806,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[2, 3]\n>>> "
+                    "text": "[2, 3]\n"
                 }
             ]
         },
@@ -2901,7 +2830,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['b', 'c', 'a']\n>>> "
+                    "text": "['b', 'c', 'a']\n"
                 }
             ]
         },
@@ -2925,7 +2854,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['a', 'b', 'a']\n>>> "
+                    "text": "['a', 'b', 'a']\n"
                 }
             ]
         },
@@ -2949,7 +2878,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['a', 'b', 'c', 'a']\n>>> "
+                    "text": "['a', 'b', 'c', 'a']\n"
                 }
             ]
         },
@@ -2973,7 +2902,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[1, 2, 3]\n>>> "
+                    "text": "[1, 2, 3]\n"
                 }
             ]
         },
@@ -3000,7 +2929,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[1, 2, 5, 6, 8, 9]\n>>> "
+                    "text": "[1, 2, 5, 6, 8, 9]\n"
                 }
             ]
         },
@@ -3029,7 +2958,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "False\nTrue\n>>> "
+                    "text": "False\nTrue\n"
                 }
             ]
         },
@@ -3055,7 +2984,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "12\n>>> "
+                    "text": "12\n"
                 }
             ]
         },
@@ -3082,7 +3011,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "3\n>>> "
+                    "text": "3\n"
                 }
             ]
         },
@@ -3106,7 +3035,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -3130,7 +3059,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "6.0\n>>> "
+                    "text": "6.0\n"
                 }
             ]
         },
@@ -3154,7 +3083,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "5050\n>>> "
+                    "text": "5050\n"
                 }
             ]
         },
@@ -3178,7 +3107,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "-1\n>>> "
+                    "text": "-1\n"
                 }
             ]
         },
@@ -3195,7 +3124,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -3214,7 +3143,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "2\n5\n>>> "
+                    "text": "2\n5\n"
                 }
             ]
         },
@@ -3267,10 +3196,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -3290,7 +3215,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Python rocks!\nPYTHON ROCKS!\n>>> "
+                    "text": "Python rocks!\nPYTHON ROCKS!\n"
                 }
             ]
         },
@@ -3310,7 +3235,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "91\n>>> "
+                    "text": "91\n"
                 }
             ]
         },
@@ -3334,7 +3259,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[1, 2, 9, 3, 4, 5]\n>>> "
+                    "text": "[1, 2, 9, 3, 4, 5]\n"
                 }
             ]
         },
@@ -3351,7 +3276,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']\n>>> "
+                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']\n"
                 }
             ]
         },
@@ -3380,7 +3305,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[2, 4, 1]\n[8, 9, 7]\n>>> "
+                    "text": "[2, 4, 1]\n[8, 9, 7]\n"
                 }
             ]
         },
@@ -3409,7 +3334,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[1, 2, 3]\n[1, 2, 3]\nTrue\nFalse\n[1, 2, 3, 4]\n[1, 2, 3]\n>>> "
+                    "text": "[1, 2, 3]\n[1, 2, 3]\nTrue\nFalse\n[1, 2, 3, 4]\n[1, 2, 3]\n"
                 }
             ]
         },
@@ -3438,7 +3363,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[1, 2, 3]\n[1, 2, 3]\nTrue\nTrue\n[1, 2, 3, 4]\n[1, 2, 3, 4]\n>>> "
+                    "text": "[1, 2, 3]\n[1, 2, 3]\nTrue\nTrue\n[1, 2, 3, 4]\n[1, 2, 3, 4]\n"
                 }
             ]
         },
@@ -3528,10 +3453,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -3552,7 +3473,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[7, 3, 12, 15]\n>>> "
+                    "text": "[7, 3, 12, 15]\n"
                 }
             ]
         },
@@ -3573,7 +3494,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[12, 15]\n>>> "
+                    "text": "[12, 15]\n"
                 }
             ]
         },
@@ -3596,7 +3517,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[12, 15]\n>>> "
+                    "text": "[12, 15]\n"
                 }
             ]
         },
@@ -3619,7 +3540,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[12, 15]\n>>> "
+                    "text": "[12, 15]\n"
                 }
             ]
         },
@@ -3637,10 +3558,6 @@
                 {
                     "color": "red",
                     "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n\n\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -3657,7 +3574,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Alice's Diner\n>>> "
+                    "text": "Alice's Diner\n"
                 }
             ]
         },
@@ -3682,7 +3599,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -3702,7 +3619,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Special cases aren't special enough to break the rules.\n>>> "
+                    "text": "Special cases aren't special enough to break the rules.\n"
                 }
             ]
         },
@@ -3722,7 +3639,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "\"Talk is cheap. Show me the code.\" - Linus Torvalds\n>>> "
+                    "text": "\"Talk is cheap. Show me the code.\" - Linus Torvalds\n"
                 }
             ]
         },
@@ -3757,7 +3674,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Alice went to lunch with Bob.\n>>> "
+                    "text": "Alice went to lunch with Bob.\n"
                 }
             ]
         },
@@ -3844,10 +3761,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -3871,7 +3784,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello Alice. You are 20 years old.\n>>> "
+                    "text": "Hello Alice. You are 20 years old.\n"
                 }
             ]
         },
@@ -3888,7 +3801,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'2 * 3 + 4 is equal to 10'\n>>> "
+                    "text": "'2 * 3 + 4 is equal to 10'\n"
                 }
             ]
         },
@@ -3909,7 +3822,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "There are 3 people waiting, the first one's name is Alice.\n>>> "
+                    "text": "There are 3 people waiting, the first one's name is Alice.\n"
                 }
             ]
         },
@@ -3940,7 +3853,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "A\nA 0\nA 1\nA 2\nA 3\n---\nB\nB 0\nB 1\nB 2\nB 3\n---\nC\nC 0\nC 1\nC 2\nC 3\n---\n>>> "
+                    "text": "A\nA 0\nA 1\nA 2\nA 3\n---\nB\nB 0\nB 1\nB 2\nB 3\n---\nC\nC 0\nC 1\nC 2\nC 3\n---\n"
                 }
             ]
         },
@@ -3993,10 +3906,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -4018,7 +3927,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n----------\n2 x 1 = 2\n3 x 2 = 6\n4 x 3 = 12\n5 x 4 = 20\n6 x 5 = 30\n7 x 6 = 42\n8 x 7 = 56\n9 x 8 = 72\n10 x 9 = 90\n11 x 10 = 110\n12 x 11 = 132\n13 x 12 = 156\n----------\n3 x 1 = 3\n4 x 2 = 8\n5 x 3 = 15\n6 x 4 = 24\n7 x 5 = 35\n8 x 6 = 48\n9 x 7 = 63\n10 x 8 = 80\n11 x 9 = 99\n12 x 10 = 120\n13 x 11 = 143\n14 x 12 = 168\n----------\n4 x 1 = 4\n5 x 2 = 10\n6 x 3 = 18\n7 x 4 = 28\n8 x 5 = 40\n9 x 6 = 54\n10 x 7 = 70\n11 x 8 = 88\n12 x 9 = 108\n13 x 10 = 130\n14 x 11 = 154\n15 x 12 = 180\n----------\n5 x 1 = 5\n6 x 2 = 12\n7 x 3 = 21\n8 x 4 = 32\n9 x 5 = 45\n10 x 6 = 60\n11 x 7 = 77\n12 x 8 = 96\n13 x 9 = 117\n14 x 10 = 140\n15 x 11 = 165\n16 x 12 = 192\n----------\n6 x 1 = 6\n7 x 2 = 14\n8 x 3 = 24\n9 x 4 = 36\n10 x 5 = 50\n11 x 6 = 66\n12 x 7 = 84\n13 x 8 = 104\n14 x 9 = 126\n15 x 10 = 150\n16 x 11 = 176\n17 x 12 = 204\n----------\n7 x 1 = 7\n8 x 2 = 16\n9 x 3 = 27\n10 x 4 = 40\n11 x 5 = 55\n12 x 6 = 72\n13 x 7 = 91\n14 x 8 = 112\n15 x 9 = 135\n16 x 10 = 160\n17 x 11 = 187\n18 x 12 = 216\n----------\n8 x 1 = 8\n9 x 2 = 18\n10 x 3 = 30\n11 x 4 = 44\n12 x 5 = 60\n13 x 6 = 78\n14 x 7 = 98\n15 x 8 = 120\n16 x 9 = 144\n17 x 10 = 170\n18 x 11 = 198\n19 x 12 = 228\n----------\n9 x 1 = 9\n10 x 2 = 20\n11 x 3 = 33\n12 x 4 = 48\n13 x 5 = 65\n14 x 6 = 84\n15 x 7 = 105\n16 x 8 = 128\n17 x 9 = 153\n18 x 10 = 180\n19 x 11 = 209\n20 x 12 = 240\n----------\n10 x 1 = 10\n11 x 2 = 22\n12 x 3 = 36\n13 x 4 = 52\n14 x 5 = 70\n15 x 6 = 90\n16 x 7 = 112\n17 x 8 = 136\n18 x 9 = 162\n19 x 10 = 190\n20 x 11 = 220\n21 x 12 = 252\n----------\n11 x 1 = 11\n12 x 2 = 24\n13 x 3 = 39\n14 x 4 = 56\n15 x 5 = 75\n16 x 6 = 96\n17 x 7 = 119\n18 x 8 = 144\n19 x 9 = 171\n20 x 10 = 200\n21 x 11 = 231\n22 x 12 = 264\n----------\n12 x 1 = 12\n13 x 2 = 26\n14 x 3 = 42\n15 x 4 = 60\n16 x 5 = 80\n17 x 6 = 102\n18 x 7 = 126\n19 x 8 = 152\n20 x 9 = 180\n21 x 10 = 210\n22 x 11 = 242\n23 x 12 = 276\n----------\n>>> "
+                    "text": "1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n----------\n2 x 1 = 2\n3 x 2 = 6\n4 x 3 = 12\n5 x 4 = 20\n6 x 5 = 30\n7 x 6 = 42\n8 x 7 = 56\n9 x 8 = 72\n10 x 9 = 90\n11 x 10 = 110\n12 x 11 = 132\n13 x 12 = 156\n----------\n3 x 1 = 3\n4 x 2 = 8\n5 x 3 = 15\n6 x 4 = 24\n7 x 5 = 35\n8 x 6 = 48\n9 x 7 = 63\n10 x 8 = 80\n11 x 9 = 99\n12 x 10 = 120\n13 x 11 = 143\n14 x 12 = 168\n----------\n4 x 1 = 4\n5 x 2 = 10\n6 x 3 = 18\n7 x 4 = 28\n8 x 5 = 40\n9 x 6 = 54\n10 x 7 = 70\n11 x 8 = 88\n12 x 9 = 108\n13 x 10 = 130\n14 x 11 = 154\n15 x 12 = 180\n----------\n5 x 1 = 5\n6 x 2 = 12\n7 x 3 = 21\n8 x 4 = 32\n9 x 5 = 45\n10 x 6 = 60\n11 x 7 = 77\n12 x 8 = 96\n13 x 9 = 117\n14 x 10 = 140\n15 x 11 = 165\n16 x 12 = 192\n----------\n6 x 1 = 6\n7 x 2 = 14\n8 x 3 = 24\n9 x 4 = 36\n10 x 5 = 50\n11 x 6 = 66\n12 x 7 = 84\n13 x 8 = 104\n14 x 9 = 126\n15 x 10 = 150\n16 x 11 = 176\n17 x 12 = 204\n----------\n7 x 1 = 7\n8 x 2 = 16\n9 x 3 = 27\n10 x 4 = 40\n11 x 5 = 55\n12 x 6 = 72\n13 x 7 = 91\n14 x 8 = 112\n15 x 9 = 135\n16 x 10 = 160\n17 x 11 = 187\n18 x 12 = 216\n----------\n8 x 1 = 8\n9 x 2 = 18\n10 x 3 = 30\n11 x 4 = 44\n12 x 5 = 60\n13 x 6 = 78\n14 x 7 = 98\n15 x 8 = 120\n16 x 9 = 144\n17 x 10 = 170\n18 x 11 = 198\n19 x 12 = 228\n----------\n9 x 1 = 9\n10 x 2 = 20\n11 x 3 = 33\n12 x 4 = 48\n13 x 5 = 65\n14 x 6 = 84\n15 x 7 = 105\n16 x 8 = 128\n17 x 9 = 153\n18 x 10 = 180\n19 x 11 = 209\n20 x 12 = 240\n----------\n10 x 1 = 10\n11 x 2 = 22\n12 x 3 = 36\n13 x 4 = 52\n14 x 5 = 70\n15 x 6 = 90\n16 x 7 = 112\n17 x 8 = 136\n18 x 9 = 162\n19 x 10 = 190\n20 x 11 = 220\n21 x 12 = 252\n----------\n11 x 1 = 11\n12 x 2 = 24\n13 x 3 = 39\n14 x 4 = 56\n15 x 5 = 75\n16 x 6 = 96\n17 x 7 = 119\n18 x 8 = 144\n19 x 9 = 171\n20 x 10 = 200\n21 x 11 = 231\n22 x 12 = 264\n----------\n12 x 1 = 12\n13 x 2 = 26\n14 x 3 = 42\n15 x 4 = 60\n16 x 5 = 80\n17 x 6 = 102\n18 x 7 = 126\n19 x 8 = 152\n20 x 9 = 180\n21 x 10 = 210\n22 x 11 = 242\n23 x 12 = 276\n----------\n"
                 }
             ]
         },
@@ -4049,7 +3958,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n>>> "
+                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n"
                 }
             ]
         },
@@ -4079,7 +3988,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n>>> "
+                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n"
                 }
             ]
         },
@@ -4106,7 +4015,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n>>> "
+                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n"
                 }
             ]
         },
@@ -4135,7 +4044,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "AAAA\nAAAB\nAABA\nAABB\nABAA\nABAB\nABBA\nABBB\nBAAA\nBAAB\nBABA\nBABB\nBBAA\nBBAB\nBBBA\nBBBB\n>>> "
+                    "text": "AAAA\nAAAB\nAABA\nAABB\nABAA\nABAB\nABBA\nABBB\nBAAA\nBAAB\nBABA\nBABB\nBBAA\nBBAB\nBBBA\nBBBB\n"
                 }
             ]
         },
@@ -4166,7 +4075,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OOO\nOO\nO\n>>> "
+                    "text": "OOO\nOO\nO\n"
                 }
             ]
         },
@@ -4193,7 +4102,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n>>> "
+                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n"
                 }
             ]
         },
@@ -4214,7 +4123,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "26\n>>> "
+                    "text": "26\n"
                 }
             ]
         },
@@ -4240,7 +4149,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "['A', 'a', 'i']\n['m', 'z', 'n', 'g']\n>>> "
+                    "text": "['A', 'a', 'i']\n['m', 'z', 'n', 'g']\n"
                 }
             ]
         },
@@ -4263,7 +4172,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "d\n>>> "
+                    "text": "d\n"
                 }
             ]
         },
@@ -4281,7 +4190,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "d\n>>> "
+                    "text": "d\n"
                 }
             ]
         },
@@ -4302,7 +4211,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "n\n>>> "
+                    "text": "n\n"
                 }
             ]
         },
@@ -4337,7 +4246,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "how\n>>> "
+                    "text": "how\n"
                 }
             ]
         },
@@ -4358,7 +4267,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "y\n>>> "
+                    "text": "y\n"
                 }
             ]
         },
@@ -4390,7 +4299,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---\n>>> "
+                    "text": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---\n"
                 }
             ]
         },
@@ -4411,7 +4320,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---\n>>> "
+                    "text": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---\n"
                 }
             ]
         },
@@ -4439,7 +4348,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "hello there\nhello world\n>>> "
+                    "text": "hello there\nhello world\n"
                 }
             ]
         },
@@ -4471,7 +4380,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "False\nTrue\n>>> "
+                    "text": "False\nTrue\n"
                 }
             ]
         },
@@ -4503,7 +4412,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -4532,7 +4441,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "adg\nbeh\ncfi\n>>> "
+                    "text": "adg\nbeh\ncfi\n"
                 }
             ]
         },
@@ -4577,7 +4486,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "adg\nbeh\ncfi\nq q\nw  \ne  \n>>> "
+                    "text": "adg\nbeh\ncfi\nq q\nw  \ne  \n"
                 }
             ]
         },
@@ -4598,7 +4507,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello Alice!\nHello Bob!\n>>> "
+                    "text": "Hello Alice!\nHello Bob!\n"
                 }
             ]
         },
@@ -4629,7 +4538,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n>>> "
+                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n"
                 }
             ]
         },
@@ -4659,7 +4568,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n>>> "
+                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n"
                 }
             ]
         },
@@ -4689,7 +4598,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n>>> "
+                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n"
                 }
             ]
         },
@@ -4710,12 +4619,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "print_twice_exercise"
     },
@@ -4745,7 +4649,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello\nHello\nHello\n>>> "
+                    "text": "Hello\nHello\nHello\n"
                 }
             ]
         },
@@ -4773,7 +4677,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello\nHello\nHello\n>>> "
+                    "text": "Hello\nHello\nHello\n"
                 }
             ]
         },
@@ -4797,7 +4701,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello\nHello\n>>> "
+                    "text": "Hello\nHello\n"
                 }
             ]
         },
@@ -4821,7 +4725,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\nHello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\nHello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n>>> "
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\nHello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\nHello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n"
                 }
             ]
         },
@@ -4845,7 +4749,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello\nHello\n>>> "
+                    "text": "Hello\nHello\n"
                 }
             ]
         },
@@ -4869,7 +4773,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Hello\nHello\n>>> "
+                    "text": "Hello\nHello\n"
                 }
             ]
         },
@@ -4901,7 +4805,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "5\n10\n>>> "
+                    "text": "5\n10\n"
                 }
             ]
         },
@@ -4931,7 +4835,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "5\n>>> "
+                    "text": "5\n"
                 }
             ]
         },
@@ -4946,12 +4850,7 @@
         "response": {
             "message": "<p>You cannot use <code>*</code>, <code>+</code>, or even any numbers inside <code>quadruple</code>.\nYou must call <code>double</code> to solve the problem.</p>",
             "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "quadruple_exercise"
     },
@@ -4971,12 +4870,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "quadruple_exercise"
     },
@@ -5006,7 +4900,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OK\nOK\n>>> "
+                    "text": "OK\nOK\n"
                 }
             ]
         },
@@ -5037,7 +4931,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Error! 6 != 4\nError! 15 != 10\n>>> "
+                    "text": "Error! 6 != 4\nError! 15 != 10\n"
                 }
             ]
         },
@@ -5061,7 +4955,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OK\nOK\n>>> "
+                    "text": "OK\nOK\n"
                 }
             ]
         },
@@ -5080,12 +4974,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "surround_exercise"
     },
@@ -5104,12 +4993,7 @@
         "response": {
             "message": "<p>In the <code>alert</code> function, you placed your <code>return</code> statement at the wrong place!\nPay attention to your indentations in <code>alert</code>. You might be ending a loop too early with <code>return</code>.</p>",
             "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "alert_exercise"
     },
@@ -5123,12 +5007,7 @@
         "response": {
             "message": "<p>You cannot use string concatenation/formatting/interpolation/multiplication or f-strings in <code>alert</code>.\nYou must call <code>surround</code> to solve the problem.</p>",
             "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "alert_exercise"
     },
@@ -5154,12 +5033,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "alert_exercise"
     },
@@ -5189,7 +5063,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1\n>>> "
+                    "text": "1\n"
                 }
             ]
         },
@@ -5210,7 +5084,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Error! 2 != [2, 4, 6]\n>>> "
+                    "text": "Error! 2 != [2, 4, 6]\n"
                 }
             ]
         },
@@ -5245,7 +5119,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "a 0\na 1\na 2\nb 0\n>>> "
+                    "text": "a 0\na 1\na 2\nb 0\n"
                 }
             ]
         },
@@ -5280,7 +5154,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2\n>>> "
+                    "text": "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2\n"
                 }
             ]
         },
@@ -5307,7 +5181,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OK\nOK\nOK\n>>> "
+                    "text": "OK\nOK\nOK\n"
                 }
             ]
         },
@@ -5332,7 +5206,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -5357,7 +5231,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -5382,7 +5256,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "False\n>>> "
+                    "text": "False\n"
                 }
             ]
         },
@@ -5407,7 +5281,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OK\nOK\nOK\n>>> "
+                    "text": "OK\nOK\nOK\n"
                 }
             ]
         },
@@ -5429,7 +5303,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OK\nOK\nOK\n>>> "
+                    "text": "OK\nOK\nOK\n"
                 }
             ]
         },
@@ -5451,7 +5325,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OK\nError! 'Bob' != True\nError! 'Bob' != False\n>>> "
+                    "text": "OK\nError! 'Bob' != True\nError! 'Bob' != False\n"
                 }
             ]
         },
@@ -5473,7 +5347,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OK\nError! 'Bob' != True\nError! 'Bob' != False\n>>> "
+                    "text": "OK\nError! 'Bob' != True\nError! 'Bob' != False\n"
                 }
             ]
         },
@@ -5498,12 +5372,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "AnExercise"
     },
@@ -5526,7 +5395,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -5551,7 +5420,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "False\n>>> "
+                    "text": "False\n"
                 }
             ]
         },
@@ -5576,7 +5445,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "False\n>>> "
+                    "text": "False\n"
                 }
             ]
         },
@@ -5601,12 +5470,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "AndExercise"
     },
@@ -5623,12 +5487,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "TicTacToeWinningRow"
     },
@@ -5645,10 +5504,6 @@
                 {
                     "color": "red",
                     "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThe Python keyword `or` can only be used for boolean expressions.\nPerhaps you meant to write\n\n`is_friend = name == \"Alice\" ,`\n\n\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -5680,7 +5535,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\nTrue\n[False, True]\nTrue\n>>> "
+                    "text": "True\nTrue\n[False, True]\nTrue\n"
                 }
             ]
         },
@@ -5697,7 +5552,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -5724,12 +5579,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "AndHasHigherPriority"
     },
@@ -5752,7 +5602,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "False\n>>> "
+                    "text": "False\n"
                 }
             ]
         },
@@ -5777,7 +5627,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -5795,7 +5645,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -5814,12 +5664,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "NotPriority"
     },
@@ -5841,12 +5686,7 @@
         "response": {
             "message": "<p>Keep in mind that some entries might be <code>' '</code>. An empty row is not a winning row.</p>",
             "passed": false,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "intro_row_winner"
     },
@@ -5881,12 +5721,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "intro_row_winner"
     },
@@ -5921,12 +5756,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "column_winner"
     },
@@ -5961,12 +5791,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "diagonal_winner"
     },
@@ -6015,12 +5840,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "winner"
     },
@@ -6043,7 +5863,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "XOX\n OO\n X \n>>> "
+                    "text": "XOX\n OO\n X \n"
                 }
             ]
         },
@@ -6070,10 +5890,6 @@
                 {
                     "color": "red",
                     "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n\n"
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -6092,7 +5908,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "First line\nSecond line\n>>> "
+                    "text": "First line\nSecond line\n"
                 }
             ]
         },
@@ -6109,7 +5925,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "'First line\\nSecond line'\n>>> "
+                    "text": "'First line\\nSecond line'\n"
                 }
             ]
         },
@@ -6134,7 +5950,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "1\n>>> "
+                    "text": "1\n"
                 }
             ]
         },
@@ -6165,12 +5981,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "format_board_simple"
     },
@@ -6201,12 +6012,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "format_board_bonus_challenge"
     },
@@ -6225,7 +6031,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "<class 'str'>\n<class 'int'>\n<class 'bool'>\n<class 'list'>\n<class 'float'>\n>>> "
+                    "text": "<class 'str'>\n<class 'int'>\n<class 'bool'>\n<class 'list'>\n<class 'float'>\n"
                 }
             ]
         },
@@ -6242,7 +6048,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\n>>> "
+                    "text": "True\n"
                 }
             ]
         },
@@ -6261,7 +6067,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "123\n123\nFalse\n>>> "
+                    "text": "123\n123\nFalse\n"
                 }
             ]
         },
@@ -6291,7 +6097,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "579\n123456\n>>> "
+                    "text": "579\n123456\n"
                 }
             ]
         },
@@ -6319,7 +6125,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "True\nFalse\n>>> "
+                    "text": "True\nFalse\n"
                 }
             ]
         },
@@ -6349,7 +6155,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[0, 13, 120]\n['0', '120', '13']\n>>> "
+                    "text": "[0, 13, 120]\n['0', '120', '13']\n"
                 }
             ]
         },
@@ -6412,10 +6218,6 @@
                             "tail": ""
                         }
                     ]
-                },
-                {
-                    "color": "white",
-                    "text": ">>> "
                 }
             ]
         },
@@ -6440,7 +6242,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Starting... 1\nGo!\n>>> "
+                    "text": "Starting... 1\nGo!\n"
                 }
             ]
         },
@@ -6473,12 +6275,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "format_board_with_numbers"
     },
@@ -6495,7 +6292,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "Type your name, then press Enter:\n<input: there>\nHello there!\n>>> "
+                    "text": "Type your name, then press Enter:\n<input: there>\nHello there!\n"
                 }
             ]
         },
@@ -6527,7 +6324,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?\n>>> "
+                    "text": "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?\n"
                 }
             ]
         },
@@ -6567,7 +6364,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[' ', 'X', ' ']\n>>> "
+                    "text": "[' ', 'X', ' ']\n"
                 }
             ]
         },
@@ -6597,7 +6394,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "[[' ', ' ', ' '], ['X', ' ', ' '], [' ', ' ', ' ']]\n>>> "
+                    "text": "[[' ', ' ', ' '], ['X', ' ', ' '], [' ', ' ', ' ']]\n"
                 }
             ]
         },
@@ -6620,12 +6417,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "nested_assignment_input"
     },
@@ -6663,7 +6455,7 @@
             "result": [
                 {
                     "color": "white",
-                    "text": "OK\nError! [['X', ' ', ' '], ['X', ' ', ' '], ['X', ' ', ' ']] != [['X', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]\n>>> "
+                    "text": "OK\nError! [['X', ' ', ' '], ['X', ' ', ' '], ['X', ' ', ' ']] != [['X', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]\n"
                 }
             ]
         },
@@ -6694,12 +6486,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "fix_make_board"
     },
@@ -6789,12 +6576,7 @@
         "response": {
             "message": "",
             "passed": true,
-            "result": [
-                {
-                    "color": "white",
-                    "text": ">>> "
-                }
-            ]
+            "result": []
         },
         "step": "the_full_game"
     }
