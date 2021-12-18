@@ -14,11 +14,8 @@ def load_package_buffer(buffer):
 
     from core.checker import check_entry
     from core.runner.pyodide_helpers import install_imports
-    from core.workers.utils import catch_internal_errors
-
-    print("Python core ready!")
 
     return dict(
         check_entry=check_entry,
-        install_imports=catch_internal_errors(install_imports),
+        install_imports=install_imports,
     )

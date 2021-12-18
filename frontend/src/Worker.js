@@ -84,8 +84,11 @@ class Runner {
 
     pyodide._module.setInterruptBuffer(interruptBuffer);
 
-    // TODO handle errors from install_imports
-    await install_imports(entry.input);
+    try {
+      await install_imports(entry.input);
+    } catch (e) {
+      console.error(e);
+    }
 
     const outputCallbackToObject = (data) => outputCallback(toObject(data.toJs()).parts);
     const result = check_entry(entry, fullInputCallback, outputCallbackToObject);
