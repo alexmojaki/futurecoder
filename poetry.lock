@@ -8,7 +8,7 @@ python-versions = "*"
 
 [[package]]
 name = "asttokens"
-version = "2.0.4"
+version = "2.0.5"
 description = "Annotate AST trees with source code positions"
 category = "main"
 optional = false
@@ -83,14 +83,14 @@ python-versions = "*"
 
 [[package]]
 name = "cheap-repr"
-version = "0.4.5"
+version = "0.5.1"
 description = "Better version of repr/reprlib for short, cheap string representations."
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.extras]
-tests = ["django", "pandas (>=0.24.2)", "numpy (>=1.16.3)", "pytest"]
+tests = ["pytest", "django", "pandas (>=0.24.2)", "numpy (>=1.16.3)", "chainmap", "Django (<2)", "pandas (>=0.24.2,<0.25)", "numpy (>=1.16.3,<1.17)", "Django (<3)", "pandas (>=0.24.2,<0.26)", "numpy (>=1.16.3,<1.19)"]
 
 [[package]]
 name = "colorama"
@@ -102,7 +102,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "executing"
-version = "0.8.1"
+version = "0.8.2"
 description = "Get the currently executing AST node of a frame, and other information"
 category = "main"
 optional = false
@@ -123,7 +123,7 @@ pyflakes = ">=2.2.0,<2.3.0"
 
 [[package]]
 name = "friendly-traceback"
-version = "0.4.52"
+version = "0.4.92"
 description = "Friendlier tracebacks in any language."
 category = "main"
 optional = false
@@ -133,7 +133,7 @@ python-versions = ">=3.6"
 asttokens = ">=2.0.4"
 executing = ">=0.7.0"
 pure-eval = ">=0.2.1"
-stack-data = ">=0.1.0"
+stack-data = ">=0.1.3"
 
 [[package]]
 name = "iniconfig"
@@ -326,7 +326,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "snoop"
-version = "0.3.0"
+version = "0.4.1"
 description = "Powerful debugging tools for Python"
 category = "main"
 optional = false
@@ -334,17 +334,17 @@ python-versions = "*"
 
 [package.dependencies]
 asttokens = "*"
-cheap_repr = ">=0.4.0"
+cheap-repr = ">=0.4.0"
 executing = "*"
 pygments = "*"
 six = "*"
 
 [package.extras]
-tests = ["pytest", "littleutils", "prettyprinter", "pprintpp", "numpy (>=1.16.5)", "pandas (>=0.24.2)", "birdseye", "django"]
+tests = ["pytest", "littleutils", "prettyprinter", "pprintpp", "pandas (>=0.24.2)", "numpy (>=1.16.5)", "birdseye", "pytest-order (<=0.11.0)", "django", "pytest-order"]
 
 [[package]]
 name = "stack-data"
-version = "0.1.1"
+version = "0.1.3"
 description = "Extract data from python stack frames and tracebacks for informative displays"
 category = "main"
 optional = false
@@ -356,7 +356,7 @@ executing = "*"
 pure-eval = "*"
 
 [package.extras]
-tests = ["pytest", "typeguard", "pygments", "pep517", "littleutils"]
+tests = ["pytest", "typeguard", "pygments", "littleutils"]
 
 [[package]]
 name = "toml"
@@ -390,8 +390,8 @@ astcheck = [
     {file = "astcheck-0.2.5.tar.gz", hash = "sha256:ba9987e8dfe6c2b9ea6720ab8fbdb5aa00fdfa2908017be8a272b2a4b663397d"},
 ]
 asttokens = [
-    {file = "asttokens-2.0.4-py2.py3-none-any.whl", hash = "sha256:766d3352908730efb20b95ae22db0f1cb1bedb67c6071fcffb5c236ea673f2f7"},
-    {file = "asttokens-2.0.4.tar.gz", hash = "sha256:a42e57e28f2ac1c85ed9b1f84109401427e5c63c04f61d15b8842b027eec5128"},
+    {file = "asttokens-2.0.5-py2.py3-none-any.whl", hash = "sha256:0844691e88552595a6f4a4281a9f7f79b8dd45ca4ccea82e5e05b4bbdb76705c"},
+    {file = "asttokens-2.0.5.tar.gz", hash = "sha256:9a54c114f02c7a9480d56550932546a3f1fe71d8a02f1bc7ccd0ee3ee35cf4d5"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
@@ -411,23 +411,24 @@ certifi = [
     {file = "certifi-2021.5.30.tar.gz", hash = "sha256:2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee"},
 ]
 cheap-repr = [
-    {file = "cheap_repr-0.4.5.tar.gz", hash = "sha256:5b8cde6babbe953bd8b83be18ba13d24f7f1f845b052c365c10c54d9da11aab4"},
+    {file = "cheap_repr-0.5.1-py2.py3-none-any.whl", hash = "sha256:30096998aeb49367a4a153988d7a99dce9dc59bbdd4b19740da6b4f3f97cf2ff"},
+    {file = "cheap_repr-0.5.1.tar.gz", hash = "sha256:31ec63b9d8394aa23d746c8376c8307f75f9fca0b983566b8bcf13cc661fe6dd"},
 ]
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
 executing = [
-    {file = "executing-0.8.1-py2.py3-none-any.whl", hash = "sha256:cfaa61564eff6e7a3afda98ea0ba7c646171d9e325203a159bf29a3c2438c129"},
-    {file = "executing-0.8.1.tar.gz", hash = "sha256:f3dd49578371a633bd1ff5ca0af4afad65e6d549a06eb35ef20df198eced58ef"},
+    {file = "executing-0.8.2-py2.py3-none-any.whl", hash = "sha256:32fc6077b103bd19e6494a72682d66d5763cf20a106d5aa7c5ccbea4e47b0df7"},
+    {file = "executing-0.8.2.tar.gz", hash = "sha256:c23bf42e9a7b9b212f185b1b2c3c91feb895963378887bb10e64a2e612ec0023"},
 ]
 flake8 = [
     {file = "flake8-3.8.3-py2.py3-none-any.whl", hash = "sha256:15e351d19611c887e482fb960eae4d44845013cc142d42896e9862f775d8cf5c"},
     {file = "flake8-3.8.3.tar.gz", hash = "sha256:f04b9fcbac03b0a3e58c0ab3a0ecc462e023a9faf046d57794184028123aa208"},
 ]
 friendly-traceback = [
-    {file = "friendly_traceback-0.4.52-py3-none-any.whl", hash = "sha256:0a0f82fa99af1c2fb48a18250480b7157fcd7768e6d40c9704f9a69b40888cdb"},
-    {file = "friendly_traceback-0.4.52.tar.gz", hash = "sha256:164bc7a7cb1249c010d8d58005469bed615bfe9efc8d8b39b372248c08acae31"},
+    {file = "friendly-traceback-0.4.92.tar.gz", hash = "sha256:c1a5c79213445e5c2c169b4b225fc9408699118497ea9f08998e20b877dc2ec9"},
+    {file = "friendly_traceback-0.4.92-py3-none-any.whl", hash = "sha256:ae1838542d6c036f4c6abc74f8173bd671fa68f156c84c76adc177f32386c630"},
 ]
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
@@ -497,10 +498,12 @@ six = [
     {file = "six-1.14.0.tar.gz", hash = "sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"},
 ]
 snoop = [
-    {file = "snoop-0.3.0.tar.gz", hash = "sha256:db09b3f90cca8f73dbe0c26363a479d086a79aef14dd7745b42cc0ae19920ab6"},
+    {file = "snoop-0.4.1-py2.py3-none-any.whl", hash = "sha256:8612b5c3fdfe6ebb28502f38111d552cbba4a7092db80d5924e5492decd6b4ec"},
+    {file = "snoop-0.4.1.tar.gz", hash = "sha256:425bcc620fa77d70cd9e3f82d1c2191966956949374c0eb23dae4ed110dad9cd"},
 ]
 stack-data = [
-    {file = "stack_data-0.1.1-py3-none-any.whl", hash = "sha256:83d712365a27f321fdc81f3df1f082e34496048d9675c78189b967329ec74519"},
+    {file = "stack_data-0.1.3-py3-none-any.whl", hash = "sha256:e3f4e54cde03af62e9afd680b3407d38f2e4f3d0e23c3d53371c088c9bea299d"},
+    {file = "stack_data-0.1.3.tar.gz", hash = "sha256:5cb2aff8164a81901160078ea2f5e39de978f08c96ac69e552a5c5345f892a81"},
 ]
 toml = [
     {file = "toml-0.10.1-py2.py3-none-any.whl", hash = "sha256:bda89d5935c2eac546d648028b9901107a595863cb36bae0c73ac804a9b4ce88"},
