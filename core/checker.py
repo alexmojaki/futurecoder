@@ -7,8 +7,8 @@ from core.exercises import assert_equal
 from core.runner.runner import EnhancedRunner
 from core.text import pages
 from core.utils import highlighted_markdown
-from core.workers.question_wizard import question_wizard_check
-from core.workers.utils import catch_internal_errors
+from core.question_wizard import question_wizard_check
+from core.utils import catch_internal_errors
 
 log = logging.getLogger(__name__)
 

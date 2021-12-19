@@ -129,8 +129,6 @@ You can use variables in calculations just like you would use literals. For exam
 __program_indented__
         """
 
-        # TODO add predicted output: requires computing choices in worker
-
         program = "'Hello ' + your_name"
 
     class word_plus_name(word_must_be_hello):
@@ -229,7 +227,7 @@ Often you will use variables to store the results of calculations. This will hel
 
     __program_indented__
         """
-        
+
         predicted_output_choices = [
             "sentence",
             "word + ' ' + name",
