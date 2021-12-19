@@ -61,19 +61,9 @@ def check_entry(entry, input_callback, output_callback):
         if event_type == "output":
             parts = []
             for part in data["parts"]:
-                typ = part.pop("type")
-
-                if typ in ("stderr", "traceback", "syntax_error"):
-                    color = "red"
-                else:
-                    color = "white"
-
-                part["color"] = color
+                typ = part["type"]
                 if typ == "traceback":
-                    part["isTraceback"] = True
-                    part["tracebacks"] = part.pop("data")
                     part["codeSource"] = entry["source"]
-
                 if typ == "input":
                     continue
                 output += part["text"]

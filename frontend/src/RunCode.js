@@ -199,7 +199,7 @@ function showOutputParts(output_parts) {
 }
 
 export const showCodeResult = ({birdseyeUrl, passed}) => {
-  pendingOutput.push({text: '>>> ', color: 'white'});
+  pendingOutput.push({text: '>>> ', type: 'shell_prompt'});
   showOutputParts(pendingOutput);
   pendingOutput = [];
 

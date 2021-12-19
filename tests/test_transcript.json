@@ -9,8 +9,8 @@
             "passed": false,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'literally anything'\n"
+                    "text": "'literally anything'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -26,8 +26,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "3\n"
+                    "text": "3\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -43,8 +43,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "-1\n"
+                    "text": "-1\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -60,8 +60,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'hello'\n"
+                    "text": "'hello'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -77,8 +77,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'helloworld'\n"
+                    "text": "'helloworld'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -94,8 +94,8 @@
             "passed": false,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'hello world'\n"
+                    "text": "'hello world'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -114,8 +114,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'hello world'\n"
+                    "text": "'hello world'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -143,8 +143,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'Hello'\n"
+                    "text": "'Hello'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -170,8 +170,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "'word'\n"
+                    "text": "'word'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -198,17 +198,7 @@
             "result": [
                 {
                     "codeSource": "shell",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
-                        "-->    1 | sunshine",
-                        "           ^^^^^^^^",
-                        "",
-                        "NameError: name 'sunshine' is not defined"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [],
                             "exception": {
@@ -233,7 +223,16 @@
                             "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, no object with the name <code>sunshine</code> exists.\nI have no additional information for you.</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | sunshine",
+                        "           ^^^^^^^^",
+                        "",
+                        "NameError: name 'sunshine' is not defined"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -309,8 +308,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'Hello Alex'\n"
+                    "text": "'Hello Alex'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -326,8 +325,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'HelloAlex'\n"
+                    "text": "'HelloAlex'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -346,8 +345,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'Hello Alex'\n"
+                    "text": "'Hello Alex'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -375,8 +374,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'Goodbye Alex'\n"
+                    "text": "'Goodbye Alex'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -392,8 +391,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Goodbye Alex\n"
+                    "text": "Goodbye Alex\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -413,8 +412,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello World\nGoodbye World\n"
+                    "text": "Hello World\nGoodbye World\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -445,8 +444,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello World\n"
+                    "text": "Hello World\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -476,8 +475,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello World\nHello World\n"
+                    "text": "Hello World\nHello World\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -494,8 +493,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "W\no\nr\nl\nd\n"
+                    "text": "W\no\nr\nl\nd\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -512,8 +511,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "red",
-                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `2` identified above was expected to begin a new indented block.\n\n\n"
+                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `2` identified above was expected to begin a new indented block.\n\n\n",
+                    "type": "syntax_error"
                 }
             ]
         },
@@ -533,8 +532,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "W\n---\no\n---\nr\n---\nl\n---\nd\n---\n"
+                    "text": "W\n---\no\n---\nr\n---\nl\n---\nd\n---\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -554,8 +553,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "W\no\nr\nl\nd\n---\n"
+                    "text": "W\no\nr\nl\nd\n---\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -573,8 +572,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "red",
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `3` identified above is less indented than expected.\n\n\n"
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `3` identified above is less indented than expected.\n\n\n",
+                    "type": "syntax_error"
                 }
             ]
         },
@@ -596,8 +595,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "---W\n---o\n---r\n---l\n---d\n"
+                    "text": "---W\n---o\n---r\n---l\n---d\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -619,8 +618,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "World\nWorld\nWorld\nWorld\nWorld\n"
+                    "text": "World\nWorld\nWorld\nWorld\nWorld\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -648,8 +647,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello\nHello!\n"
+                    "text": "Hello\nHello!\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -683,8 +682,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "-W\n-Wo\n-Wor\n-Worl\n-World\n"
+                    "text": "-W\n-Wo\n-Wor\n-Worl\n-World\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -713,8 +712,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "-\n-W\n-Wo\n-Wor\n-Worl\n"
+                    "text": "-\n-W\n-Wo\n-Wor\n-Worl\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -745,8 +744,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "''\n"
+                    "text": "''\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -772,8 +771,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "W\nWo\nWor\nWorl\nWorld\n"
+                    "text": "W\nWo\nWor\nWorl\nWorld\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -799,8 +798,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "W \nW o \nW o r \nW o r l \nW o r l d \n"
+                    "text": "W \nW o \nW o r \nW o r l \nW o r l d \n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -826,8 +825,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "W\noW\nroW\nlroW\ndlroW\n"
+                    "text": "W\noW\nroW\nlroW\ndlroW\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -855,8 +854,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "World\n-----\n"
+                    "text": "World\n-----\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -888,8 +887,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "+-----+\n|World|\n+-----+\n"
+                    "text": "+-----+\n|World|\n+-----+\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -925,8 +924,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "+World+\nW     W\no     o\nr     r\nl     l\nd     d\n+World+\n"
+                    "text": "+World+\nW     W\no     o\nr     r\nl     l\nd     d\n+World+\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -946,8 +945,8 @@
             "passed": false,
             "result": [
                 {
-                    "color": "white",
-                    "text": " W\n  o\n   r\n    l\n     d\n"
+                    "text": " W\n  o\n   r\n    l\n     d\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -973,8 +972,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "W\n o\n  r\n   l\n    d\n"
+                    "text": "W\n o\n  r\n   l\n    d\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -993,8 +992,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\nFalse\n"
+                    "text": "True\nFalse\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1014,8 +1013,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "This gets printed\n"
+                    "text": "This gets printed\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1043,8 +1042,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello World!\n"
+                    "text": "Hello World!\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1072,8 +1071,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello World\n"
+                    "text": "Hello World\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1103,8 +1102,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello!?\n"
+                    "text": "Hello!?\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1144,8 +1143,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "H!e!l!l!o! !W!o!r!l!d!\n"
+                    "text": "H!e!l!l!o! !W!o!r!l!d!\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1181,8 +1180,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "ello World\n"
+                    "text": "ello World\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1207,8 +1206,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\nello World\n"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\nello World\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1242,8 +1241,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "H\n"
+                    "text": "H\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1263,8 +1262,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Yes\n"
+                    "text": "Yes\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1284,8 +1283,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "No\n"
+                    "text": "No\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1307,8 +1306,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "HELLO WORLD\n"
+                    "text": "HELLO WORLD\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1330,8 +1329,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "hello world\n"
+                    "text": "hello world\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1363,20 +1362,7 @@
             "result": [
                 {
                     "codeSource": "editor",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 6, in <module>",
-                        "       5 |     char = '!'",
-                        "-->    6 | sentence += char",
-                        "                       ^^^^",
-                        "excited = False",
-                        "sentence = 'Hello World'",
-                        "",
-                        "NameError: name 'char' is not defined"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [
                                 "'chr' (builtin)"
@@ -1412,7 +1398,19 @@
                             "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, no object with the name <code>char</code> exists.\nThe Python builtin <code>chr</code> has a similar name.</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 6, in <module>",
+                        "       5 |     char = '!'",
+                        "-->    6 | sentence += char",
+                        "                       ^^^^",
+                        "excited = False",
+                        "sentence = 'Hello World'",
+                        "",
+                        "NameError: name 'char' is not defined"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -1436,8 +1434,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello there!\n"
+                    "text": "Hello there!\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1477,8 +1475,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello there\n"
+                    "text": "Hello there\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1520,8 +1518,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.\n"
+                    "text": "OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1539,8 +1537,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\nFalse\nTrue\n"
+                    "text": "True\nFalse\nTrue\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1556,8 +1554,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "red",
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou likely called a function with a named argument:\n\n    a_function(invalid=something) \n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n"
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou likely called a function with a named argument:\n\n    a_function(invalid=something) \n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n",
+                    "type": "syntax_error"
                 }
             ]
         },
@@ -1580,8 +1578,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "ke$ha\n"
+                    "text": "ke$ha\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1621,8 +1619,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "k3$h@\n"
+                    "text": "k3$h@\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1651,8 +1649,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "AGAAGGGAG\n"
+                    "text": "AGAAGGGAG\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1700,8 +1698,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "TCATCGCAGGAATCAATGTCCTACCGAATA\n"
+                    "text": "TCATCGCAGGAATCAATGTCCTACCGAATA\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1730,8 +1728,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "TCATCGCAG\n"
+                    "text": "TCATCGCAG\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1747,8 +1745,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1769,8 +1767,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Th  ky on my kyboard is brokn\n"
+                    "text": "Th  ky on my kyboard is brokn\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1786,8 +1784,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1803,8 +1801,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1841,8 +1839,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "B\n"
+                    "text": "B\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1884,8 +1882,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Alice\n"
+                    "text": "Alice\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1904,8 +1902,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "This\nis\na\nlist\n"
+                    "text": "This\nis\na\nlist\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1923,8 +1921,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "['Hello', 1, 4]\n"
+                    "text": "['Hello', 1, 4]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1946,8 +1944,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "23\n"
+                    "text": "23\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -1975,8 +1973,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Thisisalist\n"
+                    "text": "Thisisalist\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2015,8 +2013,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "This - is - a - list\n"
+                    "text": "This - is - a - list\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2042,8 +2040,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[6, 2, 8, 2, 10, 18, 4, 12, 10]\n"
+                    "text": "[6, 2, 8, 2, 10, 18, 4, 12, 10]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2071,8 +2069,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[9, 6]\n"
+                    "text": "[9, 6]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2103,8 +2101,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2125,8 +2123,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "This\nis\na\nlist\n"
+                    "text": "This\nis\na\nlist\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2143,18 +2141,7 @@
             "result": [
                 {
                     "codeSource": "shell",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
-                        "-->    1 | words[4]",
-                        "           ^^^^^^^^",
-                        "words = ['This', 'is', 'a', 'list']",
-                        "",
-                        "IndexError: list index out of range"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [],
                             "exception": {
@@ -2184,7 +2171,17 @@
                             "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>words</code>,\na <code>list</code> of length <code>4</code>.\nThe valid index values of <code>words</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | words[4]",
+                        "           ^^^^^^^^",
+                        "words = ['This', 'is', 'a', 'list']",
+                        "",
+                        "IndexError: list index out of range"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -2201,8 +2198,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n"
+                    "text": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2234,8 +2231,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "0\nThis\n1\nis\n2\na\n3\nlist\n"
+                    "text": "0\nThis\n1\nis\n2\na\n3\nlist\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2255,8 +2252,8 @@
             "passed": false,
             "result": [
                 {
-                    "color": "white",
-                    "text": "1\n4\n"
+                    "text": "1\n4\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2278,8 +2275,8 @@
             "passed": false,
             "result": [
                 {
-                    "color": "white",
-                    "text": "4\n"
+                    "text": "4\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2306,8 +2303,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "1\n"
+                    "text": "1\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2334,8 +2331,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "H W\ne o\nl r\nl l\no d\n"
+                    "text": "H W\ne o\nl r\nl l\no d\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2394,8 +2391,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "G W\no o\no r\nd l\nb d\ny  \ne  \n"
+                    "text": "G W\no o\no r\nd l\nb d\ny  \ne  \n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2412,8 +2409,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "<built-in function len>\n<built-in function print>\n"
+                    "text": "<built-in function len>\n<built-in function print>\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2429,8 +2426,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2448,24 +2445,12 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "False\n"
+                    "text": "False\n",
+                    "type": "stdout"
                 },
                 {
                     "codeSource": "editor",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
-                        "       2 | print(callable(f))",
-                        "-->    3 | f()",
-                        "           ^^^",
-                        "f = 'a string'",
-                        "",
-                        "TypeError: 'str' object is not callable"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [
                                 "'str[value]'"
@@ -2497,7 +2482,18 @@
                             "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>The parenthesis <code>()</code> following <code>f</code> are interpreted\nby Python as a function call for <code>f</code>.\nHowever, <code>f</code> is not a function but an object of type <code>str</code>.</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 3, in <module>",
+                        "       2 | print(callable(f))",
+                        "-->    3 | f()",
+                        "           ^^^",
+                        "f = 'a string'",
+                        "",
+                        "TypeError: 'str' object is not callable"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -2516,8 +2512,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "3\nNone\n"
+                    "text": "3\nNone\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2534,24 +2530,12 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[1, 2, 3]\n"
+                    "text": "[1, 2, 3]\n",
+                    "type": "stdout"
                 },
                 {
                     "codeSource": "editor",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 2, in <module>",
-                        "       1 | things = print([1, 2, 3])",
-                        "-->    2 | length = len(things)",
-                        "                    ^^^^^^^^^^^",
-                        "things = None",
-                        "",
-                        "TypeError: object of type 'NoneType' has no len()"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [
                                 "implement \"__len__\" on NoneType"
@@ -2583,7 +2567,18 @@
                             "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>No information is known about this exception.\nPlease report this example to\nhttps://github.com/friendly-traceback/friendly-traceback/issues/new\nIf you are using a REPL, use <code>www('bug')</code> to do so.</p>\n<p>If you are using the Friendly console, use <code>www()</code> to\ndo an Internet search for this particular case.</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 2, in <module>",
+                        "       1 | things = print([1, 2, 3])",
+                        "-->    2 | length = len(things)",
+                        "                    ^^^^^^^^^^^",
+                        "things = None",
+                        "",
+                        "TypeError: object of type 'NoneType' has no len()"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -2601,8 +2596,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "<built-in method upper of str object at 0xABC>\nHELLO\n"
+                    "text": "<built-in method upper of str object at 0xABC>\nHELLO\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2620,19 +2615,7 @@
             "result": [
                 {
                     "codeSource": "editor",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 2, in <module>",
-                        "       1 | word = 'Hello'",
-                        "-->    2 | word.append('!')",
-                        "           ^^^^^^^^^^^",
-                        "word = 'Hello'",
-                        "",
-                        "AttributeError: 'str' object has no attribute 'append'"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [],
                             "exception": {
@@ -2662,7 +2645,18 @@
                             "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>The object <code>word</code> has no attribute named <code>append</code>.\nThe following are some of its known attributes:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 2, in <module>",
+                        "       1 | word = 'Hello'",
+                        "-->    2 | word.append('!')",
+                        "           ^^^^^^^^^^^",
+                        "word = 'Hello'",
+                        "",
+                        "AttributeError: 'str' object has no attribute 'append'"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -2683,8 +2677,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[1, 2, 3, 4, 5]\n[1, 2, 3]\n[1, 2, 3, 4]\n"
+                    "text": "[1, 2, 3, 4, 5]\n[1, 2, 3]\n[1, 2, 3, 4]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2714,8 +2708,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "[1, 9, 3]\n"
+                    "text": "[1, 9, 3]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2743,8 +2737,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "1\n"
+                    "text": "1\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2774,8 +2768,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "2\n[1, 3]\n"
+                    "text": "2\n[1, 3]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2805,8 +2799,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "[2, 3]\n"
+                    "text": "[2, 3]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2829,8 +2823,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "['b', 'c', 'a']\n"
+                    "text": "['b', 'c', 'a']\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2853,8 +2847,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "['a', 'b', 'a']\n"
+                    "text": "['a', 'b', 'a']\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2877,8 +2871,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "['a', 'b', 'c', 'a']\n"
+                    "text": "['a', 'b', 'c', 'a']\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2901,8 +2895,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[1, 2, 3]\n"
+                    "text": "[1, 2, 3]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2928,8 +2922,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "[1, 2, 5, 6, 8, 9]\n"
+                    "text": "[1, 2, 5, 6, 8, 9]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2957,8 +2951,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "False\nTrue\n"
+                    "text": "False\nTrue\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -2983,8 +2977,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "12\n"
+                    "text": "12\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3010,8 +3004,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "3\n"
+                    "text": "3\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3034,8 +3028,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3058,8 +3052,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "6.0\n"
+                    "text": "6.0\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3082,8 +3076,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "5050\n"
+                    "text": "5050\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3106,8 +3100,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "-1\n"
+                    "text": "-1\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3123,8 +3117,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3142,8 +3136,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "2\n5\n"
+                    "text": "2\n5\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3160,17 +3154,7 @@
             "result": [
                 {
                     "codeSource": "shell",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
-                        "-->    1 | 'Python'.append(' is cool!')",
-                        "           ^^^^^^^^^^^^^^^",
-                        "",
-                        "AttributeError: 'str' object has no attribute 'append'"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [],
                             "exception": {
@@ -3195,7 +3179,16 @@
                             "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>The object <code>'Python'</code> has no attribute named <code>append</code>.\nThe following are some of its known attributes:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | 'Python'.append(' is cool!')",
+                        "           ^^^^^^^^^^^^^^^",
+                        "",
+                        "AttributeError: 'str' object has no attribute 'append'"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -3214,8 +3207,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Python rocks!\nPYTHON ROCKS!\n"
+                    "text": "Python rocks!\nPYTHON ROCKS!\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3234,8 +3227,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "91\n"
+                    "text": "91\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3258,8 +3251,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[1, 2, 9, 3, 4, 5]\n"
+                    "text": "[1, 2, 9, 3, 4, 5]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3275,8 +3268,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']\n"
+                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3304,8 +3297,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[2, 4, 1]\n[8, 9, 7]\n"
+                    "text": "[2, 4, 1]\n[8, 9, 7]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3333,8 +3326,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[1, 2, 3]\n[1, 2, 3]\nTrue\nFalse\n[1, 2, 3, 4]\n[1, 2, 3]\n"
+                    "text": "[1, 2, 3]\n[1, 2, 3]\nTrue\nFalse\n[1, 2, 3, 4]\n[1, 2, 3]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3362,8 +3355,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[1, 2, 3]\n[1, 2, 3]\nTrue\nTrue\n[1, 2, 3, 4]\n[1, 2, 3, 4]\n"
+                    "text": "[1, 2, 3]\n[1, 2, 3]\nTrue\nTrue\n[1, 2, 3, 4]\n[1, 2, 3, 4]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3385,24 +3378,7 @@
             "result": [
                 {
                     "codeSource": "pythontutor",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
-                        "       2 | for i in range(len(numbers)):",
-                        "-->    3 |     number = numbers[i]",
-                        "                        ^^^^^^^^^^",
-                        "i = 4",
-                        "len(numbers) = 4",
-                        "number = 15",
-                        "number <= 10 = False",
-                        "numbers = [7, 3, 12, 15]",
-                        "range(len(numbers)) = range(0, 4)",
-                        "",
-                        "IndexError: list index out of range"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [],
                             "exception": {
@@ -3452,7 +3428,23 @@
                             "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>numbers</code>,\na <code>list</code> of length <code>4</code>.\nThe valid index values of <code>numbers</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 3, in <module>",
+                        "       2 | for i in range(len(numbers)):",
+                        "-->    3 |     number = numbers[i]",
+                        "                        ^^^^^^^^^^",
+                        "i = 4",
+                        "len(numbers) = 4",
+                        "number = 15",
+                        "number <= 10 = False",
+                        "numbers = [7, 3, 12, 15]",
+                        "range(len(numbers)) = range(0, 4)",
+                        "",
+                        "IndexError: list index out of range"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -3472,8 +3464,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[7, 3, 12, 15]\n"
+                    "text": "[7, 3, 12, 15]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3493,8 +3485,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[12, 15]\n"
+                    "text": "[12, 15]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3516,8 +3508,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[12, 15]\n"
+                    "text": "[12, 15]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3539,8 +3531,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[12, 15]\n"
+                    "text": "[12, 15]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3556,8 +3548,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "red",
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n\n\n"
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n\n\n",
+                    "type": "syntax_error"
                 }
             ]
         },
@@ -3573,8 +3565,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Alice's Diner\n"
+                    "text": "Alice's Diner\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3598,8 +3590,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3618,8 +3610,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Special cases aren't special enough to break the rules.\n"
+                    "text": "Special cases aren't special enough to break the rules.\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3638,8 +3630,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "\"Talk is cheap. Show me the code.\" - Linus Torvalds\n"
+                    "text": "\"Talk is cheap. Show me the code.\" - Linus Torvalds\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3673,8 +3665,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Alice went to lunch with Bob.\n"
+                    "text": "Alice went to lunch with Bob.\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3703,22 +3695,7 @@
             "result": [
                 {
                     "codeSource": "editor",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
-                        "       2 | age = 20",
-                        "-->    3 | print(\"Hello \" + name + \". You are \" + age + \" years old.\")",
-                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
-                        "\"Hello \" + name = 'Hello Alice'",
-                        "\"Hello \" + name + \". You are \" = 'Hello Alice. You are '",
-                        "age = 20",
-                        "name = 'Alice'",
-                        "",
-                        "TypeError: can only concatenate str (not \"int\") to str"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [],
                             "exception": {
@@ -3760,7 +3737,21 @@
                             "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to concatenate (add) two different types of objects:\na string (<code>str</code>) and an integer (<code>int</code>).</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 3, in <module>",
+                        "       2 | age = 20",
+                        "-->    3 | print(\"Hello \" + name + \". You are \" + age + \" years old.\")",
+                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+                        "\"Hello \" + name = 'Hello Alice'",
+                        "\"Hello \" + name + \". You are \" = 'Hello Alice. You are '",
+                        "age = 20",
+                        "name = 'Alice'",
+                        "",
+                        "TypeError: can only concatenate str (not \"int\") to str"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -3783,8 +3774,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello Alice. You are 20 years old.\n"
+                    "text": "Hello Alice. You are 20 years old.\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3800,8 +3791,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'2 * 3 + 4 is equal to 10'\n"
+                    "text": "'2 * 3 + 4 is equal to 10'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3821,8 +3812,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "There are 3 people waiting, the first one's name is Alice.\n"
+                    "text": "There are 3 people waiting, the first one's name is Alice.\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3852,8 +3843,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "A\nA 0\nA 1\nA 2\nA 3\n---\nB\nB 0\nB 1\nB 2\nB 3\n---\nC\nC 0\nC 1\nC 2\nC 3\n---\n"
+                    "text": "A\nA 0\nA 1\nA 2\nA 3\n---\nB\nB 0\nB 1\nB 2\nB 3\n---\nC\nC 0\nC 1\nC 2\nC 3\n---\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3870,17 +3861,7 @@
             "result": [
                 {
                     "codeSource": "shell",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
-                        "-->    1 | print(1 + \"x\")",
-                        "                 ^^^^^^^",
-                        "",
-                        "TypeError: unsupported operand type(s) for +: 'int' and 'str'"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [],
                             "exception": {
@@ -3905,7 +3886,16 @@
                             "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>).</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | print(1 + \"x\")",
+                        "                 ^^^^^^^",
+                        "",
+                        "TypeError: unsupported operand type(s) for +: 'int' and 'str'"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -3926,8 +3916,8 @@
             "passed": false,
             "result": [
                 {
-                    "color": "white",
-                    "text": "1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n----------\n2 x 1 = 2\n3 x 2 = 6\n4 x 3 = 12\n5 x 4 = 20\n6 x 5 = 30\n7 x 6 = 42\n8 x 7 = 56\n9 x 8 = 72\n10 x 9 = 90\n11 x 10 = 110\n12 x 11 = 132\n13 x 12 = 156\n----------\n3 x 1 = 3\n4 x 2 = 8\n5 x 3 = 15\n6 x 4 = 24\n7 x 5 = 35\n8 x 6 = 48\n9 x 7 = 63\n10 x 8 = 80\n11 x 9 = 99\n12 x 10 = 120\n13 x 11 = 143\n14 x 12 = 168\n----------\n4 x 1 = 4\n5 x 2 = 10\n6 x 3 = 18\n7 x 4 = 28\n8 x 5 = 40\n9 x 6 = 54\n10 x 7 = 70\n11 x 8 = 88\n12 x 9 = 108\n13 x 10 = 130\n14 x 11 = 154\n15 x 12 = 180\n----------\n5 x 1 = 5\n6 x 2 = 12\n7 x 3 = 21\n8 x 4 = 32\n9 x 5 = 45\n10 x 6 = 60\n11 x 7 = 77\n12 x 8 = 96\n13 x 9 = 117\n14 x 10 = 140\n15 x 11 = 165\n16 x 12 = 192\n----------\n6 x 1 = 6\n7 x 2 = 14\n8 x 3 = 24\n9 x 4 = 36\n10 x 5 = 50\n11 x 6 = 66\n12 x 7 = 84\n13 x 8 = 104\n14 x 9 = 126\n15 x 10 = 150\n16 x 11 = 176\n17 x 12 = 204\n----------\n7 x 1 = 7\n8 x 2 = 16\n9 x 3 = 27\n10 x 4 = 40\n11 x 5 = 55\n12 x 6 = 72\n13 x 7 = 91\n14 x 8 = 112\n15 x 9 = 135\n16 x 10 = 160\n17 x 11 = 187\n18 x 12 = 216\n----------\n8 x 1 = 8\n9 x 2 = 18\n10 x 3 = 30\n11 x 4 = 44\n12 x 5 = 60\n13 x 6 = 78\n14 x 7 = 98\n15 x 8 = 120\n16 x 9 = 144\n17 x 10 = 170\n18 x 11 = 198\n19 x 12 = 228\n----------\n9 x 1 = 9\n10 x 2 = 20\n11 x 3 = 33\n12 x 4 = 48\n13 x 5 = 65\n14 x 6 = 84\n15 x 7 = 105\n16 x 8 = 128\n17 x 9 = 153\n18 x 10 = 180\n19 x 11 = 209\n20 x 12 = 240\n----------\n10 x 1 = 10\n11 x 2 = 22\n12 x 3 = 36\n13 x 4 = 52\n14 x 5 = 70\n15 x 6 = 90\n16 x 7 = 112\n17 x 8 = 136\n18 x 9 = 162\n19 x 10 = 190\n20 x 11 = 220\n21 x 12 = 252\n----------\n11 x 1 = 11\n12 x 2 = 24\n13 x 3 = 39\n14 x 4 = 56\n15 x 5 = 75\n16 x 6 = 96\n17 x 7 = 119\n18 x 8 = 144\n19 x 9 = 171\n20 x 10 = 200\n21 x 11 = 231\n22 x 12 = 264\n----------\n12 x 1 = 12\n13 x 2 = 26\n14 x 3 = 42\n15 x 4 = 60\n16 x 5 = 80\n17 x 6 = 102\n18 x 7 = 126\n19 x 8 = 152\n20 x 9 = 180\n21 x 10 = 210\n22 x 11 = 242\n23 x 12 = 276\n----------\n"
+                    "text": "1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n----------\n2 x 1 = 2\n3 x 2 = 6\n4 x 3 = 12\n5 x 4 = 20\n6 x 5 = 30\n7 x 6 = 42\n8 x 7 = 56\n9 x 8 = 72\n10 x 9 = 90\n11 x 10 = 110\n12 x 11 = 132\n13 x 12 = 156\n----------\n3 x 1 = 3\n4 x 2 = 8\n5 x 3 = 15\n6 x 4 = 24\n7 x 5 = 35\n8 x 6 = 48\n9 x 7 = 63\n10 x 8 = 80\n11 x 9 = 99\n12 x 10 = 120\n13 x 11 = 143\n14 x 12 = 168\n----------\n4 x 1 = 4\n5 x 2 = 10\n6 x 3 = 18\n7 x 4 = 28\n8 x 5 = 40\n9 x 6 = 54\n10 x 7 = 70\n11 x 8 = 88\n12 x 9 = 108\n13 x 10 = 130\n14 x 11 = 154\n15 x 12 = 180\n----------\n5 x 1 = 5\n6 x 2 = 12\n7 x 3 = 21\n8 x 4 = 32\n9 x 5 = 45\n10 x 6 = 60\n11 x 7 = 77\n12 x 8 = 96\n13 x 9 = 117\n14 x 10 = 140\n15 x 11 = 165\n16 x 12 = 192\n----------\n6 x 1 = 6\n7 x 2 = 14\n8 x 3 = 24\n9 x 4 = 36\n10 x 5 = 50\n11 x 6 = 66\n12 x 7 = 84\n13 x 8 = 104\n14 x 9 = 126\n15 x 10 = 150\n16 x 11 = 176\n17 x 12 = 204\n----------\n7 x 1 = 7\n8 x 2 = 16\n9 x 3 = 27\n10 x 4 = 40\n11 x 5 = 55\n12 x 6 = 72\n13 x 7 = 91\n14 x 8 = 112\n15 x 9 = 135\n16 x 10 = 160\n17 x 11 = 187\n18 x 12 = 216\n----------\n8 x 1 = 8\n9 x 2 = 18\n10 x 3 = 30\n11 x 4 = 44\n12 x 5 = 60\n13 x 6 = 78\n14 x 7 = 98\n15 x 8 = 120\n16 x 9 = 144\n17 x 10 = 170\n18 x 11 = 198\n19 x 12 = 228\n----------\n9 x 1 = 9\n10 x 2 = 20\n11 x 3 = 33\n12 x 4 = 48\n13 x 5 = 65\n14 x 6 = 84\n15 x 7 = 105\n16 x 8 = 128\n17 x 9 = 153\n18 x 10 = 180\n19 x 11 = 209\n20 x 12 = 240\n----------\n10 x 1 = 10\n11 x 2 = 22\n12 x 3 = 36\n13 x 4 = 52\n14 x 5 = 70\n15 x 6 = 90\n16 x 7 = 112\n17 x 8 = 136\n18 x 9 = 162\n19 x 10 = 190\n20 x 11 = 220\n21 x 12 = 252\n----------\n11 x 1 = 11\n12 x 2 = 24\n13 x 3 = 39\n14 x 4 = 56\n15 x 5 = 75\n16 x 6 = 96\n17 x 7 = 119\n18 x 8 = 144\n19 x 9 = 171\n20 x 10 = 200\n21 x 11 = 231\n22 x 12 = 264\n----------\n12 x 1 = 12\n13 x 2 = 26\n14 x 3 = 42\n15 x 4 = 60\n16 x 5 = 80\n17 x 6 = 102\n18 x 7 = 126\n19 x 8 = 152\n20 x 9 = 180\n21 x 10 = 210\n22 x 11 = 242\n23 x 12 = 276\n----------\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3957,8 +3947,8 @@
             "passed": false,
             "result": [
                 {
-                    "color": "white",
-                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n"
+                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -3987,8 +3977,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n"
+                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4014,8 +4004,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n"
+                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4043,8 +4033,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "AAAA\nAAAB\nAABA\nAABB\nABAA\nABAB\nABBA\nABBB\nBAAA\nBAAB\nBABA\nBABB\nBBAA\nBBAB\nBBBA\nBBBB\n"
+                    "text": "AAAA\nAAAB\nAABA\nAABB\nABAA\nABAB\nABBA\nABBB\nBAAA\nBAAB\nBABA\nBABB\nBBAA\nBBAB\nBBBA\nBBBB\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4074,8 +4064,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OOO\nOO\nO\n"
+                    "text": "OOO\nOO\nO\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4101,8 +4091,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n"
+                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4122,8 +4112,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "26\n"
+                    "text": "26\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4148,8 +4138,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "['A', 'a', 'i']\n['m', 'z', 'n', 'g']\n"
+                    "text": "['A', 'a', 'i']\n['m', 'z', 'n', 'g']\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4171,8 +4161,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "d\n"
+                    "text": "d\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4189,8 +4179,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "d\n"
+                    "text": "d\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4210,8 +4200,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "n\n"
+                    "text": "n\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4245,8 +4235,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "how\n"
+                    "text": "how\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4266,8 +4256,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "y\n"
+                    "text": "y\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4298,8 +4288,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---\n"
+                    "text": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4319,8 +4309,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---\n"
+                    "text": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4347,8 +4337,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "hello there\nhello world\n"
+                    "text": "hello there\nhello world\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4379,8 +4369,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "False\nTrue\n"
+                    "text": "False\nTrue\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4411,8 +4401,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4440,8 +4430,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "adg\nbeh\ncfi\n"
+                    "text": "adg\nbeh\ncfi\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4485,8 +4475,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "adg\nbeh\ncfi\nq q\nw  \ne  \n"
+                    "text": "adg\nbeh\ncfi\nq q\nw  \ne  \n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4506,8 +4496,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello Alice!\nHello Bob!\n"
+                    "text": "Hello Alice!\nHello Bob!\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4537,8 +4527,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n"
+                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4567,8 +4557,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n"
+                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4597,8 +4587,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n"
+                    "text": "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4648,8 +4638,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello\nHello\nHello\n"
+                    "text": "Hello\nHello\nHello\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4676,8 +4666,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello\nHello\nHello\n"
+                    "text": "Hello\nHello\nHello\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4700,8 +4690,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello\nHello\n"
+                    "text": "Hello\nHello\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4724,8 +4714,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\nHello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\nHello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n"
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\nHello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\nHello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4748,8 +4738,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello\nHello\n"
+                    "text": "Hello\nHello\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4772,8 +4762,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Hello\nHello\n"
+                    "text": "Hello\nHello\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4804,8 +4794,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "5\n10\n"
+                    "text": "5\n10\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4834,8 +4824,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "5\n"
+                    "text": "5\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4899,8 +4889,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "OK\nOK\n"
+                    "text": "OK\nOK\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4930,8 +4920,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "Error! 6 != 4\nError! 15 != 10\n"
+                    "text": "Error! 6 != 4\nError! 15 != 10\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -4954,8 +4944,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OK\nOK\n"
+                    "text": "OK\nOK\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5062,8 +5052,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "1\n"
+                    "text": "1\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5083,8 +5073,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Error! 2 != [2, 4, 6]\n"
+                    "text": "Error! 2 != [2, 4, 6]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5118,8 +5108,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "a 0\na 1\na 2\nb 0\n"
+                    "text": "a 0\na 1\na 2\nb 0\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5153,8 +5143,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2\n"
+                    "text": "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5180,8 +5170,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OK\nOK\nOK\n"
+                    "text": "OK\nOK\nOK\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5205,8 +5195,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5230,8 +5220,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5255,8 +5245,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "False\n"
+                    "text": "False\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5280,8 +5270,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OK\nOK\nOK\n"
+                    "text": "OK\nOK\nOK\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5302,8 +5292,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OK\nOK\nOK\n"
+                    "text": "OK\nOK\nOK\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5324,8 +5314,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OK\nError! 'Bob' != True\nError! 'Bob' != False\n"
+                    "text": "OK\nError! 'Bob' != True\nError! 'Bob' != False\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5346,8 +5336,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OK\nError! 'Bob' != True\nError! 'Bob' != False\n"
+                    "text": "OK\nError! 'Bob' != True\nError! 'Bob' != False\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5394,8 +5384,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5419,8 +5409,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "False\n"
+                    "text": "False\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5444,8 +5434,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "False\n"
+                    "text": "False\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5502,8 +5492,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "red",
-                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThe Python keyword `or` can only be used for boolean expressions.\nPerhaps you meant to write\n\n`is_friend = name == \"Alice\" ,`\n\n\n"
+                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThe Python keyword `or` can only be used for boolean expressions.\nPerhaps you meant to write\n\n`is_friend = name == \"Alice\" ,`\n\n\n",
+                    "type": "syntax_error"
                 }
             ]
         },
@@ -5534,8 +5524,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\nTrue\n[False, True]\nTrue\n"
+                    "text": "True\nTrue\n[False, True]\nTrue\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5551,8 +5541,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5601,8 +5591,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "False\n"
+                    "text": "False\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5626,8 +5616,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5644,8 +5634,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5862,8 +5852,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "XOX\n OO\n X \n"
+                    "text": "XOX\n OO\n X \n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5888,8 +5878,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "red",
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n\n"
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n\n",
+                    "type": "syntax_error"
                 }
             ]
         },
@@ -5907,8 +5897,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "First line\nSecond line\n"
+                    "text": "First line\nSecond line\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5924,8 +5914,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "'First line\\nSecond line'\n"
+                    "text": "'First line\\nSecond line'\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -5949,8 +5939,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "1\n"
+                    "text": "1\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6030,8 +6020,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "<class 'str'>\n<class 'int'>\n<class 'bool'>\n<class 'list'>\n<class 'float'>\n"
+                    "text": "<class 'str'>\n<class 'int'>\n<class 'bool'>\n<class 'list'>\n<class 'float'>\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6047,8 +6037,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\n"
+                    "text": "True\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6066,8 +6056,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "123\n123\nFalse\n"
+                    "text": "123\n123\nFalse\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6096,8 +6086,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "579\n123456\n"
+                    "text": "579\n123456\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6124,8 +6114,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "True\nFalse\n"
+                    "text": "True\nFalse\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6154,8 +6144,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "[0, 13, 120]\n['0', '120', '13']\n"
+                    "text": "[0, 13, 120]\n['0', '120', '13']\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6182,17 +6172,7 @@
             "result": [
                 {
                     "codeSource": "shell",
-                    "color": "red",
-                    "isTraceback": true,
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
-                        "-->    1 | 12 + '34'",
-                        "           ^^^^^^^^^",
-                        "",
-                        "TypeError: unsupported operand type(s) for +: 'int' and 'str'"
-                    ],
-                    "tracebacks": [
+                    "data": [
                         {
                             "didyoumean": [],
                             "exception": {
@@ -6217,7 +6197,16 @@
                             "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>).\nPerhaps you forgot to convert the string <code>'34'</code> into an integer (<code>int</code>).</p>",
                             "tail": ""
                         }
-                    ]
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | 12 + '34'",
+                        "           ^^^^^^^^^",
+                        "",
+                        "TypeError: unsupported operand type(s) for +: 'int' and 'str'"
+                    ],
+                    "type": "traceback"
                 }
             ]
         },
@@ -6241,8 +6230,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Starting... 1\nGo!\n"
+                    "text": "Starting... 1\nGo!\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6291,8 +6280,16 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "Type your name, then press Enter:\n<input: there>\nHello there!\n"
+                    "text": "Type your name, then press Enter:\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: there>\nHello there!\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6323,8 +6320,16 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?\n"
+                    "text": "What number am I thinking of?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: 7>\nAmazing! Are you psychic?\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6363,8 +6368,8 @@
             },
             "result": [
                 {
-                    "color": "white",
-                    "text": "[' ', 'X', ' ']\n"
+                    "text": "[' ', 'X', ' ']\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6393,8 +6398,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "[[' ', ' ', ' '], ['X', ' ', ' '], [' ', ' ', ' ']]\n"
+                    "text": "[[' ', ' ', ' '], ['X', ' ', ' '], [' ', ' ', ' ']]\n",
+                    "type": "stdout"
                 }
             ]
         },
@@ -6454,8 +6459,8 @@
             "passed": true,
             "result": [
                 {
-                    "color": "white",
-                    "text": "OK\nError! [['X', ' ', ' '], ['X', ' ', ' '], ['X', ' ', ' ']] != [['X', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]\n"
+                    "text": "OK\nError! [['X', ' ', ' '], ['X', ' ', ' '], ['X', ' ', ' ']] != [['X', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]\n",
+                    "type": "stdout"
                 }
             ]
         },

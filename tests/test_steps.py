@@ -6,12 +6,12 @@ from pathlib import Path
 
 from littleutils import only
 
-import core.workers.utils
+import core.utils
 from core.checker import check_entry
 from core.text import pages, get_predictions
 from core.utils import highlighted_markdown, make_test_input_callback
 
-core.workers.utils.TESTING = True
+core.utils.TESTING = True
 
 def test_steps():
     transcript = []
@@ -86,12 +86,12 @@ def normalise_response(response, is_message, substep):
     response["result"] = response.pop("output_parts")
     for line in response["result"]:
         line["text"] = normalise_output(line["text"])
-        if line.get("isTraceback"):
+        if line["type"] == "traceback":
             line["text"] = line["text"].splitlines()
     response["result"] = [
-        list(group)[0] if istb else
-        {"text": "".join(p["text"] for p in group), "color": color}
-        for (color, istb), group in itertools.groupby(response["result"], key=lambda p: (p["color"], p.get("isTraceback")))
+        list(group)[0] if typ == "traceback" else
+        {"text": "".join(p["text"] for p in group), "type": typ}
+        for typ, group in itertools.groupby(response["result"], key=lambda p: p["type"])
     ]
 
     response.pop("birdseye_objects", None)
