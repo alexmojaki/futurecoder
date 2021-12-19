@@ -1,22 +1,8 @@
 import ast
 import os
+
 import executing
-
-
-def strip_required_suffix(string, suffix):
-    """
-    >>> strip_required_suffix('abcdef', 'def')
-    'abc'
-    >>> strip_required_suffix('abcdef', '123')
-    Traceback (most recent call last):
-    ...
-    AssertionError: String ends with 'def', not '123'
-    """
-    if string.endswith(suffix):
-        return string[: -len(suffix)]
-    raise AssertionError(
-        "String ends with %r, not %r" % (string[-len(suffix):], suffix)
-    )
+from littleutils import strip_required_suffix
 
 site_packages = strip_required_suffix(
     executing.__file__, f"executing{os.path.sep}__init__.py"
