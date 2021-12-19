@@ -35,3 +35,10 @@ class EnhancedRunner(Runner):
             "text": format_traceback_stack_data(exc),
             "data": serializer.format_exception(exc),
         }
+
+    def serialize_syntax_error(self, exc, source_code):
+        from core.runner.friendly_traceback import friendly_syntax_error
+
+        return {
+            "text": friendly_syntax_error(exc, self.filename),
+        }

@@ -68,10 +68,9 @@ class SysStream:
 class Runner:
     def __init__(
         self,
-        callback,
         *,
+        callback=None,
         extra_locals=None,
-        format_syntax_error=None,
         filename="my_program.py",
     ):
         self._callback = callback
@@ -79,7 +78,6 @@ class Runner:
         # TODO make module object
         self.extra_locals = extra_locals = (extra_locals or {}) | {"__name__": "__main__", "__file__": filename}
         self.console.locals = dict(extra_locals)
-        self.format_syntax_error = format_syntax_error
         self.filename = filename
         self.output_buffer = OutputBuffer(lambda parts: self.callback("output", parts=parts))
         self.run_type = None
@@ -100,6 +98,9 @@ class Runner:
 
     def serialize_traceback(self, exc, source_code):
         return {"text": format_traceback_string(exc)}
+
+    def serialize_syntax_error(self, exc, source_code):
+        return {"text": self.serialize_traceback(exc, source_code)}
 
     def run(self, run_type, source_code):
         sys.stdin.readline = self.readline
@@ -142,7 +143,9 @@ class Runner:
             except SyntaxError:
                 pass
 
-            self.output_buffer.put("syntax_error", self.format_syntax_error(e))
+            self.output_buffer.put(
+                "syntax_error", **self.serialize_syntax_error(e, source_code)
+            )
             return {}
 
         return self.execute(code_obj, source_code, run_type)

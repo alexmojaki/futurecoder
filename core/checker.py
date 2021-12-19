@@ -4,7 +4,6 @@ import logging
 from collections import defaultdict
 
 from core.exercises import assert_equal
-from core.runner.friendly_traceback import friendly_syntax_error
 from core.runner.runner import EnhancedRunner
 from core.text import pages
 from core.utils import highlighted_markdown
@@ -34,21 +33,12 @@ class FullRunner(EnhancedRunner):
         return result
 
 
-def make_runner():
-    # TODO move into class
-    def format_syntax_error(e):
-        return friendly_syntax_error(e, result.filename)
+FullRunner.run = catch_internal_errors(FullRunner.run)
 
-    result = FullRunner(
-        callback=None,
-        extra_locals={"assert_equal": assert_equal},
-        format_syntax_error=format_syntax_error,
-    )
-    result.run = catch_internal_errors(result.run)
 
-    return result
-
-runner = make_runner()
+runner = FullRunner(
+    extra_locals={"assert_equal": assert_equal},
+)
 
 
 @catch_internal_errors
