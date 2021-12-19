@@ -39,22 +39,6 @@ let pendingOutput = [];
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
-const runCodeRemote = async (entry, onSuccess) => {
-  interruptBuffer[0] = 2;
-  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
-  const runner = await new Runner();
-  const result = await runner.runCode(
-    entry,
-    inputTextArray,
-    inputMetaArray,
-    interruptBuffer,
-    Comlink.proxy(outputCallback),
-    Comlink.proxy(inputCallback),
-  );
-  onSuccess(result);
-}
-
-
 function outputCallback(output_parts) {
   if (currentStep().prediction.choices) {
     pendingOutput.push(...output_parts);
@@ -68,7 +52,7 @@ function inputCallback() {
   bookSetState("processing", false);
 }
 
-export const runCode = ({code, source}) => {
+export const runCode = async ({code, source}) => {
   const shell = source === "shell";
   if (shell) {
     if (awaitingInput) {
@@ -98,78 +82,85 @@ export const runCode = ({code, source}) => {
     expected_output: questionWizard.expectedOutput,
   };
 
-  const onSuccess = (data) => {
-    const {error} = data;
+  interruptBuffer[0] = 2;
+  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+  const runner = await new Runner();
+  const data = await runner.runCode(
+    entry,
+    inputTextArray,
+    inputMetaArray,
+    interruptBuffer,
+    Comlink.proxy(outputCallback),
+    Comlink.proxy(inputCallback),
+  );
+  const {error} = data;
 
-    logEvent('run_code', {
-      code_source: entry.source,
-      page_slug: entry.page_slug,
-      step_name: entry.step_name,
-      entry_passed: data.passed,
-      has_error: Boolean(error),
-      num_messages: data.messages?.length,
-      page_route: route,
-      num_hints: numHints,
-      requesting_solution: requestingSolution,
-    });
+  logEvent('run_code', {
+    code_source: entry.source,
+    page_slug: entry.page_slug,
+    step_name: entry.step_name,
+    entry_passed: data.passed,
+    has_error: Boolean(error),
+    num_messages: data.messages?.length,
+    page_route: route,
+    num_hints: numHints,
+    requesting_solution: requestingSolution,
+  });
 
-    if (error) {
-      Sentry.captureEvent(error.sentry_event);
-      delete error.sentry_event;
-      bookSetState("error", {...error});
-      return;
-    }
-
-    bookSetState("processing", false);
-
-    if (data.birdseye_objects) {
-      const {store, call_id} = data.birdseye_objects;
-      delete data.birdseye_objects;
-      Promise.all(
-        _.flatMapDeep(
-          _.entries(store),
-          ([rootKey, blob]) =>
-            _.entries(blob)
-              .map(([key, value]) => {
-                const fullKey = rootKey + "/" + key;
-                return localforage.setItem(fullKey, value);
-              })
-        )
-      ).then(() => {
-        const url = "/course/birdseye/?call_id=" + call_id;
-        if (bookState.prediction.state === "hidden") {
-          window.open(url);
-        } else {
-          bookSetState("prediction.codeResult.birdseyeUrl", url);
-        }
-      });
-    }
-
-    ranCode(data);
-    if (!bookState.prediction.choices) {
-      showCodeResult(data);
-      terminalRef.current.focusTerminal();
-    }
-
-    if (isProduction) {
-      databaseRequest("POST", {
-        entry,
-        result: {
-          messages: data.messages.map(m => _.truncate(m, {length: 1000})),
-          output: _.truncate(data.output, {length: 1000}),
-        },
-        state: {
-          developerMode: user.developerMode,
-          page_route: route,
-          num_hints: numHints,
-          requesting_solution: requestingSolution,
-        },
-        timestamp: new Date().toISOString(),
-      }, "code_entries");
-    }
+  if (error) {
+    Sentry.captureEvent(error.sentry_event);
+    delete error.sentry_event;
+    bookSetState("error", {...error});
+    return;
   }
 
-  runCodeRemote(entry, onSuccess);
+  bookSetState("processing", false);
+
+  if (data.birdseye_objects) {
+    const {store, call_id} = data.birdseye_objects;
+    delete data.birdseye_objects;
+    Promise.all(
+      _.flatMapDeep(
+        _.entries(store),
+        ([rootKey, blob]) =>
+          _.entries(blob)
+            .map(([key, value]) => {
+              const fullKey = rootKey + "/" + key;
+              return localforage.setItem(fullKey, value);
+            })
+      )
+    ).then(() => {
+      const url = "/course/birdseye/?call_id=" + call_id;
+      if (bookState.prediction.state === "hidden") {
+        window.open(url);
+      } else {
+        bookSetState("prediction.codeResult.birdseyeUrl", url);
+      }
+    });
+  }
+
+  ranCode(data);
+  if (!bookState.prediction.choices) {
+    showCodeResult(data);
+    terminalRef.current.focusTerminal();
+  }
+
+  if (isProduction) {
+    databaseRequest("POST", {
+      entry,
+      result: {
+        messages: data.messages.map(m => _.truncate(m, {length: 1000})),
+        output: _.truncate(data.output, {length: 1000}),
+      },
+      state: {
+        developerMode: user.developerMode,
+        page_route: route,
+        num_hints: numHints,
+        requesting_solution: requestingSolution,
+      },
+      timestamp: new Date().toISOString(),
+    }, "code_entries");
+  }
 }
 
 document.addEventListener('keydown', function (e) {
