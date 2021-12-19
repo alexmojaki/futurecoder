@@ -44,6 +44,7 @@ function outputCallback(output_parts) {
 function inputCallback() {
   awaitingInput = true;
   bookSetState("processing", false);
+  terminalRef.current.focusTerminal();
 }
 
 export const runCode = async ({code, source}) => {
