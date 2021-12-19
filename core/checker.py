@@ -1,13 +1,37 @@
+import ast
+import inspect
 import logging
+from collections import defaultdict
 
 from core.exercises import assert_equal
 from core.runner.friendly_traceback import friendly_syntax_error
 from core.runner.runner import EnhancedRunner
 from core.text import pages
 from core.utils import highlighted_markdown
+from core.workers.question_wizard import question_wizard_check
 from core.workers.utils import catch_internal_errors
 
 log = logging.getLogger(__name__)
+
+
+class FullRunner(EnhancedRunner):
+    question_wizard = False
+    input_nodes = {}
+
+    def input(self, prompt=""):
+        result = super().input(prompt)
+        try:
+            assert self.question_wizard
+            frame = inspect.currentframe().f_back
+            assert frame.f_code.co_filename == self.filename
+            import stack_data
+            ex = stack_data.Source.executing(frame)
+            node = ex.node
+            assert isinstance(node, ast.Call)
+            self.input_nodes[node].append((result, ex))
+        except Exception:
+            pass
+        return result
 
 
 def make_runner():
@@ -15,7 +39,7 @@ def make_runner():
     def format_syntax_error(e):
         return friendly_syntax_error(e, result.filename)
 
-    result = EnhancedRunner(
+    result = FullRunner(
         callback=None,
         extra_locals={"assert_equal": assert_equal},
         format_syntax_error=format_syntax_error,
@@ -71,9 +95,16 @@ def check_entry(entry, input_callback, output_callback):
             return input_callback()
 
     runner._callback = full_callback
+    runner.question_wizard = entry.get("question_wizard")
+    runner.input_nodes = defaultdict(list)
+
     result.update(runner.run(entry["source"], entry["input"]))
 
     if result.get("interrupted"):
+        return result
+
+    if runner.question_wizard:
+        result["messages"] = question_wizard_check(entry, output, runner)
         return result
 
     page = pages[entry["page_slug"]]
@@ -110,33 +141,3 @@ def normalise_step_result(step_result):
         messages.append(step_result.pop("message"))
 
     return step_result
-
-# TODO
-# question_wizard = entry.get("question_wizard")
-#
-# patch_stdin(input_callback, result_callback, question_wizard)
-# input_nodes = defaultdict(list)
-
-# input_nodes.clear()
-
-# try:
-#     assert question_wizard
-#     frame = inspect.currentframe().f_back
-#     assert frame.f_code.co_filename == "my_program.py"
-#     ex = stack_data.Source.executing(frame)
-#     node = ex.node
-#     assert isinstance(node, ast.Call)
-#     input_nodes[node].append((result, ex))
-# except Exception:
-#     pass
-
-# if question_wizard:
-#     messages = question_wizard_check(entry, output)
-#     result_callback(
-#         make_result(
-#             messages=messages,
-#             output=output,
-#             **run_results,
-#         )
-#     )
-#     return
