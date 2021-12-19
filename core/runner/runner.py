@@ -22,9 +22,9 @@ class EnhancedRunner(Runner):
         return result
 
     def serialize_traceback(self, exc, source_code):
-        import friendly_traceback.source_cache
         from .stack_data import format_traceback_stack_data
         from .stack_data_pygments import PygmentsTracebackSerializer
+        import friendly_traceback.source_cache
 
         friendly_traceback.source_cache.cache.add(self.filename, source_code)
 

@@ -1,3 +1,6 @@
+import sys
+sys.last_type = sys.last_value = sys.last_traceback = None
+
 from friendly_traceback.core import FriendlyTraceback
 
 from core.basic_runner.utils import format_traceback_list
