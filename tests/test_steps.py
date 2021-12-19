@@ -95,9 +95,8 @@ def normalise_response(response, is_message, substep):
     ]
 
     response.pop("birdseye_objects", None)
-    response.pop("awaiting_input", None)
-    response.pop("error", None)
-    response.pop("output", None)
+    del response["error"]
+    del response["output"]
 
     response["prediction"] = get_predictions(substep)
     if not response["prediction"]["choices"]:

@@ -54,9 +54,8 @@ def check_entry(entry, input_callback, output_callback):
     if not entry["input"].strip():
         return result
 
-    output = ""
+    result["output"] = ""
     def full_callback(event_type, data):
-        nonlocal output
         if event_type == "output":
             parts = []
             for part in data["parts"]:
@@ -65,7 +64,7 @@ def check_entry(entry, input_callback, output_callback):
                     part["codeSource"] = entry["source"]
                 if typ == "input":
                     continue
-                output += part["text"]
+                result["output"] += part["text"]
                 parts.append(part)
             data["parts"] = parts
             return output_callback(data)
@@ -83,7 +82,7 @@ def check_entry(entry, input_callback, output_callback):
         return result
 
     if runner.question_wizard:
-        result["messages"] = question_wizard_check(entry, output, runner)
+        result["messages"] = question_wizard_check(entry, result["output"], runner)
         return result
 
     page = pages[entry["page_slug"]]
@@ -92,7 +91,7 @@ def check_entry(entry, input_callback, output_callback):
     step_result = False
     if entry["step_name"] != "final_text":
         step_instance = step_cls(
-            entry["input"], output, entry["source"], runner.console
+            entry["input"], result["output"], entry["source"], runner.console
         )
         try:
             step_result = step_instance.check_with_messages()

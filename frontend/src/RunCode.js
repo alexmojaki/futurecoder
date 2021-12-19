@@ -108,8 +108,6 @@ export const runCode = ({code, source}) => {
       entry_passed: data.passed,
       has_error: Boolean(error),
       num_messages: data.messages?.length,
-      // user: user.uid,
-      // developerMode: user.developerMode,
       page_route: route,
       num_hints: numHints,
       requesting_solution: requestingSolution,
@@ -157,7 +155,6 @@ export const runCode = ({code, source}) => {
       databaseRequest("POST", {
         entry,
         result: {
-          ..._.omit(data, "output_parts"),
           messages: data.messages.map(m => _.truncate(m, {length: 1000})),
           output: _.truncate(data.output, {length: 1000}),
         },
