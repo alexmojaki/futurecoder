@@ -71,9 +71,9 @@ def check_entry(entry, input_callback, output_callback):
             return input_callback()
 
     runner._callback = full_callback
-    run_results = runner.run(entry["source"], entry["input"])
+    result.update(runner.run(entry["source"], entry["input"]))
 
-    if run_results.get("interrupted"):
+    if result.get("interrupted"):
         return result
 
     page = pages[entry["page_slug"]]
