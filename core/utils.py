@@ -17,7 +17,6 @@ from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
 
-from core.runner.utils import truncate_string
 
 TESTING = False
 
@@ -233,6 +232,18 @@ def get_exception_event():
 
     assert event
     return event
+
+
+def truncate(seq, max_length, middle):
+    if len(seq) > max_length:
+        left = (max_length - len(middle)) // 2
+        right = max_length - len(middle) - left
+        seq = seq[:left] + middle + seq[-right:]
+    return seq
+
+
+def truncate_string(string, max_length):
+    return truncate(string, max_length, "...")
 
 
 def safe_traceback(e: Exception):
