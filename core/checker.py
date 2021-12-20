@@ -55,24 +55,21 @@ def check_entry(entry, input_callback, output_callback):
             return result
 
         result["output"] = ""
-        def full_callback(event_type, data):
-            if event_type == "output":
-                parts = []
-                for part in data["parts"]:
-                    typ = part["type"]
-                    if typ == "traceback":
-                        part["codeSource"] = entry["source"]
-                    if typ == "input":
-                        continue
-                    result["output"] += part["text"]
-                    parts.append(part)
-                data["parts"] = parts
-                return output_callback(data)
-            else:
-                assert event_type == "input"
-                return input_callback()
 
-        runner.set_callback(full_callback)
+        def full_output_callback(data):
+            parts = []
+            for part in data["parts"]:
+                typ = part["type"]
+                if typ == "traceback":
+                    part["codeSource"] = entry["source"]
+                if typ == "input":
+                    continue
+                result["output"] += part["text"]
+                parts.append(part)
+            data["parts"] = parts
+            return output_callback(data)
+
+        runner.set_combined_callbacks(output=full_output_callback, input=input_callback)
         runner.question_wizard = entry.get("question_wizard")
         runner.input_nodes = defaultdict(list)
 

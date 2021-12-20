@@ -65,8 +65,8 @@ class Runner {
   async runCode(entry, inputTextArray, inputMetaArray, interruptBuffer, outputCallback, inputCallback) {
     await pyodideReadyPromise;
 
-    const fullInputCallback = () => {
-      inputCallback();
+    const fullInputCallback = (data) => {
+      inputCallback(data);
       while (true) {
         if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
           if (interruptBuffer[0] === 2) {

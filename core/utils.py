@@ -93,7 +93,7 @@ def make_test_input_callback(stdin_input: Union[str, list]):
 
     stdin_input = stdin_input[::-1]
 
-    def input_callback():
+    def input_callback(_data=None):
         if stdin_input:
             result = stdin_input.pop()
             print(f"<input: {result}>")

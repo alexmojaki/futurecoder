@@ -85,6 +85,12 @@ class Runner:
     def set_callback(self, callback):
         self._callback = callback
 
+    def set_combined_callbacks(self, **callbacks):
+        def callback(event_type, data):
+            return callbacks[event_type](data)
+
+        self.set_callback(callback)
+
     def callback(self, event_type, **data):
         if event_type != "output":
             self.output_buffer.flush()
