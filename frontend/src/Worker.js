@@ -90,8 +90,12 @@ class Runner {
       console.error(e);
     }
 
-    const outputCallbackToObject = (data) => outputCallback(toObject(data.toJs()).parts);
-    const result = check_entry(entry, fullInputCallback, outputCallbackToObject);
+    let outputPromise;
+    const fullOutputCallback = (data) => {
+      outputPromise = outputCallback(toObject(data.toJs()).parts);
+    };
+    const result = check_entry(entry, fullInputCallback, fullOutputCallback);
+    await outputPromise;
     return toObject(result.toJs());
   }
 }
