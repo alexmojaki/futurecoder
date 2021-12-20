@@ -64,6 +64,7 @@ const initialState = {
     pageSlug: "loading_placeholder",
   },
   processing: false,
+  running: false,
   numHints: 0,
   editorContent: "",
   messages: [],
@@ -340,7 +341,6 @@ export const ranCode = makeAction(
           state: prediction.choices ? "waiting" : "hidden",
           codeResult: value,
         },
-        processing: false,
       };
 
       if (prediction.choices) {
@@ -364,6 +364,11 @@ export const ranCode = makeAction(
       }
     }
 
+    state = {
+      ...state,
+      processing: false,
+      running: false,
+    }
     return state;
   },
 );

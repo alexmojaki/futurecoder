@@ -33,19 +33,14 @@ let pendingOutput = [];
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
-function outputCallback(output_parts) {
-  if (currentStep().prediction.choices) {
-    pendingOutput.push(...output_parts);
-  } else {
-    showOutputParts(output_parts);
-  }
-}
-
 function inputCallback() {
   awaitingInput = true;
   bookSetState("processing", false);
   terminalRef.current.focusTerminal();
 }
+
+export let interrupt = () => {
+};
 
 export const runCode = async ({code, source}) => {
   const shell = source === "shell";
@@ -67,7 +62,10 @@ export const runCode = async ({code, source}) => {
   if (!shell && !code) {
     code = editorContent;
   }
+
   bookSetState("processing", true);
+  bookSetState("running", true);
+
   const entry = {
     input: code,
     source,
@@ -77,8 +75,27 @@ export const runCode = async ({code, source}) => {
     expected_output: questionWizard.expectedOutput,
   };
 
-  interruptBuffer[0] = 2;
+  interrupt();
   interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+  let running = true;
+  interrupt = () => {
+    interruptBuffer[0] = 2;
+    running = false;
+  }
+
+  const hasPrediction = currentStep().prediction.choices;
+
+  function outputCallback(output_parts) {
+    if (!running) {
+      return;
+    }
+    if (hasPrediction) {
+      pendingOutput.push(...output_parts);
+    } else {
+      showOutputParts(output_parts);
+    }
+  }
+
   const runner = await new Runner();
   const data = await runner.runCode(
     entry,
@@ -88,6 +105,9 @@ export const runCode = async ({code, source}) => {
     Comlink.proxy(outputCallback),
     Comlink.proxy(inputCallback),
   );
+
+  awaitingInput = false;
+
   const {error} = data;
 
   logEvent('run_code', {
@@ -108,8 +128,6 @@ export const runCode = async ({code, source}) => {
     bookSetState("error", {...error});
     return;
   }
-
-  bookSetState("processing", false);
 
   if (data.birdseye_objects) {
     const {store, call_id} = data.birdseye_objects;

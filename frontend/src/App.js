@@ -32,6 +32,7 @@ import {
   faPlay,
   faQuestionCircle,
   faSignOutAlt,
+  faStop,
   faTimes,
   faUserGraduate
 } from '@fortawesome/free-solid-svg-icons'
@@ -40,7 +41,7 @@ import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
-import {runCode, terminalRef} from "./RunCode";
+import {interrupt, runCode, terminalRef} from "./RunCode";
 import firebase from "firebase/app";
 import {TableOfContents} from "./TableOfContents";
 import HeaderLoginInfo from "./components/HeaderLoginInfo";
@@ -54,86 +55,97 @@ const EditorButtons = (
     showPythonTutor,
     showSnoop,
     showQuestionButton,
+    running,
   }) =>
   <div className={"editor-buttons " + (showEditor ? "" : "invisible")}>
-    <button
-      disabled={disabled}
-      className="btn btn-primary"
-      onClick={() => runCode({source: "editor"})}
-    >
-      <FontAwesomeIcon icon={faPlay}/> Run
-    </button>
+    {
+      running ?
+        <button
+          className="btn btn-danger"
+          onClick={() => interrupt()}
+        >
+          <FontAwesomeIcon icon={faStop}/> Stop
+        </button>
+        :
+        <button
+          disabled={disabled}
+          className="btn btn-primary"
+          onClick={() => runCode({source: "editor"})}
+        >
+          <FontAwesomeIcon icon={faPlay}/> Run
+        </button>
+    }
 
     {" "}
 
     {showSnoop &&
-    <button
-      disabled={disabled}
-      className="btn btn-success"
-      onClick={() => runCode({source: "snoop"})}
-    >
-      <FontAwesomeIcon icon={faBug}/> Snoop
-    </button>}
+      <button
+        disabled={disabled || running}
+        className="btn btn-success"
+        onClick={() => runCode({source: "snoop"})}
+      >
+        <FontAwesomeIcon icon={faBug}/> Snoop
+      </button>}
 
     {" "}
 
     {showPythonTutor &&
-    <button
-      disabled={disabled}
-      className="btn btn-success"
-      onClick={() => {
-        runCode({source: "pythontutor"});
-        let code = bookState.editorContent;
-        if (code.includes("assert_equal") && !code.includes("def assert_equal(")) {
-          code = 'def assert_equal(actual, expected):\n' +
-            '    if actual == expected:\n' +
-            '        print("OK")\n' +
-            '    else:\n' +
-            '        print(f"Error! {repr(actual)} != {repr(expected)}")\n\n\n' + code;
-        }
-        window.open(
-          'https://pythontutor.com/iframe-embed.html#code=' +
-          encodeURIComponent(code) +
-          '&codeDivHeight=600' +
-          '&codeDivWidth=600' +
-          '&cumulative=false' +
-          '&curInstr=0' +
-          '&heapPrimitives=false' +
-          '&origin=opt-frontend.js' +
-          '&py=3' +
-          '&rawInputLstJSON=%5B%5D' +
-          '&textReferences=false',
-        );
-      }}
-    >
-      <FontAwesomeIcon icon={faUserGraduate}/> Python Tutor
-    </button>}
+      <button
+        disabled={disabled || running}
+        className="btn btn-success"
+        onClick={() => {
+          runCode({source: "pythontutor"});
+          let code = bookState.editorContent;
+          if (code.includes("assert_equal") && !code.includes("def assert_equal(")) {
+            code = 'def assert_equal(actual, expected):\n' +
+              '    if actual == expected:\n' +
+              '        print("OK")\n' +
+              '    else:\n' +
+              '        print(f"Error! {repr(actual)} != {repr(expected)}")\n\n\n' + code;
+          }
+          window.open(
+            'https://pythontutor.com/iframe-embed.html#code=' +
+            encodeURIComponent(code) +
+            '&codeDivHeight=600' +
+            '&codeDivWidth=600' +
+            '&cumulative=false' +
+            '&curInstr=0' +
+            '&heapPrimitives=false' +
+            '&origin=opt-frontend.js' +
+            '&py=3' +
+            '&rawInputLstJSON=%5B%5D' +
+            '&textReferences=false',
+          );
+        }}
+      >
+        <FontAwesomeIcon icon={faUserGraduate}/> Python Tutor
+      </button>}
 
     {" "}
 
     {showBirdseye &&
-    <button
-      disabled={disabled}
-      className="btn btn-success"
-      onClick={() => runCode({source: "birdseye"})}
-    >
-      <img
-        src={birdseyeIcon}
-        width={20}
-        height={20}
-        alt="birdseye logo"
-        style={{position: "relative", top: "-2px"}}
-      />
-      Bird's Eye
-    </button>}
+      <button
+        disabled={disabled || running}
+        className="btn btn-success"
+        onClick={() => runCode({source: "birdseye"})}
+      >
+        <img
+          src={birdseyeIcon}
+          width={20}
+          height={20}
+          alt="birdseye logo"
+          style={{position: "relative", top: "-2px"}}
+        />
+        Bird's Eye
+      </button>}
 
     {" "}
 
     {showQuestionButton && !disabled &&
-    <a className="btn btn-success"
-       href={"#question"}>
-      <FontAwesomeIcon icon={faQuestionCircle}/> Ask for help
-    </a>}
+      <a className="btn btn-success"
+         href={"#question"}>
+        <FontAwesomeIcon icon={faQuestionCircle}/> Ask for help
+      </a>}
   </div>;
 
 const Editor = ({readOnly, value}) =>
@@ -326,6 +338,7 @@ class AppComponent extends React.Component {
       prediction,
       route,
       previousRoute,
+      running,
     } = this.props;
     if (route === "toc") {
       return <TableOfContents/>
@@ -394,6 +407,7 @@ class AppComponent extends React.Component {
         showPythonTutor,
         showQuestionButton,
         disabled: cantUseEditor,
+        running,
       }}/>
 
       <div className={`ide ide-${fullIde ? 'full' : 'half'}`}>

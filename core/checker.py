@@ -42,67 +42,69 @@ runner = FullRunner(
 
 @catch_internal_errors
 def check_entry(entry, input_callback, output_callback):
-    if hasattr(entry, "to_py"):
-        entry = entry.to_py()
-
     result = dict(
         passed=False,
         messages=[],
         error=None,
     )
+    try:
+        if hasattr(entry, "to_py"):
+            entry = entry.to_py()
 
-    if not entry["input"].strip():
-        return result
+        if not entry["input"].strip():
+            return result
 
-    result["output"] = ""
-    def full_callback(event_type, data):
-        if event_type == "output":
-            parts = []
-            for part in data["parts"]:
-                typ = part["type"]
-                if typ == "traceback":
-                    part["codeSource"] = entry["source"]
-                if typ == "input":
-                    continue
-                result["output"] += part["text"]
-                parts.append(part)
-            data["parts"] = parts
-            return output_callback(data)
-        else:
-            assert event_type == "input"
-            return input_callback()
+        result["output"] = ""
+        def full_callback(event_type, data):
+            if event_type == "output":
+                parts = []
+                for part in data["parts"]:
+                    typ = part["type"]
+                    if typ == "traceback":
+                        part["codeSource"] = entry["source"]
+                    if typ == "input":
+                        continue
+                    result["output"] += part["text"]
+                    parts.append(part)
+                data["parts"] = parts
+                return output_callback(data)
+            else:
+                assert event_type == "input"
+                return input_callback()
 
-    runner._callback = full_callback
-    runner.question_wizard = entry.get("question_wizard")
-    runner.input_nodes = defaultdict(list)
+        runner._callback = full_callback
+        runner.question_wizard = entry.get("question_wizard")
+        runner.input_nodes = defaultdict(list)
 
-    result.update(runner.run(entry["source"], entry["input"]))
+        result.update(runner.run(entry["source"], entry["input"]))
 
-    if result.get("interrupted"):
-        return result
+        if result.get("interrupted"):
+            return result
 
-    if runner.question_wizard:
-        result["messages"] = question_wizard_check(entry, result["output"], runner)
-        return result
+        if runner.question_wizard:
+            result["messages"] = question_wizard_check(entry, result["output"], runner)
+            return result
 
-    page = pages[entry["page_slug"]]
-    step_cls = page.get_step(entry["step_name"])
+        page = pages[entry["page_slug"]]
+        step_cls = page.get_step(entry["step_name"])
 
-    step_result = False
-    if entry["step_name"] != "final_text":
-        step_instance = step_cls(
-            entry["input"], result["output"], entry["source"], runner.console
+        step_result = False
+        if entry["step_name"] != "final_text":
+            step_instance = step_cls(
+                entry["input"], result["output"], entry["source"], runner.console
+            )
+            try:
+                step_result = step_instance.check_with_messages()
+            except SyntaxError:
+                pass
+
+        step_result = normalise_step_result(step_result)
+        result.update(
+            passed=step_result["passed"],
+            messages=[highlighted_markdown(message) for message in step_result["messages"]],
         )
-        try:
-            step_result = step_instance.check_with_messages()
-        except SyntaxError:
-            pass
-
-    step_result = normalise_step_result(step_result)
-    result.update(
-        passed=step_result["passed"],
-        messages=[highlighted_markdown(message) for message in step_result["messages"]],
-    )
+    except KeyboardInterrupt:
+        result["interrupted"] = True
 
     return result
 

@@ -109,10 +109,7 @@ class Runner:
             redirect_stdout(SysStream("stdout", self.output_buffer)),  # noqa
             redirect_stderr(SysStream("stderr", self.output_buffer)),  # noqa
         ):
-            try:
-                result = self.inner_run(run_type, source_code)
-            except KeyboardInterrupt:
-                result = {"interrupted": True}
+            result = self.inner_run(run_type, source_code)
         self.output_buffer.flush()
         return result
 
