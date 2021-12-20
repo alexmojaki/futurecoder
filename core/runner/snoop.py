@@ -1,14 +1,19 @@
 import ast
 import inspect
+import os
 import sys
 
+import python_runner
 import snoop
 import snoop.formatting
 import snoop.tracer
 
 from ..utils import internal_dir
 
-snoop.tracer.internal_directories += (internal_dir,)
+snoop.tracer.internal_directories += (
+    internal_dir,
+    os.path.dirname(python_runner.__file__),
+)
 
 
 def exec_snoop(runner, code, code_obj):

@@ -1,13 +1,13 @@
 import sys
+import traceback
+
 sys.last_type = sys.last_value = sys.last_traceback = None
 
 from friendly_traceback.core import FriendlyTraceback
 
-from core.basic_runner.utils import format_traceback_list
-
 
 def friendly_syntax_error(e, filename):
-    lines = iter(format_traceback_list(e))
+    lines = iter(traceback.format_exception(type(e), e, e.__traceback__))
     for line in lines:
         if line.strip().startswith(f'File "{filename}"'):
             break

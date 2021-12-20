@@ -4,10 +4,10 @@ import logging
 from collections import defaultdict
 
 from core.exercises import assert_equal
+from core.question_wizard import question_wizard_check
 from core.runner.runner import EnhancedRunner
 from core.text import pages
 from core.utils import highlighted_markdown, catch_internal_errors
-from core.question_wizard import question_wizard_check
 
 log = logging.getLogger(__name__)
 
@@ -31,13 +31,19 @@ class FullRunner(EnhancedRunner):
             pass
         return result
 
+    def reset(self):
+        super().reset()
+        self.console.locals.update(assert_equal=assert_equal)
+
+    def non_str_input(self):
+        while True:
+            pass  # wait for the interrupt
+
 
 FullRunner.run = catch_internal_errors(FullRunner.run)
 
 
-runner = FullRunner(
-    extra_locals={"assert_equal": assert_equal},
-)
+runner = FullRunner()
 
 
 @catch_internal_errors
@@ -73,10 +79,10 @@ def check_entry(entry, input_callback, output_callback):
         runner.question_wizard = entry.get("question_wizard")
         runner.input_nodes = defaultdict(list)
 
-        result.update(runner.run(entry["source"], entry["input"]))
-
-        if result.get("interrupted"):
-            return result
+        mode = entry["source"]
+        if mode == "shell":
+            mode = "single"
+        result["birdseye_objects"] = runner.run(entry["input"], mode)
 
         if runner.question_wizard:
             result["messages"] = question_wizard_check(entry, result["output"], runner)
