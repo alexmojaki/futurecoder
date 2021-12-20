@@ -77,16 +77,16 @@ export const runCode = async ({code, source}) => {
 
   interrupt();
   interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
-  let running = true;
+  let interrupted = false;
   interrupt = () => {
     interruptBuffer[0] = 2;
-    running = false;
+    interrupted = true;
   }
 
   const hasPrediction = currentStep().prediction.choices;
 
   function outputCallback(output_parts) {
-    if (!running) {
+    if (interrupted) {
       return;
     }
     if (hasPrediction) {
