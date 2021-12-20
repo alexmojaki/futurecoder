@@ -591,24 +591,6 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 """
             }
 
-        class used_times_wrong_in_fstring(MessageStep):
-            """
-Did you forget to add the `f` before your f-string?
-Pay close attention to how you are using `*` in your f-string.
-If you are using `*` to multiply two variables in an f-string to compute their product, make sure to do that inside curly braces `{}`.
-If `*` is used outside curly braces in an f-string, then instead of multiplication, it will be treated just like any other text character.
-            """
-
-            def program(self):
-                for left in range(12):
-                    left += 1
-                    for right in range(12):
-                        right += 1
-                        print(f'{left} x {right} = (left * right)')
-
-            def check(self):
-                return "*" in self.result
-
         tests = {
             (): """\
 1 x 1 = 1
