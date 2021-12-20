@@ -78,6 +78,7 @@ class Runner:
         self.extra_locals = extra_locals or {}
         self.filename = filename
 
+        self.line = ""
         self.console = InteractiveConsole()
         self.output_buffer = OutputBuffer(lambda parts: self.callback("output", parts=parts))
 
@@ -127,6 +128,7 @@ class Runner:
             self.console.locals = mod.__dict__
             self.console.locals.update(self.extra_locals)
             self.output_buffer.reset()
+            self.line = ""
 
         filename = self.filename
         linecache.cache[filename] = (
@@ -153,15 +155,22 @@ class Runner:
 
         return self.execute(code_obj, source_code, run_type)
 
-    def readline(self):
-        # TODO copy papyros readline?
-        result = self.callback("input")
-        if not isinstance(result, str):
-            while True:
-                pass  # wait for the interrupt
-        self.output_buffer.put("input", result)
-        return result
+    def readline(self, n=-1, prompt=""):
+        if not self.line and n:
+            self.line = self.callback("input", prompt=prompt)
+            if not isinstance(self.line, str):
+                while True:
+                    pass  # wait for the interrupt
+            if not self.line.endswith("\n"):
+                self.line += "\n"
+            self.output_buffer.put("input", self.line)
+
+        if n < 0 or n > len(self.line):
+            n = len(self.line)
+        to_return = self.line[:n]
+        self.line = self.line[n:]
+        return to_return
 
     def input(self, prompt=""):
         self.output_buffer.put("input_prompt", prompt)
-        return sys.stdin.readline().rstrip("\n")
+        return sys.stdin.readline()[:-1]  # Remove trailing newline
