@@ -24,7 +24,8 @@ class OutputBuffer:
     def put(self, output_type, text, **extra):
         if isinstance(text, bytes):
             text = text.decode("utf8", "replace")
-        assert isinstance(text, str)
+        if not isinstance(text, str):
+            raise TypeError(f"Can only write str, not {type(text).__name__}")
         assert isinstance(output_type, str)
 
         if not self.parts or self.parts[-1]["type"] != output_type:
