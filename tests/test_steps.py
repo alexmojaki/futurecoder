@@ -6,13 +6,14 @@ from pathlib import Path
 from littleutils import only
 
 import core.utils
-from core.checker import check_entry
+from core.checker import check_entry, runner
 from core.text import pages, get_predictions
 from core.utils import highlighted_markdown, make_test_input_callback
 
 core.utils.TESTING = True
 
 def test_steps():
+    runner.reset()
     transcript = []
     for page_index, page in enumerate(pages.values()):
         for step_index, step_name in enumerate(page.step_names[:-1]):
