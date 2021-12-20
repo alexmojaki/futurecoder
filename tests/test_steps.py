@@ -1,4 +1,3 @@
-import itertools
 import json
 import os
 import re
@@ -88,11 +87,6 @@ def normalise_response(response, is_message, substep):
         line["text"] = normalise_output(line["text"])
         if line["type"] == "traceback":
             line["text"] = line["text"].splitlines()
-    response["result"] = [
-        list(group)[0] if typ == "traceback" else
-        {"text": "".join(p["text"] for p in group), "type": typ}
-        for typ, group in itertools.groupby(response["result"], key=lambda p: p["type"])
-    ]
 
     response.pop("birdseye_objects", None)
     del response["error"]
