@@ -6,6 +6,7 @@ import sys
 import time
 from code import InteractiveConsole
 from contextlib import redirect_stdout, redirect_stderr
+from types import ModuleType
 
 from .utils import format_traceback_string
 
@@ -62,7 +63,6 @@ class SysStream:
         self.output_buffer.put(self.type, s)
 
     def flush(self):
-        # TODO does `print` always flush? should there be an extra layer here?
         self.output_buffer.flush()
 
 
@@ -74,14 +74,15 @@ class Runner:
         extra_locals=None,
         filename="my_program.py",
     ):
-        self._callback = callback
-        self.console = InteractiveConsole()
-        # TODO make module object
-        self.extra_locals = extra_locals = (extra_locals or {}) | {"__name__": "__main__", "__file__": filename}
-        self.console.locals = dict(extra_locals)
+        self.set_callback(callback)
+        self.extra_locals = extra_locals or {}
         self.filename = filename
+
+        self.console = InteractiveConsole()
         self.output_buffer = OutputBuffer(lambda parts: self.callback("output", parts=parts))
-        self.run_type = None
+
+    def set_callback(self, callback):
+        self._callback = callback
 
     def callback(self, event_type, **data):
         if event_type != "output":
@@ -120,7 +121,11 @@ class Runner:
             source_code += "\n"  # Allow compiling single-line compound statements
         else:
             mode = "exec"
-            self.console.locals = dict(self.extra_locals)
+            mod = ModuleType("__main__")
+            mod.__file__ = self.filename
+            sys.modules["__main__"] = mod
+            self.console.locals = mod.__dict__
+            self.console.locals.update(self.extra_locals)
             self.output_buffer.reset()
 
         filename = self.filename

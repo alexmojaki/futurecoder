@@ -72,7 +72,7 @@ def check_entry(entry, input_callback, output_callback):
                 assert event_type == "input"
                 return input_callback()
 
-        runner._callback = full_callback
+        runner.set_callback(full_callback)
         runner.question_wizard = entry.get("question_wizard")
         runner.input_nodes = defaultdict(list)
 
