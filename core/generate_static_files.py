@@ -27,7 +27,7 @@ from pathlib import Path
 import birdseye
 from littleutils import strip_required_prefix, json_to_file
 
-from core.text import pages, get_pages, chapters
+from core.text import get_pages, chapters, step_test_entries
 from core.utils import site_packages
 from core.workers.worker import check_entry
 
@@ -36,26 +36,8 @@ import sentry_sdk  # noqa imported lazily
 
 
 def run_steps():
-    for page_index, page in enumerate(pages.values()):
-        for step_index, step_name in enumerate(page.step_names[:-1]):
-            step = page.get_step(step_name)
-
-            for substep in [*step.messages, step]:
-                program = substep.program
-
-                if "\n" in program:
-                    code_source = step.expected_code_source or "editor"
-                else:
-                    code_source = "shell"
-
-                entry = dict(
-                    input=program,
-                    source=code_source,
-                    page_slug=page.slug,
-                    step_name=step_name,
-                )
-
-                check_entry(entry, input_callback=None, result_callback=lambda _: 0)
+    for *_, entry in step_test_entries():
+        check_entry(entry, input_callback=None, result_callback=lambda _: 0)
 
 
 def get_roots():

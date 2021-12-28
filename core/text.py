@@ -649,3 +649,29 @@ def get_pages():
         },
         pageSlugsList=page_slugs_list,
     )
+
+
+def iter_step_names(*, final_text: bool):
+    for page in pages.values():
+        for step_name in page.step_names[:-(not final_text)]:
+            yield page, step_name
+
+
+def step_test_entries():
+    for page, step_name in iter_step_names(final_text=False):
+        step = page.get_step(step_name)
+
+        for substep in [*step.messages, step]:
+            program = substep.program
+
+            if "\n" in program:
+                code_source = step.expected_code_source or "editor"
+            else:
+                code_source = "shell"
+
+            yield page, step, substep, dict(
+                input=program,
+                source=code_source,
+                page_slug=page.slug,
+                step_name=step_name,
+            )
