@@ -182,7 +182,9 @@ def get_predictions(cls):
     choices = [s.rstrip() for s in choices]
     assert all(choices), choices
 
-    if not answer:
+    if answer:
+        assert answer == "Error"
+    else:
         answer = get_stdout(cls.program).rstrip()
         assert answer in choices, repr(answer)
 
