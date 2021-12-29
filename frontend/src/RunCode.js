@@ -18,7 +18,7 @@ import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
 
-const Runner = Comlink.wrap(new Worker());
+const workerWrapper = Comlink.wrap(new Worker());
 
 const inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024));
 const inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2));
@@ -99,8 +99,7 @@ export const runCode = async ({code, source}) => {
     }
   }
 
-  const runner = await new Runner();
-  const data = await runner.runCode(
+  const data = await workerWrapper.runCode(
     entry,
     inputTextArray,
     inputMetaArray,

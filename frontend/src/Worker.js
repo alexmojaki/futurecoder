@@ -64,43 +64,41 @@ const toObject = (x) => {
 
 const decoder = new TextDecoder();
 
-class Runner {
-  async runCode(entry, inputTextArray, inputMetaArray, interruptBuffer, outputCallback, inputCallback) {
-    await pyodideReadyPromise;
+async function runCode(entry, inputTextArray, inputMetaArray, interruptBuffer, outputCallback, inputCallback) {
+  await pyodideReadyPromise;
 
-    const fullInputCallback = (data) => {
-      inputCallback(toObject(data));
-      while (true) {
-        if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
-          if (interruptBuffer[0] === 2) {
-            return null;
-          }
-        } else {
-          break
+  const fullInputCallback = (data) => {
+    inputCallback(toObject(data));
+    while (true) {
+      if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
+        if (interruptBuffer[0] === 2) {
+          return null;
         }
+      } else {
+        break
       }
-      Atomics.store(inputMetaArray, 1, 0);
-      const size = Atomics.exchange(inputMetaArray, 0, 0);
-      const bytes = inputTextArray.slice(0, size);
-      return decoder.decode(bytes) + "\n";
     }
-
-    pyodide._module.setInterruptBuffer(interruptBuffer);
-
-    try {
-      await install_imports(entry.input);
-    } catch (e) {
-      console.error(e);
-    }
-
-    let outputPromise;
-    const fullOutputCallback = (data) => {
-      outputPromise = outputCallback(toObject(data).parts);
-    };
-    const result = check_entry(entry, fullInputCallback, fullOutputCallback);
-    await outputPromise;
-    return toObject(result);
+    Atomics.store(inputMetaArray, 1, 0);
+    const size = Atomics.exchange(inputMetaArray, 0, 0);
+    const bytes = inputTextArray.slice(0, size);
+    return decoder.decode(bytes) + "\n";
   }
+
+  pyodide._module.setInterruptBuffer(interruptBuffer);
+
+  try {
+    await install_imports(entry.input);
+  } catch (e) {
+    console.error(e);
+  }
+
+  let outputPromise;
+  const fullOutputCallback = (data) => {
+    outputPromise = outputCallback(toObject(data).parts);
+  };
+  const result = check_entry(entry, fullInputCallback, fullOutputCallback);
+  await outputPromise;
+  return toObject(result);
 }
 
-Comlink.expose(Runner);
+Comlink.expose({runCode});
