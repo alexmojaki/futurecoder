@@ -40,13 +40,16 @@ async function loadPyodideAndPackages() {
   console.time("load_package_buffer(buffer)")
   const load_package_buffer = pyodide.globals.get("load_package_buffer")
   const result = load_package_buffer(buffer);
-  ({check_entry, install_imports} = toObject(result.toJs()));
+  ({check_entry, install_imports} = toObject(result));
   console.timeEnd("load_package_buffer(buffer)")
 }
 
 let pyodideReadyPromise = loadPyodideAndPackages();
 
 const toObject = (x) => {
+  if (x?.toJs) {
+    x = x.toJs();
+  }
   if (x instanceof Map) {
     return Object.fromEntries(Array.from(
       x.entries(),
@@ -66,7 +69,7 @@ class Runner {
     await pyodideReadyPromise;
 
     const fullInputCallback = (data) => {
-      inputCallback(toObject(data.toJs()));
+      inputCallback(toObject(data));
       while (true) {
         if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
           if (interruptBuffer[0] === 2) {
@@ -92,11 +95,11 @@ class Runner {
 
     let outputPromise;
     const fullOutputCallback = (data) => {
-      outputPromise = outputCallback(toObject(data.toJs()).parts);
+      outputPromise = outputCallback(toObject(data).parts);
     };
     const result = check_entry(entry, fullInputCallback, fullOutputCallback);
     await outputPromise;
-    return toObject(result.toJs());
+    return toObject(result);
   }
 }
 
