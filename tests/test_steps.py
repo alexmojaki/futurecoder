@@ -7,7 +7,7 @@ from littleutils import only
 
 import core.utils
 from core.checker import check_entry, runner
-from core.text import pages, get_predictions
+from core.text import step_test_entries, get_predictions
 from core.utils import highlighted_markdown, make_test_input_callback
 
 core.utils.TESTING = True
@@ -15,59 +15,43 @@ core.utils.TESTING = True
 def test_steps():
     runner.reset()
     transcript = []
-    for page_index, page in enumerate(pages.values()):
-        for step_index, step_name in enumerate(page.step_names[:-1]):
-            step = page.get_step(step_name)
+    for page, step, substep, entry in step_test_entries():
+        program = substep.program
+        is_message = substep in step.messages
 
-            for substep in [*step.messages, step]:
-                program = substep.program
-                is_message = substep in step.messages
+        output_parts = []
+        def output_callback(data):
+            output_parts.extend(data["parts"])
 
-                if "\n" in program:
-                    code_source = step.expected_code_source or "editor"
-                else:
-                    code_source = "shell"
+        response = check_entry(
+            entry,
+            input_callback=make_test_input_callback(step.stdin_input),
+            output_callback=output_callback,
+        )
+        response["output_parts"] = output_parts
+        normalise_response(response, is_message, substep)
 
-                entry = dict(
-                    input=program,
-                    source=code_source,
-                    page_slug=page.slug,
-                    step_name=step_name,
+        transcript_item = dict(
+            program=program.splitlines(),
+            page=page.title,
+            step=step.__name__,
+            response=response,
+        )
+        transcript.append(transcript_item)
+
+        if step.get_solution and not is_message:
+            get_solution = "".join(step.get_solution["tokens"])
+            assert "def solution(" not in get_solution
+            assert "returns_stdout" not in get_solution
+            assert get_solution.strip() in program
+            transcript_item["get_solution"] = get_solution.splitlines()
+            if step.parsons_solution:
+                is_function = transcript_item["get_solution"][0].startswith(
+                    "def "
                 )
+                assert len(step.get_solution["lines"]) >= 4 + is_function
 
-                output_parts = []
-                def output_callback(data):
-                    output_parts.extend(data["parts"])
-
-                response = check_entry(
-                    entry,
-                    input_callback=make_test_input_callback(step.stdin_input),
-                    output_callback=output_callback,
-                )
-                response["output_parts"] = output_parts
-                normalise_response(response, is_message, substep)
-
-                transcript_item = dict(
-                    program=program.splitlines(),
-                    page=page.title,
-                    step=step_name,
-                    response=response,
-                )
-                transcript.append(transcript_item)
-
-                if step.get_solution and not is_message:
-                    get_solution = "".join(step.get_solution["tokens"])
-                    assert "def solution(" not in get_solution
-                    assert "returns_stdout" not in get_solution
-                    assert get_solution.strip() in program
-                    transcript_item["get_solution"] = get_solution.splitlines()
-                    if step.parsons_solution:
-                        is_function = transcript_item["get_solution"][0].startswith(
-                            "def "
-                        )
-                        assert len(step.get_solution["lines"]) >= 4 + is_function
-
-                assert response["passed"] == (not is_message)
+        assert response["passed"] == (not is_message)
 
     path = Path(__file__).parent / "test_transcript.json"
     if os.environ.get("FIX_TESTS", 0):
