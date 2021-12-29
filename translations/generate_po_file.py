@@ -21,10 +21,18 @@ def main():
         for step_name, text in zip(page.step_names, page.step_texts(raw=True)):
             step_msgid = f"pages.{page_slug}.steps.{step_name}"
             po.append(make_po_entry(code_bits, page_link, f"{step_msgid}.text", text))
-            for message_step in getattr(page.get_step(step_name), "messages", ()):
+            if step_name == "final_text":
+                continue
+
+            step = page.get_step(step_name)
+            for message_step in step.messages:
                 msgid = f"{step_msgid}.messages.{message_step.__name__}.text"
                 text = message_step.raw_text
                 po.append(make_po_entry(code_bits, page_link, msgid, text))
+
+            for i, hint in enumerate(step.hints):
+                msgid = f"{step_msgid}.hints.{i}.text"
+                po.append(make_po_entry(code_bits, page_link, msgid, hint))
 
     for code_bit, comments in code_bits.items():
         po.append(
@@ -37,7 +45,7 @@ def main():
     po.save(str(Path(__file__).parent / "english.po"))
 
 
-def make_po_entry(code_bits, page_link, step_msgid, text):
+def make_po_entry(code_bits, page_link, msgid, text):
     codes = [c for c in markdown_codes(text) if not c["no_auto_translate"]]
     codes_grouped = group_by_key(codes, "text")
     code_comments = []
@@ -74,14 +82,14 @@ def make_po_entry(code_bits, page_link, step_msgid, text):
                 continue
             code_bits[node_text].add(
                 f"https://poeditor.com/projects/view_terms?id=490053&search="
-                f"{step_msgid}\n\n{code_text}"
+                f"{msgid}\n\n{code_text}"
             )
             local_code_bits.add(
                 f"https://poeditor.com/projects/view_terms?id=490053&search=code_bits."
                 f"{urllib.parse.quote_plus(node_text)}"
             )
     po_entry = POEntry(
-        msgid=step_msgid,
+        msgid=msgid,
         msgstr=text,
         comment="\n\n".join([f"{page_link}", *code_comments, *sorted(local_code_bits)]),
     )
