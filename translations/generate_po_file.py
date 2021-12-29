@@ -80,19 +80,20 @@ def make_po_entry(code_bits, page_link, msgid, text):
                     continue
             else:
                 continue
-            code_bits[node_text].add(
-                f"https://poeditor.com/projects/view_terms?id=490053&search="
-                f"{msgid}\n\n{code_text}"
-            )
-            local_code_bits.add(
-                f"https://poeditor.com/projects/view_terms?id=490053&search=code_bits."
-                f"{urllib.parse.quote_plus(node_text)}"
-            )
+            code_bits[node_text].add(f"{search_link(msgid)}\n\n{code_text}")
+            local_code_bits.add(search_link(f"code_bits.{node_text}"))
 
     return POEntry(
         msgid=msgid,
         msgstr=text,
         comment="\n\n".join([f"{page_link}", *code_comments, *sorted(local_code_bits)]),
+    )
+
+
+def search_link(msgid):
+    return (
+        "https://poeditor.com/projects/view_terms?id=490053&search="
+        + urllib.parse.quote_plus(msgid)
     )
 
 
