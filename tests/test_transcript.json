@@ -197,7 +197,6 @@
             },
             "result": [
                 {
-                    "codeSource": "shell",
                     "data": [
                         {
                             "didyoumean": [],
@@ -1557,7 +1556,6 @@
             },
             "result": [
                 {
-                    "codeSource": "editor",
                     "data": [
                         {
                             "didyoumean": [
@@ -2336,7 +2334,6 @@
             "passed": true,
             "result": [
                 {
-                    "codeSource": "shell",
                     "data": [
                         {
                             "didyoumean": [],
@@ -2645,7 +2642,6 @@
                     "type": "stdout"
                 },
                 {
-                    "codeSource": "editor",
                     "data": [
                         {
                             "didyoumean": [
@@ -2730,7 +2726,6 @@
                     "type": "stdout"
                 },
                 {
-                    "codeSource": "editor",
                     "data": [
                         {
                             "didyoumean": [
@@ -2810,7 +2805,6 @@
             "passed": true,
             "result": [
                 {
-                    "codeSource": "editor",
                     "data": [
                         {
                             "didyoumean": [],
@@ -3349,7 +3343,6 @@
             "passed": true,
             "result": [
                 {
-                    "codeSource": "shell",
                     "data": [
                         {
                             "didyoumean": [],
@@ -3573,7 +3566,6 @@
             "passed": true,
             "result": [
                 {
-                    "codeSource": "pythontutor",
                     "data": [
                         {
                             "didyoumean": [],
@@ -3890,7 +3882,6 @@
             },
             "result": [
                 {
-                    "codeSource": "editor",
                     "data": [
                         {
                             "didyoumean": [],
@@ -4056,7 +4047,6 @@
             "passed": false,
             "result": [
                 {
-                    "codeSource": "shell",
                     "data": [
                         {
                             "didyoumean": [],
@@ -6469,7 +6459,6 @@
             },
             "result": [
                 {
-                    "codeSource": "shell",
                     "data": [
                         {
                             "didyoumean": [],

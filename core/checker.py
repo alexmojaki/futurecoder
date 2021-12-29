@@ -66,8 +66,6 @@ def check_entry(entry, input_callback, output_callback):
             parts = []
             for part in data["parts"]:
                 typ = part["type"]
-                if typ == "traceback":
-                    part["codeSource"] = entry["source"]
                 if typ == "input":
                     continue
                 result["output"] += part["text"]

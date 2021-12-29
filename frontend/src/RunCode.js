@@ -89,6 +89,9 @@ export const runCode = async ({code, source}) => {
     if (interrupted) {
       return;
     }
+    for (const part of output_parts) {
+      part.codeSource = source;
+    }
     if (hasPrediction) {
       pendingOutput.push(...output_parts);
     } else {
