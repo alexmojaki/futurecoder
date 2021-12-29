@@ -25,14 +25,15 @@ def main():
                 continue
 
             step = page.get_step(step_name)
+            comments = [search_link(step_msgid)]
             for message_step in step.messages:
                 msgid = f"{step_msgid}.messages.{message_step.__name__}.text"
                 text = message_step.raw_text
-                po.append(make_po_entry(code_bits, page_link, msgid, text))
+                po.append(make_po_entry(code_bits, page_link, msgid, text, comments))
 
             for i, hint in enumerate(step.hints):
                 msgid = f"{step_msgid}.hints.{i}.text"
-                po.append(make_po_entry(code_bits, page_link, msgid, hint))
+                po.append(make_po_entry(code_bits, page_link, msgid, hint, comments))
 
     for code_bit, comments in code_bits.items():
         po.append(
@@ -45,11 +46,11 @@ def main():
     po.save(str(Path(__file__).parent / "english.po"))
 
 
-def make_po_entry(code_bits, page_link, msgid, text):
+def make_po_entry(code_bits, page_link, msgid, text, comments=()):
     codes = [c for c in markdown_codes(text) if not c["no_auto_translate"]]
     codes_grouped = group_by_key(codes, "text")
     code_comments = []
-    local_code_bits = set()
+    comments = set(comments)
     for i, (code_text, group) in sorted(
         enumerate(codes_grouped.items()),
         key=lambda it: -len(it[1][0]),
@@ -81,12 +82,12 @@ def make_po_entry(code_bits, page_link, msgid, text):
             else:
                 continue
             code_bits[node_text].add(f"{search_link(msgid)}\n\n{code_text}")
-            local_code_bits.add(search_link(f"code_bits.{node_text}"))
+            comments.add(search_link(f"code_bits.{node_text}"))
 
     return POEntry(
         msgid=msgid,
         msgstr=text,
-        comment="\n\n".join([page_link, *code_comments, *sorted(local_code_bits)]),
+        comment="\n\n".join([page_link, *code_comments, *sorted(comments)]),
     )
 
 

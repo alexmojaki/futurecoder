@@ -12,6 +12,8 @@ msgstr ""
 "3. Press the Enter key on your keyboard."
 
 #. https://futurecoder.io/course/#IntroducingTheShell
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTheShell.steps.first_expression
 msgid "pages.IntroducingTheShell.steps.first_expression.messages.inner_cls.text"
 msgstr ""
 "Awesome, you're trying out your own experiments!\n"
@@ -70,14 +72,20 @@ msgstr ""
 "By the way, if you get stuck, you can click the lightbulb icon in the bottom right for a hint."
 
 #. https://futurecoder.io/course/#AddingStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.AddingStrings.steps.hello_world_space
 msgid "pages.AddingStrings.steps.hello_world_space.messages.inner_cls.text"
 msgstr "You must still add two or more strings together."
 
 #. https://futurecoder.io/course/#AddingStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.AddingStrings.steps.hello_world_space
 msgid "pages.AddingStrings.steps.hello_world_space.hints.0.text"
 msgstr "A space is a character just like any other, like `o` or `w`."
 
 #. https://futurecoder.io/course/#AddingStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.AddingStrings.steps.hello_world_space
 msgid "pages.AddingStrings.steps.hello_world_space.hints.1.text"
 msgstr "The space character must be somewhere inside quotes."
 
@@ -153,18 +161,26 @@ msgstr ""
 "(The character `_` in `your_name` is called an *underscore*. Use it to separate words when you want a variable name containing multiple words. You can type it on most keyboards by pressing Shift and hyphen/dash/minus (`-`).)"
 
 #. https://futurecoder.io/course/#UsingVariables
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
 msgid "pages.UsingVariables.steps.name_assign.messages.inner_cls.text"
 msgstr "Put `your_name` before the `=` to create a variable called `your_name`."
 
 #. https://futurecoder.io/course/#UsingVariables
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
 msgid "pages.UsingVariables.steps.name_assign.messages.inner_cls.text"
 msgstr "For this exercise, choose a non-empty string"
 
 #. https://futurecoder.io/course/#UsingVariables
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
 msgid "pages.UsingVariables.steps.name_assign.messages.inner_cls.text"
 msgstr "You've got the `your_name = ` part right, now put a string (use quotes) on the right of the `=`."
 
 #. https://futurecoder.io/course/#UsingVariables
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
 msgid "pages.UsingVariables.steps.name_assign.messages.inner_cls.text"
 msgstr "For this exercise, choose a name that doesn't start with a space."
 
@@ -193,14 +209,20 @@ msgstr ""
 "Oops...that doesn't look nice. Can you modify the code above so that there's a space between the word and your name?"
 
 #. https://futurecoder.io/course/#UsingVariables
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.word_plus_name_with_space
 msgid "pages.UsingVariables.steps.word_plus_name_with_space.hints.0.text"
 msgstr "You will need to use `+` twice, like 1+2+3."
 
 #. https://futurecoder.io/course/#UsingVariables
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.word_plus_name_with_space
 msgid "pages.UsingVariables.steps.word_plus_name_with_space.hints.1.text"
 msgstr "Your answer should contain a mixture of variables (no quotes) and string literals (quotes)."
 
 #. https://futurecoder.io/course/#UsingVariables
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.word_plus_name_with_space
 msgid "pages.UsingVariables.steps.word_plus_name_with_space.hints.2.text"
 msgstr "You will need to have a space character inside quotes."
 
@@ -444,10 +466,14 @@ msgstr ""
 "    ---d"
 
 #. https://futurecoder.io/course/#BasicForLoopExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_1
 msgid "pages.BasicForLoopExercises.steps.loop_exercise_1.hints.0.text"
 msgstr "You should only use one print, since each print outputs on a different line."
 
 #. https://futurecoder.io/course/#BasicForLoopExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_1
 msgid "pages.BasicForLoopExercises.steps.loop_exercise_1.hints.1.text"
 msgstr "You will need to use `+`."
 
@@ -473,14 +499,20 @@ msgstr ""
 "By the way, you can set `name` to anything in the first line. Only the rest of the program after that will be checked."
 
 #. https://futurecoder.io/course/#BasicForLoopExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_2
 msgid "pages.BasicForLoopExercises.steps.loop_exercise_2.hints.0.text"
 msgstr "Forget loops for a moment. How would you write a program which prints `name` 3 times?"
 
 #. https://futurecoder.io/course/#BasicForLoopExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_2
 msgid "pages.BasicForLoopExercises.steps.loop_exercise_2.hints.1.text"
 msgstr "The solution looks very similar to the other programs we've seen in this section."
 
 #. https://futurecoder.io/course/#BasicForLoopExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_2
 msgid "pages.BasicForLoopExercises.steps.loop_exercise_2.hints.2.text"
 msgstr "The for loop will create a variable such as `character`, but the program doesn't need to use it."
 
@@ -590,22 +622,32 @@ msgstr ""
 "    World"
 
 #. https://futurecoder.io/course/#BuildingUpStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle_empty_string
 msgid "pages.BuildingUpStrings.steps.name_triangle_empty_string.hints.0.text"
 msgstr "First make sure you're not working from the broken version of the previous program on this page."
 
 #. https://futurecoder.io/course/#BuildingUpStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle_empty_string
 msgid "pages.BuildingUpStrings.steps.name_triangle_empty_string.hints.1.text"
 msgstr "That is, `line = line + char` should come before `print(line)`."
 
 #. https://futurecoder.io/course/#BuildingUpStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle_empty_string
 msgid "pages.BuildingUpStrings.steps.name_triangle_empty_string.hints.2.text"
 msgstr "Apart from that, you only need to make one ***tiny*** change."
 
 #. https://futurecoder.io/course/#BuildingUpStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle_empty_string
 msgid "pages.BuildingUpStrings.steps.name_triangle_empty_string.hints.3.text"
 msgstr "We want to get rid of the `-`. So just do that. Literally."
 
 #. https://futurecoder.io/course/#BuildingUpStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle_empty_string
 msgid "pages.BuildingUpStrings.steps.name_triangle_empty_string.hints.4.text"
 msgstr "Use an empty string!"
 
@@ -649,10 +691,14 @@ msgstr ""
 "    W o r l d"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_triangle_spaced
 msgid "pages.BuildingUpStringsExercises.steps.name_triangle_spaced.hints.0.text"
 msgstr "You will need to use one more `+`."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_triangle_spaced
 msgid "pages.BuildingUpStringsExercises.steps.name_triangle_spaced.hints.1.text"
 msgstr "You will need to use a string consisting of one space: `' '`."
 
@@ -669,22 +715,32 @@ msgstr ""
 "    dlroW"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_triangle_backwards
 msgid "pages.BuildingUpStringsExercises.steps.name_triangle_backwards.hints.0.text"
 msgstr "The solution is very similar to the original triangle program, just make one small change."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_triangle_backwards
 msgid "pages.BuildingUpStringsExercises.steps.name_triangle_backwards.hints.1.text"
 msgstr "You still want to add one character to `line` at a time, it's just a question of where you add it."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_triangle_backwards
 msgid "pages.BuildingUpStringsExercises.steps.name_triangle_backwards.hints.2.text"
 msgstr "You want the lines to be reversed, so you need to reverse/flip something."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_triangle_backwards
 msgid "pages.BuildingUpStringsExercises.steps.name_triangle_backwards.hints.3.text"
 msgstr "You need to add the character before the string, instead of after."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_triangle_backwards
 msgid "pages.BuildingUpStringsExercises.steps.name_triangle_backwards.hints.4.text"
 msgstr "3 + 7 is equal to 7 + 3. Same for all numbers. Is this also true for strings?"
 
@@ -721,18 +777,26 @@ msgstr ""
 "There should be one `-` for each character in `name`."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_underlined
 msgid "pages.BuildingUpStringsExercises.steps.name_underlined.hints.0.text"
 msgstr "Look at the triangle program for inspiration."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_underlined
 msgid "pages.BuildingUpStringsExercises.steps.name_underlined.hints.1.text"
 msgstr "Look at the program where you printed `name` once for each character for inspiration."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_underlined
 msgid "pages.BuildingUpStringsExercises.steps.name_underlined.hints.2.text"
 msgstr "You will need to build up a string of dashes (`-`) one character at a time."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_underlined
 msgid "pages.BuildingUpStringsExercises.steps.name_underlined.hints.3.text"
 msgstr "The for loop will create a variable such as `char`, but the program doesn't need to use it."
 
@@ -750,18 +814,26 @@ msgstr ""
 "    +-----+"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box
 msgid "pages.BuildingUpStringsExercises.steps.name_box.hints.0.text"
 msgstr "You did all the hard stuff in the previous exercise. Now it's just some simple adding of strings."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box
 msgid "pages.BuildingUpStringsExercises.steps.name_box.hints.1.text"
 msgstr "You only need one for loop - the one used to make the line of dashes from the previous exercise."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box
 msgid "pages.BuildingUpStringsExercises.steps.name_box.hints.2.text"
 msgstr "Don't try and do everything at once. Break the problem up into smaller, easier subproblems."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box
 msgid "pages.BuildingUpStringsExercises.steps.name_box.hints.3.text"
 msgstr ""
 "Try writing a program that outputs:\n"
@@ -771,10 +843,14 @@ msgstr ""
 "    -----"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box
 msgid "pages.BuildingUpStringsExercises.steps.name_box.hints.4.text"
 msgstr "Since you need to output three separate lines of text, you will need to call `print()` three times."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box
 msgid "pages.BuildingUpStringsExercises.steps.name_box.hints.5.text"
 msgstr ""
 "Try writing a program that outputs:\n"
@@ -795,19 +871,27 @@ msgstr ""
 "    +World+"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box_2
 msgid "pages.BuildingUpStringsExercises.steps.name_box_2.hints.0.text"
 msgstr "You will need two separate for loops over `name`."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box_2
 msgid "pages.BuildingUpStringsExercises.steps.name_box_2.hints.1.text"
 msgstr ""
 "Each line except for the first and last has the same characters in the middle. That means you can reuse something."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box_2
 msgid "pages.BuildingUpStringsExercises.steps.name_box_2.hints.2.text"
 msgstr "Create a variable containing the spaces in the middle and use it many times."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box_2
 msgid "pages.BuildingUpStringsExercises.steps.name_box_2.hints.3.text"
 msgstr ""
 "Use one loop to create a bunch of spaces, and a second loop to print a bunch of lines using the previously created "
@@ -831,6 +915,8 @@ msgstr ""
 "        d"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge
 msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.messages.inner_cls.text"
 msgstr ""
 "Almost there! You have one space too many before each letter.\n"
@@ -839,28 +925,40 @@ msgstr ""
 "Check the order of your code."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge
 msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.hints.0.text"
 msgstr ""
 "The first letter should have 0 spaces before it, the second letter should have 1 space before it, the third should "
 "have 2, etc."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge
 msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.hints.1.text"
 msgstr "You should keep the spaces in a variable and build them up in a loop, as before."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge
 msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.hints.2.text"
 msgstr "The difference is that you need to print letters at the same time as building up spaces."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge
 msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.hints.3.text"
 msgstr "In other words, you need a single loop that does both."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge
 msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.hints.4.text"
 msgstr "The body of the loop needs to print the spaces and letter, and also add a space."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge
 msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.hints.5.text"
 msgstr "Since the first letter should have no spaces before it, you need to add a space after printing a letter."
 
@@ -970,10 +1068,14 @@ msgstr ""
 "If both `confused` and `excited` are true, the sentence should end with `!?`."
 
 #. https://futurecoder.io/course/#IntroducingIfStatements
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingIfStatements.steps.excited_confused_exercise
 msgid "pages.IntroducingIfStatements.steps.excited_confused_exercise.hints.0.text"
 msgstr "You only need to add a few lines to the existing program. All the existing code should be left as is."
 
 #. https://futurecoder.io/course/#IntroducingIfStatements
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingIfStatements.steps.excited_confused_exercise
 msgid "pages.IntroducingIfStatements.steps.excited_confused_exercise.hints.1.text"
 msgstr "The code that you add should be very similar to the existing code."
 
@@ -1097,22 +1199,32 @@ msgstr ""
 "Now modify the program to do the opposite: only print the first character, leave out the rest."
 
 #. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_first_character
 msgid "pages.UnderstandingProgramsWithSnoop.steps.print_first_character.hints.0.text"
 msgstr "The code should be almost exactly the same, just make a couple of small changes."
 
 #. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_first_character
 msgid "pages.UnderstandingProgramsWithSnoop.steps.print_first_character.hints.1.text"
 msgstr "Make sure that the code inside `if include:` runs at the beginning of the loop, in the first iteration."
 
 #. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_first_character
 msgid "pages.UnderstandingProgramsWithSnoop.steps.print_first_character.hints.2.text"
 msgstr "That means `include` should be `True` at that point."
 
 #. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_first_character
 msgid "pages.UnderstandingProgramsWithSnoop.steps.print_first_character.hints.3.text"
 msgstr "Make sure that the code inside `if include:` *doesn't* run after the first iteration."
 
 #. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_first_character
 msgid "pages.UnderstandingProgramsWithSnoop.steps.print_first_character.hints.4.text"
 msgstr "That means `include` should be `False` after the first iteration."
 
@@ -1201,26 +1313,38 @@ msgstr ""
 "or `'HELLO WORLD'`."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.capitalise
 msgid "pages.IfAndElse.steps.capitalise.hints.0.text"
 msgstr "You've learned all the tools you need for this. I believe in you! Look at previous programs for inspiration."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.capitalise
 msgid "pages.IfAndElse.steps.capitalise.hints.1.text"
 msgstr "You will need a loop to build up the new sentence character by character."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.capitalise
 msgid "pages.IfAndElse.steps.capitalise.hints.2.text"
 msgstr "You will need an `if/else` to choose whether to add an uppercase or lowercase character."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.capitalise
 msgid "pages.IfAndElse.steps.capitalise.hints.3.text"
 msgstr "Your `if/else` needs to execute different bodies depending on which iteration of the loop it's in."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.capitalise
 msgid "pages.IfAndElse.steps.capitalise.hints.4.text"
 msgstr "That means that your `if` condition needs to be a variable that changes inside the loop."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.capitalise
 msgid "pages.IfAndElse.steps.capitalise.hints.5.text"
 msgstr "In the first iteration you need an uppercase letter. In the following iterations you need a lowercase letter."
 
@@ -1238,24 +1362,34 @@ msgstr ""
 "Every second character should be lowercased, the rest should be uppercase."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.spongebob
 msgid "pages.IfAndElse.steps.spongebob.hints.0.text"
 msgstr "This is similar to the previous exercise. The difference is when and where you set the condition variable."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.spongebob
 msgid "pages.IfAndElse.steps.spongebob.hints.1.text"
 msgstr "You will need to have a boolean variable which changes with every iteration."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.spongebob
 msgid "pages.IfAndElse.steps.spongebob.hints.2.text"
 msgstr ""
 "First write a small program which takes a boolean variable and flips it, i.e. if the variable is `True` it becomes "
 "`False` and if it starts out `False` it's changed to `True`. No loops, just an `if/else`."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.spongebob
 msgid "pages.IfAndElse.steps.spongebob.hints.3.text"
 msgstr "You will need to use the variable in the `if` condition and also assign to the same variable in the body."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.spongebob
 msgid "pages.IfAndElse.steps.spongebob.hints.4.text"
 msgstr "Combine that flipping `if/else` with the one that chooses an uppercase or lowercase character."
 
@@ -1302,6 +1436,8 @@ msgid "pages.TheEqualityOperator.steps.if_equals_replacing_characters_exercise.t
 msgstr "Now extend the program to also replace `e` with `3` and `a` with `@`."
 
 #. https://futurecoder.io/course/#TheEqualityOperator
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheEqualityOperator.steps.if_equals_replacing_characters_exercise
 msgid "pages.TheEqualityOperator.steps.if_equals_replacing_characters_exercise.hints.0.text"
 msgstr "You just need to add a few lines of code that are very similar to existing ones."
 
@@ -1372,6 +1508,8 @@ msgstr ""
 #.         char = 'A'
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingElif.steps.dna_example_with_else
 msgid "pages.IntroducingElif.steps.dna_example_with_else.hints.0.text"
 msgstr ""
 "Change:\n"
@@ -1381,6 +1519,8 @@ msgstr ""
 "to look like the revised snippet. It's just a small change, do it without copy-pasting."
 
 #. https://futurecoder.io/course/#IntroducingElif
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingElif.steps.dna_example_with_else
 msgid "pages.IntroducingElif.steps.dna_example_with_else.hints.1.text"
 msgstr "Now make the same kind of change to the code swapping G and C."
 
@@ -1510,10 +1650,14 @@ msgstr ""
 "it should print `10`."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
 msgid "pages.OtherComparisonOperators.steps.min_three_exercise.hints.0.text"
 msgstr "Try writing a program which prints the smallest of just `x1` and `x2`."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
 msgid "pages.OtherComparisonOperators.steps.min_three_exercise.hints.1.text"
 msgstr "All you need is a few uses of `<`, `if`, and maybe `else`."
 
@@ -1639,22 +1783,32 @@ msgstr ""
 "    Thisisalist"
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 msgid "pages.IntroducingLists.steps.strings_sum.hints.0.text"
 msgstr "This is very similar to the exercises you've done building up strings character by character."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 msgid "pages.IntroducingLists.steps.strings_sum.hints.1.text"
 msgstr "The solution is very similar to the program that adds numbers."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 msgid "pages.IntroducingLists.steps.strings_sum.hints.2.text"
 msgstr "In fact, what happens if you try running that program with a list of strings?"
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 msgid "pages.IntroducingLists.steps.strings_sum.hints.3.text"
 msgstr "The problem is that 0. You can't add 0 to a string because numbers and strings are incompatible."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 msgid "pages.IntroducingLists.steps.strings_sum.hints.4.text"
 msgstr "Is there a similar concept among strings to 0? A blank initial value?"
 
@@ -1678,93 +1832,133 @@ msgstr ""
 "    This - is - a - list"
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.0.text"
 msgstr "This is similar to the previous exercise. You can start with your solution from that."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.1.text"
 msgstr ""
 "This exercise doesn't require anything fancy and the final solution can be quite simple. But it's tricky to get it "
 "right and you need to think about the approach carefully."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.2.text"
 msgstr "In each iteration, in addition to a word in the list, you also have to add the separator."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.3.text"
 msgstr "But you don't want to add the separator after adding the last word in the list."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.4.text"
 msgstr "Unfortunately there is no \"subtraction\" with strings; you can't add the last separator then remove it."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.5.text"
 msgstr ""
 "Let's back up. The final result should contain each word, and `n - 1` separators, where `n` is the number of words."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.6.text"
 msgstr "So you want to add a separator in every iteration except one."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.7.text"
 msgstr "You can skip adding the separator in one particular iteration using an `if` statement."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.8.text"
 msgstr ""
 "Later on you will learn a way to iterate over a list and check if you're in the last iteration, but right now you have"
 " no way of doing that."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.9.text"
 msgstr "However, the iteration you skip doesn't have to be the last one!"
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.10.text"
 msgstr "You *can* write a program that checks if you're in the *first* iteration of a loop."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.11.text"
 msgstr "Just make a boolean variable to keep track of this. No need for any comparison operators or numbers."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.12.text"
 msgstr "We looked at programs that did something like this [here](#UnderstandingProgramsWithSnoop)."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.13.text"
 msgstr ""
 "So if you only skip adding the separator in the first iteration, you will have `n - 1` separators. Now you just need "
 "to think carefully about how to make sure the separators are in the right place."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.14.text"
 msgstr ""
 "Forgetting the loop for a moment, you need to add the following to the string in this order: the first word, the "
 "separator, the second word, the separator, the third word, etc."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.15.text"
 msgstr ""
 "That means that in the first iteration, you just add the first word. In the second iteration, you add the separator, "
 "then the second word. In the third iteration, you add the separator, then the third word. And so on."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.16.text"
 msgstr "So inside your loop, add the separator first, add the word after."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.17.text"
 msgstr "Skip adding the separator in the first iteration by checking a boolean variable."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.18.text"
 msgstr "Create the boolean variable before the loop, then change it inside the loop."
 
 #. https://futurecoder.io/course/#IntroducingLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum_bonus
 msgid "pages.IntroducingLists.steps.strings_sum_bonus.hints.19.text"
 msgstr "Only change it in the loop after checking it, or you won't be able to skip the first iteration."
 
@@ -1826,27 +2020,39 @@ msgstr ""
 "__code2__"
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.double_numbers
 msgid "pages.BuildingNewLists.steps.double_numbers.hints.0.text"
 msgstr "Remember that you can multiply numbers using `*`."
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.double_numbers
 msgid "pages.BuildingNewLists.steps.double_numbers.hints.1.text"
 msgstr ""
 "This program is structurally very similar to the programs you've written to build up strings character by character."
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.double_numbers
 msgid "pages.BuildingNewLists.steps.double_numbers.hints.2.text"
 msgstr "Make a new list, and then build it up element by element in a for loop."
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.double_numbers
 msgid "pages.BuildingNewLists.steps.double_numbers.hints.3.text"
 msgstr "Start with an empty list."
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.double_numbers
 msgid "pages.BuildingNewLists.steps.double_numbers.hints.4.text"
 msgstr "You can make a list with one element `x` by just writing `[x]`."
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.double_numbers
 msgid "pages.BuildingNewLists.steps.double_numbers.hints.5.text"
 msgstr "You can add an element to a list by adding a list containing one element."
 
@@ -1895,18 +2101,26 @@ msgstr ""
 "__code3__"
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.filter_numbers
 msgid "pages.BuildingNewLists.steps.filter_numbers.hints.0.text"
 msgstr "This is very similar to the previous exercise."
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.filter_numbers
 msgid "pages.BuildingNewLists.steps.filter_numbers.hints.1.text"
 msgstr "The difference is that sometimes you should skip appending to the new list."
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.filter_numbers
 msgid "pages.BuildingNewLists.steps.filter_numbers.hints.2.text"
 msgstr "Use an `if` statement."
 
 #. https://futurecoder.io/course/#BuildingNewLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.filter_numbers
 msgid "pages.BuildingNewLists.steps.filter_numbers.hints.3.text"
 msgstr "Use a comparison operator to test if a number is big enough to add."
 
@@ -1932,42 +2146,62 @@ msgstr ""
 "it should print `False`."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.0.text"
 msgstr "You will need a loop."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.1.text"
 msgstr "You will need an `if` statement."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.2.text"
 msgstr "You will need a comparison operator."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.3.text"
 msgstr "Specifically `==`."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.4.text"
 msgstr "You need a boolean variable that you print at the end."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.5.text"
 msgstr "If you find the element in the list you should set that variable to `True`."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.6.text"
 msgstr "Once you've found the element, you can't unfind it."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.7.text"
 msgstr "That means that once you set the variable to `True`, it should never be set to anything else after that."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.8.text"
 msgstr "Don't use an `else`."
 
 #. https://futurecoder.io/course/#UsingBreak
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingBreak.steps.list_contains_exercise
 msgid "pages.UsingBreak.steps.list_contains_exercise.hints.9.text"
 msgstr "There is no reason to ever set the variable to `False` inside the loop."
 
@@ -2073,50 +2307,72 @@ msgstr ""
 "You can assume that `to_find` appears at least once."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.messages.inner_cls.text"
 msgstr ""
 "You're almost there! However, this prints all the indices,\n"
 "not just the first one."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.messages.inner_cls.text"
 msgstr ""
 "You're almost there! However, this prints the *last* index,\n"
 "not the first one."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.0.text"
 msgstr "You will need to look at all the possible indices of `things` and check which one is the answer."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.1.text"
 msgstr "To look at all possible indices, you will need a loop over `range(len(things))`."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.2.text"
 msgstr "To check if an index is the answer, you will need to use:"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.3.text"
 msgstr "- `if`"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.4.text"
 msgstr "- the index in a subscript"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.5.text"
 msgstr "- `==`"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.6.text"
 msgstr "Since you're looking for the first index, you need to stop the loop once you find one."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.7.text"
 msgstr "You learned how to stop a loop in the middle recently."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
 msgid "pages.GettingElementsAtPosition.steps.index_exercise.hints.8.text"
 msgstr "You need to use `break`."
 
@@ -2142,44 +2398,64 @@ msgstr ""
 "    o d"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.0.text"
 msgstr "Did you experiment with indexing and `len()` with strings in the shell?"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.1.text"
 msgstr ""
 "Forget loops for a moment. How would you print just the first line, which has the first character of each of the two "
 "strings?"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.2.text"
 msgstr "In the second line you want to print the second character of each string, and so on."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.3.text"
 msgstr "You will need a `for` loop."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.4.text"
 msgstr "You will need indexing (subscripting)."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.5.text"
 msgstr "You will need `range`."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.6.text"
 msgstr "You will need `len`."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.7.text"
 msgstr "You will need `+`."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.8.text"
 msgstr "You will need to index both strings."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_exercise.hints.9.text"
 msgstr "You will need to pass the same index to both strings each time to retrieve matching characters."
 
@@ -2245,6 +2521,8 @@ msgstr ""
 "      h"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.0.text"
 msgstr ""
 "The solution has the same overall structure and essential elements of the previous solution, but it's significantly "
@@ -2260,6 +2538,8 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char1
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char2
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.1.text"
 msgstr ""
 "In particular, it should still contain something like:\n"
@@ -2267,38 +2547,54 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.2.text"
 msgstr "What should go inside `range()`? Neither `len(string1)` nor `len(string2)` is good enough."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.3.text"
 msgstr "You want a loop iteration for every character in the longer string."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.4.text"
 msgstr "That means you need `range(<length of the longest string>)`"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.5.text"
 msgstr ""
 "In other words you need to find the biggest of the two values `len(string1)` and `len(string2)`. You've already done "
 "an exercise like that."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.6.text"
 msgstr ""
 "Once you've sorted out `for i in range(...)`, `i` will sometimes be too big to be a valid index for both strings. You "
 "will need to check if it's too big before indexing."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.7.text"
 msgstr "Remember, the biggest valid index for `string1` is `len(string1) - 1`. `len(string)` is too big."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.8.text"
 msgstr "You will need two `if` statements, one for each string."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.9.text"
 msgstr "You will need to set e.g. `char1 = ' '` when `string1[i]` is not valid."
 
@@ -2514,28 +2810,40 @@ msgstr ""
 "Replace the middle line with one line from the list above. The final program should modify `x` to move the first element to the end, so that it prints `['b', 'c', 'a']`."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment
 msgid "pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment.hints.0.text"
 msgstr ""
 "Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, then one line copied exactly from the list "
 "(no additions), and `print(x)`."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment
 msgid "pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment.hints.1.text"
 msgstr "Moving the first element to the end requires two things."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment
 msgid "pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment.hints.2.text"
 msgstr "Removing the first element..."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment
 msgid "pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment.hints.3.text"
 msgstr "and adding it to the end."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment
 msgid "pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment.hints.4.text"
 msgstr "Which functions/methods can you use for this?"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment
 msgid "pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment.hints.5.text"
 msgstr "Remember that the first index is 0."
 
@@ -2558,24 +2866,34 @@ msgstr ""
 "so now it should print `['a', 'b', 'a']`."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise.hints.0.text"
 msgstr ""
 "Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, then one line copied exactly from the list "
 "(no additions), and `print(x)`."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise.hints.1.text"
 msgstr "You need to get the value of the first element in `x`..."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise.hints.2.text"
 msgstr "and assign that value to the last position in `x`."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise.hints.3.text"
 msgstr "How do you assign a value at a specific index in the list?"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise.hints.4.text"
 msgstr "What are the indices of the first and last last elements in `x`?"
 
@@ -2612,24 +2930,34 @@ msgstr ""
 "Therefore the program will print `['a', 'b', 'c', 'a']`."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise.hints.0.text"
 msgstr ""
 "Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, `y = ` followed by one line copied exactly "
 "from the list, and `print(y)`."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise.hints.1.text"
 msgstr "Which lines of code create a new list rather than modifying?"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise.hints.2.text"
 msgstr "`x` is a list. Each element of `x` is a string."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise.hints.3.text"
 msgstr "You can add lists together, you can add strings together, but you can't add a string and a list."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise.hints.4.text"
 msgstr "How do you make a list containing one element?"
 
@@ -2649,32 +2977,46 @@ msgstr ""
 "Replace the middle line `x.remove(0)` with a line from the list that does the same thing."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.remove_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.hints.0.text"
 msgstr ""
 "Your solution should have exactly three statements: `x = [1, 2, 0, 3]`, one line copied exactly from the list (no "
 "additions), and `print(x)`."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.remove_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.hints.1.text"
 msgstr "What does `x.remove(0)` do?"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.remove_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.hints.2.text"
 msgstr "It removes an element!"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.remove_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.hints.3.text"
 msgstr "Which function/method can also remove an element?"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.remove_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.hints.4.text"
 msgstr "The other function/method can't simply be told 'remove 0', it needs a different kind of information."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.remove_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.hints.5.text"
 msgstr "Specifically, it needs to be told where 0 is."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.remove_exercise
 msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.hints.6.text"
 msgstr "Which function/method provides that kind of information?"
 
@@ -2797,24 +3139,34 @@ msgstr ""
 "Replace the part `1 in x` (leave in the `y = `) with one line from the list above that does the same thing."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum
 msgid "pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum.hints.0.text"
 msgstr ""
 "Your solution should have exactly three statements: `x = ['a', 'b', 'c']`, `y = ` followed by one line copied exactly "
 "from the list, and `print(y)`."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum
 msgid "pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum.hints.1.text"
 msgstr "When is `1 in x` True?"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum
 msgid "pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum.hints.2.text"
 msgstr "When `1` is in `x`!"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum
 msgid "pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum.hints.3.text"
 msgstr "Could be that `1` is in `x` once, or twice, or three times..."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum
 msgid "pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum.hints.4.text"
 msgstr "...but not zero times!"
 
@@ -2837,24 +3189,34 @@ msgstr ""
 "The final program should print the average (technically the *mean*) of the numbers in `x`."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.average_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.average_exercise.hints.0.text"
 msgstr ""
 "Your solution should have exactly three statements: `x = [15, 12, -6, 3]`, `y = ` followed by one line copied exactly "
 "from the list, and `print(y)`."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.average_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.average_exercise.hints.1.text"
 msgstr "If you're not sure, look up how to calculate the average/mean."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.average_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.average_exercise.hints.2.text"
 msgstr "To calculate the average of numbers in `x` we need two things."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.average_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.average_exercise.hints.3.text"
 msgstr "Which two functions/methods give you those two things?"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.average_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.average_exercise.hints.4.text"
 msgstr "How do you combine those two things to calculate the average?"
 
@@ -2877,20 +3239,28 @@ msgstr ""
 "The final program should print the result of adding up all the numbers from `1` to `x` inclusive, i.e. `1 + 2 + 3 + ... + x`."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.sum_range_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.sum_range_exercise.hints.0.text"
 msgstr ""
 "Your solution should have exactly three statements: `x = 100`, `y = ` followed by one line copied exactly from the "
 "list, and `print(y)`."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.sum_range_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.sum_range_exercise.hints.1.text"
 msgstr "What function/method can be used to add up things?"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.sum_range_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.sum_range_exercise.hints.2.text"
 msgstr "Which function/method gives us the numbers `1, 2, 3, ..., x`?"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.sum_range_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.sum_range_exercise.hints.3.text"
 msgstr "You have to make a small tweak, otherwise that last number `x` will be left out."
 
@@ -2913,24 +3283,34 @@ msgstr ""
 "The final program should print the *second smallest value* in `x`."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise.hints.0.text"
 msgstr ""
 "Your solution should have exactly three statements: `x = [12, -6, 2, -1, 3]`, `y = ` followed by one line copied "
 "exactly from the list, and `print(y)`."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise.hints.1.text"
 msgstr "The numbers in `x` seem to be all out of order. Can you do something about that?"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise.hints.2.text"
 msgstr "If you figured that part out, try using that function in the shell to play around with it."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise.hints.3.text"
 msgstr "How would you use that function to get the smallest value in a list? What about the biggest?"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise
 msgid "pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise.hints.4.text"
 msgstr "After that, how can you get the *second* smallest value?"
 
@@ -3060,18 +3440,26 @@ msgstr ""
 "Let's practice this skill now. Find a function/method that returns the value in a list which is bigger than any other value. For example, given the list `[21, 55, 4, 91, 62, 49]`, it will return `91`. You should write the answer in the shell as a single small expression. For example, if you were looking for the function `sum`, you could write `sum([21, 55, 4, 91, 62, 49])`. Don't solve this manually with a loop. Note that the function you're looking for hasn't been mentioned here before."
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.sum_list
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.hints.0.text"
 msgstr "Use the words 'python' and 'list' in your search query."
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.sum_list
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.hints.1.text"
 msgstr "In one word, what's special about `91` in the list `[21, 55, 4, 91, 62, 49]`?"
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.sum_list
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.hints.2.text"
 msgstr "'biggest' or 'largest'"
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.sum_list
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.hints.3.text"
 msgstr "'python biggest value in list'"
 
@@ -3106,18 +3494,26 @@ msgstr ""
 "Replace the middle line `nums.append(9)` with the right function/method call to do that."
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.list_insert
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.list_insert.hints.0.text"
 msgstr "Use the words 'python' and 'list' in your search query."
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.list_insert
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.list_insert.hints.1.text"
 msgstr "Instead of putting the value at the beginning or end, we want to put it ____________?"
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.list_insert
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.list_insert.hints.2.text"
 msgstr "'in the middle' or 'at an index' or 'at a particular position'"
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.list_insert
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.list_insert.hints.3.text"
 msgstr "'python add value at index'"
 
@@ -3351,18 +3747,26 @@ msgstr ""
 "    Special cases aren't special enough to break the rules."
 
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise.hints.0.text"
 msgstr "How should you define the string?"
 
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise.hints.1.text"
 msgstr "With single quotes, or with double quotes?"
 
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise.hints.2.text"
 msgstr "You only need one string."
 
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise.hints.3.text"
 msgstr "No need to add strings together."
 
@@ -3377,14 +3781,20 @@ msgstr ""
 "    \"Talk is cheap. Show me the code.\" - Linus Torvalds"
 
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.single_quote_exercise
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.single_quote_exercise.hints.0.text"
 msgstr "Think simple! How would you normally do this?"
 
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.single_quote_exercise
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.single_quote_exercise.hints.1.text"
 msgstr "If a string contains a single quote, we must use double quotes to define it."
 
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.single_quote_exercise
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.single_quote_exercise.hints.2.text"
 msgstr "What if the string contains double quotes?"
 
@@ -3464,14 +3874,20 @@ msgstr ""
 "Fix this by replacing all the string concatenations (+) with a single f-string."
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.basic_f_string_exercise
 msgid "pages.IntroducingFstrings.steps.basic_f_string_exercise.hints.0.text"
 msgstr "This is just like the given f-string example."
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.basic_f_string_exercise
 msgid "pages.IntroducingFstrings.steps.basic_f_string_exercise.hints.1.text"
 msgstr "Did you forget the `f`?"
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.basic_f_string_exercise
 msgid "pages.IntroducingFstrings.steps.basic_f_string_exercise.hints.2.text"
 msgstr "How many pairs of curly brackets do you need?"
 
@@ -3503,26 +3919,38 @@ msgstr ""
 "    There are 3 people waiting, the first one's name is Alice."
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.fix_broken_program
 msgid "pages.IntroducingFstrings.steps.fix_broken_program.hints.0.text"
 msgstr "There are four problems with the expression inside `print`."
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.fix_broken_program
 msgid "pages.IntroducingFstrings.steps.fix_broken_program.hints.1.text"
 msgstr "There is a problem with the syntax that finds the number of people."
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.fix_broken_program
 msgid "pages.IntroducingFstrings.steps.fix_broken_program.hints.2.text"
 msgstr "Then one of the strings has a problem with the quotes."
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.fix_broken_program
 msgid "pages.IntroducingFstrings.steps.fix_broken_program.hints.3.text"
 msgstr "Also there is a problem with the syntax that finds the first person's name."
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.fix_broken_program
 msgid "pages.IntroducingFstrings.steps.fix_broken_program.hints.4.text"
 msgstr "And you can't add strings and numbers together!"
 
 #. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.fix_broken_program
 msgid "pages.IntroducingFstrings.steps.fix_broken_program.hints.5.text"
 msgstr "Did you properly use curly brackets in your f-string?"
 
@@ -3598,16 +4026,22 @@ msgstr ""
 "    ----------"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.inner_cls.text"
 msgstr "You can't add together strings and numbers. Use an f-string."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.inner_cls.text"
 msgstr ""
 "You added 1 to your outer loop variable at the wrong place!\n"
 "Where should you do that instead to fix it?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.inner_cls.text"
 msgstr ""
 "Your solution is too long. You only need a few lines of code for this problem.\n"
@@ -3615,42 +4049,62 @@ msgstr ""
 "The computer will do the repetition for you!"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.0.text"
 msgstr "You need to use a for loop inside a for loop."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.1.text"
 msgstr "You need the numbers from 1 to 12."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.2.text"
 msgstr "Whenever you need a sequence of consecutive numbers, use `range`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.3.text"
 msgstr "You want something like `for x in range(n):`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.4.text"
 msgstr "This will start with `x = 0`, but there's an easy workaround for that."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.5.text"
 msgstr "You can just add 1 to `x`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.6.text"
 msgstr "Use `*` to multiply numbers."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.7.text"
 msgstr "Use an f-string with several variables."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.8.text"
 msgstr "Remember to print a line with the correct number of dashes after each section."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.hints.9.text"
 msgstr "Make sure each line is in the correct loop and has the right amount of indentation."
 
@@ -3686,14 +4140,20 @@ msgstr ""
 "Note that \"Alice vs Bob\" and \"Bob vs Alice\" are both in the list, but there's no \"Alice vs Alice\" - we don't want anyone playing with themselves."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_exercise
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_exercise.hints.0.text"
 msgstr "Think about how you would do this manually and systematically, with a pencil and paper."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_exercise
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_exercise.hints.1.text"
 msgstr "You need to use a for loop inside a for loop."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_exercise
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_exercise.hints.2.text"
 msgstr "You need an `if` statement to check that the two players aren't the same person."
 
@@ -3726,44 +4186,62 @@ msgstr ""
 "    DDDD"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.0.text"
 msgstr "Think about how you would do this manually and systematically, with a pencil and paper."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.1.text"
 msgstr ""
 "The fact that the password must be four letters long is very important. This would be a lot harder to solve if the "
 "password could be any given length."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.2.text"
 msgstr "But the string `letters` might have any number of characters."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.3.text"
 msgstr ""
 "If there are `n` different letters, then the number of possible passwords is `n^4 == n*n*n*n` because there are `n` "
 "possible letters for each position and they're all independent."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.4.text"
 msgstr ""
 "Suppose again that `letters = \"ABCD\"`. Imagine you have all possible three-letter passwords. Now for each one, add "
 "an A at the end, or add a B, or a C, or a D. That's how you would get all possible four-letter passwords."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.5.text"
 msgstr "Remember, a for loop can contain any statement, including another for loop."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.6.text"
 msgstr "That applies to all for loops."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.7.text"
 msgstr "One for loop inside another for loop is no longer enough."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 msgid "pages.IntroducingNestedLoops.steps.crack_password_exercise.hints.8.text"
 msgstr "You have to go deeper."
 
@@ -3791,37 +4269,53 @@ msgstr ""
 "    O"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.0.text"
 msgstr "How would you describe instructions to type in this triangle manually?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.1.text"
 msgstr ""
 "Print a line of `size` Os, then `size - 1` Os, etc. down to 1 O. For example print 5 Os, then 4 Os, then 3, 2, and 1."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.2.text"
 msgstr "Break this down into subproblems."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.3.text"
 msgstr "How do you print one line of Os of a given length, and how do you go through all the lengths?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.4.text"
 msgstr ""
 "Building up a line of characters should be very familiar from previous exercises, the only difference is that you have"
 " to make it a given length instead of just the same length as another string."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.5.text"
 msgstr "An easy way to do something `n` times is to loop over `range(n)`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.6.text"
 msgstr "You need to use a for loop inside a for loop."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.7.text"
 msgstr ""
 "You need numbers that count down, like 5, 4, 3, 2, 1. There is a way to do this with `range`, and you can easily look "
@@ -3829,6 +4323,8 @@ msgstr ""
 "numbers counting down."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.8.text"
 msgstr "What formula converts 0 into 5, 1 into 4, 2, into 3, etc?"
 
@@ -3868,50 +4364,74 @@ msgstr ""
 "    Dylan vs Bob"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.0.text"
 msgstr "You'll need a for loop inside a for loop like before."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.1.text"
 msgstr "This time something like `for player1 in players:` won't be enough."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.2.text"
 msgstr "Your program needs to use the *positions* of the players in the list."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.3.text"
 msgstr "That means you need to loop over the positions and use indexing (subscripting) to access the list entries."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.4.text"
 msgstr "To loop over the positions, use `range`..."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.5.text"
 msgstr "...and `len`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.6.text"
 msgstr "Look at the desired output: `Charlie vs Alice`: `Charlie` comes before `Alice` in the `players` list."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.7.text"
 msgstr "We don't want to print `Alice vs Charlie` because `Alice` comes AFTER `Charlie` in `players`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.8.text"
 msgstr "The only pairs we want to print are those where the left player comes before the right player in the list."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.9.text"
 msgstr "How can we express this relation in terms of the list indices of the two for-loops?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.10.text"
 msgstr "You need to use a comparison operator."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.player_vs_player_bonus
 msgid "pages.IntroducingNestedLoops.steps.player_vs_player_bonus.hints.11.text"
 msgstr "Once you figure out the relation, you can express it with an `if` statement."
 
@@ -4032,14 +4552,20 @@ msgstr ""
 "you should print `d`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.string_list_exercise
 msgid "pages.IntroducingNestedLists.steps.string_list_exercise.hints.0.text"
 msgstr "How can you access the second string in the list?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.string_list_exercise
 msgid "pages.IntroducingNestedLists.steps.string_list_exercise.hints.1.text"
 msgstr "Then how do you access a particular letter in a string?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.string_list_exercise
 msgid "pages.IntroducingNestedLists.steps.string_list_exercise.hints.2.text"
 msgstr "Remember that the indexing of lists and strings are very similar."
 
@@ -4080,34 +4606,50 @@ msgstr ""
 "For the previous example input it should print `f`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.0.text"
 msgstr "This is very similar to the previous exercise."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.1.text"
 msgstr "Do you remember how to access the last position of a list (without using `len`)?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.2.text"
 msgstr "Similarly how do you access the second-to-last position in a list?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.3.text"
 msgstr "If you can't remember, you can Google it!"
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.4.text"
 msgstr "Indexing works similarly on lists and strings."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.5.text"
 msgstr "Do you get an `index out of range` error? Is it for a string, or a list? Why?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.6.text"
 msgstr "Make sure you are not confusing the order of the list index and the string index."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.7.text"
 msgstr "Use birdseye if you're having trouble."
 
@@ -4134,26 +4676,38 @@ msgstr ""
 "For example, for the list above, it should print `y`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 msgid "pages.IntroducingNestedLists.steps.triple_subscripting.hints.0.text"
 msgstr "This is very similar to the previous exercises."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 msgid "pages.IntroducingNestedLists.steps.triple_subscripting.hints.1.text"
 msgstr "How many times do you need to use subscripting?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 msgid "pages.IntroducingNestedLists.steps.triple_subscripting.hints.2.text"
 msgstr "First you need to access a sublist."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 msgid "pages.IntroducingNestedLists.steps.triple_subscripting.hints.3.text"
 msgstr "Then a string in that sublist."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 msgid "pages.IntroducingNestedLists.steps.triple_subscripting.hints.4.text"
 msgstr "Then a letter in that string."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 msgid "pages.IntroducingNestedLists.steps.triple_subscripting.hints.5.text"
 msgstr "Use birdseye if you're having trouble."
 
@@ -4270,22 +4824,32 @@ msgstr ""
 "Remember that there is a specific way to check if a string contains another string. If you can't remember how, Google it!"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.string_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.string_contains_word_exercise.hints.0.text"
 msgstr "How do you check if a string contains a word?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.string_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.string_contains_word_exercise.hints.1.text"
 msgstr "Make sure to check whether **the string** contains the word, not the sublist."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.string_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.string_contains_word_exercise.hints.2.text"
 msgstr "How can you access each string in each sublist of a nested list?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.string_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.string_contains_word_exercise.hints.3.text"
 msgstr "You need to use a nested loop."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.string_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.string_contains_word_exercise.hints.4.text"
 msgstr "The loops should follow the same pattern as the example at the beginning of the page."
 
@@ -4342,38 +4906,56 @@ msgstr ""
 "because `\"hello\"` is not *equal* to either of the two elements of that list, even though it is in one of them."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.0.text"
 msgstr "For each sublist, define a boolean."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.1.text"
 msgstr "Go through a sublist, update the boolean accordingly."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.2.text"
 msgstr "Only print the boolean once for each sublist."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.3.text"
 msgstr "What should be the initial value for the boolean?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.4.text"
 msgstr "What if one of the sublists is empty? What should you print for that sublist?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.5.text"
 msgstr "If you find the word in a string, the boolean should be set to `True`."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.6.text"
 msgstr "What if a string doesn't contain the word?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.7.text"
 msgstr "Doesn't matter! It doesn't change whether any other string might contain the word."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.sublist_contains_word_exercise.hints.8.text"
 msgstr "In other words, don't set the boolean to `False` except at the beginning."
 
@@ -4417,22 +4999,32 @@ msgstr ""
 "your program should print `False`."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.list_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.list_contains_word_exercise.hints.0.text"
 msgstr "This is very similar to the previous exercise."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.list_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.list_contains_word_exercise.hints.1.text"
 msgstr "When should you print the boolean?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.list_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.list_contains_word_exercise.hints.2.text"
 msgstr "Remember you want to print it only once."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.list_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.list_contains_word_exercise.hints.3.text"
 msgstr "Instead of defining a boolean for each sublist, define only one boolean for the entire list."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.list_contains_word_exercise
 msgid "pages.LoopingOverNestedLists.steps.list_contains_word_exercise.hints.4.text"
 msgstr "When and how should you modify the boolean?"
 
@@ -4486,38 +5078,56 @@ msgstr ""
 "Note that this time you shouldn't add spaces between letters in the output."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.0.text"
 msgstr "This is NOT similar to the previous exercises on this page."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.1.text"
 msgstr "Think about the solution when there's just two strings. How can you generalize it to a list of strings?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.2.text"
 msgstr "You'll need to go through the first letters, then the second letters, and so on."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.3.text"
 msgstr "You'll have to use a loop, but how long should the loop take?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.4.text"
 msgstr "Remember that strings in the list have equal lengths."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.5.text"
 msgstr "For each position (first, second etc.) define a new string."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.6.text"
 msgstr "What should that string be initially?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.7.text"
 msgstr "For each position (first, second etc.) you'll have to go through each string in the list."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_strings_list_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.hints.8.text"
 msgstr "You'll need another loop inside the one you have."
 
@@ -4547,22 +5157,32 @@ msgstr ""
 "    e"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise.hints.0.text"
 msgstr "Since the strings can have different lengths, this is a bit tricky."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise.hints.1.text"
 msgstr "For how long should your outer loop go this time?"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise.hints.2.text"
 msgstr "Before you start handling the strings, it might be a good idea to find the longest string length first."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise.hints.3.text"
 msgstr "The rest is very similar to the previous exercise."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise
 msgid "pages.LoopingOverNestedLists.steps.zip_longest_strings_exercise.hints.4.text"
 msgstr "The only difference is that now you have to determine whether to add a letter from a string, or a space."
 
@@ -4654,34 +5274,50 @@ msgstr ""
 "Make sure the whole program stays working as before, but don't change anything else."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 msgid "pages.DefiningFunctions.steps.change_function_name.hints.0.text"
 msgstr "You have to change the name in the function definition header, but that's not all."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 msgid "pages.DefiningFunctions.steps.change_function_name.hints.1.text"
 msgstr "If you just change the name in the function definition header, what happens?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 msgid "pages.DefiningFunctions.steps.change_function_name.hints.2.text"
 msgstr "You get an error. Look at the message. What is it telling you? Where does the error come from?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 msgid "pages.DefiningFunctions.steps.change_function_name.hints.3.text"
 msgstr "If your function is called `say_hello`, what does `greet(\"Alice\")` mean?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 msgid "pages.DefiningFunctions.steps.change_function_name.hints.4.text"
 msgstr "You need to change exactly 3 lines of the program."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 msgid "pages.DefiningFunctions.steps.change_function_name.hints.5.text"
 msgstr "In each line you change, change exactly one word."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 msgid "pages.DefiningFunctions.steps.change_function_name.hints.6.text"
 msgstr "Don't touch the body of the function. It should still have `print(\"How are you?\")`."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 msgid "pages.DefiningFunctions.steps.change_function_name.hints.7.text"
 msgstr "You should still call the function twice after defining it, with arguments `\"Alice\"` and `\"Bob\"`."
 
@@ -4690,34 +5326,50 @@ msgid "pages.DefiningFunctions.steps.change_parameter_name.text"
 msgstr "Good! Now do a similar exercise: change the name of the parameter from `name` to `person_name`."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.0.text"
 msgstr "You have to change the parameter name in the function definition header, but that's not all."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.1.text"
 msgstr "If you just change the parameter name in the function definition header, what happens?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.2.text"
 msgstr "You get an error. Look at the message. What is it telling you? Where does the error come from?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.3.text"
 msgstr "If the parameter is called `person_name`, what does `print(\"Hello \" + name + \"!\")` mean?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.4.text"
 msgstr "You need to change exactly 2 lines of the program."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.5.text"
 msgstr "In each line you change, change exactly one word."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.6.text"
 msgstr "Don't touch the part after the function definition, i.e. `say_hello(\"Alice\")` and `say_hello(\"Bob\")`."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.7.text"
 msgstr "You should still have two statements in the function body, including `print(\"How are you?\")`."
 
@@ -4742,42 +5394,62 @@ msgstr ""
 "You can test your function by calling it after the function definition, but it's not required."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.0.text"
 msgstr "There's no clever problem solving here, this is just about following the recipe for defining a function."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.1.text"
 msgstr "Make sure you have all the parts of a function listed above."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.2.text"
 msgstr "That includes `def`, `()`, and `:`."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.3.text"
 msgstr "Make sure your function is named `print_twice`."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.4.text"
 msgstr "Make sure it accepts one parameter called `x` in between the parentheses `()`."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.5.text"
 msgstr "Look at the other functions defined above for help."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.6.text"
 msgstr "Use the parameter inside the function body."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.7.text"
 msgstr "Make sure the body is indented."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.8.text"
 msgstr "The body needs two statements or a very simple loop."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.9.text"
 msgstr "Make sure that you don't call `print_twice` inside the function body of `print_twice`. Check your indentation."
 
@@ -4826,18 +5498,26 @@ msgstr ""
 "*Don't change the body of the function*."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters
 msgid "pages.DefiningFunctions.steps.swap_parameters.hints.0.text"
 msgstr "The only change to the function definition should be the swapping of parameters as instructed, nothing else."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters
 msgid "pages.DefiningFunctions.steps.swap_parameters.hints.1.text"
 msgstr "You need to fix the call to `print_many`."
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters
 msgid "pages.DefiningFunctions.steps.swap_parameters.hints.2.text"
 msgstr "If the function is defined as `def print_many(n, thing)`, what does `print_many(\"Hello\", 3)` mean?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters
 msgid "pages.DefiningFunctions.steps.swap_parameters.hints.3.text"
 msgstr "We still want `thing = \"Hello\"` and `n = 3`."
 
@@ -4930,56 +5610,82 @@ msgstr ""
 "of `quadruple`."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.messages.inner_cls.text"
 msgstr ""
 "You cannot use `*`, `+`, or even any numbers inside `quadruple`.\n"
 "You must call `double` to solve the problem."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.0.text"
 msgstr "To multiply by 4, multiply by 2 twice."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.1.text"
 msgstr "That means you need to call `double` twice."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.2.text"
 msgstr "Make sure you use the returned value from `double` each time."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.3.text"
 msgstr "Make sure you have all the parts of a function definition."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.4.text"
 msgstr "That includes `def`, `()`, and `:`."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.5.text"
 msgstr "Make sure your function is named `quadruple`."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.6.text"
 msgstr "Make sure it accepts one parameter called `x` in between the parentheses `()`."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.7.text"
 msgstr "Use the parameter inside the function body."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.8.text"
 msgstr "Make sure the body is indented."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.9.text"
 msgstr "Make sure you `return` something at the end."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.10.text"
 msgstr "Look at the definition of `double` for an example."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.hints.11.text"
 msgstr "Make sure that you don't call `quadruple` inside the function body of `quadruple`. Check your indentation."
 
@@ -5109,22 +5815,32 @@ msgstr ""
 "__code1__"
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise
 msgid "pages.TestingFunctions.steps.surround_exercise.hints.0.text"
 msgstr "The argument `sides` should be added before and after `string`."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise
 msgid "pages.TestingFunctions.steps.surround_exercise.hints.1.text"
 msgstr "Use string concatenation to do this."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise
 msgid "pages.TestingFunctions.steps.surround_exercise.hints.2.text"
 msgstr "Make sure the body is indented."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise
 msgid "pages.TestingFunctions.steps.surround_exercise.hints.3.text"
 msgstr "Make sure you `return` something at the end."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise
 msgid "pages.TestingFunctions.steps.surround_exercise.hints.4.text"
 msgstr "Make sure that you don't call `surround` inside the function body of `surround`. Check your indentation."
 
@@ -5159,75 +5875,109 @@ msgstr ""
 "__code1__"
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.messages.inner_cls.text"
 msgstr ""
 "In the `alert` function, you placed your `return` statement at the wrong place!\n"
 "Pay attention to your indentations in `alert`. You might be ending a loop too early with `return`."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.messages.inner_cls.text"
 msgstr ""
 "You cannot use string concatenation/formatting/interpolation/multiplication or f-strings in `alert`.\n"
 "You must call `surround` to solve the problem."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.0.text"
 msgstr "`string` should be surrounded by one space and `level` exclamation marks (`!`) on each side."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.1.text"
 msgstr "Include the definition of `surround` from before in your program and call it in `alert`."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.2.text"
 msgstr "Use `surround` for the spaces."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.3.text"
 msgstr "Use `surround` for the exclamation marks."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.4.text"
 msgstr "You're not allowed to combine several exclamation marks into one string, so call `surround` several times."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.5.text"
 msgstr "That is, call surround once for each pair of exclamation marks."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.6.text"
 msgstr "So call `surround(..., '!')` several times."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.7.text"
 msgstr "Use a loop to call it several times."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.8.text"
 msgstr "Use `range(n)` to make your loop have `n` iterations."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.9.text"
 msgstr "Make sure you use the return value from `surround`."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.10.text"
 msgstr ""
 "Think of how you would build up strings with `+=`. Repeatedly update the same variable, building up your result."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.11.text"
 msgstr "That is, write `something = surround(something, '!')` in your loop."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.12.text"
 msgstr "Make sure you `return` something at the end of `alert`."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.13.text"
 msgstr "Make sure you don't `return` inside the loop, but after it. Check your indentation."
 
 #. https://futurecoder.io/course/#TestingFunctions
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.14.text"
 msgstr "Make sure that you don't call `alert` inside the function body of `alert`. Check your indentation."
 
@@ -5593,32 +6343,46 @@ msgstr ""
 "__code4__"
 
 #. https://futurecoder.io/course/#IntroducingOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
 msgid "pages.IntroducingOr.steps.AnExercise.hints.0.text"
 msgstr "Remember, you can use comparison operators `<, >, <=, >=, ==` to produce booleans."
 
 #. https://futurecoder.io/course/#IntroducingOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
 msgid "pages.IntroducingOr.steps.AnExercise.hints.1.text"
 msgstr "You need to check how `x` compares to 0 and how it compares to 100."
 
 #. https://futurecoder.io/course/#IntroducingOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
 msgid "pages.IntroducingOr.steps.AnExercise.hints.2.text"
 msgstr "You need to combine the two comparisons into one boolean using `or`."
 
 #. https://futurecoder.io/course/#IntroducingOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
 msgid "pages.IntroducingOr.steps.AnExercise.hints.3.text"
 msgstr ""
 "Above we used a trick so that the whole function body was just `return <comparison> or <comparison>`. But that won't "
 "work here!"
 
 #. https://futurecoder.io/course/#IntroducingOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
 msgid "pages.IntroducingOr.steps.AnExercise.hints.4.text"
 msgstr "You need to use an `if` statement."
 
 #. https://futurecoder.io/course/#IntroducingOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
 msgid "pages.IntroducingOr.steps.AnExercise.hints.5.text"
 msgstr "You need to have a `return False` and a `return True`."
 
 #. https://futurecoder.io/course/#IntroducingOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
 msgid "pages.IntroducingOr.steps.AnExercise.hints.6.text"
 msgstr ""
 "If you have something like `x >= 0 or x <= 100`, you're on the wrong track. That's going to be true for *any* value of"
@@ -5682,26 +6446,36 @@ msgstr ""
 "Rewrite this function using `and` instead."
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise
 msgid "pages.IntroducingAnd.steps.AndExercise.hints.0.text"
 msgstr ""
 "If you have something like `x < 0 and x > 100`, you're on the wrong track. That's going to be `False` for *any* value "
 "of `x`!"
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise
 msgid "pages.IntroducingAnd.steps.AndExercise.hints.1.text"
 msgstr "The solution with `and` is different in several ways from the solution with `or`."
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise
 msgid "pages.IntroducingAnd.steps.AndExercise.hints.2.text"
 msgstr ""
 "Our solution with `or` first determines if `x` is an invalid percentage, else concludes validity. Using `and` will do "
 "this in reverse."
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise
 msgid "pages.IntroducingAnd.steps.AndExercise.hints.3.text"
 msgstr "You will have to reverse the `return` statements accordingly."
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise
 msgid "pages.IntroducingAnd.steps.AndExercise.hints.4.text"
 msgstr "You will have to change the comparison operators too."
 
@@ -5770,22 +6544,32 @@ msgstr ""
 "__code5__"
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.hints.0.text"
 msgstr "The list will always have 3 elements."
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.hints.1.text"
 msgstr "That means you don't need to use a loop."
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.hints.2.text"
 msgstr "Remember that you can get the first element using `row[0]`."
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.hints.3.text"
 msgstr "The first element, second element, and third element all need to be equal."
 
 #. https://futurecoder.io/course/#IntroducingAnd
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.hints.4.text"
 msgstr "That means the first element should be equal to the second element and also the third element."
 
@@ -5969,38 +6753,54 @@ msgstr ""
 "__code4__"
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.hints.0.text"
 msgstr "How many diagonals are there on the board?"
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.hints.1.text"
 msgstr "Which entries of the three sublists make up each diagonal? How can you access these entries?"
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.hints.2.text"
 msgstr "Every list always has 3 entries, so no need for a loop."
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.hints.3.text"
 msgstr ""
 "There are two problems to solve here: checking for a win in a specific diagonal, and combining the checks for each "
 "diagonal."
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.hints.4.text"
 msgstr "One problem can be solved using `and`, the other using `or`."
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.hints.5.text"
 msgstr ""
 "There's a lot of similarity with the `all_equal` function. You can even call that function to help! But then you have "
 "to include its definition."
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.hints.6.text"
 msgstr "Similar to `all_equal`, check that the 3 entries on a diagonal are equal to each other, e.g. by using `and`."
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority
 msgid "pages.CombiningAndAndOr.steps.AndHasHigherPriority.hints.7.text"
 msgstr "Check the two diagonals together, using `or`."
 
@@ -6193,6 +6993,8 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.filename
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.valid_image
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNotPage.steps.NotPriority
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.0.text"
 msgstr ""
 "What if you were instead asked to simplify this related but opposite function?\n"
@@ -6200,10 +7002,14 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#IntroducingNotPage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNotPage.steps.NotPriority
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.1.text"
 msgstr "In that case there is a standard simplification trick you can apply that we discussed a few pages ago."
 
 #. https://futurecoder.io/course/#IntroducingNotPage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNotPage.steps.NotPriority
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.2.text"
 msgstr ""
 "In particular the `returns` are redundant because `filename.endswith(\".png\") or filename.endswith(\".jpg\")` is "
@@ -6222,6 +7028,8 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.filename
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.valid_image
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNotPage.steps.NotPriority
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.3.text"
 msgstr ""
 "So you can just write:\n"
@@ -6229,18 +7037,26 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#IntroducingNotPage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNotPage.steps.NotPriority
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.4.text"
 msgstr "For the real exercise, you can do something similar."
 
 #. https://futurecoder.io/course/#IntroducingNotPage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNotPage.steps.NotPriority
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.5.text"
 msgstr "The difference in the real exercise is that the result is reversed."
 
 #. https://futurecoder.io/course/#IntroducingNotPage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNotPage.steps.NotPriority
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.6.text"
 msgstr "That is, `invalid_image` returns `True` when `valid_image` returns `False` and vice versa."
 
 #. https://futurecoder.io/course/#IntroducingNotPage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNotPage.steps.NotPriority
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.7.text"
 msgstr "Remember what `not` does?"
 
@@ -6420,56 +7236,80 @@ msgstr ""
 "In the second example, `O` wins in the bottom row."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.messages.inner_cls.text"
 msgstr "Keep in mind that some entries might be `' '`. An empty row is not a winning row."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.0.text"
 msgstr "You need to check every row in the board, so you'll need a loop for that."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.1.text"
 msgstr "How can you check if all entries in a row are equal to each other?"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.2.text"
 msgstr ""
 "That's a self contained problem on its own. You can start by forgetting about the whole board and just checking a "
 "single row."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.3.text"
 msgstr "You could even write a function which just does this, although you don't have to."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.4.text"
 msgstr "Since the row could have any size, you'll have to loop all the way through it."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.5.text"
 msgstr "For each row, define a boolean. Then loop through that row, updating the boolean accordingly."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.6.text"
 msgstr "You can use the first entry `row[0]` in a row to compare all the row entries to it."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.7.text"
 msgstr ""
 "Think carefully about what the initial value of the boolean should be, and under what conditions you should change its"
 " value."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.8.text"
 msgstr ""
 "After looping through a row, if you determined that all its entries are equal, then return `True` (ending the outer "
 "loop early)."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.9.text"
 msgstr "Make sure you don't return `True` for a row filled with spaces."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.hints.10.text"
 msgstr "Make sure you return `False` if there are no winning rows"
 
@@ -6516,66 +7356,94 @@ msgstr ""
 "Here `O` won in the second column of the second board."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.0.text"
 msgstr "You can start by imitating `row_winner` above, then change it to make it work with columns."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.1.text"
 msgstr "You can't loop through the columns of `board` as simply as its rows."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.2.text"
 msgstr ""
 "What *is* a column of a nested list? The first column consists of the first element of the first row, the first "
 "element of the second row, etc."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.3.text"
 msgstr ""
 "Looping through all columns means looking at the first element of every row, then the second element of every row, "
 "etc."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.4.text"
 msgstr "So you need to loop through numbers representing the positions first, second, etc."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.5.text"
 msgstr "How do you find the number of columns in `board`?"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.6.text"
 msgstr ""
 "That covers the outer loop, which goes through each column. Then you need an inner loop to go through each element in "
 "the column."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.7.text"
 msgstr "The different entries of a column are NOT on the same row. So how can you access them?"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.8.text"
 msgstr "You can loop through rows of the board and find the element corresponding to that row and the current column."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.9.text"
 msgstr ""
 "To access all the entries of, say, the 5th column, you can loop through all the rows, and access the 5th element in "
 "each row."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.10.text"
 msgstr "Define a boolean for each column, then update it accordingly inside the inner loop."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.11.text"
 msgstr "The rest of the logic is very similar to `row_winner`."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.12.text"
 msgstr "Watch out for `' '`."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.hints.13.text"
 msgstr "Remember to return `False` at the end if needed."
 
@@ -6638,50 +7506,72 @@ msgstr ""
 "In the first example, `X` won in the diagonal going from the bottom left to the top right."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.0.text"
 msgstr "How many diagonals are there on a square board of arbitrary size?"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.1.text"
 msgstr "Even if the size of the board changes, the number of diagonals remains the same!"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.2.text"
 msgstr ""
 "You can't do something like `middle == board[0][0] and middle == board[2][2]` this time, because you don't know how "
 "long a diagonal is."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.3.text"
 msgstr "Moreover the two diagonals might not have anything in common like `middle`."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.4.text"
 msgstr "First, focus on the diagonal that goes from top left to bottom right."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.5.text"
 msgstr "How can you access those entries with double subscripting?"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.6.text"
 msgstr "Do you see a pattern in those double subscripts? Get some paper and pen, work it out on some examples."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.7.text"
 msgstr ""
 "Now focus on the other diagonal (from top right to bottom left). There is a pattern in the subscripts again, but it's "
 "a little bit more difficult."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.8.text"
 msgstr "Do you remember negative indexing? It might be helpful here."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.9.text"
 msgstr "Once you get the hang of the patterns, use the same ideas from before to check if all entries are equal."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 msgid "pages.IntroducingTicTacToe.steps.diagonal_winner.hints.10.text"
 msgstr "You can use one loop and check both diagonals at the same time. Or you can use one loop for each diagonal."
 
@@ -6800,14 +7690,20 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.winner
 msgid "pages.IntroducingTicTacToe.steps.winner.hints.0.text"
 msgstr "The solution is quite short! Simply use the three functions correctly."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.winner
 msgid "pages.IntroducingTicTacToe.steps.winner.hints.1.text"
 msgstr "Think about possible cases. When does `winner(board)` return `False`? When does it return `True`?"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.winner
 msgid "pages.IntroducingTicTacToe.steps.winner.hints.2.text"
 msgstr "How can you use the three functions and a boolean operator together to get the result you need?"
 
@@ -6947,42 +7843,62 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.0.text"
 msgstr "Look carefully at the test case we provided. It shows you all you need!"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.1.text"
 msgstr "You need to build up a string for the whole board. Start with an empty string."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.2.text"
 msgstr "For each row, add the characters from that row to the string."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.3.text"
 msgstr "You'll need a nested loop."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.4.text"
 msgstr "When you reach the end of a row, you need to add a newline before the next row."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.5.text"
 msgstr "`'\\n'` is just like any other character! You can add it as usual with `+`."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.6.text"
 msgstr "Notice that the end of the last row is different than the others."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.7.text"
 msgstr "Before you add a newline, you'll need to check if it's the last row or not."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.8.text"
 msgstr "Your outer loop should loop over the length of the board."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.hints.9.text"
 msgstr "Then check if you are at the last index or not."
 
@@ -7077,54 +7993,78 @@ msgstr ""
 "__code3__"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.0.text"
 msgstr ""
 "There are two types of lines to be displayed: one type has the pieces joined by `|`s in between them, the other type "
 "has `-`s joined by `+`s in between them."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.1.text"
 msgstr "Both of these types of lines can be built up by using `join` appropriately."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.2.text"
 msgstr "For example, how can you convert a row `['X', 'O', 'X']` into `'X|O|X'` using `join`?"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.3.text"
 msgstr "Similarly, how can you obtain `'-+-+-'` using `join`? To what list should you apply `join`?"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.4.text"
 msgstr "Once you figured out how to build up both types of lines, how can you combine them to obtain the final result?"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.5.text"
 msgstr "Notice that the lines with the `+-`  signs are always the same."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.6.text"
 msgstr "And there is one line with `+-` separating every consecutive pair of lines with pieces."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.7.text"
 msgstr "You can use `join` on the lines themselves!"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.8.text"
 msgstr ""
 "The lines with the pieces can be joined together with the `+-` line in between them (with newlines added in "
 "appropriate places)."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.9.text"
 msgstr "To do that, first you need to keep the lines with the pieces stored in a list as you are building them."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.10.text"
 msgstr "Then apply `join` to that list, with the `+-` line as separator."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.hints.11.text"
 msgstr "To add the newlines to the `+-` line correctly, take a look at the test case we provided."
 
@@ -7281,18 +8221,26 @@ msgstr ""
 "Your solution should work for any value of the variable `number`."
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.fixing_type_errors_with_conversion
 msgid "pages.Types.steps.fixing_type_errors_with_conversion.hints.0.text"
 msgstr "At what points is this code broken?"
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.fixing_type_errors_with_conversion
 msgid "pages.Types.steps.fixing_type_errors_with_conversion.hints.1.text"
 msgstr "There are values that need to be converted to a different type."
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.fixing_type_errors_with_conversion
 msgid "pages.Types.steps.fixing_type_errors_with_conversion.hints.2.text"
 msgstr "Specifically there's a `str` that needs to be converted to an `int`."
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.fixing_type_errors_with_conversion
 msgid "pages.Types.steps.fixing_type_errors_with_conversion.hints.3.text"
 msgstr "And an `int` that needs to be converted to a `str`."
 
@@ -7331,35 +8279,51 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers
 msgid "pages.Types.steps.format_board_with_numbers.hints.0.text"
 msgstr ""
 "You can start by using the ideas from your previous solution to `format_board`. Using `join` is highly recommended!"
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers
 msgid "pages.Types.steps.format_board_with_numbers.hints.1.text"
 msgstr "The first line has to be treated separately from the rest."
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers
 msgid "pages.Types.steps.format_board_with_numbers.hints.2.text"
 msgstr "Remember that `range` yields numbers in the way: 0, 1, 2, ..."
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers
 msgid "pages.Types.steps.format_board_with_numbers.hints.3.text"
 msgstr "We want numbers on the first line like this: 1, 2, 3..."
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers
 msgid "pages.Types.steps.format_board_with_numbers.hints.4.text"
 msgstr "Each number has to be converted to a string before being added to the first row!"
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers
 msgid "pages.Types.steps.format_board_with_numbers.hints.5.text"
 msgstr "For the rows of the board itself, do something similar."
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers
 msgid "pages.Types.steps.format_board_with_numbers.hints.6.text"
 msgstr "Start with a list consisting only of the first line that you built above."
 
 #. https://futurecoder.io/course/#Types
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers
 msgid "pages.Types.steps.format_board_with_numbers.hints.7.text"
 msgstr "Add each row's string to the list, then join the list with a newline character."
 
@@ -7428,38 +8392,56 @@ msgstr ""
 "Fix the program so that when the user inputs `7` the program prints `Amazing! Are you psychic?` as expected."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.0.text"
 msgstr "`input()` always returns a string."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.1.text"
 msgstr "A string that looks like a number is still a string, not a number."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.2.text"
 msgstr "In `super_secret_number = 7`, `7` is a number, not a string."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.3.text"
 msgstr "That makes `super_secret_number` also a number."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.4.text"
 msgstr "A string cannot equal a number."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.5.text"
 msgstr "To check that two values are equal, make sure they're the same type first."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.6.text"
 msgstr "So to compare a number and a string, first convert the number to a string or convert the string to a number."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.7.text"
 msgstr "You learned how to convert between strings and numbers in the previous page."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int
 msgid "pages.InteractiveProgramsWithInput.steps.convert_input_to_int.hints.8.text"
 msgstr "Use `int()` to convert to an integer (whole number) or `str()` to convert to a string."
 
@@ -7662,58 +8644,86 @@ msgstr ""
 "with invalid inputs, like numbers out of range or inputs that aren't numbers at all."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.0.text"
 msgstr "Your function needs to call `input()` twice. Input isn't passed to `play_move` as an argument."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.1.text"
 msgstr "`input()` always returns a string."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.2.text"
 msgstr "A string that looks like a number is still a string, not a number."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.3.text"
 msgstr "List indices have to be numbers, not strings."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.4.text"
 msgstr "If the board is 3x3, the user might input 1, 2, or 3 for each coordinate."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.5.text"
 msgstr "What are the valid indices of a list of length 3?"
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.6.text"
 msgstr "You need to take the input of 1, 2, or 3 and turn it into 0, 1, or 2."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.7.text"
 msgstr "You also need to be able to handle bigger boards, like 9x9 or beyond."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.8.text"
 msgstr "You can't do maths with strings, only numbers."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.9.text"
 msgstr "How can you convert a string to a number?"
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.10.text"
 msgstr "Once you've got two numbers, you need to modify the nested list `board` with them."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.11.text"
 msgstr "The code for this has been shown to you above."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.12.text"
 msgstr "You just need to use the numbers from user input instead of the hardcoded 1 and 0."
 
 #. https://futurecoder.io/course/#NestedListAssignment
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.13.text"
 msgstr "You can use nested subscripting in one line, or do it in two steps."
 
@@ -7818,38 +8828,56 @@ msgstr ""
 "list repeated."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.0.text"
 msgstr "The existing code is almost correct."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.1.text"
 msgstr "There are several ways to solve this."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.2.text"
 msgstr "Some solutions involve adding something small."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.3.text"
 msgstr "You can also rearrange the code without adding or removing anything (except spaces)."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.4.text"
 msgstr "The problem is that a single list `row` is used several times."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.5.text"
 msgstr "So one solution is to make copies of `row` which will all be separate."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.6.text"
 msgstr "Another solution is to make a new `row` from scratch each time."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.7.text"
 msgstr "There are a few ways to copy a list in Python with a tiny bit of code."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.8.text"
 msgstr "Making a new row each time can be done by just rearranging the code."
 
@@ -8080,136 +9108,198 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.0.text"
 msgstr ""
 "You should use all of the functions `winner`, `format_board` (not counting its use in `play_move`), `play_move`, "
 "`make_board`, `print_winner`, and `print_draw` somewhere."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.1.text"
 msgstr ""
 "You only need to mention each of those functions once in your code, although some of them will be called several times"
 " as the program runs."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.2.text"
 msgstr "You will need a for loop to repeatedly play moves."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.3.text"
 msgstr ""
 "You don't need to check if the board has been filled up, because you can always calculate how many moves it takes to "
 "fill up the board."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.4.text"
 msgstr ""
 "So you can just use a loop that will run a fixed number of iterations, and inside the loop check if the loop needs to "
 "be ended early."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.5.text"
 msgstr "What's the maximum number of moves that can be played in a 3x3 board? 4x4?"
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.6.text"
 msgstr "A loop over a `range` is an easy way to iterate a fixed number of times."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.7.text"
 msgstr "So you can use `for _ in range(N):` to play at most `N` moves."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.8.text"
 msgstr "Once there's a winner, you need to end the loop and the game."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.9.text"
 msgstr "Either `print_winner` or `print_draw` should be called, not both."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.10.text"
 msgstr "Whichever function is called, it must be called exactly once."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.11.text"
 msgstr "One easy way to make sure you don't call a function multiple times is to call it outside of any loop."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.12.text"
 msgstr "We've learned about two ways to make a loop stop."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.13.text"
 msgstr "One way is `break`, which specifically ends one loop and no more."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.14.text"
 msgstr "The second way ends not just the loop but the whole function call."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.15.text"
 msgstr "The second way is `return`."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.16.text"
 msgstr "Don't play moves in pairs like `play_move(board, player1)` and `play_move(board, player2)` in the sample code."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.17.text"
 msgstr "Instead, each loop iteration should play one move."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.18.text"
 msgstr "You need a variable to keep track of which player's turn it is."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.19.text"
 msgstr "The player should be switched in each loop iteration."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.20.text"
 msgstr "An `if` statement is a good way to do this."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.21.text"
 msgstr "Especially combined with an `else`."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.22.text"
 msgstr "Make sure `player1` plays the first move."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.23.text"
 msgstr "Only call `print_winner` after checking `winner` with an `if` statement."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.24.text"
 msgstr "You need to check for the winner inside the loop since you don't know when a player might win."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.25.text"
 msgstr "Once you call `print_winner`, you can use `return` to end the function."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.26.text"
 msgstr "Just `return` by itself is fine, `play_game` isn't meant to return a value."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.27.text"
 msgstr ""
 "Don't use `else` after checking for a winner to call `print_draw` if there isn't a winner. Just because no one has won"
 " yet doesn't mean it's a draw already."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.28.text"
 msgstr "`print_draw` should only be called after all moves have been played and there's still no winner."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.29.text"
 msgstr "So it should be called after the loop, outside of it."
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheFullTicTacToeGame.steps.the_full_game
 msgid "pages.TheFullTicTacToeGame.steps.the_full_game.hints.30.text"
 msgstr "Check the indentation to make sure `print_draw` isn't in the body of the for loop."
 
