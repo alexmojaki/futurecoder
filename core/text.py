@@ -97,9 +97,9 @@ def clean_solution_function(func, source):
     )
 
 
+@lru_cache
 def clean_step_class(cls):
     assert cls.__name__ != "step_name_here"
-    assert not cls.cleaned
 
     text = cls.text or cls.__doc__
     program = cls.program
@@ -107,8 +107,11 @@ def clean_step_class(cls):
 
     solution = cls.__dict__.get("solution", "")
     assert bool(solution) ^ bool(program)
+
+    text = dedent(text).strip()
     assert text
     no_weird_whitespace(text)
+    cls.raw_text = text
 
     if solution:
         assert cls.tests
@@ -154,7 +157,6 @@ def clean_step_class(cls):
             cls.check_exercise(inner_cls.solution)
 
     setattrs(cls,
-             cleaned=True,
              text=text,
              program=program,
              messages=messages,
@@ -260,15 +262,16 @@ class PageMeta(type):
 
     def get_step(cls, step_name):
         step = getattr(cls, step_name)
-        if step_name != "final_text" and not step.cleaned:
+        if step_name != "final_text":
             clean_step_class(step)
         return step
 
-    def step_texts(cls):
-        result = [step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
-        result = [highlighted_markdown(text) for text in result]
-        assert "__copyable__" not in str(result)
-        assert "__no_auto_translate__" not in str(result)
+    def step_texts(cls, *, raw: bool):
+        result = [step.raw_text if raw else step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
+        if not raw:
+            result = [highlighted_markdown(text) for text in result]
+            assert "__copyable__" not in str(result)
+            assert "__no_auto_translate__" not in str(result)
         return result
 
     @property
@@ -357,7 +360,6 @@ class Step(ABC):
     get_solution = None
     predicted_output_choices = None
     correct_output = None
-    cleaned = False
 
     def __init__(self, *args):
         self.args = args
@@ -653,7 +655,10 @@ def get_pages():
 
 def iter_step_names(*, final_text: bool):
     for page in pages.values():
-        for step_name in page.step_names[:-(not final_text)]:
+        step_names = page.step_names
+        if not final_text:
+            step_names = step_names[:-1]
+        for step_name in step_names:
             yield page, step_name
 
 
