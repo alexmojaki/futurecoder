@@ -7,7 +7,7 @@ import re
 import traceback
 from abc import ABC, abstractmethod
 from copy import deepcopy
-from functools import cached_property, lru_cache
+from functools import cached_property, cache
 from importlib import import_module
 from io import StringIO
 from pathlib import Path
@@ -97,7 +97,7 @@ def clean_solution_function(func, source):
     )
 
 
-@lru_cache
+@cache
 def clean_step_class(cls):
     assert cls.__name__ != "step_name_here"
 
@@ -314,7 +314,7 @@ class PageMeta(type):
                 solution=getattr(step, "get_solution", None),
             )
             for index, (name, text, step) in
-            enumerate(zip(self.step_names, self.step_texts(), self.steps))
+            enumerate(zip(self.step_names, self.step_texts(raw=False), self.steps))
         ]
 
 
@@ -639,7 +639,7 @@ def load_chapters():
 chapters = list(load_chapters())
 
 
-@lru_cache
+@cache
 def get_pages():
     return dict(
         pages={
