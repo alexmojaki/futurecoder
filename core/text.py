@@ -123,6 +123,7 @@ def clean_step_class(cls):
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
+    hints = [hint.strip() for hint in hints]
 
     if "__program_" in text:
         text = text.replace("__program__", program)

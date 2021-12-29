@@ -768,7 +768,7 @@ msgstr ""
 "\n"
 "    -----\n"
 "    World\n"
-"    -----\n"
+"    -----"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
 msgid "pages.BuildingUpStringsExercises.steps.name_box.hints.4.text"
@@ -779,7 +779,7 @@ msgid "pages.BuildingUpStringsExercises.steps.name_box.hints.5.text"
 msgstr ""
 "Try writing a program that outputs:\n"
 "\n"
-"    |World|\n"
+"    |World|"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
 msgid "pages.BuildingUpStringsExercises.steps.name_box_2.text"
@@ -1374,12 +1374,11 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char
 msgid "pages.IntroducingElif.steps.dna_example_with_else.hints.0.text"
 msgstr ""
-"\n"
 "Change:\n"
 "\n"
 "__code0__\n"
 "\n"
-"to look like the revised snippet. It's just a small change, do it without copy-pasting.\n"
+"to look like the revised snippet. It's just a small change, do it without copy-pasting."
 
 #. https://futurecoder.io/course/#IntroducingElif
 msgid "pages.IntroducingElif.steps.dna_example_with_else.hints.1.text"
@@ -2263,10 +2262,9 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char2
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.1.text"
 msgstr ""
-"\n"
 "In particular, it should still contain something like:\n"
 "\n"
-"__code0__\n"
+"__code0__"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 msgid "pages.GettingElementsAtPosition.steps.zip_longest_exercise.hints.2.text"
@@ -6197,10 +6195,9 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.valid_image
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.0.text"
 msgstr ""
-"\n"
 "What if you were instead asked to simplify this related but opposite function?\n"
 "\n"
-"__code0__\n"
+"__code0__"
 
 #. https://futurecoder.io/course/#IntroducingNotPage
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.1.text"
@@ -6227,10 +6224,9 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.valid_image
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.3.text"
 msgstr ""
-"\n"
 "So you can just write:\n"
 "\n"
-"__code0__\n"
+"__code0__"
 
 #. https://futurecoder.io/course/#IntroducingNotPage
 msgid "pages.IntroducingNotPage.steps.NotPriority.hints.4.text"
