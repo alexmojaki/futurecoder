@@ -5,66 +5,51 @@ from pathlib import Path
 
 from littleutils import only
 
-from core.text import pages
+from core.text import step_test_entries
 from core.utils import highlighted_markdown, make_test_input_callback
 from core.workers.worker import check_entry
 
 
 def test_steps():
     transcript = []
-    for page_index, page in enumerate(pages.values()):
-        for step_index, step_name in enumerate(page.step_names[:-1]):
-            step = page.get_step(step_name)
+    for page, step, substep, entry in step_test_entries():
+        program = substep.program
+        is_message = substep in step.messages
 
-            for substep in [*step.messages, step]:
-                program = substep.program
-                is_message = substep in step.messages
+        response = {}
 
-                if "\n" in program:
-                    code_source = step.expected_code_source or "editor"
-                else:
-                    code_source = "shell"
+        def result_callback(r):
+            nonlocal response
+            response = r
 
-                entry = dict(
-                    input=program,
-                    source=code_source,
-                    page_slug=page.slug,
-                    step_name=step_name,
+        check_entry(
+            entry,
+            input_callback=make_test_input_callback(step.stdin_input),
+            result_callback=result_callback,
+        )
+        normalise_response(response, is_message, substep)
+
+        transcript_item = dict(
+            program=program.splitlines(),
+            page=page.title,
+            step=step.__name__,
+            response=response,
+        )
+        transcript.append(transcript_item)
+
+        if step.get_solution and not is_message:
+            get_solution = "".join(step.get_solution["tokens"])
+            assert "def solution(" not in get_solution
+            assert "returns_stdout" not in get_solution
+            assert get_solution.strip() in program
+            transcript_item["get_solution"] = get_solution.splitlines()
+            if step.parsons_solution:
+                is_function = transcript_item["get_solution"][0].startswith(
+                    "def "
                 )
-                response = {}
+                assert len(step.get_solution["lines"]) >= 4 + is_function
 
-                def result_callback(r):
-                    nonlocal response
-                    response = r
-
-                check_entry(
-                    entry,
-                    input_callback=make_test_input_callback(step.stdin_input),
-                    result_callback=result_callback,
-                )
-                normalise_response(response, is_message, substep)
-
-                transcript_item = dict(
-                    program=program.splitlines(),
-                    page=page.title,
-                    step=step_name,
-                    response=response,
-                )
-                transcript.append(transcript_item)
-
-                if step.get_solution and not is_message:
-                    get_solution = "".join(step.get_solution["tokens"])
-                    assert "def solution(" not in get_solution
-                    assert "returns_stdout" not in get_solution
-                    assert get_solution.strip() in program
-                    transcript_item["get_solution"] = get_solution.splitlines()
-                    if step.parsons_solution:
-                        is_function = transcript_item["get_solution"][0].startswith(
-                            "def "
-                        )
-                        assert len(step.get_solution["lines"]) >= 4 + is_function
-
-                assert response["passed"] == (not is_message)
+        assert response["passed"] == (not is_message)
 
     path = Path(__file__).parent / "test_transcript.json"
     if os.environ.get("FIX_TESTS", 0):

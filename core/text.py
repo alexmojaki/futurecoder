@@ -7,7 +7,7 @@ import re
 import traceback
 from abc import ABC, abstractmethod
 from copy import deepcopy
-from functools import cached_property, lru_cache
+from functools import cached_property, cache
 from importlib import import_module
 from io import StringIO
 from pathlib import Path
@@ -97,9 +97,9 @@ def clean_solution_function(func, source):
     )
 
 
+@cache
 def clean_step_class(cls):
     assert cls.__name__ != "step_name_here"
-    assert not cls.cleaned
 
     text = cls.text or cls.__doc__
     program = cls.program
@@ -107,8 +107,11 @@ def clean_step_class(cls):
 
     solution = cls.__dict__.get("solution", "")
     assert bool(solution) ^ bool(program)
+
+    text = dedent(text).strip()
     assert text
     no_weird_whitespace(text)
+    cls.raw_text = text
 
     if solution:
         assert cls.tests
@@ -120,6 +123,7 @@ def clean_step_class(cls):
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
+    hints = [hint.strip() for hint in hints]
 
     if "__program_" in text:
         text = text.replace("__program__", program)
@@ -154,7 +158,6 @@ def clean_step_class(cls):
             cls.check_exercise(inner_cls.solution)
 
     setattrs(cls,
-             cleaned=True,
              text=text,
              program=program,
              messages=messages,
@@ -260,15 +263,16 @@ class PageMeta(type):
 
     def get_step(cls, step_name):
         step = getattr(cls, step_name)
-        if step_name != "final_text" and not step.cleaned:
+        if step_name != "final_text":
             clean_step_class(step)
         return step
 
-    def step_texts(cls):
-        result = [step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
-        result = [highlighted_markdown(text) for text in result]
-        assert "__copyable__" not in str(result)
-        assert "__no_auto_translate__" not in str(result)
+    def step_texts(cls, *, raw: bool):
+        result = [step.raw_text if raw else step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
+        if not raw:
+            result = [highlighted_markdown(text) for text in result]
+            assert "__copyable__" not in str(result)
+            assert "__no_auto_translate__" not in str(result)
         return result
 
     @property
@@ -311,7 +315,7 @@ class PageMeta(type):
                 solution=getattr(step, "get_solution", None),
             )
             for index, (name, text, step) in
-            enumerate(zip(self.step_names, self.step_texts(), self.steps))
+            enumerate(zip(self.step_names, self.step_texts(raw=False), self.steps))
         ]
 
 
@@ -357,7 +361,6 @@ class Step(ABC):
     get_solution = None
     predicted_output_choices = None
     correct_output = None
-    cleaned = False
 
     def __init__(self, *args):
         self.args = args
@@ -637,7 +640,7 @@ def load_chapters():
 chapters = list(load_chapters())
 
 
-@lru_cache
+@cache
 def get_pages():
     return dict(
         pages={
@@ -649,3 +652,32 @@ def get_pages():
         },
         pageSlugsList=page_slugs_list,
     )
+
+
+def iter_step_names(*, final_text: bool):
+    for page in pages.values():
+        step_names = page.step_names
+        if not final_text:
+            step_names = step_names[:-1]
+        for step_name in step_names:
+            yield page, step_name
+
+
+def step_test_entries():
+    for page, step_name in iter_step_names(final_text=False):
+        step = page.get_step(step_name)
+
+        for substep in [*step.messages, step]:
+            program = substep.program
+
+            if "\n" in program:
+                code_source = step.expected_code_source or "editor"
+            else:
+                code_source = "shell"
+
+            yield page, step, substep, dict(
+                input=program,
+                source=code_source,
+                page_slug=page.slug,
+                step_name=step_name,
+            )
