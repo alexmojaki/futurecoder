@@ -1,13 +1,8 @@
-import stack_data
-
 from python_runner import PatchedStdinRunner
 
 
 class EnhancedRunner(PatchedStdinRunner):
     def execute(self, code_obj, source_code, mode=None):
-        # TODO move
-        stack_data.Source._class_local("__source_cache", {}).pop(self.filename, None)
-
         if mode == "snoop":
             from core.runner.snoop import exec_snoop
 

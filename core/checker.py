@@ -33,6 +33,13 @@ class FullRunner(EnhancedRunner):
 
     def reset(self):
         super().reset()
+        if self.question_wizard:
+            # Delay importing stack_data in general.
+            # Clear the source cache before running in the question wizard
+            # for the input() magic to work properly.
+            import stack_data
+            stack_data.Source._class_local("__source_cache", {}).pop(self.filename, None)
+
         self.console.locals.update(assert_equal=assert_equal)
 
     def non_str_input(self):
