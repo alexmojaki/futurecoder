@@ -86,7 +86,7 @@ def make_po_entry(code_bits, page_link, msgid, text):
     return POEntry(
         msgid=msgid,
         msgstr=text,
-        comment="\n\n".join([f"{page_link}", *code_comments, *sorted(local_code_bits)]),
+        comment="\n\n".join([page_link, *code_comments, *sorted(local_code_bits)]),
     )
 
 
