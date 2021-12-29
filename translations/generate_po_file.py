@@ -88,12 +88,12 @@ def make_po_entry(code_bits, page_link, msgid, text):
                 f"https://poeditor.com/projects/view_terms?id=490053&search=code_bits."
                 f"{urllib.parse.quote_plus(node_text)}"
             )
-    po_entry = POEntry(
+
+    return POEntry(
         msgid=msgid,
         msgstr=text,
         comment="\n\n".join([f"{page_link}", *code_comments, *sorted(local_code_bits)]),
     )
-    return po_entry
 
 
 main()
