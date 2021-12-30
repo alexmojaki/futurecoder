@@ -155,7 +155,7 @@ export const runCode = async ({code, source}) => {
   }
 
   ranCode(data);
-  if (!bookState.prediction.choices) {
+  if (!bookState.prediction.choices || !data.passed) {
     showCodeResult(data);
     terminalRef.current.focusTerminal();
   }
