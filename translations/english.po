@@ -17244,6 +17244,10 @@ msgstr "x3"
 msgid "code_bits.your_name"
 msgstr "your_name"
 
+#. Special choice at the end of all output prediction multiple choice questions
+msgid "output_predictions.Error"
+msgstr "Error"
+
 #. https://futurecoder.io/course/#AddingStrings
 #. 
 #.     # __code0__:

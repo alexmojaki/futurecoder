@@ -56,6 +56,14 @@ def main():
             )
         )
 
+    po.append(
+        POEntry(
+            msgid=f"output_predictions.Error",
+            msgstr="Error",
+            comment="Special choice at the end of all output prediction multiple choice questions",
+        )
+    )
+
     po.sort(key=lambda entry: entry.msgid)
     po.save(str(Path(__file__).parent / "english.po"))
 
