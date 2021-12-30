@@ -18,8 +18,17 @@ def main():
     code_bits = defaultdict(set)
     for page_slug, page in pages.items():
         page_link = "https://futurecoder.io/course/#" + page_slug
+        page_msgid = f"pages.{page_slug}"
+        po.append(
+            POEntry(
+                msgid=f"{page_msgid}.title",
+                msgstr=page.raw_title,
+                comment=page_link,
+            )
+        )
+
         for step_name, text in zip(page.step_names, page.step_texts(raw=True)):
-            step_msgid = f"pages.{page_slug}.steps.{step_name}"
+            step_msgid = f"{page_msgid}.steps.{step_name}"
             po.append(make_po_entry(code_bits, page_link, f"{step_msgid}.text", text))
             if step_name == "final_text":
                 continue

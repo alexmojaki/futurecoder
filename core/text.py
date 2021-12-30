@@ -291,12 +291,16 @@ class PageMeta(type):
 
     @property
     def title(cls):
-        return unwrapped_markdown(cls.__dict__.get(
+        return unwrapped_markdown(cls.raw_title)
+
+    @property
+    def raw_title(cls):
+        return cls.__dict__.get(
             "title",
             snake(cls.slug)
                 .replace("_", " ")
                 .title()
-        ))
+        )
 
     @property
     def index(self):

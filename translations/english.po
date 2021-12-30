@@ -17298,6 +17298,10 @@ msgstr ""
 "\n"
 "By the way, if you get stuck, you can click the lightbulb icon in the bottom right for a hint."
 
+#. https://futurecoder.io/course/#AddingStrings
+msgid "pages.AddingStrings.title"
+msgstr "Adding Strings"
+
 #. https://futurecoder.io/course/#BasicForLoopExercises
 msgid "pages.BasicForLoopExercises.steps.final_text.text"
 msgstr ""
@@ -17384,6 +17388,10 @@ msgstr ""
 "\n"
 "By the way, you can set `name` to anything in the first line. Only the rest of the program after that will be checked."
 
+#. https://futurecoder.io/course/#BasicForLoopExercises
+msgid "pages.BasicForLoopExercises.title"
+msgstr "Basic For Loop Exercises"
+
 #. https://futurecoder.io/course/#BasicTerminology
 msgid "pages.BasicTerminology.steps.final_text.text"
 msgstr ""
@@ -17411,6 +17419,10 @@ msgstr ""
 "The process of calculating the value of an expression is called ***evaluation*** - note how it almost contains the word 'value'. The computer *evaluates* `1 + 2` to get the value `3`.\n"
 "\n"
 "The process of executing a loop is called ***iteration***. Code like `for char in 'Hello':` is *iterating over* the string `'Hello'`. The fact that it's possible means that strings are *iterable*. By contrast, numbers are not iterable, which is exactly what Python will tell you if you try `for char in 3:`. Each run through the loop is *one iteration*, so in this example there will be 5 iterations."
+
+#. https://futurecoder.io/course/#BasicTerminology
+msgid "pages.BasicTerminology.title"
+msgstr "Basic Terminology"
 
 #. https://futurecoder.io/course/#BuildingNewLists
 #. 
@@ -17559,6 +17571,10 @@ msgstr ""
 msgid "pages.BuildingNewLists.steps.final_text.text"
 msgstr "Fantastic! We're making great progress."
 
+#. https://futurecoder.io/course/#BuildingNewLists
+msgid "pages.BuildingNewLists.title"
+msgstr "Building New Lists"
+
 #. https://futurecoder.io/course/#BuildingUpStrings
 msgid "pages.BuildingUpStrings.steps.empty_string.text"
 msgstr ""
@@ -17696,6 +17712,10 @@ msgstr ""
 "The details are important. What happens if you swap the last two lines and run this program instead?\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#BuildingUpStrings
+msgid "pages.BuildingUpStrings.title"
+msgstr "Building Up Strings"
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
 #. 
@@ -18003,6 +18023,10 @@ msgstr ""
 "\n"
 "There should be one `-` for each character in `name`."
 
+#. https://futurecoder.io/course/#BuildingUpStringsExercises
+msgid "pages.BuildingUpStringsExercises.title"
+msgstr "Building Up Strings Exercises"
+
 #. https://futurecoder.io/course/#CallingFunctionsTerminology
 msgid "pages.CallingFunctionsTerminology.steps.final_text.text"
 msgstr ""
@@ -18064,6 +18088,10 @@ msgstr ""
 "\n"
 "__program_indented__"
 
+#. https://futurecoder.io/course/#CallingFunctionsTerminology
+msgid "pages.CallingFunctionsTerminology.title"
+msgstr "Terminology: Calling functions and methods"
+
 #. https://futurecoder.io/course/#CallingFunctionsWithinFunctions
 msgid "pages.CallingFunctionsWithinFunctions.steps.final_text.text"
 msgstr ""
@@ -18115,6 +18143,10 @@ msgstr ""
 "to explore function calls, so we're going to try this out in each debugger.\n"
 "\n"
 "First, run the program again with Snoop."
+
+#. https://futurecoder.io/course/#CallingFunctionsWithinFunctions
+msgid "pages.CallingFunctionsWithinFunctions.title"
+msgstr "Calling Functions Within Functions"
 
 #. https://futurecoder.io/course/#CombiningAndAndOr
 #. 
@@ -18316,6 +18348,10 @@ msgstr ""
 "\n"
 "__code1__"
 
+#. https://futurecoder.io/course/#CombiningAndAndOr
+msgid "pages.CombiningAndAndOr.title"
+msgstr "Combining `and` and `or`"
+
 #. https://futurecoder.io/course/#CombiningCompoundStatements
 #. 
 #.     # __code0__:
@@ -18364,6 +18400,10 @@ msgstr ""
 "that you're *really* excited:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#CombiningCompoundStatements
+msgid "pages.CombiningCompoundStatements.title"
+msgstr "Combining Compound Statements"
 
 #. https://futurecoder.io/course/#DefiningFunctions
 #. 
@@ -18698,6 +18738,10 @@ msgstr ""
 "If you do this and nothing else, you will get an error. Fix the rest of the program so that it behaves like before.\n"
 "*Don't change the body of the function*."
 
+#. https://futurecoder.io/course/#DefiningFunctions
+msgid "pages.DefiningFunctions.title"
+msgstr "Defining Functions"
+
 #. https://futurecoder.io/course/#EqualsVsIs
 #. 
 #.     # __code0__:
@@ -18764,6 +18808,10 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#EqualsVsIs
+msgid "pages.EqualsVsIs.title"
+msgstr "`==` vs `is`, and Having Multiple Names for One Value"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
 #. 
@@ -19126,6 +19174,10 @@ msgstr ""
 "\n"
 "__program_indented__"
 
+#. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+msgid "pages.FunctionsAndMethodsForLists.title"
+msgstr "Functions and Methods for Lists"
+
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 msgid "pages.GettingElementsAtPosition.steps.final_text.text"
 msgstr "Magnificent! Take a break, you've earned it!"
@@ -19483,6 +19535,10 @@ msgstr ""
 "      t\n"
 "      h"
 
+#. https://futurecoder.io/course/#GettingElementsAtPosition
+msgid "pages.GettingElementsAtPosition.title"
+msgstr "Getting elements at a position, `range()`, and `len()`"
+
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.dir_list.text"
 msgstr ""
@@ -19604,6 +19660,10 @@ msgstr ""
 "    - python get index of value\n"
 "\n"
 "Let's practice this skill now. Find a function/method that returns the value in a list which is bigger than any other value. For example, given the list `[21, 55, 4, 91, 62, 49]`, it will return `91`. You should write the answer in the shell as a single small expression. For example, if you were looking for the function `sum`, you could write `sum([21, 55, 4, 91, 62, 49])`. Don't solve this manually with a loop. Note that the function you're looking for hasn't been mentioned here before."
+
+#. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+msgid "pages.HowToFindInformationWithGoogleAndMore.title"
+msgstr "How to Find Information with Google, and more"
 
 #. https://futurecoder.io/course/#IfAndElse
 #. 
@@ -19770,6 +19830,10 @@ msgstr ""
 "\n"
 "What happens if you change `excited` to `False`?"
 
+#. https://futurecoder.io/course/#IfAndElse
+msgid "pages.IfAndElse.title"
+msgstr "`if` and `else`"
+
 #. https://futurecoder.io/course/#Indentation
 msgid "pages.Indentation.steps.final_text.text"
 msgstr ""
@@ -19835,6 +19899,10 @@ msgstr ""
 "The spaces are required to tell Python which lines of code belong to the body of the for loop. This is critical when the loop contains several lines, which it often will. For example, run this code:\n"
 "\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#Indentation
+msgid "pages.Indentation.title"
+msgstr "Indentation"
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
 #. 
@@ -19972,6 +20040,10 @@ msgstr ""
 "\n"
 "When `name = input()` runs, the program actually stops and waits for you to type in the shell and press Enter,\n"
 "so you will need to do that for it to complete."
+
+#. https://futurecoder.io/course/#InteractiveProgramsWithInput
+msgid "pages.InteractiveProgramsWithInput.title"
+msgstr "Interactive Programs with `input()`"
 
 #. https://futurecoder.io/course/#IntroducingAnd
 #. 
@@ -20183,6 +20255,10 @@ msgstr ""
 "\n"
 "__code2__"
 
+#. https://futurecoder.io/course/#IntroducingAnd
+msgid "pages.IntroducingAnd.title"
+msgstr "Introducing `and`"
+
 #. https://futurecoder.io/course/#IntroducingBirdseye
 #. 
 #.     # __code3__:
@@ -20251,6 +20327,10 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#IntroducingBirdseye
+msgid "pages.IntroducingBirdseye.title"
+msgstr "Understanding Programs with Bird's Eye"
 
 #. https://futurecoder.io/course/#IntroducingElif
 #. 
@@ -20396,6 +20476,10 @@ msgstr ""
 "in the input, or change `elif char == 'C':` to `else:` if we were confident\n"
 "about the input being valid."
 
+#. https://futurecoder.io/course/#IntroducingElif
+msgid "pages.IntroducingElif.title"
+msgstr "Introducing `elif`"
+
 #. https://futurecoder.io/course/#IntroducingForLoops
 msgid "pages.IntroducingForLoops.steps.final_text.text"
 msgstr ""
@@ -20437,6 +20521,10 @@ msgstr ""
 "Good news! You've made it past the boring basics. We can start to write some interesting programs and have a bit of fun. One of the most powerful concepts in programming is the *loop*, which lets you repeat the same code over and over. Python has two kinds of loop: `for` loops and `while` loops. Here is an example of a for loop, try running this program:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#IntroducingForLoops
+msgid "pages.IntroducingForLoops.title"
+msgstr "Introducing For Loops"
 
 #. https://futurecoder.io/course/#IntroducingFstrings
 #. 
@@ -20593,6 +20681,10 @@ msgstr ""
 "\n"
 "__code1__"
 
+#. https://futurecoder.io/course/#IntroducingFstrings
+msgid "pages.IntroducingFstrings.title"
+msgstr "f-strings"
+
 #. https://futurecoder.io/course/#IntroducingIfStatements
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingIfStatements.steps.excited_confused_exercise
@@ -20683,6 +20775,10 @@ msgstr ""
 "`True` and `False`. Try this program:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#IntroducingIfStatements
+msgid "pages.IntroducingIfStatements.title"
+msgstr "Introducing If Statements"
 
 #. https://futurecoder.io/course/#IntroducingLists
 msgid "pages.IntroducingLists.steps.can_contain_anything.text"
@@ -20929,6 +21025,10 @@ msgstr ""
 "    __no_auto_translate__\n"
 "    This - is - a - list"
 
+#. https://futurecoder.io/course/#IntroducingLists
+msgid "pages.IntroducingLists.title"
+msgstr "Introducing Lists"
+
 #. https://futurecoder.io/course/#IntroducingNestedLists
 #. 
 #.     # __code0__:
@@ -21131,6 +21231,10 @@ msgstr ""
 "and prints the **first letter of the third string in the second sublist**.\n"
 "Use only a single expression like in the previous exercise.\n"
 "For example, for the list above, it should print `y`."
+
+#. https://futurecoder.io/course/#IntroducingNestedLists
+msgid "pages.IntroducingNestedLists.title"
+msgstr "Introducing Nested Lists"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -21640,6 +21744,10 @@ msgstr ""
 "    OO\n"
 "    O"
 
+#. https://futurecoder.io/course/#IntroducingNestedLoops
+msgid "pages.IntroducingNestedLoops.title"
+msgstr "Introducing Nested Loops"
+
 #. https://futurecoder.io/course/#IntroducingNotPage
 msgid "pages.IntroducingNotPage.steps.IntroducingNot.text"
 msgstr ""
@@ -21900,6 +22008,10 @@ msgstr ""
 "where `x` itself is a boolean, then it can be simplified to:\n"
 "\n"
 "__code2__"
+
+#. https://futurecoder.io/course/#IntroducingNotPage
+msgid "pages.IntroducingNotPage.title"
+msgstr "Introducing `not`"
 
 #. https://futurecoder.io/course/#IntroducingOr
 #. 
@@ -22197,6 +22309,10 @@ msgstr ""
 msgid "pages.IntroducingOr.steps.final_text.text"
 msgstr "Good job!"
 
+#. https://futurecoder.io/course/#IntroducingOr
+msgid "pages.IntroducingOr.title"
+msgstr "Introducing `or`"
+
 #. https://futurecoder.io/course/#IntroducingStrings
 msgid "pages.IntroducingStrings.steps.final_text.text"
 msgstr ""
@@ -22210,6 +22326,10 @@ msgstr ""
 "Python lets you do much more than calculate. In fact, we're not going to touch numbers or maths for a while. Instead, we're going to look at *strings*. Strings are essentially snippets of text. For example, enter the following into the shell, quotes (`'`) included:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#IntroducingStrings
+msgid "pages.IntroducingStrings.title"
+msgstr "Introducing Strings"
 
 #. https://futurecoder.io/course/#IntroducingTheShell
 msgid "pages.IntroducingTheShell.steps.final_text.text"
@@ -22241,6 +22361,10 @@ msgstr ""
 "The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself \"What would happen if I ran X?\" and then immediately answer that question by running it! Never be scared to try something out - if you get something wrong, nothing bad will happen.\n"
 "\n"
 "Try doing some more calculations now. You can multiply numbers with `*`, divide with `/`, and subtract with `-`. You can also use parentheses, i.e. `(` and `)`."
+
+#. https://futurecoder.io/course/#IntroducingTheShell
+msgid "pages.IntroducingTheShell.title"
+msgstr "Introducing The Shell"
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
 #. 
@@ -22855,6 +22979,10 @@ msgstr ""
 "    __copyable__\n"
 "__code0__"
 
+#. https://futurecoder.io/course/#IntroducingTicTacToe
+msgid "pages.IntroducingTicTacToe.title"
+msgstr "Checking the board for winners"
+
 #. https://futurecoder.io/course/#IntroducingVariables
 msgid "pages.IntroducingVariables.steps.final_text.text"
 msgstr ""
@@ -22887,6 +23015,10 @@ msgstr ""
 #. https://futurecoder.io/course/#IntroducingVariables
 msgid "pages.IntroducingVariables.steps.word_string_check.text"
 msgstr "Good. For comparison, run `__program__` in the shell by itself, with the quotes."
+
+#. https://futurecoder.io/course/#IntroducingVariables
+msgid "pages.IntroducingVariables.title"
+msgstr "Introducing Variables"
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
 msgid "pages.LoopingOverNestedLists.steps.final_text.text"
@@ -23347,6 +23479,10 @@ msgstr ""
 "\n"
 "Note that this time you shouldn't add spaces between letters in the output."
 
+#. https://futurecoder.io/course/#LoopingOverNestedLists
+msgid "pages.LoopingOverNestedLists.title"
+msgstr "Looping Over Nested Lists"
+
 #. https://futurecoder.io/course/#MakingTheBoard
 #. 
 #.     # __code2__:
@@ -23592,6 +23728,10 @@ msgstr ""
 "and bonus points if you can spot the bug!\n"
 "If not, don't feel bad or waste too much time on it."
 
+#. https://futurecoder.io/course/#MakingTheBoard
+msgid "pages.MakingTheBoard.title"
+msgstr "Making the Board"
+
 #. https://futurecoder.io/course/#ModifyingWhileIterating
 msgid "pages.ModifyingWhileIterating.steps.final_text.text"
 msgstr ""
@@ -23662,6 +23802,10 @@ msgstr ""
 "__code0__\n"
 "\n"
 "(remember that `numbers.pop(i)` removes the element from `numbers` at index `i`)"
+
+#. https://futurecoder.io/course/#ModifyingWhileIterating
+msgid "pages.ModifyingWhileIterating.title"
+msgstr "Modifying While Iterating"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
 #. 
@@ -23957,6 +24101,10 @@ msgstr ""
 "Replace the part after `y = ` with one line from the list above.\n"
 "The final program should print the result of adding up all the numbers from `1` to `x` inclusive, i.e. `1 + 2 + 3 + ... + x`."
 
+#. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+msgid "pages.MoreListFunctionsAndMethods.title"
+msgstr "More List Functions and Methods"
+
 #. https://futurecoder.io/course/#MoreOnReturn
 msgid "pages.MoreOnReturn.steps.break_vs_return.text"
 msgstr ""
@@ -24068,6 +24216,10 @@ msgstr ""
 "    __copyable__\n"
 "__code1__"
 
+#. https://futurecoder.io/course/#MoreOnReturn
+msgid "pages.MoreOnReturn.title"
+msgstr "`return` ends the function call"
+
 #. https://futurecoder.io/course/#MultiLineExpressions
 msgid "pages.MultiLineExpressions.steps.final_text.text"
 msgstr "So if you get a mysterious `SyntaxError`, make sure that you haven't improperly broken up any lines!"
@@ -24106,6 +24258,10 @@ msgstr ""
 "    __copyable__\n"
 "__code0__"
 
+#. https://futurecoder.io/course/#MultiLineExpressions
+msgid "pages.MultiLineExpressions.title"
+msgstr "Multi-line statements"
+
 #. https://futurecoder.io/course/#NavigatingShellHistory
 msgid "pages.NavigatingShellHistory.steps.final_text.text"
 msgstr ""
@@ -24113,6 +24269,10 @@ msgstr ""
 "You can copy and paste, but that's tedious and gets in the way of experimenting. A better method is to press the Up "
 "Arrow key on your keyboard. This will insert the previous line of code into the shell. Keep pressing it to go further "
 "back in your history, and if you go too far, press the Down Arrow key to go the other way. Try using it now."
+
+#. https://futurecoder.io/course/#NavigatingShellHistory
+msgid "pages.NavigatingShellHistory.title"
+msgstr "Navigating Shell History"
 
 #. https://futurecoder.io/course/#NestedListAssignment
 msgid "pages.NestedListAssignment.steps.final_text.text"
@@ -24369,6 +24529,10 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#NestedListAssignment
+msgid "pages.NestedListAssignment.title"
+msgstr "Nested List Assignment: Playing Moves on the Board"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
 msgid "pages.NewlinesAndFormatBoard.steps.discovering_newline.text"
@@ -24734,6 +24898,10 @@ msgstr ""
 "\n"
 "(What's `\"\".join`? Google it!)"
 
+#. https://futurecoder.io/course/#NewlinesAndFormatBoard
+msgid "pages.NewlinesAndFormatBoard.title"
+msgstr "The newline character, `format_board`"
+
 #. https://futurecoder.io/course/#OtherComparisonOperators
 #. 
 #.     # __code0__:
@@ -24881,6 +25049,10 @@ msgstr ""
 "The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It "
 "evaluates to `True` when two values are...not equal. Try it for yourself in the shell."
 
+#. https://futurecoder.io/course/#OtherComparisonOperators
+msgid "pages.OtherComparisonOperators.title"
+msgstr "Other Comparison Operators"
+
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
 #. 
 #.     # __code0__:
@@ -25013,6 +25185,10 @@ msgstr ""
 "You must only use the `double` function - no numbers or multiplication are allowed directly in the body\n"
 "of `quadruple`."
 
+#. https://futurecoder.io/course/#ReturningValuesFromFunctions
+msgid "pages.ReturningValuesFromFunctions.title"
+msgstr "Returning Values From Functions"
+
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.double_quote_exercise
@@ -25121,6 +25297,10 @@ msgstr ""
 "\n"
 "__program_indented__"
 
+#. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
+msgid "pages.SingleAndDoubleQuotesInStrings.title"
+msgstr "Single and Double Quotes in Strings"
+
 #. https://futurecoder.io/course/#StoringCalculationsInVariables
 msgid "pages.StoringCalculationsInVariables.steps.final_text.text"
 msgstr ""
@@ -25155,6 +25335,10 @@ msgstr ""
 "Often you will use variables to store the results of calculations. This will help to build more complex programs. For example, try this program:\n"
 "\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#StoringCalculationsInVariables
+msgid "pages.StoringCalculationsInVariables.title"
+msgstr "Storing Calculations In Variables"
 
 #. https://futurecoder.io/course/#StringMethodsUnderstandingMutation
 #. 
@@ -25252,6 +25436,10 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code1__"
+
+#. https://futurecoder.io/course/#StringMethodsUnderstandingMutation
+msgid "pages.StringMethodsUnderstandingMutation.title"
+msgstr "String Methods and Immutability"
 
 #. https://futurecoder.io/course/#TestingFunctions
 #. 
@@ -25529,6 +25717,10 @@ msgstr ""
 "\n"
 "__code1__"
 
+#. https://futurecoder.io/course/#TestingFunctions
+msgid "pages.TestingFunctions.title"
+msgstr "Testing Functions"
+
 #. https://futurecoder.io/course/#TheEqualityOperator
 msgid "pages.TheEqualityOperator.steps.equality_vs_assignment.text"
 msgstr ""
@@ -25576,6 +25768,10 @@ msgstr ""
 "It's denoted by two equals signs: `==`. Try running this:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#TheEqualityOperator
+msgid "pages.TheEqualityOperator.title"
+msgstr "The Equality Operator"
 
 #. https://futurecoder.io/course/#TheFullTicTacToeGame
 msgid "pages.TheFullTicTacToeGame.steps.final_text.text"
@@ -25911,6 +26107,10 @@ msgstr ""
 "    __copyable__\n"
 "__code0__"
 
+#. https://futurecoder.io/course/#TheFullTicTacToeGame
+msgid "pages.TheFullTicTacToeGame.title"
+msgstr "The Full Tic-Tac-Toe Game"
+
 #. https://futurecoder.io/course/#Types
 msgid "pages.Types.steps.check_type_manually.text"
 msgstr ""
@@ -26171,6 +26371,10 @@ msgstr ""
 "    __copyable__\n"
 "__code0__"
 
+#. https://futurecoder.io/course/#Types
+msgid "pages.Types.title"
+msgstr "Types"
+
 #. https://futurecoder.io/course/#UnderstandingProgramsWithPythonTutor
 msgid "pages.UnderstandingProgramsWithPythonTutor.steps.final_text.text"
 msgstr ""
@@ -26193,6 +26397,10 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#UnderstandingProgramsWithPythonTutor
+msgid "pages.UnderstandingProgramsWithPythonTutor.title"
+msgstr "Understanding Programs With Python Tutor"
 
 #. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
 msgid "pages.UnderstandingProgramsWithSnoop.steps.final_text.text"
@@ -26291,6 +26499,10 @@ msgid "pages.UnderstandingProgramsWithSnoop.steps.print_tail_snoop.text"
 msgstr ""
 "Programs are starting to get complicated!\n"
 "It's time to introduce a new tool to help you understand programs. Click the 'Snoop' button to run the same program while also showing what's happening."
+
+#. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
+msgid "pages.UnderstandingProgramsWithSnoop.title"
+msgstr "Understanding Programs With Snoop"
 
 #. https://futurecoder.io/course/#UsingBreak
 #. 
@@ -26408,6 +26620,10 @@ msgstr ""
 "    thing_to_find = 'other'\n"
 "\n"
 "it should print `False`."
+
+#. https://futurecoder.io/course/#UsingBreak
+msgid "pages.UsingBreak.title"
+msgstr "Using `break` to end a loop early"
 
 #. https://futurecoder.io/course/#UsingVariables
 msgid "pages.UsingVariables.steps.final_text.text"
@@ -26531,6 +26747,10 @@ msgid "pages.UsingVariables.steps.word_plus_name_with_space.text"
 msgstr ""
 "Oops...that doesn't look nice. Can you modify the code above so that there's a space between the word and your name?"
 
+#. https://futurecoder.io/course/#UsingVariables
+msgid "pages.UsingVariables.title"
+msgstr "Using Variables and `print()`"
+
 #. https://futurecoder.io/course/#WritingPrograms
 #. 
 #.     # __code0__:
@@ -26559,3 +26779,7 @@ msgstr ""
 "3. If you enter code in the shell and it has a value, that value will automatically be displayed. That doesn't happen for programs in the editor - you have to print values. If you remove `print()` from the program, changing the two lines to just `word + ' ' + name`, nothing will be displayed.\n"
 "\n"
 "I recommend that you check all of these things for yourself."
+
+#. https://futurecoder.io/course/#WritingPrograms
+msgid "pages.WritingPrograms.title"
+msgstr "Writing Programs"
