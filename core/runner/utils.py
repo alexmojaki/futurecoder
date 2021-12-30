@@ -13,5 +13,5 @@ def is_valid_syntax(text):
     try:
         ast.parse(text)
         return True
-    except SyntaxError:
+    except Exception:
         return False

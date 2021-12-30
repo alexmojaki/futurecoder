@@ -144,14 +144,6 @@ def format_exception_string():
     return ''.join(traceback.format_exception_only(*sys.exc_info()[:2]))
 
 
-def is_valid_syntax(text):
-    try:
-        ast.parse(text)
-        return True
-    except SyntaxError:
-        return False
-
-
 def highlighted_markdown_and_codes(text):
     from markdown import markdown
     from .markdown_extensions import HighlightPythonExtension
