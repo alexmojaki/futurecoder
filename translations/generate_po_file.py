@@ -64,25 +64,7 @@ def make_po_entry(code_bits, page_link, msgid, text, comments=()):
         code = group[0]["code"]
         assert dedent(code_text) in code
 
-        atok = MyASTTokens(code, parse=1)
-        for node in ast.walk(atok.tree):
-            if isinstance(node, ast.Name):
-                node_text = node.id
-                assert atok.get_text(node) == node_text
-                if node_text in builtins.__dict__ or len(node_text) == 1:
-                    continue
-            elif isinstance(
-                node, (ast.FunctionDef, ast.ClassDef, ast.AsyncFunctionDef)
-            ):
-                node_text = node.name
-            elif isinstance(node, (ast.Str, ast.JoinedStr)):
-                node_text = atok.get_text(node)
-                if not re.search(r"[a-zA-Z]", node_text) or re.match(
-                    r"""^['"][a-zA-Z]['"]""", node_text
-                ):
-                    continue
-            else:
-                continue
+        for node_text in get_code_bits(code):
             code_bits[node_text].add(f"{search_link(msgid)}\n\n{code_text}")
             comments.add(search_link(f"code_bits.{node_text}"))
 
@@ -91,6 +73,34 @@ def make_po_entry(code_bits, page_link, msgid, text, comments=()):
         msgstr=text,
         comment="\n\n".join([page_link, *code_comments, *sorted(comments)]),
     )
+
+
+def get_code_bits(code):
+    try:
+        atok = MyASTTokens(code, parse=1)
+    except SyntaxError:
+        return
+
+    for node in ast.walk(atok.tree):
+        if isinstance(node, ast.Name):
+            node_text = node.id
+            assert atok.get_text(node) == node_text
+            if node_text in builtins.__dict__ or len(node_text) == 1:
+                continue
+        elif isinstance(
+            node, (ast.FunctionDef, ast.ClassDef, ast.AsyncFunctionDef)
+        ):
+            node_text = node.name
+        elif isinstance(node, (ast.Str, ast.JoinedStr)):
+            node_text = atok.get_text(node)
+            if not re.search(r"[a-zA-Z]", node_text) or re.match(
+                r"""^['"][a-zA-Z]['"]""", node_text
+            ):
+                continue
+        else:
+            continue
+
+        yield node_text
 
 
 def search_link(msgid):
