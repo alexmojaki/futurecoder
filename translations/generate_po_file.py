@@ -9,7 +9,7 @@ from textwrap import indent, dedent
 from littleutils import group_by_key
 from polib import POEntry, POFile
 
-from core.text import pages
+from core.text import pages, get_predictions
 from core.utils import markdown_codes, MyASTTokens
 
 
@@ -46,6 +46,21 @@ def main():
 
             for node_text in get_code_bits(step.program):
                 code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
+
+            output_prediction_choices = get_predictions(step)["choices"] or []
+            for i, choice in enumerate(output_prediction_choices[:-1]):
+                if (
+                    not re.search(r"[a-zA-Z]", choice)
+                    or choice in ("True", "False")
+                ):
+                    continue
+                po.append(
+                    POEntry(
+                        msgid=f"{step_msgid}.output_prediction_choices.{i}",
+                        msgstr=choice,
+                        comment=search_link(step_msgid),
+                    )
+                )
 
     for code_bit, comments in code_bits.items():
         po.append(

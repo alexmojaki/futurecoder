@@ -17605,6 +17605,24 @@ msgstr ""
 "and you're going to get lots of practice with it. Some initial empty values are\n"
 "`''`, `0`, and `[]` - an empty list, which you'll see soon."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.hello_plus_equals
+msgid "pages.BuildingUpStrings.steps.hello_plus_equals.output_prediction_choices.0"
+msgstr ""
+"Hello\n"
+"Hello"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.hello_plus_equals
+msgid "pages.BuildingUpStrings.steps.hello_plus_equals.output_prediction_choices.1"
+msgstr ""
+"Hello\n"
+"Hello!"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.hello_plus_equals
+msgid "pages.BuildingUpStrings.steps.hello_plus_equals.output_prediction_choices.2"
+msgstr ""
+"Hello!\n"
+"Hello!"
+
 #. https://futurecoder.io/course/#BuildingUpStrings
 msgid "pages.BuildingUpStrings.steps.hello_plus_equals.text"
 msgstr ""
@@ -17613,6 +17631,73 @@ msgstr ""
 "__program_indented__\n"
 "\n"
 "What do you think the line `hello = hello + '!'` does? Run the program to find out."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle
+msgid "pages.BuildingUpStrings.steps.name_triangle.output_prediction_choices.0"
+msgstr ""
+"-\n"
+"W\n"
+"-\n"
+"o\n"
+"-\n"
+"r\n"
+"-\n"
+"l\n"
+"-\n"
+"d"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle
+msgid "pages.BuildingUpStrings.steps.name_triangle.output_prediction_choices.1"
+msgstr ""
+"-W\n"
+"-o\n"
+"-r\n"
+"-l\n"
+"-d"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle
+msgid "pages.BuildingUpStrings.steps.name_triangle.output_prediction_choices.2"
+msgstr "-World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle
+msgid "pages.BuildingUpStrings.steps.name_triangle.output_prediction_choices.3"
+msgstr "-W-o-r-l-d"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle
+msgid "pages.BuildingUpStrings.steps.name_triangle.output_prediction_choices.4"
+msgstr ""
+"-W\n"
+"-Wo\n"
+"-Wor\n"
+"-Worl\n"
+"-World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle
+msgid "pages.BuildingUpStrings.steps.name_triangle.output_prediction_choices.5"
+msgstr ""
+"-World\n"
+"-Worl\n"
+"-Wor\n"
+"-Wo\n"
+"-W"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle
+msgid "pages.BuildingUpStrings.steps.name_triangle.output_prediction_choices.6"
+msgstr ""
+"-World\n"
+"-World\n"
+"-World\n"
+"-World\n"
+"-World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle
+msgid "pages.BuildingUpStrings.steps.name_triangle.output_prediction_choices.7"
+msgstr ""
+"-World\n"
+"--World\n"
+"---World\n"
+"----World\n"
+"-----World"
 
 #. https://futurecoder.io/course/#BuildingUpStrings
 #. 
@@ -17685,6 +17770,32 @@ msgstr ""
 "    Wor\n"
 "    Worl\n"
 "    World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle_missing_last_line
+msgid "pages.BuildingUpStrings.steps.name_triangle_missing_last_line.output_prediction_choices.0"
+msgstr ""
+"-W\n"
+"-Wo\n"
+"-Wor\n"
+"-Worl\n"
+"-World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle_missing_last_line
+msgid "pages.BuildingUpStrings.steps.name_triangle_missing_last_line.output_prediction_choices.1"
+msgstr ""
+"-Wo\n"
+"-Wor\n"
+"-Worl\n"
+"-World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle_missing_last_line
+msgid "pages.BuildingUpStrings.steps.name_triangle_missing_last_line.output_prediction_choices.2"
+msgstr ""
+"-\n"
+"-W\n"
+"-Wo\n"
+"-Wor\n"
+"-Worl"
 
 #. https://futurecoder.io/course/#BuildingUpStrings
 msgid "pages.BuildingUpStrings.steps.name_triangle_missing_last_line.text"
@@ -18395,6 +18506,38 @@ msgstr ""
 "These two programs have the exact same result. However the first one is more efficient as it\n"
 "only iterates over the string if it needs to, since when `excited = False` nothing changes."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.for_inside_if
+msgid "pages.CombiningCompoundStatements.steps.for_inside_if.output_prediction_choices.0"
+msgstr "Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.for_inside_if
+msgid "pages.CombiningCompoundStatements.steps.for_inside_if.output_prediction_choices.2"
+msgstr "Hello World!!!!!!!!!!!"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.for_inside_if
+msgid "pages.CombiningCompoundStatements.steps.for_inside_if.output_prediction_choices.3"
+msgstr "!!!!!!!!!!!Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.for_inside_if
+msgid "pages.CombiningCompoundStatements.steps.for_inside_if.output_prediction_choices.4"
+msgstr "Hello World!"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.for_inside_if
+msgid "pages.CombiningCompoundStatements.steps.for_inside_if.output_prediction_choices.5"
+msgstr "!Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.for_inside_if
+msgid "pages.CombiningCompoundStatements.steps.for_inside_if.output_prediction_choices.6"
+msgstr "!Hello World!"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.for_inside_if
+msgid "pages.CombiningCompoundStatements.steps.for_inside_if.output_prediction_choices.7"
+msgstr "H!e!l!l!o! !W!o!r!l!d!"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.for_inside_if
+msgid "pages.CombiningCompoundStatements.steps.for_inside_if.output_prediction_choices.8"
+msgstr "!H!e!l!l!o! !W!o!r!l!d"
+
 #. https://futurecoder.io/course/#CombiningCompoundStatements
 msgid "pages.CombiningCompoundStatements.steps.for_inside_if.text"
 msgstr ""
@@ -18569,6 +18712,28 @@ msgstr ""
 msgid "pages.DefiningFunctions.steps.final_text.text"
 msgstr "Perfect! Now you have a solid foundation of the basics of defining functions."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.how_are_you
+msgid "pages.DefiningFunctions.steps.how_are_you.output_prediction_choices.0"
+msgstr ""
+"Hello Alice!\n"
+"How are you?\n"
+"Hello Bob!\n"
+"How are you?"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.how_are_you
+msgid "pages.DefiningFunctions.steps.how_are_you.output_prediction_choices.1"
+msgstr ""
+"Hello Alice!\n"
+"Hello Bob!\n"
+"How are you?"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.how_are_you
+msgid "pages.DefiningFunctions.steps.how_are_you.output_prediction_choices.2"
+msgstr ""
+"Hello Alice!\n"
+"How are you?\n"
+"Hello Bob!"
+
 #. https://futurecoder.io/course/#DefiningFunctions
 #. 
 #.     # __code0__:
@@ -18593,6 +18758,26 @@ msgstr ""
 "__code0__\n"
 "\n"
 "Then run the program again."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_many
+msgid "pages.DefiningFunctions.steps.print_many.output_prediction_choices.2"
+msgstr ""
+"Hello\n"
+"Hello\n"
+"Hello"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_many
+msgid "pages.DefiningFunctions.steps.print_many.output_prediction_choices.3"
+msgstr "Hello"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_many
+msgid "pages.DefiningFunctions.steps.print_many.output_prediction_choices.4"
+msgstr ""
+"H\n"
+"e\n"
+"l\n"
+"l\n"
+"o"
 
 #. https://futurecoder.io/course/#DefiningFunctions
 msgid "pages.DefiningFunctions.steps.print_many.text"
@@ -19309,6 +19494,62 @@ msgstr ""
 "\n"
 "__program_indented__"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+msgid "pages.GettingElementsAtPosition.steps.range_len.output_prediction_choices.0"
+msgstr ""
+"This\n"
+"is\n"
+"a\n"
+"list"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+msgid "pages.GettingElementsAtPosition.steps.range_len.output_prediction_choices.2"
+msgstr ""
+"0\n"
+"This\n"
+"1\n"
+"is\n"
+"2\n"
+"a\n"
+"3\n"
+"list"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+msgid "pages.GettingElementsAtPosition.steps.range_len.output_prediction_choices.3"
+msgstr ""
+"This\n"
+"0\n"
+"is\n"
+"1\n"
+"a\n"
+"2\n"
+"list\n"
+"3"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+msgid "pages.GettingElementsAtPosition.steps.range_len.output_prediction_choices.4"
+msgstr ""
+"0\n"
+"1\n"
+"2\n"
+"3\n"
+"This\n"
+"is\n"
+"a\n"
+"list"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+msgid "pages.GettingElementsAtPosition.steps.range_len.output_prediction_choices.5"
+msgstr ""
+"This\n"
+"is\n"
+"a\n"
+"list\n"
+"0\n"
+"1\n"
+"2\n"
+"3"
+
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 msgid "pages.GettingElementsAtPosition.steps.range_len.text"
 msgstr ""
@@ -19801,6 +20042,14 @@ msgstr ""
 "    OnE MoRe eXeRcIsE, aNd tHeN YoU CaN ReLaX.\n"
 "\n"
 "Every second character should be lowercased, the rest should be uppercase."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.undefined_char
+msgid "pages.IfAndElse.steps.undefined_char.output_prediction_choices.0"
+msgstr "Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.undefined_char
+msgid "pages.IfAndElse.steps.undefined_char.output_prediction_choices.1"
+msgstr "Hello World!"
 
 #. https://futurecoder.io/course/#IfAndElse
 #. 
@@ -20555,6 +20804,22 @@ msgstr ""
 "\n"
 "Fix this by replacing all the string concatenations (+) with a single f-string."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.concatenate_string_number
+msgid "pages.IntroducingFstrings.steps.concatenate_string_number.output_prediction_choices.0"
+msgstr "\"Hello \" + name + \". You are \" + age + \" years old.\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.concatenate_string_number
+msgid "pages.IntroducingFstrings.steps.concatenate_string_number.output_prediction_choices.1"
+msgstr "Hello name. You are age years old."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.concatenate_string_number
+msgid "pages.IntroducingFstrings.steps.concatenate_string_number.output_prediction_choices.2"
+msgstr "Hello Alice. You are 20 years old."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.concatenate_string_number
+msgid "pages.IntroducingFstrings.steps.concatenate_string_number.output_prediction_choices.3"
+msgstr "Hello 'Alice'. You are 20 years old."
+
 #. https://futurecoder.io/course/#IntroducingFstrings
 #. 
 #.     # __code0__:
@@ -20644,6 +20909,42 @@ msgstr ""
 "\n"
 "    There are 3 people waiting, the first one's name is Alice."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.0"
+msgstr "f\"{name} went to {meal} with {friend}.\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.1"
+msgstr "\"{name} went to {meal} with {friend}.\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.2"
+msgstr "{name} went to {meal} with {friend}."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.3"
+msgstr "'name' went to 'meal' with 'friend'."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.4"
+msgstr "name went to meal with friend."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.5"
+msgstr "\"Alice\" went to \"lunch\" with 'Bob'."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.6"
+msgstr "'Alice' went to 'lunch' with 'Bob'."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.7"
+msgstr "\"Alice went to lunch with Bob.\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.output_prediction_choices.8"
+msgstr "Alice went to lunch with Bob."
+
 #. https://futurecoder.io/course/#IntroducingFstrings
 #. 
 #.     # __code0__:
@@ -20727,6 +21028,14 @@ msgstr ""
 "When `confused` is true, the printed sentence should have a question mark added to the end.\n"
 "If both `confused` and `excited` are true, the sentence should end with `!?`."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingIfStatements.steps.excited_example
+msgid "pages.IntroducingIfStatements.steps.excited_example.output_prediction_choices.0"
+msgstr "Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingIfStatements.steps.excited_example
+msgid "pages.IntroducingIfStatements.steps.excited_example.output_prediction_choices.1"
+msgstr "Hello World!"
+
 #. https://futurecoder.io/course/#IntroducingIfStatements
 msgid "pages.IntroducingIfStatements.steps.excited_example.text"
 msgstr ""
@@ -20747,6 +21056,14 @@ msgstr ""
 "Here's a more interesting example for you to run:\n"
 "\n"
 "__program_indented__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingIfStatements.steps.excited_false_example
+msgid "pages.IntroducingIfStatements.steps.excited_false_example.output_prediction_choices.0"
+msgstr "Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingIfStatements.steps.excited_false_example
+msgid "pages.IntroducingIfStatements.steps.excited_false_example.output_prediction_choices.1"
+msgstr "Hello World!"
 
 #. https://futurecoder.io/course/#IntroducingIfStatements
 msgid "pages.IntroducingIfStatements.steps.excited_false_example.text"
@@ -21139,6 +21456,50 @@ msgstr ""
 "\n"
 "On the next page we will learn about looping over nested lists."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.0"
+msgstr "hello"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.1"
+msgstr "there"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.10"
+msgstr "a"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.2"
+msgstr "how"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.3"
+msgstr "are"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.4"
+msgstr "you"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.5"
+msgstr "['hello', 'there']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.6"
+msgstr "['how', 'are', 'you']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.7"
+msgstr "h"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.8"
+msgstr "t"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.9"
+msgstr "e"
+
 #. https://futurecoder.io/course/#IntroducingNestedLists
 msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.text"
 msgstr ""
@@ -21353,6 +21714,89 @@ msgstr ""
 "Excellent! The solution goes like this:\n"
 "\n"
 "__code0__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.first_nested_loop
+msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.output_prediction_choices.0"
+msgstr ""
+"A 0\n"
+"A 1\n"
+"A 2\n"
+"A 3\n"
+"---\n"
+"B 0\n"
+"B 1\n"
+"B 2\n"
+"B 3\n"
+"---\n"
+"C 0\n"
+"C 1\n"
+"C 2\n"
+"C 3\n"
+"---"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.first_nested_loop
+msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.output_prediction_choices.1"
+msgstr ""
+"A\n"
+"A 0\n"
+"A 1\n"
+"A 2\n"
+"A 3\n"
+"---\n"
+"B\n"
+"B 0\n"
+"B 1\n"
+"B 2\n"
+"B 3\n"
+"---\n"
+"C\n"
+"C 0\n"
+"C 1\n"
+"C 2\n"
+"C 3\n"
+"---"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.first_nested_loop
+msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.output_prediction_choices.2"
+msgstr ""
+"A 1\n"
+"A 2\n"
+"A 3\n"
+"A 4\n"
+"---\n"
+"B 1\n"
+"B 2\n"
+"B 3\n"
+"B 4\n"
+"---\n"
+"C 1\n"
+"C 2\n"
+"C 3\n"
+"C 4\n"
+"---"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.first_nested_loop
+msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.output_prediction_choices.3"
+msgstr ""
+"A\n"
+"B\n"
+"C\n"
+"---\n"
+"A 0\n"
+"B 0\n"
+"C 0\n"
+"---\n"
+"A 1\n"
+"B 1\n"
+"C 1\n"
+"---\n"
+"A 2\n"
+"B 2\n"
+"C 2\n"
+"---\n"
+"A 3\n"
+"B 3\n"
+"C 3"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.text"
@@ -22993,6 +23437,22 @@ msgstr ""
 "The answer is that `sunshine` looks like a variable, so Python tries to look up its value, but since we never defined "
 "a variable with that name we get an error."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingVariables.steps.sunshine_undefined_check
+msgid "pages.IntroducingVariables.steps.sunshine_undefined_check.output_prediction_choices.0"
+msgstr "sunshine"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingVariables.steps.sunshine_undefined_check
+msgid "pages.IntroducingVariables.steps.sunshine_undefined_check.output_prediction_choices.1"
+msgstr "'sunshine'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingVariables.steps.sunshine_undefined_check
+msgid "pages.IntroducingVariables.steps.sunshine_undefined_check.output_prediction_choices.2"
+msgstr "Hello"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingVariables.steps.sunshine_undefined_check
+msgid "pages.IntroducingVariables.steps.sunshine_undefined_check.output_prediction_choices.3"
+msgstr "'Hello'"
+
 #. https://futurecoder.io/course/#IntroducingVariables
 msgid "pages.IntroducingVariables.steps.sunshine_undefined_check.text"
 msgstr ""
@@ -23015,6 +23475,22 @@ msgstr ""
 "This creates a variable with the name `word` that refers to the string value `'Hello'`.\n"
 "\n"
 "Now see what happens when you run `__program__` in the shell by itself."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingVariables.steps.word_string_check
+msgid "pages.IntroducingVariables.steps.word_string_check.output_prediction_choices.0"
+msgstr "word"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingVariables.steps.word_string_check
+msgid "pages.IntroducingVariables.steps.word_string_check.output_prediction_choices.1"
+msgstr "'word'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingVariables.steps.word_string_check
+msgid "pages.IntroducingVariables.steps.word_string_check.output_prediction_choices.2"
+msgstr "Hello"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingVariables.steps.word_string_check
+msgid "pages.IntroducingVariables.steps.word_string_check.output_prediction_choices.3"
+msgstr "'Hello'"
 
 #. https://futurecoder.io/course/#IntroducingVariables
 msgid "pages.IntroducingVariables.steps.word_string_check.text"
@@ -23959,6 +24435,30 @@ msgstr ""
 msgid "pages.MoreListFunctionsAndMethods.steps.final_text.text"
 msgstr "Congratulations! You are now a master of list methods and functions!"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.in_predict_exercise
+msgid "pages.MoreListFunctionsAndMethods.steps.in_predict_exercise.output_prediction_choices.0"
+msgstr ""
+"True\n"
+"False"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.in_predict_exercise
+msgid "pages.MoreListFunctionsAndMethods.steps.in_predict_exercise.output_prediction_choices.1"
+msgstr ""
+"False\n"
+"True"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.in_predict_exercise
+msgid "pages.MoreListFunctionsAndMethods.steps.in_predict_exercise.output_prediction_choices.2"
+msgstr ""
+"True\n"
+"True"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.in_predict_exercise
+msgid "pages.MoreListFunctionsAndMethods.steps.in_predict_exercise.output_prediction_choices.3"
+msgstr ""
+"False\n"
+"False"
+
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
 #. 
 #.     # __code0__:
@@ -24109,6 +24609,55 @@ msgstr ""
 msgid "pages.MoreListFunctionsAndMethods.title"
 msgstr "More List Functions and Methods"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
+msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.0"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
+msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.1"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2\n"
+"b 0"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
+msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.2"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2\n"
+"b 0\n"
+"b 1\n"
+"b 2"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
+msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.3"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2\n"
+"b 0\n"
+"c 0\n"
+"c 1\n"
+"c 2"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
+msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.4"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2\n"
+"b 0\n"
+"b 1\n"
+"b 2\n"
+"c 0\n"
+"c 1\n"
+"c 2"
+
 #. https://futurecoder.io/course/#MoreOnReturn
 msgid "pages.MoreOnReturn.steps.break_vs_return.text"
 msgstr ""
@@ -24178,6 +24727,55 @@ msgstr ""
 "- then the inner loop is stopped by `break`, but \n"
 "- the outer loop continues its execution, moving on to the next letter `c`\n"
 "- which is executed in full since it does not trigger the `break` statement."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
+msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.0"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
+msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.1"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2\n"
+"b 0"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
+msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.2"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2\n"
+"b 0\n"
+"b 1\n"
+"b 2"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
+msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.3"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2\n"
+"b 0\n"
+"c 0\n"
+"c 1\n"
+"c 2"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
+msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.4"
+msgstr ""
+"a 0\n"
+"a 1\n"
+"a 2\n"
+"b 0\n"
+"b 1\n"
+"b 2\n"
+"c 0\n"
+"c 1\n"
+"c 2"
 
 #. https://futurecoder.io/course/#MoreOnReturn
 #. 
@@ -24281,6 +24879,30 @@ msgstr "Navigating Shell History"
 #. https://futurecoder.io/course/#NestedListAssignment
 msgid "pages.NestedListAssignment.steps.final_text.text"
 msgstr "Brilliant! You're almost ready to put it all together, keep going!"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
+msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.0"
+msgstr "X"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
+msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.2"
+msgstr "'X'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
+msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.4"
+msgstr "['X']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
+msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.6"
+msgstr "['X', ' ', ' ']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
+msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.7"
+msgstr "[' ', 'X', ' ']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
+msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.8"
+msgstr "[' ', ' ', 'X']"
 
 #. https://futurecoder.io/course/#NestedListAssignment
 #. 
@@ -25000,6 +25622,22 @@ msgstr ""
 "In summary, the main comparison operators are `==`, `!=`, `<`, `>`, `<=`, and `>=`.\n"
 "If you ever have doubts about what they do, play with them in the shell!"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.grades_example
+msgid "pages.OtherComparisonOperators.steps.grades_example.output_prediction_choices.0"
+msgstr "F"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.grades_example
+msgid "pages.OtherComparisonOperators.steps.grades_example.output_prediction_choices.1"
+msgstr "C"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.grades_example
+msgid "pages.OtherComparisonOperators.steps.grades_example.output_prediction_choices.2"
+msgstr "B"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.grades_example
+msgid "pages.OtherComparisonOperators.steps.grades_example.output_prediction_choices.3"
+msgstr "A"
+
 #. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.steps.grades_example.text"
 msgstr ""
@@ -25311,6 +25949,24 @@ msgstr ""
 "Unlike a spreadsheet where formulas update automatically, a variable like `sentence` doesn't remember how it was "
 "calculated and won't change if the underlying values `word` or `name` are changed."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_doesnt_change
+msgid "pages.StoringCalculationsInVariables.steps.sentence_doesnt_change.output_prediction_choices.0"
+msgstr ""
+"Hello World\n"
+"Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_doesnt_change
+msgid "pages.StoringCalculationsInVariables.steps.sentence_doesnt_change.output_prediction_choices.1"
+msgstr ""
+"Hello World\n"
+"Goodbye World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_doesnt_change
+msgid "pages.StoringCalculationsInVariables.steps.sentence_doesnt_change.output_prediction_choices.2"
+msgstr ""
+"Goodbye World\n"
+"Goodbye World"
+
 #. https://futurecoder.io/course/#StoringCalculationsInVariables
 #. 
 #.     # __code0__:
@@ -25327,6 +25983,30 @@ msgstr ""
 "Now `sentence` has the value `'Hello World'` which can be used multiple times. Note that it will continue to have this value until it is directly reassigned, e.g. with another statement like `sentence = <something>`. For example, add these two lines to the end of the program:\n"
 "\n"
 "__code0__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name
+msgid "pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name.output_prediction_choices.0"
+msgstr "sentence"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name
+msgid "pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name.output_prediction_choices.1"
+msgstr "word + ' ' + name"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name
+msgid "pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name.output_prediction_choices.2"
+msgstr "Hello + ' ' + World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name
+msgid "pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name.output_prediction_choices.3"
+msgstr "'Hello' + ' ' + 'World'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name
+msgid "pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name.output_prediction_choices.4"
+msgstr "Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name
+msgid "pages.StoringCalculationsInVariables.steps.sentence_equals_word_plus_name.output_prediction_choices.5"
+msgstr "'Hello World'"
 
 #. https://futurecoder.io/course/#StoringCalculationsInVariables
 #. 
@@ -25613,6 +26293,32 @@ msgstr ""
 msgid "pages.TestingFunctions.steps.final_text.text"
 msgstr "Great work! These tools will be very helpful in coming chapters."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
+msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.0"
+msgstr ""
+"Error! 4 != 4\n"
+"Error! 10 != 10"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
+msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.1"
+msgstr ""
+"Error! 2 != 4\n"
+"Error! 5 != 10"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
+msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.2"
+msgstr "Error! 2 != 4"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
+msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.3"
+msgstr ""
+"OK\n"
+"OK"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
+msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.4"
+msgstr "OK"
+
 #. https://futurecoder.io/course/#TestingFunctions
 #. 
 #.     # __code0__:
@@ -25649,6 +26355,30 @@ msgstr ""
 "so you can always use it. Here's an example of using it for you to try out:\n"
 "\n"
 "__program_indented__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
+msgid "pages.TestingFunctions.steps.make_tests_fail.output_prediction_choices.0"
+msgstr ""
+"Error! 4 != 4\n"
+"Error! 10 != 10"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
+msgid "pages.TestingFunctions.steps.make_tests_fail.output_prediction_choices.1"
+msgstr ""
+"Error! 6 != 4\n"
+"Error! 15 != 10"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
+msgid "pages.TestingFunctions.steps.make_tests_fail.output_prediction_choices.2"
+msgstr ""
+"Error! 4 != 6\n"
+"Error! 10 != 15"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
+msgid "pages.TestingFunctions.steps.make_tests_fail.output_prediction_choices.3"
+msgstr ""
+"OK\n"
+"OK"
 
 #. https://futurecoder.io/course/#TestingFunctions
 msgid "pages.TestingFunctions.steps.make_tests_fail.text"
@@ -26328,6 +27058,30 @@ msgstr ""
 "    __copyable__\n"
 "__code0__"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.less_than_has_two_meanings
+msgid "pages.Types.steps.less_than_has_two_meanings.output_prediction_choices.0"
+msgstr ""
+"True\n"
+"True"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.less_than_has_two_meanings
+msgid "pages.Types.steps.less_than_has_two_meanings.output_prediction_choices.1"
+msgstr ""
+"True\n"
+"False"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.less_than_has_two_meanings
+msgid "pages.Types.steps.less_than_has_two_meanings.output_prediction_choices.2"
+msgstr ""
+"False\n"
+"True"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.less_than_has_two_meanings
+msgid "pages.Types.steps.less_than_has_two_meanings.output_prediction_choices.3"
+msgstr ""
+"False\n"
+"False"
+
 #. https://futurecoder.io/course/#Types
 #. 
 #.     # __code0__:
@@ -26484,6 +27238,26 @@ msgstr ""
 "`new_sentence += char` runs for the first time and the variable `new_sentence` gets a new value.\n"
 "\n"
 "Now modify the program to do the opposite: only print the first character, leave out the rest."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_tail
+msgid "pages.UnderstandingProgramsWithSnoop.steps.print_tail.output_prediction_choices.0"
+msgstr "Hello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_tail
+msgid "pages.UnderstandingProgramsWithSnoop.steps.print_tail.output_prediction_choices.1"
+msgstr "ello World"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_tail
+msgid "pages.UnderstandingProgramsWithSnoop.steps.print_tail.output_prediction_choices.2"
+msgstr "Hello Worl"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_tail
+msgid "pages.UnderstandingProgramsWithSnoop.steps.print_tail.output_prediction_choices.3"
+msgstr "H"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_tail
+msgid "pages.UnderstandingProgramsWithSnoop.steps.print_tail.output_prediction_choices.4"
+msgstr "d"
 
 #. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
 #. 

@@ -192,6 +192,7 @@ def get_predictions(cls):
         assert answer in choices, repr(answer)
 
     choices += ["Error"]
+    assert answer in choices, repr(answer)
     return dict(choices=choices, answer=answer)
 
 
