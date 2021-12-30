@@ -247,6 +247,9 @@ const setUserStateAndDatabase = (path, value) => {
   updateDatabase({[path.join("/")]: value});
 }
 
+let loadedPromiseResolve;
+export const loadedPromise = new Promise((resolve) => {loadedPromiseResolve = resolve});
+
 const loadUserAndPages = (state, previousUser = {}) => {
   if (!isLoaded(state)) {
     return state;
@@ -298,6 +301,9 @@ const loadUserAndPages = (state, previousUser = {}) => {
   if (!specialHash(hash)) {
     afterSetPage(pageSlug, state);
   }
+
+  loadedPromiseResolve();
+
   return state;
 }
 

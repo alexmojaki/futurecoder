@@ -8,6 +8,7 @@ import {
   currentStepName,
   databaseRequest,
   isProduction,
+  loadedPromise,
   logEvent,
   moveStep,
   ranCode
@@ -58,13 +59,15 @@ export const runCode = async ({code, source}) => {
   awaitingInput = false;
   pendingOutput = [];
 
+  bookSetState("processing", true);
+  bookSetState("running", true);
+
+  await loadedPromise;
+
   const {route, user, questionWizard, editorContent, numHints, requestingSolution} = bookState;
   if (!shell && !code) {
     code = editorContent;
   }
-
-  bookSetState("processing", true);
-  bookSetState("running", true);
 
   const entry = {
     input: code,
