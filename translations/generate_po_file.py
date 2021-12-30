@@ -35,6 +35,9 @@ def main():
                 msgid = f"{step_msgid}.hints.{i}.text"
                 po.append(make_po_entry(code_bits, page_link, msgid, hint, comments))
 
+            for node_text in get_code_bits(step.program):
+                code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
+
     for code_bit, comments in code_bits.items():
         po.append(
             POEntry(
