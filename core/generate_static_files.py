@@ -27,9 +27,9 @@ from pathlib import Path
 import birdseye
 from littleutils import strip_required_prefix, json_to_file
 
+from core.checker import check_entry
+from core.runner.utils import site_packages
 from core.text import get_pages, chapters, step_test_entries
-from core.utils import site_packages
-from core.workers.worker import check_entry
 
 str("import sentry_sdk after core.utils for stubs")
 import sentry_sdk  # noqa imported lazily
@@ -37,7 +37,7 @@ import sentry_sdk  # noqa imported lazily
 
 def run_steps():
     for *_, entry in step_test_entries():
-        check_entry(entry, input_callback=None, result_callback=lambda _: 0)
+        check_entry(entry, input_callback=None, output_callback=lambda _: 0)
 
 
 def get_roots():

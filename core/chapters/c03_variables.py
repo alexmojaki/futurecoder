@@ -45,7 +45,6 @@ Good. For comparison, run `__program__` in the shell by itself, with the quotes.
 
         program = "'word'"
         predicted_output_choices = ["word", "'word'", "Hello", "'Hello'"]
-        correct_output = "'word'"
 
     class sunshine_undefined_check(VerbatimStep):
         """
@@ -128,8 +127,6 @@ You can use variables in calculations just like you would use literals. For exam
 
 __program_indented__
         """
-
-        # TODO add predicted output: requires computing choices in worker
 
         program = "'Hello ' + your_name"
 
@@ -229,7 +226,7 @@ Often you will use variables to store the results of calculations. This will hel
 
     __program_indented__
         """
-        
+
         predicted_output_choices = [
             "sentence",
             "word + ' ' + name",

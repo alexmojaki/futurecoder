@@ -14,7 +14,6 @@ async function getPackageBuffer() {
   return await response.arrayBuffer()
 }
 
-let runCodeCatchErrors;
 let pyodide;
 
 async function loadPyodideOnly() {
@@ -30,6 +29,7 @@ async function loadPyodideOnly() {
   pyodide.runPython(loadPythonString)
 }
 
+let check_entry, install_imports;
 
 async function loadPyodideAndPackages() {
   const buffer = (await Promise.all([
@@ -38,16 +38,18 @@ async function loadPyodideAndPackages() {
   ]))[1];
 
   console.time("load_package_buffer(buffer)")
-  pyodide.globals.get("load_package_buffer")(buffer);
+  const load_package_buffer = pyodide.globals.get("load_package_buffer")
+  const result = load_package_buffer(buffer);
+  ({check_entry, install_imports} = toObject(result));
   console.timeEnd("load_package_buffer(buffer)")
-
-  runCodeCatchErrors = pyodide.globals.get("check_entry_catch_internal_errors");
-  console.assert(runCodeCatchErrors);
 }
 
 let pyodideReadyPromise = loadPyodideAndPackages();
 
 const toObject = (x) => {
+  if (x?.toJs) {
+    x = x.toJs();
+  }
   if (x instanceof Map) {
     return Object.fromEntries(Array.from(
       x.entries(),
@@ -62,33 +64,41 @@ const toObject = (x) => {
 
 const decoder = new TextDecoder();
 
-class Runner {
-  constructor(resultCallback) {
-    this.resultCallback = resultCallback;
-  }
-  async runCode(entry, inputTextArray, inputMetaArray, interruptBuffer) {
-    await pyodideReadyPromise;
+async function runCode(entry, inputTextArray, inputMetaArray, interruptBuffer, outputCallback, inputCallback) {
+  await pyodideReadyPromise;
 
-    const inputCallback = () => {
-      while (true) {
-        if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
-          if (interruptBuffer[0] === 2) {
-            return null;
-          }
-        } else {
-          break
+  const fullInputCallback = (data) => {
+    inputCallback(toObject(data));
+    while (true) {
+      if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
+        if (interruptBuffer[0] === 2) {
+          return null;
         }
+      } else {
+        break
       }
-      Atomics.store(inputMetaArray, 1, 0);
-      const size = Atomics.exchange(inputMetaArray, 0, 0);
-      const bytes = inputTextArray.slice(0, size);
-      return decoder.decode(bytes) + "\n";
     }
-
-    pyodide._module.setInterruptBuffer(interruptBuffer);
-    const resultCallbackToObject = (result) => this.resultCallback(toObject(result.toJs()));
-    runCodeCatchErrors(entry, inputCallback, resultCallbackToObject)
+    Atomics.store(inputMetaArray, 1, 0);
+    const size = Atomics.exchange(inputMetaArray, 0, 0);
+    const bytes = inputTextArray.slice(0, size);
+    return decoder.decode(bytes) + "\n";
   }
+
+  pyodide._module.setInterruptBuffer(interruptBuffer);
+
+  try {
+    await install_imports(entry.input);
+  } catch (e) {
+    console.error(e);
+  }
+
+  let outputPromise;
+  const fullOutputCallback = (data) => {
+    outputPromise = outputCallback(toObject(data).parts);
+  };
+  const result = check_entry(entry, fullInputCallback, fullOutputCallback);
+  await outputPromise;
+  return toObject(result);
 }
 
-Comlink.expose(Runner);
+Comlink.expose({runCode});

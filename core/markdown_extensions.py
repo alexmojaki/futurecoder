@@ -2,14 +2,14 @@ import xml.etree.ElementTree as etree
 from html import unescape
 from textwrap import dedent
 
-from littleutils import strip_required_prefix
 from markdown.extensions import Extension
 from markdown.treeprocessors import Treeprocessor
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
 
-from core.utils import is_valid_syntax, check_and_remove_prefix
+from core.utils import check_and_remove_prefix
+from core.runner.utils import is_valid_syntax
 
 lexer = get_lexer_by_name("python3")
 monokai = get_style_by_name("monokai")

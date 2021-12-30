@@ -5,28 +5,30 @@ from pathlib import Path
 
 from littleutils import only
 
-from core.text import step_test_entries
+import core.utils
+from core.checker import check_entry, runner
+from core.text import step_test_entries, get_predictions
 from core.utils import highlighted_markdown, make_test_input_callback
-from core.workers.worker import check_entry
 
+core.utils.TESTING = True
 
 def test_steps():
+    runner.reset()
     transcript = []
     for page, step, substep, entry in step_test_entries():
         program = substep.program
         is_message = substep in step.messages
 
-        response = {}
+        output_parts = []
+        def output_callback(data):
+            output_parts.extend(data["parts"])
 
-        def result_callback(r):
-            nonlocal response
-            response = r
-
-        check_entry(
+        response = check_entry(
             entry,
             input_callback=make_test_input_callback(step.stdin_input),
-            result_callback=result_callback,
+            output_callback=output_callback,
         )
+        response["output_parts"] = output_parts
         normalise_response(response, is_message, substep)
 
         transcript_item = dict(
@@ -68,13 +70,14 @@ def normalise_response(response, is_message, substep):
     response["result"] = response.pop("output_parts")
     for line in response["result"]:
         line["text"] = normalise_output(line["text"])
-        if line.get("isTraceback"):
+        if line["type"] == "traceback":
             line["text"] = line["text"].splitlines()
 
-    del response["birdseye_objects"]
-    del response["awaiting_input"]
+    response.pop("birdseye_objects", None)
     del response["error"]
     del response["output"]
+
+    response["prediction"] = get_predictions(substep)
     if not response["prediction"]["choices"]:
         del response["prediction"]
 

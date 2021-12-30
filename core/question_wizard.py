@@ -25,7 +25,7 @@ You can still change your code or expected output and click Run again to regener
     *Explain what you're trying to do and why*
 
     Here's my code:
-    
+
 {}
 
     This is the result:
@@ -33,14 +33,12 @@ You can still change your code or expected output and click Run again to regener
 {}
 
     The expected output is:
-    
+
 {}
 """
 
 
-def input_messages():
-    from core.workers.worker import input_nodes
-
+def input_messages(input_nodes):
     if not input_nodes:
         return []
 
@@ -94,11 +92,11 @@ to the top of your code.
     return [message]
 
 
-def question_wizard_check(entry, output):
+def question_wizard_check(entry, output, runner):
     if entry["source"] == "shell":
         return None
 
-    messages = input_messages()
+    messages = input_messages(runner.input_nodes)
 
     if not output.strip():
         messages.append(

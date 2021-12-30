@@ -64,6 +64,7 @@ const initialState = {
     pageSlug: "loading_placeholder",
   },
   processing: false,
+  running: false,
   numHints: 0,
   editorContent: "",
   messages: [],
@@ -324,6 +325,8 @@ export const scrollToNextStep = () => {
 export const ranCode = makeAction(
   'RAN_CODE',
   (state, {value}) => {
+    const prediction = currentStep(state).prediction;
+
     if (value.passed) {
       scrollToNextStep();
 
@@ -332,14 +335,20 @@ export const ranCode = makeAction(
         ..._.pick(initialState,
           "numHints messages requestingSolution".split(" ")),
         prediction: {
-          ...value.prediction,
+          ...prediction,
           userChoice: "",
           wrongAnswers: [],
-          state: value.prediction.choices ? "waiting" : "hidden",
+          state: prediction.choices ? "waiting" : "hidden",
           codeResult: value,
         },
-        processing: false,
       };
+
+      if (prediction.choices) {
+        const scrollInterval = setInterval(() => {
+          animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current});
+        }, 30);
+        setTimeout(() => clearInterval(scrollInterval), 1300);
+      }
     }
 
     if (state.route === "question") {
@@ -355,11 +364,10 @@ export const ranCode = makeAction(
       }
     }
 
-    if (value.prediction.choices) {
-      const scrollInterval = setInterval(() => {
-        animateScroll.scrollToBottom({duration: 30, container: terminalRef.current.terminalRoot.current});
-      }, 30);
-      setTimeout(() => clearInterval(scrollInterval), 1300);
+    state = {
+      ...state,
+      processing: false,
+      running: false,
     }
     return state;
   },

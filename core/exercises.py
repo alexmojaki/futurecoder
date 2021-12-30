@@ -2,7 +2,6 @@ import ast
 import inspect
 import random
 import string
-import traceback
 import typing
 from textwrap import indent
 

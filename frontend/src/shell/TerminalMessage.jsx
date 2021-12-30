@@ -13,13 +13,15 @@ export default class TerminalMessage extends Component {
   render() {
     let {content} = this.props;
 
-    if (content.isTraceback) {
+    if (content.type === "traceback") {
       return <Tracebacks {...content}/>
     }
 
     let color = "white";
     if (typeof content === "object") {
-      color = content.color;
+      if (["stderr", "traceback", "syntax_error"].includes(content.type)) {
+        color = "red";
+      }
       content = content.text;
     }
 
@@ -35,11 +37,11 @@ export default class TerminalMessage extends Component {
 }
 
 
-const Tracebacks = ({tracebacks, codeSource}) => {
+const Tracebacks = ({data, codeSource}) => {
   const simple = (
     codeSource === "shell"
-    && tracebacks.length === 1
-    && tracebacks[0].frames.length === 1
+    && data.length === 1
+    && data[0].frames.length === 1
   );
   return <div className="tracebacks-container">
     {!simple &&
@@ -48,7 +50,7 @@ const Tracebacks = ({tracebacks, codeSource}) => {
       </div>
     }
     {
-      tracebacks.map((traceback, tracebackIndex) =>
+      data.map((traceback, tracebackIndex) =>
         <div className="traceback" key={tracebackIndex}>
           {
             !simple && traceback.frames.map((frame, frameIndex) =>
