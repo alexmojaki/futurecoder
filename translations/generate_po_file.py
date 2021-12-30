@@ -9,6 +9,7 @@ from textwrap import indent, dedent
 from littleutils import group_by_key
 from polib import POEntry, POFile
 
+from core import linting
 from core.text import pages, get_predictions
 from core.utils import markdown_codes, MyASTTokens
 
@@ -68,6 +69,14 @@ def main():
                 msgid=f"code_bits.{code_bit}",
                 msgstr=code_bit,
                 comment="\n\n------\n\n".join(sorted(comments)),
+            )
+        )
+
+    for message_cls, message_format in linting.MESSAGES.items():
+        po.append(
+            POEntry(
+                msgid=f"linting_messages.pyflakes.{message_cls.__name__}.message_format",
+                msgstr=message_format.strip(),
             )
         )
 
