@@ -146,11 +146,14 @@ def clean_step_class(cls):
         inner_cls.tests = inner_cls.tests or cls.tests
         clean_step_class(inner_cls)
 
+        original_inner_cls = inner_cls
+
         # noinspection PyAbstractClass
         class inner_cls(inner_cls, cls):
-            __name__ = inner_cls.__name__
             __qualname__ = inner_cls.__qualname__
             __module__ = inner_cls.__module__
+
+        inner_cls.__name__ = original_inner_cls.__name__
 
         messages.append(inner_cls)
 

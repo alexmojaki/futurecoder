@@ -14,7 +14,7 @@ msgstr ""
 #. https://futurecoder.io/course/#IntroducingTheShell
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTheShell.steps.first_expression
-msgid "pages.IntroducingTheShell.steps.first_expression.messages.inner_cls.text"
+msgid "pages.IntroducingTheShell.steps.first_expression.messages.anything_else.text"
 msgstr ""
 "Awesome, you're trying out your own experiments!\n"
 "That's a great sign. Keep it up.\n"
@@ -74,7 +74,7 @@ msgstr ""
 #. https://futurecoder.io/course/#AddingStrings
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.AddingStrings.steps.hello_world_space
-msgid "pages.AddingStrings.steps.hello_world_space.messages.inner_cls.text"
+msgid "pages.AddingStrings.steps.hello_world_space.messages.literal_answer.text"
 msgstr "You must still add two or more strings together."
 
 #. https://futurecoder.io/course/#AddingStrings
@@ -163,25 +163,25 @@ msgstr ""
 #. https://futurecoder.io/course/#UsingVariables
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
-msgid "pages.UsingVariables.steps.name_assign.messages.inner_cls.text"
+msgid "pages.UsingVariables.steps.name_assign.messages.assigned_something_else.text"
 msgstr "Put `your_name` before the `=` to create a variable called `your_name`."
 
 #. https://futurecoder.io/course/#UsingVariables
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
-msgid "pages.UsingVariables.steps.name_assign.messages.inner_cls.text"
+msgid "pages.UsingVariables.steps.name_assign.messages.empty_string.text"
 msgstr "For this exercise, choose a non-empty string"
 
 #. https://futurecoder.io/course/#UsingVariables
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
-msgid "pages.UsingVariables.steps.name_assign.messages.inner_cls.text"
+msgid "pages.UsingVariables.steps.name_assign.messages.name_equals_something_else.text"
 msgstr "You've got the `your_name = ` part right, now put a string (use quotes) on the right of the `=`."
 
 #. https://futurecoder.io/course/#UsingVariables
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
-msgid "pages.UsingVariables.steps.name_assign.messages.inner_cls.text"
+msgid "pages.UsingVariables.steps.name_assign.messages.starts_with_space.text"
 msgstr "For this exercise, choose a name that doesn't start with a space."
 
 #. https://futurecoder.io/course/#UsingVariables
@@ -917,7 +917,7 @@ msgstr ""
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge
-msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.messages.inner_cls.text"
+msgid "pages.BuildingUpStringsExercises.steps.diagonal_name_bonus_challenge.messages.add_space_first.text"
 msgstr ""
 "Almost there! You have one space too many before each letter.\n"
 "Make sure that the first time your loop calls `print`\n"
@@ -2309,7 +2309,7 @@ msgstr ""
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
-msgid "pages.GettingElementsAtPosition.steps.index_exercise.messages.inner_cls.text"
+msgid "pages.GettingElementsAtPosition.steps.index_exercise.messages.all_indices.text"
 msgstr ""
 "You're almost there! However, this prints all the indices,\n"
 "not just the first one."
@@ -2317,7 +2317,7 @@ msgstr ""
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_exercise
-msgid "pages.GettingElementsAtPosition.steps.index_exercise.messages.inner_cls.text"
+msgid "pages.GettingElementsAtPosition.steps.index_exercise.messages.last_index.text"
 msgstr ""
 "You're almost there! However, this prints the *last* index,\n"
 "not the first one."
@@ -4028,13 +4028,13 @@ msgstr ""
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
-msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.inner_cls.text"
+msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.added_str_and_int.text"
 msgstr "You can't add together strings and numbers. Use an f-string."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
-msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.inner_cls.text"
+msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.adding_one_in_wrong_loop.text"
 msgstr ""
 "You added 1 to your outer loop variable at the wrong place!\n"
 "Where should you do that instead to fix it?"
@@ -4042,11 +4042,19 @@ msgstr ""
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
-msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.inner_cls.text"
+msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.too_long.text"
 msgstr ""
 "Your solution is too long. You only need a few lines of code for this problem.\n"
 "Use a nested loop so that you don't need to repeat yourself.\n"
 "The computer will do the repetition for you!"
+
+#. https://futurecoder.io/course/#IntroducingNestedLoops
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
+msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.messages.used_times_instead_of_x.text"
+msgstr ""
+"That's almost correct! Make sure to display the right character `x` in your table.\n"
+"For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -5612,7 +5620,7 @@ msgstr ""
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
-msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.messages.inner_cls.text"
+msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.messages.used_multiply.text"
 msgstr ""
 "You cannot use `*`, `+`, or even any numbers inside `quadruple`.\n"
 "You must call `double` to solve the problem."
@@ -5877,7 +5885,7 @@ msgstr ""
 #. https://futurecoder.io/course/#TestingFunctions
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
-msgid "pages.TestingFunctions.steps.alert_exercise.messages.inner_cls.text"
+msgid "pages.TestingFunctions.steps.alert_exercise.messages.catch_return_inside_loop.text"
 msgstr ""
 "In the `alert` function, you placed your `return` statement at the wrong place!\n"
 "Pay attention to your indentations in `alert`. You might be ending a loop too early with `return`."
@@ -5885,7 +5893,7 @@ msgstr ""
 #. https://futurecoder.io/course/#TestingFunctions
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
-msgid "pages.TestingFunctions.steps.alert_exercise.messages.inner_cls.text"
+msgid "pages.TestingFunctions.steps.alert_exercise.messages.used_format.text"
 msgstr ""
 "You cannot use string concatenation/formatting/interpolation/multiplication or f-strings in `alert`.\n"
 "You must call `surround` to solve the problem."
@@ -7238,7 +7246,7 @@ msgstr ""
 #. https://futurecoder.io/course/#IntroducingTicTacToe
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
-msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.messages.inner_cls.text"
+msgid "pages.IntroducingTicTacToe.steps.intro_row_winner.messages.catch_empty_row.text"
 msgstr "Keep in mind that some entries might be `' '`. An empty row is not a winning row."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe

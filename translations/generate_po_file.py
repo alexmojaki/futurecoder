@@ -4,7 +4,7 @@ import re
 import urllib.parse
 from collections import defaultdict
 from pathlib import Path
-from textwrap import indent
+from textwrap import indent, dedent
 
 from littleutils import group_by_key
 from polib import POEntry, POFile
@@ -62,6 +62,8 @@ def make_po_entry(code_bits, page_link, msgid, text, comments=()):
         code_comments.append(f"    # __code{i}__:\n{code_text}")
 
         code = group[0]["code"]
+        assert dedent(code_text) in code
+
         atok = MyASTTokens(code, parse=1)
         for node in ast.walk(atok.tree):
             if isinstance(node, ast.Name):
