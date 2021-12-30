@@ -43,6 +43,8 @@ def main():
                 comment="\n\n------\n\n".join(sorted(comments)),
             )
         )
+
+    po.sort(key=lambda entry: entry.msgid)
     po.save(str(Path(__file__).parent / "english.po"))
 
 
