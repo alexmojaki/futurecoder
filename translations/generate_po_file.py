@@ -9,7 +9,8 @@ from textwrap import indent, dedent
 from littleutils import group_by_key
 from polib import POEntry, POFile
 
-from core.text import pages
+from core import linting
+from core.text import pages, get_predictions
 from core.utils import markdown_codes, MyASTTokens
 
 
@@ -18,8 +19,17 @@ def main():
     code_bits = defaultdict(set)
     for page_slug, page in pages.items():
         page_link = "https://futurecoder.io/course/#" + page_slug
+        page_msgid = f"pages.{page_slug}"
+        po.append(
+            POEntry(
+                msgid=f"{page_msgid}.title",
+                msgstr=page.raw_title,
+                comment=page_link,
+            )
+        )
+
         for step_name, text in zip(page.step_names, page.step_texts(raw=True)):
-            step_msgid = f"pages.{page_slug}.steps.{step_name}"
+            step_msgid = f"{page_msgid}.steps.{step_name}"
             po.append(make_po_entry(code_bits, page_link, f"{step_msgid}.text", text))
             if step_name == "final_text":
                 continue
@@ -35,6 +45,34 @@ def main():
                 msgid = f"{step_msgid}.hints.{i}.text"
                 po.append(make_po_entry(code_bits, page_link, msgid, hint, comments))
 
+            if step.auto_translate_program:
+                for node_text in get_code_bits(step.program):
+                    code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
+            else:
+                po.append(
+                    POEntry(
+                        msgid=f"{step_msgid}.program",
+                        msgstr=step.program,
+                        comment=search_link(step_msgid),
+                    )
+                )
+
+            if step.translate_output_choices:
+                output_prediction_choices = get_predictions(step)["choices"] or []
+                for i, choice in enumerate(output_prediction_choices[:-1]):
+                    if (
+                        not re.search(r"[a-zA-Z]", choice)
+                        or choice in ("True", "False")
+                    ):
+                        continue
+                    po.append(
+                        POEntry(
+                            msgid=f"{step_msgid}.output_prediction_choices.{i}",
+                            msgstr=choice,
+                            comment=search_link(step_msgid),
+                        )
+                    )
+
     for code_bit, comments in code_bits.items():
         po.append(
             POEntry(
@@ -43,6 +81,24 @@ def main():
                 comment="\n\n------\n\n".join(sorted(comments)),
             )
         )
+
+    for message_cls, message_format in linting.MESSAGES.items():
+        po.append(
+            POEntry(
+                msgid=f"linting_messages.pyflakes.{message_cls.__name__}.message_format",
+                msgstr=message_format.strip(),
+            )
+        )
+
+    po.append(
+        POEntry(
+            msgid=f"output_predictions.Error",
+            msgstr="Error",
+            comment="Special choice at the end of all output prediction multiple choice questions",
+        )
+    )
+
+    po.sort(key=lambda entry: entry.msgid)
     po.save(str(Path(__file__).parent / "english.po"))
 
 
@@ -76,10 +132,7 @@ def make_po_entry(code_bits, page_link, msgid, text, comments=()):
 
 
 def get_code_bits(code):
-    try:
-        atok = MyASTTokens(code, parse=1)
-    except SyntaxError:
-        return
+    atok = MyASTTokens(code, parse=1)
 
     for node in ast.walk(atok.tree):
         if isinstance(node, ast.Name):

@@ -1034,6 +1034,7 @@ Similarly `<` acts differently on two strings and two integers:
     __program_indented__
         """
 
+        translate_output_choices = False
         predicted_output_choices = [
             "True\nTrue",
             "True\nFalse",
@@ -1348,6 +1349,7 @@ on the board and play the game. For starters, try out this code:
     __program_indented__
         """
 
+        translate_output_choices = False
         predicted_output_choices = [
             "X",
             "' '",

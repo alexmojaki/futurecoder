@@ -24,6 +24,8 @@ It's time to learn about a powerful new type of value called lists. Here's an ex
 __program_indented__
         """
 
+        auto_translate_program = False
+
         def program(self):
             words = ['This', 'is', 'a', 'list']
 
@@ -391,6 +393,8 @@ Here's how:
 __program_indented__
         """
 
+        auto_translate_program = False
+
         def program(self):
             words = ['This', 'is', 'a', 'list']
 
@@ -407,6 +411,8 @@ You've probably noticed that the first index is 0, not 1. In programming, counti
 
 This also means that the last index in this list of 4 elements is 3. What happens if you try getting an index greater than that?
         """
+
+        auto_translate_program = False
 
         program = "words[4]"
 
@@ -489,6 +495,8 @@ list
 3
 """,
                                     ]
+
+        auto_translate_program = False
 
         def program(self):
             words = ['This', 'is', 'a', 'list']
@@ -1217,6 +1225,7 @@ For example run this program:
 __program_indented__
         """
 
+        translate_output_choices = False
         predicted_output_choices = [
             "True\n"
             "False",
@@ -1421,6 +1430,8 @@ For example, try the following:
     __program_indented__
         """
 
+        auto_translate_program = False
+
         program = "print('the' in 'feed the dog and the cat')"
 
     class string_count_index(VerbatimStep):
@@ -1431,6 +1442,8 @@ How about `count` and `index`?
     __copyable__
     __program_indented__
         """
+
+        auto_translate_program = False
 
         def program(self):
             string = 'feed the dog and the cat'

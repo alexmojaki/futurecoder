@@ -474,6 +474,7 @@ so you can always use it. Here's an example of using it for you to try out:
 __program_indented__
         """
 
+        translate_output_choices = False
         predicted_output_choices = [
             """\
 Error! 4 != 4
@@ -505,6 +506,7 @@ The OKs tell us that the tests passed. Our `double` function seems to be working
 """
 
         program_in_text = False
+        translate_output_choices = False
         predicted_output_choices = [
             """\
 Error! 4 != 4
@@ -792,6 +794,7 @@ What happens if there are nested loops? Try the following function:
 
             foo()
 
+        translate_output_choices = False
         predicted_output_choices = [
             """\
 a 0
@@ -850,6 +853,7 @@ Change `return letter` to `break` and see what the difference is.
 
             foo()
 
+        translate_output_choices = False
         predicted_output_choices = [
             """\
 a 0
@@ -892,8 +896,8 @@ c 2
 Unlike `return`, `break` only stops the innermost loop in which it is used, in this case `for number in range(3):`.
 Here's exactly what happens:
 
-- For `letter = b`, the line `print(f"{letter} {number}")` is executed only for `number = 0`, 
-- then the inner loop is stopped by `break`, but 
+- For `letter = b`, the line `print(f"{letter} {number}")` is executed only for `number = 0`,
+- then the inner loop is stopped by `break`, but
 - the outer loop continues its execution, moving on to the next letter `c`
 - which is executed in full since it does not trigger the `break` statement.
     """

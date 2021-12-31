@@ -33,6 +33,7 @@ This is called a *nested loop*. Nothing about it is really new, it's just worth 
                     print(f'{letter} {number}')
                 print('---')
 
+        translate_output_choices = False
         predicted_output_choices = [
             """\
 A 0
@@ -1270,6 +1271,8 @@ For example, what does the following program print?
 
 __program_indented__
         """
+
+        auto_translate_program = False
 
         def program(self):
             strings = [['hello', 'there'], ['how', 'are', 'you']]
