@@ -1225,6 +1225,7 @@ For example run this program:
 __program_indented__
         """
 
+        translate_output_choices = False
         predicted_output_choices = [
             "True\n"
             "False",

@@ -21602,89 +21602,6 @@ msgstr ""
 "\n"
 "__code0__"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.first_nested_loop
-msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.output_prediction_choices.0"
-msgstr ""
-"A 0\n"
-"A 1\n"
-"A 2\n"
-"A 3\n"
-"---\n"
-"B 0\n"
-"B 1\n"
-"B 2\n"
-"B 3\n"
-"---\n"
-"C 0\n"
-"C 1\n"
-"C 2\n"
-"C 3\n"
-"---"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.first_nested_loop
-msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.output_prediction_choices.1"
-msgstr ""
-"A\n"
-"A 0\n"
-"A 1\n"
-"A 2\n"
-"A 3\n"
-"---\n"
-"B\n"
-"B 0\n"
-"B 1\n"
-"B 2\n"
-"B 3\n"
-"---\n"
-"C\n"
-"C 0\n"
-"C 1\n"
-"C 2\n"
-"C 3\n"
-"---"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.first_nested_loop
-msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.output_prediction_choices.2"
-msgstr ""
-"A 1\n"
-"A 2\n"
-"A 3\n"
-"A 4\n"
-"---\n"
-"B 1\n"
-"B 2\n"
-"B 3\n"
-"B 4\n"
-"---\n"
-"C 1\n"
-"C 2\n"
-"C 3\n"
-"C 4\n"
-"---"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.first_nested_loop
-msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.output_prediction_choices.3"
-msgstr ""
-"A\n"
-"B\n"
-"C\n"
-"---\n"
-"A 0\n"
-"B 0\n"
-"C 0\n"
-"---\n"
-"A 1\n"
-"B 1\n"
-"C 1\n"
-"---\n"
-"A 2\n"
-"B 2\n"
-"C 2\n"
-"---\n"
-"A 3\n"
-"B 3\n"
-"C 3"
-
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 msgid "pages.IntroducingNestedLoops.steps.first_nested_loop.text"
 msgstr ""
@@ -24322,30 +24239,6 @@ msgstr ""
 msgid "pages.MoreListFunctionsAndMethods.steps.final_text.text"
 msgstr "Congratulations! You are now a master of list methods and functions!"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.in_predict_exercise
-msgid "pages.MoreListFunctionsAndMethods.steps.in_predict_exercise.output_prediction_choices.0"
-msgstr ""
-"True\n"
-"False"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.in_predict_exercise
-msgid "pages.MoreListFunctionsAndMethods.steps.in_predict_exercise.output_prediction_choices.1"
-msgstr ""
-"False\n"
-"True"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.in_predict_exercise
-msgid "pages.MoreListFunctionsAndMethods.steps.in_predict_exercise.output_prediction_choices.2"
-msgstr ""
-"True\n"
-"True"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.in_predict_exercise
-msgid "pages.MoreListFunctionsAndMethods.steps.in_predict_exercise.output_prediction_choices.3"
-msgstr ""
-"False\n"
-"False"
-
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
 #. 
 #.     # __code0__:
@@ -24496,55 +24389,6 @@ msgstr ""
 msgid "pages.MoreListFunctionsAndMethods.title"
 msgstr "More List Functions and Methods"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
-msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.0"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
-msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.1"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2\n"
-"b 0"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
-msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.2"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2\n"
-"b 0\n"
-"b 1\n"
-"b 2"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
-msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.3"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2\n"
-"b 0\n"
-"c 0\n"
-"c 1\n"
-"c 2"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
-msgid "pages.MoreOnReturn.steps.break_vs_return.output_prediction_choices.4"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2\n"
-"b 0\n"
-"b 1\n"
-"b 2\n"
-"c 0\n"
-"c 1\n"
-"c 2"
-
 #. https://futurecoder.io/course/#MoreOnReturn
 msgid "pages.MoreOnReturn.steps.break_vs_return.text"
 msgstr ""
@@ -24614,55 +24458,6 @@ msgstr ""
 "- then the inner loop is stopped by `break`, but\n"
 "- the outer loop continues its execution, moving on to the next letter `c`\n"
 "- which is executed in full since it does not trigger the `break` statement."
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
-msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.0"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
-msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.1"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2\n"
-"b 0"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
-msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.2"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2\n"
-"b 0\n"
-"b 1\n"
-"b 2"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
-msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.3"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2\n"
-"b 0\n"
-"c 0\n"
-"c 1\n"
-"c 2"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.return_ends_whole_function
-msgid "pages.MoreOnReturn.steps.return_ends_whole_function.output_prediction_choices.4"
-msgstr ""
-"a 0\n"
-"a 1\n"
-"a 2\n"
-"b 0\n"
-"b 1\n"
-"b 2\n"
-"c 0\n"
-"c 1\n"
-"c 2"
 
 #. https://futurecoder.io/course/#MoreOnReturn
 #. 
@@ -24772,30 +24567,6 @@ msgstr "Navigating Shell History"
 #. https://futurecoder.io/course/#NestedListAssignment
 msgid "pages.NestedListAssignment.steps.final_text.text"
 msgstr "Brilliant! You're almost ready to put it all together, keep going!"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
-msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.0"
-msgstr "X"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
-msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.2"
-msgstr "'X'"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
-msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.4"
-msgstr "['X']"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
-msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.6"
-msgstr "['X', ' ', ' ']"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
-msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.7"
-msgstr "[' ', 'X', ' ']"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
-msgid "pages.NestedListAssignment.steps.modify_list_in_function.output_prediction_choices.8"
-msgstr "[' ', ' ', 'X']"
 
 #. https://futurecoder.io/course/#NestedListAssignment
 #. 
@@ -25529,22 +25300,6 @@ msgstr ""
 "In summary, the main comparison operators are `==`, `!=`, `<`, `>`, `<=`, and `>=`.\n"
 "If you ever have doubts about what they do, play with them in the shell!"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.grades_example
-msgid "pages.OtherComparisonOperators.steps.grades_example.output_prediction_choices.0"
-msgstr "F"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.grades_example
-msgid "pages.OtherComparisonOperators.steps.grades_example.output_prediction_choices.1"
-msgstr "C"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.grades_example
-msgid "pages.OtherComparisonOperators.steps.grades_example.output_prediction_choices.2"
-msgstr "B"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.grades_example
-msgid "pages.OtherComparisonOperators.steps.grades_example.output_prediction_choices.3"
-msgstr "A"
-
 #. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.steps.grades_example.text"
 msgstr ""
@@ -26215,32 +25970,6 @@ msgstr ""
 msgid "pages.TestingFunctions.steps.final_text.text"
 msgstr "Great work! These tools will be very helpful in coming chapters."
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
-msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.0"
-msgstr ""
-"Error! 4 != 4\n"
-"Error! 10 != 10"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
-msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.1"
-msgstr ""
-"Error! 2 != 4\n"
-"Error! 5 != 10"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
-msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.2"
-msgstr "Error! 2 != 4"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
-msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.3"
-msgstr ""
-"OK\n"
-"OK"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
-msgid "pages.TestingFunctions.steps.introducing_assert_equal.output_prediction_choices.4"
-msgstr "OK"
-
 #. https://futurecoder.io/course/#TestingFunctions
 #. 
 #.     # __code0__:
@@ -26277,30 +26006,6 @@ msgstr ""
 "so you can always use it. Here's an example of using it for you to try out:\n"
 "\n"
 "__program_indented__"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
-msgid "pages.TestingFunctions.steps.make_tests_fail.output_prediction_choices.0"
-msgstr ""
-"Error! 4 != 4\n"
-"Error! 10 != 10"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
-msgid "pages.TestingFunctions.steps.make_tests_fail.output_prediction_choices.1"
-msgstr ""
-"Error! 6 != 4\n"
-"Error! 15 != 10"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
-msgid "pages.TestingFunctions.steps.make_tests_fail.output_prediction_choices.2"
-msgstr ""
-"Error! 4 != 6\n"
-"Error! 10 != 15"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
-msgid "pages.TestingFunctions.steps.make_tests_fail.output_prediction_choices.3"
-msgstr ""
-"OK\n"
-"OK"
 
 #. https://futurecoder.io/course/#TestingFunctions
 msgid "pages.TestingFunctions.steps.make_tests_fail.text"
@@ -26983,30 +26688,6 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.less_than_has_two_meanings
-msgid "pages.Types.steps.less_than_has_two_meanings.output_prediction_choices.0"
-msgstr ""
-"True\n"
-"True"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.less_than_has_two_meanings
-msgid "pages.Types.steps.less_than_has_two_meanings.output_prediction_choices.1"
-msgstr ""
-"True\n"
-"False"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.less_than_has_two_meanings
-msgid "pages.Types.steps.less_than_has_two_meanings.output_prediction_choices.2"
-msgstr ""
-"False\n"
-"True"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.less_than_has_two_meanings
-msgid "pages.Types.steps.less_than_has_two_meanings.output_prediction_choices.3"
-msgstr ""
-"False\n"
-"False"
 
 #. https://futurecoder.io/course/#Types
 #. 

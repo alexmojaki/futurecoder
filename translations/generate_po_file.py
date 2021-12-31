@@ -57,20 +57,21 @@ def main():
                     )
                 )
 
-            output_prediction_choices = get_predictions(step)["choices"] or []
-            for i, choice in enumerate(output_prediction_choices[:-1]):
-                if (
-                    not re.search(r"[a-zA-Z]", choice)
-                    or choice in ("True", "False")
-                ):
-                    continue
-                po.append(
-                    POEntry(
-                        msgid=f"{step_msgid}.output_prediction_choices.{i}",
-                        msgstr=choice,
-                        comment=search_link(step_msgid),
+            if step.translate_output_choices:
+                output_prediction_choices = get_predictions(step)["choices"] or []
+                for i, choice in enumerate(output_prediction_choices[:-1]):
+                    if (
+                        not re.search(r"[a-zA-Z]", choice)
+                        or choice in ("True", "False")
+                    ):
+                        continue
+                    po.append(
+                        POEntry(
+                            msgid=f"{step_msgid}.output_prediction_choices.{i}",
+                            msgstr=choice,
+                            comment=search_link(step_msgid),
+                        )
                     )
-                )
 
     for code_bit, comments in code_bits.items():
         po.append(

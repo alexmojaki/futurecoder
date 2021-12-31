@@ -872,6 +872,7 @@ __program_indented__
 Recall that `elif percentage < 60` after `if percentage < 40` means "if the percentage wasn't less than 40 and also is less than 60", so it will pass for all numbers from 40 to 59 inclusive. Similarly a 'B' is for percentages from 60 to 79, and an 'A' is for any number 80 and up.
         """
 
+        translate_output_choices = False
         predicted_output_choices = ["F", "C", "B", "A"]
 
         def program(self):
