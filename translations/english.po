@@ -2432,36 +2432,6 @@ msgstr "'This does not'"
 msgid "code_bits.'This gets printed'"
 msgstr "'This gets printed'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_subscripting
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. print(words[0])
-#. print(words[1])
-#. print(words[2])
-#. print(words[3])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for index in range(len(words)):
-#.     print(index)
-#.     print(words[index])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.first_list
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for word in words:
-#.     print(word)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 #. 
 #. words = ['This', 'is', 'a', 'list']
@@ -2993,13 +2963,6 @@ msgstr "'abcqwe'"
 msgid "code_bits.'aeiou'"
 msgstr "'aeiou'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
-#. 
-#. strings = [['hello', 'there'], ['how', 'are', 'you']]
-#. print(strings[1][0])
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 #. 
 #. strings = [['hello', 'there'], ['how', 'are', 'you']]
@@ -3072,20 +3035,6 @@ msgstr "'de'"
 #.     print(line)
 msgid "code_bits.'def'"
 msgstr "'def'"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StringMethodsUnderstandingMutation.steps.string_count_index
-#. 
-#. string = 'feed the dog and the cat'
-#. print(string.count('the'))
-#. print(string.index('the'))
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StringMethodsUnderstandingMutation.steps.string_in_step
-#. 
-#. print('the' in 'feed the dog and the cat')
-msgid "code_bits.'feed the dog and the cat'"
-msgstr "'feed the dog and the cat'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 #. 
@@ -3284,13 +3233,6 @@ msgstr "'hello world'"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
-#. 
-#. strings = [['hello', 'there'], ['how', 'are', 'you']]
-#. print(strings[1][0])
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 #. 
 #. strings = [['hello', 'there'], ['how', 'are', 'you']]
@@ -3352,13 +3294,6 @@ msgstr "'hello'"
 msgid "code_bits.'how are you'"
 msgstr "'how are you'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
-#. 
-#. strings = [['hello', 'there'], ['how', 'are', 'you']]
-#. print(strings[1][0])
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 #. 
 #. strings = [['hello', 'there'], ['how', 'are', 'you']]
@@ -3366,36 +3301,6 @@ msgstr "'how are you'"
 msgid "code_bits.'how'"
 msgstr "'how'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_subscripting
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. print(words[0])
-#. print(words[1])
-#. print(words[2])
-#. print(words[3])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for index in range(len(words)):
-#.     print(index)
-#.     print(words[index])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.first_list
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for word in words:
-#.     print(word)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 #. 
 #. words = ['This', 'is', 'a', 'list']
@@ -3474,36 +3379,6 @@ msgstr "'jklmn'"
 msgid "code_bits.'kesha'"
 msgstr "'kesha'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_subscripting
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. print(words[0])
-#. print(words[1])
-#. print(words[2])
-#. print(words[3])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for index in range(len(words)):
-#.     print(index)
-#.     print(words[index])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.first_list
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for word in words:
-#.     print(word)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 #. 
 #. words = ['This', 'is', 'a', 'list']
@@ -3575,30 +3450,9 @@ msgstr "'store'"
 #.     if to_find == things[i]:
 #.         print(i)
 #.         break
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StringMethodsUnderstandingMutation.steps.string_count_index
-#. 
-#. string = 'feed the dog and the cat'
-#. print(string.count('the'))
-#. print(string.index('the'))
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StringMethodsUnderstandingMutation.steps.string_in_step
-#. 
-#. print('the' in 'feed the dog and the cat')
 msgid "code_bits.'the'"
 msgstr "'the'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
-#. 
-#. strings = [['hello', 'there'], ['how', 'are', 'you']]
-#. print(strings[1][0])
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 #. 
 #. strings = [['hello', 'there'], ['how', 'are', 'you']]
@@ -3660,13 +3514,6 @@ msgstr "'world'"
 msgid "code_bits.'yes'"
 msgstr "'yes'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
-#. 
-#. strings = [['hello', 'there'], ['how', 'are', 'you']]
-#. print(strings[1][0])
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 #. 
 #. strings = [['hello', 'there'], ['how', 'are', 'you']]
@@ -9295,16 +9142,6 @@ msgstr "include"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.subscript_assignment_predict.text
 #. 
 #.     some_list[index] = new_value
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for index in range(len(words)):
-#.     print(index)
-#.     print(words[index])
 msgid "code_bits.index"
 msgstr "index"
 
@@ -15056,14 +14893,6 @@ msgstr "spaces"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StringMethodsUnderstandingMutation.steps.string_count_index
-#. 
-#. string = 'feed the dog and the cat'
-#. print(string.count('the'))
-#. print(string.index('the'))
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 #. 
 #. def surround(string, sides):
@@ -15208,13 +15037,6 @@ msgstr "string2"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.final_text.text
 #. 
 #.     strings[1].append("today?")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
-#. 
-#. strings = [['hello', 'there'], ['how', 'are', 'you']]
-#. print(strings[1][0])
 #. 
 #. ------
 #. 
@@ -16721,15 +16543,6 @@ msgstr "winning_line"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.first_list
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for word in words:
-#.     print(word)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 #. 
 #. words = ['This', 'is', 'a', 'list']
@@ -16940,45 +16753,9 @@ msgstr "winning_line"
 msgid "code_bits.word"
 msgstr "word"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_error
-#. 
-#. words[4]
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range.text
 #. 
 #.     [0, 1, 2, ..., len(words) - 2, len(words) - 1]
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_subscripting
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. print(words[0])
-#. print(words[1])
-#. print(words[2])
-#. print(words[3])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for index in range(len(words)):
-#.     print(index)
-#.     print(words[index])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.first_list
-#. 
-#. words = ['This', 'is', 'a', 'list']
-#. 
-#. for word in words:
-#.     print(word)
 #. 
 #. ------
 #. 
@@ -19431,6 +19208,10 @@ msgstr "Functions and Methods for Lists"
 msgid "pages.GettingElementsAtPosition.steps.final_text.text"
 msgstr "Magnificent! Take a break, you've earned it!"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_error
+msgid "pages.GettingElementsAtPosition.steps.index_error.program"
+msgstr "words[4]"
+
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 msgid "pages.GettingElementsAtPosition.steps.index_error.text"
 msgstr ""
@@ -19546,6 +19327,16 @@ msgstr ""
 "\n"
 "__program_indented__"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_subscripting
+msgid "pages.GettingElementsAtPosition.steps.introducing_subscripting.program"
+msgstr ""
+"words = ['This', 'is', 'a', 'list']\n"
+"\n"
+"print(words[0])\n"
+"print(words[1])\n"
+"print(words[2])\n"
+"print(words[3])"
+
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 msgid "pages.GettingElementsAtPosition.steps.introducing_subscripting.text"
 msgstr ""
@@ -19609,6 +19400,15 @@ msgstr ""
 "1\n"
 "2\n"
 "3"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+msgid "pages.GettingElementsAtPosition.steps.range_len.program"
+msgstr ""
+"words = ['This', 'is', 'a', 'list']\n"
+"\n"
+"for index in range(len(words)):\n"
+"    print(index)\n"
+"    print(words[index])"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 msgid "pages.GettingElementsAtPosition.steps.range_len.text"
@@ -20154,6 +19954,13 @@ msgstr ""
 " is the convention that almost everyone follows. Note that the editor generally makes this easy for you. For example, "
 "if you press the 'Tab' key on your keyboard in the editor, it will insert 4 spaces for you."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Indentation.steps.mismatched_indentations
+msgid "pages.Indentation.steps.mismatched_indentations.program"
+msgstr ""
+"for character in name:\n"
+"    print(character)\n"
+"  print('---')"
+
 #. https://futurecoder.io/course/#Indentation
 msgid "pages.Indentation.steps.mismatched_indentations.text"
 msgstr ""
@@ -20162,6 +19969,12 @@ msgstr ""
 "The program below is invalid. Both lines in the loop body are indented, but by different amounts. The first line starts with 4 spaces, the second line starts with 2. Try running it.\n"
 "\n"
 "__program_indented__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Indentation.steps.missing_indentation
+msgid "pages.Indentation.steps.missing_indentation.program"
+msgstr ""
+"for character in name:\n"
+"print(character)"
 
 #. https://futurecoder.io/course/#Indentation
 #. 
@@ -21197,6 +21010,14 @@ msgstr ""
 "\n"
 "    print(total)"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.first_list
+msgid "pages.IntroducingLists.steps.first_list.program"
+msgstr ""
+"words = ['This', 'is', 'a', 'list']\n"
+"\n"
+"for word in words:\n"
+"    print(word)"
+
 #. https://futurecoder.io/course/#IntroducingLists
 msgid "pages.IntroducingLists.steps.first_list.text"
 msgstr ""
@@ -21559,6 +21380,12 @@ msgstr "t"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
 msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.output_prediction_choices.9"
 msgstr "e"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.first_nested_list_example
+msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.program"
+msgstr ""
+"strings = [['hello', 'there'], ['how', 'are', 'you']]\n"
+"print(strings[1][0])"
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
 msgid "pages.IntroducingNestedLists.steps.first_nested_list_example.text"
@@ -24783,8 +24610,8 @@ msgstr ""
 "Unlike `return`, `break` only stops the innermost loop in which it is used, in this case `for number in range(3):`.\n"
 "Here's exactly what happens:\n"
 "\n"
-"- For `letter = b`, the line `print(f\"{letter} {number}\")` is executed only for `number = 0`, \n"
-"- then the inner loop is stopped by `break`, but \n"
+"- For `letter = b`, the line `print(f\"{letter} {number}\")` is executed only for `number = 0`,\n"
+"- then the inner loop is stopped by `break`, but\n"
 "- the outer loop continues its execution, moving on to the next letter `c`\n"
 "- which is executed in full since it does not trigger the `break` statement."
 
@@ -24885,6 +24712,12 @@ msgstr "`return` ends the function call"
 #. https://futurecoder.io/course/#MultiLineExpressions
 msgid "pages.MultiLineExpressions.steps.final_text.text"
 msgstr "So if you get a mysterious `SyntaxError`, make sure that you haven't improperly broken up any lines!"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.MultiLineExpressions.steps.invalid_multiline
+msgid "pages.MultiLineExpressions.steps.invalid_multiline.program"
+msgstr ""
+"is_friend = name == \"Alice\" or\n"
+"            name == \"Bob\""
 
 #. https://futurecoder.io/course/#MultiLineExpressions
 msgid "pages.MultiLineExpressions.steps.invalid_multiline.text"
@@ -25511,6 +25344,20 @@ msgstr ""
 "\n"
 "__code0__"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.invalid_multi_line_string
+msgid "pages.NewlinesAndFormatBoard.steps.invalid_multi_line_string.program"
+msgstr ""
+"assert_equal(\n"
+"    format_board([\n"
+"        ['X', 'O', 'X'],\n"
+"        [' ', 'O', 'O'],\n"
+"        [' ', 'X', ' ']\n"
+"    ]),\n"
+"    \"XOX\n"
+"      OO\n"
+"      X \"\n"
+")"
+
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
 #. 
 #.     # __code1__:
@@ -25981,6 +25828,10 @@ msgstr ""
 "    __copyable__\n"
 "    \"Talk is cheap. Show me the code.\" - Linus Torvalds"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe
+msgid "pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe.program"
+msgstr "print('Alice's Diner')"
+
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
 #. 
 #.     # __code0__:
@@ -26128,6 +25979,13 @@ msgstr ""
 "    __copyable__\n"
 "__code0__"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StringMethodsUnderstandingMutation.steps.string_count_index
+msgid "pages.StringMethodsUnderstandingMutation.steps.string_count_index.program"
+msgstr ""
+"string = 'feed the dog and the cat'\n"
+"print(string.count('the'))\n"
+"print(string.index('the'))"
+
 #. https://futurecoder.io/course/#StringMethodsUnderstandingMutation
 #. 
 #.     # __code0__:
@@ -26141,6 +25999,10 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.StringMethodsUnderstandingMutation.steps.string_in_step
+msgid "pages.StringMethodsUnderstandingMutation.steps.string_in_step.program"
+msgstr "print('the' in 'feed the dog and the cat')"
 
 #. https://futurecoder.io/course/#StringMethodsUnderstandingMutation
 #. 
@@ -26514,6 +26376,10 @@ msgstr ""
 #. https://futurecoder.io/course/#TestingFunctions
 msgid "pages.TestingFunctions.title"
 msgstr "Testing Functions"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheEqualityOperator.steps.equality_vs_assignment
+msgid "pages.TheEqualityOperator.steps.equality_vs_assignment.program"
+msgstr "print(1 + 2 = 3)"
 
 #. https://futurecoder.io/course/#TheEqualityOperator
 msgid "pages.TheEqualityOperator.steps.equality_vs_assignment.text"

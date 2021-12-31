@@ -32,6 +32,7 @@ from core.exercises import (
     match_returns_stdout,
 )
 from core.linting import lint
+from core.runner.utils import is_valid_syntax
 from core.utils import (
     highlighted_markdown,
     lexer,
@@ -115,10 +116,14 @@ def clean_step_class(cls):
 
     if solution:
         assert cls.tests
+        assert cls.auto_translate_program
         cls.solution = MethodType(solution, "")
         program, cls.solution = clean_program(cls.solution, cls)
     else:
         program, _ = clean_program(program, cls)
+        if not is_valid_syntax(program):
+            cls.auto_translate_program = False
+
     assert program
 
     if isinstance(hints, str):
@@ -377,6 +382,8 @@ class Step(ABC):
     get_solution = None
     predicted_output_choices = None
     correct_output = None
+    translate_output_choices = True
+    auto_translate_program = True
 
     def __init__(self, *args):
         self.args = args

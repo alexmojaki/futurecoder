@@ -1271,6 +1271,8 @@ For example, what does the following program print?
 __program_indented__
         """
 
+        auto_translate_program = False
+
         def program(self):
             strings = [['hello', 'there'], ['how', 'are', 'you']]
             print(strings[1][0])

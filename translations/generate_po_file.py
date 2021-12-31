@@ -45,8 +45,17 @@ def main():
                 msgid = f"{step_msgid}.hints.{i}.text"
                 po.append(make_po_entry(code_bits, page_link, msgid, hint, comments))
 
-            for node_text in get_code_bits(step.program):
-                code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
+            if step.auto_translate_program:
+                for node_text in get_code_bits(step.program):
+                    code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
+            else:
+                po.append(
+                    POEntry(
+                        msgid=f"{step_msgid}.program",
+                        msgstr=step.program,
+                        comment=search_link(step_msgid),
+                    )
+                )
 
             output_prediction_choices = get_predictions(step)["choices"] or []
             for i, choice in enumerate(output_prediction_choices[:-1]):
@@ -122,10 +131,7 @@ def make_po_entry(code_bits, page_link, msgid, text, comments=()):
 
 
 def get_code_bits(code):
-    try:
-        atok = MyASTTokens(code, parse=1)
-    except SyntaxError:
-        return
+    atok = MyASTTokens(code, parse=1)
 
     for node in ast.walk(atok.tree):
         if isinstance(node, ast.Name):
