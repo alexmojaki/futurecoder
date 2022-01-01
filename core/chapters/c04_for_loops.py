@@ -375,7 +375,7 @@ __program_indented__
 
     class empty_string(VerbatimStep):
         """
-The last character in `name` only gets added to `line` at the end of the loop, after `print(line)` has already run for the last time. So that character and the full `name` never get printed at the bottom of the triangle.
+The last character in `name` only gets added to `line` at the end of the loop, after `print(line)` has already run for the last time. So that character and the full `name` never get printed at the bottom of the triangle. If you're confused, try putting `print(line)` both before and after `line = line + char`.
 
 Let's get rid of those `-` characters in the output. You might already be able to guess how.
 
