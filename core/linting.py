@@ -4,6 +4,8 @@ from pyflakes import checker
 from pyflakes.messages import UnusedImport, UnusedVariable, IsLiteral, RedefinedWhileUnused, ImportShadowedByLoopVar, \
     ImportStarNotPermitted, MultiValueRepeatedKeyLiteral
 
+from core import translation as t
+
 MESSAGES = {
     UnusedImport: """
 **Unused import `{0}`**
@@ -74,8 +76,9 @@ def lint(tree):
     ch = checker.Checker(function_tree, builtins=["assert_equal"])
     ch.messages.sort(key=lambda m: m.lineno)
     for message in ch.messages:
-        if type(message) in MESSAGES:
-            message_format = MESSAGES[type(message)]
+        cls = type(message)
+        if cls in MESSAGES:
+            message_format = t.get(t.pyflakes_message(cls), MESSAGES[cls])
             yield message_format.format(*message.message_args)
 
 # to do at later stage: ReturnWithArgsInsideGenerator, AssertTuple

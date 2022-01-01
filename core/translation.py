@@ -140,3 +140,7 @@ def hint(cls, i):
 
 def code_bit(node_text):
     return f"code_bits.{node_text}"
+
+
+def pyflakes_message(message_cls):
+    return f"linting_messages.pyflakes.{message_cls.__name__}.message_format"

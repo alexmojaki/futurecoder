@@ -77,10 +77,7 @@ def main():
         )
 
     for message_cls, message_format in linting.MESSAGES.items():
-        entry(
-            f"linting_messages.pyflakes.{message_cls.__name__}.message_format",
-            message_format.strip(),
-        )
+        entry(t.pyflakes_message(message_cls), message_format.strip())
 
     for chapter in chapters:
         entry(t.chapter_title(chapter["slug"]), chapter["title"])
