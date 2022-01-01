@@ -10,7 +10,7 @@ from polib import POEntry, POFile
 
 from core import linting
 from core import translation as t
-from core.text import pages, get_predictions
+from core.text import pages, get_predictions, chapters
 from core.utils import markdown_codes
 
 code_blocks = defaultdict(dict)
@@ -81,6 +81,9 @@ def main():
             f"linting_messages.pyflakes.{message_cls.__name__}.message_format",
             message_format.strip(),
         )
+
+    for chapter in chapters:
+        entry(t.chapter_title(chapter["slug"]), chapter["title"])
 
     entry(
         "output_predictions.Error",

@@ -668,13 +668,15 @@ def load_chapters():
         module_name = path.stem
         full_module_name = "core.chapters." + module_name
         import_module(full_module_name)
-        title = module_name[4:].replace("_", " ").title()
+        slug = module_name[4:]
+        title = slug.replace("_", " ").title()
+        title = t.get(t.chapter_title(slug), title)
         chapter_pages = [
             select_attrs(page, "title slug")
             for page in pages.values()
             if page.__module__ == full_module_name
         ]
-        yield dict(title=title, pages=chapter_pages)
+        yield dict(slug=slug, title=title, pages=chapter_pages)
 
 
 chapters = list(load_chapters())

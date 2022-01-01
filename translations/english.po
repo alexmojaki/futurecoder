@@ -2,6 +2,39 @@
 msgid ""
 msgstr ""
 
+msgid "chapters.a_bit_more_about_strings.title"
+msgstr "A Bit More About Strings"
+
+msgid "chapters.boolean operators.title"
+msgstr "Boolean Operators"
+
+msgid "chapters.for_loops.title"
+msgstr "For Loops"
+
+msgid "chapters.functions.title"
+msgstr "Functions"
+
+msgid "chapters.if_statements.title"
+msgstr "If Statements"
+
+msgid "chapters.lists.title"
+msgstr "Lists"
+
+msgid "chapters.nested_loops.title"
+msgstr "Nested Loops"
+
+msgid "chapters.string_basics.title"
+msgstr "String Basics"
+
+msgid "chapters.the_shell.title"
+msgstr "The Shell"
+
+msgid "chapters.tic_tac_toe_project.title"
+msgstr "Tic Tac Toe Project"
+
+msgid "chapters.variables.title"
+msgstr "Variables"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
 #. 
 #.     name = "Alice"

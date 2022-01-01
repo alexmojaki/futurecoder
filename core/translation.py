@@ -98,6 +98,10 @@ def get_code_bits(code):
         yield node, node_text
 
 
+def chapter_title(chapter_slug):
+    return f"chapters.{chapter_slug}.title"
+
+
 def page(page_slug):
     return f"pages.{page_slug}"
 
