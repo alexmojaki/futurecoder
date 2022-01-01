@@ -21764,6 +21764,10 @@ msgstr ""
 "For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.special_messages.multiply_with_x.text"
+msgstr "To multiply numbers, use `*`"
+
+#. https://futurecoder.io/course/#IntroducingNestedLoops
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.text"
 msgstr ""
 "Make sure you fully grasp what's going on. `print(letter)` and `print('---')` each run 3 times, because their indentation puts them in the *outer loop*. `print(f'{letter} {number}')` is called 3 × 4 = 12 times, because it's in the *inner loop* `for number in range(4):` which has 4 iterations but is itself in the outer loop so it runs 3 times.\n"
@@ -24742,6 +24746,10 @@ msgstr ""
 #. https://futurecoder.io/course/#NestedListAssignment
 msgid "pages.NestedListAssignment.title"
 msgstr "Nested List Assignment: Playing Moves on the Board"
+
+#. https://futurecoder.io/course/#NewlinesAndFormatBoard
+msgid "pages.NewlinesAndFormatBoard.steps.discovering_newline.special_messages.bad_string.text"
+msgstr "Oops, `string` doesn't have the right value. Run the program from the previous step again."
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
 msgid "pages.NewlinesAndFormatBoard.steps.discovering_newline.text"
