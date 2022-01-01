@@ -422,6 +422,10 @@ class Step(ABC):
     class special_messages:
         pass
 
+    @classmethod
+    def pre_run(cls, runner):
+        pass
+
     def __init__(self, *args):
         self.args = args
         self.input, self.result, self.code_source, self.console = args

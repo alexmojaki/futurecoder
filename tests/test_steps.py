@@ -6,15 +6,15 @@ from pathlib import Path
 from littleutils import only
 
 import core.utils
+from core import translation as t
 from core.checker import check_entry, runner
 from core.text import step_test_entries, get_predictions
-from core.translation import set_language
 from core.utils import highlighted_markdown, make_test_input_callback
 
 core.utils.TESTING = True
 
 def test_steps():
-    set_language("en")
+    t.set_language("en")
     runner.reset()
     transcript = []
     for page, step, substep, entry in step_test_entries():
@@ -24,6 +24,8 @@ def test_steps():
         output_parts = []
         def output_callback(data):
             output_parts.extend(data["parts"])
+
+        step.pre_run(runner)
 
         response = check_entry(
             entry,

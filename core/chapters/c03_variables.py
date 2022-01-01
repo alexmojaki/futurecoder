@@ -9,13 +9,29 @@ from core import translation as t
 
 
 class word_must_be_hello(VerbatimStep):
+    @staticmethod
+    def word():
+        return t.get_code_bit('word')
+
+    @staticmethod
+    def Hello():
+        return ast.literal_eval(t.get_code_bit("'Hello'"))
+
+    @classmethod
+    def pre_run(cls, runner):
+        runner.console.locals[cls.word()] = cls.Hello()
+
+    class special_messages:
+        class bad_word:
+            """
+            Oops, you need to set `word = 'Hello'` before we can continue.
+            """
+            program = 'word = 2'
+
     def check(self):
-        word = t.get_code_bit('word')
-        Hello = t.get_code_bit("'Hello'")
-        if repr(self.console.locals.get(word)) != Hello:
-            return dict(
-                message="Oops, you need to set `word = 'Hello'` before we can continue."
-            )
+        if self.console.locals.get(self.word()) != self.Hello():
+            return self.special_messages.bad_word
+
         return super().check()
 
 

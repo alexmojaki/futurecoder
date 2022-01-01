@@ -153,6 +153,18 @@
     {
         "page": "Introducing Variables",
         "program": [
+            "word = 2"
+        ],
+        "response": {
+            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "word_check"
+    },
+    {
+        "page": "Introducing Variables",
+        "program": [
             "word"
         ],
         "response": {
@@ -334,6 +346,18 @@
     {
         "page": "Using Variables and <code>print()</code>",
         "program": [
+            "word = 2"
+        ],
+        "response": {
+            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "word_plus_name"
+    },
+    {
+        "page": "Using Variables and <code>print()</code>",
+        "program": [
             "word + your_name"
         ],
         "response": {
@@ -347,6 +371,18 @@
             ]
         },
         "step": "word_plus_name"
+    },
+    {
+        "page": "Using Variables and <code>print()</code>",
+        "program": [
+            "word = 2"
+        ],
+        "response": {
+            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "word_plus_name_with_space"
     },
     {
         "get_solution": [
