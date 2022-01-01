@@ -33,6 +33,7 @@ from core.exercises import (
 )
 from core.linting import lint
 from core.runner.utils import is_valid_syntax
+from core import translation as t
 from core.utils import (
     highlighted_markdown,
     lexer,
@@ -112,7 +113,7 @@ def clean_step_class(cls):
     text = dedent(text).strip()
     assert text
     no_weird_whitespace(text)
-    cls.raw_text = text
+    cls.raw_text = t.get(cls.text_msgid, text)
 
     if solution:
         assert cls.tests
@@ -125,10 +126,14 @@ def clean_step_class(cls):
             cls.auto_translate_program = False
 
     assert program
+    if cls.auto_translate_program:
+        program = t.translate_code(program)
+    else:
+        program = t.get(t.step_program(cls), program)
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
-    hints = [hint.strip() for hint in hints]
+    hints = [t.get(t.hint(cls, i), hint.strip()) for i, hint in enumerate(hints)]
 
     if "__program_" in text:
         text = text.replace("__program__", program)
@@ -149,6 +154,8 @@ def clean_step_class(cls):
         assert issubclass(inner_cls, MessageStep)
 
         inner_cls.tests = inner_cls.tests or cls.tests
+        inner_cls.page = cls.page
+        inner_cls.text_msgid = t.message_step_text(cls, inner_cls)
         clean_step_class(inner_cls)
 
         original_inner_cls = inner_cls
@@ -187,8 +194,7 @@ def get_predictions(cls):
         return dict(choices=None, answer=None)
 
     answer = cls.correct_output
-    choices = [s.rstrip() for s in choices]
-    assert all(choices), choices
+    choices = [t.get(t.prediction_choice(cls, i), choice.rstrip()) for i, choice in enumerate(choices)]
 
     if answer:
         assert answer == "Error"
@@ -196,7 +202,7 @@ def get_predictions(cls):
         answer = get_stdout(cls.program).rstrip()
         assert answer in choices, repr(answer)
 
-    choices += ["Error"]
+    choices += [t.get(f"output_predictions.Error", "Error")]
     assert answer in choices, repr(answer)
     return dict(choices=choices, answer=answer)
 
@@ -217,6 +223,8 @@ def get_solution(step):
             program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
     else:
         program = step.program
+
+    program = t.translate_code(program)
 
     untokenizer = Untokenizer()
     tokens = generate_tokens(StringIO(program).readline)
@@ -274,17 +282,20 @@ class PageMeta(type):
                 cls.step_names.append(key)
 
         assert isinstance(cls.final_text, str)
+        cls.final_text = t.get(t.step_text(cls.slug, "final_text"), cls.final_text.strip())
         no_weird_whitespace(cls.final_text)
         cls.step_names.append("final_text")
 
     def get_step(cls, step_name):
         step = getattr(cls, step_name)
         if step_name != "final_text":
+            step.page = cls
+            step.text_msgid = t.step_text(cls.slug, step_name)
             clean_step_class(step)
         return step
 
     def step_texts(cls, *, raw: bool):
-        result = [step.raw_text if raw else step.text for step in cls.steps[:-1]] + [cls.final_text.strip()]
+        result = [step.raw_text if raw else step.text for step in cls.steps[:-1]] + [cls.final_text]
         if not raw:
             result = [highlighted_markdown(text) for text in result]
             assert "__copyable__" not in str(result)
@@ -297,7 +308,12 @@ class PageMeta(type):
 
     @property
     def title(cls):
-        return unwrapped_markdown(cls.raw_title)
+        return unwrapped_markdown(
+            t.get(
+                t.page_title(cls.slug),
+                cls.raw_title,
+            )
+        )
 
     @property
     def raw_title(cls):
@@ -384,6 +400,7 @@ class Step(ABC):
     correct_output = None
     translate_output_choices = True
     auto_translate_program = True
+    page = None
 
     def __init__(self, *args):
         self.args = args

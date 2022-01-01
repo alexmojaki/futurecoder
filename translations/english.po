@@ -8904,12 +8904,6 @@ msgstr "found"
 #.     friend = 'Bob'
 #.     meal = "lunch"
 #.     print(name + " went to " + meal + " with " + friend + '.')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
-#. 
-#.     print(f"{name} went to {meal} with {friend}.")
 msgid "code_bits.friend"
 msgstr "friend"
 
@@ -10442,12 +10436,6 @@ msgstr "make_cube"
 #.     friend = 'Bob'
 #.     meal = "lunch"
 #.     print(name + " went to " + meal + " with " + friend + '.')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
-#. 
-#.     print(f"{name} went to {meal} with {friend}.")
 msgid "code_bits.meal"
 msgstr "meal"
 
@@ -10619,17 +10607,6 @@ msgstr "middle"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
-#. 
-#. def say_hello(name):
-#.     print(f"Hello {name}!")
-#.     print("How are you?")
-#. 
-#. say_hello("Alice")
-#. say_hello("Bob")
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name.text
 #. 
 #.     name = "Alice"
@@ -10639,35 +10616,6 @@ msgstr "middle"
 #.     name = "Bob"
 #.     print(f"Hello {name}!")
 #.     print("How are you?")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.define_greet
-#. 
-#. def greet(name):
-#.     print(f"Hello {name}!")
-#. 
-#. greet("Alice")
-#. greet("Bob")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.how_are_you
-#. 
-#. def greet(name):
-#.     print(f"Hello {name}!")
-#.     print("How are you?")
-#. 
-#. greet("Alice")
-#. greet("Bob")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.how_are_you.text
-#. 
-#.     def greet(name):
-#.         print(f"Hello {name}!")
-#.         print("How are you?")
 #. 
 #. ------
 #. 
@@ -10750,12 +10698,6 @@ msgstr "middle"
 #.     friend = 'Bob'
 #.     meal = "lunch"
 #.     print(name + " went to " + meal + " with " + friend + '.')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
-#. 
-#.     print(f"{name} went to {meal} with {friend}.")
 #. 
 #. ------
 #. 
@@ -11705,17 +11647,6 @@ msgstr "people"
 #. print(grade)
 msgid "code_bits.percentage"
 msgstr "percentage"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
-#. 
-#. def say_hello(person_name):
-#.     print(f"Hello {person_name}!")
-#.     print("How are you?")
-#. 
-#. say_hello("Alice")
-#. say_hello("Bob")
-msgid "code_bits.person_name"
-msgstr "person_name"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 #. 
@@ -18526,8 +18457,6 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22Hello+%7Bname%7D%21%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.greet
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.DefiningFunctions.steps.how_are_you.text"
 msgstr ""
 "A function definition is a compound statement. Like `if` and `for`, it has a header line followed by an indented body\n"

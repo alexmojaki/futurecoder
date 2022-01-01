@@ -27,6 +27,7 @@ from pathlib import Path
 import birdseye
 from littleutils import strip_required_prefix, json_to_file
 
+from core import translation
 from core.checker import check_entry
 from core.runner.utils import site_packages
 from core.text import get_pages, chapters, step_test_entries
@@ -79,6 +80,7 @@ def tarfile_filter(tar_info):
 
 def main():
     print("Generating files...")
+    translation.set_language("en")
     this_dir = Path(__file__).parent
     frontend = this_dir / "../frontend"
     frontend_src = frontend / "src"
