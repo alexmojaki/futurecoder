@@ -855,6 +855,13 @@ Other handy operators are `<` (less than) and `>` (greater than). For example, `
         program = "1 < 2"
         comparators_type = int
 
+        hints = """
+You only need to run one very small, simple line in the shell.
+How would you add two numbers in the shell?
+For example, try `123 + 456`
+For this exercise you have to do basically that, but compare them instead.
+"""
+
     class comparing_strings(try_less_than_in_shell):
         """
 You can also use these operators to compare strings. If you arrange two strings in alphabetical order, the first one is 'less than' the second. See for yourself.
@@ -862,6 +869,15 @@ You can also use these operators to compare strings. If you arrange two strings 
 
         program = "'1' < '2'"
         comparators_type = str
+
+        hints = """
+This is almost exactly the same as the previous step, just use strings instead of numbers.
+You only need to run one very small, simple line in the shell.
+You can also do this by running multiple lines in the shell, first defining variables and then comparing them, but you don't need to, this can be done without variables.
+Remember adding two strings in the shell at the beginning of the course?
+For example, we did `'hello' + 'world'`
+For this exercise you have to do basically that, but compare them instead.
+"""
 
     class grades_example(VerbatimStep):
         """
