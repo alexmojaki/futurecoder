@@ -17419,7 +17419,7 @@ msgstr "Building New Lists"
 #. https://futurecoder.io/course/#BuildingUpStrings
 msgid "pages.BuildingUpStrings.steps.empty_string.text"
 msgstr ""
-"The last character in `name` only gets added to `line` at the end of the loop, after `print(line)` has already run for the last time. So that character and the full `name` never get printed at the bottom of the triangle.\n"
+"The last character in `name` only gets added to `line` at the end of the loop, after `print(line)` has already run for the last time. So that character and the full `name` never get printed at the bottom of the triangle. If you're confused, try putting `print(line)` both before and after `line = line + char`.\n"
 "\n"
 "Let's get rid of those `-` characters in the output. You might already be able to guess how.\n"
 "\n"
@@ -25220,6 +25220,44 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.comparing_strings
+msgid "pages.OtherComparisonOperators.steps.comparing_strings.hints.0.text"
+msgstr "This is almost exactly the same as the previous step, just use strings instead of numbers."
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.comparing_strings
+msgid "pages.OtherComparisonOperators.steps.comparing_strings.hints.1.text"
+msgstr "You only need to run one very small, simple line in the shell."
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.comparing_strings
+msgid "pages.OtherComparisonOperators.steps.comparing_strings.hints.2.text"
+msgstr ""
+"You can also do this by running multiple lines in the shell, first defining variables and then comparing them, but you"
+" don't need to, this can be done without variables."
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.comparing_strings
+msgid "pages.OtherComparisonOperators.steps.comparing_strings.hints.3.text"
+msgstr "Remember adding two strings in the shell at the beginning of the course?"
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.comparing_strings
+msgid "pages.OtherComparisonOperators.steps.comparing_strings.hints.4.text"
+msgstr "For example, we did `'hello' + 'world'`"
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.comparing_strings
+msgid "pages.OtherComparisonOperators.steps.comparing_strings.hints.5.text"
+msgstr "For this exercise you have to do basically that, but compare them instead."
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.steps.comparing_strings.text"
 msgstr ""
 "You can also use these operators to compare strings. If you arrange two strings in alphabetical order, the first one "
@@ -25308,6 +25346,30 @@ msgstr ""
 "__program_indented__\n"
 "\n"
 "Recall that `elif percentage < 60` after `if percentage < 40` means \"if the percentage wasn't less than 40 and also is less than 60\", so it will pass for all numbers from 40 to 59 inclusive. Similarly a 'B' is for percentages from 60 to 79, and an 'A' is for any number 80 and up."
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.introducing_less_than
+msgid "pages.OtherComparisonOperators.steps.introducing_less_than.hints.0.text"
+msgstr "You only need to run one very small, simple line in the shell."
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.introducing_less_than
+msgid "pages.OtherComparisonOperators.steps.introducing_less_than.hints.1.text"
+msgstr "How would you add two numbers in the shell?"
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.introducing_less_than
+msgid "pages.OtherComparisonOperators.steps.introducing_less_than.hints.2.text"
+msgstr "For example, try `123 + 456`"
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.introducing_less_than
+msgid "pages.OtherComparisonOperators.steps.introducing_less_than.hints.3.text"
+msgstr "For this exercise you have to do basically that, but compare them instead."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.steps.introducing_less_than.text"

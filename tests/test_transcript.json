@@ -1969,6 +1969,9 @@
         "step": "brokn_kyboard"
     },
     {
+        "get_solution": [
+            "1 < 2"
+        ],
         "page": "Other Comparison Operators",
         "program": [
             "1 < 2"
@@ -1986,6 +1989,9 @@
         "step": "introducing_less_than"
     },
     {
+        "get_solution": [
+            "'1' < '2'"
+        ],
         "page": "Other Comparison Operators",
         "program": [
             "'1' < '2'"
