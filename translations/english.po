@@ -1742,25 +1742,6 @@ msgstr "'Alex'"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
-#. 
-#. x1 = 'Charlie'
-#. x2 = 'Alice'
-#. x3 = 'Bob'
-#. if x1 < x2:
-#.     if x1 < x3:
-#.         first = x1
-#.     else:
-#.         first = x3
-#. else:
-#.     if x2 < x3:
-#.         first = x2
-#.     else:
-#.         first = x3
-#. print(first)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.single_double_quotes_equal
 #. 
 #. 'Alice' == "Alice"
@@ -1854,25 +1835,6 @@ msgstr "'Amazing'"
 #.     x1 = 'Charlie'
 #.     x2 = 'Alice'
 #.     x3 = 'Bob'
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
-#. 
-#. x1 = 'Charlie'
-#. x2 = 'Alice'
-#. x3 = 'Bob'
-#. if x1 < x2:
-#.     if x1 < x3:
-#.         first = x1
-#.     else:
-#.         first = x3
-#. else:
-#.     if x2 < x3:
-#.         first = x2
-#.     else:
-#.         first = x3
-#. print(first)
 msgid "code_bits.'Bob'"
 msgstr "'Bob'"
 
@@ -1924,25 +1886,6 @@ msgstr "'Bob'"
 #.     x1 = 'Charlie'
 #.     x2 = 'Alice'
 #.     x3 = 'Bob'
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
-#. 
-#. x1 = 'Charlie'
-#. x2 = 'Alice'
-#. x3 = 'Bob'
-#. if x1 < x2:
-#.     if x1 < x3:
-#.         first = x1
-#.     else:
-#.         first = x3
-#. else:
-#.     if x2 < x3:
-#.         first = x2
-#.     else:
-#.         first = x3
-#. print(first)
 msgid "code_bits.'Charlie'"
 msgstr "'Charlie'"
 
@@ -8538,9 +8481,9 @@ msgstr "filename"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
 #. 
-#. x1 = 'Charlie'
-#. x2 = 'Alice'
-#. x3 = 'Bob'
+#. x1 = 1
+#. x2 = 2
+#. x3 = 3
 #. if x1 < x2:
 #.     if x1 < x3:
 #.         first = x1
@@ -16828,9 +16771,9 @@ msgstr "words"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
 #. 
-#. x1 = 'Charlie'
-#. x2 = 'Alice'
-#. x3 = 'Bob'
+#. x1 = 1
+#. x2 = 2
+#. x3 = 3
 #. if x1 < x2:
 #.     if x1 < x3:
 #.         first = x1
@@ -16894,9 +16837,9 @@ msgstr "x1"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
 #. 
-#. x1 = 'Charlie'
-#. x2 = 'Alice'
-#. x3 = 'Bob'
+#. x1 = 1
+#. x2 = 2
+#. x3 = 3
 #. if x1 < x2:
 #.     if x1 < x3:
 #.         first = x1
@@ -16960,9 +16903,9 @@ msgstr "x2"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.min_three_exercise
 #. 
-#. x1 = 'Charlie'
-#. x2 = 'Alice'
-#. x3 = 'Bob'
+#. x1 = 1
+#. x2 = 2
+#. x3 = 3
 #. if x1 < x2:
 #.     if x1 < x3:
 #.         first = x1
@@ -21021,7 +20964,7 @@ msgstr ""
 #. https://futurecoder.io/course/#IntroducingLists
 msgid "pages.IntroducingLists.steps.first_list.text"
 msgstr ""
-"It's time to learn about a powerful new type of value called lists. Here's an example:\n"
+"It's time to learn about a powerful new type of value called *lists*. Here's an example:\n"
 "\n"
 "__program_indented__"
 
@@ -25320,8 +25263,7 @@ msgstr ""
 "\n"
 "__code1__\n"
 "\n"
-"These programs (and yours too) all work equally well with numbers and strings,\n"
-"but not a mixture. So for:\n"
+"These programs (and yours too) all work equally well with numbers and strings. So for:\n"
 "\n"
 "__code2__\n"
 "\n"

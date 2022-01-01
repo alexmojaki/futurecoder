@@ -19,7 +19,7 @@ from core.text import (
 class IntroducingLists(Page):
     class first_list(VerbatimStep):
         """
-It's time to learn about a powerful new type of value called lists. Here's an example:
+It's time to learn about a powerful new type of value called *lists*. Here's an example:
 
 __program_indented__
         """
