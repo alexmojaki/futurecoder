@@ -725,13 +725,22 @@ However `string` does contain something new. Run `__program__` in the shell to s
 
         program = "string"
 
+        class special_messages:
+            class bad_string:
+                """
+                Oops, `string` doesn't have the right value. Run the program from the previous step again.
+                """
+
+                program = "string = 'a'"
+
+        @classmethod
+        def pre_run(cls, runner):
+            runner.console.locals[cls.program] = "First line\nSecond line"
+
         def check(self):
             string = self.console.locals.get(self.program, "")
             if not (isinstance(string, str) and '\n' in string):
-                return dict(
-                    message="Oops, `string` doesn't have the right value. "
-                            "Run the program from the previous step again."
-                )
+                return self.special_messages.bad_string
             return super().check()
 
     class introducing_newline(VerbatimStep):

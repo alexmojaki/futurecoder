@@ -467,7 +467,12 @@ class Step(ABC):
             if not isinstance(result, dict):
                 result = {}
 
-            result.setdefault("messages", []).extend(lint(self.tree))
+            try:
+                tree = self.tree
+            except SyntaxError:
+                pass
+            else:
+                result.setdefault("messages", []).extend(lint(tree))
 
         return result
 

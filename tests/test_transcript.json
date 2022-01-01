@@ -4234,6 +4234,24 @@
         "step": "times_table_exercise"
     },
     {
+        "page": "Introducing Nested Loops",
+        "program": [
+            "pass",
+            "3 x 4"
+        ],
+        "response": {
+            "message": "<p>To multiply numbers, use <code>*</code></p>",
+            "passed": false,
+            "result": [
+                {
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 2\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "type": "syntax_error"
+                }
+            ]
+        },
+        "step": "times_table_exercise"
+    },
+    {
         "get_solution": [
             "for left in range(12):",
             "    left += 1",
@@ -6250,6 +6268,18 @@
             ]
         },
         "step": "multi_line_strings_triple_quotes"
+    },
+    {
+        "page": "The newline character, <code>format_board</code>",
+        "program": [
+            "string = 'a'"
+        ],
+        "response": {
+            "message": "<p>Oops, <code>string</code> doesn't have the right value. Run the program from the previous step again.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "discovering_newline"
     },
     {
         "page": "The newline character, <code>format_board</code>",

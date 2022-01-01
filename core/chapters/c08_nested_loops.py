@@ -179,6 +179,13 @@ Make sure each line is in the correct loop and has the right amount of indentati
 
         parsons_solution = True
 
+        class special_messages:
+            class multiply_with_x:
+                """
+                To multiply numbers, use `*`
+                """
+                program = "pass\n3 x 4"
+
         def check(self):
             try:
                 return super().check()
@@ -190,7 +197,7 @@ Make sure each line is in the correct loop and has the right amount of indentati
                     and lines[1].strip() == "^"
                     and lines[0][lines[1].index("^")] == "x"
                 ):
-                    return dict(message="To multiply numbers, use `*`")
+                    return self.special_messages.multiply_with_x
 
         def solution(self):
             for left in range(12):
