@@ -17,23 +17,28 @@ code_blocks = defaultdict(dict)
 code_bits = defaultdict(set)
 page_link = ""
 
+po = POFile(wrapwidth=120)
+
+
+def entry(msgid, msgstr, comment=""):
+    po.append(
+        POEntry(
+            msgid=msgid,
+            msgstr=msgstr,
+            comment=comment,
+        )
+    )
+
 
 def main():
     global page_link
-    po = POFile(wrapwidth=120)
     for page_slug, page in pages.items():
         page_link = "https://futurecoder.io/course/#" + page_slug
-        po.append(
-            POEntry(
-                msgid=t.page_title(page_slug),
-                msgstr=page.raw_title,
-                comment=page_link,
-            )
-        )
+        entry(t.page_title(page_slug), page.raw_title, page_link)
 
         for step_name, text in zip(page.step_names, page.step_texts(raw=True)):
             step_msgid = t.step(page_slug, step_name)
-            po.append(make_po_entry(t.step_text(page_slug, step_name), text))
+            text_entry(t.step_text(page_slug, step_name), text)
             if step_name == "final_text":
                 continue
 
@@ -42,23 +47,17 @@ def main():
             for message_step in step.messages:
                 msgid = t.message_step_text(step, message_step)
                 text = message_step.raw_text
-                po.append(make_po_entry(msgid, text, comments))
+                text_entry(msgid, text, comments)
 
             for i, hint in enumerate(step.hints):
                 msgid = t.hint(step, i)
-                po.append(make_po_entry(msgid, hint, comments))
+                text_entry(msgid, hint, comments)
 
             if step.auto_translate_program:
                 for _, node_text in t.get_code_bits(step.program):
                     code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
             else:
-                po.append(
-                    POEntry(
-                        msgid=t.step_program(step),
-                        msgstr=step.program,
-                        comment=search_link(step_msgid),
-                    )
-                )
+                entry(t.step_program(step), step.program, search_link(step_msgid))
 
             if step.translate_output_choices:
                 output_prediction_choices = get_predictions(step)["choices"] or []
@@ -68,46 +67,34 @@ def main():
                         or choice in ("True", "False")
                     ):
                         continue
-                    po.append(
-                        POEntry(
-                            msgid=t.prediction_choice(step, i),
-                            msgstr=choice,
-                            comment=search_link(step_msgid),
-                        )
-                    )
+                    entry(t.prediction_choice(step, i), choice, search_link(step_msgid))
 
     for code_bit, comments in code_bits.items():
-        po.append(
-            POEntry(
-                msgid=t.code_bit(code_bit),
-                msgstr=code_bit,
-                comment="\n\n------\n\n".join(sorted(comments)),
-            )
+        entry(
+            t.code_bit(code_bit),
+            code_bit,
+            "\n\n------\n\n".join(sorted(comments)),
         )
 
     for message_cls, message_format in linting.MESSAGES.items():
-        po.append(
-            POEntry(
-                msgid=f"linting_messages.pyflakes.{message_cls.__name__}.message_format",
-                msgstr=message_format.strip(),
-            )
+        entry(
+            f"linting_messages.pyflakes.{message_cls.__name__}.message_format",
+            message_format.strip(),
         )
 
-    po.append(
-        POEntry(
-            msgid=f"output_predictions.Error",
-            msgstr="Error",
-            comment="Special choice at the end of all output prediction multiple choice questions",
-        )
+    entry(
+        "output_predictions.Error",
+        "Error",
+        "Special choice at the end of all output prediction multiple choice questions",
     )
 
-    po.sort(key=lambda entry: entry.msgid)
+    po.sort(key=lambda e: e.msgid)
     po.save(str(Path(__file__).parent / "english.po"))
 
     t.codes_path.write_text(json.dumps(code_blocks))
 
 
-def make_po_entry(msgid, text, comments=()):
+def text_entry(msgid, text, comments=()):
     codes = [c for c in markdown_codes(text) if not c["no_auto_translate"]]
     codes_grouped = group_by_key(codes, "text")
     code_comments = []
@@ -131,11 +118,8 @@ def make_po_entry(msgid, text, comments=()):
             code_bits[node_text].add(f"{search_link(msgid)}\n\n{code_text}")
             comments.add(search_link(t.code_bit(node_text)))
 
-    return POEntry(
-        msgid=msgid,
-        msgstr=text,
-        comment="\n\n".join([page_link, *code_comments, *sorted(comments)]),
-    )
+    comment = "\n\n".join([page_link, *code_comments, *sorted(comments)])
+    entry(msgid, text, comment)
 
 
 def search_link(msgid):
