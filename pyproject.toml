@@ -27,6 +27,7 @@ flake8 = {version = "^3.8.3", optional = true}
 isort = "^5.1.4"
 selenium = "^3.141.0"
 pytest = "^6.2.4"
+polib = "^1.1.1"
 
 [build-system]
 requires = ["poetry>=0.12"]
