@@ -2062,9 +2062,9 @@
         ],
         "page": "Other Comparison Operators",
         "program": [
-            "x1 = 'Charlie'",
-            "x2 = 'Alice'",
-            "x3 = 'Bob'",
+            "x1 = 1",
+            "x2 = 2",
+            "x3 = 3",
             "if x1 < x2:",
             "    if x1 < x3:",
             "        first = x1",
@@ -2082,7 +2082,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Alice\n",
+                    "text": "1\n",
                     "type": "stdout"
                 }
             ]

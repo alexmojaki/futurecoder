@@ -937,10 +937,13 @@ All you need is a few uses of `<`, `if`, and maybe `else`.
             print(first)
 
         tests = {
+            (1, 2, 3): 1,
+            (10, 20, 30): 10,
+            (40, 20, 30): 20,
+            (40, 50, 30): 30,
             ('Charlie', 'Alice', 'Bob'): 'Alice',
             ('Charlie', 'Bob', 'Alice'): 'Alice',
             ('Alice', 'Charlie', 'Bob'): 'Alice',
-            (1, 2, 3): 1,
         }
 
     final_text = """
@@ -973,8 +976,7 @@ Here's another:
 
     print(first)
 
-These programs (and yours too) all work equally well with numbers and strings,
-but not a mixture. So for:
+These programs (and yours too) all work equally well with numbers and strings. So for:
 
     x1 = 'Charlie'
     x2 = 'Alice'
