@@ -1,9 +1,9 @@
 # flake8: NOQA E501
 import ast
-from string import ascii_lowercase
-from random import randint, choice
+from random import randint
 from typing import List
 
+from core import translation as t
 from core.exercises import generate_string
 from core.text import (
     ExerciseStep,
@@ -1250,7 +1250,7 @@ For the previous example input it should print `f`.
             return super().check() and \
                 search_ast(
                     self.tree,
-                    ast.parse("print(strings[-2][-1])").body[0],
+                    ast.parse(t.translate_code("print(strings[-2][-1])")).body[0],
                 )
 
         hints = """
