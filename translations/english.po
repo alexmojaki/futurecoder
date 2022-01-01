@@ -23189,6 +23189,10 @@ msgstr ""
 "__program_indented__"
 
 #. https://futurecoder.io/course/#IntroducingVariables
+msgid "pages.IntroducingVariables.steps.word_check.special_messages.bad_word.text"
+msgstr "Oops, you need to set `word = 'Hello'` before we can continue."
+
+#. https://futurecoder.io/course/#IntroducingVariables
 msgid "pages.IntroducingVariables.steps.word_check.text"
 msgstr ""
 "This creates a variable with the name `word` that refers to the string value `'Hello'`.\n"
@@ -27078,6 +27082,10 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#UsingVariables
+msgid "pages.UsingVariables.steps.word_plus_name.special_messages.bad_word.text"
+msgstr "Oops, you need to set `word = 'Hello'` before we can continue."
+
+#. https://futurecoder.io/course/#UsingVariables
 #. 
 #.     # __code0__:
 #.     __program_indented__
@@ -27106,6 +27114,10 @@ msgstr "Your answer should contain a mixture of variables (no quotes) and string
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.word_plus_name_with_space
 msgid "pages.UsingVariables.steps.word_plus_name_with_space.hints.2.text"
 msgstr "You will need to have a space character inside quotes."
+
+#. https://futurecoder.io/course/#UsingVariables
+msgid "pages.UsingVariables.steps.word_plus_name_with_space.special_messages.bad_word.text"
+msgstr "Oops, you need to set `word = 'Hello'` before we can continue."
 
 #. https://futurecoder.io/course/#UsingVariables
 msgid "pages.UsingVariables.steps.word_plus_name_with_space.text"
