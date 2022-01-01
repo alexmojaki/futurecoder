@@ -14,11 +14,13 @@ from core.text import pages, get_predictions
 from core.utils import markdown_codes
 
 code_blocks = defaultdict(dict)
+code_bits = defaultdict(set)
+page_link = ""
 
 
 def main():
+    global page_link
     po = POFile(wrapwidth=120)
-    code_bits = defaultdict(set)
     for page_slug, page in pages.items():
         page_link = "https://futurecoder.io/course/#" + page_slug
         po.append(
@@ -31,7 +33,7 @@ def main():
 
         for step_name, text in zip(page.step_names, page.step_texts(raw=True)):
             step_msgid = t.step(page_slug, step_name)
-            po.append(make_po_entry(code_bits, page_link, t.step_text(page_slug, step_name), text))
+            po.append(make_po_entry(t.step_text(page_slug, step_name), text))
             if step_name == "final_text":
                 continue
 
@@ -40,11 +42,11 @@ def main():
             for message_step in step.messages:
                 msgid = t.message_step_text(step, message_step)
                 text = message_step.raw_text
-                po.append(make_po_entry(code_bits, page_link, msgid, text, comments))
+                po.append(make_po_entry(msgid, text, comments))
 
             for i, hint in enumerate(step.hints):
                 msgid = t.hint(step, i)
-                po.append(make_po_entry(code_bits, page_link, msgid, hint, comments))
+                po.append(make_po_entry(msgid, hint, comments))
 
             if step.auto_translate_program:
                 for _, node_text in t.get_code_bits(step.program):
@@ -105,7 +107,7 @@ def main():
     t.codes_path.write_text(json.dumps(code_blocks))
 
 
-def make_po_entry(code_bits, page_link, msgid, text, comments=()):
+def make_po_entry(msgid, text, comments=()):
     codes = [c for c in markdown_codes(text) if not c["no_auto_translate"]]
     codes_grouped = group_by_key(codes, "text")
     code_comments = []
