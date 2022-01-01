@@ -58,6 +58,8 @@ Now write a program that prints the following text from the Zen of Python:
 
     __copyable__
     Special cases aren't special enough to break the rules.
+
+The program should be a single line using `print()`, no variables.
         """
 
         hints = """
@@ -80,6 +82,8 @@ Now print the following quote exactly (including the double quotes):
 
     __copyable__
     "Talk is cheap. Show me the code." - Linus Torvalds
+
+The program should be a single line using `print()`, no variables.
         """
 
         hints = """

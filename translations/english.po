@@ -25587,7 +25587,9 @@ msgstr ""
 "Now write a program that prints the following text from the Zen of Python:\n"
 "\n"
 "    __copyable__\n"
-"    Special cases aren't special enough to break the rules."
+"    Special cases aren't special enough to break the rules.\n"
+"\n"
+"The program should be a single line using `print()`, no variables."
 
 #. https://futurecoder.io/course/#SingleAndDoubleQuotesInStrings
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.double_quotes.text"
@@ -25643,7 +25645,9 @@ msgstr ""
 "Now print the following quote exactly (including the double quotes):\n"
 "\n"
 "    __copyable__\n"
-"    \"Talk is cheap. Show me the code.\" - Linus Torvalds"
+"    \"Talk is cheap. Show me the code.\" - Linus Torvalds\n"
+"\n"
+"The program should be a single line using `print()`, no variables."
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe
 msgid "pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe.program"
