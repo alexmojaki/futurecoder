@@ -69,7 +69,7 @@ def translate_code(code):
         start = code.find(node_text, node.first_token.startpos)
         end = start + len(node_text)
         text_range = (start, end)
-        replacements.append((*text_range, get(code_bit(node_text), node_text)))
+        replacements.append((*text_range, get_code_bit(node_text)))
     return asttokens.util.replace(code, replacements)
 
 
@@ -140,6 +140,10 @@ def hint(cls, i):
 
 def code_bit(node_text):
     return f"code_bits.{node_text}"
+
+
+def get_code_bit(node_text):
+    return get(code_bit(node_text), node_text)
 
 
 def pyflakes_message(message_cls):

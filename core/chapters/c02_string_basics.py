@@ -2,6 +2,7 @@
 import ast
 
 from core.text import MessageStep, Page, Step, VerbatimStep, search_ast
+from core import translation as t
 
 
 class IntroducingStrings(Page):
@@ -21,6 +22,8 @@ The shell simply gives the same thing back because there's nothing to further to
 A string is a sequence of characters. A character is a single symbol such as a letter, number, punctuation, space, etc. In this case the string contains the 5 characters `hello`. The quotes are not part of the string - they are there to tell both humans and computers that this is a string consisting of whatever characters are between the quotes.
 """
 
+
+hello_world_repr = "'hello world'"
 
 class AddingStrings(Page):
 
@@ -53,7 +56,7 @@ By the way, if you get stuck, you can click the lightbulb icon in the bottom rig
             """
             You must still add two or more strings together.
             """
-            program = "'hello world'"
+            program = hello_world_repr
             after_success = True
 
             def check(self):
@@ -63,7 +66,7 @@ By the way, if you get stuck, you can click the lightbulb icon in the bottom rig
                 )
 
         def check(self):
-            return "'hello world'" in self.result
+            return t.get_code_bit(hello_world_repr) in self.result
 
     final_text = """
 Well done! Any of the following are valid solutions:

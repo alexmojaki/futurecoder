@@ -87,14 +87,16 @@ def clean_program(program, cls):
 
 
 def basic_signature(func):
-    joined = ", ".join(inspect.signature(func).parameters)
+    params = [t.get_code_bit(p) for p in inspect.signature(func).parameters]
+    joined = ", ".join(params)
     return f'({joined})'
 
 
 def clean_solution_function(func, source):
+    name = t.get_code_bit(func.__name__)
     return re.sub(
-        rf"def {func.__name__}\(.+?\):",
-        rf"def {func.__name__}{basic_signature(func)}:",
+        rf"def {name}\(.+?\):",
+        rf"def {name}{basic_signature(func)}:",
         source,
     )
 
@@ -484,6 +486,7 @@ class ExerciseStep(Step):
         if function_name == "solution":
             return self.check_exercise(self.input, functionise=True)
         else:
+            function_name = t.get_code_bit(function_name)
             if function_name not in self.console.locals:
                 return dict(message=f"You must define a function `{function_name}`")
 

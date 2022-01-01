@@ -10,7 +10,9 @@ from core import translation as t
 
 class word_must_be_hello(VerbatimStep):
     def check(self):
-        if self.console.locals.get("word") != "Hello":
+        word = t.get_code_bit('word')
+        Hello = t.get_code_bit("'Hello'")
+        if repr(self.console.locals.get(word)) != Hello:
             return dict(
                 message="Oops, you need to set `word = 'Hello'` before we can continue."
             )
@@ -63,7 +65,7 @@ The answer is that `sunshine` looks like a variable, so Python tries to look up 
 """
 
 
-your_name = t.get(t.code_bit("your_name"), "your_name")
+your_name = t.get_code_bit("your_name")
 
 
 class UsingVariables(Page):

@@ -726,7 +726,7 @@ However `string` does contain something new. Run `__program__` in the shell to s
         program = "string"
 
         def check(self):
-            string = self.console.locals.get("string", "")
+            string = self.console.locals.get(self.program, "")
             if not (isinstance(string, str) and '\n' in string):
                 return dict(
                     message="Oops, `string` doesn't have the right value. "
