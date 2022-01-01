@@ -5,6 +5,7 @@ import re
 from astcheck import is_ast_like
 
 from core.text import MessageStep, Page, Step, VerbatimStep
+from core import translation as t
 
 
 class word_must_be_hello(VerbatimStep):
@@ -62,6 +63,9 @@ The answer is that `sunshine` looks like a variable, so Python tries to look up 
 """
 
 
+your_name = t.get(t.code_bit("your_name"), "your_name")
+
+
 class UsingVariables(Page):
     title = "Using Variables and `print()`"
 
@@ -87,14 +91,14 @@ Now make a variable called `your_name` whose value is another string.
 
             def check(self):
                 match = re.match(r"(.*)=", self.input)
-                return bool(match and match.group(1).strip() != "your_name")
+                return bool(match and match.group(1).strip() != your_name)
 
         class name_equals_something_else(MessageStep):
             """You've got the `your_name = ` part right, now put a string (use quotes) on the right of the `=`."""
             program = "your_name = 3"
 
             def check(self):
-                return self.input_matches("your_name=[^'\"].*")
+                return self.input_matches(your_name + "=[^'\"].*")
 
         class empty_string(MessageStep):
             """For this exercise, choose a non-empty string"""
@@ -102,7 +106,7 @@ Now make a variable called `your_name` whose value is another string.
             after_success = True
 
             def check(self):
-                return not self.console.locals['your_name']
+                return not self.console.locals[your_name]
 
         class starts_with_space(MessageStep):
             """For this exercise, choose a name that doesn't start with a space."""
@@ -110,15 +114,15 @@ Now make a variable called `your_name` whose value is another string.
             after_success = True
 
             def check(self):
-                return self.console.locals['your_name'].startswith(' ')
+                return self.console.locals[your_name].startswith(' ')
 
         def check(self):
             return (
                     is_ast_like(
                         self.tree,
-                        ast.Module(body=[ast.Assign(targets=[ast.Name(id='your_name')])])
+                        ast.Module(body=[ast.Assign(targets=[ast.Name(id=your_name)])])
                     )
-                    and isinstance(self.console.locals.get('your_name'), str)
+                    and isinstance(self.console.locals.get(your_name), str)
             )
 
     class hello_plus_name(VerbatimStep):
