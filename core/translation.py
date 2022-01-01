@@ -134,6 +134,10 @@ def message_step_text(cls, message_step):
     return f"{step_cls(cls)}.messages.{message_step.__name__}.text"
 
 
+def special_message_text(cls, special_message):
+    return f"{step_cls(cls)}.special_messages.{special_message.__name__}.text"
+
+
 def hint(cls, i):
     return f"{step_cls(cls)}.hints.{i}.text"
 

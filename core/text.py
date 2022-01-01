@@ -101,6 +101,10 @@ def clean_solution_function(func, source):
     )
 
 
+def get_special_messages(cls):
+    return [v for k, v in inspect.getmembers(cls.special_messages) if not k.startswith("__")]
+
+
 @cache
 def clean_step_class(cls):
     assert cls.__name__ != "step_name_here"
@@ -121,7 +125,7 @@ def clean_step_class(cls):
         assert cls.tests
         assert cls.auto_translate_program
         cls.solution = MethodType(solution, "")
-        program, cls.solution = clean_program(cls.solution, cls)
+        program, cls.solution = clean_program(cls.solution, cls)  # noqa
     else:
         program, _ = clean_program(program, cls)
         if not is_valid_syntax(program):
@@ -148,6 +152,17 @@ def clean_step_class(cls):
     assert "__program_" not in text
 
     text = dedent(text).strip()
+
+
+    for special_message in get_special_messages(cls):
+        msgstr = special_message.__doc__ or special_message.text
+        msgstr = dedent(msgstr).strip()
+        msgstr = t.get(t.special_message_text(cls, special_message), msgstr)
+        special_message.text = msgstr
+        try:
+            special_message.program = t.translate_code(special_message.program)
+        except SyntaxError:
+            pass
 
     messages = []
     for name, inner_cls in inspect.getmembers(cls):
@@ -371,7 +386,7 @@ class Disallowed:
                       f"you're not allowed to use {label}."
         message = dedent(message).strip()
         self.template = template
-        self.message = message
+        self.text = message
         self.max_count = max_count
         self.predicate = predicate
         self.function_only = function_only
@@ -404,21 +419,28 @@ class Step(ABC):
     auto_translate_program = True
     page = None
 
+    class special_messages:
+        pass
+
     def __init__(self, *args):
         self.args = args
         self.input, self.result, self.code_source, self.console = args
 
     def clean_check(self) -> Union[bool, dict]:
         result = self.check()
+        if hasattr(result, "text"):
+            result = dict(message=result.text)
+
         if not isinstance(result, dict):
             result = bool(result)
+
         return result
 
     def check_with_messages(self):
         result = self.clean_check()
         for message_cls in self.messages:
             if (result is True) == message_cls.after_success and (message_cls.check_message(self) is True):
-                return message_cls.message()
+                return message_cls
 
         if result is True:
             for d in self.disallowed:
@@ -427,7 +449,7 @@ class Step(ABC):
                     d.template,
                     d.predicate
                 ) > d.max_count:
-                    return dict(message=d.message)
+                    return d
 
             if self.expected_code_source not in (None, self.code_source):
                 return dict(
@@ -637,10 +659,6 @@ class MessageStep(Step, ABC):
     after_success = False
 
     @classmethod
-    def message(cls):
-        return dict(message=cls.text)
-
-    @classmethod
     def check_message(cls, step):
         return cls(*step.args).clean_check()
 
@@ -712,7 +730,7 @@ def step_test_entries():
     for page, step_name in iter_step_names(final_text=False):
         step = page.get_step(step_name)
 
-        for substep in [*step.messages, step]:
+        for substep in [*step.messages, *get_special_messages(step), step]:
             program = substep.program
 
             if "\n" in program:

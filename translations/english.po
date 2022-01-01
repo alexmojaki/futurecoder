@@ -22511,6 +22511,16 @@ msgstr ""
 "3. Press the Enter key on your keyboard."
 
 #. https://futurecoder.io/course/#IntroducingTheShell
+#. 
+#.     # __code0__:
+#.     3 * 4
+msgid "pages.IntroducingTheShell.steps.more_calculation.special_messages.multiply_with_x.text"
+msgstr ""
+"I see an 'x'. If you're trying to multiply, use an asterisk, e.g:\n"
+"\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#IntroducingTheShell
 msgid "pages.IntroducingTheShell.steps.more_calculation.text"
 msgstr ""
 "Great! Python evaluated `1+2` and got the result `3`, so the shell displays that.\n"

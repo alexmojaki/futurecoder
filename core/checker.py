@@ -118,6 +118,9 @@ def check_entry(entry, input_callback, output_callback):
 
 
 def normalise_step_result(step_result):
+    if hasattr(step_result, "text"):
+        step_result = dict(message=step_result.text)
+
     if not isinstance(step_result, dict):
         assert isinstance(step_result, bool)
         step_result = dict(passed=step_result, messages=[])

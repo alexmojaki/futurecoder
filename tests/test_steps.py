@@ -19,7 +19,7 @@ def test_steps():
     transcript = []
     for page, step, substep, entry in step_test_entries():
         program = substep.program
-        is_message = substep in step.messages
+        is_message = substep != step
 
         output_parts = []
         def output_callback(data):

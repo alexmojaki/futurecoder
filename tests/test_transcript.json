@@ -36,6 +36,23 @@
     {
         "page": "Introducing The Shell",
         "program": [
+            "3 x 4"
+        ],
+        "response": {
+            "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
+            "passed": false,
+            "result": [
+                {
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "type": "syntax_error"
+                }
+            ]
+        },
+        "step": "more_calculation"
+    },
+    {
+        "page": "Introducing The Shell",
+        "program": [
             "5 - 6"
         ],
         "response": {

@@ -10,7 +10,7 @@ from polib import POEntry, POFile
 
 from core import linting
 from core import translation as t
-from core.text import pages, get_predictions, chapters
+from core.text import pages, get_predictions, chapters, get_special_messages
 from core.utils import markdown_codes
 
 code_blocks = defaultdict(dict)
@@ -48,6 +48,9 @@ def main():
                 msgid = t.message_step_text(step, message_step)
                 text = message_step.raw_text
                 text_entry(msgid, text, comments)
+
+            for special_message in get_special_messages(step):
+                text_entry(t.special_message_text(step, special_message), special_message.text)
 
             for i, hint in enumerate(step.hints):
                 msgid = t.hint(step, i)
