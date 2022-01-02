@@ -18,7 +18,11 @@ code_bits = defaultdict(set)
 page_link = ""
 
 po = POFile(wrapwidth=120)
-
+po.metadata = {
+    'MIME-Version': '1.0',
+    'Content-Type': 'text/plain; charset=utf-8',
+    'Content-Transfer-Encoding': '8bit',
+}
 
 def entry(msgid, msgstr, comment=""):
     po.append(
@@ -93,6 +97,7 @@ def main():
 
     po.sort(key=lambda e: e.msgid)
     po.save(str(Path(__file__).parent / "english.po"))
+    po.save_as_mofile(str(Path(__file__).parent / "locales/en/LC_MESSAGES/futurecoder.mo"))
 
     t.codes_path.write_text(json.dumps(code_blocks))
 

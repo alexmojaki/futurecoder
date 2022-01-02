@@ -248,7 +248,8 @@ it's actually more common to write:
 There isn't really a big difference between these, but `.append`
 will be more familiar and readable to most people.
 
-Now use `.append` to write a program which prints a list containing only the numbers bigger than 5.
+Now use `.append` to write a program which takes a list of numbers and
+prints a new list containing only the numbers bigger than 5.
 
 For example, given:
 
