@@ -1796,7 +1796,7 @@ The good news is that there are many ways to solve this. You can instead just lo
 
     class make_copy2(VerbatimStep):
         """
-Now the list being modified and the list being itererated over are separate objects, even if they start out with equal contents.
+Now the list being modified and the list being iterated over are separate objects, even if they start out with equal contents.
 
 Similarly, you could loop over the original and modify a copy:
 
