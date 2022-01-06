@@ -1,5 +1,6 @@
 import json
 import os
+import random
 import re
 from pathlib import Path
 
@@ -12,6 +13,9 @@ from core.text import step_test_entries, get_predictions, load_chapters
 from core.utils import highlighted_markdown, make_test_input_callback
 
 core.utils.TESTING = True
+
+random.seed(0)
+
 
 def test_steps():
     t.set_language("en")
