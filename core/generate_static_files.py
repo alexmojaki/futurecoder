@@ -80,7 +80,7 @@ def tarfile_filter(tar_info):
 
 def main():
     print("Generating files...")
-    translation.set_language("en")
+    translation.set_language("es")
     this_dir = Path(__file__).parent
     frontend = this_dir / "../frontend"
     frontend_src = frontend / "src"
@@ -106,6 +106,7 @@ def main():
 
     with tarfile.open(frontend_src / "python_core.tar.load_by_url", "w") as tar:
         tar.add(this_dir, arcname=this_dir.stem, recursive=True, filter=tarfile_filter)
+        tar.add(this_dir.parent / "translations", arcname="translations", recursive=True, filter=tarfile_filter)
         for root in roots:
             tar.add(
                 Path(site_packages) / root,

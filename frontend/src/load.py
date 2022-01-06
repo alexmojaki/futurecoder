@@ -17,7 +17,7 @@ def load_package_buffer(buffer):
     from core.text import load_chapters
     from core import translation as t
 
-    # t.set_language("es")
+    t.set_language("es")
 
     list(load_chapters())
 

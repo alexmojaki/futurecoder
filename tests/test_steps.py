@@ -14,7 +14,7 @@ from core.utils import highlighted_markdown, make_test_input_callback
 core.utils.TESTING = True
 
 def test_steps():
-    t.set_language("en")
+    t.set_language("es")
     list(load_chapters())
     runner.reset()
     transcript = []
