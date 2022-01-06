@@ -31,6 +31,12 @@ if (isProduction) {
   firebaseAnalytics = firebase.analytics(firebaseApp);
 }
 
+const isOffline = new Promise((resolve) => {
+  axios.get(`${databaseUrl}/.json`).catch((e) => {
+    resolve(!e.response);
+  });
+});
+
 const initialState = {
   error: null,
   route: "main",
@@ -65,6 +71,7 @@ const initialState = {
   },
   processing: false,
   running: false,
+  offline: false,
   numHints: 0,
   editorContent: "",
   messages: [],
@@ -90,7 +97,7 @@ const {reducer, makeAction, setState, localState, statePush} = redact('book', in
 
 export {reducer as bookReducer, setState as bookSetState, localState as bookState, statePush as bookStatePush};
 
-const isLoaded = (state) => state.user.uid && state.pageSlugsList.length > 1
+const isLoaded = (state) => (state.offline || state.user.uid) && state.pageSlugsList.length > 1
 
 export const currentPage = (state = localState) => {
   if (!isLoaded(state)) {
@@ -202,14 +209,23 @@ const loadUser = makeAction(
 )
 
 firebase.auth().onAuthStateChanged(async (user) => {
-  if (user) {
+  if (await isOffline) {
+    loadOffline(user);
+  } else if (user) {
     // TODO ideally we'd set a listener on the user instead of just getting it once
     //   to sync changes made on multiple devices
     await updateUserData(user);
   } else {
-    await firebase.auth().signInAnonymously();
+    await firebase.auth().signInAnonymously().catch(() => loadOffline());
   }
 });
+
+const loadOffline = makeAction(
+  "LOAD_OFFLINE",
+  (state, user={}) => {
+    return loadUserAndPages({...state, user, offline: "true"}, state.user);
+  },
+)
 
 export const updateUserData = async (user) => {
   const userData = await databaseRequest("GET");
@@ -221,6 +237,9 @@ export const updateUserData = async (user) => {
 }
 
 export const databaseRequest = async (method, data={}, endpoint="users") => {
+  if (await isOffline) {
+    return;
+  }
   const currentUser = firebase.auth().currentUser;
   if (!currentUser) {
     return;
