@@ -39,7 +39,7 @@
             "3 x 4"
         ],
         "response": {
-            "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
+            "message": "<p>Observo una 'x'. Si est\u00e1s tratando de multiplicar, usa un asterisco, por ejemplo:</p>\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
             "passed": false,
             "result": [
                 {
@@ -156,7 +156,7 @@
             "palabra = 2"
         ],
         "response": {
-            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "message": "<p>Oops, necesitas establecer <code>palabra = 'Hola'</code> antes de que podamos continuar.</p>",
             "passed": false,
             "result": []
         },
@@ -349,7 +349,7 @@
             "palabra = 2"
         ],
         "response": {
-            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "message": "<p>Oops, necesitas establecer <code>palabra = 'Hola'</code> antes de que podamos continuar.</p>",
             "passed": false,
             "result": []
         },
@@ -378,7 +378,7 @@
             "palabra = 2"
         ],
         "response": {
-            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "message": "<p>Oops, necesitas establecer <code>palabra = 'Hola'</code> antes de que podamos continuar.</p>",
             "passed": false,
             "result": []
         },
@@ -4034,7 +4034,7 @@
         ],
         "page": "f-strings",
         "program": [
-            "gente = ['TBpHyOXduR', 'zEueTVXs', 'zgbiDl', 'aoWHge', 'pWSUfv', 'ruhzxkVHtM', 'FsRQgMAfUI']",
+            "gente = ['UQesqvN', 'HwYQXfmKI', 'nOQmWB', 'ARtYrHaPL', 'cYPFNHBt', 'owaUWeiulB', 'cZRrE', 'brHQFoazeJ']",
             "print(f\"Hay {len(gente)} personas esperando, el nombre de la primera es {gente[0]}.\")"
         ],
         "response": {
@@ -4042,7 +4042,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Hay 7 personas esperando, el nombre de la primera es TBpHyOXduR.\n",
+                    "text": "Hay 8 personas esperando, el nombre de la primera es UQesqvN.\n",
                     "type": "stdout"
                 }
             ]
@@ -4225,7 +4225,7 @@
             "3 x 4"
         ],
         "response": {
-            "message": "<p>To multiply numbers, use <code>*</code></p>",
+            "message": "<p>Para multiplicar n\u00fameros, utiliza <code>*</code></p>",
             "passed": false,
             "result": [
                 {
@@ -4882,13 +4882,13 @@
     },
     {
         "get_solution": [
-            "def imprime_doble(x):",
+            "def imprimir_doble(x):",
             "    print(x)",
             "    print(x)"
         ],
         "page": "Definiendo Funciones",
         "program": [
-            "def imprime_doble(x):",
+            "def imprimir_doble(x):",
             "    print(x)",
             "    print(x)"
         ],
@@ -4902,11 +4902,11 @@
     {
         "page": "Definiendo Funciones",
         "program": [
-            "def imprime_varios(cosa, n):",
+            "def imprimir_varios(cosa, n):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "imprime_varios(\"Hola\", 3)"
+            "imprimir_varios(\"Hola\", 3)"
         ],
         "response": {
             "message": "",
@@ -4933,19 +4933,19 @@
     },
     {
         "get_solution": [
-            "def imprime_varios(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "imprime_varios(3, \"Hola\")"
+            "imprimir_varios(3, \"Hola\")"
         ],
         "page": "Definiendo Funciones",
         "program": [
-            "def imprime_varios(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "imprime_varios(3, \"Hola\")"
+            "imprimir_varios(3, \"Hola\")"
         ],
         "response": {
             "message": "",
@@ -4962,14 +4962,14 @@
     {
         "page": "Llamando funciones dentro de funciones",
         "program": [
-            "def imprime_varios(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "def imprime_doble(x):",
-            "    imprime_varios(2, x)",
+            "def imprimir_doble(x):",
+            "    imprimir_varios(2, x)",
             "",
-            "imprime_doble(\"Hola\")"
+            "imprimir_doble(\"Hola\")"
         ],
         "response": {
             "message": "",
@@ -4986,14 +4986,14 @@
     {
         "page": "Llamando funciones dentro de funciones",
         "program": [
-            "def imprime_varios(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "def imprime_doble(x):",
-            "    imprime_varios(2, x)",
+            "def imprimir_doble(x):",
+            "    imprimir_varios(2, x)",
             "",
-            "imprime_doble(\"Hola\")"
+            "imprimir_doble(\"Hola\")"
         ],
         "response": {
             "message": "",
@@ -5004,27 +5004,27 @@
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprime_varios\u001b[39m(n, cosa):\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprime_doble\u001b[39m(x):\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprime_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to imprime_doble in File \"my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprime_doble\u001b[39m(x):\n",
+                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_doble in File \"my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprime_varios(\u001b[38;5;141m2\u001b[39m, x)\n",
+                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to imprime_varios in File \"my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... cosa = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprime_varios\u001b[39m(n, cosa):\n",
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_varios in File \"my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... cosa = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
                     "type": "stdout"
                 },
                 {
@@ -5048,19 +5048,19 @@
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprime_varios: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_varios: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprime_varios(\u001b[38;5;141m2\u001b[39m, x)\n",
+                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprime_doble: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
+                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_doble: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprime_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
                     "type": "stdout"
                 },
                 {
@@ -5074,14 +5074,14 @@
     {
         "page": "Llamando funciones dentro de funciones",
         "program": [
-            "def imprime_varios(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "def imprime_doble(x):",
-            "    imprime_varios(2, x)",
+            "def imprimir_doble(x):",
+            "    imprimir_varios(2, x)",
             "",
-            "imprime_doble(\"Hola\")"
+            "imprimir_doble(\"Hola\")"
         ],
         "response": {
             "message": "",
@@ -5098,14 +5098,14 @@
     {
         "page": "Llamando funciones dentro de funciones",
         "program": [
-            "def imprime_varios(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "def imprime_doble(x):",
-            "    imprime_varios(2, x)",
+            "def imprimir_doble(x):",
+            "    imprimir_varios(2, x)",
             "",
-            "imprime_doble(\"Hola\")"
+            "imprimir_doble(\"Hola\")"
         ],
         "response": {
             "message": "",
@@ -6260,7 +6260,7 @@
             "cadena = 'a'"
         ],
         "response": {
-            "message": "<p>Oops, <code>string</code> doesn't have the right value. Run the program from the previous step again.</p>",
+            "message": "<p>Oops, la <code>cadena</code> no tiene el valor correcto. Vuelve a ejecutar el programa del paso anterior.</p>",
             "passed": false,
             "result": []
         },
@@ -6581,7 +6581,7 @@
         ],
         "page": "Tipos de Dato",
         "program": [
-            "numero = '8'",
+            "numero = '9'",
             "for i in range(int(numero)):",
             "    print('Comenzando...' + str(i + 1))",
             "print('\u00a1V\u00e9!')"
@@ -6591,7 +6591,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Comenzando...1\nComenzando...2\nComenzando...3\nComenzando...4\nComenzando...5\nComenzando...6\nComenzando...7\nComenzando...8\n\u00a1V\u00e9!\n",
+                    "text": "Comenzando...1\nComenzando...2\nComenzando...3\nComenzando...4\nComenzando...5\nComenzando...6\nComenzando...7\nComenzando...8\nComenzando...9\n\u00a1V\u00e9!\n",
                     "type": "stdout"
                 }
             ]
@@ -6693,11 +6693,11 @@
                     "type": "input_prompt"
                 },
                 {
-                    "text": "<input: 7>\n",
+                    "text": "<input: 1>\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u00a1Incre\u00edble! \u00bfEres ps\u00edquico?\n",
+                    "text": "\u00a1Nope!\n",
                     "type": "stdout"
                 }
             ]
@@ -6707,15 +6707,15 @@
     {
         "page": "Tarea con Listas Anidadas: Jugando en el tablero",
         "program": [
-            "def mover_juego(tablero, jugador):",
+            "def jugar_turno(tablero, jugador):",
             "    tablero[1] = jugador",
             "",
-            "def jugar_juego():",
-            "    tablero_juego = [\" \", \" \", \" \"]",
-            "    mover_juego(tablero_juego, \"X\")",
-            "    print(tablero_juego)",
+            "def jugar():",
+            "    tablero_de_juego = [\" \", \" \", \" \"]",
+            "    jugar_turno(tablero_de_juego, \"X\")",
+            "    print(tablero_de_juego)",
             "",
-            "jugar_juego()"
+            "jugar()"
         ],
         "response": {
             "message": "",
@@ -6747,20 +6747,20 @@
     {
         "page": "Tarea con Listas Anidadas: Jugando en el tablero",
         "program": [
-            "def mover_juego(tablero, jugador):",
+            "def jugar_turno(tablero, jugador):",
             "    fila = tablero[1]",
             "    fila[0] = jugador",
             "",
-            "def jugar_juego():",
+            "def jugar():",
             "    tablero = [",
             "        [\" \", \" \", \" \"],",
             "        [\" \", \" \", \" \"],",
             "        [\" \", \" \", \" \"],",
             "    ]",
-            "    mover_juego(tablero, \"X\")",
+            "    jugar_turno(tablero, \"X\")",
             "    print(tablero)",
             "",
-            "jugar_juego()"
+            "jugar()"
         ],
         "response": {
             "message": "",
@@ -6776,14 +6776,14 @@
     },
     {
         "get_solution": [
-            "def mover_juego(tablero, jugador):",
+            "def jugar_turno(tablero, jugador):",
             "    fila = int(input()) - 1",
             "    col = int(input()) - 1",
             "    tablero[fila][col] = jugador"
         ],
         "page": "Tarea con Listas Anidadas: Jugando en el tablero",
         "program": [
-            "def mover_juego(tablero, jugador):",
+            "def jugar_turno(tablero, jugador):",
             "    fila = int(input()) - 1",
             "    col = int(input()) - 1",
             "    tablero[fila][col] = jugador"
@@ -6798,7 +6798,7 @@
     {
         "page": "Construyendo el Tablero",
         "program": [
-            "def construye_tablero(tamano):",
+            "def crear_tablero(tamano):",
             "    fila = []",
             "    for _ in range(tamano):",
             "        fila.append(' ')",
@@ -6808,7 +6808,7 @@
             "    return tablero",
             "",
             "def prueba():",
-            "    tablero = construye_tablero(3)",
+            "    tablero = crear_tablero(3)",
             "    assert_equal(tablero, [",
             "        [' ', ' ', ' '],",
             "        [' ', ' ', ' '],",
@@ -6837,7 +6837,7 @@
     },
     {
         "get_solution": [
-            "def construye_tablero(tamano):",
+            "def crear_tablero(tamano):",
             "    tablero = []",
             "    for _ in range(tamano):",
             "        fila = []",
@@ -6848,7 +6848,7 @@
         ],
         "page": "Construyendo el Tablero",
         "program": [
-            "def construye_tablero(tamano):",
+            "def crear_tablero(tamano):",
             "    tablero = []",
             "    for _ in range(tamano):",
             "        fila = []",
@@ -6866,16 +6866,16 @@
     },
     {
         "get_solution": [
-            "def jugar_juego(tamano_tablero, jugador1, jugador2):",
-            "    tablero = construye_tablero(tamano_tablero)",
+            "def jugar(tamano_tablero, jugador1, jugador2):",
+            "    tablero = crear_tablero(tamano_tablero)",
             "    print(estructurar_tablero(tablero))",
             "",
             "    jugador = jugador1",
             "    for _ in range(tamano_tablero * tamano_tablero):",
-            "        mover_juego(tablero, jugador)",
+            "        jugar_turno(tablero, jugador)",
             "",
             "        if ganador(tablero):",
-            "            imprime_ganador(jugador)",
+            "            imprimir_ganador(jugador)",
             "            return",
             "",
             "        if jugador == jugador1:",
@@ -6883,7 +6883,7 @@
             "        else:",
             "            jugador = jugador1",
             "",
-            "    imprime_empate()"
+            "    imprimir_empate()"
         ],
         "page": "El juego de Ta-Te-Ti completo",
         "program": [
@@ -6912,32 +6912,32 @@
             "    filas = [f'{i + 1} {\"|\".join(fila)}' for i, fila in enumerate(tablero)]",
             "    return f'  {\" \".join(str(i + 1) for i in range(tamano))}\\n{linea.join(filas)}'",
             "",
-            "def mover_juego(tablero, jugador):",
+            "def jugar_turno(tablero, jugador):",
             "    print(f'Juega {jugador}:')",
             "    fila = int(input()) - 1",
             "    col = int(input()) - 1",
             "    tablero[fila][col] = jugador",
             "    print(estructurar_tablero(tablero))",
             "",
-            "def construye_tablero(tamano):",
+            "def crear_tablero(tamano):",
             "    return [[' '] * tamano for _ in range(tamano)]",
             "",
-            "def imprime_ganador(jugador):",
+            "def imprimir_ganador(jugador):",
             "    print(f'\u00a1gana {jugador}!')",
             "",
-            "def imprime_empate():",
+            "def imprimir_empate():",
             "    print(\"\u00a1Es un empate!\")",
             "",
-            "def jugar_juego(tamano_tablero, jugador1, jugador2):",
-            "    tablero = construye_tablero(tamano_tablero)",
+            "def jugar(tamano_tablero, jugador1, jugador2):",
+            "    tablero = crear_tablero(tamano_tablero)",
             "    print(estructurar_tablero(tablero))",
             "",
             "    jugador = jugador1",
             "    for _ in range(tamano_tablero * tamano_tablero):",
-            "        mover_juego(tablero, jugador)",
+            "        jugar_turno(tablero, jugador)",
             "",
             "        if ganador(tablero):",
-            "            imprime_ganador(jugador)",
+            "            imprimir_ganador(jugador)",
             "            return",
             "",
             "        if jugador == jugador1:",
@@ -6945,7 +6945,7 @@
             "        else:",
             "            jugador = jugador1",
             "",
-            "    imprime_empate()"
+            "    imprimir_empate()"
         ],
         "response": {
             "message": "",
