@@ -967,21 +967,21 @@ One more exercise. Given a size:
 
     size = 5
 
-Print out an 'upside down' triangle made of the letter `O` whose sides are as long as the given size, e.g:
+Print out an 'upside down' triangle made of the plus sign `+` whose sides are as long as the given size, e.g:
 
     __no_auto_translate__
-    OOOOO
-    OOOO
-    OOO
-    OO
-    O
+    +++++
+    ++++
+    +++
+    ++
+    +
         """
 
         hints = """
 How would you describe instructions to type in this triangle manually?
-Print a line of `size` Os, then `size - 1` Os, etc. down to 1 O. For example print 5 Os, then 4 Os, then 3, 2, and 1.
+Print a line of `size` plus signs, then `size - 1` plus signs, etc. down to 1 plus sign. For example print 5 `+`s, then 4 `+`s, then 3, 2, and 1.
 Break this down into subproblems.
-How do you print one line of Os of a given length, and how do you go through all the lengths?
+How do you print one line of `+`s of a given length, and how do you go through all the lengths?
 Building up a line of characters should be very familiar from previous exercises, the only difference is that you have to make it a given length instead of just the same length as another string.
 An easy way to do something `n` times is to loop over `range(n)`.
 You need to use a for loop inside a for loop.
@@ -996,23 +996,23 @@ What formula converts 0 into 5, 1 into 4, 2, into 3, etc?
                 length = size - i
                 line = ''
                 for _ in range(length):
-                    line += 'O'
+                    line += '+'
                 print(line)
 
         disallowed = Disallowed(ast.Mult, label="`*`")
 
         tests = {
             3: """\
-OOO
-OO
-O
++++
+++
++
 """,
             5: """\
-OOOOO
-OOOO
-OOO
-OO
-O
++++++
+++++
++++
+++
++
     """
         }
 
