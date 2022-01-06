@@ -242,6 +242,8 @@ Did you properly use curly brackets in your f-string?
         def solution(self, people: List[str]):
             print(f"There are {len(people)} people waiting, the first one's name is {people[0]}.")
 
+        translated_tests = True
+
         tests = [
             (["Alice", "Bob", "Charlie"],
              "There are 3 people waiting, the first one's name is Alice."),

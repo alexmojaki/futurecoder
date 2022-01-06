@@ -20,7 +20,7 @@ from typing import Union, List, get_type_hints
 import pygments
 from astcheck import is_ast_like
 from asttokens import ASTTokens
-from littleutils import setattrs, only, select_attrs
+from littleutils import setattrs, only, select_attrs, strip_required_prefix
 
 from core import translation as t
 from core.exercises import (
@@ -62,12 +62,17 @@ def clean_program(program, cls):
         return program, None
 
     func = program
+    func_name = t.get_code_bit(func.__name__)
     source = dedent(inspect.getsource(program))
     if cls.auto_translate_program:
-        source = t.translate_code(source)
-        exec(source, func.__globals__)
-        func = func.__globals__[t.get_code_bit(func.__name__)]
-        func = MethodType(func, "")
+        source = t.translate_program(cls, source)
+    else:
+        source = dedent(strip_required_prefix(source, "def program(self):\n")).rstrip()
+        source = t.translate_program(cls, source)
+        source = f"def program(self):\n{indent(source, '    ')}"
+    exec(source, func.__globals__)
+    func = func.__globals__[func_name]
+    func = MethodType(func, "")
 
     lines = source.splitlines()
     if lines[-1].strip().startswith("return "):
@@ -235,7 +240,7 @@ def get_predictions(cls):
         return dict(choices=None, answer=None)
 
     answer = cls.correct_output
-    choices = [t.get(t.prediction_choice(cls, i), choice.rstrip()) for i, choice in enumerate(choices)]
+    choices = [t.get(t.prediction_choice(cls, i), choice.rstrip()).rstrip() for i, choice in enumerate(choices)]
 
     if answer:
         assert answer == "Error"

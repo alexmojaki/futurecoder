@@ -44,7 +44,8 @@ def get(msgid, default):
 
     result = translation.gettext(msgid)
     if result == msgid:
-        assert msgid.startswith("code_bits.") or "output_prediction_choices" in msgid
+        # TODO chapters and special messages should be translated
+        assert msgid.startswith(("code_bits.", "chapters.")) or "output_prediction_choices" in msgid or ".special_messages." in msgid
         return default
 
     def replace(match):

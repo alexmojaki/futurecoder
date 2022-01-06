@@ -686,7 +686,7 @@ Pay attention to your indentations in `alert`. You might be ending a loop too ea
             def solution(self):
                 def alert(string: str, level: int):
                     marks = '!' * level
-                    return f'{marks} {string} {marks}'
+                    return marks + ' ' + string + ' ' + marks
 
                 return alert
 

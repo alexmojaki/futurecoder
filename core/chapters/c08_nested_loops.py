@@ -435,7 +435,8 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
                     left += 1
                     for right in range(12):
                         right += 1
-                        print(f'{left} * {right} = {left * right}')
+                        # workaround while translation is in progress
+                        print(f'{left} x {right} = {left * right}'.replace('x', '*'))
                     print('----------')
 
             tests = {

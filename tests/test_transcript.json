@@ -4214,7 +4214,8 @@
             "    left += 1",
             "    for right in range(12):",
             "        right += 1",
-            "        print(f'{left} * {right} = {left * right}')",
+            "        # workaround while translation is in progress",
+            "        print(f'{left} x {right} = {left * right}'.replace('x', '*'))",
             "    print('----------')"
         ],
         "response": {
@@ -5357,7 +5358,7 @@
         "program": [
             "def alert(string, level):",
             "    marks = '!' * level",
-            "    return f'{marks} {string} {marks}'"
+            "    return marks + ' ' + string + ' ' + marks"
         ],
         "response": {
             "message": "<p>You cannot use string concatenation/formatting/interpolation/multiplication or f-strings in <code>alert</code>.\nYou must call <code>surround</code> to solve the problem.</p>",
