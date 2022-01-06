@@ -95,6 +95,8 @@ def get_code_bits(code):
                 continue
         elif isinstance(node, (ast.FunctionDef, ast.ClassDef, ast.AsyncFunctionDef)):
             for arg in node.args.args:
+                if len(arg.arg) == 1:
+                    continue
                 yield arg, arg.arg
             node_text = node.name
         elif isinstance(node, (ast.Str, ast.JoinedStr)):
