@@ -44,8 +44,7 @@ def get(msgid, default):
 
     result = translation.gettext(msgid)
     if result == msgid:
-        # TODO chapters and special messages should be translated
-        assert msgid.startswith(("code_bits.", "chapters.")) or "output_prediction_choices" in msgid or ".special_messages." in msgid
+        assert msgid.startswith(("code_bits.")) or "output_prediction_choices" in msgid
         return default
 
     def replace(match):
@@ -95,6 +94,8 @@ def get_code_bits(code):
                 continue
         elif isinstance(node, (ast.FunctionDef, ast.ClassDef, ast.AsyncFunctionDef)):
             for arg in node.args.args:
+                if len(arg.arg) == 1:
+                    continue
                 yield arg, arg.arg
             node_text = node.name
         elif isinstance(node, (ast.Str, ast.JoinedStr)):

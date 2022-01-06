@@ -5,7 +5,7 @@
             "'literally anything'"
         ],
         "response": {
-            "message": "<p>Fabuloso, \u00a1est\u00e1s probando tus propios experimentos!\nEs una gran se\u00f1al. Sigue as\u00ed.\nS\u00f3lo te hago saber que al final tienes que escribir <code>1+2</code> para que el libro avance.</p>",
+            "message": "<p>Fabuloso, \u00a1est\u00e1s probando tus propios experimentos!\nEs una gran se\u00f1al. Sigue as\u00ed.\nS\u00f3lo te hago saber que al final tienes que escribir <code>1+2</code> para que la lecci\u00f3n avance.</p>",
             "passed": false,
             "result": [
                 {
@@ -4034,7 +4034,7 @@
         ],
         "page": "f-strings",
         "program": [
-            "gente = ['UQesqvN', 'HwYQXfmKI', 'nOQmWB', 'ARtYrHaPL', 'cYPFNHBt', 'owaUWeiulB', 'cZRrE', 'brHQFoazeJ']",
+            "gente = ['xXHpwj', 'KviHqnTYy', 'UwalMAWd', 'pCldL', 'ILiVG', 'WupPwbGR', 'WsnkbMl', 'lAMDfz']",
             "print(f\"Hay {len(gente)} personas esperando, el nombre de la primera es {gente[0]}.\")"
         ],
         "response": {
@@ -4042,7 +4042,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Hay 8 personas esperando, el nombre de la primera es UQesqvN.\n",
+                    "text": "Hay 8 personas esperando, el nombre de la primera es xXHpwj.\n",
                     "type": "stdout"
                 }
             ]
@@ -4198,7 +4198,7 @@
             "    izquierda += 1",
             "    for derecha in range(12):",
             "        derecha += 1",
-            "        # workaround while translation is in progress",
+            "        # for the sake of translation",
             "        print(f'{izquierda} x {derecha} = {izquierda * derecha}'.replace('x', '*'))",
             "    print('----------')"
         ],
@@ -6581,7 +6581,7 @@
         ],
         "page": "Tipos de Dato",
         "program": [
-            "numero = '9'",
+            "numero = '7'",
             "for i in range(int(numero)):",
             "    print('Comenzando...' + str(i + 1))",
             "print('\u00a1V\u00e9!')"
@@ -6591,7 +6591,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Comenzando...1\nComenzando...2\nComenzando...3\nComenzando...4\nComenzando...5\nComenzando...6\nComenzando...7\nComenzando...8\nComenzando...9\n\u00a1V\u00e9!\n",
+                    "text": "Comenzando...1\nComenzando...2\nComenzando...3\nComenzando...4\nComenzando...5\nComenzando...6\nComenzando...7\n\u00a1V\u00e9!\n",
                     "type": "stdout"
                 }
             ]
@@ -6632,7 +6632,7 @@
     {
         "page": "Programas interactivos con <code>input()</code>",
         "program": [
-            "print('Digita tu nombre y presiona Enter:')",
+            "print('Escribe tu nombre y presiona Enter:')",
             "nombre = input()",
             "print(f'Hola {nombre}!')"
         ],
@@ -6641,7 +6641,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Digita tu nombre y presiona Enter:\n",
+                    "text": "Escribe tu nombre y presiona Enter:\n",
                     "type": "stdout"
                 },
                 {
@@ -6693,7 +6693,7 @@
                     "type": "input_prompt"
                 },
                 {
-                    "text": "<input: 1>\n",
+                    "text": "<input: 4>\n",
                     "type": "stdout"
                 },
                 {
