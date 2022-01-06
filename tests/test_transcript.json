@@ -4347,7 +4347,7 @@
             "    length = size - i",
             "    line = ''",
             "    for _ in range(length):",
-            "        line += 'O'",
+            "        line += '+'",
             "    print(line)"
         ],
         "page": "Introducing Nested Loops",
@@ -4357,7 +4357,7 @@
             "    length = size - i",
             "    line = ''",
             "    for _ in range(length):",
-            "        line += 'O'",
+            "        line += '+'",
             "    print(line)"
         ],
         "response": {
@@ -4365,7 +4365,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "OOO\nOO\nO\n",
+                    "text": "+++\n++\n+\n",
                     "type": "stdout"
                 }
             ]
