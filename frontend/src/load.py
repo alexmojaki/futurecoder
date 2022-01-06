@@ -14,6 +14,12 @@ def load_package_buffer(buffer):
 
     from core.checker import check_entry
     from core.pyodide_helpers import install_imports
+    from core.text import load_chapters
+    from core import translation as t
+
+    # t.set_language("es")
+
+    load_chapters()
 
     return dict(
         check_entry=check_entry,

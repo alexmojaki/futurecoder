@@ -7,9 +7,10 @@ from string import ascii_uppercase
 from textwrap import dedent
 from typing import List
 
+from core import translation as t
 from core.exercises import assert_equal, ExerciseError
 from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
-from core.utils import returns_stdout, shuffled
+from core.utils import returns_stdout, shuffled, wrap_solution
 
 
 def generate_board(board_type):
@@ -1154,6 +1155,8 @@ Go!
 
         disallowed = Disallowed(ast.JoinedStr, label="f-strings")
 
+        translated_tests = True
+
         def solution(self, number: str):
             for i in range(int(number)):
                 print('Starting... ' + str(i + 1))
@@ -1306,6 +1309,8 @@ So to compare a number and a string, first convert the number to a string or con
 You learned how to convert between strings and numbers in the previous page.
 Use `int()` to convert to an integer (whole number) or `str()` to convert to a string.
         """
+
+        translated_tests = True
 
         def solution(self):
             super_secret_number = 7
@@ -1542,8 +1547,10 @@ You can use nested subscripting in one line, or do it in two steps.
         @classmethod
         def wrap_solution(cls, func):
             @returns_stdout
+            @wrap_solution(func)
             def wrapper(**kwargs):
-                board = kwargs["board"] = deepcopy(kwargs["board"])
+                board_name = t.get_code_bit("board")
+                board = kwargs[board_name] = deepcopy(kwargs[board_name])
 
                 def format_board():
                     first_row = ' '
@@ -2009,6 +2016,8 @@ Check the indentation to make sure `print_draw` isn't in the body of the for loo
         @classmethod
         def wrap_solution(cls, func):
             return returns_stdout(func)
+
+        translated_tests = True
 
         tests = [
             (dict(board_size=2, player1="A", player2="B", stdin_input=["1", "1", "1", "2", "2", "1"]),

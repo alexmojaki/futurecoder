@@ -4498,6 +4498,46 @@ msgstr "big_numbers"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority.text
+#. 
+#.     def diagonal_winner(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['X', 'O', 'X'],
+#.                 ['X', 'X', 'O'],
+#.                 ['O', 'O', 'X']
+#.             ]
+#.         ),
+#.         True
+#.     )
+#. 
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['X', 'X', 'O'],
+#.                 ['X', 'O', 'O'],
+#.                 ['O', 'X', 'X']
+#.             ]
+#.         ),
+#.         True
+#.     )
+#. 
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['O', 'X', 'O'],
+#.                 ['X', 'X', 'X'],
+#.                 ['O', 'O', 'X']
+#.             ]
+#.         ),
+#.         False
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.final_text.text
 #. 
 #.         diagonal1 = all_equal([board[0][0], board[1][1], board[2][2]])
@@ -4533,6 +4573,35 @@ msgstr "big_numbers"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner.text
+#. 
+#.     def column_winner(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         column_winner(
+#.             [
+#.                 ['X', 'O', ' '],
+#.                 ['X', 'O', ' '],
+#.                 ['O', 'X', ' ']
+#.             ]
+#.         ),
+#.         False
+#.     )
+#.     assert_equal(
+#.         column_winner(
+#.             [
+#.                 ['X', 'O', ' ', 'X'],
+#.                 [' ', 'O', 'X', 'O'],
+#.                 ['O', 'O', 'X', 'X'],
+#.                 ['O', 'O', 'X', ' ']
+#.             ]
+#.         ),
+#.         True
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 #. 
 #. def diagonal_winner(board):
@@ -4546,6 +4615,35 @@ msgstr "big_numbers"
 #.         if board[i][-i - 1] == ' ' or board[i][-i - 1] != topright:
 #.             all_equal2 = False
 #.     return all_equal1 or all_equal2
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner.text
+#. 
+#.     def diagonal_winner(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['O', 'X', 'O', 'X'],
+#.                 [' ', 'O', 'X', ' '],
+#.                 ['X', 'X', ' ', 'X'],
+#.                 ['X', ' ', 'O', 'O']
+#.             ]
+#.         ),
+#.         True
+#.     )
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['X', 'X', ' '],
+#.                 ['X', ' ', 'O'],
+#.                 [' ', 'O', 'O']
+#.             ]
+#.         ),
+#.         False
+#.     )
 #. 
 #. ------
 #. 
@@ -4594,6 +4692,35 @@ msgstr "big_numbers"
 #.         ['O', ' ', ' '],
 #.         [' ', 'X', 'O']
 #.     ]
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner.text
+#. 
+#.     def row_winner(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         row_winner(
+#.             [
+#.                 ['A', 'A', 'B', 'A'],
+#.                 [' ', ' ', ' ', ' '],
+#.                 ['A', ' ', ' ', 'A'],
+#.                 ['B', ' ', 'B', 'A']
+#.             ]
+#.         ),
+#.         False
+#.     )
+#.     assert_equal(
+#.         row_winner(
+#.             [
+#.                 ['X', ' ', 'X'],
+#.                 ['O', 'X', 'X'],
+#.                 ['O', 'O', 'O']
+#.             ]
+#.         ),
+#.         True
+#.     )
 #. 
 #. ------
 #. 
@@ -4940,6 +5067,22 @@ msgstr "big_numbers"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.text
 #. 
 #.     def format_board(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         format_board([
+#.             ['X', 'O', 'X'],
+#.             ['O', ' ', ' '],
+#.             [' ', 'X', 'O']
+#.         ]),
+#.         'X|O|X\n-+-+-\nO| | \n-+-+-\n |X|O'
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.text
+#. 
+#.     def format_board(board):
 #.         joined_rows = []
 #.         for row in board:
 #.             joined_rows.append("".join(row))
@@ -4970,6 +5113,32 @@ msgstr "big_numbers"
 #.         if i != len(board) - 1:
 #.             result += '\n'
 #.     return result
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple.text
+#. 
+#.     def format_board(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         format_board([
+#.             ['X', 'O', 'X'],
+#.             ['O', ' ', ' '],
+#.             [' ', 'X', 'O']
+#.         ]),
+#.         'XOX\nO  \n XO'
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.invalid_multi_line_string.text
+#. 
+#.     def format_board(board):
+#.         ...
+#.         return ...
+#. 
+#.     assert_equal(format_board([...]), "...")
 #. 
 #. ------
 #. 
@@ -5118,6 +5287,22 @@ msgstr "big_numbers"
 #.         joined_row = str(i + 1) + ''.join(board[i])
 #.         joined_rows.append(joined_row)
 #.     return "\n".join(joined_rows)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers.text
+#. 
+#.     def format_board(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         format_board([
+#.             ['X', 'O', 'X'],
+#.             ['O', ' ', ' '],
+#.             [' ', 'X', 'O']
+#.         ]),
+#.         ' 123\n1XOX\n2O  \n3 XO'
+#.     )
 msgid "code_bits.board"
 msgstr "board"
 
@@ -9712,6 +9897,12 @@ msgstr "letters"
 #.     for _ in range(level):
 #.         string = surround(string, '!')
 #.     return string
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise.text
+#. 
+#.     def alert(string, level):
 msgid "code_bits.level"
 msgstr "level"
 
@@ -10508,6 +10699,84 @@ msgstr "meal"
 msgid "code_bits.middle"
 msgstr "middle"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.print_twice_call_print_many
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. def print_twice(x):
+#.     print_many(2, x)
+#. 
+#. print_twice("Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_birdseye
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. def print_twice(x):
+#.     print_many(2, x)
+#. 
+#. print_twice("Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_pythontutor
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. def print_twice(x):
+#.     print_many(2, x)
+#. 
+#. print_twice("Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_snoop
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. def print_twice(x):
+#.     print_many(2, x)
+#. 
+#. print_twice("Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_many
+#. 
+#. def print_many(thing, n):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. print_many("Hello", 3)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. print_many(3, "Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters.text
+#. 
+#.     def print_many(n, thing):
+msgid "code_bits.n"
+msgstr "n"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_1
 #. 
 #. name = 'World'
@@ -10643,6 +10912,17 @@ msgstr "middle"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
+#. 
+#. def say_hello(name):
+#.     print(f"Hello {name}!")
+#.     print("How are you?")
+#. 
+#. say_hello("Alice")
+#. say_hello("Bob")
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name.text
 #. 
 #.     name = "Alice"
@@ -10652,6 +10932,35 @@ msgstr "middle"
 #.     name = "Bob"
 #.     print(f"Hello {name}!")
 #.     print("How are you?")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.define_greet
+#. 
+#. def greet(name):
+#.     print(f"Hello {name}!")
+#. 
+#. greet("Alice")
+#. greet("Bob")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.how_are_you
+#. 
+#. def greet(name):
+#.     print(f"Hello {name}!")
+#.     print("How are you?")
+#. 
+#. greet("Alice")
+#. greet("Bob")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.how_are_you.text
+#. 
+#.     def greet(name):
+#.         print(f"Hello {name}!")
+#.         print("How are you?")
 #. 
 #. ------
 #. 
@@ -11684,6 +11993,17 @@ msgstr "people"
 msgid "code_bits.percentage"
 msgstr "percentage"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
+#. 
+#. def say_hello(person_name):
+#.     print(f"Hello {person_name}!")
+#.     print("How are you?")
+#. 
+#. say_hello("Alice")
+#. say_hello("Bob")
+msgid "code_bits.person_name"
+msgstr "person_name"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner
 #. 
 #. def column_winner(board):
@@ -12232,6 +12552,39 @@ msgstr "play_move"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input.text
 #. 
 #.     board[1][0] = player
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input.text
+#. 
+#.     def format_board(board):
+#.         first_row = ' '
+#.         for i in range(len(board)):
+#.             first_row += str(i + 1)
+#.         joined_rows = [first_row]
+#.         for i in range(len(board)):
+#.             joined_row = str(i + 1) + ''.join(board[i])
+#.             joined_rows.append(joined_row)
+#.         return "\n".join(joined_rows)
+#. 
+#.     def play_game():
+#.         board = [
+#.             [' ', ' ', ' '],
+#.             [' ', ' ', ' '],
+#.             [' ', ' ', ' '],
+#.         ]
+#.         print(format_board(board))
+#.         print('\nX to play:\n')
+#.         play_move(board, 'X')
+#.         print(format_board(board))
+#.         print('\nO to play:\n')
+#.         play_move(board, 'O')
+#.         print(format_board(board))
+#. 
+#.     def play_move(board, player):
+#.         ...
+#. 
+#.     play_game()
 #. 
 #. ------
 #. 
@@ -13205,6 +13558,17 @@ msgstr "right"
 #. 
 #. def all_equal(row):
 #.     return row[0] == row[1] and row[0] == row[2]
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow.text
+#. 
+#.     def all_equal(row):
+#.         ...
+#. 
+#.     assert_equal(all_equal(["X", "X", "X"]), True)
+#.     assert_equal(all_equal(["O", "O", "O"]), True)
+#.     assert_equal(all_equal(["X", "O", "X"]), False)
 #. 
 #. ------
 #. 
@@ -14377,6 +14741,12 @@ msgstr "separator"
 #. 
 #. def surround(string, sides):
 #.     return sides + string + sides
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise.text
+#. 
+#.     def surround(string, sides):
 msgid "code_bits.sides"
 msgstr "sides"
 
@@ -14816,10 +15186,22 @@ msgstr "spaces"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise.text
+#. 
+#.     def alert(string, level):
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise
 #. 
 #. def surround(string, sides):
 #.     return sides + string + sides
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise.text
+#. 
+#.     def surround(string, sides):
 msgid "code_bits.string"
 msgstr "string"
 
@@ -15611,6 +15993,12 @@ msgstr "test"
 #.         print(thing)
 #. 
 #. print_many(3, "Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters.text
+#. 
+#.     def print_many(n, thing):
 #. 
 #. ------
 #. 
@@ -16696,6 +17084,217 @@ msgstr "word"
 #. print(total)
 msgid "code_bits.words"
 msgstr "words"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.print_twice_call_print_many
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. def print_twice(x):
+#.     print_many(2, x)
+#. 
+#. print_twice("Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_birdseye
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. def print_twice(x):
+#.     print_many(2, x)
+#. 
+#. print_twice("Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_pythontutor
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. def print_twice(x):
+#.     print_many(2, x)
+#. 
+#. print_twice("Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_snoop
+#. 
+#. def print_many(n, thing):
+#.     for _ in range(n):
+#.         print(thing)
+#. 
+#. def print_twice(x):
+#.     print_many(2, x)
+#. 
+#. print_twice("Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
+#. 
+#. def print_twice(x):
+#.     print(x)
+#.     print(x)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise
+#. 
+#. def is_valid_percentage(x):
+#.     if 0 <= x and x <= 100:
+#.         return True
+#.     else:
+#.         return False
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise.text
+#. 
+#.     def is_valid_percentage(x):
+#.         if x < 0 or x > 100:
+#.             return False
+#.         else:
+#.             return True
+#. 
+#.     assert_equal(is_valid_percentage(-1), False)
+#.     assert_equal(is_valid_percentage(0), True)
+#.     assert_equal(is_valid_percentage(50), True)
+#.     assert_equal(is_valid_percentage(100), True)
+#.     assert_equal(is_valid_percentage(101), False)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow.text
+#. 
+#.     def is_valid_percentage(x):
+#.         if 0 <= x and x <= 100:
+#.             return True
+#.         else:
+#.             return False
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow.text
+#. 
+#.     def is_valid_percentage(x):
+#.         return 0 <= x <= 100
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow.text
+#. 
+#.     def is_valid_percentage(x):
+#.         return 0 <= x and x <= 100
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
+#. 
+#. def is_valid_percentage(x):
+#.     if x < 0 or x > 100:
+#.         return False
+#.     else:
+#.         return True
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.final_text.text
+#. 
+#.     def quadruple(x):
+#.         x = double(x)
+#.         x = double(x)
+#.         return x
+#. 
+#.     def quadruple(x):
+#.         return double(double(x))
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.first_return
+#. 
+#. def double(x):
+#.     return x * 2
+#. 
+#. number = 5
+#. twice = double(number)
+#. print(number)
+#. print(twice)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.losing_return_value
+#. 
+#. def double(x):
+#.     return x * 2
+#. 
+#. number = 5
+#. double(number)
+#. print(number)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
+#. 
+#. def double(x):
+#.     return x * 2
+#. 
+#. def quadruple(x):
+#.     return double(double(x))
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.complete_quadruple_tests
+#. 
+#. def double(x):
+#.     return x * 2
+#. 
+#. def quadruple(x):
+#.     return double(double(x))
+#. 
+#. assert_equal(quadruple(2), 8)
+#. assert_equal(quadruple(5), 20)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.complete_quadruple_tests.text
+#. 
+#.     def double(x):
+#.         return x * 2
+#. 
+#.     def quadruple(x):
+#.         return double(double(x))
+#. 
+#.     assert_equal(quadruple(2))
+#.     assert_equal(quadruple(5))
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
+#. 
+#. def double(x):
+#.     return x * 2
+#. 
+#. assert_equal(double(2), 4)
+#. assert_equal(double(5), 10)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
+#. 
+#. def double(x):
+#.     return x * 3
+#. 
+#. assert_equal(double(2), 4)
+#. assert_equal(double(5), 10)
+msgid "code_bits.x"
+msgstr "x"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
 #. 
@@ -18494,6 +19093,8 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22Hello+%7Bname%7D%21%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.greet
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.DefiningFunctions.steps.how_are_you.text"
 msgstr ""
 "A function definition is a compound statement. Like `if` and `for`, it has a header line followed by an indented body\n"
@@ -18648,6 +19249,8 @@ msgstr "We still want `thing = \"Hello\"` and `n = 3`."
 #.     def print_many(n, thing):
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Hello%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.n
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.print_many
 #. 
@@ -20132,6 +20735,8 @@ msgstr "You will have to change the comparison operators too."
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x
 msgid "pages.IntroducingAnd.steps.AndExercise.text"
 msgstr ""
 "Let's practice now. Previously we wrote a function `is_valid_percentage` using `or`. Here's an example\n"
@@ -20215,6 +20820,10 @@ msgstr "That means the first element should be equal to the second element and a
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.text"
 msgstr ""
 "Awesome! Here's one possible solution:\n"
@@ -22663,6 +23272,8 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.text"
 msgstr ""
@@ -23974,7 +24585,7 @@ msgstr ""
 #. https://futurecoder.io/course/#ModifyingWhileIterating
 msgid "pages.ModifyingWhileIterating.steps.make_copy2.text"
 msgstr ""
-"Now the list being modified and the list being itererated over are separate objects, even if they start out with equal contents.\n"
+"Now the list being modified and the list being iterated over are separate objects, even if they start out with equal contents.\n"
 "\n"
 "Similarly, you could loop over the original and modify a copy:\n"
 "\n"
@@ -25020,6 +25631,8 @@ msgstr "Then check if you are at the last index or not."
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.text"
 msgstr ""
@@ -25078,6 +25691,8 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 #. 
@@ -25363,6 +25978,8 @@ msgstr "Other Comparison Operators"
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.double
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quadruple
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x
 msgid "pages.ReturningValuesFromFunctions.steps.final_text.text"
 msgstr ""
 "Well done! Here are two possible solutions:\n"
@@ -25925,6 +26542,10 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.alert
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.level
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
 msgid "pages.TestingFunctions.steps.alert_exercise.text"
 msgstr ""
 "Perfect! Now write a function `alert` that passes these tests:\n"
@@ -25952,6 +26573,8 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.double
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quadruple
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x
 msgid "pages.TestingFunctions.steps.complete_quadruple_tests.text"
 msgstr ""
 "Excellent! Our tests failed! Of course that's not usually a good thing, but it tells us that the tests are\n"
@@ -26057,6 +26680,10 @@ msgstr "Make sure that you don't call `surround` inside the function body of `su
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22the+same%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sides
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.surround
 msgid "pages.TestingFunctions.steps.surround_exercise.text"
@@ -26669,6 +27296,8 @@ msgstr "Add each row's string to the list, then join the list with a newline cha
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27+123%5Cn1XOX%5Cn2O++%5Cn3+XO%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 msgid "pages.Types.steps.format_board_with_numbers.text"

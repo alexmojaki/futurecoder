@@ -8,13 +8,14 @@ from littleutils import only
 import core.utils
 from core import translation as t
 from core.checker import check_entry, runner
-from core.text import step_test_entries, get_predictions
+from core.text import step_test_entries, get_predictions, load_chapters
 from core.utils import highlighted_markdown, make_test_input_callback
 
 core.utils.TESTING = True
 
 def test_steps():
     t.set_language("en")
+    list(load_chapters())
     runner.reset()
     transcript = []
     for page, step, substep, entry in step_test_entries():

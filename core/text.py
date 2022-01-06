@@ -19,8 +19,10 @@ from typing import Union, List, get_type_hints
 
 import pygments
 from astcheck import is_ast_like
+from asttokens import ASTTokens
 from littleutils import setattrs, only, select_attrs
 
+from core import translation as t
 from core.exercises import (
     check_result,
     generate_for_type,
@@ -33,7 +35,6 @@ from core.exercises import (
 )
 from core.linting import lint
 from core.runner.utils import is_valid_syntax
-from core import translation as t
 from core.utils import (
     highlighted_markdown,
     lexer,
@@ -49,54 +50,79 @@ from core.utils import (
 
 
 def clean_program(program, cls):
+    if not callable(program):
+        no_weird_whitespace(program)
+        program = program.strip()
+        if not is_valid_syntax(program):
+            cls.auto_translate_program = False
+
+        program = t.translate_program(cls, program)
+        no_weird_whitespace(program)
+        cls.show_solution_program = program = program.strip()
+        return program, None
+
     func = program
+    source = dedent(inspect.getsource(program))
+    if cls.auto_translate_program:
+        source = t.translate_code(source)
+        exec(source, func.__globals__)
+        func = func.__globals__[t.get_code_bit(func.__name__)]
+        func = MethodType(func, "")
 
-    if callable(program):
-        source = dedent(inspect.getsource(program))
-        lines = source.splitlines()
-        if lines[-1].strip().startswith("return "):
-            func = func()
-            assert lines[0] == "def solution(self):"
-            assert lines[-1] == f"    return {func.__name__}"
-            source = dedent("\n".join(lines[1:-1]))
-            program = clean_solution_function(func, source)
-        else:
-            tree = ast.parse(source)
-            func_node = tree.body[0]
-            assert isinstance(func_node, ast.FunctionDef)
-            lines = lines[func_node.body[0].lineno - 1 :]
-            if hasattr(cls, "test_values"):
-                inputs = list(cls.test_values())[0][0]
-                cls.stdin_input = inputs.pop("stdin_input", [])
-            else:
-                inputs = {}
-            inputs = inputs_string(inputs)
-            program = inputs + '\n' + dedent('\n'.join(lines))
-        compile(program, "<program>", "exec")  # check validity
-
-        func = NoMethodWrapper(func)
+    lines = source.splitlines()
+    if lines[-1].strip().startswith("return "):
+        func = func()
         func = add_stdin_input_arg(func)
 
-        if not any(
-            isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))
-        ) and not getattr(cls, "no_returns_stdout", False):
-            func = returns_stdout(func)
+        assert lines[0] == f"def {t.get_code_bit('solution')}(self):"
+        assert lines[-1] == f"    return {func.__name__}"
+        source = dedent("\n".join(lines[1:-1]))
+        program = clean_solution_function(func, source)
+        atok = ASTTokens(source, parse=1)
+        func_node = only(
+            node
+            for node in atok.tree.body
+            if isinstance(node, ast.FunctionDef) and node.name == func.__name__
+        )
+        cls.show_solution_program = clean_solution_function(
+            func, atok.get_text(func_node)
+        )
+    else:
+        func = add_stdin_input_arg(func)
+
+        tree = ast.parse(source)
+        func_node = tree.body[0]
+        assert isinstance(func_node, ast.FunctionDef)
+        lines = lines[func_node.body[0].lineno - 1 :]
+        cls.show_solution_program = program = dedent("\n".join(lines))
+        if hasattr(cls, "test_values"):
+            cls.solution = func
+            [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
+            cls.stdin_input = inputs.pop("stdin_input", [])
+            inputs = inputs_string(inputs)
+            program = inputs + "\n" + program
+    compile(program, "<program>", "exec")  # check validity
+
+    func = NoMethodWrapper(func)
+
+    if not any(
+        isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))
+    ) and not getattr(cls, "no_returns_stdout", False):
+        func = returns_stdout(func)
 
     no_weird_whitespace(program)
     return program.strip(), func
 
 
 def basic_signature(func):
-    params = [t.get_code_bit(p) for p in inspect.signature(func).parameters]
-    joined = ", ".join(params)
+    joined = ", ".join(inspect.signature(func).parameters)
     return f'({joined})'
 
 
 def clean_solution_function(func, source):
-    name = t.get_code_bit(func.__name__)
     return re.sub(
-        rf"def {name}\(.+?\):",
-        rf"def {name}{basic_signature(func)}:",
+        rf"def {func.__name__}\(.+?\):",
+        rf"def {func.__name__}{basic_signature(func)}:",
         source,
     )
 
@@ -119,23 +145,20 @@ def clean_step_class(cls):
     text = dedent(text).strip()
     assert text
     no_weird_whitespace(text)
-    cls.raw_text = t.get(cls.text_msgid, text)
+    cls.raw_text = text = t.get(cls.text_msgid, text)
 
     if solution:
         assert cls.tests
         assert cls.auto_translate_program
         cls.solution = MethodType(solution, "")
         program, cls.solution = clean_program(cls.solution, cls)  # noqa
+        cls.solution = cls.wrap_solution(cls.solution)
+        if not issubclass(cls, MessageStep) or cls.after_success:
+            cls.test_exercise(cls.solution, cls.test_values())
     else:
         program, _ = clean_program(program, cls)
-        if not is_valid_syntax(program):
-            cls.auto_translate_program = False
 
     assert program
-    if cls.auto_translate_program:
-        program = t.translate_code(program)
-    else:
-        program = t.get(t.step_program(cls), program)
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
@@ -171,6 +194,7 @@ def clean_step_class(cls):
         assert issubclass(inner_cls, MessageStep)
 
         inner_cls.tests = inner_cls.tests or cls.tests
+        inner_cls.generate_inputs = getattr(cls, "generate_inputs", None)
         inner_cls.page = cls.page
         inner_cls.text_msgid = t.message_step_text(cls, inner_cls)
         clean_step_class(inner_cls)
@@ -233,16 +257,7 @@ def get_stdout(program):
 
 
 def get_solution(step):
-    if issubclass(step, ExerciseStep):
-        if step.solution.__name__ == "solution":
-            program, _ = clean_program(step.solution, None)  # noqa
-        else:
-            program = clean_solution_function(step.solution, dedent(inspect.getsource(step.solution)))
-    else:
-        program = step.program
-
-    program = t.translate_code(program)
-
+    program = step.show_solution_program
     untokenizer = Untokenizer()
     tokens = generate_tokens(StringIO(program).readline)
     untokenizer.untokenize(tokens)
@@ -417,6 +432,7 @@ class Step(ABC):
     correct_output = None
     translate_output_choices = True
     auto_translate_program = True
+    translated_tests = False
     page = None
 
     class special_messages:
@@ -496,9 +512,10 @@ class Step(ABC):
         # noinspection PyUnresolvedReferences
         function_name = self.solution.__name__
 
-        if function_name == "solution":
+        if function_name == "solution":  # TODO
             raise ValueError("This exercise doesn't require defining a function")
 
+        function_name = t.get_code_bit(function_name)
         return only(
             node
             for node in ast.walk(self.tree)
@@ -514,10 +531,9 @@ class ExerciseStep(Step):
 
         function_name = self.solution.__name__
 
-        if function_name == "solution":
+        if function_name == "solution":  # TODO
             return self.check_exercise(self.input, functionise=True)
         else:
-            function_name = t.get_code_bit(function_name)
             if function_name not in self.console.locals:
                 return dict(message=f"You must define a function `{function_name}`")
 
@@ -545,10 +561,7 @@ class ExerciseStep(Step):
 
     @classmethod
     def check_exercise(cls, submission, functionise=False):
-        solution = cls.wrap_solution(cls.solution)
-        cls.test_exercise(solution, cls.test_values())
-        inputs = [cls.generate_inputs() for _ in range(10)]
-        expected_generated_results = [solution(**inp) for inp in inputs]
+        solution = cls.solution
 
         if functionise:
             try:
@@ -580,12 +593,7 @@ class ExerciseStep(Step):
             func = cls._patch_streams(submission)
 
         try:
-            cls.test_exercise(
-                func,
-                itertools.chain(
-                    cls.test_values(), zip(inputs, expected_generated_results)
-                ),
-            )
+            cls.test_exercise(func, cls.test_values())
         except ExerciseError as e:
             return dict(message=str(e))
 
@@ -605,9 +613,14 @@ class ExerciseStep(Step):
 
     @classmethod
     def test_values(cls):
-        tests = cls.tests
+        if cls.translated_tests and t.current_language not in (None, "en"):
+            tests = []
+        else:
+            tests = cls.tests
+
         if isinstance(tests, dict):
             tests = tests.items()
+
         for inputs, result in tests:
             if not isinstance(inputs, dict):
                 if not isinstance(inputs, tuple):
@@ -616,6 +629,13 @@ class ExerciseStep(Step):
                 assert len(arg_names) == len(inputs)
                 inputs = dict(zip(arg_names, inputs))
             inputs = deepcopy(inputs)
+            inputs = t.translate_dict_keys(inputs)
+            yield inputs, result
+
+        for _ in range(10):
+            inputs = cls.generate_inputs()
+            inputs = t.translate_dict_keys(inputs)
+            result = cls.solution(**inputs)
             yield inputs, result
 
     @classmethod
@@ -707,9 +727,6 @@ def load_chapters():
             if page.__module__ == full_module_name
         ]
         yield dict(slug=slug, title=title, pages=chapter_pages)
-
-
-chapters = list(load_chapters())
 
 
 @cache

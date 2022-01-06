@@ -643,7 +643,7 @@ Make sure that you don't call `alert` inside the function body of `alert`. Check
 
             return alert
 
-        class catch_return_inside_loop(MessageStep):
+        class catch_return_inside_loop(MessageStep, ExerciseStep):
             """
 In the `alert` function, you placed your `return` statement at the wrong place!
 Pay attention to your indentations in `alert`. You might be ending a loop too early with `return`.

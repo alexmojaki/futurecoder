@@ -54,7 +54,7 @@ def get(msgid, default):
         code = code_block["code"]
         suffix_length = len(code) - code_block["code_text_length"]
         translated = translate_code(code)[:-suffix_length]
-        return indent(translated, "    ")
+        return indent(translated, "    " + code_block["prefix"])
 
     result = re.sub(r"__code(\d+)__", replace, result)
     assert result
@@ -74,6 +74,13 @@ def translate_code(code):
     return asttokens.util.replace(code, replacements)
 
 
+def translate_program(cls, program):
+    if cls.auto_translate_program:
+        return translate_code(program)
+    else:
+        return get(step_program(cls), program)
+
+
 def get_code_bits(code):
     atok = ASTTokens(code, parse=1)
 
@@ -86,6 +93,8 @@ def get_code_bits(code):
             if node_text in builtins.__dict__ or len(node_text) == 1:
                 continue
         elif isinstance(node, (ast.FunctionDef, ast.ClassDef, ast.AsyncFunctionDef)):
+            for arg in node.args.args:
+                yield arg, arg.arg
             node_text = node.name
         elif isinstance(node, (ast.Str, ast.JoinedStr)):
             node_text = atok.get_text(node)
@@ -97,6 +106,10 @@ def get_code_bits(code):
             continue
 
         yield node, node_text
+
+
+def translate_dict_keys(d):
+    return {get_code_bit(k): v for k, v in d.items()}
 
 
 def chapter_title(chapter_slug):

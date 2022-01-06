@@ -10,7 +10,7 @@ from polib import POEntry, POFile
 
 from core import linting
 from core import translation as t
-from core.text import pages, get_predictions, chapters, get_special_messages
+from core.text import pages, get_predictions, get_special_messages, load_chapters
 from core.utils import markdown_codes
 
 code_blocks = defaultdict(dict)
@@ -35,6 +35,7 @@ def entry(msgid, msgstr, comment=""):
 
 
 def main():
+    chapters = list(load_chapters())
     global page_link
     for page_slug, page in pages.items():
         page_link = "https://futurecoder.io/course/#" + page_slug
@@ -112,9 +113,14 @@ def text_entry(msgid, text, comments=()):
         key=lambda it: -len(it[1][0]),
     ):
         code_text = code_text.rstrip()
+        dedented = dedent(code_text)
         code = group[0]["code"]
-        assert code.startswith(dedent(code_text))
-        code_blocks[msgid][i] = dict(code=code, code_text_length=len(dedent(code_text)))
+        assert code.startswith(dedented)
+        code_blocks[msgid][i] = dict(
+            code=code,
+            code_text_length=len(dedented),
+            prefix=code_text[: code_text.splitlines()[0].index(dedented.splitlines()[0])],
+        )
 
         code_text = indent(code_text, "    ")
         assert code_text in text
