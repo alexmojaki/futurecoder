@@ -9722,7 +9722,7 @@ msgstr "left"
 #.     length = size - i
 #.     line = ''
 #.     for _ in range(length):
-#.         line += 'O'
+#.         line += '+'
 #.     print(line)
 #. 
 #. ------
@@ -10024,7 +10024,7 @@ msgstr "level"
 #.     length = size - i
 #.     line = ''
 #.     for _ in range(length):
-#.         line += 'O'
+#.         line += '+'
 #.     print(line)
 #. 
 #. ------
@@ -14757,7 +14757,7 @@ msgstr "sides"
 #.     length = size - i
 #.     line = ''
 #.     for _ in range(length):
-#.         line += 'O'
+#.         line += '+'
 #.     print(line)
 #. 
 #. ------
@@ -22446,7 +22446,8 @@ msgstr "How would you describe instructions to type in this triangle manually?"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.1.text"
 msgstr ""
-"Print a line of `size` Os, then `size - 1` Os, etc. down to 1 O. For example print 5 Os, then 4 Os, then 3, 2, and 1."
+"Print a line of `size` plus signs, then `size - 1` plus signs, etc. down to 1 plus sign. For example print 5 `+`s, "
+"then 4 `+`s, then 3, 2, and 1."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -22458,7 +22459,7 @@ msgstr "Break this down into subproblems."
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.3.text"
-msgstr "How do you print one line of Os of a given length, and how do you go through all the lengths?"
+msgstr "How do you print one line of `+`s of a given length, and how do you go through all the lengths?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -22509,14 +22510,13 @@ msgstr ""
 "\n"
 "__code0__\n"
 "\n"
-"Print out an 'upside down' triangle made of the letter `O` whose sides are as long as the given size, e.g:\n"
+"Print out an 'upside down' triangle made of the plus sign `+` whose sides are as long as the given size, e.g:\n"
 "\n"
-"    __no_auto_translate__\n"
-"    OOOOO\n"
-"    OOOO\n"
-"    OOO\n"
-"    OO\n"
-"    O"
+"    +++++\n"
+"    ++++\n"
+"    +++\n"
+"    ++\n"
+"    +"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 msgid "pages.IntroducingNestedLoops.title"

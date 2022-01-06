@@ -976,7 +976,6 @@ One more exercise. Given a size:
 
 Print out an 'upside down' triangle made of the plus sign `+` whose sides are as long as the given size, e.g:
 
-    __no_auto_translate__
     +++++
     ++++
     +++
