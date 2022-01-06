@@ -19,7 +19,7 @@ def load_package_buffer(buffer):
 
     # t.set_language("es")
 
-    load_chapters()
+    list(load_chapters())
 
     return dict(
         check_entry=check_entry,
