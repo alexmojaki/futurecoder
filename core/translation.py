@@ -167,7 +167,8 @@ def get_code_bit(node_text):
     node1 = ast.parse(node_text).body[0].value
     node2 = ast.parse(result).body[0].value
     try:
-        assert type(node1) == type(node2) in (ast.Name, ast.Constant, ast.JoinedStr)
+        assert type(node1) == type(node2)
+        assert isinstance(node1, (ast.Name, ast.Str, ast.JoinedStr))
         for quote in ['"', "'"]:
             assert result.startswith(quote) == node_text.startswith(quote)
             assert result.endswith(quote) == node_text.endswith(quote)
