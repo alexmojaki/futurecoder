@@ -17373,7 +17373,7 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_1
 msgid "pages.BasicForLoopExercises.steps.loop_exercise_1.hints.0.text"
-msgstr "You should only use one print, since each print outputs on a different line."
+msgstr "You should only use one `print`, since each print outputs on a different line."
 
 #. https://futurecoder.io/course/#BasicForLoopExercises
 #. 
@@ -19072,8 +19072,8 @@ msgstr ""
 "\n"
 "- **`append`**: Add an element to the end of the list. `nums.append(4)` changes the list to `[1, 2, 3, 4]`.\n"
 "- **`len`**: Returns the number of elements. `len(nums)` is `3`.\n"
-"- **`range`**: `range(n)` is an object similar to the list of numbers from 0 to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.\n"
-"- **`subscripting`**: Get a value at an index. `nums[0]` is 1, `nums[1]` is 2, `nums[2]` is 3.\n"
+"- **`range`**: `range(n)` is an object similar to the list of numbers from `0` to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.\n"
+"- **`[]` (subscripting/indexing)**: Get a value at an index. `nums[0]` is `1`, `nums[1]` is `2`, `nums[2]` is `3`.\n"
 "- **`+`**: Concatenates lists. `nums + [4, 5]` is `[1, 2, 3, 4, 5]`.\n"
 "\n"
 "Note that `nums.append(4)` modifies the existing list `nums`, while `nums + [4, 5]` does not.\n"
@@ -26183,7 +26183,7 @@ msgstr "You're not allowed to combine several exclamation marks into one string,
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.5.text"
-msgstr "That is, call surround once for each pair of exclamation marks."
+msgstr "That is, call `surround` once for each pair of exclamation marks."
 
 #. https://futurecoder.io/course/#TestingFunctions
 #. 

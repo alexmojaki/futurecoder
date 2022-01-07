@@ -4,12 +4,15 @@ import ast
 import builtins
 import gettext
 import json
+import os
 import re
 from pathlib import Path
 from textwrap import indent
 
 import asttokens.util
 from asttokens import ASTTokens
+
+from core.runner.utils import is_valid_syntax
 
 translation: gettext.GNUTranslations | None = None
 current_language = None
@@ -46,6 +49,15 @@ def get(msgid, default):
     if result == msgid:
         assert msgid.startswith(("code_bits.")) or "output_prediction_choices" in msgid
         return default
+
+    if os.environ.get("CHECK_INLINE_CODES"):
+        inline1 = {translate_code(c) for c in inline_codes(default)}
+        inline2 = inline_codes(result)
+        if inline1 != inline2:
+            print(msgid)
+            print(sorted(inline1))
+            print(sorted(inline2))
+            print()
 
     def replace(match):
         block_num = match[1]
@@ -193,6 +205,10 @@ def fstring_parts(node, source):
         for part in node.values
         if isinstance(part, ast.FormattedValue)
     }
+
+
+def inline_codes(text):
+    return {c for c in re.findall(r"`(.+?)`", text) if is_valid_syntax(c)}
 
 
 def pyflakes_message(message_cls):
