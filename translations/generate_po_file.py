@@ -96,6 +96,9 @@ def main():
         "Special choice at the end of all output prediction multiple choice questions",
     )
 
+    for key, value in t.misc_terms():
+        entry(t.misc_term(key), value)
+
     po.sort(key=lambda e: e.msgid)
     po.save(str(Path(__file__).parent / "english.po"))
     po.save_as_mofile(str(Path(__file__).parent / "locales/en/LC_MESSAGES/futurecoder.mo"))

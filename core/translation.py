@@ -37,6 +37,8 @@ def set_language(language):
         str(root_path / "locales"),
         languages=[language],
     )
+    for key, value in misc_terms():
+        setattr(Terms, key, get(misc_term(key), value))
 
 
 def get(msgid, default):
@@ -47,7 +49,8 @@ def get(msgid, default):
 
     result = translation.gettext(msgid)
     if result == msgid:
-        assert msgid.startswith(("code_bits.")) or "output_prediction_choices" in msgid
+        # TODO remove misc_terms
+        assert msgid.startswith(("code_bits.", "misc_terms.")) or "output_prediction_choices" in msgid
         return default
 
     if os.environ.get("CHECK_INLINE_CODES"):
@@ -347,3 +350,15 @@ to the top of your code."""
     internal_error = "Internal error"
 
     syntax_error_at_line = "at line"
+
+
+def misc_term(key):
+    return f"misc_terms.{key}"
+
+
+def misc_terms():
+    for key, value in Terms.__dict__.items():
+        if key.startswith("_"):
+            continue
+        assert isinstance(value, str)
+        yield key, value
