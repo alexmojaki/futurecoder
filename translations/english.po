@@ -10699,84 +10699,6 @@ msgstr "meal"
 msgid "code_bits.middle"
 msgstr "middle"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.print_twice_call_print_many
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. def print_twice(x):
-#.     print_many(2, x)
-#. 
-#. print_twice("Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_birdseye
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. def print_twice(x):
-#.     print_many(2, x)
-#. 
-#. print_twice("Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_pythontutor
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. def print_twice(x):
-#.     print_many(2, x)
-#. 
-#. print_twice("Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_snoop
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. def print_twice(x):
-#.     print_many(2, x)
-#. 
-#. print_twice("Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_many
-#. 
-#. def print_many(thing, n):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. print_many("Hello", 3)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. print_many(3, "Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters.text
-#. 
-#.     def print_many(n, thing):
-msgid "code_bits.n"
-msgstr "n"
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_1
 #. 
 #. name = 'World'
@@ -17085,217 +17007,6 @@ msgstr "word"
 msgid "code_bits.words"
 msgstr "words"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.print_twice_call_print_many
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. def print_twice(x):
-#.     print_many(2, x)
-#. 
-#. print_twice("Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_birdseye
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. def print_twice(x):
-#.     print_many(2, x)
-#. 
-#. print_twice("Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_pythontutor
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. def print_twice(x):
-#.     print_many(2, x)
-#. 
-#. print_twice("Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CallingFunctionsWithinFunctions.steps.see_stack_in_snoop
-#. 
-#. def print_many(n, thing):
-#.     for _ in range(n):
-#.         print(thing)
-#. 
-#. def print_twice(x):
-#.     print_many(2, x)
-#. 
-#. print_twice("Hello")
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
-#. 
-#. def print_twice(x):
-#.     print(x)
-#.     print(x)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise
-#. 
-#. def is_valid_percentage(x):
-#.     if 0 <= x and x <= 100:
-#.         return True
-#.     else:
-#.         return False
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.AndExercise.text
-#. 
-#.     def is_valid_percentage(x):
-#.         if x < 0 or x > 100:
-#.             return False
-#.         else:
-#.             return True
-#. 
-#.     assert_equal(is_valid_percentage(-1), False)
-#.     assert_equal(is_valid_percentage(0), True)
-#.     assert_equal(is_valid_percentage(50), True)
-#.     assert_equal(is_valid_percentage(100), True)
-#.     assert_equal(is_valid_percentage(101), False)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow.text
-#. 
-#.     def is_valid_percentage(x):
-#.         if 0 <= x and x <= 100:
-#.             return True
-#.         else:
-#.             return False
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow.text
-#. 
-#.     def is_valid_percentage(x):
-#.         return 0 <= x <= 100
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow.text
-#. 
-#.     def is_valid_percentage(x):
-#.         return 0 <= x and x <= 100
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
-#. 
-#. def is_valid_percentage(x):
-#.     if x < 0 or x > 100:
-#.         return False
-#.     else:
-#.         return True
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.final_text.text
-#. 
-#.     def quadruple(x):
-#.         x = double(x)
-#.         x = double(x)
-#.         return x
-#. 
-#.     def quadruple(x):
-#.         return double(double(x))
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.first_return
-#. 
-#. def double(x):
-#.     return x * 2
-#. 
-#. number = 5
-#. twice = double(number)
-#. print(number)
-#. print(twice)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.losing_return_value
-#. 
-#. def double(x):
-#.     return x * 2
-#. 
-#. number = 5
-#. double(number)
-#. print(number)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.quadruple_exercise
-#. 
-#. def double(x):
-#.     return x * 2
-#. 
-#. def quadruple(x):
-#.     return double(double(x))
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.complete_quadruple_tests
-#. 
-#. def double(x):
-#.     return x * 2
-#. 
-#. def quadruple(x):
-#.     return double(double(x))
-#. 
-#. assert_equal(quadruple(2), 8)
-#. assert_equal(quadruple(5), 20)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.complete_quadruple_tests.text
-#. 
-#.     def double(x):
-#.         return x * 2
-#. 
-#.     def quadruple(x):
-#.         return double(double(x))
-#. 
-#.     assert_equal(quadruple(2))
-#.     assert_equal(quadruple(5))
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.introducing_assert_equal
-#. 
-#. def double(x):
-#.     return x * 2
-#. 
-#. assert_equal(double(2), 4)
-#. assert_equal(double(5), 10)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.make_tests_fail
-#. 
-#. def double(x):
-#.     return x * 3
-#. 
-#. assert_equal(double(2), 4)
-#. assert_equal(double(5), 10)
-msgid "code_bits.x"
-msgstr "x"
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.final_text.text
 #. 
 #.     first = x1
@@ -19250,8 +18961,6 @@ msgstr "We still want `thing = \"Hello\"` and `n = 3`."
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Hello%22
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.n
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.print_many
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.thing
@@ -20735,8 +20444,6 @@ msgstr "You will have to change the comparison operators too."
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x
 msgid "pages.IntroducingAnd.steps.AndExercise.text"
 msgstr ""
 "Let's practice now. Previously we wrote a function `is_valid_percentage` using `or`. Here's an example\n"
@@ -20822,8 +20529,6 @@ msgstr "That means the first element should be equal to the second element and a
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.text"
 msgstr ""
 "Awesome! Here's one possible solution:\n"
@@ -25978,8 +25683,6 @@ msgstr "Other Comparison Operators"
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.double
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quadruple
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x
 msgid "pages.ReturningValuesFromFunctions.steps.final_text.text"
 msgstr ""
 "Well done! Here are two possible solutions:\n"
@@ -26573,8 +26276,6 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.double
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quadruple
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.x
 msgid "pages.TestingFunctions.steps.complete_quadruple_tests.text"
 msgstr ""
 "Excellent! Our tests failed! Of course that's not usually a good thing, but it tells us that the tests are\n"

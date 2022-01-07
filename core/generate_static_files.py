@@ -80,7 +80,7 @@ def tarfile_filter(tar_info):
 
 def main():
     print("Generating files...")
-    translation.set_language("en")
+    translation.set_language(os.environ["FUTURECODER_LANGUAGE"])
     this_dir = Path(__file__).parent
     frontend = this_dir / "../frontend"
     frontend_src = frontend / "src"
