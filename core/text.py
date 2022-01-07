@@ -70,8 +70,9 @@ def clean_program(program, cls):
         source = dedent(strip_required_prefix(source, "def program(self):\n")).rstrip()
         source = t.translate_program(cls, source)
         source = f"def program(self):\n{indent(source, '    ')}"
-    exec(source, func.__globals__)
-    func = func.__globals__[func_name]
+    globs = func.__globals__  # noqa
+    exec(source, globs)
+    func = globs[func_name]
     func = MethodType(func, "")
 
     lines = source.splitlines()
@@ -231,7 +232,7 @@ def clean_step_class(cls):
         cls.disallowed = [cls.disallowed]
 
     if cls.expected_code_source:
-        assert cls.expected_code_source in expected_code_source_descriptions
+        getattr(t.Terms, f"expected_mode_{cls.expected_code_source}")
 
 
 def get_predictions(cls):
@@ -396,28 +397,24 @@ class PageMeta(type):
 class Page(metaclass=PageMeta):
     pass
 
+
 class Disallowed:
     def __init__(self, template, *, label="", message="", max_count=0, predicate=lambda n: True, function_only=False):
         assert bool(label) ^ bool(message)
         if not message:
             if max_count > 0:
-                label = f"more than {max_count} {label}"
-            message = "Well done, you have found a solution! However, for this exercise and your learning, " \
-                      f"you're not allowed to use {label}."
+                label = t.Terms.disallowed_default_label.format(
+                    max_count=max_count, label=label
+                )
+
+            message = t.Terms.disallowed_default_message.format(label=label)
+
         message = dedent(message).strip()
         self.template = template
         self.text = message
         self.max_count = max_count
         self.predicate = predicate
         self.function_only = function_only
-
-
-expected_code_source_descriptions = dict(
-    shell="Type your code directly in the shell after `>>>` and press Enter.",
-    birdseye="With your code in the editor, click the Bird's Eye button.",
-    snoop="With your code in the editor, click the Snoop button.",
-    pythontutor="With your code in the editor, click the Python Tutor button.",
-)
 
 
 class Step(ABC):
@@ -478,8 +475,9 @@ class Step(ABC):
 
             if self.expected_code_source not in (None, self.code_source):
                 return dict(
-                    message="The code is correct, but you didn't run it as instructed. "
-                    + expected_code_source_descriptions[self.expected_code_source]
+                    message=t.Terms.incorrect_mode
+                    + " "
+                    + getattr(t.Terms, f"expected_mode_{self.expected_code_source}")
                 )
 
             return True
@@ -540,21 +538,22 @@ class ExerciseStep(Step):
             return self.check_exercise(self.input, functionise=True)
         else:
             if function_name not in self.console.locals:
-                return dict(message=f"You must define a function `{function_name}`")
+                return dict(
+                    message=t.Terms.must_define_function.format(
+                        function_name=function_name
+                    )
+                )
 
             func = self.console.locals[function_name]
             if not inspect.isfunction(func):
-                return dict(message=f"`{function_name}` is not a function.")
+                return dict(
+                    message=t.Terms.not_a_function.format(function_name=function_name)
+                )
 
             actual_signature = basic_signature(func)
             needed_signature = basic_signature(self.solution)
             if actual_signature != needed_signature:
-                return dict(
-                    message=f"The signature should be:\n\n"
-                            f"    def {function_name}{needed_signature}:\n\n"
-                            f"not:\n\n"
-                            f"    def {function_name}{actual_signature}:"
-                )
+                return dict(message=t.Terms.signature_should_be.format(**locals()))
 
             return self.check_exercise(func)
 
@@ -584,10 +583,7 @@ class ExerciseStep(Step):
                 expected_result = solution(**initial_names)
             except Exception:
                 traceback.print_exc()
-                return dict(
-                    message="The values of your input variables are invalid, "
-                    "try using values like the example."
-                )
+                return dict(message=t.Terms.invalid_inputs)
             try:
                 cls.check_result(func, initial_names, expected_result)
             except:
@@ -674,12 +670,7 @@ class VerbatimStep(Step):
                 ast.parse(self.input.lower()),
                 ast.parse(self.program.lower()),
         ):
-            return dict(
-                message="Python is case sensitive! That means that small and capital letters "
-                        "matter and changing them changes the meaning of the program. The strings "
-                        "`'hello'` and `'Hello'` are different, as are the variable names "
-                        "`word` and `Word`."
-            )
+            return dict(message=t.Terms.case_sensitive)
 
     def truncated_trees_match(self, input_tree, program_tree):
         input_tree = ast.Module(

@@ -14,6 +14,7 @@ from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
+from core import translation as t
 
 TESTING = False
 
@@ -96,7 +97,7 @@ def make_test_input_callback(stdin_input: Union[str, list]):
             print(f"<input: {result}>")
             return result
         else:
-            raise ValueError("No more test inputs - solution should have finished by now")
+            raise ValueError(t.Terms.no_more_test_inputs)
 
     return input_callback
 
@@ -253,7 +254,7 @@ def internal_error_result(e: Exception):
     return dict(
         error=dict(
             details=safe_traceback(e),
-            title=f"Internal error: {truncate_string(exception_string, 100)}",
+            title=f"{t.Terms.internal_error}: {truncate_string(exception_string, 100)}",
             sentry_event=get_exception_event(),
         ),
     )
