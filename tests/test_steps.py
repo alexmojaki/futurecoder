@@ -62,7 +62,7 @@ def test_steps():
 
         assert response["passed"] == (not is_message)
 
-    path = Path(__file__).parent / "test_transcript.json"
+    path = Path(__file__).parent / "golden_files" / t.current_language / "test_transcript.json"
     if os.environ.get("FIX_TESTS", 0):
         dump = json.dumps(transcript, indent=4, sort_keys=True)
         path.write_text(dump)
