@@ -614,7 +614,7 @@ Include the definition of `surround` from before in your program and call it in 
 Use `surround` for the spaces.
 Use `surround` for the exclamation marks.
 You're not allowed to combine several exclamation marks into one string, so call `surround` several times.
-That is, call surround once for each pair of exclamation marks.
+That is, call `surround` once for each pair of exclamation marks.
 So call `surround(..., '!')` several times.
 Use a loop to call it several times.
 Use `range(n)` to make your loop have `n` iterations.

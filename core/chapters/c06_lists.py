@@ -902,8 +902,8 @@ Let's review how to work with lists. Suppose we have a list `nums = [1, 2, 3]`. 
 
 - **`append`**: Add an element to the end of the list. `nums.append(4)` changes the list to `[1, 2, 3, 4]`.
 - **`len`**: Returns the number of elements. `len(nums)` is `3`.
-- **`range`**: `range(n)` is an object similar to the list of numbers from 0 to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.
-- **`subscripting`**: Get a value at an index. `nums[0]` is 1, `nums[1]` is 2, `nums[2]` is 3.
+- **`range`**: `range(n)` is an object similar to the list of numbers from `0` to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.
+- **`[]` (subscripting/indexing)**: Get a value at an index. `nums[0]` is `1`, `nums[1]` is `2`, `nums[2]` is `3`.
 - **`+`**: Concatenates lists. `nums + [4, 5]` is `[1, 2, 3, 4, 5]`.
 
 Note that `nums.append(4)` modifies the existing list `nums`, while `nums + [4, 5]` does not.

@@ -4,12 +4,15 @@ import ast
 import builtins
 import gettext
 import json
+import os
 import re
 from pathlib import Path
 from textwrap import indent
 
 import asttokens.util
 from asttokens import ASTTokens
+
+from core.runner.utils import is_valid_syntax
 
 translation: gettext.GNUTranslations | None = None
 current_language = None
@@ -46,6 +49,15 @@ def get(msgid, default):
     if result == msgid:
         assert msgid.startswith(("code_bits.")) or "output_prediction_choices" in msgid
         return default
+
+    if os.environ.get("CHECK_INLINE_CODES"):
+        inline1 = {translate_code(c) for c in inline_codes(default)}
+        inline2 = inline_codes(result)
+        if inline1 != inline2:
+            print(msgid)
+            print(sorted(inline1))
+            print(sorted(inline2))
+            print()
 
     def replace(match):
         block_num = match[1]
@@ -163,7 +175,40 @@ def code_bit(node_text):
 
 
 def get_code_bit(node_text):
-    return get(code_bit(node_text), node_text)
+    result = get(code_bit(node_text), node_text)
+    node1 = ast.parse(node_text).body[0].value
+    node2 = ast.parse(result).body[0].value
+    try:
+        assert type(node1) == type(node2)
+        assert isinstance(node1, (ast.Name, ast.Str, ast.JoinedStr))
+        for quote in ['"', "'"]:
+            assert result.startswith(quote) == node_text.startswith(quote)
+            assert result.endswith(quote) == node_text.endswith(quote)
+            quote = 'f' + quote
+            assert result.startswith(quote) == node_text.startswith(quote)
+
+        if isinstance(node1, ast.JoinedStr):
+            parts1 = fstring_parts(node1, node_text)
+            parts2 = fstring_parts(node2, result)
+            assert parts2 == {translate_code(part) for part in parts1}
+
+    except AssertionError:
+        message = f"Invalid translation from {node_text} to {result}"
+        # print(message)
+        raise ValueError(message)
+    return result
+
+
+def fstring_parts(node, source):
+    return {
+        ast.get_source_segment(source, part.value)  # noqa
+        for part in node.values
+        if isinstance(part, ast.FormattedValue)
+    }
+
+
+def inline_codes(text):
+    return {c for c in re.findall(r"`(.+?)`", text) if is_valid_syntax(c)}
 
 
 def pyflakes_message(message_cls):

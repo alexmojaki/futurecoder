@@ -18,7 +18,7 @@ random.seed(0)
 
 
 def test_steps():
-    t.set_language("es")
+    t.set_language(os.environ["FUTURECODER_LANGUAGE"])
     list(load_chapters())
     runner.reset()
     transcript = []
@@ -62,7 +62,7 @@ def test_steps():
 
         assert response["passed"] == (not is_message)
 
-    path = Path(__file__).parent / "test_transcript.json"
+    path = Path(__file__).parent / "golden_files" / t.current_language / "test_transcript.json"
     if os.environ.get("FIX_TESTS", 0):
         dump = json.dumps(transcript, indent=4, sort_keys=True)
         path.write_text(dump)

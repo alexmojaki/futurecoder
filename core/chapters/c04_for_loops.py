@@ -153,7 +153,7 @@ to instead output:
         """
 
         hints = """
-You should only use one print, since each print outputs on a different line.
+You should only use one `print`, since each print outputs on a different line.
 You will need to use `+`.
         """
 
