@@ -174,11 +174,25 @@ def get_code_bit(node_text):
             assert result.endswith(quote) == node_text.endswith(quote)
             quote = 'f' + quote
             assert result.startswith(quote) == node_text.startswith(quote)
+
+        if isinstance(node1, ast.JoinedStr):
+            parts1 = fstring_parts(node1, node_text)
+            parts2 = fstring_parts(node2, result)
+            assert parts2 == {translate_code(part) for part in parts1}
+
     except AssertionError:
         message = f"Invalid translation from {node_text} to {result}"
         # print(message)
         raise ValueError(message)
     return result
+
+
+def fstring_parts(node, source):
+    return {
+        ast.get_source_segment(source, part.value)  # noqa
+        for part in node.values
+        if isinstance(part, ast.FormattedValue)
+    }
 
 
 def pyflakes_message(message_cls):
