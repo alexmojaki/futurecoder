@@ -68,7 +68,7 @@
         "step": "more_calculation"
     },
     {
-        "page": "Introduccion a las Cadenas",
+        "page": "Introducci\u00f3n a las Cadenas",
         "program": [
             "'hola'"
         ],
@@ -535,7 +535,7 @@
         "step": "sentence_doesnt_change"
     },
     {
-        "page": "Presentaci\u00f3n de los Bucles For",
+        "page": "Introduci\u00f3n a los Bucles For",
         "program": [
             "nombre = 'Mundo'",
             "for caracter in nombre: print(caracter)"
@@ -2264,7 +2264,7 @@
             "    doble += [numero * 2]",
             "print(doble)"
         ],
-        "page": "Construyendo nuevas listas",
+        "page": "Construyendo listas nuevas",
         "program": [
             "numeros = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
             "doble = []",
@@ -2292,7 +2292,7 @@
             "        numeros_grandes.append(numero)",
             "print(numeros_grandes)"
         ],
-        "page": "Construyendo nuevas listas",
+        "page": "Construyendo listas nuevas",
         "program": [
             "numeros = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
             "numeros_grandes = []",
