@@ -17711,6 +17711,9 @@ msgstr ""
 "\n"
 "__code2__"
 
+msgid "pages.BuildingNewLists.steps.filter_numbers.disallowed.0.message"
+msgstr "Well done, that's correct! However, you should use `.append()` instead of `+=`."
+
 #. https://futurecoder.io/course/#BuildingNewLists
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.filter_numbers
@@ -18110,6 +18113,12 @@ msgstr ""
 msgid "pages.BuildingUpStringsExercises.steps.final_text.text"
 msgstr "Wow, nothing can stop you!"
 
+msgid "pages.BuildingUpStringsExercises.steps.name_box.disallowed.0.message"
+msgstr ""
+"Well done, this solution is correct! However, it can be improved.\n"
+"You only need to use one loop - using more is inefficient.\n"
+"You can reuse the variable containing the line of `-` and `+`."
+
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box
@@ -18166,6 +18175,13 @@ msgstr ""
 "    +-----+\n"
 "    |World|\n"
 "    +-----+"
+
+msgid "pages.BuildingUpStringsExercises.steps.name_box_2.disallowed.0.message"
+msgstr ""
+"Well done, this solution is correct!\n"
+"And you used a nested loop (a loop inside a loop) which we haven't even covered yet!\n"
+"However, in this case a nested loop is inefficient.\n"
+"You can make a variable containing spaces and reuse that in each line."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
 #. 
@@ -22674,6 +22690,9 @@ msgstr ""
 "\n"
 "Replace the `return` line in the code with the above line, and try running it again."
 
+msgid "pages.IntroducingOr.steps.AnExercise.disallowed.3.label"
+msgstr "comparison chaining"
+
 #. https://futurecoder.io/course/#IntroducingOr
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.AnExercise
@@ -23488,6 +23507,14 @@ msgstr ""
 "__code2__\n"
 "\n"
 "In the second example, `O` wins in the bottom row."
+
+msgid "pages.IntroducingTicTacToe.steps.winner.disallowed.0.message"
+msgstr ""
+"Your solution should work by calling the three functions. `winner` itself should not do any\n"
+"looping, subscripting, etc. It should be very short.\n"
+"\n"
+"Copy the `row_winner` and other functions and leave them as they are. Don't copy code from them\n"
+"into the `winner` function, just call those functions."
 
 #. https://futurecoder.io/course/#IntroducingTicTacToe
 #. 
@@ -27019,6 +27046,9 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+msgid "pages.Types.steps.fixing_type_errors_with_conversion.disallowed.0.label"
+msgstr "f-strings"
 
 #. https://futurecoder.io/course/#Types
 #. 

@@ -230,6 +230,8 @@ def clean_step_class(cls):
 
     if isinstance(cls.disallowed, Disallowed):
         cls.disallowed = [cls.disallowed]
+    for i, disallowed in enumerate(cls.disallowed):
+        disallowed.setup(cls, i)
 
     if cls.expected_code_source:
         getattr(t.Terms, f"expected_mode_{cls.expected_code_source}")
@@ -401,20 +403,28 @@ class Page(metaclass=PageMeta):
 class Disallowed:
     def __init__(self, template, *, label="", message="", max_count=0, predicate=lambda n: True, function_only=False):
         assert bool(label) ^ bool(message)
+        message = dedent(message).strip()
+        self.label = label
+        self.message = message
+        self.max_count = max_count
+        self.predicate = predicate
+        self.function_only = function_only
+        self.template = template
+
+    def setup(self, step_cls, i):
+        label = self.label and t.get(t.disallowed_label(step_cls, i), self.label)
+        message = self.message and t.get(t.disallowed_message(step_cls, i), self.message)
+
         if not message:
-            if max_count > 0:
+            if self.max_count > 0:
                 label = t.Terms.disallowed_default_label.format(
-                    max_count=max_count, label=label
+                    max_count=self.max_count, label=label
                 )
 
             message = t.Terms.disallowed_default_message.format(label=label)
 
         message = dedent(message).strip()
-        self.template = template
         self.text = message
-        self.max_count = max_count
-        self.predicate = predicate
-        self.function_only = function_only
 
 
 class Step(ABC):

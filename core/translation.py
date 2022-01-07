@@ -50,7 +50,11 @@ def get(msgid, default):
     result = translation.gettext(msgid)
     if result == msgid:
         # TODO remove misc_terms
-        assert msgid.startswith(("code_bits.", "misc_terms.")) or "output_prediction_choices" in msgid
+        assert (
+            msgid.startswith(("code_bits.", "misc_terms."))
+            or "output_prediction_choices" in msgid
+            or ".disallowed." in msgid
+        )
         return default
 
     if os.environ.get("CHECK_INLINE_CODES"):
@@ -171,6 +175,18 @@ def special_message_text(cls, special_message):
 
 def hint(cls, i):
     return f"{step_cls(cls)}.hints.{i}.text"
+
+
+def disallowed(cls, i):
+    return f"{step_cls(cls)}.disallowed.{i}"
+
+
+def disallowed_message(cls, i):
+    return f"{disallowed(cls, i)}.message"
+
+
+def disallowed_label(cls, i):
+    return f"{disallowed(cls, i)}.label"
 
 
 def code_bit(node_text):

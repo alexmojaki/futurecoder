@@ -61,6 +61,14 @@ def main():
                 msgid = t.hint(step, i)
                 text_entry(msgid, hint, comments)
 
+            for i, disallowed in enumerate(step.disallowed):
+                label = disallowed.label
+                message = disallowed.message
+                if label and not label[0] == label[-1] == '`':
+                    entry(t.disallowed_label(step, i), label)
+                if message:
+                    entry(t.disallowed_message(step, i), message)
+
             if step.auto_translate_program:
                 for _, node_text in t.get_code_bits(step.program):
                     code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
