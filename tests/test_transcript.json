@@ -2389,6 +2389,196 @@
     {
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
+            "words = ['This', 'is', 'a', 'list']",
+            "indices = [0, 1, 2, 3]",
+            "",
+            "for index in indices:",
+            "    print(index)",
+            "    print(words[index])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "0\nThis\n1\nis\n2\na\n3\nlist\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "improve_with_list_and_loop"
+    },
+    {
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "program": [
+            "words = ['This', 'is', 'a', 'list']",
+            "indices = range(4)",
+            "",
+            "for index in indices:",
+            "    print(index)",
+            "    print(words[index])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "0\nThis\n1\nis\n2\na\n3\nlist\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "using_range_instead_of_indices"
+    },
+    {
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "program": [
+            "indices = range(4)",
+            "",
+            "print(indices[0])",
+            "print(indices[1])",
+            "print(indices[2])",
+            "print(indices[3])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "0\n1\n2\n3",
+                "choices": [
+                    "0\n1\n2\n3",
+                    "1\n2\n3\n4",
+                    "[0]\n[1]\n[2]\n[3]",
+                    "[1]\n[2]\n[3]\n[4]",
+                    "This\nis\na\nlist",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "text": "0\n1\n2\n3\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "printing_the_range"
+    },
+    {
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "program": [
+            "indices[4]"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "range object index out of range",
+                                "type": "IndexError"
+                            },
+                            "frames": [
+                                {
+                                    "lines": [
+                                        {
+                                            "content": "<span class=\"n n-ExecutingNode\">indices</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">indices</span>\n",
+                                            "value": "<span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"mi\">0</span><span class=\"p\">,</span> <span class=\"mi\">4</span><span class=\"p\">)</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>indices</code>,\nrange object of length <code>4</code>.\nThe valid index values of <code>indices</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"my_program.py\", line 1, in <module>",
+                        "-->    1 | indices[4]",
+                        "           ^^^^^^^^^^",
+                        "indices = range(0, 4)",
+                        "",
+                        "IndexError: range object index out of range"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "indices_out_of_bounds"
+    },
+    {
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "program": [
+            "range(4)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "range(0, 4)\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "range_almost_the_same_as_list"
+    },
+    {
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "program": [
+            "list(range(4))"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "prediction": {
+                "answer": "[0, 1, 2, 3]",
+                "choices": [
+                    "range(4)",
+                    "range(0, 4)",
+                    "list(range(4))",
+                    "range(0, 1, 2, 3)",
+                    "(0, 1, 2, 3)",
+                    "[0, 1, 2, 3]",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "text": "[0, 1, 2, 3]\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "range_versus_list"
+    },
+    {
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "program": [
             "for i in range(10):",
             "    print(i)"
         ],

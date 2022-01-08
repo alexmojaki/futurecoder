@@ -419,9 +419,140 @@ This also means that the last index in this list of 4 elements is 3. What happen
         def check(self):
             return "IndexError" in self.result
 
-    class introducing_len_and_range(VerbatimStep):
+    class improve_with_list_and_loop(VerbatimStep):
         """
 There you go. `words[4]` and beyond don't exist, so trying that will give you an error.
+That first program is a bit repetitive. Let's improve it with a list and a loop!
+
+__program_indented__
+        """
+
+        def program(self):
+            words = ['This', 'is', 'a', 'list']
+            indices = [0, 1, 2, 3]
+
+            for index in indices:
+                print(index)
+                print(words[index])
+
+    class using_range_instead_of_indices(VerbatimStep):
+        """
+That's a bit better, but writing out `[0, 1, 2, ...]` isn't great, especially if it gets long.
+There's a handy function `range` to do that part for you. Replace `[0, 1, 2, 3]` with `range(4)`.
+        """
+
+        program_in_text = False
+
+        def program(self):
+            words = ['This', 'is', 'a', 'list']
+            indices = range(4)
+
+            for index in indices:
+                print(index)
+                print(words[index])
+
+    class printing_the_range(VerbatimStep):
+        """
+As you can see, the result is the same. Try this:
+
+    __copyable__
+    __program_indented__
+
+What do you expect the output to be?
+        """
+
+        predicted_output_choices = ["""\
+0
+1
+2
+3
+""", """\
+1
+2
+3
+4
+""", """\
+[0]
+[1]
+[2]
+[3]
+""", """\
+[1]
+[2]
+[3]
+[4]
+""", """\
+This
+is
+a
+list
+""",
+                                    ]
+
+        def program(self):
+            indices = range(4)
+
+            print(indices[0])
+            print(indices[1])
+            print(indices[2])
+            print(indices[3])
+
+    class indices_out_of_bounds(VerbatimStep):
+        """
+Now try `__program__` in the shell. What do you expect the output to be?
+        """
+
+        predicted_output_choices = ["0", "1", "2", "3", "4"]
+
+        correct_output = "Error"
+
+        expected_code_source = "shell"
+
+        program = "indices[4]"
+
+    class range_almost_the_same_as_list(VerbatimStep):
+        """
+`range(4)` is the same thing as `[0, 1, 2, 3]` ... almost. Try `__program__` in the shell.
+        """
+
+        expected_code_source = "shell"
+
+        program = "range(4)"
+
+    class range_versus_list(VerbatimStep):
+        """
+That's probably a bit surprising. If you're curious, the `0` represents the start of the range.
+`0` is the default start, so `range(4)` is equal to `range(0, 4)`.
+`4` is the end of the range, but the end is always excluded, so the last value is `3`.
+If you're confused now, don't worry about it.
+
+There's a good reason for why `range(4)` is not actually a list - it makes programs faster and more efficient.
+It's not worth explaining that more right now.
+
+But you can easily convert it to a list: try `__program__` in the shell.
+
+What do you expect the output to be?
+        """
+        predicted_output_choices = [
+            "range(4)",
+            "range(0, 4)",
+            "list(range(4))",
+            "range(0, 1, 2, 3)",
+            "(0, 1, 2, 3)",
+            "[0, 1, 2, 3]"
+        ]
+
+        expected_code_source = "shell"
+
+        program = "list(range(4))"
+
+    class introducing_len_and_range(VerbatimStep):
+        """
+That's just a demonstration to let you see a range in a more familiar form.
+You should almost never actually do that.
+
+If you're feeling overwhelmed, don't worry! All you need to know is that `range(n)`
+is very similar to the list `[0, 1, 2, ..., n - 2, n - 1]`.
 
 By the way, you can get the number of elements in a list (commonly called the *length*) using `len(words)`.
 That means that the last valid index of the list is `len(words) - 1`, so the last element is `words[len(words) - 1]`. Try these for yourself.
