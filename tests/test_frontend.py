@@ -176,7 +176,7 @@ list
     assert not driver.find_elements_by_class_name("hint-icon")
 
     # Skip forward to output prediction step
-    for _ in range(8):
+    for _ in range(8):  # now it tests 'introducing_len_and_range'
         skip_button.click()
         sleep(0.1)
 
@@ -185,14 +185,14 @@ list
         in driver.find_element_by_css_selector(".book-text").text
     )
 
-    # Correct answer first time
-    predict_output(driver, editor, run_button, 2, None)
+    # Correct answer first time: [0, 1, 2, 3, 4] 4 is correct
+    predict_output(driver, editor, run_button, 4, None)
 
     # start again
     reverse_button.click()
 
     # Correct answer second time
-    predict_output(driver, editor, run_button, 1, 2)
+    predict_output(driver, editor, run_button, 1, 4)
 
     # start again
     reverse_button.click()
@@ -203,9 +203,14 @@ list
     # Click OK
     driver.find_element_by_css_selector(".submit-prediction button").click()
 
-    # Course has moved on to next step
+    # Course has moved on to next step 'print_last_element'
+    # Skip forward to 'index_exercise'
+    for _ in range(2):
+        skip_button.click()
+        sleep(0.1)
+
     assert (
-        "Let's get some exercise!"
+        "Let's get some more exercise!"
         in driver.find_element_by_css_selector(".book-text").text
     )
 

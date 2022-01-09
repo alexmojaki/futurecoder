@@ -2561,6 +2561,7 @@
                     "range(4)",
                     "range(0, 4)",
                     "list(range(4))",
+                    "list(range(0, 4))",
                     "range(0, 1, 2, 3)",
                     "(0, 1, 2, 3)",
                     "[0, 1, 2, 3]",
@@ -2579,15 +2580,26 @@
     {
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
-            "for i in range(10):",
-            "    print(i)"
+            "words = ['This', 'is', 'a', 'list']",
+            "print(len(words))"
         ],
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "4",
+                "choices": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "Error"
+                ]
+            },
             "result": [
                 {
-                    "text": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n",
+                    "text": "4\n",
                     "type": "stdout"
                 }
             ]
@@ -2595,10 +2607,35 @@
         "step": "introducing_len_and_range"
     },
     {
+        "get_solution": [
+            "print(words[len(words) - 1])"
+        ],
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
-            "words = ['This', 'is', 'a', 'list']",
-            "",
+            "words = ['Python']",
+            "print(words[len(words) - 1])"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "Python\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "print_last_element"
+    },
+    {
+        "get_solution": [
+            "for index in range(len(words)):",
+            "    print(index)",
+            "    print(words[index])"
+        ],
+        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "program": [
+            "words = ['Python']",
             "for index in range(len(words)):",
             "    print(index)",
             "    print(words[index])"
@@ -2606,21 +2643,9 @@
         "response": {
             "message": "",
             "passed": true,
-            "prediction": {
-                "answer": "0\nThis\n1\nis\n2\na\n3\nlist",
-                "choices": [
-                    "This\nis\na\nlist",
-                    "0\n1\n2\n3",
-                    "0\nThis\n1\nis\n2\na\n3\nlist",
-                    "This\n0\nis\n1\na\n2\nlist\n3",
-                    "0\n1\n2\n3\nThis\nis\na\nlist",
-                    "This\nis\na\nlist\n0\n1\n2\n3",
-                    "Error"
-                ]
-            },
             "result": [
                 {
-                    "text": "0\nThis\n1\nis\n2\na\n3\nlist\n",
+                    "text": "0\nPython\n",
                     "type": "stdout"
                 }
             ]
