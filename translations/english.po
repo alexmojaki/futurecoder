@@ -24338,6 +24338,10 @@ msgid "pages.MakingTheBoard.steps.fix_make_board.hints.8.text"
 msgstr "Making a new row each time can be done by just rearranging the code."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+msgid "pages.MakingTheBoard.steps.fix_make_board.special_messages.not_separate.text"
+msgstr "The sublists in the result are not all separate objects."
+
+#. https://futurecoder.io/course/#MakingTheBoard
 #. 
 #.     # __code0__:
 #.     board[0][0] = 'X'

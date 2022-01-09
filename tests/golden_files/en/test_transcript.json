@@ -6852,6 +6852,19 @@
         "step": "naive_make_board"
     },
     {
+        "page": "Making the Board",
+        "program": [
+            "pass",
+            "def make_board(size): return [[' '] * size] * size"
+        ],
+        "response": {
+            "message": "<p>The sublists in the result are not all separate objects.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "fix_make_board"
+    },
+    {
         "get_solution": [
             "def make_board(size):",
             "    board = []",
