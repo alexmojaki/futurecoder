@@ -427,6 +427,8 @@ That first program is a bit repetitive. Let's improve it with a list and a loop!
 __program_indented__
         """
 
+        auto_translate_program = False
+
         def program(self):
             words = ['This', 'is', 'a', 'list']
             indices = [0, 1, 2, 3]
@@ -438,7 +440,8 @@ __program_indented__
     class using_range_instead_of_indices(VerbatimStep):
         """
 That's a bit better, but writing out `[0, 1, 2, ...]` isn't great, especially if it gets long.
-There's a handy function `range` to do that part for you. Replace `[0, 1, 2, 3]` with `range(4)`.
+There's a handy function `range` to do that part for you. Replace `[0, 1, 2, 3]` with `range(4)`,
+i.e. `indices = range(4)`.
         """
 
         program_in_text = False
@@ -457,8 +460,6 @@ As you can see, the result is the same. Try this:
 
     __copyable__
     __program_indented__
-
-What do you expect the output to be?
         """
 
         predicted_output_choices = ["""\
@@ -552,7 +553,9 @@ That's just a demonstration to let you see a range in a more familiar form.
 You should almost never actually do that.
 
 If you're feeling overwhelmed, don't worry! All you need to know is that `range(n)`
-is very similar to the list `[0, 1, 2, ..., n - 2, n - 1]`.
+is very similar to the list:
+
+    [0, 1, 2, ..., n - 2, n - 1]
 
 By the way, you can get the number of elements in a list (commonly called the *length*) using `len(words)`.
 That means that the last valid index of the list is `len(words) - 1`, so the last element is `words[len(words) - 1]`. Try these for yourself.
