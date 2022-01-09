@@ -176,7 +176,7 @@ list
     assert not driver.find_elements_by_class_name("hint-icon")
 
     # Skip forward to output prediction step
-    for _ in range(8):  # now it tests 'introducing_len_and_range'
+    for _ in range(7):  # now it tests 'introducing_len_and_range'
         skip_button.click()
         sleep(0.1)
 
