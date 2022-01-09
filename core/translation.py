@@ -6,6 +6,7 @@ import gettext
 import json
 import os
 import re
+from functools import cache
 from pathlib import Path
 from textwrap import indent
 
@@ -193,6 +194,7 @@ def code_bit(node_text):
     return f"code_bits.{node_text}"
 
 
+@cache
 def get_code_bit(node_text):
     result = get(code_bit(node_text), node_text)
     node1 = ast.parse(node_text).body[0].value
