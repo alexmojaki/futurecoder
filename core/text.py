@@ -137,7 +137,7 @@ def clean_step_class(cls):
         program = clean_program(cls.solution, cls)  # noqa
         cls.solution = cls.wrap_solution(cls.solution)
         if not issubclass(cls, MessageStep) or cls.after_success:
-            cls.test_exercise(cls.solution, cls.test_values())
+            cls.test_exercise(cls.solution)
     else:
         program = clean_program(program, cls)
 
@@ -583,7 +583,7 @@ class ExerciseStep(Step):
             func = cls._patch_streams(submission)
 
         try:
-            cls.test_exercise(func, cls.test_values())
+            cls.test_exercise(func)
         except ExerciseError as e:
             return dict(message=str(e))
 
@@ -629,8 +629,8 @@ class ExerciseStep(Step):
             yield inputs, result
 
     @classmethod
-    def test_exercise(cls, func, values):
-        for inputs, result in values:
+    def test_exercise(cls, func):
+        for inputs, result in cls.test_values():
             cls.check_result(func, inputs, result)
 
     @classmethod
