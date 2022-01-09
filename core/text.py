@@ -63,7 +63,7 @@ def clean_program(program, cls):
         program = t.translate_program(cls, program)
         no_weird_whitespace(program)
         cls.show_solution_program = program = program.strip()
-        return program, None
+        return program
 
     func = program
     source = dedent(inspect.getsource(program))
@@ -88,7 +88,8 @@ def clean_program(program, cls):
     ) and not getattr(cls, "no_returns_stdout", False):
         func = returns_stdout(func)
     func = add_stdin_input_arg(func)
-
+    func = NoMethodWrapper(func)
+    cls.solution = func
     func_node = function_node(func, tree)
 
     if cls.is_function_exercise:
@@ -98,17 +99,14 @@ def clean_program(program, cls):
         lines = lines[func_node.body[0].lineno - 1 :]
         cls.show_solution_program = program = dedent("\n".join(lines))
         if hasattr(cls, "test_values"):
-            cls.solution = func
             [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
             cls.stdin_input = inputs.pop("stdin_input", [])
             inputs = inputs_string(inputs)
             program = inputs + "\n" + program
     compile(program, "<program>", "exec")  # check validity
 
-    func = NoMethodWrapper(func)
-
     no_weird_whitespace(program)
-    return program.strip(), func
+    return program.strip()
 
 
 def basic_signature(func):
@@ -148,12 +146,12 @@ def clean_step_class(cls):
         assert cls.tests
         assert cls.auto_translate_program
         cls.solution = MethodType(solution, "")
-        program, cls.solution = clean_program(cls.solution, cls)  # noqa
+        program = clean_program(cls.solution, cls)  # noqa
         cls.solution = cls.wrap_solution(cls.solution)
         if not issubclass(cls, MessageStep) or cls.after_success:
             cls.test_exercise(cls.solution, cls.test_values())
     else:
-        program, _ = clean_program(program, cls)
+        program = clean_program(program, cls)
 
     assert program
 
