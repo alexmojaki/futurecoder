@@ -427,7 +427,7 @@ print(words[index])
 
     # Check the choices
     choices = driver.find_elements_by_class_name("prediction-choice")
-    # assert len(choices) == 7
+    assert len(choices) == 7
 
     # Click first choice
     choice = choices[first_choice]
