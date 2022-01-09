@@ -419,10 +419,7 @@ def predict_output(driver, editor, run_button, first_choice, second_choice):
         run_button,
         """\
 words = ['This', 'is', 'a', 'list']
-
-for index in range(len(words)):
-print(index)
-print(words[index])
+print(len(words)))
                 """,
     )
 
@@ -432,7 +429,7 @@ print(words[index])
 
     # Check the choices
     choices = driver.find_elements_by_class_name("prediction-choice")
-    assert len(choices) == 7
+    assert len(choices) == 6
 
     # Click first choice
     choice = choices[first_choice]
