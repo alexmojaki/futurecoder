@@ -95,10 +95,14 @@ def translate_code(code):
 
 
 def translate_program(cls, program):
+    from core.utils import clean_spaces
+
+    program = clean_spaces(program)
     if cls.auto_translate_program:
-        return translate_code(program)
+        result = translate_code(program)
     else:
-        return get(step_program(cls), program)
+        result = get(step_program(cls), program)
+    return clean_spaces(result)
 
 
 def get_code_bits(code):

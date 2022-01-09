@@ -7,6 +7,7 @@ import traceback
 from io import StringIO
 from itertools import combinations
 from random import shuffle
+from textwrap import dedent
 from types import ModuleType
 from typing import Union
 
@@ -34,9 +35,13 @@ internal_dir = os.path.dirname(os.path.dirname(
 ))
 
 
-def no_weird_whitespace(string):
+def clean_spaces(string):
+    if isinstance(string, list):
+        string = "\n".join(string)
+    string = dedent(string).strip()
     spaces = set(re.findall(r"\s", string))
     assert spaces <= {" ", "\n"}, spaces
+    return string
 
 
 def returns_stdout(func):

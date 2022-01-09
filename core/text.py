@@ -39,7 +39,7 @@ from core.utils import (
     lexer,
     html_formatter,
     shuffled_well,
-    no_weird_whitespace,
+    clean_spaces,
     snake,
     unwrapped_markdown,
     returns_stdout,
@@ -50,24 +50,18 @@ from core.utils import (
 
 def clean_program(program, cls):
     if callable(program) and not cls.auto_translate_program:
-        source = inspect.getsource(program)
-        lines = source.splitlines()
-        program = dedent("\n".join(lines[1:]))
+        program = inspect.getsource(program).splitlines()[1:]
 
     if not callable(program):
-        no_weird_whitespace(program)
-        program = program.strip()
+        program = clean_spaces(program)
         if not is_valid_syntax(program):
             cls.auto_translate_program = False
 
-        program = t.translate_program(cls, program)
-        no_weird_whitespace(program)
-        cls.show_solution_program = program = program.strip()
+        cls.show_solution_program = program = t.translate_program(cls, program)
         return program
 
     func = program
-    source = dedent(inspect.getsource(program))
-    source = t.translate_program(cls, source)
+    source = t.translate_program(cls, inspect.getsource(program))
     globs = func.__globals__  # noqa
     exec(source, globs)
     func = globs[t.get_code_bit(func.__name__)]
@@ -79,7 +73,7 @@ def clean_program(program, cls):
         func = func()
         assert lines[0] == f"def {t.get_code_bit('solution')}(self):"
         assert lines[-1] == f"    return {func.__name__}"
-        source = dedent("\n".join(lines[1:-1]))
+        source = clean_spaces(lines[1:-1])
         source = program = clean_solution_function(func, source)
 
     tree = ast.parse(source)
@@ -95,18 +89,17 @@ def clean_program(program, cls):
     if cls.is_function_exercise:
         cls.show_solution_program = ast.get_source_segment(source, func_node)
     else:
-        assert isinstance(func_node, ast.FunctionDef)
         lines = lines[func_node.body[0].lineno - 1 :]
-        cls.show_solution_program = program = dedent("\n".join(lines))
+        cls.show_solution_program = program = clean_spaces(lines)
         if hasattr(cls, "test_values"):
             [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
             cls.stdin_input = inputs.pop("stdin_input", [])
-            inputs = inputs_string(inputs)
-            program = inputs + "\n" + program
-    compile(program, "<program>", "exec")  # check validity
+            if inputs:
+                inputs = inputs_string(inputs)
+                program = inputs + "\n" + program
 
-    no_weird_whitespace(program)
-    return program.strip()
+    compile(program, "<program>", "exec")  # check validity
+    return program
 
 
 def basic_signature(func):
@@ -137,9 +130,8 @@ def clean_step_class(cls):
     solution = cls.__dict__.get("solution", "")
     assert bool(solution) ^ bool(program)
 
-    text = dedent(text).strip()
+    text = clean_spaces(text)
     assert text
-    no_weird_whitespace(text)
     cls.raw_text = text = t.get(cls.text_msgid, text)
 
     if solution:
@@ -310,9 +302,9 @@ class PageMeta(type):
             if getattr(value, "is_step", False):
                 cls.step_names.append(key)
 
-        assert isinstance(cls.final_text, str)
-        cls.final_text = t.get(t.step_text(cls.slug, "final_text"), cls.final_text.strip())
-        no_weird_whitespace(cls.final_text)
+        cls.final_text = clean_spaces(cls.final_text)
+        cls.final_text = t.get(t.step_text(cls.slug, "final_text"), cls.final_text)
+        cls.final_text = clean_spaces(cls.final_text)
         cls.step_names.append("final_text")
 
     def get_step(cls, step_name):
