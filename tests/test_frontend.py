@@ -176,14 +176,14 @@ list
     assert not driver.find_elements_by_class_name("hint-icon")
 
     # Skip forward to output prediction step
-    for _ in range(2):
+    for _ in range(8):
         skip_button.click()
         sleep(0.1)
 
-    # assert (
-    #     "range(n) is similar to the list"
-    #     in driver.find_element_by_css_selector(".book-text").text
-    # )
+    assert (
+        "range(n) is very similar to the list"
+        in driver.find_element_by_css_selector(".book-text").text
+    )
 
     # Correct answer first time
     predict_output(driver, editor, run_button, 2, None)
