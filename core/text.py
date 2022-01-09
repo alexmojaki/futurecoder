@@ -424,6 +424,7 @@ class Step(ABC):
     auto_translate_program = True
     translated_tests = False
     page = None
+    is_function_exercise = False
 
     class special_messages:
         pass
@@ -502,6 +503,7 @@ class Step(ABC):
         # We define this here so MessageSteps implicitly inheriting from ExerciseStep don't complain it doesn't exist
         # noinspection PyUnresolvedReferences
         func = self.solution
+        assert self.is_function_exercise
         return function_node(func, self.tree)
 
 
@@ -520,11 +522,10 @@ class ExerciseStep(Step):
         if self.code_source == "shell":
             return False
 
-        function_name = self.solution.__name__
-
-        if function_name == "solution":  # TODO
+        if not self.is_function_exercise:
             return self.check_exercise(self.input, functionise=True)
         else:
+            function_name = self.solution.__name__
             if function_name not in self.console.locals:
                 return dict(
                     message=t.Terms.must_define_function.format(
