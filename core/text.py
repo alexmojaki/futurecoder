@@ -19,7 +19,6 @@ from typing import Union, List, get_type_hints
 
 import pygments
 from astcheck import is_ast_like
-from asttokens import ASTTokens
 from littleutils import setattrs, only, select_attrs
 
 from core import translation as t
@@ -90,11 +89,7 @@ def clean_program(program, cls):
         func = returns_stdout(func)
     func = add_stdin_input_arg(func)
 
-    func_node = only(
-        node
-        for node in tree.body
-        if isinstance(node, ast.FunctionDef) and node.name == func.__name__
-    )
+    func_node = function_node(func, tree)
 
     if cls.is_function_exercise:
         cls.show_solution_program = ast.get_source_segment(source, func_node)
@@ -519,18 +514,18 @@ class Step(ABC):
     def function_tree(self):
         # We define this here so MessageSteps implicitly inheriting from ExerciseStep don't complain it doesn't exist
         # noinspection PyUnresolvedReferences
-        function_name = self.solution.__name__
+        func = self.solution
+        return function_node(func, self.tree)
 
-        if function_name == "solution":  # TODO
-            raise ValueError("This exercise doesn't require defining a function")
 
-        function_name = t.get_code_bit(function_name)
-        return only(
-            node
-            for node in ast.walk(self.tree)
-            if isinstance(node, ast.FunctionDef)
-            if node.name == function_name
-        )
+def function_node(func, tree):
+    function_name = t.get_code_bit(func.__name__)
+    return only(
+        node
+        for node in tree.body
+        if isinstance(node, ast.FunctionDef)
+        if node.name == function_name
+    )
 
 
 class ExerciseStep(Step):
