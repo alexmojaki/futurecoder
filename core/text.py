@@ -12,7 +12,7 @@ from importlib import import_module
 from io import StringIO
 from pathlib import Path
 from random import shuffle
-from textwrap import dedent, indent
+from textwrap import indent
 from tokenize import Untokenizer, generate_tokens
 from types import MethodType
 from typing import Union, List, get_type_hints
@@ -130,10 +130,6 @@ def clean_step_class(cls):
     solution = cls.__dict__.get("solution", "")
     assert bool(solution) ^ bool(program)
 
-    text = clean_spaces(text)
-    assert text
-    cls.raw_text = text = t.get(cls.text_msgid, text)
-
     if solution:
         assert cls.tests
         assert cls.auto_translate_program
@@ -151,6 +147,12 @@ def clean_step_class(cls):
         hints = hints.strip().splitlines()
     hints = [t.get(t.hint(cls, i), hint.strip()) for i, hint in enumerate(hints)]
 
+    text = clean_spaces(text)
+    assert text
+    text = t.get(cls.text_msgid, text)
+    text = clean_spaces(text)
+    cls.raw_text = text
+
     if "__program_" in text:
         text = text.replace("__program__", program)
         indented = indent(program, '    ').replace("\\", "\\\\")
@@ -160,13 +162,10 @@ def clean_step_class(cls):
                                         "or set program_in_text = False in the class."
 
     assert "__program_" not in text
-
-    text = dedent(text).strip()
-
+    text = clean_spaces(text)
 
     for special_message in get_special_messages(cls):
-        msgstr = special_message.__doc__ or special_message.text
-        msgstr = dedent(msgstr).strip()
+        msgstr = clean_spaces(special_message.__doc__ or special_message.text)
         msgstr = t.get(t.special_message_text(cls, special_message), msgstr)
         special_message.text = msgstr
         try:
@@ -384,9 +383,8 @@ class Page(metaclass=PageMeta):
 class Disallowed:
     def __init__(self, template, *, label="", message="", max_count=0, predicate=lambda n: True, function_only=False):
         assert bool(label) ^ bool(message)
-        message = dedent(message).strip()
         self.label = label
-        self.message = message
+        self.message = clean_spaces(message)
         self.max_count = max_count
         self.predicate = predicate
         self.function_only = function_only
@@ -404,8 +402,7 @@ class Disallowed:
 
             message = t.Terms.disallowed_default_message.format(label=label)
 
-        message = dedent(message).strip()
-        self.text = message
+        self.text = clean_spaces(message)
 
 
 class Step(ABC):
