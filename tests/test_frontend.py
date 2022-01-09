@@ -424,7 +424,7 @@ print(len(words)))
     )
 
     locator = (By.CLASS_NAME, "terminal")
-    WebDriverWait(driver, 5).until(text_to_be_present_in_element(locator, "4"))
+    WebDriverWait(driver, 5).until(text_to_be_present_in_element(locator, "Error"))
     sleep(2)
 
     # Check the choices
