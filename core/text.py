@@ -20,7 +20,7 @@ from typing import Union, List, get_type_hints
 import pygments
 from astcheck import is_ast_like
 from asttokens import ASTTokens
-from littleutils import setattrs, only, select_attrs, strip_required_prefix
+from littleutils import setattrs, only, select_attrs
 
 from core import translation as t
 from core.exercises import (
@@ -50,6 +50,11 @@ from core.utils import (
 
 
 def clean_program(program, cls):
+    if callable(program) and not cls.auto_translate_program:
+        source = inspect.getsource(program)
+        lines = source.splitlines()
+        program = dedent("\n".join(lines[1:]))
+
     if not callable(program):
         no_weird_whitespace(program)
         program = program.strip()
@@ -62,17 +67,11 @@ def clean_program(program, cls):
         return program, None
 
     func = program
-    func_name = t.get_code_bit(func.__name__)
     source = dedent(inspect.getsource(program))
-    if cls.auto_translate_program:
-        source = t.translate_program(cls, source)
-    else:
-        source = dedent(strip_required_prefix(source, "def program(self):\n")).rstrip()
-        source = t.translate_program(cls, source)
-        source = f"def program(self):\n{indent(source, '    ')}"
+    source = t.translate_program(cls, source)
     globs = func.__globals__  # noqa
     exec(source, globs)
-    func = globs[func_name]
+    func = globs[t.get_code_bit(func.__name__)]
     func = MethodType(func, "")
 
     lines = source.splitlines()
