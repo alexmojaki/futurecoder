@@ -75,28 +75,30 @@ def clean_program(program, cls):
     func = MethodType(func, "")
 
     lines = source.splitlines()
-    if lines[-1].strip().startswith("return "):
+    cls.is_function_exercise = lines[-1].strip().startswith("return ")
+    if cls.is_function_exercise:
         func = func()
-        func = add_stdin_input_arg(func)
-
         assert lines[0] == f"def {t.get_code_bit('solution')}(self):"
         assert lines[-1] == f"    return {func.__name__}"
         source = dedent("\n".join(lines[1:-1]))
-        program = clean_solution_function(func, source)
-        atok = ASTTokens(source, parse=1)
-        func_node = only(
-            node
-            for node in atok.tree.body
-            if isinstance(node, ast.FunctionDef) and node.name == func.__name__
-        )
-        cls.show_solution_program = clean_solution_function(
-            func, atok.get_text(func_node)
-        )
-    else:
-        func = add_stdin_input_arg(func)
+        source = program = clean_solution_function(func, source)
 
-        tree = ast.parse(source)
-        func_node = tree.body[0]
+    tree = ast.parse(source)
+    if not any(
+        isinstance(node, ast.Return) for node in ast.walk(tree)
+    ) and not getattr(cls, "no_returns_stdout", False):
+        func = returns_stdout(func)
+    func = add_stdin_input_arg(func)
+
+    func_node = only(
+        node
+        for node in tree.body
+        if isinstance(node, ast.FunctionDef) and node.name == func.__name__
+    )
+
+    if cls.is_function_exercise:
+        cls.show_solution_program = ast.get_source_segment(source, func_node)
+    else:
         assert isinstance(func_node, ast.FunctionDef)
         lines = lines[func_node.body[0].lineno - 1 :]
         cls.show_solution_program = program = dedent("\n".join(lines))
@@ -109,11 +111,6 @@ def clean_program(program, cls):
     compile(program, "<program>", "exec")  # check validity
 
     func = NoMethodWrapper(func)
-
-    if not any(
-        isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))
-    ) and not getattr(cls, "no_returns_stdout", False):
-        func = returns_stdout(func)
 
     no_weird_whitespace(program)
     return program.strip(), func
