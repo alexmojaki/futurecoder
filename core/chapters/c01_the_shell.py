@@ -40,20 +40,22 @@ Try doing some more calculations now. You can multiply numbers with `*`, divide 
 
         program = "5 - 6"
 
+        class special_messages:
+            class multiply_with_x:
+                """
+                I see an 'x'. If you're trying to multiply, use an asterisk, e.g:
+
+                    3 * 4
+                """
+
+                program = "3 x 4"
+
         def check(self):
             try:
                 return search_ast(self.tree, (ast.Mult, ast.Div, ast.Sub))
             except SyntaxError:
                 if "x" in self.input:
-                    return dict(
-                        message=dedent(
-                            """
-            I see an 'x'. If you're trying to multiply, use an asterisk, e.g:
-
-                3 * 4
-            """
-                        )
-                    )
+                    return self.special_messages.multiply_with_x
 
     final_text = """
 Excellent! Keep experimenting. When you're ready, click 'Next' to continue.

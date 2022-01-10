@@ -10,6 +10,7 @@ from pygments.styles import get_style_by_name
 
 from core.utils import check_and_remove_prefix
 from core.runner.utils import is_valid_syntax
+from core import translation as t
 
 lexer = get_lexer_by_name("python3")
 monokai = get_style_by_name("monokai")
@@ -40,7 +41,11 @@ class HighlightPythonTreeProcessor(Treeprocessor):
                 node.text = text
 
             if copyable:
-                node.append(etree.fromstring('<button class="btn btn-primary">Copy</button>'))
+                node.append(
+                    etree.fromstring(
+                        f'<button class="btn btn-primary">{t.Terms.copy_button}</button>'
+                    )
+                )
                 node.set("class", node.get("class", "") + " copyable")
 
     @staticmethod

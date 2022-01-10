@@ -27,9 +27,10 @@ from pathlib import Path
 import birdseye
 from littleutils import strip_required_prefix, json_to_file
 
+from core import translation as t
 from core.checker import check_entry
 from core.runner.utils import site_packages
-from core.text import get_pages, chapters, step_test_entries
+from core.text import get_pages, step_test_entries, load_chapters
 
 str("import sentry_sdk after core.utils for stubs")
 import sentry_sdk  # noqa imported lazily
@@ -79,10 +80,12 @@ def tarfile_filter(tar_info):
 
 def main():
     print("Generating files...")
+    t.set_language(os.environ.get("FUTURECODER_LANGUAGE", "en"))
     this_dir = Path(__file__).parent
     frontend = this_dir / "../frontend"
     frontend_src = frontend / "src"
 
+    chapters = list(load_chapters())
     json_to_file(get_pages(), frontend_src / "book/pages.json.load_by_url")
     json_to_file(chapters, frontend_src / "chapters.json")
 

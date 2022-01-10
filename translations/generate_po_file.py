@@ -1,5 +1,4 @@
-import ast
-import builtins
+import json
 import re
 import urllib.parse
 from collections import defaultdict
@@ -10,52 +9,71 @@ from littleutils import group_by_key
 from polib import POEntry, POFile
 
 from core import linting
-from core.text import pages, get_predictions
-from core.utils import markdown_codes, MyASTTokens
+from core import translation as t
+from core.text import pages, get_predictions, get_special_messages, load_chapters
+from core.utils import markdown_codes
+
+code_blocks = defaultdict(dict)
+code_bits = defaultdict(set)
+page_link = ""
+
+po = POFile(wrapwidth=120)
+po.metadata = {
+    'MIME-Version': '1.0',
+    'Content-Type': 'text/plain; charset=utf-8',
+    'Content-Transfer-Encoding': '8bit',
+}
+
+def entry(msgid, msgstr, comment=""):
+    po.append(
+        POEntry(
+            msgid=msgid,
+            msgstr=msgstr,
+            comment=comment,
+        )
+    )
 
 
 def main():
-    po = POFile(wrapwidth=120)
-    code_bits = defaultdict(set)
+    chapters = list(load_chapters())
+    global page_link
     for page_slug, page in pages.items():
         page_link = "https://futurecoder.io/course/#" + page_slug
-        page_msgid = f"pages.{page_slug}"
-        po.append(
-            POEntry(
-                msgid=f"{page_msgid}.title",
-                msgstr=page.raw_title,
-                comment=page_link,
-            )
-        )
+        entry(t.page_title(page_slug), page.raw_title, page_link)
 
         for step_name, text in zip(page.step_names, page.step_texts(raw=True)):
-            step_msgid = f"{page_msgid}.steps.{step_name}"
-            po.append(make_po_entry(code_bits, page_link, f"{step_msgid}.text", text))
+            step_msgid = t.step(page_slug, step_name)
+            text_entry(t.step_text(page_slug, step_name), text)
             if step_name == "final_text":
                 continue
 
             step = page.get_step(step_name)
             comments = [search_link(step_msgid)]
             for message_step in step.messages:
-                msgid = f"{step_msgid}.messages.{message_step.__name__}.text"
+                msgid = t.message_step_text(step, message_step)
                 text = message_step.raw_text
-                po.append(make_po_entry(code_bits, page_link, msgid, text, comments))
+                text_entry(msgid, text, comments)
+
+            for special_message in get_special_messages(step):
+                text_entry(t.special_message_text(step, special_message), special_message.text)
 
             for i, hint in enumerate(step.hints):
-                msgid = f"{step_msgid}.hints.{i}.text"
-                po.append(make_po_entry(code_bits, page_link, msgid, hint, comments))
+                msgid = t.hint(step, i)
+                text_entry(msgid, hint, comments)
+
+            for i, disallowed in enumerate(step.disallowed):
+                label = disallowed.label
+                message = disallowed.message
+                if label and not label[0] == label[-1] == '`':
+                    entry(t.disallowed_label(step, i), label)
+                if message:
+                    entry(t.disallowed_message(step, i), message)
 
             if step.auto_translate_program:
-                for node_text in get_code_bits(step.program):
+                for _, node_text in t.get_code_bits(step.program):
                     code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
             else:
-                po.append(
-                    POEntry(
-                        msgid=f"{step_msgid}.program",
-                        msgstr=step.program,
-                        comment=search_link(step_msgid),
-                    )
-                )
+                entry(t.step_program(step), step.program, search_link(step_msgid))
 
             if step.translate_output_choices:
                 output_prediction_choices = get_predictions(step)["choices"] or []
@@ -65,44 +83,38 @@ def main():
                         or choice in ("True", "False")
                     ):
                         continue
-                    po.append(
-                        POEntry(
-                            msgid=f"{step_msgid}.output_prediction_choices.{i}",
-                            msgstr=choice,
-                            comment=search_link(step_msgid),
-                        )
-                    )
+                    entry(t.prediction_choice(step, i), choice, search_link(step_msgid))
 
     for code_bit, comments in code_bits.items():
-        po.append(
-            POEntry(
-                msgid=f"code_bits.{code_bit}",
-                msgstr=code_bit,
-                comment="\n\n------\n\n".join(sorted(comments)),
-            )
+        entry(
+            t.code_bit(code_bit),
+            code_bit,
+            "\n\n------\n\n".join(sorted(comments)),
         )
 
     for message_cls, message_format in linting.MESSAGES.items():
-        po.append(
-            POEntry(
-                msgid=f"linting_messages.pyflakes.{message_cls.__name__}.message_format",
-                msgstr=message_format.strip(),
-            )
-        )
+        entry(t.pyflakes_message(message_cls), message_format.strip())
 
-    po.append(
-        POEntry(
-            msgid=f"output_predictions.Error",
-            msgstr="Error",
-            comment="Special choice at the end of all output prediction multiple choice questions",
-        )
+    for chapter in chapters:
+        entry(t.chapter_title(chapter["slug"]), chapter["title"])
+
+    entry(
+        "output_predictions.Error",
+        "Error",
+        "Special choice at the end of all output prediction multiple choice questions",
     )
 
-    po.sort(key=lambda entry: entry.msgid)
+    for key, value in t.misc_terms():
+        entry(t.misc_term(key), value)
+
+    po.sort(key=lambda e: e.msgid)
     po.save(str(Path(__file__).parent / "english.po"))
+    po.save_as_mofile(str(Path(__file__).parent / "locales/en/LC_MESSAGES/futurecoder.mo"))
+
+    t.codes_path.write_text(json.dumps(code_blocks))
 
 
-def make_po_entry(code_bits, page_link, msgid, text, comments=()):
+def text_entry(msgid, text, comments=()):
     codes = [c for c in markdown_codes(text) if not c["no_auto_translate"]]
     codes_grouped = group_by_key(codes, "text")
     code_comments = []
@@ -111,49 +123,28 @@ def make_po_entry(code_bits, page_link, msgid, text, comments=()):
         enumerate(codes_grouped.items()),
         key=lambda it: -len(it[1][0]),
     ):
-        code_text = indent(code_text, "    ").rstrip()
+        code_text = code_text.rstrip()
+        dedented = dedent(code_text)
+        code = group[0]["code"]
+        assert code.startswith(dedented)
+        code_blocks[msgid][i] = dict(
+            code=code,
+            code_text_length=len(dedented),
+            prefix=code_text[: code_text.splitlines()[0].index(dedented.splitlines()[0])],
+        )
+
+        code_text = indent(code_text, "    ")
         assert code_text in text
         text = text.replace(code_text, f"__code{i}__")
         assert code_text not in text
         code_comments.append(f"    # __code{i}__:\n{code_text}")
 
-        code = group[0]["code"]
-        assert dedent(code_text) in code
-
-        for node_text in get_code_bits(code):
+        for _, node_text in t.get_code_bits(code):
             code_bits[node_text].add(f"{search_link(msgid)}\n\n{code_text}")
-            comments.add(search_link(f"code_bits.{node_text}"))
+            comments.add(search_link(t.code_bit(node_text)))
 
-    return POEntry(
-        msgid=msgid,
-        msgstr=text,
-        comment="\n\n".join([page_link, *code_comments, *sorted(comments)]),
-    )
-
-
-def get_code_bits(code):
-    atok = MyASTTokens(code, parse=1)
-
-    for node in ast.walk(atok.tree):
-        if isinstance(node, ast.Name):
-            node_text = node.id
-            assert atok.get_text(node) == node_text
-            if node_text in builtins.__dict__ or len(node_text) == 1:
-                continue
-        elif isinstance(
-            node, (ast.FunctionDef, ast.ClassDef, ast.AsyncFunctionDef)
-        ):
-            node_text = node.name
-        elif isinstance(node, (ast.Str, ast.JoinedStr)):
-            node_text = atok.get_text(node)
-            if not re.search(r"[a-zA-Z]", node_text) or re.match(
-                r"""^['"][a-zA-Z]['"]""", node_text
-            ):
-                continue
-        else:
-            continue
-
-        yield node_text
+    comment = "\n\n".join([page_link, *code_comments, *sorted(comments)])
+    entry(msgid, text, comment)
 
 
 def search_link(msgid):

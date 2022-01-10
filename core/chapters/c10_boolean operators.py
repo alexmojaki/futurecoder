@@ -52,6 +52,7 @@ __program_indented__
         """
         program = "True or True"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class TrueOrFalse(VerbatimStep):
         """
@@ -61,6 +62,7 @@ __program_indented__
         """
         program = "True or False"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class FalseOrFalse(VerbatimStep):
         """
@@ -70,6 +72,7 @@ __program_indented__
         """
         program = "False or False"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class ImprovingWithOr(VerbatimStep):
         """
@@ -291,6 +294,7 @@ __program_indented__
         """
         program = "True and True"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class TrueAndFalse(VerbatimStep):
         """
@@ -302,6 +306,7 @@ What do you expect?
         """
         program = "True and False"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class FalseAndFalse(VerbatimStep):
         """
@@ -311,6 +316,7 @@ __program_indented__
         """
         program = "False and False"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     # noinspection PyChainedComparisons
     class AndExercise(ExerciseStep):
@@ -767,13 +773,13 @@ i.e. no `if` statement. It should pass the same tests.
         hints = [
             dedent("""
             What if you were instead asked to simplify this related but opposite function?
-            
+
                 def valid_image(filename):
                     if filename.endswith(".png") or filename.endswith(".jpg"):
                         return True
                     else:
                         return False
-            
+
                 assert_equal(valid_image("dog.png"), True)
                 assert_equal(valid_image("cat.jpg"), True)
                 assert_equal(valid_image("invoice.pdf"), False)

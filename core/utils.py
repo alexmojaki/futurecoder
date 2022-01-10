@@ -1,4 +1,3 @@
-import ast
 import builtins
 import functools
 import os
@@ -8,15 +7,15 @@ import traceback
 from io import StringIO
 from itertools import combinations
 from random import shuffle
+from textwrap import dedent
 from types import ModuleType
 from typing import Union
 
-from asttokens import ASTTokens
 from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
-
+from core import translation as t
 
 TESTING = False
 
@@ -36,9 +35,13 @@ internal_dir = os.path.dirname(os.path.dirname(
 ))
 
 
-def no_weird_whitespace(string):
+def clean_spaces(string):
+    if isinstance(string, list):
+        string = "\n".join(string)
+    string = dedent(string).strip()
     spaces = set(re.findall(r"\s", string))
     assert spaces <= {" ", "\n"}, spaces
+    return string
 
 
 def returns_stdout(func):
@@ -99,7 +102,7 @@ def make_test_input_callback(stdin_input: Union[str, list]):
             print(f"<input: {result}>")
             return result
         else:
-            raise ValueError("No more test inputs - solution should have finished by now")
+            raise ValueError(t.Terms.no_more_test_inputs)
 
     return input_callback
 
@@ -184,23 +187,6 @@ def shuffled_well(seq):
     return [seq[i] for i in permutation]
 
 
-class MyASTTokens(ASTTokens):
-    def get_text_pos(self, lineno, col_offset):
-        col_offset = self._line_numbers.from_utf8_col(lineno, col_offset)
-        return self._line_numbers.line_to_offset(lineno, col_offset)
-
-    def get_text_range(self, node):
-        return (
-            self.get_text_pos(node.lineno, node.col_offset),
-            self.get_text_pos(node.end_lineno, node.end_col_offset),
-        )
-
-    def get_text(self, node):
-        result = super().get_text(node)
-        assert result == ast.get_source_segment(self._text, node)
-        return result
-
-
 def check_and_remove_prefix(string, prefix):
     if startswith := string.startswith(prefix):
         string = strip_required_prefix(string, prefix)
@@ -273,7 +259,7 @@ def internal_error_result(e: Exception):
     return dict(
         error=dict(
             details=safe_traceback(e),
-            title=f"Internal error: {truncate_string(exception_string, 100)}",
+            title=f"{t.Terms.internal_error}: {truncate_string(exception_string, 100)}",
             sentry_event=get_exception_event(),
         ),
     )

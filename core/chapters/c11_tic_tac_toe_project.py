@@ -7,9 +7,10 @@ from string import ascii_uppercase
 from textwrap import dedent
 from typing import List
 
+from core import translation as t
 from core.exercises import assert_equal, ExerciseError
 from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
-from core.utils import returns_stdout, shuffled
+from core.utils import returns_stdout, shuffled, wrap_solution
 
 
 def generate_board(board_type):
@@ -725,13 +726,22 @@ However `string` does contain something new. Run `__program__` in the shell to s
 
         program = "string"
 
+        class special_messages:
+            class bad_string:
+                """
+                Oops, `string` doesn't have the right value. Run the program from the previous step again.
+                """
+
+                program = "string = 'a'"
+
+        @classmethod
+        def pre_run(cls, runner):
+            runner.console.locals[cls.program] = "First line\nSecond line"
+
         def check(self):
-            string = self.console.locals.get("string", "")
+            string = self.console.locals.get(self.program, "")
             if not (isinstance(string, str) and '\n' in string):
-                return dict(
-                    message="Oops, `string` doesn't have the right value. "
-                            "Run the program from the previous step again."
-                )
+                return self.special_messages.bad_string
             return super().check()
 
     class introducing_newline(VerbatimStep):
@@ -1145,6 +1155,8 @@ Go!
 
         disallowed = Disallowed(ast.JoinedStr, label="f-strings")
 
+        translated_tests = True
+
         def solution(self, number: str):
             for i in range(int(number)):
                 print('Starting... ' + str(i + 1))
@@ -1297,6 +1309,8 @@ So to compare a number and a string, first convert the number to a string or con
 You learned how to convert between strings and numbers in the previous page.
 Use `int()` to convert to an integer (whole number) or `str()` to convert to a string.
         """
+
+        translated_tests = True
 
         def solution(self):
             super_secret_number = 7
@@ -1533,8 +1547,10 @@ You can use nested subscripting in one line, or do it in two steps.
         @classmethod
         def wrap_solution(cls, func):
             @returns_stdout
+            @wrap_solution(func)
             def wrapper(**kwargs):
-                board = kwargs["board"] = deepcopy(kwargs["board"])
+                board_name = t.get_code_bit("board")
+                board = kwargs[board_name] = deepcopy(kwargs[board_name])
 
                 def format_board():
                     first_row = ' '
@@ -1747,11 +1763,16 @@ Making a new row each time can be done by just rearranging the code.
         def generate_inputs(cls):
             return dict(size=randint(4, 12))
 
+        class special_messages:
+            class not_separate:
+                text = "The sublists in the result are not all separate objects."
+                program = "pass\ndef make_board(size): return [[' '] * size] * size"
+
         @classmethod
         def check_result(cls, func, inputs, expected_result):
             result = super().check_result(func, inputs, expected_result)
             if len(result) != len(set(map(id, result))):
-                raise ExerciseError("The sublists in the result are not all separate objects")
+                raise ExerciseError(cls.special_messages.not_separate.text)
 
     final_text = """
 Well done!
@@ -2000,6 +2021,8 @@ Check the indentation to make sure `print_draw` isn't in the body of the for loo
         @classmethod
         def wrap_solution(cls, func):
             return returns_stdout(func)
+
+        translated_tests = True
 
         tests = [
             (dict(board_size=2, player1="A", player2="B", stdin_input=["1", "1", "1", "2", "2", "1"]),

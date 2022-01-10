@@ -1,6 +1,42 @@
 #
 msgid ""
 msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "chapters.a_bit_more_about_strings.title"
+msgstr "A Bit More About Strings"
+
+msgid "chapters.boolean operators.title"
+msgstr "Boolean Operators"
+
+msgid "chapters.for_loops.title"
+msgstr "For Loops"
+
+msgid "chapters.functions.title"
+msgstr "Functions"
+
+msgid "chapters.if_statements.title"
+msgstr "If Statements"
+
+msgid "chapters.lists.title"
+msgstr "Lists"
+
+msgid "chapters.nested_loops.title"
+msgstr "Nested Loops"
+
+msgid "chapters.string_basics.title"
+msgstr "String Basics"
+
+msgid "chapters.the_shell.title"
+msgstr "The Shell"
+
+msgid "chapters.tic_tac_toe_project.title"
+msgstr "Tic Tac Toe Project"
+
+msgid "chapters.variables.title"
+msgstr "Variables"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
 #. 
@@ -4462,6 +4498,46 @@ msgstr "big_numbers"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.AndHasHigherPriority.text
+#. 
+#.     def diagonal_winner(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['X', 'O', 'X'],
+#.                 ['X', 'X', 'O'],
+#.                 ['O', 'O', 'X']
+#.             ]
+#.         ),
+#.         True
+#.     )
+#. 
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['X', 'X', 'O'],
+#.                 ['X', 'O', 'O'],
+#.                 ['O', 'X', 'X']
+#.             ]
+#.         ),
+#.         True
+#.     )
+#. 
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['O', 'X', 'O'],
+#.                 ['X', 'X', 'X'],
+#.                 ['O', 'O', 'X']
+#.             ]
+#.         ),
+#.         False
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.final_text.text
 #. 
 #.         diagonal1 = all_equal([board[0][0], board[1][1], board[2][2]])
@@ -4497,6 +4573,35 @@ msgstr "big_numbers"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.column_winner.text
+#. 
+#.     def column_winner(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         column_winner(
+#.             [
+#.                 ['X', 'O', ' '],
+#.                 ['X', 'O', ' '],
+#.                 ['O', 'X', ' ']
+#.             ]
+#.         ),
+#.         False
+#.     )
+#.     assert_equal(
+#.         column_winner(
+#.             [
+#.                 ['X', 'O', ' ', 'X'],
+#.                 [' ', 'O', 'X', 'O'],
+#.                 ['O', 'O', 'X', 'X'],
+#.                 ['O', 'O', 'X', ' ']
+#.             ]
+#.         ),
+#.         True
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner
 #. 
 #. def diagonal_winner(board):
@@ -4510,6 +4615,35 @@ msgstr "big_numbers"
 #.         if board[i][-i - 1] == ' ' or board[i][-i - 1] != topright:
 #.             all_equal2 = False
 #.     return all_equal1 or all_equal2
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.diagonal_winner.text
+#. 
+#.     def diagonal_winner(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['O', 'X', 'O', 'X'],
+#.                 [' ', 'O', 'X', ' '],
+#.                 ['X', 'X', ' ', 'X'],
+#.                 ['X', ' ', 'O', 'O']
+#.             ]
+#.         ),
+#.         True
+#.     )
+#.     assert_equal(
+#.         diagonal_winner(
+#.             [
+#.                 ['X', 'X', ' '],
+#.                 ['X', ' ', 'O'],
+#.                 [' ', 'O', 'O']
+#.             ]
+#.         ),
+#.         False
+#.     )
 #. 
 #. ------
 #. 
@@ -4558,6 +4692,35 @@ msgstr "big_numbers"
 #.         ['O', ' ', ' '],
 #.         [' ', 'X', 'O']
 #.     ]
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner.text
+#. 
+#.     def row_winner(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         row_winner(
+#.             [
+#.                 ['A', 'A', 'B', 'A'],
+#.                 [' ', ' ', ' ', ' '],
+#.                 ['A', ' ', ' ', 'A'],
+#.                 ['B', ' ', 'B', 'A']
+#.             ]
+#.         ),
+#.         False
+#.     )
+#.     assert_equal(
+#.         row_winner(
+#.             [
+#.                 ['X', ' ', 'X'],
+#.                 ['O', 'X', 'X'],
+#.                 ['O', 'O', 'O']
+#.             ]
+#.         ),
+#.         True
+#.     )
 #. 
 #. ------
 #. 
@@ -4904,6 +5067,22 @@ msgstr "big_numbers"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.text
 #. 
 #.     def format_board(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         format_board([
+#.             ['X', 'O', 'X'],
+#.             ['O', ' ', ' '],
+#.             [' ', 'X', 'O']
+#.         ]),
+#.         'X|O|X\n-+-+-\nO| | \n-+-+-\n |X|O'
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_bonus_challenge.text
+#. 
+#.     def format_board(board):
 #.         joined_rows = []
 #.         for row in board:
 #.             joined_rows.append("".join(row))
@@ -4934,6 +5113,32 @@ msgstr "big_numbers"
 #.         if i != len(board) - 1:
 #.             result += '\n'
 #.     return result
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.format_board_simple.text
+#. 
+#.     def format_board(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         format_board([
+#.             ['X', 'O', 'X'],
+#.             ['O', ' ', ' '],
+#.             [' ', 'X', 'O']
+#.         ]),
+#.         'XOX\nO  \n XO'
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.invalid_multi_line_string.text
+#. 
+#.     def format_board(board):
+#.         ...
+#.         return ...
+#. 
+#.     assert_equal(format_board([...]), "...")
 #. 
 #. ------
 #. 
@@ -5082,6 +5287,22 @@ msgstr "big_numbers"
 #.         joined_row = str(i + 1) + ''.join(board[i])
 #.         joined_rows.append(joined_row)
 #.     return "\n".join(joined_rows)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.format_board_with_numbers.text
+#. 
+#.     def format_board(board):
+#.         ...
+#. 
+#.     assert_equal(
+#.         format_board([
+#.             ['X', 'O', 'X'],
+#.             ['O', ' ', ' '],
+#.             [' ', 'X', 'O']
+#.         ]),
+#.         ' 123\n1XOX\n2O  \n3 XO'
+#.     )
 msgid "code_bits.board"
 msgstr "board"
 
@@ -8904,12 +9125,6 @@ msgstr "found"
 #.     friend = 'Bob'
 #.     meal = "lunch"
 #.     print(name + " went to " + meal + " with " + friend + '.')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
-#. 
-#.     print(f"{name} went to {meal} with {friend}.")
 msgid "code_bits.friend"
 msgstr "friend"
 
@@ -9507,7 +9722,7 @@ msgstr "left"
 #.     length = size - i
 #.     line = ''
 #.     for _ in range(length):
-#.         line += 'O'
+#.         line += '+'
 #.     print(line)
 #. 
 #. ------
@@ -9682,6 +9897,12 @@ msgstr "letters"
 #.     for _ in range(level):
 #.         string = surround(string, '!')
 #.     return string
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise.text
+#. 
+#.     def alert(string, level):
 msgid "code_bits.level"
 msgstr "level"
 
@@ -9803,7 +10024,7 @@ msgstr "level"
 #.     length = size - i
 #.     line = ''
 #.     for _ in range(length):
-#.         line += 'O'
+#.         line += '+'
 #.     print(line)
 #. 
 #. ------
@@ -10442,12 +10663,6 @@ msgstr "make_cube"
 #.     friend = 'Bob'
 #.     meal = "lunch"
 #.     print(name + " went to " + meal + " with " + friend + '.')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
-#. 
-#.     print(f"{name} went to {meal} with {friend}.")
 msgid "code_bits.meal"
 msgstr "meal"
 
@@ -10750,12 +10965,6 @@ msgstr "middle"
 #.     friend = 'Bob'
 #.     meal = "lunch"
 #.     print(name + " went to " + meal + " with " + friend + '.')
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
-#. 
-#.     print(f"{name} went to {meal} with {friend}.")
 #. 
 #. ------
 #. 
@@ -12270,6 +12479,39 @@ msgstr "play_move"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input.text
 #. 
+#.     def format_board(board):
+#.         first_row = ' '
+#.         for i in range(len(board)):
+#.             first_row += str(i + 1)
+#.         joined_rows = [first_row]
+#.         for i in range(len(board)):
+#.             joined_row = str(i + 1) + ''.join(board[i])
+#.             joined_rows.append(joined_row)
+#.         return "\n".join(joined_rows)
+#. 
+#.     def play_game():
+#.         board = [
+#.             [' ', ' ', ' '],
+#.             [' ', ' ', ' '],
+#.             [' ', ' ', ' '],
+#.         ]
+#.         print(format_board(board))
+#.         print('\nX to play:\n')
+#.         play_move(board, 'X')
+#.         print(format_board(board))
+#.         print('\nO to play:\n')
+#.         play_move(board, 'O')
+#.         print(format_board(board))
+#. 
+#.     def play_move(board, player):
+#.         ...
+#. 
+#.     play_game()
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input.text
+#. 
 #.     row = board[1]
 #.     row[0] = player
 #. 
@@ -13238,6 +13480,17 @@ msgstr "right"
 #. 
 #. def all_equal(row):
 #.     return row[0] == row[1] and row[0] == row[2]
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingAnd.steps.TicTacToeWinningRow.text
+#. 
+#.     def all_equal(row):
+#.         ...
+#. 
+#.     assert_equal(all_equal(["X", "X", "X"]), True)
+#.     assert_equal(all_equal(["O", "O", "O"]), True)
+#.     assert_equal(all_equal(["X", "O", "X"]), False)
 #. 
 #. ------
 #. 
@@ -14410,6 +14663,12 @@ msgstr "separator"
 #. 
 #. def surround(string, sides):
 #.     return sides + string + sides
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise.text
+#. 
+#.     def surround(string, sides):
 msgid "code_bits.sides"
 msgstr "sides"
 
@@ -14420,7 +14679,7 @@ msgstr "sides"
 #.     length = size - i
 #.     line = ''
 #.     for _ in range(length):
-#.         line += 'O'
+#.         line += '+'
 #.     print(line)
 #. 
 #. ------
@@ -14849,10 +15108,22 @@ msgstr "spaces"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise.text
+#. 
+#.     def alert(string, level):
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise
 #. 
 #. def surround(string, sides):
 #.     return sides + string + sides
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise.text
+#. 
+#.     def surround(string, sides):
 msgid "code_bits.string"
 msgstr "string"
 
@@ -15644,6 +15915,12 @@ msgstr "test"
 #.         print(thing)
 #. 
 #. print_many(3, "Hello")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.swap_parameters.text
+#. 
+#.     def print_many(n, thing):
 #. 
 #. ------
 #. 
@@ -17024,6 +17301,157 @@ msgstr ""
 "You defined a variable `{0}` but never used it. Did you forget to use it?\n"
 "Maybe you used the wrong variable in its place? If you don't need it, just remove it entirely."
 
+msgid "misc_terms.blank_result"
+msgstr "<nothing>"
+
+msgid "misc_terms.case_sensitive"
+msgstr ""
+"Python is case sensitive! That means that small and capital letters matter and changing them changes the meaning of "
+"the program. The strings `'hello'` and `'Hello'` are different, as are the variable names `word` and `Word`."
+
+msgid "misc_terms.code_should_start_like"
+msgstr ""
+"Your code should start like this:\n"
+"\n"
+"{expected_start}\n"
+
+msgid "misc_terms.copy_button"
+msgstr "Copy"
+
+msgid "misc_terms.disallowed_default_label"
+msgstr "more than {max_count} {label}"
+
+msgid "misc_terms.disallowed_default_message"
+msgstr ""
+"Well done, you have found a solution! However, for this exercise and your learning, you're not allowed to use {label}."
+
+msgid "misc_terms.expected_mode_birdseye"
+msgstr "With your code in the editor, click the Bird's Eye button."
+
+msgid "misc_terms.expected_mode_pythontutor"
+msgstr "With your code in the editor, click the Python Tutor button."
+
+msgid "misc_terms.expected_mode_shell"
+msgstr "Type your code directly in the shell after `>>>` and press Enter."
+
+msgid "misc_terms.expected_mode_snoop"
+msgstr "With your code in the editor, click the Snoop button."
+
+msgid "misc_terms.incorrect_mode"
+msgstr "The code is correct, but you didn't run it as instructed."
+
+msgid "misc_terms.internal_error"
+msgstr "Internal error"
+
+msgid "misc_terms.invalid_inputs"
+msgstr "The values of your input variables are invalid, try using values like the example."
+
+msgid "misc_terms.must_define_function"
+msgstr "You must define a function `{function_name}`"
+
+msgid "misc_terms.no_more_test_inputs"
+msgstr "No more test inputs - solution should have finished by now"
+
+msgid "misc_terms.not_a_function"
+msgstr "`{function_name}` is not a function."
+
+msgid "misc_terms.q_wiz_debugger"
+msgstr ""
+"It's great that you're using a debugger! Solving the problem on your own is ideal. If you can't, use the 'Run' button "
+"to generate the question."
+
+msgid "misc_terms.q_wiz_final_message"
+msgstr ""
+"\n"
+"Great! Here's some final tips:\n"
+"\n"
+"- Make sure the output is showing the problem you have and not something else.\n"
+"- Reduce your code to a **minimal** example. Remove any code that isn't directly related to the problem.\n"
+"- Run your code through the Snoop, Birdseye, and Python Tutor debuggers to understand what it's doing.\n"
+"- Search for your problem online.\n"
+"- Read [How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)\n"
+"\n"
+"If you're really ready, copy and paste the below into the question website,\n"
+"and replace the first line with a description of your problem.\n"
+"\n"
+"You can still change your code or expected output and click Run again to regenerate the question.\n"
+"\n"
+"    __copyable__\n"
+"    *Explain what you're trying to do and why*\n"
+"\n"
+"    Here's my code:\n"
+"\n"
+"{}\n"
+"\n"
+"    This is the result:\n"
+"\n"
+"{}\n"
+"\n"
+"    The expected output is:\n"
+"\n"
+"{}\n"
+
+msgid "misc_terms.q_wiz_input_and_add"
+msgstr ""
+"and add\n"
+"\n"
+"    {list_line}\n"
+"\n"
+"to the top of your code."
+
+msgid "misc_terms.q_wiz_input_message_start"
+msgstr ""
+"`input()` makes it harder to ask and answer questions about code. Replace calls to input with strings so that everyone"
+" can run the code instantly and get the same results."
+
+msgid "misc_terms.q_wiz_input_replace_with"
+msgstr ""
+"Replace:\n"
+"\n"
+"{original_lines}\n"
+"\n"
+"with\n"
+"\n"
+"{replaced_lines}"
+
+msgid "misc_terms.q_wiz_no_output"
+msgstr ""
+"Your code didn't output anything. Add some `print()` calls so that at least it outputs *something*. Use code to show "
+"readers exactly where the problem is."
+
+msgid "misc_terms.q_wiz_same_as_expected_output"
+msgstr ""
+"Your output is the same as your expected output! If your problem is still there, adjust your code and/or your expected"
+" output so that the two outputs don't match. Make it clear what would be different if the code worked the way you want"
+" it to."
+
+msgid "misc_terms.signature_should_be"
+msgstr ""
+"The signature should be:\n"
+"\n"
+"    def {function_name}{needed_signature}:\n"
+"\n"
+"not:\n"
+"\n"
+"    def {function_name}{actual_signature}:"
+
+msgid "misc_terms.syntax_error_at_line"
+msgstr "at line"
+
+msgid "misc_terms.when_it_should_output"
+msgstr "when it should output:"
+
+msgid "misc_terms.your_code_outputs"
+msgstr "Your code outputs:"
+
+msgid "misc_terms.your_code_outputs_given_values"
+msgstr ""
+"Given these values:\n"
+"\n"
+"{given_values}\n"
+"\n"
+"your code outputs:"
+
 #. Special choice at the end of all output prediction multiple choice questions
 msgid "output_predictions.Error"
 msgstr "Error"
@@ -17096,7 +17524,7 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_1
 msgid "pages.BasicForLoopExercises.steps.loop_exercise_1.hints.0.text"
-msgstr "You should only use one print, since each print outputs on a different line."
+msgstr "You should only use one `print`, since each print outputs on a different line."
 
 #. https://futurecoder.io/course/#BasicForLoopExercises
 #. 
@@ -17283,6 +17711,9 @@ msgstr ""
 "\n"
 "__code2__"
 
+msgid "pages.BuildingNewLists.steps.filter_numbers.disallowed.0.message"
+msgstr "Well done, that's correct! However, you should use `.append()` instead of `+=`."
+
 #. https://futurecoder.io/course/#BuildingNewLists
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingNewLists.steps.filter_numbers
@@ -17341,7 +17772,8 @@ msgstr ""
 "There isn't really a big difference between these, but `.append`\n"
 "will be more familiar and readable to most people.\n"
 "\n"
-"Now use `.append` to write a program which prints a list containing only the numbers bigger than 5.\n"
+"Now use `.append` to write a program which takes a list of numbers and\n"
+"prints a new list containing only the numbers bigger than 5.\n"
 "\n"
 "For example, given:\n"
 "\n"
@@ -17681,6 +18113,12 @@ msgstr ""
 msgid "pages.BuildingUpStringsExercises.steps.final_text.text"
 msgstr "Wow, nothing can stop you!"
 
+msgid "pages.BuildingUpStringsExercises.steps.name_box.disallowed.0.message"
+msgstr ""
+"Well done, this solution is correct! However, it can be improved.\n"
+"You only need to use one loop - using more is inefficient.\n"
+"You can reuse the variable containing the line of `-` and `+`."
+
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStringsExercises.steps.name_box
@@ -17737,6 +18175,13 @@ msgstr ""
 "    +-----+\n"
 "    |World|\n"
 "    +-----+"
+
+msgid "pages.BuildingUpStringsExercises.steps.name_box_2.disallowed.0.message"
+msgstr ""
+"Well done, this solution is correct!\n"
+"And you used a nested loop (a loop inside a loop) which we haven't even covered yet!\n"
+"However, in this case a nested loop is inefficient.\n"
+"You can make a variable containing spaces and reuse that in each line."
 
 #. https://futurecoder.io/course/#BuildingUpStringsExercises
 #. 
@@ -18794,8 +19239,8 @@ msgstr ""
 "\n"
 "- **`append`**: Add an element to the end of the list. `nums.append(4)` changes the list to `[1, 2, 3, 4]`.\n"
 "- **`len`**: Returns the number of elements. `len(nums)` is `3`.\n"
-"- **`range`**: `range(n)` is an object similar to the list of numbers from 0 to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.\n"
-"- **`subscripting`**: Get a value at an index. `nums[0]` is 1, `nums[1]` is 2, `nums[2]` is 3.\n"
+"- **`range`**: `range(n)` is an object similar to the list of numbers from `0` to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.\n"
+"- **`[]` (subscripting/indexing)**: Get a value at an index. `nums[0]` is `1`, `nums[1]` is `2`, `nums[2]` is `3`.\n"
 "- **`+`**: Concatenates lists. `nums + [4, 5]` is `[1, 2, 3, 4, 5]`.\n"
 "\n"
 "Note that `nums.append(4)` modifies the existing list `nums`, while `nums + [4, 5]` does not.\n"
@@ -20249,6 +20694,8 @@ msgstr "That means the first element should be equal to the second element and a
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.is_valid_percentage
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.row
 msgid "pages.IntroducingAnd.steps.TicTacToeWinningRow.text"
 msgstr ""
 "Awesome! Here's one possible solution:\n"
@@ -21802,6 +22249,10 @@ msgstr ""
 "For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
+msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.special_messages.multiply_with_x.text"
+msgstr "To multiply numbers, use `*`"
+
+#. https://futurecoder.io/course/#IntroducingNestedLoops
 msgid "pages.IntroducingNestedLoops.steps.times_table_exercise.text"
 msgstr ""
 "Make sure you fully grasp what's going on. `print(letter)` and `print('---')` each run 3 times, because their indentation puts them in the *outer loop*. `print(f'{letter} {number}')` is called 3 × 4 = 12 times, because it's in the *inner loop* `for number in range(4):` which has 4 iterations but is itself in the outer loop so it runs 3 times.\n"
@@ -21867,7 +22318,8 @@ msgstr "How would you describe instructions to type in this triangle manually?"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.1.text"
 msgstr ""
-"Print a line of `size` Os, then `size - 1` Os, etc. down to 1 O. For example print 5 Os, then 4 Os, then 3, 2, and 1."
+"Print a line of `size` plus signs, then `size - 1` plus signs, etc. down to 1 plus sign. For example print 5 `+`s, "
+"then 4 `+`s, then 3, 2, and 1."
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -21879,7 +22331,7 @@ msgstr "Break this down into subproblems."
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.3.text"
-msgstr "How do you print one line of Os of a given length, and how do you go through all the lengths?"
+msgstr "How do you print one line of `+`s of a given length, and how do you go through all the lengths?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -21930,14 +22382,13 @@ msgstr ""
 "\n"
 "__code0__\n"
 "\n"
-"Print out an 'upside down' triangle made of the letter `O` whose sides are as long as the given size, e.g:\n"
+"Print out an 'upside down' triangle made of the plus sign `+` whose sides are as long as the given size, e.g:\n"
 "\n"
-"    __no_auto_translate__\n"
-"    OOOOO\n"
-"    OOOO\n"
-"    OOO\n"
-"    OO\n"
-"    O"
+"    +++++\n"
+"    ++++\n"
+"    +++\n"
+"    ++\n"
+"    +"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 msgid "pages.IntroducingNestedLoops.title"
@@ -22238,6 +22689,9 @@ msgstr ""
 "But Python is not English, and that's not how `or` works.\n"
 "\n"
 "Replace the `return` line in the code with the above line, and try running it again."
+
+msgid "pages.IntroducingOr.steps.AnExercise.disallowed.3.label"
+msgstr "comparison chaining"
 
 #. https://futurecoder.io/course/#IntroducingOr
 #. 
@@ -22549,6 +23003,16 @@ msgstr ""
 "3. Press the Enter key on your keyboard."
 
 #. https://futurecoder.io/course/#IntroducingTheShell
+#. 
+#.     # __code0__:
+#.     3 * 4
+msgid "pages.IntroducingTheShell.steps.more_calculation.special_messages.multiply_with_x.text"
+msgstr ""
+"I see an 'x'. If you're trying to multiply, use an asterisk, e.g:\n"
+"\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#IntroducingTheShell
 msgid "pages.IntroducingTheShell.steps.more_calculation.text"
 msgstr ""
 "Great! Python evaluated `1+2` and got the result `3`, so the shell displays that.\n"
@@ -22682,6 +23146,8 @@ msgstr ""
 #.     )
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.column_winner
 msgid "pages.IntroducingTicTacToe.steps.column_winner.text"
@@ -23042,6 +23508,14 @@ msgstr ""
 "\n"
 "In the second example, `O` wins in the bottom row."
 
+msgid "pages.IntroducingTicTacToe.steps.winner.disallowed.0.message"
+msgstr ""
+"Your solution should work by calling the three functions. `winner` itself should not do any\n"
+"looping, subscripting, etc. It should be very short.\n"
+"\n"
+"Copy the `row_winner` and other functions and leave them as they are. Don't copy code from them\n"
+"into the `winner` function, just call those functions."
+
 #. https://futurecoder.io/course/#IntroducingTicTacToe
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.winner
@@ -23215,6 +23689,10 @@ msgstr ""
 "Run this code:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#IntroducingVariables
+msgid "pages.IntroducingVariables.steps.word_check.special_messages.bad_word.text"
+msgstr "Oops, you need to set `word = 'Hello'` before we can continue."
 
 #. https://futurecoder.io/course/#IntroducingVariables
 msgid "pages.IntroducingVariables.steps.word_check.text"
@@ -23860,6 +24338,10 @@ msgid "pages.MakingTheBoard.steps.fix_make_board.hints.8.text"
 msgstr "Making a new row each time can be done by just rearranging the code."
 
 #. https://futurecoder.io/course/#MakingTheBoard
+msgid "pages.MakingTheBoard.steps.fix_make_board.special_messages.not_separate.text"
+msgstr "The sublists in the result are not all separate objects."
+
+#. https://futurecoder.io/course/#MakingTheBoard
 #. 
 #.     # __code0__:
 #.     board[0][0] = 'X'
@@ -23990,7 +24472,7 @@ msgstr ""
 #. https://futurecoder.io/course/#ModifyingWhileIterating
 msgid "pages.ModifyingWhileIterating.steps.make_copy2.text"
 msgstr ""
-"Now the list being modified and the list being itererated over are separate objects, even if they start out with equal contents.\n"
+"Now the list being modified and the list being iterated over are separate objects, even if they start out with equal contents.\n"
 "\n"
 "Similarly, you could loop over the original and modify a copy:\n"
 "\n"
@@ -24768,6 +25250,10 @@ msgid "pages.NestedListAssignment.title"
 msgstr "Nested List Assignment: Playing Moves on the Board"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
+msgid "pages.NewlinesAndFormatBoard.steps.discovering_newline.special_messages.bad_string.text"
+msgstr "Oops, `string` doesn't have the right value. Run the program from the previous step again."
+
+#. https://futurecoder.io/course/#NewlinesAndFormatBoard
 msgid "pages.NewlinesAndFormatBoard.steps.discovering_newline.text"
 msgstr ""
 "Hooray! A *triple quoted string* is allowed to span many lines and they will be shown in the output.\n"
@@ -25032,6 +25518,8 @@ msgstr "Then check if you are at the last index or not."
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 msgid "pages.NewlinesAndFormatBoard.steps.format_board_simple.text"
 msgstr ""
@@ -25090,6 +25578,8 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 #. 
@@ -25875,7 +26365,7 @@ msgstr "You're not allowed to combine several exclamation marks into one string,
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 msgid "pages.TestingFunctions.steps.alert_exercise.hints.5.text"
-msgstr "That is, call surround once for each pair of exclamation marks."
+msgstr "That is, call `surround` once for each pair of exclamation marks."
 
 #. https://futurecoder.io/course/#TestingFunctions
 #. 
@@ -25937,6 +26427,10 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.alert
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.level
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
 msgid "pages.TestingFunctions.steps.alert_exercise.text"
 msgstr ""
 "Perfect! Now write a function `alert` that passes these tests:\n"
@@ -26069,6 +26563,10 @@ msgstr "Make sure that you don't call `surround` inside the function body of `su
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22the+same%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.sides
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.surround
 msgid "pages.TestingFunctions.steps.surround_exercise.text"
@@ -26553,6 +27051,9 @@ msgstr ""
 "    __copyable__\n"
 "__code0__"
 
+msgid "pages.Types.steps.fixing_type_errors_with_conversion.disallowed.0.label"
+msgstr "f-strings"
+
 #. https://futurecoder.io/course/#Types
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.fixing_type_errors_with_conversion
@@ -26681,6 +27182,8 @@ msgstr "Add each row's string to the list, then join the list with a newline cha
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27+123%5Cn1XOX%5Cn2O++%5Cn3+XO%27
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.board
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.format_board
 msgid "pages.Types.steps.format_board_with_numbers.text"
@@ -27106,6 +27609,10 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#UsingVariables
+msgid "pages.UsingVariables.steps.word_plus_name.special_messages.bad_word.text"
+msgstr "Oops, you need to set `word = 'Hello'` before we can continue."
+
+#. https://futurecoder.io/course/#UsingVariables
 #. 
 #.     # __code0__:
 #.     __program_indented__
@@ -27134,6 +27641,10 @@ msgstr "Your answer should contain a mixture of variables (no quotes) and string
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.word_plus_name_with_space
 msgid "pages.UsingVariables.steps.word_plus_name_with_space.hints.2.text"
 msgstr "You will need to have a space character inside quotes."
+
+#. https://futurecoder.io/course/#UsingVariables
+msgid "pages.UsingVariables.steps.word_plus_name_with_space.special_messages.bad_word.text"
+msgstr "Oops, you need to set `word = 'Hello'` before we can continue."
 
 #. https://futurecoder.io/course/#UsingVariables
 msgid "pages.UsingVariables.steps.word_plus_name_with_space.text"

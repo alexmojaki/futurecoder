@@ -1,9 +1,9 @@
 # flake8: NOQA E501
 import ast
-from string import ascii_lowercase
-from random import randint, choice
+from random import randint
 from typing import List
 
+from core import translation as t
 from core.exercises import generate_string
 from core.text import (
     ExerciseStep,
@@ -179,6 +179,13 @@ Make sure each line is in the correct loop and has the right amount of indentati
 
         parsons_solution = True
 
+        class special_messages:
+            class multiply_with_x:
+                """
+                To multiply numbers, use `*`
+                """
+                program = "pass\n3 x 4"
+
         def check(self):
             try:
                 return super().check()
@@ -190,7 +197,7 @@ Make sure each line is in the correct loop and has the right amount of indentati
                     and lines[1].strip() == "^"
                     and lines[0][lines[1].index("^")] == "x"
                 ):
-                    return dict(message="To multiply numbers, use `*`")
+                    return self.special_messages.multiply_with_x
 
         def solution(self):
             for left in range(12):
@@ -428,7 +435,8 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
                     left += 1
                     for right in range(12):
                         right += 1
-                        print(f'{left} * {right} = {left * right}')
+                        # for the sake of translation
+                        print(f'{left} x {right} = {left * right}'.replace('x', '*'))
                     print('----------')
 
             tests = {
@@ -969,7 +977,6 @@ One more exercise. Given a size:
 
 Print out an 'upside down' triangle made of the plus sign `+` whose sides are as long as the given size, e.g:
 
-    __no_auto_translate__
     +++++
     ++++
     +++
@@ -1243,7 +1250,7 @@ For the previous example input it should print `f`.
             return super().check() and \
                 search_ast(
                     self.tree,
-                    ast.parse("print(strings[-2][-1])").body[0],
+                    ast.parse(t.translate_code("print(strings[-2][-1])")).body[0],
                 )
 
         hints = """

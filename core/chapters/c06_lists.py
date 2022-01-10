@@ -248,7 +248,8 @@ it's actually more common to write:
 There isn't really a big difference between these, but `.append`
 will be more familiar and readable to most people.
 
-Now use `.append` to write a program which prints a list containing only the numbers bigger than 5.
+Now use `.append` to write a program which takes a list of numbers and
+prints a new list containing only the numbers bigger than 5.
 
 For example, given:
 
@@ -901,8 +902,8 @@ Let's review how to work with lists. Suppose we have a list `nums = [1, 2, 3]`. 
 
 - **`append`**: Add an element to the end of the list. `nums.append(4)` changes the list to `[1, 2, 3, 4]`.
 - **`len`**: Returns the number of elements. `len(nums)` is `3`.
-- **`range`**: `range(n)` is an object similar to the list of numbers from 0 to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.
-- **`subscripting`**: Get a value at an index. `nums[0]` is 1, `nums[1]` is 2, `nums[2]` is 3.
+- **`range`**: `range(n)` is an object similar to the list of numbers from `0` to `n - 1`. That means it contains `n` numbers. In particular, `range(len(nums))` is like `[0, 1, 2]`, which are the indices of every element in `nums`.
+- **`[]` (subscripting/indexing)**: Get a value at an index. `nums[0]` is `1`, `nums[1]` is `2`, `nums[2]` is `3`.
 - **`+`**: Concatenates lists. `nums + [4, 5]` is `[1, 2, 3, 4, 5]`.
 
 Note that `nums.append(4)` modifies the existing list `nums`, while `nums + [4, 5]` does not.
@@ -1795,7 +1796,7 @@ The good news is that there are many ways to solve this. You can instead just lo
 
     class make_copy2(VerbatimStep):
         """
-Now the list being modified and the list being itererated over are separate objects, even if they start out with equal contents.
+Now the list being modified and the list being iterated over are separate objects, even if they start out with equal contents.
 
 Similarly, you could loop over the original and modify a copy:
 
