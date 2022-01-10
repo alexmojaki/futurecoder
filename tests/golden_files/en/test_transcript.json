@@ -2452,6 +2452,17 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "0\nThis\n1\nis\n2\na\n3\nlist",
+                "choices": [
+                    "0\n1\n2\n3\nThis\nis\na\nlist",
+                    "1\n2\n3\n4\nThis\nis\na\nlist",
+                    "This\nis\na\nlist\n0\n1\n2\n3",
+                    "0\nThis\n1\nis\n2\na\n3\nlist",
+                    "1\nThis\n2\nis\n3\na\n4\nlist",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "text": "0\nThis\n1\nis\n2\na\n3\nlist\n",
@@ -2459,7 +2470,7 @@
                 }
             ]
         },
-        "step": "improve_with_list_and_loop"
+        "step": "introducing_len_and_range"
     },
     {
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
@@ -2647,6 +2658,7 @@
                     "2",
                     "3",
                     "4",
+                    "5",
                     "Error"
                 ]
             },
@@ -2657,7 +2669,7 @@
                 }
             ]
         },
-        "step": "introducing_len_and_range"
+        "step": "using_len_first_time"
     },
     {
         "get_solution": [

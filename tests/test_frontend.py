@@ -210,7 +210,7 @@ list
         sleep(0.1)
 
     assert (
-        "Let's get some more exercise!"
+        "When you're ready, here's something a bit more challenging"
         in driver.find_element_by_css_selector(".book-text").text
     )
 

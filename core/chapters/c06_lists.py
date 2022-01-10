@@ -420,7 +420,7 @@ This also means that the last index in this list of 4 elements is 3. What happen
         def check(self):
             return "IndexError" in self.result
 
-    class improve_with_list_and_loop(VerbatimStep):
+    class introducing_len_and_range(VerbatimStep):
         """
 There you go. `words[4]` and beyond don't exist, so trying that will give you an error.
 That first program is a bit repetitive. Let's improve it with a list and a loop!
@@ -429,6 +429,54 @@ __program_indented__
         """
 
         auto_translate_program = False
+
+        predicted_output_choices = ["""\
+0
+1
+2
+3
+This
+is
+a
+list
+""",  """\
+1
+2
+3
+4
+This
+is
+a
+list
+""", """\
+This
+is
+a
+list
+0
+1
+2
+3
+""", """\
+0
+This
+1
+is
+2
+a
+3
+list
+""", """\
+1
+This
+2
+is
+3
+a
+4
+list
+""",
+                                    ]
 
         def program(self):
             words = ['This', 'is', 'a', 'list']
@@ -503,7 +551,7 @@ list
 
     class indices_out_of_bounds(VerbatimStep):
         """
-Now try `__program__` in the shell. What do you expect the output to be?
+Now try `__program__` in the shell.
         """
 
         predicted_output_choices = ["0", "1", "2", "3", "4"]
@@ -534,8 +582,6 @@ There's a good reason for why `range(4)` is not actually a list - it makes progr
 It's not worth explaining that more right now.
 
 But you can easily convert it to a list: try `__program__` in the shell.
-
-What do you expect the output to be?
         """
         predicted_output_choices = [
             "range(4)",
@@ -551,7 +597,7 @@ What do you expect the output to be?
 
         program = "list(range(4))"
 
-    class introducing_len_and_range(VerbatimStep):
+    class using_len_first_time(VerbatimStep):
         """
 That's just a demonstration to let you see a range in a more familiar form.
 You should almost never actually do that.
@@ -570,7 +616,7 @@ Try it by running this code:
 
         auto_translate_program = False
 
-        predicted_output_choices = ["0", "1", "2", "3", "4"]
+        predicted_output_choices = ["0", "1", "2", "3", "4", "5"]
 
         def program(self):
             words = ['This', 'is', 'a', 'list']
@@ -610,12 +656,17 @@ So in general, the valid indices are:
 
     [0, 1, 2, ..., len(words) - 2, len(words) - 1]
 
-Exercise: for any non-empty list `words`, print each index and element of the list. For example, if
+Now we can fix the program from earlier to work with any list. Fill in the `...`:
 
+    __copyable__
     __no_auto_translate__
     words = ['This', 'is', 'a', 'list']
 
-your program should print:
+    for index in ...:
+        print(index)
+        print(words[index])
+
+For the given example value of `words` it should print:
 
     0
     This
@@ -672,25 +723,19 @@ list
 
     class index_exercise(ExerciseStep):
         """
-Using `range` and `len` in combination is a very important skill! At first, it may seem complicated.
-If you'd like some more practice with `range` and `len`,
-here are a few suggestions for you to practice on your own.
-Don't feel like you have to do all of these, just as much as you need to.
-
+If you're not quite comfortable with `range` and/or `len`, practice and experiment with it for a bit.
+Here are some simple exercises you can try on your own if you want.
 For any non-empty list `words` and any positive number `n`:
 
-Print the numbers from `1` to `n` inclusive.
+- Print the numbers from `1` to `100` inclusive.
+- Print your name 100 times.
+- Print each word in a list `words` except for the last one.
+- Print each word in `words` in reverse order, i.e. print the last word, then the second last word, etc.
+- Revisit the bonus problem at the end of the [Introducing Lists page](#IntroducingLists),
+whether or not you completed it. It's now much easier with `range` and `len`!
 
-Print the word `Python` `n` times.
-
-Print each word in `words` except for the last one.
-
-Print each word in `words` in reverse order.
-
-Go back and revisit the bonus problem at the end of the [Introducing Lists page](#IntroducingLists),
-even if you've done it. It's now much easier with `range` and `len`!
-
-Let's get some more exercise! Given a list `things` and a value `to_find`,
+When you're ready, here's something a bit more challenging.
+Given a list `things` and a value `to_find`,
 print the first index of `to_find` in the list, i.e. the lowest number `i` such that
 `things[i]` is `to_find`. For example, for
 
