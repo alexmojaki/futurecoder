@@ -417,13 +417,6 @@ def predict_output(driver, editor, run_button, first_choice, second_choice):
     run_code(
         editor,
         run_button,
-#         """\
-# words = ['This', 'is', 'a', 'list']
-#
-# for index in range(len(words)):
-# print(index)
-# print(words[index])
-#                 """,
         """\
 indices = range(4)
 
