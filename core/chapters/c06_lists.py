@@ -431,28 +431,11 @@ __program_indented__
         auto_translate_program = False
 
         predicted_output_choices = ["""\
-0
-1
-2
-3
-This
-is
-a
-list
-""",  """\
-1
-2
-3
-4
 This
 is
 a
 list
 """, """\
-This
-is
-a
-list
 0
 1
 2
@@ -467,15 +450,33 @@ a
 3
 list
 """, """\
-1
 This
-2
+0
 is
-3
+1
 a
-4
+2
 list
-""",
+3
+""", """\
+0
+1
+2
+3
+This
+is
+a
+list
+""", """\
+This
+is
+a
+list
+0
+1
+2
+3
+"""
                                     ]
 
         def program(self):
@@ -486,7 +487,7 @@ list
                 print(index)
                 print(words[index])
 
-    class using_range_instead_of_indices(VerbatimStep):
+    class range_len(VerbatimStep):
         """
 That's a bit better, but writing out `[0, 1, 2, ...]` isn't great, especially if it gets long.
 There's a handy function `range` to do that part for you. Replace `[0, 1, 2, 3]` with `range(4)`,
@@ -650,7 +651,7 @@ Can you come up with a general solution that works for any length?
             (['This', 'is', 'a', 'list'], "list")
         ]
 
-    class range_len(ExerciseStep):
+    class print_indices_and_words(ExerciseStep):
         """
 So in general, the valid indices are:
 
@@ -679,10 +680,9 @@ For the given example value of `words` it should print:
         """
 
         hints = """
-This is similar to an earlier step, where we looped through two lists `words` and `indices` at the same time.
-This time there is only one list, and it could be of any length.
-Think back to earlier steps. We replaced `indices` with a function.
-How can you combine the two functions you just learned, `range` and `len`, to help you here?
+Remember that earlier we used `range(4)` in place of `...`.
+This time, it should work for any list. What if the list has 5 elements, or 10?
+Combine the two functions you learned!
         """
 
         def solution(self, words: List[str]):
@@ -725,7 +725,6 @@ list
         """
 If you're not quite comfortable with `range` and/or `len`, practice and experiment with it for a bit.
 Here are some simple exercises you can try on your own if you want.
-For any non-empty list `words` and any positive number `n`:
 
 - Print the numbers from `1` to `100` inclusive.
 - Print your name 100 times.

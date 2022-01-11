@@ -2455,11 +2455,12 @@
             "prediction": {
                 "answer": "0\nThis\n1\nis\n2\na\n3\nlist",
                 "choices": [
-                    "0\n1\n2\n3\nThis\nis\na\nlist",
-                    "1\n2\n3\n4\nThis\nis\na\nlist",
-                    "This\nis\na\nlist\n0\n1\n2\n3",
+                    "This\nis\na\nlist",
+                    "0\n1\n2\n3",
                     "0\nThis\n1\nis\n2\na\n3\nlist",
-                    "1\nThis\n2\nis\n3\na\n4\nlist",
+                    "This\n0\nis\n1\na\n2\nlist\n3",
+                    "0\n1\n2\n3\nThis\nis\na\nlist",
+                    "This\nis\na\nlist\n0\n1\n2\n3",
                     "Error"
                 ]
             },
@@ -2492,7 +2493,7 @@
                 }
             ]
         },
-        "step": "using_range_instead_of_indices"
+        "step": "range_len"
     },
     {
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
@@ -2715,7 +2716,7 @@
                 }
             ]
         },
-        "step": "range_len"
+        "step": "print_indices_and_words"
     },
     {
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",

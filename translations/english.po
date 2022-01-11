@@ -2356,19 +2356,19 @@ msgstr "'No'"
 msgid "code_bits.'One more exercise, and then you can relax.'"
 msgstr "'One more exercise, and then you can relax.'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_last_element
-#. 
-#. words = ['Python']
-#. print(words[len(words) - 1])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_indices_and_words
 #. 
 #. words = ['Python']
 #. for index in range(len(words)):
 #.     print(index)
 #.     print(words[index])
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_last_element
+#. 
+#. words = ['Python']
+#. print(words[len(words) - 1])
 #. 
 #. ------
 #. 
@@ -9331,7 +9331,7 @@ msgstr "include"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_indices_and_words
 #. 
 #. words = ['Python']
 #. for index in range(len(words)):
@@ -17027,14 +17027,7 @@ msgstr "winning_line"
 msgid "code_bits.word"
 msgstr "word"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_last_element
-#. 
-#. words = ['Python']
-#. print(words[len(words) - 1])
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_indices_and_words
 #. 
 #. words = ['Python']
 #. for index in range(len(words)):
@@ -17043,9 +17036,16 @@ msgstr "word"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_indices_and_words.text
 #. 
 #.     [0, 1, 2, ..., len(words) - 2, len(words) - 1]
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_last_element
+#. 
+#. words = ['Python']
+#. print(words[len(words) - 1])
 #. 
 #. ------
 #. 
@@ -19754,7 +19754,6 @@ msgid "pages.GettingElementsAtPosition.steps.index_exercise.text"
 msgstr ""
 "If you're not quite comfortable with `range` and/or `len`, practice and experiment with it for a bit.\n"
 "Here are some simple exercises you can try on your own if you want.\n"
-"For any non-empty list `words` and any positive number `n`:\n"
 "\n"
 "- Print the numbers from `1` to `100` inclusive.\n"
 "- Print your name 100 times.\n"
@@ -19783,6 +19782,38 @@ msgstr "Now try `__program__` in the shell."
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
 msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.0"
 msgstr ""
+"This\n"
+"is\n"
+"a\n"
+"list"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
+msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.2"
+msgstr ""
+"0\n"
+"This\n"
+"1\n"
+"is\n"
+"2\n"
+"a\n"
+"3\n"
+"list"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
+msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.3"
+msgstr ""
+"This\n"
+"0\n"
+"is\n"
+"1\n"
+"a\n"
+"2\n"
+"list\n"
+"3"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
+msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.4"
+msgstr ""
 "0\n"
 "1\n"
 "2\n"
@@ -19793,19 +19824,7 @@ msgstr ""
 "list"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
-msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.1"
-msgstr ""
-"1\n"
-"2\n"
-"3\n"
-"4\n"
-"This\n"
-"is\n"
-"a\n"
-"list"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
-msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.2"
+msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.5"
 msgstr ""
 "This\n"
 "is\n"
@@ -19815,30 +19834,6 @@ msgstr ""
 "1\n"
 "2\n"
 "3"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
-msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.3"
-msgstr ""
-"0\n"
-"This\n"
-"1\n"
-"is\n"
-"2\n"
-"a\n"
-"3\n"
-"list"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
-msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.output_prediction_choices.4"
-msgstr ""
-"1\n"
-"This\n"
-"2\n"
-"is\n"
-"3\n"
-"a\n"
-"4\n"
-"list"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.introducing_len_and_range
 msgid "pages.GettingElementsAtPosition.steps.introducing_len_and_range.program"
@@ -19875,6 +19870,57 @@ msgstr ""
 "Here's how:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_indices_and_words
+msgid "pages.GettingElementsAtPosition.steps.print_indices_and_words.hints.0.text"
+msgstr "Remember that earlier we used `range(4)` in place of `...`."
+
+#. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_indices_and_words
+msgid "pages.GettingElementsAtPosition.steps.print_indices_and_words.hints.1.text"
+msgstr "This time, it should work for any list. What if the list has 5 elements, or 10?"
+
+#. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_indices_and_words
+msgid "pages.GettingElementsAtPosition.steps.print_indices_and_words.hints.2.text"
+msgstr "Combine the two functions you learned!"
+
+#. https://futurecoder.io/course/#GettingElementsAtPosition
+#. 
+#.     # __code0__:
+#.     [0, 1, 2, ..., len(words) - 2, len(words) - 1]
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.words
+msgid "pages.GettingElementsAtPosition.steps.print_indices_and_words.text"
+msgstr ""
+"So in general, the valid indices are:\n"
+"\n"
+"__code0__\n"
+"\n"
+"Now we can fix the program from earlier to work with any list. Fill in the `...`:\n"
+"\n"
+"    __copyable__\n"
+"    __no_auto_translate__\n"
+"    words = ['This', 'is', 'a', 'list']\n"
+"\n"
+"    for index in ...:\n"
+"        print(index)\n"
+"        print(words[index])\n"
+"\n"
+"For the given example value of `words` it should print:\n"
+"\n"
+"    0\n"
+"    This\n"
+"    1\n"
+"    is\n"
+"    2\n"
+"    a\n"
+"    3\n"
+"    list"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 #. 
@@ -19941,62 +19987,22 @@ msgstr ""
 msgid "pages.GettingElementsAtPosition.steps.range_almost_the_same_as_list.text"
 msgstr "`range(4)` is the same thing as `[0, 1, 2, 3]` ... almost. Try `__program__` in the shell."
 
-#. https://futurecoder.io/course/#GettingElementsAtPosition
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-msgid "pages.GettingElementsAtPosition.steps.range_len.hints.0.text"
-msgstr "This is similar to an earlier step, where we looped through two lists `words` and `indices` at the same time."
+msgid "pages.GettingElementsAtPosition.steps.range_len.program"
+msgstr ""
+"words = ['This', 'is', 'a', 'list']\n"
+"indices = range(4)\n"
+"\n"
+"for index in indices:\n"
+"    print(index)\n"
+"    print(words[index])"
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-msgid "pages.GettingElementsAtPosition.steps.range_len.hints.1.text"
-msgstr "This time there is only one list, and it could be of any length."
-
-#. https://futurecoder.io/course/#GettingElementsAtPosition
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-msgid "pages.GettingElementsAtPosition.steps.range_len.hints.2.text"
-msgstr "Think back to earlier steps. We replaced `indices` with a function."
-
-#. https://futurecoder.io/course/#GettingElementsAtPosition
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_len
-msgid "pages.GettingElementsAtPosition.steps.range_len.hints.3.text"
-msgstr "How can you combine the two functions you just learned, `range` and `len`, to help you here?"
-
-#. https://futurecoder.io/course/#GettingElementsAtPosition
-#. 
-#.     # __code0__:
-#.     [0, 1, 2, ..., len(words) - 2, len(words) - 1]
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.words
 msgid "pages.GettingElementsAtPosition.steps.range_len.text"
 msgstr ""
-"So in general, the valid indices are:\n"
-"\n"
-"__code0__\n"
-"\n"
-"Now we can fix the program from earlier to work with any list. Fill in the `...`:\n"
-"\n"
-"    __copyable__\n"
-"    __no_auto_translate__\n"
-"    words = ['This', 'is', 'a', 'list']\n"
-"\n"
-"    for index in ...:\n"
-"        print(index)\n"
-"        print(words[index])\n"
-"\n"
-"For the given example value of `words` it should print:\n"
-"\n"
-"    0\n"
-"    This\n"
-"    1\n"
-"    is\n"
-"    2\n"
-"    a\n"
-"    3\n"
-"    list"
+"That's a bit better, but writing out `[0, 1, 2, ...]` isn't great, especially if it gets long.\n"
+"There's a handy function `range` to do that part for you. Replace `[0, 1, 2, 3]` with `range(4)`,\n"
+"i.e. `indices = range(4)`."
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.range_versus_list
 msgid "pages.GettingElementsAtPosition.steps.range_versus_list.output_prediction_choices.0"
@@ -20061,23 +20067,6 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code1__"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.using_range_instead_of_indices
-msgid "pages.GettingElementsAtPosition.steps.using_range_instead_of_indices.program"
-msgstr ""
-"words = ['This', 'is', 'a', 'list']\n"
-"indices = range(4)\n"
-"\n"
-"for index in indices:\n"
-"    print(index)\n"
-"    print(words[index])"
-
-#. https://futurecoder.io/course/#GettingElementsAtPosition
-msgid "pages.GettingElementsAtPosition.steps.using_range_instead_of_indices.text"
-msgstr ""
-"That's a bit better, but writing out `[0, 1, 2, ...]` isn't great, especially if it gets long.\n"
-"There's a handy function `range` to do that part for you. Replace `[0, 1, 2, 3]` with `range(4)`,\n"
-"i.e. `indices = range(4)`."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 #. 

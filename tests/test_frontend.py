@@ -205,7 +205,7 @@ list
 
     # Course has moved on to next step: indices_out_of_bounds
     # Let's skip to the step: index_exercise
-    for _ in range(6):  # change this back to 6
+    for _ in range(6):
         skip_button.click()
         sleep(0.1)
 
