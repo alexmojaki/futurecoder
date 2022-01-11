@@ -680,7 +680,7 @@ For the given example value of `words` it should print:
         """
 
         hints = """
-Remember that earlier we used `range(4)` in place of `...`.
+Remember that earlier we used `range(4)`.
 This time, it should work for any list. What if the list has 5 elements, or 10?
 Combine the two functions you learned!
         """

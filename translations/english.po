@@ -19875,7 +19875,7 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.print_indices_and_words
 msgid "pages.GettingElementsAtPosition.steps.print_indices_and_words.hints.0.text"
-msgstr "Remember that earlier we used `range(4)` in place of `...`."
+msgstr "Remember that earlier we used `range(4)`."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 #. 
