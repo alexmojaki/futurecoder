@@ -43,7 +43,7 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -563,7 +563,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `2` identified above was expected to begin a new indented block.\n\n\n",
+                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nen la l\u00ednea 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `2` identified above was expected to begin a new indented block.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -624,7 +624,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `3` identified above is less indented than expected.\n\n\n",
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nen la l\u00ednea 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `3` identified above is less indented than expected.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1783,7 +1783,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou likely called a function with a named argument:\n\n    a_function(invalid=something) \n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n",
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou likely called a function with a named argument:\n\n    a_function(invalid=something) \n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1794,13 +1794,13 @@
         "page": "El operador de igualdad",
         "program": [
             "nombre = 'kesha'",
-            "juevo_nuevo = ''",
+            "juego_nuevo = ''",
             "for c in nombre:",
             "    if c == 's':",
             "        c = '$'",
-            "    juevo_nuevo += c",
+            "    juego_nuevo += c",
             "",
-            "print(juevo_nuevo)"
+            "print(juego_nuevo)"
         ],
         "response": {
             "message": "",
@@ -1816,7 +1816,7 @@
     },
     {
         "get_solution": [
-            "juevo_nuevo = ''",
+            "juego_nuevo = ''",
             "for c in nombre:",
             "    if c == 'e':",
             "        c = '3'",
@@ -1824,14 +1824,14 @@
             "        c = '$'",
             "    if c == 'a':",
             "        c = '@'",
-            "    juevo_nuevo += c",
+            "    juego_nuevo += c",
             "",
-            "print(juevo_nuevo)"
+            "print(juego_nuevo)"
         ],
         "page": "El operador de igualdad",
         "program": [
             "nombre = 'kesha'",
-            "juevo_nuevo = ''",
+            "juego_nuevo = ''",
             "for c in nombre:",
             "    if c == 'e':",
             "        c = '3'",
@@ -1839,9 +1839,9 @@
             "        c = '$'",
             "    if c == 'a':",
             "        c = '@'",
-            "    juevo_nuevo += c",
+            "    juego_nuevo += c",
             "",
-            "print(juevo_nuevo)"
+            "print(juego_nuevo)"
         ],
         "response": {
             "message": "",
@@ -3777,7 +3777,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n\n\n",
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4227,7 +4227,7 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 2\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 2\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4383,7 +4383,7 @@
         "step": "player_vs_player_bonus"
     },
     {
-        "page": "Comprensi\u00f3n de programas con Bird's Eye",
+        "page": "Comprensi\u00f3n de programas con <code>birdseye</code>",
         "program": [
             "a = 2",
             "b = 3",
@@ -4404,7 +4404,7 @@
         "step": "first_birdseye_example"
     },
     {
-        "page": "Comprensi\u00f3n de programas con Bird's Eye",
+        "page": "Comprensi\u00f3n de programas con <code>birdseye</code>",
         "program": [
             "palabra = 'Sorprendente'",
             "vocales = []",
@@ -5840,7 +5840,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    es_amigo = nombre == \"Alicia\" or\n                                    ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThe Python keyword `or` can only be used for boolean expressions.\nPerhaps you meant to write\n\n`es_amigo = nombre == \"Alicia\" ,`\n\n\n",
+                    "text": "    es_amigo = nombre == \"Alicia\" or\n                                    ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThe Python keyword `or` can only be used for boolean expressions.\nPerhaps you meant to write\n\n`es_amigo = nombre == \"Alicia\" ,`\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6226,7 +6226,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n\n",
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nen la l\u00ednea 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6832,6 +6832,19 @@
             ]
         },
         "step": "naive_make_board"
+    },
+    {
+        "page": "Construyendo el Tablero",
+        "program": [
+            "pass",
+            "def crear_tablero(tamano): return [[' '] * tamano] * tamano"
+        ],
+        "response": {
+            "message": "<p>Las sublistas en el resultado no son objetos separados.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "fix_make_board"
     },
     {
         "get_solution": [
