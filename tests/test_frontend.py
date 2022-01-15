@@ -204,15 +204,15 @@ list
     driver.find_element_by_css_selector(".submit-prediction button").click()
 
     # Course has moved on to next step: indices_out_of_bounds
-    # Let's skip to the step: index_exercise
+    # Let's skip to the end of this page
+    # and start on the next page with the step index_exercise
     for _ in range(6):
         skip_button.click()
         sleep(0.1)
 
-    assert (
-        "When you're ready, here's something a bit more challenging"
-        in driver.find_element_by_css_selector(".book-text").text
-    )
+    force_click(driver, driver.find_element_by_class_name("next-button"))
+
+    assert "Given a list" in driver.find_element_by_css_selector(".book-text").text
 
     show_hints_and_solution(driver, num_hints=9, parsons=False)
 
@@ -344,7 +344,7 @@ for i in range(length):
     driver.find_element_by_class_name("previous-button").click()
     sleep(0.1)
     assert driver.find_element_by_css_selector(".book-text h1").text.startswith(
-        "Getting elements at a position"
+        "Exercises with"
     )
 
 
