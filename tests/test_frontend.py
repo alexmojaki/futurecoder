@@ -175,39 +175,44 @@ list
     # No hint button present
     assert not driver.find_elements_by_class_name("hint-icon")
 
-    # Skip forward to output prediction step
-    for _ in range(2):
+    # Skip forward to output prediction step: printing_the_range
+    for _ in range(3):
         skip_button.click()
         sleep(0.1)
 
     assert (
-        "range(n) is similar to the list"
+        "As you can see, the result is the same"
         in driver.find_element_by_css_selector(".book-text").text
     )
 
     # Correct answer first time
-    predict_output(driver, editor, run_button, 2, None)
+    predict_output(driver, editor, run_button, 0, None)
 
     # start again
     reverse_button.click()
 
     # Correct answer second time
-    predict_output(driver, editor, run_button, 1, 2)
+    predict_output(driver, editor, run_button, 1, 0)
 
     # start again
     reverse_button.click()
 
     # Two wrong answers
-    predict_output(driver, editor, run_button, 0, 1)
+    predict_output(driver, editor, run_button, 1, 2)
 
     # Click OK
     driver.find_element_by_css_selector(".submit-prediction button").click()
 
-    # Course has moved on to next step
-    assert (
-        "Let's get some exercise!"
-        in driver.find_element_by_css_selector(".book-text").text
-    )
+    # Course has moved on to next step: indices_out_of_bounds
+    # Let's skip to the end of this page
+    # and start on the next page with the step index_exercise
+    for _ in range(6):
+        skip_button.click()
+        sleep(0.1)
+
+    force_click(driver, driver.find_element_by_class_name("next-button"))
+
+    assert "Given a list" in driver.find_element_by_css_selector(".book-text").text
 
     show_hints_and_solution(driver, num_hints=9, parsons=False)
 
@@ -339,7 +344,7 @@ for i in range(length):
     driver.find_element_by_class_name("previous-button").click()
     sleep(0.1)
     assert driver.find_element_by_css_selector(".book-text h1").text.startswith(
-        "Getting elements at a position"
+        "Exercises with"
     )
 
 
@@ -413,12 +418,13 @@ def predict_output(driver, editor, run_button, first_choice, second_choice):
         editor,
         run_button,
         """\
-words = ['This', 'is', 'a', 'list']
+indices = range(4)
 
-for index in range(len(words)):
-print(index)
-print(words[index])
-                """,
+print(indices[0])
+print(indices[1])
+print(indices[2])
+print(indices[3])
+                """
     )
 
     locator = (By.CLASS_NAME, "terminal")
@@ -427,7 +433,7 @@ print(words[index])
 
     # Check the choices
     choices = driver.find_elements_by_class_name("prediction-choice")
-    assert len(choices) == 7
+    assert len(choices) == 6
 
     # Click first choice
     choice = choices[first_choice]
@@ -451,7 +457,7 @@ print(words[index])
     if is_correct:
         return
 
-    is_correct = second_choice == 2
+    is_correct = second_choice == 0
 
     # Click second choice
     choice = choices[second_choice]
