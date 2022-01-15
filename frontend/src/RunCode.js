@@ -21,9 +21,15 @@ import * as Sentry from "@sentry/react";
 
 const workerWrapper = Comlink.wrap(new Worker());
 
-const inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024));
-const inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2));
-let interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+let inputTextArray, inputMetaArray, interruptBuffer = null;
+if (typeof SharedArrayBuffer == "undefined") {
+  inputTextArray = null;
+  inputMetaArray = null;
+} else {
+  inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024));
+  inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2));
+  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+}
 
 const encoder = new TextEncoder();
 
