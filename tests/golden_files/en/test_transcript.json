@@ -2719,7 +2719,7 @@
         "step": "print_indices_and_words"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "Exercises with <code>range()</code> and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -2740,7 +2740,7 @@
         "step": "index_exercise"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "Exercises with <code>range()</code> and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -2769,7 +2769,7 @@
             "        print(i)",
             "        break"
         ],
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "Exercises with <code>range()</code> and <code>len()</code>",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -2797,7 +2797,7 @@
             "    char2 = string2[i]",
             "    print(char1 + ' ' + char2)"
         ],
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "Exercises with <code>range()</code> and <code>len()</code>",
         "program": [
             "string1 = 'Hello'",
             "string2 = 'World'",
@@ -2841,7 +2841,7 @@
             "",
             "    print(char1 + ' ' + char2)"
         ],
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "Exercises with <code>range()</code> and <code>len()</code>",
         "program": [
             "string1 = 'Goodbye'",
             "string2 = 'World'",

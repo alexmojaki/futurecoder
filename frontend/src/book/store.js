@@ -295,6 +295,8 @@ const loadUserAndPages = (state, previousUser = {}) => {
     pagesProgress[slug] = {step_name};
   });
 
+  migrateUserState(pages, pagesProgress, updates);
+
   updateDatabase(updates);
 
   state = {...state, user: {...state.user, pagesProgress, pageSlug, developerMode}};
@@ -305,6 +307,18 @@ const loadUserAndPages = (state, previousUser = {}) => {
   loadedPromiseResolve();
 
   return state;
+}
+
+function migrateUserState(pages, pagesProgress, updates) {
+  const oldSlug = "GettingElementsAtPosition";
+  const newSlug = "GettingElementsAtPositionExercises";
+  const {step_name} = pagesProgress[oldSlug];
+  if (!pages[oldSlug].step_names.includes(step_name)) {
+    pagesProgress[oldSlug] = {step_name: "final_text"};
+    pagesProgress[newSlug] = {step_name};
+    updates[`pagesProgress/${oldSlug}/step_name`] = "final_text";
+    updates[`pagesProgress/${newSlug}/step_name`] = step_name;
+  }
 }
 
 export const showHint = makeAction(

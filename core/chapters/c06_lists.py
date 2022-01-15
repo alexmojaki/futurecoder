@@ -721,9 +721,8 @@ list
                     """),
                 ]
 
-    class index_exercise(ExerciseStep):
-        """
-If you're not quite comfortable with `range` and/or `len`, practice and experiment with it for a bit.
+    final_text = """
+If you're still not quite comfortable with `range` and/or `len`, practice and experiment with it for a bit.
 Here are some simple exercises you can try on your own if you want.
 
 - Print the numbers from `1` to `100` inclusive.
@@ -733,7 +732,15 @@ Here are some simple exercises you can try on your own if you want.
 - Revisit the bonus problem at the end of the [Introducing Lists page](#IntroducingLists),
 whether or not you completed it. It's now much easier with `range` and `len`!
 
-When you're ready, here's something a bit more challenging.
+When you're ready, continue to the next page for something a bit more challenging.
+"""
+
+
+class GettingElementsAtPositionExercises(Page):
+    title = "Exercises with `range()` and `len()`"
+
+    class index_exercise(ExerciseStep):
+        """
 Given a list `things` and a value `to_find`,
 print the first index of `to_find` in the list, i.e. the lowest number `i` such that
 `things[i]` is `to_find`. For example, for
