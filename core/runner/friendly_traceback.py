@@ -3,7 +3,8 @@ import traceback
 
 from core import translation as t
 
-sys.last_type = sys.last_value = sys.last_traceback = None
+for attr in "type value traceback".split():
+    sys.__dict__.pop("last_" + attr, None)
 
 from friendly_traceback.core import FriendlyTraceback
 

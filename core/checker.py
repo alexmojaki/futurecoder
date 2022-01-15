@@ -47,9 +47,6 @@ class FullRunner(EnhancedRunner):
             pass  # wait for the interrupt
 
 
-FullRunner.run = catch_internal_errors(FullRunner.run)
-
-
 runner = FullRunner()
 
 
