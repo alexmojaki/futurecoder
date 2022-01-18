@@ -16,6 +16,9 @@
 .hero-illustration {
   display: none;
   position: relative;
+  // Fixes weird 3d bug in Safari
+  // https://stackoverflow.com/questions/18146511/bug-in-css3-rotatey-transition-on-safari/18167565#18167565
+  z-index: 1000;
 }
 
 #hero-image {
