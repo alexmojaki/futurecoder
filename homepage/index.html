@@ -21,7 +21,6 @@
 <div class="body-wrap boxed-container home-page">
     <div style="position:fixed; z-index:0; top:0; left:0; width:100%; height:100%;">
         <canvas id="canvas" style="width:100%; height:100%;"></canvas>
-        <script type="text/javascript">new WarpSpeed("canvas");</script>
     </div>
 
     <header class="site-header">
@@ -428,10 +427,10 @@
 <script>
     // document.onload = AOS.init();
 </script>
-<script type="text/javascript" src="static/js/warpspeed.min.js"></script>
+<script type="text/javascript" src="static/js/warpspeed.js"></script>
 <script>
     var x=new WarpSpeed(
-        "canvas",{"speed":100,"targetSpeed": 1.5, "speedAdjFactor":0.04,"density":2,"shape":"square","warpEffect":true,"warpEffectLength":6,"depthFade":true,"starSize":2,"backgroundColor":"hsl(263,45%,7%)","starColor":"#eee"}
+        {"speed":100,"targetSpeed": 1.5, "speedAdjFactor":0.04,"density":2,"shape":"square","warpEffect":true,"warpEffectLength":6,"depthFade":true,"starSize":2,"backgroundColor":"hsl(263,45%,7%)","starColor":"#eee"}
         );
 </script>
 </body>
