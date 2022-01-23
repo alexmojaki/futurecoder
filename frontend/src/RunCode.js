@@ -18,20 +18,15 @@ import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
+import {makeChannel} from "./syncWebWorker/channel";
 
 const workerWrapper = Comlink.wrap(new Worker());
+const channelPromise = makeChannel();
 
-let inputTextArray, inputMetaArray, interruptBuffer = null;
-if (typeof SharedArrayBuffer == "undefined") {
-  inputTextArray = null;
-  inputMetaArray = null;
-} else {
-  inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024));
-  inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2));
+let interruptBuffer = null;
+if (typeof SharedArrayBuffer != "undefined") {
   interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
 }
-
-const encoder = new TextEncoder();
 
 export const terminalRef = React.createRef();
 
@@ -40,8 +35,8 @@ let pendingOutput = [];
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
-function inputCallback() {
-  awaitingInput = true;
+function inputCallback(messageId) {
+  awaitingInput = messageId;
   bookSetState("processing", false);
   terminalRef.current.focusTerminal();
 }
@@ -53,8 +48,9 @@ export const runCode = async ({code, source}) => {
   const shell = source === "shell";
   if (shell) {
     if (awaitingInput) {
+      const messageId = awaitingInput;
       awaitingInput = false;
-      writeInput(code);
+      (await channelPromise).writeInput(code, messageId);
       bookSetState("processing", true);
       return;
     }
@@ -110,8 +106,7 @@ export const runCode = async ({code, source}) => {
 
   const data = await workerWrapper.runCode(
     entry,
-    inputTextArray,
-    inputMetaArray,
+    (await channelPromise).channel,
     interruptBuffer,
     Comlink.proxy(outputCallback),
     Comlink.proxy(inputCallback),
@@ -192,17 +187,6 @@ document.addEventListener('keydown', function (e) {
     runCode({source: "editor"});
   }
 });
-
-const writeInput = (string) => {
-  const bytes = encoder.encode(string);
-  if (bytes.length > inputTextArray.length) {
-    throw "Input is too long";  // TODO
-  }
-  inputTextArray.set(bytes, 0);  // TODO ensure no race conditions
-  Atomics.store(inputMetaArray, 0, bytes.length);
-  Atomics.store(inputMetaArray, 1, 1);
-  Atomics.notify(inputMetaArray, 1);
-}
 
 function showOutputParts(output_parts) {
   const terminal = terminalRef.current;

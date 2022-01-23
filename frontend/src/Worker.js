@@ -5,6 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
+import {readChannel} from "./syncWebWorker";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -62,26 +63,20 @@ const toObject = (x) => {
   }
 }
 
-const decoder = new TextDecoder();
-
-async function runCode(entry, inputTextArray, inputMetaArray, interruptBuffer, outputCallback, inputCallback) {
+async function runCode(entry, channel, interruptBuffer, outputCallback, inputCallback) {
   await pyodideReadyPromise;
 
   const fullInputCallback = (data) => {
-    inputCallback(toObject(data));
-    while (true) {
-      if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
-        if (interruptBuffer[0] === 2) {
-          return null;
-        }
-      } else {
-        break
-      }
+    const messageId = Math.random() + " " + new Date();
+    inputCallback(messageId, toObject(data));
+    function checkInterrupt() {
+      return interruptBuffer[0] === 2;
     }
-    Atomics.store(inputMetaArray, 1, 0);
-    const size = Atomics.exchange(inputMetaArray, 0, 0);
-    const bytes = inputTextArray.slice(0, size);
-    return decoder.decode(bytes) + "\n";
+    return readChannel(
+      channel,
+      messageId,
+      {checkInterrupt}
+    ) + "\n";
   }
 
   pyodide._module.setInterruptBuffer(interruptBuffer);
