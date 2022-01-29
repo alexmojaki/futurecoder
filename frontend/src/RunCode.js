@@ -20,7 +20,14 @@ import React from "react";
 import * as Sentry from "@sentry/react";
 import {makeAtomicsChannel, makeServiceWorkerChannel} from "sync-message";
 
-const workerWrapper = Comlink.wrap(new Worker());
+let worker, workerWrapper;
+
+function initWorker() {
+  worker = new Worker();
+  workerWrapper = Comlink.wrap(worker);
+}
+
+initWorker();
 
 const channelPromise = (async () => {
   if (typeof SharedArrayBuffer !== "undefined") {
@@ -93,14 +100,30 @@ export const runCode = async ({code, source}) => {
     expected_output: questionWizard.expectedOutput,
   };
 
-  interrupt();
   let interrupted = false;
+  let interruptResolver;
+  const interruptPromise = new Promise(r => interruptResolver = r);
+  interrupt = () => {
+    doInterrupt();
+    interrupted = true;
+  }
 
-  if (typeof SharedArrayBuffer !== "undefined") {
+  let doInterrupt;
+  if (typeof SharedArrayBuffer === "undefined") {
+    doInterrupt = () => {
+      worker.terminate();
+      initWorker();
+      interruptResolver({
+        interrupted: true,
+        error: null,
+        passed: false,
+        messages: [],
+      });
+    }
+  } else {
     interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
-    interrupt = () => {
+    doInterrupt = () => {
       interruptBuffer[0] = 2;
-      interrupted = true;
     }
   }
 
@@ -120,13 +143,16 @@ export const runCode = async ({code, source}) => {
     }
   }
 
-  const data = await workerWrapper.runCode(
-    entry,
-    (await channelPromise).channel,
-    interruptBuffer,
-    Comlink.proxy(outputCallback),
-    Comlink.proxy(inputCallback),
-  );
+  const data = await Promise.race([
+    interruptPromise,
+    workerWrapper.runCode(
+      entry,
+      (await channelPromise).channel,
+      interruptBuffer,
+      Comlink.proxy(outputCallback),
+      Comlink.proxy(inputCallback),
+    ),
+  ]);
 
   awaitingInput = false;
 
