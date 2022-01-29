@@ -18,10 +18,23 @@ import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
-import {makeChannel} from "./syncWebWorker/channel";
+import {makeAtomicsChannel, makeServiceWorkerChannel} from "sync-message";
 
 const workerWrapper = Comlink.wrap(new Worker());
-const channelPromise = makeChannel();
+
+const channelPromise = (async () => {
+  if (typeof SharedArrayBuffer !== "undefined") {
+    return makeAtomicsChannel();
+  } else {
+    await navigator.serviceWorker.register("./service-worker.js");
+    const result = await makeServiceWorkerChannel({timeout: 1000});
+    if (!result) {
+      // TODO what if this doesn't work?
+      window.location.reload();
+    }
+    return result;
+  }
+})();
 
 let interruptBuffer = null;
 if (typeof SharedArrayBuffer != "undefined") {

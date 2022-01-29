@@ -1,4 +1,4 @@
-import {serviceWorkerFetchListener} from "./syncWebWorker";
+import {serviceWorkerFetchListener} from "sync-message";
 
 console.log(self.__WB_MANIFEST);
 

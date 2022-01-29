@@ -5,7 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
-import {readChannel} from "./syncWebWorker";
+import {readChannel} from "sync-message";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
