@@ -65,15 +65,9 @@ export let interrupt = () => {
 };
 
 let finishedLastRun = Promise.resolve();
-let finishedLastRunResolve;
+let finishedLastRunResolve = () => {};
 
 export const runCode = async ({code, source}) => {
-  if (bookState.running) {
-    interrupt();
-    await finishedLastRun;
-  }
-  finishedLastRun = new Promise(r => finishedLastRunResolve = r);
-
   const shell = source === "shell";
   if (shell) {
     if (awaitingInput) {
@@ -84,6 +78,12 @@ export const runCode = async ({code, source}) => {
       return;
     }
   } else {
+    if (bookState.running) {
+      interrupt();
+      await finishedLastRun;
+    }
+    finishedLastRun = new Promise(r => finishedLastRunResolve = r);
+
     terminalRef.current.clearStdout();
   }
 
