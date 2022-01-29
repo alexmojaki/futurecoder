@@ -73,7 +73,7 @@ export const runCode = async ({code, source}) => {
     if (awaitingInput) {
       const messageId = awaitingInput;
       awaitingInput = false;
-      (await channelPromise).writeInput(code, messageId);
+      (await channelPromise).writeInput(JSON.stringify({text: code}), messageId);
       bookSetState("processing", true);
       return;
     }
@@ -112,8 +112,14 @@ export const runCode = async ({code, source}) => {
   let interrupted = false;
   let interruptResolver;
   const interruptPromise = new Promise(r => interruptResolver = r);
-  interrupt = () => {
-    doInterrupt();
+  interrupt = async () => {
+    if (awaitingInput) {
+      const messageId = awaitingInput;
+      awaitingInput = false;
+      (await channelPromise).writeInput(JSON.stringify({interrupted: true}), messageId);
+    } else {
+      doInterrupt();
+    }
     interrupted = true;
   }
 

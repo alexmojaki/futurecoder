@@ -69,16 +69,9 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   const fullInputCallback = (data) => {
     const messageId = Math.random() + " " + new Date();
     inputCallback(messageId, toObject(data));
-    function checkInterrupt() {
-      return interruptBuffer?.[0] === 2;
-    }
-    const result = readChannel(
-      channel,
-      messageId,
-      {checkInterrupt}
-    );
-    if (result === null) {
-      return result;
+    const result = JSON.parse(readChannel(channel, messageId)).text;
+    if (result == null) {
+      return null;
     }
     return result + "\n";
   }
