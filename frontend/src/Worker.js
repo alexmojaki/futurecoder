@@ -72,11 +72,15 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
     function checkInterrupt() {
       return interruptBuffer?.[0] === 2;
     }
-    return readChannel(
+    const result = readChannel(
       channel,
       messageId,
       {checkInterrupt}
-    ) + "\n";
+    );
+    if (result === null) {
+      return result;
+    }
+    return result + "\n";
   }
 
   if (interruptBuffer) {
