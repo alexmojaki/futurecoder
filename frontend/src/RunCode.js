@@ -94,11 +94,14 @@ export const runCode = async ({code, source}) => {
   };
 
   interrupt();
-  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
   let interrupted = false;
-  interrupt = () => {
-    interruptBuffer[0] = 2;
-    interrupted = true;
+
+  if (typeof SharedArrayBuffer !== "undefined") {
+    interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+    interrupt = () => {
+      interruptBuffer[0] = 2;
+      interrupted = true;
+    }
   }
 
   const hasPrediction = currentStep().prediction.choices;

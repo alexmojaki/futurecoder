@@ -70,7 +70,7 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
     const messageId = Math.random() + " " + new Date();
     inputCallback(messageId, toObject(data));
     function checkInterrupt() {
-      return interruptBuffer[0] === 2;
+      return interruptBuffer?.[0] === 2;
     }
     return readChannel(
       channel,
@@ -79,7 +79,9 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
     ) + "\n";
   }
 
-  pyodide._module.setInterruptBuffer(interruptBuffer);
+  if (interruptBuffer) {
+    pyodide._module.setInterruptBuffer(interruptBuffer);
+  }
 
   try {
     await install_imports(entry.input);
