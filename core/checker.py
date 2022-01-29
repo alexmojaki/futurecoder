@@ -43,8 +43,7 @@ class FullRunner(EnhancedRunner):
         self.console.locals.update(assert_equal=assert_equal)
 
     def non_str_input(self):
-        while True:
-            pass  # wait for the interrupt
+        raise KeyboardInterrupt
 
 
 runner = FullRunner()
