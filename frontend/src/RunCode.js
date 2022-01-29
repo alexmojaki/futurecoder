@@ -64,7 +64,16 @@ function inputCallback(messageId) {
 export let interrupt = () => {
 };
 
+let finishedLastRun = Promise.resolve();
+let finishedLastRunResolve;
+
 export const runCode = async ({code, source}) => {
+  if (bookState.running) {
+    interrupt();
+    await finishedLastRun;
+  }
+  finishedLastRun = new Promise(r => finishedLastRunResolve = r);
+
   const shell = source === "shell";
   if (shell) {
     if (awaitingInput) {
@@ -205,6 +214,8 @@ export const runCode = async ({code, source}) => {
     showCodeResult(data);
     terminalRef.current.focusTerminal();
   }
+
+  finishedLastRunResolve();
 
   if (isProduction) {
     databaseRequest("POST", {
