@@ -18,20 +18,35 @@ import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
+import {makeAtomicsChannel, makeServiceWorkerChannel} from "sync-message";
 
-const workerWrapper = Comlink.wrap(new Worker());
+let worker, workerWrapper;
 
-let inputTextArray, inputMetaArray, interruptBuffer = null;
-if (typeof SharedArrayBuffer == "undefined") {
-  inputTextArray = null;
-  inputMetaArray = null;
-} else {
-  inputTextArray = new Uint8Array(new SharedArrayBuffer(128 * 1024));
-  inputMetaArray = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 2));
-  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+function initWorker() {
+  worker = new Worker();
+  workerWrapper = Comlink.wrap(worker);
 }
 
-const encoder = new TextEncoder();
+initWorker();
+
+const channelPromise = (async () => {
+  if (typeof SharedArrayBuffer !== "undefined") {
+    return makeAtomicsChannel();
+  } else {
+    await navigator.serviceWorker.register("./service-worker.js");
+    const result = await makeServiceWorkerChannel({timeout: 1000});
+    if (!result) {
+      // TODO what if this doesn't work?
+      window.location.reload();
+    }
+    return result;
+  }
+})();
+
+let interruptBuffer = null;
+if (typeof SharedArrayBuffer != "undefined") {
+  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+}
 
 export const terminalRef = React.createRef();
 
@@ -40,8 +55,8 @@ let pendingOutput = [];
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
-function inputCallback() {
-  awaitingInput = true;
+function inputCallback(messageId) {
+  awaitingInput = messageId;
   bookSetState("processing", false);
   terminalRef.current.focusTerminal();
 }
@@ -49,16 +64,26 @@ function inputCallback() {
 export let interrupt = () => {
 };
 
+let finishedLastRun = Promise.resolve();
+let finishedLastRunResolve = () => {};
+
 export const runCode = async ({code, source}) => {
   const shell = source === "shell";
   if (shell) {
     if (awaitingInput) {
+      const messageId = awaitingInput;
       awaitingInput = false;
-      writeInput(code);
+      (await channelPromise).writeInput({text: code}, messageId);
       bookSetState("processing", true);
       return;
     }
   } else {
+    if (bookState.running) {
+      interrupt();
+      await finishedLastRun;
+    }
+    finishedLastRun = new Promise(r => finishedLastRunResolve = r);
+
     terminalRef.current.clearStdout();
   }
 
@@ -84,12 +109,37 @@ export const runCode = async ({code, source}) => {
     expected_output: questionWizard.expectedOutput,
   };
 
-  interrupt();
-  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
   let interrupted = false;
-  interrupt = () => {
-    interruptBuffer[0] = 2;
+  let interruptResolver;
+  const interruptPromise = new Promise(r => interruptResolver = r);
+  interrupt = async () => {
+    if (awaitingInput) {
+      const messageId = awaitingInput;
+      awaitingInput = false;
+      (await channelPromise).writeInput({interrupted: true}, messageId);
+    } else {
+      doInterrupt();
+    }
     interrupted = true;
+  }
+
+  let doInterrupt;
+  if (typeof SharedArrayBuffer === "undefined") {
+    doInterrupt = () => {
+      worker.terminate();
+      initWorker();
+      interruptResolver({
+        interrupted: true,
+        error: null,
+        passed: false,
+        messages: [],
+      });
+    }
+  } else {
+    interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
+    doInterrupt = () => {
+      interruptBuffer[0] = 2;
+    }
   }
 
   const hasPrediction = currentStep().prediction.choices;
@@ -108,14 +158,16 @@ export const runCode = async ({code, source}) => {
     }
   }
 
-  const data = await workerWrapper.runCode(
-    entry,
-    inputTextArray,
-    inputMetaArray,
-    interruptBuffer,
-    Comlink.proxy(outputCallback),
-    Comlink.proxy(inputCallback),
-  );
+  const data = await Promise.race([
+    interruptPromise,
+    workerWrapper.runCode(
+      entry,
+      (await channelPromise).channel,
+      interruptBuffer,
+      Comlink.proxy(outputCallback),
+      Comlink.proxy(inputCallback),
+    ),
+  ]);
 
   awaitingInput = false;
 
@@ -169,6 +221,8 @@ export const runCode = async ({code, source}) => {
     terminalRef.current.focusTerminal();
   }
 
+  finishedLastRunResolve();
+
   if (isProduction) {
     databaseRequest("POST", {
       entry,
@@ -192,17 +246,6 @@ document.addEventListener('keydown', function (e) {
     runCode({source: "editor"});
   }
 });
-
-const writeInput = (string) => {
-  const bytes = encoder.encode(string);
-  if (bytes.length > inputTextArray.length) {
-    throw "Input is too long";  // TODO
-  }
-  inputTextArray.set(bytes, 0);  // TODO ensure no race conditions
-  Atomics.store(inputMetaArray, 0, bytes.length);
-  Atomics.store(inputMetaArray, 1, 1);
-  Atomics.notify(inputMetaArray, 1);
-}
 
 function showOutputParts(output_parts) {
   const terminal = terminalRef.current;

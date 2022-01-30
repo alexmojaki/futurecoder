@@ -172,7 +172,9 @@ export default class Terminal extends Component {
   handleInput(event) {
     switch (event.key) {
       case 'Enter':
-        this.processCommand();
+        if (!(event.ctrlKey || event.metaKey)) {
+          this.processCommand();
+        }
         break;
       case 'ArrowUp':
         this.scrollHistory('up');

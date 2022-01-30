@@ -1,7 +1,7 @@
-from python_runner import PatchedStdinRunner
+from python_runner import PatchedStdinRunner, PatchedSleepRunner
 
 
-class EnhancedRunner(PatchedStdinRunner):
+class EnhancedRunner(PatchedStdinRunner, PatchedSleepRunner):
     def execute(self, code_obj, source_code, mode=None):
         if mode == "snoop":
             from core.runner.snoop import exec_snoop

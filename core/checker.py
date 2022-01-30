@@ -1,6 +1,7 @@
 import ast
 import inspect
 import logging
+import time
 from collections import defaultdict
 
 from core.exercises import assert_equal
@@ -43,15 +44,14 @@ class FullRunner(EnhancedRunner):
         self.console.locals.update(assert_equal=assert_equal)
 
     def non_str_input(self):
-        while True:
-            pass  # wait for the interrupt
+        raise KeyboardInterrupt
 
 
 runner = FullRunner()
 
 
 @catch_internal_errors
-def check_entry(entry, input_callback, output_callback):
+def check_entry(entry, input_callback, output_callback, sleep_callback=time.sleep):
     result = dict(
         passed=False,
         messages=[],
@@ -77,7 +77,11 @@ def check_entry(entry, input_callback, output_callback):
             data["parts"] = parts
             return output_callback(data)
 
-        runner.set_combined_callbacks(output=full_output_callback, input=input_callback)
+        runner.set_combined_callbacks(
+            output=full_output_callback,
+            input=input_callback,
+            sleep=sleep_callback,
+        )
         runner.question_wizard = entry.get("question_wizard")
         runner.input_nodes = defaultdict(list)
 

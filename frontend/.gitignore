@@ -26,3 +26,6 @@ yarn-error.log*
 chapters.json
 python_core.tar
 public/birdseye/
+
+public/service-worker.js
+public/service-worker.js.map

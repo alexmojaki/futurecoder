@@ -5,6 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
+import {readChannel, syncSleep, uuidv4} from "sync-message";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -62,29 +63,22 @@ const toObject = (x) => {
   }
 }
 
-const decoder = new TextDecoder();
-
-async function runCode(entry, inputTextArray, inputMetaArray, interruptBuffer, outputCallback, inputCallback) {
+async function runCode(entry, channel, interruptBuffer, outputCallback, inputCallback) {
   await pyodideReadyPromise;
 
   const fullInputCallback = (data) => {
-    inputCallback(toObject(data));
-    while (true) {
-      if (Atomics.wait(inputMetaArray, 1, 0, 50) === "timed-out") {
-        if (interruptBuffer[0] === 2) {
-          return null;
-        }
-      } else {
-        break
-      }
+    const messageId = uuidv4();
+    inputCallback(messageId, toObject(data));
+    const result = readChannel(channel, messageId).text;
+    if (result == null) {
+      return null;
     }
-    Atomics.store(inputMetaArray, 1, 0);
-    const size = Atomics.exchange(inputMetaArray, 0, 0);
-    const bytes = inputTextArray.slice(0, size);
-    return decoder.decode(bytes) + "\n";
+    return result + "\n";
   }
 
-  pyodide._module.setInterruptBuffer(interruptBuffer);
+  if (interruptBuffer) {
+    pyodide._module.setInterruptBuffer(interruptBuffer);
+  }
 
   try {
     await install_imports(entry.input);
@@ -96,7 +90,12 @@ async function runCode(entry, inputTextArray, inputMetaArray, interruptBuffer, o
   const fullOutputCallback = (data) => {
     outputPromise = outputCallback(toObject(data).parts);
   };
-  const result = check_entry(entry, fullInputCallback, fullOutputCallback);
+
+  function sleepCallback(data) {
+    syncSleep(toObject(data).seconds * 1000, channel);
+  }
+
+  const result = check_entry(entry, fullInputCallback, fullOutputCallback, sleepCallback);
   await outputPromise;
   return toObject(result);
 }
