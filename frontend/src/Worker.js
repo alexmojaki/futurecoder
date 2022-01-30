@@ -5,7 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
-import {readChannel, syncSleep} from "sync-message";
+import {readChannel, syncSleep, uuidv4} from "sync-message";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -67,9 +67,9 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   await pyodideReadyPromise;
 
   const fullInputCallback = (data) => {
-    const messageId = Math.random() + " " + new Date();
+    const messageId = uuidv4();
     inputCallback(messageId, toObject(data));
-    const result = JSON.parse(readChannel(channel, messageId)).text;
+    const result = readChannel(channel, messageId).text;
     if (result == null) {
       return null;
     }
