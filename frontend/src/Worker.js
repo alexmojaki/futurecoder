@@ -5,7 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
-import {readChannel} from "sync-message";
+import {readChannel, syncSleep} from "sync-message";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -90,7 +90,12 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   const fullOutputCallback = (data) => {
     outputPromise = outputCallback(toObject(data).parts);
   };
-  const result = check_entry(entry, fullInputCallback, fullOutputCallback);
+
+  function sleepCallback(data) {
+    syncSleep(toObject(data).seconds * 1000, channel);
+  }
+
+  const result = check_entry(entry, fullInputCallback, fullOutputCallback, sleepCallback);
   await outputPromise;
   return toObject(result);
 }
