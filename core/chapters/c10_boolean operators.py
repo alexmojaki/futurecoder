@@ -174,7 +174,7 @@ Replace the `return` line in the code with the above line, and try running it ag
         text = """
 The second and third tests fail! Our function seems to be doing the wrong thing:
 it returns `"Bob"` (a string, not a boolean!) when `name` is `"Bob"` or `"Charlie"`. What is going on?
-Try inspecting the code with Bird's Eye. Inspect the `return` statements of each `is_friend` call carefully.
+Try inspecting the code with `birdseye`. Inspect the `return` statements of each `is_friend` call carefully.
 (Use the blue arrow buttons)
         """
 
@@ -182,7 +182,7 @@ Try inspecting the code with Bird's Eye. Inspect the `return` statements of each
 
     class AnExercise(ExerciseStep):
         """
-When we inspect it with Bird's Eye, we can see that:
+When we inspect it with `birdseye`, we can see that:
 
     name == "Alice" or "Bob"
 
@@ -705,7 +705,7 @@ __program_indented__
 
     class NotTrueOrTrue(VerbatimStep):
         """
-What is the priority of `not` compared to `and` and `or`? Try the following in Bird's Eye:
+What is the priority of `not` compared to `and` and `or`? Try the following in `birdseye`:
 
     __program_indented__
         """
@@ -718,7 +718,7 @@ What is the priority of `not` compared to `and` and `or`? Try the following in B
 
     class NotPriority(ExerciseStep):
         """
-You can see in Bird's Eye that
+You can see in `birdseye` that
 
     not True or True
 

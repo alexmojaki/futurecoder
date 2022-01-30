@@ -84,7 +84,7 @@ const EditorButtons = (
         className="btn btn-success"
         onClick={() => runCode({source: "snoop"})}
       >
-        <FontAwesomeIcon icon={faBug}/> Snoop
+        <FontAwesomeIcon icon={faBug}/> <span style={{fontFamily: "monospace"}}>snoop</span>
       </button>}
 
     {" "}
@@ -136,7 +136,7 @@ const EditorButtons = (
           alt="birdseye logo"
           style={{position: "relative", top: "-2px"}}
         />
-        Bird's Eye
+        <span style={{fontFamily: "monospace"}}> birdseye</span>
       </button>}
 
     {" "}

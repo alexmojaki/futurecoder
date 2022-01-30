@@ -1203,7 +1203,7 @@
         "step": "for_inside_if"
     },
     {
-        "page": "Understanding Programs With Snoop",
+        "page": "Understanding Programs With <code>snoop</code>",
         "program": [
             "sentence = 'Hello World'",
             "",
@@ -1240,7 +1240,7 @@
         "step": "print_tail"
     },
     {
-        "page": "Understanding Programs With Snoop",
+        "page": "Understanding Programs With <code>snoop</code>",
         "program": [
             "sentence = 'Hello World'",
             "",
@@ -1472,7 +1472,7 @@
             "",
             "print(new_sentence)"
         ],
-        "page": "Understanding Programs With Snoop",
+        "page": "Understanding Programs With <code>snoop</code>",
         "program": [
             "sentence = 'Hello there'",
             "include = True",
@@ -4629,7 +4629,7 @@
         "step": "player_vs_player_bonus"
     },
     {
-        "page": "Understanding Programs with Bird's Eye",
+        "page": "Understanding Programs with <code>birdseye</code>",
         "program": [
             "a = 2",
             "b = 3",
@@ -4650,7 +4650,7 @@
         "step": "first_birdseye_example"
     },
     {
-        "page": "Understanding Programs with Bird's Eye",
+        "page": "Understanding Programs with <code>birdseye</code>",
         "program": [
             "word = 'Amazing'",
             "vowels = []",

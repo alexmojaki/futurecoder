@@ -292,7 +292,7 @@ __program_indented__
 It's important to get a good sense of what's going on here and to know how
 to explore function calls, so we're going to try this out in each debugger.
 
-First, run the program again with Snoop.
+First, run the program again with `snoop`.
         """
 
         expected_code_source = "snoop"
@@ -300,7 +300,7 @@ First, run the program again with Snoop.
 
     class see_stack_in_pythontutor(print_twice_call_print_many):
         text = """
-Snoop starts each function call with:
+`snoop` starts each function call with:
 
 1. A new level of indentation in the logs.
 2. `>>> Call to <function name>`
@@ -325,14 +325,14 @@ You can see this in Python Tutor on the right under "Frames". At the top is the 
 the top level frame where the whole program is running. As you click Next, new frames appear
 and then disappear. In each one you can see the values of the variables.
 
-Finally, run the program with Bird's Eye.
+Finally, run the program with `birdseye`.
         """
 
         expected_code_source = "birdseye"
         program_in_text = False
 
     final_text = """
-Bird's Eye only shows one frame (function call) at a time. At first you see the global frame.
+`birdseye` only shows one frame (function call) at a time. At first you see the global frame.
 At the bottom is the call to `print_twice`. Click on the little blue arrow to take
 you into that frame, and then click on the next one to enter `print_many`.
 """
@@ -763,7 +763,7 @@ A common mistake is to misunderstand what `return` does in `for` loops. Try the 
         """
 At first it may look intuitive to `return` one value for each iteration in a `for` loop.
 But it doesn't work like that!
-If you inspect the code with Snoop or Python tutor you can see that the function returns 2 in the first
+If you inspect the code with `snoop` or Python tutor you can see that the function returns 2 in the first
 loop iteration and then ends immediately.
 
 Even when there's only one `return` statement, it will get executed only once and return one value.
