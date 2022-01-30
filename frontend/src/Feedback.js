@@ -5,6 +5,7 @@ import Popup from "reactjs-popup";
 import _ from "lodash";
 import {bookSetState, bookState} from "./book/store";
 import axios from "axios";
+import * as terms from "./terms.json"
 
 
 export const FeedbackModal = ({close, error}) => {
@@ -13,14 +14,10 @@ export const FeedbackModal = ({close, error}) => {
     initialTitle = error.title;
     descriptionExtra = "\n\n```" + error.details + "```";
     instructions = <>
-      <h3>Report error</h3>
-      <p>
-        Oops, something went wrong!
-        Please describe what you were just doing and what steps someone can take
-        to reproduce the problem, then click Submit. Or click Cancel to not send a report.
-      </p>
+      <h3>{terms.report_error}</h3>
+      <p>{terms.report_error_instructions}</p>
       <details>
-        <summary>Click for error details</summary>
+        <summary>{terms.click_for_error_details}</summary>
         <pre>{error.details}</pre>
       </details>
 
@@ -29,17 +26,12 @@ export const FeedbackModal = ({close, error}) => {
     initialTitle = "";
     descriptionExtra = "";
     instructions = <>
-      <h3>Give feedback</h3>
-      <p>Tell us what you like or don't like! If you're reporting a bug, give a detailed description of the problem:</p>
-      <ul>
-        <li>What were you doing before and when the problem occurred?</li>
-        <li>What steps can someone take to reproduce it?</li>
-        <li>What do you observe happening, and what do you expect to happen instead?</li>
-      </ul>
+      <h3>{terms.give_feedback}</h3>
+      <div dangerouslySetInnerHTML={{__html: terms.give_feedback_instructions}}/>
     </>
   }
   const email = useInput(bookState.user.email || "", {
-    placeholder: 'Email (optional, publicly visible)',
+    placeholder: terms.feedback_email_placeholder,
     type: 'text',
     className: 'form-control',
     style: {
@@ -47,7 +39,7 @@ export const FeedbackModal = ({close, error}) => {
     },
   });
   const title = useInput(initialTitle, {
-    placeholder: 'Title',
+    placeholder: terms.title,
     type: 'text',
     className: 'form-control',
     style: {
@@ -55,7 +47,7 @@ export const FeedbackModal = ({close, error}) => {
     },
   });
   const description = useInput('', {
-    placeholder: 'Description',
+    placeholder: terms.description,
     className: 'form-control',
     style: {
       width: "100%",
@@ -110,34 +102,34 @@ ${JSON.stringify(state)}
             close();
           }}
         >
-          Submit
+          {terms.submit}
         </button>
 
         <button
           className="btn btn-default"
           onClick={close}
         >
-          Cancel
+          {terms.cancel}
         </button>
       </div>
       <br/>
       <br/>
       <div>
-        Alternatively, you can contact us directly:
+        {terms.contact_directly}
         <ul>
           <li>
             <a href="mailto:hello@futurecoder.io">
-              Email hello@futurecoder.io
+              {terms.send_email_to} hello@futurecoder.io
             </a>
           </li>
           <li>
             <a href="https://github.com/alexmojaki/futurecoder/issues/new">
-              Open an issue on GitHub
+              {terms.open_github_issue}
             </a>
           </li>
           <li>
             <a href="https://join.slack.com/t/futurecoder/shared_invite/zt-tp8cmwra-CbdEeX9u3k1VyoMLDupAeQ">
-              Chat on Slack
+              {terms.chat_on_slack}
             </a>
           </li>
         </ul>

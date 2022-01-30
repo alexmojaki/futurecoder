@@ -25,15 +25,21 @@ import tarfile
 from pathlib import Path
 
 import birdseye
-from littleutils import strip_required_prefix, json_to_file
+from littleutils import strip_required_prefix, json_to_file, file_to_json
+from markdown import markdown
 
 from core import translation as t
 from core.checker import check_entry
 from core.runner.utils import site_packages
 from core.text import get_pages, step_test_entries, load_chapters
+from core.utils import unwrapped_markdown, new_tab_links
 
 str("import sentry_sdk after core.utils for stubs")
 import sentry_sdk  # noqa imported lazily
+
+this_dir = Path(__file__).parent
+frontend = this_dir / "../frontend"
+frontend_src = frontend / "src"
 
 
 def run_steps():
@@ -78,16 +84,29 @@ def tarfile_filter(tar_info):
     return tar_info
 
 
+def frontend_terms():
+    for key, value in file_to_json(frontend_src / "english_terms.json").items():
+        translation = t.get(f"frontend.{key}", value)
+
+        if "\n" in translation:
+            value = markdown(translation)
+        else:
+            value = unwrapped_markdown(translation)
+
+        result = new_tab_links(value)
+        if value != result:
+            assert key.startswith("question_wizard_")
+
+        yield key, result
+
+
 def main():
     print("Generating files...")
     t.set_language(os.environ.get("FUTURECODER_LANGUAGE", "en"))
-    this_dir = Path(__file__).parent
-    frontend = this_dir / "../frontend"
-    frontend_src = frontend / "src"
 
-    chapters = list(load_chapters())
+    json_to_file(list(load_chapters()), frontend_src / "chapters.json")
     json_to_file(get_pages(), frontend_src / "book/pages.json.load_by_url")
-    json_to_file(chapters, frontend_src / "chapters.json")
+    json_to_file(dict(frontend_terms()), frontend_src / "terms.json", indent=4)
 
     birdseye_dest = frontend / "public/birdseye"
     shutil.rmtree(birdseye_dest, ignore_errors=True)

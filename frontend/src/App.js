@@ -45,6 +45,7 @@ import {interrupt, runCode, terminalRef} from "./RunCode";
 import firebase from "firebase/app";
 import {TableOfContents} from "./TableOfContents";
 import HeaderLoginInfo from "./components/HeaderLoginInfo";
+import * as terms from "./terms.json"
 
 
 const EditorButtons = (
@@ -64,7 +65,7 @@ const EditorButtons = (
           className="btn btn-danger"
           onClick={() => interrupt()}
         >
-          <FontAwesomeIcon icon={faStop}/> Stop
+          <FontAwesomeIcon icon={faStop}/> {terms.stop}
         </button>
         :
         <button
@@ -72,7 +73,7 @@ const EditorButtons = (
           className="btn btn-primary"
           onClick={() => runCode({source: "editor"})}
         >
-          <FontAwesomeIcon icon={faPlay}/> Run
+          <FontAwesomeIcon icon={faPlay}/> {terms.run}
         </button>
     }
 
@@ -144,7 +145,7 @@ const EditorButtons = (
     {showQuestionButton && !disabled &&
       <a className="btn btn-success"
          href={"#question"}>
-        <FontAwesomeIcon icon={faQuestionCircle}/> Ask for help
+        <FontAwesomeIcon icon={faQuestionCircle}/> {terms.ask_for_help}
       </a>}
   </div>;
 
@@ -200,42 +201,11 @@ const QuestionWizard = (
     expectedOutput,
   }) =>
   <>
-    <h1>Question Wizard</h1>
-    <p>
-      If you need help, there are many sites like
-      {" "} <a target="_blank" rel="noreferrer" href="https://stackoverflow.com/">Stack Overflow</a> {" "}
-      and <a target="_blank" rel="noreferrer" href="https://www.reddit.com/r/learnpython/">reddit</a> where
-      you can ask questions.
-      This is a tool to help you write a good quality question that is likely to get answers.
-    </p>
-    <p>
-      Enter and run your code on the right. If you don't have any code because you don't know where to get started,
-      I'm afraid this tool can't help you. You can still ask for help, but it might be good to first
-      read <a target="_blank" rel="noreferrer"
-              href="https://stackoverflow.com/help/dont-ask">What types of questions should I avoid asking?</a>
-    </p>
-    <p>
-      If your question is about servers (e.g. Django or Flask), web requests, databases, or a package that can't be
-      imported here, then this tool won't work. However, just because your current code <em>involves</em> those things,
-      that doesn't mean that's what your question is <em>about</em>. If you're having a general
-      Python/programming/logic problem, then extract that problem from the other stuff.
-      Python with Django is still Python. If you can't do that, then
-      read <a target="_blank" rel="noreferrer"
-              href="https://stackoverflow.com/help/minimal-reproducible-example">
-      How to create a Minimal, Reproducible Example</a> before
-      asking your question.
-    </p>
+    <h1>{terms.question_wizard}</h1>
+    <div dangerouslySetInnerHTML={{__html: terms.question_wizard_intro}}/>
     <hr/>
     {requestExpectedOutput && <>
-      <p>
-        Good, now enter the output you expect/want from your program below.
-        What would it show if it worked correctly?
-        If it's not supposed to output anything, then add some <code>print()</code> calls to your
-        code so that it would output something useful.
-      </p>
-      <p>
-        When you're done, click 'Run' again to generate your question.
-      </p>
+      <div dangerouslySetInnerHTML={{__html: terms.question_wizard_expected_output}}/>
       <AceEditor
         onChange={value => bookSetState("questionWizard.expectedOutput", value)}
         theme={"monokai"}
@@ -273,10 +243,10 @@ const Markdown = (
        onClick={(event) => {
          // https://stackoverflow.com/questions/54109790/how-to-add-onclick-event-to-a-string-rendered-by-dangerouslysetinnerhtml-in-reac
          const button = event.target.closest("button");
-         if (button && event.currentTarget.contains(button) && button.textContent === "Copy") {
+         if (button && event.currentTarget.contains(button) && button.classList.contains("copy-button")) {
            const codeElement = button.closest("code");
            let codeText = codeElement.textContent;
-           codeText = codeText.substring(0, codeText.length - "\nCopy".length);
+           codeText = codeText.substring(0, codeText.length - 1 - button.textContent.length);
            copyFunc(codeText);
          }
        }}
@@ -309,13 +279,13 @@ const CourseText = (
       {page.index > 0 &&
       <button className="btn btn-primary previous-button"
               onClick={() => movePage(-1)}>
-        Previous
+        {terms.previous}
       </button>}
       {" "}
       {page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1 &&
       <button className="btn btn-success next-button"
               onClick={() => movePage(+1)}>
-        Next
+        {terms.next}
       </button>}
     </div>
     <br/>
@@ -377,7 +347,7 @@ class AppComponent extends React.Component {
           <HeaderLoginInfo email={user.email}/>
         </span>
         <a className="nav-item nav-link" href="#toc">
-          <FontAwesomeIcon icon={faListOl}/> Table of Contents
+          <FontAwesomeIcon icon={faListOl}/> {terms.table_of_contents}
         </a>
       </nav>
 
@@ -448,9 +418,9 @@ const StepButton = ({delta, label}) =>
 
 const StepButtons = () =>
   <div style={{position: "fixed", bottom: 0}}>
-    <StepButton delta={-1} label="Reverse step"/>
+    <StepButton delta={-1} label={terms.reverse_step}/>
     {" "}
-    <StepButton delta={+1} label="Skip step"/>
+    <StepButton delta={+1} label={terms.skip_step}/>
   </div>
 
 
@@ -462,21 +432,22 @@ const MenuPopup = ({user}) =>
         </button>}
     >
       {close => <div className="menu-popup">
-        <p><button
-          className="btn btn-danger"
-          onClick={() => {
-            close();
-            bookSetState("user.uid", null)
-            firebase.auth().signOut();
-          }}
-        >
-          <FontAwesomeIcon icon={faSignOutAlt}/> Sign out
-        </button></p>
+        <p>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              close();
+              bookSetState("user.uid", null)
+              firebase.auth().signOut();
+            }}
+          >
+            <FontAwesomeIcon icon={faSignOutAlt}/> {terms.sign_out}
+          </button></p>
         <p>
           <Popup
             trigger={
               <button className="btn btn-primary">
-                <FontAwesomeIcon icon={faCog}/> Settings
+                <FontAwesomeIcon icon={faCog}/> {terms.settings}
               </button>
               }
             modal
@@ -489,7 +460,7 @@ const MenuPopup = ({user}) =>
           <Popup
             trigger={
               <button className="btn btn-success">
-                <FontAwesomeIcon icon={faBug}/> Feedback
+                <FontAwesomeIcon icon={faBug}/> {terms.feedback}
               </button>
             }
             modal
@@ -505,17 +476,17 @@ const MenuPopup = ({user}) =>
 
 const SettingsModal = ({user}) => (
   <div className="settings-modal">
-    <h1>Settings</h1>
+    <h1>{terms.settings}</h1>
     <br/>
     <label>
       <Toggle
         defaultChecked={user.developerMode}
         onChange={(e) => setDeveloperMode(e.target.checked)}
       />
-      <b>Developer mode</b>
+      <b>{terms.developer_mode}</b>
     </label>
 
-    <p>Enables the "Reverse step" and "Skip step" buttons.</p>
+    <p>{terms.developer_mode_description}</p>
   </div>
 )
 
@@ -531,22 +502,7 @@ const checkCopy = () => {
       ])
       .some((node) => node && !node.classList.contains("copyable"))
   ) {
-    addMessage(`
-      <div>
-        <p><strong>STOP!</strong></p>
-        <p>
-        Try to avoid copy pasting code. You will learn, absorb, and remember better if you
-        type in the code yourself.
-        </p>
-        <p>
-        When copying is appropriate, there will be a button to click to make it easy.
-        If there's no button, try typing.
-        </p>
-        <p>
-        Having said that, we're not going to force you. Copy if you really want to.
-        </p>
-      </div>
-   `);
+    addMessage(terms.copy_warning);
   }
 }
 

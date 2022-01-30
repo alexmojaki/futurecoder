@@ -7,6 +7,7 @@ import "firebase/auth";
 import "firebase/analytics";
 import pagesUrl from "./pages.json.load_by_url"
 import axios from "axios";
+import * as terms from "../terms.json"
 
 const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
@@ -37,7 +38,7 @@ const initialState = {
   previousRoute: "main",
   pages: {
     loading_placeholder: {
-      title: "Loading...",
+      title: terms.loading_wait,
       slug: "loading_placeholder",
       index: 0,
       steps: [

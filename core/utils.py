@@ -164,6 +164,10 @@ def markdown_codes(text):
     return highlighted_markdown_and_codes(text)[1]
 
 
+def new_tab_links(s):
+    return s.replace("<a href=", '<a target="_blank" rel="noreferrer" href=')
+
+
 def shuffled(it):
     result = list(it)
     shuffle(result)
