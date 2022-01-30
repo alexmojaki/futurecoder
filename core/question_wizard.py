@@ -6,7 +6,7 @@ import asttokens.util
 from littleutils import only
 
 from core.linting import lint
-from core.utils import highlighted_markdown
+from core.utils import highlighted_markdown, new_tab_links
 
 
 def input_messages(input_nodes):
@@ -82,5 +82,5 @@ def question_wizard_check(entry, output, runner):
         else:
             messages.append(t.Terms.q_wiz_debugger)
 
-    messages = [highlighted_markdown(message) for message in messages]
+    messages = [new_tab_links(highlighted_markdown(message)) for message in messages]
     return messages
