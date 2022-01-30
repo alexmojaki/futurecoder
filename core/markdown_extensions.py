@@ -43,7 +43,7 @@ class HighlightPythonTreeProcessor(Treeprocessor):
             if copyable:
                 node.append(
                     etree.fromstring(
-                        f'<button class="btn btn-primary">{t.Terms.copy_button}</button>'
+                        f'<button class="btn btn-primary copy-button">{t.Terms.copy_button}</button>'
                     )
                 )
                 node.set("class", node.get("class", "") + " copyable")

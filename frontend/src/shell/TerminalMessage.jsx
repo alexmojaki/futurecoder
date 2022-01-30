@@ -5,6 +5,8 @@ import sourceStyles from './defs/styles/TerminalMessage'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
 import Popup from "reactjs-popup";
+import * as terms from "../terms.json"
+import _ from "lodash";
 
 const ansi_up = new AnsiUp();
 
@@ -46,7 +48,7 @@ const Tracebacks = ({data, codeSource}) => {
   return <div className="tracebacks-container">
     {!simple &&
       <div className="traceback-exception">
-        <strong>Error traceback:</strong>
+        <strong>{terms.error_traceback}</strong>
       </div>
     }
     {
@@ -88,7 +90,7 @@ const Tracebacks = ({data, codeSource}) => {
           {
             traceback.didyoumean.length > 0 &&
             <div className="traceback-didyoumean">
-              <i>Did you mean...</i>
+              <i>{terms.did_you_mean}</i>
               <ul>
                 {
                   traceback.didyoumean.map((suggestion, suggestionIndex) =>
@@ -139,15 +141,16 @@ const Frame = ({frame}) =>
     </table>
   </div>
 
+const repeatedFramesDescription = _.template(terms.repeated_frames_description);
 
 const RepeatedFrames = ({data}) =>
   <div className="traceback-repeated-frames">
-    <div>Similar frames skipped:</div>
+    <div>{terms.similar_frames_skipped}</div>
     <ul>
       {
         data.map((item, itemIndex) =>
         <li key={itemIndex}>
-          {`${item.name} at line ${item.lineno} (${item.count} times)`}
+          {repeatedFramesDescription(item)}
         </li>)
       }
     </ul>

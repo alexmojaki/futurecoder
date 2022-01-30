@@ -17311,6 +17311,211 @@ msgstr "x3"
 msgid "code_bits.your_name"
 msgstr "your_name"
 
+msgid "frontend.are_you_sure"
+msgstr "Are you sure?"
+
+msgid "frontend.ask_for_help"
+msgstr "Ask for Help"
+
+msgid "frontend.cancel"
+msgstr "Cancel"
+
+msgid "frontend.chat_on_slack"
+msgstr "Chat on Slack"
+
+msgid "frontend.click_for_error_details"
+msgstr "Click for error details"
+
+msgid "frontend.contact_directly"
+msgstr "Alternatively, you can contact us directly:"
+
+msgid "frontend.copy_warning"
+msgstr ""
+"**STOP!**\n"
+"\n"
+"Try to avoid copy pasting code. You will learn, absorb, and remember better if you type in the code yourself.\n"
+"\n"
+"When copying is appropriate, there will be a button to click to make it easy. If there's no button, try typing.\n"
+"\n"
+"Having said that, we're not going to force you. Copy if you really want to."
+
+msgid "frontend.copying_solution_not_allowed"
+msgstr "Copying from the hints/solution area is not allowed!"
+
+msgid "frontend.current_page"
+msgstr "(current)"
+
+msgid "frontend.description"
+msgstr "Description"
+
+msgid "frontend.developer_mode"
+msgstr "Developer mode"
+
+msgid "frontend.developer_mode_description"
+msgstr "Enables the \"Reverse step\" and \"Skip step\" buttons."
+
+msgid "frontend.did_you_mean"
+msgstr "Did you mean..."
+
+msgid "frontend.error_traceback"
+msgstr "Error traceback:"
+
+msgid "frontend.feedback"
+msgstr "Feedback"
+
+msgid "frontend.feedback_email_placeholder"
+msgstr "Email (optional, publicly visible)"
+
+msgid "frontend.get_another_hint"
+msgstr "Get another hint"
+
+msgid "frontend.get_hint"
+msgstr "Get a hint"
+
+msgid "frontend.give_feedback"
+msgstr "Give feedback"
+
+msgid "frontend.give_feedback_instructions"
+msgstr ""
+"Tell us what you like or don't like! If you're reporting a bug, give a detailed description of the problem:\n"
+"\n"
+"- What were you doing before and when the problem occurred?\n"
+"- What steps can someone take to reproduce it?\n"
+"- What do you observe happening, and what do you expect to happen instead?"
+
+msgid "frontend.hidden_solution_instructions"
+msgstr ""
+"Above is an example solution, but it's hidden. Click the Reveal button repeatedly to reveal the solution bit by bit. "
+"Try to stop when you think you've revealed enough and can fill in the remaining gaps yourself. Then type a solution in"
+" the editor and run it. Your solution doesn't have to be the same as the one above."
+
+msgid "frontend.hints_progress"
+msgstr "Shown ${numHints} of ${totalHints} hints"
+
+msgid "frontend.loading_wait"
+msgstr "Loading..."
+
+msgid "frontend.login_or_sign_up"
+msgstr "Login / Sign up"
+
+msgid "frontend.next"
+msgstr "Next"
+
+msgid "frontend.no"
+msgstr "No"
+
+msgid "frontend.ok"
+msgstr "OK"
+
+msgid "frontend.open_github_issue"
+msgstr "Open an issue on GitHub"
+
+msgid "frontend.output_prediction_correct"
+msgstr "Correct!"
+
+msgid "frontend.output_prediction_error_choice"
+msgstr "Error"
+
+msgid "frontend.output_prediction_question"
+msgstr "What do you think the result will be?"
+
+msgid "frontend.output_prediction_wrong_once"
+msgstr "Oops, that's not right. You can try one more time!"
+
+msgid "frontend.output_prediction_wrong_twice"
+msgstr "Sorry, wrong answer. Try again next time!"
+
+msgid "frontend.parsons_solution_instructions"
+msgstr ""
+"Above is an example solution with the lines out of order. You can drag them around to reorder them. Finding a correct "
+"order is up to you, and we won't will tell you if you get it right. Experimenting and running partial solutions in the"
+" editor may help you figure it out. You still need to type a correct solution into the editor and run it to continue."
+
+msgid "frontend.previous"
+msgstr "Previous"
+
+msgid "frontend.question_wizard"
+msgstr "Question Wizard"
+
+msgid "frontend.question_wizard_expected_output"
+msgstr ""
+"Good, now enter the output you expect/want from your program below. What would it show if it worked correctly? If it's not supposed to output anything, then add some `print()` calls to your code so that it would output something useful.\n"
+"\n"
+"When you're done, click 'Run' again to generate your question."
+
+msgid "frontend.question_wizard_intro"
+msgstr ""
+"If you need help, there are many sites like [Stack Overflow](https://stackoverflow.com/) and [reddit](https://www.reddit.com/r/learnpython/) where you can ask questions. This is a tool to help you write a good quality question that is likely to get answers.\n"
+"\n"
+"Enter and run your code on the right. If you don't have any code because you don't know where to get started, I'm afraid this tool can't help you. You can still ask for help, but it might be good to first read [What types of questions should I avoid asking?](https://stackoverflow.com/help/dont-ask)\n"
+"\n"
+"If your question is about servers (e.g. Django or Flask), web requests, databases, or a package that can't be imported here, then this tool won't work. However, just because your current code *involves* those things, that doesn't mean that's what your question is *about*. If you're having a general Python/programming/logic problem, then extract that problem from the other stuff. Python with Django is still Python. If you can't do that, then read [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example) before asking your question."
+
+msgid "frontend.repeated_frames_description"
+msgstr "${name} at line ${lineno} (${count} times)"
+
+msgid "frontend.report_error"
+msgstr "Report error"
+
+msgid "frontend.report_error_instructions"
+msgstr ""
+"Oops, something went wrong! Please describe what you were just doing and what steps someone can take to reproduce the "
+"problem, then click Submit. Or click Cancel to not send a report."
+
+msgid "frontend.reveal"
+msgstr "Reveal"
+
+msgid "frontend.reverse_step"
+msgstr "Reverse step"
+
+msgid "frontend.run"
+msgstr "Run"
+
+msgid "frontend.send_email_to"
+msgstr "Email"
+
+msgid "frontend.settings"
+msgstr "Settings"
+
+msgid "frontend.show_shuffled_solution"
+msgstr "Show shuffled solution"
+
+msgid "frontend.show_solution"
+msgstr "Show solution"
+
+msgid "frontend.show_unscrambled_solution"
+msgstr "Show unscrambled solution"
+
+msgid "frontend.sign_out"
+msgstr "Sign out"
+
+msgid "frontend.similar_frames_skipped"
+msgstr "Similar frames skipped:"
+
+msgid "frontend.skip_step"
+msgstr "Skip step"
+
+msgid "frontend.stop"
+msgstr "Stop"
+
+msgid "frontend.submit"
+msgstr "Submit"
+
+msgid "frontend.table_of_contents"
+msgstr "Table of Contents"
+
+msgid "frontend.title"
+msgstr "Title"
+
+msgid "frontend.toc_instructions"
+msgstr ""
+"Below are links to different pages in the course. You can start anywhere and go in any order, and your progress on each page will be recorded.\n"
+"\n"
+"If you're completely new to programming, or you have doubts, just start at the beginning and click Next as you finish each page."
+
+msgid "frontend.yes"
+msgstr "Yes"
+
 msgid "linting_messages.pyflakes.ImportShadowedByLoopVar.message_format"
 msgstr ""
 "**Import `{0}` shadowed by loop variable**\n"

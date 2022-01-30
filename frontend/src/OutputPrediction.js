@@ -6,8 +6,9 @@ import {showCodeResult, terminalRef} from "./RunCode";
 import Confetti from "react-dom-confetti";
 import {animateScroll} from "react-scroll";
 import _ from "lodash";
+import * as terms from "./terms.json"
 
-const RadioButton = ({onChange, label, status}) => (
+const RadioButton = ({onChange, label, status, isError}) => (
   <div className={"prediction-choice prediction-" + status}
        onClick={onChange}>
     <FontAwesomeIcon
@@ -18,7 +19,7 @@ const RadioButton = ({onChange, label, status}) => (
         "": faCircle,
       }[status]}
     />
-    <div className="prediction-label" style={{color: label === "Error" ? "red" : "white"}}>
+    <div className="prediction-label" style={{color: isError ? "red" : "white"}}>
       {label}
     </div>
   </div>
@@ -49,6 +50,7 @@ const RadioGroup = (
           label={label}
           onChange={() => onChange(label)}
           status={status}
+          isError={i === choices.length - 1}
         />
       );
     })}
@@ -77,14 +79,14 @@ export class OutputPrediction extends Component {
     let message;
     if (state === "waiting") {
       if (wrongAnswers.length === 0) {
-        message = "What do you think the result will be?";
+        message = terms.output_prediction_question;
       } else {
-        message = "Oops, that's not right. You can try one more time!";
+        message = terms.output_prediction_wrong_once;
       }
     } else if (userChoice === answer) {
-      message = "Correct!";
+      message = terms.output_prediction_correct;
     } else {
-      message = "Sorry, wrong answer. Try again next time!";
+      message = terms.output_prediction_wrong_twice;
     }
 
     const userFailed = wrongAnswers.length === 2;
@@ -143,7 +145,7 @@ export class OutputPrediction extends Component {
             setTimeout(() => bookSetState("prediction.state", "hidden"), timeToFade + 1000);
           }}
         >
-          {userFailed ? "OK" : "Submit"}
+          {userFailed ? terms.ok : terms.submit}
         </button>
       </div>
     </div>
