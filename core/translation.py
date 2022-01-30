@@ -251,7 +251,7 @@ class Terms:
         "Type your code directly in the shell after `>>>` and press Enter."
     )
     expected_mode_birdseye = (
-        "With your code in the editor, click the Bird's Eye button."
+        "With your code in the editor, click the `birdseye` button."
     )
     expected_mode_snoop = "With your code in the editor, click the Snoop button."
     expected_mode_pythontutor = (
