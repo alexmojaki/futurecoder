@@ -2,7 +2,7 @@ import {serviceWorkerFetchListener} from "sync-message";
 
 console.log(self.__WB_MANIFEST);
 
-const fetchListener = serviceWorkerFetchListener({readTimeout: 5000});
+const fetchListener = serviceWorkerFetchListener();
 
 addEventListener('fetch', fetchListener);
 
