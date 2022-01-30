@@ -379,7 +379,7 @@ You can stop any loop using a `break` statement, like so:
             break
 
 This is just as correct but skips unnecessary iterations and checks once it finds the element.
-You can use snoop to see the difference.
+You can use `snoop` to see the difference.
         """
 
 

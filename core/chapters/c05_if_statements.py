@@ -210,6 +210,8 @@ class print_tail_base(VerbatimStep):
 
 
 class UnderstandingProgramsWithSnoop(Page):
+    title = "Understanding Programs With `snoop`"
+
     class print_tail(print_tail_base):
         """
 Run this program:
@@ -228,7 +230,7 @@ Run this program:
     class print_tail_snoop(print_tail_base):
         """
 Programs are starting to get complicated!
-It's time to introduce a new tool to help you understand programs. Click the 'Snoop' button to run the same program while also showing what's happening.
+It's time to introduce a new tool to help you understand programs. Click the `snoop` button to run the same program while also showing what's happening.
         """
 
         program_in_text = False
@@ -236,7 +238,7 @@ It's time to introduce a new tool to help you understand programs. Click the 'Sn
 
     class print_first_character(ExerciseStep):
         """
-Tada! Scroll to the top of the terminal and let's walk through what snoop is showing you.
+Tada! Scroll to the top of the terminal and let's walk through what `snoop` is showing you.
 It starts out very straightforward:
 
         1 | sentence = 'Hello World'
@@ -248,9 +250,9 @@ It starts out very straightforward:
 The first lines are simply showing you the lines of the program that the computer ran.
 On the left is the line number as seen in the editor.
 
-Running `for char in sentence:` assigns a value to the variable `char`, so snoop shows you that value.
+Running `for char in sentence:` assigns a value to the variable `char`, so `snoop` shows you that value.
 Lines starting with `......` indicate a new variable or a change in the value of an existing variable.
-Such lines will not be shown when they're redundant, which is why the snoop output doesn't start like this:
+Such lines will not be shown when they're redundant, which is why the `snoop` output doesn't start like this:
 
         1 | sentence = 'Hello World'
      ...... sentence = 'Hello World'

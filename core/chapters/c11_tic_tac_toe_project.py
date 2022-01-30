@@ -1433,7 +1433,7 @@ can be combined into one:
 
 The two pieces of code are pretty much exactly equivalent. Python first evaluates
 `board[1]` to *get* the inner list, while the `[0] = ...` sets an element of `board[1]`.
-You can see the value of `board[1]` in Bird's Eye because it's an expression,
+You can see the value of `board[1]` in `birdseye` because it's an expression,
 and you could actually replace it with any other expression.
 
 Now you know how to set elements in nested lists, it's time to make this interactive!
