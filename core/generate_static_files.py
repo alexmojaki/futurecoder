@@ -75,7 +75,7 @@ def tarfile_filter(tar_info):
         x in name
         for x in [
             "__pycache__",
-            "friendly/locales",
+            "friendly_traceback/locales",
             "birdseye/static",
             "pygments/lexers",
         ]
@@ -125,7 +125,15 @@ def main():
 
     with tarfile.open(frontend_src / "python_core.tar.load_by_url", "w") as tar:
         tar.add(this_dir, arcname=this_dir.stem, recursive=True, filter=tarfile_filter)
-        tar.add(this_dir.parent / "translations", arcname="translations", recursive=True, filter=tarfile_filter)
+        if t.current_language not in (None, "en"):
+            for arcname in [
+                f"translations/locales/{t.current_language}",
+                f"translations/codes.json",
+            ]:
+                tar.add(this_dir.parent / arcname, arcname=arcname, recursive=True, filter=tarfile_filter)
+            arcname = f"friendly_traceback/locales/{t.current_language}/LC_MESSAGES/friendly_tb_{t.current_language}.mo"
+            tar.add(Path(site_packages) / arcname, arcname=arcname)
+
         for root in roots:
             tar.add(
                 Path(site_packages) / root,
