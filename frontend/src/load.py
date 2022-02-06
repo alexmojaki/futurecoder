@@ -7,7 +7,7 @@ sys.path.append(package_path)
 tarfile.TarFile.chown = lambda *_, **__: None
 
 
-def load_package_buffer(buffer):
+def load_package_buffer(buffer, lang):
     fd = io.BytesIO(buffer.to_py())
     with tarfile.TarFile(fileobj=fd) as zf:
         zf.extractall(package_path)
@@ -17,7 +17,8 @@ def load_package_buffer(buffer):
     from core.text import load_chapters
     from core import translation as t
 
-    # t.set_language("es")
+    if lang and lang != "en":
+        t.set_language(lang)
 
     list(load_chapters())
 
