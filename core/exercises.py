@@ -7,6 +7,7 @@ from textwrap import indent
 
 from littleutils import only
 
+from core import translation as t
 from core.utils import format_exception_string, returns_stdout
 
 
@@ -28,11 +29,10 @@ def make_function(program, function_template):
             assert isinstance(target, ast.Name)
             assert target.id == arg_name
     except AssertionError:
-        raise ExerciseError(f"""\
-Your code should start like this:
-
-{indented_inputs_string(dict.fromkeys(arg_names, "..."))}
-""")
+        expected_start = indented_inputs_string(dict.fromkeys(arg_names, "..."))
+        raise ExerciseError(
+            t.Terms.code_should_start_like.format(expected_start=expected_start)
+        )
 
     assignments = tree.body[:len(arg_names)]
     exercise = tree.body[len(arg_names):]
@@ -64,7 +64,7 @@ def clean_result(result):
     if not isinstance(result, str):
         result = repr(result)
     result = '\n'.join(line.rstrip() for line in result.rstrip().splitlines())
-    result = result or '<nothing>'
+    result = result or t.Terms.blank_result
     result = indent(result, '    ')
     return result
 
@@ -90,20 +90,17 @@ def check_result(func, inputs, expected_result):
     if cleaned_result != expected_result:
         inputs.pop("stdin_input", None)
         if inputs:
-            message = f"""\
-Given these values:
-
-{indented_inputs_string(inputs)}
-
-your code outputs:"""
+            message = t.Terms.your_code_outputs_given_values.format(
+                given_values=indented_inputs_string(inputs)
+            )
         else:
-            message = "Your code outputs:"
+            message = t.Terms.your_code_outputs
 
         message += f"""
 
 {cleaned_result}
 
-when it should output:
+{t.Terms.when_it_should_output}
 
 {expected_result}
 """

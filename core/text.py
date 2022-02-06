@@ -12,15 +12,14 @@ from importlib import import_module
 from io import StringIO
 from pathlib import Path
 from random import shuffle
-from textwrap import dedent, indent
+from textwrap import indent
 from tokenize import Untokenizer, generate_tokens
 from types import MethodType
 from typing import Union, List, get_type_hints
 
 import pygments
 from astcheck import is_ast_like
-from asttokens import ASTTokens
-from littleutils import setattrs, only, select_attrs, strip_required_prefix
+from littleutils import setattrs, only, select_attrs
 
 from core import translation as t
 from core.exercises import (
@@ -40,7 +39,7 @@ from core.utils import (
     lexer,
     html_formatter,
     shuffled_well,
-    no_weird_whitespace,
+    clean_spaces,
     snake,
     unwrapped_markdown,
     returns_stdout,
@@ -50,73 +49,57 @@ from core.utils import (
 
 
 def clean_program(program, cls):
+    if callable(program) and not cls.auto_translate_program:
+        program = inspect.getsource(program).splitlines()[1:]
+
     if not callable(program):
-        no_weird_whitespace(program)
-        program = program.strip()
+        program = clean_spaces(program)
         if not is_valid_syntax(program):
             cls.auto_translate_program = False
 
-        program = t.translate_program(cls, program)
-        no_weird_whitespace(program)
-        cls.show_solution_program = program = program.strip()
-        return program, None
+        cls.show_solution_program = program = t.translate_program(cls, program)
+        return program
 
     func = program
-    func_name = t.get_code_bit(func.__name__)
-    source = dedent(inspect.getsource(program))
-    if cls.auto_translate_program:
-        source = t.translate_program(cls, source)
-    else:
-        source = dedent(strip_required_prefix(source, "def program(self):\n")).rstrip()
-        source = t.translate_program(cls, source)
-        source = f"def program(self):\n{indent(source, '    ')}"
-    exec(source, func.__globals__)
-    func = func.__globals__[func_name]
+    source = t.translate_program(cls, inspect.getsource(program))
+    globs = func.__globals__  # noqa
+    exec(source, globs)
+    func = globs[t.get_code_bit(func.__name__)]
     func = MethodType(func, "")
 
     lines = source.splitlines()
-    if lines[-1].strip().startswith("return "):
+    cls.is_function_exercise = lines[-1].strip().startswith("return ")
+    if cls.is_function_exercise:
         func = func()
-        func = add_stdin_input_arg(func)
-
         assert lines[0] == f"def {t.get_code_bit('solution')}(self):"
         assert lines[-1] == f"    return {func.__name__}"
-        source = dedent("\n".join(lines[1:-1]))
-        program = clean_solution_function(func, source)
-        atok = ASTTokens(source, parse=1)
-        func_node = only(
-            node
-            for node in atok.tree.body
-            if isinstance(node, ast.FunctionDef) and node.name == func.__name__
-        )
-        cls.show_solution_program = clean_solution_function(
-            func, atok.get_text(func_node)
-        )
-    else:
-        func = add_stdin_input_arg(func)
+        source = clean_spaces(lines[1:-1])
+        source = program = clean_solution_function(func, source)
 
-        tree = ast.parse(source)
-        func_node = tree.body[0]
-        assert isinstance(func_node, ast.FunctionDef)
-        lines = lines[func_node.body[0].lineno - 1 :]
-        cls.show_solution_program = program = dedent("\n".join(lines))
-        if hasattr(cls, "test_values"):
-            cls.solution = func
-            [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
-            cls.stdin_input = inputs.pop("stdin_input", [])
-            inputs = inputs_string(inputs)
-            program = inputs + "\n" + program
-    compile(program, "<program>", "exec")  # check validity
-
-    func = NoMethodWrapper(func)
-
+    tree = ast.parse(source)
     if not any(
-        isinstance(node, ast.Return) for node in ast.walk(ast.parse(source))
+        isinstance(node, ast.Return) for node in ast.walk(tree)
     ) and not getattr(cls, "no_returns_stdout", False):
         func = returns_stdout(func)
+    func = add_stdin_input_arg(func)
+    func = NoMethodWrapper(func)
+    cls.solution = func
+    func_node = function_node(func, tree)
 
-    no_weird_whitespace(program)
-    return program.strip(), func
+    if cls.is_function_exercise:
+        cls.show_solution_program = ast.get_source_segment(source, func_node)
+    else:
+        lines = lines[func_node.body[0].lineno - 1 :]
+        cls.show_solution_program = program = clean_spaces(lines)
+        if hasattr(cls, "test_values"):
+            [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
+            cls.stdin_input = inputs.pop("stdin_input", [])
+            if inputs:
+                inputs = inputs_string(inputs)
+                program = inputs + "\n" + program
+
+    compile(program, "<program>", "exec")  # check validity
+    return program
 
 
 def basic_signature(func):
@@ -147,27 +130,28 @@ def clean_step_class(cls):
     solution = cls.__dict__.get("solution", "")
     assert bool(solution) ^ bool(program)
 
-    text = dedent(text).strip()
-    assert text
-    no_weird_whitespace(text)
-    cls.raw_text = text = t.get(cls.text_msgid, text)
-
     if solution:
         assert cls.tests
         assert cls.auto_translate_program
         cls.solution = MethodType(solution, "")
-        program, cls.solution = clean_program(cls.solution, cls)  # noqa
+        program = clean_program(cls.solution, cls)  # noqa
         cls.solution = cls.wrap_solution(cls.solution)
         if not issubclass(cls, MessageStep) or cls.after_success:
-            cls.test_exercise(cls.solution, cls.test_values())
+            cls.test_exercise(cls.solution)
     else:
-        program, _ = clean_program(program, cls)
+        program = clean_program(program, cls)
 
     assert program
 
     if isinstance(hints, str):
         hints = hints.strip().splitlines()
     hints = [t.get(t.hint(cls, i), hint.strip()) for i, hint in enumerate(hints)]
+
+    text = clean_spaces(text)
+    assert text
+    text = t.get(cls.text_msgid, text)
+    text = clean_spaces(text)
+    cls.raw_text = text
 
     if "__program_" in text:
         text = text.replace("__program__", program)
@@ -178,13 +162,10 @@ def clean_step_class(cls):
                                         "or set program_in_text = False in the class."
 
     assert "__program_" not in text
-
-    text = dedent(text).strip()
-
+    text = clean_spaces(text)
 
     for special_message in get_special_messages(cls):
-        msgstr = special_message.__doc__ or special_message.text
-        msgstr = dedent(msgstr).strip()
+        msgstr = clean_spaces(special_message.__doc__ or special_message.text)
         msgstr = t.get(t.special_message_text(cls, special_message), msgstr)
         special_message.text = msgstr
         try:
@@ -229,9 +210,11 @@ def clean_step_class(cls):
 
     if isinstance(cls.disallowed, Disallowed):
         cls.disallowed = [cls.disallowed]
+    for i, disallowed in enumerate(cls.disallowed):
+        disallowed.setup(cls, i)
 
     if cls.expected_code_source:
-        assert cls.expected_code_source in expected_code_source_descriptions
+        getattr(t.Terms, f"expected_mode_{cls.expected_code_source}")
 
 
 def get_predictions(cls):
@@ -318,9 +301,9 @@ class PageMeta(type):
             if getattr(value, "is_step", False):
                 cls.step_names.append(key)
 
-        assert isinstance(cls.final_text, str)
-        cls.final_text = t.get(t.step_text(cls.slug, "final_text"), cls.final_text.strip())
-        no_weird_whitespace(cls.final_text)
+        cls.final_text = clean_spaces(cls.final_text)
+        cls.final_text = t.get(t.step_text(cls.slug, "final_text"), cls.final_text)
+        cls.final_text = clean_spaces(cls.final_text)
         cls.step_names.append("final_text")
 
     def get_step(cls, step_name):
@@ -396,28 +379,30 @@ class PageMeta(type):
 class Page(metaclass=PageMeta):
     pass
 
+
 class Disallowed:
     def __init__(self, template, *, label="", message="", max_count=0, predicate=lambda n: True, function_only=False):
         assert bool(label) ^ bool(message)
-        if not message:
-            if max_count > 0:
-                label = f"more than {max_count} {label}"
-            message = "Well done, you have found a solution! However, for this exercise and your learning, " \
-                      f"you're not allowed to use {label}."
-        message = dedent(message).strip()
-        self.template = template
-        self.text = message
+        self.label = label
+        self.message = clean_spaces(message)
         self.max_count = max_count
         self.predicate = predicate
         self.function_only = function_only
+        self.template = template
 
+    def setup(self, step_cls, i):
+        label = self.label and t.get(t.disallowed_label(step_cls, i), self.label)
+        message = self.message and t.get(t.disallowed_message(step_cls, i), self.message)
 
-expected_code_source_descriptions = dict(
-    shell="Type your code directly in the shell after `>>>` and press Enter.",
-    birdseye="With your code in the editor, click the Bird's Eye button.",
-    snoop="With your code in the editor, click the Snoop button.",
-    pythontutor="With your code in the editor, click the Python Tutor button.",
-)
+        if not message:
+            if self.max_count > 0:
+                label = t.Terms.disallowed_default_label.format(
+                    max_count=self.max_count, label=label
+                )
+
+            message = t.Terms.disallowed_default_message.format(label=label)
+
+        self.text = clean_spaces(message)
 
 
 class Step(ABC):
@@ -439,6 +424,7 @@ class Step(ABC):
     auto_translate_program = True
     translated_tests = False
     page = None
+    is_function_exercise = False
 
     class special_messages:
         pass
@@ -478,8 +464,9 @@ class Step(ABC):
 
             if self.expected_code_source not in (None, self.code_source):
                 return dict(
-                    message="The code is correct, but you didn't run it as instructed. "
-                    + expected_code_source_descriptions[self.expected_code_source]
+                    message=t.Terms.incorrect_mode
+                    + " "
+                    + getattr(t.Terms, f"expected_mode_{self.expected_code_source}")
                 )
 
             return True
@@ -515,18 +502,19 @@ class Step(ABC):
     def function_tree(self):
         # We define this here so MessageSteps implicitly inheriting from ExerciseStep don't complain it doesn't exist
         # noinspection PyUnresolvedReferences
-        function_name = self.solution.__name__
+        func = self.solution
+        assert self.is_function_exercise
+        return function_node(func, self.tree)
 
-        if function_name == "solution":  # TODO
-            raise ValueError("This exercise doesn't require defining a function")
 
-        function_name = t.get_code_bit(function_name)
-        return only(
-            node
-            for node in ast.walk(self.tree)
-            if isinstance(node, ast.FunctionDef)
-            if node.name == function_name
-        )
+def function_node(func, tree):
+    function_name = t.get_code_bit(func.__name__)
+    return only(
+        node
+        for node in tree.body
+        if isinstance(node, ast.FunctionDef)
+        if node.name == function_name
+    )
 
 
 class ExerciseStep(Step):
@@ -534,27 +522,27 @@ class ExerciseStep(Step):
         if self.code_source == "shell":
             return False
 
-        function_name = self.solution.__name__
-
-        if function_name == "solution":  # TODO
+        if not self.is_function_exercise:
             return self.check_exercise(self.input, functionise=True)
         else:
+            function_name = self.solution.__name__
             if function_name not in self.console.locals:
-                return dict(message=f"You must define a function `{function_name}`")
+                return dict(
+                    message=t.Terms.must_define_function.format(
+                        function_name=function_name
+                    )
+                )
 
             func = self.console.locals[function_name]
             if not inspect.isfunction(func):
-                return dict(message=f"`{function_name}` is not a function.")
+                return dict(
+                    message=t.Terms.not_a_function.format(function_name=function_name)
+                )
 
             actual_signature = basic_signature(func)
             needed_signature = basic_signature(self.solution)
             if actual_signature != needed_signature:
-                return dict(
-                    message=f"The signature should be:\n\n"
-                            f"    def {function_name}{needed_signature}:\n\n"
-                            f"not:\n\n"
-                            f"    def {function_name}{actual_signature}:"
-                )
+                return dict(message=t.Terms.signature_should_be.format(**locals()))
 
             return self.check_exercise(func)
 
@@ -584,10 +572,7 @@ class ExerciseStep(Step):
                 expected_result = solution(**initial_names)
             except Exception:
                 traceback.print_exc()
-                return dict(
-                    message="The values of your input variables are invalid, "
-                    "try using values like the example."
-                )
+                return dict(message=t.Terms.invalid_inputs)
             try:
                 cls.check_result(func, initial_names, expected_result)
             except:
@@ -598,7 +583,7 @@ class ExerciseStep(Step):
             func = cls._patch_streams(submission)
 
         try:
-            cls.test_exercise(func, cls.test_values())
+            cls.test_exercise(func)
         except ExerciseError as e:
             return dict(message=str(e))
 
@@ -644,8 +629,8 @@ class ExerciseStep(Step):
             yield inputs, result
 
     @classmethod
-    def test_exercise(cls, func, values):
-        for inputs, result in values:
+    def test_exercise(cls, func):
+        for inputs, result in cls.test_values():
             cls.check_result(func, inputs, result)
 
     @classmethod
@@ -674,12 +659,7 @@ class VerbatimStep(Step):
                 ast.parse(self.input.lower()),
                 ast.parse(self.program.lower()),
         ):
-            return dict(
-                message="Python is case sensitive! That means that small and capital letters "
-                        "matter and changing them changes the meaning of the program. The strings "
-                        "`'hello'` and `'Hello'` are different, as are the variable names "
-                        "`word` and `Word`."
-            )
+            return dict(message=t.Terms.case_sensitive)
 
     def truncated_trees_match(self, input_tree, program_tree):
         input_tree = ast.Module(

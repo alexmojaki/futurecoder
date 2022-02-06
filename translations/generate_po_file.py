@@ -5,13 +5,16 @@ from collections import defaultdict
 from pathlib import Path
 from textwrap import indent, dedent
 
-from littleutils import group_by_key
+from littleutils import group_by_key, file_to_json
 from polib import POEntry, POFile
 
 from core import linting
 from core import translation as t
 from core.text import pages, get_predictions, get_special_messages, load_chapters
 from core.utils import markdown_codes
+
+this_dir = Path(__file__).parent
+frontend_src = this_dir / "../frontend/src"
 
 code_blocks = defaultdict(dict)
 code_bits = defaultdict(set)
@@ -61,6 +64,14 @@ def main():
                 msgid = t.hint(step, i)
                 text_entry(msgid, hint, comments)
 
+            for i, disallowed in enumerate(step.disallowed):
+                label = disallowed.label
+                message = disallowed.message
+                if label and not label[0] == label[-1] == '`':
+                    entry(t.disallowed_label(step, i), label)
+                if message:
+                    entry(t.disallowed_message(step, i), message)
+
             if step.auto_translate_program:
                 for _, node_text in t.get_code_bits(step.program):
                     code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")
@@ -90,15 +101,21 @@ def main():
     for chapter in chapters:
         entry(t.chapter_title(chapter["slug"]), chapter["title"])
 
+    for key, value in file_to_json(frontend_src / "english_terms.json").items():
+        entry(f"frontend.{key}", value)
+
     entry(
         "output_predictions.Error",
         "Error",
         "Special choice at the end of all output prediction multiple choice questions",
     )
 
+    for key, value in t.misc_terms():
+        entry(t.misc_term(key), value)
+
     po.sort(key=lambda e: e.msgid)
-    po.save(str(Path(__file__).parent / "english.po"))
-    po.save_as_mofile(str(Path(__file__).parent / "locales/en/LC_MESSAGES/futurecoder.mo"))
+    po.save(str(this_dir / "english.po"))
+    po.save_as_mofile(str(this_dir / "locales/en/LC_MESSAGES/futurecoder.mo"))
 
     t.codes_path.write_text(json.dumps(code_blocks))
 

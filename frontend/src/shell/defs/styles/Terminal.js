@@ -19,7 +19,7 @@ export default {
     fontFamily: 'monospace'
   },
   inputArea: {
-    display: 'inline-flex',
+    display: 'inline-block',
     width: 'calc(100% - 2.5em)'
   },
   promptLabel: {
@@ -31,7 +31,6 @@ export default {
     padding: '0',
     margin: '0',
     marginBottom: '2em',
-    flexGrow: '100',
     width: '100%',
     background: 'transparent',
     fontSize: '15px',

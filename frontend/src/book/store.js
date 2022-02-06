@@ -7,6 +7,7 @@ import "firebase/auth";
 import "firebase/analytics";
 import pagesUrl from "./pages.json.load_by_url"
 import axios from "axios";
+import * as terms from "../terms.json"
 
 const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
@@ -37,7 +38,7 @@ const initialState = {
   previousRoute: "main",
   pages: {
     loading_placeholder: {
-      title: "Loading...",
+      title: terms.loading_wait,
       slug: "loading_placeholder",
       index: 0,
       steps: [
@@ -295,6 +296,8 @@ const loadUserAndPages = (state, previousUser = {}) => {
     pagesProgress[slug] = {step_name};
   });
 
+  migrateUserState(pages, pagesProgress, updates);
+
   updateDatabase(updates);
 
   state = {...state, user: {...state.user, pagesProgress, pageSlug, developerMode}};
@@ -305,6 +308,18 @@ const loadUserAndPages = (state, previousUser = {}) => {
   loadedPromiseResolve();
 
   return state;
+}
+
+function migrateUserState(pages, pagesProgress, updates) {
+  const oldSlug = "GettingElementsAtPosition";
+  const newSlug = "GettingElementsAtPositionExercises";
+  const {step_name} = pagesProgress[oldSlug];
+  if (!pages[oldSlug].step_names.includes(step_name)) {
+    pagesProgress[oldSlug] = {step_name: "final_text"};
+    pagesProgress[newSlug] = {step_name};
+    updates[`pagesProgress/${oldSlug}/step_name`] = "final_text";
+    updates[`pagesProgress/${newSlug}/step_name`] = step_name;
+  }
 }
 
 export const showHint = makeAction(

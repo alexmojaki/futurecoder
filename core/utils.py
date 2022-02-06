@@ -7,6 +7,7 @@ import traceback
 from io import StringIO
 from itertools import combinations
 from random import shuffle
+from textwrap import dedent
 from types import ModuleType
 from typing import Union
 
@@ -14,6 +15,7 @@ from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
+from core import translation as t
 
 TESTING = False
 
@@ -33,9 +35,13 @@ internal_dir = os.path.dirname(os.path.dirname(
 ))
 
 
-def no_weird_whitespace(string):
+def clean_spaces(string):
+    if isinstance(string, list):
+        string = "\n".join(string)
+    string = dedent(string).strip()
     spaces = set(re.findall(r"\s", string))
     assert spaces <= {" ", "\n"}, spaces
+    return string
 
 
 def returns_stdout(func):
@@ -96,7 +102,7 @@ def make_test_input_callback(stdin_input: Union[str, list]):
             print(f"<input: {result}>")
             return result
         else:
-            raise ValueError("No more test inputs - solution should have finished by now")
+            raise ValueError(t.Terms.no_more_test_inputs)
 
     return input_callback
 
@@ -156,6 +162,10 @@ def highlighted_markdown(text):
 
 def markdown_codes(text):
     return highlighted_markdown_and_codes(text)[1]
+
+
+def new_tab_links(s):
+    return s.replace("<a href=", '<a target="_blank" rel="noreferrer" href=')
 
 
 def shuffled(it):
@@ -253,7 +263,7 @@ def internal_error_result(e: Exception):
     return dict(
         error=dict(
             details=safe_traceback(e),
-            title=f"Internal error: {truncate_string(exception_string, 100)}",
+            title=f"{t.Terms.internal_error}: {truncate_string(exception_string, 100)}",
             sentry_event=get_exception_event(),
         ),
     )

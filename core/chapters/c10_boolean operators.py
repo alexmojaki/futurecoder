@@ -52,6 +52,7 @@ __program_indented__
         """
         program = "True or True"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class TrueOrFalse(VerbatimStep):
         """
@@ -61,6 +62,7 @@ __program_indented__
         """
         program = "True or False"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class FalseOrFalse(VerbatimStep):
         """
@@ -70,6 +72,7 @@ __program_indented__
         """
         program = "False or False"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class ImprovingWithOr(VerbatimStep):
         """
@@ -171,7 +174,7 @@ Replace the `return` line in the code with the above line, and try running it ag
         text = """
 The second and third tests fail! Our function seems to be doing the wrong thing:
 it returns `"Bob"` (a string, not a boolean!) when `name` is `"Bob"` or `"Charlie"`. What is going on?
-Try inspecting the code with Bird's Eye. Inspect the `return` statements of each `is_friend` call carefully.
+Try inspecting the code with `birdseye`. Inspect the `return` statements of each `is_friend` call carefully.
 (Use the blue arrow buttons)
         """
 
@@ -179,7 +182,7 @@ Try inspecting the code with Bird's Eye. Inspect the `return` statements of each
 
     class AnExercise(ExerciseStep):
         """
-When we inspect it with Bird's Eye, we can see that:
+When we inspect it with `birdseye`, we can see that:
 
     name == "Alice" or "Bob"
 
@@ -291,6 +294,7 @@ __program_indented__
         """
         program = "True and True"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class TrueAndFalse(VerbatimStep):
         """
@@ -302,6 +306,7 @@ What do you expect?
         """
         program = "True and False"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     class FalseAndFalse(VerbatimStep):
         """
@@ -311,6 +316,7 @@ __program_indented__
         """
         program = "False and False"
         predicted_output_choices = ["True", "False"]
+        expected_code_source = "shell"
 
     # noinspection PyChainedComparisons
     class AndExercise(ExerciseStep):
@@ -699,7 +705,7 @@ __program_indented__
 
     class NotTrueOrTrue(VerbatimStep):
         """
-What is the priority of `not` compared to `and` and `or`? Try the following in Bird's Eye:
+What is the priority of `not` compared to `and` and `or`? Try the following in `birdseye`:
 
     __program_indented__
         """
@@ -712,7 +718,7 @@ What is the priority of `not` compared to `and` and `or`? Try the following in B
 
     class NotPriority(ExerciseStep):
         """
-You can see in Bird's Eye that
+You can see in `birdseye` that
 
     not True or True
 
@@ -767,13 +773,13 @@ i.e. no `if` statement. It should pass the same tests.
         hints = [
             dedent("""
             What if you were instead asked to simplify this related but opposite function?
-            
+
                 def valid_image(filename):
                     if filename.endswith(".png") or filename.endswith(".jpg"):
                         return True
                     else:
                         return False
-            
+
                 assert_equal(valid_image("dog.png"), True)
                 assert_equal(valid_image("cat.jpg"), True)
                 assert_equal(valid_image("invoice.pdf"), False)

@@ -4,6 +4,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
 import {updateDatabase, updateUserData} from "../book/store";
 import Popup from "reactjs-popup";
+import * as terms from "../terms.json"
 
 const HeaderLoginInfo = ({ email }) => {
   return email ?
@@ -11,7 +12,7 @@ const HeaderLoginInfo = ({ email }) => {
     <Popup
       trigger={
       <button className="btn btn-primary">
-        <FontAwesomeIcon icon={faUser}/> Login / Sign up
+        <FontAwesomeIcon icon={faUser}/> {terms.login_or_sign_up}
       </button>
     }
     modal

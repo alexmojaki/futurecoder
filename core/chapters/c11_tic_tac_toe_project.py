@@ -1433,7 +1433,7 @@ can be combined into one:
 
 The two pieces of code are pretty much exactly equivalent. Python first evaluates
 `board[1]` to *get* the inner list, while the `[0] = ...` sets an element of `board[1]`.
-You can see the value of `board[1]` in Bird's Eye because it's an expression,
+You can see the value of `board[1]` in `birdseye` because it's an expression,
 and you could actually replace it with any other expression.
 
 Now you know how to set elements in nested lists, it's time to make this interactive!
@@ -1763,11 +1763,16 @@ Making a new row each time can be done by just rearranging the code.
         def generate_inputs(cls):
             return dict(size=randint(4, 12))
 
+        class special_messages:
+            class not_separate:
+                text = "The sublists in the result are not all separate objects."
+                program = "pass\ndef make_board(size): return [[' '] * size] * size"
+
         @classmethod
         def check_result(cls, func, inputs, expected_result):
             result = super().check_result(func, inputs, expected_result)
             if len(result) != len(set(map(id, result))):
-                raise ExerciseError("The sublists in the result are not all separate objects")
+                raise ExerciseError(cls.special_messages.not_separate.text)
 
     final_text = """
 Well done!

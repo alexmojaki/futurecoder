@@ -18,7 +18,7 @@ random.seed(0)
 
 
 def test_steps():
-    t.set_language(os.environ["FUTURECODER_LANGUAGE"])
+    t.set_language(os.environ.get("FUTURECODER_LANGUAGE", "en"))
     list(load_chapters())
     runner.reset()
     transcript = []

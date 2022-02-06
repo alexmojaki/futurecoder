@@ -6,6 +6,7 @@ import gettext
 import json
 import os
 import re
+from functools import cache
 from pathlib import Path
 from textwrap import indent
 
@@ -37,6 +38,8 @@ def set_language(language):
         str(root_path / "locales"),
         languages=[language],
     )
+    for key, value in misc_terms():
+        setattr(Terms, key, get(misc_term(key), value))
 
 
 def get(msgid, default):
@@ -47,7 +50,11 @@ def get(msgid, default):
 
     result = translation.gettext(msgid)
     if result == msgid:
-        assert msgid.startswith(("code_bits.")) or "output_prediction_choices" in msgid
+        assert (
+            msgid.startswith(("code_bits."))
+            or "output_prediction_choices" in msgid
+            or ".disallowed." in msgid
+        )
         return default
 
     if os.environ.get("CHECK_INLINE_CODES"):
@@ -87,10 +94,14 @@ def translate_code(code):
 
 
 def translate_program(cls, program):
+    from core.utils import clean_spaces
+
+    program = clean_spaces(program)
     if cls.auto_translate_program:
-        return translate_code(program)
+        result = translate_code(program)
     else:
-        return get(step_program(cls), program)
+        result = get(step_program(cls), program)
+    return clean_spaces(result)
 
 
 def get_code_bits(code):
@@ -170,10 +181,23 @@ def hint(cls, i):
     return f"{step_cls(cls)}.hints.{i}.text"
 
 
+def disallowed(cls, i):
+    return f"{step_cls(cls)}.disallowed.{i}"
+
+
+def disallowed_message(cls, i):
+    return f"{disallowed(cls, i)}.message"
+
+
+def disallowed_label(cls, i):
+    return f"{disallowed(cls, i)}.label"
+
+
 def code_bit(node_text):
     return f"code_bits.{node_text}"
 
 
+@cache
 def get_code_bit(node_text):
     result = get(code_bit(node_text), node_text)
     node1 = ast.parse(node_text).body[0].value
@@ -213,3 +237,149 @@ def inline_codes(text):
 
 def pyflakes_message(message_cls):
     return f"linting_messages.pyflakes.{message_cls.__name__}.message_format"
+
+
+class Terms:
+    disallowed_default_message = (
+        "Well done, you have found a solution! However, for this exercise and your learning, "
+        "you're not allowed to use {label}."
+    )
+    disallowed_default_label = "more than {max_count} {label}"
+
+    expected_mode_shell = (
+        "Type your code directly in the shell after `>>>` and press Enter."
+    )
+    expected_mode_birdseye = (
+        "With your code in the editor, click the `birdseye` button."
+    )
+    expected_mode_snoop = "With your code in the editor, click the `snoop` button."
+    expected_mode_pythontutor = (
+        "With your code in the editor, click the Python Tutor button."
+    )
+
+    incorrect_mode = "The code is correct, but you didn't run it as instructed."
+
+    must_define_function = "You must define a function `{function_name}`"
+    not_a_function = "`{function_name}` is not a function."
+    signature_should_be = (
+        "The signature should be:\n\n"
+        "    def {function_name}{needed_signature}:\n\n"
+        "not:\n\n"
+        "    def {function_name}{actual_signature}:"
+    )
+
+    invalid_inputs = "The values of your input variables are invalid, try using values like the example."
+
+    case_sensitive = (
+        "Python is case sensitive! That means that small and capital letters "
+        "matter and changing them changes the meaning of the program. The strings "
+        "`'hello'` and `'Hello'` are different, as are the variable names "
+        "`word` and `Word`."
+    )
+
+    code_should_start_like = """\
+Your code should start like this:
+
+{expected_start}
+"""
+
+    blank_result = "<nothing>"
+
+    your_code_outputs_given_values = """\
+Given these values:
+
+{given_values}
+
+your code outputs:"""
+
+    your_code_outputs = "Your code outputs:"
+
+    when_it_should_output = "when it should output:"
+
+    copy_button = "Copy"
+
+    q_wiz_final_message = """
+Great! Here's some final tips:
+
+- Make sure the output is showing the problem you have and not something else.
+- Reduce your code to a **minimal** example. Remove any code that isn't directly related to the problem.
+- Run your code through the `snoop`, `birdseye`, and Python Tutor debuggers to understand what it's doing.
+- Search for your problem online.
+- Read [How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)
+
+If you're really ready, copy and paste the below into the question website,
+and replace the first line with a description of your problem.
+
+You can still change your code or expected output and click Run again to regenerate the question.
+
+    __copyable__
+    *Explain what you're trying to do and why*
+
+    Here's my code:
+
+{}
+
+    This is the result:
+
+{}
+
+    The expected output is:
+
+{}
+"""
+    q_wiz_input_message_start = (
+        "`input()` makes it harder to ask and answer questions about code. "
+        "Replace calls to input with strings so that everyone can run the code instantly "
+        "and get the same results."
+    )
+
+    q_wiz_input_replace_with = """Replace:
+
+{original_lines}
+
+with
+
+{replaced_lines}"""
+
+    q_wiz_input_and_add = """and add
+
+    {list_line}
+
+to the top of your code."""
+
+    q_wiz_no_output = (
+        "Your code didn't output anything. "
+        "Add some `print()` calls so that at least it outputs *something*. "
+        "Use code to show readers exactly where the problem is."
+    )
+    q_wiz_same_as_expected_output = (
+        "Your output is the same as your expected output! "
+        "If your problem is still there, adjust your code and/or "
+        "your expected output so that the two outputs don't match. "
+        "Make it clear what would be different if the code worked "
+        "the way you want it to."
+    )
+
+    q_wiz_debugger = (
+        "It's great that you're using a debugger! "
+        "Solving the problem on your own is ideal. "
+        "If you can't, use the 'Run' button to generate the question."
+    )
+
+    no_more_test_inputs = "No more test inputs - solution should have finished by now"
+
+    internal_error = "Internal error"
+
+    syntax_error_at_line = "at line"
+
+
+def misc_term(key):
+    return f"misc_terms.{key}"
+
+
+def misc_terms():
+    for key, value in Terms.__dict__.items():
+        if key.startswith("_"):
+            continue
+        assert isinstance(value, str)
+        yield key, value

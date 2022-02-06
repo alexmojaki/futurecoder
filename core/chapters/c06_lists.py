@@ -379,7 +379,7 @@ You can stop any loop using a `break` statement, like so:
             break
 
 This is just as correct but skips unnecessary iterations and checks once it finds the element.
-You can use snoop to see the difference.
+You can use `snoop` to see the difference.
         """
 
 
@@ -423,30 +423,12 @@ This also means that the last index in this list of 4 elements is 3. What happen
     class introducing_len_and_range(VerbatimStep):
         """
 There you go. `words[4]` and beyond don't exist, so trying that will give you an error.
-
-By the way, you can get the number of elements in a list (commonly called the *length*) using `len(words)`.
-That means that the last valid index of the list is `len(words) - 1`, so the last element is `words[len(words) - 1]`. Try these for yourself.
-
-So in general, the valid indices are:
-
-    [0, 1, 2, ..., len(words) - 2, len(words) - 1]
-
-There's a handy built in function called `range` which gives you these values. Try it by running this code:
+That first program is a bit repetitive. Let's improve it with a list and a loop!
 
 __program_indented__
         """
 
-        def program(self):
-            for i in range(10):
-                print(i)
-
-    class range_len(VerbatimStep):
-        """
-`range(n)` is similar to the list `[0, 1, 2, ..., n - 2, n - 1]`.
-This gives us an alternative way to loop over a list:
-
-__program_indented__
-        """
+        auto_translate_program = False
 
         predicted_output_choices = ["""\
 This
@@ -494,21 +476,272 @@ list
 1
 2
 3
-""",
+"""
                                     ]
+
+        def program(self):
+            words = ['This', 'is', 'a', 'list']
+            indices = [0, 1, 2, 3]
+
+            for index in indices:
+                print(index)
+                print(words[index])
+
+    class range_len(VerbatimStep):
+        """
+That's a bit better, but writing out `[0, 1, 2, ...]` isn't great, especially if it gets long.
+There's a handy function `range` to do that part for you. Replace `[0, 1, 2, 3]` with `range(4)`,
+i.e. `indices = range(4)`.
+        """
+
+        program_in_text = False
 
         auto_translate_program = False
 
         def program(self):
             words = ['This', 'is', 'a', 'list']
+            indices = range(4)
 
+            for index in indices:
+                print(index)
+                print(words[index])
+
+    class printing_the_range(VerbatimStep):
+        """
+As you can see, the result is the same. Try this:
+
+    __copyable__
+    __program_indented__
+        """
+
+        predicted_output_choices = ["""\
+0
+1
+2
+3
+""", """\
+1
+2
+3
+4
+""", """\
+[0]
+[1]
+[2]
+[3]
+""", """\
+[1]
+[2]
+[3]
+[4]
+""", """\
+This
+is
+a
+list
+""",
+                                    ]
+
+        def program(self):
+            indices = range(4)
+
+            print(indices[0])
+            print(indices[1])
+            print(indices[2])
+            print(indices[3])
+
+    class indices_out_of_bounds(VerbatimStep):
+        """
+Now try `__program__` in the shell.
+        """
+
+        predicted_output_choices = ["0", "1", "2", "3", "4"]
+
+        correct_output = "Error"
+
+        expected_code_source = "shell"
+
+        program = "indices[4]"
+
+    class range_almost_the_same_as_list(VerbatimStep):
+        """
+`range(4)` is the same thing as `[0, 1, 2, 3]` ... almost. Try `__program__` in the shell.
+        """
+
+        expected_code_source = "shell"
+
+        program = "range(4)"
+
+    class range_versus_list(VerbatimStep):
+        """
+That's probably a bit surprising. If you're curious, the `0` represents the start of the range.
+`0` is the default start, so `range(4)` is equal to `range(0, 4)`.
+`4` is the end of the range, but the end is always excluded, so the last value is `3`.
+If you're confused now, don't worry about it.
+
+There's a good reason for why `range(4)` is not actually a list - it makes programs faster and more efficient.
+It's not worth explaining that more right now.
+
+But you can easily convert it to a list: try `__program__` in the shell.
+        """
+        predicted_output_choices = [
+            "range(4)",
+            "range(0, 4)",
+            "list(range(4))",
+            "list(range(0, 4))",
+            "range(0, 1, 2, 3)",
+            "(0, 1, 2, 3)",
+            "[0, 1, 2, 3]"
+        ]
+
+        expected_code_source = "shell"
+
+        program = "list(range(4))"
+
+    class using_len_first_time(VerbatimStep):
+        """
+That's just a demonstration to let you see a range in a more familiar form.
+You should almost never actually do that.
+
+If you're feeling overwhelmed, don't worry! All you need to know is that `range(n)`
+is very similar to the list:
+
+    [0, 1, 2, ..., n - 2, n - 1]
+
+By the way, you can get the number of elements in a list (commonly called the *length*) using the `len` function.
+Try it by running this code:
+
+    __copyable__
+    __program_indented__
+        """
+
+        auto_translate_program = False
+
+        predicted_output_choices = ["0", "1", "2", "3", "4", "5"]
+
+        def program(self):
+            words = ['This', 'is', 'a', 'list']
+            print(len(words))
+
+    class print_last_element(ExerciseStep):
+        """
+Exercise: for any non-empty list `words`, print the last element. For example, if
+
+    __no_auto_translate__
+    words = ['This', 'is', 'a', 'list']
+
+your program should print `list`.
+        """
+
+        hints = """
+To access the last element of the list, you'll need the index of the last position.
+If the list has 2 elements, the first element is at index 0, so the last element is at index 1.
+Likewise, if the list had 3 elements, the last element would be at index 2.
+Do you see a pattern between those numbers? How can you express it?
+Can you come up with a general solution that works for any length?
+        """
+
+        def solution(self, words: List[str]):
+            print(words[len(words) - 1])
+
+        tests = [
+            (["Python"], "Python"),
+            (['Hello', 'world'], "world"),
+            (['futurecoder', 'is', 'cool!'], "cool!"),
+            (['This', 'is', 'a', 'list'], "list")
+        ]
+
+    class print_indices_and_words(ExerciseStep):
+        """
+So in general, the valid indices are:
+
+    [0, 1, 2, ..., len(words) - 2, len(words) - 1]
+
+Now we can fix the program from earlier to work with any list. Fill in the `...`:
+
+    __copyable__
+    __no_auto_translate__
+    words = ['This', 'is', 'a', 'list']
+
+    for index in ...:
+        print(index)
+        print(words[index])
+
+For the given example value of `words` it should print:
+
+    0
+    This
+    1
+    is
+    2
+    a
+    3
+    list
+        """
+
+        hints = """
+Remember that earlier we used `range(4)`.
+This time, it should work for any list. What if the list has 5 elements, or 10?
+Combine the two functions you learned!
+        """
+
+        def solution(self, words: List[str]):
             for index in range(len(words)):
                 print(index)
                 print(words[index])
 
+        tests = [
+                   (['Python'], """\
+0
+Python
+                        """),
+                    (['Hello', 'world'], """\
+0
+Hello
+1
+world
+                    """),
+                    (['futurecoder', 'is', 'cool!'], """\
+0
+futurecoder
+1
+is
+2
+cool!
+                    """),
+                    (['This', 'is', 'a', 'list'], """\
+0
+This
+1
+is
+2
+a
+3
+list
+                    """),
+                ]
+
+    final_text = """
+If you're still not quite comfortable with `range` and/or `len`, practice and experiment with it for a bit.
+Here are some simple exercises you can try on your own if you want.
+
+- Print the numbers from `1` to `100` inclusive.
+- Print your name 100 times.
+- Print each word in a list `words` except for the last one.
+- Print each word in `words` in reverse order, i.e. print the last word, then the second last word, etc.
+- Revisit the bonus problem at the end of the [Introducing Lists page](#IntroducingLists),
+whether or not you completed it. It's now much easier with `range` and `len`!
+
+When you're ready, continue to the next page for something a bit more challenging.
+"""
+
+
+class GettingElementsAtPositionExercises(Page):
+    title = "Exercises with `range()` and `len()`"
+
     class index_exercise(ExerciseStep):
         """
-Let's get some exercise! Given a list `things` and a value `to_find`,
+Given a list `things` and a value `to_find`,
 print the first index of `to_find` in the list, i.e. the lowest number `i` such that
 `things[i]` is `to_find`. For example, for
 

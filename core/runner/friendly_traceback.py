@@ -1,7 +1,10 @@
 import sys
 import traceback
 
-sys.last_type = sys.last_value = sys.last_traceback = None
+from core import translation as t
+
+for attr in "type value traceback".split():
+    sys.__dict__.pop("last_" + attr, None)
 
 from friendly_traceback.core import FriendlyTraceback
 
@@ -13,7 +16,7 @@ def friendly_syntax_error(e, filename):
             break
     return f"""\
 {''.join(lines).rstrip()}
-at line {e.lineno}
+{t.Terms.syntax_error_at_line} {e.lineno}
 
 {friendly_message(e, double_newline=False)}
 
