@@ -20,7 +20,7 @@ astcheck = "^0.2.5"
 pyflakes = "^2.2.0"
 BetterErrorMessages = "^0.4"
 sentry-sdk = "^1.1.0"
-friendly-traceback = "^0.4.94"
+friendly-traceback = "@latest"
 
 [tool.poetry.dev-dependencies]
 flake8 = {version = "^3.8.3", optional = true}

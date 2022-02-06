@@ -123,7 +123,7 @@ pyflakes = ">=2.2.0,<2.3.0"
 
 [[package]]
 name = "friendly-traceback"
-version = "0.4.111"
+version = "0.5.30"
 description = "Friendlier tracebacks in any language."
 category = "main"
 optional = false
@@ -215,7 +215,7 @@ python-versions = "*"
 
 [[package]]
 name = "pure-eval"
-version = "0.2.1"
+version = "0.2.2"
 description = "Safely evaluate AST nodes without side effects"
 category = "main"
 optional = false
@@ -401,7 +401,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.9"
-content-hash = "2a20bfd696af4b333e8fa11d49917fc2096b34efc887597806d71a5610082a1c"
+content-hash = "4c55af646e134959e750c2fbd468f4c6546cdb6ea73a9af2e719bc3a24a41881"
 
 [metadata.files]
 astcheck = [
@@ -446,8 +446,8 @@ flake8 = [
     {file = "flake8-3.8.3.tar.gz", hash = "sha256:f04b9fcbac03b0a3e58c0ab3a0ecc462e023a9faf046d57794184028123aa208"},
 ]
 friendly-traceback = [
-    {file = "friendly-traceback-0.4.111.tar.gz", hash = "sha256:8102a4a73a1c1621a49550b73ca82a8597dfc4c52a8f395693f6270e6bb36221"},
-    {file = "friendly_traceback-0.4.111-py3-none-any.whl", hash = "sha256:90016d0bf4839fcbdcf2b9531c544dc7f0254755eb424ff9fb196293ac8ce365"},
+    {file = "friendly-traceback-0.5.30.tar.gz", hash = "sha256:edfdab56802d0dab95cd1a66dfe7b95119d991bc63c8649477e4b55bfd79cf3d"},
+    {file = "friendly_traceback-0.5.30-py3-none-any.whl", hash = "sha256:31caf436407eda23104852a35e81e7f3f953123a18b87e5a5e6d18679131f631"},
 ]
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
@@ -481,8 +481,8 @@ polib = [
     {file = "polib-1.1.1.tar.gz", hash = "sha256:e02c355ae5e054912e3b0d16febc56510eff7e49d60bf22aecb463bd2f2a2dfa"},
 ]
 pure-eval = [
-    {file = "pure_eval-0.2.1-py3-none-any.whl", hash = "sha256:94eeb505a88721bec7bb21a4ac49758b8b1a01530da1a70d4ffc1d9937689d71"},
-    {file = "pure_eval-0.2.1.tar.gz", hash = "sha256:0f04483b16c9429532d2c0ddc96e2b3bb6b2dc37a2bfb0e986248dbfd0b78873"},
+    {file = "pure_eval-0.2.2-py3-none-any.whl", hash = "sha256:01eaab343580944bc56080ebe0a674b39ec44a945e6d09ba7db3cb8cec289350"},
+    {file = "pure_eval-0.2.2.tar.gz", hash = "sha256:2b45320af6dfaa1750f543d714b6d1c520a1688dec6fd24d339063ce0aaa9ac3"},
 ]
 py = [
     {file = "py-1.9.0-py2.py3-none-any.whl", hash = "sha256:366389d1db726cd2fcfc79732e75410e5fe4d31db13692115529d34069a043c2"},

@@ -4023,7 +4023,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n\n\n",
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:\n\n    print('Alice\\'s Diner')\n                ^^\n\n\n",
                     "type": "syntax_error"
                 }
             ]
