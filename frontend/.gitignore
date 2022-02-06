@@ -24,6 +24,7 @@ yarn-error.log*
 
 *.load_by_url
 chapters.json
+terms.json
 python_core.tar
 public/birdseye/
 
