@@ -4004,7 +4004,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThere appears to be a Python identifier (variable name)\nimmediately following a string.\nI suspect that you were trying to use a quote inside a string\nthat was enclosed in quotes of the same kind.\n\n\n",
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:\n\n    print('Alice\\'s Diner')\n                ^^\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4133,7 +4133,7 @@
         "program": [
             "nombre = \"Alicia\"",
             "edad = 20",
-            "print(\"Hola\" + nombre + \". T\u00fa eres \" + edad + \" a\u00f1os.\")"
+            "print(\"Hola \" + nombre + \". T\u00fa eres \" + edad + \" a\u00f1os.\")"
         ],
         "response": {
             "message": "",
@@ -4161,7 +4161,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hola&quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">nombre</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. T\u00fa eres &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">edad</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; a\u00f1os.&quot;</span><span class=\"p\">)</span>",
+                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hola &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">nombre</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. T\u00fa eres &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">edad</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; a\u00f1os.&quot;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 3,
                                             "type": "line"
@@ -4171,12 +4171,12 @@
                                     "type": "frame",
                                     "variables": [
                                         {
-                                            "name": "<span class=\"s2\">&quot;Hola&quot;</span> <span class=\"o\">+</span> <span class=\"n\">nombre</span>\n",
-                                            "value": "<span class=\"s1\">&#39;HolaAlicia&#39;</span>\n"
+                                            "name": "<span class=\"s2\">&quot;Hola &quot;</span> <span class=\"o\">+</span> <span class=\"n\">nombre</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hola Alicia&#39;</span>\n"
                                         },
                                         {
-                                            "name": "<span class=\"s2\">&quot;Hola&quot;</span> <span class=\"o\">+</span> <span class=\"n\">nombre</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;. T\u00fa eres &quot;</span>\n",
-                                            "value": "<span class=\"s1\">&#39;HolaAlicia. T\u00fa eres &#39;</span>\n"
+                                            "name": "<span class=\"s2\">&quot;Hola &quot;</span> <span class=\"o\">+</span> <span class=\"n\">nombre</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;. T\u00fa eres &quot;</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hola Alicia. T\u00fa eres &#39;</span>\n"
                                         },
                                         {
                                             "name": "<span class=\"n\">edad</span>\n",
@@ -4197,10 +4197,10 @@
                         "Traceback (most recent call last):",
                         " File \"my_program.py\", line 3, in <module>",
                         "       2 | edad = 20",
-                        "-->    3 | print(\"Hola\" + nombre + \". T\u00fa eres \" + edad + \" a\u00f1os.\")",
-                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
-                        "\"Hola\" + nombre = 'HolaAlicia'",
-                        "\"Hola\" + nombre + \". T\u00fa eres \" = 'HolaAlicia. T\u00fa eres '",
+                        "-->    3 | print(\"Hola \" + nombre + \". T\u00fa eres \" + edad + \" a\u00f1os.\")",
+                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+                        "\"Hola \" + nombre = 'Hola Alicia'",
+                        "\"Hola \" + nombre + \". T\u00fa eres \" = 'Hola Alicia. T\u00fa eres '",
                         "edad = 20",
                         "nombre = 'Alicia'",
                         "",
