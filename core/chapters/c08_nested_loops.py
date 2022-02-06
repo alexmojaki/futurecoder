@@ -1217,7 +1217,7 @@ So you can skip the intermediate variable and just do it in one line:
 
 Take a good look at this syntax. If it looks new and fancy, it's not.
 It's just the usual syntax for subscripting, applied twice.
-Try it in birdseye to see how Python breaks it down into smaller pieces.
+Try it in `birdseye` to see how Python breaks it down into smaller pieces.
         """
 
         expected_code_source = "birdseye"
@@ -1261,7 +1261,7 @@ If you can't remember, you can Google it!
 Indexing works similarly on lists and strings.
 Do you get an `index out of range` error? Is it for a string, or a list? Why?
 Make sure you are not confusing the order of the list index and the string index.
-Use birdseye if you're having trouble.
+Use `birdseye` if you're having trouble.
 """
         tests = [
             (["abc", "de", "fghi", "jklmn", "o"], 'n'),
@@ -1311,7 +1311,7 @@ How many times do you need to use subscripting?
 First you need to access a sublist.
 Then a string in that sublist.
 Then a letter in that string.
-Use birdseye if you're having trouble.
+Use `birdseye` if you're having trouble.
         """
 
         tests = [
