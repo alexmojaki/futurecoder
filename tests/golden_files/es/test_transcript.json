@@ -2127,7 +2127,7 @@
     {
         "page": "Introducci\u00f3n a las Listas",
         "program": [
-            "palabras = ['Esta', 'es', 'una', 'lista']",
+            "palabras = ['Esto', 'es', 'una', 'lista']",
             "",
             "for palabra in palabras:",
             "    print(palabra)"
@@ -2137,7 +2137,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Esta\nes\nuna\nlista\n",
+                    "text": "Esto\nes\nuna\nlista\n",
                     "type": "stdout"
                 }
             ]
@@ -2460,9 +2460,9 @@
         "program": [
             "palabras = ['Esto', 'es', 'una', 'lista']",
             "",
-            "for posicion in range(len(palabras)):",
-            "    print(posicion)",
-            "    print(palabras[posicion])"
+            "for indice in range(len(palabras)):",
+            "    print(indice)",
+            "    print(palabras[indice])"
         ],
         "response": {
             "message": "",
@@ -2626,7 +2626,7 @@
     {
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
-            "palabras = ['Esta', 'es', 'una', 'lista']",
+            "palabras = ['Esto', 'es', 'una', 'lista']",
             "print(len(palabras))"
         ],
         "response": {
