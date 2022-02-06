@@ -17,7 +17,7 @@ def load_package_buffer(buffer, lang):
     from core.text import load_chapters
     from core import translation as t
 
-    if lang:
+    if lang and lang != "en":
         t.set_language(lang)
 
     list(load_chapters())
