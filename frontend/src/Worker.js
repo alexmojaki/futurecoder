@@ -40,7 +40,7 @@ async function loadPyodideAndPackages() {
 
   console.time("load_package_buffer(buffer)")
   const load_package_buffer = pyodide.globals.get("load_package_buffer")
-  const result = load_package_buffer(buffer);
+  const result = load_package_buffer(buffer, process.env.REACT_APP_LANGUAGE);
   ({check_entry, install_imports} = toObject(result));
   console.timeEnd("load_package_buffer(buffer)")
 }
