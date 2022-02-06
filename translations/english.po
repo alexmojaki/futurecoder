@@ -17610,7 +17610,7 @@ msgid "misc_terms.expected_mode_shell"
 msgstr "Type your code directly in the shell after `>>>` and press Enter."
 
 msgid "misc_terms.expected_mode_snoop"
-msgstr "With your code in the editor, click the Snoop button."
+msgstr "With your code in the editor, click the `snoop` button."
 
 msgid "misc_terms.incorrect_mode"
 msgstr "The code is correct, but you didn't run it as instructed."
@@ -17642,7 +17642,7 @@ msgstr ""
 "\n"
 "- Make sure the output is showing the problem you have and not something else.\n"
 "- Reduce your code to a **minimal** example. Remove any code that isn't directly related to the problem.\n"
-"- Run your code through the Snoop, Birdseye, and Python Tutor debuggers to understand what it's doing.\n"
+"- Run your code through the `snoop`, `birdseye`, and Python Tutor debuggers to understand what it's doing.\n"
 "- Search for your problem online.\n"
 "- Read [How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)\n"
 "\n"
@@ -22122,7 +22122,7 @@ msgstr ""
 "\n"
 "Take a good look at this syntax. If it looks new and fancy, it's not.\n"
 "It's just the usual syntax for subscripting, applied twice.\n"
-"Try it in birdseye to see how Python breaks it down into smaller pieces."
+"Try it in `birdseye` to see how Python breaks it down into smaller pieces."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
 #. 
@@ -22170,7 +22170,7 @@ msgstr "Make sure you are not confusing the order of the list index and the stri
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting_exercise
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.hints.7.text"
-msgstr "Use birdseye if you're having trouble."
+msgstr "Use `birdseye` if you're having trouble."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
 msgid "pages.IntroducingNestedLists.steps.double_subscripting_exercise.text"
@@ -22336,7 +22336,7 @@ msgstr "Then a letter in that string."
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.triple_subscripting
 msgid "pages.IntroducingNestedLists.steps.triple_subscripting.hints.5.text"
-msgstr "Use birdseye if you're having trouble."
+msgstr "Use `birdseye` if you're having trouble."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
 msgid "pages.IntroducingNestedLists.steps.triple_subscripting.text"

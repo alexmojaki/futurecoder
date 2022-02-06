@@ -50,9 +50,8 @@ def get(msgid, default):
 
     result = translation.gettext(msgid)
     if result == msgid:
-        # TODO remove misc_terms
         assert (
-            msgid.startswith(("code_bits.", "misc_terms."))
+            msgid.startswith(("code_bits."))
             or "output_prediction_choices" in msgid
             or ".disallowed." in msgid
         )
@@ -253,7 +252,7 @@ class Terms:
     expected_mode_birdseye = (
         "With your code in the editor, click the `birdseye` button."
     )
-    expected_mode_snoop = "With your code in the editor, click the Snoop button."
+    expected_mode_snoop = "With your code in the editor, click the `snoop` button."
     expected_mode_pythontutor = (
         "With your code in the editor, click the Python Tutor button."
     )
@@ -304,7 +303,7 @@ Great! Here's some final tips:
 
 - Make sure the output is showing the problem you have and not something else.
 - Reduce your code to a **minimal** example. Remove any code that isn't directly related to the problem.
-- Run your code through the Snoop, Birdseye, and Python Tutor debuggers to understand what it's doing.
+- Run your code through the `snoop`, `birdseye`, and Python Tutor debuggers to understand what it's doing.
 - Search for your problem online.
 - Read [How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)
 
