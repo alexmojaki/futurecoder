@@ -43,7 +43,7 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nActualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.\n\nA menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -248,7 +248,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, no object with the name <code>sol</code> exists.\nI have no additional information for you.</p>",
+                            "friendly": "<p>Una excepci\u00f3n <code>NameError</code> indica que una variable o\nnombre de funci\u00f3n no es conocido por Python.\nLa mayor\u00eda de las veces, esto se debe a un error ortogr\u00e1fico.\nSin embargo, a veces es porque el nombre se utiliza\nantes de ser definido o de recibir un valor.</p>\n<p>En su programa, no existe ning\u00fan objeto con el nombre <code>sol</code>.\nNo tengo informaci\u00f3n adicional para usted.</p>",
                             "tail": ""
                         }
                     ],
@@ -563,7 +563,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nen la l\u00ednea 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `2` identified above was expected to begin a new indented block.\n\n\n",
+                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nen la l\u00ednea 2\n\nUn `IndentationError` ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.\n\nSe esperaba que la l\u00ednea `2` identificada anteriormente comenzara un nuevo bloque indentado.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -624,7 +624,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nen la l\u00ednea 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `3` identified above is less indented than expected.\n\n\n",
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nen la l\u00ednea 3\n\nUn `IndentationError` ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.\n\nLa l\u00ednea `3` identificada arriba tiene menos indentaci\u00f3n de la esperada.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1624,7 +1624,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, no object with the name <code>car</code> exists.\nThe Python builtin <code>chr</code> has a similar name.</p>",
+                            "friendly": "<p>Una excepci\u00f3n <code>NameError</code> indica que una variable o\nnombre de funci\u00f3n no es conocido por Python.\nLa mayor\u00eda de las veces, esto se debe a un error ortogr\u00e1fico.\nSin embargo, a veces es porque el nombre se utiliza\nantes de ser definido o de recibir un valor.</p>\n<p>En su programa, no existe ning\u00fan objeto con el nombre <code>car</code>.\nEl builtin de Python <code>chr</code> tiene un nombre similar.</p>",
                             "tail": ""
                         }
                     ],
@@ -1783,7 +1783,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou likely called a function with a named argument:\n\n    a_function(invalid=something) \n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n",
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nEs probable que hayas llamado a una funci\u00f3n con un argumento con nombre:\n\n    unaa_funci\u00f3n(inv\u00e1lido=algo) \n\ndonde `inv\u00e1lido` no es un nombre de variable v\u00e1lido en Python\nya sea porque comienza con un n\u00famero, o es una cadena\no contiene un punto, etc.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -2402,7 +2402,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>palabras</code>,\na <code>list</code> of length <code>4</code>.\nThe valid index values of <code>palabras</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
+                            "friendly": "<p>Un <code>IndexError</code> se produce cuando se intenta obtener un elemento de una lista\nuna tupla, o un objeto similar (secuencia), y utiliza un \u00edndice que\nno existe; normalmente, esto ocurre porque el \u00edndice que se da\nes mayor que la longitud de la secuencia.</p>\n<p>Ha intentado obtener el elemento con \u00edndice <code>4</code> de <code>palabras</code>,\nuna <code>list</code> de longitud <code>4</code>.\nLos valores de \u00edndice v\u00e1lidos de <code>palabras</code> son n\u00fameros enteros que van desde\n<code>-4</code> a <code>3</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -2557,7 +2557,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>indices</code>,\nrange object of length <code>4</code>.\nThe valid index values of <code>indices</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
+                            "friendly": "<p>Un <code>IndexError</code> se produce cuando se intenta obtener un elemento de una lista\nuna tupla, o un objeto similar (secuencia), y utiliza un \u00edndice que\nno existe; normalmente, esto ocurre porque el \u00edndice que se da\nes mayor que la longitud de la secuencia.</p>\n<p>Ha intentado obtener el elemento con \u00edndice <code>4</code> de <code>indices</code>,\nrange object de longitud <code>4</code>.\nLos valores de \u00edndice v\u00e1lidos de <code>indices</code> son n\u00fameros enteros que van desde\n<code>-4</code> a <code>3</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -2939,7 +2939,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>The parenthesis <code>()</code> following <code>f</code> are interpreted\nby Python as a function call for <code>f</code>.\nHowever, <code>f</code> is not a function but an object of type <code>str</code>.</p>",
+                            "friendly": "<p>Un <code>TypeError</code> suele producirse al intentar\ncombinar dos tipos de objetos incompatibles,\npor llamar a una funci\u00f3n con el tipo de objeto equivocado,\no por intentar realizar una operaci\u00f3n no permitida en un tipo de objeto determinado.</p>\n<p>Los par\u00e9ntesis <code>()</code> que siguen a <code>f</code> son interpretados\npor Python como una llamada a una funci\u00f3n para <code>f</code>.\nSin embargo, <code>f</code> no es una funci\u00f3n sino un objeto de tipo <code>str</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -3023,7 +3023,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>No information is known about this exception.\nPlease report this example to\nhttps://github.com/friendly-traceback/friendly-traceback/issues/new\nIf you are using a REPL, use <code>www('bug')</code> to do so.</p>\n<p>If you are using the Friendly console, use <code>www()</code> to\ndo an Internet search for this particular case.</p>",
+                            "friendly": "<p>Un <code>TypeError</code> suele producirse al intentar\ncombinar dos tipos de objetos incompatibles,\npor llamar a una funci\u00f3n con el tipo de objeto equivocado,\no por intentar realizar una operaci\u00f3n no permitida en un tipo de objeto determinado.</p>\n<p>No se conoce ninguna informaci\u00f3n sobre esta excepci\u00f3n.\nPor favor, informe de este ejemplo a\nhttps://github.com/friendly-traceback/friendly-traceback/issues/new\nSi est\u00e1 utilizando un REPL, utilice <code>www('bug')</code> para hacerlo.</p>\n<p>Si est\u00e1 utilizando la consola Friendly, utilice <code>www()</code> para\nhacer una b\u00fasqueda en Internet para este caso en particular.</p>",
                             "tail": ""
                         }
                     ],
@@ -3100,7 +3100,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>The object <code>palabra</code> has no attribute named <code>append</code>.\nThe following are some of its known attributes:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
+                            "friendly": "<p>Un <code>AttributeError</code> ocurre cuando el c\u00f3digo contiene algo como\n    objeto.x\ny <code>x</code> no es un m\u00e9todo o atributo (variable) perteneciente al <code>objeto</code>.</p>\n<p>Un objeto de tipo <code>palabra</code> no tiene ning\u00fan atributo llamado <code>append</code>.\nA continuaci\u00f3n se detallan algunos de sus atributos conocidos:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -3633,7 +3633,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>An <code>AttributeError</code> occurs when the code contains something like\n    <code>object.x</code>\nand <code>x</code> is not a method or attribute (variable) belonging to <code>object</code>.</p>\n<p>The object <code>'Python'</code> has no attribute named <code>append</code>.\nThe following are some of its known attributes:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
+                            "friendly": "<p>Un <code>AttributeError</code> ocurre cuando el c\u00f3digo contiene algo como\n    objeto.x\ny <code>x</code> no es un m\u00e9todo o atributo (variable) perteneciente al <code>objeto</code>.</p>\n<p>Un objeto de tipo <code>'Python'</code> no tiene ning\u00fan atributo llamado <code>append</code>.\nA continuaci\u00f3n se detallan algunos de sus atributos conocidos:\n<code>capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, ...</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -3881,7 +3881,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>numeros</code>,\na <code>list</code> of length <code>4</code>.\nThe valid index values of <code>numeros</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
+                            "friendly": "<p>Un <code>IndexError</code> se produce cuando se intenta obtener un elemento de una lista\nuna tupla, o un objeto similar (secuencia), y utiliza un \u00edndice que\nno existe; normalmente, esto ocurre porque el \u00edndice que se da\nes mayor que la longitud de la secuencia.</p>\n<p>Ha intentado obtener el elemento con \u00edndice <code>4</code> de <code>numeros</code>,\nuna <code>list</code> de longitud <code>4</code>.\nLos valores de \u00edndice v\u00e1lidos de <code>numeros</code> son n\u00fameros enteros que van desde\n<code>-4</code> a <code>3</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -4004,7 +4004,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:\n\n    print('Alice\\'s Diner')\n                ^^\n\n\n",
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nI suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:\n\n    print('Alice\\'s Diner')\n                ^^\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4189,7 +4189,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to concatenate (add) two different types of objects:\na string (<code>str</code>) and an integer (<code>int</code>).</p>",
+                            "friendly": "<p>Un <code>TypeError</code> suele producirse al intentar\ncombinar dos tipos de objetos incompatibles,\npor llamar a una funci\u00f3n con el tipo de objeto equivocado,\no por intentar realizar una operaci\u00f3n no permitida en un tipo de objeto determinado.</p>\n<p>Has intentado concatenar (sumar) dos tipos de objetos diferentes:\n<code>un string (</code>str<code>)</code> y <code>un n\u00famero entero (</code>int<code>)</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -4337,7 +4337,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>).</p>",
+                            "friendly": "<p>Un <code>TypeError</code> suele producirse al intentar\ncombinar dos tipos de objetos incompatibles,\npor llamar a una funci\u00f3n con el tipo de objeto equivocado,\no por intentar realizar una operaci\u00f3n no permitida en un tipo de objeto determinado.</p>\n<p>Has intentado a\u00f1adir dos tipos de objetos incompatibles:\n<code>un n\u00famero entero (</code>int<code>)</code> y <code>un string (</code>str<code>)</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -4454,7 +4454,7 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 2\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 2\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nActualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.\n\nA menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6067,7 +6067,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    es_amigo = nombre == \"Alicia\" or\n                                    ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThe Python keyword `or` can only be used for boolean expressions.\nPerhaps you meant to write\n\n`es_amigo = nombre == \"Alicia\" ,`\n\n\n",
+                    "text": "    es_amigo = nombre == \"Alicia\" or\n                                    ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nLa palabra clave de Python `or` s\u00f3lo puede utilizarse para expresiones booleanas.\nQuiz\u00e1s haya querido escribir\n\n`es_amigo = nombre == \"Alicia\" ,`\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6453,7 +6453,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nen la l\u00ednea 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n\n",
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nen la l\u00ednea 7\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nHa empezado a escribir una cadena con una comilla simple o doble\npero nunca termin\u00f3 la cadena con otra comilla en esa l\u00ednea.\n\n\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6780,7 +6780,7 @@
                                     "variables": []
                                 }
                             ],
-                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to add two incompatible types of objects:\nan integer (<code>int</code>) and a string (<code>str</code>).\nPerhaps you forgot to convert the string <code>'34'</code> into an integer (<code>int</code>).</p>",
+                            "friendly": "<p>Un <code>TypeError</code> suele producirse al intentar\ncombinar dos tipos de objetos incompatibles,\npor llamar a una funci\u00f3n con el tipo de objeto equivocado,\no por intentar realizar una operaci\u00f3n no permitida en un tipo de objeto determinado.</p>\n<p>Has intentado a\u00f1adir dos tipos de objetos incompatibles:\n<code>un n\u00famero entero (</code>int<code>)</code> y <code>un string (</code>str<code>)</code>.\nTal vez haya olvidado convertir la cadena <code>'34'</code> en un n\u00famero entero (<code>int</code>).</p>",
                             "tail": ""
                         }
                     ],

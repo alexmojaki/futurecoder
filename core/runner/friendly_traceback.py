@@ -7,6 +7,9 @@ for attr in "type value traceback".split():
     sys.__dict__.pop("last_" + attr, None)
 
 from friendly_traceback.core import FriendlyTraceback
+import friendly_traceback
+
+friendly_traceback.set_lang(t.current_language or "en")
 
 
 def friendly_syntax_error(e, filename):
