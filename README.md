@@ -136,14 +136,16 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 
 1. Install Python 3.9 and [poetry](https://python-poetry.org/docs/#installation).
 2. Run `poetry install` to install Python dependencies.
-3. Run `poetry run python -m core.generate_static_files`. 
-4. In the `frontend` folder:
+3. Change into the `futurecoder` (top-level project) directory.
+4. Run `poetry run python -m translations.generate_po_file`.
+5. Run `poetry run python -m core.generate_static_files`. 
+6. In the `frontend` folder:
     1. Ensure you have version 14.15.4 (lts/fermium) of `node` and version 7.5.2 of `npm`.
 
     2. Run `npm ci` to download dependencies.
 
     3. Run `npm start` to start the frontend development server.
-5. Go to http://localhost:3000/course/
+7. Go to http://localhost:3000/course/
 
 To learn more about the system, see the [contributing guide](how_to_contribute.md).
 
