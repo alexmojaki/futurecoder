@@ -143,7 +143,9 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 
     2. Run `npm ci` to download dependencies.
 
-    3. Run `npm start` to start the frontend development server.
+    3. For some browsers, especially Safari, you will need to run `npm run build` and then copy `service-worker.js` from the `build` folder to the `public` folder.
+
+    4. Run `npm start` to start the frontend development server.
 6. Go to http://localhost:3000/course/
 
 To learn more about the system, see the [contributing guide](how_to_contribute.md).
