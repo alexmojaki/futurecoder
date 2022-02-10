@@ -227,7 +227,7 @@ export const runCode = async ({code, source}) => {
     databaseRequest("POST", {
       entry,
       result: {
-        messages: data.messages.map(m => _.truncate(m, {length: 1000})),
+        messages: data.messages?.map(m => _.truncate(m, {length: 1000})),
         output: _.truncate(data.output, {length: 1000}),
       },
       state: {
