@@ -137,7 +137,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 1. Fork this repo, `git clone` it, and enter the top-level `futurecoder` folder.
 2. Install Python 3.9 and [poetry](https://python-poetry.org/docs/#installation).
 3. Run `poetry install` to install Python dependencies.
-4. Run `./generate.sh` to generate various static files from Python used by the frontend, and run tests. Repeat this step whenever you change Python files.
+4. Run `./generate.sh`. This will generate various static files from Python used by the frontend and run some tests. Repeat this step whenever you change Python files.
 5. In the `frontend` folder:
     1. Ensure you have version 14.15.4 (lts/fermium) of `node` and version 7.5.2 of `npm`.
 
