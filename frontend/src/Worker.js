@@ -5,7 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
-import {readChannel, syncSleep, uuidv4} from "sync-message";
+import {readMessage, syncSleep, uuidv4} from "sync-message";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -69,7 +69,7 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   const fullInputCallback = (data) => {
     const messageId = uuidv4();
     inputCallback(messageId, toObject(data));
-    const result = readChannel(channel, messageId).text;
+    const result = readMessage(channel, messageId).text;
     if (result == null) {
       return null;
     }

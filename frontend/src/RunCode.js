@@ -18,7 +18,7 @@ import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
-import {makeAtomicsChannel, makeServiceWorkerChannel} from "sync-message";
+import {makeChannel, writeMessage} from "sync-message";
 
 let worker, workerWrapper;
 
@@ -29,19 +29,10 @@ function initWorker() {
 
 initWorker();
 
-const channelPromise = (async () => {
-  if (typeof SharedArrayBuffer !== "undefined") {
-    return makeAtomicsChannel();
-  } else {
-    await navigator.serviceWorker.register("./service-worker.js");
-    const result = await makeServiceWorkerChannel({timeout: 1000});
-    if (!result) {
-      // TODO what if this doesn't work?
-      window.location.reload();
-    }
-    return result;
-  }
-})();
+const channel = makeChannel({serviceWorker: {scope: "/course/"}});
+if (channel?.type === "serviceWorker") {
+  navigator.serviceWorker.register("/course/service-worker.js", {scope: "/course/"});
+}
 
 let interruptBuffer = null;
 if (typeof SharedArrayBuffer != "undefined") {
@@ -73,7 +64,7 @@ export const runCode = async ({code, source}) => {
     if (awaitingInput) {
       const messageId = awaitingInput;
       awaitingInput = false;
-      (await channelPromise).writeInput({text: code}, messageId);
+      await writeMessage(channel, {text: code}, messageId);
       bookSetState("processing", true);
       return;
     }
@@ -116,7 +107,7 @@ export const runCode = async ({code, source}) => {
     if (awaitingInput) {
       const messageId = awaitingInput;
       awaitingInput = false;
-      (await channelPromise).writeInput({interrupted: true}, messageId);
+      await writeMessage(channel, {interrupted: true}, messageId);
     } else {
       doInterrupt();
     }
@@ -162,7 +153,7 @@ export const runCode = async ({code, source}) => {
     interruptPromise,
     workerWrapper.runCode(
       entry,
-      (await channelPromise).channel,
+      channel,
       interruptBuffer,
       Comlink.proxy(outputCallback),
       Comlink.proxy(inputCallback),
