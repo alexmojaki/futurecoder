@@ -42,14 +42,19 @@ if (typeof SharedArrayBuffer != "undefined") {
 export const terminalRef = React.createRef();
 
 let awaitingInput = false;
+let sleeping = false;
 let pendingOutput = [];
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
-function inputCallback(messageId) {
-  awaitingInput = messageId;
-  bookSetState("processing", false);
-  terminalRef.current.focusTerminal();
+function inputCallback(messageId, data) {
+  if (data.sleeping) {
+    sleeping = messageId;
+  } else {
+    awaitingInput = messageId;
+    bookSetState("processing", false);
+    terminalRef.current.focusTerminal();
+  }
 }
 
 export let interrupt = () => {
@@ -83,6 +88,7 @@ export const runCode = async ({code, source}) => {
   }
 
   awaitingInput = false;
+  sleeping = false;
   pendingOutput = [];
 
   bookSetState("processing", true);
@@ -108,9 +114,10 @@ export const runCode = async ({code, source}) => {
   let interruptResolver;
   const interruptPromise = new Promise(r => interruptResolver = r);
   interrupt = async () => {
-    if (awaitingInput) {
-      const messageId = awaitingInput;
+    if (awaitingInput || sleeping) {
+      const messageId = awaitingInput || sleeping;
       awaitingInput = false;
+      sleeping = false;
       await writeMessage(channel, {interrupted: true}, messageId);
     } else {
       doInterrupt();
@@ -165,6 +172,7 @@ export const runCode = async ({code, source}) => {
   ]);
 
   awaitingInput = false;
+  sleeping = false;
 
   const {error} = data;
 

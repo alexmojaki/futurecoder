@@ -104,7 +104,17 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   };
 
   function sleepCallback(data) {
-    syncSleep(toObject(data).seconds * 1000, channel);
+    const timeout = toObject(data).seconds * 1000;
+    if (!(timeout > 0 && channel)) {
+      return;
+    }
+    const messageId = uuidv4();
+    try {
+      inputCallback(messageId, {sleeping: true});
+      readMessage(channel, messageId, {timeout});
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   const result = check_entry(entry, fullInputCallback, fullOutputCallback, sleepCallback);
