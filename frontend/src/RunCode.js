@@ -31,7 +31,7 @@ initWorker();
 
 const channel = makeChannel({serviceWorker: {scope: "/course/"}});
 if (channel?.type === "serviceWorker") {
-  navigator.serviceWorker.register("/course/service-worker.js", {scope: "/course/"});
+  navigator.serviceWorker.register("./service-worker.js");
 }
 
 let interruptBuffer = null;
@@ -64,7 +64,11 @@ export const runCode = async ({code, source}) => {
     if (awaitingInput) {
       const messageId = awaitingInput;
       awaitingInput = false;
-      await writeMessage(channel, {text: code}, messageId);
+      try {
+        await writeMessage(channel, {text: code}, messageId);
+      } catch {
+        return;
+      }
       bookSetState("processing", true);
       return;
     }

@@ -41,3 +41,28 @@ class EnhancedRunner(PatchedStdinRunner, PatchedSleepRunner):
         return {
             "text": friendly_syntax_error(exc, self.filename),
         }
+
+    def non_str_input(self):
+        # TODO do this in python_runner, then return early
+        line = self.line
+        self.line = ""
+
+        if line == 1:
+            raise KeyboardInterrupt
+        elif line == 2:
+            raise RuntimeError(
+                "The service worker for reading input isn't working. "
+                "Try closing all futurecoder tabs, then reopening."
+            )
+        elif line == 3:
+            raise RuntimeError(
+                "This browser doesn't support reading input. "
+                "Try upgrading to the most recent version or switching to a different browser, e.g. Chrome/Firefox. "
+                "The browser must support SharedArrayBuffer or Service Workers."
+            )
+        else:
+            # TODO raise specific exception to trigger proper feedback
+            raise RuntimeError(
+                "Oops, something went wrong while reading input! "
+                "Please report this error!"
+            )
