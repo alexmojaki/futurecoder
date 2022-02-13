@@ -18,7 +18,7 @@ import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
-import {makeAtomicsChannel, makeServiceWorkerChannel} from "sync-message";
+import {makeChannel, writeMessage} from "sync-message";
 
 let worker, workerWrapper;
 
@@ -29,19 +29,10 @@ function initWorker() {
 
 initWorker();
 
-const channelPromise = (async () => {
-  if (typeof SharedArrayBuffer !== "undefined") {
-    return makeAtomicsChannel();
-  } else {
-    await navigator.serviceWorker.register("./service-worker.js");
-    const result = await makeServiceWorkerChannel({timeout: 1000});
-    if (!result) {
-      // TODO what if this doesn't work?
-      window.location.reload();
-    }
-    return result;
-  }
-})();
+const channel = makeChannel({serviceWorker: {scope: "/course/"}});
+if (channel?.type === "serviceWorker") {
+  navigator.serviceWorker.register("./service-worker.js");
+}
 
 let interruptBuffer = null;
 if (typeof SharedArrayBuffer != "undefined") {
@@ -51,14 +42,19 @@ if (typeof SharedArrayBuffer != "undefined") {
 export const terminalRef = React.createRef();
 
 let awaitingInput = false;
+let sleeping = false;
 let pendingOutput = [];
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
-function inputCallback(messageId) {
-  awaitingInput = messageId;
-  bookSetState("processing", false);
-  terminalRef.current.focusTerminal();
+function inputCallback(messageId, data) {
+  if (data.sleeping) {
+    sleeping = messageId;
+  } else {
+    awaitingInput = messageId;
+    bookSetState("processing", false);
+    terminalRef.current.focusTerminal();
+  }
 }
 
 export let interrupt = () => {
@@ -73,7 +69,11 @@ export const runCode = async ({code, source}) => {
     if (awaitingInput) {
       const messageId = awaitingInput;
       awaitingInput = false;
-      (await channelPromise).writeInput({text: code}, messageId);
+      try {
+        await writeMessage(channel, {text: code}, messageId);
+      } catch {
+        return;
+      }
       bookSetState("processing", true);
       return;
     }
@@ -88,6 +88,7 @@ export const runCode = async ({code, source}) => {
   }
 
   awaitingInput = false;
+  sleeping = false;
   pendingOutput = [];
 
   bookSetState("processing", true);
@@ -113,10 +114,11 @@ export const runCode = async ({code, source}) => {
   let interruptResolver;
   const interruptPromise = new Promise(r => interruptResolver = r);
   interrupt = async () => {
-    if (awaitingInput) {
-      const messageId = awaitingInput;
+    if (awaitingInput || sleeping) {
+      const messageId = awaitingInput || sleeping;
       awaitingInput = false;
-      (await channelPromise).writeInput({interrupted: true}, messageId);
+      sleeping = false;
+      await writeMessage(channel, {interrupted: true}, messageId);
     } else {
       doInterrupt();
     }
@@ -162,7 +164,7 @@ export const runCode = async ({code, source}) => {
     interruptPromise,
     workerWrapper.runCode(
       entry,
-      (await channelPromise).channel,
+      channel,
       interruptBuffer,
       Comlink.proxy(outputCallback),
       Comlink.proxy(inputCallback),
@@ -170,6 +172,7 @@ export const runCode = async ({code, source}) => {
   ]);
 
   awaitingInput = false;
+  sleeping = false;
 
   const {error} = data;
 

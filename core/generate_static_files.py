@@ -62,6 +62,10 @@ def get_roots():
 
         relative = strip_required_prefix(f, site_packages)
         root = relative.split(os.path.sep)[0]
+
+        if root == "_distutils_hack":
+            continue
+
         roots.add(root)
 
         mod_names.append(module.__name__)

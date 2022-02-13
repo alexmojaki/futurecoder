@@ -43,9 +43,6 @@ class FullRunner(EnhancedRunner):
 
         self.console.locals.update(assert_equal=assert_equal)
 
-    def non_str_input(self):
-        raise KeyboardInterrupt
-
 
 runner = FullRunner()
 

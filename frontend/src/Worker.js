@@ -5,7 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
-import {readChannel, syncSleep, uuidv4} from "sync-message";
+import {readMessage, ServiceWorkerError, syncSleep, uuidv4} from "sync-message";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -67,13 +67,25 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   await pyodideReadyPromise;
 
   const fullInputCallback = (data) => {
-    const messageId = uuidv4();
-    inputCallback(messageId, toObject(data));
-    const result = readChannel(channel, messageId).text;
-    if (result == null) {
-      return null;
+    try {
+      if (!channel) {
+        return 3;  // browser not supported
+      }
+      const messageId = uuidv4();
+      inputCallback(messageId, toObject(data));
+      const result = readMessage(channel, messageId).text;
+      if (result == null) {
+        return 1;  // interrupt
+      }
+      return result + "\n";
+    } catch (e) {
+      if (e instanceof ServiceWorkerError) {
+        return 2;  // suggesting closing all tabs and reopening
+      } else {
+        console.error(e);
+        return 4;  // general error
+      }
     }
-    return result + "\n";
   }
 
   if (interruptBuffer) {
@@ -92,7 +104,17 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   };
 
   function sleepCallback(data) {
-    syncSleep(toObject(data).seconds * 1000, channel);
+    const timeout = toObject(data).seconds * 1000;
+    if (!(timeout > 0 && channel)) {
+      return;
+    }
+    const messageId = uuidv4();
+    try {
+      inputCallback(messageId, {sleeping: true});
+      readMessage(channel, messageId, {timeout});
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   const result = check_entry(entry, fullInputCallback, fullOutputCallback, sleepCallback);
