@@ -5,7 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
-import {readMessage, ServiceWorkerError, syncSleep, uuidv4} from "sync-message";
+import {readMessage, ServiceWorkerError, uuidv4} from "sync-message";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -19,7 +19,7 @@ let pyodide;
 
 async function loadPyodideOnly() {
   console.time("importScripts pyodide")
-  const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.18.0/full/';
+  const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.19.0/full/';
   importScripts(indexURL + 'pyodide.js');
   console.timeEnd("importScripts pyodide")
 
@@ -89,7 +89,7 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   }
 
   if (interruptBuffer) {
-    pyodide._module.setInterruptBuffer(interruptBuffer);
+    pyodide.setInterruptBuffer(interruptBuffer);
   }
 
   try {
