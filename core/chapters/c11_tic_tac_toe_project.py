@@ -702,7 +702,7 @@ Normally a string literal has to be on one line, so this is invalid:
     print(string)
 
 But Python provides a way! The solution is to use *triple quotes*, i.e. three quote characters in a row
-(either `'''` or `\"""`) around the contents of the string:
+(either `'''` or `\"""`) around the contents of the string. Run the following:
 
 __program_indented__
         """

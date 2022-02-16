@@ -277,6 +277,11 @@ class Terms:
         "`word` and `Word`."
     )
 
+    string_spaces_differ = (
+        "Check that the strings in your code have the correct spaces. "
+        "For example, `'Hello'` is different from `'Hello '` because of the space at the end."
+    )
+
     code_should_start_like = """\
 Your code should start like this:
 

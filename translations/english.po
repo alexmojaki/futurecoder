@@ -17710,6 +17710,11 @@ msgstr ""
 "\n"
 "    def {function_name}{actual_signature}:"
 
+msgid "misc_terms.string_spaces_differ"
+msgstr ""
+"Check that the strings in your code have the correct spaces. For example, `'Hello'` is different from `'Hello '` "
+"because of the space at the end."
+
 msgid "misc_terms.syntax_error_at_line"
 msgstr "at line"
 
@@ -23405,7 +23410,7 @@ msgid "pages.IntroducingOr.steps.InspectWithBirdseye.text"
 msgstr ""
 "The second and third tests fail! Our function seems to be doing the wrong thing:\n"
 "it returns `\"Bob\"` (a string, not a boolean!) when `name` is `\"Bob\"` or `\"Charlie\"`. What is going on?\n"
-"Try inspecting the code with `birdseye`. Inspect the `return` statements of each `is_friend` call carefully.\n"
+"Run the same problematic code again with `birdseye`. Inspect the `return` statements of each `is_friend` call carefully.\n"
 "(Use the blue arrow buttons)"
 
 #. https://futurecoder.io/course/#IntroducingOr
@@ -26091,7 +26096,7 @@ msgstr ""
 "    print(string)\n"
 "\n"
 "But Python provides a way! The solution is to use *triple quotes*, i.e. three quote characters in a row\n"
-"(either `'''` or `\"\"\"`) around the contents of the string:\n"
+"(either `'''` or `\"\"\"`) around the contents of the string. Run the following:\n"
 "\n"
 "__program_indented__"
 
