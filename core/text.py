@@ -651,8 +651,8 @@ class VerbatimStep(Step):
     def check(self):
         try:
             if self.truncated_trees_match(
-                    self.tree,
-                    ast.parse(self.program),
+                self.tree,
+                ast.parse(self.program),
             ):
                 return True
         except SyntaxError:
