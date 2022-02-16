@@ -648,13 +648,16 @@ class ExerciseStep(Step):
 class VerbatimStep(Step):
     program_in_text = True
 
+    class StringSpacesDiffer(Exception):
+        pass
+
     def check(self):
         try:
-            if self.truncated_trees_match(
+            if result:= self.truncated_trees_match(
                 self.tree,
                 ast.parse(self.program),
             ):
-                return True
+                return result
         except SyntaxError:
             pass
 
@@ -674,7 +677,38 @@ class VerbatimStep(Step):
             body=body[:len(program_tree.body)],
             type_ignores=[],
         )
-        return is_ast_like(input_tree, program_tree)
+        return self.are_trees_equal(input_tree, program_tree)
+
+    def are_trees_equal(self, t1, t2):
+        try:
+            self.assert_trees_equal(t1, t2)
+            return True
+        except VerbatimStep.StringSpacesDiffer:
+            return dict(message=t.Terms.string_spaces_differ)
+        except AssertionError:
+            return False
+
+    def assert_trees_equal(self, t1, t2):
+        assert type(t1) == type(t2)
+        if isinstance(t1, (list, tuple)):
+            assert len(t1) == len(t2)
+            for vc1, vc2 in zip(t1, t2):
+                self.assert_trees_equal(vc1, vc2)
+        elif isinstance(t1, ast.Str):
+            if t1.s == t2.s:
+                return
+            s1 = t1.s.replace(" ", "")
+            s2 = t2.s.replace(" ", "")
+            if s1 == s2:
+                raise self.StringSpacesDiffer()
+            raise AssertionError
+        elif isinstance(t1, ast.AST):
+            self.assert_trees_equal(
+                list(ast.iter_fields(t1)),
+                list(ast.iter_fields(t2)),
+            )
+        else:
+            assert t1 == t2
 
 
 class MessageStep(Step, ABC):

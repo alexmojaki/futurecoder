@@ -17710,6 +17710,11 @@ msgstr ""
 "\n"
 "    def {function_name}{actual_signature}:"
 
+msgid "misc_terms.string_spaces_differ"
+msgstr ""
+"Check that the strings in your code have the correct spaces. For example, `'Hello'` is different from `'Hello '` "
+"because of the space at the end."
+
 msgid "misc_terms.syntax_error_at_line"
 msgstr "at line"
 
