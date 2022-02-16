@@ -88,7 +88,10 @@ def check_entry(entry, input_callback, output_callback, sleep_callback=time.slee
         result["birdseye_objects"] = runner.run(entry["input"], mode)
 
         if runner.question_wizard:
-            result["messages"] = question_wizard_check(entry, result["output"], runner)
+            (
+                result["messages"],
+                result["question_wizard_status"],
+            ) = question_wizard_check(entry, result["output"], runner)
             return result
 
         page = pages[entry["page_slug"]]

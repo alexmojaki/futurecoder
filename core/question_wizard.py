@@ -51,7 +51,7 @@ def input_messages(input_nodes):
 
 def question_wizard_check(entry, output, runner):
     if entry["source"] == "shell":
-        return None
+        return [], "shell"
 
     messages = input_messages(runner.input_nodes)
 
@@ -67,7 +67,7 @@ def question_wizard_check(entry, output, runner):
 
     if not messages:
         if not entry["expected_output"].strip():
-            return "__expected_output__"
+            return [], "expected_output"
 
         if entry["expected_output"].strip() == output.strip():
             messages.append(t.Terms.q_wiz_same_as_expected_output)
@@ -83,4 +83,4 @@ def question_wizard_check(entry, output, runner):
             messages.append(t.Terms.q_wiz_debugger)
 
     messages = [new_tab_links(highlighted_markdown(message)) for message in messages]
-    return messages
+    return messages, "messages"
