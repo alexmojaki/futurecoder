@@ -4,6 +4,8 @@ This page explains how to help build the futurecoder platform by writing code or
 
 **If you'd like to donate money, please do so at [open collective](https://opencollective.com/futurecoder).**
 
+**For translating futurecoder to languages other than English, [see this guide](https://github.com/alexmojaki/futurecoder/wiki/How-to-write-translations-for-futurecoder).**
+
 For starters, try using the platform to see what it's like. From the [table of contents](https://futurecoder.io/course/#toc) you can jump to any page and start immediately. No account needed. If you want to try all the debuggers, pick a page close to the end of the course where everything is enabled. See the [Controls](README.md#controls) section for instructions on enabling developer mode, this will allow you to skip or replay steps in a page to allow exploring more freely and quickly.
 
 Please [open an issue](https://github.com/alexmojaki/futurecoder/issues/new) about anything that's confusing, could be done better, or doesn't work. All suggestions and feedback are welcome. Tell me what interests you!
