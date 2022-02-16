@@ -26096,7 +26096,7 @@ msgstr ""
 "    print(string)\n"
 "\n"
 "But Python provides a way! The solution is to use *triple quotes*, i.e. three quote characters in a row\n"
-"(either `'''` or `\"\"\"`) around the contents of the string:\n"
+"(either `'''` or `\"\"\"`) around the contents of the string. Run the following:\n"
 "\n"
 "__program_indented__"
 
