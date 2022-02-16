@@ -659,8 +659,8 @@ class VerbatimStep(Step):
             pass
 
         if self.truncated_trees_match(
-                ast.parse(self.input.lower()),
-                ast.parse(self.program.lower()),
+            ast.parse(self.input.lower()),
+            ast.parse(self.program.lower()),
         ):
             return dict(message=t.Terms.case_sensitive)
 
