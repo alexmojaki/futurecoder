@@ -23410,7 +23410,7 @@ msgid "pages.IntroducingOr.steps.InspectWithBirdseye.text"
 msgstr ""
 "The second and third tests fail! Our function seems to be doing the wrong thing:\n"
 "it returns `\"Bob\"` (a string, not a boolean!) when `name` is `\"Bob\"` or `\"Charlie\"`. What is going on?\n"
-"Try inspecting the code with `birdseye`. Inspect the `return` statements of each `is_friend` call carefully.\n"
+"Run the same problematic code again with `birdseye`. Inspect the `return` statements of each `is_friend` call carefully.\n"
 "(Use the blue arrow buttons)"
 
 #. https://futurecoder.io/course/#IntroducingOr
