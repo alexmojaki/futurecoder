@@ -662,8 +662,13 @@ class VerbatimStep(Step):
             return dict(message=t.Terms.case_sensitive)
 
     def truncated_trees_match(self, input_tree, program_tree):
+        body = [
+            stmt
+            for stmt in input_tree.body
+            if not (isinstance(stmt, ast.FunctionDef) and stmt.name == "assert_equal")
+        ]
         input_tree = ast.Module(
-            body=input_tree.body[:len(program_tree.body)],
+            body=body[:len(program_tree.body)],
             type_ignores=[],
         )
         return is_ast_like(input_tree, program_tree)
