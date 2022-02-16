@@ -649,11 +649,14 @@ class VerbatimStep(Step):
     program_in_text = True
 
     def check(self):
-        if self.truncated_trees_match(
-                self.tree,
-                ast.parse(self.program),
-        ):
-            return True
+        try:
+            if self.truncated_trees_match(
+                    self.tree,
+                    ast.parse(self.program),
+            ):
+                return True
+        except SyntaxError:
+            pass
 
         if self.truncated_trees_match(
                 ast.parse(self.input.lower()),
