@@ -8,6 +8,7 @@ import "firebase/analytics";
 import pagesUrl from "./pages.json.load_by_url"
 import axios from "axios";
 import * as terms from "../terms.json"
+import * as Sentry from "@sentry/react";
 
 const firebaseConfig = {
   es: {
@@ -234,6 +235,7 @@ firebase.auth().onAuthStateChanged(async (user) => {
 });
 
 export const updateUserData = async (user) => {
+  Sentry.setUser({id: user.uid});
   const userData = await databaseRequest("GET");
   loadUser({
     uid: user.uid,
