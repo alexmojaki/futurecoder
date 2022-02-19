@@ -144,7 +144,7 @@ export const runCode = async ({code, source}) => {
     }
   }
 
-  const hasPrediction = currentStep().prediction.choices;
+  const hasPrediction = currentStep().prediction?.choices;
 
   function outputCallback(output_parts) {
     if (interrupted) {
