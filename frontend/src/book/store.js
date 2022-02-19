@@ -9,6 +9,7 @@ import pagesUrl from "./pages.json.load_by_url"
 import axios from "axios";
 import * as terms from "../terms.json"
 import * as Sentry from "@sentry/react";
+import {wrapAsync} from "../frontendlib/sentry";
 
 const firebaseConfig = {
   es: {
@@ -214,7 +215,7 @@ export function setEditorContent(editorContent) {
   debouncedSaveEditorContent(editorContent);
 }
 
-axios.get(pagesUrl).then((response) => loadPages(response.data));
+wrapAsync(axios.get, "axios_get")(pagesUrl).then((response) => loadPages(response.data));
 
 const loadUser = makeAction(
   "LOAD_USER",
@@ -244,7 +245,7 @@ export const updateUserData = async (user) => {
   });
 }
 
-export const databaseRequest = async (method, data={}, endpoint="users") => {
+export const databaseRequest = wrapAsync(async function databaseRequest(method, data={}, endpoint="users") {
   const currentUser = firebase.auth().currentUser;
   if (!currentUser) {
     return;
@@ -257,7 +258,7 @@ export const databaseRequest = async (method, data={}, endpoint="users") => {
     data,
   })
   return response.data;
-}
+});
 
 export const updateDatabase = (updates) => {
   return databaseRequest("PATCH", updates);

@@ -1,11 +1,11 @@
 import * as Sentry from "@sentry/react";
 
-export function wrapAsync(func) {
+export function wrapAsync(func, name) {
   return async function() {
     try {
       return await func(...arguments);
     } catch (e) {
-      Sentry.setExtra(`${func.name || 'anon'}_arguments`, [...arguments]);
+      Sentry.setExtra(`${name || func.name || 'anon'}_arguments`, [...arguments]);
       throw e;
     }
   }
