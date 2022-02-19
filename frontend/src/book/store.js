@@ -181,7 +181,9 @@ export const moveStep = (delta) => {
 
 const animateStep = (stepIndex) => {
   const stepDiv = document.getElementById(`step-text-${stepIndex}`);
-  stepDiv.style.animation = 'next-step-transition 0.7s ease-out, next-step-flash 3s ease-out 0.7s';
+  if (stepDiv) {
+    stepDiv.style.animation = 'next-step-transition 0.7s ease-out, next-step-flash 3s ease-out 0.7s';
+  }
 }
 
 const loadPages = makeAction(
