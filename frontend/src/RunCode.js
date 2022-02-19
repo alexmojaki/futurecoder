@@ -153,7 +153,7 @@ export const runCode = async ({code, source}) => {
     for (const part of output_parts) {
       part.codeSource = source;
     }
-    if (hasPrediction) {
+    if (hasPrediction || !terminalRef.current) {
       pendingOutput.push(...output_parts);
     } else {
       showOutputParts(output_parts);
@@ -253,6 +253,7 @@ document.addEventListener('keydown', function (e) {
 function showOutputParts(output_parts) {
   const terminal = terminalRef.current;
   if (!terminal) {
+    setTimeout(() => showOutputParts(output_parts), 500);
     return;
   }
   terminal.pushToStdout(output_parts);
