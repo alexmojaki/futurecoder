@@ -252,6 +252,9 @@ document.addEventListener('keydown', function (e) {
 
 function showOutputParts(output_parts) {
   const terminal = terminalRef.current;
+  if (!terminal) {
+    return;
+  }
   terminal.pushToStdout(output_parts);
   animateScroll.scrollToBottom({duration: 0, container: terminal.terminalRoot.current});
 }
