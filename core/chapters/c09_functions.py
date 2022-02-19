@@ -366,7 +366,7 @@ __program_indented__
 Here we passed `number` (which has value `5`) as the argument `x` to the function `double`, and `double` *returned*
 `x * 2`, i.e. `5 * 2`, i.e. `10`, which became the value of the variable `twice`. The special keyword `return` inside
 `double` makes `double(number)` an expression with a value - specifically the value which was returned.
-It's a bit like `twice = double(number)` is equivalent to `double = number * 2`, although that's not
+It's a bit like `twice = double(number)` is equivalent to `twice = number * 2`, although that's not
 exactly what happens.
 
 Note that `double(number)` *didn't change `number`*. At the end, `number` is still `5`. Rather, `double(number)`
