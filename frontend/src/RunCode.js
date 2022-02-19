@@ -19,6 +19,7 @@ import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
 import {makeChannel, writeMessage} from "sync-message";
+import {wrapAsync} from "./frontendlib/sentry";
 
 let worker, workerWrapper;
 
@@ -63,7 +64,7 @@ export let interrupt = () => {
 let finishedLastRun = Promise.resolve();
 let finishedLastRunResolve = () => {};
 
-export const runCode = async ({code, source}) => {
+export const runCode = wrapAsync(async function runCode({code, source}) {
   const shell = source === "shell";
   if (shell) {
     if (awaitingInput) {
@@ -242,7 +243,7 @@ export const runCode = async ({code, source}) => {
       timestamp: new Date().toISOString(),
     }, "code_entries");
   }
-}
+});
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
