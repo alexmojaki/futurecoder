@@ -44,7 +44,11 @@ if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname ===
 let firebaseAnalytics;
 export const isProduction = window.location.hostname.endsWith("futurecoder.io");
 if (isProduction) {
-  firebaseAnalytics = firebase.analytics(firebaseApp);
+  firebase.analytics.isSupported().then((isSupported) => {
+    if (isSupported) {
+      firebaseAnalytics = firebase.analytics(firebaseApp);
+    }
+  });
 }
 
 const initialState = {
