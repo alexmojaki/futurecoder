@@ -8,3 +8,41 @@
     border-radius: .25rem;
   }
 }
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .badge {
+    border-radius: 10px;
+    border: 1px solid grey;
+    width: 288px;
+    padding: 5px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    .center-text {
+      font-size: larger;
+      margin-bottom: 0.6em;
+      color: white;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    strong {
+      color: white;
+    }
+
+    .testimonial {
+      font-style: italic;
+    }
+  }
+}
