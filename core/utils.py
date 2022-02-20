@@ -210,12 +210,11 @@ def get_exception_event():
         nonlocal event
         event = e
 
-    client = sentry_sdk.Client(
+    sentry_sdk.init(
         transport=transport,
         integrations=[PureEvalIntegration(), ExecutingIntegration()],
     )
-    hub = sentry_sdk.Hub(client)
-    hub.capture_exception()
+    sentry_sdk.capture_exception()
 
     assert event
     return event
