@@ -10,6 +10,7 @@ import axios from "axios";
 import * as terms from "../terms.json"
 import * as Sentry from "@sentry/react";
 import {wrapAsync} from "../frontendlib/sentry";
+import pRetry from 'p-retry';
 
 const firebaseConfig = {
   es: {
@@ -215,7 +216,8 @@ export function setEditorContent(editorContent) {
   debouncedSaveEditorContent(editorContent);
 }
 
-wrapAsync(axios.get, "axios_get")(pagesUrl).then((response) => loadPages(response.data));
+pRetry(() => wrapAsync(axios.get, "axios_get")(pagesUrl), {retries: 3})
+  .then((response) => loadPages(response.data));
 
 const loadUser = makeAction(
   "LOAD_USER",
@@ -251,12 +253,15 @@ export const databaseRequest = wrapAsync(async function databaseRequest(method, 
     return;
   }
   const auth = await currentUser.getIdToken();
-  const response = await axios.request({
-    url: `${databaseURL}/${endpoint}/${currentUser.uid}.json`,
-    params: {auth},
-    method,
-    data,
-  })
+  const response = await pRetry(() =>
+      axios.request({
+        url: `${databaseURL}/${endpoint}/${currentUser.uid}.json`,
+        params: {auth},
+        method,
+        data,
+      }),
+    {retries: 3},
+  )
   return response.data;
 });
 
