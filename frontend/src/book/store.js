@@ -8,6 +8,9 @@ import "firebase/analytics";
 import pagesUrl from "./pages.json.load_by_url"
 import axios from "axios";
 import * as terms from "../terms.json"
+import * as Sentry from "@sentry/react";
+import {wrapAsync} from "../frontendlib/sentry";
+import pRetry from 'p-retry';
 
 const firebaseConfig = {
   es: {
@@ -44,7 +47,11 @@ if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname ===
 let firebaseAnalytics;
 export const isProduction = window.location.hostname.endsWith("futurecoder.io");
 if (isProduction) {
-  firebaseAnalytics = firebase.analytics(firebaseApp);
+  firebase.analytics.isSupported().then((isSupported) => {
+    if (isSupported) {
+      firebaseAnalytics = firebase.analytics(firebaseApp);
+    }
+  });
 }
 
 const initialState = {
@@ -181,7 +188,9 @@ export const moveStep = (delta) => {
 
 const animateStep = (stepIndex) => {
   const stepDiv = document.getElementById(`step-text-${stepIndex}`);
-  stepDiv.style.animation = 'next-step-transition 0.7s ease-out, next-step-flash 3s ease-out 0.7s';
+  if (stepDiv) {
+    stepDiv.style.animation = 'next-step-transition 0.7s ease-out, next-step-flash 3s ease-out 0.7s';
+  }
 }
 
 const loadPages = makeAction(
@@ -207,7 +216,8 @@ export function setEditorContent(editorContent) {
   debouncedSaveEditorContent(editorContent);
 }
 
-axios.get(pagesUrl).then((response) => loadPages(response.data));
+pRetry(() => wrapAsync(axios.get, "axios_get")(pagesUrl), {retries: 3})
+  .then((response) => loadPages(response.data));
 
 const loadUser = makeAction(
   "LOAD_USER",
@@ -228,6 +238,7 @@ firebase.auth().onAuthStateChanged(async (user) => {
 });
 
 export const updateUserData = async (user) => {
+  Sentry.setUser({id: user.uid});
   const userData = await databaseRequest("GET");
   loadUser({
     uid: user.uid,
@@ -236,20 +247,23 @@ export const updateUserData = async (user) => {
   });
 }
 
-export const databaseRequest = async (method, data={}, endpoint="users") => {
+export const databaseRequest = wrapAsync(async function databaseRequest(method, data={}, endpoint="users") {
   const currentUser = firebase.auth().currentUser;
   if (!currentUser) {
     return;
   }
   const auth = await currentUser.getIdToken();
-  const response = await axios.request({
-    url: `${databaseURL}/${endpoint}/${currentUser.uid}.json`,
-    params: {auth},
-    method,
-    data,
-  })
+  const response = await pRetry(() =>
+      axios.request({
+        url: `${databaseURL}/${endpoint}/${currentUser.uid}.json`,
+        params: {auth},
+        method,
+        data,
+      }),
+    {retries: 3},
+  )
   return response.data;
-}
+});
 
 export const updateDatabase = (updates) => {
   return databaseRequest("PATCH", updates);

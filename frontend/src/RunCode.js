@@ -19,6 +19,7 @@ import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
 import {makeChannel, writeMessage} from "sync-message";
+import {wrapAsync} from "./frontendlib/sentry";
 
 let worker, workerWrapper;
 
@@ -63,7 +64,19 @@ export let interrupt = () => {
 let finishedLastRun = Promise.resolve();
 let finishedLastRunResolve = () => {};
 
-export const runCode = async ({code, source}) => {
+export async function runCode(entry) {
+  try {
+    await _runCode(entry)
+  } catch (e) {
+    bookSetState("error", {
+      details: e.message,
+      title: "JS Error while running code: " + e.name,
+    });
+    Sentry.captureException(e);
+  }
+}
+
+export const _runCode = wrapAsync(async function runCode({code, source}) {
   const shell = source === "shell";
   if (shell) {
     if (awaitingInput) {
@@ -144,7 +157,7 @@ export const runCode = async ({code, source}) => {
     }
   }
 
-  const hasPrediction = currentStep().prediction.choices;
+  const hasPrediction = currentStep().prediction?.choices;
 
   function outputCallback(output_parts) {
     if (interrupted) {
@@ -153,7 +166,7 @@ export const runCode = async ({code, source}) => {
     for (const part of output_parts) {
       part.codeSource = source;
     }
-    if (hasPrediction) {
+    if (hasPrediction || !terminalRef.current) {
       pendingOutput.push(...output_parts);
     } else {
       showOutputParts(output_parts);
@@ -242,7 +255,7 @@ export const runCode = async ({code, source}) => {
       timestamp: new Date().toISOString(),
     }, "code_entries");
   }
-}
+});
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
@@ -252,6 +265,10 @@ document.addEventListener('keydown', function (e) {
 
 function showOutputParts(output_parts) {
   const terminal = terminalRef.current;
+  if (!terminal) {
+    setTimeout(() => showOutputParts(output_parts), 500);
+    return;
+  }
   terminal.pushToStdout(output_parts);
   animateScroll.scrollToBottom({duration: 0, container: terminal.terminalRoot.current});
 }

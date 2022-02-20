@@ -6,6 +6,7 @@ import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
 import {readMessage, ServiceWorkerError, uuidv4} from "sync-message";
+import pRetry from 'p-retry';
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -34,8 +35,8 @@ let check_entry, install_imports;
 
 async function loadPyodideAndPackages() {
   const buffer = (await Promise.all([
-    loadPyodideOnly(),
-    getPackageBuffer(),
+    pRetry(loadPyodideOnly, {retries: 3}),
+    pRetry(getPackageBuffer, {retries: 3}),
   ]))[1];
 
   console.time("load_package_buffer(buffer)")

@@ -694,7 +694,7 @@ class VerbatimStep(Step):
             assert len(t1) == len(t2)
             for vc1, vc2 in zip(t1, t2):
                 self.assert_trees_equal(vc1, vc2)
-        elif isinstance(t1, ast.Str):
+        elif isinstance(t1, ast.Str) and isinstance(t2, ast.Str):
             if t1.s == t2.s:
                 return
             s1 = t1.s.replace(" ", "")

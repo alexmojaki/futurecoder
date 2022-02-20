@@ -1,5 +1,6 @@
 # flake8: NOQA E501
 import ast
+from contextlib import suppress
 from random import randint
 from typing import List
 
@@ -191,13 +192,13 @@ Make sure each line is in the correct loop and has the right amount of indentati
                 return super().check()
             except SyntaxError:
                 lines = self.result.splitlines()
-                if (
-                    len(lines) >= 3
-                    and lines[2].strip() == "SyntaxError: invalid syntax"
-                    and lines[1].strip() == "^"
-                    and lines[0][lines[1].index("^")] == "x"
-                ):
-                    return self.special_messages.multiply_with_x
+                with suppress(IndexError):
+                    if (
+                        lines[2].strip() == "SyntaxError: invalid syntax" and
+                        lines[1].strip() == "^" and
+                        lines[0][lines[1].index("^")] == "x"
+                    ):
+                        return self.special_messages.multiply_with_x
 
         def solution(self):
             for left in range(12):

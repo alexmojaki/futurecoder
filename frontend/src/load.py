@@ -2,6 +2,8 @@ import io
 import sys
 import tarfile
 
+sys.setrecursionlimit(500)
+
 package_path = "/tmp/package/"
 sys.path.append(package_path)
 tarfile.TarFile.chown = lambda *_, **__: None

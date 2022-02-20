@@ -1,15 +1,38 @@
-import {createStore, applyMiddleware, compose, combineReducers} from "redux";
+import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {connect} from "react-redux";
-import {
-  TextContainer,
-  redact,
-  dispatcher
-} from "./frontendlib";
-import {bookReducer, navigate} from "./book/store";
-
+import {dispatcher, redact, TextContainer} from "./frontendlib";
+import {bookReducer, currentStep, navigate} from "./book/store";
 import * as Sentry from "@sentry/react";
+import _ from "lodash";
+
+const sentryReduxEnhancer = Sentry.createReduxEnhancer({
+  actionTransformer: action => {
+    if (action.type === "LOAD_PAGES") {
+      return null;
+    }
+    if (action.type === "RAN_CODE") {
+      try {
+        action = {
+          ...action,
+          messages: action.messages?.map(m => _.truncate(m, {length: 100})),
+          output: _.truncate(action.output, {length: 100}),
+        }
+      } catch {
+      }
+    }
+    return action;
+  },
+  stateTransformer: state => {
+    state = _.omit(state, "book.pages");
+    try {
+      state = {...state, currentStep: currentStep(state)};
+    } catch {
+    }
+    return state;
+  },
+});
 
 const sentryDsn = process.env.REACT_APP_SENTRY_DSN;
 if (sentryDsn) {
@@ -47,6 +70,7 @@ export const store = createStore(
       thunk,
       logger,
     ),
+    sentryReduxEnhancer,
   )
 );
 

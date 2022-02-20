@@ -199,6 +199,8 @@ def check_and_remove_prefix(string, prefix):
 
 def get_exception_event():
     import sentry_sdk
+    from sentry_sdk.integrations.pure_eval import PureEvalIntegration
+    from sentry_sdk.integrations.executing import ExecutingIntegration
 
     os.environ["SENTRY_RELEASE"] = "stubbed"  # TODO get git commit?
 
@@ -208,9 +210,11 @@ def get_exception_event():
         nonlocal event
         event = e
 
-    client = sentry_sdk.Client(transport=transport)
-    hub = sentry_sdk.Hub(client)
-    hub.capture_exception()
+    sentry_sdk.init(
+        transport=transport,
+        integrations=[PureEvalIntegration(), ExecutingIntegration()],
+    )
+    sentry_sdk.capture_exception()
 
     assert event
     return event
