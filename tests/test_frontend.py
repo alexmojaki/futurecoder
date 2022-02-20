@@ -13,7 +13,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 del sys.modules["urllib3"]  # so that stub_module doesn't complain
 
-assets_dir = Path(__file__).parent / "test_frontend_assets"
+this_dir = Path(__file__).parent
+assets_dir = this_dir / "test_frontend_assets"
 assets_dir.mkdir(exist_ok=True)
 
 
@@ -104,6 +105,21 @@ Feedback"""
 >>> """,
     )
 
+    editor = driver.find_element_by_css_selector("#editor textarea")
+    run_button = driver.find_element_by_css_selector(".editor-buttons .btn-primary")
+    snoop_button = driver.find_element_by_css_selector(".editor-buttons .btn-success")
+
+    # Run test_steps within futurecoder!
+    run_code(editor, run_button, get_test_steps_code())
+    driver.implicitly_wait(20)
+    await_result(driver, ">>>", ">>> ")
+    driver.implicitly_wait(5)
+
+    # The above directly modifies the runner callbacks,
+    # so we need a separate run to reset the callback and print stuff
+    run_code(editor, run_button, 'print(open("golden_files/None/test_transcript.json").read())')
+    await_result(driver, "Introducing", (this_dir / "golden_files/en/test_transcript.json").read_text() + "\n>>> ")
+
     # Reverse until at first step
     for _ in range(10):
         reverse_button.click()
@@ -130,9 +146,6 @@ print(words[3])"""
     )
 
     # Run code in editor
-    editor = driver.find_element_by_css_selector("#editor textarea")
-    run_button = driver.find_element_by_css_selector(".editor-buttons .btn-primary")
-    snoop_button = driver.find_element_by_css_selector(".editor-buttons .btn-success")
     run_code(editor, run_button, code)
 
     # Check result in terminal
@@ -490,3 +503,13 @@ def check_choice_status(driver, choice_index, status):
         choice.get_attribute("class")
         for choice in driver.find_elements_by_class_name("prediction-choice")
     ]
+
+
+def get_test_steps_code():
+    code = (this_dir / "test_steps.py").read_text()
+    code += "os.environ['FUTURECODER_LANGUAGE'] = 'None'\n"
+    code += "os.environ['FIX_TESTS'] = '1'\n"
+    code += "test_steps()\n"
+    # Put all code in one line to avoid ace indentation issues
+    code = f"exec({code!r}, globals())"
+    return code

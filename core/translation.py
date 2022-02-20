@@ -32,6 +32,11 @@ else:
 def set_language(language):
     global current_language
     global translation
+
+    if language == "None":
+        # Hack to explicitly set the language to None with an env var, which must be a string
+        return
+
     current_language = language
     translation = gettext.translation(
         "futurecoder",
