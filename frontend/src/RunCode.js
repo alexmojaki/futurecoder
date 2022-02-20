@@ -64,7 +64,19 @@ export let interrupt = () => {
 let finishedLastRun = Promise.resolve();
 let finishedLastRunResolve = () => {};
 
-export const runCode = wrapAsync(async function runCode({code, source}) {
+export async function runCode(entry) {
+  try {
+    await _runCode(entry)
+  } catch (e) {
+    bookSetState("error", {
+      details: e.message,
+      title: "JS Error while running code: " + e.name,
+    });
+    Sentry.captureException(e);
+  }
+}
+
+export const _runCode = wrapAsync(async function runCode({code, source}) {
   const shell = source === "shell";
   if (shell) {
     if (awaitingInput) {
