@@ -54,7 +54,7 @@ function inputCallback(messageId, data) {
   } else {
     awaitingInput = messageId;
     bookSetState("processing", false);
-    terminalRef.current.focusTerminal();
+    terminalRef.current?.focusTerminal();
   }
 }
 
@@ -234,7 +234,7 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
   ranCode(data);
   if (!bookState.prediction.choices || !data.passed) {
     showCodeResult(data);
-    terminalRef.current.focusTerminal();
+    terminalRef.current?.focusTerminal();
   }
 
   finishedLastRunResolve();
