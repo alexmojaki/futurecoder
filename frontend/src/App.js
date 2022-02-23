@@ -470,6 +470,12 @@ const MenuPopup = ({user}) =>
             {close => <FeedbackModal close={close}/>}
           </Popup>
         </p>
+        <p>
+          <a href={terms.switch_language_url} className="btn btn-link"
+             style={{borderColor: "grey"}}>
+            {terms.switch_language_label}
+          </a>
+        </p>
       </div>}
     </Popup>
 
