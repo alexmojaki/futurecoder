@@ -243,6 +243,7 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
     databaseRequest("POST", {
       entry,
       result: {
+        passed: data.passed,
         messages: data.messages?.map(m => _.truncate(m, {length: 1000})),
         output: _.truncate(data.output, {length: 1000}),
       },
