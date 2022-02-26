@@ -87,8 +87,10 @@ def check_entry(entry, input_callback, output_callback, sleep_callback=time.slee
             mode = "single"
 
         runner.birdseye_objects = None
-        runner.run(entry["input"], mode)
-        result["birdseye_objects"] = runner.birdseye_objects
+        try:
+            runner.run(entry["input"], mode)
+        finally:
+            result["birdseye_objects"] = runner.birdseye_objects
 
         if runner.question_wizard:
             (
