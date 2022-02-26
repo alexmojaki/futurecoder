@@ -10,7 +10,7 @@ class EnhancedRunner(PatchedStdinRunner, PatchedSleepRunner):
         elif mode == "birdseye":
             from core.runner.birdseye import exec_birdseye
 
-            return exec_birdseye(self, source_code)
+            exec_birdseye(self, source_code)
         else:
             super().execute(code_obj, source_code)
 
