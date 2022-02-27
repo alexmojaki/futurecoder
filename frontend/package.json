@@ -99,9 +99,9 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
+    "start": "vite",
+    "build": "vite build",
+    "test": "echo TODO FIXME; exit 1;"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -121,6 +121,7 @@
   },
   "devDependencies": {
     "raw-loader": "^4.0.2",
+    "vite-plugin-env-compatible": "^1.1.1",
     "worker-loader": "^3.0.8"
   },
   "jest": {
