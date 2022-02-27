@@ -14,5 +14,6 @@ cd ..
 
 cp -r frontend/build/* dist/course/
 
-npx -y --package=node-sass -- node-sass homepage/static/css -o dist/course
+mkdir -p dist/static/css
+npx -y --package=node-sass -- node-sass homepage/static/css -o dist/static/css
 cp -r homepage/* dist/
