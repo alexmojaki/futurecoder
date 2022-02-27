@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "/",
+  "homepage": "/course/",
   "private": true,
   "engines": {
     "node": ">= 14.15.4",
@@ -41,7 +41,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build && cra-append-sw ./src/custom-sw.js",
+    "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -62,7 +62,6 @@
     ]
   },
   "devDependencies": {
-    "cra-append-sw": "^2.7.0",
     "raw-loader": "^4.0.2",
     "worker-loader": "^3.0.8"
   }
