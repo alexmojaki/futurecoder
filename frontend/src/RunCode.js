@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-webpack-loader-syntax
-import Worker from "worker-loader!./Worker.js";
+import Worker from "./Worker.js?worker&inline";
 import * as Comlink from 'comlink';
 import {
   bookSetState,
@@ -18,7 +18,7 @@ import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
-import {makeChannel, writeMessage} from "sync-message";
+import {makeChannel, writeMessage} from "./sync-message/lib";
 import {wrapAsync} from "./frontendlib/sentry";
 
 let worker, workerWrapper;

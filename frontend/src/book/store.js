@@ -5,7 +5,7 @@ import {terminalRef} from "../RunCode";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/analytics";
-import pagesUrl from "./pages.json.load_by_url"
+import pagesUrl from "./pages.json.load_by_url?url"
 import axios from "axios";
 import * as terms from "../terms.json"
 import * as Sentry from "@sentry/react";
