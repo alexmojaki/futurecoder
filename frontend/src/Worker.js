@@ -5,8 +5,9 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
 import loadPythonString from "!!raw-loader!./load.py"
-import {readMessage, ServiceWorkerError, uuidv4} from "sync-message";
+import {ServiceWorkerError} from "sync-message";
 import pRetry from 'p-retry';
+import {exposeSync, InterruptError, NoChannelError} from "./comsync";
 
 async function getPackageBuffer() {
   const response = await fetch(pythonCoreUrl);
@@ -64,30 +65,8 @@ const toObject = (x) => {
   }
 }
 
-async function runCode(entry, channel, interruptBuffer, outputCallback, inputCallback) {
+const runCode = exposeSync(async function (comsyncExtras, interruptBuffer, entry, outputCallback, inputCallback) {
   await pyodideReadyPromise;
-
-  const fullInputCallback = (data) => {
-    try {
-      if (!channel) {
-        return 3;  // browser not supported
-      }
-      const messageId = uuidv4();
-      inputCallback(messageId, toObject(data));
-      const result = readMessage(channel, messageId).text;
-      if (result == null) {
-        return 1;  // interrupt
-      }
-      return result + "\n";
-    } catch (e) {
-      if (e instanceof ServiceWorkerError) {
-        return 2;  // suggesting closing all tabs and reopening
-      } else {
-        console.error(e);
-        return 4;  // general error
-      }
-    }
-  }
 
   if (interruptBuffer) {
     pyodide.setInterruptBuffer(interruptBuffer);
@@ -99,6 +78,24 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
     console.error(e);
   }
 
+  const fullInputCallback = () => {
+    inputCallback();
+    try {
+      return comsyncExtras.readMessage() + "\n";
+    } catch (e) {
+      if (e instanceof InterruptError) {
+        return 1;  // raise KeyboardInterrupt
+      } else if (e instanceof ServiceWorkerError) {
+        return 2;  // suggesting closing all tabs and reopening
+      } else if (e instanceof NoChannelError) {
+        return 3;  // browser not supported
+      } else {
+        console.error(e);
+        return 4;  // general error
+      }
+    }
+  }
+
   let outputPromise;
   const fullOutputCallback = (data) => {
     outputPromise = outputCallback(toObject(data).parts);
@@ -106,13 +103,11 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
 
   function sleepCallback(data) {
     const timeout = toObject(data).seconds * 1000;
-    if (!(timeout > 0 && channel)) {
+    if (!timeout > 0) {
       return;
     }
-    const messageId = uuidv4();
     try {
-      inputCallback(messageId, {sleeping: true});
-      readMessage(channel, messageId, {timeout});
+      comsyncExtras.syncSleep(timeout)
     } catch (e) {
       console.error(e);
     }
@@ -121,6 +116,6 @@ async function runCode(entry, channel, interruptBuffer, outputCallback, inputCal
   const result = check_entry(entry, fullInputCallback, fullOutputCallback, sleepCallback);
   await outputPromise;
   return toObject(result);
-}
+});
 
 Comlink.expose({runCode});
