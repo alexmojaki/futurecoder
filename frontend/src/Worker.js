@@ -21,7 +21,7 @@ let imported = false;
 
 async function importPyodide() {
   if (imported) return
-  await import('./vendor/pyodide.js')
+  await import('./vendor/pyodide.js?worker')
 }
 
 async function loadPyodideOnly() {
