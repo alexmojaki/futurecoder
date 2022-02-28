@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-webpack-loader-syntax
-import Worker from "./Worker.js?worker&inline";
+import Worker from "./Worker.js?worker";
 import * as Comlink from 'comlink';
 import {
   bookSetState,

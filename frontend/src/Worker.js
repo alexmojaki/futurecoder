@@ -3,12 +3,13 @@
 // https://github.com/facebook/create-react-app/issues/8014
 
 import * as Comlink from 'comlink';
-import pythonCoreUrl from "./python_core.tar.load_by_url?url"
+import pythonCoreUrl from "./python_core.tar.load_by_url?raw"
 import loadPythonString from "./load.py?raw"
 import {readMessage, ServiceWorkerError, uuidv4} from "./sync-message/lib";
 import pRetry from 'p-retry';
 
 async function getPackageBuffer() {
+  console.log("FIXME: what is the difference from webpack for this?", {pythonCoreUrl})
   const response = await fetch(pythonCoreUrl);
   if (!response.ok) {
     throw `Request for package failed with status ${response.status}: ${response.statusText}`
@@ -17,25 +18,27 @@ async function getPackageBuffer() {
 }
 
 let pyodide;
-let imported = false;
+let loadPyodide;
 
 async function importPyodide() {
-  if (imported) return
-  await import('./vendor/pyodide.js?worker')
-}
-
-async function loadPyodideOnly() {
+  if (loadPyodide) return
   console.time("importScripts pyodide")
   // const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.19.0/full/';
   // importScripts(indexURL + 'pyodide.js');
-  await importPyodide()
   console.timeEnd("importScripts pyodide")
+  const Imported = await import ('./vendor/pyodide.js?worker')
+  return Imported.loadPyodide
+}
+
+async function loadPyodideOnly() {
+  if (!loadPyodide) loadPyodide = await importPyodide()
 
   console.time("loadPyodide")
-  pyodide = await loadPyodide({indexURL});
+  pyodide = await loadPyodide({indexURL: "https://cdn.jsdelivr.net/pyodide/v0.19.1/full/"});
   console.timeEnd("loadPyodide")
 
   pyodide.runPython(loadPythonString)
+  // pyodide.runPythonAsync  // TODO: should we use this? https://stackoverflow.com/questions/63958996/how-do-i-import-modules-in-a-project-using-pyodide-without-errors/64418958#64418958 ... https://github.com/inureyes/pyodide-console/blob/f128de6c5e2fda9115e396820eddb4897458c0cd/examples/webworker.js
 }
 
 let check_entry, install_imports;
