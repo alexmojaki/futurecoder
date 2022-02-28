@@ -14,5 +14,5 @@ cd ..
 
 cp -r frontend/build/* dist/course/
 
-npx -y sass homepage/static/css
+npx -y --package=sass -- sass homepage/static/css
 cp -r homepage/* dist/
