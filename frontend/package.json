@@ -121,8 +121,10 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-legacy": "^1.7.1",
     "raw-loader": "^4.0.2",
     "vite-plugin-env-compatible": "^1.1.1",
+    "vite-plugin-singlefile": "^0.6.3",
     "worker-loader": "^3.0.8"
   },
   "jest": {
