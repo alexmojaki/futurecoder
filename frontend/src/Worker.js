@@ -3,7 +3,7 @@
 // https://github.com/facebook/create-react-app/issues/8014
 
 import * as Comlink from 'comlink';
-import pythonCoreUrl from "./python_core.tar.load_by_url?raw"
+import pythonCoreUrl from "./python_core.tar?url"
 import loadPythonString from "./load.py?raw"
 import {readMessage, ServiceWorkerError, uuidv4} from "./sync-message/lib";
 import pRetry from 'p-retry';
