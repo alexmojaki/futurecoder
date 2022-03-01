@@ -31,9 +31,10 @@ function initWorker() {
 initWorker();
 
 const channel = makeChannel({serviceWorker: {scope: "/course/"}});
-if (channel?.type === "serviceWorker") {
-  navigator.serviceWorker.register("./service-worker.js");
-}
+// // "also you should probably comment out this code in RunCode.js just to avoid having multiple places that register the service worker:"
+// if (channel?.type === "serviceWorker") {
+//   navigator.serviceWorker.register("./service-worker.js");
+// }
 
 let interruptBuffer = null;
 if (typeof SharedArrayBuffer != "undefined") {
