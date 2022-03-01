@@ -158,10 +158,14 @@ def clean_step_class(cls):
         indented = indent(program, '    ').replace("\\", "\\\\")
         text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
     else:
-        assert not cls.program_in_text, "Either include __program__ or __program_indented__ in the text, " \
-                                        "or set program_in_text = False in the class."
+        assert not cls.program_in_text, (
+            "Either include __program__ or __program_indented__ in the text, "
+            "or set program_in_text = False in the class.",
+            cls,
+            text,
+        )
 
-    assert "__program_" not in text
+    assert "__program_" not in text, (cls, text)
     text = clean_spaces(text)
 
     for special_message in get_special_messages(cls):

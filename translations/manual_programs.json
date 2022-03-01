@@ -117,6 +117,10 @@
         ]
     },
     "pages.MultiLineExpressions.steps.invalid_multiline.program": {
+        "br": [
+            "se_amigo = nome == \"Alice\" or",
+            "              name == \"Bob\""
+        ],
         "en": [
             "is_friend = name == \"Alice\" or",
             "            name == \"Bob\""
@@ -127,6 +131,18 @@
         ]
     },
     "pages.NewlinesAndFormatBoard.steps.invalid_multi_line_string.program": {
+        "br": [
+            "assert_equal(",
+            "    format_borda([",
+            "        ['X', 'O', 'X'],",
+            "        ['', 'O', 'O'],",
+            "        [' ', 'X', ' ']",
+            "     ]),",
+            "     \"XOX",
+            "       OO",
+            "       X \"",
+            ")"
+        ],
         "en": [
             "assert_equal(",
             "    format_board([",
@@ -153,14 +169,22 @@
         ]
     },
     "pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe.program": {
+        "br": [
+            "print('Jantar da Alice')"
+        ],
         "en": [
             "print('Alice's Diner')"
         ],
         "es": [
-            "print('Alice's Diner')"
+            "print('Ese es el perro'e Juan')"
         ]
     },
     "pages.StringMethodsUnderstandingMutation.steps.string_count_index.program": {
+        "br": [
+            "aspas = 'alimente o cachorro e o gato'",
+            "print(aspas.contar('o))",
+            "print(aspas.indice('o'))"
+        ],
         "en": [
             "string = 'feed the dog and the cat'",
             "print(string.count('the'))",
@@ -173,6 +197,9 @@
         ]
     },
     "pages.StringMethodsUnderstandingMutation.steps.string_in_step.program": {
+        "br": [
+            "print('O' in 'alimente o cachorro e o gato')"
+        ],
         "en": [
             "print('the' in 'feed the dog and the cat')"
         ],
@@ -181,6 +208,9 @@
         ]
     },
     "pages.TheEqualityOperator.steps.equality_vs_assignment.program": {
+        "br": [
+            "print(1 + 2 = 3)"
+        ],
         "en": [
             "print(1 + 2 = 3)"
         ],
