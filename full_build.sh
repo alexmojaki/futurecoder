@@ -9,6 +9,4 @@ cd frontend
 npm ci
 cd ..
 
-npm install -g sass
-
 ./build.sh
