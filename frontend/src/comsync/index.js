@@ -22,8 +22,8 @@ export class TaskClient {
     this.workerProxy = Comlink.wrap(this.worker);
   }
 
-  async _terminate() {
-    await this.workerProxy[Comlink.releaseProxy]();
+  _terminate() {
+    this.workerProxy[Comlink.releaseProxy]();
     this.worker.terminate();
   }
 
@@ -45,7 +45,7 @@ export class TaskClient {
     }
 
     this.interruptRejector(new InterruptError("Worker terminated"));
-    await this._terminate();
+    this._terminate();
     this._start();
   }
 
