@@ -1,4 +1,3 @@
-import * as Comlink from 'comlink';
 import {
   bookSetState,
   bookState,
@@ -107,8 +106,8 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
 
   const data = await runCodeTask(
     entry,
-    Comlink.proxy(outputCallback),
-    Comlink.proxy(inputCallback),
+    outputCallback,
+    inputCallback,
   );
 
   const {error} = data;
