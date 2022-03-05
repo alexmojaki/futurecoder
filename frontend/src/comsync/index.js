@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {readMessage, uuidv4, writeMessage} from "sync-message";
 import * as Comlink from 'comlink';
 
@@ -117,6 +118,9 @@ export function exposeSync(func) {
         return fullSyncMessageCallback("awaitingInput");
       },
       syncSleep(ms) {
+        if (!ms > 0) {
+          return;
+        }
         fullSyncMessageCallback(null, {timeout: ms});
       },
     };

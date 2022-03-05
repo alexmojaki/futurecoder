@@ -1,25 +1,19 @@
+/* eslint-disable */
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import Worker from "worker-loader!./Worker.js";
 import {makeChannel} from "sync-message";
-import {InterruptError, TaskClient} from "./comsync";
+import {InterruptError} from "./comsync";
 import * as Comlink from 'comlink';
+import {PyodideTaskClient} from "./pyodide-worker-runner";
 
 const channel = makeChannel({serviceWorker: {scope: "/course/"}});
 if (channel?.type === "serviceWorker") {
   navigator.serviceWorker.register("/course/service-worker.js");
 }
 
-export const taskClient = new TaskClient(() => new Worker(), channel);
+export const taskClient = new PyodideTaskClient(() => new Worker(), channel);
 
 export async function runCodeTask(entry, outputCallback, inputCallback) {
-  let interruptBuffer = null;
-  if (typeof SharedArrayBuffer !== "undefined") {
-    interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
-    taskClient.interrupter = () => {
-      interruptBuffer[0] = 2;
-    }
-  }
-
   let running = true;
 
   function wrappedOutputCallback(...args) {
@@ -31,7 +25,6 @@ export async function runCodeTask(entry, outputCallback, inputCallback) {
   try {
     return await taskClient.runTask(
       "runCode",
-      interruptBuffer,
       entry,
       Comlink.proxy(wrappedOutputCallback),
       Comlink.proxy(inputCallback),
