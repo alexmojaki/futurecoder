@@ -4,7 +4,7 @@
 
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
-import {exposePyodide, loadPyodideAndPackage, makeRunnerCallback, toObject} from "./pyodide-worker-runner";
+import {exposePyodide, loadPyodideAndPackage, makeRunnerCallback, toObject} from "pyodide-worker-runner";
 
 async function load() {
   const pyodide = await loadPyodideAndPackage({url: pythonCoreUrl, format: "tar"});
@@ -25,7 +25,7 @@ const runCode = exposePyodide(
 
     let outputPromise;
     const callback = makeRunnerCallback(comsyncExtras, {
-      input: inputCallback,
+      input: () => inputCallback(),
       output: (data) => {
         outputPromise = outputCallback(data.parts);
       },

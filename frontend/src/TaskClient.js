@@ -1,10 +1,8 @@
-/* eslint-disable */
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import Worker from "worker-loader!./Worker.js";
 import {makeChannel} from "sync-message";
-import {InterruptError} from "./comsync";
 import * as Comlink from 'comlink';
-import {PyodideTaskClient} from "./pyodide-worker-runner";
+import {PyodideTaskClient} from "pyodide-worker-runner";
 
 const channel = makeChannel({serviceWorker: {scope: "/course/"}});
 if (channel?.type === "serviceWorker") {
@@ -24,13 +22,13 @@ export async function runCodeTask(entry, outputCallback, inputCallback) {
 
   try {
     return await taskClient.runTask(
-      "runCode",
+      taskClient.workerProxy.runCode,
       entry,
       Comlink.proxy(wrappedOutputCallback),
       Comlink.proxy(inputCallback),
     );
   } catch (e) {
-    if (e instanceof InterruptError) {
+    if (e.type === "InterruptError") {
       return {
         interrupted: true,
         error: null,

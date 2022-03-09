@@ -51,7 +51,7 @@ export async function runCode(entry) {
 export const _runCode = wrapAsync(async function runCode({code, source}) {
   const shell = source === "shell";
   if (shell) {
-    if (taskClient.state === "awaitingInput") {
+    if (taskClient.state === "awaitingMessage") {
       try {
         await taskClient.writeMessage(code);
       } catch {
