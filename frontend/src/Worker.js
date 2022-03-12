@@ -18,23 +18,25 @@ async function getPackageBuffer() {
 }
 
 let pyodide;
-let loadPyodide;
 
-async function importPyodide() {
-  if (loadPyodide) return
-  console.time("importScripts pyodide")
-  const Imported = await import ('./vendor/pyodide.js?worker')
-  console.timeEnd("importScripts pyodide")
-  return Imported.loadPyodide
-}
+// async function importPyodide() {
+//   if (loadPyodide) return
+//   console.time("importScripts pyodide")
+//   const Imported = await import('./vendor/pyodide.mjs?worker')
+//   console.timeEnd("importScripts pyodide")
+//   return Imported.loadPyodide
+// }
 
 async function loadPyodideOnly() {
+  // FIXME(hangtwenty): Update this URL to a version-pinned URL... (Blocker: awaiting official release of pyodide.mjs)
   // const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.19.0/full/';
   // importScripts(indexURL + 'pyodide.js');
-  if (!loadPyodide) loadPyodide = await importPyodide()
+  const indexURL = "https://pyodide-cdn2.iodide.io/dev/full/pyodide.mjs"
+  importScripts(indexURL)
+  // if (!loadPyodide) loadPyodide = await importPyodide()
 
   console.time("loadPyodide")
-  pyodide = await loadPyodide({indexURL: "https://cdn.jsdelivr.net/pyodide/v0.19.1/full/"});
+  pyodide = await loadPyodide({ indexURL }); // FIXME(hangtwenty): Does this need update in light of .mjs / ESM ?
   console.timeEnd("loadPyodide")
 
   pyodide.runPython(loadPythonString)
