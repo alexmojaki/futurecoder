@@ -71,12 +71,12 @@ registerRoute(
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  ({ url }) => true, // XXX Caching everything for now. It breaks firebase, but it makes most of the PWA work offline. We can narrow it down later.
   new StaleWhileRevalidate({
-    cacheName: 'images',
+    cacheName: 'everything',
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
-      // least-recently used images are removed.
+      // least-recently used stuff is removed.
       new ExpirationPlugin({ maxEntries: 50 }),
     ],
   })
