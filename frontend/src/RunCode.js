@@ -72,7 +72,8 @@ export async function runCode(entry) {
       details: e.message,
       title: "JS Error while running code: " + e.name,
     });
-    Sentry.captureException(e);
+    // Sentry.captureException(e); // FIXME(hangtwenty) Put back Sentry
+    console.warn(e.message, e)
   }
 }
 

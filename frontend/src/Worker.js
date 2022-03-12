@@ -21,10 +21,11 @@ let pyodide;
 let loadPyodide;
 
 const indexURL = "https://pyodide-cdn2.iodide.io/dev/full/pyodide.mjs"
-self.importScripts(indexURL);
 
 async function loadPyodideOnly() {
   // FIXME(hangtwenty): Update this URL to a version-pinned URL... (Blocker: awaiting official release of pyodide.mjs)
+
+  loadPyodide = loadPyodide ?? (await import('./vendor/pyodide.mjs')).loadPyodide
 
   console.time("loadPyodide")
   pyodide = await loadPyodide({ indexURL });
