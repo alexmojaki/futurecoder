@@ -1,54 +1,55 @@
-import {applyMiddleware, combineReducers, compose, createStore} from "redux";
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {connect} from "react-redux";
 import {dispatcher, redact, TextContainer} from "./frontendlib";
 import {bookReducer, currentStep, navigate} from "./book/store";
-import * as Sentry from "@sentry/react";
+// import * as Sentry from "@sentry/react"; // FIXME(hangtwenty): Put back Sentry
 import _ from "lodash";
 
-const sentryReduxEnhancer = Sentry.createReduxEnhancer({
-  actionTransformer: action => {
-    if (action.type === "LOAD_PAGES") {
-      return null;
-    }
-    if (action.type === "RAN_CODE") {
-      try {
-        action = {
-          ...action,
-          messages: action.messages?.map(m => _.truncate(m, {length: 100})),
-          output: _.truncate(action.output, {length: 100}),
-        }
-      } catch {
-      }
-    }
-    return action;
-  },
-  stateTransformer: state => {
-    state = _.omit(state, "book.pages");
-    try {
-      state = {...state, currentStep: currentStep(state)};
-    } catch {
-    }
-    return state;
-  },
-});
+// FIXME(hangtwenty): Put back Sentry
+// const sentryReduxEnhancer = Sentry.createReduxEnhancer({
+//   actionTransformer: action => {
+//     if (action.type === "LOAD_PAGES") {
+//       return null;
+//     }
+//     if (action.type === "RAN_CODE") {
+//       try {
+//         action = {
+//           ...action,
+//           messages: action.messages?.map(m => _.truncate(m, {length: 100})),
+//           output: _.truncate(action.output, {length: 100}),
+//         }
+//       } catch {
+//       }
+//     }
+//     return action;
+//   },
+//   stateTransformer: state => {
+//     state = _.omit(state, "book.pages");
+//     try {
+//       state = {...state, currentStep: currentStep(state)};
+//     } catch {
+//     }
+//     return state;
+//   },
+// });
 
-const sentryDsn = process.env.REACT_APP_SENTRY_DSN;
-if (sentryDsn) {
-  console.log('Configuring sentry');
-  Sentry.init({
-    dsn: sentryDsn,
-    normalizeDepth: 5,
-    beforeBreadcrumb(breadcrumb, hint) {
-      const {message} = breadcrumb;
-      if (message.includes("prev state") || message.includes("next state")) {
-        return null;
-      }
-      return breadcrumb;
-    },
-  });
-}
+// const sentryDsn = process.env.REACT_APP_SENTRY_DSN;
+// if (sentryDsn) {
+//   console.log('Configuring sentry');
+//   Sentry.init({
+//     dsn: sentryDsn,
+//     normalizeDepth: 5,
+//     beforeBreadcrumb(breadcrumb, hint) {
+//       const {message} = breadcrumb;
+//       if (message.includes("prev state") || message.includes("next state")) {
+//         return null;
+//       }
+//       return breadcrumb;
+//     },
+//   });
+// }
 
 const {delegateReducer} = redact("root");
 
@@ -70,7 +71,7 @@ export const store = createStore(
       thunk,
       logger,
     ),
-    sentryReduxEnhancer,
+    // sentryReduxEnhancer,
   )
 );
 

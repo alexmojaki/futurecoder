@@ -16,6 +16,7 @@ import {
   setDeveloperMode,
   setEditorContent,
   specialHash,
+  firebaseApp,
 } from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
@@ -42,11 +43,12 @@ import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import {interrupt, runCode, terminalRef} from "./RunCode";
-import firebase from "firebase/app";
+import {getAuth, signOut} from "firebase/auth";
 import {TableOfContents} from "./TableOfContents";
 import HeaderLoginInfo from "./components/HeaderLoginInfo";
 import * as terms from "./terms.json"
 
+const auth = getAuth(firebaseApp)
 
 const EditorButtons = (
   {
@@ -438,7 +440,7 @@ const MenuPopup = ({user}) =>
             onClick={() => {
               close();
               bookSetState("user.uid", null)
-              firebase.auth().signOut();
+              signOut(auth).catch(console.error);
             }}
           >
             <FontAwesomeIcon icon={faSignOutAlt}/> {terms.sign_out}

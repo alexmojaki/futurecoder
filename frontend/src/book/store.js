@@ -1,16 +1,15 @@
 import {ipush, iremove, iset, redact} from "../frontendlib";
 import {animateScroll, scroller} from "react-scroll";
 import _ from "lodash";
-import {terminalRef} from "../RunCode";
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/analytics";
+import { terminalRef } from "../RunCode";
+import {getAuth, signInAnonymously} from "firebase/auth";
+import {initializeApp} from "firebase/app";
+import {getAnalytics, isSupported, initializeAnalytics} from "firebase/analytics";
 import pagesUrl from "./pages.json.load_by_url?url"
 import axios from "axios";
 import * as terms from "../terms.json"
-import * as Sentry from "@sentry/react";
-import {wrapAsync} from "../frontendlib/sentry";
-import pRetry from 'p-retry';
+// import * as Sentry from "@sentry/react";
+import { wrapAsync } from "../frontendlib/sentry";
 
 const firebaseConfig = {
   es: {
@@ -33,23 +32,27 @@ const firebaseConfig = {
   appId: "1:361930705093:web:dda41fee927c949daf88ac",
   measurementId: "G-ZKCE9KY52F",
 };
+import pRetry from 'p-retry';
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseApp)
 
-let {databaseURL} = firebaseConfig;
+let { databaseURL } = firebaseConfig;
 
 if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname === "localhost") {
   // firebase.database().useEmulator("localhost", 9009);
   databaseURL = "http://localhost:9009";
-  firebase.auth().useEmulator("http://localhost:9099");
+  auth.useEmulator("http://localhost:9099");
 }
 
 let firebaseAnalytics;
 export const isProduction = window.location.hostname.endsWith("futurecoder.io");
 if (isProduction) {
-  firebase.analytics.isSupported().then((isSupported) => {
+  // const analytics = getAnalytics()
+  isSupported().then((isSupported) => {
     if (isSupported) {
-      firebaseAnalytics = firebase.analytics(firebaseApp);
+      // firebaseAnalytics = analytics(firebaseApp);
+      firebaseAnalytics = initializeAnalytics(firebaseApp);
     }
   });
 }
@@ -227,18 +230,19 @@ const loadUser = makeAction(
   },
 )
 
-firebase.auth().onAuthStateChanged(async (user) => {
+// FIXME(hangtwenty): Mention to Alex that this might be broken right now...
+auth.onAuthStateChanged(async (user) => {
   if (user) {
     // TODO ideally we'd set a listener on the user instead of just getting it once
     //   to sync changes made on multiple devices
     await updateUserData(user);
   } else {
-    await firebase.auth().signInAnonymously();
+    await signInAnonymously(auth);
   }
 });
 
 export const updateUserData = async (user) => {
-  Sentry.setUser({id: user.uid});
+  // Sentry.setUser({id: user.uid});
   const userData = await databaseRequest("GET");
   loadUser({
     uid: user.uid,
@@ -247,20 +251,20 @@ export const updateUserData = async (user) => {
   });
 }
 
-export const databaseRequest = wrapAsync(async function databaseRequest(method, data={}, endpoint="users") {
-  const currentUser = firebase.auth().currentUser;
+export const databaseRequest = wrapAsync(async function databaseRequest(method, data = {}, endpoint = "users") {
+  const currentUser = auth.currentUser;
   if (!currentUser) {
     return;
   }
-  const auth = await currentUser.getIdToken();
+  const _auth = await currentUser.getIdToken();
   const response = await pRetry(() =>
-      axios.request({
-        url: `${databaseURL}/${endpoint}/${currentUser.uid}.json`,
-        params: {auth},
-        method,
-        data,
-      }),
-    {retries: 3},
+    axios.request({
+      url: `${databaseURL}/${endpoint}/${currentUser.uid}.json`,
+      params: { auth: _auth },
+      method,
+      data,
+    }),
+    { retries: 3 },
   )
   return response.data;
 });

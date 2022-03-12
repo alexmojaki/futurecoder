@@ -17,7 +17,7 @@ import _ from "lodash";
 import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
-import * as Sentry from "@sentry/react";
+// import * as Sentry from "@sentry/react"; // FIXME(hangtwenty) put back Sentry
 import {makeChannel, writeMessage} from "./sync-message/lib";
 import {wrapAsync} from "./frontendlib/sentry";
 
@@ -202,9 +202,9 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
   });
 
   if (error) {
-    Sentry.captureEvent(error.sentry_event);
-    delete error.sentry_event;
-    bookSetState("error", {...error});
+    // Sentry.captureEvent(error.sentry_event); // FIXME(hangtwenty): Put back Sentry
+    // delete error.sentry_event; // FIXME(hangtwenty): Put back Sentry
+    bookSetState("error", { ...error });
     return;
   }
 

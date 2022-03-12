@@ -3,10 +3,12 @@ import React from 'react'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import firebase from "firebase";
-import {updateDatabase, updateUserData} from "../book/store";
+import {getAuth, signInWithCredential} from "firebase/auth";
+import {firebaseApp, updateDatabase, updateUserData} from '../book/store';
 import Popup from "reactjs-popup";
 import * as terms from "../terms.json"
+
+const auth = getAuth(firebaseApp)
 
 const HeaderLoginInfo = ({ email }) => {
   return email ?
@@ -25,7 +27,7 @@ const HeaderLoginInfo = ({ email }) => {
         uiConfig={{
           signInOptions: [
             {
-              provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+              provider: auth.EmailAuthProvider.PROVIDER_ID,
               requireDisplayName: false,
             },
             // TODO not working because of cross origin isolation
@@ -52,13 +54,13 @@ const HeaderLoginInfo = ({ email }) => {
                 // Note the upgrade in the old anonymous account
                 await updateDatabase({upgradedFromAnonymous: true});
 
-                await firebase.auth().signInWithCredential(error.credential);
+                await signInWithCredential(auth, error.credential);
                 close();
               }
             }
           }
         }}
-        firebaseAuth={firebase.auth()}
+        firebaseAuth={auth}
       />
     }
   </Popup>
