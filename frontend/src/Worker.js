@@ -8,6 +8,8 @@ import loadPythonString from "./load.py?raw"
 import {readMessage, ServiceWorkerError, uuidv4} from "./sync-message/lib";
 import pRetry from 'p-retry';
 
+import {loadPyodide} from './vendor/pyodide.mjs?worker'
+
 async function getPackageBuffer() {
   // console.log("FIXME: how was .tar.load_by_url handled by webpack/etc before? Why do we have raw tar instead?
   const response = await fetch(pythonCoreUrl);
@@ -17,23 +19,26 @@ async function getPackageBuffer() {
   return await response.arrayBuffer()
 }
 
+let loadPyodide
 let pyodide;
 
-// async function importPyodide() {
-//   if (loadPyodide) return
-//   console.time("importScripts pyodide")
-//   const Imported = await import('./vendor/pyodide.mjs?worker')
-//   console.timeEnd("importScripts pyodide")
-//   return Imported.loadPyodide
-// }
+async function importPyodide() {
+  if (loadPyodide) return
+  console.time("importScripts pyodide")
+  loadPyodide = (await import('./vendor/pyodide.mjs?worker')).loadPyodide
+  console.timeEnd("importScripts pyodide")
+  console.info({loadPyodide})
+  return loadPyodide
+}
 
 async function loadPyodideOnly() {
   // FIXME(hangtwenty): Update this URL to a version-pinned URL... (Blocker: awaiting official release of pyodide.mjs)
   // const indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.19.0/full/';
   // importScripts(indexURL + 'pyodide.js');
   const indexURL = "https://pyodide-cdn2.iodide.io/dev/full/pyodide.mjs"
-  importScripts(indexURL)
-  // if (!loadPyodide) loadPyodide = await importPyodide()
+  // importScripts(indexURL)
+  console.info('...')
+  if (!loadPyodide) await importPyodide()
 
   console.time("loadPyodide")
   pyodide = await loadPyodide({ indexURL }); // FIXME(hangtwenty): Does this need update in light of .mjs / ESM ?
