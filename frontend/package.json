@@ -37,11 +37,14 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.8",
-    "sync-message": "0.0.8"
+    "sync-message": "0.0.8",
+    "workbox-expiration": "^5.1.4",
+    "workbox-strategies": "^5.1.4"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "pwa": "cd .. && ./build.sh && npx -y http-server dist",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
