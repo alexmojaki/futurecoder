@@ -9,7 +9,7 @@ import envCompatible from 'vite-plugin-env-compatible';
 // import legacy from '@vitejs/plugin-legacy'
 // </TODO(hangtwenty)-clean-up>
 
-// import {ManifestOptions, VitePWA, VitePWAOptions} from 'vite-plugin-pwa';
+import {ManifestOptions, VitePWA, VitePWAOptions} from 'vite-plugin-pwa';
 
 export default defineConfig({
   server: {
@@ -22,7 +22,7 @@ export default defineConfig({
     envCompatible({
       prefix: 'REACT_APP',
     }),
-    // VitePWA(...) // <-- we're not ready yet, WIP...
+    VitePWA(),
   ],
   // https://vitejs.dev/guide/build.html#public-base-path
   // base   : '/course', // FIXME(hangtwenty): need to reconcile "/course" vs "/" -- see "homepage" in package.json too  ...

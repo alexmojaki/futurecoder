@@ -38,7 +38,7 @@ const indexURL = "https://pyodide-cdn2.iodide.io/dev/full/"
 async function loadPyodideOnly() {
   // FIXME(hangtwenty): Update this URL to a version-pinned URL... (Blocker: awaiting official release of pyodide.mjs)
 
-  loadPyodide = loadPyodide ?? (await import('./vendor/pyodide.mjs')).loadPyodide
+  loadPyodide = loadPyodide ?? (import('./vendor/pyodide.mjs')).loadPyodide
 
   console.time("loadPyodide")
   pyodide = await loadPyodide({indexURL});
