@@ -8,6 +8,18 @@ import loadPythonString from "./load.py?raw"
 import { readMessage, ServiceWorkerError, uuidv4 } from "./sync-message/lib";
 import pRetry from 'p-retry';
 
+self.HTMLElement = function () {
+  // HACKY, but it fixes an error I was getting in vite dev... "ReferenceError: HTMLElement is not defined" ...
+  // (Something to do with futurecoder's custom error overlay/ error-reporting-popup, and/or vite's HMR error overlay
+  // -- though I don't know why the vite part is happening, when vite.config.js has hmr.overlay=false ...)
+  return {}
+}
+self.customElements = {
+  get() {
+    return []
+  }
+}
+
 async function getPackageBuffer() {
   // console.log("FIXME: how was .tar.load_by_url handled by webpack/etc before? Why do we have raw tar instead?
   const response = await fetch(pythonCoreUrl);
