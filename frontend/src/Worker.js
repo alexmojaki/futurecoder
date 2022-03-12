@@ -5,7 +5,7 @@
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar?url"
 import loadPythonString from "./load.py?raw"
-import {readMessage, ServiceWorkerError, uuidv4} from "./sync-message/lib";
+import { readMessage, ServiceWorkerError, uuidv4 } from "./sync-message/lib";
 import pRetry from 'p-retry';
 
 async function getPackageBuffer() {
@@ -18,12 +18,16 @@ async function getPackageBuffer() {
 }
 
 let pyodide;
+let loadPyodide;
+
+const indexURL = "https://pyodide-cdn2.iodide.io/dev/full/pyodide.mjs"
+self.importScripts(indexURL);
 
 async function loadPyodideOnly() {
   // FIXME(hangtwenty): Update this URL to a version-pinned URL... (Blocker: awaiting official release of pyodide.mjs)
 
   console.time("loadPyodide")
-  pyodide = await loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v0.19.1/full/" }); // FIXME(hangtwenty): Does this need update in light of .mjs / ESM ?
+  pyodide = await loadPyodide({ indexURL });
   console.timeEnd("loadPyodide")
 
   pyodide.runPython(loadPythonString)
