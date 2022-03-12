@@ -2,13 +2,14 @@ import {defineConfig} from 'vite';
 
 // import react from '@vitejs/plugin-react';
 import reactRefresh from '@vitejs/plugin-react-refresh';
-
 import envCompatible from 'vite-plugin-env-compatible';
 
+// <TODO(hangtwenty)-clean-up>
 // import { viteSingleFile } from "vite-plugin-singlefile"
 // import legacy from '@vitejs/plugin-legacy'
-// import {ManifestOptions, VitePWA, VitePWAOptions} from 'vite-plugin-pwa';
+// </TODO(hangtwenty)-clean-up>
 
+// import {ManifestOptions, VitePWA, VitePWAOptions} from 'vite-plugin-pwa';
 
 export default defineConfig({
   server: {
@@ -21,21 +22,15 @@ export default defineConfig({
     envCompatible({
       prefix: 'REACT_APP',
     }),
-    // TODO(maybe): Consider using https://polyfill.io/v3/ from the index.html, to get polyfills aside from transforms.
-    // TODO(maybe): ... Alternatively, check out: https://github.com/vitejs/vite/tree/main/packages/plugin-legacy
-    // // XXX Might want to use vite plugin legacy, as easiest way to do some polyfills
-    // legacy({targets  : ['Chrome >= 49'],
-    //   polyfills      : ['es.promise.finally', 'es/map', 'es/set'],
-    //   modernPolyfills: ['es.promise.finally'],
-    // }),
-    // viteSingleFile(), // <-- Was not necessary, but keeping the memo for a little. TODO: cleanup: remove
     // VitePWA(...) // <-- we're not ready yet, WIP...
   ],
-  // base   : '/course', // FIXME: need to update package.json back to homepage: "/course/" instead of "/", and may need to set "base" config to "/course/" ...https://vitejs.dev/guide/build.html#public-base-path
+  // https://vitejs.dev/guide/build.html#public-base-path
+  // base   : '/course', // FIXME(hangtwenty): need to reconcile "/course" vs "/" -- see "homepage" in package.json too  ...
   build: {
     target: 'modules',
     // target: 'es2015',
 
+    // <TODO(hangtwenty)-clean-up>
     // // <vite-single-file>
     // assetsInlineLimit    : 100000000,
     // chunkSizeWarningLimit: 100000000,
@@ -45,5 +40,6 @@ export default defineConfig({
     //   inlineDynamicImports: true,
     // },
     // // </vite-single-file>
+    // </TODO(hangtwenty)-clean-up>
   },
 });
