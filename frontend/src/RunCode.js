@@ -31,9 +31,9 @@ function initWorker() {
 initWorker();
 
 const channel = makeChannel({serviceWorker: {scope: "/course/"}});
-if (channel?.type === "serviceWorker") {
-  navigator.serviceWorker.register("./service-worker.js");
-}
+// if (channel?.type === "serviceWorker") {
+//   navigator.serviceWorker.register("./service-worker.js");
+// }
 
 let interruptBuffer = null;
 if (typeof SharedArrayBuffer != "undefined") {
