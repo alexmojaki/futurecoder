@@ -32,8 +32,8 @@ async function getPackageBuffer() {
 let pyodide;
 let loadPyodide;
 
-// const indexURL = "https://pyodide-cdn2.iodide.io/dev/full/"
-const indexURL = "https://cdn.jsdelivr.net/pyodide/v0.19.1/full/"
+const indexURL = "https://pyodide-cdn2.iodide.io/dev/full/"
+// const indexURL = "https://cdn.jsdelivr.net/pyodide/v0.19.1/full/"
 
 async function loadPyodideOnly() {
   // FIXME(hangtwenty): Update this URL to a version-pinned URL... (Blocker: awaiting official release of pyodide.mjs)
