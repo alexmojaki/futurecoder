@@ -2,6 +2,25 @@
 // Otherwise webpack can fail silently
 // https://github.com/facebook/create-react-app/issues/8014
 
+// <TODO-DELETE>
+// import {serviceWorkerFetchListener} from "sync-message";
+//
+// console.log(self.__WB_MANIFEST);
+//
+// const fetchListener = serviceWorkerFetchListener();
+//
+// addEventListener('fetch', fetchListener);
+//
+// addEventListener('install', function (e) {
+//   e.waitUntil(self.skipWaiting());
+// });
+//
+// addEventListener('activate', function (e) {
+//   e.waitUntil(self.clients.claim());
+// });
+// </TODO-DELETE>
+
+
 // This service worker can be customized!
 // See https://developers.google.com/web/tools/workbox/modules
 // for the list of available Workbox modules, or add any other
@@ -13,7 +32,7 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import {NetworkFirst, StaleWhileRevalidate} from 'workbox-strategies';
+import { StaleWhileRevalidate } from 'workbox-strategies';
 
 clientsClaim();
 
@@ -48,19 +67,23 @@ registerRoute(
   createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
 );
 
+// An example runtime caching route for requests that aren't handled by the
+// precache, in this case same-origin .png requests like those from in public/
 registerRoute(
+  // Add in any other file extensions or routing criteria as needed.
   ({ url }) => true, // XXX Caching everything for now. It breaks firebase, but it makes most of the PWA work offline. We can narrow it down later.
-  new NetworkFirst({
+  new StaleWhileRevalidate({
     cacheName: 'everything',
     plugins: [
-      // "Ensure that once this runtime cache reaches a maximum size the
-      // least-recently used stuff is removed."
+      // Ensure that once this runtime cache reaches a maximum size the
+      // least-recently used stuff is removed.
       new ExpirationPlugin({ maxEntries: 50 }),
     ],
   })
 );
 
-// "This allows the web app to trigger skipWaiting via registration.waiting.postMessage({type: 'SKIP_WAITING'})"
+// This allows the web app to trigger skipWaiting via
+// registration.waiting.postMessage({type: 'SKIP_WAITING'})
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
