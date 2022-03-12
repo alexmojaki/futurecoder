@@ -33,7 +33,7 @@ export default defineConfig({
   ],
   // base   : '/course', // FIXME: need to update package.json back to homepage: "/course/" instead of "/", and may need to set "base" config to "/course/" ...https://vitejs.dev/guide/build.html#public-base-path
   build: {
-    target: 'esnext',
+    target: 'modules',
     // target: 'es2015',
 
     // // <vite-single-file>
