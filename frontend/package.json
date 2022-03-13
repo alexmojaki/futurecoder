@@ -44,7 +44,9 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "pwa": "echo 'REMINDER: go to localhost:3002/course/ (trailing slash)' && npx -y serve -p 3002",
+    "pwa:https:prereq": "[[ -f cert.pem && -f key.pem ]] || openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem",
+    "pwa:https": "npm run pwa:https:prereq && cd .. && SKIP_TRANSLATIONS=1 ./build.sh && npx -y http-server --tls --cert frontend/cert.pem --key frontend/key.pem dist",
+    "pwa": "cd .. && SKIP_TRANSLATIONS=1 ./build.sh && npx -y http-server --port 3333 dist",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
