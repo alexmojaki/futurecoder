@@ -36,7 +36,7 @@ let check_entry, install_imports;
 async function loadPyodideAndPackages() {
   const buffer = (await Promise.all([
     // pRetry(loadPyodideOnly, {retries: 3}), // XXX: https://github.com/pyodide/pyodide/issues/2255
-    loadPyodideOnly, {retries: 3},
+    loadPyodideOnly(),
     pRetry(getPackageBuffer, {retries: 3}),
   ]))[1];
 
