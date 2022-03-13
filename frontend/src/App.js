@@ -438,7 +438,11 @@ const MenuPopup = ({user}) =>
             onClick={() => {
               close();
               bookSetState("user.uid", null)
-              firebase.auth().signOut();
+              try {
+                firebase.auth().signOut().catch(console.warn);
+              } catch (err) {
+                console.warn(err)
+              }
             }}
           >
             <FontAwesomeIcon icon={faSignOutAlt}/> {terms.sign_out}

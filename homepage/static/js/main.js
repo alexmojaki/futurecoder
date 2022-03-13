@@ -79,10 +79,14 @@
 }())
 
 function submitEmailGeneric(email, key) {
-  fetch(`https://futurecoder-io-default-rtdb.firebaseio.com/${key}.json`, {
-    method: "POST",
-    body: JSON.stringify({email, timestamp: new Date().toISOString()}),
-  });
+  try {
+    fetch(`https://futurecoder-io-default-rtdb.firebaseio.com/${key}.json`, {
+      method: "POST",
+      body: JSON.stringify({email, timestamp: new Date().toISOString()}),
+    }).catch(console.warn);
+  } catch (err) {
+    console.warn(err)
+  }
 }
 
 function submitEmail() {

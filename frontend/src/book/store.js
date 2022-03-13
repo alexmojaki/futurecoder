@@ -34,24 +34,37 @@ const firebaseConfig = {
   measurementId: "G-ZKCE9KY52F",
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+let firebaseApp
+try {
+   firebaseApp = firebase.initializeApp(firebaseConfig);
+} catch (err) {
+  console.warn(err)
+}
 
 let {databaseURL} = firebaseConfig;
 
 if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname === "localhost") {
   // firebase.database().useEmulator("localhost", 9009);
   databaseURL = "http://localhost:9009";
-  firebase.auth().useEmulator("http://localhost:9099");
+  try {
+    firebase.auth().useEmulator("http://localhost:9099");
+  } catch (err) {
+    console.warn(err)
+  }
 }
 
 let firebaseAnalytics;
 export const isProduction = window.location.hostname.endsWith("futurecoder.io");
 if (isProduction) {
-  firebase.analytics.isSupported().then((isSupported) => {
-    if (isSupported) {
-      firebaseAnalytics = firebase.analytics(firebaseApp);
-    }
-  });
+  try {
+    firebase.analytics.isSupported().then((isSupported) => {
+      if (isSupported && firebaseApp) {
+        firebaseAnalytics = firebase.analytics(firebaseApp);
+      }
+    }).catch(console.warn);
+  } catch (err) {
+    console.warn(err)
+  }
 }
 
 const initialState = {
@@ -227,42 +240,63 @@ const loadUser = makeAction(
   },
 )
 
-firebase.auth().onAuthStateChanged(async (user) => {
-  if (user) {
-    // TODO ideally we'd set a listener on the user instead of just getting it once
-    //   to sync changes made on multiple devices
-    await updateUserData(user);
-  } else {
-    await firebase.auth().signInAnonymously();
-  }
-});
+try {
+  firebase.auth().onAuthStateChanged(async (user) => {
+    if (user) {
+      // TODO ideally we'd set a listener on the user instead of just getting it once
+      //   to sync changes made on multiple devices
+      await updateUserData(user);
+    } else {
+      try {
+        await firebase.auth().signInAnonymously();
+      } catch (err) {
+        console.warn(err)
+      }
+    }
+  });
+} catch (err) {
+  console.warn(err)
+}
 
 export const updateUserData = async (user) => {
-  Sentry.setUser({id: user.uid});
-  const userData = await databaseRequest("GET");
-  loadUser({
-    uid: user.uid,
-    email: user.email,
-    ...userData,
-  });
+  try {
+    Sentry.setUser({id: user.uid});
+    const userData = await databaseRequest("GET");
+    loadUser({
+      uid: user.uid,
+      email: user.email,
+      ...userData,
+    });
+  } catch (err) {
+    console.warn(err)
+  }
 }
 
 export const databaseRequest = wrapAsync(async function databaseRequest(method, data={}, endpoint="users") {
-  const currentUser = firebase.auth().currentUser;
+  let currentUser
+  try {
+    currentUser = firebase.auth().currentUser;
+  } catch (err) {
+    console.warn(err)
+  }
   if (!currentUser) {
     return;
   }
-  const auth = await currentUser.getIdToken();
-  const response = await pRetry(() =>
-      axios.request({
-        url: `${databaseURL}/${endpoint}/${currentUser.uid}.json`,
-        params: {auth},
-        method,
-        data,
-      }),
-    {retries: 3},
-  )
-  return response.data;
+  try {
+    const auth = await currentUser.getIdToken();
+    const response = await pRetry(() =>
+        axios.request({
+          url: `${databaseURL}/${endpoint}/${currentUser.uid}.json`,
+          params: {auth},
+          method,
+          data,
+        }),
+      {retries: 3},
+    )
+    return response.data;
+  } catch (err) {
+    console.warn(err)
+  }
 });
 
 export const updateDatabase = (updates) => {
@@ -474,5 +508,9 @@ export const reorderSolutionLines = makeAction(
 )
 
 export function logEvent(name, data = {}) {
-  firebaseAnalytics?.logEvent(name, data);
+  try {
+    firebaseAnalytics?.logEvent(name, data);
+  } catch (err) {
+    console.warn(err)
+  }
 }
