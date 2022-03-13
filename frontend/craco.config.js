@@ -8,10 +8,10 @@ module.exports = {
     },
   },
   // XXX: Here's how to make craco output to ./course instead of ./build.
-  // webpack  : {
-  //   configure: (webpackConfig, {env, paths}) => {
-  //     paths.appBuild = webpackConfig.output.path = path.resolve('course');
-  //     return webpackConfig;
-  //   },
-  // },
+  webpack  : {
+    configure: (webpackConfig, {env, paths}) => {
+      paths.appBuild = webpackConfig.output.path = path.resolve('course');
+      return webpackConfig;
+    },
+  },
 };

@@ -43,8 +43,8 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "rm -rf build course; craco build && mv build course",
-    "pwa": "echo 'REMINDER: go to localhost:3001/course/ (trailing slash)' && npx -y serve -p 3002",
+    "build": "craco build",
+    "pwa": "echo 'REMINDER: go to localhost:3002/course/ (trailing slash)' && npx -y serve -p 3002",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

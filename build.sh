@@ -12,7 +12,7 @@ cd frontend
 REACT_APP_LANGUAGE=$FUTURECODER_LANGUAGE CI=false npm run build
 cd ..
 
-cp -r frontend/build/* dist/course/
+cp -r frontend/course/* dist/course/
 
 npx -y --package=sass -- sass homepage/static/css
 cp -r homepage/* dist/
