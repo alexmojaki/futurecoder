@@ -2,25 +2,6 @@
 // Otherwise webpack can fail silently
 // https://github.com/facebook/create-react-app/issues/8014
 
-// <TODO-DELETE>
-// import {serviceWorkerFetchListener} from "sync-message";
-//
-// console.log(self.__WB_MANIFEST);
-//
-// const fetchListener = serviceWorkerFetchListener();
-//
-// addEventListener('fetch', fetchListener);
-//
-// addEventListener('install', function (e) {
-//   e.waitUntil(self.skipWaiting());
-// });
-//
-// addEventListener('activate', function (e) {
-//   e.waitUntil(self.clients.claim());
-// });
-// </TODO-DELETE>
-
-
 // This service worker can be customized!
 // See https://developers.google.com/web/tools/workbox/modules
 // for the list of available Workbox modules, or add any other

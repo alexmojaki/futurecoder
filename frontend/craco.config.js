@@ -7,7 +7,7 @@ module.exports = {
       'Cross-Origin-Embedder-Policy': 'require-corp',
     },
   },
-  // XXX: Here's how to make craco output to ./course instead of ./build.
+  // Output to ./course (instead of ./build)
   webpack: {
     configure: (webpackConfig, {env, paths}) => {
       paths.appBuild = webpackConfig.output.path = path.resolve('course');
