@@ -54,16 +54,14 @@ if (process.env.NODE_ENV === 'production') {
   registerRoute(
     ({url}) => {
       const urlString = url.toString();
-      if (urlString.startsWith('https://cdn.jsdelivr.net/')) {
-        return true;
-      } else if (urlString.startsWith('https://cdnjs.cloudflare.com')) {
-        return true;
-      } else if (urlString.startsWith('https://futurecoder.io')) {
-        return true;
-      } else if (urlString.startsWith('https://pyodide-cdn2.iodide.io')) {
-        return true;
+      if (
+        urlString.startsWith('https://cdn.jsdelivr.net/')
+        || urlString.startsWith('https://cdnjs.cloudflare.com')
+        || urlString.startsWith('https://pyodide-cdn2.iodide.io')
+        || url.hostname.endsWith('futurecoder.io')
+      ) {
+        return true
       }
-      console.debug('ignore url', {url, urlString}); // TODO(hangtwenty)--cleanup-- remove this logging.
       return false;
     },
     new StaleWhileRevalidate({
