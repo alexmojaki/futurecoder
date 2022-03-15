@@ -9,10 +9,12 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
-  if (!(process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'dev-pwa')) {
-    console.debug("(NOT registering service worker. do NODE_ENV=dev-pwa if you need to dev with SW.)")
-    return
-  }
+  // TODO(hangtwenty) <remove>
+  // if (!(process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'dev-pwa')) {
+  //   console.debug("(NOT registering service worker. do NODE_ENV=dev-pwa if you need to dev with SW.)")
+  //   return
+  // }
+  // TODO(hangtwenty) </remove>
   if ('serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
