@@ -9,12 +9,11 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
-  // TODO(hangtwenty) <remove>
-  // if (!(process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'dev-pwa')) {
-  //   console.debug("(NOT registering service worker. do NODE_ENV=dev-pwa if you need to dev with SW.)")
-  //   return
-  // }
-  // TODO(hangtwenty) </remove>
+  // XXX Unlike some usages of PWAs, we always register the service worker (including in dev);
+  // this is because our service worker has responsibilities besides caching. But as you can see
+  // in service-worker.js, we only do the caching parts when it's NODE_ENV=production (i.e. "build")
+  // so there is not confusing caching in development (same as general pattern with CRA PWAs).
+
   if ('serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
