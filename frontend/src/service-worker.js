@@ -1,19 +1,17 @@
 /* eslint-disable */
 // Otherwise webpack can fail silently
 // https://github.com/facebook/create-react-app/issues/8014
+// Reference for service-worker.js: https://developers.google.com/web/tools/workbox/modules
 
-// This service worker can be customized!
-// See https://developers.google.com/web/tools/workbox/modules
-// for the list of available Workbox modules, or add any other
-// code you'd like.
-// You can also remove this file if you'd prefer not to use a
-// service worker, and the Workbox build step will be skipped.
+import {serviceWorkerFetchListener} from 'sync-message'; // Do not remove
+const fetchListener = serviceWorkerFetchListener(); // Do not remove
+addEventListener('fetch', fetchListener); // Do not remove
 
-import { clientsClaim } from 'workbox-core';
-import { ExpirationPlugin } from 'workbox-expiration';
-import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
-import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
+import {clientsClaim} from 'workbox-core';
+import {ExpirationPlugin} from 'workbox-expiration';
+import {precacheAndRoute, createHandlerBoundToURL} from 'workbox-precaching';
+import {registerRoute} from 'workbox-routing';
+import {StaleWhileRevalidate} from 'workbox-strategies';
 
 clientsClaim();
 
