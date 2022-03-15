@@ -17,7 +17,7 @@ fi
 
 
 cd frontend
-REACT_APP_LANGUAGE=$FUTURECODER_LANGUAGE CI=false npm run build
+NODE_ENV=production REACT_APP_LANGUAGE=$FUTURECODER_LANGUAGE CI=false npm run build
 cd ..
 
 cp -r frontend/course/* dist/course/
