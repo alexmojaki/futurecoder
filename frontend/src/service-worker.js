@@ -59,6 +59,8 @@ if (process.env.NODE_ENV === 'production') {
         || urlString.startsWith('https://cdnjs.cloudflare.com')
         || urlString.startsWith('https://pyodide-cdn2.iodide.io')
         || url.hostname.endsWith('futurecoder.io')
+        || url.hostname.includes("localhost")
+        || url.hostname.includes("127.0.0.1")
       ) {
         return true
       }
