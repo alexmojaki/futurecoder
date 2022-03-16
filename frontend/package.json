@@ -44,7 +44,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "pwa": "cd .. && SKIP_TRANSLATIONS=1 ./build.sh && npx -y http-server --port 3333 dist",
+    "pwa": "npm run build && npx -y serve -p 3333",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
