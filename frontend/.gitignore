@@ -12,10 +12,6 @@
 /build
 /course
 
-# development cert/key for sake of http-server --tls (for sake of testing installable PWA over HTTPS, locally)
-cert.pem
-key.pem
-
 # misc
 .DS_Store
 .env.local
