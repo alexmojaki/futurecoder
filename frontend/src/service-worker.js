@@ -55,9 +55,10 @@ if (process.env.NODE_ENV === 'production') {
     ({url}) => {
       const urlString = url.toString();
       if (
-        urlString.startsWith('https://cdn.jsdelivr.net/')
-        || urlString.startsWith('https://cdnjs.cloudflare.com')
-        || urlString.startsWith('https://pyodide-cdn2.iodide.io')
+        urlString.startsWith('https://cdn.jsdelivr.net/') // Pyodide
+        || urlString.startsWith('https://pyodide-cdn2.iodide.io') // Only used when we are testing bleeding-edge pyodide
+        || urlString.startsWith('https://cdnjs.cloudflare.com') // Only used by homepage, so probably not needed here
+        || urlString.startsWith('https://fonts.googleapis.com') // Only used by homepage, so probably not needed here
         || url.hostname.endsWith('futurecoder.io')
         || url.hostname.includes("localhost")
         || url.hostname.includes("127.0.0.1")
