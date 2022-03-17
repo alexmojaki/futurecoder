@@ -51,6 +51,7 @@ registerRoute(
 );
 
 if (process.env.NODE_ENV === 'production') {
+// Application-specific routes for FutureCoder
   registerRoute(
     ({url}) => {
       const urlString = url.toString();
@@ -67,13 +68,8 @@ if (process.env.NODE_ENV === 'production') {
     },
     new StaleWhileRevalidate({
       cacheName: 'everything',
-      cacheExpiration: {
-        maxEntries: 50,
-      },
       cacheableResponse: {statuses: [0, 200]},
       plugins: [
-        // Ensure that once this runtime cache reaches a maximum size the
-        // least-recently used stuff is removed.
         new ExpirationPlugin({maxEntries: 30}),
       ],
     }),
