@@ -69,7 +69,6 @@ export async function runCode(entry) {
       details: e.message,
       title: "JS Error while running code: " + e.name,
     });
-    console.warn(e)
     Sentry.captureException(e);
   }
 }
@@ -200,7 +199,6 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
   });
 
   if (error) {
-    console.warn(error)
     Sentry.captureEvent(error.sentry_event);
     delete error.sentry_event;
     bookSetState("error", {...error});
