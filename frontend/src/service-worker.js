@@ -52,16 +52,14 @@ if (process.env.NODE_ENV === 'production') {
   registerRoute(
     ({url}) => {
       const urlString = url.toString();
-      if (
-        urlString.startsWith('https://cdn.jsdelivr.net/') // Pyodide
-        || urlString.startsWith('https://pyodide-cdn2.iodide.io') // Only used when we are testing bleeding-edge pyodide
-        || url.hostname.endsWith('futurecoder.io')
-        || url.hostname.includes('localhost')
-        || url.hostname.includes('127.0.0.1')
-      ) {
-        return true;
-      }
-      return false;
+      return (
+        urlString.startsWith('https://cdn.jsdelivr.net/') || // Pyodide
+        urlString.startsWith('https://pyodide-cdn2.iodide.io') || // Only used when we are testing bleeding-edge pyodide
+        urlString.startsWith('https://futurecoder-io--') || // Firebase preview deployments
+        url.hostname.endsWith('futurecoder.io') ||
+        url.hostname.includes('localhost') ||
+        url.hostname.includes('127.0.0.1')
+      );
     },
     new StaleWhileRevalidate({
       cacheName: 'everything',
