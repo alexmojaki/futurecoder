@@ -287,7 +287,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xm
 
 [[package]]
 name = "python-runner"
-version = "0.2.0"
+version = "0.4.2"
 description = "Helper for running python code indirectly"
 category = "main"
 optional = false
@@ -403,7 +403,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.9"
-content-hash = "4c55af646e134959e750c2fbd468f4c6546cdb6ea73a9af2e719bc3a24a41881"
+content-hash = "35ac73c2451aadbc4750abab7220579f5c11e482cbc9ca20f7b14eee0d9231ee"
 
 [metadata.files]
 astcheck = [
@@ -511,8 +511,8 @@ pytest = [
     {file = "pytest-6.2.4.tar.gz", hash = "sha256:50bcad0a0b9c5a72c8e4e7c9855a3ad496ca6a881a3641b4260605450772c54b"},
 ]
 python-runner = [
-    {file = "python_runner-0.2.0-py3-none-any.whl", hash = "sha256:26b284066c3a310b0a43c683dca8779e1c4ba73a7a0cc4aecae518c5b751d6bb"},
-    {file = "python_runner-0.2.0.tar.gz", hash = "sha256:911260537834fa20d7b83790e902f9ba77a1ef780e5dc391a6d1affbb2090b70"},
+    {file = "python_runner-0.4.2-py3-none-any.whl", hash = "sha256:22b325b7012fdba3ccb4a6cdfb0bfa8f5ff0c2d9604e0b4be8db71c376be24a7"},
+    {file = "python_runner-0.4.2.tar.gz", hash = "sha256:a0e336e1b85b84a7c732d88f2d6065b79c162ae66a2bfa37ba183cbed08cfc80"},
 ]
 selenium = [
     {file = "selenium-3.141.0-py2.py3-none-any.whl", hash = "sha256:2d7131d7bc5a5b99a2d9b04aaf2612c411b03b8ca1b1ee8d3de5845a9be2cb3c"},

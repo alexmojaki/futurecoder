@@ -4,7 +4,7 @@
 
 import * as Comlink from 'comlink';
 import pythonCoreUrl from "./python_core.tar.load_by_url"
-import {exposePyodide, loadPyodideAndPackage, makeRunnerCallback, toObject} from "pyodide-worker-runner";
+import {pyodideExpose, loadPyodideAndPackage, makeRunnerCallback} from "pyodide-worker-runner";
 
 async function load() {
   const pyodide = await loadPyodideAndPackage({url: pythonCoreUrl, format: "tar"});
@@ -12,7 +12,7 @@ async function load() {
   return pyodide;
 }
 
-const runCode = exposePyodide(
+const runCode = pyodideExpose(
   load(),
   async function (comsyncExtras, pyodide, entry, outputCallback, inputCallback) {
     const pyodide_worker_runner = pyodide.pyimport("pyodide_worker_runner");
@@ -26,14 +26,14 @@ const runCode = exposePyodide(
     let outputPromise;
     const callback = makeRunnerCallback(comsyncExtras, {
       input: () => inputCallback(),
-      output: (data) => {
-        outputPromise = outputCallback(data.parts);
+      output: (parts) => {
+        outputPromise = outputCallback(parts);
       },
     });
 
     const result = pyodide.pyimport("core.checker").check_entry(entry, callback);
     await outputPromise;
-    return toObject(result);
+    return result.toJs({dict_converter: Object.fromEntries});
   },
 );
 
