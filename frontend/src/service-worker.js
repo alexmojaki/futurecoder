@@ -7,7 +7,7 @@ import {serviceWorkerFetchListener} from 'sync-message'; // Do not remove
 const fetchListener = serviceWorkerFetchListener(); // Do not remove
 addEventListener('fetch', fetchListener); // Do not remove
 
-import {clientsClaim} from 'workbox-core';
+import {clientsClaim, skipWaiting} from 'workbox-core';
 import {ExpirationPlugin} from 'workbox-expiration';
 import {precacheAndRoute, createHandlerBoundToURL} from 'workbox-precaching';
 import {registerRoute} from 'workbox-routing';
@@ -74,4 +74,4 @@ if (process.env.NODE_ENV === 'production') {
   );
 }
 
-self.skipWaiting();
+skipWaiting();
