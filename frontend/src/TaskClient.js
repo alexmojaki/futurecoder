@@ -5,9 +5,6 @@ import * as Comlink from 'comlink';
 import {PyodideClient} from "pyodide-worker-runner";
 
 const channel = makeChannel({serviceWorker: {scope: "/course/"}});
-if (channel?.type === "serviceWorker") {
-  navigator.serviceWorker.register("/course/service-worker.js");
-}
 
 export const taskClient = new PyodideClient(() => new Worker(), channel);
 
