@@ -42,7 +42,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "pwa": "npm run build && npx -y serve -p 3333",
+    "pwa": "npm run build && npx -y serve -- serve -p 3333",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
