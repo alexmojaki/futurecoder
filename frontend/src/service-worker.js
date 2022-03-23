@@ -74,4 +74,5 @@ if (process.env.NODE_ENV === 'production') {
   );
 }
 
-skipWaiting();
+// TODO: maybe remove the explicit skipWaiting() call, it might be the culprit for the issue on the preview deployments in Chrome.
+// skipWaiting();
