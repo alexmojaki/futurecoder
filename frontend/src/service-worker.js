@@ -63,10 +63,7 @@ if (process.env.NODE_ENV === 'production') {
     },
     new StaleWhileRevalidate({
       cacheName: 'everything',
-      cacheableResponse: {statuses: [0, 200]},
-      // ^ Q: What's status 0 mean?
-      // ^ A: It's an opaque response, and it relates to third-party resources (and CORS).
-      // https://github.com/alexmojaki/futurecoder/pull/313/files/f5f0fded9f44fefd0bf44b99ee45f54a8badc272#r829408930
+      cacheableResponse: {statuses: [200]},
       plugins: [
         new ExpirationPlugin({maxEntries: 30}),
       ],
