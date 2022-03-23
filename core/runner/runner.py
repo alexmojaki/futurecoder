@@ -1,7 +1,7 @@
-from python_runner import PatchedStdinRunner, PatchedSleepRunner
+from python_runner import PyodideRunner
 
 
-class EnhancedRunner(PatchedStdinRunner, PatchedSleepRunner):
+class EnhancedRunner(PyodideRunner):
     def execute(self, code_obj, source_code, mode=None):
         if mode == "snoop":
             from core.runner.snoop import exec_snoop
@@ -13,12 +13,6 @@ class EnhancedRunner(PatchedStdinRunner, PatchedSleepRunner):
             exec_birdseye(self, source_code)
         else:
             super().execute(code_obj, source_code)
-
-    def set_combined_callbacks(self, **callbacks):
-        def callback(event_type, data):
-            return callbacks[event_type](data)
-
-        self.set_callback(callback)
 
     def serialize_traceback(self, exc, source_code):
         from .stack_data import format_traceback_stack_data
@@ -41,28 +35,3 @@ class EnhancedRunner(PatchedStdinRunner, PatchedSleepRunner):
         return {
             "text": friendly_syntax_error(exc, self.filename),
         }
-
-    def non_str_input(self):
-        # TODO do this in python_runner, then return early
-        line = self.line
-        self.line = ""
-
-        if line == 1:
-            raise KeyboardInterrupt
-        elif line == 2:
-            raise RuntimeError(
-                "The service worker for reading input isn't working. "
-                "Try closing all futurecoder tabs, then reopening."
-            )
-        elif line == 3:
-            raise RuntimeError(
-                "This browser doesn't support reading input. "
-                "Try upgrading to the most recent version or switching to a different browser, e.g. Chrome/Firefox. "
-                "The browser must support SharedArrayBuffer or Service Workers."
-            )
-        else:
-            # TODO raise specific exception to trigger proper feedback
-            raise RuntimeError(
-                "Oops, something went wrong while reading input! "
-                "Please report this error!"
-            )

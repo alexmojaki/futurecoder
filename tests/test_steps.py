@@ -28,16 +28,17 @@ def test_steps():
         is_message = substep != step
 
         output_parts = []
-        def output_callback(data):
-            output_parts.extend(data["parts"])
+        input_callback = make_test_input_callback(step.stdin_input)
+
+        def callback(event_type, data):
+            if event_type == "input":
+                return input_callback(data)
+            elif event_type == "output":
+                output_parts.extend(data["parts"])
 
         step.pre_run(runner)
 
-        response = check_entry(
-            entry,
-            input_callback=make_test_input_callback(step.stdin_input),
-            output_callback=output_callback,
-        )
+        response = check_entry(entry, callback)
         response["output_parts"] = output_parts
         normalise_response(response, is_message, substep)
 

@@ -15,12 +15,13 @@
     "@sentry/react": "^6.17.9",
     "ansi_up": "^5.0.0",
     "axios": "^0.21.2",
-    "comlink": "^4.3.0",
+    "comlink": "^4.3.1",
     "firebase": "^8.6.3",
     "http-proxy-middleware": "^1.0.6",
     "localforage": "^1.9.0",
     "lodash": "^4.17.21",
     "p-retry": "^5.0.0",
+    "pyodide-worker-runner": "0.0.6",
     "react": "^17.0.2",
     "react-ace": "^8.1.0",
     "react-beautiful-dnd": "^13.1.0",
@@ -37,7 +38,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.8",
-    "sync-message": "0.0.8"
+    "sync-message": "0.0.9"
   },
   "scripts": {
     "start": "craco start",
