@@ -1,6 +1,3 @@
-// eslint-disable-next-line import/no-webpack-loader-syntax
-import Worker from "worker-loader!./Worker.js";
-import * as Comlink from 'comlink';
 import {
   bookSetState,
   bookState,
@@ -18,45 +15,23 @@ import localforage from "localforage";
 import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
-import {makeChannel, writeMessage} from "sync-message";
 import {wrapAsync} from "./frontendlib/sentry";
-
-let worker, workerWrapper;
-
-function initWorker() {
-  worker = new Worker();
-  workerWrapper = Comlink.wrap(worker);
-}
-
-initWorker();
-
-const channel = makeChannel({serviceWorker: {scope: "/course/"}});
-
-let interruptBuffer = null;
-if (typeof SharedArrayBuffer != "undefined") {
-  interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
-}
+import {taskClient, runCodeTask} from "./TaskClient";
 
 export const terminalRef = React.createRef();
 
-let awaitingInput = false;
-let sleeping = false;
 let pendingOutput = [];
 
 localforage.config({name: "birdseye", storeName: "birdseye"});
 
-function inputCallback(messageId, data) {
-  if (data.sleeping) {
-    sleeping = messageId;
-  } else {
-    awaitingInput = messageId;
-    bookSetState("processing", false);
-    terminalRef.current?.focusTerminal();
-  }
+function inputCallback() {
+  bookSetState("processing", false);
+  terminalRef.current?.focusTerminal();
 }
 
-export let interrupt = () => {
-};
+export function interrupt() {
+  taskClient.interrupt();
+}
 
 let finishedLastRun = Promise.resolve();
 let finishedLastRunResolve = () => {};
@@ -76,11 +51,9 @@ export async function runCode(entry) {
 export const _runCode = wrapAsync(async function runCode({code, source}) {
   const shell = source === "shell";
   if (shell) {
-    if (awaitingInput) {
-      const messageId = awaitingInput;
-      awaitingInput = false;
+    if (taskClient.state === "awaitingMessage") {
       try {
-        await writeMessage(channel, {text: code}, messageId);
+        await taskClient.writeMessage(code);
       } catch {
         return;
       }
@@ -97,8 +70,6 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
     terminalRef.current.clearStdout();
   }
 
-  awaitingInput = false;
-  sleeping = false;
   pendingOutput = [];
 
   bookSetState("processing", true);
@@ -120,46 +91,9 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
     expected_output: questionWizard.expectedOutput,
   };
 
-  let interrupted = false;
-  let interruptResolver;
-  const interruptPromise = new Promise(r => interruptResolver = r);
-  interrupt = async () => {
-    if (awaitingInput || sleeping) {
-      const messageId = awaitingInput || sleeping;
-      awaitingInput = false;
-      sleeping = false;
-      await writeMessage(channel, {interrupted: true}, messageId);
-    } else {
-      doInterrupt();
-    }
-    interrupted = true;
-  }
-
-  let doInterrupt;
-  if (typeof SharedArrayBuffer === "undefined") {
-    doInterrupt = () => {
-      worker.terminate();
-      initWorker();
-      interruptResolver({
-        interrupted: true,
-        error: null,
-        passed: false,
-        messages: [],
-      });
-    }
-  } else {
-    interruptBuffer = new Int32Array(new SharedArrayBuffer(Int32Array.BYTES_PER_ELEMENT * 1));
-    doInterrupt = () => {
-      interruptBuffer[0] = 2;
-    }
-  }
-
   const hasPrediction = currentStep().prediction?.choices;
 
   function outputCallback(output_parts) {
-    if (interrupted) {
-      return;
-    }
     for (const part of output_parts) {
       part.codeSource = source;
     }
@@ -170,19 +104,11 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
     }
   }
 
-  const data = await Promise.race([
-    interruptPromise,
-    workerWrapper.runCode(
-      entry,
-      channel,
-      interruptBuffer,
-      Comlink.proxy(outputCallback),
-      Comlink.proxy(inputCallback),
-    ),
-  ]);
-
-  awaitingInput = false;
-  sleeping = false;
+  const data = await runCodeTask(
+    entry,
+    outputCallback,
+    inputCallback,
+  );
 
   const {error} = data;
 
@@ -251,7 +177,7 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
         requesting_solution: requestingSolution,
       },
       timestamp: new Date().toISOString(),
-    }, "code_entries");
+    }, "code_entries").catch(e => console.error(e));
   }
 });
 

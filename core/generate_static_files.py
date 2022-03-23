@@ -44,7 +44,7 @@ frontend_src = frontend / "src"
 
 def run_steps():
     for *_, entry in step_test_entries():
-        check_entry(entry, input_callback=None, output_callback=lambda _: 0)
+        check_entry(entry, lambda *_: 0)
 
 
 def get_roots():
