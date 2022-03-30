@@ -130,7 +130,7 @@ Good! Now do a similar exercise: change the name of the parameter from `name` to
 You have to change the parameter name in the function definition header, but that's not all.
 If you just change the parameter name in the function definition header, what happens?
 You get an error. Look at the message. What is it telling you? Where does the error come from?
-If the parameter is called `person_name`, what does `print("Hello " + name + "!")` mean?
+If the parameter is called `person_name`, what does `print(f"Hello {name}!")` mean?
 You need to change exactly 2 lines of the program.
 In each line you change, change exactly one word.
 Don't touch the part after the function definition, i.e. `say_hello("Alice")` and `say_hello("Bob")`.

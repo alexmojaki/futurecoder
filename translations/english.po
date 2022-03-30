@@ -19150,7 +19150,7 @@ msgstr "You get an error. Look at the message. What is it telling you? Where doe
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.3.text"
-msgstr "If the parameter is called `person_name`, what does `print(\"Hello \" + name + \"!\")` mean?"
+msgstr "If the parameter is called `person_name`, what does `print(f\"Hello {name}!\")` mean?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
 #. 
