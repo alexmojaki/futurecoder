@@ -78,18 +78,6 @@ msgstr "\"!! Warning !!\""
 msgid "code_bits.\"!!!! DANGER !!!!\""
 msgstr "\"!!!! DANGER !!!!\""
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
-#. 
-#. string = """First line
-#. Second line"""
-#. print(string)
-msgid ""
-"code_bits.\"\"\"First line\n"
-"Second line\"\"\""
-msgstr ""
-"\"\"\"First line\n"
-"Second line\"\"\""
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise.text
 #. 
 #.     assert_equal(surround("more", "++"), "++more++")
@@ -15141,14 +15129,6 @@ msgstr "spaces"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
-#. 
-#. string = """First line
-#. Second line"""
-#. print(string)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 #. 
 #. def surround(string, sides):
@@ -24631,7 +24611,7 @@ msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.text"
 msgstr ""
 "Excellent!\n"
 "\n"
-"[Earlier in the course](#GettingElementsAtPosition) there was an exercise\n"
+"[Earlier in the course](#GettingElementsAtPositionExercises) there was an exercise\n"
 "to print two strings vertically side by side, like this:\n"
 "\n"
 "    H W\n"
@@ -26085,6 +26065,13 @@ msgstr ""
 "__code2__\n"
 "\n"
 "See for yourself how this doesn't work."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
+msgid "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.program"
+msgstr ""
+"string = \"\"\"First line\n"
+"Second line\"\"\"\n"
+"print(string)"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
 msgid "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.text"
