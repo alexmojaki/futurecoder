@@ -4099,29 +4099,29 @@
             "nombre = \"Alicia\"",
             "amigo = 'Bob'",
             "comida = \"almuerzo\"",
-            "print(f\"{nombre} fue a comprar {comida} con {amigo}.\")"
+            "print(f\"{nombre} fue a {comida} con {amigo}.\")"
         ],
         "response": {
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "Alicia fue a comprar almuerzo con Bob.",
+                "answer": "Alicia fue a almuerzo con Bob.",
                 "choices": [
-                    "f\"{nombre} fue a comprar {comida} con {amigo}.\"",
-                    "\"{nombre} fue a comprar {comida} con {amigo}.\"",
-                    "{nombre} fue a comprar {comida} con {amigo}.",
-                    "'nombre' fue a comprar 'comida' con 'amigo'.",
-                    "nombre fue a comprar comida con amigo.",
-                    "\"Alicia\" fue a comprar \"almuerzo\" con 'Bob'.",
-                    "'Alicia' fue a comprar 'almuerzo' con 'Bob'.",
-                    "\"Alicia fue a comprar almuerzo con Bob.\"",
-                    "Alicia fue a comprar almuerzo con Bob.",
+                    "f\"{nombre} fue a {comida} con {amigo}.\"",
+                    "\"{nombre} fue a {comida} con {amigo}.\"",
+                    "{nombre} fue a {comida} con {amigo}.",
+                    "'nombre' fue a 'comida' con 'amigo'.",
+                    "nombre fue a comida con amigo.",
+                    "\"Alicia\" fue a \"almuerzo\" con 'Bob'.",
+                    "'Alicia' fue a 'almuerzo' con 'Bob'.",
+                    "\"Alicia fue a almuerzo con Bob.\"",
+                    "Alicia fue a almuerzo con Bob.",
                     "Error"
                 ]
             },
             "result": [
                 {
-                    "text": "Alicia fue a comprar almuerzo con Bob.\n",
+                    "text": "Alicia fue a almuerzo con Bob.\n",
                     "type": "stdout"
                 }
             ]
@@ -4141,10 +4141,10 @@
             "prediction": {
                 "answer": "Error",
                 "choices": [
-                    "\"Hola \" + nombre + \". Tu edad es \" + edad + \" a\u00f1os.\"",
-                    "Hola nombre. Tu edad es edad a\u00f1os.",
-                    "Hola Alicia. Tu edad es 20 a\u00f1os.",
-                    "Hola 'Alicia'. Tu edad es 20 a\u00f1os.",
+                    "\"Hola \" + nombre + \". T\u00fa tienes es \" + edad + \" a\u00f1os.\"",
+                    "Hola nombre. T\u00fa tienes es edad a\u00f1os.",
+                    "Hola Alicia. T\u00fa tienes es 20 a\u00f1os.",
+                    "Hola 'Alicia'. T\u00fa tienes es 20 a\u00f1os.",
                     "Error"
                 ]
             },
