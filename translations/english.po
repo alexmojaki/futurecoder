@@ -23425,7 +23425,7 @@ msgstr "Introducing `or`"
 #. https://futurecoder.io/course/#IntroducingStrings
 msgid "pages.IntroducingStrings.steps.final_text.text"
 msgstr ""
-"The shell simply gives the same thing back because there's nothing to further to calculate. `'hello'` is simply equal to `'hello'`.\n"
+"The shell simply gives the same thing back because there's nothing further to calculate. `'hello'` is simply equal to `'hello'`.\n"
 "\n"
 "A string is a sequence of characters. A character is a single symbol such as a letter, number, punctuation, space, etc. In this case the string contains the 5 characters `hello`. The quotes are not part of the string - they are there to tell both humans and computers that this is a string consisting of whatever characters are between the quotes."
 
@@ -23477,7 +23477,7 @@ msgid "pages.IntroducingTheShell.steps.more_calculation.text"
 msgstr ""
 "Great! Python evaluated `1+2` and got the result `3`, so the shell displays that.\n"
 "\n"
-"The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself \"What would happen if I ran X?\" and then immediately answer that question by running it! Never be scared to try something out - if you get something wrong, nothing bad will happen.\n"
+"The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself \"What would happen if I ran X?\" and then immediately answer that question by running it. Never be scared to try something out - if you get something wrong, nothing bad will happen.\n"
 "\n"
 "Try doing some more calculations now. You can multiply numbers with `*`, divide with `/`, and subtract with `-`. You can also use parentheses, i.e. `(` and `)`."
 
