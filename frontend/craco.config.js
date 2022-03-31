@@ -1,12 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  devServer: {
-    headers: {
-      'Cross-Origin-Opener-Policy': 'same-origin',
-      'Cross-Origin-Embedder-Policy': 'require-corp',
-    },
-  },
   // Output to ./course (instead of ./build)
   webpack: {
     configure: (webpackConfig, {env, paths}) => {
@@ -14,4 +8,12 @@ module.exports = {
       return webpackConfig;
     },
   },
+
+  // Staged for deletion -- the CORS headers override should not be needed as of recent commits in https://github.com/alexmojaki/futurecoder/pull/320
+  // devServer: {
+  //   headers: {
+  //     'Cross-Origin-Opener-Policy': 'same-origin',
+  //     'Cross-Origin-Embedder-Policy': 'require-corp',
+  //   },
+  // },
 };
