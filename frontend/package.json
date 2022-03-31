@@ -66,6 +66,7 @@
   },
   "devDependencies": {
     "raw-loader": "^4.0.2",
+    "workbox-webpack-plugin": "^6.5.2",
     "worker-loader": "^3.0.8"
   }
 }
