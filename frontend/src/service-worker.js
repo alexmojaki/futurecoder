@@ -40,6 +40,11 @@ if (process.env.NODE_ENV === 'production') {
         return false;
       }
 
+      // XXX don't use the app shell routing for birdseye!
+      if (url.pathname.includes('birdseye')) {
+        return false;
+      }
+
       // "If this looks like a URL for a resource, because it contains // a file extension, skip."
       if (url.pathname.match(fileExtensionRegexp)) {
         return false;
