@@ -1,12 +1,8 @@
 const path = require('path');
-const fs = require('fs');
 
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-const paths = require('./paths'); // <-- Copied from "CRA eject" -- "config" folder.
 
 const isEnvProduction = process.env.NODE_ENV === "production"
-const swSrc = paths.swSrc;
-console.info({swSrc, exists: fs.existsSync(swSrc)})
 
 module.exports = {
   webpack: {
@@ -17,14 +13,13 @@ module.exports = {
     },
     plugins: [
       isEnvProduction &&
-      fs.existsSync(swSrc) &&
       new WorkboxWebpackPlugin.InjectManifest({
         // At time of writing, the swSrc snd other arguments are the same as when doing "CRA eject",
         // and so they SHOULD behave the same as when this whole block (`plugins`) is commented-out.
         // However, for some reason, we're getting "Can't find self.__WB_MANIFEST in your SW source"
         // even though `self.__WB_MANIFEST` clearly exists in src/service-worker.js, and it works
         // when the default settings are left in place... Rather opaque error right now...
-        swSrc,
+        swSrc: path.resolve(__dirname, 'src/service-worker.js'),
         dontCacheBustURLsMatching: /\.[0-9a-f]{8}\./,
         exclude: [/\.map$/, /asset-manifest\.json$/, /LICENSE/],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
