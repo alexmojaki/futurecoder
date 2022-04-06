@@ -12,9 +12,12 @@ async function load() {
   return pyodide;
 }
 
+const pyodidePromise = load();
+let programCount = 1;
+
 const runCode = pyodideExpose(
-  load(),
-  async function (comsyncExtras, pyodide, entry, outputCallback, inputCallback) {
+  async function (extras, entry, outputCallback, inputCallback) {
+    const pyodide = await pyodidePromise;
     const pyodide_worker_runner = pyodide.pyimport("pyodide_worker_runner");
 
     try {
@@ -24,14 +27,20 @@ const runCode = pyodideExpose(
     }
 
     let outputPromise;
-    const callback = makeRunnerCallback(comsyncExtras, {
+    const callback = makeRunnerCallback(extras, {
       input: () => inputCallback(),
       output: (parts) => {
         outputPromise = outputCallback(parts);
       },
     });
 
-    const result = pyodide.pyimport("core.checker").check_entry(entry, callback);
+    if (extras.interruptBuffer) {
+      pyodide.setInterruptBuffer(extras.interruptBuffer);
+    }
+
+    const checkerModule = pyodide.pyimport("core.checker");
+    checkerModule.default_runner.set_filename(`/my_program_${programCount++}.py`)
+    const result = checkerModule.check_entry(entry, callback);
     await outputPromise;
     return result.toJs({dict_converter: Object.fromEntries});
   },

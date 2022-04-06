@@ -111,13 +111,6 @@ Feedback"""
 
     # Run test_steps within futurecoder!
     run_code(editor, run_button, get_test_steps_code())
-    driver.implicitly_wait(20)
-    await_result(driver, ">>>", ">>> ")
-    driver.implicitly_wait(5)
-
-    # The above directly modifies the runner callbacks,
-    # so we need a separate run to reset the callback and print stuff
-    run_code(editor, run_button, 'print(open("golden_files/None/test_transcript.json").read())')
     await_result(driver, "Introducing", (this_dir / "golden_files/en/test_transcript.json").read_text() + "\n>>> ")
 
     # Reverse until at first step
@@ -507,9 +500,13 @@ def check_choice_status(driver, choice_index, status):
 
 def get_test_steps_code():
     code = (this_dir / "test_steps.py").read_text()
-    code += "os.environ['FUTURECODER_LANGUAGE'] = 'None'\n"
-    code += "os.environ['FIX_TESTS'] = '1'\n"
-    code += "test_steps()\n"
-    # Put all code in one line to avoid ace indentation issues
-    code = f"exec({code!r}, globals())"
-    return code
+    return f"""
+# Put all code in one line to avoid ace indentation issues
+exec({code!r}, globals())
+
+os.environ['FUTURECODER_LANGUAGE'] = 'None'
+os.environ['FIX_TESTS'] = '1'
+test_steps()
+
+print(open("/golden_files/None/test_transcript.json").read())
+"""

@@ -43,11 +43,11 @@ class FullRunner(EnhancedRunner):
         self.console.locals.update(assert_equal=assert_equal)
 
 
-runner = FullRunner()
+default_runner = FullRunner(filename="/my_program.py")
 
 
 @catch_internal_errors
-def check_entry(entry, callback):
+def check_entry(entry, callback, runner=default_runner):
     result = dict(
         passed=False,
         messages=[],

@@ -8,7 +8,7 @@ from littleutils import only
 
 import core.utils
 from core import translation as t
-from core.checker import check_entry, runner
+from core.checker import check_entry, FullRunner
 from core.text import step_test_entries, get_predictions, load_chapters
 from core.utils import highlighted_markdown, make_test_input_callback
 
@@ -21,7 +21,7 @@ def test_steps():
     lang = os.environ.get("FUTURECODER_LANGUAGE", "en")
     t.set_language(lang)
     list(load_chapters())
-    runner.reset()
+    runner = FullRunner(filename="/my_program.py")
     transcript = []
     for page, step, substep, entry in step_test_entries():
         program = substep.program
@@ -38,7 +38,7 @@ def test_steps():
 
         step.pre_run(runner)
 
-        response = check_entry(entry, callback)
+        response = check_entry(entry, callback, runner)
         response["output_parts"] = output_parts
         normalise_response(response, is_message, substep)
 
