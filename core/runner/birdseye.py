@@ -1,7 +1,8 @@
 from birdseye.bird import BirdsEye
 
 
-def exec_birdseye(runner, code):
+def exec_birdseye(runner):
+    code = runner.source_code
     eye = BirdsEye()
     traced_file = eye.trace_string_deep(runner.filename, code)
     runner.console.locals.update(eye._trace_methods_dict(traced_file))

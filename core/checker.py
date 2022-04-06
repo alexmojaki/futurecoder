@@ -43,7 +43,7 @@ class FullRunner(EnhancedRunner):
         self.console.locals.update(assert_equal=assert_equal)
 
 
-runner = FullRunner()
+runner = FullRunner(filename="/my_program.py")
 
 
 @catch_internal_errors
