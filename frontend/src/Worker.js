@@ -39,7 +39,7 @@ const runCode = pyodideExpose(
     }
 
     const checkerModule = pyodide.pyimport("core.checker");
-    checkerModule.runner.set_filename(`/my_program_${programCount++}.py`)
+    checkerModule.default_runner.set_filename(`/my_program_${programCount++}.py`)
     const result = checkerModule.check_entry(entry, callback);
     await outputPromise;
     return result.toJs({dict_converter: Object.fromEntries});
