@@ -15,6 +15,9 @@ class EnhancedRunner(PyodideRunner):
             super().execute(code_obj)
 
     def serialize_traceback(self, exc):
+        if isinstance(exc, KeyboardInterrupt):
+            raise
+
         from .stack_data import format_traceback_stack_data
         from .stack_data_pygments import PygmentsTracebackSerializer
         import friendly_traceback.source_cache
