@@ -13,6 +13,7 @@ async function load() {
 }
 
 const pyodidePromise = load();
+let programCount = 1;
 
 const runCode = pyodideExpose(
   async function (extras, entry, outputCallback, inputCallback) {
@@ -37,7 +38,9 @@ const runCode = pyodideExpose(
       pyodide.setInterruptBuffer(extras.interruptBuffer);
     }
 
-    const result = pyodide.pyimport("core.checker").check_entry(entry, callback);
+    const checkerModule = pyodide.pyimport("core.checker");
+    checkerModule.runner.set_filename(`/my_program_${programCount++}.py`)
+    const result = checkerModule.check_entry(entry, callback);
     await outputPromise;
     return result.toJs({dict_converter: Object.fromEntries});
   },
