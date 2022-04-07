@@ -7,7 +7,7 @@ import pythonCoreUrl from "./python_core.tar.load_by_url"
 import {pyodideExpose, loadPyodideAndPackage, makeRunnerCallback} from "pyodide-worker-runner";
 
 async function load() {
-  const pyodide = await loadPyodideAndPackage({url: pythonCoreUrl, format: "tar"});
+  const pyodide = await loadPyodideAndPackage({url: pythonCoreUrl, format: "tar", extract_dir: "/tmp"});
   pyodide.pyimport("core.init_pyodide").init(process.env.REACT_APP_LANGUAGE);
   return pyodide;
 }
