@@ -72,10 +72,14 @@ function registerValidSW(swUrl, config) {
                 config.onUpdate(registration);
               }
             } else {
-              // At this point, everything has been precached.
-              // It's the perfect time to display a
-              // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+              if (process.env.REACT_APP_PRECACHE === true) {
+                // At this point, everything has been precached.
+                // It's the perfect time to display a
+                // "Content is cached for offline use." message.
+                console.log('Content is cached for offline use.');
+              } else {
+                console.log('Service worker has registered, but caching is not enabled for development mode.')
+              }
 
               // Execute callback
               if (config && config.onSuccess) {
