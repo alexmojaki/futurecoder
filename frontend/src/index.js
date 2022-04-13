@@ -15,4 +15,5 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+// Always run the service worker (even in dev) (but it only enables PWA-style precaching depending on an env variable)
 serviceWorkerRegistration.register();

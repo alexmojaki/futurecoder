@@ -42,7 +42,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "REACT_APP_PRECACHE=true craco build",
     "build:full": "cd ../ && ./full_build.sh && npx -y serve -- serve -p 4444 dist",
     "pwa": "npm run build && npx -y serve -- serve -p 3333",
     "test": "craco test",
