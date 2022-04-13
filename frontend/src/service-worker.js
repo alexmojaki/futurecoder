@@ -31,7 +31,6 @@ if (process.env.REACT_APP_PRECACHE) {
         urlString.startsWith('https://cdn.jsdelivr.net/') || // Pyodide
         urlString.startsWith('https://pyodide-cdn2.iodide.io') || // Only used when we are testing bleeding-edge pyodide
         urlString.startsWith('https://futurecoder-io--') || // Firebase preview deployments
-        urlString.startsWith('https://stackpath.bootstrapcdn.com') || // Bootstrap from CDN
         url.hostname.endsWith('futurecoder.io') ||
         url.hostname.includes('localhost') ||
         url.hostname.includes('127.0.0.1')
