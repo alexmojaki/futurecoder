@@ -12,7 +12,7 @@ export function register(config) {
   // XXX Unlike some usages of PWAs, we always register the service worker (including in dev);
   // this is because our service worker has responsibilities besides caching. But as you can see
   // in service-worker.js, we only do the caching parts when REACT_APP_PRECACHE is set.
-  // (To avoid confusing caching in development (same as general pattern with CRA PWAs).
+  // (To avoid confusing caching in development (same as general pattern with CRA PWAs))
 
   if ('serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
