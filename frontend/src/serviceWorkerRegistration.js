@@ -72,7 +72,7 @@ function registerValidSW(swUrl, config) {
                 config.onUpdate(registration);
               }
             } else {
-              if (process.env.REACT_APP_PRECACHE === true) {
+              if (process.env.REACT_APP_PRECACHE) {
                 // At this point, everything has been precached.
                 // It's the perfect time to display a
                 // "Content is cached for offline use." message.
