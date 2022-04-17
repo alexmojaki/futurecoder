@@ -1,3 +1,9 @@
+// `npm start` tends to set the path to `/course` without a trailing `/`
+// which stops the service worker from working. Redirect if necessary.
+if (window.location.pathname !== "/course/") {
+  window.location.pathname = "/course/";
+}
+
 // Reference: https://cra.link/PWA
 
 const isLocalhost = Boolean(
