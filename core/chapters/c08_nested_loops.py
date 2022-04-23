@@ -128,7 +128,7 @@ Let's put this to use! Suppose you're a teacher and you need to print out all th
     1 x 10 = 10
     1 x 11 = 11
     1 x 12 = 12
-    ----------
+    ---
     2 x 1 = 2
     2 x 2 = 4
     2 x 3 = 6
@@ -141,7 +141,7 @@ Let's put this to use! Suppose you're a teacher and you need to print out all th
     2 x 10 = 20
     2 x 11 = 22
     2 x 12 = 24
-    ----------
+    ---
     3 x 1 = 3
     3 x 2 = 6
     3 x 3 = 9
@@ -149,7 +149,7 @@ Let's put this to use! Suppose you're a teacher and you need to print out all th
     11 x 10 = 110
     11 x 11 = 121
     11 x 12 = 132
-    ----------
+    ---
     12 x 1 = 12
     12 x 2 = 24
     12 x 3 = 36
@@ -162,7 +162,7 @@ Let's put this to use! Suppose you're a teacher and you need to print out all th
     12 x 10 = 120
     12 x 11 = 132
     12 x 12 = 144
-    ----------
+    ---
         """
 
         hints = """
@@ -206,7 +206,7 @@ Make sure each line is in the correct loop and has the right amount of indentati
                 for right in range(12):
                     right += 1
                     print(f'{left} x {right} = {left * right}')
-                print('----------')
+                print('---')
 
         class adding_one_in_wrong_loop(ExerciseStep, MessageStep):
             """
@@ -220,7 +220,7 @@ Where should you do that instead to fix it?
                         left += 1
                         right += 1
                         print(f'{left} x {right} = {left * right}')
-                    print('----------')
+                    print('---')
 
             tests = {
                 (): """\
@@ -236,7 +236,7 @@ Where should you do that instead to fix it?
 10 x 10 = 100
 11 x 11 = 121
 12 x 12 = 144
-----------
+---
 2 x 1 = 2
 3 x 2 = 6
 4 x 3 = 12
@@ -249,7 +249,7 @@ Where should you do that instead to fix it?
 11 x 10 = 110
 12 x 11 = 132
 13 x 12 = 156
-----------
+---
 3 x 1 = 3
 4 x 2 = 8
 5 x 3 = 15
@@ -262,7 +262,7 @@ Where should you do that instead to fix it?
 12 x 10 = 120
 13 x 11 = 143
 14 x 12 = 168
-----------
+---
 4 x 1 = 4
 5 x 2 = 10
 6 x 3 = 18
@@ -275,7 +275,7 @@ Where should you do that instead to fix it?
 13 x 10 = 130
 14 x 11 = 154
 15 x 12 = 180
-----------
+---
 5 x 1 = 5
 6 x 2 = 12
 7 x 3 = 21
@@ -288,7 +288,7 @@ Where should you do that instead to fix it?
 14 x 10 = 140
 15 x 11 = 165
 16 x 12 = 192
-----------
+---
 6 x 1 = 6
 7 x 2 = 14
 8 x 3 = 24
@@ -301,7 +301,7 @@ Where should you do that instead to fix it?
 15 x 10 = 150
 16 x 11 = 176
 17 x 12 = 204
-----------
+---
 7 x 1 = 7
 8 x 2 = 16
 9 x 3 = 27
@@ -314,7 +314,7 @@ Where should you do that instead to fix it?
 16 x 10 = 160
 17 x 11 = 187
 18 x 12 = 216
-----------
+---
 8 x 1 = 8
 9 x 2 = 18
 10 x 3 = 30
@@ -327,7 +327,7 @@ Where should you do that instead to fix it?
 17 x 10 = 170
 18 x 11 = 198
 19 x 12 = 228
-----------
+---
 9 x 1 = 9
 10 x 2 = 20
 11 x 3 = 33
@@ -340,7 +340,7 @@ Where should you do that instead to fix it?
 18 x 10 = 180
 19 x 11 = 209
 20 x 12 = 240
-----------
+---
 10 x 1 = 10
 11 x 2 = 22
 12 x 3 = 36
@@ -353,7 +353,7 @@ Where should you do that instead to fix it?
 19 x 10 = 190
 20 x 11 = 220
 21 x 12 = 252
-----------
+---
 11 x 1 = 11
 12 x 2 = 24
 13 x 3 = 39
@@ -366,7 +366,7 @@ Where should you do that instead to fix it?
 20 x 10 = 200
 21 x 11 = 231
 22 x 12 = 264
-----------
+---
 12 x 1 = 12
 13 x 2 = 26
 14 x 3 = 42
@@ -379,7 +379,7 @@ Where should you do that instead to fix it?
 21 x 10 = 210
 22 x 11 = 242
 23 x 12 = 276
-----------
+---
 """
             }
 
@@ -406,7 +406,7 @@ The computer will do the repetition for you!
                     print(left, 'x 10 =', left * 10)
                     print(left, 'x 11 =', left * 11)
                     print(left, 'x 12 =', left * 12)
-                    print('----------')
+                    print('---')
 
             def check(self):
                 lines = [line.strip() for line in self.input.splitlines()]
@@ -438,7 +438,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
                         right += 1
                         # for the sake of translation
                         print(f'{left} x {right} = {left * right}'.replace('x', '*'))
-                    print('----------')
+                    print('---')
 
             tests = {
                 (): """\
@@ -454,7 +454,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 1 * 10 = 10
 1 * 11 = 11
 1 * 12 = 12
-----------
+---
 2 * 1 = 2
 2 * 2 = 4
 2 * 3 = 6
@@ -467,7 +467,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 2 * 10 = 20
 2 * 11 = 22
 2 * 12 = 24
-----------
+---
 3 * 1 = 3
 3 * 2 = 6
 3 * 3 = 9
@@ -480,7 +480,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 3 * 10 = 30
 3 * 11 = 33
 3 * 12 = 36
-----------
+---
 4 * 1 = 4
 4 * 2 = 8
 4 * 3 = 12
@@ -493,7 +493,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 4 * 10 = 40
 4 * 11 = 44
 4 * 12 = 48
-----------
+---
 5 * 1 = 5
 5 * 2 = 10
 5 * 3 = 15
@@ -506,7 +506,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 5 * 10 = 50
 5 * 11 = 55
 5 * 12 = 60
-----------
+---
 6 * 1 = 6
 6 * 2 = 12
 6 * 3 = 18
@@ -519,7 +519,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 6 * 10 = 60
 6 * 11 = 66
 6 * 12 = 72
-----------
+---
 7 * 1 = 7
 7 * 2 = 14
 7 * 3 = 21
@@ -532,7 +532,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 7 * 10 = 70
 7 * 11 = 77
 7 * 12 = 84
-----------
+---
 8 * 1 = 8
 8 * 2 = 16
 8 * 3 = 24
@@ -545,7 +545,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 8 * 10 = 80
 8 * 11 = 88
 8 * 12 = 96
-----------
+---
 9 * 1 = 9
 9 * 2 = 18
 9 * 3 = 27
@@ -558,7 +558,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 9 * 10 = 90
 9 * 11 = 99
 9 * 12 = 108
-----------
+---
 10 * 1 = 10
 10 * 2 = 20
 10 * 3 = 30
@@ -571,7 +571,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 10 * 10 = 100
 10 * 11 = 110
 10 * 12 = 120
-----------
+---
 11 * 1 = 11
 11 * 2 = 22
 11 * 3 = 33
@@ -584,7 +584,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 11 * 10 = 110
 11 * 11 = 121
 11 * 12 = 132
-----------
+---
 12 * 1 = 12
 12 * 2 = 24
 12 * 3 = 36
@@ -597,7 +597,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 12 * 10 = 120
 12 * 11 = 132
 12 * 12 = 144
-----------
+---
 """
             }
 
@@ -615,7 +615,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 1 x 10 = 10
 1 x 11 = 11
 1 x 12 = 12
-----------
+---
 2 x 1 = 2
 2 x 2 = 4
 2 x 3 = 6
@@ -628,7 +628,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 2 x 10 = 20
 2 x 11 = 22
 2 x 12 = 24
-----------
+---
 3 x 1 = 3
 3 x 2 = 6
 3 x 3 = 9
@@ -641,7 +641,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 3 x 10 = 30
 3 x 11 = 33
 3 x 12 = 36
-----------
+---
 4 x 1 = 4
 4 x 2 = 8
 4 x 3 = 12
@@ -654,7 +654,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 4 x 10 = 40
 4 x 11 = 44
 4 x 12 = 48
-----------
+---
 5 x 1 = 5
 5 x 2 = 10
 5 x 3 = 15
@@ -667,7 +667,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 5 x 10 = 50
 5 x 11 = 55
 5 x 12 = 60
-----------
+---
 6 x 1 = 6
 6 x 2 = 12
 6 x 3 = 18
@@ -680,7 +680,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 6 x 10 = 60
 6 x 11 = 66
 6 x 12 = 72
-----------
+---
 7 x 1 = 7
 7 x 2 = 14
 7 x 3 = 21
@@ -693,7 +693,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 7 x 10 = 70
 7 x 11 = 77
 7 x 12 = 84
-----------
+---
 8 x 1 = 8
 8 x 2 = 16
 8 x 3 = 24
@@ -706,7 +706,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 8 x 10 = 80
 8 x 11 = 88
 8 x 12 = 96
-----------
+---
 9 x 1 = 9
 9 x 2 = 18
 9 x 3 = 27
@@ -719,7 +719,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 9 x 10 = 90
 9 x 11 = 99
 9 x 12 = 108
-----------
+---
 10 x 1 = 10
 10 x 2 = 20
 10 x 3 = 30
@@ -732,7 +732,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 10 x 10 = 100
 10 x 11 = 110
 10 x 12 = 120
-----------
+---
 11 x 1 = 11
 11 x 2 = 22
 11 x 3 = 33
@@ -745,7 +745,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 11 x 10 = 110
 11 x 11 = 121
 11 x 12 = 132
-----------
+---
 12 x 1 = 12
 12 x 2 = 24
 12 x 3 = 36
@@ -758,7 +758,7 @@ For example, your solution should display `3 x 4 = 12` and not `3 * 4 = 12`.
 12 x 10 = 120
 12 x 11 = 132
 12 x 12 = 144
-----------
+---
 """
         }
 
