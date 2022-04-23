@@ -143,7 +143,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 
     2. Run `npm ci` to download dependencies.
 
-    3. For some browsers, especially Safari, you will need to run `npm run build` and then copy `service-worker.js` from the `build` folder to the `public` folder.
+    3. Run `npm run build` and then copy `service-worker.js` from the `course` folder to the `public` folder. The service worker is used by [sync-message](https://github.com/alexmojaki/sync-message) to handle `time.sleep` and reading from stdin (e.g. `input()`) in Python. To enable caching, set the environment variable `REACT_APP_PRECACHE=1` when building.
 
     4. Run `npm start` to start the frontend development server.
 6. Go to http://localhost:3000/course/
