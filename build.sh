@@ -9,7 +9,7 @@ poetry run python -m translations.generate_po_file
 poetry run python -m core.generate_static_files
 
 cd frontend
-REACT_APP_LANGUAGE=$FUTURECODER_LANGUAGE CI=false npm run build
+REACT_APP_PRECACHE=1 REACT_APP_LANGUAGE=$FUTURECODER_LANGUAGE CI=false npm run build
 cd ..
 
 cp -r frontend/course/* dist/course/
