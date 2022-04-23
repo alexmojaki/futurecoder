@@ -130,6 +130,9 @@ def clean_step_class(cls):
     solution = cls.__dict__.get("solution", "")
     assert bool(solution) ^ bool(program)
 
+    if issubclass(cls, ExerciseStep) and not issubclass(cls, MessageStep):
+        assert cls.hints, cls
+
     if solution:
         assert cls.tests
         assert cls.auto_translate_program
