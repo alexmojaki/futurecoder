@@ -19,7 +19,6 @@ const runCode = pyodideExpose(
   async function (extras, entry, outputCallback, inputCallback) {
     const pyodide = await pyodidePromise;
     const pyodide_worker_runner = pyodide.pyimport("pyodide_worker_runner");
-
     try {
       await pyodide_worker_runner.install_imports(entry.input);
     } catch (e) {
