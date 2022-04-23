@@ -426,6 +426,15 @@ Fix this by adding an `else` clause to the `if` so that if `excited` is false, a
 is added to the end of the sentence instead of an exclamation mark (`!`).
         """
 
+        hints = """
+Don't change anything that's already there, just add a bit more code.
+`else` needs to come immediately after the `if` body, with nothing in between.
+`sentence += char` needs to run whether `excited` is `True` or `False`.
+You *could* have a copy of `sentence += char` in both the `if` and `else` blocks, but there's a better way.
+Use `else` to assign a different value to `char`.
+If `excited` is `False`, then `char` should be `'.'` instead of `'!'`.
+"""
+
         parsons_solution = True
 
         def solution(self, sentence: str, excited: bool):
@@ -821,17 +830,16 @@ class try_less_than_in_shell(Step):
 
 
 class OtherComparisonOperators(Page):
-    class try_not_equals(Step):
+    class try_not_equals(VerbatimStep):
         """
-The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It evaluates to `True` when two values are...not equal. Try it for yourself in the shell.
+The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It evaluates to `True` when two values are...not equal. Try `__program__` for yourself in the shell.
         """
 
         program = "1 != 2"
 
         expected_code_source = "shell"
 
-        def check(self):
-            return search_ast(self.tree, ast.NotEq)
+        predicted_output_choices = ["True", "False"]
 
     class brokn_kyboard(VerbatimStep):
         """

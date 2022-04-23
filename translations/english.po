@@ -8342,7 +8342,7 @@ msgstr "f'{i + 1} {\"|\".join(row)}'"
 #.     for right in range(12):
 #.         right += 1
 #.         print(f'{left} x {right} = {left * right}')
-#.     print('----------')
+#.     print('---')
 msgid "code_bits.f'{left} x {right} = {left * right}'"
 msgstr "f'{left} x {right} = {left * right}'"
 
@@ -9710,7 +9710,7 @@ msgstr "joined_rows"
 #.     for right in range(12):
 #.         right += 1
 #.         print(f'{left} x {right} = {left * right}')
-#.     print('----------')
+#.     print('---')
 msgid "code_bits.left"
 msgstr "left"
 
@@ -13514,7 +13514,7 @@ msgstr "result"
 #.     for right in range(12):
 #.         right += 1
 #.         print(f'{left} x {right} = {left * right}')
-#.     print('----------')
+#.     print('---')
 msgid "code_bits.right"
 msgstr "right"
 
@@ -20665,6 +20665,42 @@ msgstr ""
 "or `'HELLO WORLD'`."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.0.text"
+msgstr "Don't change anything that's already there, just add a bit more code."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.1.text"
+msgstr "`else` needs to come immediately after the `if` body, with nothing in between."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.2.text"
+msgstr "`sentence += char` needs to run whether `excited` is `True` or `False`."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.3.text"
+msgstr "You *could* have a copy of `sentence += char` in both the `if` and `else` blocks, but there's a better way."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.4.text"
+msgstr "Use `else` to assign a different value to `char`."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.5.text"
+msgstr "If `excited` is `False`, then `char` should be `'.'` instead of `'!'`."
+
+#. https://futurecoder.io/course/#IfAndElse
 msgid "pages.IfAndElse.steps.else_full_stop.text"
 msgstr ""
 "If `excited` is true then `char` is defined and everything runs fine. But otherwise\n"
@@ -22731,7 +22767,7 @@ msgstr ""
 "    1 x 10 = 10\n"
 "    1 x 11 = 11\n"
 "    1 x 12 = 12\n"
-"    ----------\n"
+"    ---\n"
 "    2 x 1 = 2\n"
 "    2 x 2 = 4\n"
 "    2 x 3 = 6\n"
@@ -22744,7 +22780,7 @@ msgstr ""
 "    2 x 10 = 20\n"
 "    2 x 11 = 22\n"
 "    2 x 12 = 24\n"
-"    ----------\n"
+"    ---\n"
 "    3 x 1 = 3\n"
 "    3 x 2 = 6\n"
 "    3 x 3 = 9\n"
@@ -22752,7 +22788,7 @@ msgstr ""
 "    11 x 10 = 110\n"
 "    11 x 11 = 121\n"
 "    11 x 12 = 132\n"
-"    ----------\n"
+"    ---\n"
 "    12 x 1 = 12\n"
 "    12 x 2 = 24\n"
 "    12 x 3 = 36\n"
@@ -22765,7 +22801,7 @@ msgstr ""
 "    12 x 10 = 120\n"
 "    12 x 11 = 132\n"
 "    12 x 12 = 144\n"
-"    ----------"
+"    ---"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -26312,7 +26348,7 @@ msgstr ""
 msgid "pages.OtherComparisonOperators.steps.try_not_equals.text"
 msgstr ""
 "The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It "
-"evaluates to `True` when two values are...not equal. Try it for yourself in the shell."
+"evaluates to `True` when two values are...not equal. Try `__program__` for yourself in the shell."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.title"
