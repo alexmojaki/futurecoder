@@ -1704,7 +1704,7 @@ When and how should you modify the boolean?
         """
 Excellent!
 
-[Earlier in the course](#GettingElementsAtPosition) there was an exercise
+[Earlier in the course](#GettingElementsAtPositionExercises) there was an exercise
 to print two strings vertically side by side, like this:
 
     H W

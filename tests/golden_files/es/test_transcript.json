@@ -4055,18 +4055,18 @@
     },
     {
         "get_solution": [
-            "print(\"Los casos especiales no son tan especiales como para romper las reglas.\")"
+            "print(\"Si continuamos as\u00ed nos vamos pa'rriba.\")"
         ],
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
-            "print(\"Los casos especiales no son tan especiales como para romper las reglas.\")"
+            "print(\"Si continuamos as\u00ed nos vamos pa'rriba.\")"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Los casos especiales no son tan especiales como para romper las reglas.\n",
+                    "text": "Si continuamos as\u00ed nos vamos pa'rriba.\n",
                     "type": "stdout"
                 }
             ]
@@ -4099,29 +4099,29 @@
             "nombre = \"Alicia\"",
             "amigo = 'Bob'",
             "comida = \"almuerzo\"",
-            "print(f\"{nombre} fue a comprar {comida} con {amigo}.\")"
+            "print(f\"{nombre} fue a {comida} con {amigo}.\")"
         ],
         "response": {
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "Alicia fue a comprar almuerzo con Bob.",
+                "answer": "Alicia fue a almuerzo con Bob.",
                 "choices": [
-                    "f\"{nombre} fue a comprar {comida} con {amigo}.\"",
-                    "\"{nombre} fue a comprar {comida} con {amigo}.\"",
-                    "{nombre} fue a comprar {comida} con {amigo}.",
-                    "'nombre' fue a comprar 'comida' con 'amigo'.",
-                    "nombre fue a comprar comida con amigo.",
-                    "\"Alicia\" fue a comprar \"almuerzo\" con 'Bob'.",
-                    "'Alicia' fue a comprar 'almuerzo' con 'Bob'.",
-                    "\"Alicia fue a comprar almuerzo con Bob.\"",
-                    "Alicia fue a comprar almuerzo con Bob.",
+                    "f\"{nombre} fue a {comida} con {amigo}.\"",
+                    "\"{nombre} fue a {comida} con {amigo}.\"",
+                    "{nombre} fue a {comida} con {amigo}.",
+                    "'nombre' fue a 'comida' con 'amigo'.",
+                    "nombre fue a comida con amigo.",
+                    "\"Alicia\" fue a \"almuerzo\" con 'Bob'.",
+                    "'Alicia' fue a 'almuerzo' con 'Bob'.",
+                    "\"Alicia fue a almuerzo con Bob.\"",
+                    "Alicia fue a almuerzo con Bob.",
                     "Error"
                 ]
             },
             "result": [
                 {
-                    "text": "Alicia fue a comprar almuerzo con Bob.\n",
+                    "text": "Alicia fue a almuerzo con Bob.\n",
                     "type": "stdout"
                 }
             ]
@@ -4133,7 +4133,7 @@
         "program": [
             "nombre = \"Alicia\"",
             "edad = 20",
-            "print(\"Hola \" + nombre + \". T\u00fa eres \" + edad + \" a\u00f1os.\")"
+            "print(\"Hola \" + nombre + \". T\u00fa tienes \" + edad + \" a\u00f1os.\")"
         ],
         "response": {
             "message": "",
@@ -4141,10 +4141,10 @@
             "prediction": {
                 "answer": "Error",
                 "choices": [
-                    "\"Hola \" + nombre + \". Tu edad es \" + edad + \" a\u00f1os.\"",
-                    "Hola nombre. Tu edad es edad a\u00f1os.",
-                    "Hola Alicia. Tu edad es 20 a\u00f1os.",
-                    "Hola 'Alicia'. Tu edad es 20 a\u00f1os.",
+                    "\"Hola \" + nombre + \". T\u00fa tienes es \" + edad + \" a\u00f1os.\"",
+                    "Hola nombre. T\u00fa tienes es edad a\u00f1os.",
+                    "Hola Alicia. T\u00fa tienes es 20 a\u00f1os.",
+                    "Hola 'Alicia'. T\u00fa tienes es 20 a\u00f1os.",
                     "Error"
                 ]
             },
@@ -4161,7 +4161,7 @@
                                 {
                                     "lines": [
                                         {
-                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hola &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">nombre</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. T\u00fa eres &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">edad</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; a\u00f1os.&quot;</span><span class=\"p\">)</span>",
+                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hola &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">nombre</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. T\u00fa tienes &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">edad</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; a\u00f1os.&quot;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 3,
                                             "type": "line"
@@ -4175,8 +4175,8 @@
                                             "value": "<span class=\"s1\">&#39;Hola Alicia&#39;</span>\n"
                                         },
                                         {
-                                            "name": "<span class=\"s2\">&quot;Hola &quot;</span> <span class=\"o\">+</span> <span class=\"n\">nombre</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;. T\u00fa eres &quot;</span>\n",
-                                            "value": "<span class=\"s1\">&#39;Hola Alicia. T\u00fa eres &#39;</span>\n"
+                                            "name": "<span class=\"s2\">&quot;Hola &quot;</span> <span class=\"o\">+</span> <span class=\"n\">nombre</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;. T\u00fa tienes &quot;</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hola Alicia. T\u00fa tienes &#39;</span>\n"
                                         },
                                         {
                                             "name": "<span class=\"n\">edad</span>\n",
@@ -4197,10 +4197,10 @@
                         "Traceback (most recent call last):",
                         " File \"my_program.py\", line 3, in <module>",
                         "       2 | edad = 20",
-                        "-->    3 | print(\"Hola \" + nombre + \". T\u00fa eres \" + edad + \" a\u00f1os.\")",
-                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+                        "-->    3 | print(\"Hola \" + nombre + \". T\u00fa tienes \" + edad + \" a\u00f1os.\")",
+                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
                         "\"Hola \" + nombre = 'Hola Alicia'",
-                        "\"Hola \" + nombre + \". T\u00fa eres \" = 'Hola Alicia. T\u00fa eres '",
+                        "\"Hola \" + nombre + \". T\u00fa tienes \" = 'Hola Alicia. T\u00fa tienes '",
                         "edad = 20",
                         "nombre = 'Alicia'",
                         "",
@@ -5078,7 +5078,7 @@
     {
         "get_solution": [
             "def di_hola(nombre_persona):",
-            "    print(f\"Hola {nombre_persona}!\")",
+            "    print(f\"\u00a1Hola {nombre_persona}!\")",
             "    print(\"\u00bfC\u00f3mo est\u00e1s?\")",
             "",
             "di_hola(\"Alicia\")",
@@ -5087,7 +5087,7 @@
         "page": "Definiendo Funciones",
         "program": [
             "def di_hola(nombre_persona):",
-            "    print(f\"Hola {nombre_persona}!\")",
+            "    print(f\"\u00a1Hola {nombre_persona}!\")",
             "    print(\"\u00bfC\u00f3mo est\u00e1s?\")",
             "",
             "di_hola(\"Alicia\")",
@@ -5098,7 +5098,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Hola Alicia!\n\u00bfC\u00f3mo est\u00e1s?\nHola Bob!\n\u00bfC\u00f3mo est\u00e1s?\n",
+                    "text": "\u00a1Hola Alicia!\n\u00bfC\u00f3mo est\u00e1s?\n\u00a1Hola Bob!\n\u00bfC\u00f3mo est\u00e1s?\n",
                     "type": "stdout"
                 }
             ]
@@ -6463,8 +6463,8 @@
     {
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
-            "cadena = \"\"\"First line",
-            "Second line\"\"\"",
+            "cadena = \"\"\"Primera l\u00ednea",
+            "Segunda l\u00ednea\"\"\"",
             "print(cadena)"
         ],
         "response": {
@@ -6472,7 +6472,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "First line\nSecond line\n",
+                    "text": "Primera l\u00ednea\nSegunda l\u00ednea\n",
                     "type": "stdout"
                 }
             ]

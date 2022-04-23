@@ -168,6 +168,18 @@
             ")"
         ]
     },
+    "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.program": {
+        "en": [
+            "string = \"\"\"First line",
+            "Second line\"\"\"",
+            "print(string)"
+        ],
+        "es": [
+            "cadena = \"\"\"Primera l\u00ednea",
+            "Segunda l\u00ednea\"\"\"",
+            "print(cadena)"
+        ]
+    },
     "pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe.program": {
         "br": [
             "print('Jantar da Alice')"

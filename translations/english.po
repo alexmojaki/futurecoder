@@ -78,18 +78,6 @@ msgstr "\"!! Warning !!\""
 msgid "code_bits.\"!!!! DANGER !!!!\""
 msgstr "\"!!!! DANGER !!!!\""
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
-#. 
-#. string = """First line
-#. Second line"""
-#. print(string)
-msgid ""
-"code_bits.\"\"\"First line\n"
-"Second line\"\"\""
-msgstr ""
-"\"\"\"First line\n"
-"Second line\"\"\""
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise.text
 #. 
 #.     assert_equal(surround("more", "++"), "++more++")
@@ -15141,14 +15129,6 @@ msgstr "spaces"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
-#. 
-#. string = """First line
-#. Second line"""
-#. print(string)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.alert_exercise
 #. 
 #. def surround(string, sides):
@@ -19170,7 +19150,7 @@ msgstr "You get an error. Look at the message. What is it telling you? Where doe
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.3.text"
-msgstr "If the parameter is called `person_name`, what does `print(\"Hello \" + name + \"!\")` mean?"
+msgstr "If the parameter is called `person_name`, what does `print(f\"Hello {name}!\")` mean?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
 #. 
@@ -23445,7 +23425,7 @@ msgstr "Introducing `or`"
 #. https://futurecoder.io/course/#IntroducingStrings
 msgid "pages.IntroducingStrings.steps.final_text.text"
 msgstr ""
-"The shell simply gives the same thing back because there's nothing to further to calculate. `'hello'` is simply equal to `'hello'`.\n"
+"The shell simply gives the same thing back because there's nothing further to calculate. `'hello'` is simply equal to `'hello'`.\n"
 "\n"
 "A string is a sequence of characters. A character is a single symbol such as a letter, number, punctuation, space, etc. In this case the string contains the 5 characters `hello`. The quotes are not part of the string - they are there to tell both humans and computers that this is a string consisting of whatever characters are between the quotes."
 
@@ -23497,7 +23477,7 @@ msgid "pages.IntroducingTheShell.steps.more_calculation.text"
 msgstr ""
 "Great! Python evaluated `1+2` and got the result `3`, so the shell displays that.\n"
 "\n"
-"The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself \"What would happen if I ran X?\" and then immediately answer that question by running it! Never be scared to try something out - if you get something wrong, nothing bad will happen.\n"
+"The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself \"What would happen if I ran X?\" and then immediately answer that question by running it. Never be scared to try something out - if you get something wrong, nothing bad will happen.\n"
 "\n"
 "Try doing some more calculations now. You can multiply numbers with `*`, divide with `/`, and subtract with `-`. You can also use parentheses, i.e. `(` and `)`."
 
@@ -24631,7 +24611,7 @@ msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.text"
 msgstr ""
 "Excellent!\n"
 "\n"
-"[Earlier in the course](#GettingElementsAtPosition) there was an exercise\n"
+"[Earlier in the course](#GettingElementsAtPositionExercises) there was an exercise\n"
 "to print two strings vertically side by side, like this:\n"
 "\n"
 "    H W\n"
@@ -26085,6 +26065,13 @@ msgstr ""
 "__code2__\n"
 "\n"
 "See for yourself how this doesn't work."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
+msgid "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.program"
+msgstr ""
+"string = \"\"\"First line\n"
+"Second line\"\"\"\n"
+"print(string)"
 
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
 msgid "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.text"

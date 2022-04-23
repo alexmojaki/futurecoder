@@ -16,7 +16,7 @@ snoop.tracer.internal_directories += (
 )
 
 
-def exec_snoop(runner, code, code_obj):
+def exec_snoop(runner, code_obj):
     class PatchedFrameInfo(snoop.tracer.FrameInfo):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
@@ -33,7 +33,7 @@ def exec_snoop(runner, code, code_obj):
     )
     tracer = config.snoop()
     tracer.variable_whitelist = set()
-    for node in ast.walk(ast.parse(code)):
+    for node in ast.walk(ast.parse(runner.source_code)):
         if isinstance(node, ast.Name):
             name = node.id
             tracer.variable_whitelist.add(name)
@@ -53,4 +53,4 @@ def exec_snoop(runner, code, code_obj):
     find_code(code_obj)
 
     with tracer:
-        runner.execute(code_obj, code)
+        runner.execute(code_obj)

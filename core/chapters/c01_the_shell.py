@@ -33,7 +33,7 @@ On the right is the *shell*. This is a place for running small bits of Python co
         """
 Great! Python evaluated `1+2` and got the result `3`, so the shell displays that.
 
-The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself "What would happen if I ran X?" and then immediately answer that question by running it! Never be scared to try something out - if you get something wrong, nothing bad will happen.
+The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself "What would happen if I ran X?" and then immediately answer that question by running it. Never be scared to try something out - if you get something wrong, nothing bad will happen.
 
 Try doing some more calculations now. You can multiply numbers with `*`, divide with `/`, and subtract with `-`. You can also use parentheses, i.e. `(` and `)`.
         """
