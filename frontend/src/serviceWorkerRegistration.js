@@ -14,7 +14,7 @@ const isLocalhost = Boolean(
     window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
 );
 
-export function register(config) {
+export function register() {
   // XXX Unlike some usages of PWAs, we always register the service worker (including in dev);
   // this is because our service worker has responsibilities besides caching. But as you can see
   // in service-worker.js, we only do the caching parts when REACT_APP_PRECACHE is set.
@@ -35,25 +35,16 @@ export function register(config) {
 
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
-        checkValidServiceWorker(swUrl, config);
-
-        // Add some additional logging to localhost, pointing developers to the
-        // service worker/PWA documentation.
-        navigator.serviceWorker.ready.then(() => {
-          console.log(
-            'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://cra.link/PWA'
-          );
-        });
+        checkValidServiceWorker(swUrl);
       } else {
         // Is not localhost. Just register service worker
-        registerValidSW(swUrl, config);
+        registerValidSW(swUrl);
       }
     });
   }
 }
 
-function registerValidSW(swUrl, config) {
+function registerValidSW(swUrl) {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
@@ -72,11 +63,6 @@ function registerValidSW(swUrl, config) {
                 'New content is available and will be used when all ' +
                   'tabs for this page are closed. See https://cra.link/PWA.'
               );
-
-              // Execute callback
-              if (config && config.onUpdate) {
-                config.onUpdate(registration);
-              }
             } else {
               if (process.env.REACT_APP_PRECACHE) {
                 // At this point, everything has been precached.
@@ -85,11 +71,6 @@ function registerValidSW(swUrl, config) {
                 console.log('Content is cached for offline use.');
               } else {
                 console.log('Service worker has registered, but caching is not enabled for development mode.')
-              }
-
-              // Execute callback
-              if (config && config.onSuccess) {
-                config.onSuccess(registration);
               }
             }
           }
@@ -101,7 +82,7 @@ function registerValidSW(swUrl, config) {
     });
 }
 
-function checkValidServiceWorker(swUrl, config) {
+function checkValidServiceWorker(swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
     headers: { 'Service-Worker': 'script' },
@@ -121,7 +102,7 @@ function checkValidServiceWorker(swUrl, config) {
         });
       } else {
         // Service worker found. Proceed as normal.
-        registerValidSW(swUrl, config);
+        registerValidSW(swUrl);
       }
     })
     .catch(() => {
