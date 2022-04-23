@@ -1664,6 +1664,15 @@
         "step": "undefined_char"
     },
     {
+        "get_solution": [
+            "if excited:",
+            "    char = '!'",
+            "else:",
+            "    char = '.'",
+            "sentence += char",
+            "",
+            "print(sentence)"
+        ],
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "sentence = 'Hello there'",

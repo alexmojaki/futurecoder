@@ -20665,6 +20665,42 @@ msgstr ""
 "or `'HELLO WORLD'`."
 
 #. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.0.text"
+msgstr "Don't change anything that's already there, just add a bit more code."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.1.text"
+msgstr "`else` needs to come immediately after the `if` body, with nothing in between."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.2.text"
+msgstr "`sentence += char` needs to run whether `excited` is `True` or `False`."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.3.text"
+msgstr "You *could* have a copy of `sentence += char` in both the `if` and `else` blocks, but there's a better way."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.4.text"
+msgstr "Use `else` to assign a different value to `char`."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.5.text"
+msgstr "If `excited` is `False`, then `char` should be `'.'` instead of `'!'`."
+
+#. https://futurecoder.io/course/#IfAndElse
 msgid "pages.IfAndElse.steps.else_full_stop.text"
 msgstr ""
 "If `excited` is true then `char` is defined and everything runs fine. But otherwise\n"

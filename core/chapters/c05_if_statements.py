@@ -426,6 +426,15 @@ Fix this by adding an `else` clause to the `if` so that if `excited` is false, a
 is added to the end of the sentence instead of an exclamation mark (`!`).
         """
 
+        hints = """
+Don't change anything that's already there, just add a bit more code.
+`else` needs to come immediately after the `if` body, with nothing in between.
+`sentence += char` needs to run whether `excited` is `True` or `False`.
+You *could* have a copy of `sentence += char` in both the `if` and `else` blocks, but there's a better way.
+Use `else` to assign a different value to `char`.
+If `excited` is `False`, then `char` should be `'.'` instead of `'!'`.
+"""
+
         parsons_solution = True
 
         def solution(self, sentence: str, excited: bool):
