@@ -26312,7 +26312,7 @@ msgstr ""
 msgid "pages.OtherComparisonOperators.steps.try_not_equals.text"
 msgstr ""
 "The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It "
-"evaluates to `True` when two values are...not equal. Try it for yourself in the shell."
+"evaluates to `True` when two values are...not equal. Try `__program__` for yourself in the shell."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.title"

@@ -1990,6 +1990,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "text": "True\n",

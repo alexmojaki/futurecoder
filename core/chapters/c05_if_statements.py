@@ -821,17 +821,16 @@ class try_less_than_in_shell(Step):
 
 
 class OtherComparisonOperators(Page):
-    class try_not_equals(Step):
+    class try_not_equals(VerbatimStep):
         """
-The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It evaluates to `True` when two values are...not equal. Try it for yourself in the shell.
+The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It evaluates to `True` when two values are...not equal. Try `__program__` for yourself in the shell.
         """
 
         program = "1 != 2"
 
         expected_code_source = "shell"
 
-        def check(self):
-            return search_ast(self.tree, ast.NotEq)
+        predicted_output_choices = ["True", "False"]
 
     class brokn_kyboard(VerbatimStep):
         """
