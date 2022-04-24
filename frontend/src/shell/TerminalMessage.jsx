@@ -83,7 +83,7 @@ const Tracebacks = ({data, codeSource}) => {
                 zIndex: 5
               }}
             >
-              <div className="markdown-body friendly-traceback-popup"
+              <div className="markdown-body my-popup-content"
                    dangerouslySetInnerHTML={{__html: traceback.friendly}}/>
             </Popup>}
           </div>

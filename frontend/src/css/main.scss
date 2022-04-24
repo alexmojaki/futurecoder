@@ -69,10 +69,7 @@
 
 }
 
-
-.book-container {
-  margin-left: 2vw;
-  width: 46vw;
+.markdown-body {
 
   code {
     color: black;
@@ -91,6 +88,11 @@
       color: #f8f8f2;
     }
   }
+}
+
+.book-container {
+  margin-left: 2vw;
+  width: 46vw;
 
   .book-text {
     margin-bottom: 3em;
@@ -303,6 +305,7 @@
 }
 
 .settings-modal {
+  @extend .my-popup-content;
   label b {
     position: relative;
     bottom: 5px;
