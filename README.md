@@ -139,11 +139,11 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 3. Run `poetry install` to install Python dependencies.
 4. Run `./generate.sh`. This will generate various static files from Python used by the frontend and run some tests. Repeat this step whenever you change Python files.
 5. In the `frontend` folder:
-    1. Ensure you have version 14.15.4 (lts/fermium) of `node` and version 7.5.2 of `npm`.
+    1. Install `node`. We recommend using version 14.15.4 (lts/fermium) but there are no known issues with other versions.
 
     2. Run `npm ci` to download dependencies.
 
-    3. Run `npm run build` and then copy `service-worker.js` from the `course` folder to the `public` folder. The service worker is used by [sync-message](https://github.com/alexmojaki/sync-message) to handle `time.sleep` and reading from stdin (e.g. `input()`) in Python. To enable caching, set the environment variable `REACT_APP_PRECACHE=1` when building.
+    3. Run `npm run build` and then copy `service-worker.js` from the `course` folder to the `public` folder. The service worker is used by [sync-message](https://github.com/alexmojaki/sync-message) to handle `time.sleep` and reading from stdin (e.g. `input()`) in Python. If you want to enable caching (not a good idea when developing), set the environment variable `REACT_APP_PRECACHE=1` when building.
 
     4. Run `npm start` to start the frontend development server.
 6. Go to http://localhost:3000/course/
