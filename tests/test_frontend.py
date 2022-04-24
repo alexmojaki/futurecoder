@@ -241,8 +241,8 @@ for i in range(len(things)):
         assert len(code.find_elements_by_class_name("solution-token-visible")) == 12 + i
         get_hint_button.click()
 
-    # Click outside hints popup to close
-    driver.find_element_by_class_name("popup-overlay").click()
+    # Dismiss hints
+    driver.find_element_by_class_name("hint-icon").click()
 
     # No messages visible
     assert not driver.find_elements_by_class_name("book-message")
@@ -325,8 +325,8 @@ for i in range(length):
     print(char1 + ' ' + char2)""".splitlines()
     )
 
-    # Click outside hints popup to close
-    driver.find_element_by_class_name("popup-overlay").click()
+    # Dismiss hints
+    driver.find_element_by_class_name("hint-icon").click()
 
     # Cannot go to next page yet
     assert not driver.find_elements_by_class_name("next-button")
