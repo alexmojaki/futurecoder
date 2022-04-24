@@ -16,7 +16,6 @@ const HeaderLoginInfo = ({ email }) => {
       </button>
     }
     modal
-    closeOnDocumentClick
   >
     {close =>
       <StyledFirebaseAuth

@@ -426,6 +426,7 @@ const StepButtons = () =>
 
 const MenuPopup = ({user}) =>
     <Popup
+      nested
       trigger={
         <button className="btn btn-sm btn-outline-secondary">
           <FontAwesomeIcon icon={faBars} size="lg"/>
@@ -451,7 +452,7 @@ const MenuPopup = ({user}) =>
               </button>
               }
             modal
-            closeOnDocumentClick
+            nested
           >
             <SettingsModal user={user}/>
           </Popup>
@@ -464,7 +465,7 @@ const MenuPopup = ({user}) =>
               </button>
             }
             modal
-            closeOnDocumentClick
+            nested
             contentStyle={feedbackContentStyle}
           >
             {close => <FeedbackModal close={close}/>}
