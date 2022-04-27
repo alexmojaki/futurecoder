@@ -15,6 +15,7 @@ import {
   moveStep,
   setDeveloperMode,
   setEditorContent,
+  signOut,
   specialHash,
 } from "./book/store";
 import Popup from "reactjs-popup";
@@ -438,7 +439,7 @@ const MenuPopup = ({user}) =>
             className="btn btn-danger"
             onClick={() => {
               close();
-              bookSetState("user.uid", null)
+              signOut();
               firebase.auth().signOut();
             }}
           >
