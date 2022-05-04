@@ -11,6 +11,7 @@ import * as terms from "../terms.json"
 import * as Sentry from "@sentry/react";
 import {wrapAsync} from "../frontendlib/sentry";
 import pRetry from 'p-retry';
+import localforage from "localforage";
 
 const firebaseConfig = {
   es: {
@@ -225,7 +226,26 @@ const loadUser = makeAction(
     state = iset(state, "editorContent", state.editorContent || editorContent || "");
     return loadUserAndPages({...state, user}, state.user);
   },
-)
+);
+
+// Reset state to clear out user data
+export const signOut = makeAction(
+  "SIGN_OUT",
+  (state) => {
+    return loadUserAndPages({
+      ...state,
+      editorContent: "",
+      user: {
+        ...initialState.user,
+        // Avoid an empty user.uid so that this cleared state is saved to the local store,
+        // so signing out has an effect even when offline.
+        ...initialUser,
+        // Stay on the current page, rather than the initial loading_placeholder which breaks.
+        pageSlug: state.user.pageSlug,
+      }
+    }, {});
+  },
+);
 
 firebase.auth().onAuthStateChanged(async (user) => {
   if (user) {
@@ -240,12 +260,23 @@ firebase.auth().onAuthStateChanged(async (user) => {
 export const updateUserData = async (user) => {
   Sentry.setUser({id: user.uid});
   const userData = await databaseRequest("GET");
+  // loadUser should be called on the local store data first
+  // for proper merging with the firebase user data in loadUserAndPages
+  await loadUserFromLocalStorePromise;
   loadUser({
     uid: user.uid,
     email: user.email,
     ...userData,
   });
 }
+
+export const initialUser = {uid: "__futurecoder_offline__"}
+
+export const localStore = localforage.createInstance({name: "futurecoder"});
+
+const loadUserFromLocalStorePromise = localStore.getItem("user").then(user => {
+  loadUser(user || initialUser);
+});
 
 export const databaseRequest = wrapAsync(async function databaseRequest(method, data={}, endpoint="users") {
   const currentUser = firebase.auth().currentUser;
@@ -306,20 +337,18 @@ const loadUserAndPages = (state, previousUser = {}) => {
     }
   }
 
-  pagesProgress = pagesProgress || {};
+  pagesProgress = {...(pagesProgress || {})};
   pageSlugsList.forEach(slug => {
     const steps = pages[slug].steps;
     let step_name = pagesProgress[slug]?.step_name || steps[0].name;
-    if (previousUser.uid) {
-      const progress = previousUser.pagesProgress[slug];
-      if (progress) {
-        const findStepIndex = (name) => _.find(steps, {name})?.index || 0
-        const previousIndex = findStepIndex(progress.step_name);
-        const currentIndex =  findStepIndex(step_name);
-        if (previousIndex > currentIndex) {
-          step_name = progress.step_name;
-          updates[`pagesProgress/${slug}/step_name`] = step_name;
-        }
+    const progress = previousUser.pagesProgress?.[slug];
+    if (progress) {
+      const findStepIndex = (name) => _.find(steps, {name})?.index || 0
+      const previousIndex = findStepIndex(progress.step_name);
+      const currentIndex =  findStepIndex(step_name);
+      if (previousIndex > currentIndex) {
+        step_name = progress.step_name;
+        updates[`pagesProgress/${slug}/step_name`] = step_name;
       }
     }
     pagesProgress[slug] = {step_name};

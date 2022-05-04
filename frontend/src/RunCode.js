@@ -22,7 +22,7 @@ export const terminalRef = React.createRef();
 
 let pendingOutput = [];
 
-localforage.config({name: "birdseye", storeName: "birdseye"});
+const birdseyeLocalStore = localforage.createInstance({name: "birdseye", storeName: "birdseye"});
 
 function inputCallback() {
   bookSetState("processing", false);
@@ -141,7 +141,7 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
           _.entries(blob)
             .map(([key, value]) => {
               const fullKey = rootKey + "/" + key;
-              return localforage.setItem(fullKey, value);
+              return birdseyeLocalStore.setItem(fullKey, value);
             })
       )
     ).then(() => {
