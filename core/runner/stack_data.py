@@ -1,5 +1,6 @@
 import html
 import logging
+import sys
 import traceback
 from collections import Counter
 from typing import Union, Iterable, List
@@ -38,7 +39,7 @@ class TracebackSerializer:
 
         result.append(
             dict(
-                frames=self.format_stack(e.__traceback__),
+                frames=self.format_stack(e.__traceback__ or sys.exc_info()[2]),
                 exception=dict(
                     type=type(e).__name__,
                     message=traceback._some_str(e),
