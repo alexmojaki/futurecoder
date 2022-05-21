@@ -11,8 +11,11 @@ import {
   closeMessage,
   currentPage,
   currentStep,
+  currentStepName,
+  logEvent,
   movePage,
   moveStep,
+  postCodeEntry,
   setDeveloperMode,
   setEditorContent,
   signOut,
@@ -413,7 +416,12 @@ class AppComponent extends React.Component {
 
 const StepButton = ({delta, label}) =>
   <button className={`btn btn-danger btn-sm button-${label.replace(" ", "-").toLowerCase()}`}
-          onClick={() => moveStep(delta)}>
+          onClick={() => {
+            const entry = {skip_step: delta, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
+            postCodeEntry(entry);
+            logEvent('skip_step', entry);
+            moveStep(delta);
+          }}>
     {label}
   </button>
 
