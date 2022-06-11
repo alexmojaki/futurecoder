@@ -24,6 +24,16 @@ const firebaseConfig = {
     appId: "1:1084443780130:web:cb507edf79f9ba131b967b",
     measurementId: "G-W0ZYL2E5W5"
   },
+  fr: {
+    apiKey: "AIzaSyBAC0zYqkdW6hJKD_RyTzBtIgndxyraW6o",
+    authDomain: "futurecoder-fr.firebaseapp.com",
+    databaseURL: "https://futurecoder-fr-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "futurecoder-fr",
+    storageBucket: "futurecoder-fr.appspot.com",
+    messagingSenderId: "453289812685",
+    appId: "1:453289812685:web:1b390689ec643db8533f84",
+    measurementId: "G-E3E2910NY5"
+  },
 }[process.env.REACT_APP_LANGUAGE] || {
   apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
   authDomain: "futurecoder-io.firebaseapp.com",
