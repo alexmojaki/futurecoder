@@ -231,15 +231,17 @@ def get_predictions(cls):
 
     answer = cls.correct_output
     choices = [t.get(t.prediction_choice(cls, i), choice.rstrip()).rstrip() for i, choice in enumerate(choices)]
+    error = t.get(f"output_predictions.Error", "Error")
 
     if answer:
         assert answer == "Error"
+        answer = error
     else:
         answer = get_stdout(cls.program).rstrip()
-        assert answer in choices, repr(answer)
+        assert answer in choices, (answer, choices, cls)
 
-    choices += [t.get(f"output_predictions.Error", "Error")]
-    assert answer in choices, repr(answer)
+    choices += [error]
+    assert answer in choices, (answer, choices, cls)
     return dict(choices=choices, answer=answer)
 
 

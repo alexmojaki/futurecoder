@@ -69,6 +69,8 @@ def get(msgid, default):
             print(msgid)
             print(sorted(inline1))
             print(sorted(inline2))
+            print(inline1 - inline2)
+            print(inline2 - inline1)
             print()
 
     def replace(match):
@@ -223,8 +225,8 @@ def get_code_bit(node_text):
 
     except AssertionError:
         message = f"Invalid translation from {node_text} to {result}"
-        # print(message)
-        raise ValueError(message)
+        print(message)
+        # raise ValueError(message)
     return result
 
 
