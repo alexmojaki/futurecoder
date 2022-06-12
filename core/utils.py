@@ -41,6 +41,7 @@ def clean_spaces(string):
     string = dedent(string).strip()
     spaces = set(re.findall(r"\s", string))
     assert spaces <= {" ", "\n"}, spaces
+    assert not re.search(r"^ {1,3}_", string, re.MULTILINE), string
     return string
 
 
