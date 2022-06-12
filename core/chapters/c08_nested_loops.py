@@ -994,7 +994,7 @@ Building up a line of characters should be very familiar from previous exercises
 An easy way to do something `n` times is to loop over `range(n)`.
 You need to use a for loop inside a for loop.
 You need numbers that count down, like 5, 4, 3, 2, 1. There is a way to do this with `range`, and you can easily look it up, but it's also easy to use a normal range and do some very simple maths to convert numbers counting up into numbers counting down.
-What formula converts 0 into 5, 1 into 4, 2, into 3, etc?
+What formula converts 0 into 5, 1 into 4, 2 into 3, etc?
 """
 
         parsons_solution = True
