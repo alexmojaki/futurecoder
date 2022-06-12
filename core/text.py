@@ -156,6 +156,8 @@ def clean_step_class(cls):
     text = clean_spaces(text)
     cls.raw_text = text
 
+    assert "__program__indented__" not in text
+
     if "__program_" in text:
         text = text.replace("__program__", program)
         indented = indent(program, '    ').replace("\\", "\\\\")
