@@ -407,7 +407,7 @@
     {
         "page": "Utilisation de variables et de <code>print()</code>",
         "program": [
-            "mot = 'Au revoir'"
+            "mot = 'Goodbye'"
         ],
         "response": {
             "message": "",
@@ -426,7 +426,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "'Au revoir Alex'\n",
+                    "text": "'Goodbye Alex'\n",
                     "type": "stdout"
                 }
             ]
@@ -443,7 +443,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Au revoir Alex\n",
+                    "text": "Goodbye Alex\n",
                     "type": "stdout"
                 }
             ]
@@ -456,7 +456,7 @@
             "mot = 'Hello'",
             "nom = 'World'",
             "print(mot + ' ' + nom)",
-            "mot = 'Au revoir'",
+            "mot = 'Goodbye'",
             "print(mot + ' ' + nom)"
         ],
         "response": {
@@ -464,7 +464,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Hello World\nAu revoir World\n",
+                    "text": "Hello World\nGoodbye World\n",
                     "type": "stdout"
                 }
             ]
@@ -510,7 +510,7 @@
             "nom = 'World'",
             "phrase = mot + ' ' + nom",
             "print(phrase)",
-            "mot = 'Au revoir'",
+            "mot = 'Goodbye'",
             "print(phrase)"
         ],
         "response": {

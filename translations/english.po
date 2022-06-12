@@ -20413,7 +20413,7 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPositionExercises.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPositionExercises.steps.zip_longest_exercise.hints.7.text"
-msgstr "Remember, the biggest valid index for `string1` is `len(string1) - 1`. `len(string)` is too big."
+msgstr "Remember, the biggest valid index for `string1` is `len(string1) - 1`. `len(string1)` is too big."
 
 #. https://futurecoder.io/course/#GettingElementsAtPositionExercises
 #. 
@@ -22862,7 +22862,7 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.8.text"
-msgstr "What formula converts 0 into 5, 1 into 4, 2, into 3, etc?"
+msgstr "What formula converts 0 into 5, 1 into 4, 2 into 3, etc?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
