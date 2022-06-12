@@ -92,6 +92,8 @@ def frontend_terms():
     for key, value in file_to_json(frontend_src / "english_terms.json").items():
         translation = t.get(f"frontend.{key}", value)
 
+        assert ("\n" in translation) == ("\n" in value), (key, value, translation)
+
         if "\n" in translation:
             value = markdown(translation)
         else:
