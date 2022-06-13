@@ -228,8 +228,8 @@ def get_code_bit(node_text):
 
     except AssertionError:
         message = f"Invalid translation from {node_text} to {result}"
-        print(message)
-        # raise ValueError(message)
+        # print(message)
+        raise ValueError(message)
     return result
 
 

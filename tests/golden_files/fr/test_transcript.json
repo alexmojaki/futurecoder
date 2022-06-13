@@ -1162,7 +1162,7 @@
         "step": "excited_confused_exercise"
     },
     {
-        "page": "Imbrication de Structures",
+        "page": "Structures imbriqu\u00e9es",
         "program": [
             "phrase = 'Hello World'",
             "ravi = True",
@@ -4289,19 +4289,19 @@
     },
     {
         "get_solution": [
-            "print(f\"Il y a {len(personnes)} personnes qui attendent, le nom de la premi\u00e8re est {personnes[0]}.\")"
+            "print(f\"Il y a {len(personnes)} personnes qui attendent, la premi\u00e8re personne s'appelle {personnes[0]}.\")"
         ],
         "page": "Les f-string",
         "program": [
             "personnes = ['eODoUwNzS', 'ofHBEzZxs', 'zwTrQA', 'LDaOKmpHU', 'HCMLTt', 'NbRmEjaoyD']",
-            "print(f\"Il y a {len(personnes)} personnes qui attendent, le nom de la premi\u00e8re est {personnes[0]}.\")"
+            "print(f\"Il y a {len(personnes)} personnes qui attendent, la premi\u00e8re personne s'appelle {personnes[0]}.\")"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Il y a 6 personnes qui attendent, le nom de la premi\u00e8re est eODoUwNzS.\n",
+                    "text": "Il y a 6 personnes qui attendent, la premi\u00e8re personne s'appelle eODoUwNzS.\n",
                     "type": "stdout"
                 }
             ]
@@ -5583,9 +5583,9 @@
             "def entoure(chaine, balise):",
             "    return balise + chaine + balise",
             "",
-            "def alerte(chaine, niveau):",
+            "def alerte(chaine, nb_points):",
             "    chaine = entoure(chaine, ' ')",
-            "    for _ in range(niveau):",
+            "    for _ in range(nb_points):",
             "        chaine = entoure(chaine, '!')",
             "        return chaine"
         ],
@@ -5599,8 +5599,8 @@
     {
         "page": "Fonctions de tests",
         "program": [
-            "def alerte(chaine, niveau):",
-            "    marks = '!' * niveau",
+            "def alerte(chaine, nb_points):",
+            "    marks = '!' * nb_points",
             "    return marks + ' ' + chaine + ' ' + marks"
         ],
         "response": {
@@ -5612,9 +5612,9 @@
     },
     {
         "get_solution": [
-            "def alerte(chaine, niveau):",
+            "def alerte(chaine, nb_points):",
             "    chaine = entoure(chaine, ' ')",
-            "    for _ in range(niveau):",
+            "    for _ in range(nb_points):",
             "        chaine = entoure(chaine, '!')",
             "    return chaine"
         ],
@@ -5623,9 +5623,9 @@
             "def entoure(chaine, balise):",
             "    return balise + chaine + balise",
             "",
-            "def alerte(chaine, niveau):",
+            "def alerte(chaine, nb_points):",
             "    chaine = entoure(chaine, ' ')",
-            "    for _ in range(niveau):",
+            "    for _ in range(nb_points):",
             "        chaine = entoure(chaine, '!')",
             "    return chaine"
         ],
@@ -6836,21 +6836,21 @@
         "get_solution": [
             "for i in range(int(nombre)):",
             "    print('\u00c0 la... ' + str(i + 1))",
-            "print(\"C'est parti !\")"
+            "print('Et hop !')"
         ],
         "page": "Les types",
         "program": [
             "nombre = '1'",
             "for i in range(int(nombre)):",
             "    print('\u00c0 la... ' + str(i + 1))",
-            "print(\"C'est parti !\")"
+            "print('Et hop !')"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "\u00c0 la... 1\nC'est parti !\n",
+                    "text": "\u00c0 la... 1\nEt hop !\n",
                     "type": "stdout"
                 }
             ]
