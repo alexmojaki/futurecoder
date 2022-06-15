@@ -65,7 +65,7 @@ const Tracebacks = ({data, codeSource}) => {
               frame.type === "frame" ?
                 <Frame frame={frame} key={frameIndex}/>
                 :
-                <RepeatedFrames data={frame.data} key={frameIndex}/>
+                <RepeatedFrames frames={frame.frames} key={frameIndex}/>
             )
           }
           <div>
@@ -134,12 +134,12 @@ const Frame = ({frame}) =>
 
 const repeatedFramesDescription = _.template(terms.repeated_frames_description);
 
-const RepeatedFrames = ({data}) =>
+const RepeatedFrames = ({frames}) =>
   <div className="traceback-repeated-frames">
     <div>{terms.similar_frames_skipped}</div>
     <ul>
       {
-        data.map((item, itemIndex) =>
+        frames.map((item, itemIndex) =>
         <li key={itemIndex}>
           {repeatedFramesDescription(item)}
         </li>)
