@@ -3606,7 +3606,7 @@
     {
         "page": "M\u00e9thodes sur les chaine et immuabilit\u00e9",
         "program": [
-            "print('le' in 'nourrit le chien et le chat')"
+            "print('tes' in 'fait tes devoirs et apprend tes le\u00e7ons')"
         ],
         "response": {
             "message": "",
@@ -3623,16 +3623,16 @@
     {
         "page": "M\u00e9thodes sur les chaine et immuabilit\u00e9",
         "program": [
-            "chaine = 'nourrit le chien et le chat'",
-            "print(chaine.count('le'))",
-            "print(chaine.index('le'))"
+            "chaine = 'fait tes devoirs et apprend tes le\u00e7ons'",
+            "print(chaine.count('tes'))",
+            "print(chaine.index('tes'))"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "2\n8\n",
+                    "text": "2\n5\n",
                     "type": "stdout"
                 }
             ]
