@@ -22,19 +22,11 @@ class EnhancedRunner(PyodideRunner):
         if isinstance(exc, KeyboardInterrupt):
             raise
 
-        from .stack_data import format_traceback_stack_data, TracebackSerializer
+        from .stack_data import format_traceback_stack_data, serializer
         import friendly_traceback.source_cache
-        from stack_data import Options
 
         friendly_traceback.source_cache.cache.add(self.filename, self.source_code)
 
-        serializer = TracebackSerializer(
-            options=Options(before=0, after=0),
-            pygmented=True,
-            pygments_formatter_kwargs=dict(nowrap=True),
-            html=True,
-            show_variables=True,
-        )
         serializer.filename = self.filename
 
         return {

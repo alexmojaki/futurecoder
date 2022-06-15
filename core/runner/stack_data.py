@@ -2,13 +2,14 @@ import logging
 from typing import Union, Iterable
 
 import pygments
-import stack_data
 from cheap_repr import cheap_repr
 from pygments.lexers import get_lexer_by_name
 from stack_data import (
+    Formatter,
     FrameInfo,
     RepeatedFrames,
     Serializer,
+    Options,
 )
 
 from core.runner.didyoumean import didyoumean_suggestions
@@ -53,7 +54,16 @@ class TracebackSerializer(Serializer):
             return super().format_variable_part(text)
 
 
-class TracebackFormatter(stack_data.Formatter):
+serializer = TracebackSerializer(
+    options=Options(before=0, after=0),
+    pygmented=True,
+    pygments_formatter_kwargs=dict(nowrap=True),
+    html=True,
+    show_variables=True,
+)
+
+
+class TracebackFormatter(Formatter):
     def format_stack_data(
         self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
     ) -> Iterable[str]:
@@ -72,10 +82,11 @@ class TracebackFormatter(stack_data.Formatter):
         return cheap_repr(value)
 
 
+formatter = TracebackFormatter(
+    options=Options(before=1, after=0),
+    show_variables=True,
+)
+
+
 def format_traceback_stack_data(e):
-    return "".join(
-        TracebackFormatter(
-            options=stack_data.Options(before=1, after=0),
-            show_variables=True,
-        ).format_exception(e)
-    )
+    return "".join(formatter.format_exception(e))
