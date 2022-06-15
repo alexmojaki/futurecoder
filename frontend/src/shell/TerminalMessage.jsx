@@ -110,7 +110,7 @@ const Frame = ({frame}) =>
           <tr key={line.lineno}>
             <td className="traceback-lineno">{line.lineno}</td>
             <td className="traceback-line-content codehilite"
-                dangerouslySetInnerHTML={{__html: line.content}}/>
+                dangerouslySetInnerHTML={{__html: line.text}}/>
           </tr>
         )
       }

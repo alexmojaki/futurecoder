@@ -30,11 +30,6 @@ class TracebackSerializer(Serializer):
             friendly=friendly_message(e, double_newline=True),
         )
 
-    def format_line(self, line):
-        result = super().format_line(line)
-        result["content"] = result.pop("text")
-        return result
-
     def format_variable_value(self, value) -> str:
         return cheap_repr(value)
 
