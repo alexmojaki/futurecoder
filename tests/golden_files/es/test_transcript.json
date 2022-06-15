@@ -43,7 +43,8 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nActualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.\n\nA menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -563,7 +564,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nen la l\u00ednea 2\n\nUn `IndentationError` ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.\n\nSe esperaba que la l\u00ednea `2` identificada anteriormente comenzara un nuevo bloque indentado.\n\n\n",
+                    "friendly": "<p>Un <code>IndentationError</code> ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.</p>\n<p>Se esperaba que la l\u00ednea <code>2</code> identificada anteriormente comenzara un nuevo bloque indentado.</p>",
+                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nen la l\u00ednea 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -624,7 +626,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nen la l\u00ednea 3\n\nUn `IndentationError` ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.\n\nLa l\u00ednea `3` identificada arriba tiene menos indentaci\u00f3n de la esperada.\n\n\n",
+                    "friendly": "<p>Un <code>IndentationError</code> ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.</p>\n<p>La l\u00ednea <code>3</code> identificada arriba tiene menos indentaci\u00f3n de la esperada.</p>",
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nen la l\u00ednea 3\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1792,7 +1795,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nEs probable que hayas llamado a una funci\u00f3n con un argumento con nombre:\n\n    unaa_funci\u00f3n(inv\u00e1lido=algo) \n\ndonde `inv\u00e1lido` no es un nombre de variable v\u00e1lido en Python\nya sea porque comienza con un n\u00famero, o es una cadena\no contiene un punto, etc.\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Es probable que hayas llamado a una funci\u00f3n con un argumento con nombre:</p>\n<pre><code>unaa_funci\u00f3n(inv\u00e1lido=algo)\n</code></pre>\n<p>donde <code>inv\u00e1lido</code> no es un nombre de variable v\u00e1lido en Python\nya sea porque comienza con un n\u00famero, o es una cadena\no contiene un punto, etc.</p>",
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4021,7 +4025,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('Ese es el perro'e Juan')\n                           ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nI suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:\n\n    print('Ese es el perro\\'e Juan')\n                          ^^\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Ese es el perro\\'e Juan')\n                      ^^\n</code></pre>",
+                    "text": "    print('Ese es el perro'e Juan')\n                           ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4471,7 +4476,8 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 2\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nActualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.\n\nA menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6084,7 +6090,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    es_amigo = nombre == \"Alicia\" or\n                                    ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nLa palabra clave de Python `or` s\u00f3lo puede utilizarse para expresiones booleanas.\nQuiz\u00e1s haya querido escribir\n\n`es_amigo = nombre == \"Alicia\" ,`\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>La palabra clave de Python <code>or</code> s\u00f3lo puede utilizarse para expresiones booleanas.\nQuiz\u00e1s haya querido escribir</p>\n<p><code>es_amigo = nombre == \"Alicia\" ,</code></p>",
+                    "text": "    es_amigo = nombre == \"Alicia\" or\n                                    ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6470,7 +6477,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nen la l\u00ednea 7\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nHa empezado a escribir una cadena con una comilla simple o doble\npero nunca termin\u00f3 la cadena con otra comilla en esa l\u00ednea.\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Ha empezado a escribir una cadena con una comilla simple o doble\npero nunca termin\u00f3 la cadena con otra comilla en esa l\u00ednea.</p>",
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nen la l\u00ednea 7\n",
                     "type": "syntax_error"
                 }
             ]
