@@ -90,6 +90,19 @@
   }
 }
 
+.traceback .markdown-body {
+  color: white;
+  border: 3px solid white;
+  border-radius: 5px;
+  margin: 1em;
+  padding: 1em;
+
+  code {
+    background-color: #666666;
+    color: white;
+  }
+}
+
 .book-container {
   margin-left: 2vw;
   width: 46vw;
