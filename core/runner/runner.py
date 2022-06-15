@@ -1,4 +1,8 @@
+import traceback
+
 from python_runner import PyodideRunner
+
+import core.translation as t
 
 
 class EnhancedRunner(PyodideRunner):
@@ -32,9 +36,19 @@ class EnhancedRunner(PyodideRunner):
             "data": serializer.format_exception(exc),
         }
 
-    def serialize_syntax_error(self, exc):
-        from core.runner.friendly_traceback import friendly_syntax_error
+    def serialize_syntax_error(self, e):
+        from core.runner.friendly_traceback import friendly_message
+
+        lines = iter(traceback.format_exception(type(e), e, e.__traceback__))
+        for line in lines:
+            if line.strip().startswith(f'File "{self.filename}"'):
+                break
+        text = f"""\
+{''.join(lines).rstrip()}
+{t.Terms.syntax_error_at_line} {e.lineno}
+"""
 
         return {
-            "text": friendly_syntax_error(exc, self.filename),
+            "text": text,
+            "friendly": friendly_message(e, double_newline=False)
         }

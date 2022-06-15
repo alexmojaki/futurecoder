@@ -16,6 +16,19 @@ export default class TerminalMessage extends Component {
       return <Tracebacks {...content}/>
     }
 
+    if (content.type === "syntax_error") {
+      return <div
+        className="traceback"
+        style={{...sourceStyles, color: "red"}}
+      >
+        {content.text}
+        {content.friendly &&
+          <div className="markdown-body"
+               dangerouslySetInnerHTML={{__html: content.friendly}}/>
+        }
+      </div>
+    }
+
     let color = "white";
     if (typeof content === "object") {
       if (["stderr", "traceback", "syntax_error"].includes(content.type)) {
@@ -24,12 +37,8 @@ export default class TerminalMessage extends Component {
       content = content.text;
     }
 
-    const styles = {
-      message: sourceStyles
-    }
-
     return <span
-      style={{...styles.message, color}}
+      style={{...sourceStyles, color}}
       dangerouslySetInnerHTML={{__html: ansi_up.ansi_to_html(content)}}
     />
   }

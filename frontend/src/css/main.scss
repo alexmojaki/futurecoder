@@ -92,13 +92,14 @@
 
 .traceback .markdown-body {
   color: white;
-  border: 3px solid white;
+  border: 2px solid white;
   border-radius: 5px;
   margin: 1em;
   padding: 1em;
+  white-space: normal;
 
-  code {
-    background-color: #666666;
+  code, pre {
+    background-color: #565656;
     color: white;
   }
 }

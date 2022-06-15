@@ -26,8 +26,6 @@ class TracebackSerializer:
     filename = None
 
     def format_exception(self, e) -> List[dict]:
-        from markdown import markdown
-
         if e.__cause__ is not None:
             result = self.format_exception(e.__cause__)
             result[-1]["tail"] = traceback._cause_message
@@ -46,7 +44,7 @@ class TracebackSerializer:
                 ),
                 tail="",
                 didyoumean=didyoumean_suggestions(e),
-                friendly=markdown(friendly_message(e, double_newline=True)),
+                friendly=friendly_message(e, double_newline=True),
             )
         )
         return result
