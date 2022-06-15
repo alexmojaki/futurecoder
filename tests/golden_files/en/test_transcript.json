@@ -1263,204 +1263,40 @@
             "passed": true,
             "result": [
                 {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "ello World",
+                    "type": "stdout"
+                },
+                {
+                    "text": "\n",
+                    "type": "stdout"
+                },
+                {
                     "text": "",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "ello World\n",
-                    "type": "stdout"
+                    "type": "snoop"
                 }
             ]
         },
@@ -5289,72 +5125,44 @@
             "passed": true,
             "result": [
                 {
-                    "text": "",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hello",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n",
+                    "text": "\n",
                     "type": "stdout"
                 },
                 {
                     "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "Hello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "stdout"
+                    "type": "snoop"
                 },
                 {
                     "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hello",
                     "type": "stdout"
                 },
                 {
-                    "text": "Hello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "text": "\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
-                    "type": "stdout"
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "",
-                    "type": "stdout"
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "type": "snoop"
                 }
             ]
         },

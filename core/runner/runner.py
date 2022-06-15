@@ -6,17 +6,13 @@ import core.translation as t
 
 
 class EnhancedRunner(PyodideRunner):
-    def execute(self, code_obj, mode=None):
-        if mode == "snoop":
-            from core.runner.snoop import exec_snoop
-
-            exec_snoop(self, code_obj)
-        elif mode == "birdseye":
+    def execute(self, code_obj, mode=None, snoop_config=None):
+        if mode == "birdseye":
             from core.runner.birdseye import exec_birdseye
 
             exec_birdseye(self)
         else:
-            super().execute(code_obj)
+            super().execute(code_obj, mode=mode, snoop_config={"color": True})
 
     def serialize_traceback(self, exc):
         if isinstance(exc, KeyboardInterrupt):

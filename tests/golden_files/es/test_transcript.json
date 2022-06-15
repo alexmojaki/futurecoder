@@ -1263,188 +1263,40 @@
             "passed": true,
             "result": [
                 {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | nueva_frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mol\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ma\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mM\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola M\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mn\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mun\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mund\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(nueva_frase)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "ola Mundo",
+                    "type": "stdout"
+                },
+                {
+                    "text": "\n",
+                    "type": "stdout"
+                },
+                {
                     "text": "",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | nueva_frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mol\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ma\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mM\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola M\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mn\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mun\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mund\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(nueva_frase)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "ola Mundo\n",
-                    "type": "stdout"
+                    "type": "snoop"
                 }
             ]
         },
@@ -5270,72 +5122,44 @@
             "passed": true,
             "result": [
                 {
-                    "text": "",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_doble in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_varios in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... cosa = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(cosa)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hola",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_doble in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_varios in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... cosa = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
+                    "text": "\n",
                     "type": "stdout"
                 },
                 {
                     "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(cosa)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "Hola\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "stdout"
+                    "type": "snoop"
                 },
                 {
                     "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(cosa)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hola",
                     "type": "stdout"
                 },
                 {
-                    "text": "Hola\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "text": "\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_varios: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
-                    "type": "stdout"
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_doble: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "",
-                    "type": "stdout"
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_varios: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_doble: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "type": "snoop"
                 }
             ]
         },
