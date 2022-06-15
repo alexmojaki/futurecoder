@@ -1,8 +1,10 @@
 import logging
 from typing import Union, Iterable
 
+import pygments
 import stack_data
 from cheap_repr import cheap_repr
+from pygments.lexers import get_lexer_by_name
 from stack_data import (
     FrameInfo,
     RepeatedFrames,
@@ -11,8 +13,10 @@ from stack_data import (
 
 from core.runner.didyoumean import didyoumean_suggestions
 from core.runner.friendly_traceback import friendly_message
+from core.runner.utils import is_valid_syntax
 
 log = logging.getLogger(__name__)
+lexer = get_lexer_by_name("python3")
 
 
 class TracebackSerializer(Serializer):
@@ -41,6 +45,12 @@ class TracebackSerializer(Serializer):
 
     def should_include_frame(self, frame_info: FrameInfo) -> bool:
         return self.filename == frame_info.filename
+
+    def format_variable_part(self, text):
+        if is_valid_syntax(text):
+            return pygments.highlight(text, lexer, self.options.pygments_formatter)
+        else:
+            return super().format_variable_part(text)
 
 
 class TracebackFormatter(stack_data.Formatter):
