@@ -236,6 +236,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
                                             "content": "<span class=\"n n-ExecutingNode\">sunshine</span>",
@@ -1623,6 +1625,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 6,
                                     "lines": [
                                         {
                                             "content": "<span class=\"n\">sentence</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">char</span>",
@@ -2423,6 +2427,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
                                             "content": "<span class=\"n n-ExecutingNode\">words</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
@@ -2579,6 +2585,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
                                             "content": "<span class=\"n n-ExecutingNode\">indices</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
@@ -2961,6 +2969,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
                                             "content": "<span class=\"n n-ExecutingNode\">f</span><span class=\"p p-ExecutingNode\">()</span>",
@@ -3045,6 +3055,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 2,
                                     "lines": [
                                         {
                                             "content": "<span class=\"n\">length</span> <span class=\"o\">=</span> <span class=\"nb nb-ExecutingNode\">len</span><span class=\"p p-ExecutingNode\">(</span><span class=\"n n-ExecutingNode\">things</span><span class=\"p p-ExecutingNode\">)</span>",
@@ -3122,6 +3134,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 2,
                                     "lines": [
                                         {
                                             "content": "<span class=\"n n-ExecutingNode\">word</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39;!&#39;</span><span class=\"p\">)</span>",
@@ -3660,6 +3674,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
                                             "content": "<span class=\"s1 s1-ExecutingNode\">&#39;Python&#39;</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
@@ -3883,6 +3899,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
                                             "content": "<span class=\"n\">number</span> <span class=\"o\">=</span> <span class=\"n n-ExecutingNode\">numbers</span><span class=\"p p-ExecutingNode\">[</span><span class=\"n n-ExecutingNode\">i</span><span class=\"p p-ExecutingNode\">]</span>",
@@ -4200,6 +4218,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
                                             "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hello &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">name</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. You are &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">age</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; years old.&quot;</span><span class=\"p\">)</span>",
@@ -4365,6 +4385,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
                                             "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi mi-ExecutingNode\">1</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;x&quot;</span><span class=\"p\">)</span>",
@@ -6811,6 +6833,8 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
                                             "content": "<span class=\"mi mi-ExecutingNode\">12</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;34&#39;</span>",

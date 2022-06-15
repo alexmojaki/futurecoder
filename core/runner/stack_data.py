@@ -30,12 +30,6 @@ class TracebackSerializer(Serializer):
             friendly=friendly_message(e, double_newline=True),
         )
 
-    def format_frame(self, frame):
-        result = super().format_frame(frame)
-        del result["filename"]
-        del result["lineno"]
-        return result
-
     def format_line(self, line):
         result = super().format_line(line)
         result["content"] = result.pop("text")
