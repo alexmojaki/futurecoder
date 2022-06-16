@@ -4401,7 +4401,7 @@
         ],
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
-            "jugadores = ['Alice', 'Bob', 'Charlie']",
+            "jugadores = ['OUumHyG', 'ocUyWBh', 'DbNQe', 'XjItgGJ', 'iOuKYyzZt', 'iySpdUX', 'EZkLNo']",
             "for jugador1 in jugadores:",
             "    for jugador2 in jugadores:",
             "        if jugador1 != jugador2:",
@@ -4412,7 +4412,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n",
+                    "text": "OUumHyG vs ocUyWBh\nOUumHyG vs DbNQe\nOUumHyG vs XjItgGJ\nOUumHyG vs iOuKYyzZt\nOUumHyG vs iySpdUX\nOUumHyG vs EZkLNo\nocUyWBh vs OUumHyG\nocUyWBh vs DbNQe\nocUyWBh vs XjItgGJ\nocUyWBh vs iOuKYyzZt\nocUyWBh vs iySpdUX\nocUyWBh vs EZkLNo\nDbNQe vs OUumHyG\nDbNQe vs ocUyWBh\nDbNQe vs XjItgGJ\nDbNQe vs iOuKYyzZt\nDbNQe vs iySpdUX\nDbNQe vs EZkLNo\nXjItgGJ vs OUumHyG\nXjItgGJ vs ocUyWBh\nXjItgGJ vs DbNQe\nXjItgGJ vs iOuKYyzZt\nXjItgGJ vs iySpdUX\nXjItgGJ vs EZkLNo\niOuKYyzZt vs OUumHyG\niOuKYyzZt vs ocUyWBh\niOuKYyzZt vs DbNQe\niOuKYyzZt vs XjItgGJ\niOuKYyzZt vs iySpdUX\niOuKYyzZt vs EZkLNo\niySpdUX vs OUumHyG\niySpdUX vs ocUyWBh\niySpdUX vs DbNQe\niySpdUX vs XjItgGJ\niySpdUX vs iOuKYyzZt\niySpdUX vs EZkLNo\nEZkLNo vs OUumHyG\nEZkLNo vs ocUyWBh\nEZkLNo vs DbNQe\nEZkLNo vs XjItgGJ\nEZkLNo vs iOuKYyzZt\nEZkLNo vs iySpdUX\n",
                     "type": "stdout"
                 }
             ]
@@ -4488,7 +4488,7 @@
         ],
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
-            "jugadores = ['Alice', 'Bob', 'Charlie']",
+            "jugadores = ['JwsUZyHWXS', 'UepKEbOB', 'uTRiPVo', 'VWkbqMa', 'BwdsYFWHh', 'XmgDJ', 'WRoYNxvLF']",
             "for i in range(len(jugadores)):",
             "    for j in range(len(jugadores)):",
             "        if i < j:",
@@ -4499,7 +4499,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n",
+                    "text": "JwsUZyHWXS vs UepKEbOB\nJwsUZyHWXS vs uTRiPVo\nJwsUZyHWXS vs VWkbqMa\nJwsUZyHWXS vs BwdsYFWHh\nJwsUZyHWXS vs XmgDJ\nJwsUZyHWXS vs WRoYNxvLF\nUepKEbOB vs uTRiPVo\nUepKEbOB vs VWkbqMa\nUepKEbOB vs BwdsYFWHh\nUepKEbOB vs XmgDJ\nUepKEbOB vs WRoYNxvLF\nuTRiPVo vs VWkbqMa\nuTRiPVo vs BwdsYFWHh\nuTRiPVo vs XmgDJ\nuTRiPVo vs WRoYNxvLF\nVWkbqMa vs BwdsYFWHh\nVWkbqMa vs XmgDJ\nVWkbqMa vs WRoYNxvLF\nBwdsYFWHh vs XmgDJ\nBwdsYFWHh vs WRoYNxvLF\nXmgDJ vs WRoYNxvLF\n",
                     "type": "stdout"
                 }
             ]
@@ -6679,7 +6679,7 @@
         ],
         "page": "Tipos de Dato",
         "program": [
-            "numero = '1'",
+            "numero = '2'",
             "for i in range(int(numero)):",
             "    print('Comenzando...' + str(i + 1))",
             "print('\u00a1V\u00e9!')"
@@ -6689,7 +6689,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Comenzando...1\n\u00a1V\u00e9!\n",
+                    "text": "Comenzando...1\nComenzando...2\n\u00a1V\u00e9!\n",
                     "type": "stdout"
                 }
             ]
@@ -6791,11 +6791,11 @@
                     "type": "input_prompt"
                 },
                 {
-                    "text": "<input: 7>\n",
+                    "text": "<input: 1>\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u00a1Incre\u00edble! \u00bfEres ps\u00edquico?\n",
+                    "text": "\u00a1Nope!\n",
                     "type": "stdout"
                 }
             ]
