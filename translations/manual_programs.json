@@ -223,7 +223,7 @@
         ],
         "fr": [
             "assert_equal(",
-            "    etat_plateau([",
+            "    representation([",
             "        ['X', 'O', 'X'],",
             "        [' ', 'O', 'O'],",
             "        [' ', 'X', ' ']",
@@ -282,9 +282,9 @@
             "print(string.index('al'))"
         ],
         "fr": [
-            "chaine = 'nourrit le chien et le chat'",
-            "print(chaine.count('le'))",
-            "print(chaine.index('le'))"
+            "chaine = 'fait tes devoirs et apprend tes le\u00e7ons'",
+            "print(chaine.count('tes'))",
+            "print(chaine.index('tes'))"
         ]
     },
     "pages.StringMethodsUnderstandingMutation.steps.string_in_step.program": {
@@ -298,7 +298,7 @@
             "print('al' in 'alimentar al perro y al gato')"
         ],
         "fr": [
-            "print('le ' in 'nourrit le chien et le chat')"
+            "print('tes' in 'fait tes devoirs et apprend tes le\u00e7ons')"
         ]
     },
     "pages.TheEqualityOperator.steps.equality_vs_assignment.program": {
