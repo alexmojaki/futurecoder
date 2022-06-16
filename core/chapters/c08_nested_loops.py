@@ -794,6 +794,8 @@ You need to use a for loop inside a for loop.
 You need an `if` statement to check that the two players aren't the same person.
         """
 
+        translated_tests = True
+
         tests = [
             (["Alice", "Bob", "Charlie"], """\
 Alice vs Bob
@@ -1067,6 +1069,8 @@ How can we express this relation in terms of the list indices of the two for-loo
 You need to use a comparison operator.
 Once you figure out the relation, you can express it with an `if` statement.
 """
+
+        translated_tests = True
 
         tests = [
             (["Alice", "Bob", "Charlie"], """\

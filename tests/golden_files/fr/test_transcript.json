@@ -352,7 +352,7 @@
             "mot = 2"
         ],
         "response": {
-            "message": "<p>Mince, vous devez affecter <code>mot = 'Hello'</code> avant de continuer.</p>",
+            "message": "<p>Mince, vous devez entrer <code>mot = 'Hello'</code> avant de continuer.</p>",
             "passed": false,
             "result": []
         },
@@ -381,7 +381,7 @@
             "mot = 2"
         ],
         "response": {
-            "message": "<p>Mince, vous devez affecter <code>mot = 'Hello'</code> avant de continuer.</p>",
+            "message": "<p>Mince, vous devez entrer <code>mot = 'Hello'</code> avant de continuer.</p>",
             "passed": false,
             "result": []
         },
@@ -1227,7 +1227,7 @@
             "prediction": {
                 "answer": "ello World",
                 "choices": [
-                    "\nHello World",
+                    "Hello World",
                     "ello World",
                     "Hello Worl",
                     "H",
@@ -2582,7 +2582,7 @@
         "step": "print_indices_and_words"
     },
     {
-        "page": "Exercices avec <code>range()</code> et <code>len()</code>",
+        "page": "Exercices avec <code>range</code> et <code>len</code>",
         "program": [
             "choses = ['on', 'the', 'way', 'to', 'the', 'store']",
             "cible = 'the'",
@@ -2603,7 +2603,7 @@
         "step": "index_exercise"
     },
     {
-        "page": "Exercices avec <code>range()</code> et <code>len()</code>",
+        "page": "Exercices avec <code>range</code> et <code>len</code>",
         "program": [
             "choses = ['on', 'the', 'way', 'to', 'the', 'store']",
             "cible = 'the'",
@@ -2632,7 +2632,7 @@
             "        print(i)",
             "        break"
         ],
-        "page": "Exercices avec <code>range()</code> et <code>len()</code>",
+        "page": "Exercices avec <code>range</code> et <code>len</code>",
         "program": [
             "choses = ['on', 'the', 'way', 'to', 'the', 'store']",
             "cible = 'the'",
@@ -2660,7 +2660,7 @@
             "    caractere_2 = chaine_2[i]",
             "    print(caractere_1 + ' ' + caractere_2)"
         ],
-        "page": "Exercices avec <code>range()</code> et <code>len()</code>",
+        "page": "Exercices avec <code>range</code> et <code>len</code>",
         "program": [
             "chaine_1 = 'Hello'",
             "chaine_2 = 'World'",
@@ -2704,7 +2704,7 @@
             "",
             "    print(caractere_1 + ' ' + caractere_2)"
         ],
-        "page": "Exercices avec <code>range()</code> et <code>len()</code>",
+        "page": "Exercices avec <code>range</code> et <code>len</code>",
         "program": [
             "chaine_1 = 'Goodbye'",
             "chaine_2 = 'World'",
@@ -3454,7 +3454,7 @@
         "step": "second_smallest_in_list_exercise"
     },
     {
-        "page": "M\u00e9thodes sur les chaine et immuabilit\u00e9",
+        "page": "M\u00e9thodes sur les chaines et immuabilit\u00e9",
         "program": [
             "print('tes' in 'fait tes devoirs et apprend tes le\u00e7ons')"
         ],
@@ -3471,7 +3471,7 @@
         "step": "string_in_step"
     },
     {
-        "page": "M\u00e9thodes sur les chaine et immuabilit\u00e9",
+        "page": "M\u00e9thodes sur les chaines et immuabilit\u00e9",
         "program": [
             "chaine = 'fait tes devoirs et apprend tes le\u00e7ons'",
             "print(chaine.count('tes'))",
@@ -3490,7 +3490,7 @@
         "step": "string_count_index"
     },
     {
-        "page": "M\u00e9thodes sur les chaine et immuabilit\u00e9",
+        "page": "M\u00e9thodes sur les chaines et immuabilit\u00e9",
         "program": [
             "'Python'.append(' est sympa !')"
         ],
@@ -3542,7 +3542,7 @@
         "step": "mutation_string_append"
     },
     {
-        "page": "M\u00e9thodes sur les chaine et immuabilit\u00e9",
+        "page": "M\u00e9thodes sur les chaines et immuabilit\u00e9",
         "program": [
             "phrase = \"Python brille !\"",
             "nouvelle_phrase = phrase.upper()",
@@ -4007,7 +4007,7 @@
                     "nom est all\u00e9(e) repas avec ami.",
                     "\"Alice\" est all\u00e9(e) \"d\u00e9jeuner\" avec 'Bob'.",
                     "'Alice' est all\u00e9(e) 'd\u00e9jeuner' avec 'Bob'.",
-                    "\"Alice est all\u00e9(e) d\u00e9jeuner avec 'Bob'.",
+                    "\"Alice est all\u00e9(e) d\u00e9jeuner avec Bob.\"",
                     "Alice est all\u00e9(e) d\u00e9jeuner avec Bob.",
                     "Erreur"
                 ]
@@ -4398,22 +4398,22 @@
             "for joueur_1 in joueurs:",
             "    for joueur_2 in joueurs:",
             "        if joueur_1 != joueur_2:",
-            "            print(f'{joueur_1} vs {joueur_2}')"
+            "            print(f'{joueur_1} contre {joueur_2}')"
         ],
         "page": "Pr\u00e9sentation des boucles imbriqu\u00e9es",
         "program": [
-            "joueurs = ['Alice', 'Bob', 'Charlie']",
+            "joueurs = ['OUumHyG', 'ocUyWBh', 'DbNQe', 'XjItgGJ', 'iOuKYyzZt', 'iySpdUX', 'EZkLNo']",
             "for joueur_1 in joueurs:",
             "    for joueur_2 in joueurs:",
             "        if joueur_1 != joueur_2:",
-            "            print(f'{joueur_1} vs {joueur_2}')"
+            "            print(f'{joueur_1} contre {joueur_2}')"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n",
+                    "text": "OUumHyG contre ocUyWBh\nOUumHyG contre DbNQe\nOUumHyG contre XjItgGJ\nOUumHyG contre iOuKYyzZt\nOUumHyG contre iySpdUX\nOUumHyG contre EZkLNo\nocUyWBh contre OUumHyG\nocUyWBh contre DbNQe\nocUyWBh contre XjItgGJ\nocUyWBh contre iOuKYyzZt\nocUyWBh contre iySpdUX\nocUyWBh contre EZkLNo\nDbNQe contre OUumHyG\nDbNQe contre ocUyWBh\nDbNQe contre XjItgGJ\nDbNQe contre iOuKYyzZt\nDbNQe contre iySpdUX\nDbNQe contre EZkLNo\nXjItgGJ contre OUumHyG\nXjItgGJ contre ocUyWBh\nXjItgGJ contre DbNQe\nXjItgGJ contre iOuKYyzZt\nXjItgGJ contre iySpdUX\nXjItgGJ contre EZkLNo\niOuKYyzZt contre OUumHyG\niOuKYyzZt contre ocUyWBh\niOuKYyzZt contre DbNQe\niOuKYyzZt contre XjItgGJ\niOuKYyzZt contre iySpdUX\niOuKYyzZt contre EZkLNo\niySpdUX contre OUumHyG\niySpdUX contre ocUyWBh\niySpdUX contre DbNQe\niySpdUX contre XjItgGJ\niySpdUX contre iOuKYyzZt\niySpdUX contre EZkLNo\nEZkLNo contre OUumHyG\nEZkLNo contre ocUyWBh\nEZkLNo contre DbNQe\nEZkLNo contre XjItgGJ\nEZkLNo contre iOuKYyzZt\nEZkLNo contre iySpdUX\n",
                     "type": "stdout"
                 }
             ]
@@ -4485,22 +4485,22 @@
             "for i in range(len(joueurs)):",
             "    for j in range(len(joueurs)):",
             "        if i < j:",
-            "            print(f'{joueurs[i]} vs {joueurs[j]}')"
+            "            print(f'{joueurs[i]} contre {joueurs[j]}')"
         ],
         "page": "Pr\u00e9sentation des boucles imbriqu\u00e9es",
         "program": [
-            "joueurs = ['Alice', 'Bob', 'Charlie']",
+            "joueurs = ['JwsUZyHWXS', 'UepKEbOB', 'uTRiPVo', 'VWkbqMa', 'BwdsYFWHh', 'XmgDJ', 'WRoYNxvLF']",
             "for i in range(len(joueurs)):",
             "    for j in range(len(joueurs)):",
             "        if i < j:",
-            "            print(f'{joueurs[i]} vs {joueurs[j]}')"
+            "            print(f'{joueurs[i]} contre {joueurs[j]}')"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n",
+                    "text": "JwsUZyHWXS contre UepKEbOB\nJwsUZyHWXS contre uTRiPVo\nJwsUZyHWXS contre VWkbqMa\nJwsUZyHWXS contre BwdsYFWHh\nJwsUZyHWXS contre XmgDJ\nJwsUZyHWXS contre WRoYNxvLF\nUepKEbOB contre uTRiPVo\nUepKEbOB contre VWkbqMa\nUepKEbOB contre BwdsYFWHh\nUepKEbOB contre XmgDJ\nUepKEbOB contre WRoYNxvLF\nuTRiPVo contre VWkbqMa\nuTRiPVo contre BwdsYFWHh\nuTRiPVo contre XmgDJ\nuTRiPVo contre WRoYNxvLF\nVWkbqMa contre BwdsYFWHh\nVWkbqMa contre XmgDJ\nVWkbqMa contre WRoYNxvLF\nBwdsYFWHh contre XmgDJ\nBwdsYFWHh contre WRoYNxvLF\nXmgDJ contre WRoYNxvLF\n",
                     "type": "stdout"
                 }
             ]
@@ -5440,7 +5440,7 @@
             "    return marks + ' ' + chaine + ' ' + marks"
         ],
         "response": {
-            "message": "<p>Vous ne pouvez pas utiliser la concat\u00e9nation ni le formatage ni la multiplication ni f-string dans <code>alerte</code>.\nVous devez appeler <code>entoure</code> pour r\u00e9soudre ce probl\u00e8me.</p>",
+            "message": "<p>Vous ne pouvez pas utiliser la concat\u00e9nation ni le formatage ni la multiplication ni de f-string dans <code>alerte</code>.\nVous devez appeler <code>entoure</code> pour r\u00e9soudre ce probl\u00e8me.</p>",
             "passed": false,
             "result": []
         },
@@ -6281,7 +6281,7 @@
         "step": "winner"
     },
     {
-        "page": "Le caract\u00e8re saut de ligne, <code>etat_plateau</code>",
+        "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "def affiche_plateau(plateau):",
             "    for ligne in plateau:",
@@ -6306,10 +6306,10 @@
         "step": "one_way_to_print_board"
     },
     {
-        "page": "Le caract\u00e8re saut de ligne, <code>etat_plateau</code>",
+        "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "assert_equal(",
-            "    etat_plateau([",
+            "    representation([",
             "        ['X', 'O', 'X'],",
             "        [' ', 'O', 'O'],",
             "        [' ', 'X', ' ']",
@@ -6333,7 +6333,7 @@
         "step": "invalid_multi_line_string"
     },
     {
-        "page": "Le caract\u00e8re saut de ligne, <code>etat_plateau</code>",
+        "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "chaine = \"\"\"Premi\u00e8re ligne",
             "Deuxi\u00e8me ligne \"\"\"",
@@ -6352,7 +6352,7 @@
         "step": "multi_line_strings_triple_quotes"
     },
     {
-        "page": "Le caract\u00e8re saut de ligne, <code>etat_plateau</code>",
+        "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "chaine = 'a'"
         ],
@@ -6364,7 +6364,7 @@
         "step": "discovering_newline"
     },
     {
-        "page": "Le caract\u00e8re saut de ligne, <code>etat_plateau</code>",
+        "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "chaine"
         ],
@@ -6381,7 +6381,7 @@
         "step": "discovering_newline"
     },
     {
-        "page": "Le caract\u00e8re saut de ligne, <code>etat_plateau</code>",
+        "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "len('\\n')"
         ],
@@ -6407,7 +6407,7 @@
     },
     {
         "get_solution": [
-            "def etat_plateau(plateau):",
+            "def representation(plateau):",
             "    resultat = ''",
             "    for i in range(len(plateau)):",
             "        for caractere in plateau[i]:",
@@ -6416,9 +6416,9 @@
             "            resultat += '\\n'",
             "    return resultat"
         ],
-        "page": "Le caract\u00e8re saut de ligne, <code>etat_plateau</code>",
+        "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
-            "def etat_plateau(plateau):",
+            "def representation(plateau):",
             "    resultat = ''",
             "    for i in range(len(plateau)):",
             "        for caractere in plateau[i]:",
@@ -6436,7 +6436,7 @@
     },
     {
         "get_solution": [
-            "def etat_plateau(plateau):",
+            "def representation(plateau):",
             "    liste_de_lignes = []",
             "    for ligne in plateau:",
             "        liste_de_lignes.append(\"|\".join(ligne))",
@@ -6446,9 +6446,9 @@
             "    ligne = f'\\n{\"+\".join(lignes)}\\n'",
             "    return ligne.join(liste_de_lignes)"
         ],
-        "page": "Le caract\u00e8re saut de ligne, <code>etat_plateau</code>",
+        "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
-            "def etat_plateau(plateau):",
+            "def representation(plateau):",
             "    liste_de_lignes = []",
             "    for ligne in plateau:",
             "        liste_de_lignes.append(\"|\".join(ligne))",
@@ -6680,7 +6680,7 @@
         ],
         "page": "Les types",
         "program": [
-            "nombre = '1'",
+            "nombre = '2'",
             "for i in range(int(nombre)):",
             "    print('\u00c0 la... ' + str(i + 1))",
             "print('Et hop !')"
@@ -6690,7 +6690,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "\u00c0 la... 1\nEt hop !\n",
+                    "text": "\u00c0 la... 1\n\u00c0 la... 2\nEt hop !\n",
                     "type": "stdout"
                 }
             ]
@@ -6699,7 +6699,7 @@
     },
     {
         "get_solution": [
-            "def etat_plateau(plateau):",
+            "def representation(plateau):",
             "    premiere_ligne = ' '",
             "    for i in range(len(plateau)):",
             "        premiere_ligne += str(i + 1)",
@@ -6711,7 +6711,7 @@
         ],
         "page": "Les types",
         "program": [
-            "def etat_plateau(plateau):",
+            "def representation(plateau):",
             "    premiere_ligne = ' '",
             "    for i in range(len(plateau)):",
             "        premiere_ligne += str(i + 1)",
@@ -6731,7 +6731,7 @@
     {
         "page": "Programmes interactifs avec <code>input()</code>",
         "program": [
-            "print('Tapez votre nom, puis appuyez sur Entr\u00e9e :')",
+            "print('Tapez votre nom, puis appuyez sur \"Entr\u00e9e\" :')",
             "nom = input()",
             "print(f'Bonjour {nom} !')"
         ],
@@ -6740,7 +6740,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Tapez votre nom, puis appuyez sur Entr\u00e9e :\n",
+                    "text": "Tapez votre nom, puis appuyez sur \"Entr\u00e9e\" :\n",
                     "type": "stdout"
                 },
                 {
@@ -6792,11 +6792,11 @@
                     "type": "input_prompt"
                 },
                 {
-                    "text": "<input: 7>\n",
+                    "text": "<input: 1>\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "Incroyable ! \u00cates-vous devin ?\n",
+                    "text": "Perdu !\n",
                     "type": "stdout"
                 }
             ]
@@ -6980,7 +6980,7 @@
         "get_solution": [
             "def lance_jeu(taille_plateau, joueur_1, joueur_2):",
             "    plateau = fabrique_plateau(taille_plateau)",
-            "    print(etat_plateau(plateau))",
+            "    print(representation(plateau))",
             "",
             "    joueur = joueur_1",
             "    for _ in range(taille_plateau * taille_plateau):",
@@ -7018,7 +7018,7 @@
             "def victoire(plateau):",
             "    return victoire_en_ligne(plateau) or victoire_en_colonne(plateau) or victoire_en_diagonale(plateau)",
             "",
-            "def etat_plateau(plateau):",
+            "def representation(plateau):",
             "    taille = len(plateau)",
             "    ligne = f'\\n  {\"+\".join(\"-\" * taille)}\\n'",
             "    lignes = [f'{i + 1} {\"|\".join(ligne)}' for i, ligne in enumerate(plateau)]",
@@ -7029,7 +7029,7 @@
             "    ligne = int(input()) - 1",
             "    i_colonne = int(input()) - 1",
             "    plateau[ligne][i_colonne] = joueur",
-            "    print(etat_plateau(plateau))",
+            "    print(representation(plateau))",
             "",
             "def fabrique_plateau(taille):",
             "    return [[' '] * taille for _ in range(taille)]",
@@ -7042,7 +7042,7 @@
             "",
             "def lance_jeu(taille_plateau, joueur_1, joueur_2):",
             "    plateau = fabrique_plateau(taille_plateau)",
-            "    print(etat_plateau(plateau))",
+            "    print(representation(plateau))",
             "",
             "    joueur = joueur_1",
             "    for _ in range(taille_plateau * taille_plateau):",
