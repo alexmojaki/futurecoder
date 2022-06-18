@@ -16,3 +16,8 @@ cp -r frontend/course/* dist/course/
 
 npx -y --package=sass -- sass homepage/static/css
 cp -r homepage/* dist/
+
+translated_index=translations/locales/${FUTURECODER_LANGUAGE}/index.html
+if [ -f $translated_index ]; then
+    cp $translated_index dist
+fi
