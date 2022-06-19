@@ -17306,6 +17306,9 @@ msgstr "Chat on Slack"
 msgid "frontend.click_for_error_details"
 msgstr "Click for error details"
 
+msgid "frontend.click_to_expand"
+msgstr "Click to expand"
+
 msgid "frontend.contact_directly"
 msgstr "Alternatively, you can contact us directly:"
 

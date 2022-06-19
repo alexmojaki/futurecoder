@@ -56,5 +56,6 @@
   "toc_instructions": "Below are links to different pages in the course. You can start anywhere and go in any order, and your progress on each page will be recorded.\n\nIf you're completely new to programming, or you have doubts, just start at the beginning and click Next as you finish each page.",
   "hints_progress": "Shown ${numHints} of ${totalHints} hints",
   "repeated_frames_description": "${name} at line ${lineno} (${count} times)",
+  "click_to_expand": "Click to expand",
   "copy_warning": "**STOP!**\n\nTry to avoid copy pasting code. You will learn, absorb, and remember better if you type in the code yourself.\n\nWhen copying is appropriate, there will be a button to click to make it easy. If there's no button, try typing.\n\nHaving said that, we're not going to force you. Copy if you really want to."
 }

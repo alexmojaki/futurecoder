@@ -160,12 +160,11 @@ const FriendlyMessage = ({friendly}) => {
            onClick={() => setTruncated(false)}
            >
         <div dangerouslySetInnerHTML={{__html: friendly}}/>
-        {/* Explicit instruction that I decided not to keep */}
-        {/*{truncated &&*/}
-        {/*  <div className="click-to-expand">*/}
-        {/*    Click to expand*/}
-        {/*  </div>*/}
-        {/*}*/}
+        {truncated &&
+          <div className="click-to-expand">
+            {terms.click_to_expand}
+          </div>
+        }
       </div>
     }
   </>;
