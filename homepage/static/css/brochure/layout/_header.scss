@@ -49,5 +49,17 @@ title {
 
 
 .navbar{
-  padding: 10px 0
+  padding: 10px 0;
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2em;
+  }
+
+  .translation-icon {
+    width: 24px;
+    height: 24px;
+    display: inline;
+  }
 }
