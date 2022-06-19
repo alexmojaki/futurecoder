@@ -12,6 +12,8 @@ class EnhancedRunner(PyodideRunner):
 
             exec_birdseye(self)
         else:
+            if mode == "snoop":
+                import core.runner.snoop  # noqa # set up internal_directories
             super().execute(code_obj, mode=mode, snoop_config={"color": True})
 
     def serialize_traceback(self, exc):
