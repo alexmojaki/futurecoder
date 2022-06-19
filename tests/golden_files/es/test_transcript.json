@@ -43,7 +43,8 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nActualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.\n\nA menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -235,11 +236,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">sol</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">sol</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -254,7 +257,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | sol",
                         "           ^^^",
                         "",
@@ -563,7 +566,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nen la l\u00ednea 2\n\nUn `IndentationError` ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.\n\nSe esperaba que la l\u00ednea `2` identificada anteriormente comenzara un nuevo bloque indentado.\n\n\n",
+                    "friendly": "<p>Un <code>IndentationError</code> ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.</p>\n<p>Se esperaba que la l\u00ednea <code>2</code> identificada anteriormente comenzara un nuevo bloque indentado.</p>",
+                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nen la l\u00ednea 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -624,7 +628,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nen la l\u00ednea 3\n\nUn `IndentationError` ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.\n\nLa l\u00ednea `3` identificada arriba tiene menos indentaci\u00f3n de la esperada.\n\n\n",
+                    "friendly": "<p>Un <code>IndentationError</code> ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.</p>\n<p>La l\u00ednea <code>3</code> identificada arriba tiene menos indentaci\u00f3n de la esperada.</p>",
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nen la l\u00ednea 3\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1258,188 +1263,40 @@
             "passed": true,
             "result": [
                 {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | nueva_frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mol\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ma\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mM\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola M\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mn\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mun\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mund\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(nueva_frase)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "ola Mundo",
+                    "type": "stdout"
+                },
+                {
+                    "text": "\n",
+                    "type": "stdout"
+                },
+                {
                     "text": "",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | nueva_frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mol\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ma\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mM\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola M\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mn\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mun\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mund\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(nueva_frase)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "ola Mundo\n",
-                    "type": "stdout"
+                    "type": "snoop"
                 }
             ]
         },
@@ -1602,11 +1459,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 6,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">frase</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">car</span>",
                                             "is_current": true,
                                             "lineno": 6,
+                                            "text": "<span class=\"n\">frase</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">car</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -1630,7 +1489,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 6, in <module>",
+                        " File \"/my_program.py\", line 6, in <module>",
                         "       5 |     car = '!'",
                         "-->    6 | frase += car",
                         "                    ^^^",
@@ -1646,6 +1505,15 @@
         "step": "undefined_char"
     },
     {
+        "get_solution": [
+            "if emocionado:",
+            "    car = '!'",
+            "else:",
+            "    car = '.'",
+            "frase += car",
+            "",
+            "print(frase)"
+        ],
         "page": "<code>if</code> y <code>else</code>",
         "program": [
             "frase = 'Hello there'",
@@ -1783,7 +1651,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nEs probable que hayas llamado a una funci\u00f3n con un argumento con nombre:\n\n    unaa_funci\u00f3n(inv\u00e1lido=algo) \n\ndonde `inv\u00e1lido` no es un nombre de variable v\u00e1lido en Python\nya sea porque comienza con un n\u00famero, o es una cadena\no contiene un punto, etc.\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Es probable que hayas llamado a una funci\u00f3n con un argumento con nombre:</p>\n<pre><code>unaa_funci\u00f3n(inv\u00e1lido=algo)\n</code></pre>\n<p>donde <code>inv\u00e1lido</code> no es un nombre de variable v\u00e1lido en Python\nya sea porque comienza con un n\u00famero, o es una cadena\no contiene un punto, etc.</p>",
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1972,6 +1841,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "text": "True\n",
@@ -2384,11 +2261,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">palabras</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">palabras</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -2408,7 +2287,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | palabras[4]",
                         "           ^^^^^^^^^^^",
                         "palabras = ['Esto', 'es', 'una', 'lista']",
@@ -2539,11 +2418,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">indices</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">indices</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -2563,7 +2444,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | indices[4]",
                         "           ^^^^^^^^^^",
                         "indices = range(0, 4)",
@@ -2921,11 +2802,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">f</span><span class=\"p p-ExecutingNode\">()</span>",
                                             "is_current": true,
                                             "lineno": 3,
+                                            "text": "<span class=\"n n-ExecutingNode\">f</span><span class=\"p p-ExecutingNode\">()</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -2945,7 +2828,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
+                        " File \"/my_program.py\", line 3, in <module>",
                         "       2 | print(callable(f))",
                         "-->    3 | f()",
                         "           ^^^",
@@ -3005,11 +2888,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 2,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">largo</span> <span class=\"o\">=</span> <span class=\"nb nb-ExecutingNode\">len</span><span class=\"p p-ExecutingNode\">(</span><span class=\"n n-ExecutingNode\">cosas</span><span class=\"p p-ExecutingNode\">)</span>",
                                             "is_current": true,
                                             "lineno": 2,
+                                            "text": "<span class=\"n\">largo</span> <span class=\"o\">=</span> <span class=\"nb nb-ExecutingNode\">len</span><span class=\"p p-ExecutingNode\">(</span><span class=\"n n-ExecutingNode\">cosas</span><span class=\"p p-ExecutingNode\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -3029,7 +2914,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 2, in <module>",
+                        " File \"/my_program.py\", line 2, in <module>",
                         "       1 | cosas = print([1, 2, 3])",
                         "-->    2 | largo = len(cosas)",
                         "                   ^^^^^^^^^^",
@@ -3082,11 +2967,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 2,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">palabra</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39;!&#39;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 2,
+                                            "text": "<span class=\"n n-ExecutingNode\">palabra</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39;!&#39;</span><span class=\"p\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -3106,7 +2993,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 2, in <module>",
+                        " File \"/my_program.py\", line 2, in <module>",
                         "       1 | palabra = 'Hola'",
                         "-->    2 | palabra.append('!')",
                         "           ^^^^^^^^^^^^^^",
@@ -3620,11 +3507,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"s1 s1-ExecutingNode\">&#39;Python&#39;</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; es genial!&#39;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"s1 s1-ExecutingNode\">&#39;Python&#39;</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; es genial!&#39;</span><span class=\"p\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -3639,7 +3528,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | 'Python'.append(' es genial!')",
                         "           ^^^^^^^^^^^^^^^",
                         "",
@@ -3843,11 +3732,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">numero</span> <span class=\"o\">=</span> <span class=\"n n-ExecutingNode\">numeros</span><span class=\"p p-ExecutingNode\">[</span><span class=\"n n-ExecutingNode\">i</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "is_current": true,
                                             "lineno": 3,
+                                            "text": "<span class=\"n\">numero</span> <span class=\"o\">=</span> <span class=\"n n-ExecutingNode\">numeros</span><span class=\"p p-ExecutingNode\">[</span><span class=\"n n-ExecutingNode\">i</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -3887,7 +3778,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
+                        " File \"/my_program.py\", line 3, in <module>",
                         "       2 | for i in range(len(numeros)):",
                         "-->    3 |     numero = numeros[i]",
                         "                        ^^^^^^^^^^",
@@ -4004,7 +3895,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('Ese es el perro'e Juan')\n                           ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nI suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:\n\n    print('Ese es el perro\\'e Juan')\n                          ^^\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Ese es el perro\\'e Juan')\n                      ^^\n</code></pre>",
+                    "text": "    print('Ese es el perro'e Juan')\n                           ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4055,18 +3947,18 @@
     },
     {
         "get_solution": [
-            "print(\"Los casos especiales no son tan especiales como para romper las reglas.\")"
+            "print(\"Si continuamos as\u00ed nos vamos pa'rriba.\")"
         ],
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
-            "print(\"Los casos especiales no son tan especiales como para romper las reglas.\")"
+            "print(\"Si continuamos as\u00ed nos vamos pa'rriba.\")"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Los casos especiales no son tan especiales como para romper las reglas.\n",
+                    "text": "Si continuamos as\u00ed nos vamos pa'rriba.\n",
                     "type": "stdout"
                 }
             ]
@@ -4099,29 +3991,29 @@
             "nombre = \"Alicia\"",
             "amigo = 'Bob'",
             "comida = \"almuerzo\"",
-            "print(f\"{nombre} fue a comprar {comida} con {amigo}.\")"
+            "print(f\"{nombre} fue a {comida} con {amigo}.\")"
         ],
         "response": {
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "Alicia fue a comprar almuerzo con Bob.",
+                "answer": "Alicia fue a almuerzo con Bob.",
                 "choices": [
-                    "f\"{nombre} fue a comprar {comida} con {amigo}.\"",
-                    "\"{nombre} fue a comprar {comida} con {amigo}.\"",
-                    "{nombre} fue a comprar {comida} con {amigo}.",
-                    "'nombre' fue a comprar 'comida' con 'amigo'.",
-                    "nombre fue a comprar comida con amigo.",
-                    "\"Alicia\" fue a comprar \"almuerzo\" con 'Bob'.",
-                    "'Alicia' fue a comprar 'almuerzo' con 'Bob'.",
-                    "\"Alicia fue a comprar almuerzo con Bob.\"",
-                    "Alicia fue a comprar almuerzo con Bob.",
+                    "f\"{nombre} fue a {comida} con {amigo}.\"",
+                    "\"{nombre} fue a {comida} con {amigo}.\"",
+                    "{nombre} fue a {comida} con {amigo}.",
+                    "'nombre' fue a 'comida' con 'amigo'.",
+                    "nombre fue a comida con amigo.",
+                    "\"Alicia\" fue a \"almuerzo\" con 'Bob'.",
+                    "'Alicia' fue a 'almuerzo' con 'Bob'.",
+                    "\"Alicia fue a almuerzo con Bob.\"",
+                    "Alicia fue a almuerzo con Bob.",
                     "Error"
                 ]
             },
             "result": [
                 {
-                    "text": "Alicia fue a comprar almuerzo con Bob.\n",
+                    "text": "Alicia fue a almuerzo con Bob.\n",
                     "type": "stdout"
                 }
             ]
@@ -4133,7 +4025,7 @@
         "program": [
             "nombre = \"Alicia\"",
             "edad = 20",
-            "print(\"Hola \" + nombre + \". T\u00fa eres \" + edad + \" a\u00f1os.\")"
+            "print(\"Hola \" + nombre + \". T\u00fa tienes \" + edad + \" a\u00f1os.\")"
         ],
         "response": {
             "message": "",
@@ -4141,10 +4033,10 @@
             "prediction": {
                 "answer": "Error",
                 "choices": [
-                    "\"Hola \" + nombre + \". Tu edad es \" + edad + \" a\u00f1os.\"",
-                    "Hola nombre. Tu edad es edad a\u00f1os.",
-                    "Hola Alicia. Tu edad es 20 a\u00f1os.",
-                    "Hola 'Alicia'. Tu edad es 20 a\u00f1os.",
+                    "\"Hola \" + nombre + \". T\u00fa tienes es \" + edad + \" a\u00f1os.\"",
+                    "Hola nombre. T\u00fa tienes es edad a\u00f1os.",
+                    "Hola Alicia. T\u00fa tienes es 20 a\u00f1os.",
+                    "Hola 'Alicia'. T\u00fa tienes es 20 a\u00f1os.",
                     "Error"
                 ]
             },
@@ -4159,11 +4051,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hola &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">nombre</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. T\u00fa eres &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">edad</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; a\u00f1os.&quot;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 3,
+                                            "text": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hola &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">nombre</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. T\u00fa tienes &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">edad</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; a\u00f1os.&quot;</span><span class=\"p\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -4175,8 +4069,8 @@
                                             "value": "<span class=\"s1\">&#39;Hola Alicia&#39;</span>\n"
                                         },
                                         {
-                                            "name": "<span class=\"s2\">&quot;Hola &quot;</span> <span class=\"o\">+</span> <span class=\"n\">nombre</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;. T\u00fa eres &quot;</span>\n",
-                                            "value": "<span class=\"s1\">&#39;Hola Alicia. T\u00fa eres &#39;</span>\n"
+                                            "name": "<span class=\"s2\">&quot;Hola &quot;</span> <span class=\"o\">+</span> <span class=\"n\">nombre</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;. T\u00fa tienes &quot;</span>\n",
+                                            "value": "<span class=\"s1\">&#39;Hola Alicia. T\u00fa tienes &#39;</span>\n"
                                         },
                                         {
                                             "name": "<span class=\"n\">edad</span>\n",
@@ -4195,12 +4089,12 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
+                        " File \"/my_program.py\", line 3, in <module>",
                         "       2 | edad = 20",
-                        "-->    3 | print(\"Hola \" + nombre + \". T\u00fa eres \" + edad + \" a\u00f1os.\")",
-                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+                        "-->    3 | print(\"Hola \" + nombre + \". T\u00fa tienes \" + edad + \" a\u00f1os.\")",
+                        "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
                         "\"Hola \" + nombre = 'Hola Alicia'",
-                        "\"Hola \" + nombre + \". T\u00fa eres \" = 'Hola Alicia. T\u00fa eres '",
+                        "\"Hola \" + nombre + \". T\u00fa tienes \" = 'Hola Alicia. T\u00fa tienes '",
                         "edad = 20",
                         "nombre = 'Alicia'",
                         "",
@@ -4324,11 +4218,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi mi-ExecutingNode\">1</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;x&quot;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi mi-ExecutingNode\">1</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;x&quot;</span><span class=\"p\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -4343,7 +4239,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | print(1 + \"x\")",
                         "                 ^^^^^^^",
                         "",
@@ -4363,18 +4259,18 @@
             "        izquierda += 1",
             "        derecha += 1",
             "        print(f'{izquierda} x {derecha} = {izquierda * derecha}')",
-            "    print('----------')"
+            "    print('---')"
         ],
         "response": {
             "message": "<p>\u00a1Le sumaste 1 a la variable de tu bucle exterior en el lugar equivocado! \u00bfD\u00f3nde deber\u00edas hacer eso para corregir el c\u00f3digo?</p>",
             "passed": false,
             "result": [
                 {
-                    "text": "1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n----------\n2 x 1 = 2\n3 x 2 = 6\n4 x 3 = 12\n5 x 4 = 20\n6 x 5 = 30\n7 x 6 = 42\n8 x 7 = 56\n9 x 8 = 72\n10 x 9 = 90\n11 x 10 = 110\n12 x 11 = 132\n13 x 12 = 156\n----------\n3 x 1 = 3\n4 x 2 = 8\n5 x 3 = 15\n6 x 4 = 24\n7 x 5 = 35\n8 x 6 = 48\n9 x 7 = 63\n10 x 8 = 80\n11 x 9 = 99\n12 x 10 = 120\n13 x 11 = 143\n14 x 12 = 168\n----------\n4 x 1 = 4\n5 x 2 = 10\n6 x 3 = 18\n7 x 4 = 28\n8 x 5 = 40\n9 x 6 = 54\n10 x 7 = 70\n11 x 8 = 88\n12 x 9 = 108\n13 x 10 = 130\n14 x 11 = 154\n15 x 12 = 180\n----------\n5 x 1 = 5\n6 x 2 = 12\n7 x 3 = 21\n8 x 4 = 32\n9 x 5 = 45\n10 x 6 = 60\n11 x 7 = 77\n12 x 8 = 96\n13 x 9 = 117\n14 x 10 = 140\n15 x 11 = 165\n16 x 12 = 192\n----------\n6 x 1 = 6\n7 x 2 = 14\n8 x 3 = 24\n9 x 4 = 36\n10 x 5 = 50\n11 x 6 = 66\n12 x 7 = 84\n13 x 8 = 104\n14 x 9 = 126\n15 x 10 = 150\n16 x 11 = 176\n17 x 12 = 204\n----------\n7 x 1 = 7\n8 x 2 = 16\n9 x 3 = 27\n10 x 4 = 40\n11 x 5 = 55\n12 x 6 = 72\n13 x 7 = 91",
+                    "text": "1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n---\n2 x 1 = 2\n3 x 2 = 6\n4 x 3 = 12\n5 x 4 = 20\n6 x 5 = 30\n7 x 6 = 42\n8 x 7 = 56\n9 x 8 = 72\n10 x 9 = 90\n11 x 10 = 110\n12 x 11 = 132\n13 x 12 = 156\n---\n3 x 1 = 3\n4 x 2 = 8\n5 x 3 = 15\n6 x 4 = 24\n7 x 5 = 35\n8 x 6 = 48\n9 x 7 = 63\n10 x 8 = 80\n11 x 9 = 99\n12 x 10 = 120\n13 x 11 = 143\n14 x 12 = 168\n---\n4 x 1 = 4\n5 x 2 = 10\n6 x 3 = 18\n7 x 4 = 28\n8 x 5 = 40\n9 x 6 = 54\n10 x 7 = 70\n11 x 8 = 88\n12 x 9 = 108\n13 x 10 = 130\n14 x 11 = 154\n15 x 12 = 180\n---\n5 x 1 = 5\n6 x 2 = 12\n7 x 3 = 21\n8 x 4 = 32\n9 x 5 = 45\n10 x 6 = 60\n11 x 7 = 77\n12 x 8 = 96\n13 x 9 = 117\n14 x 10 = 140\n15 x 11 = 165\n16 x 12 = 192\n---\n6 x 1 = 6\n7 x 2 = 14\n8 x 3 = 24\n9 x 4 = 36\n10 x 5 = 50\n11 x 6 = 66\n12 x 7 = 84\n13 x 8 = 104\n14 x 9 = 126\n15 x 10 = 150\n16 x 11 = 176\n17 x 12 = 204\n---\n7 x 1 = 7\n8 x 2 = 16\n9 x 3 = 27\n10 x 4 = 40\n11 x 5 = 55\n12 x 6 = 72\n13 x 7 = 91\n14 x 8 = 112\n15 x 9 = 135\n16 x 10 = 160\n17 x 11 = 187",
                     "type": "stdout"
                 },
                 {
-                    "text": "\n14 x 8 = 112\n15 x 9 = 135\n16 x 10 = 160\n17 x 11 = 187\n18 x 12 = 216\n----------\n8 x 1 = 8\n9 x 2 = 18\n10 x 3 = 30\n11 x 4 = 44\n12 x 5 = 60\n13 x 6 = 78\n14 x 7 = 98\n15 x 8 = 120\n16 x 9 = 144\n17 x 10 = 170\n18 x 11 = 198\n19 x 12 = 228\n----------\n9 x 1 = 9\n10 x 2 = 20\n11 x 3 = 33\n12 x 4 = 48\n13 x 5 = 65\n14 x 6 = 84\n15 x 7 = 105\n16 x 8 = 128\n17 x 9 = 153\n18 x 10 = 180\n19 x 11 = 209\n20 x 12 = 240\n----------\n10 x 1 = 10\n11 x 2 = 22\n12 x 3 = 36\n13 x 4 = 52\n14 x 5 = 70\n15 x 6 = 90\n16 x 7 = 112\n17 x 8 = 136\n18 x 9 = 162\n19 x 10 = 190\n20 x 11 = 220\n21 x 12 = 252\n----------\n11 x 1 = 11\n12 x 2 = 24\n13 x 3 = 39\n14 x 4 = 56\n15 x 5 = 75\n16 x 6 = 96\n17 x 7 = 119\n18 x 8 = 144\n19 x 9 = 171\n20 x 10 = 200\n21 x 11 = 231\n22 x 12 = 264\n----------\n12 x 1 = 12\n13 x 2 = 26\n14 x 3 = 42\n15 x 4 = 60\n16 x 5 = 80\n17 x 6 = 102\n18 x 7 = 126\n19 x 8 = 152\n20 x 9 = 180\n21 x 10 = 210\n22 x 11 = 242\n23 x 12 = 276\n----------\n",
+                    "text": "\n18 x 12 = 216\n---\n8 x 1 = 8\n9 x 2 = 18\n10 x 3 = 30\n11 x 4 = 44\n12 x 5 = 60\n13 x 6 = 78\n14 x 7 = 98\n15 x 8 = 120\n16 x 9 = 144\n17 x 10 = 170\n18 x 11 = 198\n19 x 12 = 228\n---\n9 x 1 = 9\n10 x 2 = 20\n11 x 3 = 33\n12 x 4 = 48\n13 x 5 = 65\n14 x 6 = 84\n15 x 7 = 105\n16 x 8 = 128\n17 x 9 = 153\n18 x 10 = 180\n19 x 11 = 209\n20 x 12 = 240\n---\n10 x 1 = 10\n11 x 2 = 22\n12 x 3 = 36\n13 x 4 = 52\n14 x 5 = 70\n15 x 6 = 90\n16 x 7 = 112\n17 x 8 = 136\n18 x 9 = 162\n19 x 10 = 190\n20 x 11 = 220\n21 x 12 = 252\n---\n11 x 1 = 11\n12 x 2 = 24\n13 x 3 = 39\n14 x 4 = 56\n15 x 5 = 75\n16 x 6 = 96\n17 x 7 = 119\n18 x 8 = 144\n19 x 9 = 171\n20 x 10 = 200\n21 x 11 = 231\n22 x 12 = 264\n---\n12 x 1 = 12\n13 x 2 = 26\n14 x 3 = 42\n15 x 4 = 60\n16 x 5 = 80\n17 x 6 = 102\n18 x 7 = 126\n19 x 8 = 152\n20 x 9 = 180\n21 x 10 = 210\n22 x 11 = 242\n23 x 12 = 276\n---\n",
                     "type": "stdout"
                 }
             ]
@@ -4398,18 +4294,18 @@
             "    print(izquierda, 'x 10 =', izquierda * 10)",
             "    print(izquierda, 'x 11 =', izquierda * 11)",
             "    print(izquierda, 'x 12 =', izquierda * 12)",
-            "    print('----------')"
+            "    print('---')"
         ],
         "response": {
             "message": "<p>Tu soluci\u00f3n es demasiado larga. Necesitas solo unas pocas l\u00edneas de c\u00f3digo para este problema.\nUsa un bucle anidado para no tener que repetir tu c\u00f3digo.\n\u00a1La computadora har\u00e1 las repeticiones por ti!</p>",
             "passed": false,
             "result": [
                 {
-                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------",
+                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n---\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n---\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n---\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n---\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n---\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n---\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n---\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 =",
                     "type": "stdout"
                 },
                 {
-                    "text": "\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n",
+                    "text": " 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n---\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n---\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n---\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n---\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n---\n",
                     "type": "stdout"
                 }
             ]
@@ -4425,18 +4321,18 @@
             "        derecha += 1",
             "        # for the sake of translation",
             "        print(f'{izquierda} x {derecha} = {izquierda * derecha}'.replace('x', '*'))",
-            "    print('----------')"
+            "    print('---')"
         ],
         "response": {
             "message": "<p>\u00a1Eso es casi correcto! Aseg\u00farate de mostrar el caracter correcto <code>x</code> en tu tabla.\nPor ejemplo, tu soluci\u00f3n debe mostrar <code>3 x 4 = 12</code> y no <code>3 * 4 = 12</code>.</p>",
             "passed": false,
             "result": [
                 {
-                    "text": "1 * 1 = 1\n1 * 2 = 2\n1 * 3 = 3\n1 * 4 = 4\n1 * 5 = 5\n1 * 6 = 6\n1 * 7 = 7\n1 * 8 = 8\n1 * 9 = 9\n1 * 10 = 10\n1 * 11 = 11\n1 * 12 = 12\n----------\n2 * 1 = 2\n2 * 2 = 4\n2 * 3 = 6\n2 * 4 = 8\n2 * 5 = 10\n2 * 6 = 12\n2 * 7 = 14\n2 * 8 = 16\n2 * 9 = 18\n2 * 10 = 20\n2 * 11 = 22\n2 * 12 = 24\n----------\n3 * 1 = 3\n3 * 2 = 6\n3 * 3 = 9\n3 * 4 = 12\n3 * 5 = 15\n3 * 6 = 18\n3 * 7 = 21\n3 * 8 = 24\n3 * 9 = 27\n3 * 10 = 30\n3 * 11 = 33\n3 * 12 = 36\n----------\n4 * 1 = 4\n4 * 2 = 8\n4 * 3 = 12\n4 * 4 = 16\n4 * 5 = 20\n4 * 6 = 24\n4 * 7 = 28\n4 * 8 = 32\n4 * 9 = 36\n4 * 10 = 40\n4 * 11 = 44\n4 * 12 = 48\n----------\n5 * 1 = 5\n5 * 2 = 10\n5 * 3 = 15\n5 * 4 = 20\n5 * 5 = 25\n5 * 6 = 30\n5 * 7 = 35\n5 * 8 = 40\n5 * 9 = 45\n5 * 10 = 50\n5 * 11 = 55\n5 * 12 = 60\n----------\n6 * 1 = 6\n6 * 2 = 12\n6 * 3 = 18\n6 * 4 = 24\n6 * 5 = 30\n6 * 6 = 36\n6 * 7 = 42\n6 * 8 = 48\n6 * 9 = 54\n6 * 10 = 60\n6 * 11 = 66\n6 * 12 = 72\n----------\n7 * 1 = 7\n7 * 2 = 14\n7 * 3 = 21\n7 * 4 = 28\n7 * 5 = 35\n7 * 6 = 42\n7 * 7 = 49\n7 * 8 = 56\n7 * 9 = 63\n7 * 10 = 70\n7 * 11 = 77\n7 * 12 = 84\n----------",
+                    "text": "1 * 1 = 1\n1 * 2 = 2\n1 * 3 = 3\n1 * 4 = 4\n1 * 5 = 5\n1 * 6 = 6\n1 * 7 = 7\n1 * 8 = 8\n1 * 9 = 9\n1 * 10 = 10\n1 * 11 = 11\n1 * 12 = 12\n---\n2 * 1 = 2\n2 * 2 = 4\n2 * 3 = 6\n2 * 4 = 8\n2 * 5 = 10\n2 * 6 = 12\n2 * 7 = 14\n2 * 8 = 16\n2 * 9 = 18\n2 * 10 = 20\n2 * 11 = 22\n2 * 12 = 24\n---\n3 * 1 = 3\n3 * 2 = 6\n3 * 3 = 9\n3 * 4 = 12\n3 * 5 = 15\n3 * 6 = 18\n3 * 7 = 21\n3 * 8 = 24\n3 * 9 = 27\n3 * 10 = 30\n3 * 11 = 33\n3 * 12 = 36\n---\n4 * 1 = 4\n4 * 2 = 8\n4 * 3 = 12\n4 * 4 = 16\n4 * 5 = 20\n4 * 6 = 24\n4 * 7 = 28\n4 * 8 = 32\n4 * 9 = 36\n4 * 10 = 40\n4 * 11 = 44\n4 * 12 = 48\n---\n5 * 1 = 5\n5 * 2 = 10\n5 * 3 = 15\n5 * 4 = 20\n5 * 5 = 25\n5 * 6 = 30\n5 * 7 = 35\n5 * 8 = 40\n5 * 9 = 45\n5 * 10 = 50\n5 * 11 = 55\n5 * 12 = 60\n---\n6 * 1 = 6\n6 * 2 = 12\n6 * 3 = 18\n6 * 4 = 24\n6 * 5 = 30\n6 * 6 = 36\n6 * 7 = 42\n6 * 8 = 48\n6 * 9 = 54\n6 * 10 = 60\n6 * 11 = 66\n6 * 12 = 72\n---\n7 * 1 = 7\n7 * 2 = 14\n7 * 3 = 21\n7 * 4 = 28\n7 * 5 = 35\n7 * 6 = 42\n7 * 7 = 49\n7 * 8 = 56\n7 * 9 = 63\n7 * 10 = 70\n7 * 11 = 77\n7 * 12 = 84\n---\n8 * 1 = 8\n8 * 2 = 16\n8 * 3 = 24\n8 * 4 = 32\n8 * 5 = 40",
                     "type": "stdout"
                 },
                 {
-                    "text": "\n8 * 1 = 8\n8 * 2 = 16\n8 * 3 = 24\n8 * 4 = 32\n8 * 5 = 40\n8 * 6 = 48\n8 * 7 = 56\n8 * 8 = 64\n8 * 9 = 72\n8 * 10 = 80\n8 * 11 = 88\n8 * 12 = 96\n----------\n9 * 1 = 9\n9 * 2 = 18\n9 * 3 = 27\n9 * 4 = 36\n9 * 5 = 45\n9 * 6 = 54\n9 * 7 = 63\n9 * 8 = 72\n9 * 9 = 81\n9 * 10 = 90\n9 * 11 = 99\n9 * 12 = 108\n----------\n10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = 70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100\n10 * 11 = 110\n10 * 12 = 120\n----------\n11 * 1 = 11\n11 * 2 = 22\n11 * 3 = 33\n11 * 4 = 44\n11 * 5 = 55\n11 * 6 = 66\n11 * 7 = 77\n11 * 8 = 88\n11 * 9 = 99\n11 * 10 = 110\n11 * 11 = 121\n11 * 12 = 132\n----------\n12 * 1 = 12\n12 * 2 = 24\n12 * 3 = 36\n12 * 4 = 48\n12 * 5 = 60\n12 * 6 = 72\n12 * 7 = 84\n12 * 8 = 96\n12 * 9 = 108\n12 * 10 = 120\n12 * 11 = 132\n12 * 12 = 144\n----------\n",
+                    "text": "\n8 * 6 = 48\n8 * 7 = 56\n8 * 8 = 64\n8 * 9 = 72\n8 * 10 = 80\n8 * 11 = 88\n8 * 12 = 96\n---\n9 * 1 = 9\n9 * 2 = 18\n9 * 3 = 27\n9 * 4 = 36\n9 * 5 = 45\n9 * 6 = 54\n9 * 7 = 63\n9 * 8 = 72\n9 * 9 = 81\n9 * 10 = 90\n9 * 11 = 99\n9 * 12 = 108\n---\n10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = 70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100\n10 * 11 = 110\n10 * 12 = 120\n---\n11 * 1 = 11\n11 * 2 = 22\n11 * 3 = 33\n11 * 4 = 44\n11 * 5 = 55\n11 * 6 = 66\n11 * 7 = 77\n11 * 8 = 88\n11 * 9 = 99\n11 * 10 = 110\n11 * 11 = 121\n11 * 12 = 132\n---\n12 * 1 = 12\n12 * 2 = 24\n12 * 3 = 36\n12 * 4 = 48\n12 * 5 = 60\n12 * 6 = 72\n12 * 7 = 84\n12 * 8 = 96\n12 * 9 = 108\n12 * 10 = 120\n12 * 11 = 132\n12 * 12 = 144\n---\n",
                     "type": "stdout"
                 }
             ]
@@ -4454,7 +4350,8 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 2\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nActualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.\n\nA menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4468,7 +4365,7 @@
             "    for derecha in range(12):",
             "        derecha += 1",
             "        print(f'{izquierda} x {derecha} = {izquierda * derecha}')",
-            "    print('----------')"
+            "    print('---')"
         ],
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
@@ -4477,18 +4374,18 @@
             "    for derecha in range(12):",
             "        derecha += 1",
             "        print(f'{izquierda} x {derecha} = {izquierda * derecha}')",
-            "    print('----------')"
+            "    print('---')"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------",
+                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n---\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n---\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n---\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n---\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n---\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n---\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n---\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40",
                     "type": "stdout"
                 },
                 {
-                    "text": "\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n",
+                    "text": "\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n---\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n---\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n---\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n---\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n---\n",
                     "type": "stdout"
                 }
             ]
@@ -4504,7 +4401,7 @@
         ],
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
-            "jugadores = ['Alice', 'Bob', 'Charlie']",
+            "jugadores = ['OUumHyG', 'ocUyWBh', 'DbNQe', 'XjItgGJ', 'iOuKYyzZt', 'iySpdUX', 'EZkLNo']",
             "for jugador1 in jugadores:",
             "    for jugador2 in jugadores:",
             "        if jugador1 != jugador2:",
@@ -4515,7 +4412,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n",
+                    "text": "OUumHyG vs ocUyWBh\nOUumHyG vs DbNQe\nOUumHyG vs XjItgGJ\nOUumHyG vs iOuKYyzZt\nOUumHyG vs iySpdUX\nOUumHyG vs EZkLNo\nocUyWBh vs OUumHyG\nocUyWBh vs DbNQe\nocUyWBh vs XjItgGJ\nocUyWBh vs iOuKYyzZt\nocUyWBh vs iySpdUX\nocUyWBh vs EZkLNo\nDbNQe vs OUumHyG\nDbNQe vs ocUyWBh\nDbNQe vs XjItgGJ\nDbNQe vs iOuKYyzZt\nDbNQe vs iySpdUX\nDbNQe vs EZkLNo\nXjItgGJ vs OUumHyG\nXjItgGJ vs ocUyWBh\nXjItgGJ vs DbNQe\nXjItgGJ vs iOuKYyzZt\nXjItgGJ vs iySpdUX\nXjItgGJ vs EZkLNo\niOuKYyzZt vs OUumHyG\niOuKYyzZt vs ocUyWBh\niOuKYyzZt vs DbNQe\niOuKYyzZt vs XjItgGJ\niOuKYyzZt vs iySpdUX\niOuKYyzZt vs EZkLNo\niySpdUX vs OUumHyG\niySpdUX vs ocUyWBh\niySpdUX vs DbNQe\niySpdUX vs XjItgGJ\niySpdUX vs iOuKYyzZt\niySpdUX vs EZkLNo\nEZkLNo vs OUumHyG\nEZkLNo vs ocUyWBh\nEZkLNo vs DbNQe\nEZkLNo vs XjItgGJ\nEZkLNo vs iOuKYyzZt\nEZkLNo vs iySpdUX\n",
                     "type": "stdout"
                 }
             ]
@@ -4591,7 +4488,7 @@
         ],
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
-            "jugadores = ['Alice', 'Bob', 'Charlie']",
+            "jugadores = ['JwsUZyHWXS', 'UepKEbOB', 'uTRiPVo', 'VWkbqMa', 'BwdsYFWHh', 'XmgDJ', 'WRoYNxvLF']",
             "for i in range(len(jugadores)):",
             "    for j in range(len(jugadores)):",
             "        if i < j:",
@@ -4602,7 +4499,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n",
+                    "text": "JwsUZyHWXS vs UepKEbOB\nJwsUZyHWXS vs uTRiPVo\nJwsUZyHWXS vs VWkbqMa\nJwsUZyHWXS vs BwdsYFWHh\nJwsUZyHWXS vs XmgDJ\nJwsUZyHWXS vs WRoYNxvLF\nUepKEbOB vs uTRiPVo\nUepKEbOB vs VWkbqMa\nUepKEbOB vs BwdsYFWHh\nUepKEbOB vs XmgDJ\nUepKEbOB vs WRoYNxvLF\nuTRiPVo vs VWkbqMa\nuTRiPVo vs BwdsYFWHh\nuTRiPVo vs XmgDJ\nuTRiPVo vs WRoYNxvLF\nVWkbqMa vs BwdsYFWHh\nVWkbqMa vs XmgDJ\nVWkbqMa vs WRoYNxvLF\nBwdsYFWHh vs XmgDJ\nBwdsYFWHh vs WRoYNxvLF\nXmgDJ vs WRoYNxvLF\n",
                     "type": "stdout"
                 }
             ]
@@ -5078,7 +4975,7 @@
     {
         "get_solution": [
             "def di_hola(nombre_persona):",
-            "    print(f\"Hola {nombre_persona}!\")",
+            "    print(f\"\u00a1Hola {nombre_persona}!\")",
             "    print(\"\u00bfC\u00f3mo est\u00e1s?\")",
             "",
             "di_hola(\"Alicia\")",
@@ -5087,7 +4984,7 @@
         "page": "Definiendo Funciones",
         "program": [
             "def di_hola(nombre_persona):",
-            "    print(f\"Hola {nombre_persona}!\")",
+            "    print(f\"\u00a1Hola {nombre_persona}!\")",
             "    print(\"\u00bfC\u00f3mo est\u00e1s?\")",
             "",
             "di_hola(\"Alicia\")",
@@ -5098,7 +4995,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Hola Alicia!\n\u00bfC\u00f3mo est\u00e1s?\nHola Bob!\n\u00bfC\u00f3mo est\u00e1s?\n",
+                    "text": "\u00a1Hola Alicia!\n\u00bfC\u00f3mo est\u00e1s?\n\u00a1Hola Bob!\n\u00bfC\u00f3mo est\u00e1s?\n",
                     "type": "stdout"
                 }
             ]
@@ -5225,72 +5122,44 @@
             "passed": true,
             "result": [
                 {
-                    "text": "",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_doble in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_varios in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... cosa = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(cosa)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hola",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_doble in File \"my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_varios in File \"my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... cosa = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
+                    "text": "\n",
                     "type": "stdout"
                 },
                 {
                     "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(cosa)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "Hola\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "stdout"
+                    "type": "snoop"
                 },
                 {
                     "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(cosa)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hola",
                     "type": "stdout"
                 },
                 {
-                    "text": "Hola\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "text": "\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_varios: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
-                    "type": "stdout"
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_doble: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "",
-                    "type": "stdout"
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_varios: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_doble: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "type": "snoop"
                 }
             ]
         },
@@ -6067,7 +5936,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    es_amigo = nombre == \"Alicia\" or\n                                    ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nLa palabra clave de Python `or` s\u00f3lo puede utilizarse para expresiones booleanas.\nQuiz\u00e1s haya querido escribir\n\n`es_amigo = nombre == \"Alicia\" ,`\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>La palabra clave de Python <code>or</code> s\u00f3lo puede utilizarse para expresiones booleanas.\nQuiz\u00e1s haya querido escribir</p>\n<p><code>es_amigo = nombre == \"Alicia\" ,</code></p>",
+                    "text": "    es_amigo = nombre == \"Alicia\" or\n                                    ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6453,7 +6323,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nen la l\u00ednea 7\n\nUn `SyntaxError` ocurre cuando Python no puede entender tu c\u00f3digo.\n\nHa empezado a escribir una cadena con una comilla simple o doble\npero nunca termin\u00f3 la cadena con otra comilla en esa l\u00ednea.\n\n\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Ha empezado a escribir una cadena con una comilla simple o doble\npero nunca termin\u00f3 la cadena con otra comilla en esa l\u00ednea.</p>",
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nen la l\u00ednea 7\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6463,8 +6334,8 @@
     {
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
-            "cadena = \"\"\"First line",
-            "Second line\"\"\"",
+            "cadena = \"\"\"Primera l\u00ednea",
+            "Segunda l\u00ednea\"\"\"",
             "print(cadena)"
         ],
         "response": {
@@ -6472,7 +6343,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "First line\nSecond line\n",
+                    "text": "Primera l\u00ednea\nSegunda l\u00ednea\n",
                     "type": "stdout"
                 }
             ]
@@ -6767,11 +6638,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"mi mi-ExecutingNode\">12</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;34&#39;</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"mi mi-ExecutingNode\">12</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;34&#39;</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -6786,7 +6659,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | 12 + '34'",
                         "           ^^^^^^^^^",
                         "",
@@ -6806,7 +6679,7 @@
         ],
         "page": "Tipos de Dato",
         "program": [
-            "numero = '1'",
+            "numero = '2'",
             "for i in range(int(numero)):",
             "    print('Comenzando...' + str(i + 1))",
             "print('\u00a1V\u00e9!')"
@@ -6816,7 +6689,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Comenzando...1\n\u00a1V\u00e9!\n",
+                    "text": "Comenzando...1\nComenzando...2\n\u00a1V\u00e9!\n",
                     "type": "stdout"
                 }
             ]
@@ -6918,11 +6791,11 @@
                     "type": "input_prompt"
                 },
                 {
-                    "text": "<input: 7>\n",
+                    "text": "<input: 1>\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u00a1Incre\u00edble! \u00bfEres ps\u00edquico?\n",
+                    "text": "\u00a1Nope!\n",
                     "type": "stdout"
                 }
             ]

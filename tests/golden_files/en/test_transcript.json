@@ -43,7 +43,8 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>Currently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.</p>\n<p>Unless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -235,11 +236,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">sunshine</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">sunshine</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -254,7 +257,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | sunshine",
                         "           ^^^^^^^^",
                         "",
@@ -563,7 +566,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `2` identified above was expected to begin a new indented block.\n\n\n",
+                    "friendly": "<p>An <code>IndentationError</code> occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.</p>\n<p>Line <code>2</code> identified above was expected to begin a new indented block.</p>",
+                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -624,7 +628,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n\nAn `IndentationError` occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.\n\nLine `3` identified above is less indented than expected.\n\n\n",
+                    "friendly": "<p>An <code>IndentationError</code> occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.</p>\n<p>Line <code>3</code> identified above is less indented than expected.</p>",
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1258,204 +1263,40 @@
             "passed": true,
             "result": [
                 {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "ello World",
+                    "type": "stdout"
+                },
+                {
+                    "text": "\n",
+                    "type": "stdout"
+                },
+                {
                     "text": "",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | new_sentence \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m...... char = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m include:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         new_sentence \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m char\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. new_sentence = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     include \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m char \u001b[38;5;197min\u001b[39m sentence:\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(new_sentence)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "ello World\n",
-                    "type": "stdout"
+                    "type": "snoop"
                 }
             ]
         },
@@ -1620,11 +1461,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 6,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">sentence</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">char</span>",
                                             "is_current": true,
                                             "lineno": 6,
+                                            "text": "<span class=\"n\">sentence</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">char</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -1648,7 +1491,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 6, in <module>",
+                        " File \"/my_program.py\", line 6, in <module>",
                         "       5 |     char = '!'",
                         "-->    6 | sentence += char",
                         "                       ^^^^",
@@ -1664,6 +1507,15 @@
         "step": "undefined_char"
     },
     {
+        "get_solution": [
+            "if excited:",
+            "    char = '!'",
+            "else:",
+            "    char = '.'",
+            "sentence += char",
+            "",
+            "print(sentence)"
+        ],
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "sentence = 'Hello there'",
@@ -1801,7 +1653,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou likely called a function with a named argument:\n\n    a_function(invalid=something) \n\nwhere `invalid` is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.\n\n\n",
+                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You likely called a function with a named argument:</p>\n<pre><code>a_function(invalid=something)\n</code></pre>\n<p>where <code>invalid</code> is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.</p>",
+                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1990,6 +1843,14 @@
         "response": {
             "message": "",
             "passed": true,
+            "prediction": {
+                "answer": "True",
+                "choices": [
+                    "True",
+                    "False",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "text": "True\n",
@@ -2402,11 +2263,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">words</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">words</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -2426,7 +2289,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | words[4]",
                         "           ^^^^^^^^",
                         "words = ['This', 'is', 'a', 'list']",
@@ -2558,11 +2421,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">indices</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">indices</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">4</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -2582,7 +2447,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | indices[4]",
                         "           ^^^^^^^^^^",
                         "indices = range(0, 4)",
@@ -2940,11 +2805,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">f</span><span class=\"p p-ExecutingNode\">()</span>",
                                             "is_current": true,
                                             "lineno": 3,
+                                            "text": "<span class=\"n n-ExecutingNode\">f</span><span class=\"p p-ExecutingNode\">()</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -2964,7 +2831,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
+                        " File \"/my_program.py\", line 3, in <module>",
                         "       2 | print(callable(f))",
                         "-->    3 | f()",
                         "           ^^^",
@@ -3024,11 +2891,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 2,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">length</span> <span class=\"o\">=</span> <span class=\"nb nb-ExecutingNode\">len</span><span class=\"p p-ExecutingNode\">(</span><span class=\"n n-ExecutingNode\">things</span><span class=\"p p-ExecutingNode\">)</span>",
                                             "is_current": true,
                                             "lineno": 2,
+                                            "text": "<span class=\"n\">length</span> <span class=\"o\">=</span> <span class=\"nb nb-ExecutingNode\">len</span><span class=\"p p-ExecutingNode\">(</span><span class=\"n n-ExecutingNode\">things</span><span class=\"p p-ExecutingNode\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -3048,7 +2917,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 2, in <module>",
+                        " File \"/my_program.py\", line 2, in <module>",
                         "       1 | things = print([1, 2, 3])",
                         "-->    2 | length = len(things)",
                         "                    ^^^^^^^^^^^",
@@ -3101,11 +2970,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 2,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n n-ExecutingNode\">word</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39;!&#39;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 2,
+                                            "text": "<span class=\"n n-ExecutingNode\">word</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39;!&#39;</span><span class=\"p\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -3125,7 +2996,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 2, in <module>",
+                        " File \"/my_program.py\", line 2, in <module>",
                         "       1 | word = 'Hello'",
                         "-->    2 | word.append('!')",
                         "           ^^^^^^^^^^^",
@@ -3639,11 +3510,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"s1 s1-ExecutingNode\">&#39;Python&#39;</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"s1 s1-ExecutingNode\">&#39;Python&#39;</span><span class=\"o o-ExecutingNode\">.</span><span class=\"n n-ExecutingNode\">append</span><span class=\"p\">(</span><span class=\"s1\">&#39; is cool!&#39;</span><span class=\"p\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -3658,7 +3531,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | 'Python'.append(' is cool!')",
                         "           ^^^^^^^^^^^^^^^",
                         "",
@@ -3862,11 +3735,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"n\">number</span> <span class=\"o\">=</span> <span class=\"n n-ExecutingNode\">numbers</span><span class=\"p p-ExecutingNode\">[</span><span class=\"n n-ExecutingNode\">i</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "is_current": true,
                                             "lineno": 3,
+                                            "text": "<span class=\"n\">number</span> <span class=\"o\">=</span> <span class=\"n n-ExecutingNode\">numbers</span><span class=\"p p-ExecutingNode\">[</span><span class=\"n n-ExecutingNode\">i</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -3906,7 +3781,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
+                        " File \"/my_program.py\", line 3, in <module>",
                         "       2 | for i in range(len(numbers)):",
                         "-->    3 |     number = numbers[i]",
                         "                        ^^^^^^^^^^",
@@ -4023,7 +3898,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nI suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:\n\n    print('Alice\\'s Diner')\n                ^^\n\n\n",
+                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Alice\\'s Diner')\n            ^^\n</code></pre>",
+                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4178,11 +4054,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 3,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hello &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">name</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. You are &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">age</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; years old.&quot;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 3,
+                                            "text": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2 s2-ExecutingNode\">&quot;Hello &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">name</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;. You are &quot;</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">age</span> <span class=\"o\">+</span> <span class=\"s2\">&quot; years old.&quot;</span><span class=\"p\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -4214,7 +4092,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 3, in <module>",
+                        " File \"/my_program.py\", line 3, in <module>",
                         "       2 | age = 20",
                         "-->    3 | print(\"Hello \" + name + \". You are \" + age + \" years old.\")",
                         "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
@@ -4343,11 +4221,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi mi-ExecutingNode\">1</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;x&quot;</span><span class=\"p\">)</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"mi mi-ExecutingNode\">1</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s2 s2-ExecutingNode\">&quot;x&quot;</span><span class=\"p\">)</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -4362,7 +4242,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | print(1 + \"x\")",
                         "                 ^^^^^^^",
                         "",
@@ -4382,18 +4262,18 @@
             "        left += 1",
             "        right += 1",
             "        print(f'{left} x {right} = {left * right}')",
-            "    print('----------')"
+            "    print('---')"
         ],
         "response": {
             "message": "<p>You added 1 to your outer loop variable at the wrong place!\nWhere should you do that instead to fix it?</p>",
             "passed": false,
             "result": [
                 {
-                    "text": "1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n----------\n2 x 1 = 2\n3 x 2 = 6\n4 x 3 = 12\n5 x 4 = 20\n6 x 5 = 30\n7 x 6 = 42\n8 x 7 = 56\n9 x 8 = 72\n10 x 9 = 90\n11 x 10 = 110\n12 x 11 = 132\n13 x 12 = 156\n----------\n3 x 1 = 3\n4 x 2 = 8\n5 x 3 = 15\n6 x 4 = 24\n7 x 5 = 35\n8 x 6 = 48\n9 x 7 = 63\n10 x 8 = 80\n11 x 9 = 99\n12 x 10 = 120\n13 x 11 = 143\n14 x 12 = 168\n----------\n4 x 1 = 4\n5 x 2 = 10\n6 x 3 = 18\n7 x 4 = 28\n8 x 5 = 40\n9 x 6 = 54\n10 x 7 = 70\n11 x 8 = 88\n12 x 9 = 108\n13 x 10 = 130\n14 x 11 = 154\n15 x 12 = 180\n----------\n5 x 1 = 5\n6 x 2 = 12\n7 x 3 = 21\n8 x 4 = 32\n9 x 5 = 45\n10 x 6 = 60\n11 x 7 = 77\n12 x 8 = 96\n13 x 9 = 117\n14 x 10 = 140\n15 x 11 = 165\n16 x 12 = 192\n----------\n6 x 1 = 6\n7 x 2 = 14\n8 x 3 = 24\n9 x 4 = 36\n10 x 5 = 50\n11 x 6 = 66\n12 x 7 = 84\n13 x 8 = 104\n14 x 9 = 126\n15 x 10 = 150\n16 x 11 = 176\n17 x 12 = 204\n----------\n7 x 1 = 7\n8 x 2 = 16\n9 x 3 = 27\n10 x 4 = 40\n11 x 5 = 55\n12 x 6 = 72\n13 x 7 = 91",
+                    "text": "1 x 1 = 1\n2 x 2 = 4\n3 x 3 = 9\n4 x 4 = 16\n5 x 5 = 25\n6 x 6 = 36\n7 x 7 = 49\n8 x 8 = 64\n9 x 9 = 81\n10 x 10 = 100\n11 x 11 = 121\n12 x 12 = 144\n---\n2 x 1 = 2\n3 x 2 = 6\n4 x 3 = 12\n5 x 4 = 20\n6 x 5 = 30\n7 x 6 = 42\n8 x 7 = 56\n9 x 8 = 72\n10 x 9 = 90\n11 x 10 = 110\n12 x 11 = 132\n13 x 12 = 156\n---\n3 x 1 = 3\n4 x 2 = 8\n5 x 3 = 15\n6 x 4 = 24\n7 x 5 = 35\n8 x 6 = 48\n9 x 7 = 63\n10 x 8 = 80\n11 x 9 = 99\n12 x 10 = 120\n13 x 11 = 143\n14 x 12 = 168\n---\n4 x 1 = 4\n5 x 2 = 10\n6 x 3 = 18\n7 x 4 = 28\n8 x 5 = 40\n9 x 6 = 54\n10 x 7 = 70\n11 x 8 = 88\n12 x 9 = 108\n13 x 10 = 130\n14 x 11 = 154\n15 x 12 = 180\n---\n5 x 1 = 5\n6 x 2 = 12\n7 x 3 = 21\n8 x 4 = 32\n9 x 5 = 45\n10 x 6 = 60\n11 x 7 = 77\n12 x 8 = 96\n13 x 9 = 117\n14 x 10 = 140\n15 x 11 = 165\n16 x 12 = 192\n---\n6 x 1 = 6\n7 x 2 = 14\n8 x 3 = 24\n9 x 4 = 36\n10 x 5 = 50\n11 x 6 = 66\n12 x 7 = 84\n13 x 8 = 104\n14 x 9 = 126\n15 x 10 = 150\n16 x 11 = 176\n17 x 12 = 204\n---\n7 x 1 = 7\n8 x 2 = 16\n9 x 3 = 27\n10 x 4 = 40\n11 x 5 = 55\n12 x 6 = 72\n13 x 7 = 91\n14 x 8 = 112\n15 x 9 = 135\n16 x 10 = 160\n17 x 11 = 187",
                     "type": "stdout"
                 },
                 {
-                    "text": "\n14 x 8 = 112\n15 x 9 = 135\n16 x 10 = 160\n17 x 11 = 187\n18 x 12 = 216\n----------\n8 x 1 = 8\n9 x 2 = 18\n10 x 3 = 30\n11 x 4 = 44\n12 x 5 = 60\n13 x 6 = 78\n14 x 7 = 98\n15 x 8 = 120\n16 x 9 = 144\n17 x 10 = 170\n18 x 11 = 198\n19 x 12 = 228\n----------\n9 x 1 = 9\n10 x 2 = 20\n11 x 3 = 33\n12 x 4 = 48\n13 x 5 = 65\n14 x 6 = 84\n15 x 7 = 105\n16 x 8 = 128\n17 x 9 = 153\n18 x 10 = 180\n19 x 11 = 209\n20 x 12 = 240\n----------\n10 x 1 = 10\n11 x 2 = 22\n12 x 3 = 36\n13 x 4 = 52\n14 x 5 = 70\n15 x 6 = 90\n16 x 7 = 112\n17 x 8 = 136\n18 x 9 = 162\n19 x 10 = 190\n20 x 11 = 220\n21 x 12 = 252\n----------\n11 x 1 = 11\n12 x 2 = 24\n13 x 3 = 39\n14 x 4 = 56\n15 x 5 = 75\n16 x 6 = 96\n17 x 7 = 119\n18 x 8 = 144\n19 x 9 = 171\n20 x 10 = 200\n21 x 11 = 231\n22 x 12 = 264\n----------\n12 x 1 = 12\n13 x 2 = 26\n14 x 3 = 42\n15 x 4 = 60\n16 x 5 = 80\n17 x 6 = 102\n18 x 7 = 126\n19 x 8 = 152\n20 x 9 = 180\n21 x 10 = 210\n22 x 11 = 242\n23 x 12 = 276\n----------\n",
+                    "text": "\n18 x 12 = 216\n---\n8 x 1 = 8\n9 x 2 = 18\n10 x 3 = 30\n11 x 4 = 44\n12 x 5 = 60\n13 x 6 = 78\n14 x 7 = 98\n15 x 8 = 120\n16 x 9 = 144\n17 x 10 = 170\n18 x 11 = 198\n19 x 12 = 228\n---\n9 x 1 = 9\n10 x 2 = 20\n11 x 3 = 33\n12 x 4 = 48\n13 x 5 = 65\n14 x 6 = 84\n15 x 7 = 105\n16 x 8 = 128\n17 x 9 = 153\n18 x 10 = 180\n19 x 11 = 209\n20 x 12 = 240\n---\n10 x 1 = 10\n11 x 2 = 22\n12 x 3 = 36\n13 x 4 = 52\n14 x 5 = 70\n15 x 6 = 90\n16 x 7 = 112\n17 x 8 = 136\n18 x 9 = 162\n19 x 10 = 190\n20 x 11 = 220\n21 x 12 = 252\n---\n11 x 1 = 11\n12 x 2 = 24\n13 x 3 = 39\n14 x 4 = 56\n15 x 5 = 75\n16 x 6 = 96\n17 x 7 = 119\n18 x 8 = 144\n19 x 9 = 171\n20 x 10 = 200\n21 x 11 = 231\n22 x 12 = 264\n---\n12 x 1 = 12\n13 x 2 = 26\n14 x 3 = 42\n15 x 4 = 60\n16 x 5 = 80\n17 x 6 = 102\n18 x 7 = 126\n19 x 8 = 152\n20 x 9 = 180\n21 x 10 = 210\n22 x 11 = 242\n23 x 12 = 276\n---\n",
                     "type": "stdout"
                 }
             ]
@@ -4417,18 +4297,18 @@
             "    print(left, 'x 10 =', left * 10)",
             "    print(left, 'x 11 =', left * 11)",
             "    print(left, 'x 12 =', left * 12)",
-            "    print('----------')"
+            "    print('---')"
         ],
         "response": {
             "message": "<p>Your solution is too long. You only need a few lines of code for this problem.\nUse a nested loop so that you don't need to repeat yourself.\nThe computer will do the repetition for you!</p>",
             "passed": false,
             "result": [
                 {
-                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------",
+                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n---\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n---\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n---\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n---\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n---\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n---\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n---\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 =",
                     "type": "stdout"
                 },
                 {
-                    "text": "\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n",
+                    "text": " 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n---\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n---\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n---\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n---\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n---\n",
                     "type": "stdout"
                 }
             ]
@@ -4444,18 +4324,18 @@
             "        right += 1",
             "        # for the sake of translation",
             "        print(f'{left} x {right} = {left * right}'.replace('x', '*'))",
-            "    print('----------')"
+            "    print('---')"
         ],
         "response": {
             "message": "<p>That's almost correct! Make sure to display the right character <code>x</code> in your table.\nFor example, your solution should display <code>3 x 4 = 12</code> and not <code>3 * 4 = 12</code>.</p>",
             "passed": false,
             "result": [
                 {
-                    "text": "1 * 1 = 1\n1 * 2 = 2\n1 * 3 = 3\n1 * 4 = 4\n1 * 5 = 5\n1 * 6 = 6\n1 * 7 = 7\n1 * 8 = 8\n1 * 9 = 9\n1 * 10 = 10\n1 * 11 = 11\n1 * 12 = 12\n----------\n2 * 1 = 2\n2 * 2 = 4\n2 * 3 = 6\n2 * 4 = 8\n2 * 5 = 10\n2 * 6 = 12\n2 * 7 = 14\n2 * 8 = 16\n2 * 9 = 18\n2 * 10 = 20\n2 * 11 = 22\n2 * 12 = 24\n----------\n3 * 1 = 3\n3 * 2 = 6\n3 * 3 = 9\n3 * 4 = 12\n3 * 5 = 15\n3 * 6 = 18\n3 * 7 = 21\n3 * 8 = 24\n3 * 9 = 27\n3 * 10 = 30\n3 * 11 = 33\n3 * 12 = 36\n----------\n4 * 1 = 4\n4 * 2 = 8\n4 * 3 = 12\n4 * 4 = 16\n4 * 5 = 20\n4 * 6 = 24\n4 * 7 = 28\n4 * 8 = 32\n4 * 9 = 36\n4 * 10 = 40\n4 * 11 = 44\n4 * 12 = 48\n----------\n5 * 1 = 5\n5 * 2 = 10\n5 * 3 = 15\n5 * 4 = 20\n5 * 5 = 25\n5 * 6 = 30\n5 * 7 = 35\n5 * 8 = 40\n5 * 9 = 45\n5 * 10 = 50\n5 * 11 = 55\n5 * 12 = 60\n----------\n6 * 1 = 6\n6 * 2 = 12\n6 * 3 = 18\n6 * 4 = 24\n6 * 5 = 30\n6 * 6 = 36\n6 * 7 = 42\n6 * 8 = 48\n6 * 9 = 54\n6 * 10 = 60\n6 * 11 = 66\n6 * 12 = 72\n----------\n7 * 1 = 7\n7 * 2 = 14\n7 * 3 = 21\n7 * 4 = 28\n7 * 5 = 35\n7 * 6 = 42\n7 * 7 = 49\n7 * 8 = 56\n7 * 9 = 63\n7 * 10 = 70\n7 * 11 = 77\n7 * 12 = 84\n----------",
+                    "text": "1 * 1 = 1\n1 * 2 = 2\n1 * 3 = 3\n1 * 4 = 4\n1 * 5 = 5\n1 * 6 = 6\n1 * 7 = 7\n1 * 8 = 8\n1 * 9 = 9\n1 * 10 = 10\n1 * 11 = 11\n1 * 12 = 12\n---\n2 * 1 = 2\n2 * 2 = 4\n2 * 3 = 6\n2 * 4 = 8\n2 * 5 = 10\n2 * 6 = 12\n2 * 7 = 14\n2 * 8 = 16\n2 * 9 = 18\n2 * 10 = 20\n2 * 11 = 22\n2 * 12 = 24\n---\n3 * 1 = 3\n3 * 2 = 6\n3 * 3 = 9\n3 * 4 = 12\n3 * 5 = 15\n3 * 6 = 18\n3 * 7 = 21\n3 * 8 = 24\n3 * 9 = 27\n3 * 10 = 30\n3 * 11 = 33\n3 * 12 = 36\n---\n4 * 1 = 4\n4 * 2 = 8\n4 * 3 = 12\n4 * 4 = 16\n4 * 5 = 20\n4 * 6 = 24\n4 * 7 = 28\n4 * 8 = 32\n4 * 9 = 36\n4 * 10 = 40\n4 * 11 = 44\n4 * 12 = 48\n---\n5 * 1 = 5\n5 * 2 = 10\n5 * 3 = 15\n5 * 4 = 20\n5 * 5 = 25\n5 * 6 = 30\n5 * 7 = 35\n5 * 8 = 40\n5 * 9 = 45\n5 * 10 = 50\n5 * 11 = 55\n5 * 12 = 60\n---\n6 * 1 = 6\n6 * 2 = 12\n6 * 3 = 18\n6 * 4 = 24\n6 * 5 = 30\n6 * 6 = 36\n6 * 7 = 42\n6 * 8 = 48\n6 * 9 = 54\n6 * 10 = 60\n6 * 11 = 66\n6 * 12 = 72\n---\n7 * 1 = 7\n7 * 2 = 14\n7 * 3 = 21\n7 * 4 = 28\n7 * 5 = 35\n7 * 6 = 42\n7 * 7 = 49\n7 * 8 = 56\n7 * 9 = 63\n7 * 10 = 70\n7 * 11 = 77\n7 * 12 = 84\n---\n8 * 1 = 8\n8 * 2 = 16\n8 * 3 = 24\n8 * 4 = 32\n8 * 5 = 40",
                     "type": "stdout"
                 },
                 {
-                    "text": "\n8 * 1 = 8\n8 * 2 = 16\n8 * 3 = 24\n8 * 4 = 32\n8 * 5 = 40\n8 * 6 = 48\n8 * 7 = 56\n8 * 8 = 64\n8 * 9 = 72\n8 * 10 = 80\n8 * 11 = 88\n8 * 12 = 96\n----------\n9 * 1 = 9\n9 * 2 = 18\n9 * 3 = 27\n9 * 4 = 36\n9 * 5 = 45\n9 * 6 = 54\n9 * 7 = 63\n9 * 8 = 72\n9 * 9 = 81\n9 * 10 = 90\n9 * 11 = 99\n9 * 12 = 108\n----------\n10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = 70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100\n10 * 11 = 110\n10 * 12 = 120\n----------\n11 * 1 = 11\n11 * 2 = 22\n11 * 3 = 33\n11 * 4 = 44\n11 * 5 = 55\n11 * 6 = 66\n11 * 7 = 77\n11 * 8 = 88\n11 * 9 = 99\n11 * 10 = 110\n11 * 11 = 121\n11 * 12 = 132\n----------\n12 * 1 = 12\n12 * 2 = 24\n12 * 3 = 36\n12 * 4 = 48\n12 * 5 = 60\n12 * 6 = 72\n12 * 7 = 84\n12 * 8 = 96\n12 * 9 = 108\n12 * 10 = 120\n12 * 11 = 132\n12 * 12 = 144\n----------\n",
+                    "text": "\n8 * 6 = 48\n8 * 7 = 56\n8 * 8 = 64\n8 * 9 = 72\n8 * 10 = 80\n8 * 11 = 88\n8 * 12 = 96\n---\n9 * 1 = 9\n9 * 2 = 18\n9 * 3 = 27\n9 * 4 = 36\n9 * 5 = 45\n9 * 6 = 54\n9 * 7 = 63\n9 * 8 = 72\n9 * 9 = 81\n9 * 10 = 90\n9 * 11 = 99\n9 * 12 = 108\n---\n10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = 70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100\n10 * 11 = 110\n10 * 12 = 120\n---\n11 * 1 = 11\n11 * 2 = 22\n11 * 3 = 33\n11 * 4 = 44\n11 * 5 = 55\n11 * 6 = 66\n11 * 7 = 77\n11 * 8 = 88\n11 * 9 = 99\n11 * 10 = 110\n11 * 11 = 121\n11 * 12 = 132\n---\n12 * 1 = 12\n12 * 2 = 24\n12 * 3 = 36\n12 * 4 = 48\n12 * 5 = 60\n12 * 6 = 72\n12 * 7 = 84\n12 * 8 = 96\n12 * 9 = 108\n12 * 10 = 120\n12 * 11 = 132\n12 * 12 = 144\n---\n",
                     "type": "stdout"
                 }
             ]
@@ -4473,7 +4353,8 @@
             "passed": false,
             "result": [
                 {
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 2\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nCurrently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.\n\nUnless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues\n\n\n\n",
+                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>Currently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.</p>\n<p>Unless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4487,7 +4368,7 @@
             "    for right in range(12):",
             "        right += 1",
             "        print(f'{left} x {right} = {left * right}')",
-            "    print('----------')"
+            "    print('---')"
         ],
         "page": "Introducing Nested Loops",
         "program": [
@@ -4496,18 +4377,18 @@
             "    for right in range(12):",
             "        right += 1",
             "        print(f'{left} x {right} = {left * right}')",
-            "    print('----------')"
+            "    print('---')"
         ],
         "response": {
             "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n----------\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n----------\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n----------\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n----------\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n----------\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n----------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n----------",
+                    "text": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n1 x 11 = 11\n1 x 12 = 12\n---\n2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n2 x 11 = 22\n2 x 12 = 24\n---\n3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30\n3 x 11 = 33\n3 x 12 = 36\n---\n4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n4 x 11 = 44\n4 x 12 = 48\n---\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50\n5 x 11 = 55\n5 x 12 = 60\n---\n6 x 1 = 6\n6 x 2 = 12\n6 x 3 = 18\n6 x 4 = 24\n6 x 5 = 30\n6 x 6 = 36\n6 x 7 = 42\n6 x 8 = 48\n6 x 9 = 54\n6 x 10 = 60\n6 x 11 = 66\n6 x 12 = 72\n---\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n7 x 11 = 77\n7 x 12 = 84\n---\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40",
                     "type": "stdout"
                 },
                 {
-                    "text": "\n8 x 1 = 8\n8 x 2 = 16\n8 x 3 = 24\n8 x 4 = 32\n8 x 5 = 40\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n----------\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n----------\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n----------\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n----------\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n----------\n",
+                    "text": "\n8 x 6 = 48\n8 x 7 = 56\n8 x 8 = 64\n8 x 9 = 72\n8 x 10 = 80\n8 x 11 = 88\n8 x 12 = 96\n---\n9 x 1 = 9\n9 x 2 = 18\n9 x 3 = 27\n9 x 4 = 36\n9 x 5 = 45\n9 x 6 = 54\n9 x 7 = 63\n9 x 8 = 72\n9 x 9 = 81\n9 x 10 = 90\n9 x 11 = 99\n9 x 12 = 108\n---\n10 x 1 = 10\n10 x 2 = 20\n10 x 3 = 30\n10 x 4 = 40\n10 x 5 = 50\n10 x 6 = 60\n10 x 7 = 70\n10 x 8 = 80\n10 x 9 = 90\n10 x 10 = 100\n10 x 11 = 110\n10 x 12 = 120\n---\n11 x 1 = 11\n11 x 2 = 22\n11 x 3 = 33\n11 x 4 = 44\n11 x 5 = 55\n11 x 6 = 66\n11 x 7 = 77\n11 x 8 = 88\n11 x 9 = 99\n11 x 10 = 110\n11 x 11 = 121\n11 x 12 = 132\n---\n12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n12 x 11 = 132\n12 x 12 = 144\n---\n",
                     "type": "stdout"
                 }
             ]
@@ -5244,72 +5125,44 @@
             "passed": true,
             "result": [
                 {
-                    "text": "",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hello",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n",
+                    "text": "\n",
                     "type": "stdout"
                 },
                 {
                     "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "Hello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "stdout"
+                    "type": "snoop"
                 },
                 {
                     "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(thing)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hello",
                     "type": "stdout"
                 },
                 {
-                    "text": "Hello\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "text": "\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
-                    "type": "stdout"
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "",
-                    "type": "stdout"
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "type": "snoop"
                 }
             ]
         },
@@ -6086,7 +5939,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nThe Python keyword `or` can only be used for boolean expressions.\nPerhaps you meant to write\n\n`is_friend = name == \"Alice\" ,`\n\n\n",
+                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>The Python keyword <code>or</code> can only be used for boolean expressions.\nPerhaps you meant to write</p>\n<p><code>is_friend = name == \"Alice\" ,</code></p>",
+                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6472,7 +6326,8 @@
             "passed": true,
             "result": [
                 {
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n\nA `SyntaxError` occurs when Python cannot understand your code.\n\nYou started writing a string with a single or double quote\nbut never ended the string with another quote on that line.\n\n\n",
+                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You started writing a string with a single or double quote\nbut never ended the string with another quote on that line.</p>",
+                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6786,11 +6641,13 @@
                             },
                             "frames": [
                                 {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
                                     "lines": [
                                         {
-                                            "content": "<span class=\"mi mi-ExecutingNode\">12</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;34&#39;</span>",
                                             "is_current": true,
                                             "lineno": 1,
+                                            "text": "<span class=\"mi mi-ExecutingNode\">12</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">+</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;34&#39;</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -6805,7 +6662,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"my_program.py\", line 1, in <module>",
+                        " File \"/my_program.py\", line 1, in <module>",
                         "-->    1 | 12 + '34'",
                         "           ^^^^^^^^^",
                         "",

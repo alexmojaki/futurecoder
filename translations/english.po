@@ -78,18 +78,6 @@ msgstr "\"!! Warning !!\""
 msgid "code_bits.\"!!!! DANGER !!!!\""
 msgstr "\"!!!! DANGER !!!!\""
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
-#. 
-#. string = """First line
-#. Second line"""
-#. print(string)
-msgid ""
-"code_bits.\"\"\"First line\n"
-"Second line\"\"\""
-msgstr ""
-"\"\"\"First line\n"
-"Second line\"\"\""
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TestingFunctions.steps.surround_exercise.text
 #. 
 #.     assert_equal(surround("more", "++"), "++more++")
@@ -8354,7 +8342,7 @@ msgstr "f'{i + 1} {\"|\".join(row)}'"
 #.     for right in range(12):
 #.         right += 1
 #.         print(f'{left} x {right} = {left * right}')
-#.     print('----------')
+#.     print('---')
 msgid "code_bits.f'{left} x {right} = {left * right}'"
 msgstr "f'{left} x {right} = {left * right}'"
 
@@ -9722,7 +9710,7 @@ msgstr "joined_rows"
 #.     for right in range(12):
 #.         right += 1
 #.         print(f'{left} x {right} = {left * right}')
-#.     print('----------')
+#.     print('---')
 msgid "code_bits.left"
 msgstr "left"
 
@@ -13526,7 +13514,7 @@ msgstr "result"
 #.     for right in range(12):
 #.         right += 1
 #.         print(f'{left} x {right} = {left * right}')
-#.     print('----------')
+#.     print('---')
 msgid "code_bits.right"
 msgstr "right"
 
@@ -15138,14 +15126,6 @@ msgstr "spaces"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.discovering_newline
 #. 
 #. string
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
-#. 
-#. string = """First line
-#. Second line"""
-#. print(string)
 #. 
 #. ------
 #. 
@@ -17326,6 +17306,9 @@ msgstr "Chat on Slack"
 msgid "frontend.click_for_error_details"
 msgstr "Click for error details"
 
+msgid "frontend.click_to_expand"
+msgstr "Click to expand"
+
 msgid "frontend.contact_directly"
 msgstr "Alternatively, you can contact us directly:"
 
@@ -19176,7 +19159,7 @@ msgstr "You get an error. Look at the message. What is it telling you? Where doe
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_parameter_name
 msgid "pages.DefiningFunctions.steps.change_parameter_name.hints.3.text"
-msgstr "If the parameter is called `person_name`, what does `print(\"Hello \" + name + \"!\")` mean?"
+msgstr "If the parameter is called `person_name`, what does `print(f\"Hello {name}!\")` mean?"
 
 #. https://futurecoder.io/course/#DefiningFunctions
 #. 
@@ -20439,7 +20422,7 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPositionExercises.steps.zip_longest_exercise
 msgid "pages.GettingElementsAtPositionExercises.steps.zip_longest_exercise.hints.7.text"
-msgstr "Remember, the biggest valid index for `string1` is `len(string1) - 1`. `len(string)` is too big."
+msgstr "Remember, the biggest valid index for `string1` is `len(string1) - 1`. `len(string1)` is too big."
 
 #. https://futurecoder.io/course/#GettingElementsAtPositionExercises
 #. 
@@ -20689,6 +20672,42 @@ msgstr ""
 "the same letters, where the first letter is capitalised and the rest are lowercase.\n"
 "For example, the output should be `Hello world` whether the input `sentence = 'hello world'`\n"
 "or `'HELLO WORLD'`."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.0.text"
+msgstr "Don't change anything that's already there, just add a bit more code."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.1.text"
+msgstr "`else` needs to come immediately after the `if` body, with nothing in between."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.2.text"
+msgstr "`sentence += char` needs to run whether `excited` is `True` or `False`."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.3.text"
+msgstr "You *could* have a copy of `sentence += char` in both the `if` and `else` blocks, but there's a better way."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.4.text"
+msgstr "Use `else` to assign a different value to `char`."
+
+#. https://futurecoder.io/course/#IfAndElse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.else_full_stop
+msgid "pages.IfAndElse.steps.else_full_stop.hints.5.text"
+msgstr "If `excited` is `False`, then `char` should be `'.'` instead of `'!'`."
 
 #. https://futurecoder.io/course/#IfAndElse
 msgid "pages.IfAndElse.steps.else_full_stop.text"
@@ -22757,7 +22776,7 @@ msgstr ""
 "    1 x 10 = 10\n"
 "    1 x 11 = 11\n"
 "    1 x 12 = 12\n"
-"    ----------\n"
+"    ---\n"
 "    2 x 1 = 2\n"
 "    2 x 2 = 4\n"
 "    2 x 3 = 6\n"
@@ -22770,7 +22789,7 @@ msgstr ""
 "    2 x 10 = 20\n"
 "    2 x 11 = 22\n"
 "    2 x 12 = 24\n"
-"    ----------\n"
+"    ---\n"
 "    3 x 1 = 3\n"
 "    3 x 2 = 6\n"
 "    3 x 3 = 9\n"
@@ -22778,7 +22797,7 @@ msgstr ""
 "    11 x 10 = 110\n"
 "    11 x 11 = 121\n"
 "    11 x 12 = 132\n"
-"    ----------\n"
+"    ---\n"
 "    12 x 1 = 12\n"
 "    12 x 2 = 24\n"
 "    12 x 3 = 36\n"
@@ -22791,7 +22810,7 @@ msgstr ""
 "    12 x 10 = 120\n"
 "    12 x 11 = 132\n"
 "    12 x 12 = 144\n"
-"    ----------"
+"    ---"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -22852,7 +22871,7 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise
 msgid "pages.IntroducingNestedLoops.steps.upside_down_triangle_exercise.hints.8.text"
-msgstr "What formula converts 0 into 5, 1 into 4, 2, into 3, etc?"
+msgstr "What formula converts 0 into 5, 1 into 4, 2 into 3, etc?"
 
 #. https://futurecoder.io/course/#IntroducingNestedLoops
 #. 
@@ -23451,7 +23470,7 @@ msgstr "Introducing `or`"
 #. https://futurecoder.io/course/#IntroducingStrings
 msgid "pages.IntroducingStrings.steps.final_text.text"
 msgstr ""
-"The shell simply gives the same thing back because there's nothing to further to calculate. `'hello'` is simply equal to `'hello'`.\n"
+"The shell simply gives the same thing back because there's nothing further to calculate. `'hello'` is simply equal to `'hello'`.\n"
 "\n"
 "A string is a sequence of characters. A character is a single symbol such as a letter, number, punctuation, space, etc. In this case the string contains the 5 characters `hello`. The quotes are not part of the string - they are there to tell both humans and computers that this is a string consisting of whatever characters are between the quotes."
 
@@ -23503,7 +23522,7 @@ msgid "pages.IntroducingTheShell.steps.more_calculation.text"
 msgstr ""
 "Great! Python evaluated `1+2` and got the result `3`, so the shell displays that.\n"
 "\n"
-"The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself \"What would happen if I ran X?\" and then immediately answer that question by running it! Never be scared to try something out - if you get something wrong, nothing bad will happen.\n"
+"The shell is probably your most important tool for learning Python, and you should spend lots of time experimenting and exploring in it. Be curious! Constantly ask yourself \"What would happen if I ran X?\" and then immediately answer that question by running it. Never be scared to try something out - if you get something wrong, nothing bad will happen.\n"
 "\n"
 "Try doing some more calculations now. You can multiply numbers with `*`, divide with `/`, and subtract with `-`. You can also use parentheses, i.e. `(` and `)`."
 
@@ -24637,7 +24656,7 @@ msgid "pages.LoopingOverNestedLists.steps.zip_strings_list_exercise.text"
 msgstr ""
 "Excellent!\n"
 "\n"
-"[Earlier in the course](#GettingElementsAtPosition) there was an exercise\n"
+"[Earlier in the course](#GettingElementsAtPositionExercises) there was an exercise\n"
 "to print two strings vertically side by side, like this:\n"
 "\n"
 "    H W\n"
@@ -26092,6 +26111,13 @@ msgstr ""
 "\n"
 "See for yourself how this doesn't work."
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes
+msgid "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.program"
+msgstr ""
+"string = \"\"\"First line\n"
+"Second line\"\"\"\n"
+"print(string)"
+
 #. https://futurecoder.io/course/#NewlinesAndFormatBoard
 msgid "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.text"
 msgstr ""
@@ -26331,7 +26357,7 @@ msgstr ""
 msgid "pages.OtherComparisonOperators.steps.try_not_equals.text"
 msgstr ""
 "The opposite of the equals operator `==` is the *not equals* operator `!=`. If you squint it sort of looks like ≠. It "
-"evaluates to `True` when two values are...not equal. Try it for yourself in the shell."
+"evaluates to `True` when two values are...not equal. Try `__program__` for yourself in the shell."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.title"

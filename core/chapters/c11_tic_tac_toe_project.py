@@ -707,6 +707,9 @@ But Python provides a way! The solution is to use *triple quotes*, i.e. three qu
 __program_indented__
         """
 
+        # Auto-translation of the body of `def program` is broken by the multiline string
+        auto_translate_program = False
+
         def program(self):
             string = """First line
             Second line"""

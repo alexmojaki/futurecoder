@@ -1,10 +1,7 @@
-import React, {Component} from 'react'
+import React, {Component, useState, useRef, useLayoutEffect} from 'react'
 import AnsiUp from "ansi_up";
 
 import sourceStyles from './defs/styles/TerminalMessage'
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
-import Popup from "reactjs-popup";
 import * as terms from "../terms.json"
 import _ from "lodash";
 
@@ -19,6 +16,16 @@ export default class TerminalMessage extends Component {
       return <Tracebacks {...content}/>
     }
 
+    if (content.type === "syntax_error") {
+      return <div
+        className="traceback"
+        style={{...sourceStyles, color: "red"}}
+      >
+        {content.text}
+        <FriendlyMessage friendly={content.friendly}/>
+      </div>
+    }
+
     let color = "white";
     if (typeof content === "object") {
       if (["stderr", "traceback", "syntax_error"].includes(content.type)) {
@@ -27,12 +34,8 @@ export default class TerminalMessage extends Component {
       content = content.text;
     }
 
-    const styles = {
-      message: sourceStyles
-    }
-
     return <span
-      style={{...styles.message, color}}
+      style={{...sourceStyles, color}}
       dangerouslySetInnerHTML={{__html: ansi_up.ansi_to_html(content)}}
     />
   }
@@ -59,7 +62,7 @@ const Tracebacks = ({data, codeSource}) => {
               frame.type === "frame" ?
                 <Frame frame={frame} key={frameIndex}/>
                 :
-                <RepeatedFrames data={frame.data} key={frameIndex}/>
+                <RepeatedFrames frames={frame.frames} key={frameIndex}/>
             )
           }
           <div>
@@ -67,25 +70,7 @@ const Tracebacks = ({data, codeSource}) => {
               <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
             </span>
             {" "}
-            {traceback.friendly && <Popup
-              trigger={
-                <span className="friendly-traceback-info">
-                  <FontAwesomeIcon icon={faInfoCircle}/>
-                </span>
-              }
-              position="top right"
-              keepTooltipInside={true}
-              on={['hover', 'focus']}
-              arrow={false}
-              contentStyle={{
-                width: "30em",
-                border: "10px solid grey",
-                zIndex: 5
-              }}
-            >
-              <div className="markdown-body friendly-traceback-popup"
-                   dangerouslySetInnerHTML={{__html: traceback.friendly}}/>
-            </Popup>}
+            <FriendlyMessage friendly={traceback.friendly}/>
           </div>
           {
             traceback.didyoumean.length > 0 &&
@@ -119,7 +104,7 @@ const Frame = ({frame}) =>
           <tr key={line.lineno}>
             <td className="traceback-lineno">{line.lineno}</td>
             <td className="traceback-line-content codehilite"
-                dangerouslySetInnerHTML={{__html: line.content}}/>
+                dangerouslySetInnerHTML={{__html: line.text}}/>
           </tr>
         )
       }
@@ -143,15 +128,44 @@ const Frame = ({frame}) =>
 
 const repeatedFramesDescription = _.template(terms.repeated_frames_description);
 
-const RepeatedFrames = ({data}) =>
+const RepeatedFrames = ({frames}) =>
   <div className="traceback-repeated-frames">
     <div>{terms.similar_frames_skipped}</div>
     <ul>
       {
-        data.map((item, itemIndex) =>
+        frames.map((item, itemIndex) =>
         <li key={itemIndex}>
           {repeatedFramesDescription(item)}
         </li>)
       }
     </ul>
   </div>
+
+const FriendlyMessage = ({friendly}) => {
+  const ref = useRef(null)
+
+  // If the full message is too big, truncate it initially.
+  // Clicking on it resets it to normal.
+  const [truncated, setTruncated] = useState(null);
+  useLayoutEffect(() => {
+    if (truncated == null && ref.current?.clientHeight > 200) {
+      setTruncated(true)
+    }
+  })
+
+  return <>
+    {friendly &&
+      <div className={"markdown-body" + (truncated ? " truncated" : "")}
+           ref={ref}
+           onClick={() => setTruncated(false)}
+           >
+        <div dangerouslySetInnerHTML={{__html: friendly}}/>
+        {truncated &&
+          <div className="click-to-expand">
+            {terms.click_to_expand}
+          </div>
+        }
+      </div>
+    }
+  </>;
+}

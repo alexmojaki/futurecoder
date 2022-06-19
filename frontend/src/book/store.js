@@ -11,6 +11,7 @@ import * as terms from "../terms.json"
 import * as Sentry from "@sentry/react";
 import {wrapAsync} from "../frontendlib/sentry";
 import pRetry from 'p-retry';
+import localforage from "localforage";
 
 const firebaseConfig = {
   es: {
@@ -23,6 +24,16 @@ const firebaseConfig = {
     appId: "1:1084443780130:web:cb507edf79f9ba131b967b",
     measurementId: "G-W0ZYL2E5W5"
   },
+  fr: {
+    apiKey: "AIzaSyBAC0zYqkdW6hJKD_RyTzBtIgndxyraW6o",
+    authDomain: "futurecoder-fr.firebaseapp.com",
+    databaseURL: "https://futurecoder-fr-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "futurecoder-fr",
+    storageBucket: "futurecoder-fr.appspot.com",
+    messagingSenderId: "453289812685",
+    appId: "1:453289812685:web:1b390689ec643db8533f84",
+    measurementId: "G-E3E2910NY5"
+  },
 }[process.env.REACT_APP_LANGUAGE] || {
   apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
   authDomain: "futurecoder-io.firebaseapp.com",
@@ -34,18 +45,21 @@ const firebaseConfig = {
   measurementId: "G-ZKCE9KY52F",
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const disableFirebase = !!process.env.REACT_APP_DISABLE_FIREBASE;
+export const disableLogin = disableFirebase || !!process.env.REACT_APP_DISABLE_LOGIN;
+
+const firebaseApp = !disableFirebase && firebase.initializeApp(firebaseConfig);
 
 let {databaseURL} = firebaseConfig;
 
-if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname === "localhost") {
+if (!disableFirebase && process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname === "localhost") {
   // firebase.database().useEmulator("localhost", 9009);
   databaseURL = "http://localhost:9009";
   firebase.auth().useEmulator("http://localhost:9099");
 }
 
 let firebaseAnalytics;
-export const isProduction = window.location.hostname.endsWith("futurecoder.io");
+export const isProduction = !disableFirebase && window.location.hostname.endsWith("futurecoder.io");
 if (isProduction) {
   firebase.analytics.isSupported().then((isSupported) => {
     if (isSupported) {
@@ -225,21 +239,45 @@ const loadUser = makeAction(
     state = iset(state, "editorContent", state.editorContent || editorContent || "");
     return loadUserAndPages({...state, user}, state.user);
   },
-)
+);
 
-firebase.auth().onAuthStateChanged(async (user) => {
-  if (user) {
-    // TODO ideally we'd set a listener on the user instead of just getting it once
-    //   to sync changes made on multiple devices
-    await updateUserData(user);
-  } else {
-    await firebase.auth().signInAnonymously();
-  }
-});
+// Reset state to clear out user data
+export const signOut = makeAction(
+  "SIGN_OUT",
+  (state) => {
+    return loadUserAndPages({
+      ...state,
+      editorContent: "",
+      user: {
+        ...initialState.user,
+        // Avoid an empty user.uid so that this cleared state is saved to the local store,
+        // so signing out has an effect even when offline.
+        ...initialUser,
+        // Stay on the current page, rather than the initial loading_placeholder which breaks.
+        pageSlug: state.user.pageSlug,
+      }
+    }, {});
+  },
+);
+
+if (!disableFirebase) {
+  firebase.auth().onAuthStateChanged(async (user) => {
+    if (user) {
+      // TODO ideally we'd set a listener on the user instead of just getting it once
+      //   to sync changes made on multiple devices
+      await updateUserData(user);
+    } else {
+      await firebase.auth().signInAnonymously();
+    }
+  });
+}
 
 export const updateUserData = async (user) => {
   Sentry.setUser({id: user.uid});
   const userData = await databaseRequest("GET");
+  // loadUser should be called on the local store data first
+  // for proper merging with the firebase user data in loadUserAndPages
+  await loadUserFromLocalStorePromise;
   loadUser({
     uid: user.uid,
     email: user.email,
@@ -247,7 +285,18 @@ export const updateUserData = async (user) => {
   });
 }
 
+export const initialUser = {uid: "__futurecoder_offline__"}
+
+export const localStore = localforage.createInstance({name: "futurecoder"});
+
+const loadUserFromLocalStorePromise = localStore.getItem("user").then(user => {
+  loadUser(user || initialUser);
+});
+
 export const databaseRequest = wrapAsync(async function databaseRequest(method, data={}, endpoint="users") {
+  if (disableFirebase) {
+    return;
+  }
   const currentUser = firebase.auth().currentUser;
   if (!currentUser) {
     return;
@@ -306,20 +355,18 @@ const loadUserAndPages = (state, previousUser = {}) => {
     }
   }
 
-  pagesProgress = pagesProgress || {};
+  pagesProgress = {...(pagesProgress || {})};
   pageSlugsList.forEach(slug => {
     const steps = pages[slug].steps;
     let step_name = pagesProgress[slug]?.step_name || steps[0].name;
-    if (previousUser.uid) {
-      const progress = previousUser.pagesProgress[slug];
-      if (progress) {
-        const findStepIndex = (name) => _.find(steps, {name})?.index || 0
-        const previousIndex = findStepIndex(progress.step_name);
-        const currentIndex =  findStepIndex(step_name);
-        if (previousIndex > currentIndex) {
-          step_name = progress.step_name;
-          updates[`pagesProgress/${slug}/step_name`] = step_name;
-        }
+    const progress = previousUser.pagesProgress?.[slug];
+    if (progress) {
+      const findStepIndex = (name) => _.find(steps, {name})?.index || 0
+      const previousIndex = findStepIndex(progress.step_name);
+      const currentIndex =  findStepIndex(step_name);
+      if (previousIndex > currentIndex) {
+        step_name = progress.step_name;
+        updates[`pagesProgress/${slug}/step_name`] = step_name;
       }
     }
     pagesProgress[slug] = {step_name};
@@ -475,4 +522,21 @@ export const reorderSolutionLines = makeAction(
 
 export function logEvent(name, data = {}) {
   firebaseAnalytics?.logEvent(name, data);
+}
+
+export function postCodeEntry(codeEntry) {
+  if (isProduction) {
+    const {user: {developerMode}, route, numHints, requestingSolution} = localState;
+    codeEntry = {
+      ...codeEntry,
+      state: {
+        developerMode,
+        page_route: route,
+        num_hints: numHints,
+        requesting_solution: requestingSolution,
+      },
+      timestamp: new Date().toISOString(),
+    };
+    databaseRequest("POST", codeEntry, "code_entries").catch(e => console.error(e));
+  }
 }

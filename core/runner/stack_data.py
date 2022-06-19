@@ -1,141 +1,58 @@
-import html
 import logging
-import traceback
-from collections import Counter
-from typing import Union, Iterable, List
+from typing import Union, Iterable
 
-import stack_data
+import pygments
 from cheap_repr import cheap_repr
+from pygments.lexers import get_lexer_by_name
 from stack_data import (
-    Options,
-    Line,
+    Formatter,
     FrameInfo,
-    Variable,
     RepeatedFrames,
+    Serializer,
+    Options,
 )
 
 from core.runner.didyoumean import didyoumean_suggestions
 from core.runner.friendly_traceback import friendly_message
+from core.runner.utils import is_valid_syntax
 
 log = logging.getLogger(__name__)
+lexer = get_lexer_by_name("python3")
 
 
-class TracebackSerializer:
-    pygments_formatter = None
+class TracebackSerializer(Serializer):
     filename = None
 
-    def format_exception(self, e) -> List[dict]:
-        from markdown import markdown
-
-        if e.__cause__ is not None:
-            result = self.format_exception(e.__cause__)
-            result[-1]["tail"] = traceback._cause_message
-        elif e.__context__ is not None and not e.__suppress_context__:
-            result = self.format_exception(e.__context__)
-            result[-1]["tail"] = traceback._context_message
-        else:
-            result = []
-
-        result.append(
-            dict(
-                frames=self.format_stack(e.__traceback__),
-                exception=dict(
-                    type=type(e).__name__,
-                    message=traceback._some_str(e),
-                ),
-                tail="",
-                didyoumean=didyoumean_suggestions(e),
-                friendly=markdown(friendly_message(e, double_newline=True)),
-            )
-        )
-        return result
-
-    def format_stack(self, frame_or_tb) -> List[dict]:
-        return list(
-            self.format_stack_data(
-                FrameInfo.stack_data(
-                    frame_or_tb,
-                    Options(
-                        before=0, after=0, pygments_formatter=self.pygments_formatter
-                    ),
-                    collapse_repeated_frames=True,
-                )
-            )
-        )
-
-    def format_stack_data(
-        self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
-    ) -> Iterable[dict]:
-        for item in stack:
-            if isinstance(item, FrameInfo):
-                if item.filename != self.filename:
-                    continue
-                yield self.format_frame(item)
-            else:
-                yield dict(
-                    type="repeated_frames", data=self.format_repeated_frames(item)
-                )
-
-    def format_repeated_frames(self, repeated_frames: RepeatedFrames) -> List[dict]:
-        counts = sorted(
-            Counter(repeated_frames.frame_keys).items(),
-            key=lambda item: (-item[1], item[0][0].co_name),
-        )
-        return [
-            dict(
-                name=code.co_name,
-                lineno=lineno,
-                count=count,
-            )
-            for (code, lineno), count in counts
-        ]
-
-    def format_frame(self, frame: FrameInfo) -> dict:
+    def format_traceback_part(self, e: BaseException) -> dict:
         return dict(
-            type="frame",
-            name=frame.executing.code_qualname(),
-            variables=list(self.format_variables(frame)),
-            lines=list(self.format_lines(frame.lines)),
+            **super().format_traceback_part(e),
+            didyoumean=didyoumean_suggestions(e),
+            friendly=friendly_message(e, double_newline=True),
         )
 
-    def format_lines(self, lines):
-        for line in lines:
-            if isinstance(line, Line):
-                yield self.format_line(line)
-            else:
-                yield dict(type="line_gap")
+    def format_variable_value(self, value) -> str:
+        return cheap_repr(value)
 
-    def format_line(self, line: Line) -> dict:
-        return dict(
-            type="line",
-            is_current=line.is_current,
-            lineno=line.lineno,
-            content=line.render(
-                pygmented=bool(self.pygments_formatter),
-                escape_html=True,
-                strip_leading_indent=True,
-            ),
-        )
-
-    def format_variables(self, frame_info: FrameInfo) -> Iterable[str]:
-        try:
-            for var in sorted(frame_info.variables, key=lambda v: v.name):
-                yield self.format_variable(var)
-        except Exception:
-            log.exception("Error in getting frame variables")
-            return []
-
-    def format_variable(self, var: Variable) -> dict:
-        return dict(
-            name=self.format_variable_part(var.name),
-            value=self.format_variable_part(cheap_repr(var.value)),
-        )
+    def should_include_frame(self, frame_info: FrameInfo) -> bool:
+        return self.filename == frame_info.filename
 
     def format_variable_part(self, text):
-        return html.escape(text)
+        if is_valid_syntax(text):
+            return pygments.highlight(text, lexer, self.options.pygments_formatter)
+        else:
+            return super().format_variable_part(text)
 
 
-class TracebackFormatter(stack_data.Formatter):
+serializer = TracebackSerializer(
+    options=Options(before=0, after=0),
+    pygmented=True,
+    pygments_formatter_kwargs=dict(nowrap=True),
+    html=True,
+    show_variables=True,
+)
+
+
+class TracebackFormatter(Formatter):
     def format_stack_data(
         self, stack: Iterable[Union[FrameInfo, RepeatedFrames]]
     ) -> Iterable[str]:
@@ -154,10 +71,11 @@ class TracebackFormatter(stack_data.Formatter):
         return cheap_repr(value)
 
 
+formatter = TracebackFormatter(
+    options=Options(before=1, after=0),
+    show_variables=True,
+)
+
+
 def format_traceback_stack_data(e):
-    return "".join(
-        TracebackFormatter(
-            options=stack_data.Options(before=1, after=0),
-            show_variables=True,
-        ).format_exception(e)
-    )
+    return "".join(formatter.format_exception(e))

@@ -41,6 +41,7 @@ def clean_spaces(string):
     string = dedent(string).strip()
     spaces = set(re.findall(r"\s", string))
     assert spaces <= {" ", "\n"}, spaces
+    assert not re.search(r"^ {1,3}_", string, re.MULTILINE), string
     return string
 
 
@@ -157,7 +158,11 @@ def highlighted_markdown_and_codes(text):
 
 
 def highlighted_markdown(text):
-    return highlighted_markdown_and_codes(text)[0]
+    result = highlighted_markdown_and_codes(text)[0]
+    assert (
+        "__copyable__" not in result and "__no_auto_translate__" not in result
+    ), result
+    return result
 
 
 def markdown_codes(text):

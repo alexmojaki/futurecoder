@@ -1,5 +1,6 @@
 import sys
-import traceback
+
+from markdown import markdown
 
 from core import translation as t
 
@@ -12,19 +13,6 @@ import friendly_traceback
 friendly_traceback.set_lang(t.current_language or "en")
 
 
-def friendly_syntax_error(e, filename):
-    lines = iter(traceback.format_exception(type(e), e, e.__traceback__))
-    for line in lines:
-        if line.strip().startswith(f'File "{filename}"'):
-            break
-    return f"""\
-{''.join(lines).rstrip()}
-{t.Terms.syntax_error_at_line} {e.lineno}
-
-{friendly_message(e, double_newline=False)}
-
-"""
-
 
 def friendly_message(e, double_newline: bool):
     try:
@@ -32,7 +20,6 @@ def friendly_message(e, double_newline: bool):
         fr.assign_generic()
         fr.assign_cause()
 
-        return fr.info["generic"] + "\n" + double_newline * "\n" + fr.info.get("cause", "")
+        return markdown(fr.info["generic"] + "\n" + double_newline * "\n" + fr.info.get("cause", ""))
     except (Exception, SystemExit):
-        # log.exception("Failed to build friendly message")
         return ""

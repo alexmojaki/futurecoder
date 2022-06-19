@@ -958,7 +958,7 @@ output:
             "Once you've sorted out `for i in range(...)`, `i` will sometimes be too big "
             "to be a valid index for both strings. You will need to check if it's too big before indexing.",
             "Remember, the biggest valid index for `string1` is `len(string1) - 1`. "
-            "`len(string)` is too big.",
+            "`len(string1)` is too big.",
             "You will need two `if` statements, one for each string.",
             "You will need to set e.g. `char1 = ' '` when `string1[i]` is not valid.",
         ]

@@ -1,7 +1,6 @@
 import ast
 import inspect
 import logging
-import time
 from collections import defaultdict
 
 from core.exercises import assert_equal
@@ -44,11 +43,11 @@ class FullRunner(EnhancedRunner):
         self.console.locals.update(assert_equal=assert_equal)
 
 
-runner = FullRunner()
+default_runner = FullRunner(filename="/my_program.py")
 
 
 @catch_internal_errors
-def check_entry(entry, input_callback, output_callback, sleep_callback=time.sleep):
+def check_entry(entry, callback, runner=default_runner):
     result = dict(
         passed=False,
         messages=[],
@@ -63,29 +62,31 @@ def check_entry(entry, input_callback, output_callback, sleep_callback=time.slee
 
         result["output"] = ""
 
-        def full_output_callback(data):
-            parts = []
-            for part in data["parts"]:
-                typ = part["type"]
-                if typ == "input":
-                    continue
-                result["output"] += part["text"]
-                parts.append(part)
-            data["parts"] = parts
-            return output_callback(data)
+        def wrapped_callback(event_type, data):
+            if event_type == "output":
+                parts = []
+                for part in data["parts"]:
+                    typ = part["type"]
+                    if typ == "input":
+                        continue
+                    result["output"] += part["text"]
+                    parts.append(part)
+                data["parts"] = parts
+            return callback(event_type, data)
 
-        runner.set_combined_callbacks(
-            output=full_output_callback,
-            input=input_callback,
-            sleep=sleep_callback,
-        )
+        runner.set_callback(wrapped_callback)
         runner.question_wizard = entry.get("question_wizard")
         runner.input_nodes = defaultdict(list)
 
         mode = entry["source"]
         if mode == "shell":
             mode = "single"
-        result["birdseye_objects"] = runner.run(entry["input"], mode)
+
+        runner.birdseye_objects = None
+        try:
+            runner.run(entry["input"], mode)
+        finally:
+            result["birdseye_objects"] = runner.birdseye_objects
 
         if runner.question_wizard:
             (

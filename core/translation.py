@@ -69,6 +69,8 @@ def get(msgid, default):
             print(msgid)
             print(sorted(inline1))
             print(sorted(inline2))
+            print(inline1 - inline2)
+            print(inline2 - inline1)
             print()
 
     def replace(match):
@@ -82,6 +84,9 @@ def get(msgid, default):
 
     result = re.sub(r"__code(\d+)__", replace, result)
     assert result
+    special1 = re.findall(r"__\w+__", result)
+    special2 = re.findall(r"__\w+__", default)
+    assert special1 == special2, (special1, special2, msgid)
     if current_language == "en":
         assert result == default
 

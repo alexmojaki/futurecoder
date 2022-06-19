@@ -146,7 +146,6 @@ export const ErrorModal = ({error}) => {
   return (
     <Popup
       open={true}
-      closeOnDocumentClick
       onClose={() => bookSetState("error", null)}
       contentStyle={feedbackContentStyle}
     >
@@ -159,4 +158,6 @@ export const ErrorModal = ({error}) => {
 export const feedbackContentStyle = {
   maxHeight: "90vh",
   overflow: "auto",
+  background: "white",
+  border: "solid 1px lightgray",
 }

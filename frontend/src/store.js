@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {connect} from "react-redux";
 import {dispatcher, redact, TextContainer} from "./frontendlib";
-import {bookReducer, currentStep, navigate} from "./book/store";
+import {bookReducer, currentStep, localStore, navigate} from "./book/store";
 import * as Sentry from "@sentry/react";
 import _ from "lodash";
 
@@ -27,7 +27,7 @@ const sentryReduxEnhancer = Sentry.createReduxEnhancer({
   stateTransformer: state => {
     state = _.omit(state, "book.pages");
     try {
-      state = {...state, currentStep: currentStep(state)};
+      state = {...state, currentStep: currentStep(state.book)};
     } catch {
     }
     return state;
@@ -54,6 +54,18 @@ const {delegateReducer} = redact("root");
 
 TextContainer.connect = connect;
 
+const saveToLocalStoreMiddleware = store => next => async (action) => {
+  // first call the next middleware function in the chain; we want the state to be updated so that, when we should
+  // update the storage, we have the values that we need.
+  next(action);
+  const {user, editorContent} = store.getState().book;
+  if (!user.uid) {  // still in initial loading stage
+    return;
+  }
+  // Save the data in the same shape as in firebase
+  await localStore.setItem('user', {editorContent, ...user});
+};
+
 const reducer = delegateReducer(
   combineReducers({
     book: bookReducer,
@@ -69,6 +81,7 @@ export const store = createStore(
     applyMiddleware(
       thunk,
       logger,
+      saveToLocalStoreMiddleware,
     ),
     sentryReduxEnhancer,
   )

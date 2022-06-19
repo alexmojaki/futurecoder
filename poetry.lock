@@ -102,7 +102,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "executing"
-version = "0.8.2"
+version = "0.8.3"
 description = "Get the currently executing AST node of a frame, and other information"
 category = "main"
 optional = false
@@ -287,14 +287,14 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xm
 
 [[package]]
 name = "python-runner"
-version = "0.2.0"
+version = "0.6.1"
 description = "Helper for running python code indirectly"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.extras]
-tests = ["pytest"]
+tests = ["pytest", "snoop"]
 
 [[package]]
 name = "selenium"
@@ -365,7 +365,7 @@ tests = ["pytest", "littleutils", "prettyprinter", "pprintpp", "pandas (>=0.24.2
 
 [[package]]
 name = "stack-data"
-version = "0.2.0"
+version = "0.3.0"
 description = "Extract data from python stack frames and tracebacks for informative displays"
 category = "main"
 optional = false
@@ -403,7 +403,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.9"
-content-hash = "4c55af646e134959e750c2fbd468f4c6546cdb6ea73a9af2e719bc3a24a41881"
+content-hash = "5cb64f89f1d3baea28a63374ea6fa72654ef083d1183d296ac476acf14608988"
 
 [metadata.files]
 astcheck = [
@@ -440,8 +440,8 @@ colorama = [
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
 executing = [
-    {file = "executing-0.8.2-py2.py3-none-any.whl", hash = "sha256:32fc6077b103bd19e6494a72682d66d5763cf20a106d5aa7c5ccbea4e47b0df7"},
-    {file = "executing-0.8.2.tar.gz", hash = "sha256:c23bf42e9a7b9b212f185b1b2c3c91feb895963378887bb10e64a2e612ec0023"},
+    {file = "executing-0.8.3-py2.py3-none-any.whl", hash = "sha256:d1eef132db1b83649a3905ca6dd8897f71ac6f8cac79a7e58a1a09cf137546c9"},
+    {file = "executing-0.8.3.tar.gz", hash = "sha256:c6554e21c6b060590a6d3be4b82fb78f8f0194d809de5ea7df1c093763311501"},
 ]
 flake8 = [
     {file = "flake8-3.8.3-py2.py3-none-any.whl", hash = "sha256:15e351d19611c887e482fb960eae4d44845013cc142d42896e9862f775d8cf5c"},
@@ -511,8 +511,8 @@ pytest = [
     {file = "pytest-6.2.4.tar.gz", hash = "sha256:50bcad0a0b9c5a72c8e4e7c9855a3ad496ca6a881a3641b4260605450772c54b"},
 ]
 python-runner = [
-    {file = "python_runner-0.2.0-py3-none-any.whl", hash = "sha256:26b284066c3a310b0a43c683dca8779e1c4ba73a7a0cc4aecae518c5b751d6bb"},
-    {file = "python_runner-0.2.0.tar.gz", hash = "sha256:911260537834fa20d7b83790e902f9ba77a1ef780e5dc391a6d1affbb2090b70"},
+    {file = "python_runner-0.6.1-py3-none-any.whl", hash = "sha256:0f8ab76bec0fa9be907e85ef8eb837051b4e15d434d991069a3da7dc33d1e349"},
+    {file = "python_runner-0.6.1.tar.gz", hash = "sha256:a65368abc006613c9dae064cac012da11ff9e324db2280b9a27712f980414e93"},
 ]
 selenium = [
     {file = "selenium-3.141.0-py2.py3-none-any.whl", hash = "sha256:2d7131d7bc5a5b99a2d9b04aaf2612c411b03b8ca1b1ee8d3de5845a9be2cb3c"},
@@ -531,8 +531,8 @@ snoop = [
     {file = "snoop-0.4.1.tar.gz", hash = "sha256:425bcc620fa77d70cd9e3f82d1c2191966956949374c0eb23dae4ed110dad9cd"},
 ]
 stack-data = [
-    {file = "stack_data-0.2.0-py3-none-any.whl", hash = "sha256:999762f9c3132308789affa03e9271bbbe947bf78311851f4d485d8402ed858e"},
-    {file = "stack_data-0.2.0.tar.gz", hash = "sha256:45692d41bd633a9503a5195552df22b583caf16f0b27c4e58c98d88c8b648e12"},
+    {file = "stack_data-0.3.0-py3-none-any.whl", hash = "sha256:aa1d52d14d09c7a9a12bb740e6bdfffe0f5e8f4f9218d85e7c73a8c37f7ae38d"},
+    {file = "stack_data-0.3.0.tar.gz", hash = "sha256:77bec1402dcd0987e9022326473fdbcc767304892a533ed8c29888dacb7dddbc"},
 ]
 toml = [
     {file = "toml-0.10.1-py2.py3-none-any.whl", hash = "sha256:bda89d5935c2eac546d648028b9901107a595863cb36bae0c73ac804a9b4ce88"},

@@ -130,6 +130,9 @@ def clean_step_class(cls):
     solution = cls.__dict__.get("solution", "")
     assert bool(solution) ^ bool(program)
 
+    if issubclass(cls, ExerciseStep) and not issubclass(cls, MessageStep):
+        assert cls.hints, cls
+
     if solution:
         assert cls.tests
         assert cls.auto_translate_program
@@ -153,15 +156,21 @@ def clean_step_class(cls):
     text = clean_spaces(text)
     cls.raw_text = text
 
+    assert "__program__indented__" not in text
+
     if "__program_" in text:
         text = text.replace("__program__", program)
         indented = indent(program, '    ').replace("\\", "\\\\")
         text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
     else:
-        assert not cls.program_in_text, "Either include __program__ or __program_indented__ in the text, " \
-                                        "or set program_in_text = False in the class."
+        assert not cls.program_in_text, (
+            "Either include __program__ or __program_indented__ in the text, "
+            "or set program_in_text = False in the class.",
+            cls,
+            text,
+        )
 
-    assert "__program_" not in text
+    assert "__program_" not in text, (cls, text)
     text = clean_spaces(text)
 
     for special_message in get_special_messages(cls):
@@ -224,15 +233,17 @@ def get_predictions(cls):
 
     answer = cls.correct_output
     choices = [t.get(t.prediction_choice(cls, i), choice.rstrip()).rstrip() for i, choice in enumerate(choices)]
+    error = t.get(f"output_predictions.Error", "Error")
 
     if answer:
         assert answer == "Error"
+        answer = error
     else:
         answer = get_stdout(cls.program).rstrip()
-        assert answer in choices, repr(answer)
+        assert answer in choices, (answer, choices, cls)
 
-    choices += [t.get(f"output_predictions.Error", "Error")]
-    assert answer in choices, repr(answer)
+    choices += [error]
+    assert answer in choices, (answer, choices, cls)
     return dict(choices=choices, answer=answer)
 
 

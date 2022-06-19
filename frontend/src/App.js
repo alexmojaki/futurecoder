@@ -11,10 +11,15 @@ import {
   closeMessage,
   currentPage,
   currentStep,
+  currentStepName,
+  disableLogin,
+  logEvent,
   movePage,
   moveStep,
+  postCodeEntry,
   setDeveloperMode,
   setEditorContent,
+  signOut,
   specialHash,
 } from "./book/store";
 import Popup from "reactjs-popup";
@@ -412,7 +417,12 @@ class AppComponent extends React.Component {
 
 const StepButton = ({delta, label}) =>
   <button className={`btn btn-danger btn-sm button-${label.replace(" ", "-").toLowerCase()}`}
-          onClick={() => moveStep(delta)}>
+          onClick={() => {
+            const entry = {skip_step: delta, page_slug: bookState.user.pageSlug, step_name: currentStepName()};
+            postCodeEntry(entry);
+            logEvent('skip_step', entry);
+            moveStep(delta);
+          }}>
     {label}
   </button>
 
@@ -426,23 +436,27 @@ const StepButtons = () =>
 
 const MenuPopup = ({user}) =>
     <Popup
+      nested
       trigger={
         <button className="btn btn-sm btn-outline-secondary">
           <FontAwesomeIcon icon={faBars} size="lg"/>
         </button>}
     >
       {close => <div className="menu-popup">
-        <p>
-          <button
-            className="btn btn-danger"
-            onClick={() => {
-              close();
-              bookSetState("user.uid", null)
-              firebase.auth().signOut();
-            }}
-          >
-            <FontAwesomeIcon icon={faSignOutAlt}/> {terms.sign_out}
-          </button></p>
+        {!disableLogin &&
+          <p>
+            <button
+              className="btn btn-danger"
+              onClick={() => {
+                close();
+                signOut();
+                firebase.auth().signOut();
+              }}
+            >
+              <FontAwesomeIcon icon={faSignOutAlt}/> {terms.sign_out}
+            </button>
+          </p>
+        }
         <p>
           <Popup
             trigger={
@@ -451,7 +465,7 @@ const MenuPopup = ({user}) =>
               </button>
               }
             modal
-            closeOnDocumentClick
+            nested
           >
             <SettingsModal user={user}/>
           </Popup>
@@ -464,7 +478,7 @@ const MenuPopup = ({user}) =>
               </button>
             }
             modal
-            closeOnDocumentClick
+            nested
             contentStyle={feedbackContentStyle}
           >
             {close => <FeedbackModal close={close}/>}

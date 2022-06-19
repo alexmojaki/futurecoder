@@ -2,11 +2,14 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
-import {updateDatabase, updateUserData} from "../book/store";
+import {disableLogin, updateDatabase, updateUserData} from "../book/store";
 import Popup from "reactjs-popup";
 import * as terms from "../terms.json"
 
 const HeaderLoginInfo = ({ email }) => {
+  if (disableLogin) {
+    return null;
+  }
   return email ?
     <><FontAwesomeIcon icon={faUser}/> {email}</> :
     <Popup
@@ -16,7 +19,6 @@ const HeaderLoginInfo = ({ email }) => {
       </button>
     }
     modal
-    closeOnDocumentClick
   >
     {close =>
       <StyledFirebaseAuth

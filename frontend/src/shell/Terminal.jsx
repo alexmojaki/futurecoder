@@ -247,6 +247,8 @@ export default class Terminal extends Component {
               onKeyDown={this.handleInput}
               type={'text'}
               autoComplete={'off'}
+              autoCapitalize={'off'}
+              spellCheck={false}
               disabled={bookState.processing}
             />
             }
