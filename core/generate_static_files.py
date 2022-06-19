@@ -92,6 +92,8 @@ def frontend_terms():
     for key, value in file_to_json(frontend_src / "english_terms.json").items():
         translation = t.get(f"frontend.{key}", value)
 
+        assert ("\n" in translation) == ("\n" in value), (key, value, translation)
+
         if "\n" in translation:
             value = markdown(translation)
         else:
@@ -131,7 +133,7 @@ def main():
         tar.add(this_dir, arcname=this_dir.stem, recursive=True, filter=tarfile_filter)
         if t.current_language not in (None, "en"):
             for arcname in [
-                f"translations/locales/{t.current_language}",
+                f"translations/locales/{t.current_language}/LC_MESSAGES",
                 f"translations/codes.json",
             ]:
                 tar.add(this_dir.parent / arcname, arcname=arcname, recursive=True, filter=tarfile_filter)
