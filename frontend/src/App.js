@@ -12,6 +12,7 @@ import {
   currentPage,
   currentStep,
   currentStepName,
+  disableLogin,
   logEvent,
   movePage,
   moveStep,
@@ -442,17 +443,20 @@ const MenuPopup = ({user}) =>
         </button>}
     >
       {close => <div className="menu-popup">
-        <p>
-          <button
-            className="btn btn-danger"
-            onClick={() => {
-              close();
-              signOut();
-              firebase.auth().signOut();
-            }}
-          >
-            <FontAwesomeIcon icon={faSignOutAlt}/> {terms.sign_out}
-          </button></p>
+        {!disableLogin &&
+          <p>
+            <button
+              className="btn btn-danger"
+              onClick={() => {
+                close();
+                signOut();
+                firebase.auth().signOut();
+              }}
+            >
+              <FontAwesomeIcon icon={faSignOutAlt}/> {terms.sign_out}
+            </button>
+          </p>
+        }
         <p>
           <Popup
             trigger={

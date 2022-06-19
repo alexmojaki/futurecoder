@@ -45,18 +45,21 @@ const firebaseConfig = {
   measurementId: "G-ZKCE9KY52F",
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const disableFirebase = !!process.env.REACT_APP_DISABLE_FIREBASE;
+export const disableLogin = disableFirebase || !!process.env.REACT_APP_DISABLE_LOGIN;
+
+const firebaseApp = !disableFirebase && firebase.initializeApp(firebaseConfig);
 
 let {databaseURL} = firebaseConfig;
 
-if (process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname === "localhost") {
+if (!disableFirebase && process.env.REACT_APP_USE_FIREBASE_EMULATORS && window.location.hostname === "localhost") {
   // firebase.database().useEmulator("localhost", 9009);
   databaseURL = "http://localhost:9009";
   firebase.auth().useEmulator("http://localhost:9099");
 }
 
 let firebaseAnalytics;
-export const isProduction = window.location.hostname.endsWith("futurecoder.io");
+export const isProduction = !disableFirebase && window.location.hostname.endsWith("futurecoder.io");
 if (isProduction) {
   firebase.analytics.isSupported().then((isSupported) => {
     if (isSupported) {
@@ -257,15 +260,17 @@ export const signOut = makeAction(
   },
 );
 
-firebase.auth().onAuthStateChanged(async (user) => {
-  if (user) {
-    // TODO ideally we'd set a listener on the user instead of just getting it once
-    //   to sync changes made on multiple devices
-    await updateUserData(user);
-  } else {
-    await firebase.auth().signInAnonymously();
-  }
-});
+if (!disableFirebase) {
+  firebase.auth().onAuthStateChanged(async (user) => {
+    if (user) {
+      // TODO ideally we'd set a listener on the user instead of just getting it once
+      //   to sync changes made on multiple devices
+      await updateUserData(user);
+    } else {
+      await firebase.auth().signInAnonymously();
+    }
+  });
+}
 
 export const updateUserData = async (user) => {
   Sentry.setUser({id: user.uid});
@@ -289,6 +294,9 @@ const loadUserFromLocalStorePromise = localStore.getItem("user").then(user => {
 });
 
 export const databaseRequest = wrapAsync(async function databaseRequest(method, data={}, endpoint="users") {
+  if (disableFirebase) {
+    return;
+  }
   const currentUser = firebase.auth().currentUser;
   if (!currentUser) {
     return;
