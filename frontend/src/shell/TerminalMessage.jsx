@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, useState, useRef, useLayoutEffect} from 'react'
 import AnsiUp from "ansi_up";
 
 import sourceStyles from './defs/styles/TerminalMessage'
@@ -22,10 +22,7 @@ export default class TerminalMessage extends Component {
         style={{...sourceStyles, color: "red"}}
       >
         {content.text}
-        {content.friendly &&
-          <div className="markdown-body"
-               dangerouslySetInnerHTML={{__html: content.friendly}}/>
-        }
+        <FriendlyMessage friendly={content.friendly}/>
       </div>
     }
 
@@ -73,10 +70,7 @@ const Tracebacks = ({data, codeSource}) => {
               <strong>{traceback.exception.type}: </strong>{traceback.exception.message}
             </span>
             {" "}
-            {traceback.friendly &&
-              <div className="markdown-body"
-                   dangerouslySetInnerHTML={{__html: traceback.friendly}}/>
-            }
+            <FriendlyMessage friendly={traceback.friendly}/>
           </div>
           {
             traceback.didyoumean.length > 0 &&
@@ -146,3 +140,33 @@ const RepeatedFrames = ({frames}) =>
       }
     </ul>
   </div>
+
+const FriendlyMessage = ({friendly}) => {
+  const ref = useRef(null)
+
+  // If the full message is too big, truncate it initially.
+  // Clicking on it resets it to normal.
+  const [truncated, setTruncated] = useState(null);
+  useLayoutEffect(() => {
+    if (truncated == null && ref.current?.clientHeight > 200) {
+      setTruncated(true)
+    }
+  })
+
+  return <>
+    {friendly &&
+      <div className={"markdown-body" + (truncated ? " truncated" : "")}
+           ref={ref}
+           onClick={() => setTruncated(false)}
+           >
+        <div dangerouslySetInnerHTML={{__html: friendly}}/>
+        {/* Explicit instruction that I decided not to keep */}
+        {/*{truncated &&*/}
+        {/*  <div className="click-to-expand">*/}
+        {/*    Click to expand*/}
+        {/*  </div>*/}
+        {/*}*/}
+      </div>
+    }
+  </>;
+}
