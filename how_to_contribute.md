@@ -50,7 +50,7 @@ If you make some changes to the course, the tests will likely fail the compariso
   - This runs in a web worker (`Worker.js`) in the background so it doesn't interfere with the UI.
   - `SharedArrayBuffer` is used for some features (`input()` and `KeyboardInterrupt`) which comes with certain restrictions, including not working on Safari.
   - The entire `core` folder as well as several libraries are packaged into a single archive which the worker downloads (`load.py`) and extracts into Pyodide's virtual filesystem.
-  - The script `core/generate_static_files.py` creates the above archive and some other files and puts them under `frontend/src` to be packaged by React.
+  - The script `scripts/generate_static_files.py` creates the above archive and some other files and puts them under `frontend/src` to be packaged by React.
   - When a user runs code, `Worker.js` calls the Python function `check_entry` in `checker.py`.
     - After the code finishes running, it checks the `Page` and `Step` that the user is currently on, and calls the `Step.check` method.
     - In most cases this is a `VerbatimStep` - the user is supposed to enter exactly the code in the text, using the AST to check for equality.
