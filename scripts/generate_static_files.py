@@ -1,5 +1,5 @@
 """
-Run this file to generate files under frontend/src:
+Run this file to generate various files under frontend/src including:
 
 - chapters.json
 - python_core.tar.load_by_url
@@ -15,7 +15,7 @@ For example, you could use watchdog (https://github.com/gorakhargosh/watchdog):
         --ignore-directories \
         --ignore-pattern '*~' \
         --drop \
-        --command "python -m core.generate_static_files"
+        --command "python -m scripts.generate_static_files"
 """
 
 import os
@@ -37,8 +37,8 @@ from core.utils import unwrapped_markdown, new_tab_links
 str("import sentry_sdk after core.utils for stubs")
 import sentry_sdk  # noqa imported lazily
 
-this_dir = Path(__file__).parent
-frontend = this_dir / "../frontend"
+core_dir = Path(__file__).parent.parent / "core"
+frontend = core_dir / "../frontend"
 frontend_src = frontend / "src"
 
 
@@ -120,7 +120,7 @@ def main():
 
     roots = get_roots()
     core_imports = "\n".join(roots)
-    core_imports_path = this_dir / "core_imports.txt"
+    core_imports_path = core_dir / "core_imports.txt"
     if os.environ.get("FIX_CORE_IMPORTS"):
         core_imports_path.write_text(core_imports)
     elif core_imports_path.read_text() != core_imports:
@@ -130,13 +130,13 @@ def main():
         )
 
     with tarfile.open(frontend_src / "python_core.tar.load_by_url", "w") as tar:
-        tar.add(this_dir, arcname=this_dir.stem, recursive=True, filter=tarfile_filter)
+        tar.add(core_dir, arcname=core_dir.stem, recursive=True, filter=tarfile_filter)
         if t.current_language not in (None, "en"):
             for arcname in [
                 f"translations/locales/{t.current_language}/LC_MESSAGES",
                 f"translations/codes.json",
             ]:
-                tar.add(this_dir.parent / arcname, arcname=arcname, recursive=True, filter=tarfile_filter)
+                tar.add(core_dir.parent / arcname, arcname=arcname, recursive=True, filter=tarfile_filter)
             arcname = f"friendly_traceback/locales/{t.current_language}/LC_MESSAGES/friendly_tb_{t.current_language}.mo"
             tar.add(Path(site_packages) / arcname, arcname=arcname)
 

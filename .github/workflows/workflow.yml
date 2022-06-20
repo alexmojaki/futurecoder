@@ -15,6 +15,8 @@ jobs:
         node-version: '14'
     - name: Install chromedriver
       uses: nanasess/setup-chromedriver@master
+    - name: Install Python and JS dependencies
+      run: ./scripts/install_deps.sh
     - name: Build
       id: build
       env:
@@ -22,11 +24,11 @@ jobs:
         REACT_APP_SENTRY_DSN: https://37b1f01452b54bf4a0fe88656070998f@o871617.ingest.sentry.io/5824691
         REACT_APP_USE_FIREBASE_EMULATORS: '1'
         FUTURECODER_LANGUAGE: en
-      run: ./full_build.sh
+      run: ./scripts/build.sh
     - name: Test
       env:
         FUTURECODER_LANGUAGE: en
-      run: ./ci_test.sh
+      run: ./scripts/ci_test.sh
     - name: Upload test artifacts
       uses: actions/upload-artifact@v2
       if: steps.build.outcome == 'success'
