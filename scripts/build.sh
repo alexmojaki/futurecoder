@@ -9,7 +9,7 @@ rm -rf dist || true
 mkdir -p dist/course/
 
 # Generate various files with Python scripts, placing many of them inside the frontend folder
-
+poetry run python -m translations.generate_po_file
 poetry run python -m scripts.generate_static_files
 
 # Build the react app in the frontend folder, 'compiling' JS and CSS, and copy the result into the dist folder
