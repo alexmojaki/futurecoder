@@ -28,7 +28,7 @@ jobs:
     - name: Test
       env:
         FUTURECODER_LANGUAGE: en
-      run: ./ci_test.sh
+      run: ./scripts/ci_test.sh
     - name: Upload test artifacts
       uses: actions/upload-artifact@v2
       if: steps.build.outcome == 'success'
