@@ -46,6 +46,7 @@ import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
+import languageIcon from "./img/language.png";
 import {interrupt, runCode, terminalRef} from "./RunCode";
 import firebase from "firebase/app";
 import {TableOfContents} from "./TableOfContents";
@@ -483,6 +484,23 @@ const MenuPopup = ({user}) =>
           >
             {close => <FeedbackModal close={close}/>}
           </Popup>
+        </p>
+        <p>
+          <a href={terms.switch_language_url} className="btn btn-link"
+             style={{borderColor: "grey"}}>
+            <img
+              alt="language icon"
+              src={languageIcon}
+              width={24}
+              height={24}
+              style={{
+                display: "inline",
+                position: "relative",
+                top: "-2px",
+                left: "-2px",
+            }}
+            /> {terms.switch_language_label}
+          </a>
         </p>
       </div>}
     </Popup>

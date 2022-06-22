@@ -72,7 +72,8 @@ def _tests(driver):
         == """\
 Sign out
 Settings
-Feedback"""
+Feedback
+Français"""
     )
 
     # Open settings
