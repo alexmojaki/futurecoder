@@ -16,7 +16,7 @@
     "ansi_up": "^5.0.0",
     "axios": "^0.21.2",
     "comlink": "^4.3.1",
-    "comsync": "0.0.7",
+    "comsync": "^0.0.8",
     "defaults": "^1.0.3",
     "firebase": "^8.6.3",
     "http-proxy-middleware": "^1.0.6",
@@ -42,7 +42,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.8",
-    "sync-message": "0.0.9"
+    "sync-message": "^0.0.10"
   },
   "scripts": {
     "start": "craco start",
