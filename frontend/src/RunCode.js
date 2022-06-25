@@ -51,12 +51,12 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
   const shell = source === "shell";
   if (shell) {
     if (taskClient.state === "awaitingMessage") {
+      bookSetState("processing", true);
       try {
         await taskClient.writeMessage(code);
-      } catch {
-        return;
+      } catch (e) {
+        console.warn(e);
       }
-      bookSetState("processing", true);
       return;
     }
   } else {
