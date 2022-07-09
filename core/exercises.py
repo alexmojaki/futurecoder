@@ -125,6 +125,8 @@ def generate_for_type(typ):
     if isinstance(typ, typing._GenericAlias):
         if typ.__origin__ is list:
             return generate_list(only(typ.__args__))
+        if typ.__origin__ is dict:
+            return {}
     return {
         str: generate_string(),
         bool: random.choice([True, False]),
