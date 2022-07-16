@@ -7067,5 +7067,633 @@
             "result": []
         },
         "step": "the_full_game"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
+            "french = {'apple':'pomme', 'box': 'boite'}"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "first_dict"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
+            "french[0]"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "0",
+                                "type": "KeyError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">french</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">0</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">french</span>\n",
+                                            "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;apple&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;pomme&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;box&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;boite&#39;</span><span class=\"p\">}</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>KeyError</code> is raised when a value is not found as a\nkey in a Python dict or in a similar object.</p>\n<p>The key <code>0</code> cannot be found in the dict <code>french</code>.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 1, in <module>",
+                        "-->    1 | french[0]",
+                        "           ^^^^^^^^^",
+                        "french = {'apple': 'pomme', 'box': 'boite'}",
+                        "",
+                        "KeyError: 0"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "dict_access"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
+            "french['apple']"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "'pomme'\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dict_access2"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
+            "french['box']"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "'boite'\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dict_access3"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
+            "french['pomme']"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "'pomme'",
+                                "type": "KeyError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">french</span><span class=\"p p-ExecutingNode\">[</span><span class=\"s1 s1-ExecutingNode\">&#39;pomme&#39;</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">french</span>\n",
+                                            "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;apple&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;pomme&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;box&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;boite&#39;</span><span class=\"p\">}</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>KeyError</code> is raised when a value is not found as a\nkey in a Python dict or in a similar object.</p>\n<p>The key <code>'pomme'</code> cannot be found in the dict <code>french</code>.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 1, in <module>",
+                        "-->    1 | french['pomme']",
+                        "           ^^^^^^^^^^^^^^^",
+                        "french = {'apple': 'pomme', 'box': 'boite'}",
+                        "",
+                        "KeyError: 'pomme'"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "dict_access4"
+    },
+    {
+        "page": "Using Dictionaries",
+        "program": [
+            "prices = {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100}"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "shopping_cart1"
+    },
+    {
+        "page": "Using Dictionaries",
+        "program": [
+            "prices = {'apple': 2, 'apple': 3}"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "shopping_cart2"
+    },
+    {
+        "get_solution": [
+            "def total_cost(cart, prices):",
+            "    result = 0",
+            "    for item in cart:",
+            "        price = prices[item]",
+            "        result += price",
+            "    return result"
+        ],
+        "page": "Using Dictionaries",
+        "program": [
+            "def total_cost(cart, prices):",
+            "    result = 0",
+            "    for item in cart:",
+            "        price = prices[item]",
+            "        result += price",
+            "    return result"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "shopping_cart3"
+    },
+    {
+        "page": "Using Dictionaries",
+        "program": [
+            "def total_cost(cart, quantities, prices):",
+            "    result = 0",
+            "    for item in cart:",
+            "        price = ...",
+            "        quantity = ...",
+            "        result += price * quantity",
+            "    return result",
+            "",
+            "assert_equal(",
+            "    total_cost(",
+            "        ['dog', 'box'],",
+            "        {'dog': 5000000, 'box': 2},",
+            "        {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},",
+            "    ),",
+            "    500000010,",
+            ")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "unsupported operand type(s) for *: 'ellipsis' and 'ellipsis'",
+                                "type": "TypeError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 10,
+                                    "lines": [
+                                        {
+                                            "is_current": false,
+                                            "lineno": 9,
+                                            "text": "<span class=\"n\">assert_equal</span><span class=\"p\">(</span>",
+                                            "type": "line"
+                                        },
+                                        {
+                                            "is_current": true,
+                                            "lineno": 10,
+                                            "text": "    <span class=\"n n-ExecutingNode\">total_cost</span><span class=\"p p-ExecutingNode\">(</span><span class=\" -ExecutingNode\"></span>",
+                                            "type": "line"
+                                        },
+                                        {
+                                            "is_current": false,
+                                            "lineno": 11,
+                                            "text": "<span class=\" -ExecutingNode\">        </span><span class=\"p p-ExecutingNode\">[</span><span class=\"s1 s1-ExecutingNode\">&#39;dog&#39;</span><span class=\"p p-ExecutingNode\">,</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;box&#39;</span><span class=\"p p-ExecutingNode\">],</span><span class=\" -ExecutingNode\"></span>",
+                                            "type": "line"
+                                        },
+                                        {
+                                            "is_current": false,
+                                            "lineno": 12,
+                                            "text": "<span class=\" -ExecutingNode\">        </span><span class=\"p p-ExecutingNode\">{</span><span class=\"s1 s1-ExecutingNode\">&#39;dog&#39;</span><span class=\"p p-ExecutingNode\">:</span><span class=\" -ExecutingNode\"> </span><span class=\"mi mi-ExecutingNode\">5000000</span><span class=\"p p-ExecutingNode\">,</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;box&#39;</span><span class=\"p p-ExecutingNode\">:</span><span class=\" -ExecutingNode\"> </span><span class=\"mi mi-ExecutingNode\">2</span><span class=\"p p-ExecutingNode\">},</span><span class=\" -ExecutingNode\"></span>",
+                                            "type": "line"
+                                        },
+                                        {
+                                            "is_current": false,
+                                            "lineno": 13,
+                                            "text": "<span class=\" -ExecutingNode\">        </span><span class=\"p p-ExecutingNode\">{</span><span class=\"s1 s1-ExecutingNode\">&#39;apple&#39;</span><span class=\"p p-ExecutingNode\">:</span><span class=\" -ExecutingNode\"> </span><span class=\"mi mi-ExecutingNode\">2</span><span class=\"p p-ExecutingNode\">,</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;box&#39;</span><span class=\"p p-ExecutingNode\">:</span><span class=\" -ExecutingNode\"> </span><span class=\"mi mi-ExecutingNode\">5</span><span class=\"p p-ExecutingNode\">,</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;cat&#39;</span><span class=\"p p-ExecutingNode\">:</span><span class=\" -ExecutingNode\"> </span><span class=\"mi mi-ExecutingNode\">100</span><span class=\"p p-ExecutingNode\">,</span><span class=\" -ExecutingNode\"> </span><span class=\"s1 s1-ExecutingNode\">&#39;dog&#39;</span><span class=\"p p-ExecutingNode\">:</span><span class=\" -ExecutingNode\"> </span><span class=\"mi mi-ExecutingNode\">100</span><span class=\"p p-ExecutingNode\">},</span><span class=\" -ExecutingNode\"></span>",
+                                            "type": "line"
+                                        },
+                                        {
+                                            "is_current": false,
+                                            "lineno": 14,
+                                            "text": "<span class=\" -ExecutingNode\">    </span><span class=\"p p-ExecutingNode\">)</span><span class=\"p\">,</span>",
+                                            "type": "line"
+                                        },
+                                        {
+                                            "is_current": false,
+                                            "lineno": 15,
+                                            "text": "    <span class=\"mi\">500000010</span><span class=\"p\">,</span>",
+                                            "type": "line"
+                                        },
+                                        {
+                                            "is_current": false,
+                                            "lineno": 16,
+                                            "text": "<span class=\"p\">)</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": []
+                                },
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 6,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 6,
+                                            "text": "<span class=\"n\">result</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">price</span><span class=\" -ExecutingNode\"> </span><span class=\"o o-ExecutingNode\">*</span><span class=\" -ExecutingNode\"> </span><span class=\"n n-ExecutingNode\">quantity</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "total_cost",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">cart</span>\n",
+                                            "value": "<span class=\"p\">[</span><span class=\"s1\">&#39;dog&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;box&#39;</span><span class=\"p\">]</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">item</span>\n",
+                                            "value": "<span class=\"s1\">&#39;dog&#39;</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">price</span>\n",
+                                            "value": "<span class=\"bp\">Ellipsis</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">prices</span>\n",
+                                            "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;apple&#39;</span><span class=\"p\">:</span> <span class=\"mi\">2</span><span class=\"p\">,</span> <span class=\"s1\">&#39;box&#39;</span><span class=\"p\">:</span> <span class=\"mi\">5</span><span class=\"p\">,</span> <span class=\"s1\">&#39;cat&#39;</span><span class=\"p\">:</span> <span class=\"mi\">100</span><span class=\"p\">,</span> <span class=\"s1\">&#39;dog&#39;</span><span class=\"p\">:</span> <span class=\"mi\">100</span><span class=\"p\">}</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">quantities</span>\n",
+                                            "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;dog&#39;</span><span class=\"p\">:</span> <span class=\"mi\">5000000</span><span class=\"p\">,</span> <span class=\"s1\">&#39;box&#39;</span><span class=\"p\">:</span> <span class=\"mi\">2</span><span class=\"p\">}</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">quantity</span>\n",
+                                            "value": "<span class=\"bp\">Ellipsis</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">result</span>\n",
+                                            "value": "<span class=\"mi\">0</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>TypeError</code> is usually caused by trying\nto combine two incompatible types of objects,\nby calling a function with the wrong type of object,\nor by trying to do an operation not allowed on a given type of object.</p>\n<p>You tried to multiply two incompatible types of objects:\nellipsis and ellipsis.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 10, in <module>",
+                        "       7 |     return result",
+                        "       9 | assert_equal(",
+                        "-->   10 |     total_cost(",
+                        "               ^^^^^^^^^^^",
+                        "      11 |         ['dog', 'box'],",
+                        "               ^^^^^^^^^^^^^^^^^^^",
+                        "      12 |         {'dog': 5000000, 'box': 2},",
+                        "               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+                        "      13 |         {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},",
+                        "               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+                        "      14 |     ),",
+                        "               ^",
+                        "      15 |     500000010,",
+                        "      16 | )",
+                        "",
+                        " File \"/my_program.py\", line 6, in total_cost",
+                        "       5 | quantity = ...",
+                        "-->    6 | result += price * quantity",
+                        "                     ^^^^^^^^^^^^^^^^",
+                        "cart = ['dog', 'box']",
+                        "item = 'dog'",
+                        "price = Ellipsis",
+                        "prices = {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100}",
+                        "quantities = {'dog': 5000000, 'box': 2}",
+                        "quantity = Ellipsis",
+                        "result = 0",
+                        "",
+                        "TypeError: unsupported operand type(s) for *: 'ellipsis' and 'ellipsis'"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "shopping_cart4"
+    },
+    {
+        "page": "Using Dictionaries",
+        "program": [
+            "def substitute(string):",
+            "    result = ''",
+            "    for char in string:",
+            "        if char == 'A':",
+            "            char = 'T'",
+            "        elif char == 'T':",
+            "            char = 'A'",
+            "        elif char == 'G':",
+            "            char = 'C'",
+            "        elif char == 'C':",
+            "            char = 'G'",
+            "        result += char",
+            "    return result",
+            "",
+            "original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
+            "expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'",
+            "assert_equal(substitute(original), expected)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "OK\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "shopping_cart5"
+    },
+    {
+        "page": "Using Dictionaries",
+        "program": [
+            "def substitute(string, d):",
+            "    ...",
+            "",
+            "original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
+            "expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'",
+            "assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "Error! None != 'TCATCGCAGGAATCAATGTCCTACCGAATA'\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dna_part2"
+    },
+    {
+        "page": "Using Dictionaries",
+        "program": [
+            "plaintext = 'helloworld'",
+            "encrypted = 'qpeefifmez'",
+            "letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}",
+            "reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}",
+            "assert_equal(substitute(plaintext, letters), encrypted)",
+            "assert_equal(substitute(encrypted, reverse), plaintext)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "name 'substitute' is not defined",
+                                "type": "NameError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 5,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 5,
+                                            "text": "<span class=\"n\">assert_equal</span><span class=\"p\">(</span><span class=\"n n-ExecutingNode\">substitute</span><span class=\"p\">(</span><span class=\"n\">plaintext</span><span class=\"p\">,</span> <span class=\"n\">letters</span><span class=\"p\">),</span> <span class=\"n\">encrypted</span><span class=\"p\">)</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">encrypted</span>\n",
+                                            "value": "<span class=\"s1\">&#39;qpeefifmez&#39;</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">letters</span>\n",
+                                            "value": "{&#x27;h&#x27;: &#x27;q&#x27;, &#x27;e&#x27;: &#x27;p&#x27;, &#x27;l&#x27;: &#x27;e&#x27;, &#x27;o&#x27;: &#x27;f&#x27;, ...}"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">plaintext</span>\n",
+                                            "value": "<span class=\"s1\">&#39;helloworld&#39;</span>\n"
+                                        },
+                                        {
+                                            "name": "<span class=\"n\">reverse</span>\n",
+                                            "value": "{&#x27;q&#x27;: &#x27;h&#x27;, &#x27;p&#x27;: &#x27;e&#x27;, &#x27;e&#x27;: &#x27;l&#x27;, &#x27;f&#x27;: &#x27;o&#x27;, ...}"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, no object with the name <code>substitute</code> exists.\nI have no additional information for you.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 5, in <module>",
+                        "       4 | reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}",
+                        "-->    5 | assert_equal(substitute(plaintext, letters), encrypted)",
+                        "                        ^^^^^^^^^^",
+                        "encrypted = 'qpeefifmez'",
+                        "letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', ...}",
+                        "plaintext = 'helloworld'",
+                        "reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', ...}",
+                        "",
+                        "NameError: name 'substitute' is not defined"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "cryptography"
+    },
+    {
+        "page": "Dictionary Keys And Values",
+        "program": [
+            "quantities = {'apple': 1, 'cat': 10}",
+            "print(quantities.keys())"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "dict_keys(['apple', 'cat'])\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "introducing_keys"
+    },
+    {
+        "page": "Dictionary Keys And Values",
+        "program": [
+            "quantities = {'apple': 1, 'cat': 10}",
+            "for key in quantities.keys():",
+            "    print(key)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "apple\ncat\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "keys_are_iterable"
+    },
+    {
+        "page": "Dictionary Keys And Values",
+        "program": [
+            "quantities = {'apple': 1, 'cat': 10}",
+            "for key in quantities:",
+            "    print(key)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "apple\ncat\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "keys_are_iterable2"
+    },
+    {
+        "get_solution": [
+            "def total_cost(quantities, prices):",
+            "    result = 0",
+            "    for item in quantities:",
+            "        price = prices[item]",
+            "        quantity = quantities[item]",
+            "        result += price * quantity",
+            "    return result"
+        ],
+        "page": "Dictionary Keys And Values",
+        "program": [
+            "def total_cost(quantities, prices):",
+            "    result = 0",
+            "    for item in quantities:",
+            "        price = prices[item]",
+            "        quantity = quantities[item]",
+            "        result += price * quantity",
+            "    return result"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "cleanup_shopping_cart"
+    },
+    {
+        "get_solution": [
+            "def print_words(french):",
+            "    for word in french:",
+            "        print(\"English: \" + word)",
+            "        print(\"French: \" + french[word])",
+            "        print(\"---\")"
+        ],
+        "page": "Dictionary Keys And Values",
+        "program": [
+            "def print_words(french):",
+            "    for word in french:",
+            "        print(\"English: \" + word)",
+            "        print(\"French: \" + french[word])",
+            "        print(\"---\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "english_to_french"
     }
 ]
