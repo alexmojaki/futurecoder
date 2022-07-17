@@ -1,18 +1,17 @@
 import React from 'react';
 import {useInput} from "./frontendlib/HookInput";
-import {redact} from "./frontendlib/redact"
 import Popup from "reactjs-popup";
-import _ from "lodash";
 import {bookSetState, bookState} from "./book/store";
 import axios from "axios";
 import * as terms from "./terms.json"
+import * as Sentry from "@sentry/react";
+import {uuidv4} from "sync-message";
 
 
 export const FeedbackModal = ({close, error}) => {
-  let initialTitle, instructions, descriptionExtra;
+  let initialTitle, instructions;
   if (error) {
     initialTitle = error.title;
-    descriptionExtra = "\n\n```" + error.details + "```";
     instructions = <>
       <h3>{terms.report_error}</h3>
       <p>{terms.report_error_instructions}</p>
@@ -24,7 +23,6 @@ export const FeedbackModal = ({close, error}) => {
     </>
   } else {
     initialTitle = "";
-    descriptionExtra = "";
     instructions = <>
       <h3>{terms.give_feedback}</h3>
       <div dangerouslySetInnerHTML={{__html: terms.give_feedback_instructions}}/>
@@ -69,33 +67,30 @@ export const FeedbackModal = ({close, error}) => {
           className="btn btn-primary"
           disabled={!(title.value && description.value)}
           onClick={() => {
-            const state = _.omit(redact.store.getState(), "book.pages")
-            const body = `
-**User Issue**
-Email: ${email.value || "(not given)"}
-User Agent: ${navigator.userAgent}
+            // Get the last actual event (if any) before we override it now
+            const lastEvent = Sentry.lastEventId();
+            // Create an artificial event so that user feedback can be attached to it.
+            // Set a unique fingerprint to prevent grouping so that an email notification is triggered.
+            Sentry.withScope(scope => {
+              scope.setFingerprint([uuidv4()]);
+              Sentry.captureMessage(`User feedback`);
+            });
+            const comments = `${email.value ? `Email: ${email.value}\n` : ''}
+${lastEvent ? `Last event: ${lastEvent}\n` : ''}
+${title.value.trim()}
 
-${description.value + descriptionExtra}
-
-<details>
-
-<summary>Redux state</summary>
-
-<p>
-
-\`\`\`json
-${JSON.stringify(state)}
-\`\`\`
-
-</p>
-</details>`
+${description.value.trim()}`;
             axios.post(
-              'https://api.github.com/repos/alexmojaki/futurecoder/issues',
-              {title: title.value, body, labels: ['user', 'bug']},
+              'https://sentry.io/api/0/projects/futurecoder/frontend/user-feedback/',
+              {
+                event_id: Sentry.lastEventId(),  // the captureMessage event just now
+                name: "John Doe",  // name and email are required by Sentry
+                email: "john@example.com",
+                comments,
+              },
               {
                 headers: {
-                  Authorization: 'token ' + process.env.REACT_APP_FEEDBACK_GITHUB_TOKEN,
-                  Accept : 'application/vnd.github.v3+json'
+                  Authorization: 'DSN ' + process.env.REACT_APP_SENTRY_DSN,
                 }
               }
             );
