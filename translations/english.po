@@ -17347,7 +17347,7 @@ msgid "frontend.feedback"
 msgstr "Feedback"
 
 msgid "frontend.feedback_email_placeholder"
-msgstr "Email (optional, publicly visible)"
+msgstr "Email (optional)"
 
 msgid "frontend.get_another_hint"
 msgstr "Get another hint"
