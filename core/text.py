@@ -107,6 +107,10 @@ def basic_signature(func):
     return f'({joined})'
 
 
+def basic_function_header(func):
+    return f"def {func.__name__}{basic_signature(func)}:"
+
+
 def clean_solution_function(func, source):
     return re.sub(
         rf"def {func.__name__}\(.+?\):",
@@ -592,7 +596,7 @@ class ExerciseStep(Step):
             result = [
                 dict(
                     type="function_exercise",
-                    signature=basic_signature(cls.solution),
+                    header=basic_function_header(cls.solution),
                     goal=cls.function_exercise_goal(),
                     has_stdin=bool(cls.stdin_input),
                 ),
