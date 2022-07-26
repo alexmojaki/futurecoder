@@ -42,6 +42,9 @@ Add another statement to the function so that it looks like this:
 Then run the program again.
         """
 
+        requirements = """
+Add `print("How are you?")` after `print("How are you?")` with the same indentation.
+"""
         program_in_text = False
         predicted_output_choices = [
             """\
@@ -99,6 +102,7 @@ Make sure the whole program stays working as before, but don't change anything e
 """
 
         program_in_text = False
+        requirements = "hints"
 
         hints = """
 You have to change the name in the function definition header, but that's not all.
@@ -125,6 +129,7 @@ Good! Now do a similar exercise: change the name of the parameter from `name` to
 """
 
         program_in_text = False
+        requirements = "hints"
 
         hints = """
 You have to change the parameter name in the function definition header, but that's not all.
@@ -246,6 +251,7 @@ If you do this and nothing else, you will get an error. Fix the rest of the prog
 *Don't change the body of the function*.
 """
         program_in_text = False
+        requirements = "hints"
 
         hints = """
 The only change to the function definition should be the swapping of parameters as instructed, nothing else.
@@ -295,6 +301,7 @@ to explore function calls, so we're going to try this out in each debugger.
 First, run the program again with `snoop`.
         """
 
+        requirements = "Run the same program as above, but with `snoop`."
         expected_code_source = "snoop"
         program_in_text = False
 
@@ -312,6 +319,7 @@ It ends the call with `<<< Return value from <function name>`. We'll learn about
 Now run the program again with Python Tutor.
         """
 
+        requirements = "Run the same program as above, but with Python Tutor."
         expected_code_source = "pythontutor"
         program_in_text = False
 
@@ -328,6 +336,7 @@ and then disappear. In each one you can see the values of the variables.
 Finally, run the program with `birdseye`.
         """
 
+        requirements = "Run the same program as above, but with `birdseye`."
         expected_code_source = "birdseye"
         program_in_text = False
 
@@ -504,6 +513,7 @@ OK
 The OKs tell us that the tests passed. Our `double` function seems to be working correctly. Change it to return
 `x * 3` instead and see what happens.
 """
+        requirements = "Run the program from the previous step, but replace `x * 2` with `x * 3`. Keep the rest the same."
 
         program_in_text = False
         translate_output_choices = False
@@ -548,6 +558,10 @@ Fix the program by adding the missing arguments to `assert_equal`.
     assert_equal(quadruple(5))
         """
 
+        requirements = """
+Type in the program above.
+Then change the last two lines by adding one argument to each `assert_equal` call to make the tests pass.
+Don't touch the function definitions."""
         program_in_text = False
 
         def program(self):
@@ -841,6 +855,7 @@ Previously we showed [how to stop a loop with `break`](#UsingBreak).
 Change `return letter` to `break` and see what the difference is.
         """
 
+        requirements = "Run the same code as in the previous step, but replace the whole last line of the function (`return letter`) with just `break`."
         program_in_text = False
 
         def program(self):

@@ -45,6 +45,8 @@ Here's an exercise: change the previous code slightly so that the result is the 
 By the way, if you get stuck, you can click the lightbulb icon in the bottom right for a hint.
         """
 
+        requirements = "Use `+` to add two or more strings together, so that the result is the string `'hello world'`."
+
         hints = [
               "A space is a character just like any other, like `o` or `w`.",
               "The space character must be somewhere inside quotes.",

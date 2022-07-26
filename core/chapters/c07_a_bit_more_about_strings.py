@@ -70,6 +70,7 @@ No need to add strings together.
         """
 
         program_in_text = False
+        requirements = "hints"
 
         def program(self):
             print("Special cases aren't special enough to break the rules.")
@@ -86,6 +87,7 @@ Now print the following quote exactly (including the double quotes):
 The program should be a single line using `print()`, no variables.
         """
 
+        requirements = "hints"
         hints = """
 Think simple! How would you normally do this?
 If a string contains a single quote, we must use double quotes to define it.
@@ -125,6 +127,15 @@ Make sure you include the `f` before the string.
     print(f"{name} went to {meal} with {friend}.")
         """
 
+        requirements = """
+Run the program above, but replace this code inside the `print()`:
+
+    name + " went to " + meal + " with " + friend + '.'
+
+with:
+
+    f"{name} went to {meal} with {friend}."
+        """
         program_in_text = False
         # TODO message: catch forgetting the f
 
@@ -188,6 +199,7 @@ How many pairs of curly brackets do you need?
         """
 
         program_in_text = False
+        requirements = "hints"
 
         # TODO message: catch forgetting the f
 

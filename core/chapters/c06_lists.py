@@ -415,6 +415,8 @@ This also means that the last index in this list of 4 elements is 3. What happen
 
         auto_translate_program = False
 
+        requirements = "Run something like `words[3]` but replace `3` with a bigger number."
+
         program = "words[4]"
 
         def check(self):
@@ -495,7 +497,7 @@ i.e. `indices = range(4)`.
         """
 
         program_in_text = False
-
+        requirements = "Run the same program from the previous step, but replace the second line `indices = [0, 1, 2, 3]` with `indices = range(4)`."
         auto_translate_program = False
 
         def program(self):
@@ -1302,6 +1304,7 @@ Replace the middle line with one line from the list above. The final program sho
         """
 
         program_in_text = False
+        requirements = "Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list just before that. You must choose the correct line, there's only one right answer. Type in the line exactly."
 
         def program(self):
             x = ['a', 'b', 'c']
@@ -1329,6 +1332,8 @@ Good job. For the next exercise, start with the same incomplete program:
 Choose a line of code from the list that overwrites the last element of `x` with the first element,
 so now it should print `['a', 'b', 'a']`.
         """
+
+        requirements = "Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list in the previous step. You must choose the correct line, there's only one right answer. Type in the line exactly."
 
         program_in_text = False
 
@@ -1373,6 +1378,7 @@ Therefore the program will print `['a', 'b', 'c', 'a']`.
         """
 
         program_in_text = False
+        requirements = "Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list of lines from before. You must choose the correct line, there's only one right answer. Type in the line exactly. Do not replace the `y = ` part, that should still be there just before the line that you type in, on the same line."
 
         def program(self):
             x = ['a', 'b', 'c']
@@ -1400,6 +1406,7 @@ Replace the middle line `x.remove(0)` with a line from the list that does the sa
         """
 
         program_in_text = False
+        requirements = "Copy the three lines above, then replace `x.remove(0)` with exactly one line from the long list of lines from before. The line you choose should have the same effect as `x.remove(0)`, so that the program prints `[1, 2, 3]`."
 
         def program(self):
             x = [1, 2, 0, 3]
@@ -1549,6 +1556,7 @@ Replace the part `1 in x` (leave in the `y = `) with one line from the list abov
         """
 
         program_in_text = False
+        requirements = "Copy the three lines above, then replace `1 in x` with exactly one line from the long list of lines above. The middle line should still start with `y = `. The line you choose should have the same effect as `1 in x`, so that the program prints `True`."
 
         def program(self):
             x = [1, 2, 0, 3]
@@ -1577,6 +1585,7 @@ The final program should print the average (technically the *mean*) of the numbe
         """
 
         program_in_text = False
+        requirements = "Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list of lines above. The middle line should still start with `y = `."
 
         def program(self):
             x = [15, 12, -6, 3]
@@ -1605,6 +1614,7 @@ The final program should print the result of adding up all the numbers from `1` 
         """
 
         program_in_text = False
+        requirements = "Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list of lines above. The middle line should still start with `y = `."
 
         def program(self):
             x = 100
@@ -1632,6 +1642,7 @@ The final program should print the *second smallest value* in `x`.
         """
 
         program_in_text = False
+        requirements = "Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list of lines above. The middle line should still start with `y = `."
 
         def program(self):
             x = [12, -6, 2, -1, 3]
@@ -1772,6 +1783,11 @@ In one word, what's special about `91` in the list `[21, 55, 4, 91, 62, 49]`?
 'python biggest value in list'
 """
 
+        requirements = """
+Run code similar to `sum([21, 55, 4, 91, 62, 49])` but replace `sum` with the name of another specific function.
+There's only one correct answer for which function should be used. You need to search online to figure out which one.
+It's a commonly used built-in function in Python.
+"""
         program = "max([21, 55, 4, 91, 62, 49])"
 
         def check(self):
@@ -1797,6 +1813,13 @@ But suppose you don't want the 9 to be at the end, you want it to go between the
     [1, 2, 9, 3, 4, 5]
 
 Replace the middle line `nums.append(9)` with the right function/method call to do that.
+        """
+
+        requirements = """
+Run code similar to the three lines above, but change `nums.append(9)` to the right function/method call
+to put 9 right after the second element (2 in the example `nums = [1, 2, 3, 4, 5]`) instead of at the end.
+There's only one correct answer for what the middle line should be.
+You need to search online to figure out which function/method to use and how to use it.
         """
 
         hints = """
@@ -1918,6 +1941,7 @@ Now change `list2 = [1, 2, 3]` to `list2 = list1` and see what difference it mak
         """
 
         program_in_text = False
+        requirements = "Run the same program as above, but replace the *second* `[1, 2, 3]` with `list1`."
 
         def program(self):
             list1 = [1, 2, 3]
@@ -2019,6 +2043,17 @@ The good news is that there are many ways to solve this. You can instead just lo
         """
 
         program_in_text = False
+        requirements = """
+Run the same program as above, but change the second line:
+
+    for number in numbers:
+
+to:
+
+    for number in numbers.copy():
+
+i.e. add `.copy()` after `numbers` but before `:`.
+"""
 
         def program(self):
             numbers = [10, 7, 8, 3, 12, 15]

@@ -98,6 +98,8 @@ Now make a variable called `your_name` whose value is another string.
 (The character `_` in `your_name` is called an *underscore*. Use it to separate words when you want a variable name containing multiple words. You can type it on most keyboards by pressing Shift and hyphen/dash/minus (`-`).)
         """
 
+        requirements = "Something similar to `word = 'Hello'`, but replace `word` with `your_name`."
+
         program = "your_name = 'Alex'"
 
         class assigned_something_else(MessageStep):
@@ -165,6 +167,8 @@ Or you can just add variables together. Try:
         """
 Oops...that doesn't look nice. Can you modify the code above so that there's a space between the word and your name?
         """
+
+        requirements = "hints"
 
         hints = """
 You will need to use `+` twice, like 1+2+3.
@@ -272,6 +276,8 @@ Now `sentence` has the value `'Hello World'` which can be used multiple times. N
     print(sentence)
         """
         program_in_text = False
+
+        requirements = "Run a program consisting of the four lines in the previous step followed by the two lines here."
 
         predicted_output_choices = [
             "Hello World\n"

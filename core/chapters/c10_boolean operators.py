@@ -92,6 +92,7 @@ As you can see, `is_friend` will return `True` only when `name` is Alice or Bob.
 The `or` is used in between the two booleans `name == "Alice"` and `name == "Bob"`.
         """
         program_in_text = False
+        requirements = "Copy the program from the top of the page, then change the first four lines of the function to use `or` as suggested."
 
         def program(self):
             def is_friend(name):
@@ -132,6 +133,18 @@ where `x` itself is a boolean, you can always simplify this block of code to:
 Apply this simplification to the code yourself, and run it again.
         """
 
+        requirements = """
+Run the program from the previous step, but replace:
+
+    if name == "Alice" or name == "Bob":
+        return True
+    else:
+        return False
+
+with:
+
+    return name == "Alice" or name == "Bob"
+"""
         program_in_text = False
 
         def program(self):
@@ -161,6 +174,15 @@ But Python is not English, and that's not how `or` works.
 Replace the `return` line in the code with the above line, and try running it again.
         """
         program_in_text = False
+        requirements = """
+Run the program from the previous step, but replace:
+
+    return name == "Alice" or name == "Bob"
+
+with:
+
+    return name == "Alice" or "Bob"
+        """
 
         def program(self):
             def is_friend(name):
@@ -178,6 +200,7 @@ Run the same problematic code again with `birdseye`. Inspect the `return` statem
 (Use the blue arrow buttons)
         """
 
+        requirements = "Run the same code as in the previous step, but with `birdseye`."
         expected_code_source = "birdseye"
 
     class AnExercise(ExerciseStep):

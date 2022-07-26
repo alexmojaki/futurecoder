@@ -19,8 +19,7 @@ class InvalidInitialCode(Exception):
     pass
 
 
-def make_function(program, function_template):
-    arg_names = inspect.signature(function_template).parameters
+def make_function(program, arg_names):
     tree = ast.parse(program)
     try:
         for node, arg_name in zip(tree.body, arg_names):

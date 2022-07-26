@@ -1537,6 +1537,7 @@ You just need to use the numbers from user input instead of the hardcoded 1 and 
 You can use nested subscripting in one line, or do it in two steps.
         """
 
+        requirements = "Your function should modify the `board` argument. It doesn't need to `return` or `print` anything."
         no_returns_stdout = True
 
         def solution(self):
@@ -1725,6 +1726,7 @@ list repeated.
         """
 
         parsons_solution = True
+        requirements = "hints"
 
         hints = """
 The existing code is almost correct.
@@ -1923,6 +1925,7 @@ i.e. numbers from 1 to `board_size` to choose a cell on the board that isn't alr
         """
 
         parsons_solution = True
+        requirements = "hints"
 
         hints = """
 You should use all of the functions `winner`, `format_board` (not counting its use in `play_move`), `play_move`, `make_board`, `print_winner`, and `print_draw` somewhere.

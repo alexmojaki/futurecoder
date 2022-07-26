@@ -162,6 +162,7 @@ def clean_step_class(cls):
         text = text.replace("__program__", program)
         indented = indent(program, '    ').replace("\\", "\\\\")
         text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
+        cls.program_in_text = True
     else:
         assert not cls.program_in_text, (
             "Either include __program__ or __program_indented__ in the text, "
@@ -381,6 +382,7 @@ class PageMeta(type):
                 hints=[highlighted_markdown(hint) for hint in getattr(step, "hints", [])],
                 solution=getattr(step, "get_solution", None),
                 prediction=get_predictions(step),
+                requirements=step.get_all_requirements() if getattr(step, "is_step", False) else None,
             )
             for index, (name, text, step) in
             enumerate(zip(self.step_names, self.step_texts(raw=False), self.steps))
@@ -436,6 +438,7 @@ class Step(ABC):
     translated_tests = False
     page = None
     is_function_exercise = False
+    requirements = ""
 
     class special_messages:
         pass
@@ -499,6 +502,28 @@ class Step(ABC):
     def check(self) -> Union[bool, dict]:
         raise NotImplementedError
 
+    @classmethod
+    def get_all_requirements(cls):
+        result = cls.get_requirements()
+        if cls.program_in_text:
+            result.append(dict(type="program_in_text"))
+        if cls.requirements:
+            if cls.requirements == "hints":
+                assert cls.hints
+            else:
+                result.append(dict(type="custom", message=cls.requirements))
+
+        assert result, cls
+
+        if cls.expected_code_source:
+            # TODO add message
+            result.append(dict(type="expected_code_source", value=cls.expected_code_source))
+        return result
+
+    @classmethod
+    def get_requirements(cls):
+        return []
+
     @cached_property
     def tree(self):
         return ast.parse(self.input)
@@ -558,6 +583,38 @@ class ExerciseStep(Step):
             return self.check_exercise(func)
 
     @classmethod
+    def get_requirements(cls):
+        if not cls.is_function_exercise:
+            result = [
+                dict(type="non_function_exercise", arg_names=cls.arg_names()),
+            ]
+        else:
+            result = [
+                dict(
+                    type="function_exercise",
+                    signature=basic_signature(cls.solution),
+                    goal=cls.function_exercise_goal(),
+                    has_stdin=bool(cls.stdin_input),
+                ),
+            ]
+        return result
+
+    @classmethod
+    def function_exercise_goal(cls):
+        assert cls.is_function_exercise
+        if (
+            cls.wrap_solution.__func__ == ExerciseStep.wrap_solution.__func__ and
+            cls.check_result.__func__ == ExerciseStep.check_result.__func__
+        ):
+            if getattr(cls.solution, "returns_stdout", False):
+                return "print"
+            else:
+                return "return"
+        else:
+            assert cls.requirements, cls
+            return None
+
+    @classmethod
     def _patch_streams(cls, func):
         func = match_returns_stdout(func, cls.solution)
         func = add_stdin_input_arg(func)
@@ -569,7 +626,7 @@ class ExerciseStep(Step):
 
         if functionise:
             try:
-                initial_names, func = make_function(submission, solution)
+                initial_names, func = make_function(submission, cls.arg_names())
             except InvalidInitialCode:
                 # There should be an exception in the usual output
                 return False
@@ -661,6 +718,12 @@ class VerbatimStep(Step):
 
     class StringSpacesDiffer(Exception):
         pass
+
+    @classmethod
+    def get_requirements(cls):
+        if not cls.program_in_text:
+            assert cls.requirements, cls
+        return [dict(type="verbatim")]
 
     def check(self):
         try:
