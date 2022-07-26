@@ -1,5 +1,4 @@
 import ast
-import inspect
 import random
 import string
 import typing
@@ -80,7 +79,7 @@ def inputs_string(inputs):
 def check_result(func, inputs, expected_result):
     try:
         result = func(**inputs)
-    except Exception as e:
+    except Exception:
         result = format_exception_string()
 
     cleaned_result = clean_result(result)
