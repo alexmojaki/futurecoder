@@ -165,6 +165,13 @@ For example, `print_twice("Hello")` should output:
 You can test your function by calling it after the function definition, but it's not required.
 """
 
+        # The standard requirements for an ExerciseStep reveal too much at this stage,
+        # where the user is literally practicing the basics of writing function definitions.
+        requirements = "Write a program which defines a function called `quadruple` as described above."
+        @classmethod
+        def get_requirements(cls):
+            return []
+
         hints = """
 There's no clever problem solving here, this is just about following the recipe for defining a function.
 Make sure you have all the parts of a function listed above.
@@ -404,6 +411,13 @@ Write a function `quadruple` which takes one argument `x` and returns that argum
 You must only use the `double` function - no numbers or multiplication are allowed directly in the body
 of `quadruple`.
         """
+
+        # The standard requirements for an ExerciseStep reveal too much at this stage,
+        # where the user is literally practicing the basics of writing function definitions.
+        requirements = "Write a program which defines a function called `quadruple` as described above."
+        @classmethod
+        def get_requirements(cls):
+            return []
 
         hints = """
 To multiply by 4, multiply by 2 twice.
