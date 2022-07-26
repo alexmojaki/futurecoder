@@ -4,7 +4,6 @@ import ast
 import inspect
 import itertools
 import re
-import traceback
 from abc import ABC, abstractmethod
 from copy import deepcopy
 from functools import cached_property, cache
@@ -643,7 +642,6 @@ class ExerciseStep(Step):
             try:
                 expected_result = solution(**initial_names)
             except Exception:
-                traceback.print_exc()
                 return dict(message=t.Terms.invalid_inputs)
             try:
                 cls.check_result(func, initial_names, expected_result)
