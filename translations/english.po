@@ -17710,6 +17710,9 @@ msgstr "at line"
 msgid "misc_terms.when_it_should_output"
 msgstr "when it should output:"
 
+msgid "misc_terms.which_is_correct"
+msgstr "which is correct!"
+
 msgid "misc_terms.your_code_outputs"
 msgstr "Your code outputs:"
 
@@ -24841,10 +24844,6 @@ msgstr "There are a few ways to copy a list in Python with a tiny bit of code."
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.fix_make_board
 msgid "pages.MakingTheBoard.steps.fix_make_board.hints.8.text"
 msgstr "Making a new row each time can be done by just rearranging the code."
-
-#. https://futurecoder.io/course/#MakingTheBoard
-msgid "pages.MakingTheBoard.steps.fix_make_board.special_messages.not_separate.text"
-msgstr "The sublists in the result are not all separate objects."
 
 #. https://futurecoder.io/course/#MakingTheBoard
 #. 

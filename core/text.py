@@ -460,44 +460,46 @@ class Step(ABC):
             result = dict(message=result.text)
 
         if not isinstance(result, dict):
-            result = bool(result)
+            result = dict(passed=bool(result))
+
+        result.setdefault("passed", False)
+        result.setdefault("messages", [])
 
         return result
 
     def check_with_messages(self):
         result = self.clean_check()
         for message_cls in self.messages:
-            if (result is True) == message_cls.after_success and (message_cls.check_message(self) is True):
-                return message_cls
+            if result["passed"] == message_cls.after_success and message_cls.check_message(self)["passed"]:
+                return result | dict(message=message_cls.text, passed=False)
 
-        if result is True:
+        if result["passed"]:
             for d in self.disallowed:
                 if search_ast(
                     self.function_tree if d.function_only else self.tree,
                     d.template,
                     d.predicate
                 ) > d.max_count:
-                    return d
+                    return result | dict(message=d.text, passed=False)
 
             if self.expected_code_source not in (None, self.code_source):
-                return dict(
+                return result | dict(
+                    passed=False,
                     message=t.Terms.incorrect_mode
                     + " "
                     + getattr(t.Terms, f"expected_mode_{self.expected_code_source}")
                 )
 
-            return True
+            return result
 
         if self.code_source != "shell":
-            if not isinstance(result, dict):
-                result = {}
-
             try:
                 tree = self.tree
             except SyntaxError:
                 pass
             else:
-                result.setdefault("messages", []).extend(lint(tree))
+                # TODO move to new section
+                result["messages"].extend(lint(tree))
 
         return result
 
@@ -626,11 +628,13 @@ class ExerciseStep(Step):
     @classmethod
     def check_exercise(cls, submission, functionise=False):
         solution = cls.solution
+        test_values = list(cls.test_values())
 
         if functionise:
             try:
                 initial_names, func = make_function(submission, cls.arg_names())
             except InvalidInitialCode:
+                # TODO message for this
                 # There should be an exception in the usual output
                 return False
             except ExerciseError as e:
@@ -643,21 +647,24 @@ class ExerciseStep(Step):
                 expected_result = solution(**initial_names)
             except Exception:
                 return dict(message=t.Terms.invalid_inputs)
-            try:
-                cls.check_result(func, initial_names, expected_result)
-            except:
-                # Assume that the user can tell that the output is wrong
-                return False
+
+            # TODO only insert if initial_names isn't present already
+            test_values.insert(0, (initial_names, expected_result))
         else:
             submission = cls.wrap_solution(submission)
             func = cls._patch_streams(submission)
 
-        try:
-            cls.test_exercise(func)
-        except ExerciseError as e:
-            return dict(message=str(e))
+        test_results = []
+        return_value = dict(test_results=test_results, passed=True)
+        for inputs, result in test_values:
+            test_result = cls.check_result(func, inputs, result)
+            test_results.append(test_result)
+            if not test_result["passed"]:
+                return_value["passed"] = False
+                return_value["message"] = test_result["message"]
+                break
 
-        return True
+        return return_value
 
     @classmethod
     def wrap_solution(cls, func):
@@ -701,11 +708,11 @@ class ExerciseStep(Step):
     @classmethod
     def test_exercise(cls, func):
         for inputs, result in cls.test_values():
-            cls.check_result(func, inputs, result)
+            assert cls.check_result(func, inputs, result)["passed"]
 
     @classmethod
     def check_result(cls, func, inputs, result):
-        return check_result(func, inputs, result)
+        return check_result(func, inputs, result)[0]
 
     @classmethod
     def generate_inputs(cls):

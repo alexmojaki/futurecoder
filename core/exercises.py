@@ -85,25 +85,23 @@ def check_result(func, inputs, expected_result):
     cleaned_result = clean_result(result)
     expected_result = clean_result(expected_result)
 
-    if cleaned_result != expected_result:
-        inputs.pop("stdin_input", None)
-        if inputs:
-            message = t.Terms.your_code_outputs_given_values.format(
-                given_values=indented_inputs_string(inputs)
-            )
-        else:
-            message = t.Terms.your_code_outputs
+    inputs.pop("stdin_input", None)
+    if inputs:
+        message = t.Terms.your_code_outputs_given_values.format(
+            given_values=indented_inputs_string(inputs)
+        )
+    else:
+        message = t.Terms.your_code_outputs
 
-        message += f"""
+    message += f"\n\n{cleaned_result}\n\n"
 
-{cleaned_result}
+    passed = cleaned_result == expected_result
+    if passed:
+        message += t.Terms.which_is_correct
+    else:
+        message += f"{t.Terms.when_it_should_output}\n\n{expected_result}"
 
-{t.Terms.when_it_should_output}
-
-{expected_result}
-"""
-        raise ExerciseError(message)
-    return result
+    return dict(passed=passed, message=message), result
 
 
 def generate_string(length=None):

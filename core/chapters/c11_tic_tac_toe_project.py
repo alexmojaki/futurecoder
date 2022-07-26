@@ -8,7 +8,7 @@ from textwrap import dedent
 from typing import List
 
 from core import translation as t
-from core.exercises import assert_equal, ExerciseError
+from core.exercises import assert_equal, check_result
 from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
 from core.utils import returns_stdout, shuffled, wrap_solution
 
@@ -1768,16 +1768,19 @@ Making a new row each time can be done by just rearranging the code.
         def generate_inputs(cls):
             return dict(size=randint(4, 12))
 
-        class special_messages:
+        # TODO
+        class special_messages_:
             class not_separate:
                 text = "The sublists in the result are not all separate objects."
                 program = "pass\ndef make_board(size): return [[' '] * size] * size"
 
         @classmethod
         def check_result(cls, func, inputs, expected_result):
-            result = super().check_result(func, inputs, expected_result)
-            if len(result) != len(set(map(id, result))):
-                raise ExerciseError(cls.special_messages.not_separate.text)
+            test_result, func_result = check_result(func, inputs, expected_result)
+            if test_result["passed"] and len(func_result) != len(set(map(id, func_result))):
+                test_result["passed"] = False
+                test_result["message"] += "\n\n" + cls.special_messages_.not_separate.text
+            return test_result
 
     final_text = """
 Well done!

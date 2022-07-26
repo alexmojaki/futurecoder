@@ -108,29 +108,17 @@ def check_entry(entry, callback, runner=default_runner):
             except SyntaxError:
                 pass
 
-        step_result = normalise_step_result(step_result)
+        messages = step_result["messages"]
+        if "message" in step_result:
+            messages.append(step_result.pop("message"))
         result.update(
             passed=step_result["passed"],
-            messages=[highlighted_markdown(message) for message in step_result["messages"]],
+            messages=[highlighted_markdown(message) for message in messages],
         )
+        # TODO?
+        # if "test_results" in step_result:
+        #     result["test_results"] = step_result["test_results"]
     except KeyboardInterrupt:
         result["interrupted"] = True
 
     return result
-
-
-def normalise_step_result(step_result):
-    if hasattr(step_result, "text"):
-        step_result = dict(message=step_result.text)
-
-    if not isinstance(step_result, dict):
-        assert isinstance(step_result, bool)
-        step_result = dict(passed=step_result, messages=[])
-
-    step_result.setdefault("passed", False)
-
-    messages = step_result.setdefault("messages", [])
-    if "message" in step_result:
-        messages.append(step_result.pop("message"))
-
-    return step_result

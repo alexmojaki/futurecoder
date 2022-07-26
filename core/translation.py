@@ -311,6 +311,8 @@ your code outputs:"""
 
     when_it_should_output = "when it should output:"
 
+    which_is_correct = "which is correct!"
+
     copy_button = "Copy"
 
     q_wiz_final_message = """
