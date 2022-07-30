@@ -15,7 +15,7 @@ import asttokens.util
 from asttokens import ASTTokens
 
 from core.runner.utils import is_valid_syntax
-from core.utils import qa_error
+import core.utils
 
 translation: gettext.GNUTranslations | None = None
 current_language = None
@@ -89,7 +89,7 @@ def get(msgid, default):
     special1 = re.findall(r"__\w+__", result)
     special2 = re.findall(r"__\w+__", default)
     if special1 != special2:
-        qa_error(f"Mismatched special strings for {msgid}: {special1} != {special2}")
+        core.utils.qa_error(f"Mismatched special strings for {msgid}: {special1} != {special2}")
     if current_language == "en":
         assert result == default
 
@@ -233,7 +233,7 @@ def get_code_bit(node_text):
             assert parts2 == {translate_code(part) for part in parts1}
 
     except (AssertionError, SyntaxError):
-        qa_error(f"Invalid translation from {node_text} to {result}")
+        core.utils.qa_error(f"Invalid translation from {node_text} to {result}")
     return result
 
 
