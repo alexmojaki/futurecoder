@@ -23,7 +23,6 @@ class HighlightPythonTreeProcessor(Treeprocessor):
     def run(self, root):
         for node in root.findall(".//pre/code"):
             text = unescape(node.text)
-            text = dedent(text)
 
             # TODO: this assumes that __copyable__ never comes after __no_auto_translate__
             text, copyable = check_and_remove_prefix(text, "__copyable__\n")

@@ -140,7 +140,7 @@ def text_entry(msgid, text, comments=()):
         )
 
         code_text = indent(code_text, "    ")
-        assert code_text in text
+        assert code_text in text, (code_text, text)
         text = text.replace(code_text, f"__code{i}__")
         assert code_text not in text
         code_comments.append(f"    # __code{i}__:\n{code_text}")
