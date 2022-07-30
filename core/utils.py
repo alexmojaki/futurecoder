@@ -1,5 +1,6 @@
 import builtins
 import functools
+import itertools
 import os
 import re
 import sys
@@ -10,6 +11,7 @@ from random import shuffle
 from textwrap import dedent
 from types import ModuleType
 from typing import Union
+import tokenize
 
 from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
@@ -18,6 +20,39 @@ from pygments.styles import get_style_by_name
 from core import translation as t
 
 TESTING = False
+
+
+# tokenize has problems with non-ascii characters in identifiers:
+# https://github.com/python/cpython/issues/68382
+original_tokenize = tokenize._tokenize
+def patched_tokenize(*args):
+    for key, group in itertools.groupby(
+        original_tokenize(*args),
+        lambda tok: tokenize.NAME if tok.type == tokenize.ERRORTOKEN else tok.type,
+    ):
+        group = list(group)
+        if key == tokenize.NAME and len(group) > 1 and any(tok.type == tokenize.ERRORTOKEN for tok in group):
+            line = group[0].line
+            assert {tok.line for tok in group} == {line}
+            yield tokenize.TokenInfo(
+                type=tokenize.NAME,
+                string="".join(t.string for t in group),
+                start=group[0].start,
+                end=group[-1].end,
+                line=line,
+            )
+        else:
+            yield from group
+tokenize._tokenize = patched_tokenize
+
+
+def qa_error(message, cls=AssertionError):
+    if os.environ.get("PRINT_ERRORS"):
+        print(message)
+        print("\n-----------------------------------------------------\n")
+    else:
+        raise cls(message)
+
 
 def stub_module(name):
     assert name not in sys.modules
@@ -41,7 +76,10 @@ def clean_spaces(string):
     string = dedent(string).strip()
     spaces = set(re.findall(r"\s", string))
     assert spaces <= {" ", "\n"}, spaces
-    assert not re.search(r"^ {1,3}_", string, re.MULTILINE), string
+    # In translation, special codes like `__copyable__` often get the wrong indentation.
+    # They must be preceded by 0 or 4 spaces.
+    if re.search(r"^( {1,3}| {5,})_", string, re.MULTILINE):
+        qa_error("Incorrect indentation of code:\n" + string)
     return string
 
 
@@ -159,9 +197,8 @@ def highlighted_markdown_and_codes(text):
 
 def highlighted_markdown(text):
     result = highlighted_markdown_and_codes(text)[0]
-    assert (
-        "__copyable__" not in result and "__no_auto_translate__" not in result
-    ), result
+    if "__copyable__" in result or "__no_auto_translate__" in result:
+        qa_error(f"Markdown contains __copyable__ or __no_auto_translate__:\n{result}")
     return result
 
 
@@ -199,6 +236,8 @@ def shuffled_well(seq):
 def check_and_remove_prefix(string, prefix):
     if startswith := string.startswith(prefix):
         string = strip_required_prefix(string, prefix)
+    if prefix in string:
+        qa_error(f"String still contains {prefix!r}: {string!r}")
     return string, startswith
 
 

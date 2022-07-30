@@ -8,7 +8,7 @@ from textwrap import indent
 from littleutils import only
 
 from core import translation as t
-from core.utils import format_exception_string, returns_stdout
+from core.utils import format_exception_string, returns_stdout, qa_error
 
 
 class ExerciseError(Exception):
@@ -104,7 +104,7 @@ def check_result(func, inputs, expected_result):
 
 {expected_result}
 """
-        raise ExerciseError(message)
+        qa_error(message, ExerciseError)
     return result
 
 
