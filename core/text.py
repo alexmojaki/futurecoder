@@ -30,6 +30,7 @@ from core.exercises import (
     InvalidInitialCode,
     ExerciseError,
     match_returns_stdout,
+    indented_inputs_string,
 )
 from core.linting import lint
 from core.runner.utils import is_valid_syntax
@@ -91,7 +92,7 @@ def clean_program(program, cls):
         lines = lines[func_node.body[0].lineno - 1 :]
         cls.show_solution_program = program = clean_spaces(lines)
         if hasattr(cls, "test_values"):
-            [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
+            inputs = cls.example_inputs()
             cls.stdin_input = inputs.pop("stdin_input", [])
             if inputs:
                 inputs = inputs_string(inputs)
@@ -107,7 +108,7 @@ def basic_signature(func):
 
 
 def basic_function_header(func):
-    return f"def {func.__name__}{basic_signature(func)}:"
+    return highlighted_markdown(f"    def {func.__name__}{basic_signature(func)}:")
 
 
 def clean_solution_function(func, source):
@@ -227,7 +228,7 @@ def clean_step_class(cls):
         disallowed.setup(cls, i)
 
     if cls.expected_code_source:
-        getattr(t.Terms, f"expected_mode_{cls.expected_code_source}")
+        cls.expected_code_source_term()
 
 
 def get_predictions(cls):
@@ -485,9 +486,7 @@ class Step(ABC):
             if self.expected_code_source not in (None, self.code_source):
                 return result | dict(
                     passed=False,
-                    message=t.Terms.incorrect_mode
-                    + " "
-                    + getattr(t.Terms, f"expected_mode_{self.expected_code_source}")
+                    message=t.Terms.incorrect_mode + " " + self.expected_code_source_term(),
                 )
 
             return result
@@ -508,6 +507,10 @@ class Step(ABC):
         raise NotImplementedError
 
     @classmethod
+    def expected_code_source_term(cls):
+        return getattr(t.Terms, f"expected_mode_{cls.expected_code_source}")
+
+    @classmethod
     def get_all_requirements(cls):
         result = cls.get_requirements()
         if cls.program_in_text:
@@ -516,13 +519,12 @@ class Step(ABC):
             if cls.requirements == "hints":
                 assert cls.hints
             else:
-                result.append(dict(type="custom", message=cls.requirements))
+                result.append(dict(type="custom", message=highlighted_markdown(cls.requirements)))
 
         assert result, cls
 
         if cls.expected_code_source:
-            # TODO add message
-            result.append(dict(type="expected_code_source", value=cls.expected_code_source))
+            result.append(dict(type="custom", message=highlighted_markdown(cls.expected_code_source_term())))
         return result
 
     @classmethod
@@ -589,19 +591,18 @@ class ExerciseStep(Step):
 
     @classmethod
     def get_requirements(cls):
+        result = [dict(type="exercise")]
+        inputs = cls.example_inputs()
         if not cls.is_function_exercise:
-            result = [
-                dict(type="non_function_exercise", arg_names=cls.arg_names()),
-            ]
+            inputs.pop("stdin_input", None)
+            inputs = highlighted_markdown(indented_inputs_string(inputs))
+            result.append(dict(type="non_function_exercise", inputs=inputs))
         else:
-            result = [
-                dict(
-                    type="function_exercise",
-                    header=basic_function_header(cls.solution),
-                    goal=cls.function_exercise_goal(),
-                    has_stdin=bool(cls.stdin_input),
-                ),
-            ]
+            result.append(dict(type="function_exercise", header=basic_function_header(cls.solution)))
+            if goal := cls.function_exercise_goal():
+                result.append(dict(type="function_exercise_goal", print_or_return=goal))
+            if inputs.get("stdin_input"):
+                result.append(dict(type="function_exercise_stdin"))
         return result
 
     @classmethod
@@ -677,6 +678,11 @@ class ExerciseStep(Step):
     @classmethod
     def arg_names(cls):
         return list(inspect.signature(cls.solution).parameters)
+
+    @classmethod
+    def example_inputs(cls):
+        [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
+        return inputs
 
     @classmethod
     def test_values(cls):

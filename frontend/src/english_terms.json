@@ -59,5 +59,15 @@
   "hints_progress": "Shown ${numHints} of ${totalHints} hints",
   "repeated_frames_description": "${name} at line ${lineno} (${count} times)",
   "click_to_expand": "Click to expand",
+  "requirements": "Requirements",
+  "requirements_description": "You need to run some code according to the instructions above. In case those aren't clear enough, here's some extra clarification:",
+  "exercise_requirement": "This step is an exercise. You need to figure out what code will produce the correct result. Many different correct answers are possible.",
+  "no_input_variables": "This exercise has no input variables.",
+  "non_function_exercise": "Your code *must* start by assigning value(s) to input variable(s), e.g:\n\n${inputs}\n\nThe values are just examples, you can choose different ones. Your code will be tested automatically with different values to check that it works generally.",
+  "function_exercise": "Define a function starting like this:\n\n${header}\n\nThen fill in the indented body with your implementation.\n\nThe function will be called with different arguments to test that it works generally. You can also call the function yourself to test it as you work, but it doesn't affect the testing.",
+  "function_exercise_goal": "Your function needs to `${print_or_return}` the correct result.",
+  "function_exercise_stdin": "Your program needs to receive input from the user via the `input()` function. When it's tested for correctness, different user inputs will be simulated.",
+  "verbatim": "This step has only one correct answer. You must run exactly the correct code, so check your spelling carefully. Only a few kinds of details (such as spaces in certain places) will be ignored, as they don't make any difference to the program.",
+  "program_in_text": "The exact code that you need to run is shown in the text above, in one piece.",
   "copy_warning": "**STOP!**\n\nTry to avoid copy pasting code. You will learn, absorb, and remember better if you type in the code yourself.\n\nWhen copying is appropriate, there will be a button to click to make it easy. If there's no button, try typing.\n\nHaving said that, we're not going to force you. Copy if you really want to."
 }

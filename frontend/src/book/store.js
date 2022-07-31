@@ -84,6 +84,7 @@ const initialState = {
           hints: [],
           name: "loading_placeholder",
           solution: null,
+          requirements: null,
         }
       ],
     },

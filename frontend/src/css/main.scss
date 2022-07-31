@@ -464,3 +464,13 @@
 .firebase-emulator-warning {
     display: none;
 }
+
+.assistant {
+  margin-top: 1em;
+  .card-header {
+    font-size: larger;
+  }
+  .assistant-content {
+    margin-top: 1em;
+  }
+}

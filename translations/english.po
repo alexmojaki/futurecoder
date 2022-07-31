@@ -17343,11 +17343,34 @@ msgstr "Did you mean..."
 msgid "frontend.error_traceback"
 msgstr "Error traceback:"
 
+msgid "frontend.exercise_requirement"
+msgstr ""
+"This step is an exercise. You need to figure out what code will produce the correct result. Many different correct "
+"answers are possible."
+
 msgid "frontend.feedback"
 msgstr "Feedback"
 
 msgid "frontend.feedback_email_placeholder"
 msgstr "Email (optional)"
+
+msgid "frontend.function_exercise"
+msgstr ""
+"Define a function starting like this:\n"
+"\n"
+"${header}\n"
+"\n"
+"Then fill in the indented body with your implementation.\n"
+"\n"
+"The function will be called with different arguments to test that it works generally. You can also call the function yourself to test it as you work, but it doesn't affect the testing."
+
+msgid "frontend.function_exercise_goal"
+msgstr "Your function needs to `${print_or_return}` the correct result."
+
+msgid "frontend.function_exercise_stdin"
+msgstr ""
+"Your function needs to call the `input()` function to receive input from the user. When the function is tested for "
+"correctness, different user inputs will be simulated."
 
 msgid "frontend.get_another_hint"
 msgstr "Get another hint"
@@ -17387,6 +17410,17 @@ msgstr "Next"
 msgid "frontend.no"
 msgstr "No"
 
+msgid "frontend.no_input_variables"
+msgstr "This exercise has no input variables."
+
+msgid "frontend.non_function_exercise"
+msgstr ""
+"Your code *must* start by assigning value(s) to input variable(s), e.g:\n"
+"\n"
+"${inputs}\n"
+"\n"
+"The values are just examples, you can choose different ones. Your code will be tested automatically with different values to check that it works generally."
+
 msgid "frontend.ok"
 msgstr "OK"
 
@@ -17417,6 +17451,9 @@ msgstr ""
 msgid "frontend.previous"
 msgstr "Previous"
 
+msgid "frontend.program_in_text"
+msgstr "The exact code that you need to run is shown in the text above, in one piece."
+
 msgid "frontend.question_wizard"
 msgstr "Question Wizard"
 
@@ -17444,6 +17481,14 @@ msgid "frontend.report_error_instructions"
 msgstr ""
 "Oops, something went wrong! Please describe what you were just doing and what steps someone can take to reproduce the "
 "problem, then click Submit. Or click Cancel to not send a report."
+
+msgid "frontend.requirements"
+msgstr "Requirements"
+
+msgid "frontend.requirements_description"
+msgstr ""
+"You need to run some code according to the instructions above. In case those aren't clear enough, here's some extra "
+"clarifications:"
 
 msgid "frontend.reveal"
 msgstr "Reveal"
@@ -17501,6 +17546,12 @@ msgstr ""
 "Below are links to different pages in the course. You can start anywhere and go in any order, and your progress on each page will be recorded.\n"
 "\n"
 "If you're completely new to programming, or you have doubts, just start at the beginning and click Next as you finish each page."
+
+msgid "frontend.verbatim"
+msgstr ""
+"This step has only one correct answer. You must run exactly the correct code, so check your spelling carefully. Only a"
+" few kinds of details (such as spaces in certain places) will be ignored, as they don't make any difference to the "
+"program."
 
 msgid "frontend.yes"
 msgstr "Yes"

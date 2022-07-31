@@ -52,6 +52,7 @@ import firebase from "firebase/app";
 import {TableOfContents} from "./TableOfContents";
 import HeaderLoginInfo from "./components/HeaderLoginInfo";
 import * as terms from "./terms.json"
+import _ from "lodash";
 
 
 const EditorButtons = (
@@ -200,6 +201,78 @@ const Messages = (
     </div>
   )
 
+const Assistant = (
+  {
+    requirements,
+  }) => {
+  if (!requirements) {
+    return null;
+  }
+  return <div className="card assistant">
+    <div className="card-header">
+      <strong><FontAwesomeIcon icon={faQuestionCircle}/> Assistant</strong>
+    </div>
+    <div className="card-body">
+      <details className="assistant-header">
+        <summary>
+          <strong>{terms.requirements}</strong>
+        </summary>
+        <div className="assistant-content">
+          <p>
+            {terms.requirements_description}
+          </p>
+          <ul>
+            {requirements.map((requirement, index) =>
+              <li key={index}>
+                <Requirement requirement={requirement}/>
+              </li>
+            )}
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>;
+}
+
+const Requirement = (
+  {
+    requirement,
+  }) => {
+  let text = "";
+  switch (requirement.type) {
+    case "verbatim":
+      text = terms.verbatim;
+      break;
+    case "exercise":
+      text = terms.exercise_requirement;
+      break;
+    case "program_in_text":
+      text = terms.program_in_text;
+      break;
+    case "function_exercise":
+      text = _.template(terms.function_exercise)(requirement);
+      break;
+    case "function_exercise_goal":
+      text = _.template(terms.function_exercise_goal)(requirement);
+      break;
+    case "function_exercise_stdin":
+      text = terms.function_exercise_stdin;
+      break;
+    case "non_function_exercise":
+      if (!requirement.inputs.trim()) {
+        text = terms.no_input_variables;
+      } else {
+        text = _.template(terms.non_function_exercise)(requirement);
+      }
+      break;
+    default:
+      text = requirement.message;
+      break;
+  }
+  text = <div dangerouslySetInnerHTML={{__html: text}}></div>;
+  return <div className="assistant-requirement">{text}</div>;
+}
+
 const QuestionWizard = (
   {
     messages,
@@ -279,6 +352,7 @@ const CourseText = (
         <hr style={{ margin: '0' }}/>
       </div>
     )}
+    <Assistant requirements={page.steps[step_index].requirements}/>
     <Messages {...{messages}}/>
     {/* pt-3 is Bootstrap's helper class. Shorthand for padding-top: 1rem. Available classes are pt-{1-5} */}
     <div className='pt-3'>

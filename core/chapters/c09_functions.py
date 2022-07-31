@@ -44,6 +44,7 @@ Then run the program again.
 
         requirements = """
 Add `print("How are you?")` after `print("How are you?")` with the same indentation.
+Keep the two calls to `greet` after the definition as is.
 """
         program_in_text = False
         predicted_output_choices = [
