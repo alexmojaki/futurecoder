@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@sentry/react": "^7.7.0",
+    "@sentry/react": "^7.8.1",
     "ansi_up": "^5.0.0",
     "axios": "^0.21.2",
     "comlink": "^4.3.1",
