@@ -222,6 +222,12 @@ def get_exception_event():
     sentry_sdk.capture_exception()
 
     assert event
+
+    # https://github.com/getsentry/sentry-python/issues/1536
+    breadcrumbs = event.get("breadcrumbs", {})
+    if isinstance(breadcrumbs, dict):
+        event["breadcrumbs"] = breadcrumbs.get("values", [])
+
     return event
 
 
