@@ -121,12 +121,26 @@ def generate_list(typ):
     ]
 
 
+def generate_dict(key_type, value_type):
+    return {
+        generate_for_type(key_type): generate_for_type(value_type)
+        for _ in range(random.randrange(5, 11))
+    }
+
+
 def generate_for_type(typ):
     if isinstance(typ, typing._GenericAlias):
+<<<<<<< HEAD
         if typ.__origin__ is list:
             return generate_list(only(typ.__args__))
         if typ.__origin__ is dict:
             return {}
+=======
+        return {
+            list: generate_list,
+            dict: generate_dict,
+        }[typ.__origin__](*typ.__args__)
+>>>>>>> 0491f0843816b3cfe6e33da02d1fa45c984bd8b8
     return {
         str: generate_string(),
         bool: random.choice([True, False]),
