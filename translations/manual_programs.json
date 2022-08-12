@@ -10,7 +10,7 @@
             "mots[4]"
         ],
         "ta": [
-            "\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd[4]"
+            "words[4]"
         ]
     },
     "pages.GettingElementsAtPosition.steps.introducing_len_and_range.program": {
@@ -39,7 +39,12 @@
             "    print(mots[i])"
         ],
         "ta": [
-            "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0bcd = ['\u0b87\u0ba4\u0bc1', '\u0b87\u0bb8\u0bcd', '\u0b8f', '\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd'] \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bcd = [0, 1, 2, 3] \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bcd\u0b9f\u0bbf\u0bb1\u0bcd\u0b95\u0bc1: \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1) \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd[\u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1])"
+            "words = ['This', 'is', 'a', 'list']",
+            "indices = [0, 1, 2, 3]",
+            "",
+            "for index in indices:",
+            "    print(index)",
+            "    print(words[index])"
         ]
     },
     "pages.GettingElementsAtPosition.steps.introducing_subscripting.program": {
@@ -68,7 +73,12 @@
             "print(mots[3])"
         ],
         "ta": [
-            "\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd = ['\u0b87\u0ba4\u0bc1', '\u0b87\u0bb8\u0bcd', '\u0b8f', '\u0bb2\u0bbf\u0bb8\u0bcd\u0b9f\u0bcd'] \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd[0]) \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd[1]) \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd[2]) \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd[3])"
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "print(words[0])",
+            "print(words[1])",
+            "print(words[2])",
+            "print(words[3])"
         ]
     },
     "pages.GettingElementsAtPosition.steps.range_len.program": {
@@ -96,7 +106,12 @@
             "    print(mots[i])"
         ],
         "ta": [
-            "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0bcd = ['\u0b87\u0ba4\u0bc1', '\u0b87\u0bb8\u0bcd', '\u0b8f', '\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd'] \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bcd = \u0bb5\u0bb0\u0bae\u0bcd\u0baa\u0bc1(4) \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1: \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1) \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd[\u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1])"
+            "words = ['This', 'is', 'a', 'list']",
+            "indices = range(4)",
+            "",
+            "for index in indices:",
+            "    print(index)",
+            "    print(words[index])"
         ]
     },
     "pages.GettingElementsAtPosition.steps.using_len_first_time.program": {
@@ -113,7 +128,8 @@
             "print(len(mots))"
         ],
         "ta": [
-            "\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bcd = ['\u0b87\u0ba4\u0bc1', '\u0b87\u0bb8\u0bcd', '\u0b8f', '\u0bb2\u0bbf\u0bb8\u0bcd\u0b9f\u0bcd'] \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0bb2\u0bc6\u0ba9\u0bcd(\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0bcd))"
+            "words = ['This', 'is', 'a', 'list']",
+            "print(len(words))"
         ]
     },
     "pages.Indentation.steps.mismatched_indentations.program": {
@@ -133,7 +149,9 @@
             "  print('---')"
         ],
         "ta": [
-            "\u0baa\u0bc6\u0baf\u0bb0\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bc1: \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1) \u0b85\u0b9a\u0bcd\u0b9a\u0bc1('---')"
+            "for character in name:",
+            "    print(character)",
+            "  print('---')"
         ]
     },
     "pages.Indentation.steps.missing_indentation.program": {
@@ -150,7 +168,8 @@
             "print(caractere)"
         ],
         "ta": [
-            "\u0baa\u0bc6\u0baf\u0bb0\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bc1: \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1)"
+            "for character in name:",
+            "print(character)"
         ]
     },
     "pages.IntroducingLists.steps.first_list.program": {
@@ -173,7 +192,10 @@
             "    print(mot)"
         ],
         "ta": [
-            "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0bcd = ['\u0b87\u0ba4\u0bc1', '\u0b87\u0bb8\u0bcd', '\u0b8f', '\u0bb2\u0bbf\u0bb8\u0bcd\u0b9f\u0bcd'] \u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bcd\u0b95\u0bc1: \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8)"
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "for word in words:",
+            "    print(word)"
         ]
     },
     "pages.IntroducingNestedLists.steps.first_nested_list_example.program": {
@@ -190,7 +212,8 @@
             "print(chaines[1][0])"
         ],
         "ta": [
-            "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd = [['\u0bb9\u0bb2\u0bcb', '\u0b85\u0b99\u0bcd\u0b95\u0bc7'], ['\u0b8e\u0baa\u0bcd\u0baa\u0b9f\u0bbf', '\u0b86\u0bb0\u0bcd', '\u0baf\u0bc2']] \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd[1][0])"
+            "strings = [['hello', 'there'], ['how', 'are', 'you']]",
+            "print(strings[1][0])"
         ]
     },
     "pages.MultiLineExpressions.steps.invalid_multiline.program": {
@@ -211,7 +234,8 @@
             "                 nom == \"Bob\""
         ],
         "ta": [
-            "is_friend = \u0baa\u0bc6\u0baf\u0bb0\u0bcd == \"\u0b86\u0bb2\u0bbf\u0bb8\u0bcd\" \u0b85\u0bb2\u0bcd\u0bb2\u0ba4\u0bc1 \u0baa\u0bc6\u0baf\u0bb0\u0bcd == \"\u0baa\u0bbe\u0baa\u0bcd\""
+            "is_friend = name == \"Alice\" or",
+            "            name == \"Bob\""
         ]
     },
     "pages.NewlinesAndFormatBoard.steps.invalid_multi_line_string.program": {
@@ -264,7 +288,16 @@
             ")"
         ],
         "ta": [
-            "assert_equal( format_board([ ['X', 'O', 'X'], [' ', 'O', 'O'], [' ', 'X', ' '] ]), \"XOX OO X \")"
+            "assert_equal(",
+            "    format_board([",
+            "        ['X', 'O', 'X'],",
+            "        [' ', 'O', 'O'],",
+            "        [' ', 'X', ' ']",
+            "    ]),",
+            "    \"XOX",
+            "      OO",
+            "      X \"",
+            ")"
         ]
     },
     "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.program": {
@@ -284,7 +317,9 @@
             "print(chaine)"
         ],
         "ta": [
-            "\u0b9a\u0bb0\u0bae\u0bcd = \"\"\"\u0bae\u0bc1\u0ba4\u0bb2\u0bcd \u0bb5\u0bb0\u0bbf \u0b87\u0bb0\u0ba3\u0bcd\u0b9f\u0bbe\u0bb5\u0ba4\u0bc1 \u0bb5\u0bb0\u0bbf\"\"\" \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(\u0b9a\u0bb0\u0bae\u0bcd)"
+            "string = \"\"\"First line",
+            "Second line\"\"\"",
+            "print(string)"
         ]
     },
     "pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe.program": {
@@ -301,7 +336,7 @@
             "print('Alice s'en va diner')"
         ],
         "ta": [
-            "\u0b85\u0b9a\u0bcd\u0b9a\u0bc1 ('\u0b86\u0bb2\u0bbf\u0bb8\u0bcd \u0b9f\u0bbf\u0ba9\u0bcd\u0ba9\u0bb0\u0bcd')"
+            "print('Alice's Diner')"
         ]
     },
     "pages.StringMethodsUnderstandingMutation.steps.string_count_index.program": {
@@ -326,7 +361,9 @@
             "print(chaine.index('tes'))"
         ],
         "ta": [
-            "\u0b9a\u0bb0\u0bae\u0bcd = '\u0ba8\u0bbe\u0baf\u0bcd\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0baa\u0bc2\u0ba9\u0bc8\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0b89\u0ba3\u0bb5\u0bb3\u0bbf\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd' \u0b85\u0b9a\u0bcd\u0b9a\u0bc1(string.count('the')) \u0baa\u0bbf\u0bb0\u0bbf\u0ba3\u0bcd\u0b9f\u0bcd(string.index('the'))"
+            "string = 'feed the dog and the cat'",
+            "print(string.count('the'))",
+            "print(string.index('the'))"
         ]
     },
     "pages.StringMethodsUnderstandingMutation.steps.string_in_step.program": {
@@ -343,7 +380,7 @@
             "print('tes' in 'fait tes devoirs et apprend tes le\u00e7ons')"
         ],
         "ta": [
-            "\u0b85\u0b9a\u0bcd\u0b9a\u0bc1 ('\u0ba8\u0bbe\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bc2\u0ba9\u0bc8\u0baf\u0bc1\u0bae\u0bcd' \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bbf\u0bb2\u0bcd 'the')"
+            "print('the' in 'feed the dog and the cat')"
         ]
     },
     "pages.TheEqualityOperator.steps.equality_vs_assignment.program": {
@@ -360,7 +397,7 @@
             "print(1 + 2 = 3)"
         ],
         "ta": [
-            "\u0b85\u0b9a\u0bcd\u0b9a\u0bc1 (1 + 2 = 3)"
+            "print(1 + 2 = 3)"
         ]
     }
 }
