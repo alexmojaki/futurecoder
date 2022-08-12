@@ -1,6 +1,5 @@
 import builtins
 import functools
-import itertools
 import os
 import re
 import sys
@@ -11,39 +10,15 @@ from random import shuffle
 from textwrap import dedent
 from types import ModuleType
 from typing import Union
-import tokenize
 
 from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
+
 from core import translation as t
 
 TESTING = False
-
-
-# tokenize has problems with non-ascii characters in identifiers:
-# https://github.com/python/cpython/issues/68382
-original_tokenize = tokenize._tokenize
-def patched_tokenize(*args):
-    for key, group in itertools.groupby(
-        original_tokenize(*args),
-        lambda tok: tokenize.NAME if tok.type == tokenize.ERRORTOKEN else tok.type,
-    ):
-        group = list(group)
-        if key == tokenize.NAME and len(group) > 1 and any(tok.type == tokenize.ERRORTOKEN for tok in group):
-            line = group[0].line
-            assert {tok.line for tok in group} == {line}
-            yield tokenize.TokenInfo(
-                type=tokenize.NAME,
-                string="".join(t.string for t in group),
-                start=group[0].start,
-                end=group[-1].end,
-                line=line,
-            )
-        else:
-            yield from group
-tokenize._tokenize = patched_tokenize
 
 
 def qa_error(message, cls=AssertionError):

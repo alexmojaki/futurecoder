@@ -3898,7 +3898,7 @@
             "passed": true,
             "result": [
                 {
-                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Alice\\'sDiner')\n            ^^\n</code></pre>",
+                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Alice\\'s Diner')\n            ^^\n</code></pre>",
                     "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n",
                     "type": "syntax_error"
                 }
