@@ -65,14 +65,16 @@ def get(msgid, default):
         return default
 
     if os.environ.get("CHECK_INLINE_CODES"):
-        inline1 = {translate_code(c) for c in inline_codes(default)}
+        original = inline_codes(default)
+        inline1 = {translate_code(c) for c in original}
         inline2 = inline_codes(result)
         if inline1 != inline2:
-            print(msgid)
-            print(sorted(inline1))
-            print(sorted(inline2))
-            print(inline1 - inline2)
-            print(inline2 - inline1)
+            print("Inline codes don't match auto-translation in", msgid)
+            print("original:", original)
+            print("expected (auto-translated):", sorted(inline1))
+            print("actual:", sorted(inline2))
+            print("expected - actual:", inline1 - inline2)
+            print("actual - expected:", inline2 - inline1)
             print()
 
     def replace(match):
