@@ -84,13 +84,22 @@ def get(msgid, default):
         translated = translate_code(code)[:-suffix_length]
         return indent(translated, "    " + code_block["prefix"])
 
-    result = re.sub(r"__code(\d+)__", replace, result)
+    result = re.sub(r"^ *__code(\d+)__", replace, result, flags=re.MULTILINE)
     assert result
     special1 = re.findall(r"__\w+__", result)
     special2 = re.findall(r"__\w+__", default)
     if special1 != special2:
-        core.utils.qa_error(f"Mismatched special strings for {msgid}: {special1} != {special2}")
-    if current_language == "en":
+        core.utils.qa_error(
+            f"Mismatched special strings for {msgid}: {special1} != {special2}"
+        )
+    if current_language == "en" or (
+        current_language in ["ta", "zh"]
+        and (
+            msgid.startswith(("code_bits."))
+            or "output_prediction_choices" in msgid
+            or msgid.endswith(".program")
+        )
+    ):
         assert result == default
 
     return result
