@@ -62,7 +62,7 @@ def test_steps():
                 )
                 assert len(step.get_solution["lines"]) >= 4 + is_function
 
-        assert response["passed"] == (not is_message)
+        assert response["passed"] == (not is_message), step
 
     dirpath = Path(__file__).parent / "golden_files" / lang
     dirpath.mkdir(parents=True, exist_ok=True)

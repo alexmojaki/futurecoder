@@ -567,7 +567,7 @@
             "result": [
                 {
                     "friendly": "<p>An <code>IndentationError</code> occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.</p>\n<p>Line <code>2</code> identified above was expected to begin a new indented block.</p>",
-                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\nat line 2\n",
+                    "text": "    print(character)\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 1\nat line 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1654,7 +1654,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You likely called a function with a named argument:</p>\n<pre><code>a_function(invalid=something)\n</code></pre>\n<p>where <code>invalid</code> is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.</p>",
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n",
+                    "text": "    print(1 + 2 = 3)\n          ^^^^^^^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -3899,7 +3899,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Alice\\'s Diner')\n            ^^\n</code></pre>",
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\nat line 1\n",
+                    "text": "    print('Alice's Diner')\n                        ^\nSyntaxError: unterminated string literal (detected at line 1)\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6327,7 +6327,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You started writing a string with a single or double quote\nbut never ended the string with another quote on that line.</p>",
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n",
+                    "text": "    \"XOX\n    ^\nSyntaxError: unterminated string literal (detected at line 7)\nat line 7\n",
                     "type": "syntax_error"
                 }
             ]
