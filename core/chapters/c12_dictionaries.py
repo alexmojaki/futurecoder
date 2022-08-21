@@ -4,6 +4,8 @@ import random
 from textwrap import dedent
 from typing import List, Dict, Mapping
 
+import sys
+
 from core.exercises import generate_list, generate_string
 from core.text import (
     ExerciseStep,
@@ -413,7 +415,7 @@ Now you can use this to modify our function on the previous page to remove the `
         """
 
         def solution(self):
-            def total_cost(quantities: Dict[str, str], prices: Dict[str, str]):
+            def total_cost(quantities: Dict[str, int], prices: Dict[str, int]):
                 result = 0
                 for item in quantities:
                     price = prices[item]
@@ -424,6 +426,10 @@ Now you can use this to modify our function on the previous page to remove the `
             return total_cost
 
         hints = "TODO PPPP"
+
+        # Custom generate inputs is required because cart and prices must have the same keys.
+        def generate_inputs():
+            return {'quantities': {"apple" : 2, "banana" : 5}, 'prices': {"apple" : 7, "banana" : 11}}
 
         tests = [
           (
@@ -532,6 +538,11 @@ The keys are the same across both dictionaries.
                     print("---")
 
             return print_words
+
+        # Custom generate_dicts is required here because French and German dicts must have same English word as the key.
+        def generate_inputs():
+            return {'french': {"apple" : "pomme", "cat" : "chat"}, 'german': {"apple" : "apfel", "cat" : "katze"}}
+
 
         tests = (
             (({'apple' : 'pomme', 'box' : 'boite'}, {'apple' : 'apfel', 'box' : 'kasten'},), """English: apple
