@@ -236,7 +236,7 @@ Here's the new code for you to fix:
             )
 
 
-    class dna_part1(VerbatimStep):
+    class shopping_cart5(VerbatimStep):
         """
 We've added another parameter called `quantities` to `total_cost`.
 Now `cart` is still a list of strings, but it doesn't have any duplicates.
