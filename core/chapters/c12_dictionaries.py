@@ -162,23 +162,22 @@ So let's write a function that does that. Complete the function below, particula
 
 
     __copyable__
-    __program_indented__
 
-    def program(self):
-        def total_cost(cart, prices):
-            result = 0
-            for item in cart:
-                price = ... 
-                result += price
-            return result
+    
+    def total_cost(cart, prices):
+        result = 0
+        for item in cart:
+            price = ...
+            result += price
+        return result
 
-        assert_equal(
-            total_cost(
-                ['apple', 'box', 'cat'],
-                {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-                ),
-            107,
-        )
+    assert_equal(
+        total_cost(
+            ['apple', 'box', 'cat'],
+            {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+            ),
+        107,
+    )
         """ 
 
         ##TODO: Stop displaying total cost from the solution
@@ -237,7 +236,7 @@ Here's the new code for you to fix:
             )
 
 
-    class shopping_cart5(VerbatimStep):
+    class dna_part1(VerbatimStep):
         """
 We've added another parameter called `quantities` to `total_cost`.
 Now `cart` is still a list of strings, but it doesn't have any duplicates.
