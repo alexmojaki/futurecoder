@@ -235,13 +235,19 @@ Here's the new code for you to fix:
                 500000010,
             )
 
-
-    class shopping_cart5(VerbatimStep):
         """
+        TODO: Make this show up
+
 We've added another parameter called `quantities` to `total_cost`.
 Now `cart` is still a list of strings, but it doesn't have any duplicates.
 `quantities` is a dictionary where the keys are the items in `cart` and the corresponding values are the quantity
 of that item that the customer wants to buy.
+
+        """
+
+    class shopping_cart5(VerbatimStep):
+        """
+
 
 
 Not bad! But you may have noticed that it looks a bit awkward. Why do we have to specify `'dog'` and `'box'` in both the `cart` and the `quantities`?
