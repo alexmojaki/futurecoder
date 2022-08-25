@@ -567,7 +567,7 @@
             "result": [
                 {
                     "friendly": "<p>An <code>IndentationError</code> occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.</p>\n<p>Line <code>2</code> identified above was expected to begin a new indented block.</p>",
-                    "text": "    print(character)\n    ^\nIndentationError: expected an indented block\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 2\n",
+                    "text": "    print(character)\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 1\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1654,7 +1654,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You likely called a function with a named argument:</p>\n<pre><code>a_function(invalid=something)\n</code></pre>\n<p>where <code>invalid</code> is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.</p>",
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 1\n",
+                    "text": "    print(1 + 2 = 3)\n          ^^^^^^^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -2004,7 +2004,7 @@
         "step": "min_three_exercise"
     },
     {
-        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -2024,7 +2024,7 @@
         "step": "first_list"
     },
     {
-        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "x = 1",
             "things = ['Hello', x, x + 3]",
@@ -2043,7 +2043,7 @@
         "step": "can_contain_anything"
     },
     {
-        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9]",
             "",
@@ -2073,7 +2073,7 @@
             "",
             "print(total)"
         ],
-        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "total = ''",
@@ -2107,7 +2107,7 @@
             "",
             "print(total)"
         ],
-        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "separator = ' - '",
@@ -2744,7 +2744,7 @@
         "step": "zip_longest_exercise"
     },
     {
-        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "print(len)",
             "print(print)"
@@ -2762,7 +2762,7 @@
         "step": "print_functions"
     },
     {
-        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "print(callable(len))"
         ],
@@ -2779,7 +2779,7 @@
         "step": "introducing_callable"
     },
     {
-        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "f = 'a string'",
             "print(callable(f))",
@@ -2846,7 +2846,7 @@
         "step": "not_callable"
     },
     {
-        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "things = [1, 2, 3]",
             "length = len(things)",
@@ -2866,7 +2866,7 @@
         "step": "print_returns_none"
     },
     {
-        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "things = print([1, 2, 3])",
             "length = len(things)"
@@ -2932,7 +2932,7 @@
         "step": "len_of_none"
     },
     {
-        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "word = 'Hello'",
             "print(word.upper)",
@@ -2951,7 +2951,7 @@
         "step": "methods_of_str"
     },
     {
-        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "word = 'Hello'",
             "word.append('!')"
@@ -3712,7 +3712,7 @@
         "step": "same_list"
     },
     {
-        "page": "\u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for i in range(len(numbers)):",
@@ -3801,7 +3801,7 @@
         "step": "run_broken_with_python_tutor"
     },
     {
-        "page": "\u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for number in numbers:",
@@ -3822,7 +3822,7 @@
         "step": "remove_instead_of_pop"
     },
     {
-        "page": "\u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for number in numbers.copy():",
@@ -3843,7 +3843,7 @@
         "step": "make_copy"
     },
     {
-        "page": "\u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "big_numbers = numbers.copy()",
@@ -3866,7 +3866,7 @@
         "step": "make_copy2"
     },
     {
-        "page": "\u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "big_numbers = []",
@@ -3898,8 +3898,8 @@
             "passed": true,
             "result": [
                 {
-                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Alice\\'s Diner')\n            ^^\n</code></pre>",
-                    "text": "    print('Alice's Diner')\n                 ^\nSyntaxError: invalid syntax\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 1\n",
+                    "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>Currently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.</p>\n<p>Unless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "text": "    print('Alice's Diner')\n          ^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6327,7 +6327,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You started writing a string with a single or double quote\nbut never ended the string with another quote on that line.</p>",
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 7\n",
+                    "text": "    \"XOX\n    ^\nSyntaxError: unterminated string literal (detected at line 7)\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 7\n",
                     "type": "syntax_error"
                 }
             ]
