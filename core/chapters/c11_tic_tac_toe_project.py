@@ -691,7 +691,7 @@ assert_equal(
 )"""
 
         def check(self):
-            return 'SyntaxError: EOL while scanning string literal' in self.result
+            return 'SyntaxError: unterminated string literal' in self.result
 
     class multi_line_strings_triple_quotes(VerbatimStep):
         """
