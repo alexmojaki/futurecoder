@@ -180,7 +180,6 @@ So let's write a function that does that. Complete the function below, particula
     )
         """ 
 
-        ##TODO: Stop displaying total cost from the solution
         def solution(self):
             def total_cost(cart: List[str], prices: Dict[str, int]):
                 result = 0
@@ -203,6 +202,7 @@ So let's write a function that does that. Complete the function below, particula
 
     class shopping_cart4(Step):
         """
+        TODO: Convert to ExerciseStep
 Perfect! You publish your website and start dreaming about how rich you're going to be.
 
 But soon you get a complaint from a customer who wants to buy 5 million dogs...and 2 boxes to put them in.
@@ -284,9 +284,9 @@ into a new strand with matching nucleotides:
             assert_equal(substitute(original), expected)
 
 
-    ##TODO: Is this supposed to be an exercise or a verbatim step?
     class dna_part2(VerbatimStep):
         """
+        TODO: Convert to ExerciseStep
 Now we can use dictionaries to make this code both shorter and more general so it can be used for other purposes.
 
 Your job is to add another argument to the `substitute` function: a dictionary called `d`.
@@ -347,7 +347,6 @@ class DictionaryKeysAndValues(Page):
 Copy this code into the editor, then change `print(quantities)` to `print(quantities.keys())`, and run the whole program.
 
     __copyable__
-    __no_auto_translate__
 
     quantities = {'apple': 1, 'cat': 10}
     print(quantities)
@@ -361,7 +360,7 @@ Copy this code into the editor, then change `print(quantities)` to `print(quanti
         """
 
         def check(self):
-            return "dict_keys(['apple', 'cat'])" in self.result
+            return "dict_keys([" in self.result
 
 
     class keys_are_iterable(VerbatimStep):
@@ -378,21 +377,23 @@ just like you'd iterate over a list:
             for key in quantities.keys():
                 print(key)
 
-    class keys_are_iterable2(Step):
+    class keys_are_iterable2(VerbatimStep):
         """
 Actually, you don't even need `.keys()`. Iterating directly over a dictionary automatically iterates over its keys.
 Sometimes it's nice to write `.keys()` to make your code more readable, but you don't have to.
-Remove the `.keys()` and run the code again.
+Run this code.
+
+        __program_indented__
         """
 
-        program = """
-        quantities = {'apple': 1, 'cat': 10}
-        for key in quantities:
-            print(key)
-                """
+        def program(self):
+            quantities = {'apple': 1, 'cat': 10}
+            for key in quantities:
+                print(key)
+                    
 
-        def check(self):
-            return "apple\ncat" in self.result
+        #def check(self):
+        #    return "apple\ncat" in self.result
 
     class cleanup_shopping_cart(ExerciseStep):
         """
@@ -429,7 +430,10 @@ Now you can use this to modify our function on the previous page to remove the `
 
             return total_cost
 
-        hints = "TODO PPPP"
+        hints = """
+        You don't need .keys() to iterate over the keys to a dictionary.
+        Try iterating over the dictionary 'quantities' itself.
+        """
 
         # Custom generate inputs is required because cart and prices must have the same keys.
         def generate_inputs():
@@ -451,7 +455,6 @@ which prints out each word in an English-to-French dictionary and its translatio
 Here's your starting code:
 
     __copyable__
-    __no_auto_translate__
     def print_words(french):
         ...
 
