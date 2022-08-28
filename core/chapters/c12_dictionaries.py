@@ -201,7 +201,7 @@ So let's write a function that does that. Complete the function below, particula
 
         hints = "TODO"
 
-    class shopping_cart4(VerbatimStep):
+    class shopping_cart4(Step):
         """
 Perfect! You publish your website and start dreaming about how rich you're going to be.
 
@@ -214,29 +214,24 @@ but they have to add each item one at a time, and for some reason this customer 
 Here's the new code for you to fix:
 
     __copyable__
-    __program_indented__
-        """
+    
+        
+    def total_cost(cart, quantities, prices):
+        result = 0
+        for item in cart:
+            price = ...
+            quantity = ...
+            result += price * quantity
+        return result
 
-        def program(self):
-            def total_cost(cart, quantities, prices):
-                result = 0
-                for item in cart:
-                    price = ...
-                    quantity = ...
-                    result += price * quantity
-                return result
-
-            assert_equal(
-                total_cost(
-                    ['dog', 'box'],
-                    {'dog': 5000000, 'box': 2},
-                    {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-                ),
-                500000010,
-            )
-
-        """
-        TODO: Make this show up
+    assert_equal(
+        total_cost(
+            ['dog', 'box'],
+            {'dog': 5000000, 'box': 2},
+            {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+        ),
+        500000010,
+    )
 
 We've added another parameter called `quantities` to `total_cost`.
 Now `cart` is still a list of strings, but it doesn't have any duplicates.
@@ -244,6 +239,10 @@ Now `cart` is still a list of strings, but it doesn't have any duplicates.
 of that item that the customer wants to buy.
 
         """
+        # Program is required by Step. Contents do not matter.
+        def program(self): pass
+        # Check is required by Step. Contents do not matter.
+        def check(self): return True
 
     class shopping_cart5(VerbatimStep):
         """
