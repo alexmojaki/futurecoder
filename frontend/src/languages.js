@@ -55,6 +55,7 @@ const languages = [
     firebaseConfig: {
       apiKey: "AIzaSyCatBdK3vpK_o7fWxafl-4GtjDKW9en9mY",
       authDomain: "futurecoder-ta.firebaseapp.com",
+      databaseURL: "https://futurecoder-ta-default-rtdb.asia-southeast1.firebasedatabase.app",
       projectId: "futurecoder-ta",
       storageBucket: "futurecoder-ta.appspot.com",
       messagingSenderId: "551486140162",
