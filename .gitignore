@@ -143,3 +143,4 @@ homepage/static/css/**/*.css
 .firebase
 
 translations/codes.json
+.DS_Store

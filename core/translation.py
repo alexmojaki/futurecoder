@@ -6,6 +6,7 @@ import gettext
 import json
 import os
 import re
+import unicodedata
 from functools import cache
 from pathlib import Path
 from textwrap import indent
@@ -14,6 +15,7 @@ import asttokens.util
 from asttokens import ASTTokens
 
 from core.runner.utils import is_valid_syntax
+import core.utils
 
 translation: gettext.GNUTranslations | None = None
 current_language = None
@@ -63,14 +65,16 @@ def get(msgid, default):
         return default
 
     if os.environ.get("CHECK_INLINE_CODES"):
-        inline1 = {translate_code(c) for c in inline_codes(default)}
+        original = inline_codes(default)
+        inline1 = {translate_code(c) for c in original}
         inline2 = inline_codes(result)
         if inline1 != inline2:
-            print(msgid)
-            print(sorted(inline1))
-            print(sorted(inline2))
-            print(inline1 - inline2)
-            print(inline2 - inline1)
+            print("Inline codes don't match auto-translation in", msgid)
+            print("original:", original)
+            print("expected (auto-translated):", sorted(inline1))
+            print("actual:", sorted(inline2))
+            print("expected - actual:", inline1 - inline2)
+            print("actual - expected:", inline2 - inline1)
             print()
 
     def replace(match):
@@ -82,12 +86,22 @@ def get(msgid, default):
         translated = translate_code(code)[:-suffix_length]
         return indent(translated, "    " + code_block["prefix"])
 
-    result = re.sub(r"__code(\d+)__", replace, result)
+    result = re.sub(r"^ *__code(\d+)__", replace, result, flags=re.MULTILINE)
     assert result
     special1 = re.findall(r"__\w+__", result)
     special2 = re.findall(r"__\w+__", default)
-    assert special1 == special2, (special1, special2, msgid)
-    if current_language == "en":
+    if special1 != special2:
+        core.utils.qa_error(
+            f"Mismatched special strings for {msgid}: {special1} != {special2}"
+        )
+    if current_language == "en" or (
+        current_language in ["ta", "zh"]
+        and (
+            msgid.startswith(("code_bits."))
+            or "output_prediction_choices" in msgid
+            or msgid.endswith(".program")
+        )
+    ):
         assert result == default
 
     return result
@@ -122,7 +136,10 @@ def get_code_bits(code):
             if not atok.get_text(node):
                 continue
             node_text = node.id
-            assert atok.get_text(node) == node_text
+            assert (
+                unicodedata.normalize("NFKD", node_text) ==
+                unicodedata.normalize("NFKD", atok.get_text(node))
+            )
             if node_text in builtins.__dict__ or len(node_text) == 1:
                 continue
         elif isinstance(node, (ast.FunctionDef, ast.ClassDef, ast.AsyncFunctionDef)):
@@ -210,9 +227,9 @@ def code_bit(node_text):
 @cache
 def get_code_bit(node_text):
     result = get(code_bit(node_text), node_text)
-    node1 = ast.parse(node_text).body[0].value
-    node2 = ast.parse(result).body[0].value
     try:
+        node1 = ast.parse(node_text).body[0].value
+        node2 = ast.parse(result).body[0].value
         assert type(node1) == type(node2)
         assert isinstance(node1, (ast.Name, ast.Str, ast.JoinedStr))
         for quote in ['"', "'"]:
@@ -226,10 +243,8 @@ def get_code_bit(node_text):
             parts2 = fstring_parts(node2, result)
             assert parts2 == {translate_code(part) for part in parts1}
 
-    except AssertionError:
-        message = f"Invalid translation from {node_text} to {result}"
-        # print(message)
-        raise ValueError(message)
+    except (AssertionError, SyntaxError):
+        core.utils.qa_error(f"Invalid translation from {node_text} to {result}")
     return result
 
 
