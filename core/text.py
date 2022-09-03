@@ -45,6 +45,7 @@ from core.utils import (
     returns_stdout,
     NoMethodWrapper,
     add_stdin_input_arg,
+    qa_error,
 )
 
 
@@ -163,12 +164,12 @@ def clean_step_class(cls):
         indented = indent(program, '    ').replace("\\", "\\\\")
         text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
     else:
-        assert not cls.program_in_text, (
-            "Either include __program__ or __program_indented__ in the text, "
-            "or set program_in_text = False in the class.",
-            cls,
-            text,
-        )
+        if cls.program_in_text:
+            qa_error(
+                "Either include __program__ or __program_indented__ in the text, "
+                "or set program_in_text = False in the class. "
+                f"Step: {cls}. Text: {text}",
+            )
 
     assert "__program_" not in text, (cls, text)
     text = clean_spaces(text)
@@ -239,11 +240,15 @@ def get_predictions(cls):
         assert answer == "Error"
         answer = error
     else:
-        answer = get_stdout(cls.program).rstrip()
-        assert answer in choices, (answer, choices, cls)
+        try:
+            answer = get_stdout(cls.program).rstrip()
+        except Exception as e:
+            qa_error(f"Error running program in {t.step_cls(cls)}: {e}")
+            answer = error
 
     choices += [error]
-    assert answer in choices, (answer, choices, cls)
+    if answer not in choices:
+        qa_error(f"{t.step_cls(cls)}.output_prediction_choices: correct answer {answer} not in choices {choices}")
     return dict(choices=choices, answer=answer)
 
 
@@ -329,8 +334,8 @@ class PageMeta(type):
         result = [step.raw_text if raw else step.text for step in cls.steps[:-1]] + [cls.final_text]
         if not raw:
             result = [highlighted_markdown(text) for text in result]
-            assert "__copyable__" not in str(result)
-            assert "__no_auto_translate__" not in str(result)
+            if "__copyable__" in str(result) or "__no_auto_translate__" in str(result):
+                qa_error(f"{cls} has __copyable__ or __no_auto_translate__ in step texts")
         return result
 
     @property
