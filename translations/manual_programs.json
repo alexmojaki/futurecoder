@@ -8,6 +8,9 @@
         ],
         "fr": [
             "mots[4]"
+        ],
+        "ta": [
+            "words[4]"
         ]
     },
     "pages.GettingElementsAtPosition.steps.introducing_len_and_range.program": {
@@ -34,6 +37,14 @@
             "for i in indices:",
             "    print(i)",
             "    print(mots[i])"
+        ],
+        "ta": [
+            "words = ['This', 'is', 'a', 'list']",
+            "indices = [0, 1, 2, 3]",
+            "",
+            "for index in indices:",
+            "    print(index)",
+            "    print(words[index])"
         ]
     },
     "pages.GettingElementsAtPosition.steps.introducing_subscripting.program": {
@@ -60,6 +71,14 @@
             "print(mots[1])",
             "print(mots[2])",
             "print(mots[3])"
+        ],
+        "ta": [
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "print(words[0])",
+            "print(words[1])",
+            "print(words[2])",
+            "print(words[3])"
         ]
     },
     "pages.GettingElementsAtPosition.steps.range_len.program": {
@@ -85,6 +104,14 @@
             "for i in indices:",
             "    print(i)",
             "    print(mots[i])"
+        ],
+        "ta": [
+            "words = ['This', 'is', 'a', 'list']",
+            "indices = range(4)",
+            "",
+            "for index in indices:",
+            "    print(index)",
+            "    print(words[index])"
         ]
     },
     "pages.GettingElementsAtPosition.steps.using_len_first_time.program": {
@@ -99,6 +126,10 @@
         "fr": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
             "print(len(mots))"
+        ],
+        "ta": [
+            "words = ['This', 'is', 'a', 'list']",
+            "print(len(words))"
         ]
     },
     "pages.Indentation.steps.mismatched_indentations.program": {
@@ -116,6 +147,11 @@
             "for caractere in nom:",
             "    print(caractere)",
             "  print('---')"
+        ],
+        "ta": [
+            "for character in name:",
+            "    print(character)",
+            "  print('---')"
         ]
     },
     "pages.Indentation.steps.missing_indentation.program": {
@@ -130,6 +166,10 @@
         "fr": [
             "for caractere in nom:",
             "print(caractere)"
+        ],
+        "ta": [
+            "for character in name:",
+            "print(character)"
         ]
     },
     "pages.IntroducingLists.steps.first_list.program": {
@@ -150,6 +190,12 @@
             "",
             "for mot in mots:",
             "    print(mot)"
+        ],
+        "ta": [
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "for word in words:",
+            "    print(word)"
         ]
     },
     "pages.IntroducingNestedLists.steps.first_nested_list_example.program": {
@@ -164,6 +210,10 @@
         "fr": [
             "chaines = [['hello', 'there'], ['comment', 'allez', 'vous']]",
             "print(chaines[1][0])"
+        ],
+        "ta": [
+            "strings = [['hello', 'there'], ['how', 'are', 'you']]",
+            "print(strings[1][0])"
         ]
     },
     "pages.MultiLineExpressions.steps.invalid_multiline.program": {
@@ -182,6 +232,10 @@
         "fr": [
             "est_ami = nom == \"Alice\" or",
             "                 nom == \"Bob\""
+        ],
+        "ta": [
+            "is_friend = name == \"Alice\" or",
+            "            name == \"Bob\""
         ]
     },
     "pages.NewlinesAndFormatBoard.steps.invalid_multi_line_string.program": {
@@ -232,6 +286,18 @@
             "      OO",
             "      X \"",
             ")"
+        ],
+        "ta": [
+            "assert_equal(",
+            "    format_board([",
+            "        ['X', 'O', 'X'],",
+            "        [' ', 'O', 'O'],",
+            "        [' ', 'X', ' ']",
+            "    ]),",
+            "    \"XOX",
+            "      OO",
+            "      X \"",
+            ")"
         ]
     },
     "pages.NewlinesAndFormatBoard.steps.multi_line_strings_triple_quotes.program": {
@@ -249,6 +315,11 @@
             "chaine = \"\"\"Premi\u00e8re ligne",
             "Deuxi\u00e8me ligne \"\"\"",
             "print(chaine)"
+        ],
+        "ta": [
+            "string = \"\"\"First line",
+            "Second line\"\"\"",
+            "print(string)"
         ]
     },
     "pages.SingleAndDoubleQuotesInStrings.steps.single_quotes_apostrophe.program": {
@@ -263,6 +334,9 @@
         ],
         "fr": [
             "print('Alice s'en va diner')"
+        ],
+        "ta": [
+            "print('Alice's Diner')"
         ]
     },
     "pages.StringMethodsUnderstandingMutation.steps.string_count_index.program": {
@@ -285,6 +359,11 @@
             "chaine = 'fait tes devoirs et apprend tes le\u00e7ons'",
             "print(chaine.count('tes'))",
             "print(chaine.index('tes'))"
+        ],
+        "ta": [
+            "string = 'feed the dog and the cat'",
+            "print(string.count('the'))",
+            "print(string.index('the'))"
         ]
     },
     "pages.StringMethodsUnderstandingMutation.steps.string_in_step.program": {
@@ -299,6 +378,9 @@
         ],
         "fr": [
             "print('tes' in 'fait tes devoirs et apprend tes le\u00e7ons')"
+        ],
+        "ta": [
+            "print('the' in 'feed the dog and the cat')"
         ]
     },
     "pages.TheEqualityOperator.steps.equality_vs_assignment.program": {
@@ -312,6 +394,9 @@
             "print(1 + 2 = 3)"
         ],
         "fr": [
+            "print(1 + 2 = 3)"
+        ],
+        "ta": [
             "print(1 + 2 = 3)"
         ]
     }

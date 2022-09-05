@@ -18782,12 +18782,6 @@ msgstr "Stop"
 msgid "frontend.submit"
 msgstr "Submit"
 
-msgid "frontend.switch_language_label"
-msgstr "Français"
-
-msgid "frontend.switch_language_url"
-msgstr "https://fr.futurecoder.io/course/"
-
 msgid "frontend.table_of_contents"
 msgstr "Table of Contents"
 

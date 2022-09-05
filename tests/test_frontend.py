@@ -73,7 +73,8 @@ def _tests(driver):
 Sign out
 Settings
 Feedback
-Français"""
+Français
+தமிழ்"""
     )
 
     # Open settings
