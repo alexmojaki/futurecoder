@@ -198,7 +198,11 @@ So let's write a function that does that. Complete the function below, particula
             ((['apple', 'box', 'dog'],  {'apple': 2, 'box': 5, 'cat': 100, 'dog': 120}), 127)
         ]
 
-        hints = "TODO"
+        hints = """
+        Remember that prices is a dictionary.
+        To access a value in a dictionary, you need a key.
+        The keys for prices are the items in the cart.
+        """
 
     class shopping_cart4(Step):
         """
@@ -383,7 +387,7 @@ Actually, you don't even need `.keys()`. Iterating directly over a dictionary au
 Sometimes it's nice to write `.keys()` to make your code more readable, but you don't have to.
 Run this code.
 
-        __program_indented__
+    __program_indented__
         """
 
         def program(self):
@@ -595,5 +599,7 @@ Beautiful! There's a pattern emerging here. The two languages could be merged in
         """
 
     final_text = """
-    TODO - FINAL TEXT
+    Congratulations! You've completed the dictionaries chapters.
+
+    As you have seen, dictionaries are a powerful tool for organizing and accessing data.
     """
