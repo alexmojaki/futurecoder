@@ -431,11 +431,6 @@ export const ranCode = makeAction(
       }
     }
 
-    state = {
-      ...state,
-      processing: false,
-      running: false,
-    }
     return state;
   },
 );
