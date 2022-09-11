@@ -192,11 +192,11 @@ const Messages = (
   }) =>
   messages.map((message, index) =>
     <div key={index} className="card book-message">
-      <div
-        className="card-header"
-        onClick={() => closeMessage(index)}>
-        <FontAwesomeIcon icon={faTimes}/>
-      </div>
+      {/*<div*/}
+      {/*  className="card-header"*/}
+      {/*  onClick={() => closeMessage(index)}>*/}
+      {/*  <FontAwesomeIcon icon={faTimes}/>*/}
+      {/*</div>*/}
       <div className="card-body"
            dangerouslySetInnerHTML={{__html: message}}/>
     </div>
@@ -205,13 +205,14 @@ const Messages = (
 const Assistant = (
   {
     requirements,
+    messages,
   }) => {
   if (!requirements) {
     return null;
   }
   return <div className="card assistant">
     <div className="card-header">
-      <strong><FontAwesomeIcon icon={faQuestionCircle}/> Assistant</strong>
+      <strong><FontAwesomeIcon icon={faQuestionCircle}/> {terms.assistant}</strong>
     </div>
     <div className="card-body">
       <details className="assistant-header">
@@ -229,6 +230,17 @@ const Assistant = (
               </li>
             )}
           </ul>
+        </div>
+      </details>
+      <details className="assistant-header">
+        <summary>
+          <strong>{terms.submission_status}</strong>
+        </summary>
+        <div className="assistant-content">
+          <p>
+            {terms.submission_status_description}
+          </p>
+          <Messages {...{messages}}/>
         </div>
       </details>
     </div>
@@ -353,8 +365,7 @@ const CourseText = (
         <hr style={{ margin: '0' }}/>
       </div>
     )}
-    <Assistant requirements={page.steps[step_index].requirements}/>
-    <Messages {...{messages}}/>
+      <Assistant requirements={page.steps[step_index].requirements} messages={messages}/>
     {/* pt-3 is Bootstrap's helper class. Shorthand for padding-top: 1rem. Available classes are pt-{1-5} */}
     <div className='pt-3'>
       {page.index > 0 &&

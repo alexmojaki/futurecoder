@@ -427,15 +427,14 @@ export const ranCode = makeAction(
         state = iset(state, "questionWizard.messages", value.messages);
       }
     } else {
-      for (const message of value.messages) {
-        state = addMessageToState(state, message);
-      }
+      state = iset(state, "messages", value.messages);
     }
 
     return state;
   },
 );
 
+// TODO this is only used for the copy message, which now shows in the wrong place
 const addMessageToState = (state, message) => {
   if (message && state.pastMessages.indexOf(message) === -1) {
       animateScroll.scrollToBottom({duration: 1000, delay: 500});

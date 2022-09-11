@@ -17297,6 +17297,9 @@ msgstr "Are you sure?"
 msgid "frontend.ask_for_help"
 msgstr "Ask for Help"
 
+msgid "frontend.assistant"
+msgstr "Assistant"
+
 msgid "frontend.cancel"
 msgstr "Cancel"
 
@@ -17525,6 +17528,12 @@ msgstr "Skip step"
 
 msgid "frontend.stop"
 msgstr "Stop"
+
+msgid "frontend.submission_status"
+msgstr "Submission status"
+
+msgid "frontend.submission_status_description"
+msgstr "TODO..."
 
 msgid "frontend.submit"
 msgstr "Submit"

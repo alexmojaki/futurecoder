@@ -98,7 +98,7 @@ def check_entry(entry, callback, runner=default_runner):
         page = pages[entry["page_slug"]]
         step_cls = page.get_step(entry["step_name"])
 
-        step_result = False
+        step_result = dict(passed=False, messages=[])
         if entry["step_name"] != "final_text":
             step_instance = step_cls(
                 entry["input"], result["output"], entry["source"], runner.console
@@ -110,7 +110,7 @@ def check_entry(entry, callback, runner=default_runner):
 
         messages = step_result["messages"]
         if "message" in step_result:
-            messages.append(step_result.pop("message"))
+            messages.insert(0, step_result.pop("message"))
         result.update(
             passed=step_result["passed"],
             messages=[highlighted_markdown(message) for message in messages],

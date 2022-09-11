@@ -21,6 +21,7 @@ class InvalidInitialCode(Exception):
 def make_function(program, arg_names):
     tree = ast.parse(program)
     try:
+        assert len(tree.body) >= len(arg_names)
         for node, arg_name in zip(tree.body, arg_names):
             assert isinstance(node, ast.Assign)
             target = only(node.targets)
