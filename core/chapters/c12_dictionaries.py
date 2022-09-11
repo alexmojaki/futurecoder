@@ -335,7 +335,8 @@ means that `A` should be replaced by `T`.
             return {"string" : "ABC", "d" : {"A" : "B", "B" : "C", "C" : "A"}}
 
         hints = """
-        TODO
+        Remember that the key for the dictionary is the character in the string.
+        The value from the dictionary is the replacement for the key.
         """
 
         tests = [
