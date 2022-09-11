@@ -204,9 +204,8 @@ So let's write a function that does that. Complete the function below, particula
         The keys for prices are the items in the cart.
         """
 
-    class shopping_cart4(Step):
+    class shopping_cart4(ExerciseStep):
         """
-        TODO: Convert to ExerciseStep
 Perfect! You publish your website and start dreaming about how rich you're going to be.
 
 But soon you get a complaint from a customer who wants to buy 5 million dogs...and 2 boxes to put them in.
@@ -243,10 +242,34 @@ Now `cart` is still a list of strings, but it doesn't have any duplicates.
 of that item that the customer wants to buy.
 
         """
-        # Program is required by Step. Contents do not matter.
-        def program(self): pass
-        # Check is required by Step. Contents do not matter.
-        def check(self): return True
+        def solution(self):
+            def total_cost(cart, quantities, prices):
+                result = 0
+                for item in cart:
+                    price = prices[item]
+                    quantity = quantities[item]
+                    result += price * quantity
+                return result
+            return total_cost
+
+        def generate_inputs():
+            return {"cart" : ["apple", "banana"],
+                    "quantities" : {"apple" : 4, "banana" : 9},
+                    "prices" : {"apple" : 5, "banana" : 7}}
+
+        tests = [
+            (
+                {"cart" : ['dog', 'box'],
+                 "quantities" : {'dog': 5000000, 'box': 2},
+                 "prices" : {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100}},
+                500000010
+             )
+        ]
+
+        hints = """
+        Remember that the keys for prices and quantities are the same.
+        Access the two dictionaries using item as the key.
+        """
 
     class shopping_cart5(VerbatimStep):
         """
