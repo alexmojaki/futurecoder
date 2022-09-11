@@ -103,11 +103,20 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
     }
   }
 
-  const data = await runCodeTask(
-    entry,
-    outputCallback,
-    inputCallback,
-  );
+  let data;
+  try {
+    data = await runCodeTask(
+      entry,
+      outputCallback,
+      inputCallback,
+    );
+  } catch (e) {
+    showOutputParts({text: '>>> ', type: 'shell_prompt'});
+    throw e;
+  } finally {
+    bookSetState("processing", false);
+    bookSetState("running", false);
+  }
 
   const {error} = data;
 

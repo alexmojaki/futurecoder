@@ -12,42 +12,12 @@ import * as Sentry from "@sentry/react";
 import {wrapAsync} from "../frontendlib/sentry";
 import pRetry from 'p-retry';
 import localforage from "localforage";
-
-const firebaseConfig = {
-  es: {
-    apiKey: "AIzaSyDNpI4qJjFfRWuFqOnonuqmJGYr0Hp3Iuk",
-    authDomain: "futurecoder-es-latam.firebaseapp.com",
-    databaseURL: "https://futurecoder-es-latam-default-rtdb.firebaseio.com",
-    projectId: "futurecoder-es-latam",
-    storageBucket: "futurecoder-es-latam.appspot.com",
-    messagingSenderId: "1084443780130",
-    appId: "1:1084443780130:web:cb507edf79f9ba131b967b",
-    measurementId: "G-W0ZYL2E5W5"
-  },
-  fr: {
-    apiKey: "AIzaSyBAC0zYqkdW6hJKD_RyTzBtIgndxyraW6o",
-    authDomain: "futurecoder-fr.firebaseapp.com",
-    databaseURL: "https://futurecoder-fr-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "futurecoder-fr",
-    storageBucket: "futurecoder-fr.appspot.com",
-    messagingSenderId: "453289812685",
-    appId: "1:453289812685:web:1b390689ec643db8533f84",
-    measurementId: "G-E3E2910NY5"
-  },
-}[process.env.REACT_APP_LANGUAGE] || {
-  apiKey: "AIzaSyAZmDPaMC92X9YFbS-Mt0p-dKHIg4w48Ow",
-  authDomain: "futurecoder-io.firebaseapp.com",
-  databaseURL: "https://futurecoder-io-default-rtdb.firebaseio.com",
-  projectId: "futurecoder-io",
-  storageBucket: "futurecoder-io.appspot.com",
-  messagingSenderId: "361930705093",
-  appId: "1:361930705093:web:dda41fee927c949daf88ac",
-  measurementId: "G-ZKCE9KY52F",
-};
+import {languageConfig} from "../languages";
 
 export const disableFirebase = !!process.env.REACT_APP_DISABLE_FIREBASE;
 export const disableLogin = disableFirebase || !!process.env.REACT_APP_DISABLE_LOGIN;
 
+const {firebaseConfig} = languageConfig;
 const firebaseApp = !disableFirebase && firebase.initializeApp(firebaseConfig);
 
 let {databaseURL} = firebaseConfig;
@@ -462,11 +432,6 @@ export const ranCode = makeAction(
       }
     }
 
-    state = {
-      ...state,
-      processing: false,
-      running: false,
-    }
     return state;
   },
 );

@@ -53,6 +53,7 @@ import {TableOfContents} from "./TableOfContents";
 import HeaderLoginInfo from "./components/HeaderLoginInfo";
 import * as terms from "./terms.json"
 import _ from "lodash";
+import {otherVisibleLanguages} from "./languages";
 
 
 const EditorButtons = (
@@ -559,23 +560,27 @@ const MenuPopup = ({user}) =>
             {close => <FeedbackModal close={close}/>}
           </Popup>
         </p>
-        <p>
-          <a href={terms.switch_language_url} className="btn btn-link"
-             style={{borderColor: "grey"}}>
-            <img
-              alt="language icon"
-              src={languageIcon}
-              width={24}
-              height={24}
-              style={{
-                display: "inline",
-                position: "relative",
-                top: "-2px",
-                left: "-2px",
-            }}
-            /> {terms.switch_language_label}
-          </a>
-        </p>
+        {
+          otherVisibleLanguages.map(lang =>
+            <p>
+              <a href={lang.url + "course/"} className="btn btn-link"
+                 style={{borderColor: "grey"}}>
+                <img
+                  alt="language icon"
+                  src={languageIcon}
+                  width={24}
+                  height={24}
+                  style={{
+                    display: "inline",
+                    position: "relative",
+                    top: "-2px",
+                    left: "-2px",
+                  }}
+                /> {lang.name}
+              </a>
+            </p>
+          )
+        }
       </div>}
     </Popup>
 

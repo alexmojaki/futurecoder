@@ -15,9 +15,19 @@ from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
 from pygments.styles import get_style_by_name
+
 from core import translation as t
 
 TESTING = False
+
+
+def qa_error(message, cls=AssertionError):
+    if os.environ.get("PRINT_ERRORS"):
+        print(message)
+        print("\n-----------------------------------------------------\n")
+    else:
+        raise cls(message)
+
 
 def stub_module(name):
     assert name not in sys.modules
@@ -41,7 +51,10 @@ def clean_spaces(string):
     string = dedent(string).strip()
     spaces = set(re.findall(r"\s", string))
     assert spaces <= {" ", "\n"}, spaces
-    assert not re.search(r"^ {1,3}_", string, re.MULTILINE), string
+    # In translation, special codes like `__copyable__` often get the wrong indentation.
+    # They must be preceded by 0 or 4 spaces.
+    if re.search(r"^( {1,3}| {5,})_", string, re.MULTILINE):
+        qa_error("Incorrect indentation of code:\n" + string)
     return string
 
 
@@ -159,9 +172,8 @@ def highlighted_markdown_and_codes(text):
 
 def highlighted_markdown(text):
     result = highlighted_markdown_and_codes(text)[0]
-    assert (
-        "__copyable__" not in result and "__no_auto_translate__" not in result
-    ), result
+    if "__copyable__" in result or "__no_auto_translate__" in result:
+        qa_error(f"Markdown contains __copyable__ or __no_auto_translate__:\n{result}")
     return result
 
 
@@ -199,6 +211,8 @@ def shuffled_well(seq):
 def check_and_remove_prefix(string, prefix):
     if startswith := string.startswith(prefix):
         string = strip_required_prefix(string, prefix)
+    if prefix in string:
+        qa_error(f"String still contains {prefix!r}: {string!r}")
     return string, startswith
 
 
@@ -222,6 +236,12 @@ def get_exception_event():
     sentry_sdk.capture_exception()
 
     assert event
+
+    # https://github.com/getsentry/sentry-python/issues/1536
+    breadcrumbs = event.get("breadcrumbs", {})
+    if isinstance(breadcrumbs, dict):
+        event["breadcrumbs"] = breadcrumbs.get("values", [])
+
     return event
 
 

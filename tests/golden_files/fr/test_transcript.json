@@ -567,7 +567,7 @@
             "result": [
                 {
                     "friendly": "<p>Une exception de type <code>IndentationError</code> se produit lorsqu'une ligne de code\nn'est pas indent\u00e9e (c'est-\u00e0-dire align\u00e9e verticalement avec les autres lignes)\nde la fa\u00e7on attendue.</p>\n<p>La ligne <code>2</code> identifi\u00e9e ci-dessus \u00e9tait cens\u00e9e commencer un nouveau bloc indent\u00e9.</p>",
-                    "text": "    print(caractere)\n    ^\nIndentationError: expected an indented block\nat line 2\n",
+                    "text": "    print(caractere)\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 1\nat line 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1652,7 +1652,7 @@
             "result": [
                 {
                     "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Vous avez probablement appel\u00e9 une fonction avec un argument :</p>\n<pre><code>une_fonction (invalide=quelque_chose)\n</code></pre>\n<p>o\u00f9 <code>invalide</code> n'est pas un nom de variable valide dans Python\nsoit parce qu'il commence par un chiffre, soit qu'il est une cha\u00eene,\nou qu'il contient un point, etc.</p>",
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n",
+                    "text": "    print(1 + 2 = 3)\n          ^^^^^^^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -3896,8 +3896,8 @@
             "passed": true,
             "result": [
                 {
-                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Je soup\u00e7onne que vous avez essay\u00e9 d'utiliser un guillemet \u00e0 l'int\u00e9rieur d'une cha\u00eene de caract\u00e8res\nqui \u00e9tait entour\u00e9e de guillemets du m\u00eame type.\nVous auriez peut-\u00eatre d\u00fb \u00e9chapper ce guillemet interne\u00a0:</p>\n<pre><code>print('Alice s\\'en va diner')\n              ^^\n</code></pre>",
-                    "text": "    print('Alice s'en va diner')\n                   ^\nSyntaxError: invalid syntax\nat line 1\n",
+                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Pr\u00e9sentement, je ne peux pas deviner la cause probable de cette erreur.\nEssayez d\u2019examiner attentivement la ligne indiqu\u00e9e ainsi que celle\nimm\u00e9diatement au dessus pour voir si vous pouvez identifier\nun mot mal orthographi\u00e9, ou des symboles manquants, comme (,), [,],:, etc.</p>\n<p>Si votre code n'utilise pas d'annotations de type,\net que vous pensez que friendly devrait\npouvoir l'analyser correctement, SVP rapporter ce cas au site suivant:\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "text": "    print('Alice s'en va diner')\n          ^^^^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6325,7 +6325,7 @@
             "result": [
                 {
                     "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Vous aviez commenc\u00e9 \u00e0 \u00e9crire une cha\u00eene de caract\u00e8res\navec un guillemet simple ou double, mais n'avez jamais\ntermin\u00e9 la cha\u00eene avec un autre guillemet sur cette ligne.</p>",
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nat line 7\n",
+                    "text": "    \"XOX\n    ^\nSyntaxError: unterminated string literal (detected at line 7)\nat line 7\n",
                     "type": "syntax_error"
                 }
             ]

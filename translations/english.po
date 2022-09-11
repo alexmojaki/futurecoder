@@ -17369,8 +17369,8 @@ msgstr "Your function needs to `${print_or_return}` the correct result."
 
 msgid "frontend.function_exercise_stdin"
 msgstr ""
-"Your function needs to call the `input()` function to receive input from the user. When the function is tested for "
-"correctness, different user inputs will be simulated."
+"Your program needs to receive input from the user via the `input()` function. When it's tested for correctness, "
+"different user inputs will be simulated."
 
 msgid "frontend.get_another_hint"
 msgstr "Get another hint"
@@ -17488,7 +17488,7 @@ msgstr "Requirements"
 msgid "frontend.requirements_description"
 msgstr ""
 "You need to run some code according to the instructions above. In case those aren't clear enough, here's some extra "
-"clarifications:"
+"clarification:"
 
 msgid "frontend.reveal"
 msgstr "Reveal"
@@ -17528,12 +17528,6 @@ msgstr "Stop"
 
 msgid "frontend.submit"
 msgstr "Submit"
-
-msgid "frontend.switch_language_label"
-msgstr "Français"
-
-msgid "frontend.switch_language_url"
-msgstr "https://fr.futurecoder.io/course/"
 
 msgid "frontend.table_of_contents"
 msgstr "Table of Contents"

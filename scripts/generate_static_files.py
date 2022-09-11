@@ -138,7 +138,9 @@ def main():
             ]:
                 tar.add(core_dir.parent / arcname, arcname=arcname, recursive=True, filter=tarfile_filter)
             arcname = f"friendly_traceback/locales/{t.current_language}/LC_MESSAGES/friendly_tb_{t.current_language}.mo"
-            tar.add(Path(site_packages) / arcname, arcname=arcname)
+            source_path = Path(site_packages) / arcname
+            if source_path.exists():
+                tar.add(source_path, arcname=arcname)
 
         for root in roots:
             tar.add(

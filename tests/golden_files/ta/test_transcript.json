@@ -1,11 +1,11 @@
 [
     {
-        "page": "Introducing The Shell",
+        "page": "\u0b93\u0b9f\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "'literally anything'"
         ],
         "response": {
-            "message": "<p>Awesome, you're trying out your own experiments!\nThat's a great sign. Keep it up.\nJust letting you know that you do need to eventually type <code>1+2</code> for the book to move forward.</p>",
+            "message": "<p>\u0b85\u0bb0\u0bc1\u0bae\u0bc8, \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b9a\u0bca\u0ba8\u0bcd\u0ba4 \u0baa\u0bb0\u0bbf\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8\u0b95\u0bb3\u0bc8 \u0bae\u0bc1\u0baf\u0bb1\u0bcd\u0b9a\u0bbf \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bbf\u0bb1\u0bc0\u0bb0\u0bcd\u0b95\u0bb3\u0bcd!\n\u0b85\u0ba4\u0bc1 \u0b92\u0bb0\u0bc1 \u0baa\u0bc6\u0bb0\u0bbf\u0baf \u0b85\u0b9f\u0bc8\u0baf\u0bbe\u0bb3\u0bae\u0bcd. \u0baa\u0bb4\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf \u0b95\u0bc6\u0bbe\u0bb3\u0bcd \u0b85\u0bb2\u0bcd\u0bb2\u0ba4\u0bc1 \u0bae\u0bc7\u0bae\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf\u0b95\u0bcd\u0b95\u0bc6\u0bbe\u0bb3\u0bcd.\n\u0baa\u0bc1\u0ba4\u0bcd\u0ba4\u0b95\u0bae\u0bcd \u0bae\u0bc1\u0ba9\u0bcd\u0ba9\u0bcb\u0b95\u0bcd\u0b95\u0bbf\u0b9a\u0bcd \u0b9a\u0bc6\u0bb2\u0bcd\u0bb2 \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b87\u0bb1\u0bc1\u0ba4\u0bbf\u0baf\u0bbf\u0bb2\u0bcd <code>1+2</code> \u0b8e\u0ba9 \u0ba4\u0b9f\u0bcd\u0b9f\u0b9a\u0bcd\u0b9a\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0baf \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bcd \u0ba4\u0bc6\u0bb0\u0bbf\u0baf\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0bc7\u0ba9\u0bcd.</p>",
             "passed": false,
             "result": [
                 {
@@ -17,7 +17,7 @@
         "step": "first_expression"
     },
     {
-        "page": "Introducing The Shell",
+        "page": "\u0b93\u0b9f\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "1+2"
         ],
@@ -34,17 +34,17 @@
         "step": "first_expression"
     },
     {
-        "page": "Introducing The Shell",
+        "page": "\u0b93\u0b9f\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "3 x 4"
         ],
         "response": {
-            "message": "<p>I see an 'x'. If you're trying to multiply, use an asterisk, e.g:</p>\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
+            "message": "<p>\u0ba8\u0bbe\u0ba9\u0bcd \u0b92\u0bb0\u0bc1 'x' \u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0bc7\u0ba9\u0bcd. \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0baa\u0bc6\u0bb0\u0bc1\u0b95\u0bcd\u0b95 \u0bae\u0bc1\u0baf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0bc0\u0bb0\u0bcd\u0b95\u0bb3\u0bcd \u0b8e\u0ba9\u0bcd\u0bb1\u0bbe\u0bb2\u0bcd, \u0b92\u0bb0\u0bc1 \u0ba8\u0b9f\u0bcd\u0b9a\u0ba4\u0bcd\u0ba4\u0bbf\u0bb0\u0ba4\u0bcd\u0ba4\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bb5\u0bc1\u0bae\u0bcd, \u0b8e.\u0b95\u0bbe:</p>\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
             "passed": false,
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>Currently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.</p>\n<p>Unless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues</p>",
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 1\n",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -52,7 +52,7 @@
         "step": "more_calculation"
     },
     {
-        "page": "Introducing The Shell",
+        "page": "\u0b93\u0b9f\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "5 - 6"
         ],
@@ -69,7 +69,7 @@
         "step": "more_calculation"
     },
     {
-        "page": "Introducing Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "'hello'"
         ],
@@ -86,7 +86,7 @@
         "step": "hello_string"
     },
     {
-        "page": "Adding Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8\u0b9a\u0bcd \u0b9a\u0bc7\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "'hello' + 'world'"
         ],
@@ -103,12 +103,12 @@
         "step": "hello_world_concat"
     },
     {
-        "page": "Adding Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8\u0b9a\u0bcd \u0b9a\u0bc7\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "'hello world'"
         ],
         "response": {
-            "message": "<p>You must still add two or more strings together.</p>",
+            "message": "<p>\u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b87\u0ba9\u0bcd\u0ba9\u0bc1\u0bae\u0bcd \u0b87\u0bb0\u0ba3\u0bcd\u0b9f\u0bc1 \u0b85\u0bb2\u0bcd\u0bb2\u0ba4\u0bc1 \u0b85\u0ba4\u0bb1\u0bcd\u0b95\u0bc1 \u0bae\u0bc7\u0bb1\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b92\u0ba9\u0bcd\u0bb1\u0bbe\u0b95\u0b9a\u0bcd \u0b9a\u0bc7\u0bb0\u0bcd\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": [
                 {
@@ -123,7 +123,7 @@
         "get_solution": [
             "'hello ' + 'world'"
         ],
-        "page": "Adding Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8\u0b9a\u0bcd \u0b9a\u0bc7\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "'hello ' + 'world'"
         ],
@@ -140,7 +140,7 @@
         "step": "hello_world_space"
     },
     {
-        "page": "Introducing Variables",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "word = 'Hello'"
         ],
@@ -152,19 +152,19 @@
         "step": "word_assign"
     },
     {
-        "page": "Introducing Variables",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "word = 2"
         ],
         "response": {
-            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "message": "<p>\u0b85\u0b9a\u0bcd\u0b9a\u0b9a\u0bcd\u0b9a\u0bcb, \u0ba8\u0bbe\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0ba4\u0bca\u0b9f\u0bb0\u0bcd\u0bb5\u0ba4\u0bb1\u0bcd\u0b95\u0bc1 \u0bae\u0bc1\u0ba9\u0bcd \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd <code>word = 'Hello'</code> \u0b85\u0bae\u0bc8\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
         "step": "word_check"
     },
     {
-        "page": "Introducing Variables",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "word"
         ],
@@ -181,7 +181,7 @@
         "step": "word_check"
     },
     {
-        "page": "Introducing Variables",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "'word'"
         ],
@@ -195,7 +195,7 @@
                     "'word'",
                     "Hello",
                     "'Hello'",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -208,7 +208,7 @@
         "step": "word_string_check"
     },
     {
-        "page": "Introducing Variables",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "sunshine"
         ],
@@ -216,13 +216,13 @@
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "Error",
+                "answer": "\u0baa\u0bbf\u0bb4\u0bc8",
                 "choices": [
                     "sunshine",
                     "'sunshine'",
                     "Hello",
                     "'Hello'",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -270,55 +270,55 @@
         "step": "sunshine_undefined_check"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "foo = 3"
         ],
         "response": {
-            "message": "<p>Put <code>your_name</code> before the <code>=</code> to create a variable called <code>your_name</code>.</p>",
+            "message": "<p><code>your_name</code> \u0b8e\u0ba9\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bbe\u0bb1\u0bbf\u0baf\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95, <code>=</code> \u0b95\u0bcd\u0b95\u0bc1 \u0bae\u0bc1\u0ba9\u0bcd <code>your_name</code> \u0b90 \u0bb5\u0bc8\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
         "step": "name_assign"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "your_name = ''"
         ],
         "response": {
-            "message": "<p>For this exercise, choose a non-empty string</p>",
+            "message": "<p>\u0b87\u0ba8\u0bcd\u0ba4 \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bcd\u0b95\u0bc1, \u0b95\u0bbe\u0bb2\u0bbf\u0baf\u0bbe\u0b95 \u0b87\u0bb2\u0bcd\u0bb2\u0bbe\u0ba4 \u0b9a\u0bb0\u0ba4\u0bcd\u0ba4\u0bc8\u0ba4\u0bcd \u0ba4\u0bc7\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4\u0bc6\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd</p>",
             "passed": false,
             "result": []
         },
         "step": "name_assign"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "your_name = 3"
         ],
         "response": {
-            "message": "<p>You've got the <code>your_name =</code> part right, now put a string (use quotes) on the right of the <code>=</code>.</p>",
+            "message": "<p><code>your_name =</code> \u0baa\u0b95\u0bc1\u0ba4\u0bbf \u0b9a\u0bb0\u0bbf\u0baf\u0bbe\u0b95 \u0b89\u0bb3\u0bcd\u0bb3\u0ba4\u0bc1, \u0b87\u0baa\u0bcd\u0baa\u0bcb\u0ba4\u0bc1 <code>=</code> \u0b87\u0ba9\u0bcd \u0bb5\u0bb2\u0ba4\u0bc1\u0baa\u0bc1\u0bb1\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0b92\u0bb0\u0bc1 \u0b9a\u0bb0\u0ba4\u0bcd\u0ba4\u0bc8 (\u0bae\u0bc7\u0bb1\u0bcd\u0b95\u0bcb\u0bb3\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bb5\u0bc1\u0bae\u0bcd) \u0bb5\u0bc8\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
         "step": "name_assign"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "your_name = ' Alex'"
         ],
         "response": {
-            "message": "<p>For this exercise, choose a name that doesn't start with a space.</p>",
+            "message": "<p>\u0b87\u0ba8\u0bcd\u0ba4\u0baa\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bcd\u0b95\u0bc1, \u0b87\u0b9f\u0bc8\u0bb5\u0bc6\u0bb3\u0bbf\u0baf\u0bc1\u0b9f\u0ba9\u0bcd \u0ba4\u0bca\u0b9f\u0b99\u0bcd\u0b95\u0bbe\u0ba4 \u0baa\u0bc6\u0baf\u0bb0\u0bc8\u0ba4\u0bcd \u0ba4\u0bc7\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4\u0bc6\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
         "step": "name_assign"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "your_name = 'Alex'"
         ],
@@ -330,7 +330,7 @@
         "step": "name_assign"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "'Hello ' + your_name"
         ],
@@ -347,19 +347,19 @@
         "step": "hello_plus_name"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "word = 2"
         ],
         "response": {
-            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "message": "<p>\u0b85\u0b9a\u0bcd\u0b9a\u0b9a\u0bcd\u0b9a\u0bcb, \u0ba8\u0bbe\u0bae\u0bcd \u0ba4\u0bca\u0b9f\u0bb0\u0bcd\u0bb5\u0ba4\u0bb1\u0bcd\u0b95\u0bc1 \u0bae\u0bc1\u0ba9\u0bcd \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd <code>word = 'Hello'</code> \u0b85\u0bae\u0bc8\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
         "step": "word_plus_name"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "word + your_name"
         ],
@@ -376,12 +376,12 @@
         "step": "word_plus_name"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "word = 2"
         ],
         "response": {
-            "message": "<p>Oops, you need to set <code>word = 'Hello'</code> before we can continue.</p>",
+            "message": "<p>\u0b85\u0b9a\u0bcd\u0b9a\u0b9a\u0bcd\u0b9a\u0bcb, \u0ba8\u0bbe\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0ba4\u0bca\u0b9f\u0bb0\u0bcd\u0bb5\u0ba4\u0bb1\u0bcd\u0b95\u0bc1 \u0bae\u0bc1\u0ba9\u0bcd \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd <code>word = 'Hello'</code> \u0b85\u0bae\u0bc8\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
@@ -391,7 +391,7 @@
         "get_solution": [
             "word + ' ' + your_name"
         ],
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "word + ' ' + your_name"
         ],
@@ -408,7 +408,7 @@
         "step": "word_plus_name_with_space"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "word = 'Goodbye'"
         ],
@@ -420,7 +420,7 @@
         "step": "word_assign_goodbye"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "word + ' ' + your_name"
         ],
@@ -437,7 +437,7 @@
         "step": "goodbye_plus_name"
     },
     {
-        "page": "Using Variables and <code>print()</code>",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>print()</code> \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "print(word + ' ' + your_name)"
         ],
@@ -454,7 +454,7 @@
         "step": "first_print"
     },
     {
-        "page": "Writing Programs",
+        "page": "\u0b8e\u0bb4\u0bc1\u0ba4\u0bc1\u0bae\u0bcd \u0ba4\u0bbf\u0b9f\u0bcd\u0b9f\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "word = 'Hello'",
             "name = 'World'",
@@ -475,7 +475,7 @@
         "step": "editor_hello_world"
     },
     {
-        "page": "Storing Calculations In Variables",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0b9a\u0bc7\u0bae\u0bbf\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "word = 'Hello'",
             "name = 'World'",
@@ -494,7 +494,7 @@
                     "'Hello' + ' ' + 'World'",
                     "Hello World",
                     "'Hello World'",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -507,7 +507,7 @@
         "step": "sentence_equals_word_plus_name"
     },
     {
-        "page": "Storing Calculations In Variables",
+        "page": "\u0bae\u0bbe\u0bb1\u0bbf\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0b9a\u0bc7\u0bae\u0bbf\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "word = 'Hello'",
             "name = 'World'",
@@ -525,7 +525,7 @@
                     "Hello World\nHello World",
                     "Hello World\nGoodbye World",
                     "Goodbye World\nGoodbye World",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -538,7 +538,7 @@
         "step": "sentence_doesnt_change"
     },
     {
-        "page": "Introducing For Loops",
+        "page": "\u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "name = 'World'",
             "for character in name: print(character)"
@@ -556,7 +556,7 @@
         "step": "first_for_loop"
     },
     {
-        "page": "Indentation",
+        "page": "\u0b89\u0bb3\u0bcd\u0ba4\u0bb3\u0bcd\u0bb3\u0bb2\u0bcd",
         "program": [
             "for character in name:",
             "print(character)"
@@ -567,7 +567,7 @@
             "result": [
                 {
                     "friendly": "<p>An <code>IndentationError</code> occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.</p>\n<p>Line <code>2</code> identified above was expected to begin a new indented block.</p>",
-                    "text": "    print(character)\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 1\nat line 2\n",
+                    "text": "    print(character)\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 1\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -575,7 +575,7 @@
         "step": "missing_indentation"
     },
     {
-        "page": "Indentation",
+        "page": "\u0b89\u0bb3\u0bcd\u0ba4\u0bb3\u0bcd\u0bb3\u0bb2\u0bcd",
         "program": [
             "name = 'World'",
             "",
@@ -596,7 +596,7 @@
         "step": "two_indented_lines"
     },
     {
-        "page": "Indentation",
+        "page": "\u0b89\u0bb3\u0bcd\u0ba4\u0bb3\u0bcd\u0bb3\u0bb2\u0bcd",
         "program": [
             "name = 'World'",
             "",
@@ -617,7 +617,7 @@
         "step": "one_indented_line"
     },
     {
-        "page": "Indentation",
+        "page": "\u0b89\u0bb3\u0bcd\u0ba4\u0bb3\u0bcd\u0bb3\u0bb2\u0bcd",
         "program": [
             "for character in name:",
             "    print(character)",
@@ -629,7 +629,7 @@
             "result": [
                 {
                     "friendly": "<p>An <code>IndentationError</code> occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.</p>\n<p>Line <code>3</code> identified above is less indented than expected.</p>",
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\nat line 3\n",
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 3\n",
                     "type": "syntax_error"
                 }
             ]
@@ -641,7 +641,7 @@
             "for character in name:",
             "    print('---' + character)"
         ],
-        "page": "Basic For Loop Exercises",
+        "page": "\u0b9a\u0bc1\u0bb4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b85\u0b9f\u0bbf\u0baa\u0bcd\u0baa\u0b9f\u0bc8",
         "program": [
             "name = 'World'",
             "for character in name:",
@@ -664,7 +664,7 @@
             "for _ in name:",
             "    print(name)"
         ],
-        "page": "Basic For Loop Exercises",
+        "page": "\u0b9a\u0bc1\u0bb4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b85\u0b9f\u0bbf\u0baa\u0bcd\u0baa\u0b9f\u0bc8",
         "program": [
             "name = 'World'",
             "for _ in name:",
@@ -683,7 +683,7 @@
         "step": "loop_exercise_2"
     },
     {
-        "page": "Building Up Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "hello = 'Hello'",
             "print(hello)",
@@ -699,7 +699,7 @@
                     "Hello\nHello",
                     "Hello\nHello!",
                     "Hello!\nHello!",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -712,7 +712,7 @@
         "step": "hello_plus_equals"
     },
     {
-        "page": "Building Up Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "name = 'World'",
             "line = '-'",
@@ -734,7 +734,7 @@
                     "-World\n-Worl\n-Wor\n-Wo\n-W",
                     "-World\n-World\n-World\n-World\n-World",
                     "-World\n--World\n---World\n----World\n-----World",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -747,7 +747,7 @@
         "step": "name_triangle"
     },
     {
-        "page": "Building Up Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "name = 'World'",
             "line = '-'",
@@ -764,7 +764,7 @@
                     "-W\n-Wo\n-Wor\n-Worl\n-World",
                     "-Wo\n-Wor\n-Worl\n-World",
                     "-\n-W\n-Wo\n-Wor\n-Worl",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -777,7 +777,7 @@
         "step": "name_triangle_missing_last_line"
     },
     {
-        "page": "Building Up Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "'' + '' + ''"
         ],
@@ -796,7 +796,7 @@
                     "'' '' ''",
                     "' '' '' '",
                     "++",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -815,7 +815,7 @@
             "    line = line + char",
             "    print(line)"
         ],
-        "page": "Building Up Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "name = 'World'",
             "line = ''",
@@ -842,7 +842,7 @@
             "    line = line + char + ' '",
             "    print(line)"
         ],
-        "page": "Building Up Strings Exercises",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "name = 'World'",
             "line = ''",
@@ -869,7 +869,7 @@
             "    line = char + line",
             "    print(line)"
         ],
-        "page": "Building Up Strings Exercises",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "name = 'World'",
             "line = ''",
@@ -897,7 +897,7 @@
             "print(name)",
             "print(line)"
         ],
-        "page": "Building Up Strings Exercises",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "name = 'World'",
             "line = ''",
@@ -928,7 +928,7 @@
             "print('|' + name + '|')",
             "print(line)"
         ],
-        "page": "Building Up Strings Exercises",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "name = 'World'",
             "line = ''",
@@ -963,7 +963,7 @@
             "    print(char + spaces + char)",
             "print(line)"
         ],
-        "page": "Building Up Strings Exercises",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "name = 'World'",
             "line = '+' + name + '+'",
@@ -989,7 +989,7 @@
         "step": "name_box_2"
     },
     {
-        "page": "Building Up Strings Exercises",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "name = 'World'",
             "spaces = ''",
@@ -998,7 +998,7 @@
             "    print(spaces + char)"
         ],
         "response": {
-            "message": "<p>Almost there! You have one space too many before each letter.\nMake sure that the first time your loop calls <code>print</code>\nyour variable which will contain the spaces is an empty string.\nCheck the order of your code.</p>",
+            "message": "<p>\u0b8f\u0bb1\u0b95\u0bcd\u0b95\u0bc1\u0bb1\u0bc8\u0baf \u0b85\u0b99\u0bcd\u0b95\u0bc1\u0ba4\u0bbe\u0ba9\u0bcd! \u0b92\u0bb5\u0bcd\u0bb5\u0bca\u0bb0\u0bc1 \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0ba9\u0bcd \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bbf\u0b9f\u0bae\u0bcd \u0b92\u0bb0\u0bc1 \u0b87\u0b9f\u0bc8\u0bb5\u0bc6\u0bb3\u0bbf \u0b85\u0ba4\u0bbf\u0b95\u0bae\u0bbe\u0b95 \u0b89\u0bb3\u0bcd\u0bb3\u0ba4\u0bc1.\n\u0b87\u0b9f\u0bc8\u0bb5\u0bc6\u0bb3\u0bbf\u0b95\u0bb3\u0bc8\u0b95\u0bcd \u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bbf\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bbe\u0bb1\u0bbf\u0baf\u0bc8 \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd \u0bae\u0bc1\u0ba4\u0bb2\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0baf\u0bbe\u0b95 <code>print</code> \u0b8e\u0ba9\u0bcd\u0bb1\u0bc1 \u0b85\u0bb4\u0bc8\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bc1\n\u0b85\u0ba4\u0bc1 \u0bb5\u0bc6\u0bb1\u0bcd\u0bb1\u0bc1 \u0b9a\u0bb0\u0bae\u0bcd \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b89\u0bb1\u0bc1\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bb5\u0bc1\u0bae\u0bcd. \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bcd\u0b9f\u0bbf\u0ba9\u0bcd \u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bc8\u0b9a\u0bcd \u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": [
                 {
@@ -1016,7 +1016,7 @@
             "    print(spaces + char)",
             "    spaces += ' '"
         ],
-        "page": "Building Up Strings Exercises",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "name = 'World'",
             "spaces = ''",
@@ -1037,7 +1037,7 @@
         "step": "diagonal_name_bonus_challenge"
     },
     {
-        "page": "Introducing If Statements",
+        "page": "If \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "condition = True",
             "print(condition)",
@@ -1057,7 +1057,7 @@
         "step": "introducing_booleans"
     },
     {
-        "page": "Introducing If Statements",
+        "page": "If \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "if True:",
             "    print('This gets printed')",
@@ -1078,7 +1078,7 @@
         "step": "first_if_statements"
     },
     {
-        "page": "Introducing If Statements",
+        "page": "If \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "sentence = 'Hello World'",
             "excited = True",
@@ -1094,7 +1094,7 @@
                 "choices": [
                     "Hello World",
                     "Hello World!",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -1107,7 +1107,7 @@
         "step": "excited_example"
     },
     {
-        "page": "Introducing If Statements",
+        "page": "If \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "sentence = 'Hello World'",
             "excited = False",
@@ -1123,7 +1123,7 @@
                 "choices": [
                     "Hello World",
                     "Hello World!",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -1143,7 +1143,7 @@
             "    sentence += '?'",
             "print(sentence)"
         ],
-        "page": "Introducing If Statements",
+        "page": "If \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bcd \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "sentence = 'Hello'",
             "excited = True",
@@ -1167,7 +1167,7 @@
         "step": "excited_confused_exercise"
     },
     {
-        "page": "Combining Compound Statements",
+        "page": "\u0b95\u0bc2\u0b9f\u0bcd\u0b9f\u0bc1 \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bc8 \u0b87\u0ba3\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "sentence = 'Hello World'",
             "excited = True",
@@ -1195,7 +1195,7 @@
                     "!Hello World!",
                     "H!e!l!l!o! !W!o!r!l!d!",
                     "!H!e!l!l!o! !W!o!r!l!d",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -1208,7 +1208,7 @@
         "step": "for_inside_if"
     },
     {
-        "page": "Understanding Programs With <code>snoop</code>",
+        "page": "<code>snoop</code> \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba8\u0bbf\u0bb0\u0bb2\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc1\u0bb0\u0bbf\u0ba8\u0bcd\u0ba4\u0bc1\u0b95\u0bca\u0bb3\u0bcd\u0bb5\u0ba4\u0bc1",
         "program": [
             "sentence = 'Hello World'",
             "",
@@ -1232,7 +1232,7 @@
                     "Hello Worl",
                     "H",
                     "d",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -1245,7 +1245,7 @@
         "step": "print_tail"
     },
     {
-        "page": "Understanding Programs With <code>snoop</code>",
+        "page": "<code>snoop</code> \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba8\u0bbf\u0bb0\u0bb2\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc1\u0bb0\u0bbf\u0ba8\u0bcd\u0ba4\u0bc1\u0b95\u0bca\u0bb3\u0bcd\u0bb5\u0ba4\u0bc1",
         "program": [
             "sentence = 'Hello World'",
             "",
@@ -1313,7 +1313,7 @@
             "",
             "print(new_sentence)"
         ],
-        "page": "Understanding Programs With <code>snoop</code>",
+        "page": "<code>snoop</code> \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba8\u0bbf\u0bb0\u0bb2\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc1\u0bb0\u0bbf\u0ba8\u0bcd\u0ba4\u0bc1\u0b95\u0bca\u0bb3\u0bcd\u0bb5\u0ba4\u0bc1",
         "program": [
             "sentence = 'Hello there'",
             "include = True",
@@ -1338,7 +1338,7 @@
         "step": "print_first_character"
     },
     {
-        "page": "<code>if</code> and <code>else</code>",
+        "page": "<code>if</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>else</code>",
         "program": [
             "condition = True",
             "if condition:",
@@ -1359,7 +1359,7 @@
         "step": "first_if_else"
     },
     {
-        "page": "<code>if</code> and <code>else</code>",
+        "page": "<code>if</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>else</code>",
         "program": [
             "condition = False",
             "if condition:",
@@ -1380,7 +1380,7 @@
         "step": "first_if_else_false"
     },
     {
-        "page": "<code>if</code> and <code>else</code>",
+        "page": "<code>if</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>else</code>",
         "program": [
             "sentence = 'Hello World'",
             "excited = True",
@@ -1403,7 +1403,7 @@
         "step": "if_upper_else_lower"
     },
     {
-        "page": "<code>if</code> and <code>else</code>",
+        "page": "<code>if</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>else</code>",
         "program": [
             "sentence = 'Hello World'",
             "excited = False",
@@ -1426,7 +1426,7 @@
         "step": "if_upper_else_lower_false"
     },
     {
-        "page": "<code>if</code> and <code>else</code>",
+        "page": "<code>if</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>else</code>",
         "program": [
             "sentence = 'Hello World'",
             "excited = False",
@@ -1441,11 +1441,11 @@
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "Error",
+                "answer": "\u0baa\u0bbf\u0bb4\u0bc8",
                 "choices": [
                     "Hello World",
                     "Hello World!",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -1516,7 +1516,7 @@
             "",
             "print(sentence)"
         ],
-        "page": "<code>if</code> and <code>else</code>",
+        "page": "<code>if</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>else</code>",
         "program": [
             "sentence = 'Hello there'",
             "excited = True",
@@ -1554,7 +1554,7 @@
             "",
             "print(new_sentence)"
         ],
-        "page": "<code>if</code> and <code>else</code>",
+        "page": "<code>if</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>else</code>",
         "program": [
             "sentence = 'HELLO THERE'",
             "upper = True",
@@ -1596,7 +1596,7 @@
             "",
             "print(new_sentence)"
         ],
-        "page": "<code>if</code> and <code>else</code>",
+        "page": "<code>if</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>else</code>",
         "program": [
             "sentence = 'One more exercise, and then you can relax.'",
             "upper = True",
@@ -1625,7 +1625,7 @@
         "step": "spongebob"
     },
     {
-        "page": "The Equality Operator",
+        "page": "\u0b9a\u0bae\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf",
         "program": [
             "print(1 + 2 == 3)",
             "print(4 + 5 == 6)",
@@ -1644,7 +1644,7 @@
         "step": "introducing_equality"
     },
     {
-        "page": "The Equality Operator",
+        "page": "\u0b9a\u0bae\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf",
         "program": [
             "print(1 + 2 = 3)"
         ],
@@ -1654,7 +1654,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You likely called a function with a named argument:</p>\n<pre><code>a_function(invalid=something)\n</code></pre>\n<p>where <code>invalid</code> is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.</p>",
-                    "text": "    print(1 + 2 = 3)\n          ^^^^^^^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nat line 1\n",
+                    "text": "    print(1 + 2 = 3)\n          ^^^^^^^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1662,7 +1662,7 @@
         "step": "equality_vs_assignment"
     },
     {
-        "page": "The Equality Operator",
+        "page": "\u0b9a\u0bae\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf",
         "program": [
             "name = 'kesha'",
             "new_name = ''",
@@ -1699,7 +1699,7 @@
             "",
             "print(new_name)"
         ],
-        "page": "The Equality Operator",
+        "page": "\u0b9a\u0bae\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf",
         "program": [
             "name = 'kesha'",
             "new_name = ''",
@@ -1727,7 +1727,7 @@
         "step": "if_equals_replacing_characters_exercise"
     },
     {
-        "page": "Introducing <code>elif</code>",
+        "page": "<code>elif</code> \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "dna = 'AGTAGCGTC'",
             "opposite_dna = ''",
@@ -1774,7 +1774,7 @@
             "",
             "print(opposite_dna)"
         ],
-        "page": "Introducing <code>elif</code>",
+        "page": "<code>elif</code> \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "dna = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
             "opposite_dna = ''",
@@ -1806,7 +1806,7 @@
         "step": "dna_example_with_else"
     },
     {
-        "page": "Introducing <code>elif</code>",
+        "page": "<code>elif</code> \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "dna = 'AGTAGCGTC'",
             "opposite_dna = ''",
@@ -1836,7 +1836,7 @@
         "step": "dna_example_with_elif"
     },
     {
-        "page": "Other Comparison Operators",
+        "page": "\u0baa\u0bbf\u0bb1 \u0b92\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "1 != 2"
         ],
@@ -1848,7 +1848,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -1861,7 +1861,7 @@
         "step": "try_not_equals"
     },
     {
-        "page": "Other Comparison Operators",
+        "page": "\u0baa\u0bbf\u0bb1 \u0b92\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "sentence = 'The e key on my keyboard is broken'",
             "new_sentence = ''",
@@ -1886,7 +1886,7 @@
         "get_solution": [
             "1 < 2"
         ],
-        "page": "Other Comparison Operators",
+        "page": "\u0baa\u0bbf\u0bb1 \u0b92\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "1 < 2"
         ],
@@ -1906,7 +1906,7 @@
         "get_solution": [
             "'1' < '2'"
         ],
-        "page": "Other Comparison Operators",
+        "page": "\u0baa\u0bbf\u0bb1 \u0b92\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "'1' < '2'"
         ],
@@ -1923,7 +1923,7 @@
         "step": "comparing_strings"
     },
     {
-        "page": "Other Comparison Operators",
+        "page": "\u0baa\u0bbf\u0bb1 \u0b92\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "percentage = 73",
             "",
@@ -1948,7 +1948,7 @@
                     "C",
                     "B",
                     "A",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -1974,7 +1974,7 @@
             "        first = x3",
             "print(first)"
         ],
-        "page": "Other Comparison Operators",
+        "page": "\u0baa\u0bbf\u0bb1 \u0b92\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "x1 = 1",
             "x2 = 2",
@@ -2004,7 +2004,7 @@
         "step": "min_three_exercise"
     },
     {
-        "page": "Introducing Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -2024,7 +2024,7 @@
         "step": "first_list"
     },
     {
-        "page": "Introducing Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "x = 1",
             "things = ['Hello', x, x + 3]",
@@ -2043,7 +2043,7 @@
         "step": "can_contain_anything"
     },
     {
-        "page": "Introducing Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9]",
             "",
@@ -2073,7 +2073,7 @@
             "",
             "print(total)"
         ],
-        "page": "Introducing Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "total = ''",
@@ -2107,7 +2107,7 @@
             "",
             "print(total)"
         ],
-        "page": "Introducing Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "separator = ' - '",
@@ -2141,7 +2141,7 @@
             "    double += [number * 2]",
             "print(double)"
         ],
-        "page": "Building New Lists",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
             "double = []",
@@ -2169,7 +2169,7 @@
             "        big_numbers.append(number)",
             "print(big_numbers)"
         ],
-        "page": "Building New Lists",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
             "big_numbers = []",
@@ -2199,7 +2199,7 @@
             "",
             "print(found)"
         ],
-        "page": "Using <code>break</code> to end a loop early",
+        "page": "\u0b9a\u0bc1\u0bb4\u0bb2\u0bc8 \u0bae\u0bc1\u0ba9\u0bcd\u0b95\u0bc2\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bc7 \u0bae\u0bc1\u0b9f\u0bbf\u0b95\u0bcd\u0b95 <code>break</code>\u0b90\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "things = ['This', 'is', 'a', 'list']",
             "thing_to_find = 'is'",
@@ -2223,7 +2223,7 @@
         "step": "list_contains_exercise"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -2245,7 +2245,7 @@
         "step": "introducing_subscripting"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "words[4]"
         ],
@@ -2303,7 +2303,7 @@
         "step": "index_error"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "indices = [0, 1, 2, 3]",
@@ -2324,7 +2324,7 @@
                     "This\n0\nis\n1\na\n2\nlist\n3",
                     "0\n1\n2\n3\nThis\nis\na\nlist",
                     "This\nis\na\nlist\n0\n1\n2\n3",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -2337,7 +2337,7 @@
         "step": "introducing_len_and_range"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "indices = range(4)",
@@ -2359,7 +2359,7 @@
         "step": "range_len"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "indices = range(4)",
             "",
@@ -2379,7 +2379,7 @@
                     "[0]\n[1]\n[2]\n[3]",
                     "[1]\n[2]\n[3]\n[4]",
                     "This\nis\na\nlist",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -2392,7 +2392,7 @@
         "step": "printing_the_range"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "indices[4]"
         ],
@@ -2400,14 +2400,14 @@
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "Error",
+                "answer": "\u0baa\u0bbf\u0bb4\u0bc8",
                 "choices": [
                     "0",
                     "1",
                     "2",
                     "3",
                     "4",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -2461,7 +2461,7 @@
         "step": "indices_out_of_bounds"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "range(4)"
         ],
@@ -2478,7 +2478,7 @@
         "step": "range_almost_the_same_as_list"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "list(range(4))"
         ],
@@ -2495,7 +2495,7 @@
                     "range(0, 1, 2, 3)",
                     "(0, 1, 2, 3)",
                     "[0, 1, 2, 3]",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -2508,7 +2508,7 @@
         "step": "range_versus_list"
     },
     {
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "print(len(words))"
@@ -2525,7 +2525,7 @@
                     "3",
                     "4",
                     "5",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -2541,7 +2541,7 @@
         "get_solution": [
             "print(words[len(words) - 1])"
         ],
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "words = ['Python']",
             "print(words[len(words) - 1])"
@@ -2564,7 +2564,7 @@
             "    print(index)",
             "    print(words[index])"
         ],
-        "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
+        "page": "\u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0b89\u0bb1\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd, <code>range()</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code>",
         "program": [
             "words = ['Python']",
             "for index in range(len(words)):",
@@ -2584,7 +2584,7 @@
         "step": "print_indices_and_words"
     },
     {
-        "page": "Exercises with <code>range()</code> and <code>len()</code>",
+        "page": "<code>range()</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code> \u0b89\u0b9f\u0ba9\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -2593,7 +2593,7 @@
             "        print(i)"
         ],
         "response": {
-            "message": "<p>You're almost there! However, this prints all the indices,\nnot just the first one.</p>",
+            "message": "<p>\u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b95\u0bbf\u0b9f\u0bcd\u0b9f\u0ba4\u0bcd\u0ba4\u0b9f\u0bcd\u0b9f \u0b85\u0b99\u0bcd\u0b95\u0bc1 \u0bb5\u0ba8\u0bcd\u0ba4\u0bc1\u0bb5\u0bbf\u0b9f\u0bcd\u0b9f\u0bc0\u0bb0\u0bcd\u0b95\u0bb3\u0bcd! \u0b87\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bbf\u0ba9\u0bc1\u0bae\u0bcd, \u0b87\u0ba4\u0bc1 \u0bae\u0bc1\u0ba4\u0bb2\u0bcd \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1 \u0bae\u0b9f\u0bcd\u0b9f\u0bc1\u0bae\u0bb2\u0bcd\u0bb2, \u0b8e\u0bb2\u0bcd\u0bb2\u0bbe \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b85\u0b9a\u0bcd\u0b9a\u0bbf\u0b9f\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1.</p>",
             "passed": false,
             "result": [
                 {
@@ -2605,7 +2605,7 @@
         "step": "index_exercise"
     },
     {
-        "page": "Exercises with <code>range()</code> and <code>len()</code>",
+        "page": "<code>range()</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code> \u0b89\u0b9f\u0ba9\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -2616,7 +2616,7 @@
             "print(answer)"
         ],
         "response": {
-            "message": "<p>You're almost there! However, this prints the <em>last</em> index,\nnot the first one.</p>",
+            "message": "<p>\u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b95\u0bbf\u0b9f\u0bcd\u0b9f\u0ba4\u0bcd\u0ba4\u0b9f\u0bcd\u0b9f \u0b85\u0b99\u0bcd\u0b95\u0bc1 \u0bb5\u0ba8\u0bcd\u0ba4\u0bc1\u0bb5\u0bbf\u0b9f\u0bcd\u0b9f\u0bc0\u0bb0\u0bcd\u0b95\u0bb3\u0bcd! \u0b87\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bbf\u0ba9\u0bc1\u0bae\u0bcd, \u0b87\u0ba4\u0bc1 <em>\u0b95\u0b9f\u0bc8\u0b9a\u0bbf</em> \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bcd\u0b9f\u0bc8 \u0b85\u0b9a\u0bcd\u0b9a\u0bbf\u0b9f\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1, \u0bae\u0bc1\u0ba4\u0bb2\u0bcd \u0b92\u0ba9\u0bcd\u0bb1\u0bc1 \u0b85\u0bb2\u0bcd\u0bb2.</p>",
             "passed": false,
             "result": [
                 {
@@ -2634,7 +2634,7 @@
             "        print(i)",
             "        break"
         ],
-        "page": "Exercises with <code>range()</code> and <code>len()</code>",
+        "page": "<code>range()</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code> \u0b89\u0b9f\u0ba9\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "things = ['on', 'the', 'way', 'to', 'the', 'store']",
             "to_find = 'the'",
@@ -2662,7 +2662,7 @@
             "    char2 = string2[i]",
             "    print(char1 + ' ' + char2)"
         ],
-        "page": "Exercises with <code>range()</code> and <code>len()</code>",
+        "page": "<code>range()</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code> \u0b89\u0b9f\u0ba9\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "string1 = 'Hello'",
             "string2 = 'World'",
@@ -2706,7 +2706,7 @@
             "",
             "    print(char1 + ' ' + char2)"
         ],
-        "page": "Exercises with <code>range()</code> and <code>len()</code>",
+        "page": "<code>range()</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>len()</code> \u0b89\u0b9f\u0ba9\u0bcd \u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf\u0b95\u0bb3\u0bcd",
         "program": [
             "string1 = 'Goodbye'",
             "string2 = 'World'",
@@ -2744,7 +2744,7 @@
         "step": "zip_longest_exercise"
     },
     {
-        "page": "Terminology: Calling functions and methods",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "print(len)",
             "print(print)"
@@ -2762,7 +2762,7 @@
         "step": "print_functions"
     },
     {
-        "page": "Terminology: Calling functions and methods",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "print(callable(len))"
         ],
@@ -2779,7 +2779,7 @@
         "step": "introducing_callable"
     },
     {
-        "page": "Terminology: Calling functions and methods",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "f = 'a string'",
             "print(callable(f))",
@@ -2846,7 +2846,7 @@
         "step": "not_callable"
     },
     {
-        "page": "Terminology: Calling functions and methods",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "things = [1, 2, 3]",
             "length = len(things)",
@@ -2866,7 +2866,7 @@
         "step": "print_returns_none"
     },
     {
-        "page": "Terminology: Calling functions and methods",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "things = print([1, 2, 3])",
             "length = len(things)"
@@ -2932,7 +2932,7 @@
         "step": "len_of_none"
     },
     {
-        "page": "Terminology: Calling functions and methods",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "word = 'Hello'",
             "print(word.upper)",
@@ -2951,7 +2951,7 @@
         "step": "methods_of_str"
     },
     {
-        "page": "Terminology: Calling functions and methods",
+        "page": "\u0b9a\u0bca\u0bb1\u0bcd\u0b95\u0bb3\u0b9e\u0bcd\u0b9a\u0bbf\u0baf\u0bae\u0bcd: \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bc8 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0ba4\u0bc1",
         "program": [
             "word = 'Hello'",
             "word.append('!')"
@@ -3011,7 +3011,7 @@
         "step": "no_append_for_str"
     },
     {
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "nums = [1, 2, 3]",
             "new_nums = nums + [4, 5]",
@@ -3033,7 +3033,7 @@
         "step": "append_vs_concatenate"
     },
     {
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "nums = [1, 2, 3]",
             "nums[1] = 9",
@@ -3051,7 +3051,7 @@
                     "[9, 2, 3]",
                     "[1, 9, 3]",
                     "[1, 2, 9]",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3064,7 +3064,7 @@
         "step": "subscript_assignment_predict"
     },
     {
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "[7, 8, 9, 8].index(8)"
         ],
@@ -3080,7 +3080,7 @@
                     "1",
                     "2",
                     "3",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3093,7 +3093,7 @@
         "step": "index_predict_exercise"
     },
     {
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "nums = [1, 2, 3]",
             "print(nums.pop(1))",
@@ -3111,7 +3111,7 @@
                     "2\n[2, 3]",
                     "1\n[2, 1, 3]",
                     "2\n[2, 1, 3]",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3124,7 +3124,7 @@
         "step": "pop_predict_exercise"
     },
     {
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "nums = [1, 2, 3]",
             "nums.remove(1)",
@@ -3142,7 +3142,7 @@
                     "1",
                     "2",
                     "3",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3160,7 +3160,7 @@
             "x.append(x.pop(0))",
             "print(x)"
         ],
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "x = ['a', 'b', 'c']",
             "x.append(x.pop(0))",
@@ -3184,7 +3184,7 @@
             "x[len(x) - 1] = x[0]",
             "print(x)"
         ],
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "x = ['a', 'b', 'c']",
             "x[len(x) - 1] = x[0]",
@@ -3208,7 +3208,7 @@
             "y = x + [x[0]]",
             "print(y)"
         ],
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "x = ['a', 'b', 'c']",
             "y = x + [x[0]]",
@@ -3232,7 +3232,7 @@
             "x.pop(x.index(0))",
             "print(x)"
         ],
-        "page": "Functions and Methods for Lists",
+        "page": "\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "x = [1, 2, 0, 3]",
             "x.pop(x.index(0))",
@@ -3251,7 +3251,7 @@
         "step": "remove_exercise"
     },
     {
-        "page": "More List Functions and Methods",
+        "page": "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "sorted([2, 9, 1, 8, 5, 6])"
         ],
@@ -3265,7 +3265,7 @@
                     "[1, 8, 6, 2, 5, 9]",
                     "[1, 2, 5, 6, 8, 9]",
                     "[2, 9, 1, 8, 5, 6]",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3278,7 +3278,7 @@
         "step": "sorted_predict_exercise"
     },
     {
-        "page": "More List Functions and Methods",
+        "page": "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "nums = [2, 9, 1, 8, 5, 64]",
             "print(7 in nums)",
@@ -3294,7 +3294,7 @@
                     "False\nTrue",
                     "True\nTrue",
                     "False\nFalse",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3307,7 +3307,7 @@
         "step": "in_predict_exercise"
     },
     {
-        "page": "More List Functions and Methods",
+        "page": "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "sum([5, 3, 4])"
         ],
@@ -3320,7 +3320,7 @@
                     "10",
                     "12",
                     "7",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3333,7 +3333,7 @@
         "step": "sum_predict_exercise"
     },
     {
-        "page": "More List Functions and Methods",
+        "page": "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "[1, 2, 3, 2, 7, 2, 5].count(2)"
         ],
@@ -3347,7 +3347,7 @@
                     "1",
                     "2",
                     "3",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3365,7 +3365,7 @@
             "y = x.count(1) > 0",
             "print(y)"
         ],
-        "page": "More List Functions and Methods",
+        "page": "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "x = [1, 2, 0, 3]",
             "y = x.count(1) > 0",
@@ -3389,7 +3389,7 @@
             "y = sum(x) / len(x)",
             "print(y)"
         ],
-        "page": "More List Functions and Methods",
+        "page": "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "x = [15, 12, -6, 3]",
             "y = sum(x) / len(x)",
@@ -3413,7 +3413,7 @@
             "y = sum(range(x + 1))",
             "print(y)"
         ],
-        "page": "More List Functions and Methods",
+        "page": "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "x = 100",
             "y = sum(range(x + 1))",
@@ -3437,7 +3437,7 @@
             "y = sorted(x)[1]",
             "print(y)"
         ],
-        "page": "More List Functions and Methods",
+        "page": "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "x = [12, -6, 2, -1, 3]",
             "y = sorted(x)[1]",
@@ -3456,7 +3456,7 @@
         "step": "second_smallest_in_list_exercise"
     },
     {
-        "page": "String Methods and Immutability",
+        "page": "\u0b9a\u0bb0\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bbe\u0bb1\u0bbe\u0ba4 \u0ba4\u0ba9\u0bcd\u0bae\u0bc8",
         "program": [
             "print('the' in 'feed the dog and the cat')"
         ],
@@ -3473,7 +3473,7 @@
         "step": "string_in_step"
     },
     {
-        "page": "String Methods and Immutability",
+        "page": "\u0b9a\u0bb0\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bbe\u0bb1\u0bbe\u0ba4 \u0ba4\u0ba9\u0bcd\u0bae\u0bc8",
         "program": [
             "string = 'feed the dog and the cat'",
             "print(string.count('the'))",
@@ -3492,7 +3492,7 @@
         "step": "string_count_index"
     },
     {
-        "page": "String Methods and Immutability",
+        "page": "\u0b9a\u0bb0\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bbe\u0bb1\u0bbe\u0ba4 \u0ba4\u0ba9\u0bcd\u0bae\u0bc8",
         "program": [
             "'Python'.append(' is cool!')"
         ],
@@ -3544,7 +3544,7 @@
         "step": "mutation_string_append"
     },
     {
-        "page": "String Methods and Immutability",
+        "page": "\u0b9a\u0bb0\u0bae\u0bcd \u0bae\u0bc1\u0bb1\u0bc8\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0bae\u0bbe\u0bb1\u0bbe\u0ba4 \u0ba4\u0ba9\u0bcd\u0bae\u0bc8",
         "program": [
             "sentence = \"Python rocks!\"",
             "new_sentence = sentence.upper()",
@@ -3567,7 +3567,7 @@
         "get_solution": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
-        "page": "How to Find Information with Google, and more",
+        "page": "\u0b95\u0bc2\u0b95\u0bc1\u0bb3\u0bcd \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba4\u0b95\u0bb5\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b8e\u0bb5\u0bcd\u0bb5\u0bbe\u0bb1\u0bc1 \u0b95\u0ba3\u0bcd\u0b9f\u0bb1\u0bbf\u0bb5\u0ba4\u0bc1 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0baa\u0bb2",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
@@ -3589,7 +3589,7 @@
             "nums.insert(2, 9)",
             "print(nums)"
         ],
-        "page": "How to Find Information with Google, and more",
+        "page": "\u0b95\u0bc2\u0b95\u0bc1\u0bb3\u0bcd \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba4\u0b95\u0bb5\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b8e\u0bb5\u0bcd\u0bb5\u0bbe\u0bb1\u0bc1 \u0b95\u0ba3\u0bcd\u0b9f\u0bb1\u0bbf\u0bb5\u0ba4\u0bc1 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0baa\u0bb2",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
             "nums.insert(2, 9)",
@@ -3608,7 +3608,7 @@
         "step": "list_insert"
     },
     {
-        "page": "How to Find Information with Google, and more",
+        "page": "\u0b95\u0bc2\u0b95\u0bc1\u0bb3\u0bcd \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba4\u0b95\u0bb5\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b8e\u0bb5\u0bcd\u0bb5\u0bbe\u0bb1\u0bc1 \u0b95\u0ba3\u0bcd\u0b9f\u0bb1\u0bbf\u0bb5\u0ba4\u0bc1 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0baa\u0bb2",
         "program": [
             "dir([])"
         ],
@@ -3625,7 +3625,7 @@
         "step": "dir_list"
     },
     {
-        "page": "Understanding Programs With Python Tutor",
+        "page": "\u0baa\u0bc8\u0ba4\u0bbe\u0ba9\u0bcd \u0b86\u0b9a\u0bbf\u0bb0\u0bbf\u0baf\u0bb0\u0bcd \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba8\u0bbf\u0bb0\u0bb2\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc1\u0bb0\u0bbf\u0ba8\u0bcd\u0ba4\u0bc1\u0b95\u0bca\u0bb3\u0bcd\u0bb5\u0ba4\u0bc1",
         "program": [
             "all_numbers = [2, 4, 8, 1, 9, 7]",
             "",
@@ -3654,7 +3654,7 @@
         "step": "run_with_python_tutor"
     },
     {
-        "page": "<code>==</code> vs <code>is</code>, and Having Multiple Names for One Value",
+        "page": "<code>==</code> \u0b8e\u0ba4\u0bbf\u0bb0\u0bbe\u0b95 <code>is</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b92\u0bb0\u0bc1 \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0baa\u0bb2 \u0baa\u0bc6\u0baf\u0bb0\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "list1 = [1, 2, 3]",
             "list2 = [1, 2, 3]",
@@ -3683,7 +3683,7 @@
         "step": "two_separate_lists"
     },
     {
-        "page": "<code>==</code> vs <code>is</code>, and Having Multiple Names for One Value",
+        "page": "<code>==</code> \u0b8e\u0ba4\u0bbf\u0bb0\u0bbe\u0b95 <code>is</code>, \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b92\u0bb0\u0bc1 \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0baa\u0bb2 \u0baa\u0bc6\u0baf\u0bb0\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "list1 = [1, 2, 3]",
             "list2 = list1",
@@ -3712,7 +3712,7 @@
         "step": "same_list"
     },
     {
-        "page": "Modifying While Iterating",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for i in range(len(numbers)):",
@@ -3801,7 +3801,7 @@
         "step": "run_broken_with_python_tutor"
     },
     {
-        "page": "Modifying While Iterating",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for number in numbers:",
@@ -3822,7 +3822,7 @@
         "step": "remove_instead_of_pop"
     },
     {
-        "page": "Modifying While Iterating",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for number in numbers.copy():",
@@ -3843,7 +3843,7 @@
         "step": "make_copy"
     },
     {
-        "page": "Modifying While Iterating",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "big_numbers = numbers.copy()",
@@ -3866,7 +3866,7 @@
         "step": "make_copy2"
     },
     {
-        "page": "Modifying While Iterating",
+        "page": "\u0bae\u0bb1\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd \u0baa\u0bcb\u0ba4\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "big_numbers = []",
@@ -3889,7 +3889,7 @@
         "step": "make_new_list"
     },
     {
-        "page": "Single and Double Quotes in Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b92\u0bb1\u0bcd\u0bb1\u0bc8 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b87\u0bb0\u0b9f\u0bcd\u0b9f\u0bc8 \u0bae\u0bc7\u0bb1\u0bcd\u0b95\u0bcb\u0bb3\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "print('Alice's Diner')"
         ],
@@ -3899,7 +3899,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>Currently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.</p>\n<p>Unless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues</p>",
-                    "text": "    print('Alice's Diner')\n          ^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\nat line 1\n",
+                    "text": "    print('Alice's Diner')\n          ^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -3907,7 +3907,7 @@
         "step": "single_quotes_apostrophe"
     },
     {
-        "page": "Single and Double Quotes in Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b92\u0bb1\u0bcd\u0bb1\u0bc8 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b87\u0bb0\u0b9f\u0bcd\u0b9f\u0bc8 \u0bae\u0bc7\u0bb1\u0bcd\u0b95\u0bcb\u0bb3\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "print(\"Alice's Diner\")"
         ],
@@ -3924,7 +3924,7 @@
         "step": "double_quotes"
     },
     {
-        "page": "Single and Double Quotes in Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b92\u0bb1\u0bcd\u0bb1\u0bc8 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b87\u0bb0\u0b9f\u0bcd\u0b9f\u0bc8 \u0bae\u0bc7\u0bb1\u0bcd\u0b95\u0bcb\u0bb3\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "'Alice' == \"Alice\""
         ],
@@ -3936,7 +3936,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -3952,7 +3952,7 @@
         "get_solution": [
             "print(\"Special cases aren't special enough to break the rules.\")"
         ],
-        "page": "Single and Double Quotes in Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b92\u0bb1\u0bcd\u0bb1\u0bc8 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b87\u0bb0\u0b9f\u0bcd\u0b9f\u0bc8 \u0bae\u0bc7\u0bb1\u0bcd\u0b95\u0bcb\u0bb3\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "print(\"Special cases aren't special enough to break the rules.\")"
         ],
@@ -3972,7 +3972,7 @@
         "get_solution": [
             "print('\"Talk is cheap. Show me the code.\" - Linus Torvalds')"
         ],
-        "page": "Single and Double Quotes in Strings",
+        "page": "\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0b92\u0bb1\u0bcd\u0bb1\u0bc8 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b87\u0bb0\u0b9f\u0bcd\u0b9f\u0bc8 \u0bae\u0bc7\u0bb1\u0bcd\u0b95\u0bcb\u0bb3\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "print('\"Talk is cheap. Show me the code.\" - Linus Torvalds')"
         ],
@@ -3989,7 +3989,7 @@
         "step": "single_quote_exercise"
     },
     {
-        "page": "f-strings",
+        "page": "f-\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "name = \"Alice\"",
             "friend = 'Bob'",
@@ -4011,7 +4011,7 @@
                     "'Alice' went to 'lunch' with 'Bob'.",
                     "\"Alice went to lunch with Bob.\"",
                     "Alice went to lunch with Bob.",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -4024,7 +4024,7 @@
         "step": "introduce_f_strings"
     },
     {
-        "page": "f-strings",
+        "page": "f-\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "name = \"Alice\"",
             "age = 20",
@@ -4034,13 +4034,13 @@
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "Error",
+                "answer": "\u0baa\u0bbf\u0bb4\u0bc8",
                 "choices": [
                     "\"Hello \" + name + \". You are \" + age + \" years old.\"",
                     "Hello name. You are age years old.",
                     "Hello Alice. You are 20 years old.",
                     "Hello 'Alice'. You are 20 years old.",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -4115,7 +4115,7 @@
             "age = 20",
             "print(f'Hello {name}. You are {age} years old.')"
         ],
-        "page": "f-strings",
+        "page": "f-\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "name = \"Alice\"",
             "age = 20",
@@ -4134,7 +4134,7 @@
         "step": "basic_f_string_exercise"
     },
     {
-        "page": "f-strings",
+        "page": "f-\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "f\"2 * 3 + 4 is equal to {2 * 3 + 4}\""
         ],
@@ -4154,9 +4154,9 @@
         "get_solution": [
             "print(f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\")"
         ],
-        "page": "f-strings",
+        "page": "f-\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
-            "people = ['Alice', 'Bob', 'Charlie']",
+            "people = ['eODoUwNzS', 'ofHBEzZxs', 'zwTrQA', 'LDaOKmpHU', 'HCMLTt', 'NbRmEjaoyD']",
             "print(f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\")"
         ],
         "response": {
@@ -4164,7 +4164,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "There are 3 people waiting, the first one's name is Alice.\n",
+                    "text": "There are 6 people waiting, the first one's name is eODoUwNzS.\n",
                     "type": "stdout"
                 }
             ]
@@ -4172,7 +4172,7 @@
         "step": "fix_broken_program"
     },
     {
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "for letter in \"ABC\":",
             "    print(letter)",
@@ -4190,7 +4190,7 @@
                     "A\nA 0\nA 1\nA 2\nA 3\n---\nB\nB 0\nB 1\nB 2\nB 3\n---\nC\nC 0\nC 1\nC 2\nC 3\n---",
                     "A 1\nA 2\nA 3\nA 4\n---\nB 1\nB 2\nB 3\nB 4\n---\nC 1\nC 2\nC 3\nC 4\n---",
                     "A\nB\nC\n---\nA 0\nB 0\nC 0\n---\nA 1\nB 1\nC 1\n---\nA 2\nB 2\nC 2\n---\nA 3\nB 3\nC 3",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -4203,12 +4203,12 @@
         "step": "first_nested_loop"
     },
     {
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "print(1 + \"x\")"
         ],
         "response": {
-            "message": "<p>You can't add together strings and numbers. Use an f-string.</p>",
+            "message": "<p>\u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b8e\u0ba3\u0bcd\u0b95\u0bb3\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b92\u0ba9\u0bcd\u0bb1\u0bbe\u0b95\u0b9a\u0bcd \u0b9a\u0bc7\u0bb0\u0bcd\u0b95\u0bcd\u0b95 \u0bae\u0bc1\u0b9f\u0bbf\u0baf\u0bbe\u0ba4\u0bc1. \u0b92\u0bb0\u0bc1 f-\u0b9a\u0bb0\u0bae\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bb5\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": [
                 {
@@ -4255,7 +4255,7 @@
         "step": "times_table_exercise"
     },
     {
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "for left in range(12):",
             "    for right in range(12):",
@@ -4265,7 +4265,7 @@
             "    print('---')"
         ],
         "response": {
-            "message": "<p>You added 1 to your outer loop variable at the wrong place!\nWhere should you do that instead to fix it?</p>",
+            "message": "<p>\u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0bb5\u0bc6\u0bb3\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0bb1 \u0b9a\u0bc1\u0bb4\u0bb1\u0bcd\u0b9a\u0bbf \u0bae\u0bbe\u0bb1\u0bbf\u0baf\u0bbf\u0bb2\u0bcd 1\u0b90 \u0ba4\u0bb5\u0bb1\u0bbe\u0ba9 \u0b87\u0b9f\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0b9a\u0bc7\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc1\u0bb3\u0bcd\u0bb3\u0bc0\u0bb0\u0bcd\u0b95\u0bb3\u0bcd!\n\u0b85\u0ba4\u0bc8\u0b9a\u0bcd \u0b9a\u0bb0\u0bbf\u0b9a\u0bc6\u0baf\u0bcd\u0bb5\u0ba4\u0bb1\u0bcd\u0b95\u0bc1\u0baa\u0bcd \u0baa\u0ba4\u0bbf\u0bb2\u0bbe\u0b95 \u0b8e\u0b99\u0bcd\u0b95\u0bc7 \u0b9a\u0bc6\u0baf\u0bcd\u0baf \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd?</p>",
             "passed": false,
             "result": [
                 {
@@ -4281,7 +4281,7 @@
         "step": "times_table_exercise"
     },
     {
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "for left in range(12):",
             "    left += 1",
@@ -4300,7 +4300,7 @@
             "    print('---')"
         ],
         "response": {
-            "message": "<p>Your solution is too long. You only need a few lines of code for this problem.\nUse a nested loop so that you don't need to repeat yourself.\nThe computer will do the repetition for you!</p>",
+            "message": "<p>\u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0ba4\u0bc0\u0bb0\u0bcd\u0bb5\u0bc1 \u0bae\u0bbf\u0b95 \u0ba8\u0bc0\u0ba3\u0bcd\u0b9f\u0ba4\u0bc1. \u0b87\u0ba8\u0bcd\u0ba4\u0b9a\u0bcd \u0b9a\u0bbf\u0b95\u0bcd\u0b95\u0bb2\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b9a\u0bbf\u0bb2 \u0bb5\u0bb0\u0bbf\u0b95\u0bb3\u0bcd \u0b95\u0bc1\u0bb1\u0bbf\u0baf\u0bc0\u0b9f\u0bc1 \u0bae\u0b9f\u0bcd\u0b9f\u0bc1\u0bae\u0bc7 \u0ba4\u0bc7\u0bb5\u0bc8.\n\u0b92\u0bb0\u0bc1 \u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8 \u0b9a\u0bc1\u0bb4\u0bb2\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bb5\u0bc1\u0bae\u0bcd, \u0b87\u0ba4\u0ba9\u0bbe\u0bb2\u0bcd \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bbf\u0baf\u0ba4\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8.\n\u0b95\u0ba3\u0bbf\u0ba9\u0bbf \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0b95 \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0bae\u0bcd!</p>",
             "passed": false,
             "result": [
                 {
@@ -4316,7 +4316,7 @@
         "step": "times_table_exercise"
     },
     {
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "for left in range(12):",
             "    left += 1",
@@ -4327,7 +4327,7 @@
             "    print('---')"
         ],
         "response": {
-            "message": "<p>That's almost correct! Make sure to display the right character <code>x</code> in your table.\nFor example, your solution should display <code>3 x 4 = 12</code> and not <code>3 * 4 = 12</code>.</p>",
+            "message": "<p>\u0b85\u0ba4\u0bc1 \u0b95\u0bbf\u0b9f\u0bcd\u0b9f\u0ba4\u0bcd\u0ba4\u0b9f\u0bcd\u0b9f \u0b9a\u0bb0\u0bbf\u0baf\u0bbe\u0ba9\u0ba4\u0bc1! \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b85\u0b9f\u0bcd\u0b9f\u0bb5\u0ba3\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b9a\u0bb0\u0bbf\u0baf\u0bbe\u0ba9 \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1 <code>x</code> \u0b95\u0bbe\u0b9f\u0bcd\u0b9f\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0bb5\u0ba4\u0bc8 \u0b89\u0bb1\u0bc1\u0ba4\u0bbf\u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bb5\u0bc1\u0bae\u0bcd.\n\u0b8e\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0b9f\u0bcd\u0b9f\u0bbe\u0b95, \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0ba4\u0bc0\u0bb0\u0bcd\u0bb5\u0bc1 <code>3 x 4 = 12</code> \u0b95\u0bbe\u0b9f\u0bcd\u0b9f\u0baa\u0bcd\u0baa\u0b9f \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>3 * 4 = 12</code> \u0b85\u0bb2\u0bcd\u0bb2.</p>",
             "passed": false,
             "result": [
                 {
@@ -4343,18 +4343,18 @@
         "step": "times_table_exercise"
     },
     {
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "pass",
             "3 x 4"
         ],
         "response": {
-            "message": "<p>To multiply numbers, use <code>*</code></p>",
+            "message": "<p>\u0b8e\u0ba3\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb0\u0bc1\u0b95\u0bcd\u0b95, <code>*</code> \u0b90\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bb5\u0bc1\u0bae\u0bcd</p>",
             "passed": false,
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>Currently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.</p>\n<p>Unless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/aroberge/friendly/issues</p>",
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 2\n",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4370,7 +4370,7 @@
             "        print(f'{left} x {right} = {left * right}')",
             "    print('---')"
         ],
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "for left in range(12):",
             "    left += 1",
@@ -4402,9 +4402,9 @@
             "        if player1 != player2:",
             "            print(f'{player1} vs {player2}')"
         ],
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
-            "players = ['Alice', 'Bob', 'Charlie']",
+            "players = ['OUumHyG', 'ocUyWBh', 'DbNQe', 'XjItgGJ', 'iOuKYyzZt', 'iySpdUX', 'EZkLNo']",
             "for player1 in players:",
             "    for player2 in players:",
             "        if player1 != player2:",
@@ -4415,7 +4415,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n",
+                    "text": "OUumHyG vs ocUyWBh\nOUumHyG vs DbNQe\nOUumHyG vs XjItgGJ\nOUumHyG vs iOuKYyzZt\nOUumHyG vs iySpdUX\nOUumHyG vs EZkLNo\nocUyWBh vs OUumHyG\nocUyWBh vs DbNQe\nocUyWBh vs XjItgGJ\nocUyWBh vs iOuKYyzZt\nocUyWBh vs iySpdUX\nocUyWBh vs EZkLNo\nDbNQe vs OUumHyG\nDbNQe vs ocUyWBh\nDbNQe vs XjItgGJ\nDbNQe vs iOuKYyzZt\nDbNQe vs iySpdUX\nDbNQe vs EZkLNo\nXjItgGJ vs OUumHyG\nXjItgGJ vs ocUyWBh\nXjItgGJ vs DbNQe\nXjItgGJ vs iOuKYyzZt\nXjItgGJ vs iySpdUX\nXjItgGJ vs EZkLNo\niOuKYyzZt vs OUumHyG\niOuKYyzZt vs ocUyWBh\niOuKYyzZt vs DbNQe\niOuKYyzZt vs XjItgGJ\niOuKYyzZt vs iySpdUX\niOuKYyzZt vs EZkLNo\niySpdUX vs OUumHyG\niySpdUX vs ocUyWBh\niySpdUX vs DbNQe\niySpdUX vs XjItgGJ\niySpdUX vs iOuKYyzZt\niySpdUX vs EZkLNo\nEZkLNo vs OUumHyG\nEZkLNo vs ocUyWBh\nEZkLNo vs DbNQe\nEZkLNo vs XjItgGJ\nEZkLNo vs iOuKYyzZt\nEZkLNo vs iySpdUX\n",
                     "type": "stdout"
                 }
             ]
@@ -4430,7 +4430,7 @@
             "            for c4 in letters:",
             "                print(c1 + c2 + c3 + c4)"
         ],
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "letters = 'AB'",
             "for c1 in letters:",
@@ -4460,7 +4460,7 @@
             "        line += '+'",
             "    print(line)"
         ],
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "size = 3",
             "for i in range(size):",
@@ -4489,9 +4489,9 @@
             "        if i < j:",
             "            print(f'{players[i]} vs {players[j]}')"
         ],
-        "page": "Introducing Nested Loops",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bc1\u0bb4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
-            "players = ['Alice', 'Bob', 'Charlie']",
+            "players = ['JwsUZyHWXS', 'UepKEbOB', 'uTRiPVo', 'VWkbqMa', 'BwdsYFWHh', 'XmgDJ', 'WRoYNxvLF']",
             "for i in range(len(players)):",
             "    for j in range(len(players)):",
             "        if i < j:",
@@ -4502,7 +4502,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n",
+                    "text": "JwsUZyHWXS vs UepKEbOB\nJwsUZyHWXS vs uTRiPVo\nJwsUZyHWXS vs VWkbqMa\nJwsUZyHWXS vs BwdsYFWHh\nJwsUZyHWXS vs XmgDJ\nJwsUZyHWXS vs WRoYNxvLF\nUepKEbOB vs uTRiPVo\nUepKEbOB vs VWkbqMa\nUepKEbOB vs BwdsYFWHh\nUepKEbOB vs XmgDJ\nUepKEbOB vs WRoYNxvLF\nuTRiPVo vs VWkbqMa\nuTRiPVo vs BwdsYFWHh\nuTRiPVo vs XmgDJ\nuTRiPVo vs WRoYNxvLF\nVWkbqMa vs BwdsYFWHh\nVWkbqMa vs XmgDJ\nVWkbqMa vs WRoYNxvLF\nBwdsYFWHh vs XmgDJ\nBwdsYFWHh vs WRoYNxvLF\nXmgDJ vs WRoYNxvLF\n",
                     "type": "stdout"
                 }
             ]
@@ -4510,7 +4510,7 @@
         "step": "player_vs_player_bonus"
     },
     {
-        "page": "Understanding Programs with <code>birdseye</code>",
+        "page": "<code>birdseye</code> \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba4\u0bbf\u0b9f\u0bcd\u0b9f\u0b99\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc1\u0bb0\u0bbf\u0ba8\u0bcd\u0ba4\u0bc1\u0b95\u0bca\u0bb3\u0bcd\u0bb5\u0ba4\u0bc1",
         "program": [
             "a = 2",
             "b = 3",
@@ -4531,7 +4531,7 @@
         "step": "first_birdseye_example"
     },
     {
-        "page": "Understanding Programs with <code>birdseye</code>",
+        "page": "<code>birdseye</code> \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba4\u0bbf\u0b9f\u0bcd\u0b9f\u0b99\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0bc1\u0bb0\u0bbf\u0ba8\u0bcd\u0ba4\u0bc1\u0b95\u0bca\u0bb3\u0bcd\u0bb5\u0ba4\u0bc1",
         "program": [
             "word = 'Amazing'",
             "vowels = []",
@@ -4561,7 +4561,7 @@
             "string = strings[1]",
             "print(string[0])"
         ],
-        "page": "Introducing Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0bcb\u0bae\u0bcd",
         "program": [
             "strings = ['abc', 'def', 'ghi']",
             "string = strings[1]",
@@ -4580,7 +4580,7 @@
         "step": "string_list_exercise"
     },
     {
-        "page": "Introducing Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0bcb\u0bae\u0bcd",
         "program": [
             "strings = [\"abc\", \"def\", \"ghi\"]",
             "print(strings[1][0])"
@@ -4601,7 +4601,7 @@
         "get_solution": [
             "print(strings[-2][-1])"
         ],
-        "page": "Introducing Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0bcb\u0bae\u0bcd",
         "program": [
             "strings = ['abc', 'de', 'fghi', 'jklmn', 'o']",
             "print(strings[-2][-1])"
@@ -4619,7 +4619,7 @@
         "step": "double_subscripting_exercise"
     },
     {
-        "page": "Introducing Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0bcb\u0bae\u0bcd",
         "program": [
             "strings = [['hello', 'there'], ['how', 'are', 'you']]",
             "print(strings[1][0])"
@@ -4641,7 +4641,7 @@
                     "t",
                     "e",
                     "a",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -4657,7 +4657,7 @@
         "get_solution": [
             "print(strings[1][2][0])"
         ],
-        "page": "Introducing Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0bcb\u0bae\u0bcd",
         "program": [
             "strings = [['hello', 'there'], ['how', 'are', 'you']]",
             "print(strings[1][2][0])"
@@ -4675,7 +4675,7 @@
         "step": "triple_subscripting"
     },
     {
-        "page": "Looping Over Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bc0\u0ba4\u0bc1 \u0b9a\u0bc1\u0bb4\u0bb2",
         "program": [
             "numbers = [[1, 2, 3], [4, 5], [6], []]",
             "for sublist in numbers:",
@@ -4694,7 +4694,7 @@
                     "1\n2\n3\n---\n4\n5\n---\n6\n---",
                     "1 2 3\n---\n4 5\n---\n6\n---\n---",
                     "1 2 3\n---\n4 5\n---\n6\n---",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -4707,7 +4707,7 @@
         "step": "nested_list_nested_loop_example"
     },
     {
-        "page": "Looping Over Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bc0\u0ba4\u0bc1 \u0b9a\u0bc1\u0bb4\u0bb2",
         "program": [
             "numbers = [[1, 2, 3], [4, 5], [6], []]",
             "for sublist in numbers:",
@@ -4734,7 +4734,7 @@
             "        if word in string:",
             "            print(string)"
         ],
-        "page": "Looping Over Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bc0\u0ba4\u0bc1 \u0b9a\u0bc1\u0bb4\u0bb2",
         "program": [
             "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
             "word = 'hello'",
@@ -4764,7 +4764,7 @@
             "            present = True",
             "    print(present)"
         ],
-        "page": "Looping Over Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bc0\u0ba4\u0bc1 \u0b9a\u0bc1\u0bb4\u0bb2",
         "program": [
             "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
             "word = 'goodbye'",
@@ -4796,7 +4796,7 @@
             "            present = True",
             "print(present)"
         ],
-        "page": "Looping Over Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bc0\u0ba4\u0bc1 \u0b9a\u0bc1\u0bb4\u0bb2",
         "program": [
             "strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]",
             "word = 'are'",
@@ -4827,7 +4827,7 @@
             "        line += string[i]",
             "    print(line)"
         ],
-        "page": "Looping Over Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bc0\u0ba4\u0bc1 \u0b9a\u0bc1\u0bb4\u0bb2",
         "program": [
             "strings = ['abc', 'def', 'ghi']",
             "for i in range(len(strings[0])):",
@@ -4864,7 +4864,7 @@
             "            line += string[i]",
             "    print(line)"
         ],
-        "page": "Looping Over Nested Lists",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bc0\u0ba4\u0bc1 \u0b9a\u0bc1\u0bb4\u0bb2",
         "program": [
             "strings = ['abcqwe', 'def', 'ghiq']",
             "lengths = []",
@@ -4894,7 +4894,7 @@
         "step": "zip_longest_strings_exercise"
     },
     {
-        "page": "Defining Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bb0\u0bc8\u0baf\u0bb1\u0bc1\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "def greet(name):",
             "    print(f\"Hello {name}!\")",
@@ -4915,7 +4915,7 @@
         "step": "define_greet"
     },
     {
-        "page": "Defining Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bb0\u0bc8\u0baf\u0bb1\u0bc1\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "def greet(name):",
             "    print(f\"Hello {name}!\")",
@@ -4933,7 +4933,7 @@
                     "Hello Alice!\nHow are you?\nHello Bob!\nHow are you?",
                     "Hello Alice!\nHello Bob!\nHow are you?",
                     "Hello Alice!\nHow are you?\nHello Bob!",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -4954,7 +4954,7 @@
             "say_hello(\"Alice\")",
             "say_hello(\"Bob\")"
         ],
-        "page": "Defining Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bb0\u0bc8\u0baf\u0bb1\u0bc1\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "def say_hello(name):",
             "    print(f\"Hello {name}!\")",
@@ -4984,7 +4984,7 @@
             "say_hello(\"Alice\")",
             "say_hello(\"Bob\")"
         ],
-        "page": "Defining Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bb0\u0bc8\u0baf\u0bb1\u0bc1\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "def say_hello(person_name):",
             "    print(f\"Hello {person_name}!\")",
@@ -5011,7 +5011,7 @@
             "    print(x)",
             "    print(x)"
         ],
-        "page": "Defining Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bb0\u0bc8\u0baf\u0bb1\u0bc1\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "def print_twice(x):",
             "    print(x)",
@@ -5025,7 +5025,7 @@
         "step": "print_twice_exercise"
     },
     {
-        "page": "Defining Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bb0\u0bc8\u0baf\u0bb1\u0bc1\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "def print_many(thing, n):",
             "    for _ in range(n):",
@@ -5044,7 +5044,7 @@
                     "Hello\nHello\nHello",
                     "Hello",
                     "H\ne\nl\nl\no",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5064,7 +5064,7 @@
             "",
             "print_many(3, \"Hello\")"
         ],
-        "page": "Defining Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bb0\u0bc8\u0baf\u0bb1\u0bc1\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5085,7 +5085,7 @@
         "step": "swap_parameters"
     },
     {
-        "page": "Calling Functions Within Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5109,7 +5109,7 @@
         "step": "print_twice_call_print_many"
     },
     {
-        "page": "Calling Functions Within Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5169,7 +5169,7 @@
         "step": "see_stack_in_snoop"
     },
     {
-        "page": "Calling Functions Within Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5193,7 +5193,7 @@
         "step": "see_stack_in_pythontutor"
     },
     {
-        "page": "Calling Functions Within Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5217,7 +5217,7 @@
         "step": "see_stack_in_birdseye"
     },
     {
-        "page": "Returning Values From Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0ba4\u0bcd \u0ba4\u0bbf\u0bb0\u0bc1\u0bae\u0bcd\u0baa\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def double(x):",
             "    return x * 2",
@@ -5236,7 +5236,7 @@
                     "5\n5",
                     "5\n10",
                     "10\n10",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5249,7 +5249,7 @@
         "step": "first_return"
     },
     {
-        "page": "Returning Values From Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0ba4\u0bcd \u0ba4\u0bbf\u0bb0\u0bc1\u0bae\u0bcd\u0baa\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def double(x):",
             "    return x * 2",
@@ -5266,7 +5266,7 @@
                 "choices": [
                     "5",
                     "10",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5279,13 +5279,13 @@
         "step": "losing_return_value"
     },
     {
-        "page": "Returning Values From Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0ba4\u0bcd \u0ba4\u0bbf\u0bb0\u0bc1\u0bae\u0bcd\u0baa\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def quadruple(x):",
             "    return x * 4"
         ],
         "response": {
-            "message": "<p>You cannot use <code>*</code>, <code>+</code>, or even any numbers inside <code>quadruple</code>.\nYou must call <code>double</code> to solve the problem.</p>",
+            "message": "<p>\u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd <code>*</code>, <code>+</code> \u0b85\u0bb2\u0bcd\u0bb2\u0ba4\u0bc1 <code>quadruple</code>\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0b8e\u0ba8\u0bcd\u0ba4 \u0b8e\u0ba3\u0bcd\u0b95\u0bb3\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4 \u0bae\u0bc1\u0b9f\u0bbf\u0baf\u0bbe\u0ba4\u0bc1.\n\u0b9a\u0bbf\u0b95\u0bcd\u0b95\u0bb2\u0bc8\u0ba4\u0bcd \u0ba4\u0bc0\u0bb0\u0bcd\u0b95\u0bcd\u0b95 \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd <code>double</code> \u0b85\u0bb4\u0bc8\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
@@ -5296,7 +5296,7 @@
             "def quadruple(x):",
             "    return double(double(x))"
         ],
-        "page": "Returning Values From Functions",
+        "page": "\u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bc8\u0ba4\u0bcd \u0ba4\u0bbf\u0bb0\u0bc1\u0bae\u0bcd\u0baa\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def double(x):",
             "    return x * 2",
@@ -5312,7 +5312,7 @@
         "step": "quadruple_exercise"
     },
     {
-        "page": "Testing Functions",
+        "page": "\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def double(x):",
             "    return x * 2",
@@ -5331,7 +5331,7 @@
                     "Error! 2 != 4",
                     "OK\nOK",
                     "OK",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5344,7 +5344,7 @@
         "step": "introducing_assert_equal"
     },
     {
-        "page": "Testing Functions",
+        "page": "\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def double(x):",
             "    return x * 3",
@@ -5362,7 +5362,7 @@
                     "Error! 6 != 4\nError! 15 != 10",
                     "Error! 4 != 6\nError! 10 != 15",
                     "OK\nOK",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5375,7 +5375,7 @@
         "step": "make_tests_fail"
     },
     {
-        "page": "Testing Functions",
+        "page": "\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def double(x):",
             "    return x * 2",
@@ -5403,7 +5403,7 @@
             "def surround(string, sides):",
             "    return sides + string + sides"
         ],
-        "page": "Testing Functions",
+        "page": "\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def surround(string, sides):",
             "    return sides + string + sides"
@@ -5416,7 +5416,7 @@
         "step": "surround_exercise"
     },
     {
-        "page": "Testing Functions",
+        "page": "\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def surround(string, sides):",
             "    return sides + string + sides",
@@ -5428,21 +5428,21 @@
             "        return string"
         ],
         "response": {
-            "message": "<p>In the <code>alert</code> function, you placed your <code>return</code> statement at the wrong place!\nPay attention to your indentations in <code>alert</code>. You might be ending a loop too early with <code>return</code>.</p>",
+            "message": "<p><code>alert</code> \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd, \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd <code>return</code> \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0baf\u0bc8 \u0ba4\u0bb5\u0bb1\u0bbe\u0ba9 \u0b87\u0b9f\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0bb5\u0bc8\u0ba4\u0bcd\u0ba4\u0bc0\u0bb0\u0bcd\u0b95\u0bb3\u0bcd!\n<code>alert</code> \u0b87\u0bb2\u0bcd \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b89\u0bb3\u0bcd\u0ba4\u0bb3\u0bcd\u0bb3\u0bb2\u0bcd\u0b95\u0bb3\u0bc8\u0b95\u0bcd \u0b95\u0bb5\u0ba9\u0bbf\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd. <code>return</code> \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb0\u0bc1 \u0b9a\u0bc1\u0bb4\u0bb2\u0bc8 \u0bae\u0bbf\u0b95 \u0bb5\u0bbf\u0bb0\u0bc8\u0bb5\u0bbe\u0b95 \u0bae\u0bc1\u0b9f\u0bbf\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd \u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bbf\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bb2\u0bbe\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
         "step": "alert_exercise"
     },
     {
-        "page": "Testing Functions",
+        "page": "\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def alert(string, level):",
             "    marks = '!' * level",
             "    return marks + ' ' + string + ' ' + marks"
         ],
         "response": {
-            "message": "<p>You cannot use string concatenation/formatting/interpolation/multiplication or f-strings in <code>alert</code>.\nYou must call <code>surround</code> to solve the problem.</p>",
+            "message": "<p><code>alert</code> \u0b87\u0bb2\u0bcd \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b9a\u0bb0\u0bae\u0bcd \u0b92\u0bb0\u0bc1\u0b99\u0bcd\u0b95\u0bbf\u0ba3\u0bc8\u0baa\u0bcd\u0baa\u0bc1/\u0bb5\u0b9f\u0bbf\u0bb5\u0bae\u0bc8\u0baa\u0bcd\u0baa\u0bc1/\u0b87\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0ba3\u0bbf\u0baa\u0bcd\u0baa\u0bc1/\u0baa\u0bc6\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bb2\u0bcd \u0b85\u0bb2\u0bcd\u0bb2\u0ba4\u0bc1 f-\u0b9a\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4 \u0bae\u0bc1\u0b9f\u0bbf\u0baf\u0bbe\u0ba4\u0bc1.\n\u0b9a\u0bbf\u0b95\u0bcd\u0b95\u0bb2\u0bc8\u0ba4\u0bcd \u0ba4\u0bc0\u0bb0\u0bcd\u0b95\u0bcd\u0b95 \u0ba8\u0bc0\u0b99\u0bcd\u0b95\u0bb3\u0bcd <code>surround</code> \u0b85\u0bb4\u0bc8\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
@@ -5456,7 +5456,7 @@
             "        string = surround(string, '!')",
             "    return string"
         ],
-        "page": "Testing Functions",
+        "page": "\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bc1\u0b95\u0bb3\u0bcd",
         "program": [
             "def surround(string, sides):",
             "    return sides + string + sides",
@@ -5475,7 +5475,7 @@
         "step": "alert_exercise"
     },
     {
-        "page": "<code>return</code> ends the function call",
+        "page": "<code>return</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bc1 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc8 \u0bae\u0bc1\u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def foo():",
             "    return 1",
@@ -5494,7 +5494,7 @@
                     "[1, 2]",
                     "1\n2",
                     "1 2",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5507,7 +5507,7 @@
         "step": "double_return_in_one_function"
     },
     {
-        "page": "<code>return</code> ends the function call",
+        "page": "<code>return</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bc1 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc8 \u0bae\u0bc1\u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def double_numbers(numbers):",
             "    for x in numbers:",
@@ -5528,7 +5528,7 @@
         "step": "cannot_return_multiple_values"
     },
     {
-        "page": "<code>return</code> ends the function call",
+        "page": "<code>return</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bc1 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc8 \u0bae\u0bc1\u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def foo():",
             "    for letter in 'abc':",
@@ -5550,7 +5550,7 @@
                     "a 0\na 1\na 2\nb 0\nb 1\nb 2",
                     "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2",
                     "a 0\na 1\na 2\nb 0\nb 1\nb 2\nc 0\nc 1\nc 2",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5563,7 +5563,7 @@
         "step": "return_ends_whole_function"
     },
     {
-        "page": "<code>return</code> ends the function call",
+        "page": "<code>return</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc1 \u0b9a\u0bc6\u0baf\u0bb2\u0bcd\u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bc1 \u0b85\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bc8 \u0bae\u0bc1\u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def foo():",
             "    for letter in 'abc':",
@@ -5585,7 +5585,7 @@
                     "a 0\na 1\na 2\nb 0\nb 1\nb 2",
                     "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2",
                     "a 0\na 1\na 2\nb 0\nb 1\nb 2\nc 0\nc 1\nc 2",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5598,7 +5598,7 @@
         "step": "break_vs_return"
     },
     {
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def is_friend(name):",
             "    if name == \"Alice\":",
@@ -5625,7 +5625,7 @@
         "step": "InputAliceBob"
     },
     {
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "True or True"
         ],
@@ -5637,7 +5637,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5650,7 +5650,7 @@
         "step": "TrueOrTrue"
     },
     {
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "True or False"
         ],
@@ -5662,7 +5662,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5675,7 +5675,7 @@
         "step": "TrueOrFalse"
     },
     {
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "False or False"
         ],
@@ -5687,7 +5687,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5700,7 +5700,7 @@
         "step": "FalseOrFalse"
     },
     {
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def is_friend(name):",
             "    if name == \"Alice\" or name == \"Bob\":",
@@ -5725,7 +5725,7 @@
         "step": "ImprovingWithOr"
     },
     {
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def is_friend(name):",
             "    return name == \"Alice\" or name == \"Bob\"",
@@ -5747,7 +5747,7 @@
         "step": "FurtherImprovement"
     },
     {
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def is_friend(name):",
             "    return name == \"Alice\" or \"Bob\"",
@@ -5769,7 +5769,7 @@
         "step": "ACommonMistake"
     },
     {
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def is_friend(name):",
             "    return name == \"Alice\" or \"Bob\"",
@@ -5798,7 +5798,7 @@
             "    else:",
             "        return True"
         ],
-        "page": "Introducing <code>or</code>",
+        "page": "<code>or</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def is_valid_percentage(x):",
             "    if x < 0 or x > 100:",
@@ -5814,7 +5814,7 @@
         "step": "AnExercise"
     },
     {
-        "page": "Introducing <code>and</code>",
+        "page": "<code>and</code> \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "True and True"
         ],
@@ -5826,7 +5826,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5839,7 +5839,7 @@
         "step": "TrueAndTrue"
     },
     {
-        "page": "Introducing <code>and</code>",
+        "page": "<code>and</code> \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "True and False"
         ],
@@ -5851,7 +5851,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5864,7 +5864,7 @@
         "step": "TrueAndFalse"
     },
     {
-        "page": "Introducing <code>and</code>",
+        "page": "<code>and</code> \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "False and False"
         ],
@@ -5876,7 +5876,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -5896,7 +5896,7 @@
             "    else:",
             "        return False"
         ],
-        "page": "Introducing <code>and</code>",
+        "page": "<code>and</code> \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "def is_valid_percentage(x):",
             "    if 0 <= x and x <= 100:",
@@ -5916,7 +5916,7 @@
             "def all_equal(row):",
             "    return row[0] == row[1] and row[0] == row[2]"
         ],
-        "page": "Introducing <code>and</code>",
+        "page": "<code>and</code> \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0bae\u0bcd",
         "program": [
             "def all_equal(row):",
             "    return row[0] == row[1] and row[0] == row[2]"
@@ -5929,7 +5929,7 @@
         "step": "TicTacToeWinningRow"
     },
     {
-        "page": "Multi-line statements",
+        "page": "\u0baa\u0bb2 \u0bb5\u0bb0\u0bbf \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "is_friend = name == \"Alice\" or",
             "            name == \"Bob\""
@@ -5940,7 +5940,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>The Python keyword <code>or</code> can only be used for boolean expressions.\nPerhaps you meant to write</p>\n<p><code>is_friend = name == \"Alice\" ,</code></p>",
-                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\nat line 1\n",
+                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -5948,7 +5948,7 @@
         "step": "invalid_multiline"
     },
     {
-        "page": "Multi-line statements",
+        "page": "\u0baa\u0bb2 \u0bb5\u0bb0\u0bbf \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "name = \"Bob\"",
             "",
@@ -5980,7 +5980,7 @@
         "step": "valid_multiline"
     },
     {
-        "page": "Combining <code>and</code> and <code>or</code>",
+        "page": "<code>and</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>or</code> \u0b87\u0ba3\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "True or False and False"
         ],
@@ -6005,7 +6005,7 @@
             "            (middle == board[0][2] and middle == board[2][0])",
             "    )"
         ],
-        "page": "Combining <code>and</code> and <code>or</code>",
+        "page": "<code>and</code> \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd <code>or</code> \u0b87\u0ba3\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
         "program": [
             "def diagonal_winner(board):",
             "    middle = board[1][1]",
@@ -6022,7 +6022,7 @@
         "step": "AndHasHigherPriority"
     },
     {
-        "page": "Introducing <code>not</code>",
+        "page": "<code>not</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "not True"
         ],
@@ -6034,7 +6034,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -6047,7 +6047,7 @@
         "step": "IntroducingNot"
     },
     {
-        "page": "Introducing <code>not</code>",
+        "page": "<code>not</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "not False"
         ],
@@ -6059,7 +6059,7 @@
                 "choices": [
                     "True",
                     "False",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -6072,7 +6072,7 @@
         "step": "NotFalse"
     },
     {
-        "page": "Introducing <code>not</code>",
+        "page": "<code>not</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "b = True",
             "print(not b or b)"
@@ -6094,7 +6094,7 @@
             "def invalid_image(filename):",
             "    return not (filename.endswith(\".png\") or filename.endswith(\".jpg\"))"
         ],
-        "page": "Introducing <code>not</code>",
+        "page": "<code>not</code> \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0b85\u0bb1\u0bbf\u0bae\u0bc1\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def invalid_image(filename):",
             "    return not (filename.endswith(\".png\") or filename.endswith(\".jpg\"))"
@@ -6107,7 +6107,7 @@
         "step": "NotPriority"
     },
     {
-        "page": "Checking the board for winners",
+        "page": "\u0bb5\u0bc6\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bbe\u0bb3\u0bb0\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bc8\u0b9a\u0bcd \u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def row_winner(board):",
             "    for row in board:",
@@ -6122,7 +6122,7 @@
             "    return False"
         ],
         "response": {
-            "message": "<p>Keep in mind that some entries might be <code>' '</code>. An empty row is not a winning row.</p>",
+            "message": "<p>\u0b9a\u0bbf\u0bb2 \u0b89\u0bb3\u0bcd\u0bb3\u0bc0\u0b9f\u0bc1\u0b95\u0bb3\u0bcd <code>' '</code> \u0b86\u0b95 \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bb2\u0bbe\u0bae\u0bcd \u0b8e\u0ba9\u0bcd\u0baa\u0ba4\u0bc8 \u0ba8\u0bbf\u0ba9\u0bc8\u0bb5\u0bbf\u0bb2\u0bcd \u0b95\u0bca\u0bb3\u0bcd\u0bb3\u0bb5\u0bc1\u0bae\u0bcd. \u0bb5\u0bc6\u0bb1\u0bcd\u0bb1\u0bc1 \u0bb5\u0bb0\u0bbf\u0b9a\u0bc8 \u0bb5\u0bc6\u0bb1\u0bcd\u0bb1\u0bbf \u0bb5\u0bb0\u0bbf\u0b9a\u0bc8 \u0b85\u0bb2\u0bcd\u0bb2.</p>",
             "passed": false,
             "result": []
         },
@@ -6142,7 +6142,7 @@
             "            return True",
             "    return False"
         ],
-        "page": "Checking the board for winners",
+        "page": "\u0bb5\u0bc6\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bbe\u0bb3\u0bb0\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bc8\u0b9a\u0bcd \u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def row_winner(board):",
             "    for row in board:",
@@ -6177,7 +6177,7 @@
             "            return True",
             "    return False"
         ],
-        "page": "Checking the board for winners",
+        "page": "\u0bb5\u0bc6\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bbe\u0bb3\u0bb0\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bc8\u0b9a\u0bcd \u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def column_winner(board):",
             "    for col in range(len(board[0])):",
@@ -6212,7 +6212,7 @@
             "            all_equal2 = False",
             "    return all_equal1 or all_equal2"
         ],
-        "page": "Checking the board for winners",
+        "page": "\u0bb5\u0bc6\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bbe\u0bb3\u0bb0\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bc8\u0b9a\u0bcd \u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def diagonal_winner(board):",
             "    all_equal1 = True",
@@ -6238,7 +6238,7 @@
             "def winner(board):",
             "    return row_winner(board) or column_winner(board) or diagonal_winner(board)"
         ],
-        "page": "Checking the board for winners",
+        "page": "\u0bb5\u0bc6\u0bb1\u0bcd\u0bb1\u0bbf\u0baf\u0bbe\u0bb3\u0bb0\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bc8\u0b9a\u0bcd \u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bbf\u0bb1\u0ba4\u0bc1",
         "program": [
             "def winning_line(strings):",
             "    piece = strings[0]",
@@ -6283,7 +6283,7 @@
         "step": "winner"
     },
     {
-        "page": "The newline character, <code>format_board</code>",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0bb5\u0bb0\u0bbf \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1, <code>format_board</code>",
         "program": [
             "def print_board(board):",
             "    for row in board:",
@@ -6308,7 +6308,7 @@
         "step": "one_way_to_print_board"
     },
     {
-        "page": "The newline character, <code>format_board</code>",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0bb5\u0bb0\u0bbf \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1, <code>format_board</code>",
         "program": [
             "assert_equal(",
             "    format_board([",
@@ -6327,7 +6327,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You started writing a string with a single or double quote\nbut never ended the string with another quote on that line.</p>",
-                    "text": "    \"XOX\n    ^\nSyntaxError: unterminated string literal (detected at line 7)\nat line 7\n",
+                    "text": "    \"XOX\n    ^\nSyntaxError: unterminated string literal (detected at line 7)\n\u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd 7\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6335,7 +6335,7 @@
         "step": "invalid_multi_line_string"
     },
     {
-        "page": "The newline character, <code>format_board</code>",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0bb5\u0bb0\u0bbf \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1, <code>format_board</code>",
         "program": [
             "string = \"\"\"First line",
             "Second line\"\"\"",
@@ -6354,19 +6354,19 @@
         "step": "multi_line_strings_triple_quotes"
     },
     {
-        "page": "The newline character, <code>format_board</code>",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0bb5\u0bb0\u0bbf \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1, <code>format_board</code>",
         "program": [
             "string = 'a'"
         ],
         "response": {
-            "message": "<p>Oops, <code>string</code> doesn't have the right value. Run the program from the previous step again.</p>",
+            "message": "<p>\u0b85\u0b9a\u0bcd\u0b9a\u0b9a\u0bcd\u0b9a\u0bcb, <code>string</code> \u0b9a\u0bb0\u0bbf\u0baf\u0bbe\u0ba9 \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc8\u0b95\u0bcd \u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bbf\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bb5\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8. \u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bc8\u0baf \u0baa\u0b9f\u0bbf\u0baf\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0ba8\u0bbf\u0bb0\u0bb2\u0bc8 \u0bae\u0bc0\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b87\u0baf\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd.</p>",
             "passed": false,
             "result": []
         },
         "step": "discovering_newline"
     },
     {
-        "page": "The newline character, <code>format_board</code>",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0bb5\u0bb0\u0bbf \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1, <code>format_board</code>",
         "program": [
             "string"
         ],
@@ -6383,7 +6383,7 @@
         "step": "discovering_newline"
     },
     {
-        "page": "The newline character, <code>format_board</code>",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0bb5\u0bb0\u0bbf \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1, <code>format_board</code>",
         "program": [
             "len('\\n')"
         ],
@@ -6395,7 +6395,7 @@
                 "choices": [
                     "1",
                     "2",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -6418,7 +6418,7 @@
             "            result += '\\n'",
             "    return result"
         ],
-        "page": "The newline character, <code>format_board</code>",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0bb5\u0bb0\u0bbf \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1, <code>format_board</code>",
         "program": [
             "def format_board(board):",
             "    result = ''",
@@ -6448,7 +6448,7 @@
             "    line = f'\\n{\"+\".join(lines)}\\n'",
             "    return line.join(joined_rows)"
         ],
-        "page": "The newline character, <code>format_board</code>",
+        "page": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0bb5\u0bb0\u0bbf \u0b8e\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1, <code>format_board</code>",
         "program": [
             "def format_board(board):",
             "    joined_rows = []",
@@ -6468,7 +6468,7 @@
         "step": "format_board_bonus_challenge"
     },
     {
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "print(type('Hello World'))",
             "print(type(23))",
@@ -6489,7 +6489,7 @@
         "step": "five_different_types"
     },
     {
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "type(3) == int"
         ],
@@ -6506,7 +6506,7 @@
         "step": "check_type_manually"
     },
     {
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "print('123')",
             "print(123)",
@@ -6525,7 +6525,7 @@
         "step": "different_types_look_same"
     },
     {
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "print(123 + 456)",
             "print('123' + '456')"
@@ -6542,7 +6542,7 @@
                     "123456\n'123456'",
                     "579\n123456",
                     "579\n'123456'",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -6555,7 +6555,7 @@
         "step": "plus_has_two_meanings"
     },
     {
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "print(13 < 120)",
             "print('13' < '120')"
@@ -6570,7 +6570,7 @@
                     "True\nFalse",
                     "False\nTrue",
                     "False\nFalse",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -6583,7 +6583,7 @@
         "step": "less_than_has_two_meanings"
     },
     {
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "print(sorted([120, 13, 0]))",
             "print(sorted(['120', '13', '0']))"
@@ -6600,7 +6600,7 @@
                     "[120, 13, 0]\n['0', '120', '13']",
                     "[120, 13, 0]\n['13', '120', '0']",
                     "[120, 13, 0]\n['120', '13', '0']",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -6613,7 +6613,7 @@
         "step": "less_than_sorting_strings"
     },
     {
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "12 + '34'"
         ],
@@ -6621,13 +6621,13 @@
             "message": "",
             "passed": true,
             "prediction": {
-                "answer": "Error",
+                "answer": "\u0baa\u0bbf\u0bb4\u0bc8",
                 "choices": [
                     "46",
                     "'46'",
                     "1234",
                     "'1234'",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -6680,9 +6680,9 @@
             "    print('Starting... ' + str(i + 1))",
             "print('Go!')"
         ],
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
-            "number = '1'",
+            "number = '2'",
             "for i in range(int(number)):",
             "    print('Starting... ' + str(i + 1))",
             "print('Go!')"
@@ -6692,7 +6692,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "Starting... 1\nGo!\n",
+                    "text": "Starting... 1\nStarting... 2\nGo!\n",
                     "type": "stdout"
                 }
             ]
@@ -6711,7 +6711,7 @@
             "        joined_rows.append(joined_row)",
             "    return \"\\n\".join(joined_rows)"
         ],
-        "page": "Types",
+        "page": "\u0bb5\u0b95\u0bc8\u0b95\u0bb3\u0bcd",
         "program": [
             "def format_board(board):",
             "    first_row = ' '",
@@ -6731,7 +6731,7 @@
         "step": "format_board_with_numbers"
     },
     {
-        "page": "Interactive Programs with <code>input()</code>",
+        "page": "<code>input()</code> \u0b89\u0b9f\u0ba9\u0bcd \u0b8a\u0b9f\u0bbe\u0b9f\u0bc1\u0bae\u0bcd \u0ba8\u0bbf\u0bb0\u0bb2\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "print('Type your name, then press Enter:')",
             "name = input()",
@@ -6771,7 +6771,7 @@
             "else:",
             "    print(\"Nope!\")"
         ],
-        "page": "Interactive Programs with <code>input()</code>",
+        "page": "<code>input()</code> \u0b89\u0b9f\u0ba9\u0bcd \u0b8a\u0b9f\u0bbe\u0b9f\u0bc1\u0bae\u0bcd \u0ba8\u0bbf\u0bb0\u0bb2\u0bcd\u0b95\u0bb3\u0bcd",
         "program": [
             "super_secret_number = 7",
             "print(\"What number am I thinking of?\")",
@@ -6794,11 +6794,11 @@
                     "type": "input_prompt"
                 },
                 {
-                    "text": "<input: 7>\n",
+                    "text": "<input: 1>\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "Amazing! Are you psychic?\n",
+                    "text": "Nope!\n",
                     "type": "stdout"
                 }
             ]
@@ -6806,7 +6806,7 @@
         "step": "convert_input_to_int"
     },
     {
-        "page": "Nested List Assignment: Playing Moves on the Board",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b92\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bc0\u0b9f\u0bc1: \u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0ba8\u0b95\u0bb0\u0bcd\u0bb5\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bbf\u0bb3\u0bc8\u0baf\u0bbe\u0b9f\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def play_move(board, player):",
             "    board[1] = player",
@@ -6833,7 +6833,7 @@
                     "['X', ' ', ' ']",
                     "[' ', 'X', ' ']",
                     "[' ', ' ', 'X']",
-                    "Error"
+                    "\u0baa\u0bbf\u0bb4\u0bc8"
                 ]
             },
             "result": [
@@ -6846,7 +6846,7 @@
         "step": "modify_list_in_function"
     },
     {
-        "page": "Nested List Assignment: Playing Moves on the Board",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b92\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bc0\u0b9f\u0bc1: \u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0ba8\u0b95\u0bb0\u0bcd\u0bb5\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bbf\u0bb3\u0bc8\u0baf\u0bbe\u0b9f\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def play_move(board, player):",
             "    row = board[1]",
@@ -6882,7 +6882,7 @@
             "    col = int(input()) - 1",
             "    board[row][col] = player"
         ],
-        "page": "Nested List Assignment: Playing Moves on the Board",
+        "page": "\u0b89\u0bb3\u0bcd\u0bb3\u0bae\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd \u0b92\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bc0\u0b9f\u0bc1: \u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0ba8\u0b95\u0bb0\u0bcd\u0bb5\u0bc1\u0b95\u0bb3\u0bc8 \u0bb5\u0bbf\u0bb3\u0bc8\u0baf\u0bbe\u0b9f\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def play_move(board, player):",
             "    row = int(input()) - 1",
@@ -6897,7 +6897,7 @@
         "step": "nested_assignment_input"
     },
     {
-        "page": "Making the Board",
+        "page": "\u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def make_board(size):",
             "    row = []",
@@ -6937,6 +6937,19 @@
         "step": "naive_make_board"
     },
     {
+        "page": "\u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
+        "program": [
+            "pass",
+            "def make_board(size): return [[' '] * size] * size"
+        ],
+        "response": {
+            "message": "<p>\u0bae\u0bc1\u0b9f\u0bbf\u0bb5\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0ba4\u0bc1\u0ba3\u0bc8\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd\u0b95\u0bb3\u0bcd \u0b85\u0ba9\u0bc8\u0ba4\u0bcd\u0ba4\u0bc1\u0bae\u0bcd \u0ba4\u0ba9\u0bbf\u0ba4\u0bcd\u0ba4\u0ba9\u0bbf \u0baa\u0bca\u0bb0\u0bc1\u0bb3\u0bcd\u0b95\u0bb3\u0bcd \u0b85\u0bb2\u0bcd\u0bb2.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "fix_make_board"
+    },
+    {
         "get_solution": [
             "def make_board(size):",
             "    board = []",
@@ -6947,7 +6960,7 @@
             "        board.append(row)",
             "    return board"
         ],
-        "page": "Making the Board",
+        "page": "\u0baa\u0bb2\u0b95\u0bc8\u0baf\u0bc8 \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bb2\u0bcd",
         "program": [
             "def make_board(size):",
             "    board = []",
@@ -6986,7 +6999,7 @@
             "",
             "    print_draw()"
         ],
-        "page": "The Full Tic-Tac-Toe Game",
+        "page": "\u0bae\u0bc1\u0bb4\u0bc1 \u0b9f\u0bbf\u0b95\u0bcd-\u0b9f\u0bbe\u0b95\u0bcd-\u0b9f\u0bcb \u0b95\u0bc7\u0bae\u0bcd",
         "program": [
             "def winning_line(strings):",
             "    strings = set(strings)",
