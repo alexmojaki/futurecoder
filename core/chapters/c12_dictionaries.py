@@ -311,28 +311,39 @@ into a new strand with matching nucleotides:
             assert_equal(substitute(original), expected)
 
 
-    class dna_part2(VerbatimStep):
+    class dna_part2(ExerciseStep):
         """
-        TODO: Convert to ExerciseStep
 Now we can use dictionaries to make this code both shorter and more general so it can be used for other purposes.
 
 Your job is to add another argument to the `substitute` function: a dictionary called `d`.
 
 The keys of `d` represent characters
 in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`
-means that `A` should be replaced by `T`:
-
-    __copyable__
-    __program_indented__
+means that `A` should be replaced by `T`.
         """
         
-        def program(self):
+        def solution(self):
             def substitute(string, d):
-                ...
+                result = ""
+                for letter in string:
+                    result += d[letter]
+                return result
 
-            original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-            expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-            assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
+            return substitute
+
+        def generate_inputs():
+            return {"string" : "ABC", "d" : {"A" : "B", "B" : "C", "C" : "A"}}
+
+        hints = """
+        TODO
+        """
+
+        tests = [
+            (
+                {"string" : "AGTAGCGTCCTTAGTTACAGGATGGCTTAT", "d" : {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}},
+                "TCATCGCAGGAATCAATGTCCTACCGAATA"
+            )
+        ]
 
 
     class cryptography(VerbatimStep):
