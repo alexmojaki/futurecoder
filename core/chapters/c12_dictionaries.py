@@ -191,7 +191,10 @@ So let's write a function that does that. Complete the function below, particula
             return total_cost
 
         def generate_inputs():
-            return {'cart': ["apple", "banana"], 'prices': {"apple" : 10, "banana" : 11}}
+            k1 = generate_string()
+            k2 = generate_string()
+            return {'cart': [k1, k2],
+                    'prices': {k1 : random.randrange(100), k2 : random.randrange(100)}}
 
         tests = [
             ((['apple', 'box', 'cat'],  {'apple': 2, 'box': 5, 'cat': 100, 'dog': 120}), 107),
@@ -253,9 +256,11 @@ of that item that the customer wants to buy.
             return total_cost
 
         def generate_inputs():
-            return {"cart" : ["apple", "banana"],
-                    "quantities" : {"apple" : 4, "banana" : 9},
-                    "prices" : {"apple" : 5, "banana" : 7}}
+            k1 = generate_string()
+            k2 = generate_string()
+            return {"cart" : [k1, k2],
+                    "quantities" : {k1 : random.randrange(100), k2 : random.randrange(100)},
+                    "prices" : {k1 : random.randrange(100), k2 : random.randrange(100)}}
 
         tests = [
             (
@@ -332,7 +337,11 @@ means that `A` should be replaced by `T`.
             return substitute
 
         def generate_inputs():
-            return {"string" : "ABC", "d" : {"A" : "B", "B" : "C", "C" : "A"}}
+            k = generate_string()
+            d = {}
+            for ch in k:
+                d[ch] = generate_string(1)
+            return {"string" : k, "d" : d}
 
         hints = """
         Remember that the key for the dictionary is the character in the string.
@@ -476,7 +485,10 @@ Now you can use this to modify our function on the previous page to remove the `
 
         # Custom generate inputs is required because cart and prices must have the same keys.
         def generate_inputs():
-            return {'quantities': {"apple" : 2, "banana" : 5}, 'prices': {"apple" : 7, "banana" : 11}}
+            k1 = generate_string()
+            k2 = generate_string()
+            return {'quantities': {k1 : random.randrange(100), k2 : random.randrange(100)},
+                    'prices': {k1 : random.randrange(100), k2 : random.randrange(100), generate_string() : random.randrange(100)}}
 
         tests = [
           (
@@ -587,7 +599,10 @@ The keys are the same across both dictionaries.
 
         # Custom generate_dicts is required here because French and German dicts must have same English word as the key.
         def generate_inputs():
-            return {'french': {"apple" : "pomme", "cat" : "chat"}, 'german': {"apple" : "apfel", "cat" : "katze"}}
+            k1 = generate_string()
+            k2 = generate_string()
+            return {'french': {k1 : generate_string(), k2 : generate_string()},
+                    'german': {k1 : generate_string(), k2 : generate_string()}}
 
 
         tests = (
