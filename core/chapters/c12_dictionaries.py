@@ -33,7 +33,7 @@ Run the line below in the shell.
 
     __program_indented__
         """
-        
+
         def program(self):
             french = {'apple':'pomme', 'box': 'boite'}
 
@@ -82,7 +82,7 @@ Now run a similar line in the shell to look up the translation for 'box'.
 
 
         """
-        
+
         auto_translate_program = False
         program_in_text = False
 
@@ -163,7 +163,7 @@ So let's write a function that does that. Complete the function below, particula
 
     __copyable__
 
-    
+
     def total_cost(cart, prices):
         result = 0
         for item in cart:
@@ -217,8 +217,8 @@ but they have to add each item one at a time, and for some reason this customer 
 Here's the new code for you to fix:
 
     __copyable__
-    
-        
+
+
     def total_cost(cart, quantities, prices):
         result = 0
         for item in cart:
@@ -321,7 +321,7 @@ The keys of `d` represent characters
 in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`
 means that `A` should be replaced by `T`.
         """
-        
+
         def solution(self):
             def substitute(string, d):
                 result = ""
@@ -429,7 +429,7 @@ Run this code.
             quantities = {'apple': 1, 'cat': 10}
             for key in quantities:
                 print(key)
-                    
+
 
         #def check(self):
         #    return "apple\ncat" in self.result
@@ -614,13 +614,13 @@ Beautiful! There's a pattern emerging here. The two languages could be merged in
         def print_words(words):
             for word in words:
                 languages = words[word]
-                        
+
                 print(f"English: {word}")
                 print(f"French: {languages['French']}")
                 print(f"German: {languages['German']}")
                 print(f"---")
-    
-    
+
+
         print_words({
             'apple': {
                 'French': 'pomme',
