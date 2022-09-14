@@ -3212,6 +3212,12 @@ msgstr "'apfel'"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access2
+#. 
+#. french['apple']
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.first_dict
 #. 
 #. french = {'apple': 'pomme', 'box': 'boite'}
@@ -3219,8 +3225,6 @@ msgstr "'apfel'"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
-#. 
-#. 
 #. 
 #.     def total_cost(cart, prices):
 #.         result = 0
@@ -3233,7 +3237,7 @@ msgstr "'apfel'"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -3402,6 +3406,12 @@ msgstr "'boite'"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access3
+#. 
+#. french['box']
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.first_dict
 #. 
 #. french = {'apple': 'pomme', 'box': 'boite'}
@@ -3409,8 +3419,6 @@ msgstr "'boite'"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
-#. 
-#. 
 #. 
 #.     def total_cost(cart, prices):
 #.         result = 0
@@ -3423,7 +3431,7 @@ msgstr "'boite'"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -3491,8 +3499,6 @@ msgstr "'box'"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -3504,7 +3510,7 @@ msgstr "'box'"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -3586,8 +3592,6 @@ msgstr "'def'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -3599,7 +3603,7 @@ msgstr "'def'"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -4122,6 +4126,12 @@ msgstr "'on'"
 #.         'German': 'kasten',
 #.     },
 #. })
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access4
+#. 
+#. french['pomme']
 #. 
 #. ------
 #. 
@@ -5217,8 +5227,6 @@ msgstr "all_numbers"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -5230,7 +5238,7 @@ msgstr "all_numbers"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -6340,8 +6348,6 @@ msgstr "c4"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -6353,7 +6359,7 @@ msgstr "c4"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -10238,6 +10244,24 @@ msgstr "found"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access2
+#. 
+#. french['apple']
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access3
+#. 
+#. french['box']
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access4
+#. 
+#. french['pomme']
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.first_dict
 #. 
 #. french = {'apple': 'pomme', 'box': 'boite'}
@@ -10752,8 +10776,6 @@ msgstr "is_valid_percentage"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -10765,7 +10787,7 @@ msgstr "is_valid_percentage"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -14367,8 +14389,6 @@ msgstr "present"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -14380,7 +14400,7 @@ msgstr "present"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -14446,8 +14466,6 @@ msgstr "price"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -14459,7 +14477,7 @@ msgstr "price"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -15221,8 +15239,6 @@ msgstr "quantity"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -15234,7 +15250,7 @@ msgstr "quantity"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -18085,8 +18101,6 @@ msgstr "total"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -18098,7 +18112,7 @@ msgstr "total"
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -23609,23 +23623,14 @@ msgstr ""
 "\n"
 "__program_indented__"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access2
-msgid "pages.IntroducingDictionaries.steps.dict_access2.program"
-msgstr "french['apple']"
-
 #. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access2.text"
 msgstr ""
 "That doesn't work because the position of items in a dictionary usually doesn't matter.\n"
-"\n"
 "You don't usually care what's the 2nd or 5th or 100th word of the dictionary,\n"
 "you just want to find a specific word like 'apple'. So try that instead:\n"
 "\n"
 "__program_indented__"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access3
-msgid "pages.IntroducingDictionaries.steps.dict_access3.program"
-msgstr "french['box']"
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access3.text"
@@ -23633,10 +23638,6 @@ msgstr ""
 "That's better!\n"
 "\n"
 "Now run a similar line in the shell to look up the translation for 'box'."
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingDictionaries.steps.dict_access4
-msgid "pages.IntroducingDictionaries.steps.dict_access4.program"
-msgstr "french['pomme']"
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access4.text"
@@ -23651,19 +23652,13 @@ msgstr ""
 msgid "pages.IntroducingDictionaries.steps.final_text.text"
 msgstr ""
 "Sorry, you can't do that either. You can only look up a key to get its value, not the other way around.\n"
-"\n"
 "The dictionary `french` only has 2 keys: `'apple'` and `'box'`. `'pomme'` is a value, not a key.\n"
-"\n"
 "We'll soon learn why you can't just look up values directly, and what you can do about it.\n"
 "\n"
-"\n"
 "Note that both `french[0]` and `french['pomme']` raised the same type of error: a `KeyError`.\n"
-"\n"
 "This error means that the provided key (`0` or `'pomme'` in this case) wasn't found in the dictionary.\n"
-"\n"
 "It's not that `french[0]` isn't *allowed*, it's just that it means the same thing as always:\n"
 "find the value associated with the key `0`. In this case it finds that no such key exists.\n"
-"\n"
 "But `0` *could* be a key, because many types of keys are allowed, including strings and numbers."
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
@@ -30428,7 +30423,7 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1
 msgid "pages.UsingDictionaries.steps.shopping_cart1.hints.0.text"
-msgstr "Remember that prices is a dictionary."
+msgstr "Remember that `prices` is a dictionary."
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
@@ -30440,13 +30435,11 @@ msgstr "To access a value in a dictionary, you need a key."
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1
 msgid "pages.UsingDictionaries.steps.shopping_cart1.hints.2.text"
-msgstr "The keys for prices are the items in the cart."
+msgstr "The keys for `prices` are the items in the `cart`."
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
 #.     # __code2__:
-#. 
-#. 
 #.     def total_cost(cart, prices):
 #.         result = 0
 #.         for item in cart:
@@ -30458,7 +30451,7 @@ msgstr "The keys for prices are the items in the cart."
 #.         total_cost(
 #.             ['apple', 'box', 'cat'],
 #.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-#.             ),
+#.         ),
 #.         107,
 #.     )
 #. 
@@ -30492,36 +30485,26 @@ msgstr "The keys for prices are the items in the cart."
 msgid "pages.UsingDictionaries.steps.shopping_cart1.text"
 msgstr ""
 "Let's see dictionaries in a real life problem. Imagine you're building an online shopping website.\n"
-"\n"
 "You keep the prices of all your items in a dictionary:\n"
 "\n"
 "__code0__\n"
 "\n"
 "Here you can see one reason why looking up values in a dictionary could be a problem.\n"
-"\n"
 "What would `prices[100]` be? `'dog'`? `'cat'`? `['dog', 'cat']`?\n"
-"\n"
 "The same value can be repeated any number of times in a dictionary.\n"
-"\n"
 "On the other hand, keys have to be unique. Imagine if your prices started like this:\n"
 "\n"
 "__code1__\n"
 "\n"
-"\n"
 "How much does an apple cost? We know it's `prices['apple']`, but is that `2` or `3`?\n"
-"\n"
 "Clearly there should only be one price, so duplicate keys aren't allowed.\n"
 "\n"
-"\n"
 "Anyway, this is a normal shop where things have one price.\n"
-"\n"
 "This normal shop has normal customers with normal shopping lists like `['apple', 'box', 'cat']`.\n"
-"\n"
 "And even though your customers have calculators in their pockets, they still expect you to add up all the prices\n"
 "yourself and tell them how much this will all cost, because that's what normal shops do.\n"
 "\n"
 "So let's write a function that does that. Complete the function below, particularly the line `price = ...`\n"
-"\n"
 "\n"
 "    __copyable__\n"
 "__code2__"

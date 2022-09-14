@@ -27,9 +27,13 @@ Run the line below in the shell.
     __program_indented__
         """
 
+        expected_code_source = "shell"
+
         # noinspection PyUnusedLocal
         def program(self):
             french = {'apple': 'pomme', 'box': 'boite'}
+
+    # TODO similar setup to word_must_be_hello to ensure correct value of `french` in following steps in shell.
 
     class dict_access(VerbatimStep):
         """
@@ -50,40 +54,27 @@ __program_indented__
 
         program = "french[0]"
 
-
     class dict_access2(VerbatimStep):
         """
 That doesn't work because the position of items in a dictionary usually doesn't matter.
-
 You don't usually care what's the 2nd or 5th or 100th word of the dictionary,
 you just want to find a specific word like 'apple'. So try that instead:
 
 __program_indented__
         """
 
-        auto_translate_program = False
-
         program = "french['apple']"
-
-        def check(self):
-            return "pomme" in self.result
 
     class dict_access3(VerbatimStep):
         """
 That's better!
 
 Now run a similar line in the shell to look up the translation for 'box'.
-
-
         """
 
-        auto_translate_program = False
         program_in_text = False
 
         program = "french['box']"
-
-        def check(self):
-            return "boite" in self.result
 
     class dict_access4(VerbatimStep):
         """
@@ -94,28 +85,17 @@ Now let's translate from French to English:
 __program_indented__
         """
 
-        auto_translate_program = False
-
         program = "french['pomme']"
-
-        def check(self):
-            return "KeyError" in self.result
 
     final_text = """
 Sorry, you can't do that either. You can only look up a key to get its value, not the other way around.
-
 The dictionary `french` only has 2 keys: `'apple'` and `'box'`. `'pomme'` is a value, not a key.
-
 We'll soon learn why you can't just look up values directly, and what you can do about it.
 
-
 Note that both `french[0]` and `french['pomme']` raised the same type of error: a `KeyError`.
-
 This error means that the provided key (`0` or `'pomme'` in this case) wasn't found in the dictionary.
-
 It's not that `french[0]` isn't *allowed*, it's just that it means the same thing as always:
 find the value associated with the key `0`. In this case it finds that no such key exists.
-
 But `0` *could* be a key, because many types of keys are allowed, including strings and numbers.
 """
 
@@ -124,40 +104,28 @@ class UsingDictionaries(Page):
     class shopping_cart1(ExerciseStep):
         """
 Let's see dictionaries in a real life problem. Imagine you're building an online shopping website.
-
 You keep the prices of all your items in a dictionary:
 
     prices = {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100}
 
 Here you can see one reason why looking up values in a dictionary could be a problem.
-
 What would `prices[100]` be? `'dog'`? `'cat'`? `['dog', 'cat']`?
-
 The same value can be repeated any number of times in a dictionary.
-
 On the other hand, keys have to be unique. Imagine if your prices started like this:
 
     prices = {'apple': 2, 'apple': 3}
 
-
 How much does an apple cost? We know it's `prices['apple']`, but is that `2` or `3`?
-
 Clearly there should only be one price, so duplicate keys aren't allowed.
 
-
 Anyway, this is a normal shop where things have one price.
-
 This normal shop has normal customers with normal shopping lists like `['apple', 'box', 'cat']`.
-
 And even though your customers have calculators in their pockets, they still expect you to add up all the prices
 yourself and tell them how much this will all cost, because that's what normal shops do.
 
 So let's write a function that does that. Complete the function below, particularly the line `price = ...`
 
-
     __copyable__
-
-
     def total_cost(cart, prices):
         result = 0
         for item in cart:
@@ -169,7 +137,7 @@ So let's write a function that does that. Complete the function below, particula
         total_cost(
             ['apple', 'box', 'cat'],
             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
-            ),
+        ),
         107,
     )
         """
@@ -184,7 +152,8 @@ So let's write a function that does that. Complete the function below, particula
 
             return total_cost
 
-        def generate_inputs():
+        @classmethod
+        def generate_inputs(cls):
             k1 = generate_string()
             k2 = generate_string()
             return {'cart': [k1, k2],
@@ -196,9 +165,9 @@ So let's write a function that does that. Complete the function below, particula
         ]
 
         hints = """
-        Remember that prices is a dictionary.
+        Remember that `prices` is a dictionary.
         To access a value in a dictionary, you need a key.
-        The keys for prices are the items in the cart.
+        The keys for `prices` are the items in the `cart`.
         """
 
     class shopping_cart4(ExerciseStep):
@@ -249,7 +218,8 @@ of that item that the customer wants to buy.
                 return result
             return total_cost
 
-        def generate_inputs():
+        @classmethod
+        def generate_inputs(cls):
             k1 = generate_string()
             k2 = generate_string()
             return {"cart" : [k1, k2],
@@ -330,7 +300,8 @@ means that `A` should be replaced by `T`.
 
             return substitute
 
-        def generate_inputs():
+        @classmethod
+        def generate_inputs(cls):
             k = generate_string()
             d = {}
             for ch in k:
@@ -478,7 +449,8 @@ Now you can use this to modify our function on the previous page to remove the `
         """
 
         # Custom generate inputs is required because cart and prices must have the same keys.
-        def generate_inputs():
+        @classmethod
+        def generate_inputs(cls):
             k1 = generate_string()
             k2 = generate_string()
             return {'quantities': {k1 : random.randrange(100), k2 : random.randrange(100)},
@@ -592,7 +564,8 @@ The keys are the same across both dictionaries.
             return print_words
 
         # Custom generate_dicts is required here because French and German dicts must have same English word as the key.
-        def generate_inputs():
+        @classmethod
+        def generate_inputs(cls):
             k1 = generate_string()
             k2 = generate_string()
             return {'french': {k1 : generate_string(), k2 : generate_string()},
