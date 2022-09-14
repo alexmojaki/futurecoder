@@ -1,20 +1,13 @@
 # flake8: NOQA E501
-import ast
 import random
-from textwrap import dedent
-from typing import List, Dict, Mapping
+from typing import List, Dict
 
-import sys
-
-from core.exercises import generate_list, generate_string
+from core.exercises import generate_string
 from core.text import (
     ExerciseStep,
-    MessageStep,
     Page,
     Step,
     VerbatimStep,
-    search_ast,
-    Disallowed,
 )
 
 
@@ -34,8 +27,9 @@ Run the line below in the shell.
     __program_indented__
         """
 
+        # noinspection PyUnusedLocal
         def program(self):
-            french = {'apple':'pomme', 'box': 'boite'}
+            french = {'apple': 'pomme', 'box': 'boite'}
 
     class dict_access(VerbatimStep):
         """
@@ -178,7 +172,7 @@ So let's write a function that does that. Complete the function below, particula
             ),
         107,
     )
-        """ 
+        """
 
         def solution(self):
             def total_cost(cart: List[str], prices: Dict[str, int]):
