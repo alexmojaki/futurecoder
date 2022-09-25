@@ -16,7 +16,7 @@ jobs:
     - name: Install chromedriver
       uses: nanasess/setup-chromedriver@master
     - name: Install Python and JS dependencies
-      run: pip install -U setuptools && ./scripts/install_deps.sh
+      run: ./scripts/install_deps.sh
     - name: Build
       id: build
       env:

@@ -21,7 +21,7 @@ pyflakes = "^2.2.0"
 BetterErrorMessages = "^0.4"
 sentry-sdk = "*"
 friendly-traceback = "*"
-setuptools = "^65.4.0"
+setuptools = "*"
 
 [tool.poetry.dev-dependencies]
 flake8 = {version = "^3.8.3", optional = true}
