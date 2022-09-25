@@ -1,5 +1,6 @@
 import sys
 import linecache
+import warnings
 
 from markdown import markdown
 
@@ -16,6 +17,8 @@ import friendly_traceback
 linecache.getlines = old_getlines  # undo friendly monkeypatching
 
 friendly_traceback.set_lang(t.current_language or "en")
+
+warnings.simplefilter("ignore")
 
 
 def friendly_message(e, double_newline: bool):
