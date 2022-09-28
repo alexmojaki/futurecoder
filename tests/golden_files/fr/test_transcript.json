@@ -43,7 +43,7 @@
             "passed": false,
             "result": [
                 {
-                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Pr\u00e9sentement, je ne peux pas deviner la cause probable de cette erreur.\nEssayez d\u2019examiner attentivement la ligne indiqu\u00e9e ainsi que celle\nimm\u00e9diatement au dessus pour voir si vous pouvez identifier\nun mot mal orthographi\u00e9, ou des symboles manquants, comme (,), [,],:, etc.</p>\n<p>Si votre code n'utilise pas d'annotations de type,\net que vous pensez que friendly devrait\npouvoir l'analyser correctement, SVP rapporter ce cas au site suivant:\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Pr\u00e9sentement, je ne peux pas deviner la cause probable de cette erreur.\nEssayez d\u2019examiner attentivement la ligne indiqu\u00e9e ainsi que celle\nimm\u00e9diatement au dessus pour voir si vous pouvez identifier\nun mot mal orthographi\u00e9, ou des symboles manquants, comme (,), [,],:, etc.</p>\n<p>Si votre code n'utilise pas d'annotations de type,\net que vous pensez que friendly devrait\npouvoir l'analyser correctement, SVP rapporter ce cas au site suivant:\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
                     "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 1\n",
                     "type": "syntax_error"
                 }
@@ -3896,7 +3896,7 @@
             "passed": true,
             "result": [
                 {
-                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Pr\u00e9sentement, je ne peux pas deviner la cause probable de cette erreur.\nEssayez d\u2019examiner attentivement la ligne indiqu\u00e9e ainsi que celle\nimm\u00e9diatement au dessus pour voir si vous pouvez identifier\nun mot mal orthographi\u00e9, ou des symboles manquants, comme (,), [,],:, etc.</p>\n<p>Si votre code n'utilise pas d'annotations de type,\net que vous pensez que friendly devrait\npouvoir l'analyser correctement, SVP rapporter ce cas au site suivant:\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Pr\u00e9sentement, je ne peux pas deviner la cause probable de cette erreur.\nEssayez d\u2019examiner attentivement la ligne indiqu\u00e9e ainsi que celle\nimm\u00e9diatement au dessus pour voir si vous pouvez identifier\nun mot mal orthographi\u00e9, ou des symboles manquants, comme (,), [,],:, etc.</p>\n<p>Si votre code n'utilise pas d'annotations de type,\net que vous pensez que friendly devrait\npouvoir l'analyser correctement, SVP rapporter ce cas au site suivant:\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
                     "text": "    print('Alice s'en va diner')\n          ^^^^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\nat line 1\n",
                     "type": "syntax_error"
                 }
@@ -4351,7 +4351,7 @@
             "passed": false,
             "result": [
                 {
-                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Pr\u00e9sentement, je ne peux pas deviner la cause probable de cette erreur.\nEssayez d\u2019examiner attentivement la ligne indiqu\u00e9e ainsi que celle\nimm\u00e9diatement au dessus pour voir si vous pouvez identifier\nun mot mal orthographi\u00e9, ou des symboles manquants, comme (,), [,],:, etc.</p>\n<p>Si votre code n'utilise pas d'annotations de type,\net que vous pensez que friendly devrait\npouvoir l'analyser correctement, SVP rapporter ce cas au site suivant:\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Pr\u00e9sentement, je ne peux pas deviner la cause probable de cette erreur.\nEssayez d\u2019examiner attentivement la ligne indiqu\u00e9e ainsi que celle\nimm\u00e9diatement au dessus pour voir si vous pouvez identifier\nun mot mal orthographi\u00e9, ou des symboles manquants, comme (,), [,],:, etc.</p>\n<p>Si votre code n'utilise pas d'annotations de type,\net que vous pensez que friendly devrait\npouvoir l'analyser correctement, SVP rapporter ce cas au site suivant:\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
                     "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nat line 2\n",
                     "type": "syntax_error"
                 }
