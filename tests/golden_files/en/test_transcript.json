@@ -7283,39 +7283,6 @@
         "step": "shopping_cart4"
     },
     {
-        "page": "Using Dictionaries",
-        "program": [
-            "def substitute(string):",
-            "    result = ''",
-            "    for char in string:",
-            "        if char == 'A':",
-            "            char = 'T'",
-            "        elif char == 'T':",
-            "            char = 'A'",
-            "        elif char == 'G':",
-            "            char = 'C'",
-            "        elif char == 'C':",
-            "            char = 'G'",
-            "        result += char",
-            "    return result",
-            "",
-            "original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
-            "expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'",
-            "assert_equal(substitute(original), expected)"
-        ],
-        "response": {
-            "message": "",
-            "passed": true,
-            "result": [
-                {
-                    "text": "OK\n",
-                    "type": "stdout"
-                }
-            ]
-        },
-        "step": "shopping_cart5"
-    },
-    {
         "get_solution": [
             "def substitute(string, d):",
             "    result = \"\"",
@@ -7337,85 +7304,6 @@
             "result": []
         },
         "step": "dna_part2"
-    },
-    {
-        "page": "Using Dictionaries",
-        "program": [
-            "plaintext = 'helloworld'",
-            "encrypted = 'qpeefifmez'",
-            "letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}",
-            "reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}",
-            "assert_equal(substitute(plaintext, letters), encrypted)",
-            "assert_equal(substitute(encrypted, reverse), plaintext)"
-        ],
-        "response": {
-            "message": "",
-            "passed": true,
-            "result": [
-                {
-                    "data": [
-                        {
-                            "didyoumean": [],
-                            "exception": {
-                                "message": "name 'substitute' is not defined",
-                                "type": "NameError"
-                            },
-                            "frames": [
-                                {
-                                    "filename": "/my_program.py",
-                                    "lineno": 5,
-                                    "lines": [
-                                        {
-                                            "is_current": true,
-                                            "lineno": 5,
-                                            "text": "<span class=\"n\">assert_equal</span><span class=\"p\">(</span><span class=\"n n-ExecutingNode\">substitute</span><span class=\"p\">(</span><span class=\"n\">plaintext</span><span class=\"p\">,</span> <span class=\"n\">letters</span><span class=\"p\">),</span> <span class=\"n\">encrypted</span><span class=\"p\">)</span>",
-                                            "type": "line"
-                                        }
-                                    ],
-                                    "name": "<module>",
-                                    "type": "frame",
-                                    "variables": [
-                                        {
-                                            "name": "<span class=\"n\">encrypted</span>\n",
-                                            "value": "<span class=\"s1\">&#39;qpeefifmez&#39;</span>\n"
-                                        },
-                                        {
-                                            "name": "<span class=\"n\">letters</span>\n",
-                                            "value": "{&#x27;h&#x27;: &#x27;q&#x27;, &#x27;e&#x27;: &#x27;p&#x27;, &#x27;l&#x27;: &#x27;e&#x27;, &#x27;o&#x27;: &#x27;f&#x27;, ...}"
-                                        },
-                                        {
-                                            "name": "<span class=\"n\">plaintext</span>\n",
-                                            "value": "<span class=\"s1\">&#39;helloworld&#39;</span>\n"
-                                        },
-                                        {
-                                            "name": "<span class=\"n\">reverse</span>\n",
-                                            "value": "{&#x27;q&#x27;: &#x27;h&#x27;, &#x27;p&#x27;: &#x27;e&#x27;, &#x27;e&#x27;: &#x27;l&#x27;, &#x27;f&#x27;: &#x27;o&#x27;, ...}"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "friendly": "<p>A <code>NameError</code> exception indicates that a variable or\nfunction name is not known to Python.\nMost often, this is because there is a spelling mistake.\nHowever, sometimes it is because the name is used\nbefore being defined or given a value.</p>\n<p>In your program, no object with the name <code>substitute</code> exists.\nI have no additional information for you.</p>",
-                            "tail": ""
-                        }
-                    ],
-                    "text": [
-                        "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 5, in <module>",
-                        "       4 | reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}",
-                        "-->    5 | assert_equal(substitute(plaintext, letters), encrypted)",
-                        "                        ^^^^^^^^^^",
-                        "encrypted = 'qpeefifmez'",
-                        "letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', ...}",
-                        "plaintext = 'helloworld'",
-                        "reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', ...}",
-                        "",
-                        "NameError: name 'substitute' is not defined"
-                    ],
-                    "type": "traceback"
-                }
-            ]
-        },
-        "step": "cryptography"
     },
     {
         "page": "Dictionary Keys And Values",

@@ -1765,25 +1765,36 @@ msgstr "'AGTAGCGTC'"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
 #. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
 #. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. 
+#.     def substitute(string, d):
+#.         ...
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
 msgid "code_bits.'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'"
 msgstr "'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'"
 
@@ -2512,25 +2523,36 @@ msgstr "'Python'"
 msgid "code_bits.'Starting... '"
 msgstr "'Starting... '"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
 #. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
 #. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. 
+#.     def substitute(string, d):
+#.         ...
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
 msgid "code_bits.'TCATCGCAGGAATCAATGTCCTACCGAATA'"
 msgstr "'TCATCGCAGGAATCAATGTCCTACCGAATA'"
 
@@ -3257,8 +3279,6 @@ msgstr "'apfel'"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -3445,8 +3465,6 @@ msgstr "'boite'"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -3523,8 +3541,6 @@ msgstr "'box'"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
-#. 
-#. 
 #. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
@@ -3616,8 +3632,6 @@ msgstr "'def'"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
-#. 
-#. 
 #. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
@@ -3859,14 +3873,20 @@ msgstr "'hello world'"
 msgid "code_bits.'hello'"
 msgstr "'hello'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
 #. 
-#. plaintext = 'helloworld'
-#. encrypted = 'qpeefifmez'
-#. letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#. reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#. assert_equal(substitute(plaintext, letters), encrypted)
-#. assert_equal(substitute(encrypted, reverse), plaintext)
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.'helloworld'"
 msgstr "'helloworld'"
 
@@ -4141,14 +4161,20 @@ msgstr "'on'"
 msgid "code_bits.'pomme'"
 msgstr "'pomme'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
 #. 
-#. plaintext = 'helloworld'
-#. encrypted = 'qpeefifmez'
-#. letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#. reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#. assert_equal(substitute(plaintext, letters), encrypted)
-#. assert_equal(substitute(encrypted, reverse), plaintext)
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.'qpeefifmez'"
 msgstr "'qpeefifmez'"
 
@@ -4496,18 +4522,6 @@ msgstr "Hello"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UnderstandingProgramsWithSnoop.steps.print_tail.text
-#. 
-#.     __program_indented__
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography.text
-#. 
-#.     __program_indented__
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5.text
 #. 
 #.     __program_indented__
 #. 
@@ -5214,14 +5228,53 @@ msgstr "all_numbers"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
 #. 
-#. plaintext = 'helloworld'
-#. encrypted = 'qpeefifmez'
-#. letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#. reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#. assert_equal(substitute(plaintext, letters), encrypted)
-#. assert_equal(substitute(encrypted, reverse), plaintext)
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. 
+#.     def substitute(string, d):
+#.         ...
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
+#. 
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 #. 
 #. ------
 #. 
@@ -5246,8 +5299,6 @@ msgstr "all_numbers"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -5264,28 +5315,6 @@ msgstr "all_numbers"
 #.         ),
 #.         500000010,
 #.     )
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
-#. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
-#. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
 msgid "code_bits.assert_equal"
 msgstr "assert_equal"
 
@@ -6379,8 +6408,6 @@ msgstr "c4"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -6764,25 +6791,25 @@ msgstr "cart"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
 #. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
 #. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
 msgid "code_bits.char"
 msgstr "char"
 
@@ -8483,14 +8510,20 @@ msgstr "doubles"
 msgid "code_bits.element"
 msgstr "element"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
 #. 
-#. plaintext = 'helloworld'
-#. encrypted = 'qpeefifmez'
-#. letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#. reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#. assert_equal(substitute(plaintext, letters), encrypted)
-#. assert_equal(substitute(encrypted, reverse), plaintext)
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.encrypted"
 msgstr "encrypted"
 
@@ -8765,25 +8798,36 @@ msgstr "excited"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
 #. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
 #. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. 
+#.     def substitute(string, d):
+#.         ...
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
 msgid "code_bits.expected"
 msgstr "expected"
 
@@ -10807,8 +10851,6 @@ msgstr "is_valid_percentage"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -11203,6 +11245,23 @@ msgstr "lengths"
 #.     for letter in string:
 #.         result += d[letter]
 #.     return result
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
+#. 
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.letter"
 msgstr "letter"
 
@@ -11223,14 +11282,20 @@ msgstr "letter"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
 #. 
-#. plaintext = 'helloworld'
-#. encrypted = 'qpeefifmez'
-#. letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#. reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#. assert_equal(substitute(plaintext, letters), encrypted)
-#. assert_equal(substitute(encrypted, reverse), plaintext)
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.letters"
 msgstr "letters"
 
@@ -13238,25 +13303,36 @@ msgstr "nums"
 msgid "code_bits.opposite_dna"
 msgstr "opposite_dna"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
 #. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
 #. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. 
+#.     def substitute(string, d):
+#.         ...
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
 msgid "code_bits.original"
 msgstr "original"
 
@@ -13436,14 +13512,20 @@ msgstr "person_name"
 msgid "code_bits.piece"
 msgstr "piece"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
 #. 
-#. plaintext = 'helloworld'
-#. encrypted = 'qpeefifmez'
-#. letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#. reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#. assert_equal(substitute(plaintext, letters), encrypted)
-#. assert_equal(substitute(encrypted, reverse), plaintext)
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.plaintext"
 msgstr "plaintext"
 
@@ -14420,8 +14502,6 @@ msgstr "present"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -14508,8 +14588,6 @@ msgstr "price"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
-#. 
-#. 
 #. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
@@ -15110,8 +15188,6 @@ msgstr "quadruple"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -15156,8 +15232,6 @@ msgstr "quantities"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
-#. 
-#. 
 #. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
@@ -15226,6 +15300,45 @@ msgstr "quantity"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. 
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
+#. 
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1
 #. 
 #. def total_cost(cart, prices):
@@ -15270,8 +15383,6 @@ msgstr "quantity"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
 #. 
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -15288,39 +15399,23 @@ msgstr "quantity"
 #.         ),
 #.         500000010,
 #.     )
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
-#. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
-#. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
 msgid "code_bits.result"
 msgstr "result"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
 #. 
-#. plaintext = 'helloworld'
-#. encrypted = 'qpeefifmez'
-#. letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#. reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#. assert_equal(substitute(plaintext, letters), encrypted)
-#. assert_equal(substitute(encrypted, reverse), plaintext)
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.reverse"
 msgstr "reverse"
 
@@ -16988,25 +17083,53 @@ msgstr "spaces"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
 #. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
 #. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. 
+#.     def substitute(string, d):
+#.         ...
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
+#. 
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.string"
 msgstr "string"
 
@@ -17574,17 +17697,6 @@ msgstr "strings"
 msgid "code_bits.sublist"
 msgstr "sublist"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.cryptography
-#. 
-#. plaintext = 'helloworld'
-#. encrypted = 'qpeefifmez'
-#. letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#. reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#. assert_equal(substitute(plaintext, letters), encrypted)
-#. assert_equal(substitute(encrypted, reverse), plaintext)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
 #. 
 #. def substitute(string, d):
@@ -17595,25 +17707,53 @@ msgstr "sublist"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart5
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
 #. 
-#. def substitute(string):
-#.     result = ''
-#.     for char in string:
-#.         if char == 'A':
-#.             char = 'T'
-#.         elif char == 'T':
-#.             char = 'A'
-#.         elif char == 'G':
-#.             char = 'C'
-#.         elif char == 'C':
-#.             char = 'G'
-#.         result += char
-#.     return result
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
 #. 
-#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#. assert_equal(substitute(original), expected)
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. 
+#.     def substitute(string, d):
+#.         ...
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
+#. 
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.substitute"
 msgstr "substitute"
 
@@ -18131,8 +18271,6 @@ msgstr "total"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4.text
-#. 
-#. 
 #. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
@@ -30367,19 +30505,6 @@ msgstr "Using `break` to end a loop early"
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
-#.     # __code0__:
-#.     __program_indented__
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
-msgid "pages.UsingDictionaries.steps.cryptography.text"
-msgstr ""
-"Nice! Here's an example of how this function can also be used to encrypt and decrypt secret messages:\n"
-"\n"
-"    __copyable__\n"
-"__code0__"
-
-#. https://futurecoder.io/course/#UsingDictionaries
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
 msgid "pages.UsingDictionaries.steps.dna_part2.hints.0.text"
 msgstr "Remember that the key for the dictionary is the character in the string."
@@ -30391,19 +30516,120 @@ msgid "pages.UsingDictionaries.steps.dna_part2.hints.1.text"
 msgstr "The value from the dictionary is the replacement for the key."
 
 #. https://futurecoder.io/course/#UsingDictionaries
+#. 
+#.     # __code0__:
+#.     def substitute(string):
+#.         result = ''
+#.         for char in string:
+#.             if char == 'A':
+#.                 char = 'T'
+#.             elif char == 'T':
+#.                 char = 'A'
+#.             elif char == 'G':
+#.                 char = 'C'
+#.             elif char == 'C':
+#.                 char = 'G'
+#.             result += char
+#.         return result
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original), expected)
+#. 
+#.     # __code1__:
+#.     def substitute(string, d):
+#.         ...
+#. 
+#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27AGTAGCGTCCTTAGTTACAGGATGGCTTAT%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27TCATCGCAGGAATCAATGTCCTACCGAATA%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.expected
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.original
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.result
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.substitute
 msgid "pages.UsingDictionaries.steps.dna_part2.text"
 msgstr ""
+"Not bad! But you may have noticed that it looks a bit awkward. Why do we have to specify `'dog'` and `'box'` in both the `cart` and the `quantities`?\n"
+"On the next page we'll look at how to loop directly over the keys of a dictionary,\n"
+"so we can get rid of the `cart` argument.\n"
+"\n"
+"But first, let's practice what we've learned a bit more.\n"
+"\n"
+"[Earlier in the course](#IntroducingElif) we looked at converting one strand of DNA\n"
+"into a new strand with matching nucleotides:\n"
+"\n"
+"    __copyable__\n"
+"__code0__\n"
+"\n"
 "Now we can use dictionaries to make this code both shorter and more general so it can be used for other purposes.\n"
 "\n"
 "Your job is to add another argument to the `substitute` function: a dictionary called `d`.\n"
 "\n"
 "The keys of `d` represent characters\n"
 "in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`\n"
-"means that `A` should be replaced by `T`."
+"means that `A` should be replaced by `T`:\n"
+"\n"
+"    __copyable__\n"
+"__code1__"
 
 #. https://futurecoder.io/course/#UsingDictionaries
+#. 
+#.     # __code0__:
+#.     def substitute(string, d):
+#.         result = ""
+#.         for letter in string:
+#.             result += d[letter]
+#.         return result
+#. 
+#.     plaintext = 'helloworld'
+#.     encrypted = 'qpeefifmez'
+#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+#.     assert_equal(substitute(plaintext, letters), encrypted)
+#.     assert_equal(substitute(encrypted, reverse), plaintext)
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27helloworld%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27qpeefifmez%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.encrypted
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.letter
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.letters
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.plaintext
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.result
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.reverse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.substitute
 msgid "pages.UsingDictionaries.steps.final_text.text"
 msgstr ""
+"Nice! Here's an example of how this function can also be used to encrypt and decrypt secret messages:\n"
+"\n"
+"    __copyable__\n"
+"__code0__\n"
+"\n"
 "The same function works in both directions, we just need to pass it different dictionaries.\n"
 "\n"
 "The two dictionaries are almost the same, we just swap around the key and value in each pair.\n"
@@ -30524,8 +30750,6 @@ msgstr "Access the two dictionaries using item as the key."
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
 #.     # __code0__:
-#. 
-#. 
 #.     def total_cost(cart, quantities, prices):
 #.         result = 0
 #.         for item in cart:
@@ -30587,28 +30811,6 @@ msgstr ""
 "Now `cart` is still a list of strings, but it doesn't have any duplicates.\n"
 "`quantities` is a dictionary where the keys are the items in `cart` and the corresponding values are the quantity\n"
 "of that item that the customer wants to buy."
-
-#. https://futurecoder.io/course/#UsingDictionaries
-#. 
-#.     # __code0__:
-#.     __program_indented__
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
-msgid "pages.UsingDictionaries.steps.shopping_cart5.text"
-msgstr ""
-"Not bad! But you may have noticed that it looks a bit awkward. Why do we have to specify `'dog'` and `'box'` in both the `cart` and the `quantities`?\n"
-"\n"
-"On the next page we'll look at how to loop directly over the keys of a dictionary,\n"
-"so we can get rid of the `cart` argument.\n"
-"\n"
-"\n"
-"But first, let's practice what we've learned a bit more.\n"
-"\n"
-"[Earlier in the course](#IntroducingElif) we looked at converting one strand of DNA\n"
-"into a new strand with matching nucleotides:\n"
-"\n"
-"    __copyable__\n"
-"__code0__"
 
 #. https://futurecoder.io/course/#UsingDictionaries
 msgid "pages.UsingDictionaries.title"

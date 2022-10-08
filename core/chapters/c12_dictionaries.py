@@ -237,7 +237,7 @@ of that item that the customer wants to buy.
         Access the two dictionaries using item as the key.
         """
 
-    class shopping_cart5(VerbatimStep):
+    class dna_part2(ExerciseStep):
         """
 Not bad! But you may have noticed that it looks a bit awkward. Why do we have to specify `'dog'` and `'box'` in both the `cart` and the `quantities`?
 On the next page we'll look at how to loop directly over the keys of a dictionary,
@@ -249,38 +249,39 @@ But first, let's practice what we've learned a bit more.
 into a new strand with matching nucleotides:
 
     __copyable__
-    __program_indented__
-        """
-
-        def program(self):
-            def substitute(string):
-                result = ''
-                for char in string:
-                    if char == 'A':
-                        char = 'T'
-                    elif char == 'T':
-                        char = 'A'
-                    elif char == 'G':
-                        char = 'C'
-                    elif char == 'C':
-                        char = 'G'
-                    result += char
-                return result
+    def substitute(string):
+        result = ''
+        for char in string:
+            if char == 'A':
+                char = 'T'
+            elif char == 'T':
+                char = 'A'
+            elif char == 'G':
+                char = 'C'
+            elif char == 'C':
+                char = 'G'
+            result += char
+        return result
 
     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
     assert_equal(substitute(original), expected)
 
-
-    class dna_part2(ExerciseStep):
-        """
 Now we can use dictionaries to make this code both shorter and more general so it can be used for other purposes.
 
 Your job is to add another argument to the `substitute` function: a dictionary called `d`.
 
 The keys of `d` represent characters
 in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`
-means that `A` should be replaced by `T`.
+means that `A` should be replaced by `T`:
+
+    __copyable__
+    def substitute(string, d):
+        ...
+
+    original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+    expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+    assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
         """
 
         def solution(self):
@@ -313,24 +314,23 @@ means that `A` should be replaced by `T`.
         ]
 
 
-    class cryptography(VerbatimStep):
-        """
+    final_text = """
 Nice! Here's an example of how this function can also be used to encrypt and decrypt secret messages:
 
     __copyable__
-    __program_indented__
-        """
+    def substitute(string, d):
+        result = ""
+        for letter in string:
+            result += d[letter]
+        return result
 
-        def program(self):
-            plaintext = 'helloworld'
-            encrypted = 'qpeefifmez'
-            letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-            reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-            assert_equal(substitute(plaintext, letters), encrypted)
-            assert_equal(substitute(encrypted, reverse), plaintext)
+    plaintext = 'helloworld'
+    encrypted = 'qpeefifmez'
+    letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+    reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+    assert_equal(substitute(plaintext, letters), encrypted)
+    assert_equal(substitute(encrypted, reverse), plaintext)
 
-
-    final_text = """
 The same function works in both directions, we just need to pass it different dictionaries.
 
 The two dictionaries are almost the same, we just swap around the key and value in each pair.
@@ -345,6 +345,7 @@ and `letters['l']` gives `'e'` again.
 
 Soon you'll write a function to create a dictionary like `reverse` automatically,
 i.e. `reverse = swap_keys_values(letters)`."""
+
 
 class DictionaryKeysAndValues(Page):
     class introducing_keys(Step):
