@@ -452,7 +452,7 @@ Now you can use this to modify our function on the previous page to remove the `
 
         tests = [
           (
-                ({'apple' : 3, 'carrot' : 4}, {'apple' : 10, 'carrot' : 20}),
+                ({'apple' : 3, 'carrot' : 4}, {'apple' : 10, 'carrot' : 20, 'banana': 30}),
                 110
            )
         ]
