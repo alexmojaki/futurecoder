@@ -2022,13 +2022,12 @@ msgstr "'Dylan'"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -2047,13 +2046,12 @@ msgstr "'French'"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -3135,13 +3133,12 @@ msgstr "'aeiou'"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -3156,6 +3153,26 @@ msgstr "'aeiou'"
 msgid "code_bits.'apfel'"
 msgstr "'apfel'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_french.text
 #. 
 #.     def print_words(french):
@@ -3187,7 +3204,6 @@ msgstr "'apfel'"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.introducing_keys.text
 #. 
-#. 
 #.     quantities = {'apple': 1, 'cat': 10}
 #.     print(quantities)
 #. 
@@ -3213,13 +3229,12 @@ msgstr "'apfel'"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -3352,13 +3367,12 @@ msgstr "'bc'"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -3379,6 +3393,26 @@ msgstr "'bc'"
 msgid "code_bits.'boite'"
 msgstr "'boite'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_french.text
 #. 
 #.     def print_words(french):
@@ -3405,13 +3439,12 @@ msgstr "'boite'"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -3484,6 +3517,26 @@ msgstr "'boite'"
 msgid "code_bits.'box'"
 msgstr "'box'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.introducing_keys
 #. 
 #. quantities = {'apple': 1, 'cat': 10}
@@ -3492,7 +3545,6 @@ msgstr "'box'"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.introducing_keys.text
-#. 
 #. 
 #.     quantities = {'apple': 1, 'cat': 10}
 #.     print(quantities)
@@ -3606,6 +3658,26 @@ msgstr "'de'"
 msgid "code_bits.'def'"
 msgstr "'def'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1.text
 #. 
 #.     def total_cost(cart, prices):
@@ -3999,13 +4071,12 @@ msgstr "'jklmn'"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -4128,13 +4199,12 @@ msgstr "'on'"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -4276,12 +4346,6 @@ msgid "code_bits.Hello"
 msgstr "Hello"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.keys_are_iterable.text
-#. 
-#.     __program_indented__
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.keys_are_iterable2.text
 #. 
 #.     __program_indented__
 #. 
@@ -4754,6 +4818,26 @@ msgstr "all_numbers"
 #.             ]
 #.         ),
 #.         False
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
 #.     )
 #. 
 #. ------
@@ -8835,13 +8919,12 @@ msgstr "expected"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -8866,13 +8949,12 @@ msgstr "f\"2 * 3 + 4 is equal to {2 * 3 + 4}\""
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -8896,56 +8978,6 @@ msgstr "f\"English: {word}\""
 #.             print(f"Error! {repr(actual)} != {repr(expected)}")
 msgid "code_bits.f\"Error! {repr(actual)} != {repr(expected)}\""
 msgstr "f\"Error! {repr(actual)} != {repr(expected)}\""
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.nested_dictionaries
-#. 
-#. def print_words(words):
-#.     for word in words:
-#.         languages = words[word]
-#. 
-#.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
-#.         print(f"---")
-#. 
-#. 
-#. print_words({
-#.     'apple': {
-#.         'French': 'pomme',
-#.         'German': 'apfel',
-#.     },
-#.     'box': {
-#.         'French': 'boite',
-#.         'German': 'kasten',
-#.     },
-#. })
-msgid "code_bits.f\"French: {languages['French']}\""
-msgstr "f\"French: {languages['French']}\""
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.nested_dictionaries
-#. 
-#. def print_words(words):
-#.     for word in words:
-#.         languages = words[word]
-#. 
-#.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
-#.         print(f"---")
-#. 
-#. 
-#. print_words({
-#.     'apple': {
-#.         'French': 'pomme',
-#.         'German': 'apfel',
-#.     },
-#.     'box': {
-#.         'French': 'boite',
-#.         'German': 'kasten',
-#.     },
-#. })
-msgid "code_bits.f\"German: {languages['German']}\""
-msgstr "f\"German: {languages['German']}\""
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 #. 
@@ -9016,6 +9048,30 @@ msgstr "f\"Hello {person_name}!\""
 #. print(f"There are {len(people)} people waiting, the first one's name is {people[0]}.")
 msgid "code_bits.f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\""
 msgstr "f\"There are {len(people)} people waiting, the first one's name is {people[0]}.\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.nested_dictionaries
+#. 
+#. def print_words(words):
+#.     for word in words:
+#.         translations = words[word]
+#. 
+#.         print(f"English: {word}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
+#.         print(f"---")
+#. 
+#. print_words({
+#.     'apple': {
+#.         'French': 'pomme',
+#.         'German': 'apfel',
+#.     },
+#.     'box': {
+#.         'French': 'boite',
+#.         'German': 'kasten',
+#.     },
+#. })
+msgid "code_bits.f\"{language}: {translations[language]}\""
+msgstr "f\"{language}: {translations[language]}\""
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreOnReturn.steps.break_vs_return
 #. 
@@ -10807,6 +10863,26 @@ msgstr "is_valid_percentage"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1
 #. 
 #. def total_cost(cart, prices):
@@ -11008,13 +11084,12 @@ msgstr "key"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -11026,8 +11101,8 @@ msgstr "key"
 #.         'German': 'kasten',
 #.     },
 #. })
-msgid "code_bits.languages"
-msgstr "languages"
+msgid "code_bits.language"
+msgstr "language"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 #. 
@@ -14458,6 +14533,26 @@ msgstr "present"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1
 #. 
 #. def total_cost(cart, prices):
@@ -14530,6 +14625,26 @@ msgstr "price"
 #.         quantity = quantities[item]
 #.         result += price * quantity
 #.     return result
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
 #. 
 #. ------
 #. 
@@ -15053,13 +15168,12 @@ msgstr "print_winner"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -15143,6 +15257,26 @@ msgstr "quadruple"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.introducing_keys
 #. 
 #. quantities = {'apple': 1, 'cat': 10}
@@ -15151,7 +15285,6 @@ msgstr "quadruple"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.introducing_keys.text
-#. 
 #. 
 #.     quantities = {'apple': 1, 'cat': 10}
 #.     print(quantities)
@@ -15219,6 +15352,26 @@ msgstr "quantities"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4
 #. 
 #. def total_cost(cart, quantities, prices):
@@ -15261,6 +15414,26 @@ msgstr "quantity"
 #.         quantity = quantities[item]
 #.         result += price * quantity
 #.     return result
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
 #. 
 #. ------
 #. 
@@ -18228,6 +18401,26 @@ msgstr "total"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
+#. 
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1
 #. 
 #. def total_cost(cart, prices):
@@ -18290,6 +18483,30 @@ msgstr "total"
 #.     )
 msgid "code_bits.total_cost"
 msgstr "total_cost"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.nested_dictionaries
+#. 
+#. def print_words(words):
+#.     for word in words:
+#.         translations = words[word]
+#. 
+#.         print(f"English: {word}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
+#.         print(f"---")
+#. 
+#. print_words({
+#.     'apple': {
+#.         'French': 'pomme',
+#.         'German': 'apfel',
+#.     },
+#.     'box': {
+#.         'French': 'boite',
+#.         'German': 'kasten',
+#.     },
+#. })
+msgid "code_bits.translations"
+msgstr "translations"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.ReturningValuesFromFunctions.steps.first_return
 #. 
@@ -18914,13 +19131,12 @@ msgstr "winning_line"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -19164,13 +19380,12 @@ msgstr "word"
 #. 
 #. def print_words(words):
 #.     for word in words:
-#.         languages = words[word]
+#.         translations = words[word]
 #. 
 #.         print(f"English: {word}")
-#.         print(f"French: {languages['French']}")
-#.         print(f"German: {languages['German']}")
+#.         for language in translations:
+#.             print(f"{language}: {translations[language]}")
 #.         print(f"---")
-#. 
 #. 
 #. print_words({
 #.     'apple': {
@@ -21610,28 +21825,53 @@ msgid "pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.hints.1.text"
 msgstr "Try iterating over the dictionary 'quantities' itself."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
+#. 
+#.     # __code0__:
+#.     def total_cost(quantities, prices):
+#.         result = 0
+#.         for item in ...:
+#.             price = prices[item]
+#.             quantity = quantities[item]
+#.             result += price * quantity
+#.         return result
+#. 
+#.     assert_equal(
+#.         total_cost(
+#.             {'dog': 5000000, 'box': 2},
+#.             {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},
+#.         ),
+#.         500000010,
+#.     )
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27apple%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27box%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27cat%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27dog%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.item
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.price
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.prices
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quantities
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quantity
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.result
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.total_cost
 msgid "pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text"
 msgstr ""
 "Now you can use this to modify our function on the previous page to remove the `cart` argument:\n"
 "\n"
 "    __copyable__\n"
-"    __no_auto_translate__\n"
-"\n"
-"    def total_cost(quantities, prices):\n"
-"        result = 0\n"
-"        for item in ...:\n"
-"            price = prices[item]\n"
-"            quantity = quantities[item]\n"
-"            result += price * quantity\n"
-"        return result\n"
-"\n"
-"    assert_equal(\n"
-"        total_cost(\n"
-"            {'dog': 5000000, 'box': 2},\n"
-"            {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100},\n"
-"        ),\n"
-"        500000010,\n"
-"    )"
+"__code0__"
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
@@ -21675,10 +21915,8 @@ msgstr ""
 "    __copyable__\n"
 "__code0__\n"
 "\n"
-"\n"
 "For example, the last line of code above should print:\n"
 "\n"
-"    __no_auto_translate__\n"
 "    English: apple\n"
 "    French: pomme\n"
 "    ---\n"
@@ -21747,15 +21985,11 @@ msgstr ""
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 msgid "pages.DictionaryKeysAndValues.steps.final_text.text"
-msgstr ""
-"Congratulations! You've completed the dictionaries chapters.\n"
-"\n"
-"As you have seen, dictionaries are a powerful tool for organizing and accessing data."
+msgstr "Congratulations! You've reached the end of the course so far. More is on the way!"
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
 #.     # __code0__:
-#. 
 #.     quantities = {'apple': 1, 'cat': 10}
 #.     print(quantities)
 #. 
@@ -21766,10 +22000,12 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quantities
 msgid "pages.DictionaryKeysAndValues.steps.introducing_keys.text"
 msgstr ""
-"Copy this code into the editor, then change `print(quantities)` to `print(quantities.keys())`, and run the whole program.\n"
+"Copy this code into the editor:\n"
 "\n"
 "    __copyable__\n"
-"__code0__"
+"__code0__\n"
+"\n"
+"Then change `print(quantities)` to `print(quantities.keys())`, and run the whole program."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
@@ -21786,18 +22022,11 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
-#. 
-#.     # __code0__:
-#.     __program_indented__
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
 msgid "pages.DictionaryKeysAndValues.steps.keys_are_iterable2.text"
 msgstr ""
 "Actually, you don't even need `.keys()`. Iterating directly over a dictionary automatically iterates over its keys.\n"
 "Sometimes it's nice to write `.keys()` to make your code more readable, but you don't have to.\n"
-"Run this code.\n"
-"\n"
-"__code0__"
+"Remove the `.keys()` and run the code again."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 

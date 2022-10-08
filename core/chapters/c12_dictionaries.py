@@ -350,14 +350,13 @@ i.e. `reverse = swap_keys_values(letters)`."""
 class DictionaryKeysAndValues(Page):
     class introducing_keys(Step):
         """
-Copy this code into the editor, then change `print(quantities)` to `print(quantities.keys())`, and run the whole program.
+Copy this code into the editor:
 
     __copyable__
-
     quantities = {'apple': 1, 'cat': 10}
     print(quantities)
 
-
+Then change `print(quantities)` to `print(quantities.keys())`, and run the whole program.
         """
 
         program = """
@@ -367,7 +366,6 @@ Copy this code into the editor, then change `print(quantities)` to `print(quanti
 
         def check(self):
             return "dict_keys([" in self.result
-
 
     class keys_are_iterable(VerbatimStep):
         """
@@ -387,27 +385,21 @@ just like you'd iterate over a list:
         """
 Actually, you don't even need `.keys()`. Iterating directly over a dictionary automatically iterates over its keys.
 Sometimes it's nice to write `.keys()` to make your code more readable, but you don't have to.
-Run this code.
-
-    __program_indented__
+Remove the `.keys()` and run the code again.
         """
+
+        program_in_text = False
 
         def program(self):
             quantities = {'apple': 1, 'cat': 10}
             for key in quantities:
                 print(key)
 
-
-        #def check(self):
-        #    return "apple\ncat" in self.result
-
     class cleanup_shopping_cart(ExerciseStep):
         """
 Now you can use this to modify our function on the previous page to remove the `cart` argument:
 
     __copyable__
-    __no_auto_translate__
-
     def total_cost(quantities, prices):
         result = 0
         for item in ...:
@@ -441,13 +433,11 @@ Now you can use this to modify our function on the previous page to remove the `
         Try iterating over the dictionary 'quantities' itself.
         """
 
-        # Custom generate inputs is required because cart and prices must have the same keys.
         @classmethod
         def generate_inputs(cls):
-            k1 = generate_string()
-            k2 = generate_string()
-            return {'quantities': {k1 : random.randrange(100), k2 : random.randrange(100)},
-                    'prices': {k1 : random.randrange(100), k2 : random.randrange(100), generate_string() : random.randrange(100)}}
+            result = UsingDictionaries.shopping_cart4.generate_inputs()
+            del result["cart"]
+            return result
 
         tests = [
           (
@@ -470,10 +460,8 @@ Here's your starting code:
 
     print_words({'apple': 'pomme', 'box': 'boite'})
 
-
 For example, the last line of code above should print:
 
-    __no_auto_translate__
     English: apple
     French: pomme
     ---
@@ -487,9 +475,8 @@ For example, the last line of code above should print:
         Remember that the english words are the keys.
         """
 
-
         def solution(self):
-            def print_words(french:Dict[str, str]):
+            def print_words(french: Dict[str, str]):
                 for word in french:
                     print("English: " + word)
                     print("French: " + french[word])
@@ -498,14 +485,16 @@ For example, the last line of code above should print:
             return print_words
 
         tests = (
-            (({'apple': 'pomme', 'box': 'boite'},), """English: apple
+            (({'apple': 'pomme', 'box': 'boite'},), """\
+English: apple
 French: pomme
 ---
 English: box
 French: boite
 ---
             """),
-            (({'house': 'maison', 'car': 'voiture'},), """English: house
+            (({'house': 'maison', 'car': 'voiture'},), """\
+English: house
 French: maison
 ---
 English: car
@@ -513,7 +502,6 @@ French: voiture
 ---
             """),
             )
-
 
     class english_to_german(ExerciseStep):
         """
@@ -547,7 +535,7 @@ The keys are the same across both dictionaries.
         """
 
         def solution(self):
-            def print_words(french:Dict[str, str], german:Dict[str, str]):
+            def print_words(french: Dict[str, str], german: Dict[str, str]):
                 for word in french:
                     print("English: " + word)
                     print("French: " + french[word])
@@ -559,14 +547,13 @@ The keys are the same across both dictionaries.
         # Custom generate_dicts is required here because French and German dicts must have same English word as the key.
         @classmethod
         def generate_inputs(cls):
-            k1 = generate_string()
-            k2 = generate_string()
-            return {'french': {k1 : generate_string(), k2 : generate_string()},
-                    'german': {k1 : generate_string(), k2 : generate_string()}}
-
+            french = generate_dict(str, str)
+            german = {k: generate_string() for k in french}
+            return {"french": french, "german": german}
 
         tests = (
-            (({'apple' : 'pomme', 'box' : 'boite'}, {'apple' : 'apfel', 'box' : 'kasten'},), """English: apple
+            (({'apple' : 'pomme', 'box' : 'boite'}, {'apple' : 'apfel', 'box' : 'kasten'},), """\
+English: apple
 French: pomme
 German: apfel
 ---
@@ -585,31 +572,27 @@ Beautiful! There's a pattern emerging here. The two languages could be merged in
     __program_indented__
         """
 
-        program = """
-        def print_words(words):
-            for word in words:
-                languages = words[word]
+        def program(self):
+            def print_words(words):
+                for word in words:
+                    translations = words[word]
 
-                print(f"English: {word}")
-                print(f"French: {languages['French']}")
-                print(f"German: {languages['German']}")
-                print(f"---")
+                    print(f"English: {word}")
+                    for language in translations:
+                        print(f"{language}: {translations[language]}")
+                    print(f"---")
 
-
-        print_words({
-            'apple': {
-                'French': 'pomme',
-                'German': 'apfel',
-            },
-            'box': {
-                'French': 'boite',
-                'German': 'kasten',
-            },
-        })
-        """
+            print_words({
+                'apple': {
+                    'French': 'pomme',
+                    'German': 'apfel',
+                },
+                'box': {
+                    'French': 'boite',
+                    'German': 'kasten',
+                },
+            })
 
     final_text = """
-    Congratulations! You've completed the dictionaries chapters.
-
-    As you have seen, dictionaries are a powerful tool for organizing and accessing data.
+    Congratulations! You've reached the end of the course so far. More is on the way!
     """
