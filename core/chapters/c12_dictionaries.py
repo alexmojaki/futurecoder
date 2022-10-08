@@ -23,9 +23,10 @@ Think of the familiar kind of dictionary where you look up a word to find its de
 Dictionaries in Python are similar, but more general. You look up a *key* (e.g. a word) to get the associated *value* (e.g. a definition or translation).
 
 For example, here's a little dictionary translating English words to French:
-Run the line below in the shell.
 
     __program_indented__
+
+Run the line above in the shell.
         """
 
         expected_code_source = "shell"
@@ -237,7 +238,7 @@ of that item that the customer wants to buy.
         Access the two dictionaries using item as the key.
         """
 
-    class dna_part2(ExerciseStep):
+    class dna_part1(VerbatimStep):
         """
 Not bad! But you may have noticed that it looks a bit awkward. Why do we have to specify `'dog'` and `'box'` in both the `cart` and the `quantities`?
 On the next page we'll look at how to loop directly over the keys of a dictionary,
@@ -246,31 +247,38 @@ so we can get rid of the `cart` argument.
 But first, let's practice what we've learned a bit more.
 
 [Earlier in the course](#IntroducingElif) we looked at converting one strand of DNA
-into a new strand with matching nucleotides:
+into a new strand with matching nucleotides.
+Here's a version of that code using a function. It substitutes each letter in the input `string`
+with a different one.
 
     __copyable__
-    def substitute(string):
-        result = ''
-        for char in string:
-            if char == 'A':
-                char = 'T'
-            elif char == 'T':
-                char = 'A'
-            elif char == 'G':
-                char = 'C'
-            elif char == 'C':
-                char = 'G'
-            result += char
-        return result
+    __program_indented__
+    """
 
-    original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-    expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-    assert_equal(substitute(original), expected)
+        def program(self):
+            def substitute(string):
+                result = ''
+                for char in string:
+                    if char == 'A':
+                        char = 'T'
+                    elif char == 'T':
+                        char = 'A'
+                    elif char == 'G':
+                        char = 'C'
+                    elif char == 'C':
+                        char = 'G'
+                    result += char
+                return result
 
+            original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+            expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+            assert_equal(substitute(original), expected)
+
+    class dna_part2(ExerciseStep):
+        """
 Now we can use dictionaries to make this code both shorter and more general so it can be used for other purposes.
 
 Your job is to add another argument to the `substitute` function: a dictionary called `d`.
-
 The keys of `d` represent characters
 in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`
 means that `A` should be replaced by `T`:
@@ -282,6 +290,9 @@ means that `A` should be replaced by `T`:
     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
+
+This version of `substitute` should work for any arguments where all the characters in `string` are keys in `d`.
+No more `if` statements needed!
         """
 
         def solution(self):

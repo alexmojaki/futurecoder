@@ -1765,25 +1765,25 @@ msgstr "'AGTAGCGTC'"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
 #. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
 #. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
 #. 
 #. ------
 #. 
@@ -2521,25 +2521,25 @@ msgstr "'Python'"
 msgid "code_bits.'Starting... '"
 msgstr "'Starting... '"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
 #. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
 #. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
 #. 
 #. ------
 #. 
@@ -4591,6 +4591,12 @@ msgstr "Hello"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.first_print.text
 #. 
 #.     __program_indented__
@@ -5312,25 +5318,25 @@ msgstr "all_numbers"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
 #. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
 #. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
 #. 
 #. ------
 #. 
@@ -6875,25 +6881,25 @@ msgstr "cart"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
 #. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
 #. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
 msgid "code_bits.char"
 msgstr "char"
 
@@ -8882,25 +8888,25 @@ msgstr "excited"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
 #. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
 #. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
 #. 
 #. ------
 #. 
@@ -13378,25 +13384,25 @@ msgstr "nums"
 msgid "code_bits.opposite_dna"
 msgstr "opposite_dna"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
 #. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
 #. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
 #. 
 #. ------
 #. 
@@ -15463,6 +15469,28 @@ msgstr "quantity"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
+#. 
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
+#. 
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
 #. 
 #. def substitute(string, d):
@@ -15470,28 +15498,6 @@ msgstr "quantity"
 #.     for letter in string:
 #.         result += d[letter]
 #.     return result
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
-#. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
-#. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
 #. 
 #. ------
 #. 
@@ -17246,6 +17252,28 @@ msgstr "spaces"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
+#. 
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
+#. 
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
 #. 
 #. def substitute(string, d):
@@ -17253,28 +17281,6 @@ msgstr "spaces"
 #.     for letter in string:
 #.         result += d[letter]
 #.     return result
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
-#. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
-#. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
 #. 
 #. ------
 #. 
@@ -17870,6 +17876,28 @@ msgstr "strings"
 msgid "code_bits.sublist"
 msgstr "sublist"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part1
+#. 
+#. def substitute(string):
+#.     result = ''
+#.     for char in string:
+#.         if char == 'A':
+#.             char = 'T'
+#.         elif char == 'T':
+#.             char = 'A'
+#.         elif char == 'G':
+#.             char = 'C'
+#.         elif char == 'C':
+#.             char = 'G'
+#.         result += char
+#.     return result
+#. 
+#. original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+#. expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+#. assert_equal(substitute(original), expected)
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
 #. 
 #. def substitute(string, d):
@@ -17877,28 +17905,6 @@ msgstr "sublist"
 #.     for letter in string:
 #.         result += d[letter]
 #.     return result
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2.text
-#. 
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
-#. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
 #. 
 #. ------
 #. 
@@ -24044,9 +24050,10 @@ msgstr ""
 "Dictionaries in Python are similar, but more general. You look up a *key* (e.g. a word) to get the associated *value* (e.g. a definition or translation).\n"
 "\n"
 "For example, here's a little dictionary translating English words to French:\n"
-"Run the line below in the shell.\n"
 "\n"
-"__code0__"
+"__code0__\n"
+"\n"
+"Run the line above in the shell."
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.title"
@@ -30734,6 +30741,28 @@ msgstr "Using `break` to end a loop early"
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.UsingDictionaries.steps.dna_part1.text"
+msgstr ""
+"Not bad! But you may have noticed that it looks a bit awkward. Why do we have to specify `'dog'` and `'box'` in both the `cart` and the `quantities`?\n"
+"On the next page we'll look at how to loop directly over the keys of a dictionary,\n"
+"so we can get rid of the `cart` argument.\n"
+"\n"
+"But first, let's practice what we've learned a bit more.\n"
+"\n"
+"[Earlier in the course](#IntroducingElif) we looked at converting one strand of DNA\n"
+"into a new strand with matching nucleotides.\n"
+"Here's a version of that code using a function. It substitutes each letter in the input `string`\n"
+"with a different one.\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#UsingDictionaries
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
 msgid "pages.UsingDictionaries.steps.dna_part2.hints.0.text"
 msgstr "Remember that the key for the dictionary is the character in the string."
@@ -30747,25 +30776,6 @@ msgstr "The value from the dictionary is the replacement for the key."
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
 #.     # __code0__:
-#.     def substitute(string):
-#.         result = ''
-#.         for char in string:
-#.             if char == 'A':
-#.                 char = 'T'
-#.             elif char == 'T':
-#.                 char = 'A'
-#.             elif char == 'G':
-#.                 char = 'C'
-#.             elif char == 'C':
-#.                 char = 'G'
-#.             result += char
-#.         return result
-#. 
-#.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-#.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-#.     assert_equal(substitute(original), expected)
-#. 
-#.     # __code1__:
 #.     def substitute(string, d):
 #.         ...
 #. 
@@ -30779,41 +30789,27 @@ msgstr "The value from the dictionary is the replacement for the key."
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.char
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.expected
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.original
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.result
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.substitute
 msgid "pages.UsingDictionaries.steps.dna_part2.text"
 msgstr ""
-"Not bad! But you may have noticed that it looks a bit awkward. Why do we have to specify `'dog'` and `'box'` in both the `cart` and the `quantities`?\n"
-"On the next page we'll look at how to loop directly over the keys of a dictionary,\n"
-"so we can get rid of the `cart` argument.\n"
-"\n"
-"But first, let's practice what we've learned a bit more.\n"
-"\n"
-"[Earlier in the course](#IntroducingElif) we looked at converting one strand of DNA\n"
-"into a new strand with matching nucleotides:\n"
-"\n"
-"    __copyable__\n"
-"__code0__\n"
-"\n"
 "Now we can use dictionaries to make this code both shorter and more general so it can be used for other purposes.\n"
 "\n"
 "Your job is to add another argument to the `substitute` function: a dictionary called `d`.\n"
-"\n"
 "The keys of `d` represent characters\n"
 "in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`\n"
 "means that `A` should be replaced by `T`:\n"
 "\n"
 "    __copyable__\n"
-"__code1__"
+"__code0__\n"
+"\n"
+"This version of `substitute` should work for any arguments where all the characters in `string` are keys in `d`.\n"
+"No more `if` statements needed!"
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 

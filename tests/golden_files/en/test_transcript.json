@@ -7283,6 +7283,39 @@
         "step": "shopping_cart4"
     },
     {
+        "page": "Using Dictionaries",
+        "program": [
+            "def substitute(string):",
+            "    result = ''",
+            "    for char in string:",
+            "        if char == 'A':",
+            "            char = 'T'",
+            "        elif char == 'T':",
+            "            char = 'A'",
+            "        elif char == 'G':",
+            "            char = 'C'",
+            "        elif char == 'C':",
+            "            char = 'G'",
+            "        result += char",
+            "    return result",
+            "",
+            "original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
+            "expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'",
+            "assert_equal(substitute(original), expected)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "OK\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dna_part1"
+    },
+    {
         "get_solution": [
             "def substitute(string, d):",
             "    result = \"\"",
