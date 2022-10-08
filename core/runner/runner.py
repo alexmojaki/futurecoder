@@ -21,9 +21,6 @@ class EnhancedRunner(PyodideRunner):
             raise
 
         from .stack_data import format_traceback_stack_data, serializer
-        import friendly_traceback.source_cache
-
-        friendly_traceback.source_cache.cache.add(self.filename, self.source_code)
 
         serializer.filename = self.filename
 
