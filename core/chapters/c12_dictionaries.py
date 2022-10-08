@@ -1,8 +1,9 @@
 # flake8: NOQA E501
 import random
 from typing import List, Dict
+from collections import Counter
 
-from core.exercises import generate_string
+from core.exercises import generate_string, generate_dict
 from core.text import (
     ExerciseStep,
     Page,
@@ -154,10 +155,9 @@ So let's write a function that does that. Complete the function below, particula
 
         @classmethod
         def generate_inputs(cls):
-            k1 = generate_string()
-            k2 = generate_string()
-            return {'cart': [k1, k2],
-                    'prices': {k1 : random.randrange(100), k2 : random.randrange(100)}}
+            prices = generate_dict(str, int)
+            cart = random.choices(list(prices), k=random.randrange(3, 20))
+            return dict(prices=prices, cart=cart)
 
         tests = [
             ((['apple', 'box', 'cat'],  {'apple': 2, 'box': 5, 'cat': 100, 'dog': 120}), 107),
@@ -183,8 +183,6 @@ but they have to add each item one at a time, and for some reason this customer 
 Here's the new code for you to fix:
 
     __copyable__
-
-
     def total_cost(cart, quantities, prices):
         result = 0
         for item in cart:
@@ -206,8 +204,8 @@ We've added another parameter called `quantities` to `total_cost`.
 Now `cart` is still a list of strings, but it doesn't have any duplicates.
 `quantities` is a dictionary where the keys are the items in `cart` and the corresponding values are the quantity
 of that item that the customer wants to buy.
-
         """
+
         def solution(self):
             def total_cost(cart, quantities, prices):
                 result = 0
@@ -220,11 +218,10 @@ of that item that the customer wants to buy.
 
         @classmethod
         def generate_inputs(cls):
-            k1 = generate_string()
-            k2 = generate_string()
-            return {"cart" : [k1, k2],
-                    "quantities" : {k1 : random.randrange(100), k2 : random.randrange(100)},
-                    "prices" : {k1 : random.randrange(100), k2 : random.randrange(100)}}
+            result = UsingDictionaries.shopping_cart1.generate_inputs()
+            result['quantities'] = dict(Counter(result['cart']))
+            result['cart'] = list(set(result['cart']))
+            return result
 
         tests = [
             (
@@ -242,14 +239,9 @@ of that item that the customer wants to buy.
 
     class shopping_cart5(VerbatimStep):
         """
-
-
-
 Not bad! But you may have noticed that it looks a bit awkward. Why do we have to specify `'dog'` and `'box'` in both the `cart` and the `quantities`?
-
 On the next page we'll look at how to loop directly over the keys of a dictionary,
 so we can get rid of the `cart` argument.
-
 
 But first, let's practice what we've learned a bit more.
 
@@ -275,9 +267,9 @@ into a new strand with matching nucleotides:
                     result += char
                 return result
 
-            original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
-            expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
-            assert_equal(substitute(original), expected)
+    original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
+    expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
+    assert_equal(substitute(original), expected)
 
 
     class dna_part2(ExerciseStep):
