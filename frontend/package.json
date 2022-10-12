@@ -4,8 +4,8 @@
   "homepage": "/course/",
   "private": true,
   "engines": {
-    "node": ">= 14.15.4",
-    "npm": ">= 7.5.2"
+    "node": ">= 16.17.1",
+    "npm": ">= 8.15.0"
   },
   "dependencies": {
     "@craco/craco": "^6.1.2",
