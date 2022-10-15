@@ -2441,7 +2441,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>indices</code>,\nrange object of length <code>4</code>.\nThe valid index values of <code>indices</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
+                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to get the item with index <code>4</code> of <code>indices</code>,\n<code>range object</code> of length <code>4</code>.\nThe valid index values of <code>indices</code> are integers ranging from\n<code>-4</code> to <code>3</code>.</p>",
                             "tail": ""
                         }
                     ],

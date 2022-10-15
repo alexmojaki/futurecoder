@@ -12,7 +12,7 @@ jobs:
     - name: Set up Node
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '16.17.1'
     - name: Install chromedriver
       uses: nanasess/setup-chromedriver@master
     - name: Install Python and JS dependencies
@@ -27,6 +27,7 @@ jobs:
     - name: Test
       env:
         FUTURECODER_LANGUAGE: en
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       run: ./scripts/ci_test.sh
     - name: Upload test artifacts
       uses: actions/upload-artifact@v2

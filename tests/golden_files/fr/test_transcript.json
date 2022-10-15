@@ -2439,7 +2439,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>Une exception <code>IndexError</code> se produit lorsque vous essayez d\u2019obtenir un \u00e9l\u00e9ment\nd'une liste, d'un tuple, ou d'un objet similaire (s\u00e9quence), \u00e0 l\u2019aide d\u2019un indice qui\nn\u2019existe pas; typiquement, c\u2019est parce que l\u2019indice que vous donnez\nest plus grand que la longueur de la s\u00e9quence.</p>\n<p>Vous avez essay\u00e9 d\u2019obtenir l\u2019\u00e9l\u00e9ment avec l\u2019indice <code>4</code> de <code>indices</code>,\nrange object de longueur <code>4</code>.\nLes indices valides de <code>indices</code> sont les entiers allant de <code>-4</code> \u00e0 <code>3</code>.</p>",
+                            "friendly": "<p>Une exception <code>IndexError</code> se produit lorsque vous essayez d\u2019obtenir un \u00e9l\u00e9ment\nd'une liste, d'un tuple, ou d'un objet similaire (s\u00e9quence), \u00e0 l\u2019aide d\u2019un indice qui\nn\u2019existe pas; typiquement, c\u2019est parce que l\u2019indice que vous donnez\nest plus grand que la longueur de la s\u00e9quence.</p>\n<p>Vous avez essay\u00e9 d\u2019obtenir l\u2019\u00e9l\u00e9ment avec l\u2019indice <code>4</code> de <code>indices</code>,\n<code>range object</code> de longueur <code>4</code>.\nLes indices valides de <code>indices</code> sont les entiers allant de <code>-4</code> \u00e0 <code>3</code>.</p>",
                             "tail": ""
                         }
                     ],

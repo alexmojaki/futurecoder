@@ -43,7 +43,7 @@
             "passed": false,
             "result": [
                 {
-                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
                     "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
@@ -567,7 +567,7 @@
             "result": [
                 {
                     "friendly": "<p>Un <code>IndentationError</code> ocurre cuando una l\u00ednea de c\u00f3digo dada no est\u00e1\ncon la indentaci\u00f3n (alineada verticalmente con otras l\u00edneas) que se espera.</p>\n<p>Se esperaba que la l\u00ednea <code>2</code> identificada anteriormente comenzara un nuevo bloque indentado.</p>",
-                    "text": "    print(caracter)\n    ^\nIndentationError: expected an indented block\nen la l\u00ednea 2\n",
+                    "text": "    print(caracter)\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 1\nen la l\u00ednea 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1652,7 +1652,7 @@
             "result": [
                 {
                     "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Es probable que hayas llamado a una funci\u00f3n con un argumento con nombre:</p>\n<pre><code>unaa_funci\u00f3n(inv\u00e1lido=algo)\n</code></pre>\n<p>donde <code>inv\u00e1lido</code> no es un nombre de variable v\u00e1lido en Python\nya sea porque comienza con un n\u00famero, o es una cadena\no contiene un punto, etc.</p>",
-                    "text": "    print(1 + 2 = 3)\n          ^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n",
+                    "text": "    print(1 + 2 = 3)\n          ^^^^^^^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -2438,7 +2438,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>Un <code>IndexError</code> se produce cuando se intenta obtener un elemento de una lista\nuna tupla, o un objeto similar (secuencia), y utiliza un \u00edndice que\nno existe; normalmente, esto ocurre porque el \u00edndice que se da\nes mayor que la longitud de la secuencia.</p>\n<p>Ha intentado obtener el elemento con \u00edndice <code>4</code> de <code>indices</code>,\nrange object de longitud <code>4</code>.\nLos valores de \u00edndice v\u00e1lidos de <code>indices</code> son n\u00fameros enteros que van desde\n<code>-4</code> a <code>3</code>.</p>",
+                            "friendly": "<p>Un <code>IndexError</code> se produce cuando se intenta obtener un elemento de una lista\nuna tupla, o un objeto similar (secuencia), y utiliza un \u00edndice que\nno existe; normalmente, esto ocurre porque el \u00edndice que se da\nes mayor que la longitud de la secuencia.</p>\n<p>Ha intentado obtener el elemento con \u00edndice <code>4</code> de <code>indices</code>,\n<code>range object</code> de longitud <code>4</code>.\nLos valores de \u00edndice v\u00e1lidos de <code>indices</code> son n\u00fameros enteros que van desde\n<code>-4</code> a <code>3</code>.</p>",
                             "tail": ""
                         }
                     ],
@@ -3895,8 +3895,8 @@
             "passed": true,
             "result": [
                 {
-                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Ese es el perro\\'e Juan')\n                      ^^\n</code></pre>",
-                    "text": "    print('Ese es el perro'e Juan')\n                           ^\nSyntaxError: invalid syntax\nen la l\u00ednea 1\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
+                    "text": "    print('Ese es el perro'e Juan')\n          ^^^^^^^^^^^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4350,7 +4350,7 @@
             "passed": false,
             "result": [
                 {
-                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/aroberge/friendly/issues</p>",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
                     "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\nen la l\u00ednea 2\n",
                     "type": "syntax_error"
                 }
@@ -6324,7 +6324,7 @@
             "result": [
                 {
                     "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Ha empezado a escribir una cadena con una comilla simple o doble\npero nunca termin\u00f3 la cadena con otra comilla en esa l\u00ednea.</p>",
-                    "text": "    \"XOX\n        ^\nSyntaxError: EOL while scanning string literal\nen la l\u00ednea 7\n",
+                    "text": "    \"XOX\n    ^\nSyntaxError: unterminated string literal (detected at line 7)\nen la l\u00ednea 7\n",
                     "type": "syntax_error"
                 }
             ]
