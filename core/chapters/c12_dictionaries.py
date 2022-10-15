@@ -262,8 +262,10 @@ of that item that the customer wants to buy.
         ]
 
         hints = """
-        Remember that the keys for prices and quantities are the same.
-        Access the two dictionaries using item as the key.
+        Remember that the keys for `prices` and `quantities` are the same.
+        This is very similar to the previous exercise, we're just practicing.
+        `price` should be a value from `prices`, and similarly for `quantity`.
+        What key should be used to obtain each value?
         """
 
     class dna_part1(VerbatimStep):
@@ -341,8 +343,12 @@ No more `if` statements needed!
             return {"string" : k, "d" : d}
 
         hints = """
-        Remember that the key for the dictionary is the character in the string.
-        The value from the dictionary is the replacement for the key.
+        This is still very similar to the previous exercises, but with strings instead of numbers.
+        You just have to think about the keys and values of `d`.
+        You need to obtain the correct values to build up a string to return.
+        You can basically replace the whole `if/elif` chain with a single line.
+        That line simply needs to use `d` to get the correct value.
+        Remember that the keys of `d` are the characters in `string`.
         """
 
         tests = [
@@ -351,7 +357,6 @@ No more `if` statements needed!
                 "TCATCGCAGGAATCAATGTCCTACCGAATA"
             )
         ]
-
 
     final_text = """
 Nice! Here's an example of how this function can also be used to encrypt and decrypt secret messages:
@@ -468,8 +473,10 @@ Now you can use this to modify our function on the previous page to remove the `
             return total_cost
 
         hints = """
-        You don't need .keys() to iterate over the keys to a dictionary.
-        Try iterating over the dictionary 'quantities' itself.
+        Remember that we previously had `for item in cart` in the function, but `cart` is no longer an argument.
+        Now `quantities` is the only argument that defines what the customer is buying.
+        You need to iterate over the keys of `quantities` instead. Remember that 'iterate' here means 'loop over' with a `for` loop.
+        You can use `.keys()`, but you don't have to.
         """
 
         @classmethod
@@ -510,8 +517,9 @@ For example, the last line of code above should print:
         """
 
         hints = """
-        Iterate over the dictionary.
-        Remember that the english words are the keys.
+        You will need to iterate (loop) over the dictionary.
+        You need to print both the key (English word) and the value (French word) of each dictionary entry.
+        You can get the value using the key in the same way as always.
         """
 
         def solution(self):
@@ -547,7 +555,6 @@ French: voiture
 Great! Now let's add a German dictionary as well:
 
     __copyable__
-
     def print_words(french, german):
         ...
 
@@ -566,11 +573,14 @@ That should print:
     French: boite
     German: kasten
     ---
+
+The two dictionaries will always have the same keys, just different values.
         """
 
         hints = """
-The dictionaries will be the same length.
-The keys are the same across both dictionaries.
+        This is still very similar to the previous exercise, nothing special yet.
+        You can reuse your previous solution, just add another argument and a tiny bit of code inside.
+        You now have to print one dictionary key and two dictionary values.
         """
 
         def solution(self):
@@ -583,7 +593,6 @@ The keys are the same across both dictionaries.
 
             return print_words
 
-        # Custom generate_dicts is required here because French and German dicts must have same English word as the key.
         @classmethod
         def generate_inputs(cls):
             french = generate_dict(str, str)
