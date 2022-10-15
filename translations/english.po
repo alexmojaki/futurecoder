@@ -3118,7 +3118,6 @@ msgstr "'aeiou'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
 #. 
-#. 
 #.     def print_words(french, german):
 #.         ...
 #. 
@@ -3183,7 +3182,6 @@ msgstr "'apfel'"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
-#. 
 #. 
 #.     def print_words(french, german):
 #.         ...
@@ -3352,7 +3350,6 @@ msgstr "'bc'"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
 #. 
-#. 
 #.     def print_words(french, german):
 #.         ...
 #. 
@@ -3423,7 +3420,6 @@ msgstr "'boite'"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
-#. 
 #. 
 #.     def print_words(french, german):
 #.         ...
@@ -4056,7 +4052,6 @@ msgstr "'jklmn'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
 #. 
-#. 
 #.     def print_words(french, german):
 #.         ...
 #. 
@@ -4183,7 +4178,6 @@ msgstr "'on'"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
-#. 
 #. 
 #.     def print_words(french, german):
 #.         ...
@@ -10333,7 +10327,6 @@ msgstr "found"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
 #. 
-#. 
 #.     def print_words(french, german):
 #.         ...
 #. 
@@ -10418,7 +10411,6 @@ msgstr "game_board"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
-#. 
 #. 
 #.     def print_words(french, german):
 #.         ...
@@ -15158,7 +15150,6 @@ msgstr "print_winner"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
-#. 
 #. 
 #.     def print_words(french, german):
 #.         ...
@@ -21822,13 +21813,27 @@ msgstr "Defining Functions"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 msgid "pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.hints.0.text"
-msgstr "You don't need .keys() to iterate over the keys to a dictionary."
+msgstr "Remember that we previously had `for item in cart` in the function, but `cart` is no longer an argument."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 msgid "pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.hints.1.text"
-msgstr "Try iterating over the dictionary 'quantities' itself."
+msgstr "Now `quantities` is the only argument that defines what the customer is buying."
+
+#. https://futurecoder.io/course/#DictionaryKeysAndValues
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
+msgid "pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.hints.2.text"
+msgstr ""
+"You need to iterate over the keys of `quantities` instead. Remember that 'iterate' here means 'loop over' with a `for`"
+" loop."
+
+#. https://futurecoder.io/course/#DictionaryKeysAndValues
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
+msgid "pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.hints.3.text"
+msgstr "You can use `.keys()`, but you don't have to."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
@@ -21883,13 +21888,19 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_french
 msgid "pages.DictionaryKeysAndValues.steps.english_to_french.hints.0.text"
-msgstr "Iterate over the dictionary."
+msgstr "You will need to iterate (loop) over the dictionary."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_french
 msgid "pages.DictionaryKeysAndValues.steps.english_to_french.hints.1.text"
-msgstr "Remember that the english words are the keys."
+msgstr "You need to print both the key (English word) and the value (French word) of each dictionary entry."
+
+#. https://futurecoder.io/course/#DictionaryKeysAndValues
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_french
+msgid "pages.DictionaryKeysAndValues.steps.english_to_french.hints.2.text"
+msgstr "You can get the value using the key in the same way as always."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
@@ -21934,18 +21945,23 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german
 msgid "pages.DictionaryKeysAndValues.steps.english_to_german.hints.0.text"
-msgstr "The dictionaries will be the same length."
+msgstr "This is still very similar to the previous exercise, nothing special yet."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german
 msgid "pages.DictionaryKeysAndValues.steps.english_to_german.hints.1.text"
-msgstr "The keys are the same across both dictionaries."
+msgstr "You can reuse your previous solution, just add another argument and a tiny bit of code inside."
+
+#. https://futurecoder.io/course/#DictionaryKeysAndValues
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german
+msgid "pages.DictionaryKeysAndValues.steps.english_to_german.hints.2.text"
+msgstr "You now have to print one dictionary key and two dictionary values."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
 #.     # __code0__:
-#. 
 #.     def print_words(french, german):
 #.         ...
 #. 
@@ -21987,7 +22003,9 @@ msgstr ""
 "    English: box\n"
 "    French: boite\n"
 "    German: kasten\n"
-"    ---"
+"    ---\n"
+"\n"
+"The two dictionaries will always have the same keys, just different values."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 msgid "pages.DictionaryKeysAndValues.steps.final_text.text"
@@ -30781,13 +30799,37 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
 msgid "pages.UsingDictionaries.steps.dna_part2.hints.0.text"
-msgstr "Remember that the key for the dictionary is the character in the string."
+msgstr "This is still very similar to the previous exercises, but with strings instead of numbers."
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
 msgid "pages.UsingDictionaries.steps.dna_part2.hints.1.text"
-msgstr "The value from the dictionary is the replacement for the key."
+msgstr "You just have to think about the keys and values of `d`."
+
+#. https://futurecoder.io/course/#UsingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
+msgid "pages.UsingDictionaries.steps.dna_part2.hints.2.text"
+msgstr "You need to obtain the correct values to build up a string to return."
+
+#. https://futurecoder.io/course/#UsingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
+msgid "pages.UsingDictionaries.steps.dna_part2.hints.3.text"
+msgstr "You can basically replace the whole `if/elif` chain with a single line."
+
+#. https://futurecoder.io/course/#UsingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
+msgid "pages.UsingDictionaries.steps.dna_part2.hints.4.text"
+msgstr "That line simply needs to use `d` to get the correct value."
+
+#. https://futurecoder.io/course/#UsingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.dna_part2
+msgid "pages.UsingDictionaries.steps.dna_part2.hints.5.text"
+msgstr "Remember that the keys of `d` are the characters in `string`."
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
@@ -30980,13 +31022,25 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4
 msgid "pages.UsingDictionaries.steps.shopping_cart4.hints.0.text"
-msgstr "Remember that the keys for prices and quantities are the same."
+msgstr "Remember that the keys for `prices` and `quantities` are the same."
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4
 msgid "pages.UsingDictionaries.steps.shopping_cart4.hints.1.text"
-msgstr "Access the two dictionaries using item as the key."
+msgstr "This is very similar to the previous exercise, we're just practicing."
+
+#. https://futurecoder.io/course/#UsingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4
+msgid "pages.UsingDictionaries.steps.shopping_cart4.hints.2.text"
+msgstr "`price` should be a value from `prices`, and similarly for `quantity`."
+
+#. https://futurecoder.io/course/#UsingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart4
+msgid "pages.UsingDictionaries.steps.shopping_cart4.hints.3.text"
+msgstr "What key should be used to obtain each value?"
 
 #. https://futurecoder.io/course/#UsingDictionaries
 #. 
