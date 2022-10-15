@@ -7083,6 +7083,18 @@
     {
         "page": "Introducing Dictionaries",
         "program": [
+            "french = {}"
+        ],
+        "response": {
+            "message": "<p>Oops, you need to set <code>french = {'apple': 'pomme', 'box': 'boite'}</code> before we can continue.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
             "french[0]"
         ],
         "response": {
@@ -7141,6 +7153,18 @@
     {
         "page": "Introducing Dictionaries",
         "program": [
+            "french = {}"
+        ],
+        "response": {
+            "message": "<p>Oops, you need to set <code>french = {'apple': 'pomme', 'box': 'boite'}</code> before we can continue.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access2"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
             "french['apple']"
         ],
         "response": {
@@ -7158,6 +7182,18 @@
     {
         "page": "Introducing Dictionaries",
         "program": [
+            "french = {}"
+        ],
+        "response": {
+            "message": "<p>Oops, you need to set <code>french = {'apple': 'pomme', 'box': 'boite'}</code> before we can continue.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access3"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
             "french['box']"
         ],
         "response": {
@@ -7171,6 +7207,18 @@
             ]
         },
         "step": "dict_access3"
+    },
+    {
+        "page": "Introducing Dictionaries",
+        "program": [
+            "french = {}"
+        ],
+        "response": {
+            "message": "<p>Oops, you need to set <code>french = {'apple': 'pomme', 'box': 'boite'}</code> before we can continue.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access4"
     },
     {
         "page": "Introducing Dictionaries",

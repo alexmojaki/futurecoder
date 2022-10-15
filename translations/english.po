@@ -23980,6 +23980,10 @@ msgid "pages.IntroducingBirdseye.title"
 msgstr "Understanding Programs with `birdseye`"
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
+msgid "pages.IntroducingDictionaries.steps.dict_access.special_messages.bad_french_value.text"
+msgstr "Oops, you need to set `french = {'apple': 'pomme', 'box': 'boite'}` before we can continue."
+
+#. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access.text"
 msgstr ""
 "`french` is a dictionary with two key-value pairs:\n"
@@ -23997,6 +24001,10 @@ msgstr ""
 "__program_indented__"
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
+msgid "pages.IntroducingDictionaries.steps.dict_access2.special_messages.bad_french_value.text"
+msgstr "Oops, you need to set `french = {'apple': 'pomme', 'box': 'boite'}` before we can continue."
+
+#. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access2.text"
 msgstr ""
 "That doesn't work because the position of items in a dictionary usually doesn't matter.\n"
@@ -24006,11 +24014,19 @@ msgstr ""
 "__program_indented__"
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
+msgid "pages.IntroducingDictionaries.steps.dict_access3.special_messages.bad_french_value.text"
+msgstr "Oops, you need to set `french = {'apple': 'pomme', 'box': 'boite'}` before we can continue."
+
+#. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access3.text"
 msgstr ""
 "That's better!\n"
 "\n"
 "Now run a similar line in the shell to look up the translation for 'box'."
+
+#. https://futurecoder.io/course/#IntroducingDictionaries
+msgid "pages.IntroducingDictionaries.steps.dict_access4.special_messages.bad_french_value.text"
+msgstr "Oops, you need to set `french = {'apple': 'pomme', 'box': 'boite'}` before we can continue."
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access4.text"

@@ -1,4 +1,5 @@
 # flake8: NOQA E501
+import ast
 import random
 from typing import List, Dict
 from collections import Counter
@@ -10,6 +11,35 @@ from core.text import (
     Step,
     VerbatimStep,
 )
+from core import translation as t
+
+
+# Similar to word_must_be_hello
+class french_must_be_dict(VerbatimStep):
+    @staticmethod
+    def french():
+        return t.get_code_bit('french')
+
+    @staticmethod
+    def dict_value():
+        return ast.literal_eval(t.translate_code("{'apple': 'pomme', 'box': 'boite'}"))
+
+    @classmethod
+    def pre_run(cls, runner):
+        runner.console.locals[cls.french()] = cls.dict_value()
+
+    class special_messages:
+        class bad_french_value:
+            """
+            Oops, you need to set `french = {'apple': 'pomme', 'box': 'boite'}` before we can continue.
+            """
+            program = 'french = {}'
+
+    def check(self):
+        if self.console.locals.get(self.french()) != self.dict_value():
+            return self.special_messages.bad_french_value
+
+        return super().check()
 
 
 class IntroducingDictionaries(Page):
@@ -35,9 +65,7 @@ Run the line above in the shell.
         def program(self):
             french = {'apple': 'pomme', 'box': 'boite'}
 
-    # TODO similar setup to word_must_be_hello to ensure correct value of `french` in following steps in shell.
-
-    class dict_access(VerbatimStep):
+    class dict_access(french_must_be_dict):
         """
 `french` is a dictionary with two key-value pairs:
 
@@ -56,7 +84,7 @@ __program_indented__
 
         program = "french[0]"
 
-    class dict_access2(VerbatimStep):
+    class dict_access2(french_must_be_dict):
         """
 That doesn't work because the position of items in a dictionary usually doesn't matter.
 You don't usually care what's the 2nd or 5th or 100th word of the dictionary,
@@ -67,7 +95,7 @@ __program_indented__
 
         program = "french['apple']"
 
-    class dict_access3(VerbatimStep):
+    class dict_access3(french_must_be_dict):
         """
 That's better!
 
@@ -78,7 +106,7 @@ Now run a similar line in the shell to look up the translation for 'box'.
 
         program = "french['box']"
 
-    class dict_access4(VerbatimStep):
+    class dict_access4(french_must_be_dict):
         """
 And now you know both Python and French!
 
