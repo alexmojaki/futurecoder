@@ -3941,23 +3941,6 @@ msgstr "'hello world'"
 msgid "code_bits.'hello'"
 msgstr "'hello'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
-msgid "code_bits.'helloworld'"
-msgstr "'helloworld'"
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.list_contains_word_exercise
 #. 
 #. strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]
@@ -4224,23 +4207,6 @@ msgstr "'on'"
 #. french = {'apple': 'pomme', 'box': 'boite'}
 msgid "code_bits.'pomme'"
 msgstr "'pomme'"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
-msgid "code_bits.'qpeefifmez'"
-msgstr "'qpeefifmez'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPositionExercises.steps.index_exercise
 #. 
@@ -5342,23 +5308,6 @@ msgstr "all_numbers"
 #.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
 #.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
 #.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
 #. 
 #. ------
 #. 
@@ -8594,23 +8543,6 @@ msgstr "doubles"
 msgid "code_bits.element"
 msgstr "element"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
-msgid "code_bits.encrypted"
-msgstr "encrypted"
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 #. 
 #. def row_winner(board):
@@ -11318,23 +11250,6 @@ msgstr "lengths"
 #.     for letter in string:
 #.         result += d[letter]
 #.     return result
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.letter"
 msgstr "letter"
 
@@ -11352,23 +11267,6 @@ msgstr "letter"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise.text
 #. 
 #.     letters = "ABCD"
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.letters"
 msgstr "letters"
 
@@ -13585,23 +13483,6 @@ msgstr "person_name"
 msgid "code_bits.piece"
 msgstr "piece"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
-msgid "code_bits.plaintext"
-msgstr "plaintext"
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.modify_list_in_function
 #. 
 #. def play_move(board, player):
@@ -15492,23 +15373,6 @@ msgstr "quantity"
 #. 
 #. ------
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
-#. 
-#. ------
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1
 #. 
 #. def total_cost(cart, prices):
@@ -15571,23 +15435,6 @@ msgstr "quantity"
 #.     )
 msgid "code_bits.result"
 msgstr "result"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
-msgid "code_bits.reverse"
-msgstr "reverse"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 #. 
@@ -17283,23 +17130,6 @@ msgstr "spaces"
 #.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
 #.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
 #.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.string"
 msgstr "string"
 
@@ -17907,23 +17737,6 @@ msgstr "sublist"
 #.     original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'
 #.     expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'
 #.     assert_equal(substitute(original, {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}), expected)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.final_text.text
-#. 
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
 msgid "code_bits.substitute"
 msgstr "substitute"
 
@@ -30870,48 +30683,24 @@ msgstr ""
 "No more `if` statements needed!"
 
 #. https://futurecoder.io/course/#UsingDictionaries
-#. 
-#.     # __code0__:
-#.     def substitute(string, d):
-#.         result = ""
-#.         for letter in string:
-#.             result += d[letter]
-#.         return result
-#. 
-#.     plaintext = 'helloworld'
-#.     encrypted = 'qpeefifmez'
-#.     letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
-#.     reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
-#.     assert_equal(substitute(plaintext, letters), encrypted)
-#.     assert_equal(substitute(encrypted, reverse), plaintext)
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27helloworld%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27qpeefifmez%27
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.encrypted
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.letter
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.letters
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.plaintext
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.result
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.reverse
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.string
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.substitute
 msgid "pages.UsingDictionaries.steps.final_text.text"
 msgstr ""
 "Nice! Here's an example of how this function can also be used to encrypt and decrypt secret messages:\n"
 "\n"
 "    __copyable__\n"
-"__code0__\n"
+"    __no_auto_translate__\n"
+"    def substitute(string, d):\n"
+"        result = \"\"\n"
+"        for letter in string:\n"
+"            result += d[letter]\n"
+"        return result\n"
+"\n"
+"    plaintext = 'helloworld'\n"
+"    encrypted = 'qpeefifmez'\n"
+"    letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}\n"
+"    reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}\n"
+"    assert_equal(substitute(plaintext, letters), encrypted)\n"
+"    assert_equal(substitute(encrypted, reverse), plaintext)\n"
 "\n"
 "The same function works in both directions, we just need to pass it different dictionaries.\n"
 "\n"

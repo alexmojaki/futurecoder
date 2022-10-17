@@ -1,9 +1,11 @@
 # flake8: NOQA E501
 import ast
 import random
-from typing import List, Dict
 from collections import Counter
+from typing import List, Dict
 
+from core import translation as t
+from core.exercises import assert_equal
 from core.exercises import generate_string, generate_dict
 from core.text import (
     ExerciseStep,
@@ -11,7 +13,6 @@ from core.text import (
     Step,
     VerbatimStep,
 )
-from core import translation as t
 
 
 # Similar to word_must_be_hello
@@ -362,6 +363,7 @@ No more `if` statements needed!
 Nice! Here's an example of how this function can also be used to encrypt and decrypt secret messages:
 
     __copyable__
+    __no_auto_translate__
     def substitute(string, d):
         result = ""
         for letter in string:
