@@ -23853,7 +23853,7 @@ msgid "pages.IntroducingDictionaries.steps.dict_access3.text"
 msgstr ""
 "That's better!\n"
 "\n"
-"Now run a similar line in the shell to look up the translation for 'box'."
+"Now run a similar line in the shell to look up the translation for `'box'`."
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access4.special_messages.bad_french_value.text"

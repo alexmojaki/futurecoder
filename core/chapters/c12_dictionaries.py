@@ -100,7 +100,7 @@ __program_indented__
         """
 That's better!
 
-Now run a similar line in the shell to look up the translation for 'box'.
+Now run a similar line in the shell to look up the translation for `'box'`.
         """
 
         program_in_text = False
