@@ -312,7 +312,7 @@ Now we can use dictionaries to make this code both shorter and more general so i
 Your job is to add another argument to the `substitute` function: a dictionary called `d`.
 The keys of `d` represent characters
 in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`
-means that `A` should be replaced by `T`:
+means that `'A'` should be replaced by `'T'`:
 
     __copyable__
     def substitute(string, d):
@@ -533,6 +533,8 @@ For example, the last line of code above should print:
 
             return print_words
 
+        translated_tests = True
+
         tests = (
             (({'apple': 'pomme', 'box': 'boite'},), """\
 English: apple
@@ -600,6 +602,8 @@ The two dictionaries will always have the same keys, just different values.
             french = generate_dict(str, str)
             german = {k: generate_string() for k in french}
             return {"french": french, "german": german}
+
+        translated_tests = True
 
         tests = (
             (({'apple' : 'pomme', 'box' : 'boite'}, {'apple' : 'apfel', 'box' : 'kasten'},), """\
