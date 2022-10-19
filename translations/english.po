@@ -21880,7 +21880,7 @@ msgstr ""
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 msgid "pages.DictionaryKeysAndValues.title"
-msgstr "Dictionary Keys And Values"
+msgstr "Iterating over Dictionary Keys"
 
 #. https://futurecoder.io/course/#EqualsVsIs
 #. 
@@ -30898,7 +30898,7 @@ msgstr ""
 
 #. https://futurecoder.io/course/#UsingDictionaries
 msgid "pages.UsingDictionaries.title"
-msgstr "Using Dictionaries"
+msgstr "Using Dictionaries in Practice"
 
 #. https://futurecoder.io/course/#UsingVariables
 msgid "pages.UsingVariables.steps.final_text.text"
