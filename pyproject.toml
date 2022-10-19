@@ -7,20 +7,21 @@ authors = ["Alex Hall <alex.mojaki@gmail.com>"]
 [tool.poetry.dependencies]
 python = "3.10.2"
 birdseye = {git = "https://github.com/alexmojaki/birdseye.git", branch = "futurecoder"}
-snoop = "@latest"
-asttokens = "@latest"
-cheap_repr = "@latest"
-littleutils = "@latest"
-stack_data = "@latest"
-executing = "@latest"
-pure_eval = "@latest"
-python-runner = "@latest"
+snoop = "*"
+asttokens = "*"
+cheap_repr = "*"
+littleutils = "*"
+stack_data = "*"
+executing = "*"
+pure_eval = "*"
+python-runner = "*"
 markdown = "^3.1.1"
 astcheck = "^0.2.5"
 pyflakes = "^2.2.0"
 BetterErrorMessages = "^0.4"
-sentry-sdk = "^1.9.0"
-friendly-traceback = "@latest"
+sentry-sdk = "*"
+friendly-traceback = "*"
+setuptools = "*"
 
 [tool.poetry.dev-dependencies]
 flake8 = {version = "^3.8.3", optional = true}

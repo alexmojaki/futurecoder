@@ -1,4 +1,5 @@
 import sys
+import linecache
 
 from markdown import markdown
 
@@ -7,11 +8,14 @@ from core import translation as t
 for attr in "type value traceback".split():
     sys.__dict__.pop("last_" + attr, None)
 
+old_getlines = linecache.getlines
+
 from friendly_traceback.core import FriendlyTraceback
 import friendly_traceback
 
-friendly_traceback.set_lang(t.current_language or "en")
+linecache.getlines = old_getlines  # undo friendly monkeypatching
 
+friendly_traceback.set_lang(t.current_language or "en")
 
 
 def friendly_message(e, double_newline: bool):
