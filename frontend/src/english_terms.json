@@ -59,7 +59,7 @@
   "click_to_expand": "Click to expand",
   "assistant": "Assistant",
   "submission_status": "Submission status",
-  "submission_status_description": "TODO...",
+  "submission_status_description": "When you run code that doesn't pass the current step, this section will *sometimes* explain what's wrong.",
   "requirements": "Requirements",
   "requirements_description": "You need to run some code according to the instructions above. In case those aren't clear enough, here's some extra clarification:",
   "exercise_requirement": "This step is an exercise. You need to figure out what code will produce the correct result. Many different correct answers are possible.",

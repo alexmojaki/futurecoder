@@ -19736,7 +19736,7 @@ msgid "frontend.submission_status"
 msgstr "Submission status"
 
 msgid "frontend.submission_status_description"
-msgstr "TODO..."
+msgstr "When you run code that doesn't pass the current step, this section will *sometimes* explain what's wrong."
 
 msgid "frontend.submit"
 msgstr "Submit"

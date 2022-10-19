@@ -237,9 +237,7 @@ const Assistant = (
           <strong>{terms.submission_status}</strong>
         </summary>
         <div className="assistant-content">
-          <p>
-            {terms.submission_status_description}
-          </p>
+          <p dangerouslySetInnerHTML={{__html: terms.submission_status_description}}/>
           <Messages {...{messages}}/>
         </div>
       </details>
