@@ -7285,7 +7285,7 @@
             "        resultat += tarif",
             "    return resultat"
         ],
-        "page": "Utiliser les Dictionnaires",
+        "page": "Utiliser les Dictionnaires sur un exemple pratique",
         "program": [
             "def cout_total(panier, prix):",
             "    resultat = 0",
@@ -7311,7 +7311,7 @@
             "        resultat += tarif * quantite",
             "    return resultat"
         ],
-        "page": "Utiliser les Dictionnaires",
+        "page": "Utiliser les Dictionnaires sur un exemple pratique",
         "program": [
             "def cout_total(panier, quantites, prix):",
             "    resultat = 0",
@@ -7329,7 +7329,7 @@
         "step": "shopping_cart4"
     },
     {
-        "page": "Utiliser les Dictionnaires",
+        "page": "Utiliser les Dictionnaires sur un exemple pratique",
         "program": [
             "def substitution(chaine):",
             "    resultat = ''",
@@ -7369,7 +7369,7 @@
             "        resultat += d[lettre]",
             "    return resultat"
         ],
-        "page": "Utiliser les Dictionnaires",
+        "page": "Utiliser les Dictionnaires sur un exemple pratique",
         "program": [
             "def substitution(chaine, d):",
             "    resultat = \"\"",
@@ -7385,7 +7385,7 @@
         "step": "dna_part2"
     },
     {
-        "page": "Clefs et valeurs d'un dictionnaire",
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "quantites = {'pomme': 1, 'chat': 10}",
             "print(quantites.keys())"
@@ -7403,11 +7403,11 @@
         "step": "introducing_keys"
     },
     {
-        "page": "Clefs et valeurs d'un dictionnaire",
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "quantites = {'pomme': 1, 'chat': 10}",
-            "for cle in quantites.keys():",
-            "    print(cle)"
+            "for clef in quantites.keys():",
+            "    print(clef)"
         ],
         "response": {
             "message": "",
@@ -7422,11 +7422,11 @@
         "step": "keys_are_iterable"
     },
     {
-        "page": "Clefs et valeurs d'un dictionnaire",
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "quantites = {'pomme': 1, 'chat': 10}",
-            "for cle in quantites:",
-            "    print(cle)"
+            "for clef in quantites:",
+            "    print(clef)"
         ],
         "response": {
             "message": "",
@@ -7450,7 +7450,7 @@
             "        resultat += tarif * quantite",
             "    return resultat"
         ],
-        "page": "Clefs et valeurs d'un dictionnaire",
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "def cout_total(quantites, prix):",
             "    resultat = 0",
@@ -7475,7 +7475,7 @@
             "        print(\"Anglais: \" + anglais[mot])",
             "        print(\"---\")"
         ],
-        "page": "Clefs et valeurs d'un dictionnaire",
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "def affiche_mots(anglais):",
             "    for mot in anglais:",
@@ -7499,7 +7499,7 @@
             "        print(\"Allemand: \" + allemand[mot])",
             "        print(\"---\")"
         ],
-        "page": "Clefs et valeurs d'un dictionnaire",
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "def affiche_mots(anglais, allemand):",
             "    for mot in anglais:",
@@ -7516,7 +7516,7 @@
         "step": "english_to_german"
     },
     {
-        "page": "Clefs et valeurs d'un dictionnaire",
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "def affiche_mots(mots):",
             "    for mot in mots:",
