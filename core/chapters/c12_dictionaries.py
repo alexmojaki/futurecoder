@@ -132,6 +132,8 @@ But `0` *could* be a key, because many types of keys are allowed, including stri
 
 
 class UsingDictionaries(Page):
+    title = "Using Dictionaries in Practice"
+
     class shopping_cart1(ExerciseStep):
         """
 Let's see dictionaries in a real life problem. Imagine you're building an online shopping website.
@@ -394,6 +396,8 @@ i.e. `reverse = swap_keys_values(letters)`."""
 
 
 class DictionaryKeysAndValues(Page):
+    title = "Iterating over Dictionary Keys"
+
     class introducing_keys(Step):
         """
 Copy this code into the editor:
