@@ -502,8 +502,7 @@ class Step(ABC):
             except SyntaxError:
                 pass
             else:
-                # TODO move to new section
-                result["messages"].extend(lint(tree))
+                result["lint"] = lint(tree)
 
         return result
 
@@ -660,12 +659,13 @@ class ExerciseStep(Step):
             submission = cls.wrap_solution(submission)
             func = cls._patch_streams(submission)
 
-        test_results = []
-        return_value = dict(test_results=test_results, passed=True)
+        passed_tests = []
+        return_value = dict(passed_tests=passed_tests, passed=True)
         for inputs, result in test_values:
             test_result = cls.check_result(func, inputs, result)
-            test_results.append(test_result)
-            if not test_result["passed"]:
+            if test_result["passed"]:
+                passed_tests.append(test_result["message"])
+            else:
                 return_value["passed"] = False
                 return_value["message"] = test_result["message"]
                 break

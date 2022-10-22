@@ -29,7 +29,7 @@ import "ace-builds/src-noconflict/theme-monokai";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faBars,
-  faBug,
+  faBug, faCheck,
   faCog,
   faCompress,
   faExpand,
@@ -188,14 +188,57 @@ const Shell = () =>
 
 const Messages = (
   {
-    messages,
-  }) =>
-  messages.map((message, index) =>
-    <div key={index} className="card book-message">
-      <div className="card-body"
-           dangerouslySetInnerHTML={{__html: message}}/>
-    </div>
-  )
+    messages: messageSections,
+  }) => {
+  const nonEmptySections = messageSections.filter(section => section?.messages?.length);
+  if (!nonEmptySections.length) {
+    return <p dangerouslySetInnerHTML={{__html: terms.submission_status_description}}/>;
+  }
+  return nonEmptySections.map((section) => {
+      if (section.type === "passed_tests") {
+        return <div key={section.type} className="card alert alert-success" style={{padding: 0}}>
+          <div className="card-body">
+            <details>
+              <summary>
+                On the bright side, your code passed {section.messages.length} test(s)!
+              </summary>
+              <br/>
+              {section.messages.map((message, index) =>
+                <>
+                  <div key={index} dangerouslySetInnerHTML={{__html: message}}/>
+                  {index !== section.messages.length - 1 && <hr/>}
+                </>
+              )}
+            </details>
+          </div>
+        </div>
+      } else if (section.type === "messages") {
+        return <>{
+          section.messages.map((message, index) =>
+            <>
+              <div key={index} dangerouslySetInnerHTML={{__html: message}}/>
+              {index !== section.messages.length - 1 && <hr/>}
+            </>
+          )
+        }</>;
+      } else {
+        return <>
+          <div className="alert alert-warning" role="alert">
+            Found the following generic problem(s) in your code:
+          </div>
+          {
+            section.messages.map((message, index) =>
+              <>
+                <div key={index} dangerouslySetInnerHTML={{__html: message}}/>
+                {index !== section.messages.length - 1 && <hr/>}
+              </>
+            )
+          }
+        </>
+      }
+    }
+  );
+}
 
 const Assistant = (
   {
@@ -209,33 +252,36 @@ const Assistant = (
     <div className="card-header">
       <strong><FontAwesomeIcon icon={faQuestionCircle}/> {terms.assistant}</strong>
     </div>
-    <div className="card-body">
-      <details className="assistant-header">
-        <summary>
-          <strong>{terms.requirements}</strong>
-        </summary>
-        <div className="assistant-content">
-          <p>
-            {terms.requirements_description}
-          </p>
-          <ul>
-            {requirements.map((requirement, index) =>
-              <li key={index}>
-                <Requirement requirement={requirement}/>
-              </li>
-            )}
-          </ul>
-        </div>
-      </details>
-      <details className="assistant-header">
-        <summary>
-          <strong>{terms.submission_status}</strong>
-        </summary>
-        <div className="assistant-content">
-          <p dangerouslySetInnerHTML={{__html: terms.submission_status_description}}/>
-          <Messages {...{messages}}/>
-        </div>
-      </details>
+    <div className="list-group list-group-flush">
+      <div className="list-group-item">
+        <details className="assistant-header">
+          <summary>
+            <strong>{terms.requirements}</strong>
+          </summary>
+          <div className="assistant-content">
+            <p>
+              {terms.requirements_description}
+            </p>
+            <ul>
+              {requirements.map((requirement, index) =>
+                <li key={index}>
+                  <Requirement requirement={requirement}/>
+                </li>
+              )}
+            </ul>
+          </div>
+        </details>
+      </div>
+      <div className="list-group-item">
+        <details className="assistant-header">
+          <summary>
+            <strong>{terms.submission_status}</strong>
+          </summary>
+          <div className="assistant-content">
+            <Messages {...{messages}}/>
+          </div>
+        </details>
+      </div>
     </div>
   </div>;
 }
@@ -384,7 +430,7 @@ class AppComponent extends React.Component {
     const {
       numHints,
       editorContent,
-      messages,
+      messageSections: messages,
       specialMessages,
       questionWizard,
       pages,

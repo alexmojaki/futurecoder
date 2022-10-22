@@ -94,9 +94,12 @@ def normalise_response(response, is_message, substep):
     if not response["prediction"]["choices"]:
         del response["prediction"]
 
+    section = response.pop("message_sections")[0]
+    assert section["type"] == "messages"
+    messages = section["messages"]
     if is_message:
-        response["message"] = only(response.pop("messages"))
+        response["message"] = only(messages)
         assert response["message"] == highlighted_markdown(substep.text)
     else:
-        assert response.pop("messages") == []
+        assert messages == []
         response["message"] = ""

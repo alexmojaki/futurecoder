@@ -50,7 +50,6 @@ default_runner = FullRunner(filename="/my_program.py")
 def check_entry(entry, callback, runner=default_runner):
     result = dict(
         passed=False,
-        messages=[],
         error=None,
     )
     try:
@@ -108,16 +107,19 @@ def check_entry(entry, callback, runner=default_runner):
             except SyntaxError:
                 pass
 
-        messages = step_result["messages"]
         if "message" in step_result:
-            messages.insert(0, step_result.pop("message"))
+            step_result["messages"].insert(0, step_result.pop("message"))
+
         result.update(
             passed=step_result["passed"],
-            messages=[highlighted_markdown(message) for message in messages],
+            message_sections=[
+                dict(
+                    type=typ,
+                    messages=[highlighted_markdown(message) for message in step_result.get(typ, [])],
+                )
+                for typ in ["messages", "passed_tests", "lint"]
+            ],
         )
-        # TODO?
-        # if "test_results" in step_result:
-        #     result["test_results"] = step_result["test_results"]
     except KeyboardInterrupt:
         result["interrupted"] = True
 

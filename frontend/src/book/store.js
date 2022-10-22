@@ -75,7 +75,7 @@ const initialState = {
   running: false,
   numHints: 0,
   editorContent: "",
-  messages: [],
+  messageSections: [],
   specialMessages: [],
   pastSpecialMessages: [],
   requestingSolution: 0,
@@ -402,7 +402,7 @@ export const ranCode = makeAction(
       state = {
         ...state,
         ..._.pick(initialState,
-          "numHints messages requestingSolution".split(" ")),
+          "numHints messageSections requestingSolution".split(" ")),
         prediction: {
           ...prediction,
           userChoice: "",
@@ -428,7 +428,7 @@ export const ranCode = makeAction(
         state = iset(state, "questionWizard.messages", value.messages);
       }
     } else {
-      state = iset(state, "messages", value.messages);
+      state = iset(state, "messageSections", value.message_sections);
     }
 
     return state;
