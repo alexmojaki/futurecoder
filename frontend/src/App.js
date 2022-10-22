@@ -503,7 +503,7 @@ class AppComponent extends React.Component {
           <Popup
             key={index}
             open={true}
-            onClose={() => closeSpecialMessage(message)}
+            onClose={() => closeSpecialMessage(index)}
           >
             <SpecialMessageModal message={message}/>
           </Popup>
