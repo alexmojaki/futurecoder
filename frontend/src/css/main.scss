@@ -351,12 +351,19 @@
 
 .settings-modal {
   @extend .my-popup-content;
+
   label b {
     position: relative;
     bottom: 5px;
     left: 6px;
     font-size: 1.3em;
   }
+}
+
+.special-message-modal {
+  @extend .my-popup-content;
+  border: 1em solid grey;
+  border-radius: 1em;
 }
 
 .solution-token-hidden, .solution-token-hidden::selection {

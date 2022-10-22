@@ -5,10 +5,10 @@ import "./css/pygments.css"
 import "./css/github-markdown.css"
 import {connect} from "react-redux";
 import {
-  addMessage,
+  addSpecialMessage,
   bookSetState,
   bookState,
-  closeMessage,
+  closeSpecialMessage,
   currentPage,
   currentStep,
   currentStepName,
@@ -390,6 +390,7 @@ class AppComponent extends React.Component {
       numHints,
       editorContent,
       messages,
+      specialMessages,
       questionWizard,
       pages,
       requestingSolution,
@@ -487,15 +488,27 @@ class AppComponent extends React.Component {
       </a>
 
       {!(fullIde || isQuestionWizard) &&
-      <HintsPopup
-        hints={step.hints}
-        numHints={numHints}
-        requestingSolution={requestingSolution}
-        solution={step.solution}
-      />
+        <HintsPopup
+          hints={step.hints}
+          numHints={numHints}
+          requestingSolution={requestingSolution}
+          solution={step.solution}
+        />
       }
 
       <ErrorModal error={error}/>
+
+      <>
+        {specialMessages.map((message, index) =>
+          <Popup
+            key={index}
+            open={true}
+            onClose={() => closeSpecialMessage(message)}
+          >
+            <SpecialMessageModal message={message}/>
+          </Popup>
+        )}
+      </>
     </div>
   }
 }
@@ -610,6 +623,12 @@ const SettingsModal = ({user}) => (
   </div>
 )
 
+const SpecialMessageModal = ({message}) => (
+  <div className="special-message-modal">
+    <div dangerouslySetInnerHTML={{__html: message}}/>
+  </div>
+);
+
 const checkCopy = () => {
   const selection = document.getSelection();
   const codeElement = (node) => node.parentElement.closest("code");
@@ -622,7 +641,7 @@ const checkCopy = () => {
       ])
       .some((node) => node && !node.classList.contains("copyable"))
   ) {
-    addMessage(terms.copy_warning);
+    addSpecialMessage(terms.copy_warning);
   }
 }
 

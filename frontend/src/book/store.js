@@ -76,7 +76,8 @@ const initialState = {
   numHints: 0,
   editorContent: "",
   messages: [],
-  pastMessages: [],
+  specialMessages: [],
+  pastSpecialMessages: [],
   requestingSolution: 0,
   prediction: {
     choices: null,
@@ -434,24 +435,26 @@ export const ranCode = makeAction(
   },
 );
 
-// TODO this is only used for the copy message, which now shows in the wrong place
-const addMessageToState = (state, message) => {
-  if (message && state.pastMessages.indexOf(message) === -1) {
+// 'Special messages' currently only means the "don't copy" popup.
+// It used to be all kinds of messages, but those coming from the Python checker
+// (just called 'messages') have been moved into the assistant.
+const addSpecialMessageToState = (state, message) => {
+  if (message && state.pastSpecialMessages.indexOf(message) === -1) {
       animateScroll.scrollToBottom({duration: 1000, delay: 500});
-      state = ipush(state, "messages", message);
-      state = ipush(state, "pastMessages", message);
+      state = ipush(state, "specialMessages", message);
+      state = ipush(state, "pastSpecialMessages", message);
     }
   return state;
 }
 
-export const addMessage = makeAction(
-  'ADD_MESSAGE',
-  (state, {value}) => addMessageToState(state, value)
+export const addSpecialMessage = makeAction(
+  'ADD_SPECIAL_MESSAGE',
+  (state, {value}) => addSpecialMessageToState(state, value)
 )
 
-export const closeMessage = makeAction(
-  'CLOSE_MESSAGE',
-  (state, {value}) => iremove(state, "messages", value)
+export const closeSpecialMessage = makeAction(
+  'CLOSE_SPECIAL_MESSAGE',
+  (state, {value}) => iremove(state, "specialMessages", value)
 )
 
 export const revealSolutionToken = makeAction(
