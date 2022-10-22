@@ -192,11 +192,6 @@ const Messages = (
   }) =>
   messages.map((message, index) =>
     <div key={index} className="card book-message">
-      {/*<div*/}
-      {/*  className="card-header"*/}
-      {/*  onClick={() => closeMessage(index)}>*/}
-      {/*  <FontAwesomeIcon icon={faTimes}/>*/}
-      {/*</div>*/}
       <div className="card-body"
            dangerouslySetInnerHTML={{__html: message}}/>
     </div>
