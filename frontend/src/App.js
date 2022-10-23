@@ -29,7 +29,7 @@ import "ace-builds/src-noconflict/theme-monokai";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faBars,
-  faBug, faCheck,
+  faBug,
   faCog,
   faCompress,
   faExpand,
@@ -38,10 +38,9 @@ import {
   faQuestionCircle,
   faSignOutAlt,
   faStop,
-  faTimes,
   faUserGraduate
 } from '@fortawesome/free-solid-svg-icons'
-import {HintsPopup} from "./Hints";
+import {HintsAssistant} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
@@ -244,6 +243,7 @@ const Assistant = (
   {
     requirements,
     messages,
+    hints, numHints, requestingSolution, solution,
   }) => {
   if (!requirements) {
     return null;
@@ -282,6 +282,17 @@ const Assistant = (
           </div>
         </details>
       </div>
+      {hints.length > 0 &&
+        <div className="list-group-item">
+          <details className="assistant-header">
+            <summary>
+              <strong>Hints</strong>
+            </summary>
+            <div className="assistant-content">
+              <HintsAssistant {...{hints, numHints, requestingSolution, solution}}/>
+            </div>
+          </details>
+        </div>}
     </div>
   </div>;
 }
@@ -389,6 +400,7 @@ const CourseText = (
     step_index,
     page,
     pages,
+    hints, numHints, requestingSolution, solution,
     messages
   }) =>
     <>
@@ -404,7 +416,12 @@ const CourseText = (
         <hr style={{ margin: '0' }}/>
       </div>
     )}
-      <Assistant requirements={page.steps[step_index].requirements} messages={messages}/>
+      <Assistant requirements={page.steps[step_index].requirements} messages={messages} {...{
+        hints,
+        numHints,
+        requestingSolution,
+        solution
+      }}/>
     {/* pt-3 is Bootstrap's helper class. Shorthand for padding-top: 1rem. Available classes are pt-{1-5} */}
     <div className='pt-3'>
       {page.index > 0 &&
@@ -489,13 +506,18 @@ class AppComponent extends React.Component {
           <QuestionWizard {...questionWizard}/>
           :
           <div onCopy={checkCopy}>
-            <CourseText {...{
-              user,
-              step_index,
-              page,
-              pages,
-              messages
-            }}/>
+            <CourseText
+              hints={step.hints}
+              numHints={numHints}
+              requestingSolution={requestingSolution}
+              solution={step.solution}
+              {...{
+                user,
+                step_index,
+                page,
+                pages,
+                messages,
+              }}/>
           </div>
         }
       </div>
@@ -527,15 +549,6 @@ class AppComponent extends React.Component {
          href={"#" + (!fullIde ? "ide" : (specialHash(previousRoute) ? previousRoute : page.slug))}>
         <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
       </a>
-
-      {!(fullIde || isQuestionWizard) &&
-        <HintsPopup
-          hints={step.hints}
-          numHints={numHints}
-          requestingSolution={requestingSolution}
-          solution={step.solution}
-        />
-      }
 
       <ErrorModal error={error}/>
 

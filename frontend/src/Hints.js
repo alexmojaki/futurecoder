@@ -6,20 +6,17 @@ import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import * as terms from "./terms.json"
 import _ from "lodash";
 
-export const HintsPopup = ({hints, numHints, requestingSolution, solution}) => {
+export const HintsAssistant = ({hints, numHints, requestingSolution, solution}) => {
   if (!hints.length) {
     return null;
   }
   return (
-    <div className="custom-popup"
+    <div
          onCopy={(event) => {
            alert(terms.copying_solution_not_allowed);
            event.preventDefault();
          }}
     >
-      <Popup
-        trigger={<img src={hintIcon} className="hint-icon" alt="Hint button"/>}
-      >
         <div className="hints-popup">
           {
             numHints === 0 ?
@@ -33,7 +30,6 @@ export const HintsPopup = ({hints, numHints, requestingSolution, solution}) => {
               />
           }
         </div>
-      </Popup>
     </div>
   )
 }

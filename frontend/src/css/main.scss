@@ -339,13 +339,6 @@
 }
 
 .hints-popup {
-  @extend .my-popup-content;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  overflow: auto;
-  max-height: 80vh;
-  max-width: 40vw;
   user-select: none;
 }
 
