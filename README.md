@@ -139,7 +139,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 3. Run `poetry install` to install Python dependencies.
 4. Run `./scripts/generate.sh`. This will generate various static files from Python used by the frontend and run some tests. Repeat this step whenever you change Python files.
 5. In the `frontend` folder:
-    1. Install `node`. We recommend using version 14.15.4 (lts/fermium) but there are no known issues with other versions.
+    1. Install `node`. We recommend using version 16.17.1 (lts/gallium) but there are no known issues with other versions.
 
     2. Run `npm ci` to download dependencies.
 
