@@ -7065,5 +7065,489 @@
             "result": []
         },
         "step": "the_full_game"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais = {'pomme': 'apple', 'boite': 'box'}"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "first_dict"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais = {}"
+        ],
+        "response": {
+            "message": "<p>Oups, on a besoin d'assigner <code>anglais = {'pomme': 'apple', 'boite': 'box'}</code> avant de continuer.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais[0]"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "0",
+                                "type": "KeyError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">anglais</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">0</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">anglais</span>\n",
+                                            "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;pomme&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;apple&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;boite&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;box&#39;</span><span class=\"p\">}</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>Une <code>KeyError</code> est lev\u00e9e lorsqu'une valeur n'est pas trouv\u00e9e en tant que\ncl\u00e9 dans un dict Python ou dans un objet similaire.</p>\n<p>La cl\u00e9 <code>0</code> est introuvable dans le dict <code>anglais</code>.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 1, in <module>",
+                        "-->    1 | anglais[0]",
+                        "           ^^^^^^^^^^",
+                        "anglais = {'pomme': 'apple', 'boite': 'box'}",
+                        "",
+                        "KeyError: 0"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "dict_access"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais = {}"
+        ],
+        "response": {
+            "message": "<p>Oups, on a besoin d'assigner <code>anglais = {'pomme': 'apple', 'boite': 'box'}</code> avant de continuer.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access2"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais['pomme']"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "'apple'\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dict_access2"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais = {}"
+        ],
+        "response": {
+            "message": "<p>Oups, vous devez d\u00e9finir <code>anglais = {'pomme': 'apple', 'boite': 'box'}</code> avant de continuer.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access3"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais['boite']"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "'box'\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dict_access3"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais = {}"
+        ],
+        "response": {
+            "message": "<p>Oups, vous devez d\u00e9finir <code>anglais = {'pomme': 'apple', 'boite': 'box'}</code> avant de continuer.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access4"
+    },
+    {
+        "page": "Introduction aux Dictionnaires",
+        "program": [
+            "anglais['apple']"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "'apple'",
+                                "type": "KeyError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">anglais</span><span class=\"p p-ExecutingNode\">[</span><span class=\"s1 s1-ExecutingNode\">&#39;apple&#39;</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">anglais</span>\n",
+                                            "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;pomme&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;apple&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;boite&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;box&#39;</span><span class=\"p\">}</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>Une <code>KeyError</code> est lev\u00e9e lorsqu'une valeur n'est pas trouv\u00e9e en tant que\ncl\u00e9 dans un dict Python ou dans un objet similaire.</p>\n<p>La cl\u00e9 <code>'apple'</code> est introuvable dans le dict <code>anglais</code>.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 1, in <module>",
+                        "-->    1 | anglais['apple']",
+                        "           ^^^^^^^^^^^^^^^^",
+                        "anglais = {'pomme': 'apple', 'boite': 'box'}",
+                        "",
+                        "KeyError: 'apple'"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "dict_access4"
+    },
+    {
+        "get_solution": [
+            "def cout_total(panier, prix):",
+            "    resultat = 0",
+            "    for element in panier:",
+            "        tarif = prix[element]",
+            "        resultat += tarif",
+            "    return resultat"
+        ],
+        "page": "Utiliser les Dictionnaires sur un exemple pratique",
+        "program": [
+            "def cout_total(panier, prix):",
+            "    resultat = 0",
+            "    for element in panier:",
+            "        tarif = prix[element]",
+            "        resultat += tarif",
+            "    return resultat"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "shopping_cart1"
+    },
+    {
+        "get_solution": [
+            "def cout_total(panier, quantites, prix):",
+            "    resultat = 0",
+            "    for element in panier:",
+            "        tarif = prix[element]",
+            "        quantite = quantites[element]",
+            "        resultat += tarif * quantite",
+            "    return resultat"
+        ],
+        "page": "Utiliser les Dictionnaires sur un exemple pratique",
+        "program": [
+            "def cout_total(panier, quantites, prix):",
+            "    resultat = 0",
+            "    for element in panier:",
+            "        tarif = prix[element]",
+            "        quantite = quantites[element]",
+            "        resultat += tarif * quantite",
+            "    return resultat"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "shopping_cart4"
+    },
+    {
+        "page": "Utiliser les Dictionnaires sur un exemple pratique",
+        "program": [
+            "def substitution(chaine):",
+            "    resultat = ''",
+            "    for caractere in chaine:",
+            "        if caractere == 'A':",
+            "            caractere = 'T'",
+            "        elif caractere == 'T':",
+            "            caractere = 'A'",
+            "        elif caractere == 'G':",
+            "            caractere = 'C'",
+            "        elif caractere == 'C':",
+            "            caractere = 'G'",
+            "        resultat += caractere",
+            "    return resultat",
+            "",
+            "original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
+            "attendu = 'TCATCGCAGGAATCAATGTCCTACCGAATA'",
+            "assert_equal(substitution(original), attendu)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "OK\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dna_part1"
+    },
+    {
+        "get_solution": [
+            "def substitution(chaine, d):",
+            "    resultat = \"\"",
+            "    for lettre in chaine:",
+            "        resultat += d[lettre]",
+            "    return resultat"
+        ],
+        "page": "Utiliser les Dictionnaires sur un exemple pratique",
+        "program": [
+            "def substitution(chaine, d):",
+            "    resultat = \"\"",
+            "    for lettre in chaine:",
+            "        resultat += d[lettre]",
+            "    return resultat"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "dna_part2"
+    },
+    {
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
+        "program": [
+            "quantites = {'pomme': 1, 'chat': 10}",
+            "print(quantites.keys())"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "dict_keys(['pomme', 'chat'])\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "introducing_keys"
+    },
+    {
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
+        "program": [
+            "quantites = {'pomme': 1, 'chat': 10}",
+            "for clef in quantites.keys():",
+            "    print(clef)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "pomme\nchat\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "keys_are_iterable"
+    },
+    {
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
+        "program": [
+            "quantites = {'pomme': 1, 'chat': 10}",
+            "for clef in quantites:",
+            "    print(clef)"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "pomme\nchat\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "keys_are_iterable2"
+    },
+    {
+        "get_solution": [
+            "def cout_total(quantites, prix):",
+            "    resultat = 0",
+            "    for element in quantites:",
+            "        tarif = prix[element]",
+            "        quantite = quantites[element]",
+            "        resultat += tarif * quantite",
+            "    return resultat"
+        ],
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
+        "program": [
+            "def cout_total(quantites, prix):",
+            "    resultat = 0",
+            "    for element in quantites:",
+            "        tarif = prix[element]",
+            "        quantite = quantites[element]",
+            "        resultat += tarif * quantite",
+            "    return resultat"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "cleanup_shopping_cart"
+    },
+    {
+        "get_solution": [
+            "def affiche_mots(anglais):",
+            "    for mot in anglais:",
+            "        print(\"Francais: \" + mot)",
+            "        print(\"Anglais: \" + anglais[mot])",
+            "        print(\"---\")"
+        ],
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
+        "program": [
+            "def affiche_mots(anglais):",
+            "    for mot in anglais:",
+            "        print(\"Francais: \" + mot)",
+            "        print(\"Anglais: \" + anglais[mot])",
+            "        print(\"---\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "english_to_french"
+    },
+    {
+        "get_solution": [
+            "def affiche_mots(anglais, allemand):",
+            "    for mot in anglais:",
+            "        print(\"Francais: \" + mot)",
+            "        print(\"Anglais: \" + anglais[mot])",
+            "        print(\"Allemand: \" + allemand[mot])",
+            "        print(\"---\")"
+        ],
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
+        "program": [
+            "def affiche_mots(anglais, allemand):",
+            "    for mot in anglais:",
+            "        print(\"Francais: \" + mot)",
+            "        print(\"Anglais: \" + anglais[mot])",
+            "        print(\"Allemand: \" + allemand[mot])",
+            "        print(\"---\")"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": []
+        },
+        "step": "english_to_german"
+    },
+    {
+        "page": "It\u00e9rer sur les clefs d'un dictionnaire",
+        "program": [
+            "def affiche_mots(mots):",
+            "    for mot in mots:",
+            "        traductions = mots[mot]",
+            "",
+            "        print(f\"Francais: {mot}\")",
+            "        for langue in traductions:",
+            "            print(f\"{langue}: {traductions[langue]}\")",
+            "        print(f\"---\")",
+            "",
+            "affiche_mots({",
+            "    'pomme': {",
+            "        'Anglais': 'apple',",
+            "        'Allemand': 'Apfel',",
+            "    },",
+            "    'boite': {",
+            "        'Anglais': 'box',",
+            "        'Allemand': 'Kasten',",
+            "    },",
+            "})"
+        ],
+        "response": {
+            "message": "",
+            "passed": true,
+            "result": [
+                {
+                    "text": "Francais: pomme\nAnglais: apple\nAllemand: Apfel\n---\nFrancais: boite\nAnglais: box\nAllemand: Kasten\n---\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "nested_dictionaries"
     }
 ]
