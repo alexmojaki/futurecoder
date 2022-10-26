@@ -752,7 +752,7 @@ If the user gives you a file that can't be processed, you want to show an error:
     if invalid_image(filename):
         print("I can't process " + filename)
 
-Suppose that .png and .jpg files cannot be processed, but other file types can.
+Suppose that .png and .jpg files can be processed, but other file types cannot.
 Here's an example function to do that:
 
     __copyable__
