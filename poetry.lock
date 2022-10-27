@@ -126,7 +126,7 @@ pyflakes = ">=2.2.0,<2.3.0"
 
 [[package]]
 name = "friendly-traceback"
-version = "0.7.40"
+version = "0.7.48"
 description = "Friendlier tracebacks in any language."
 category = "main"
 optional = false
@@ -453,8 +453,8 @@ flake8 = [
     {file = "flake8-3.8.3.tar.gz", hash = "sha256:f04b9fcbac03b0a3e58c0ab3a0ecc462e023a9faf046d57794184028123aa208"},
 ]
 friendly-traceback = [
-    {file = "friendly-traceback-0.7.40.tar.gz", hash = "sha256:0bb5fd92c7da4d011df1117b22df72323176029426c5a852fa5a5a31885f47c8"},
-    {file = "friendly_traceback-0.7.40-py3-none-any.whl", hash = "sha256:afda1626b357d4fda875479dcb1db33b4fb13024858bec3b58c68cc3329610d4"},
+    {file = "friendly-traceback-0.7.48.tar.gz", hash = "sha256:0384c49eee16df41b3356bf3071b031eaa85cda5b4b41420cbbe09d9ff8270a0"},
+    {file = "friendly_traceback-0.7.48-py3-none-any.whl", hash = "sha256:5b0a917ef4a1e750e92015757870f50cab83c90002863f77bbbf41a3d26e67af"},
 ]
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
