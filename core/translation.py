@@ -12,7 +12,7 @@ from pathlib import Path
 from textwrap import indent
 
 import asttokens.util
-from asttokens import ASTTokens
+from asttokens import ASTTokens, ASTText
 
 from core.runner.utils import is_valid_syntax
 import core.utils
@@ -102,15 +102,18 @@ def get(msgid, default):
             or msgid.endswith(".program")
         )
     ):
-        assert result == default
+        assert result == default, f"{msgid}: {result} != {default}"
 
     return result
 
 
 def translate_code(code):
     replacements = []
-    for node, node_text in get_code_bits(code):
-        start = code.find(node_text, node.first_token.startpos)
+    atok = ASTText(code)
+
+    for node, node_text in get_code_bits(code, atok):
+        startpos = atok.get_text_range(node, padded=False)[0]
+        start = code.find(node_text, startpos)
         end = start + len(node_text)
         text_range = (start, end)
         replacements.append((*text_range, get_code_bit(node_text)))
@@ -128,10 +131,13 @@ def translate_program(cls, program):
     return clean_spaces(result)
 
 
-def get_code_bits(code):
-    atok = ASTTokens(code, parse=1)
+def get_code_bits(code, atok=None):
+    atok = atok or ASTText(code)
+    in_f_string = set()
 
     for node in ast.walk(atok.tree):
+        if node in in_f_string:
+            continue
         if isinstance(node, ast.Name):
             if not atok.get_text(node):
                 continue
@@ -149,6 +155,10 @@ def get_code_bits(code):
                 yield arg, arg.arg
             node_text = node.name
         elif isinstance(node, (ast.Str, ast.JoinedStr)):
+            if isinstance(node, ast.JoinedStr):
+                # Currently, f-strings as a whole are treated as a single code bit,
+                # and nodes inside should not be.
+                in_f_string.update(ast.walk(node))
             node_text = atok.get_text(node)
             if not re.search(r"[a-zA-Z]", node_text) or re.match(
                 r"""^['"][a-zA-Z]['"]""", node_text
