@@ -27,8 +27,15 @@ for dir in ${COMBINED}-*; do
     cp -r $dir/* $COMBINED/
 done
 
-# TODO this --project won't work for futurecoder-es-latam
-firebase --project futurecoder-${FUTURECODER_LANGUAGE} deploy --only hosting --public $COMBINED
+if [ "$FUTURECODER_LANGUAGE" = "en" ]; then
+    PROJECT=futurecoder-io
+else if [ "$FUTURECODER_LANGUAGE" = "es" ]; then
+    PROJECT=futurecoder-es-latam
+else
+    PROJECT=futurecoder-${FUTURECODER_LANGUAGE}
+fi
+
+firebase --project $PROJECT deploy --only hosting --public $COMBINED
 
 git tag $TAG
 git push origin HEAD --tags
