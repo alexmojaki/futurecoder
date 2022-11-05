@@ -73,12 +73,14 @@ const initialState = {
   },
   processing: false,
   running: false,
-  numHints: 0,
   editorContent: "",
-  messageSections: [],
   specialMessages: [],
   pastSpecialMessages: [],
-  requestingSolution: 0,
+  assistant: {
+    numHints: 0,
+    messageSections: [],
+    requestingSolution: 0,
+  },
   prediction: {
     choices: null,
     answer: "",
@@ -372,12 +374,7 @@ function migrateUserState(pages, pagesProgress, updates) {
 
 export const showHint = makeAction(
   'SHOW_HINT',
-  (state) => {
-    return {
-      ...state,
-      numHints: state.numHints + 1,
-    };
-  },
+  (state) => iset(state, "assistant.numHints", state.assistant.numHints + 1),
 );
 
 export const scrollToNextStep = () => {
@@ -401,8 +398,7 @@ export const ranCode = makeAction(
 
       state = {
         ...state,
-        ..._.pick(initialState,
-          "numHints messageSections requestingSolution".split(" ")),
+        assistant: initialState.assistant,
         prediction: {
           ...prediction,
           userChoice: "",
@@ -428,7 +424,7 @@ export const ranCode = makeAction(
         state = iset(state, "questionWizard.messages", value.messages);
       }
     } else {
-      state = iset(state, "messageSections", value.message_sections);
+      state = iset(state, "assistant.messageSections", value.message_sections);
     }
 
     return state;
@@ -494,7 +490,7 @@ export function logEvent(name, data = {}) {
 
 export function postCodeEntry(codeEntry) {
   if (isProduction) {
-    const {user: {developerMode}, route, numHints, requestingSolution} = localState;
+    const {user: {developerMode}, route, assistant: {numHints, requestingSolution}} = localState;
     codeEntry = {
       ...codeEntry,
       state: {

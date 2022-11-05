@@ -76,7 +76,7 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
 
   await loadedPromise;
 
-  const {route, user, questionWizard, editorContent, numHints, requestingSolution} = bookState;
+  const {route, user, questionWizard, editorContent, assistant: {numHints, requestingSolution}} = bookState;
   if (!shell && !code) {
     code = editorContent;
   }

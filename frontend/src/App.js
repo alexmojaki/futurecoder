@@ -187,7 +187,7 @@ const Shell = () =>
 
 const Messages = (
   {
-    messages: messageSections,
+    messageSections,
   }) => {
   const nonEmptySections = messageSections.filter(section => section?.messages?.length);
   if (!nonEmptySections.length) {
@@ -212,35 +212,35 @@ const Messages = (
           </div>
         </div>
       } else if (section.type === "messages") {
-        return <>{
+        return <div key={section.type}>{
           section.messages.map((message, index) =>
-            <>
-              <div key={index} dangerouslySetInnerHTML={{__html: message}} className="assistant-message"/>
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{__html: message}} className="assistant-message"/>
               {index !== section.messages.length - 1 && <hr/>}
-            </>
+            </div>
           )
-        }</>;
+        }</div>;
       } else {
-        return <>
+        return <div key={section.type}>
           <div className="alert alert-warning" role="alert">
             Found the following generic problem(s) in your code:
           </div>
           {
             section.messages.map((message, index) =>
-              <>
-                <div key={index} dangerouslySetInnerHTML={{__html: message}} className="assistant-lint"/>
+              <div key={index}>
+                <div dangerouslySetInnerHTML={{__html: message}} className="assistant-lint"/>
                 {index !== section.messages.length - 1 && <hr/>}
-              </>
+              </div>
             )
           }
-        </>
+        </div>
       }
     }
   );
 }
 
 const Assistant = (assistant) => {
-  const {messages, step} = assistant;
+  const {messageSections, step} = assistant;
   if (!step.requirements) {
     return null;
   }
@@ -274,7 +274,7 @@ const Assistant = (assistant) => {
             <strong>{terms.submission_status}</strong>
           </summary>
           <div className="assistant-content">
-            <Messages {...{messages}}/>
+            <Messages {...{messageSections}}/>
           </div>
         </details>
       </div>
@@ -435,13 +435,11 @@ const CourseText = (
 class AppComponent extends React.Component {
   render() {
     const {
-      numHints,
       editorContent,
-      messageSections: messages,
+      assistant,
       specialMessages,
       questionWizard,
       pages,
-      requestingSolution,
       user,
       error,
       prediction,
@@ -496,17 +494,12 @@ class AppComponent extends React.Component {
           :
           <div onCopy={checkCopy}>
             <CourseText
-              assistant={{
-                numHints,
-                requestingSolution,
-                messages,
-              }}
               {...{
+                assistant,
                 user,
                 step,
                 page,
                 pages,
-                messages,
               }}/>
           </div>
         }

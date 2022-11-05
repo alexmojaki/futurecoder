@@ -60,7 +60,7 @@ const Hints = ({step: {hints, solution}, numHints, requestingSolution}) =>
 const RequestSolution1 = ({requestingSolution, solution}) => {
   if (requestingSolution === 0) {
     return (
-      <button onClick={() => bookSetState("requestingSolution", solution.lines ? 1 : 3)} className="btn btn-primary">
+      <button onClick={() => bookSetState("assistant.requestingSolution", solution.lines ? 1 : 3)} className="btn btn-primary">
         {solution.lines ?
           terms.show_shuffled_solution :
           terms.show_solution}
@@ -86,7 +86,7 @@ const RequestSolution1 = ({requestingSolution, solution}) => {
 
 const RequestSolution2 = ({requestingSolution, solution}) => {
   if (requestingSolution === 2) {
-    return <button onClick={() => bookSetState("requestingSolution", 3)} className="btn btn-primary">
+    return <button onClick={() => bookSetState("assistant.requestingSolution", 3)} className="btn btn-primary">
       {solution.lines ?
         terms.show_unscrambled_solution :
         terms.show_solution}
@@ -103,11 +103,11 @@ const RequestSolution2 = ({requestingSolution, solution}) => {
 const ConfirmSolution1 = () => <>
   <p>{terms.are_you_sure}</p>
   <p>
-    <button onClick={() => bookSetState("requestingSolution", 2)} className="btn btn-primary">
+    <button onClick={() => bookSetState("assistant.requestingSolution", 2)} className="btn btn-primary">
       {terms.yes}
     </button>
     {" "}
-    <button onClick={() => bookSetState("requestingSolution", 0)}
+    <button onClick={() => bookSetState("assistant.requestingSolution", 0)}
             className="btn-default btn">
       {terms.no}
     </button>
@@ -118,11 +118,11 @@ const ConfirmSolution1 = () => <>
 const ConfirmSolution2 = () => <>
   <p>{terms.are_you_sure}</p>
   <p>
-    <button onClick={() => bookSetState("requestingSolution", 4)} className="btn btn-primary">
+    <button onClick={() => bookSetState("assistant.requestingSolution", 4)} className="btn btn-primary">
       {terms.yes}
     </button>
     {" "}
-    <button onClick={() => bookSetState("requestingSolution", 2)}
+    <button onClick={() => bookSetState("assistant.requestingSolution", 2)}
             className="btn-default btn">
       {terms.no}
     </button>
