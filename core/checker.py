@@ -108,19 +108,18 @@ def check_entry(entry, callback, runner=default_runner):
             except SyntaxError:
                 pass
 
-        if "message" in step_result:
-            step_result["messages"].insert(0, step_result.pop("message"))
+        result["passed"] = step_result["passed"]
+        if not result["passed"]:
+            if "message" in step_result:
+                step_result["messages"].insert(0, step_result.pop("message"))
 
-        result.update(
-            passed=step_result["passed"],
-            message_sections=[
+            result["message_sections"] = [
                 dict(
                     type=typ,
                     messages=[highlighted_markdown(message) for message in step_result.get(typ, [])],
                 )
                 for typ in ["messages", "passed_tests", "lint"]
-            ],
-        )
+            ]
     except KeyboardInterrupt:
         result["interrupted"] = True
 
