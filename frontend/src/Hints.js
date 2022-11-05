@@ -52,7 +52,7 @@ const Hints = ({step: {hints, solution}, numHints, requestingSolution}) =>
     </div>
     {
       numHints < hints.length &&
-      <span className="small">{hintsProgress({numHints, totalHints: hints.length})}</span>
+      <span className="small hints-progress">{hintsProgress({numHints, totalHints: hints.length})}</span>
     }
   </div>
 

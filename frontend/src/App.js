@@ -204,7 +204,7 @@ const Messages = (
               <br/>
               {section.messages.map((message, index) =>
                 <>
-                  <div key={index} dangerouslySetInnerHTML={{__html: message}}/>
+                  <div key={index} dangerouslySetInnerHTML={{__html: message}} className="assistant-passed-test"/>
                   {index !== section.messages.length - 1 && <hr/>}
                 </>
               )}
@@ -215,7 +215,7 @@ const Messages = (
         return <>{
           section.messages.map((message, index) =>
             <>
-              <div key={index} dangerouslySetInnerHTML={{__html: message}}/>
+              <div key={index} dangerouslySetInnerHTML={{__html: message}} className="assistant-message"/>
               {index !== section.messages.length - 1 && <hr/>}
             </>
           )
@@ -228,7 +228,7 @@ const Messages = (
           {
             section.messages.map((message, index) =>
               <>
-                <div key={index} dangerouslySetInnerHTML={{__html: message}}/>
+                <div key={index} dangerouslySetInnerHTML={{__html: message}} className="assistant-lint"/>
                 {index !== section.messages.length - 1 && <hr/>}
               </>
             )
@@ -249,7 +249,7 @@ const Assistant = (assistant) => {
       <strong><FontAwesomeIcon icon={faQuestionCircle}/> {terms.assistant}</strong>
     </div>
     <div className="list-group list-group-flush">
-      <div className="list-group-item">
+      <div className="list-group-item assistant-requirements">
         <details className="assistant-header">
           <summary>
             <strong>{terms.requirements}</strong>
@@ -268,7 +268,7 @@ const Assistant = (assistant) => {
           </div>
         </details>
       </div>
-      <div className="list-group-item">
+      <div className="list-group-item assistant-status">
         <details className="assistant-header">
           <summary>
             <strong>{terms.submission_status}</strong>
@@ -279,7 +279,7 @@ const Assistant = (assistant) => {
         </details>
       </div>
       {step.hints.length > 0 &&
-        <div className="list-group-item">
+        <div className="list-group-item assistant-hints">
           <details className="assistant-header">
             <summary>
               <strong>Hints</strong>
