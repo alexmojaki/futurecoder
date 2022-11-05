@@ -21943,7 +21943,7 @@ msgstr ""
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 msgid "pages.DictionaryKeysAndValues.title"
-msgstr "Dictionary Keys And Values"
+msgstr "Iterating over Dictionary Keys"
 
 #. https://futurecoder.io/course/#EqualsVsIs
 #. 
@@ -23916,7 +23916,7 @@ msgid "pages.IntroducingDictionaries.steps.dict_access3.text"
 msgstr ""
 "That's better!\n"
 "\n"
-"Now run a similar line in the shell to look up the translation for 'box'."
+"Now run a similar line in the shell to look up the translation for `'box'`."
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access4.special_messages.bad_french_value.text"
@@ -25714,7 +25714,7 @@ msgstr ""
 "\n"
 "__code6__\n"
 "\n"
-"Suppose that .png and .jpg files cannot be processed, but other file types can.\n"
+"Suppose that .png and .jpg files can be processed, but other file types cannot.\n"
 "Here's an example function to do that:\n"
 "\n"
 "    __copyable__\n"
@@ -30733,7 +30733,7 @@ msgstr ""
 "Your job is to add another argument to the `substitute` function: a dictionary called `d`.\n"
 "The keys of `d` represent characters\n"
 "in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`\n"
-"means that `A` should be replaced by `T`:\n"
+"means that `'A'` should be replaced by `'T'`:\n"
 "\n"
 "    __copyable__\n"
 "__code0__\n"
@@ -30957,7 +30957,7 @@ msgstr ""
 
 #. https://futurecoder.io/course/#UsingDictionaries
 msgid "pages.UsingDictionaries.title"
-msgstr "Using Dictionaries"
+msgstr "Using Dictionaries in Practice"
 
 #. https://futurecoder.io/course/#UsingVariables
 msgid "pages.UsingVariables.steps.final_text.text"

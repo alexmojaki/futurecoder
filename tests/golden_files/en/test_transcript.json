@@ -7274,7 +7274,7 @@
             "        result += price",
             "    return result"
         ],
-        "page": "Using Dictionaries",
+        "page": "Using Dictionaries in Practice",
         "program": [
             "def total_cost(cart, prices):",
             "    result = 0",
@@ -7300,7 +7300,7 @@
             "        result += price * quantity",
             "    return result"
         ],
-        "page": "Using Dictionaries",
+        "page": "Using Dictionaries in Practice",
         "program": [
             "def total_cost(cart, quantities, prices):",
             "    result = 0",
@@ -7318,7 +7318,7 @@
         "step": "shopping_cart4"
     },
     {
-        "page": "Using Dictionaries",
+        "page": "Using Dictionaries in Practice",
         "program": [
             "def substitute(string):",
             "    result = ''",
@@ -7358,7 +7358,7 @@
             "        result += d[letter]",
             "    return result"
         ],
-        "page": "Using Dictionaries",
+        "page": "Using Dictionaries in Practice",
         "program": [
             "def substitute(string, d):",
             "    result = \"\"",
@@ -7374,7 +7374,7 @@
         "step": "dna_part2"
     },
     {
-        "page": "Dictionary Keys And Values",
+        "page": "Iterating over Dictionary Keys",
         "program": [
             "quantities = {'apple': 1, 'cat': 10}",
             "print(quantities.keys())"
@@ -7392,7 +7392,7 @@
         "step": "introducing_keys"
     },
     {
-        "page": "Dictionary Keys And Values",
+        "page": "Iterating over Dictionary Keys",
         "program": [
             "quantities = {'apple': 1, 'cat': 10}",
             "for key in quantities.keys():",
@@ -7411,7 +7411,7 @@
         "step": "keys_are_iterable"
     },
     {
-        "page": "Dictionary Keys And Values",
+        "page": "Iterating over Dictionary Keys",
         "program": [
             "quantities = {'apple': 1, 'cat': 10}",
             "for key in quantities:",
@@ -7439,7 +7439,7 @@
             "        result += price * quantity",
             "    return result"
         ],
-        "page": "Dictionary Keys And Values",
+        "page": "Iterating over Dictionary Keys",
         "program": [
             "def total_cost(quantities, prices):",
             "    result = 0",
@@ -7464,7 +7464,7 @@
             "        print(\"French: \" + french[word])",
             "        print(\"---\")"
         ],
-        "page": "Dictionary Keys And Values",
+        "page": "Iterating over Dictionary Keys",
         "program": [
             "def print_words(french):",
             "    for word in french:",
@@ -7488,7 +7488,7 @@
             "        print(\"German: \" + german[word])",
             "        print(\"---\")"
         ],
-        "page": "Dictionary Keys And Values",
+        "page": "Iterating over Dictionary Keys",
         "program": [
             "def print_words(french, german):",
             "    for word in french:",
@@ -7505,7 +7505,7 @@
         "step": "english_to_german"
     },
     {
-        "page": "Dictionary Keys And Values",
+        "page": "Iterating over Dictionary Keys",
         "program": [
             "def print_words(words):",
             "    for word in words:",

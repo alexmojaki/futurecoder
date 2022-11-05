@@ -102,7 +102,7 @@ __program_indented__
         """
 That's better!
 
-Now run a similar line in the shell to look up the translation for 'box'.
+Now run a similar line in the shell to look up the translation for `'box'`.
         """
 
         program_in_text = False
@@ -139,6 +139,8 @@ But `0` *could* be a key, because many types of keys are allowed, including stri
 
 
 class UsingDictionaries(Page):
+    title = "Using Dictionaries in Practice"
+
     class shopping_cart1(ExerciseStep):
         """
 Let's see dictionaries in a real life problem. Imagine you're building an online shopping website.
@@ -320,7 +322,7 @@ Now we can use dictionaries to make this code both shorter and more general so i
 Your job is to add another argument to the `substitute` function: a dictionary called `d`.
 The keys of `d` represent characters
 in the first argument `string` that should be replaced by the corresponding values of `d`. For example, `'A': 'T'`
-means that `A` should be replaced by `T`:
+means that `'A'` should be replaced by `'T'`:
 
     __copyable__
     def substitute(string, d):
@@ -402,6 +404,8 @@ i.e. `reverse = swap_keys_values(letters)`."""
 
 
 class DictionaryKeysAndValues(Page):
+    title = "Iterating over Dictionary Keys"
+
     class introducing_keys(Step):
         """
 Copy this code into the editor:
@@ -547,6 +551,8 @@ For example, the last line of code above should print:
 
             return print_words
 
+        translated_tests = True
+
         tests = (
             (({'apple': 'pomme', 'box': 'boite'},), """\
 English: apple
@@ -614,6 +620,8 @@ The two dictionaries will always have the same keys, just different values.
             french = generate_dict(str, str)
             german = {k: generate_string() for k in french}
             return {"french": french, "german": german}
+
+        translated_tests = True
 
         tests = (
             (({'apple': 'pomme', 'box': 'boite'}, {'apple': 'apfel', 'box': 'kasten'},), """\

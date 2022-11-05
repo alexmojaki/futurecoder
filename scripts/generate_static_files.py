@@ -19,6 +19,7 @@ For example, you could use watchdog (https://github.com/gorakhargosh/watchdog):
 """
 
 import os
+import random
 import shutil
 import sys
 import tarfile
@@ -41,6 +42,8 @@ core_dir = Path(__file__).parent.parent / "core"
 frontend = core_dir / "../frontend"
 frontend_src = frontend / "src"
 
+# Consistently generate the same files
+random.seed(0)
 
 def run_steps():
     for *_, entry in step_test_entries():

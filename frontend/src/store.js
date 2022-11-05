@@ -25,12 +25,12 @@ const sentryReduxEnhancer = Sentry.createReduxEnhancer({
     return action;
   },
   stateTransformer: state => {
-    state = _.omit(state, "book.pages");
+    state = state.book;
     try {
-      state = {...state, currentStep: currentStep(state.book)};
+      state = {...state, currentStep: currentStep(state)};
     } catch {
     }
-    return state;
+    return _.omit(state, "pages", "pageSlugsList");
   },
 });
 

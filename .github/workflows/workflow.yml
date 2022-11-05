@@ -34,11 +34,11 @@ jobs:
       if: steps.build.outcome == 'success'
       with:
         path: '**/test_frontend_assets/'
-    - name: Deploy
+    - name: Deploy preview
       uses: FirebaseExtended/action-hosting-deploy@v0
-      if: steps.build.outcome == 'success'
+      if: steps.build.outcome == 'success' && github.ref != 'refs/heads/master'
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
         firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FUTURECODER_IO }}'
         projectId: futurecoder-io
-        channelId: ${{ job.status == 'success' && github.event_name == 'push' && github.ref == 'refs/heads/master' && 'live' || github.ref }}
+        channelId: ${{ github.ref }}
