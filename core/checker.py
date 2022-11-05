@@ -51,6 +51,7 @@ def check_entry(entry, callback, runner=default_runner):
     result = dict(
         passed=False,
         error=None,
+        message_sections=[],
     )
     try:
         if hasattr(entry, "to_py"):

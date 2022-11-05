@@ -120,17 +120,20 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
 
   const {error} = data;
 
-  logEvent('run_code', {
+  const event = {
     code_source: entry.source,
     page_slug: entry.page_slug,
     step_name: entry.step_name,
     entry_passed: data.passed,
     has_error: Boolean(error),
-    // num_messages: data.messages?.length,  // XXX
     page_route: route,
     num_hints: numHints,
     requesting_solution: requestingSolution,
-  });
+  };
+  for (const section of data.message_sections || []) {
+    event[`num_messages_${section.type}`] = section.messages.length;
+  }
+  logEvent('run_code', event);
 
   if (error) {
     Sentry.captureEvent(error.sentry_event);
