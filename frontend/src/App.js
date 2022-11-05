@@ -393,7 +393,7 @@ const Markdown = (
 const CourseText = (
   {
     user,
-    step_index,
+    step,
     page,
     pages,
     assistant,
@@ -405,13 +405,13 @@ const CourseText = (
         key={index}
         id={`step-text-${index}`}
         className={index > 0 ? 'pt-3' : ''}
-        style={index > step_index ? {display: 'none'} : {}}
+        style={index > step.index ? {display: 'none'} : {}}
       >
         <Markdown html={part.text} copyFunc={text => bookSetState("editorContent", text)}/>
         <hr style={{ margin: '0' }}/>
       </div>
     )}
-      <Assistant {...assistant}/>
+      <Assistant {...assistant} step={step}/>
     {/* pt-3 is Bootstrap's helper class. Shorthand for padding-top: 1rem. Available classes are pt-{1-5} */}
     <div className='pt-3'>
       {page.index > 0 &&
@@ -420,7 +420,7 @@ const CourseText = (
         {terms.previous}
       </button>}
       {" "}
-      {page.index < Object.keys(pages).length - 1 && step_index === page.steps.length - 1 &&
+      {page.index < Object.keys(pages).length - 1 && step.index === page.steps.length - 1 &&
       <button className="btn btn-success next-button"
               onClick={() => movePage(+1)}>
         {terms.next}
@@ -457,7 +457,6 @@ class AppComponent extends React.Component {
 
     const page = currentPage();
     const step = currentStep();
-    const step_index = step.index;
 
     let showEditor, showSnoop, showPythonTutor, showBirdseye, showQuestionButton;
     if (fullIde || isQuestionWizard) {
@@ -470,7 +469,7 @@ class AppComponent extends React.Component {
       showEditor = page.index >= pages.WritingPrograms.index;
       const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
       showSnoop = page.index > snoopPageIndex ||
-        (page.index === snoopPageIndex && step_index >= 1);
+        (page.index === snoopPageIndex && step.index >= 1);
       showPythonTutor = page.index >= pages.UnderstandingProgramsWithPythonTutor.index;
       showBirdseye = page.index >= pages.IntroducingBirdseye.index;
       showQuestionButton = page.index > pages.IntroducingBirdseye.index;
@@ -498,14 +497,13 @@ class AppComponent extends React.Component {
           <div onCopy={checkCopy}>
             <CourseText
               assistant={{
-                step,
                 numHints,
                 requestingSolution,
                 messages,
               }}
               {...{
                 user,
-                step_index,
+                step,
                 page,
                 pages,
                 messages,
