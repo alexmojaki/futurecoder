@@ -621,7 +621,7 @@ const MenuPopup = ({user}) =>
         </p>
         {
           otherVisibleLanguages.map(lang =>
-            <p>
+            <p key={lang.code}>
               <a href={lang.url + "course/"} className="btn btn-link"
                  style={{borderColor: "grey"}}>
                 <img
