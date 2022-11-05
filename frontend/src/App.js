@@ -239,13 +239,9 @@ const Messages = (
   );
 }
 
-const Assistant = (
-  {
-    requirements,
-    messages,
-    hints, numHints, requestingSolution, solution,
-  }) => {
-  if (!requirements) {
+const Assistant = (assistant) => {
+  const {messages, step} = assistant;
+  if (!step.requirements) {
     return null;
   }
   return <div className="card assistant">
@@ -263,7 +259,7 @@ const Assistant = (
               {terms.requirements_description}
             </p>
             <ul>
-              {requirements.map((requirement, index) =>
+              {step.requirements.map((requirement, index) =>
                 <li key={index}>
                   <Requirement requirement={requirement}/>
                 </li>
@@ -282,14 +278,14 @@ const Assistant = (
           </div>
         </details>
       </div>
-      {hints.length > 0 &&
+      {step.hints.length > 0 &&
         <div className="list-group-item">
           <details className="assistant-header">
             <summary>
               <strong>Hints</strong>
             </summary>
             <div className="assistant-content">
-              <HintsAssistant {...{hints, numHints, requestingSolution, solution}}/>
+              <HintsAssistant {...assistant}/>
             </div>
           </details>
         </div>}
@@ -400,8 +396,7 @@ const CourseText = (
     step_index,
     page,
     pages,
-    hints, numHints, requestingSolution, solution,
-    messages
+    assistant,
   }) =>
     <>
     <h1 dangerouslySetInnerHTML={{__html: page.title}}/>
@@ -416,12 +411,7 @@ const CourseText = (
         <hr style={{ margin: '0' }}/>
       </div>
     )}
-      <Assistant requirements={page.steps[step_index].requirements} messages={messages} {...{
-        hints,
-        numHints,
-        requestingSolution,
-        solution
-      }}/>
+      <Assistant {...assistant}/>
     {/* pt-3 is Bootstrap's helper class. Shorthand for padding-top: 1rem. Available classes are pt-{1-5} */}
     <div className='pt-3'>
       {page.index > 0 &&
@@ -507,10 +497,12 @@ class AppComponent extends React.Component {
           :
           <div onCopy={checkCopy}>
             <CourseText
-              hints={step.hints}
-              numHints={numHints}
-              requestingSolution={requestingSolution}
-              solution={step.solution}
+              assistant={{
+                step,
+                numHints,
+                requestingSolution,
+                messages,
+              }}
               {...{
                 user,
                 step_index,

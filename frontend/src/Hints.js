@@ -1,13 +1,11 @@
 import React from "react";
 import {bookSetState, reorderSolutionLines, revealSolutionToken, showHint} from "./book/store";
-import hintIcon from "./img/hint.png";
-import Popup from "reactjs-popup";
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import * as terms from "./terms.json"
 import _ from "lodash";
 
-export const HintsAssistant = ({hints, numHints, requestingSolution, solution}) => {
-  if (!hints.length) {
+export const HintsAssistant = (assistant) => {
+  if (!assistant.step.hints.length) {
     return null;
   }
   return (
@@ -19,15 +17,10 @@ export const HintsAssistant = ({hints, numHints, requestingSolution, solution}) 
     >
         <div className="hints-popup">
           {
-            numHints === 0 ?
+            assistant.numHints === 0 ?
               <button onClick={showHint} className="btn btn-primary">{terms.get_hint}</button>
               :
-              <Hints
-                hints={hints}
-                numHints={numHints}
-                requestingSolution={requestingSolution}
-                solution={solution}
-              />
+              <Hints {...assistant}/>
           }
         </div>
     </div>
@@ -36,7 +29,7 @@ export const HintsAssistant = ({hints, numHints, requestingSolution, solution}) 
 
 const hintsProgress = _.template(terms.hints_progress);
 
-const Hints = ({hints, numHints, requestingSolution, solution}) =>
+const Hints = ({step: {hints, solution}, numHints, requestingSolution}) =>
   <div className="markdown-body">
     {hints.slice(0, numHints).map((hint, index) =>
       <div className="hint-body" key={index}>
