@@ -97,7 +97,6 @@ def normalise_response(response, is_message, substep):
     message_sections = response.pop("message_sections")
     if not is_message:
         assert not message_sections
-        response["message"] = ""
     else:
         section = message_sections[0]
         assert section == dict(
