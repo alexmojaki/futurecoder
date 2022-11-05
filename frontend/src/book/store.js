@@ -123,6 +123,7 @@ export const currentStep = (state = localState) =>
 
 export const setPage = (page_slug) => {
   setState("user.pageSlug", page_slug);
+  setState("assistant", initialState.assistant);
   afterSetPage(page_slug);
 };
 
@@ -172,6 +173,7 @@ export const moveStep = (delta) => {
     animateStep(stepIndex);
   }
   setUserStateAndDatabase(["pagesProgress", localState.user.pageSlug, "step_name"], step.name);
+  setState("assistant", initialState.assistant);
 };
 
 const animateStep = (stepIndex) => {
