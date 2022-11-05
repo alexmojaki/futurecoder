@@ -203,10 +203,10 @@ const Messages = (
               </summary>
               <br/>
               {section.messages.map((message, index) =>
-                <>
-                  <div key={index} dangerouslySetInnerHTML={{__html: message}} className="assistant-passed-test"/>
+                <div key={index} >
+                  <div dangerouslySetInnerHTML={{__html: message}} className="assistant-passed-test"/>
                   {index !== section.messages.length - 1 && <hr/>}
-                </>
+                </div>
               )}
             </details>
           </div>
