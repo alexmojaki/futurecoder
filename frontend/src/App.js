@@ -242,10 +242,17 @@ const Messages = (
 }
 
 const Assistant = (assistant) => {
-  const {messageSections, step} = assistant;
+  const {messageSections, step, lastSeenMessageSections} = assistant;
   if (!step.requirements) {
     return null;
   }
+  const newMessages = messageSections.some((section) => {
+    if (section.type === "passed_tests" || !section.messages.length) {
+      return false;
+    }
+    const lastSeenSection = lastSeenMessageSections.find(s => s.type === section.type);
+    return section.messages.some((message) => !lastSeenSection?.messages.includes(message));
+  });
   return <div className="assistant accordion">
     <Collapsible classParentString="assistant-requirements card"
                  contentInnerClassName="assistant-content card-body"
@@ -261,11 +268,15 @@ const Assistant = (assistant) => {
         )}
       </ul>
     </Collapsible>
-    <Collapsible onOpen={openSubmissionStatus}
-                 onClose={() => bookSetState("assistant.submissionStatusOpen", false)}
+    <Collapsible onOpening={openSubmissionStatus}
+                 onClosing={() => bookSetState("assistant.submissionStatusOpen", false)}
                  classParentString="assistant-status card"
                  contentInnerClassName="assistant-content card-body"
-                 trigger={<div className="card-header">{terms.submission_status}</div>}>
+                 trigger={<div className="card-header">
+                   {terms.submission_status} &nbsp;
+                   {newMessages && <span className="badge badge-pill badge-danger">New</span>}
+                 </div>}
+    >
       <Messages {...{messageSections}}/>
     </Collapsible>
     <Collapsible classParentString="assistant-hints card"
