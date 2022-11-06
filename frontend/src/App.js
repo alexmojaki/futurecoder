@@ -249,7 +249,7 @@ const Assistant = (assistant) => {
   return <div className="assistant accordion">
     <Collapsible classParentString="assistant-requirements card"
                  contentInnerClassName="assistant-content card-body"
-                 trigger={<div className="card-header"><strong>{terms.requirements}</strong></div>}>
+                 trigger={<div className="card-header">{terms.requirements}</div>}>
       <p>
         {terms.requirements_description}
       </p>
@@ -265,12 +265,12 @@ const Assistant = (assistant) => {
                  onClose={() => bookSetState("assistant.submissionStatusOpen", false)}
                  classParentString="assistant-status card"
                  contentInnerClassName="assistant-content card-body"
-                 trigger={<div className="card-header"><strong>{terms.submission_status}</strong></div>}>
+                 trigger={<div className="card-header">{terms.submission_status}</div>}>
       <Messages {...{messageSections}}/>
     </Collapsible>
     <Collapsible classParentString="assistant-hints card"
                  contentInnerClassName="assistant-content card-body"
-                 trigger={<div className="card-header"><strong>Hints & Solution</strong></div>}>
+                 trigger={<div className="card-header">Hints & Solution</div>}>
       <HintsAssistant {...assistant}/>
     </Collapsible>
   </div>
