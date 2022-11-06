@@ -472,6 +472,11 @@
     font-size: larger;
     position: relative;
 
+    // Font awesome icons
+    svg {
+      width: 2em;
+    }
+
     &:after {
       font-family: 'FontAwesome';
       content: '\f107';

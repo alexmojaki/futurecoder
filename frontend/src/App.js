@@ -35,6 +35,8 @@ import {
   faCog,
   faCompress,
   faExpand,
+  faLightbulb,
+  faListCheck,
   faListOl,
   faPlay,
   faQuestionCircle,
@@ -256,7 +258,10 @@ const Assistant = (assistant) => {
   return <div className="assistant accordion">
     <Collapsible classParentString="assistant-requirements card"
                  contentInnerClassName="assistant-content card-body"
-                 trigger={<div className="card-header">{terms.requirements}</div>}>
+                 trigger={<div className="card-header">
+                   <FontAwesomeIcon icon={faQuestionCircle}/> {terms.requirements}
+                 </div>}
+    >
       <p>
         {terms.requirements_description}
       </p>
@@ -273,7 +278,7 @@ const Assistant = (assistant) => {
                  classParentString="assistant-status card"
                  contentInnerClassName="assistant-content card-body"
                  trigger={<div className="card-header">
-                   {terms.submission_status} &nbsp;
+                   <FontAwesomeIcon icon={faListCheck}/> {terms.submission_status} &nbsp;
                    {newMessages && <span className="badge badge-pill badge-danger">New</span>}
                  </div>}
     >
@@ -281,7 +286,10 @@ const Assistant = (assistant) => {
     </Collapsible>
     <Collapsible classParentString="assistant-hints card"
                  contentInnerClassName="assistant-content card-body"
-                 trigger={<div className="card-header">Hints & Solution</div>}>
+                 trigger={<div className="card-header">
+                   <FontAwesomeIcon icon={faLightbulb}/> {"Hints & Solution"}
+                 </div>}
+    >
       <HintsAssistant {...assistant}/>
     </Collapsible>
   </div>
