@@ -220,6 +220,7 @@ list
 
     assert "Given a list" in driver.find_element_by_css_selector(".book-text").text
 
+    driver.find_element_by_css_selector(".assistant-hints .card-header").click()
     show_hints_and_solution(driver, num_hints=9, parsons=False)
 
     # Hidden solution contains correct text
@@ -237,13 +238,13 @@ for i in range(len(things)):
     get_hint_button = driver.find_element_by_css_selector(".hints-popup .btn-primary")
     assert get_hint_button.text == "Reveal"
     scroll_to_bottom(driver)
-    for i in range(25):
-        assert len(code.find_elements_by_class_name("solution-token-hidden")) == 25 - i
+    for i in range(24):
+        assert len(code.find_elements_by_class_name("solution-token-hidden")) == 24 - i
         assert len(code.find_elements_by_class_name("solution-token-visible")) == 12 + i
         get_hint_button.click()
 
     # Open submission status
-    force_click(driver, driver.find_element_by_css_selector(".assistant-status .assistant-header summary"))
+    force_click(driver, driver.find_element_by_css_selector(".assistant-status .card-header"))
 
     # No messages visible
     assert not driver.find_elements_by_class_name("assistant-message")
@@ -347,10 +348,6 @@ def scroll_to_bottom(driver):
 
 
 def show_hints_and_solution(driver, *, num_hints, parsons):
-    header = driver.find_element_by_css_selector(".assistant-hints .assistant-header")
-    if not header.get_attribute("open"):
-        header.click()
-
     # Show all hints
     for hint_num in range(num_hints):
         assert len(driver.find_elements_by_class_name("hint-body")) == hint_num

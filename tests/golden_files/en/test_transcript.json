@@ -17,6 +17,7 @@
         "step": "first_expression"
     },
     {
+        "get_solution": "program",
         "page": "Introducing The Shell",
         "program": [
             "1+2"
@@ -51,6 +52,7 @@
         "step": "more_calculation"
     },
     {
+        "get_solution": "program",
         "page": "Introducing The Shell",
         "program": [
             "5 - 6"
@@ -67,6 +69,7 @@
         "step": "more_calculation"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Strings",
         "program": [
             "'hello'"
@@ -83,6 +86,7 @@
         "step": "hello_string"
     },
     {
+        "get_solution": "program",
         "page": "Adding Strings",
         "program": [
             "'hello' + 'world'"
@@ -116,9 +120,7 @@
         "step": "hello_world_space"
     },
     {
-        "get_solution": [
-            "'hello ' + 'world'"
-        ],
+        "get_solution": "program",
         "page": "Adding Strings",
         "program": [
             "'hello ' + 'world'"
@@ -135,6 +137,7 @@
         "step": "hello_world_space"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Variables",
         "program": [
             "word = 'Hello'"
@@ -158,6 +161,7 @@
         "step": "word_check"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Variables",
         "program": [
             "word"
@@ -174,6 +178,7 @@
         "step": "word_check"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Variables",
         "program": [
             "'word'"
@@ -200,6 +205,7 @@
         "step": "word_string_check"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Variables",
         "program": [
             "sunshine"
@@ -309,6 +315,7 @@
         "step": "name_assign"
     },
     {
+        "get_solution": "program",
         "page": "Using Variables and <code>print()</code>",
         "program": [
             "your_name = 'Alex'"
@@ -320,6 +327,7 @@
         "step": "name_assign"
     },
     {
+        "get_solution": "program",
         "page": "Using Variables and <code>print()</code>",
         "program": [
             "'Hello ' + your_name"
@@ -348,6 +356,7 @@
         "step": "word_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Using Variables and <code>print()</code>",
         "program": [
             "word + your_name"
@@ -376,9 +385,7 @@
         "step": "word_plus_name_with_space"
     },
     {
-        "get_solution": [
-            "word + ' ' + your_name"
-        ],
+        "get_solution": "program",
         "page": "Using Variables and <code>print()</code>",
         "program": [
             "word + ' ' + your_name"
@@ -395,6 +402,7 @@
         "step": "word_plus_name_with_space"
     },
     {
+        "get_solution": "program",
         "page": "Using Variables and <code>print()</code>",
         "program": [
             "word = 'Goodbye'"
@@ -406,6 +414,7 @@
         "step": "word_assign_goodbye"
     },
     {
+        "get_solution": "program",
         "page": "Using Variables and <code>print()</code>",
         "program": [
             "word + ' ' + your_name"
@@ -422,6 +431,7 @@
         "step": "goodbye_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Using Variables and <code>print()</code>",
         "program": [
             "print(word + ' ' + your_name)"
@@ -438,6 +448,7 @@
         "step": "first_print"
     },
     {
+        "get_solution": "program",
         "page": "Writing Programs",
         "program": [
             "word = 'Hello'",
@@ -458,6 +469,7 @@
         "step": "editor_hello_world"
     },
     {
+        "get_solution": "program",
         "page": "Storing Calculations In Variables",
         "program": [
             "word = 'Hello'",
@@ -489,6 +501,7 @@
         "step": "sentence_equals_word_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Storing Calculations In Variables",
         "program": [
             "word = 'Hello'",
@@ -519,6 +532,7 @@
         "step": "sentence_doesnt_change"
     },
     {
+        "get_solution": "program",
         "page": "Introducing For Loops",
         "program": [
             "name = 'World'",
@@ -536,6 +550,7 @@
         "step": "first_for_loop"
     },
     {
+        "get_solution": "program",
         "page": "Indentation",
         "program": [
             "for character in name:",
@@ -554,6 +569,7 @@
         "step": "missing_indentation"
     },
     {
+        "get_solution": "program",
         "page": "Indentation",
         "program": [
             "name = 'World'",
@@ -574,6 +590,7 @@
         "step": "two_indented_lines"
     },
     {
+        "get_solution": "program",
         "page": "Indentation",
         "program": [
             "name = 'World'",
@@ -594,6 +611,7 @@
         "step": "one_indented_line"
     },
     {
+        "get_solution": "program",
         "page": "Indentation",
         "program": [
             "for character in name:",
@@ -657,6 +675,7 @@
         "step": "loop_exercise_2"
     },
     {
+        "get_solution": "program",
         "page": "Building Up Strings",
         "program": [
             "hello = 'Hello'",
@@ -685,6 +704,7 @@
         "step": "hello_plus_equals"
     },
     {
+        "get_solution": "program",
         "page": "Building Up Strings",
         "program": [
             "name = 'World'",
@@ -719,6 +739,7 @@
         "step": "name_triangle"
     },
     {
+        "get_solution": "program",
         "page": "Building Up Strings",
         "program": [
             "name = 'World'",
@@ -748,6 +769,7 @@
         "step": "name_triangle_missing_last_line"
     },
     {
+        "get_solution": "program",
         "page": "Building Up Strings",
         "program": [
             "'' + '' + ''"
@@ -1000,6 +1022,7 @@
         "step": "diagonal_name_bonus_challenge"
     },
     {
+        "get_solution": "program",
         "page": "Introducing If Statements",
         "program": [
             "condition = True",
@@ -1019,6 +1042,7 @@
         "step": "introducing_booleans"
     },
     {
+        "get_solution": "program",
         "page": "Introducing If Statements",
         "program": [
             "if True:",
@@ -1039,6 +1063,7 @@
         "step": "first_if_statements"
     },
     {
+        "get_solution": "program",
         "page": "Introducing If Statements",
         "program": [
             "sentence = 'Hello World'",
@@ -1067,6 +1092,7 @@
         "step": "excited_example"
     },
     {
+        "get_solution": "program",
         "page": "Introducing If Statements",
         "program": [
             "sentence = 'Hello World'",
@@ -1125,6 +1151,7 @@
         "step": "excited_confused_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Combining Compound Statements",
         "program": [
             "sentence = 'Hello World'",
@@ -1165,6 +1192,7 @@
         "step": "for_inside_if"
     },
     {
+        "get_solution": "program",
         "page": "Understanding Programs With <code>snoop</code>",
         "program": [
             "sentence = 'Hello World'",
@@ -1201,6 +1229,7 @@
         "step": "print_tail"
     },
     {
+        "get_solution": "program",
         "page": "Understanding Programs With <code>snoop</code>",
         "program": [
             "sentence = 'Hello World'",
@@ -1292,6 +1321,7 @@
         "step": "print_first_character"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "condition = True",
@@ -1312,6 +1342,7 @@
         "step": "first_if_else"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "condition = False",
@@ -1332,6 +1363,7 @@
         "step": "first_if_else_false"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "sentence = 'Hello World'",
@@ -1354,6 +1386,7 @@
         "step": "if_upper_else_lower"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "sentence = 'Hello World'",
@@ -1376,6 +1409,7 @@
         "step": "if_upper_else_lower_false"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> and <code>else</code>",
         "program": [
             "sentence = 'Hello World'",
@@ -1571,6 +1605,7 @@
         "step": "spongebob"
     },
     {
+        "get_solution": "program",
         "page": "The Equality Operator",
         "program": [
             "print(1 + 2 == 3)",
@@ -1589,6 +1624,7 @@
         "step": "introducing_equality"
     },
     {
+        "get_solution": "program",
         "page": "The Equality Operator",
         "program": [
             "print(1 + 2 = 3)"
@@ -1606,6 +1642,7 @@
         "step": "equality_vs_assignment"
     },
     {
+        "get_solution": "program",
         "page": "The Equality Operator",
         "program": [
             "name = 'kesha'",
@@ -1669,6 +1706,7 @@
         "step": "if_equals_replacing_characters_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>elif</code>",
         "program": [
             "dna = 'AGTAGCGTC'",
@@ -1746,6 +1784,7 @@
         "step": "dna_example_with_else"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>elif</code>",
         "program": [
             "dna = 'AGTAGCGTC'",
@@ -1775,6 +1814,7 @@
         "step": "dna_example_with_elif"
     },
     {
+        "get_solution": "program",
         "page": "Other Comparison Operators",
         "program": [
             "1 != 2"
@@ -1799,6 +1839,7 @@
         "step": "try_not_equals"
     },
     {
+        "get_solution": "program",
         "page": "Other Comparison Operators",
         "program": [
             "sentence = 'The e key on my keyboard is broken'",
@@ -1820,9 +1861,7 @@
         "step": "brokn_kyboard"
     },
     {
-        "get_solution": [
-            "1 < 2"
-        ],
+        "get_solution": "program",
         "page": "Other Comparison Operators",
         "program": [
             "1 < 2"
@@ -1839,9 +1878,7 @@
         "step": "introducing_less_than"
     },
     {
-        "get_solution": [
-            "'1' < '2'"
-        ],
+        "get_solution": "program",
         "page": "Other Comparison Operators",
         "program": [
             "'1' < '2'"
@@ -1858,6 +1895,7 @@
         "step": "comparing_strings"
     },
     {
+        "get_solution": "program",
         "page": "Other Comparison Operators",
         "program": [
             "percentage = 73",
@@ -1937,6 +1975,7 @@
         "step": "min_three_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Lists",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
@@ -1956,6 +1995,7 @@
         "step": "first_list"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Lists",
         "program": [
             "x = 1",
@@ -1974,6 +2014,7 @@
         "step": "can_contain_anything"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Lists",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9]",
@@ -2148,6 +2189,7 @@
         "step": "list_contains_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
@@ -2169,6 +2211,7 @@
         "step": "introducing_subscripting"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words[4]"
@@ -2226,6 +2269,7 @@
         "step": "index_error"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
@@ -2259,6 +2303,7 @@
         "step": "introducing_len_and_range"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
@@ -2280,6 +2325,7 @@
         "step": "range_len"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "indices = range(4)",
@@ -2312,6 +2358,7 @@
         "step": "printing_the_range"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "indices[4]"
@@ -2380,6 +2427,7 @@
         "step": "indices_out_of_bounds"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "range(4)"
@@ -2396,6 +2444,7 @@
         "step": "range_almost_the_same_as_list"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "list(range(4))"
@@ -2425,6 +2474,7 @@
         "step": "range_versus_list"
     },
     {
+        "get_solution": "program",
         "page": "Getting elements at a position, <code>range()</code>, and <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
@@ -2655,6 +2705,7 @@
         "step": "zip_longest_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Terminology: Calling functions and methods",
         "program": [
             "print(len)",
@@ -2672,6 +2723,7 @@
         "step": "print_functions"
     },
     {
+        "get_solution": "program",
         "page": "Terminology: Calling functions and methods",
         "program": [
             "print(callable(len))"
@@ -2688,6 +2740,7 @@
         "step": "introducing_callable"
     },
     {
+        "get_solution": "program",
         "page": "Terminology: Calling functions and methods",
         "program": [
             "f = 'a string'",
@@ -2754,6 +2807,7 @@
         "step": "not_callable"
     },
     {
+        "get_solution": "program",
         "page": "Terminology: Calling functions and methods",
         "program": [
             "things = [1, 2, 3]",
@@ -2773,6 +2827,7 @@
         "step": "print_returns_none"
     },
     {
+        "get_solution": "program",
         "page": "Terminology: Calling functions and methods",
         "program": [
             "things = print([1, 2, 3])",
@@ -2838,6 +2893,7 @@
         "step": "len_of_none"
     },
     {
+        "get_solution": "program",
         "page": "Terminology: Calling functions and methods",
         "program": [
             "word = 'Hello'",
@@ -2856,6 +2912,7 @@
         "step": "methods_of_str"
     },
     {
+        "get_solution": "program",
         "page": "Terminology: Calling functions and methods",
         "program": [
             "word = 'Hello'",
@@ -2915,6 +2972,7 @@
         "step": "no_append_for_str"
     },
     {
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "nums = [1, 2, 3]",
@@ -2936,6 +2994,7 @@
         "step": "append_vs_concatenate"
     },
     {
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "nums = [1, 2, 3]",
@@ -2966,6 +3025,7 @@
         "step": "subscript_assignment_predict"
     },
     {
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "[7, 8, 9, 8].index(8)"
@@ -2994,6 +3054,7 @@
         "step": "index_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "nums = [1, 2, 3]",
@@ -3024,6 +3085,7 @@
         "step": "pop_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "nums = [1, 2, 3]",
@@ -3054,11 +3116,7 @@
         "step": "remove_predict_exercise"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "x.append(x.pop(0))",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3077,11 +3135,7 @@
         "step": "pop_remove_index_subscript_assignment"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "x[len(x) - 1] = x[0]",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3100,11 +3154,7 @@
         "step": "subscript_assignment_exercise"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "y = x + [x[0]]",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3123,11 +3173,7 @@
         "step": "negative_index_concatenation_exercise"
     },
     {
-        "get_solution": [
-            "x = [1, 2, 0, 3]",
-            "x.pop(x.index(0))",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Functions and Methods for Lists",
         "program": [
             "x = [1, 2, 0, 3]",
@@ -3146,6 +3192,7 @@
         "step": "remove_exercise"
     },
     {
+        "get_solution": "program",
         "page": "More List Functions and Methods",
         "program": [
             "sorted([2, 9, 1, 8, 5, 6])"
@@ -3172,6 +3219,7 @@
         "step": "sorted_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "More List Functions and Methods",
         "program": [
             "nums = [2, 9, 1, 8, 5, 64]",
@@ -3200,6 +3248,7 @@
         "step": "in_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "More List Functions and Methods",
         "program": [
             "sum([5, 3, 4])"
@@ -3225,6 +3274,7 @@
         "step": "sum_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "More List Functions and Methods",
         "program": [
             "[1, 2, 3, 2, 7, 2, 5].count(2)"
@@ -3251,11 +3301,7 @@
         "step": "count_predict_exercise"
     },
     {
-        "get_solution": [
-            "x = [1, 2, 0, 3]",
-            "y = x.count(1) > 0",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "More List Functions and Methods",
         "program": [
             "x = [1, 2, 0, 3]",
@@ -3274,11 +3320,7 @@
         "step": "count_in_sorted_sum"
     },
     {
-        "get_solution": [
-            "x = [15, 12, -6, 3]",
-            "y = sum(x) / len(x)",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "More List Functions and Methods",
         "program": [
             "x = [15, 12, -6, 3]",
@@ -3297,11 +3339,7 @@
         "step": "average_exercise"
     },
     {
-        "get_solution": [
-            "x = 100",
-            "y = sum(range(x + 1))",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "More List Functions and Methods",
         "program": [
             "x = 100",
@@ -3320,11 +3358,7 @@
         "step": "sum_range_exercise"
     },
     {
-        "get_solution": [
-            "x = [12, -6, 2, -1, 3]",
-            "y = sorted(x)[1]",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "More List Functions and Methods",
         "program": [
             "x = [12, -6, 2, -1, 3]",
@@ -3343,6 +3377,7 @@
         "step": "second_smallest_in_list_exercise"
     },
     {
+        "get_solution": "program",
         "page": "String Methods and Immutability",
         "program": [
             "print('the' in 'feed the dog and the cat')"
@@ -3359,6 +3394,7 @@
         "step": "string_in_step"
     },
     {
+        "get_solution": "program",
         "page": "String Methods and Immutability",
         "program": [
             "string = 'feed the dog and the cat'",
@@ -3377,6 +3413,7 @@
         "step": "string_count_index"
     },
     {
+        "get_solution": "program",
         "page": "String Methods and Immutability",
         "program": [
             "'Python'.append(' is cool!')"
@@ -3428,6 +3465,7 @@
         "step": "mutation_string_append"
     },
     {
+        "get_solution": "program",
         "page": "String Methods and Immutability",
         "program": [
             "sentence = \"Python rocks!\"",
@@ -3447,9 +3485,7 @@
         "step": "string_lower_upper"
     },
     {
-        "get_solution": [
-            "max([21, 55, 4, 91, 62, 49])"
-        ],
+        "get_solution": "program",
         "page": "How to Find Information with Google, and more",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
@@ -3466,11 +3502,7 @@
         "step": "sum_list"
     },
     {
-        "get_solution": [
-            "nums = [1, 2, 3, 4, 5]",
-            "nums.insert(2, 9)",
-            "print(nums)"
-        ],
+        "get_solution": "program",
         "page": "How to Find Information with Google, and more",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
@@ -3489,6 +3521,7 @@
         "step": "list_insert"
     },
     {
+        "get_solution": "program",
         "page": "How to Find Information with Google, and more",
         "program": [
             "dir([])"
@@ -3505,6 +3538,7 @@
         "step": "dir_list"
     },
     {
+        "get_solution": "program",
         "page": "Understanding Programs With Python Tutor",
         "program": [
             "all_numbers = [2, 4, 8, 1, 9, 7]",
@@ -3533,6 +3567,7 @@
         "step": "run_with_python_tutor"
     },
     {
+        "get_solution": "program",
         "page": "<code>==</code> vs <code>is</code>, and Having Multiple Names for One Value",
         "program": [
             "list1 = [1, 2, 3]",
@@ -3561,6 +3596,7 @@
         "step": "two_separate_lists"
     },
     {
+        "get_solution": "program",
         "page": "<code>==</code> vs <code>is</code>, and Having Multiple Names for One Value",
         "program": [
             "list1 = [1, 2, 3]",
@@ -3589,6 +3625,7 @@
         "step": "same_list"
     },
     {
+        "get_solution": "program",
         "page": "Modifying While Iterating",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
@@ -3677,6 +3714,7 @@
         "step": "run_broken_with_python_tutor"
     },
     {
+        "get_solution": "program",
         "page": "Modifying While Iterating",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
@@ -3697,6 +3735,7 @@
         "step": "remove_instead_of_pop"
     },
     {
+        "get_solution": "program",
         "page": "Modifying While Iterating",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
@@ -3717,6 +3756,7 @@
         "step": "make_copy"
     },
     {
+        "get_solution": "program",
         "page": "Modifying While Iterating",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
@@ -3739,6 +3779,7 @@
         "step": "make_copy2"
     },
     {
+        "get_solution": "program",
         "page": "Modifying While Iterating",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
@@ -3761,6 +3802,7 @@
         "step": "make_new_list"
     },
     {
+        "get_solution": "program",
         "page": "Single and Double Quotes in Strings",
         "program": [
             "print('Alice's Diner')"
@@ -3778,6 +3820,7 @@
         "step": "single_quotes_apostrophe"
     },
     {
+        "get_solution": "program",
         "page": "Single and Double Quotes in Strings",
         "program": [
             "print(\"Alice's Diner\")"
@@ -3794,6 +3837,7 @@
         "step": "double_quotes"
     },
     {
+        "get_solution": "program",
         "page": "Single and Double Quotes in Strings",
         "program": [
             "'Alice' == \"Alice\""
@@ -3818,9 +3862,7 @@
         "step": "single_double_quotes_equal"
     },
     {
-        "get_solution": [
-            "print(\"Special cases aren't special enough to break the rules.\")"
-        ],
+        "get_solution": "program",
         "page": "Single and Double Quotes in Strings",
         "program": [
             "print(\"Special cases aren't special enough to break the rules.\")"
@@ -3837,9 +3879,7 @@
         "step": "double_quote_exercise"
     },
     {
-        "get_solution": [
-            "print('\"Talk is cheap. Show me the code.\" - Linus Torvalds')"
-        ],
+        "get_solution": "program",
         "page": "Single and Double Quotes in Strings",
         "program": [
             "print('\"Talk is cheap. Show me the code.\" - Linus Torvalds')"
@@ -3856,6 +3896,7 @@
         "step": "single_quote_exercise"
     },
     {
+        "get_solution": "program",
         "page": "f-strings",
         "program": [
             "name = \"Alice\"",
@@ -3890,6 +3931,7 @@
         "step": "introduce_f_strings"
     },
     {
+        "get_solution": "program",
         "page": "f-strings",
         "program": [
             "name = \"Alice\"",
@@ -3975,11 +4017,7 @@
         "step": "concatenate_string_number"
     },
     {
-        "get_solution": [
-            "name = \"Alice\"",
-            "age = 20",
-            "print(f'Hello {name}. You are {age} years old.')"
-        ],
+        "get_solution": "program",
         "page": "f-strings",
         "program": [
             "name = \"Alice\"",
@@ -3998,6 +4036,7 @@
         "step": "basic_f_string_exercise"
     },
     {
+        "get_solution": "program",
         "page": "f-strings",
         "program": [
             "f\"2 * 3 + 4 is equal to {2 * 3 + 4}\""
@@ -4034,6 +4073,7 @@
         "step": "fix_broken_program"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Nested Loops",
         "program": [
             "for letter in \"ABC\":",
@@ -4223,14 +4263,7 @@
         "step": "times_table_exercise"
     },
     {
-        "get_solution": [
-            "for left in range(12):",
-            "    left += 1",
-            "    for right in range(12):",
-            "        right += 1",
-            "        print(f'{left} x {right} = {left * right}')",
-            "    print('---')"
-        ],
+        "get_solution": "program",
         "page": "Introducing Nested Loops",
         "program": [
             "for left in range(12):",
@@ -4366,6 +4399,7 @@
         "step": "player_vs_player_bonus"
     },
     {
+        "get_solution": "program",
         "page": "Understanding Programs with <code>birdseye</code>",
         "program": [
             "a = 2",
@@ -4386,6 +4420,7 @@
         "step": "first_birdseye_example"
     },
     {
+        "get_solution": "program",
         "page": "Understanding Programs with <code>birdseye</code>",
         "program": [
             "word = 'Amazing'",
@@ -4433,6 +4468,7 @@
         "step": "string_list_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Nested Lists",
         "program": [
             "strings = [\"abc\", \"def\", \"ghi\"]",
@@ -4470,6 +4506,7 @@
         "step": "double_subscripting_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Nested Lists",
         "program": [
             "strings = [['hello', 'there'], ['how', 'are', 'you']]",
@@ -4524,6 +4561,7 @@
         "step": "triple_subscripting"
     },
     {
+        "get_solution": "program",
         "page": "Looping Over Nested Lists",
         "program": [
             "numbers = [[1, 2, 3], [4, 5], [6], []]",
@@ -4555,6 +4593,7 @@
         "step": "nested_list_nested_loop_example"
     },
     {
+        "get_solution": "program",
         "page": "Looping Over Nested Lists",
         "program": [
             "numbers = [[1, 2, 3], [4, 5], [6], []]",
@@ -4736,6 +4775,7 @@
         "step": "zip_longest_strings_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Defining Functions",
         "program": [
             "def greet(name):",
@@ -4756,6 +4796,7 @@
         "step": "define_greet"
     },
     {
+        "get_solution": "program",
         "page": "Defining Functions",
         "program": [
             "def greet(name):",
@@ -4786,14 +4827,7 @@
         "step": "how_are_you"
     },
     {
-        "get_solution": [
-            "def say_hello(name):",
-            "    print(f\"Hello {name}!\")",
-            "    print(\"How are you?\")",
-            "",
-            "say_hello(\"Alice\")",
-            "say_hello(\"Bob\")"
-        ],
+        "get_solution": "program",
         "page": "Defining Functions",
         "program": [
             "def say_hello(name):",
@@ -4815,14 +4849,7 @@
         "step": "change_function_name"
     },
     {
-        "get_solution": [
-            "def say_hello(person_name):",
-            "    print(f\"Hello {person_name}!\")",
-            "    print(\"How are you?\")",
-            "",
-            "say_hello(\"Alice\")",
-            "say_hello(\"Bob\")"
-        ],
+        "get_solution": "program",
         "page": "Defining Functions",
         "program": [
             "def say_hello(person_name):",
@@ -4844,11 +4871,7 @@
         "step": "change_parameter_name"
     },
     {
-        "get_solution": [
-            "def print_twice(x):",
-            "    print(x)",
-            "    print(x)"
-        ],
+        "get_solution": "program",
         "page": "Defining Functions",
         "program": [
             "def print_twice(x):",
@@ -4862,6 +4885,7 @@
         "step": "print_twice_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Defining Functions",
         "program": [
             "def print_many(thing, n):",
@@ -4893,13 +4917,7 @@
         "step": "print_many"
     },
     {
-        "get_solution": [
-            "def print_many(n, thing):",
-            "    for _ in range(n):",
-            "        print(thing)",
-            "",
-            "print_many(3, \"Hello\")"
-        ],
+        "get_solution": "program",
         "page": "Defining Functions",
         "program": [
             "def print_many(n, thing):",
@@ -4920,6 +4938,7 @@
         "step": "swap_parameters"
     },
     {
+        "get_solution": "program",
         "page": "Calling Functions Within Functions",
         "program": [
             "def print_many(n, thing):",
@@ -4943,6 +4962,7 @@
         "step": "print_twice_call_print_many"
     },
     {
+        "get_solution": "program",
         "page": "Calling Functions Within Functions",
         "program": [
             "def print_many(n, thing):",
@@ -5002,6 +5022,7 @@
         "step": "see_stack_in_snoop"
     },
     {
+        "get_solution": "program",
         "page": "Calling Functions Within Functions",
         "program": [
             "def print_many(n, thing):",
@@ -5025,6 +5046,7 @@
         "step": "see_stack_in_pythontutor"
     },
     {
+        "get_solution": "program",
         "page": "Calling Functions Within Functions",
         "program": [
             "def print_many(n, thing):",
@@ -5048,6 +5070,7 @@
         "step": "see_stack_in_birdseye"
     },
     {
+        "get_solution": "program",
         "page": "Returning Values From Functions",
         "program": [
             "def double(x):",
@@ -5079,6 +5102,7 @@
         "step": "first_return"
     },
     {
+        "get_solution": "program",
         "page": "Returning Values From Functions",
         "program": [
             "def double(x):",
@@ -5140,6 +5164,7 @@
         "step": "quadruple_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Testing Functions",
         "program": [
             "def double(x):",
@@ -5171,6 +5196,7 @@
         "step": "introducing_assert_equal"
     },
     {
+        "get_solution": "program",
         "page": "Testing Functions",
         "program": [
             "def double(x):",
@@ -5201,6 +5227,7 @@
         "step": "make_tests_fail"
     },
     {
+        "get_solution": "program",
         "page": "Testing Functions",
         "program": [
             "def double(x):",
@@ -5224,10 +5251,7 @@
         "step": "complete_quadruple_tests"
     },
     {
-        "get_solution": [
-            "def surround(string, sides):",
-            "    return sides + string + sides"
-        ],
+        "get_solution": "program",
         "page": "Testing Functions",
         "program": [
             "def surround(string, sides):",
@@ -5298,6 +5322,7 @@
         "step": "alert_exercise"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> ends the function call",
         "program": [
             "def foo():",
@@ -5329,6 +5354,7 @@
         "step": "double_return_in_one_function"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> ends the function call",
         "program": [
             "def double_numbers(numbers):",
@@ -5349,6 +5375,7 @@
         "step": "cannot_return_multiple_values"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> ends the function call",
         "program": [
             "def foo():",
@@ -5383,6 +5410,7 @@
         "step": "return_ends_whole_function"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> ends the function call",
         "program": [
             "def foo():",
@@ -5417,6 +5445,7 @@
         "step": "break_vs_return"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "def is_friend(name):",
@@ -5443,6 +5472,7 @@
         "step": "InputAliceBob"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "True or True"
@@ -5467,6 +5497,7 @@
         "step": "TrueOrTrue"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "True or False"
@@ -5491,6 +5522,7 @@
         "step": "TrueOrFalse"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "False or False"
@@ -5515,6 +5547,7 @@
         "step": "FalseOrFalse"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "def is_friend(name):",
@@ -5539,6 +5572,7 @@
         "step": "ImprovingWithOr"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "def is_friend(name):",
@@ -5560,6 +5594,7 @@
         "step": "FurtherImprovement"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "def is_friend(name):",
@@ -5581,6 +5616,7 @@
         "step": "ACommonMistake"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "def is_friend(name):",
@@ -5602,13 +5638,7 @@
         "step": "InspectWithBirdseye"
     },
     {
-        "get_solution": [
-            "def is_valid_percentage(x):",
-            "    if x < 0 or x > 100:",
-            "        return False",
-            "    else:",
-            "        return True"
-        ],
+        "get_solution": "program",
         "page": "Introducing <code>or</code>",
         "program": [
             "def is_valid_percentage(x):",
@@ -5624,6 +5654,7 @@
         "step": "AnExercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>and</code>",
         "program": [
             "True and True"
@@ -5648,6 +5679,7 @@
         "step": "TrueAndTrue"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>and</code>",
         "program": [
             "True and False"
@@ -5672,6 +5704,7 @@
         "step": "TrueAndFalse"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>and</code>",
         "program": [
             "False and False"
@@ -5696,13 +5729,7 @@
         "step": "FalseAndFalse"
     },
     {
-        "get_solution": [
-            "def is_valid_percentage(x):",
-            "    if 0 <= x and x <= 100:",
-            "        return True",
-            "    else:",
-            "        return False"
-        ],
+        "get_solution": "program",
         "page": "Introducing <code>and</code>",
         "program": [
             "def is_valid_percentage(x):",
@@ -5718,10 +5745,7 @@
         "step": "AndExercise"
     },
     {
-        "get_solution": [
-            "def all_equal(row):",
-            "    return row[0] == row[1] and row[0] == row[2]"
-        ],
+        "get_solution": "program",
         "page": "Introducing <code>and</code>",
         "program": [
             "def all_equal(row):",
@@ -5734,6 +5758,7 @@
         "step": "TicTacToeWinningRow"
     },
     {
+        "get_solution": "program",
         "page": "Multi-line statements",
         "program": [
             "is_friend = name == \"Alice\" or",
@@ -5752,6 +5777,7 @@
         "step": "invalid_multiline"
     },
     {
+        "get_solution": "program",
         "page": "Multi-line statements",
         "program": [
             "name = \"Bob\"",
@@ -5783,6 +5809,7 @@
         "step": "valid_multiline"
     },
     {
+        "get_solution": "program",
         "page": "Combining <code>and</code> and <code>or</code>",
         "program": [
             "True or False and False"
@@ -5799,14 +5826,7 @@
         "step": "CombiningAndOr"
     },
     {
-        "get_solution": [
-            "def diagonal_winner(board):",
-            "    middle = board[1][1]",
-            "    return (",
-            "            (middle == board[0][0] and middle == board[2][2]) or",
-            "            (middle == board[0][2] and middle == board[2][0])",
-            "    )"
-        ],
+        "get_solution": "program",
         "page": "Combining <code>and</code> and <code>or</code>",
         "program": [
             "def diagonal_winner(board):",
@@ -5823,6 +5843,7 @@
         "step": "AndHasHigherPriority"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>not</code>",
         "program": [
             "not True"
@@ -5847,6 +5868,7 @@
         "step": "IntroducingNot"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>not</code>",
         "program": [
             "not False"
@@ -5871,6 +5893,7 @@
         "step": "NotFalse"
     },
     {
+        "get_solution": "program",
         "page": "Introducing <code>not</code>",
         "program": [
             "b = True",
@@ -5888,10 +5911,7 @@
         "step": "NotTrueOrTrue"
     },
     {
-        "get_solution": [
-            "def invalid_image(filename):",
-            "    return not (filename.endswith(\".png\") or filename.endswith(\".jpg\"))"
-        ],
+        "get_solution": "program",
         "page": "Introducing <code>not</code>",
         "program": [
             "def invalid_image(filename):",
@@ -5926,19 +5946,7 @@
         "step": "intro_row_winner"
     },
     {
-        "get_solution": [
-            "def row_winner(board):",
-            "    for row in board:",
-            "        all_equal = True",
-            "        piece = row[0]",
-            "        for entry in row:",
-            "            if entry == ' ' or piece != entry:",
-            "                all_equal = False",
-            "                break",
-            "        if all_equal:",
-            "            return True",
-            "    return False"
-        ],
+        "get_solution": "program",
         "page": "Checking the board for winners",
         "program": [
             "def row_winner(board):",
@@ -5960,19 +5968,7 @@
         "step": "intro_row_winner"
     },
     {
-        "get_solution": [
-            "def column_winner(board):",
-            "    for col in range(len(board[0])):",
-            "        all_equal = True",
-            "        piece = board[0][col]",
-            "        for row in board:",
-            "            if row[col] == ' ' or row[col] != piece:",
-            "                all_equal = False",
-            "                break",
-            "        if all_equal:",
-            "            return True",
-            "    return False"
-        ],
+        "get_solution": "program",
         "page": "Checking the board for winners",
         "program": [
             "def column_winner(board):",
@@ -5994,19 +5990,7 @@
         "step": "column_winner"
     },
     {
-        "get_solution": [
-            "def diagonal_winner(board):",
-            "    all_equal1 = True",
-            "    all_equal2 = True",
-            "    topleft = board[0][0]",
-            "    topright = board[0][-1]",
-            "    for i in range(len(board)):",
-            "        if board[i][i] == ' ' or board[i][i] != topleft:",
-            "            all_equal1 = False",
-            "        if board[i][-i - 1] == ' ' or board[i][-i - 1] != topright:",
-            "            all_equal2 = False",
-            "    return all_equal1 or all_equal2"
-        ],
+        "get_solution": "program",
         "page": "Checking the board for winners",
         "program": [
             "def diagonal_winner(board):",
@@ -6076,6 +6060,7 @@
         "step": "winner"
     },
     {
+        "get_solution": "program",
         "page": "The newline character, <code>format_board</code>",
         "program": [
             "def print_board(board):",
@@ -6100,6 +6085,7 @@
         "step": "one_way_to_print_board"
     },
     {
+        "get_solution": "program",
         "page": "The newline character, <code>format_board</code>",
         "program": [
             "assert_equal(",
@@ -6126,6 +6112,7 @@
         "step": "invalid_multi_line_string"
     },
     {
+        "get_solution": "program",
         "page": "The newline character, <code>format_board</code>",
         "program": [
             "string = \"\"\"First line",
@@ -6156,6 +6143,7 @@
         "step": "discovering_newline"
     },
     {
+        "get_solution": "program",
         "page": "The newline character, <code>format_board</code>",
         "program": [
             "string"
@@ -6172,6 +6160,7 @@
         "step": "discovering_newline"
     },
     {
+        "get_solution": "program",
         "page": "The newline character, <code>format_board</code>",
         "program": [
             "len('\\n')"
@@ -6196,16 +6185,7 @@
         "step": "introducing_newline"
     },
     {
-        "get_solution": [
-            "def format_board(board):",
-            "    result = ''",
-            "    for i in range(len(board)):",
-            "        for char in board[i]:",
-            "            result += char",
-            "        if i != len(board) - 1:",
-            "            result += '\\n'",
-            "    return result"
-        ],
+        "get_solution": "program",
         "page": "The newline character, <code>format_board</code>",
         "program": [
             "def format_board(board):",
@@ -6224,17 +6204,7 @@
         "step": "format_board_simple"
     },
     {
-        "get_solution": [
-            "def format_board(board):",
-            "    joined_rows = []",
-            "    for row in board:",
-            "        joined_rows.append(\"|\".join(row))",
-            "    lines = []",
-            "    for _ in board[0]:",
-            "        lines.append(\"-\")",
-            "    line = f'\\n{\"+\".join(lines)}\\n'",
-            "    return line.join(joined_rows)"
-        ],
+        "get_solution": "program",
         "page": "The newline character, <code>format_board</code>",
         "program": [
             "def format_board(board):",
@@ -6254,6 +6224,7 @@
         "step": "format_board_bonus_challenge"
     },
     {
+        "get_solution": "program",
         "page": "Types",
         "program": [
             "print(type('Hello World'))",
@@ -6274,6 +6245,7 @@
         "step": "five_different_types"
     },
     {
+        "get_solution": "program",
         "page": "Types",
         "program": [
             "type(3) == int"
@@ -6290,6 +6262,7 @@
         "step": "check_type_manually"
     },
     {
+        "get_solution": "program",
         "page": "Types",
         "program": [
             "print('123')",
@@ -6308,6 +6281,7 @@
         "step": "different_types_look_same"
     },
     {
+        "get_solution": "program",
         "page": "Types",
         "program": [
             "print(123 + 456)",
@@ -6337,6 +6311,7 @@
         "step": "plus_has_two_meanings"
     },
     {
+        "get_solution": "program",
         "page": "Types",
         "program": [
             "print(13 < 120)",
@@ -6364,6 +6339,7 @@
         "step": "less_than_has_two_meanings"
     },
     {
+        "get_solution": "program",
         "page": "Types",
         "program": [
             "print(sorted([120, 13, 0]))",
@@ -6393,6 +6369,7 @@
         "step": "less_than_sorting_strings"
     },
     {
+        "get_solution": "program",
         "page": "Types",
         "program": [
             "12 + '34'"
@@ -6478,17 +6455,7 @@
         "step": "fixing_type_errors_with_conversion"
     },
     {
-        "get_solution": [
-            "def format_board(board):",
-            "    first_row = ' '",
-            "    for i in range(len(board)):",
-            "        first_row += str(i + 1)",
-            "    joined_rows = [first_row]",
-            "    for i in range(len(board)):",
-            "        joined_row = str(i + 1) + ''.join(board[i])",
-            "        joined_rows.append(joined_row)",
-            "    return \"\\n\".join(joined_rows)"
-        ],
+        "get_solution": "program",
         "page": "Types",
         "program": [
             "def format_board(board):",
@@ -6508,6 +6475,7 @@
         "step": "format_board_with_numbers"
     },
     {
+        "get_solution": "program",
         "page": "Interactive Programs with <code>input()</code>",
         "program": [
             "print('Type your name, then press Enter:')",
@@ -6538,15 +6506,7 @@
         "step": "first_input"
     },
     {
-        "get_solution": [
-            "super_secret_number = 7",
-            "print(\"What number am I thinking of?\")",
-            "guess = input()",
-            "if int(guess) == super_secret_number:",
-            "    print(\"Amazing! Are you psychic?\")",
-            "else:",
-            "    print(\"Nope!\")"
-        ],
+        "get_solution": "program",
         "page": "Interactive Programs with <code>input()</code>",
         "program": [
             "super_secret_number = 7",
@@ -6581,6 +6541,7 @@
         "step": "convert_input_to_int"
     },
     {
+        "get_solution": "program",
         "page": "Nested List Assignment: Playing Moves on the Board",
         "program": [
             "def play_move(board, player):",
@@ -6620,6 +6581,7 @@
         "step": "modify_list_in_function"
     },
     {
+        "get_solution": "program",
         "page": "Nested List Assignment: Playing Moves on the Board",
         "program": [
             "def play_move(board, player):",
@@ -6649,12 +6611,7 @@
         "step": "nested_assignment_two_lines"
     },
     {
-        "get_solution": [
-            "def play_move(board, player):",
-            "    row = int(input()) - 1",
-            "    col = int(input()) - 1",
-            "    board[row][col] = player"
-        ],
+        "get_solution": "program",
         "page": "Nested List Assignment: Playing Moves on the Board",
         "program": [
             "def play_move(board, player):",
@@ -6669,6 +6626,7 @@
         "step": "nested_assignment_input"
     },
     {
+        "get_solution": "program",
         "page": "Making the Board",
         "program": [
             "def make_board(size):",
@@ -6708,16 +6666,7 @@
         "step": "naive_make_board"
     },
     {
-        "get_solution": [
-            "def make_board(size):",
-            "    board = []",
-            "    for _ in range(size):",
-            "        row = []",
-            "        for _ in range(size):",
-            "            row.append(' ')",
-            "        board.append(row)",
-            "    return board"
-        ],
+        "get_solution": "program",
         "page": "Making the Board",
         "program": [
             "def make_board(size):",
@@ -6825,6 +6774,7 @@
         "step": "the_full_game"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Dictionaries",
         "program": [
             "french = {'apple': 'pomme', 'box': 'boite'}"
@@ -6848,6 +6798,7 @@
         "step": "dict_access"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Dictionaries",
         "program": [
             "french[0]"
@@ -6917,6 +6868,7 @@
         "step": "dict_access2"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Dictionaries",
         "program": [
             "french['apple']"
@@ -6945,6 +6897,7 @@
         "step": "dict_access3"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Dictionaries",
         "program": [
             "french['box']"
@@ -6973,6 +6926,7 @@
         "step": "dict_access4"
     },
     {
+        "get_solution": "program",
         "page": "Introducing Dictionaries",
         "program": [
             "french['pomme']"
@@ -7030,14 +6984,7 @@
         "step": "dict_access4"
     },
     {
-        "get_solution": [
-            "def total_cost(cart, prices):",
-            "    result = 0",
-            "    for item in cart:",
-            "        price = prices[item]",
-            "        result += price",
-            "    return result"
-        ],
+        "get_solution": "program",
         "page": "Using Dictionaries in Practice",
         "program": [
             "def total_cost(cart, prices):",
@@ -7054,15 +7001,7 @@
         "step": "shopping_cart1"
     },
     {
-        "get_solution": [
-            "def total_cost(cart, quantities, prices):",
-            "    result = 0",
-            "    for item in cart:",
-            "        price = prices[item]",
-            "        quantity = quantities[item]",
-            "        result += price * quantity",
-            "    return result"
-        ],
+        "get_solution": "program",
         "page": "Using Dictionaries in Practice",
         "program": [
             "def total_cost(cart, quantities, prices):",
@@ -7080,6 +7019,7 @@
         "step": "shopping_cart4"
     },
     {
+        "get_solution": "program",
         "page": "Using Dictionaries in Practice",
         "program": [
             "def substitute(string):",
@@ -7112,13 +7052,7 @@
         "step": "dna_part1"
     },
     {
-        "get_solution": [
-            "def substitute(string, d):",
-            "    result = \"\"",
-            "    for letter in string:",
-            "        result += d[letter]",
-            "    return result"
-        ],
+        "get_solution": "program",
         "page": "Using Dictionaries in Practice",
         "program": [
             "def substitute(string, d):",
@@ -7134,6 +7068,7 @@
         "step": "dna_part2"
     },
     {
+        "get_solution": "program",
         "page": "Iterating over Dictionary Keys",
         "program": [
             "quantities = {'apple': 1, 'cat': 10}",
@@ -7151,6 +7086,7 @@
         "step": "introducing_keys"
     },
     {
+        "get_solution": "program",
         "page": "Iterating over Dictionary Keys",
         "program": [
             "quantities = {'apple': 1, 'cat': 10}",
@@ -7169,6 +7105,7 @@
         "step": "keys_are_iterable"
     },
     {
+        "get_solution": "program",
         "page": "Iterating over Dictionary Keys",
         "program": [
             "quantities = {'apple': 1, 'cat': 10}",
@@ -7187,15 +7124,7 @@
         "step": "keys_are_iterable2"
     },
     {
-        "get_solution": [
-            "def total_cost(quantities, prices):",
-            "    result = 0",
-            "    for item in quantities:",
-            "        price = prices[item]",
-            "        quantity = quantities[item]",
-            "        result += price * quantity",
-            "    return result"
-        ],
+        "get_solution": "program",
         "page": "Iterating over Dictionary Keys",
         "program": [
             "def total_cost(quantities, prices):",
@@ -7213,13 +7142,7 @@
         "step": "cleanup_shopping_cart"
     },
     {
-        "get_solution": [
-            "def print_words(french):",
-            "    for word in french:",
-            "        print(\"English: \" + word)",
-            "        print(\"French: \" + french[word])",
-            "        print(\"---\")"
-        ],
+        "get_solution": "program",
         "page": "Iterating over Dictionary Keys",
         "program": [
             "def print_words(french):",
@@ -7235,14 +7158,7 @@
         "step": "english_to_french"
     },
     {
-        "get_solution": [
-            "def print_words(french, german):",
-            "    for word in french:",
-            "        print(\"English: \" + word)",
-            "        print(\"French: \" + french[word])",
-            "        print(\"German: \" + german[word])",
-            "        print(\"---\")"
-        ],
+        "get_solution": "program",
         "page": "Iterating over Dictionary Keys",
         "program": [
             "def print_words(french, german):",
@@ -7259,6 +7175,7 @@
         "step": "english_to_german"
     },
     {
+        "get_solution": "program",
         "page": "Iterating over Dictionary Keys",
         "program": [
             "def print_words(words):",

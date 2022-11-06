@@ -5,9 +5,7 @@ import * as terms from "./terms.json"
 import _ from "lodash";
 
 export const HintsAssistant = (assistant) => {
-  if (!assistant.step.hints.length) {
-    return null;
-  }
+  const hasHints = assistant.step.hints.length;
   return (
     <div
          onCopy={(event) => {
@@ -16,8 +14,9 @@ export const HintsAssistant = (assistant) => {
          }}
     >
         <div className="hints-popup">
+          {!hasHints && <p>{terms.no_hints_available}</p>}
           {
-            assistant.numHints === 0 ?
+            assistant.numHints === 0 && hasHints ?
               <button onClick={showHint} className="btn btn-primary">{terms.get_hint}</button>
               :
               <Hints {...assistant}/>

@@ -32,6 +32,7 @@
   "open_github_issue": "Open an issue on GitHub",
   "chat_on_slack": "Chat on Slack",
   "copying_solution_not_allowed": "Copying from the hints/solution area is not allowed!",
+  "no_hints_available": "This step doesn't have any hints. Try reading the instructions and requirements again. You can still check the solution if you're really stuck.",
   "get_hint": "Get a hint",
   "get_another_hint": "Get another hint",
   "show_solution": "Show solution",

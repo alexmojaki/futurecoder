@@ -46,6 +46,7 @@ from core.utils import (
     NoMethodWrapper,
     add_stdin_input_arg,
     qa_error,
+    split_into_tokens,
 )
 
 
@@ -220,8 +221,7 @@ def clean_step_class(cls):
              messages=messages,
              hints=hints)
 
-    if hints:
-        cls.get_solution = get_solution(cls)
+    cls.get_solution = get_solution(cls)
 
     if isinstance(cls.disallowed, Disallowed):
         cls.disallowed = [cls.disallowed]
@@ -267,10 +267,7 @@ def get_stdout(program):
 
 def get_solution(step):
     program = step.show_solution_program
-    untokenizer = Untokenizer()
-    tokens = generate_tokens(StringIO(program).readline)
-    untokenizer.untokenize(tokens)
-    tokens = untokenizer.tokens
+    tokens = split_into_tokens(program)
 
     masked_indices = []
     mask = [False] * len(tokens)

@@ -55,12 +55,15 @@ def test_steps():
             assert "def solution(" not in get_solution
             assert "returns_stdout" not in get_solution
             assert get_solution.strip() in program
-            transcript_item["get_solution"] = get_solution.splitlines()
-            if step.parsons_solution:
-                is_function = transcript_item["get_solution"][0].startswith(
-                    "def "
-                )
-                assert len(step.get_solution["lines"]) >= 4 + is_function
+            if get_solution == program:
+                transcript_item["get_solution"] = "program"
+            else:
+                transcript_item["get_solution"] = get_solution.splitlines()
+                if step.parsons_solution:
+                    is_function = transcript_item["get_solution"][0].startswith(
+                        "def "
+                    )
+                    assert len(step.get_solution["lines"]) >= 4 + is_function
 
         assert response["passed"] == (not is_message), step
 

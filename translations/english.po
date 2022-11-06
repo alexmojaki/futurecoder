@@ -19500,9 +19500,6 @@ msgstr "Are you sure?"
 msgid "frontend.ask_for_help"
 msgstr "Ask for Help"
 
-msgid "frontend.assistant"
-msgstr "Assistant"
-
 msgid "frontend.cancel"
 msgstr "Cancel"
 
@@ -19615,6 +19612,11 @@ msgstr "Next"
 
 msgid "frontend.no"
 msgstr "No"
+
+msgid "frontend.no_hints_available"
+msgstr ""
+"This step doesn't have any hints. Try reading the instructions and requirements again. You can still check the "
+"solution if you're really stuck."
 
 msgid "frontend.no_input_variables"
 msgstr "This exercise has no input variables."
@@ -19733,7 +19735,7 @@ msgid "frontend.stop"
 msgstr "Stop"
 
 msgid "frontend.submission_status"
-msgstr "Submission status"
+msgstr "Assessment"
 
 msgid "frontend.submission_status_description"
 msgstr "When you run code that doesn't pass the current step, this section will *sometimes* explain what's wrong."
