@@ -80,6 +80,8 @@ const initialState = {
     numHints: 0,
     messageSections: [],
     requestingSolution: 0,
+    submissionStatusOpen: false,
+    lastSeenMessageSections: [],
   },
   prediction: {
     choices: null,
@@ -379,6 +381,15 @@ export const showHint = makeAction(
   (state) => iset(state, "assistant.numHints", state.assistant.numHints + 1),
 );
 
+export const openSubmissionStatus = makeAction(
+  'OPEN_SUBMISSION_STATUS',
+  (state) => {
+    state = iset(state, "assistant.submissionStatusOpen", true);
+    state = iset(state, "assistant.lastSeenMessageSections", state.assistant.messageSections);
+    return state;
+  },
+);
+
 export const scrollToNextStep = () => {
   setTimeout(() =>
       scroller.scrollTo(`step-text-${currentStep().index}`, {
@@ -427,6 +438,9 @@ export const ranCode = makeAction(
       }
     } else {
       state = iset(state, "assistant.messageSections", value.message_sections);
+      if (state.assistant.submissionStatusOpen) {
+        state = iset(state, "assistant.lastSeenMessageSections", value.message_sections);
+      }
     }
 
     return state;

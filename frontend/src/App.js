@@ -16,6 +16,7 @@ import {
   logEvent,
   movePage,
   moveStep,
+  openSubmissionStatus,
   postCodeEntry,
   setDeveloperMode,
   setEditorContent,
@@ -24,6 +25,7 @@ import {
 } from "./book/store";
 import Popup from "reactjs-popup";
 import AceEditor from "react-ace";
+import Collapsible from 'react-collapsible';
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-monokai";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -244,60 +246,42 @@ const Assistant = (assistant) => {
   if (!step.requirements) {
     return null;
   }
-  return <div className="card assistant">
-    <div className="card-header">
-      <strong><FontAwesomeIcon icon={faQuestionCircle}/> {terms.assistant}</strong>
-    </div>
-    <div className="list-group list-group-flush">
-      <div className="list-group-item assistant-requirements">
-        <details className="assistant-header">
-          <summary>
-            <strong>{terms.requirements}</strong>
-          </summary>
-          <div className="assistant-content">
-            <p>
-              {terms.requirements_description}
-            </p>
-            <ul>
-              {step.requirements.map((requirement, index) =>
-                <li key={index}>
-                  <Requirement requirement={requirement}/>
-                </li>
-              )}
-            </ul>
-          </div>
-        </details>
-      </div>
-      <div className="list-group-item assistant-status">
-        <details className="assistant-header">
-          <summary>
-            <strong>{terms.submission_status}</strong>
-          </summary>
-          <div className="assistant-content">
-            <Messages {...{messageSections}}/>
-          </div>
-        </details>
-      </div>
-      {step.hints.length > 0 &&
-        <div className="list-group-item assistant-hints">
-          <details className="assistant-header">
-            <summary>
-              <strong>Hints</strong>
-            </summary>
-            <div className="assistant-content">
-              <HintsAssistant {...assistant}/>
-            </div>
-          </details>
-        </div>}
-    </div>
-  </div>;
+  return <div className="assistant accordion">
+    <Collapsible classParentString="assistant-requirements card"
+                 contentInnerClassName="assistant-content card-body"
+                 trigger={<div className="card-header"><strong>{terms.requirements}</strong></div>}>
+      <p>
+        {terms.requirements_description}
+      </p>
+      <ul>
+        {step.requirements.map((requirement, index) =>
+          <li key={index}>
+            <Requirement requirement={requirement}/>
+          </li>
+        )}
+      </ul>
+    </Collapsible>
+    <Collapsible onOpen={openSubmissionStatus}
+                 onClose={() => bookSetState("assistant.submissionStatusOpen", false)}
+                 classParentString="assistant-status card"
+                 contentInnerClassName="assistant-content card-body"
+                 trigger={<div className="card-header"><strong>{terms.submission_status}</strong></div>}>
+      <Messages {...{messageSections}}/>
+    </Collapsible>
+    <Collapsible classParentString="assistant-hints card"
+                 contentInnerClassName="assistant-content card-body"
+                 trigger={<div className="card-header"><strong>Hints & Solution</strong></div>}>
+      <HintsAssistant {...assistant}/>
+    </Collapsible>
+  </div>
+    ;
 }
 
 const Requirement = (
   {
     requirement,
   }) => {
-  let text = "";
+  let text;
   switch (requirement.type) {
     case "verbatim":
       text = terms.verbatim;

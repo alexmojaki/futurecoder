@@ -467,10 +467,25 @@
 
 .assistant {
   margin-top: 1em;
-  .card-header {
+
+  .card__trigger {
     font-size: larger;
-  }
-  .assistant-content {
-    margin-top: 1em;
+    position: relative;
+
+    &:after {
+      font-family: 'FontAwesome';
+      content: '\f107';
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      display: block;
+      transition: transform 300ms;
+    }
+
+    &.is-open {
+      &:after {
+        transform: rotateZ(180deg);
+      }
+    }
   }
 }
