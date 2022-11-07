@@ -6666,6 +6666,19 @@
         "step": "naive_make_board"
     },
     {
+        "page": "Making the Board",
+        "program": [
+            "pass",
+            "def make_board(size): return [[' '] * size] * size"
+        ],
+        "response": {
+            "message": "<p>Given these values:</p>\n<pre><code class=\"codehilite\"><span><span class=\"n\">size</span> <span class=\"o\">=</span> <span class=\"mi\">2</span>\n</span></code></pre>\n<p>your code outputs:</p>\n<pre><code class=\"codehilite\"><span><span class=\"p\">[[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">],</span> <span class=\"p\">[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">]]</span>\n</span></code></pre>\n<p>which is correct!</p>\n<p>However, the sublists in the result are not all separate objects.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "fix_make_board"
+    },
+    {
         "get_solution": "program",
         "page": "Making the Board",
         "program": [

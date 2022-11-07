@@ -1768,18 +1768,18 @@ Making a new row each time can be done by just rearranging the code.
         def generate_inputs(cls):
             return dict(size=randint(4, 12))
 
-        # TODO
-        class special_messages_:
+        class special_messages:
             class not_separate:
-                text = "The sublists in the result are not all separate objects."
+                text = "However, the sublists in the result are not all separate objects."
                 program = "pass\ndef make_board(size): return [[' '] * size] * size"
+                expected_exact_match = False
 
         @classmethod
         def check_result(cls, func, inputs, expected_result):
             test_result, func_result = check_result(func, inputs, expected_result)
             if test_result["passed"] and len(func_result) != len(set(map(id, func_result))):
                 test_result["passed"] = False
-                test_result["message"] += "\n\n" + cls.special_messages_.not_separate.text
+                test_result["message"] += "\n\n" + cls.special_messages.not_separate.text
             return test_result
 
     final_text = """
