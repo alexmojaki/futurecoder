@@ -594,16 +594,16 @@ class ExerciseStep(Step):
     def get_requirements(cls):
         result = [dict(type="exercise")]
         inputs = cls.example_inputs()
+        stdin_input = inputs.pop("stdin_input", None)
         if not cls.is_function_exercise:
-            inputs.pop("stdin_input", None)
             inputs = highlighted_markdown(indented_inputs_string(inputs))
             result.append(dict(type="non_function_exercise", inputs=inputs))
         else:
             result.append(dict(type="function_exercise", header=basic_function_header(cls.solution)))
             if goal := cls.function_exercise_goal():
                 result.append(dict(type="function_exercise_goal", print_or_return=goal))
-            if inputs.get("stdin_input"):
-                result.append(dict(type="function_exercise_stdin"))
+        if stdin_input:
+            result.append(dict(type="exercise_stdin"))
         return result
 
     @classmethod

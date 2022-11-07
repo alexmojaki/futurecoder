@@ -317,8 +317,8 @@ const Requirement = (
     case "function_exercise_goal":
       text = _.template(terms.function_exercise_goal)(requirement);
       break;
-    case "function_exercise_stdin":
-      text = terms.function_exercise_stdin;
+    case "exercise_stdin":
+      text = terms.exercise_stdin;
       break;
     case "non_function_exercise":
       if (!requirement.inputs.trim()) {

@@ -19550,6 +19550,11 @@ msgstr ""
 "This step is an exercise. You need to figure out what code will produce the correct result. Many different correct "
 "answers are possible."
 
+msgid "frontend.exercise_stdin"
+msgstr ""
+"Your program needs to receive input from the user via the `input()` function. When it's tested for correctness, "
+"different user inputs will be simulated."
+
 msgid "frontend.feedback"
 msgstr "Feedback"
 
@@ -19564,15 +19569,10 @@ msgstr ""
 "\n"
 "Then fill in the indented body with your implementation.\n"
 "\n"
-"The function will be called with different arguments to test that it works generally. You can also call the function yourself to test it as you work, but it doesn't affect the testing."
+"The function will be called with different arguments to test that it works generally. You can also call the function yourself to test it as you work, but it doesn't affect the assessment."
 
 msgid "frontend.function_exercise_goal"
 msgstr "Your function needs to `${print_or_return}` the correct result."
-
-msgid "frontend.function_exercise_stdin"
-msgstr ""
-"Your program needs to receive input from the user via the `input()` function. When it's tested for correctness, "
-"different user inputs will be simulated."
 
 msgid "frontend.get_another_hint"
 msgstr "Get another hint"
