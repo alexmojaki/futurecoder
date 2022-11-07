@@ -487,6 +487,7 @@ msgstr "\"Alice's Diner\""
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int.text
 #. 
 #.     super_secret_number = 7
+#. 
 #.     print("What number am I thinking of?")
 #.     guess = input()
 #.     if guess == super_secret_number:
@@ -1118,6 +1119,7 @@ msgstr "\"It's a draw!\""
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int.text
 #. 
 #.     super_secret_number = 7
+#. 
 #.     print("What number am I thinking of?")
 #.     guess = input()
 #.     if guess == super_secret_number:
@@ -1190,6 +1192,7 @@ msgstr "\"Warning\""
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int.text
 #. 
 #.     super_secret_number = 7
+#. 
 #.     print("What number am I thinking of?")
 #.     guess = input()
 #.     if guess == super_secret_number:
@@ -10415,6 +10418,7 @@ msgstr "greet"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int.text
 #. 
 #.     super_secret_number = 7
+#. 
 #.     print("What number am I thinking of?")
 #.     guess = input()
 #.     if guess == super_secret_number:
@@ -17761,6 +17765,7 @@ msgstr "sunshine"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.convert_input_to_int.text
 #. 
 #.     super_secret_number = 7
+#. 
 #.     print("What number am I thinking of?")
 #.     guess = input()
 #.     if guess == super_secret_number:
@@ -17779,12 +17784,6 @@ msgstr "sunshine"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.final_text.text
 #. 
 #.     if int(guess) == super_secret_number:
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.InteractiveProgramsWithInput.steps.final_text.text
-#. 
-#.     super_secret_number = '7'
 msgid "code_bits.super_secret_number"
 msgstr "super_secret_number"
 
@@ -23503,6 +23502,7 @@ msgstr "Use `int()` to convert to an integer (whole number) or `str()` to conver
 #. 
 #.     # __code0__:
 #.     super_secret_number = 7
+#. 
 #.     print("What number am I thinking of?")
 #.     guess = input()
 #.     if guess == super_secret_number:
@@ -23532,7 +23532,9 @@ msgstr ""
 "    __copyable__\n"
 "__code0__\n"
 "\n"
-"Fix the program so that when the user inputs `7` the program prints `Amazing! Are you psychic?` as expected."
+"Fix the program so that when the user inputs the value of `super_secret_number` (`7` in this example)\n"
+"the program prints `Amazing! Are you psychic?` as expected.\n"
+"It should work when `super_secret_number` is any whole number (`int`)."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
 #. 
@@ -23542,9 +23544,6 @@ msgstr ""
 #.     # __code1__:
 #.     if guess == str(super_secret_number):
 #. 
-#.     # __code2__:
-#.     super_secret_number = '7'
-#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.guess
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.super_secret_number
@@ -23552,7 +23551,7 @@ msgid "pages.InteractiveProgramsWithInput.steps.final_text.text"
 msgstr ""
 "Perfect!\n"
 "\n"
-"There's at least three fixes that would work here. You can convert the input to a number:\n"
+"There's two main fixes that would work here. You can convert the input to a number:\n"
 "\n"
 "__code0__\n"
 "\n"
@@ -23560,9 +23559,8 @@ msgstr ""
 "\n"
 "__code1__\n"
 "\n"
-"or just make it a string to begin with:\n"
-"\n"
-"__code2__"
+"An important difference between these two approaches is that the first approach will raise an error\n"
+"if the user types something that isn't a number, which may or may not be what you want."
 
 #. https://futurecoder.io/course/#InteractiveProgramsWithInput
 #. 

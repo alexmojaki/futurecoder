@@ -6506,7 +6506,14 @@
         "step": "first_input"
     },
     {
-        "get_solution": "program",
+        "get_solution": [
+            "print(\"What number am I thinking of?\")",
+            "guess = input()",
+            "if int(guess) == super_secret_number:",
+            "    print(\"Amazing! Are you psychic?\")",
+            "else:",
+            "    print(\"Nope!\")"
+        ],
         "page": "Interactive Programs with <code>input()</code>",
         "program": [
             "super_secret_number = 7",

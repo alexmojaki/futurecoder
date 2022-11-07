@@ -1291,6 +1291,7 @@ For example, this program looks fine at a glance, but if you try it out you'll s
 
     __copyable__
     super_secret_number = 7
+
     print("What number am I thinking of?")
     guess = input()
     if guess == super_secret_number:
@@ -1298,7 +1299,9 @@ For example, this program looks fine at a glance, but if you try it out you'll s
     else:
         print("Nope!")
 
-Fix the program so that when the user inputs `7` the program prints `Amazing! Are you psychic?` as expected.
+Fix the program so that when the user inputs the value of `super_secret_number` (`7` in this example)
+the program prints `Amazing! Are you psychic?` as expected.
+It should work when `super_secret_number` is any whole number (`int`).
         """
 
         hints = """
@@ -1315,8 +1318,7 @@ Use `int()` to convert to an integer (whole number) or `str()` to convert to a s
 
         translated_tests = True
 
-        def solution(self):
-            super_secret_number = 7
+        def solution(self, super_secret_number: int):
             print("What number am I thinking of?")
             guess = input()
             if int(guess) == super_secret_number:
@@ -1326,20 +1328,29 @@ Use `int()` to convert to an integer (whole number) or `str()` to convert to a s
 
         @classmethod
         def generate_inputs(cls):
+            num = randint(1, 10)
             return {
-                "stdin_input": str(randint(1, 10))
+                "stdin_input": str(num),
+                "super_secret_number": choice([num, num + 1])
             }
 
         tests = [
-            ({"stdin_input": "7"}, "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?"),
-            ({"stdin_input": "0"}, "What number am I thinking of?\n<input: 0>\nNope!"),
-            ({"stdin_input": "1"}, "What number am I thinking of?\n<input: 1>\nNope!"),
+            ({"stdin_input": "7", "super_secret_number": 7},
+             "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?"),
+            ({"stdin_input": "0", "super_secret_number": 7},
+             "What number am I thinking of?\n<input: 0>\nNope!"),
+            ({"stdin_input": "1", "super_secret_number": 7},
+             "What number am I thinking of?\n<input: 1>\nNope!"),
+            ({"stdin_input": "0", "super_secret_number": 0},
+             "What number am I thinking of?\n<input: 0>\nAmazing! Are you psychic?"),
+            ({"stdin_input": "1", "super_secret_number": 0},
+             "What number am I thinking of?\n<input: 1>\nNope!"),
         ]
 
     final_text = """
 Perfect!
 
-There's at least three fixes that would work here. You can convert the input to a number:
+There's two main fixes that would work here. You can convert the input to a number:
 
     if int(guess) == super_secret_number:
 
@@ -1347,10 +1358,8 @@ or convert the correct answer to a string:
 
     if guess == str(super_secret_number):
 
-or just make it a string to begin with:
-
-    super_secret_number = '7'
-
+An important difference between these two approaches is that the first approach will raise an error
+if the user types something that isn't a number, which may or may not be what you want.
     """
 
 
