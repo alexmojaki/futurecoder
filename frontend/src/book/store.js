@@ -76,11 +76,11 @@ const initialState = {
   editorContent: "",
   specialMessages: [],
   pastSpecialMessages: [],
+  submissionStatusOpen: false,
   assistant: {
     numHints: 0,
     messageSections: [],
     requestingSolution: 0,
-    submissionStatusOpen: false,
     lastSeenMessageSections: [],
   },
   prediction: {
@@ -384,7 +384,7 @@ export const showHint = makeAction(
 export const openSubmissionStatus = makeAction(
   'OPEN_SUBMISSION_STATUS',
   (state) => {
-    state = iset(state, "assistant.submissionStatusOpen", true);
+    state = iset(state, "submissionStatusOpen", true);
     state = iset(state, "assistant.lastSeenMessageSections", state.assistant.messageSections);
     return state;
   },
@@ -438,7 +438,7 @@ export const ranCode = makeAction(
       }
     } else {
       state = iset(state, "assistant.messageSections", value.message_sections);
-      if (state.assistant.submissionStatusOpen) {
+      if (state.submissionStatusOpen) {
         state = iset(state, "assistant.lastSeenMessageSections", value.message_sections);
       }
     }

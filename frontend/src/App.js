@@ -274,7 +274,7 @@ const Assistant = (assistant) => {
       </ul>
     </Collapsible>
     <Collapsible onOpening={openSubmissionStatus}
-                 onClosing={() => bookSetState("assistant.submissionStatusOpen", false)}
+                 onClosing={() => bookSetState("submissionStatusOpen", false)}
                  classParentString="assistant-status card"
                  contentInnerClassName="assistant-content card-body"
                  trigger={<div className="card-header">
