@@ -449,7 +449,7 @@ export const ranCode = makeAction(
 
 // 'Special messages' currently only means the "don't copy" popup.
 // It used to be all kinds of messages, but those coming from the Python checker
-// (just called 'messages') have been moved into the assistant.
+// (now called 'messageSections') have been moved into the assistant.
 const addSpecialMessageToState = (state, message) => {
   if (message && state.pastSpecialMessages.indexOf(message) === -1) {
       animateScroll.scrollToBottom({duration: 1000, delay: 500});
