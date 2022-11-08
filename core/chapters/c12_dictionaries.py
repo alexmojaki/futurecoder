@@ -17,6 +17,8 @@ from core.text import (
 
 # Similar to word_must_be_hello
 class french_must_be_dict(VerbatimStep):
+    expected_code_source = "shell"
+
     @staticmethod
     def french():
         return t.get_code_bit('french')
@@ -105,6 +107,11 @@ Now run a similar line in the shell to look up the translation for `'box'`.
 
         program_in_text = False
 
+        requirements = (
+            "Run the same code as the previous step (`french['apple']`) in the shell, "
+            "but replace `'apple'` with `'box'`."
+        )
+
         program = "french['box']"
 
     class dict_access4(french_must_be_dict):
@@ -192,8 +199,8 @@ So let's write a function that does that. Complete the function below, particula
             return dict(prices=prices, cart=cart)
 
         tests = [
-            ((['apple', 'box', 'cat'],  {'apple': 2, 'box': 5, 'cat': 100, 'dog': 120}), 107),
-            ((['apple', 'box', 'dog'],  {'apple': 2, 'box': 5, 'cat': 100, 'dog': 120}), 127)
+            ((['apple', 'box', 'cat'], {'apple': 2, 'box': 5, 'cat': 100, 'dog': 120}), 107),
+            ((['apple', 'box', 'dog'], {'apple': 2, 'box': 5, 'cat': 100, 'dog': 120}), 127)
         ]
 
         hints = """
@@ -246,6 +253,7 @@ of that item that the customer wants to buy.
                     quantity = quantities[item]
                     result += price * quantity
                 return result
+
             return total_cost
 
         @classmethod
@@ -257,11 +265,11 @@ of that item that the customer wants to buy.
 
         tests = [
             (
-                {"cart" : ['dog', 'box'],
-                 "quantities" : {'dog': 5000000, 'box': 2},
-                 "prices" : {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100}},
+                {"cart": ['dog', 'box'],
+                 "quantities": {'dog': 5000000, 'box': 2},
+                 "prices": {'apple': 2, 'box': 5, 'cat': 100, 'dog': 100}},
                 500000010
-             )
+            )
         ]
 
         hints = """
@@ -343,7 +351,7 @@ No more `if` statements needed!
             d = {}
             for ch in k:
                 d[ch] = generate_string(1)
-            return {"string" : k, "d" : d}
+            return {"string": k, "d": d}
 
         hints = """
         This is still very similar to the previous exercises, but with strings instead of numbers.
@@ -356,7 +364,7 @@ No more `if` statements needed!
 
         tests = [
             (
-                {"string" : "AGTAGCGTCCTTAGTTACAGGATGGCTTAT", "d" : {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}},
+                {"string": "AGTAGCGTCCTTAGTTACAGGATGGCTTAT", "d": {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}},
                 "TCATCGCAGGAATCAATGTCCTACCGAATA"
             )
         ]
@@ -409,6 +417,8 @@ Copy this code into the editor:
 Then change `print(quantities)` to `print(quantities.keys())`, and run the whole program.
         """
 
+        requirements = "Run `print(quantities.keys())` where `quantities` is a dictionary."
+
         program = """
         quantities = {'apple': 1, 'cat': 10}
         print(quantities.keys())
@@ -439,6 +449,10 @@ Remove the `.keys()` and run the code again.
         """
 
         program_in_text = False
+        requirements = (
+            "Run the same code as the previous step, but without `.keys()`. after `quantities`, "
+            "so the middle line is `for key in quantities:`"
+        )
 
         def program(self):
             quantities = {'apple': 1, 'cat': 10}
@@ -492,10 +506,10 @@ Now you can use this to modify our function on the previous page to remove the `
             return result
 
         tests = [
-          (
-                ({'apple' : 3, 'carrot' : 4}, {'apple' : 10, 'carrot' : 20, 'banana': 30}),
+            (
+                ({'apple': 3, 'carrot': 4}, {'apple': 10, 'carrot': 20, 'banana': 30}),
                 110
-           )
+            )
         ]
 
     class english_to_french(ExerciseStep):
@@ -556,7 +570,7 @@ English: car
 French: voiture
 ---
             """),
-            )
+        )
 
     class english_to_german(ExerciseStep):
         """
@@ -610,7 +624,7 @@ The two dictionaries will always have the same keys, just different values.
         translated_tests = True
 
         tests = (
-            (({'apple' : 'pomme', 'box' : 'boite'}, {'apple' : 'apfel', 'box' : 'kasten'},), """\
+            (({'apple': 'pomme', 'box': 'boite'}, {'apple': 'apfel', 'box': 'kasten'},), """\
 English: apple
 French: pomme
 German: apfel

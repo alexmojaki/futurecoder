@@ -8,9 +8,11 @@ from io import StringIO
 from itertools import combinations
 from random import shuffle
 from textwrap import dedent
+from tokenize import generate_tokens
 from types import ModuleType
 from typing import Union
 
+import asttokens
 from littleutils import strip_required_prefix, strip_required_suffix
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
@@ -308,3 +310,36 @@ def catch_internal_errors(func):
                 raise
             return internal_error_result(e)
     return wrapper
+
+
+def token_text_range(token_info, linenos):
+    tok_type, tok_str, start, end, line = token_info
+    return (
+        linenos.line_to_offset(*start),
+        linenos.line_to_offset(*end),
+    )
+
+
+def split_into_tokens_gen(s):
+    linenos = asttokens.LineNumbers(s)
+    try:
+        tokens = list(generate_tokens(StringIO(s).readline))
+    except SyntaxError:
+        yield from s
+        return
+    for t1, t2 in zip(tokens, tokens[1:]):
+        start1, end1 = token_text_range(t1, linenos)
+        start2, end2 = token_text_range(t2, linenos)
+        assert start1 <= end1 <= start2 <= end2
+        yield s[start1:end1]
+        yield s[end1:start2]
+    start, end = token_text_range(tokens[-1], linenos)
+    yield s[start:end]
+    yield s[end:]
+
+
+def split_into_tokens(s):
+    nonempty = filter(None, split_into_tokens_gen(s))
+    result = list(nonempty)
+    assert "".join(result) == s
+    return result

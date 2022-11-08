@@ -339,24 +339,24 @@
 }
 
 .hints-popup {
-  @extend .my-popup-content;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  overflow: auto;
-  max-height: 80vh;
-  max-width: 40vw;
   user-select: none;
 }
 
 .settings-modal {
   @extend .my-popup-content;
+
   label b {
     position: relative;
     bottom: 5px;
     left: 6px;
     font-size: 1.3em;
   }
+}
+
+.special-message-modal {
+  @extend .my-popup-content;
+  border: 1em solid grey;
+  border-radius: 1em;
 }
 
 .solution-token-hidden, .solution-token-hidden::selection {
@@ -463,4 +463,34 @@
 
 .firebase-emulator-warning {
     display: none;
+}
+
+.assistant {
+  margin-top: 1em;
+
+  .card__trigger {
+    font-size: larger;
+    position: relative;
+
+    // Font awesome icons
+    svg {
+      width: 2em;
+    }
+
+    &:after {
+      font-family: 'FontAwesome';
+      content: '\f107';
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      display: block;
+      transition: transform 300ms;
+    }
+
+    &.is-open {
+      &:after {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
 }

@@ -1,46 +1,34 @@
 import React from "react";
 import {bookSetState, reorderSolutionLines, revealSolutionToken, showHint} from "./book/store";
-import hintIcon from "./img/hint.png";
-import Popup from "reactjs-popup";
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import * as terms from "./terms.json"
 import _ from "lodash";
 
-export const HintsPopup = ({hints, numHints, requestingSolution, solution}) => {
-  if (!hints.length) {
-    return null;
-  }
+export const HintsAssistant = (assistant) => {
+  const hasHints = assistant.step.hints.length;
   return (
-    <div className="custom-popup"
+    <div
          onCopy={(event) => {
            alert(terms.copying_solution_not_allowed);
            event.preventDefault();
          }}
     >
-      <Popup
-        trigger={<img src={hintIcon} className="hint-icon" alt="Hint button"/>}
-      >
         <div className="hints-popup">
+          {!hasHints && <p>{terms.no_hints_available}</p>}
           {
-            numHints === 0 ?
+            assistant.numHints === 0 && hasHints ?
               <button onClick={showHint} className="btn btn-primary">{terms.get_hint}</button>
               :
-              <Hints
-                hints={hints}
-                numHints={numHints}
-                requestingSolution={requestingSolution}
-                solution={solution}
-              />
+              <Hints {...assistant}/>
           }
         </div>
-      </Popup>
     </div>
   )
 }
 
 const hintsProgress = _.template(terms.hints_progress);
 
-const Hints = ({hints, numHints, requestingSolution, solution}) =>
+const Hints = ({step: {hints, solution}, numHints, requestingSolution}) =>
   <div className="markdown-body">
     {hints.slice(0, numHints).map((hint, index) =>
       <div className="hint-body" key={index}>
@@ -63,7 +51,7 @@ const Hints = ({hints, numHints, requestingSolution, solution}) =>
     </div>
     {
       numHints < hints.length &&
-      <span className="small">{hintsProgress({numHints, totalHints: hints.length})}</span>
+      <span className="small hints-progress">{hintsProgress({numHints, totalHints: hints.length})}</span>
     }
   </div>
 
@@ -71,7 +59,7 @@ const Hints = ({hints, numHints, requestingSolution, solution}) =>
 const RequestSolution1 = ({requestingSolution, solution}) => {
   if (requestingSolution === 0) {
     return (
-      <button onClick={() => bookSetState("requestingSolution", solution.lines ? 1 : 3)} className="btn btn-primary">
+      <button onClick={() => bookSetState("assistant.requestingSolution", solution.lines ? 1 : 3)} className="btn btn-primary">
         {solution.lines ?
           terms.show_shuffled_solution :
           terms.show_solution}
@@ -97,7 +85,7 @@ const RequestSolution1 = ({requestingSolution, solution}) => {
 
 const RequestSolution2 = ({requestingSolution, solution}) => {
   if (requestingSolution === 2) {
-    return <button onClick={() => bookSetState("requestingSolution", 3)} className="btn btn-primary">
+    return <button onClick={() => bookSetState("assistant.requestingSolution", 3)} className="btn btn-primary">
       {solution.lines ?
         terms.show_unscrambled_solution :
         terms.show_solution}
@@ -114,11 +102,11 @@ const RequestSolution2 = ({requestingSolution, solution}) => {
 const ConfirmSolution1 = () => <>
   <p>{terms.are_you_sure}</p>
   <p>
-    <button onClick={() => bookSetState("requestingSolution", 2)} className="btn btn-primary">
+    <button onClick={() => bookSetState("assistant.requestingSolution", 2)} className="btn btn-primary">
       {terms.yes}
     </button>
     {" "}
-    <button onClick={() => bookSetState("requestingSolution", 0)}
+    <button onClick={() => bookSetState("assistant.requestingSolution", 0)}
             className="btn-default btn">
       {terms.no}
     </button>
@@ -129,11 +117,11 @@ const ConfirmSolution1 = () => <>
 const ConfirmSolution2 = () => <>
   <p>{terms.are_you_sure}</p>
   <p>
-    <button onClick={() => bookSetState("requestingSolution", 4)} className="btn btn-primary">
+    <button onClick={() => bookSetState("assistant.requestingSolution", 4)} className="btn btn-primary">
       {terms.yes}
     </button>
     {" "}
-    <button onClick={() => bookSetState("requestingSolution", 2)}
+    <button onClick={() => bookSetState("assistant.requestingSolution", 2)}
             className="btn-default btn">
       {terms.no}
     </button>

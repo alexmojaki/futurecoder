@@ -1226,7 +1226,7 @@ Try it in `birdseye` to see how Python breaks it down into smaller pieces.
         """
 
         expected_code_source = "birdseye"
-        program_in_text = False
+        requirements = "Run `print(strings[1][0])` or something similar using `birdseye` to see how it works."
 
         def program(self):
             strings = ["abc", "def", "ghi"]
@@ -1374,6 +1374,11 @@ Now run the code.
         """
 
         program_in_text = False
+        requirements = """Run a single program consisting of the two parts above combined.
+They're separated so that you don't need to type in the `numbers = [...]` part,
+but typing in the nested loop part is best for learning.
+Make sure the indentation is correct.
+        """
 
         def program(self):
             numbers = [[1, 2, 3], [4, 5], [6], []]

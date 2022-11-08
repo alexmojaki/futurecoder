@@ -55,12 +55,15 @@ def test_steps():
             assert "def solution(" not in get_solution
             assert "returns_stdout" not in get_solution
             assert get_solution.strip() in program
-            transcript_item["get_solution"] = get_solution.splitlines()
-            if step.parsons_solution:
-                is_function = transcript_item["get_solution"][0].startswith(
-                    "def "
-                )
-                assert len(step.get_solution["lines"]) >= 4 + is_function
+            if get_solution == program:
+                transcript_item["get_solution"] = "program"
+            else:
+                transcript_item["get_solution"] = get_solution.splitlines()
+                if step.parsons_solution:
+                    is_function = transcript_item["get_solution"][0].startswith(
+                        "def "
+                    )
+                    assert len(step.get_solution["lines"]) >= 4 + is_function
 
         assert response["passed"] == (not is_message), step
 
@@ -94,9 +97,17 @@ def normalise_response(response, is_message, substep):
     if not response["prediction"]["choices"]:
         del response["prediction"]
 
-    if is_message:
-        response["message"] = only(response.pop("messages"))
-        assert response["message"] == highlighted_markdown(substep.text)
+    message_sections = response.pop("message_sections")
+    if not is_message:
+        assert not message_sections
     else:
-        assert response.pop("messages") == []
-        response["message"] = ""
+        section = message_sections[0]
+        assert set(section.keys()) == {"type", "messages"}
+        assert section["type"] == "messages"
+        assert len(section["messages"]) == 1
+        message = response["message"] = section["messages"][0]
+        expected = highlighted_markdown(substep.text)
+        if getattr(substep, "expected_exact_match", True):
+            assert expected == message
+        else:
+            assert expected in message

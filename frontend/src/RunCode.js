@@ -76,7 +76,7 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
 
   await loadedPromise;
 
-  const {route, user, questionWizard, editorContent, numHints, requestingSolution} = bookState;
+  const {route, user, questionWizard, editorContent, assistant: {numHints, requestingSolution}} = bookState;
   if (!shell && !code) {
     code = editorContent;
   }
@@ -120,17 +120,20 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
 
   const {error} = data;
 
-  logEvent('run_code', {
+  const event = {
     code_source: entry.source,
     page_slug: entry.page_slug,
     step_name: entry.step_name,
     entry_passed: data.passed,
     has_error: Boolean(error),
-    num_messages: data.messages?.length,
     page_route: route,
     num_hints: numHints,
     requesting_solution: requestingSolution,
-  });
+  };
+  for (const section of data.message_sections || []) {
+    event[`num_messages_${section.type}`] = section.messages.length;
+  }
+  logEvent('run_code', event);
 
   if (error) {
     Sentry.captureEvent(error.sentry_event);
@@ -174,7 +177,10 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
     entry,
     result: {
       passed: data.passed,
-      messages: data.messages?.map(m => _.truncate(m, {length: 1000})),
+      messageSections: data.message_sections?.map(section => ({
+        type: section.type,
+        messages: section.messages?.map(m => _.truncate(m, {length: 1000})),
+      })),
       output: _.truncate(data.output, {length: 1000}),
     },
   });

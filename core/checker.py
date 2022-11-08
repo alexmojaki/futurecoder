@@ -50,8 +50,8 @@ default_runner = FullRunner(filename="/my_program.py")
 def check_entry(entry, callback, runner=default_runner):
     result = dict(
         passed=False,
-        messages=[],
         error=None,
+        message_sections=[],
     )
     try:
         if hasattr(entry, "to_py"):
@@ -98,7 +98,7 @@ def check_entry(entry, callback, runner=default_runner):
         page = pages[entry["page_slug"]]
         step_cls = page.get_step(entry["step_name"])
 
-        step_result = False
+        step_result = dict(passed=False, messages=[])
         if entry["step_name"] != "final_text":
             step_instance = step_cls(
                 entry["input"], result["output"], entry["source"], runner.console
@@ -108,29 +108,19 @@ def check_entry(entry, callback, runner=default_runner):
             except SyntaxError:
                 pass
 
-        step_result = normalise_step_result(step_result)
-        result.update(
-            passed=step_result["passed"],
-            messages=[highlighted_markdown(message) for message in step_result["messages"]],
-        )
+        result["passed"] = step_result["passed"]
+        if not result["passed"]:
+            if "message" in step_result:
+                step_result["messages"].insert(0, step_result.pop("message"))
+
+            result["message_sections"] = [
+                dict(
+                    type=typ,
+                    messages=[highlighted_markdown(message) for message in step_result.get(typ, [])],
+                )
+                for typ in ["messages", "passed_tests", "lint"]
+            ]
     except KeyboardInterrupt:
         result["interrupted"] = True
 
     return result
-
-
-def normalise_step_result(step_result):
-    if hasattr(step_result, "text"):
-        step_result = dict(message=step_result.text)
-
-    if not isinstance(step_result, dict):
-        assert isinstance(step_result, bool)
-        step_result = dict(passed=step_result, messages=[])
-
-    step_result.setdefault("passed", False)
-
-    messages = step_result.setdefault("messages", [])
-    if "message" in step_result:
-        messages.append(step_result.pop("message"))
-
-    return step_result

@@ -38,6 +38,8 @@ The shell is probably your most important tool for learning Python, and you shou
 Try doing some more calculations now. You can multiply numbers with `*`, divide with `/`, and subtract with `-`. You can also use parentheses, i.e. `(` and `)`.
         """
 
+        requirements = "Run code in the shell similar to `1 + 2`, but instead of `+`, use `*`, `/`, or `-`."
+
         program = "5 - 6"
 
         class special_messages:

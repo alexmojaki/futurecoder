@@ -4,7 +4,6 @@ import ast
 import inspect
 import itertools
 import re
-import traceback
 from abc import ABC, abstractmethod
 from copy import deepcopy
 from functools import cached_property, cache
@@ -31,6 +30,7 @@ from core.exercises import (
     InvalidInitialCode,
     ExerciseError,
     match_returns_stdout,
+    indented_inputs_string,
 )
 from core.linting import lint
 from core.runner.utils import is_valid_syntax
@@ -46,6 +46,7 @@ from core.utils import (
     NoMethodWrapper,
     add_stdin_input_arg,
     qa_error,
+    split_into_tokens,
 )
 
 
@@ -93,7 +94,7 @@ def clean_program(program, cls):
         lines = lines[func_node.body[0].lineno - 1 :]
         cls.show_solution_program = program = clean_spaces(lines)
         if hasattr(cls, "test_values"):
-            [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
+            inputs = cls.example_inputs()
             cls.stdin_input = inputs.pop("stdin_input", [])
             if inputs:
                 inputs = inputs_string(inputs)
@@ -106,6 +107,10 @@ def clean_program(program, cls):
 def basic_signature(func):
     joined = ", ".join(inspect.signature(func).parameters)
     return f'({joined})'
+
+
+def basic_function_header(func):
+    return highlighted_markdown(f"    def {func.__name__}{basic_signature(func)}:")
 
 
 def clean_solution_function(func, source):
@@ -163,6 +168,7 @@ def clean_step_class(cls):
         text = text.replace("__program__", program)
         indented = indent(program, '    ').replace("\\", "\\\\")
         text = re.sub(r" *__program_indented__", indented, text, flags=re.MULTILINE)
+        cls.program_in_text = True
     else:
         if cls.program_in_text:
             qa_error(
@@ -215,8 +221,7 @@ def clean_step_class(cls):
              messages=messages,
              hints=hints)
 
-    if hints:
-        cls.get_solution = get_solution(cls)
+    cls.get_solution = get_solution(cls)
 
     if isinstance(cls.disallowed, Disallowed):
         cls.disallowed = [cls.disallowed]
@@ -224,7 +229,7 @@ def clean_step_class(cls):
         disallowed.setup(cls, i)
 
     if cls.expected_code_source:
-        getattr(t.Terms, f"expected_mode_{cls.expected_code_source}")
+        cls.expected_code_source_term()
 
 
 def get_predictions(cls):
@@ -262,10 +267,7 @@ def get_stdout(program):
 
 def get_solution(step):
     program = step.show_solution_program
-    untokenizer = Untokenizer()
-    tokens = generate_tokens(StringIO(program).readline)
-    untokenizer.untokenize(tokens)
-    tokens = untokenizer.tokens
+    tokens = split_into_tokens(program)
 
     masked_indices = []
     mask = [False] * len(tokens)
@@ -386,6 +388,7 @@ class PageMeta(type):
                 hints=[highlighted_markdown(hint) for hint in getattr(step, "hints", [])],
                 solution=getattr(step, "get_solution", None),
                 prediction=get_predictions(step),
+                requirements=step.get_all_requirements() if getattr(step, "is_step", False) else None,
             )
             for index, (name, text, step) in
             enumerate(zip(self.step_names, self.step_texts(raw=False), self.steps))
@@ -441,6 +444,7 @@ class Step(ABC):
     translated_tests = False
     page = None
     is_function_exercise = False
+    requirements = ""
 
     class special_messages:
         pass
@@ -459,50 +463,74 @@ class Step(ABC):
             result = dict(message=result.text)
 
         if not isinstance(result, dict):
-            result = bool(result)
+            result = dict(passed=bool(result))
+
+        result.setdefault("passed", False)
+        result.setdefault("messages", [])
 
         return result
 
     def check_with_messages(self):
         result = self.clean_check()
         for message_cls in self.messages:
-            if (result is True) == message_cls.after_success and (message_cls.check_message(self) is True):
-                return message_cls
+            if result["passed"] == message_cls.after_success and message_cls.check_message(self)["passed"]:
+                return result | dict(message=message_cls.text, passed=False)
 
-        if result is True:
+        if result["passed"]:
             for d in self.disallowed:
                 if search_ast(
                     self.function_tree if d.function_only else self.tree,
                     d.template,
                     d.predicate
                 ) > d.max_count:
-                    return d
+                    return result | dict(message=d.text, passed=False)
 
             if self.expected_code_source not in (None, self.code_source):
-                return dict(
-                    message=t.Terms.incorrect_mode
-                    + " "
-                    + getattr(t.Terms, f"expected_mode_{self.expected_code_source}")
+                return result | dict(
+                    passed=False,
+                    message=t.Terms.incorrect_mode + " " + self.expected_code_source_term(),
                 )
 
-            return True
+            return result
 
         if self.code_source != "shell":
-            if not isinstance(result, dict):
-                result = {}
-
             try:
                 tree = self.tree
             except SyntaxError:
                 pass
             else:
-                result.setdefault("messages", []).extend(lint(tree))
+                result["lint"] = lint(tree)
 
         return result
 
     @abstractmethod
     def check(self) -> Union[bool, dict]:
         raise NotImplementedError
+
+    @classmethod
+    def expected_code_source_term(cls):
+        return getattr(t.Terms, f"expected_mode_{cls.expected_code_source}")
+
+    @classmethod
+    def get_all_requirements(cls):
+        result = cls.get_requirements()
+        if cls.program_in_text:
+            result.append(dict(type="program_in_text"))
+        if cls.requirements == "hints":
+            assert cls.hints
+        elif cls.requirements:
+            translated = t.get(t.requirements(cls), cls.requirements)
+            result.append(dict(type="custom", message=highlighted_markdown(translated)))
+
+        assert result, cls
+
+        if cls.expected_code_source:
+            result.append(dict(type="custom", message=highlighted_markdown(cls.expected_code_source_term())))
+        return result
+
+    @classmethod
+    def get_requirements(cls):
+        return []
 
     @cached_property
     def tree(self):
@@ -563,6 +591,37 @@ class ExerciseStep(Step):
             return self.check_exercise(func)
 
     @classmethod
+    def get_requirements(cls):
+        result = [dict(type="exercise")]
+        inputs = cls.example_inputs()
+        stdin_input = inputs.pop("stdin_input", None)
+        if not cls.is_function_exercise:
+            inputs = highlighted_markdown(indented_inputs_string(inputs))
+            result.append(dict(type="non_function_exercise", inputs=inputs))
+        else:
+            result.append(dict(type="function_exercise", header=basic_function_header(cls.solution)))
+            if goal := cls.function_exercise_goal():
+                result.append(dict(type="function_exercise_goal", print_or_return=goal))
+        if stdin_input:
+            result.append(dict(type="exercise_stdin"))
+        return result
+
+    @classmethod
+    def function_exercise_goal(cls):
+        assert cls.is_function_exercise
+        if (
+            cls.wrap_solution.__func__ == ExerciseStep.wrap_solution.__func__ and
+            cls.check_result.__func__ == ExerciseStep.check_result.__func__
+        ):
+            if getattr(cls.solution, "returns_stdout", False):
+                return "print"
+            else:
+                return "return"
+        else:
+            assert cls.requirements, cls
+            return None
+
+    @classmethod
     def _patch_streams(cls, func):
         func = match_returns_stdout(func, cls.solution)
         func = add_stdin_input_arg(func)
@@ -571,39 +630,47 @@ class ExerciseStep(Step):
     @classmethod
     def check_exercise(cls, submission, functionise=False):
         solution = cls.solution
+        test_values = list(cls.test_values())
 
         if functionise:
             try:
-                initial_names, func = make_function(submission, solution)
+                initial_names, func = make_function(submission, cls.arg_names())
             except InvalidInitialCode:
+                # TODO message for this
                 # There should be an exception in the usual output
                 return False
             except ExerciseError as e:
                 return dict(message=str(e))
 
             func = cls._patch_streams(func)
-            initial_names["stdin_input"] = cls.stdin_input
+            if cls.stdin_input:
+                initial_names["stdin_input"] = cls.stdin_input
 
             try:
                 expected_result = solution(**initial_names)
             except Exception:
-                traceback.print_exc()
                 return dict(message=t.Terms.invalid_inputs)
-            try:
-                cls.check_result(func, initial_names, expected_result)
-            except:
-                # Assume that the user can tell that the output is wrong
-                return False
+
+            if not any(names == initial_names for names, _ in test_values):
+                # Show a test in the assessment for the user's own initial values,
+                # if there isn't a test for them already.
+                test_values.insert(0, (initial_names, expected_result))
         else:
             submission = cls.wrap_solution(submission)
             func = cls._patch_streams(submission)
 
-        try:
-            cls.test_exercise(func)
-        except ExerciseError as e:
-            return dict(message=str(e))
+        passed_tests = []
+        return_value = dict(passed_tests=passed_tests, passed=True)
+        for inputs, result in test_values:
+            test_result = cls.check_result(func, inputs, result)
+            if test_result["passed"]:
+                passed_tests.append(test_result["message"])
+            else:
+                return_value["passed"] = False
+                return_value["message"] = test_result["message"]
+                break
 
-        return True
+        return return_value
 
     @classmethod
     def wrap_solution(cls, func):
@@ -618,12 +685,13 @@ class ExerciseStep(Step):
         return list(inspect.signature(cls.solution).parameters)
 
     @classmethod
-    def test_values(cls):
-        if cls.translated_tests and t.current_language not in (None, "en"):
-            tests = []
-        else:
-            tests = cls.tests
+    def example_inputs(cls):
+        [[inputs, _result]] = itertools.islice(cls.test_values(), 1)
+        return inputs
 
+    @classmethod
+    def test_values(cls):
+        tests = cls.tests
         if isinstance(tests, dict):
             tests = tests.items()
 
@@ -636,6 +704,9 @@ class ExerciseStep(Step):
                 inputs = dict(zip(arg_names, inputs))
             inputs = deepcopy(inputs)
             inputs = t.translate_dict_keys(inputs)
+            if cls.translated_tests and t.current_language not in (None, "en"):
+                # TODO also translate inputs, handling lists and dicts
+                result = cls.solution(**inputs)
             yield inputs, result
 
         for _ in range(10):
@@ -647,11 +718,11 @@ class ExerciseStep(Step):
     @classmethod
     def test_exercise(cls, func):
         for inputs, result in cls.test_values():
-            cls.check_result(func, inputs, result)
+            assert cls.check_result(func, inputs, result)["passed"]
 
     @classmethod
     def check_result(cls, func, inputs, result):
-        return check_result(func, inputs, result)
+        return check_result(func, inputs, result)[0]
 
     @classmethod
     def generate_inputs(cls):
@@ -666,6 +737,12 @@ class VerbatimStep(Step):
 
     class StringSpacesDiffer(Exception):
         pass
+
+    @classmethod
+    def get_requirements(cls):
+        if not cls.program_in_text:
+            assert cls.requirements, cls
+        return [dict(type="verbatim")]
 
     def check(self):
         try:

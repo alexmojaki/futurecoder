@@ -220,6 +220,9 @@ def disallowed_label(cls, i):
     return f"{disallowed(cls, i)}.label"
 
 
+def requirements(cls):
+    return f"{step_cls(cls)}.requirements"
+
 def code_bit(node_text):
     return f"code_bits.{node_text}"
 
@@ -325,6 +328,8 @@ your code outputs:"""
     your_code_outputs = "Your code outputs:"
 
     when_it_should_output = "when it should output:"
+
+    which_is_correct = "which is correct!"
 
     copy_button = "Copy"
 

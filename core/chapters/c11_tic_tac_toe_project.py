@@ -8,7 +8,7 @@ from textwrap import dedent
 from typing import List
 
 from core import translation as t
-from core.exercises import assert_equal, ExerciseError
+from core.exercises import assert_equal, check_result
 from core.text import ExerciseStep, Page, MessageStep, Disallowed, VerbatimStep
 from core.utils import returns_stdout, shuffled, wrap_solution
 
@@ -1291,6 +1291,7 @@ For example, this program looks fine at a glance, but if you try it out you'll s
 
     __copyable__
     super_secret_number = 7
+
     print("What number am I thinking of?")
     guess = input()
     if guess == super_secret_number:
@@ -1298,7 +1299,9 @@ For example, this program looks fine at a glance, but if you try it out you'll s
     else:
         print("Nope!")
 
-Fix the program so that when the user inputs `7` the program prints `Amazing! Are you psychic?` as expected.
+Fix the program so that when the user inputs the value of `super_secret_number` (`7` in this example)
+the program prints `Amazing! Are you psychic?` as expected.
+It should work when `super_secret_number` is any whole number (`int`).
         """
 
         hints = """
@@ -1315,8 +1318,7 @@ Use `int()` to convert to an integer (whole number) or `str()` to convert to a s
 
         translated_tests = True
 
-        def solution(self):
-            super_secret_number = 7
+        def solution(self, super_secret_number: int):
             print("What number am I thinking of?")
             guess = input()
             if int(guess) == super_secret_number:
@@ -1326,20 +1328,29 @@ Use `int()` to convert to an integer (whole number) or `str()` to convert to a s
 
         @classmethod
         def generate_inputs(cls):
+            num = randint(1, 10)
             return {
-                "stdin_input": str(randint(1, 10))
+                "stdin_input": str(num),
+                "super_secret_number": choice([num, num + 1])
             }
 
         tests = [
-            ({"stdin_input": "7"}, "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?"),
-            ({"stdin_input": "0"}, "What number am I thinking of?\n<input: 0>\nNope!"),
-            ({"stdin_input": "1"}, "What number am I thinking of?\n<input: 1>\nNope!"),
+            ({"stdin_input": "7", "super_secret_number": 7},
+             "What number am I thinking of?\n<input: 7>\nAmazing! Are you psychic?"),
+            ({"stdin_input": "0", "super_secret_number": 7},
+             "What number am I thinking of?\n<input: 0>\nNope!"),
+            ({"stdin_input": "1", "super_secret_number": 7},
+             "What number am I thinking of?\n<input: 1>\nNope!"),
+            ({"stdin_input": "0", "super_secret_number": 0},
+             "What number am I thinking of?\n<input: 0>\nAmazing! Are you psychic?"),
+            ({"stdin_input": "1", "super_secret_number": 0},
+             "What number am I thinking of?\n<input: 1>\nNope!"),
         ]
 
     final_text = """
 Perfect!
 
-There's at least three fixes that would work here. You can convert the input to a number:
+There's two main fixes that would work here. You can convert the input to a number:
 
     if int(guess) == super_secret_number:
 
@@ -1347,10 +1358,8 @@ or convert the correct answer to a string:
 
     if guess == str(super_secret_number):
 
-or just make it a string to begin with:
-
-    super_secret_number = '7'
-
+An important difference between these two approaches is that the first approach will raise an error
+if the user types something that isn't a number, which may or may not be what you want.
     """
 
 
@@ -1537,6 +1546,7 @@ You just need to use the numbers from user input instead of the hardcoded 1 and 
 You can use nested subscripting in one line, or do it in two steps.
         """
 
+        requirements = "Your function should modify the `board` argument. It doesn't need to `return` or `print` anything."
         no_returns_stdout = True
 
         def solution(self):
@@ -1725,6 +1735,7 @@ list repeated.
         """
 
         parsons_solution = True
+        requirements = "hints"
 
         hints = """
 The existing code is almost correct.
@@ -1768,14 +1779,17 @@ Making a new row each time can be done by just rearranging the code.
 
         class special_messages:
             class not_separate:
-                text = "The sublists in the result are not all separate objects."
+                text = "However, the sublists in the result are not all separate objects."
                 program = "pass\ndef make_board(size): return [[' '] * size] * size"
+                expected_exact_match = False
 
         @classmethod
         def check_result(cls, func, inputs, expected_result):
-            result = super().check_result(func, inputs, expected_result)
-            if len(result) != len(set(map(id, result))):
-                raise ExerciseError(cls.special_messages.not_separate.text)
+            test_result, func_result = check_result(func, inputs, expected_result)
+            if test_result["passed"] and len(func_result) != len(set(map(id, func_result))):
+                test_result["passed"] = False
+                test_result["message"] += "\n\n" + cls.special_messages.not_separate.text
+            return test_result
 
     final_text = """
 Well done!
@@ -1923,6 +1937,7 @@ i.e. numbers from 1 to `board_size` to choose a cell on the board that isn't alr
         """
 
         parsons_solution = True
+        requirements = "hints"
 
         hints = """
 You should use all of the functions `winner`, `format_board` (not counting its use in `play_move`), `play_move`, `make_board`, `print_winner`, and `print_draw` somewhere.

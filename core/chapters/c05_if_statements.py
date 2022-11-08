@@ -83,6 +83,8 @@ Change `excited = True` to `excited = False` and run the program again to see wh
         """
         program_in_text = False
 
+        requirements = "Run the program from the previous step, but replace `True` with `False`, so `excited = False`."
+
         predicted_output_choices = [
             'Hello World',
             'Hello World!',
@@ -235,6 +237,8 @@ It's time to introduce a new tool to help you understand programs. Click the `sn
 
         program_in_text = False
         expected_code_source = "snoop"
+        requirements = "Run the same program from the previous step, but use the `snoop` button instead of the 'Run' button. " \
+                       "Copy the program again if you might have changed it."
 
     class print_first_character(ExerciseStep):
         """
@@ -333,6 +337,7 @@ __program_indented__
 Now change the first line to `condition = False` and run it again.
         """
         program_in_text = False
+        requirements = "Run the same program from the previous step, but replace `True` with `False`, so that `condition = False`."
 
         def program(self):
             condition = False
@@ -368,6 +373,7 @@ __program_indented__
 Now change `excited` to `False` and run it again.
         """
         program_in_text = False
+        requirements = "Run the same program from the previous step, but replace `True` with `False`, so that `excited = False`."
 
         def program(self):
             sentence = 'Hello World'
@@ -399,6 +405,7 @@ Spoilers below! Have you figured it out?
 What happens if you change `excited` to `False`?
         """
         program_in_text = False
+        requirements = "Copy the program above. Run it as is if you want. Then change `excited = True` to `excited = False` and run it again."
 
         predicted_output_choices = [
             'Hello World',
@@ -574,6 +581,8 @@ removing a single `=` from the previous program?
         """
 
         program = "print(1 + 2 = 3)"
+
+        requirements = "Run the program from the previous step, but replace any of the `==` with just `=`."
 
         def check(self):
             return "SyntaxError" in self.result
@@ -755,6 +764,12 @@ the previous code can be changed to this:
         char = 'G'
         """
 
+        requirements = """
+Copy the program from the first step on this page, but replace the 4 `if` blocks there with the
+combination of `if` and `elif` blocks here. In other words, replace each of the last three `if`s with
+`elif`, but leave the first `if` alone.
+        """
+
         program_in_text = False
 
         def program(self):
@@ -862,6 +877,7 @@ Here's a cute little program using `!=`:
 Other handy operators are `<` (less than) and `>` (greater than). For example, `a < b` means "`a` is less than `b`". Try using one of these in the shell to compare two numbers.
         """
 
+        requirements = "Run any code in the shell using either `<` or `>` on two numbers."
         program = "1 < 2"
         comparators_type = int
 
@@ -877,6 +893,7 @@ For this exercise you have to do basically that, but compare them instead.
 You can also use these operators to compare strings. If you arrange two strings in alphabetical order, the first one is 'less than' the second. See for yourself.
         """
 
+        requirements = "Run any code in the shell using either `<` or `>` on two strings."
         program = "'1' < '2'"
         comparators_type = str
 
