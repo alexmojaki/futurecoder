@@ -643,15 +643,18 @@ class ExerciseStep(Step):
                 return dict(message=str(e))
 
             func = cls._patch_streams(func)
-            initial_names["stdin_input"] = cls.stdin_input
+            if cls.stdin_input:
+                initial_names["stdin_input"] = cls.stdin_input
 
             try:
                 expected_result = solution(**initial_names)
             except Exception:
                 return dict(message=t.Terms.invalid_inputs)
 
-            # TODO only insert if initial_names isn't present already
-            test_values.insert(0, (initial_names, expected_result))
+            if not any(names == initial_names for names, _ in test_values):
+                # Show a test in the assessment for the user's own initial values,
+                # if there isn't a test for them already.
+                test_values.insert(0, (initial_names, expected_result))
         else:
             submission = cls.wrap_solution(submission)
             func = cls._patch_streams(submission)
