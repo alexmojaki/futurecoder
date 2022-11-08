@@ -501,22 +501,24 @@ export const reorderSolutionLines = makeAction(
 )
 
 export function logEvent(name, data = {}) {
+  console.log("Logging event", name, data);
   firebaseAnalytics?.logEvent(name, data);
 }
 
 export function postCodeEntry(codeEntry) {
+  const {user: {developerMode}, route, assistant: {numHints, requestingSolution}} = localState;
+  codeEntry = {
+    ...codeEntry,
+    state: {
+      developerMode,
+      page_route: route,
+      num_hints: numHints,
+      requesting_solution: requestingSolution,
+    },
+    timestamp: new Date().toISOString(),
+  };
+  console.log("Posting code entry", codeEntry);
   if (isProduction) {
-    const {user: {developerMode}, route, assistant: {numHints, requestingSolution}} = localState;
-    codeEntry = {
-      ...codeEntry,
-      state: {
-        developerMode,
-        page_route: route,
-        num_hints: numHints,
-        requesting_solution: requestingSolution,
-      },
-      timestamp: new Date().toISOString(),
-    };
     databaseRequest("POST", codeEntry, "code_entries").catch(e => console.error(e));
   }
 }
