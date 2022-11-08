@@ -41,6 +41,12 @@ msgstr "Tic Tac Toe Project"
 msgid "chapters.variables.title"
 msgstr "Variables"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.requirements
+#. 
+#.     name + " went to " + meal + " with " + friend + '.'
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
 #. 
 #.     name = "Alice"
@@ -50,6 +56,12 @@ msgstr "Variables"
 msgid "code_bits.\" went to \""
 msgstr "\" went to \""
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.requirements
+#. 
+#.     name + " went to " + meal + " with " + friend + '.'
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
 #. 
 #.     name = "Alice"
@@ -329,6 +341,18 @@ msgstr "\"ABCD\""
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.ACommonMistake.requirements
+#. 
+#.     return name == "Alice" or "Bob"
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.ACommonMistake.requirements
+#. 
+#.     return name == "Alice" or name == "Bob"
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.ACommonMistake.text
 #. 
 #.     return name == "Alice" or "Bob"
@@ -373,6 +397,21 @@ msgstr "\"ABCD\""
 #. assert_equal(is_friend("Alice"), True)
 #. assert_equal(is_friend("Bob"), True)
 #. assert_equal(is_friend("Charlie"), False)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.FurtherImprovement.requirements
+#. 
+#.     if name == "Alice" or name == "Bob":
+#.         return True
+#.     else:
+#.         return False
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.FurtherImprovement.requirements
+#. 
+#.     return name == "Alice" or name == "Bob"
 #. 
 #. ------
 #. 
@@ -569,6 +608,18 @@ msgstr "\"Amazing! Are you psychic?\""
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.ACommonMistake.requirements
+#. 
+#.     return name == "Alice" or "Bob"
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.ACommonMistake.requirements
+#. 
+#.     return name == "Alice" or name == "Bob"
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.ACommonMistake.text
 #. 
 #.     return name == "Alice" or "Bob"
@@ -613,6 +664,21 @@ msgstr "\"Amazing! Are you psychic?\""
 #. assert_equal(is_friend("Alice"), True)
 #. assert_equal(is_friend("Bob"), True)
 #. assert_equal(is_friend("Charlie"), False)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.FurtherImprovement.requirements
+#. 
+#.     if name == "Alice" or name == "Bob":
+#.         return True
+#.     else:
+#.         return False
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.FurtherImprovement.requirements
+#. 
+#.     return name == "Alice" or name == "Bob"
 #. 
 #. ------
 #. 
@@ -9043,6 +9109,12 @@ msgstr "f\"{letter} {number}\""
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.requirements
+#. 
+#.     f"{name} went to {meal} with {friend}."
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
 #. 
 #.     print(f"{name} went to {meal} with {friend}.")
@@ -10308,6 +10380,12 @@ msgstr "french"
 #. friend = 'Bob'
 #. meal = "lunch"
 #. print(f"{name} went to {meal} with {friend}.")
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.requirements
+#. 
+#.     name + " went to " + meal + " with " + friend + '.'
 #. 
 #. ------
 #. 
@@ -12044,6 +12122,12 @@ msgstr "make_cube"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.requirements
+#. 
+#.     name + " went to " + meal + " with " + friend + '.'
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
 #. 
 #.     name = "Alice"
@@ -12346,6 +12430,12 @@ msgstr "middle"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.requirements
+#. 
+#.     name + " went to " + meal + " with " + friend + '.'
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings.text
 #. 
 #.     name = "Alice"
@@ -12363,6 +12453,18 @@ msgstr "middle"
 #. assert_equal(is_friend("Alice"), True)
 #. assert_equal(is_friend("Bob"), True)
 #. assert_equal(is_friend("Charlie"), False)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.ACommonMistake.requirements
+#. 
+#.     return name == "Alice" or "Bob"
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.ACommonMistake.requirements
+#. 
+#.     return name == "Alice" or name == "Bob"
 #. 
 #. ------
 #. 
@@ -12410,6 +12512,21 @@ msgstr "middle"
 #. assert_equal(is_friend("Alice"), True)
 #. assert_equal(is_friend("Bob"), True)
 #. assert_equal(is_friend("Charlie"), False)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.FurtherImprovement.requirements
+#. 
+#.     if name == "Alice" or name == "Bob":
+#.         return True
+#.     else:
+#.         return False
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingOr.steps.FurtherImprovement.requirements
+#. 
+#.     return name == "Alice" or name == "Bob"
 #. 
 #. ------
 #. 
@@ -12850,6 +12967,18 @@ msgstr "num"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ModifyingWhileIterating.steps.make_copy.requirements
+#. 
+#.     for number in numbers.copy():
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ModifyingWhileIterating.steps.make_copy.requirements
+#. 
+#.     for number in numbers:
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.ModifyingWhileIterating.steps.make_copy.text
 #. 
 #.     for number in numbers.copy():
@@ -13084,6 +13213,18 @@ msgstr "number"
 #.     if number <= 10:
 #.         numbers.remove(number)
 #. print(numbers)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ModifyingWhileIterating.steps.make_copy.requirements
+#. 
+#.     for number in numbers.copy():
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.ModifyingWhileIterating.steps.make_copy.requirements
+#. 
+#.     for number in numbers:
 #. 
 #. ------
 #. 
@@ -20038,6 +20179,10 @@ msgid "pages.AddingStrings.steps.hello_world_space.messages.literal_answer.text"
 msgstr "You must still add two or more strings together."
 
 #. https://futurecoder.io/course/#AddingStrings
+msgid "pages.AddingStrings.steps.hello_world_space.requirements"
+msgstr "Use `+` to add two or more strings together, so that the result is the string `'hello world'`."
+
+#. https://futurecoder.io/course/#AddingStrings
 msgid "pages.AddingStrings.steps.hello_world_space.text"
 msgstr ""
 "You can see that `+` combines or joins two strings together end to end. Technically, this is called concatenation.\n"
@@ -20986,6 +21131,10 @@ msgstr ""
 "__program_indented__"
 
 #. https://futurecoder.io/course/#CallingFunctionsWithinFunctions
+msgid "pages.CallingFunctionsWithinFunctions.steps.see_stack_in_birdseye.requirements"
+msgstr "Run the same program as above, but with `birdseye`."
+
+#. https://futurecoder.io/course/#CallingFunctionsWithinFunctions
 msgid "pages.CallingFunctionsWithinFunctions.steps.see_stack_in_birdseye.text"
 msgstr ""
 "Each time a function is called, a new *frame* is created, which contains the local variable values\n"
@@ -20997,6 +21146,10 @@ msgstr ""
 "and then disappear. In each one you can see the values of the variables.\n"
 "\n"
 "Finally, run the program with `birdseye`."
+
+#. https://futurecoder.io/course/#CallingFunctionsWithinFunctions
+msgid "pages.CallingFunctionsWithinFunctions.steps.see_stack_in_pythontutor.requirements"
+msgstr "Run the same program as above, but with Python Tutor."
 
 #. https://futurecoder.io/course/#CallingFunctionsWithinFunctions
 msgid "pages.CallingFunctionsWithinFunctions.steps.see_stack_in_pythontutor.text"
@@ -21011,6 +21164,10 @@ msgstr ""
 "It ends the call with `<<< Return value from <function name>`. We'll learn about return values soon.\n"
 "\n"
 "Now run the program again with Python Tutor."
+
+#. https://futurecoder.io/course/#CallingFunctionsWithinFunctions
+msgid "pages.CallingFunctionsWithinFunctions.steps.see_stack_in_snoop.requirements"
+msgstr "Run the same program as above, but with `snoop`."
 
 #. https://futurecoder.io/course/#CallingFunctionsWithinFunctions
 msgid "pages.CallingFunctionsWithinFunctions.steps.see_stack_in_snoop.text"
@@ -21496,6 +21653,13 @@ msgstr ""
 "Hello Bob!"
 
 #. https://futurecoder.io/course/#DefiningFunctions
+msgid "pages.DefiningFunctions.steps.how_are_you.requirements"
+msgstr ""
+"\n"
+"Add `print(\"How are you?\")` after `print(f\"Hello {name}!\")` with the same indentation.\n"
+"Keep the two calls to `greet` after the definition as is.\n"
+
+#. https://futurecoder.io/course/#DefiningFunctions
 #. 
 #.     # __code0__:
 #.     def greet(name):
@@ -21606,6 +21770,10 @@ msgstr "The body needs two statements or a very simple loop."
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.print_twice_exercise
 msgid "pages.DefiningFunctions.steps.print_twice_exercise.hints.9.text"
 msgstr "Make sure that you don't call `print_twice` inside the function body of `print_twice`. Check your indentation."
+
+#. https://futurecoder.io/course/#DefiningFunctions
+msgid "pages.DefiningFunctions.steps.print_twice_exercise.requirements"
+msgstr "Write a program which defines a function called `print_twice` as described above."
 
 #. https://futurecoder.io/course/#DefiningFunctions
 #. 
@@ -21895,6 +22063,10 @@ msgid "pages.DictionaryKeysAndValues.steps.final_text.text"
 msgstr "Congratulations! You've reached the end of the course so far. More is on the way!"
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
+msgid "pages.DictionaryKeysAndValues.steps.introducing_keys.requirements"
+msgstr "Run `print(quantities.keys())` where `quantities` is a dictionary."
+
+#. https://futurecoder.io/course/#DictionaryKeysAndValues
 #. 
 #.     # __code0__:
 #.     quantities = {'apple': 1, 'cat': 10}
@@ -21927,6 +22099,12 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#DictionaryKeysAndValues
+msgid "pages.DictionaryKeysAndValues.steps.keys_are_iterable2.requirements"
+msgstr ""
+"Run the same code as the previous step, but without `.keys()`. after `quantities`, so the middle line is `for key in "
+"quantities:`"
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 msgid "pages.DictionaryKeysAndValues.steps.keys_are_iterable2.text"
@@ -21990,6 +22168,10 @@ msgstr ""
 "This will make the program behave like the first version again.\n"
 "\n"
 "If you come across this kind of problem and you're still having trouble understanding this stuff, read the essay [Facts and myths about Python names and values](https://nedbatchelder.com/text/names.html)."
+
+#. https://futurecoder.io/course/#EqualsVsIs
+msgid "pages.EqualsVsIs.steps.same_list.requirements"
+msgstr "Run the same program as above, but replace the *second* `[1, 2, 3]` with `list1`."
 
 #. https://futurecoder.io/course/#EqualsVsIs
 msgid "pages.EqualsVsIs.steps.same_list.text"
@@ -22101,6 +22283,13 @@ msgid "pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exer
 msgstr "How do you make a list containing one element?"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+msgid "pages.FunctionsAndMethodsForLists.steps.negative_index_concatenation_exercise.requirements"
+msgstr ""
+"Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list of "
+"lines from before. You must choose the correct line, there's only one right answer. Type in the line exactly. Do not "
+"replace the `y = ` part, that should still be there just before the line that you type in, on the same line."
+
+#. https://futurecoder.io/course/#FunctionsAndMethodsForLists
 #. 
 #.     # __code0__:
 #.     x = ['a', 'b', 'c']
@@ -22188,6 +22377,12 @@ msgstr "Which functions/methods can you use for this?"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment
 msgid "pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment.hints.5.text"
 msgstr "Remember that the first index is 0."
+
+#. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+msgid "pages.FunctionsAndMethodsForLists.steps.pop_remove_index_subscript_assignment.requirements"
+msgstr ""
+"Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list just "
+"before that. You must choose the correct line, there's only one right answer. Type in the line exactly."
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
 #. 
@@ -22278,6 +22473,12 @@ msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.hints.6.text"
 msgstr "Which function/method provides that kind of information?"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+msgid "pages.FunctionsAndMethodsForLists.steps.remove_exercise.requirements"
+msgstr ""
+"Copy the three lines above, then replace `x.remove(0)` with exactly one line from the long list of lines from before. "
+"The line you choose should have the same effect as `x.remove(0)`, so that the program prints `[1, 2, 3]`."
+
+#. https://futurecoder.io/course/#FunctionsAndMethodsForLists
 #. 
 #.     # __code0__:
 #.     x = [1, 2, 0, 3]
@@ -22343,6 +22544,12 @@ msgid "pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise.hin
 msgstr "What are the indices of the first and last last elements in `x`?"
 
 #. https://futurecoder.io/course/#FunctionsAndMethodsForLists
+msgid "pages.FunctionsAndMethodsForLists.steps.subscript_assignment_exercise.requirements"
+msgstr ""
+"Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list in "
+"the previous step. You must choose the correct line, there's only one right answer. Type in the line exactly."
+
+#. https://futurecoder.io/course/#FunctionsAndMethodsForLists
 #. 
 #.     # __code0__:
 #.     x = ['a', 'b', 'c']
@@ -22406,6 +22613,10 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.GettingElementsAtPosition.steps.index_error
 msgid "pages.GettingElementsAtPosition.steps.index_error.program"
 msgstr "words[4]"
+
+#. https://futurecoder.io/course/#GettingElementsAtPosition
+msgid "pages.GettingElementsAtPosition.steps.index_error.requirements"
+msgstr "Run something like `words[3]` but replace `3` with a bigger number."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 msgid "pages.GettingElementsAtPosition.steps.index_error.text"
@@ -22637,6 +22848,12 @@ msgstr ""
 "for index in indices:\n"
 "    print(index)\n"
 "    print(words[index])"
+
+#. https://futurecoder.io/course/#GettingElementsAtPosition
+msgid "pages.GettingElementsAtPosition.steps.range_len.requirements"
+msgstr ""
+"Run the same program from the previous step, but replace the second line `indices = [0, 1, 2, 3]` with `indices = "
+"range(4)`."
 
 #. https://futurecoder.io/course/#GettingElementsAtPosition
 msgid "pages.GettingElementsAtPosition.steps.range_len.text"
@@ -23073,6 +23290,16 @@ msgid "pages.HowToFindInformationWithGoogleAndMore.steps.list_insert.hints.3.tex
 msgstr "'python add value at index'"
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+msgid "pages.HowToFindInformationWithGoogleAndMore.steps.list_insert.requirements"
+msgstr ""
+"\n"
+"Run code similar to the three lines above, but change `nums.append(9)` to the right function/method call\n"
+"to put 9 right after the second element (2 in the example `nums = [1, 2, 3, 4, 5]`) instead of at the end.\n"
+"There's only one correct answer for what the middle line should be.\n"
+"You need to search online to figure out which function/method to use and how to use it.\n"
+"        "
+
+#. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
 #. 
 #.     # __code0__:
 #.     nums = [1, 2, 3, 4, 5]
@@ -23125,6 +23352,14 @@ msgstr "'biggest' or 'largest'"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.HowToFindInformationWithGoogleAndMore.steps.sum_list
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.hints.3.text"
 msgstr "'python biggest value in list'"
+
+#. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
+msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.requirements"
+msgstr ""
+"\n"
+"Run code similar to `sum([21, 55, 4, 91, 62, 49])` but replace `sum` with the name of another specific function.\n"
+"There's only one correct answer for which function should be used. You need to search online to figure out which one.\n"
+"It's a commonly used built-in function in Python.\n"
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.text"
@@ -23257,6 +23492,10 @@ msgstr ""
 "__program_indented__"
 
 #. https://futurecoder.io/course/#IfAndElse
+msgid "pages.IfAndElse.steps.first_if_else_false.requirements"
+msgstr "Run the same program from the previous step, but replace `True` with `False`, so that `condition = False`."
+
+#. https://futurecoder.io/course/#IfAndElse
 msgid "pages.IfAndElse.steps.first_if_else_false.text"
 msgstr "Now change the first line to `condition = False` and run it again."
 
@@ -23270,6 +23509,10 @@ msgstr ""
 "Here's a more interesting example to run:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#IfAndElse
+msgid "pages.IfAndElse.steps.if_upper_else_lower_false.requirements"
+msgstr "Run the same program from the previous step, but replace `True` with `False`, so that `excited = False`."
 
 #. https://futurecoder.io/course/#IfAndElse
 msgid "pages.IfAndElse.steps.if_upper_else_lower_false.text"
@@ -23330,6 +23573,11 @@ msgstr "Hello World"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.undefined_char
 msgid "pages.IfAndElse.steps.undefined_char.output_prediction_choices.1"
 msgstr "Hello World!"
+
+#. https://futurecoder.io/course/#IfAndElse
+msgid "pages.IfAndElse.steps.undefined_char.requirements"
+msgstr ""
+"Copy the program above. Run it as is if you want. Then change `excited = True` to `excited = False` and run it again."
 
 #. https://futurecoder.io/course/#IfAndElse
 #. 
@@ -23914,6 +24162,10 @@ msgstr ""
 "__program_indented__"
 
 #. https://futurecoder.io/course/#IntroducingDictionaries
+msgid "pages.IntroducingDictionaries.steps.dict_access3.requirements"
+msgstr "Run the same code as the previous step (`french['apple']`) in the shell, but replace `'apple'` with `'box'`."
+
+#. https://futurecoder.io/course/#IntroducingDictionaries
 msgid "pages.IntroducingDictionaries.steps.dict_access3.special_messages.bad_french_value.text"
 msgstr "Oops, you need to set `french = {'apple': 'pomme', 'box': 'boite'}` before we can continue."
 
@@ -24004,6 +24256,15 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#IntroducingElif
+msgid "pages.IntroducingElif.steps.dna_example_with_elif.requirements"
+msgstr ""
+"\n"
+"Copy the program from the first step on this page, but replace the 4 `if` blocks there with the\n"
+"combination of `if` and `elif` blocks here. In other words, replace each of the last three `if`s with\n"
+"`elif`, but leave the first `if` alone.\n"
+"        "
 
 #. https://futurecoder.io/course/#IntroducingElif
 #. 
@@ -24338,6 +24599,37 @@ msgstr "Alice went to lunch with Bob."
 #. https://futurecoder.io/course/#IntroducingFstrings
 #. 
 #.     # __code0__:
+#.     name + " went to " + meal + " with " + friend + '.'
+#. 
+#.     # __code1__:
+#.     f"{name} went to {meal} with {friend}."
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22+went+to+%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22+with+%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.f%22%7Bname%7D+went+to+%7Bmeal%7D+with+%7Bfriend%7D.%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.friend
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.meal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
+msgid "pages.IntroducingFstrings.steps.introduce_f_strings.requirements"
+msgstr ""
+"\n"
+"Run the program above, but replace this code inside the `print()`:\n"
+"\n"
+"__code0__\n"
+"\n"
+"with:\n"
+"\n"
+"__code1__\n"
+"        "
+
+#. https://futurecoder.io/course/#IntroducingFstrings
+#. 
+#.     # __code0__:
 #.     name = "Alice"
 #.     friend = 'Bob'
 #.     meal = "lunch"
@@ -24454,6 +24746,10 @@ msgstr "Hello World"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingIfStatements.steps.excited_false_example
 msgid "pages.IntroducingIfStatements.steps.excited_false_example.output_prediction_choices.1"
 msgstr "Hello World!"
+
+#. https://futurecoder.io/course/#IntroducingIfStatements
+msgid "pages.IntroducingIfStatements.steps.excited_false_example.requirements"
+msgstr "Run the program from the previous step, but replace `True` with `False`, so `excited = False`."
 
 #. https://futurecoder.io/course/#IntroducingIfStatements
 msgid "pages.IntroducingIfStatements.steps.excited_false_example.text"
@@ -24747,6 +25043,10 @@ msgstr ""
 #. https://futurecoder.io/course/#IntroducingLists
 msgid "pages.IntroducingLists.title"
 msgstr "Introducing Lists"
+
+#. https://futurecoder.io/course/#IntroducingNestedLists
+msgid "pages.IntroducingNestedLists.steps.double_subscripting.requirements"
+msgstr "Run `print(strings[1][0])` or something similar using `birdseye` to see how it works."
 
 #. https://futurecoder.io/course/#IntroducingNestedLists
 #. 
@@ -25799,6 +26099,31 @@ msgstr "Introducing `not`"
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
+msgid "pages.IntroducingOr.steps.ACommonMistake.requirements"
+msgstr ""
+"\n"
+"Run the program from the previous step, but replace:\n"
+"\n"
+"__code0__\n"
+"\n"
+"with:\n"
+"\n"
+"__code1__\n"
+"        "
+
+#. https://futurecoder.io/course/#IntroducingOr
+#. 
+#.     # __code0__:
+#.     return name == "Alice" or name == "Bob"
+#. 
+#.     # __code1__:
+#.     return name == "Alice" or "Bob"
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingOr.steps.ACommonMistake.text"
 msgstr ""
 "Take careful note of how we wrote the condition:\n"
@@ -25962,6 +26287,33 @@ msgstr ""
 
 #. https://futurecoder.io/course/#IntroducingOr
 #. 
+#.     # __code0__:
+#.     if name == "Alice" or name == "Bob":
+#.         return True
+#.     else:
+#.         return False
+#. 
+#.     # __code1__:
+#.     return name == "Alice" or name == "Bob"
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Alice%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%22Bob%22
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
+msgid "pages.IntroducingOr.steps.FurtherImprovement.requirements"
+msgstr ""
+"\n"
+"Run the program from the previous step, but replace:\n"
+"\n"
+"__code0__\n"
+"\n"
+"with:\n"
+"\n"
+"__code1__\n"
+
+#. https://futurecoder.io/course/#IntroducingOr
+#. 
 #.     # __code1__:
 #.     if x:
 #.         return True
@@ -26002,6 +26354,11 @@ msgstr ""
 "__code2__\n"
 "\n"
 "Apply this simplification to the code yourself, and run it again."
+
+#. https://futurecoder.io/course/#IntroducingOr
+msgid "pages.IntroducingOr.steps.ImprovingWithOr.requirements"
+msgstr ""
+"Copy the program from the top of the page, then change the first four lines of the function to use `or` as suggested."
 
 #. https://futurecoder.io/course/#IntroducingOr
 #. 
@@ -26051,6 +26408,10 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://futurecoder.io/course/#IntroducingOr
+msgid "pages.IntroducingOr.steps.InspectWithBirdseye.requirements"
+msgstr "Run the same code as in the previous step, but with `birdseye`."
 
 #. https://futurecoder.io/course/#IntroducingOr
 msgid "pages.IntroducingOr.steps.InspectWithBirdseye.text"
@@ -26128,6 +26489,10 @@ msgstr ""
 "1. Click anywhere on the shell (the black area).\n"
 "2. Type `__program__`\n"
 "3. Press the Enter key on your keyboard."
+
+#. https://futurecoder.io/course/#IntroducingTheShell
+msgid "pages.IntroducingTheShell.steps.more_calculation.requirements"
+msgstr "Run code in the shell similar to `1 + 2`, but instead of `+`, use `*`, `/`, or `-`."
 
 #. https://futurecoder.io/course/#IntroducingTheShell
 #. 
@@ -26928,12 +27293,30 @@ msgstr ""
 "your program should print `False`."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
+msgid "pages.LoopingOverNestedLists.steps.nested_list_loop_python_tutor.requirements"
+msgstr ""
+"Run a single program consisting of the two parts above combined.\n"
+"They're separated so that you don't need to type in the `numbers = [...]` part,\n"
+"but typing in the nested loop part is best for learning.\n"
+"Make sure the indentation is correct.\n"
+"        "
+
+#. https://futurecoder.io/course/#LoopingOverNestedLists
 msgid "pages.LoopingOverNestedLists.steps.nested_list_loop_python_tutor.text"
 msgstr ""
 "Now run the same program again in Python Tutor.\n"
 "\n"
 "Examine what `numbers` looks like, and what `numbers[0]` up to `numbers[3]` are.\n"
 "Look at how `sublist` and `num` variables advance."
+
+#. https://futurecoder.io/course/#LoopingOverNestedLists
+msgid "pages.LoopingOverNestedLists.steps.nested_list_nested_loop_example.requirements"
+msgstr ""
+"Run a single program consisting of the two parts above combined.\n"
+"They're separated so that you don't need to type in the `numbers = [...]` part,\n"
+"but typing in the nested loop part is best for learning.\n"
+"Make sure the indentation is correct.\n"
+"        "
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
 #. 
@@ -27579,6 +27962,30 @@ msgstr ""
 
 #. https://futurecoder.io/course/#ModifyingWhileIterating
 #. 
+#.     # __code1__:
+#.     for number in numbers.copy():
+#. 
+#.     # __code0__:
+#.     for number in numbers:
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.number
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
+msgid "pages.ModifyingWhileIterating.steps.make_copy.requirements"
+msgstr ""
+"\n"
+"Run the same program as above, but change the second line:\n"
+"\n"
+"__code0__\n"
+"\n"
+"to:\n"
+"\n"
+"__code1__\n"
+"\n"
+"i.e. add `.copy()` after `numbers` but before `:`.\n"
+
+#. https://futurecoder.io/course/#ModifyingWhileIterating
+#. 
 #.     # __code0__:
 #.     for number in numbers.copy():
 #. 
@@ -27676,6 +28083,12 @@ msgid "pages.MoreListFunctionsAndMethods.steps.average_exercise.hints.4.text"
 msgstr "How do you combine those two things to calculate the average?"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+msgid "pages.MoreListFunctionsAndMethods.steps.average_exercise.requirements"
+msgstr ""
+"Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list of "
+"lines above. The middle line should still start with `y = `."
+
+#. https://futurecoder.io/course/#MoreListFunctionsAndMethods
 #. 
 #.     # __code0__:
 #.     x = [15, 12, -6, 3]
@@ -27724,6 +28137,13 @@ msgstr "Could be that `1` is in `x` once, or twice, or three times..."
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum
 msgid "pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum.hints.4.text"
 msgstr "...but not zero times!"
+
+#. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+msgid "pages.MoreListFunctionsAndMethods.steps.count_in_sorted_sum.requirements"
+msgstr ""
+"Copy the three lines above, then replace `1 in x` with exactly one line from the long list of lines above. The middle "
+"line should still start with `y = `. The line you choose should have the same effect as `1 in x`, so that the program "
+"prints `True`."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
 #. 
@@ -27842,6 +28262,12 @@ msgid "pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise.
 msgstr "After that, how can you get the *second* smallest value?"
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+msgid "pages.MoreListFunctionsAndMethods.steps.second_smallest_in_list_exercise.requirements"
+msgstr ""
+"Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list of "
+"lines above. The middle line should still start with `y = `."
+
+#. https://futurecoder.io/course/#MoreListFunctionsAndMethods
 #. 
 #.     # __code0__:
 #.     x = [12, -6, 2, -1, 3]
@@ -27920,6 +28346,12 @@ msgid "pages.MoreListFunctionsAndMethods.steps.sum_range_exercise.hints.3.text"
 msgstr "You have to make a small tweak, otherwise that last number `x` will be left out."
 
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
+msgid "pages.MoreListFunctionsAndMethods.steps.sum_range_exercise.requirements"
+msgstr ""
+"Copy the three lines above, then replace `(insert_one_line_from_above)` with exactly one line from the long list of "
+"lines above. The middle line should still start with `y = `."
+
+#. https://futurecoder.io/course/#MoreListFunctionsAndMethods
 #. 
 #.     # __code0__:
 #.     x = 100
@@ -27940,6 +28372,12 @@ msgstr ""
 #. https://futurecoder.io/course/#MoreListFunctionsAndMethods
 msgid "pages.MoreListFunctionsAndMethods.title"
 msgstr "More List Functions and Methods"
+
+#. https://futurecoder.io/course/#MoreOnReturn
+msgid "pages.MoreOnReturn.steps.break_vs_return.requirements"
+msgstr ""
+"Run the same code as in the previous step, but replace the whole last line of the function (`return letter`) with just"
+" `break`."
 
 #. https://futurecoder.io/course/#MoreOnReturn
 msgid "pages.MoreOnReturn.steps.break_vs_return.text"
@@ -28217,6 +28655,10 @@ msgstr "You can't do maths with strings, only numbers."
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.NestedListAssignment.steps.nested_assignment_input
 msgid "pages.NestedListAssignment.steps.nested_assignment_input.hints.9.text"
 msgstr "How can you convert a string to a number?"
+
+#. https://futurecoder.io/course/#NestedListAssignment
+msgid "pages.NestedListAssignment.steps.nested_assignment_input.requirements"
+msgstr "Your function should modify the `board` argument. It doesn't need to `return` or `print` anything."
 
 #. https://futurecoder.io/course/#NestedListAssignment
 #. 
@@ -28825,6 +29267,10 @@ msgid "pages.OtherComparisonOperators.steps.comparing_strings.hints.5.text"
 msgstr "For this exercise you have to do basically that, but compare them instead."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
+msgid "pages.OtherComparisonOperators.steps.comparing_strings.requirements"
+msgstr "Run any code in the shell using either `<` or `>` on two strings."
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.steps.comparing_strings.text"
 msgstr ""
 "You can also use these operators to compare strings. If you arrange two strings in alphabetical order, the first one "
@@ -28936,6 +29382,10 @@ msgstr "For example, try `123 + 456`"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.OtherComparisonOperators.steps.introducing_less_than
 msgid "pages.OtherComparisonOperators.steps.introducing_less_than.hints.3.text"
 msgstr "For this exercise you have to do basically that, but compare them instead."
+
+#. https://futurecoder.io/course/#OtherComparisonOperators
+msgid "pages.OtherComparisonOperators.steps.introducing_less_than.requirements"
+msgstr "Run any code in the shell using either `<` or `>` on two numbers."
 
 #. https://futurecoder.io/course/#OtherComparisonOperators
 msgid "pages.OtherComparisonOperators.steps.introducing_less_than.text"
@@ -29109,6 +29559,10 @@ msgstr ""
 "You must call `double` to solve the problem."
 
 #. https://futurecoder.io/course/#ReturningValuesFromFunctions
+msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.requirements"
+msgstr "Write a program which defines a function called `quadruple` as described above."
+
+#. https://futurecoder.io/course/#ReturningValuesFromFunctions
 msgid "pages.ReturningValuesFromFunctions.steps.quadruple_exercise.text"
 msgstr ""
 "Here `double(number)` still returned `10`, but we didn't make use of that so it was lost. `number` is still `5`.\n"
@@ -29264,6 +29718,10 @@ msgid "pages.StoringCalculationsInVariables.steps.sentence_doesnt_change.output_
 msgstr ""
 "Goodbye World\n"
 "Goodbye World"
+
+#. https://futurecoder.io/course/#StoringCalculationsInVariables
+msgid "pages.StoringCalculationsInVariables.steps.sentence_doesnt_change.requirements"
+msgstr "Run a program consisting of the four lines in the previous step followed by the two lines here."
 
 #. https://futurecoder.io/course/#StoringCalculationsInVariables
 #. 
@@ -29576,6 +30034,14 @@ msgstr ""
 "__code1__"
 
 #. https://futurecoder.io/course/#TestingFunctions
+msgid "pages.TestingFunctions.steps.complete_quadruple_tests.requirements"
+msgstr ""
+"\n"
+"Type in the program above.\n"
+"Then change the last two lines by adding one argument to each `assert_equal` call to make the tests pass.\n"
+"Don't touch the function definitions."
+
+#. https://futurecoder.io/course/#TestingFunctions
 #. 
 #.     # __code0__:
 #.     def double(x):
@@ -29642,6 +30108,10 @@ msgstr ""
 "so you can always use it. Here's an example of using it for you to try out:\n"
 "\n"
 "__program_indented__"
+
+#. https://futurecoder.io/course/#TestingFunctions
+msgid "pages.TestingFunctions.steps.make_tests_fail.requirements"
+msgstr "Run the program from the previous step, but replace `x * 2` with `x * 3`. Keep the rest the same."
 
 #. https://futurecoder.io/course/#TestingFunctions
 msgid "pages.TestingFunctions.steps.make_tests_fail.text"
@@ -29725,6 +30195,10 @@ msgstr "Testing Functions"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheEqualityOperator.steps.equality_vs_assignment
 msgid "pages.TheEqualityOperator.steps.equality_vs_assignment.program"
 msgstr "print(1 + 2 = 3)"
+
+#. https://futurecoder.io/course/#TheEqualityOperator
+msgid "pages.TheEqualityOperator.steps.equality_vs_assignment.requirements"
+msgstr "Run the program from the previous step, but replace any of the `==` with just `=`."
 
 #. https://futurecoder.io/course/#TheEqualityOperator
 msgid "pages.TheEqualityOperator.steps.equality_vs_assignment.text"
@@ -30525,6 +30999,12 @@ msgstr ""
 "__code0__"
 
 #. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
+msgid "pages.UnderstandingProgramsWithSnoop.steps.print_tail_snoop.requirements"
+msgstr ""
+"Run the same program from the previous step, but use the `snoop` button instead of the 'Run' button. Copy the program "
+"again if you might have changed it."
+
+#. https://futurecoder.io/course/#UnderstandingProgramsWithSnoop
 msgid "pages.UnderstandingProgramsWithSnoop.steps.print_tail_snoop.text"
 msgstr ""
 "Programs are starting to get complicated!\n"
@@ -31023,6 +31503,10 @@ msgstr "You've got the `your_name = ` part right, now put a string (use quotes) 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingVariables.steps.name_assign
 msgid "pages.UsingVariables.steps.name_assign.messages.starts_with_space.text"
 msgstr "For this exercise, choose a name that doesn't start with a space."
+
+#. https://futurecoder.io/course/#UsingVariables
+msgid "pages.UsingVariables.steps.name_assign.requirements"
+msgstr "Run something similar to `word = 'Hello'`, but replace `word` with `your_name`."
 
 #. https://futurecoder.io/course/#UsingVariables
 #. 

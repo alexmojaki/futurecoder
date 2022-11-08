@@ -220,6 +220,9 @@ def disallowed_label(cls, i):
     return f"{disallowed(cls, i)}.label"
 
 
+def requirements(cls):
+    return f"{step_cls(cls)}.requirements"
+
 def code_bit(node_text):
     return f"code_bits.{node_text}"
 

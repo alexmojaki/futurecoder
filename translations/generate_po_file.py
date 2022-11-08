@@ -72,6 +72,9 @@ def main():
                 if message:
                     entry(t.disallowed_message(step, i), message)
 
+            if step.requirements and step.requirements != "hints":
+                text_entry(t.requirements(step), step.requirements)
+
             if step.auto_translate_program:
                 for _, node_text in t.get_code_bits(step.program):
                     code_bits[node_text].add(f"{search_link(step_msgid)}\n\n{step.program}")

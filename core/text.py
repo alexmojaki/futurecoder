@@ -516,11 +516,11 @@ class Step(ABC):
         result = cls.get_requirements()
         if cls.program_in_text:
             result.append(dict(type="program_in_text"))
-        if cls.requirements:
-            if cls.requirements == "hints":
-                assert cls.hints
-            else:
-                result.append(dict(type="custom", message=highlighted_markdown(cls.requirements)))
+        if cls.requirements == "hints":
+            assert cls.hints
+        elif cls.requirements:
+            translated = t.get(t.requirements(cls), cls.requirements)
+            result.append(dict(type="custom", message=highlighted_markdown(translated)))
 
         assert result, cls
 
