@@ -691,11 +691,7 @@ class ExerciseStep(Step):
 
     @classmethod
     def test_values(cls):
-        if cls.translated_tests and t.current_language not in (None, "en"):
-            tests = []
-        else:
-            tests = cls.tests
-
+        tests = cls.tests
         if isinstance(tests, dict):
             tests = tests.items()
 
@@ -708,6 +704,9 @@ class ExerciseStep(Step):
                 inputs = dict(zip(arg_names, inputs))
             inputs = deepcopy(inputs)
             inputs = t.translate_dict_keys(inputs)
+            if cls.translated_tests and t.current_language not in (None, "en"):
+                # TODO also translate inputs, handling lists and dicts
+                result = cls.solution(**inputs)
             yield inputs, result
 
         for _ in range(10):
