@@ -519,7 +519,7 @@ class Step(ABC):
         if cls.requirements == "hints":
             assert cls.hints
         elif cls.requirements:
-            translated = t.get(t.requirements(cls), cls.requirements)
+            translated = t.get(t.requirements(cls), cls.requirements.strip())
             result.append(dict(type="custom", message=highlighted_markdown(translated)))
 
         assert result, cls

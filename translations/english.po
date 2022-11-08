@@ -21655,9 +21655,8 @@ msgstr ""
 #. https://futurecoder.io/course/#DefiningFunctions
 msgid "pages.DefiningFunctions.steps.how_are_you.requirements"
 msgstr ""
-"\n"
 "Add `print(\"How are you?\")` after `print(f\"Hello {name}!\")` with the same indentation.\n"
-"Keep the two calls to `greet` after the definition as is.\n"
+"Keep the two calls to `greet` after the definition as is."
 
 #. https://futurecoder.io/course/#DefiningFunctions
 #. 
@@ -23292,12 +23291,10 @@ msgstr "'python add value at index'"
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.list_insert.requirements"
 msgstr ""
-"\n"
 "Run code similar to the three lines above, but change `nums.append(9)` to the right function/method call\n"
 "to put 9 right after the second element (2 in the example `nums = [1, 2, 3, 4, 5]`) instead of at the end.\n"
 "There's only one correct answer for what the middle line should be.\n"
-"You need to search online to figure out which function/method to use and how to use it.\n"
-"        "
+"You need to search online to figure out which function/method to use and how to use it."
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
 #. 
@@ -23356,10 +23353,9 @@ msgstr "'python biggest value in list'"
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.requirements"
 msgstr ""
-"\n"
 "Run code similar to `sum([21, 55, 4, 91, 62, 49])` but replace `sum` with the name of another specific function.\n"
 "There's only one correct answer for which function should be used. You need to search online to figure out which one.\n"
-"It's a commonly used built-in function in Python.\n"
+"It's a commonly used built-in function in Python."
 
 #. https://futurecoder.io/course/#HowToFindInformationWithGoogleAndMore
 msgid "pages.HowToFindInformationWithGoogleAndMore.steps.sum_list.text"
@@ -24260,11 +24256,9 @@ msgstr ""
 #. https://futurecoder.io/course/#IntroducingElif
 msgid "pages.IntroducingElif.steps.dna_example_with_elif.requirements"
 msgstr ""
-"\n"
 "Copy the program from the first step on this page, but replace the 4 `if` blocks there with the\n"
 "combination of `if` and `elif` blocks here. In other words, replace each of the last three `if`s with\n"
-"`elif`, but leave the first `if` alone.\n"
-"        "
+"`elif`, but leave the first `if` alone."
 
 #. https://futurecoder.io/course/#IntroducingElif
 #. 
@@ -24617,15 +24611,13 @@ msgstr "Alice went to lunch with Bob."
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingFstrings.steps.introduce_f_strings.requirements"
 msgstr ""
-"\n"
 "Run the program above, but replace this code inside the `print()`:\n"
 "\n"
 "__code0__\n"
 "\n"
 "with:\n"
 "\n"
-"__code1__\n"
-"        "
+"__code1__"
 
 #. https://futurecoder.io/course/#IntroducingFstrings
 #. 
@@ -26101,15 +26093,13 @@ msgstr "Introducing `not`"
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingOr.steps.ACommonMistake.requirements"
 msgstr ""
-"\n"
 "Run the program from the previous step, but replace:\n"
 "\n"
 "__code0__\n"
 "\n"
 "with:\n"
 "\n"
-"__code1__\n"
-"        "
+"__code1__"
 
 #. https://futurecoder.io/course/#IntroducingOr
 #. 
@@ -26303,14 +26293,13 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.name
 msgid "pages.IntroducingOr.steps.FurtherImprovement.requirements"
 msgstr ""
-"\n"
 "Run the program from the previous step, but replace:\n"
 "\n"
 "__code0__\n"
 "\n"
 "with:\n"
 "\n"
-"__code1__\n"
+"__code1__"
 
 #. https://futurecoder.io/course/#IntroducingOr
 #. 
@@ -27298,8 +27287,7 @@ msgstr ""
 "Run a single program consisting of the two parts above combined.\n"
 "They're separated so that you don't need to type in the `numbers = [...]` part,\n"
 "but typing in the nested loop part is best for learning.\n"
-"Make sure the indentation is correct.\n"
-"        "
+"Make sure the indentation is correct."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
 msgid "pages.LoopingOverNestedLists.steps.nested_list_loop_python_tutor.text"
@@ -27315,8 +27303,7 @@ msgstr ""
 "Run a single program consisting of the two parts above combined.\n"
 "They're separated so that you don't need to type in the `numbers = [...]` part,\n"
 "but typing in the nested loop part is best for learning.\n"
-"Make sure the indentation is correct.\n"
-"        "
+"Make sure the indentation is correct."
 
 #. https://futurecoder.io/course/#LoopingOverNestedLists
 #. 
@@ -27973,7 +27960,6 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.numbers
 msgid "pages.ModifyingWhileIterating.steps.make_copy.requirements"
 msgstr ""
-"\n"
 "Run the same program as above, but change the second line:\n"
 "\n"
 "__code0__\n"
@@ -27982,7 +27968,7 @@ msgstr ""
 "\n"
 "__code1__\n"
 "\n"
-"i.e. add `.copy()` after `numbers` but before `:`.\n"
+"i.e. add `.copy()` after `numbers` but before `:`."
 
 #. https://futurecoder.io/course/#ModifyingWhileIterating
 #. 
@@ -30036,7 +30022,6 @@ msgstr ""
 #. https://futurecoder.io/course/#TestingFunctions
 msgid "pages.TestingFunctions.steps.complete_quadruple_tests.requirements"
 msgstr ""
-"\n"
 "Type in the program above.\n"
 "Then change the last two lines by adding one argument to each `assert_equal` call to make the tests pass.\n"
 "Don't touch the function definitions."
