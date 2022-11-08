@@ -43,7 +43,7 @@ Then run the program again.
         """
 
         requirements = """
-Add `print("How are you?")` after `print("How are you?")` with the same indentation.
+Add `print("How are you?")` after `print(f"Hello {name}!")` with the same indentation.
 Keep the two calls to `greet` after the definition as is.
 """
         program_in_text = False
@@ -168,7 +168,7 @@ You can test your function by calling it after the function definition, but it's
 
         # The standard requirements for an ExerciseStep reveal too much at this stage,
         # where the user is literally practicing the basics of writing function definitions.
-        requirements = "Write a program which defines a function called `quadruple` as described above."
+        requirements = "Write a program which defines a function called `print_twice` as described above."
         @classmethod
         def get_requirements(cls):
             return []

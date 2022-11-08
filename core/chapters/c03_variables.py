@@ -98,7 +98,7 @@ Now make a variable called `your_name` whose value is another string.
 (The character `_` in `your_name` is called an *underscore*. Use it to separate words when you want a variable name containing multiple words. You can type it on most keyboards by pressing Shift and hyphen/dash/minus (`-`).)
         """
 
-        requirements = "Something similar to `word = 'Hello'`, but replace `word` with `your_name`."
+        requirements = "Run something similar to `word = 'Hello'`, but replace `word` with `your_name`."
 
         program = "your_name = 'Alex'"
 
