@@ -322,8 +322,7 @@ const Requirement = (
       text = requirement.message;
       break;
   }
-  text = <div dangerouslySetInnerHTML={{__html: text}}></div>;
-  return <div className="assistant-requirement">{text}</div>;
+  return <div className="assistant-requirement" dangerouslySetInnerHTML={{__html: text}}/>
 }
 
 const QuestionWizard = (
