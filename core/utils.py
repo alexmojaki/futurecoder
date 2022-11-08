@@ -332,15 +332,14 @@ def split_into_tokens_gen(s):
         start2, end2 = token_text_range(t2, linenos)
         assert start1 <= end1 <= start2 <= end2
         yield s[start1:end1]
-        if end1 < start2:
-            yield s[end1:start2]
+        yield s[end1:start2]
     start, end = token_text_range(tokens[-1], linenos)
     yield s[start:end]
-    if end < len(s):
-        yield s[end:]
+    yield s[end:]
 
 
 def split_into_tokens(s):
-    result = list(filter(None, split_into_tokens_gen(s)))
+    nonempty = filter(None, split_into_tokens_gen(s))
+    result = list(nonempty)
     assert "".join(result) == s
     return result
