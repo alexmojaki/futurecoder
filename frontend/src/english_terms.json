@@ -56,6 +56,8 @@
   "give_feedback_instructions": "Tell us what you like or don't like! If you're reporting a bug, give a detailed description of the problem:\n\n- What were you doing before and when the problem occurred?\n- What steps can someone take to reproduce it?\n- What do you observe happening, and what do you expect to happen instead?",
   "toc_instructions": "Below are links to different pages in the course. You can start anywhere and go in any order, and your progress on each page will be recorded.\n\nIf you're completely new to programming, or you have doubts, just start at the beginning and click Next as you finish each page.",
   "hints_progress": "Shown ${numHints} of ${totalHints} hints",
+  "hints_and_solution": "Hints and Solution",
+  "new": "New",
   "repeated_frames_description": "${name} at line ${lineno} (${count} times)",
   "click_to_expand": "Click to expand",
   "submission_status": "Assessment",

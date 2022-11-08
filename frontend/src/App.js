@@ -270,7 +270,7 @@ const Assistant = (assistant) => {
                  contentInnerClassName="assistant-content card-body"
                  trigger={<div className="card-header">
                    <FontAwesomeIcon icon={faListCheck}/> {terms.submission_status} &nbsp;
-                   {newMessages && <span className="badge badge-pill badge-danger">New</span>}
+                   {newMessages && <span className="badge badge-pill badge-danger">{terms.new}</span>}
                  </div>}
     >
       <Messages {...{messageSections}}/>
@@ -278,7 +278,7 @@ const Assistant = (assistant) => {
     <Collapsible classParentString="assistant-hints card"
                  contentInnerClassName="assistant-content card-body"
                  trigger={<div className="card-header">
-                   <FontAwesomeIcon icon={faLightbulb}/> {"Hints & Solution"}
+                   <FontAwesomeIcon icon={faLightbulb}/> {terms.hints_and_solution}
                  </div>}
     >
       <HintsAssistant {...assistant}/>

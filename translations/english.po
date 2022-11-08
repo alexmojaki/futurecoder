@@ -19597,6 +19597,9 @@ msgstr ""
 "Try to stop when you think you've revealed enough and can fill in the remaining gaps yourself. Then type a solution in"
 " the editor and run it. Your solution doesn't have to be the same as the one above."
 
+msgid "frontend.hints_and_solution"
+msgstr "Hints and Solution"
+
 msgid "frontend.hints_progress"
 msgstr "Shown ${numHints} of ${totalHints} hints"
 
@@ -19605,6 +19608,9 @@ msgstr "Loading..."
 
 msgid "frontend.login_or_sign_up"
 msgstr "Login / Sign up"
+
+msgid "frontend.new"
+msgstr "New"
 
 msgid "frontend.next"
 msgstr "Next"
