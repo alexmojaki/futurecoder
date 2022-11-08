@@ -105,10 +105,9 @@ def normalise_response(response, is_message, substep):
         assert set(section.keys()) == {"type", "messages"}
         assert section["type"] == "messages"
         assert len(section["messages"]) == 1
-        message = section["messages"][0]
+        message = response["message"] = section["messages"][0]
         expected = highlighted_markdown(substep.text)
         if getattr(substep, "expected_exact_match", True):
             assert expected == message
         else:
             assert expected in message
-        response["message"] = only(section["messages"])
