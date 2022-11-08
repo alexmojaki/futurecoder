@@ -206,41 +206,33 @@ const Messages = (
                 On the bright side, your code passed {section.messages.length} test(s)!
               </summary>
               <br/>
-              {section.messages.map((message, index) =>
-                <div key={index} >
-                  <div dangerouslySetInnerHTML={{__html: message}} className="assistant-passed-test"/>
-                  {index !== section.messages.length - 1 && <hr/>}
-                </div>
-              )}
+              <SectionMessages section={section}/>
             </details>
           </div>
         </div>
       } else if (section.type === "messages") {
-        return <div key={section.type}>{
-          section.messages.map((message, index) =>
-            <div key={index}>
-              <div dangerouslySetInnerHTML={{__html: message}} className="assistant-message"/>
-              {index !== section.messages.length - 1 && <hr/>}
-            </div>
-          )
-        }</div>;
+        return <div key={section.type}>
+          <SectionMessages section={section}/>
+        </div>;
       } else {
         return <div key={section.type}>
           <div className="alert alert-warning" role="alert">
             Found the following generic problem(s) in your code:
           </div>
-          {
-            section.messages.map((message, index) =>
-              <div key={index}>
-                <div dangerouslySetInnerHTML={{__html: message}} className="assistant-lint"/>
-                {index !== section.messages.length - 1 && <hr/>}
-              </div>
-            )
-          }
+          <SectionMessages section={section}/>
         </div>
       }
     }
   );
+}
+
+const SectionMessages = ({section}) => {
+  return section.messages.map((message, index) =>
+    <div key={index}>
+      <div dangerouslySetInnerHTML={{__html: message}} className={`assistant-${section.type}`}/>
+      {index !== section.messages.length - 1 && <hr/>}
+    </div>
+  )
 }
 
 const Assistant = (assistant) => {
