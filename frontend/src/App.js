@@ -198,32 +198,31 @@ const Messages = (
     return <p dangerouslySetInnerHTML={{__html: terms.submission_status_description}}/>;
   }
   return nonEmptySections.map((section) => {
-      if (section.type === "passed_tests") {
-        return <div key={section.type} className="card alert alert-success" style={{padding: 0}}>
-          <div className="card-body">
-            <details>
-              <summary>
-                On the bright side, your code passed {section.messages.length} test(s)!
-              </summary>
-              <br/>
-              <SectionMessages section={section}/>
-            </details>
-          </div>
+    if (section.type === "passed_tests") {
+      return <div key={section.type} className="card alert alert-success" style={{padding: 0}}>
+        <div className="card-body">
+          <details>
+            <summary>
+              On the bright side, your code passed {section.messages.length} test(s)!
+            </summary>
+            <br/>
+            <SectionMessages section={section}/>
+          </details>
         </div>
-      } else if (section.type === "messages") {
-        return <div key={section.type}>
-          <SectionMessages section={section}/>
-        </div>;
-      } else {
-        return <div key={section.type}>
-          <div className="alert alert-warning" role="alert">
-            Found the following generic problem(s) in your code:
-          </div>
-          <SectionMessages section={section}/>
+      </div>
+    } else if (section.type === "messages") {
+      return <div key={section.type}>
+        <SectionMessages section={section}/>
+      </div>;
+    } else {
+      return <div key={section.type}>
+        <div className="alert alert-warning" role="alert">
+          Found the following generic problem(s) in your code:
         </div>
-      }
+        <SectionMessages section={section}/>
+      </div>
     }
-  );
+  });
 }
 
 const SectionMessages = ({section}) => {
