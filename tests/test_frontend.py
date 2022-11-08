@@ -247,14 +247,14 @@ for i in range(len(things)):
     force_click(driver, driver.find_element_by_css_selector(".assistant-status .card-header"))
 
     # No messages visible
-    assert not driver.find_elements_by_class_name("assistant-message")
+    assert not driver.find_elements_by_class_name("assistant-messages-message")
 
     # Run code which triggers a message
     run_code(editor, run_button, "12345")
 
     # Now we have a message
     assert (
-        driver.find_element_by_css_selector(".assistant-message").text
+        driver.find_element_by_css_selector(".assistant-messages-message").text
         == """\
 Your code should start like this:
 things = '...'
@@ -276,7 +276,7 @@ print(i)
 
     # Now we have a message
     assert (
-        driver.find_element_by_css_selector(".assistant-message").text
+        driver.find_element_by_css_selector(".assistant-messages-message").text
         == "You're almost there! However, this prints all the indices, not just the first one."
     )
 
@@ -286,7 +286,7 @@ print(i)
     sleep(0.2)
 
     # Step has passed, message has disappeared
-    assert not driver.find_elements_by_class_name("assistant-message")
+    assert not driver.find_elements_by_class_name("assistant-messages-message")
 
     # Skip to zip_longest exercise
     skip_button.click()

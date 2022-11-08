@@ -228,7 +228,7 @@ const Messages = (
 const SectionMessages = ({section}) => {
   return section.messages.map((message, index) =>
     <div key={index}>
-      <div dangerouslySetInnerHTML={{__html: message}} className={`assistant-${section.type}`}/>
+      <div dangerouslySetInnerHTML={{__html: message}} className={`assistant-${section.type}-message`}/>
       {index !== section.messages.length - 1 && <hr/>}
     </div>
   )
