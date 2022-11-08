@@ -243,8 +243,8 @@ for i in range(len(things)):
         assert len(code.find_elements_by_class_name("solution-token-visible")) == 12 + i
         get_hint_button.click()
 
-    # Open submission status
-    force_click(driver, driver.find_element_by_css_selector(".assistant-status .card-header"))
+    # Open assessment
+    force_click(driver, driver.find_element_by_css_selector(".assistant-assessment .card-header"))
 
     # No messages visible
     assert not driver.find_elements_by_class_name("assistant-messages-message")

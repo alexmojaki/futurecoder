@@ -19499,6 +19499,12 @@ msgstr "Are you sure?"
 msgid "frontend.ask_for_help"
 msgstr "Ask for Help"
 
+msgid "frontend.assessment"
+msgstr "Assessment"
+
+msgid "frontend.assessment_description"
+msgstr "When you run code that doesn't pass the current step, this section will *sometimes* explain what's wrong."
+
 msgid "frontend.cancel"
 msgstr "Cancel"
 
@@ -19738,12 +19744,6 @@ msgstr "Skip step"
 
 msgid "frontend.stop"
 msgstr "Stop"
-
-msgid "frontend.submission_status"
-msgstr "Assessment"
-
-msgid "frontend.submission_status_description"
-msgstr "When you run code that doesn't pass the current step, this section will *sometimes* explain what's wrong."
 
 msgid "frontend.submit"
 msgstr "Submit"

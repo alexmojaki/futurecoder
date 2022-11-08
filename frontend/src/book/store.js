@@ -76,7 +76,7 @@ const initialState = {
   editorContent: "",
   specialMessages: [],
   pastSpecialMessages: [],
-  submissionStatusOpen: false,
+  assessmentOpen: false,
   assistant: {
     numHints: 0,
     messageSections: [],
@@ -381,10 +381,10 @@ export const showHint = makeAction(
   (state) => iset(state, "assistant.numHints", state.assistant.numHints + 1),
 );
 
-export const openSubmissionStatus = makeAction(
-  'OPEN_SUBMISSION_STATUS',
+export const openAssessment = makeAction(
+  'OPEN_ASSESSMENT',
   (state) => {
-    state = iset(state, "submissionStatusOpen", true);
+    state = iset(state, "assessmentOpen", true);
     state = iset(state, "assistant.lastSeenMessageSections", state.assistant.messageSections);
     return state;
   },
@@ -438,7 +438,7 @@ export const ranCode = makeAction(
       }
     } else {
       state = iset(state, "assistant.messageSections", value.message_sections);
-      if (state.submissionStatusOpen) {
+      if (state.assessmentOpen) {
         state = iset(state, "assistant.lastSeenMessageSections", value.message_sections);
       }
     }

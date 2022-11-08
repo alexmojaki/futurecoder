@@ -16,7 +16,7 @@ import {
   logEvent,
   movePage,
   moveStep,
-  openSubmissionStatus,
+  openAssessment,
   postCodeEntry,
   setDeveloperMode,
   setEditorContent,
@@ -195,7 +195,7 @@ const Messages = (
   }) => {
   const nonEmptySections = messageSections.filter(section => section?.messages?.length);
   if (!nonEmptySections.length) {
-    return <p dangerouslySetInnerHTML={{__html: terms.submission_status_description}}/>;
+    return <p dangerouslySetInnerHTML={{__html: terms.assessment_description}}/>;
   }
   return nonEmptySections.map((section) => {
     if (section.type === "passed_tests") {
@@ -264,12 +264,12 @@ const Assistant = (assistant) => {
         )}
       </ul>
     </Collapsible>
-    <Collapsible onOpening={openSubmissionStatus}
-                 onClosing={() => bookSetState("submissionStatusOpen", false)}
-                 classParentString="assistant-status card"
+    <Collapsible onOpening={openAssessment}
+                 onClosing={() => bookSetState("assessmentOpen", false)}
+                 classParentString="assistant-assessment card"
                  contentInnerClassName="assistant-content card-body"
                  trigger={<div className="card-header">
-                   <FontAwesomeIcon icon={faListCheck}/> {terms.submission_status} &nbsp;
+                   <FontAwesomeIcon icon={faListCheck}/> {terms.assessment} &nbsp;
                    {newMessages && <span className="badge badge-pill badge-danger">{terms.new}</span>}
                  </div>}
     >
