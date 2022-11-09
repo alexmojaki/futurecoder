@@ -30,7 +30,7 @@ export async function runCodeTask(entry, outputCallback, inputCallback) {
         interrupted: true,
         error: null,
         passed: false,
-        messageSections: [],
+        message_sections: [],
       }
     }
     throw e;
