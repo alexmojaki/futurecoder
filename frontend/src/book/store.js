@@ -17,7 +17,15 @@ import {languageConfig} from "../languages";
 export const disableFirebase = !!process.env.REACT_APP_DISABLE_FIREBASE;
 export const disableLogin = disableFirebase || !!process.env.REACT_APP_DISABLE_LOGIN;
 
-const {firebaseConfig} = languageConfig;
+const firebaseConfig = !process.env.REACT_APP_FIREBASE_STAGING ? languageConfig.firebaseConfig : {
+  apiKey: "AIzaSyC3S9l7lI3f3IiiWURO_AGmWBTLP0lKeC0",
+  authDomain: "futurecoder-staging.firebaseapp.com",
+  databaseURL: "https://futurecoder-staging-default-rtdb.firebaseio.com",
+  projectId: "futurecoder-staging",
+  storageBucket: "futurecoder-staging.appspot.com",
+  messagingSenderId: "513885780206",
+  appId: "1:513885780206:web:1144315640a5ba46c01bff"
+};
 const firebaseApp = !disableFirebase && firebase.initializeApp(firebaseConfig);
 
 let {databaseURL} = firebaseConfig;

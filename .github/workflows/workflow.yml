@@ -22,12 +22,13 @@ jobs:
       env:
         REACT_APP_SENTRY_DSN: https://37b1f01452b54bf4a0fe88656070998f@o871617.ingest.sentry.io/5824691
         REACT_APP_USE_FIREBASE_EMULATORS: '1'
+        REACT_APP_FIREBASE_STAGING: '1'
         FUTURECODER_LANGUAGE: en
       run: ./scripts/build.sh
     - name: Test
       env:
         FUTURECODER_LANGUAGE: en
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_TOKEN: '1//03I37hFeN4kn3CgYIARAAGAMSNwF-L9IrUvqofZbhOkS8YMtQBhw_bu2TpWYC5MHvnaZDsWPP0KJMypXPyoxogkl8A6p2RxPJQwQ'
       run: ./scripts/ci_test.sh
     - name: Upload test artifacts
       uses: actions/upload-artifact@v2
@@ -39,6 +40,6 @@ jobs:
       if: steps.build.outcome == 'success' && github.ref != 'refs/heads/master'
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
-        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FUTURECODER_IO }}'
-        projectId: futurecoder-io
+        firebaseServiceAccount: '{ "type": "service_account", "project_id": "futurecoder-staging", "private_key_id": "22b14cd951860ff430e5dbc8f594fb4bc8f6cdab", "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCfOtcinbvJ5t9J\nh1N3yA37BUBlm0UdibbcZkQhI2YI5oUogF//F8Q9giEGzKcGexM5Yz2mLKhkwGVl\n+j5H+C3EFqUUqtAHk7Lf/F7KnS54fjMz76MgxG80xFCxrZcD6jJerxKUroukIEsK\n7VO28oY16i2kWF8gFwCIeTPGbRcSi3Y+V9JbOaIkIafx7kOU4u0o6X/KymKmws6G\nW462VBfaOwF81cObDMDBUl2RvbDK7vw2XhyTd5ua/EGNv0gGNdnl3XNVYI+a81Ct\nM1GIxV0r77wHTpEHWkC6bUh+e5D5mom6NQkZo64jcQSKAtkUzSaVdeXkHdEJjEZC\no/xBGRjPAgMBAAECggEADn2ATnokOL912m8iPWhLPWjA734tz/5UUcJMuOdLxcuU\nmpb0JXa4ORC6iK/fE0vn9/T8Cz9NI74OfDVFra78GzgkVbklrUrXoGKLDc04CWcS\nqctJARZfOGIVJdYyQ/zwEIXGHxmzQ4Bc0+W9FI0FgaqJ9MbGAVmWhtTgzVHoI5vA\npPgDBYX6NTKUwcGcIAloapvGUSmBuNE2nt46TA8zR8UFCxSHogY030WQZJJrQhGY\nmwlmWcj4+yVP9DSzGKo4M6eEkfx/uoPT0SHED91Fev3lMre5j4Jcsw5DaAECnyS4\n6osyXDverxmoqHtDjULt8qZR6cpD1lj8j1rukX/ZYQKBgQDRt/UeiqeoGDiQMuii\nG8A6WKc8Ajt/H0NQTHiRxuK0KJWXQoo29rVIRTWYdhiryXn5Ox6IqHyzdR8n/45M\nS2MchwJ5flztePZAfAL1bT5VZ4wS9XvXmg6kqPVDztEM0b/tc8pYbu7vFaa3t1KZ\nWg5OHQG4ujSzB1ov3kZk1rNzIwKBgQDCXoYShoaoAsbXWGrZ5Alwia7ovm+EI0XT\nukeNZ+jrNPs6feBLSZtWmNpWcYtFtudrLJxn/5zesxJdT35y1C2HuH4//9UHpd7q\njKKonUXmRmP+5EirCYr08kO3fzrM8tPpZgEOx/hw+dvS04zgwjGSsZ4L2YyAtT13\nYteV2hFkZQKBgQC8dgHS1mtfxZRfEUC5HRMb27s9VAw/asrFCFN5PS9REv+LFIK8\nbevu7DMDtWzqQ35XGGeSC0c0xdWfzioEKeMBKdpxb7r2tLMms8q83tUbTpg0GWKX\nF5x9IFB4BQ0b5goBywJVgis5s01E33tcz+73B14asUrWb47+YVMFH2PX3QKBgQCx\nX0z+TuFHJPGLxtYLbPvoRNzm7BIcBYxNQOrW8gIt0jWJFSG/0rX8+pQU2pz7y4O3\n3AgHJ85htAyINmjwJQw/lG8xvCcNSaL5a8lsEcmd8JKEIpLl8llqWkLNiz9/lAEq\nNrm0YWwovPqLlB41ZUGT2p6dtbNwKPSkpACUcWH5uQKBgGO1hVeWdVgKESi4eDZF\nRiY7i/RvsVSz6FY4vOB8gjGFuPkucPnDQEczFU64HbqiVqqv50ceGm7CkYWekCbh\nWlqvH/ptmKt71taSi2hbNoinFqWoU2Wqs2n2JFAzFNrS8m2KYjshVK9/ycllGIFr\nYXCZv1gcS+vONiEt5lzPK/We\n-----END PRIVATE KEY-----\n", "client_email": "firebase-adminsdk-r0lzu@futurecoder-staging.iam.gserviceaccount.com", "client_id": "109050011633679213214", "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs", "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-r0lzu%40futurecoder-staging.iam.gserviceaccount.com" }'
+        projectId: futurecoder-staging
         channelId: ${{ github.ref }}
