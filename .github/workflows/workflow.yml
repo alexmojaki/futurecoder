@@ -22,6 +22,7 @@ jobs:
       env:
         REACT_APP_SENTRY_DSN: https://37b1f01452b54bf4a0fe88656070998f@o871617.ingest.sentry.io/5824691
         REACT_APP_USE_FIREBASE_EMULATORS: '1'
+        REACT_APP_FIREBASE_STAGING: '1'
         FUTURECODER_LANGUAGE: en
       run: ./scripts/build.sh
     - name: Test
