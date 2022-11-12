@@ -215,9 +215,12 @@ export const showCodeResult = ({birdseyeUrl, passed}) => {
 }
 
 function showInternalErrorOutput(message) {
+  let instructions = process.env.REACT_APP_SENTRY_DSN ?
+    terms.report_error_instructions :
+    terms.report_error_instructions_no_feedback;
   showOutputParts([
     {text: `\n${message.trim()}\n\n`, type: 'internal_error'},
-    {text: terms.report_error_instructions, type: 'internal_error_explanation'},
+    {text: instructions, type: 'internal_error_explanation'},
     {text: '>>> ', type: 'shell_prompt'},
   ]);
 }

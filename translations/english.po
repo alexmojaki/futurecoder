@@ -19843,6 +19843,14 @@ msgstr ""
 "- Try using a different browser.\n"
 "- Give feedback from the top-left menu."
 
+msgid "frontend.report_error_instructions_no_feedback"
+msgstr ""
+"Oops, something went wrong! Here's what you can do:\n"
+"\n"
+"- Try running the code again.\n"
+"- Reload/refresh the page and try again.\n"
+"- Try using a different browser."
+
 msgid "frontend.requirements"
 msgstr "Requirements"
 

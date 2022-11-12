@@ -19,6 +19,7 @@
   "did_you_mean": "Did you mean...",
   "similar_frames_skipped": "Similar frames skipped:",
   "report_error_instructions": "Oops, something went wrong! The error has been reported. Here's what you can do:\n\n- Try running the code again.\n- Reload/refresh the page and try again.\n- Try using a different browser.\n- Give feedback from the top-left menu.",
+  "report_error_instructions_no_feedback": "Oops, something went wrong! Here's what you can do:\n\n- Try running the code again.\n- Reload/refresh the page and try again.\n- Try using a different browser.",
   "click_for_error_details": "Click for error details",
   "give_feedback": "Give feedback",
   "feedback_email_placeholder": "Email (optional)",
