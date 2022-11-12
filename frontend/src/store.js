@@ -42,7 +42,8 @@ if (sentryDsn) {
     normalizeDepth: 5,
     beforeBreadcrumb(breadcrumb, hint) {
       const {message} = breadcrumb;
-      if (message.includes("prev state") || message.includes("next state")) {
+      // Exclude console logging of redux actions
+      if (message.includes("prev state") || message.includes("next state") || message.includes("%c action  ")) {
         return null;
       }
       return breadcrumb;
