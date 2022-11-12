@@ -403,8 +403,6 @@ to the top of your code."""
 
     no_more_test_inputs = "No more test inputs - solution should have finished by now"
 
-    internal_error = "Internal error"
-
     syntax_error_at_line = "at line"
 
 

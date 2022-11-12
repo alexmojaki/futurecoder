@@ -294,7 +294,7 @@ def internal_error_result(e: Exception):
     return dict(
         error=dict(
             details=safe_traceback(e),
-            title=f"{t.Terms.internal_error}: {truncate_string(exception_string, 100)}",
+            title=f"{truncate_string(exception_string, 100)}",
             sentry_event=get_exception_event(),
         ),
     )
