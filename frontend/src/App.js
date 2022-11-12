@@ -595,7 +595,7 @@ const MenuPopup = ({user}) =>
             <SettingsModal user={user}/>
           </Popup>
         </p>
-        <p>
+        {process.env.REACT_APP_SENTRY_DSN && <p>
           <Popup
             trigger={
               <button className="btn btn-success">
@@ -608,7 +608,7 @@ const MenuPopup = ({user}) =>
           >
             {close => <FeedbackModal close={close}/>}
           </Popup>
-        </p>
+        </p>}
         {
           otherVisibleLanguages.map(lang =>
             <p key={lang.code}>
