@@ -1,43 +1,15 @@
 import React from 'react';
 import {useInput} from "./frontendlib/HookInput";
-import Popup from "reactjs-popup";
-import {bookSetState, bookState} from "./book/store";
+import {bookState} from "./book/store";
 import axios from "axios";
 import * as terms from "./terms.json"
 import * as Sentry from "@sentry/react";
 import {uuidv4} from "sync-message";
 
 
-export const FeedbackModal = ({close, error}) => {
-  let initialTitle, instructions;
-  if (error) {
-    initialTitle = error.title;
-    instructions = <>
-      <h3>{terms.report_error}</h3>
-      <p>{terms.report_error_instructions}</p>
-      <details>
-        <summary>{terms.click_for_error_details}</summary>
-        <pre>{error.details}</pre>
-      </details>
-
-    </>
-  } else {
-    initialTitle = "";
-    instructions = <>
-      <h3>{terms.give_feedback}</h3>
-      <div dangerouslySetInnerHTML={{__html: terms.give_feedback_instructions}}/>
-    </>
-  }
+export const FeedbackModal = ({close}) => {
   const email = useInput(bookState.user.email || "", {
     placeholder: terms.feedback_email_placeholder,
-    type: 'text',
-    className: 'form-control',
-    style: {
-      width: "100%",
-    },
-  });
-  const title = useInput(initialTitle, {
-    placeholder: terms.title,
     type: 'text',
     className: 'form-control',
     style: {
@@ -54,18 +26,17 @@ export const FeedbackModal = ({close, error}) => {
   }, 'textarea')
   return (
     <div style={{margin: "1em"}}>
-      {instructions}
+      <h3>{terms.give_feedback}</h3>
+      <div dangerouslySetInnerHTML={{__html: terms.give_feedback_instructions}}/>
 
       <div>{email.input}</div>
-      <br/>
-      <div>{title.input}</div>
       <br/>
       <div>{description.input}</div>
       <br/>
       <div>
         <button
           className="btn btn-primary"
-          disabled={!(title.value && description.value)}
+          disabled={!description.value}
           onClick={() => {
             // Get the last actual event (if any) before we override it now
             const lastEvent = Sentry.lastEventId();
@@ -77,7 +48,6 @@ export const FeedbackModal = ({close, error}) => {
             });
             const comments = `${email.value ? `Email: ${email.value}\n` : ''}
 ${lastEvent ? `Last event: ${lastEvent}\n` : ''}
-${title.value.trim()}
 
 ${description.value.trim()}`;
             axios.post(
@@ -131,22 +101,6 @@ ${description.value.trim()}`;
       </div>
     </div>
   );
-};
-
-
-export const ErrorModal = ({error}) => {
-  if (!error) {
-    return null;
-  }
-  return (
-    <Popup
-      open={true}
-      onClose={() => bookSetState("error", null)}
-      contentStyle={feedbackContentStyle}
-    >
-      {close => <FeedbackModal close={close} error={error}/>}
-    </Popup>
-  )
 };
 
 

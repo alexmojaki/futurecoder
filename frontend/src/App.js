@@ -47,7 +47,7 @@ import {
 import {HintsAssistant} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import {ErrorModal, feedbackContentStyle, FeedbackModal} from "./Feedback";
+import {feedbackContentStyle, FeedbackModal} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import languageIcon from "./img/language.png";
 import {interrupt, runCode, terminalRef} from "./RunCode";
@@ -434,7 +434,6 @@ class AppComponent extends React.Component {
       questionWizard,
       pages,
       user,
-      error,
       prediction,
       route,
       previousRoute,
@@ -525,8 +524,6 @@ class AppComponent extends React.Component {
          href={"#" + (!fullIde ? "ide" : (specialHash(previousRoute) ? previousRoute : page.slug))}>
         <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
       </a>
-
-      <ErrorModal error={error}/>
 
       <>
         {specialMessages.map((message, index) =>

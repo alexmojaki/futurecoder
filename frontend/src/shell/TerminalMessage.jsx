@@ -28,7 +28,7 @@ export default class TerminalMessage extends Component {
 
     let color = "white";
     if (typeof content === "object") {
-      if (["stderr", "traceback", "syntax_error"].includes(content.type)) {
+      if (["stderr", "traceback", "syntax_error", "js_error"].includes(content.type)) {
         color = "red";
       }
       content = content.text;
