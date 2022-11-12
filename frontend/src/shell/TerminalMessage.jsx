@@ -26,6 +26,10 @@ export default class TerminalMessage extends Component {
       </div>
     }
 
+    if (content.type === "internal_error_explanation") {
+      return <div dangerouslySetInnerHTML={{__html: content.text}}/>
+    }
+
     let color = "white";
     if (typeof content === "object") {
       if (["stderr", "traceback"].includes(content.type) || content.type.includes("error")) {

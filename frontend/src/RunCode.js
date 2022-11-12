@@ -16,6 +16,7 @@ import React from "react";
 import * as Sentry from "@sentry/react";
 import {wrapAsync} from "./frontendlib/sentry";
 import {taskClient, runCodeTask} from "./TaskClient";
+import * as terms from "./terms.json";
 
 export const terminalRef = React.createRef();
 
@@ -39,10 +40,7 @@ export async function runCode(entry) {
   try {
     await _runCode(entry)
   } catch (e) {
-    showOutputParts([
-      {text: `\n${e.name}: ${e.message}\n`, type: 'js_error'},
-      {text: '>>> ', type: 'shell_prompt'},
-    ]);
+    showInternalErrorOutput(`${e.name}: ${e.message}`);
     const {name, message, stack} = e;
     bookSetState("error", {name, message, stack});
     Sentry.captureException(e);
@@ -138,10 +136,7 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
     Sentry.captureEvent(error.sentry_event);
     delete error.sentry_event;
     bookSetState("error", {...error});
-    showOutputParts([
-      {text: `\n${error.title}\n`, type: 'internal_python_error'},
-      {text: '>>> ', type: 'shell_prompt'},
-    ]);
+    showInternalErrorOutput(error.title);
     return;
   }
 
@@ -217,4 +212,12 @@ export const showCodeResult = ({birdseyeUrl, passed}) => {
   if (birdseyeUrl) {
     window.open(birdseyeUrl);
   }
+}
+
+function showInternalErrorOutput(message) {
+  showOutputParts([
+    {text: `\n${message.trim()}\n\n`, type: 'internal_error'},
+    {text: terms.report_error_instructions, type: 'internal_error_explanation'},
+    {text: '>>> ', type: 'shell_prompt'},
+  ]);
 }
