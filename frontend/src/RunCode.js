@@ -138,6 +138,10 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
     Sentry.captureEvent(error.sentry_event);
     delete error.sentry_event;
     bookSetState("error", {...error});
+    showOutputParts([
+      {text: `\n${error.title}\n`, type: 'internal_python_error'},
+      {text: '>>> ', type: 'shell_prompt'},
+    ]);
     return;
   }
 
