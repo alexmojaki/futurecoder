@@ -427,6 +427,32 @@ const CourseText = (
 
 class AppComponent extends React.Component {
   render() {
+    if (this.props.route === "toc") {
+      return <TableOfContents/>
+    }
+
+    return <div className="book-container">
+      <NavBar user={this.props.user}/>
+      <AppMain {...this.props}/>
+    </div>
+  }
+}
+
+function NavBar({user}) {
+  return <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <span className="nav-item custom-popup">
+          <MenuPopup user={user}/>
+        </span>
+    <span className="nav-item navbar-text">
+          <HeaderLoginInfo email={user.email}/>
+        </span>
+    <a className="nav-item nav-link" href="#toc">
+      <FontAwesomeIcon icon={faListOl}/> {terms.table_of_contents}
+    </a>
+  </nav>;
+}
+
+function AppMain(props) {
     const {
       editorContent,
       assistant,
@@ -438,10 +464,7 @@ class AppComponent extends React.Component {
       route,
       previousRoute,
       running,
-    } = this.props;
-    if (route === "toc") {
-      return <TableOfContents/>
-    }
+    } = props;
     const isQuestionWizard = route === "question";
     const fullIde = route === "ide";
 
@@ -466,19 +489,8 @@ class AppComponent extends React.Component {
     }
 
     const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
-    return <div className="book-container">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <span className="nav-item custom-popup">
-          <MenuPopup user={user}/>
-        </span>
-        <span className="nav-item navbar-text">
-          <HeaderLoginInfo email={user.email}/>
-        </span>
-        <a className="nav-item nav-link" href="#toc">
-          <FontAwesomeIcon icon={faListOl}/> {terms.table_of_contents}
-        </a>
-      </nav>
 
+    return <>
       {!fullIde &&
       <div className="book-text markdown-body">
         {isQuestionWizard ?
@@ -536,8 +548,7 @@ class AppComponent extends React.Component {
           </Popup>
         )}
       </>
-    </div>
-  }
+    </>;
 }
 
 const StepButton = ({delta, label}) =>
