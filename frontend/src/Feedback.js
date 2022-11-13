@@ -9,6 +9,8 @@ import Popup from "reactjs-popup";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBug} from "@fortawesome/free-solid-svg-icons";
 
+const SENTRY_DSN = process.env.REACT_APP_SENTRY_DSN;
+
 
 const FeedbackModal = ({close}) => {
   const email = useInput(bookState.user.email || "", {
@@ -63,7 +65,7 @@ ${description.value.trim()}`;
               },
               {
                 headers: {
-                  Authorization: 'DSN ' + process.env.REACT_APP_SENTRY_DSN,
+                  Authorization: 'DSN ' + SENTRY_DSN,
                 }
               }
             );
@@ -114,7 +116,7 @@ const feedbackContentStyle = {
 }
 
 export function FeedbackMenuButton() {
-  if (!process.env.REACT_APP_SENTRY_DSN) {
+  if (!SENTRY_DSN) {
     return null;
   }
   return <p>
