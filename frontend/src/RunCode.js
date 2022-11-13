@@ -3,10 +3,10 @@ import {
   bookState,
   currentStep,
   currentStepName,
-  postCodeEntry,
   loadedPromise,
   logEvent,
   moveStep,
+  postCodeEntry,
   ranCode
 } from "./book/store";
 import _ from "lodash";
@@ -15,8 +15,7 @@ import {animateScroll} from "react-scroll";
 import React from "react";
 import * as Sentry from "@sentry/react";
 import {wrapAsync} from "./frontendlib/sentry";
-import {taskClient, runCodeTask} from "./TaskClient";
-import * as terms from "./terms.json";
+import {runCodeTask, taskClient} from "./TaskClient";
 
 export const terminalRef = React.createRef();
 
@@ -215,12 +214,9 @@ export const showCodeResult = ({birdseyeUrl, passed}) => {
 }
 
 function showInternalErrorOutput(message) {
-  let instructions = process.env.REACT_APP_SENTRY_DSN ?
-    terms.report_error_instructions :
-    terms.report_error_instructions_no_feedback;
   showOutputParts([
     {text: `\n${message.trim()}\n\n`, type: 'internal_error'},
-    {text: instructions, type: 'internal_error_explanation'},
+    {text: '', type: 'internal_error_explanation'},
     {text: '>>> ', type: 'shell_prompt'},
   ]);
 }

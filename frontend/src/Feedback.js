@@ -8,6 +8,7 @@ import {uuidv4} from "sync-message";
 import Popup from "reactjs-popup";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBug} from "@fortawesome/free-solid-svg-icons";
+import _ from "lodash";
 
 const SENTRY_DSN = process.env.REACT_APP_SENTRY_DSN;
 
@@ -133,4 +134,24 @@ export function FeedbackMenuButton() {
       {close => <FeedbackModal close={close}/>}
     </Popup>
   </p>;
+}
+
+export function InternalError({ranCode}) {
+  const start = _.template(terms.internal_error_start)({
+    maybeErrorReported: SENTRY_DSN ? terms.error_has_been_reported : '',
+  });
+  const suggestions = [];
+  if (ranCode) {
+    suggestions.push(terms.try_running_code_again);
+  }
+  suggestions.push(terms.refresh_and_try_again, terms.try_using_different_browser);
+  if (SENTRY_DSN) {
+    suggestions.push(terms.give_feedback_from_menu);
+  }
+  return <div>
+    <p>{start}</p>
+    <ul>
+      {suggestions.map(suggestion => <li key={suggestion}>{suggestion}</li>)}
+    </ul>
+  </div>;
 }
