@@ -47,7 +47,7 @@ import {
 import {HintsAssistant} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import {feedbackContentStyle, FeedbackModal} from "./Feedback";
+import {FeedbackMenuButton} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import languageIcon from "./img/language.png";
 import {interrupt, runCode, terminalRef} from "./RunCode";
@@ -604,20 +604,7 @@ const MenuPopup = ({user}) =>
             <SettingsModal user={user}/>
           </Popup>
         </p>
-        {process.env.REACT_APP_SENTRY_DSN && <p>
-          <Popup
-            trigger={
-              <button className="btn btn-success">
-                <FontAwesomeIcon icon={faBug}/> {terms.feedback}
-              </button>
-            }
-            modal
-            nested
-            contentStyle={feedbackContentStyle}
-          >
-            {close => <FeedbackModal close={close}/>}
-          </Popup>
-        </p>}
+        <FeedbackMenuButton/>
         {
           otherVisibleLanguages.map(lang =>
             <p key={lang.code}>

@@ -5,9 +5,12 @@ import axios from "axios";
 import * as terms from "./terms.json"
 import * as Sentry from "@sentry/react";
 import {uuidv4} from "sync-message";
+import Popup from "reactjs-popup";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBug} from "@fortawesome/free-solid-svg-icons";
 
 
-export const FeedbackModal = ({close}) => {
+const FeedbackModal = ({close}) => {
   const email = useInput(bookState.user.email || "", {
     placeholder: terms.feedback_email_placeholder,
     type: 'text',
@@ -103,10 +106,29 @@ ${description.value.trim()}`;
   );
 };
 
-
-export const feedbackContentStyle = {
+const feedbackContentStyle = {
   maxHeight: "90vh",
   overflow: "auto",
   background: "white",
   border: "solid 1px lightgray",
+}
+
+export function FeedbackMenuButton() {
+  if (!process.env.REACT_APP_SENTRY_DSN) {
+    return null;
+  }
+  return <p>
+    <Popup
+      trigger={
+        <button className="btn btn-success">
+          <FontAwesomeIcon icon={faBug}/> {terms.feedback}
+        </button>
+      }
+      modal
+      nested
+      contentStyle={feedbackContentStyle}
+    >
+      {close => <FeedbackModal close={close}/>}
+    </Popup>
+  </p>;
 }
