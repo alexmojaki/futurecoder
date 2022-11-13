@@ -452,46 +452,46 @@ function NavBar({user}) {
   </nav>;
 }
 
-function AppMain(props) {
-    const {
-      editorContent,
-      assistant,
-      specialMessages,
-      questionWizard,
-      pages,
-      user,
-      prediction,
-      route,
-      previousRoute,
-      running,
-    } = props;
-    const isQuestionWizard = route === "question";
-    const fullIde = route === "ide";
+function AppMain(
+  {
+    editorContent,
+    assistant,
+    specialMessages,
+    questionWizard,
+    pages,
+    user,
+    prediction,
+    route,
+    previousRoute,
+    running,
+  }) {
+  const isQuestionWizard = route === "question";
+  const fullIde = route === "ide";
 
-    const page = currentPage();
-    const step = currentStep();
+  const page = currentPage();
+  const step = currentStep();
 
-    let showEditor, showSnoop, showPythonTutor, showBirdseye, showQuestionButton;
-    if (fullIde || isQuestionWizard) {
-      showEditor = true;
-      showSnoop = true;
-      showPythonTutor = true;
-      showBirdseye = true;
-      showQuestionButton = !(isQuestionWizard || previousRoute === "question");
-    } else if (step.text.length) {
-      showEditor = page.index >= pages.WritingPrograms.index;
-      const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
-      showSnoop = page.index > snoopPageIndex ||
-        (page.index === snoopPageIndex && step.index >= 1);
-      showPythonTutor = page.index >= pages.UnderstandingProgramsWithPythonTutor.index;
-      showBirdseye = page.index >= pages.IntroducingBirdseye.index;
-      showQuestionButton = page.index > pages.IntroducingBirdseye.index;
-    }
+  let showEditor, showSnoop, showPythonTutor, showBirdseye, showQuestionButton;
+  if (fullIde || isQuestionWizard) {
+    showEditor = true;
+    showSnoop = true;
+    showPythonTutor = true;
+    showBirdseye = true;
+    showQuestionButton = !(isQuestionWizard || previousRoute === "question");
+  } else if (step.text.length) {
+    showEditor = page.index >= pages.WritingPrograms.index;
+    const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
+    showSnoop = page.index > snoopPageIndex ||
+      (page.index === snoopPageIndex && step.index >= 1);
+    showPythonTutor = page.index >= pages.UnderstandingProgramsWithPythonTutor.index;
+    showBirdseye = page.index >= pages.IntroducingBirdseye.index;
+    showQuestionButton = page.index > pages.IntroducingBirdseye.index;
+  }
 
-    const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
+  const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
 
-    return <>
-      {!fullIde &&
+  return <>
+    {!fullIde &&
       <div className="book-text markdown-body">
         {isQuestionWizard ?
           <QuestionWizard {...questionWizard}/>
@@ -509,46 +509,44 @@ function AppMain(props) {
         }
       </div>
 
-      }
+    }
 
-      <EditorButtons {...{
-        showBirdseye,
-        showEditor,
-        showSnoop,
-        showPythonTutor,
-        showQuestionButton,
-        disabled: cantUseEditor,
-        running,
-      }}/>
+    <EditorButtons {...{
+      showBirdseye,
+      showEditor,
+      showSnoop,
+      showPythonTutor,
+      showQuestionButton,
+      disabled: cantUseEditor,
+      running,
+    }}/>
 
-      <div className={`ide ide-${fullIde ? 'full' : 'half'}`}>
-        <div className="editor-and-terminal">
-          {showEditor &&
-           <Editor value={editorContent} readOnly={cantUseEditor}/>
-          }
-          <div className="terminal" style={{height: showEditor ? undefined : "100%"}}>
-            <Shell/>
-          </div>
+    <div className={`ide ide-${fullIde ? 'full' : 'half'}`}>
+      <div className="editor-and-terminal">
+        {showEditor &&
+          <Editor value={editorContent} readOnly={cantUseEditor}/>
+        }
+        <div className="terminal" style={{height: showEditor ? undefined : "100%"}}>
+          <Shell/>
         </div>
       </div>
+    </div>
 
-      <a className="btn btn-primary full-ide-button"
-         href={"#" + (!fullIde ? "ide" : (specialHash(previousRoute) ? previousRoute : page.slug))}>
-        <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
-      </a>
+    <a className="btn btn-primary full-ide-button"
+       href={"#" + (!fullIde ? "ide" : (specialHash(previousRoute) ? previousRoute : page.slug))}>
+      <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
+    </a>
 
-      <>
-        {specialMessages.map((message, index) =>
-          <Popup
-            key={index}
-            open={true}
-            onClose={() => closeSpecialMessage(index)}
-          >
-            <SpecialMessageModal message={message}/>
-          </Popup>
-        )}
-      </>
-    </>;
+    {specialMessages.map((message, index) =>
+      <Popup
+        key={index}
+        open={true}
+        onClose={() => closeSpecialMessage(index)}
+      >
+        <SpecialMessageModal message={message}/>
+      </Popup>
+    )}
+  </>;
 }
 
 const StepButton = ({delta, label}) =>
