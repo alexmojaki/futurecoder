@@ -28,7 +28,7 @@ export default class TerminalMessage extends Component {
     }
 
     if (content.type === "internal_error_explanation") {
-      return <InternalError ranCode/>
+      return <InternalError ranCode canGiveFeedback/>
     }
 
     let color = "white";

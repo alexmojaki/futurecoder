@@ -136,7 +136,7 @@ export function FeedbackMenuButton() {
   </p>;
 }
 
-export function InternalError({ranCode}) {
+export function InternalError({ranCode, canGiveFeedback}) {
   const start = _.template(terms.internal_error_start)({
     maybeErrorReported: SENTRY_DSN ? terms.error_has_been_reported : '',
   });
@@ -145,7 +145,7 @@ export function InternalError({ranCode}) {
     suggestions.push(terms.try_running_code_again);
   }
   suggestions.push(terms.refresh_and_try_again, terms.try_using_different_browser);
-  if (SENTRY_DSN) {
+  if (SENTRY_DSN && canGiveFeedback) {
     suggestions.push(terms.give_feedback_from_menu);
   }
   return <div>
@@ -153,5 +153,22 @@ export function InternalError({ranCode}) {
     <ul>
       {suggestions.map(suggestion => <li key={suggestion}>{suggestion}</li>)}
     </ul>
+  </div>;
+}
+
+export function ErrorBoundary({children, canGiveFeedback}) {
+  return <Sentry.ErrorBoundary fallback={
+    ({error}) => <ErrorFallback {...{error, canGiveFeedback}}/>
+  }>
+    {children}
+  </Sentry.ErrorBoundary>;
+}
+
+function ErrorFallback({error, canGiveFeedback}) {
+  return <div style={{margin: "4em"}}>
+    <div className="alert alert-danger" role="alert">
+      <pre><code>{error.toString()}</code></pre>
+    </div>
+    <InternalError canGiveFeedback={canGiveFeedback}/>
   </div>;
 }

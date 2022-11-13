@@ -47,7 +47,7 @@ import {
 import {HintsAssistant} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import {FeedbackMenuButton} from "./Feedback";
+import {ErrorBoundary, FeedbackMenuButton} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import languageIcon from "./img/language.png";
 import {interrupt, runCode, terminalRef} from "./RunCode";
@@ -433,7 +433,9 @@ class AppComponent extends React.Component {
 
     return <div className="book-container">
       <NavBar user={this.props.user}/>
-      <AppMain {...this.props}/>
+      <ErrorBoundary canGiveFeedback>
+        <AppMain {...this.props}/>
+      </ErrorBoundary>
     </div>
   }
 }
