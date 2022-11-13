@@ -47,7 +47,7 @@ import {
 import {HintsAssistant} from "./Hints";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import {feedbackContentStyle, FeedbackModal} from "./Feedback";
+import {ErrorBoundary, FeedbackMenuButton} from "./Feedback";
 import birdseyeIcon from "./img/birdseye_icon.png";
 import languageIcon from "./img/language.png";
 import {interrupt, runCode, terminalRef} from "./RunCode";
@@ -427,59 +427,73 @@ const CourseText = (
 
 class AppComponent extends React.Component {
   render() {
-    const {
-      editorContent,
-      assistant,
-      specialMessages,
-      questionWizard,
-      pages,
-      user,
-      prediction,
-      route,
-      previousRoute,
-      running,
-    } = this.props;
-    if (route === "toc") {
+    if (this.props.route === "toc") {
       return <TableOfContents/>
     }
-    const isQuestionWizard = route === "question";
-    const fullIde = route === "ide";
 
-    const page = currentPage();
-    const step = currentStep();
-
-    let showEditor, showSnoop, showPythonTutor, showBirdseye, showQuestionButton;
-    if (fullIde || isQuestionWizard) {
-      showEditor = true;
-      showSnoop = true;
-      showPythonTutor = true;
-      showBirdseye = true;
-      showQuestionButton = !(isQuestionWizard || previousRoute === "question");
-    } else if (step.text.length) {
-      showEditor = page.index >= pages.WritingPrograms.index;
-      const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
-      showSnoop = page.index > snoopPageIndex ||
-        (page.index === snoopPageIndex && step.index >= 1);
-      showPythonTutor = page.index >= pages.UnderstandingProgramsWithPythonTutor.index;
-      showBirdseye = page.index >= pages.IntroducingBirdseye.index;
-      showQuestionButton = page.index > pages.IntroducingBirdseye.index;
-    }
-
-    const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
     return <div className="book-container">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <NavBar user={this.props.user}/>
+      <ErrorBoundary canGiveFeedback>
+        <AppMain {...this.props}/>
+      </ErrorBoundary>
+    </div>
+  }
+}
+
+function NavBar({user}) {
+  return <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <span className="nav-item custom-popup">
           <MenuPopup user={user}/>
         </span>
-        <span className="nav-item navbar-text">
+    <span className="nav-item navbar-text">
           <HeaderLoginInfo email={user.email}/>
         </span>
-        <a className="nav-item nav-link" href="#toc">
-          <FontAwesomeIcon icon={faListOl}/> {terms.table_of_contents}
-        </a>
-      </nav>
+    <a className="nav-item nav-link" href="#toc">
+      <FontAwesomeIcon icon={faListOl}/> {terms.table_of_contents}
+    </a>
+  </nav>;
+}
 
-      {!fullIde &&
+function AppMain(
+  {
+    editorContent,
+    assistant,
+    specialMessages,
+    questionWizard,
+    pages,
+    user,
+    prediction,
+    route,
+    previousRoute,
+    running,
+  }) {
+  const isQuestionWizard = route === "question";
+  const fullIde = route === "ide";
+
+  const page = currentPage();
+  const step = currentStep();
+
+  let showEditor, showSnoop, showPythonTutor, showBirdseye, showQuestionButton;
+  if (fullIde || isQuestionWizard) {
+    showEditor = true;
+    showSnoop = true;
+    showPythonTutor = true;
+    showBirdseye = true;
+    showQuestionButton = !(isQuestionWizard || previousRoute === "question");
+  } else if (step.text.length) {
+    showEditor = page.index >= pages.WritingPrograms.index;
+    const snoopPageIndex = pages.UnderstandingProgramsWithSnoop.index;
+    showSnoop = page.index > snoopPageIndex ||
+      (page.index === snoopPageIndex && step.index >= 1);
+    showPythonTutor = page.index >= pages.UnderstandingProgramsWithPythonTutor.index;
+    showBirdseye = page.index >= pages.IntroducingBirdseye.index;
+    showQuestionButton = page.index > pages.IntroducingBirdseye.index;
+  }
+
+  const cantUseEditor = prediction.state === "waiting" || prediction.state === "showingResult";
+
+  return <>
+    {!fullIde &&
       <div className="book-text markdown-body">
         {isQuestionWizard ?
           <QuestionWizard {...questionWizard}/>
@@ -497,47 +511,44 @@ class AppComponent extends React.Component {
         }
       </div>
 
-      }
+    }
 
-      <EditorButtons {...{
-        showBirdseye,
-        showEditor,
-        showSnoop,
-        showPythonTutor,
-        showQuestionButton,
-        disabled: cantUseEditor,
-        running,
-      }}/>
+    <EditorButtons {...{
+      showBirdseye,
+      showEditor,
+      showSnoop,
+      showPythonTutor,
+      showQuestionButton,
+      disabled: cantUseEditor,
+      running,
+    }}/>
 
-      <div className={`ide ide-${fullIde ? 'full' : 'half'}`}>
-        <div className="editor-and-terminal">
-          {showEditor &&
-           <Editor value={editorContent} readOnly={cantUseEditor}/>
-          }
-          <div className="terminal" style={{height: showEditor ? undefined : "100%"}}>
-            <Shell/>
-          </div>
+    <div className={`ide ide-${fullIde ? 'full' : 'half'}`}>
+      <div className="editor-and-terminal">
+        {showEditor &&
+          <Editor value={editorContent} readOnly={cantUseEditor}/>
+        }
+        <div className="terminal" style={{height: showEditor ? undefined : "100%"}}>
+          <Shell/>
         </div>
       </div>
-
-      <a className="btn btn-primary full-ide-button"
-         href={"#" + (!fullIde ? "ide" : (specialHash(previousRoute) ? previousRoute : page.slug))}>
-        <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
-      </a>
-
-      <>
-        {specialMessages.map((message, index) =>
-          <Popup
-            key={index}
-            open={true}
-            onClose={() => closeSpecialMessage(index)}
-          >
-            <SpecialMessageModal message={message}/>
-          </Popup>
-        )}
-      </>
     </div>
-  }
+
+    <a className="btn btn-primary full-ide-button"
+       href={"#" + (!fullIde ? "ide" : (specialHash(previousRoute) ? previousRoute : page.slug))}>
+      <FontAwesomeIcon icon={fullIde ? faCompress : faExpand}/>
+    </a>
+
+    {specialMessages.map((message, index) =>
+      <Popup
+        key={index}
+        open={true}
+        onClose={() => closeSpecialMessage(index)}
+      >
+        <SpecialMessageModal message={message}/>
+      </Popup>
+    )}
+  </>;
 }
 
 const StepButton = ({delta, label}) =>
@@ -595,20 +606,7 @@ const MenuPopup = ({user}) =>
             <SettingsModal user={user}/>
           </Popup>
         </p>
-        {process.env.REACT_APP_SENTRY_DSN && <p>
-          <Popup
-            trigger={
-              <button className="btn btn-success">
-                <FontAwesomeIcon icon={faBug}/> {terms.feedback}
-              </button>
-            }
-            modal
-            nested
-            contentStyle={feedbackContentStyle}
-          >
-            {close => <FeedbackModal close={close}/>}
-          </Popup>
-        </p>}
+        <FeedbackMenuButton/>
         {
           otherVisibleLanguages.map(lang =>
             <p key={lang.code}>

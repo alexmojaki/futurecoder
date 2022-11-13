@@ -19689,6 +19689,9 @@ msgstr "Enables the \"Reverse step\" and \"Skip step\" buttons."
 msgid "frontend.did_you_mean"
 msgstr "Did you mean..."
 
+msgid "frontend.error_has_been_reported"
+msgstr "The error has been reported."
+
 msgid "frontend.error_traceback"
 msgstr "Error traceback:"
 
@@ -19730,6 +19733,9 @@ msgstr "Get a hint"
 msgid "frontend.give_feedback"
 msgstr "Give feedback"
 
+msgid "frontend.give_feedback_from_menu"
+msgstr "Give feedback from the top-left menu."
+
 msgid "frontend.give_feedback_instructions"
 msgstr ""
 "Tell us what you like or don't like! If you're reporting a bug, give a detailed description of the problem:\n"
@@ -19749,6 +19755,9 @@ msgstr "Hints and Solution"
 
 msgid "frontend.hints_progress"
 msgstr "Shown ${numHints} of ${totalHints} hints"
+
+msgid "frontend.internal_error_start"
+msgstr "Oops, something went wrong! ${maybeErrorReported} Here's what you can do:"
 
 msgid "frontend.loading_wait"
 msgstr "Loading..."
@@ -19831,25 +19840,11 @@ msgstr ""
 "\n"
 "If your question is about servers (e.g. Django or Flask), web requests, databases, or a package that can't be imported here, then this tool won't work. However, just because your current code *involves* those things, that doesn't mean that's what your question is *about*. If you're having a general Python/programming/logic problem, then extract that problem from the other stuff. Python with Django is still Python. If you can't do that, then read [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example) before asking your question."
 
+msgid "frontend.refresh_and_try_again"
+msgstr "Reload/refresh the page and try again."
+
 msgid "frontend.repeated_frames_description"
 msgstr "${name} at line ${lineno} (${count} times)"
-
-msgid "frontend.report_error_instructions"
-msgstr ""
-"Oops, something went wrong! The error has been reported. Here's what you can do:\n"
-"\n"
-"- Try running the code again.\n"
-"- Reload/refresh the page and try again.\n"
-"- Try using a different browser.\n"
-"- Give feedback from the top-left menu."
-
-msgid "frontend.report_error_instructions_no_feedback"
-msgstr ""
-"Oops, something went wrong! Here's what you can do:\n"
-"\n"
-"- Try running the code again.\n"
-"- Reload/refresh the page and try again.\n"
-"- Try using a different browser."
 
 msgid "frontend.requirements"
 msgstr "Requirements"
@@ -19909,6 +19904,12 @@ msgstr ""
 "Below are links to different pages in the course. You can start anywhere and go in any order, and your progress on each page will be recorded.\n"
 "\n"
 "If you're completely new to programming, or you have doubts, just start at the beginning and click Next as you finish each page."
+
+msgid "frontend.try_running_code_again"
+msgstr "Try running the code again."
+
+msgid "frontend.try_using_different_browser"
+msgstr "Try using a different browser."
 
 msgid "frontend.verbatim"
 msgstr ""

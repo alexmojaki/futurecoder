@@ -5,9 +5,15 @@ import axios from "axios";
 import * as terms from "./terms.json"
 import * as Sentry from "@sentry/react";
 import {uuidv4} from "sync-message";
+import Popup from "reactjs-popup";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBug} from "@fortawesome/free-solid-svg-icons";
+import _ from "lodash";
+
+const SENTRY_DSN = process.env.REACT_APP_SENTRY_DSN;
 
 
-export const FeedbackModal = ({close}) => {
+const FeedbackModal = ({close}) => {
   const email = useInput(bookState.user.email || "", {
     placeholder: terms.feedback_email_placeholder,
     type: 'text',
@@ -60,7 +66,7 @@ ${description.value.trim()}`;
               },
               {
                 headers: {
-                  Authorization: 'DSN ' + process.env.REACT_APP_SENTRY_DSN,
+                  Authorization: 'DSN ' + SENTRY_DSN,
                 }
               }
             );
@@ -103,10 +109,66 @@ ${description.value.trim()}`;
   );
 };
 
-
-export const feedbackContentStyle = {
+const feedbackContentStyle = {
   maxHeight: "90vh",
   overflow: "auto",
   background: "white",
   border: "solid 1px lightgray",
+}
+
+export function FeedbackMenuButton() {
+  if (!SENTRY_DSN) {
+    return null;
+  }
+  return <p>
+    <Popup
+      trigger={
+        <button className="btn btn-success">
+          <FontAwesomeIcon icon={faBug}/> {terms.feedback}
+        </button>
+      }
+      modal
+      nested
+      contentStyle={feedbackContentStyle}
+    >
+      {close => <FeedbackModal close={close}/>}
+    </Popup>
+  </p>;
+}
+
+export function InternalError({ranCode, canGiveFeedback}) {
+  const start = _.template(terms.internal_error_start)({
+    maybeErrorReported: SENTRY_DSN ? terms.error_has_been_reported : '',
+  });
+  const suggestions = [];
+  if (ranCode) {
+    suggestions.push(terms.try_running_code_again);
+  }
+  suggestions.push(terms.refresh_and_try_again, terms.try_using_different_browser);
+  if (SENTRY_DSN && canGiveFeedback) {
+    suggestions.push(terms.give_feedback_from_menu);
+  }
+  return <div>
+    <p>{start}</p>
+    <ul>
+      {suggestions.map(suggestion => <li key={suggestion}>{suggestion}</li>)}
+    </ul>
+  </div>;
+}
+
+export function ErrorBoundary({children, canGiveFeedback}) {
+  return <Sentry.ErrorBoundary fallback={
+    ({error}) => <ErrorFallback {...{error, canGiveFeedback}}/>
+  }>
+    {children}
+  </Sentry.ErrorBoundary>;
+}
+
+function ErrorFallback({error, canGiveFeedback}) {
+  return <div style={{margin: "4em"}}>
+    <div className="alert alert-danger" role="alert">
+      <pre><code>{error.toString()}</code></pre>
+    </div>
+    <InternalError canGiveFeedback={canGiveFeedback}/>
+  </div>;
 }

@@ -4,6 +4,7 @@ import AnsiUp from "ansi_up";
 import sourceStyles from './defs/styles/TerminalMessage'
 import * as terms from "../terms.json"
 import _ from "lodash";
+import {InternalError} from "../Feedback";
 
 const ansi_up = new AnsiUp();
 
@@ -27,7 +28,7 @@ export default class TerminalMessage extends Component {
     }
 
     if (content.type === "internal_error_explanation") {
-      return <div dangerouslySetInnerHTML={{__html: content.text}}/>
+      return <InternalError ranCode canGiveFeedback/>
     }
 
     let color = "white";
