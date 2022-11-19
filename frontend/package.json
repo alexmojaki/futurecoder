@@ -8,7 +8,7 @@
     "npm": ">= 8.15.0"
   },
   "dependencies": {
-    "@craco/craco": "^6.1.2",
+    "@craco/craco": "^7.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -36,7 +36,7 @@
     "react-firebaseui": "^5.0.2",
     "react-inner-html": "^1.0.1",
     "react-redux": "^7.2.2",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.2",
     "react-toggle": "^4.1.2",
     "reactjs-popup": "^2.0.5",
