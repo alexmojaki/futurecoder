@@ -1,4 +1,4 @@
-name: Build, test, deploy
+name: CI
 on: [push, pull_request]
 jobs:
   test:
