@@ -1,9 +1,8 @@
-[![GitHub license](https://img.shields.io/github/license/alexmojaki/futurecoder?style=flat)](https://github.com/alexmojaki/futurecoder/blob/master/LICENSE.txt) [![Tests](https://github.com/alexmojaki/futurecoder/workflows/CI/badge.svg)](https://github.com/alexmojaki/futurecoder/actions)
-
-[![Testing Powered By SauceLabs](https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-gray.png?sanitize=true "Testing Powered By SauceLabs")](https://saucelabs.com)
-
 <p align="center">
-  <img src="homepage/static/logo/bordered2.png" width="300px" height="300px" alt="logo">
+      <a href="https://github.com/alexmojaki/futurecoder/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/alexmojaki/futurecoder?style=flat" alt="MIT license" align="left"></a>
+      <a href="https://github.com/alexmojaki/futurecoder/actions"><img src="https://github.com/alexmojaki/futurecoder/workflows/CI/badge.svg" alt="Tests status" align="left"></a>
+      <img src="homepage/static/logo/bordered2.png" width="300px" height="300px" alt="logo">
+      <a href="https://saucelabs.com"><img src="https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-gray.png?sanitize=true" alt="Testing Powered By SauceLabs" align="right"></a>
 </p>
 
 <h1 align="center"><code>futurecoder</code></h1>
