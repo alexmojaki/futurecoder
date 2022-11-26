@@ -1,14 +1,12 @@
+[![GitHub license](https://img.shields.io/github/license/alexmojaki/futurecoder?style=flat)](https://github.com/alexmojaki/futurecoder/blob/master/LICENSE.txt) [![Tests](https://github.com/alexmojaki/futurecoder/workflows/CI/badge.svg)](https://github.com/alexmojaki/futurecoder/actions)
+
+[![Testing Powered By SauceLabs](https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-gray.png?sanitize=true "Testing Powered By SauceLabs")](https://saucelabs.com)
+
 <p align="center">
   <img src="homepage/static/logo/bordered2.png" width="300px" height="300px" alt="logo">
 </p>
 
 <h1 align="center"><code>futurecoder</code></h1>
-
-[![GitHub license](https://img.shields.io/github/license/alexmojaki/futurecoder?style=flat)](https://github.com/alexmojaki/futurecoder/blob/master/LICENSE.txt) [![Tests](https://github.com/alexmojaki/futurecoder/workflows/CI/badge.svg)](https://github.com/alexmojaki/futurecoder/actions)
-
-[![Testing Powered By SauceLabs](https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-gray.png?sanitize=true "Testing Powered By SauceLabs")](https://saucelabs.com)
-
------
 
 This is a 100% free and interactive course for people to teach themselves programming in Python, especially complete beginners at programming.
 It is carefully designed to reduce frustration and guide the user while still ensuring that they learn how to solve problems.
