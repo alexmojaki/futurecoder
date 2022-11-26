@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 from time import sleep
@@ -17,30 +18,82 @@ this_dir = Path(__file__).parent
 assets_dir = this_dir / "test_frontend_assets"
 assets_dir.mkdir(exist_ok=True)
 
+sauce_tunnel = os.environ.get("SAUCE_TUNNEL")
 
-def test_frontend():
-    options = Options()
-    options.add_argument("--headless")
-    options.add_argument("--disable-gpu")
-    desired_capabilities = DesiredCapabilities.CHROME
-    desired_capabilities["goog:loggingPrefs"] = {"browser": "ALL"}
-    driver = webdriver.Chrome(
-        options=options, desired_capabilities=desired_capabilities
-    )
+
+def get_driver(caps):
+    if sauce_tunnel:
+        desired_capabilities = {
+            **caps,
+            "sauce:options": {
+                "tunnelName": sauce_tunnel,
+                "name": "futurecoder",
+            },
+        }
+        url = "https://{SAUCE_USERNAME}:{SAUCE_ACCESS_KEY}@ondemand.eu-central-1.saucelabs.com:443/wd/hub".format(
+            **os.environ
+        )
+        driver = webdriver.Remote(
+            command_executor=url,
+            desired_capabilities=desired_capabilities,
+        )
+    else:
+        options = Options()
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        desired_capabilities = DesiredCapabilities.CHROME
+        desired_capabilities["goog:loggingPrefs"] = {"browser": "ALL"}
+        driver = webdriver.Chrome(
+            options=options, desired_capabilities=desired_capabilities
+        )
     driver.set_window_size(1024, 768)
     driver.implicitly_wait(5)
+    return driver
+
+
+def params():
+    if not sauce_tunnel:
+        yield None
+        return
+    for os_name, extra_browser, os_versions in [
+        ["Windows", "MicrosoftEdge", ["11", "10"]],
+        ["macOS", "Safari", ["12", "11.00"]],
+    ]:
+        for os_version in os_versions[:1]:  # TODO use all versions
+            for browser in ["Chrome", "Firefox", extra_browser]:
+                caps = dict(
+                    platform=f"{os_name} {os_version}",
+                    version="latest",
+                    browserName=browser,
+                )
+                if browser == "Safari" and os_version == "12":
+                    yield caps | {"version": "15"}
+                else:
+                    yield caps
+                return  # TODO
+
+
+@pytest.mark.parametrize("caps", list(params()))
+def test_frontend(caps):
+    driver = get_driver(caps)
+    status = "failed"
     try:
         _tests(driver)
+        status = "passed"
     finally:
-        driver.save_screenshot(str(assets_dir / "screenshot.png"))
-        (assets_dir / "logs.txt").write_text(
-            "\n".join(entry["message"] for entry in driver.get_log("browser"))
-        )
-        (assets_dir / "page_source.html").write_text(driver.page_source)
-        (assets_dir / "state.json").write_text(
-            driver.execute_script("return JSON.stringify(reduxStore.getState())")
-        )
-        driver.close()
+        if sauce_tunnel:
+            driver.execute_script(f"sauce:job-result={status}")
+        try:
+            driver.save_screenshot(str(assets_dir / "screenshot.png"))
+            (assets_dir / "logs.txt").write_text(
+                "\n".join(entry["message"] for entry in driver.get_log("browser"))
+            )
+            (assets_dir / "page_source.html").write_text(driver.page_source)
+            (assets_dir / "state.json").write_text(
+                driver.execute_script("return JSON.stringify(reduxStore.getState())")
+            )
+        finally:
+            driver.quit()
 
 
 def _tests(driver):
