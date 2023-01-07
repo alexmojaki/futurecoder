@@ -54,7 +54,7 @@ import {interrupt, runCode, terminalRef} from "./RunCode";
 import firebase from "firebase/app";
 import {TableOfContents} from "./TableOfContents";
 import HeaderLoginInfo from "./components/HeaderLoginInfo";
-import * as terms from "./terms.json"
+import terms from "./terms.json"
 import _ from "lodash";
 import {otherVisibleLanguages} from "./languages";
 

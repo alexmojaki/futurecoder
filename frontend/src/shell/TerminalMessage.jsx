@@ -2,7 +2,7 @@ import React, {Component, useState, useRef, useLayoutEffect} from 'react'
 import AnsiUp from "ansi_up";
 
 import sourceStyles from './defs/styles/TerminalMessage'
-import * as terms from "../terms.json"
+import terms from "../terms.json"
 import _ from "lodash";
 import {InternalError} from "../Feedback";
 

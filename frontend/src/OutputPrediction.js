@@ -6,7 +6,7 @@ import {showCodeResult, terminalRef} from "./RunCode";
 import Confetti from "react-dom-confetti";
 import {animateScroll} from "react-scroll";
 import _ from "lodash";
-import * as terms from "./terms.json"
+import terms from "./terms.json"
 
 const RadioButton = ({onChange, label, status, isError}) => (
   <div className={"prediction-choice prediction-" + status}

@@ -7,7 +7,7 @@ import "firebase/auth";
 import "firebase/analytics";
 import pagesUrl from "./pages.json.load_by_url"
 import axios from "axios";
-import * as terms from "../terms.json"
+import terms from "../terms.json"
 import * as Sentry from "@sentry/react";
 import {wrapAsync} from "../frontendlib/sentry";
 import pRetry from 'p-retry';

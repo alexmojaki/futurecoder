@@ -2,7 +2,7 @@ import React from 'react';
 import {useInput} from "./frontendlib/HookInput";
 import {bookState} from "./book/store";
 import axios from "axios";
-import * as terms from "./terms.json"
+import terms from "./terms.json"
 import * as Sentry from "@sentry/react";
 import {uuidv4} from "sync-message";
 import Popup from "reactjs-popup";
