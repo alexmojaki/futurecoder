@@ -27,11 +27,11 @@ def make_function(program, arg_names):
             target = only(node.targets)
             assert isinstance(target, ast.Name)
             assert target.id == arg_name
-    except AssertionError:
+    except AssertionError as e:
         expected_start = indented_inputs_string(dict.fromkeys(arg_names, "..."))
         raise ExerciseError(
             t.Terms.code_should_start_like.format(expected_start=expected_start)
-        )
+        ) from e
 
     assignments = tree.body[:len(arg_names)]
     exercise = tree.body[len(arg_names):]
