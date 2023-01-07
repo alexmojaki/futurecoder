@@ -2,7 +2,7 @@ import React from 'react';
 import "./css/toc.scss"
 import chapters from "./chapters.json"
 import {bookState} from "./book/store";
-import * as terms from "./terms.json"
+import terms from "./terms.json"
 
 export const TableOfContents = () => {
   const current = bookState.user.pageSlug;

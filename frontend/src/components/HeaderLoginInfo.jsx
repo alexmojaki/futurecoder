@@ -4,7 +4,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
 import {disableLogin, updateDatabase, updateUserData} from "../book/store";
 import Popup from "reactjs-popup";
-import * as terms from "../terms.json"
+import terms from "../terms.json"
 
 const HeaderLoginInfo = ({ email }) => {
   if (disableLogin) {

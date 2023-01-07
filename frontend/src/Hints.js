@@ -1,7 +1,7 @@
 import React from "react";
 import {bookSetState, reorderSolutionLines, revealSolutionToken, showHint} from "./book/store";
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
-import * as terms from "./terms.json"
+import terms from "./terms.json"
 import _ from "lodash";
 
 export const HintsAssistant = (assistant) => {
