@@ -1,5 +1,12 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 jobs:
   test:
     runs-on: ubuntu-20.04
@@ -25,20 +32,10 @@ jobs:
         REACT_APP_FIREBASE_STAGING: '1'
         FUTURECODER_LANGUAGE: en
       run: ./scripts/build.sh
-    - name: Saucelabs tunnel
-      uses: saucelabs/sauce-connect-action@v2
-      with:
-          username: ${{ secrets.SAUCE_USERNAME }}
-          accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
-          tunnelName: github-action-tunnel
-          region: eu-central
     - name: Test
       env:
         FUTURECODER_LANGUAGE: en
         FIREBASE_TOKEN: '1//03I37hFeN4kn3CgYIARAAGAMSNwF-L9IrUvqofZbhOkS8YMtQBhw_bu2TpWYC5MHvnaZDsWPP0KJMypXPyoxogkl8A6p2RxPJQwQ'
-        SAUCE_TUNNEL: github-action-tunnel
-        SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
-        SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
       run: ./scripts/ci_test.sh
     - name: Upload test artifacts
       uses: actions/upload-artifact@v2
