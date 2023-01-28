@@ -59,7 +59,7 @@ def params():
         ["Windows", "MicrosoftEdge", ["11", "10"]],
         ["macOS", "Safari", ["12", "11.00"]],
     ]:
-        for os_version in os_versions[:1]:  # TODO use all versions
+        for os_version in os_versions:
             for browser in ["Chrome", "Firefox", extra_browser]:
                 caps = dict(
                     platform=f"{os_name} {os_version}",
@@ -68,9 +68,9 @@ def params():
                 )
                 if browser == "Safari" and os_version == "12":
                     yield caps | {"version": "15"}
+                    yield caps
                 else:
                     yield caps
-                return  # TODO
 
 
 @pytest.mark.parametrize("caps", list(params()))
