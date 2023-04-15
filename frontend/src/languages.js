@@ -32,8 +32,8 @@ const languages = [
     }
   },
   {
-    code: 'es',
-    name: 'Español',
+    code: 'es-latam',
+    name: 'Español (Argentina)',
     url: 'https://es-latam.futurecoder.io/',
     visible: false,
     firebaseConfig: {
