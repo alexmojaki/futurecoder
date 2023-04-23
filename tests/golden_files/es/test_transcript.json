@@ -536,7 +536,7 @@
         "page": "Introduci\u00f3n a los Bucles For",
         "program": [
             "nombre = 'Mundo'",
-            "for car\u00e1cter in nombre: print(car\u00e1cter)"
+            "for caracter in nombre: print(caracter)"
         ],
         "response": {
             "passed": true,
@@ -574,8 +574,8 @@
         "program": [
             "nombre = 'Mundo'",
             "",
-            "for car\u00e1cter in nombre:",
-            "    print(car\u00e1cter)",
+            "for caracter in nombre:",
+            "    print(caracter)",
             "    print('---')"
         ],
         "response": {
@@ -595,8 +595,8 @@
         "program": [
             "nombre = 'Mundo'",
             "",
-            "for car\u00e1cter in nombre:",
-            "    print(car\u00e1cter)",
+            "for caracter in nombre:",
+            "    print(caracter)",
             "print('---')"
         ],
         "response": {
@@ -632,14 +632,14 @@
     },
     {
         "get_solution": [
-            "for car\u00e1cter in nombre:",
-            "    print('---' + car\u00e1cter)"
+            "for caracter in nombre:",
+            "    print('---' + caracter)"
         ],
         "page": "Ejercicios b\u00e1sicos de bucles For",
         "program": [
             "nombre = 'World'",
-            "for car\u00e1cter in nombre:",
-            "    print('---' + car\u00e1cter)"
+            "for caracter in nombre:",
+            "    print('---' + caracter)"
         ],
         "response": {
             "passed": true,
@@ -709,8 +709,8 @@
         "program": [
             "nombre = 'Mundo'",
             "linea = '-'",
-            "for car\u00e1cter in nombre:",
-            "    linea = linea + car\u00e1cter",
+            "for car in nombre:",
+            "    linea = linea + car",
             "    print(linea)"
         ],
         "response": {
@@ -744,9 +744,9 @@
         "program": [
             "nombre = 'Mundo'",
             "linea = '-'",
-            "for car\u00e1cter in nombre:",
+            "for car in nombre:",
             "    print(linea)",
-            "    linea = linea + car\u00e1cter"
+            "    linea = linea + car"
         ],
         "response": {
             "passed": true,
@@ -803,16 +803,16 @@
     {
         "get_solution": [
             "linea = ''",
-            "for car\u00e1cter in nombre:",
-            "    linea = linea + car\u00e1cter",
+            "for car in nombre:",
+            "    linea = linea + car",
             "    print(linea)"
         ],
         "page": "Construyendo Cadenas",
         "program": [
             "nombre = 'World'",
             "linea = ''",
-            "for car\u00e1cter in nombre:",
-            "    linea = linea + car\u00e1cter",
+            "for car in nombre:",
+            "    linea = linea + car",
             "    print(linea)"
         ],
         "response": {
@@ -829,16 +829,16 @@
     {
         "get_solution": [
             "linea = ''",
-            "for car\u00e1cter in nombre:",
-            "    linea = linea + car\u00e1cter + ' '",
+            "for car in nombre:",
+            "    linea = linea + car + ' '",
             "    print(linea)"
         ],
         "page": "Ejercicios de Construcci\u00f3n de Cadenas",
         "program": [
             "nombre = 'World'",
             "linea = ''",
-            "for car\u00e1cter in nombre:",
-            "    linea = linea + car\u00e1cter + ' '",
+            "for car in nombre:",
+            "    linea = linea + car + ' '",
             "    print(linea)"
         ],
         "response": {
@@ -855,16 +855,16 @@
     {
         "get_solution": [
             "linea = ''",
-            "for car\u00e1cter in nombre:",
-            "    linea = car\u00e1cter + linea",
+            "for car in nombre:",
+            "    linea = car + linea",
             "    print(linea)"
         ],
         "page": "Ejercicios de Construcci\u00f3n de Cadenas",
         "program": [
             "nombre = 'World'",
             "linea = ''",
-            "for car\u00e1cter in nombre:",
-            "    linea = car\u00e1cter + linea",
+            "for car in nombre:",
+            "    linea = car + linea",
             "    print(linea)"
         ],
         "response": {
@@ -946,8 +946,8 @@
             "    espacios += ' '",
             "",
             "print(linea)",
-            "for car\u00e1cter in nombre:",
-            "    print(car\u00e1cter + espacios + car\u00e1cter)",
+            "for car in nombre:",
+            "    print(car + espacios + car)",
             "print(linea)"
         ],
         "page": "Ejercicios de Construcci\u00f3n de Cadenas",
@@ -959,8 +959,8 @@
             "    espacios += ' '",
             "",
             "print(linea)",
-            "for car\u00e1cter in nombre:",
-            "    print(car\u00e1cter + espacios + car\u00e1cter)",
+            "for car in nombre:",
+            "    print(car + espacios + car)",
             "print(linea)"
         ],
         "response": {
@@ -979,9 +979,9 @@
         "program": [
             "nombre = 'World'",
             "espacios = ''",
-            "for car\u00e1cter in nombre:",
+            "for car in nombre:",
             "    espacios += ' '",
-            "    print(espacios + car\u00e1cter)"
+            "    print(espacios + car)"
         ],
         "response": {
             "message": "<p>\u00a1Ya casi est\u00e1! Tienes un espacio de m\u00e1s antes de cada letra.\nAseg\u00farate de que la primera vez que tu bucle llame a <code>print</code>\ntu variable que contendr\u00e1 los espacios sea una cadena vac\u00eda.\nComprueba el orden de tu c\u00f3digo.</p>",
@@ -998,16 +998,16 @@
     {
         "get_solution": [
             "espacios = ''",
-            "for car\u00e1cter in nombre:",
-            "    print(espacios + car\u00e1cter)",
+            "for car in nombre:",
+            "    print(espacios + car)",
             "    espacios += ' '"
         ],
         "page": "Ejercicios de Construcci\u00f3n de Cadenas",
         "program": [
             "nombre = 'World'",
             "espacios = ''",
-            "for car\u00e1cter in nombre:",
-            "    print(espacios + car\u00e1cter)",
+            "for car in nombre:",
+            "    print(espacios + car)",
             "    espacios += ' '"
         ],
         "response": {
@@ -1159,8 +1159,8 @@
             "",
             "if emocionado:",
             "    nueva_frase = ''",
-            "    for car\u00e1cter in frase:",
-            "        nueva_frase += car\u00e1cter + '!'",
+            "    for car in frase:",
+            "        nueva_frase += car + '!'",
             "    frase = nueva_frase",
             "",
             "print(frase)"
@@ -1197,12 +1197,12 @@
         "program": [
             "frase = 'Hola Mundo'",
             "",
-            "incluido = False",
+            "incluir = False",
             "nueva_frase = ''",
-            "for car\u00e1cter in frase:",
-            "    if incluido:",
-            "        nueva_frase += car\u00e1cter",
-            "    incluido = True",
+            "for car in frase:",
+            "    if incluir:",
+            "        nueva_frase += car",
+            "    incluir = True",
             "",
             "print(nueva_frase)"
         ],
@@ -1234,12 +1234,12 @@
         "program": [
             "frase = 'Hola Mundo'",
             "",
-            "incluido = False",
+            "incluir = False",
             "nueva_frase = ''",
-            "for car\u00e1cter in frase:",
-            "    if incluido:",
-            "        nueva_frase += car\u00e1cter",
-            "    incluido = True",
+            "for car in frase:",
+            "    if incluir:",
+            "        nueva_frase += car",
+            "    incluir = True",
             "",
             "print(nueva_frase)"
         ],
@@ -1247,27 +1247,27 @@
             "passed": true,
             "result": [
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | nueva_frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | nueva_frase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mol\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ma\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mol\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ma\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mM\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola M\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mM\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola M\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mn\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mun\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mu\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mn\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mun\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mund\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car\u00e1cter = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluido:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\u00e1cter\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluido \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mund\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m...... car = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m incluir:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nueva_frase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m car\n\u001b[38;5;242m \u001b[0m.............. nueva_frase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mola Mundo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     incluir \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car\u00e1cter \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(nueva_frase)\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m car \u001b[38;5;197min\u001b[39m frase:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(nueva_frase)\n",
                     "type": "snoop"
                 },
                 {
@@ -1288,24 +1288,24 @@
     },
     {
         "get_solution": [
-            "incluido = True",
+            "incluir = True",
             "nueva_frase = ''",
-            "for car\u00e1cter in frase:",
-            "    if incluido:",
-            "        nueva_frase += car\u00e1cter",
-            "    incluido = False",
+            "for car in frase:",
+            "    if incluir:",
+            "        nueva_frase += car",
+            "    incluir = False",
             "",
             "print(nueva_frase)"
         ],
         "page": "Entendiendo Programas con <code>snoop</code>",
         "program": [
             "frase = 'Hello there'",
-            "incluido = True",
+            "incluir = True",
             "nueva_frase = ''",
-            "for car\u00e1cter in frase:",
-            "    if incluido:",
-            "        nueva_frase += car\u00e1cter",
-            "    incluido = False",
+            "for car in frase:",
+            "    if incluir:",
+            "        nueva_frase += car",
+            "    incluir = False",
             "",
             "print(nueva_frase)"
         ],
@@ -1416,8 +1416,8 @@
             "emocionado = False",
             "",
             "if emocionado:",
-            "    car\u00e1cter = '!'",
-            "frase += car\u00e1cter",
+            "    car = '!'",
+            "frase += car",
             "",
             "print(frase)"
         ],
@@ -1437,7 +1437,7 @@
                         {
                             "didyoumean": [],
                             "exception": {
-                                "message": "name 'car\u00e1cter' is not defined",
+                                "message": "name 'car' is not defined",
                                 "type": "NameError"
                             },
                             "frames": [
@@ -1448,7 +1448,7 @@
                                         {
                                             "is_current": true,
                                             "lineno": 6,
-                                            "text": "<span class=\"n\">frase</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">car\u00e1cter</span>",
+                                            "text": "<span class=\"n\">frase</span> <span class=\"o\">+=</span> <span class=\"n n-ExecutingNode\">car</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -1466,20 +1466,20 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>Una excepci\u00f3n <code>NameError</code> indica que una variable o\nnombre de funci\u00f3n no es conocido por Python.\nLa mayor\u00eda de las veces, esto se debe a un error ortogr\u00e1fico.\nSin embargo, a veces es porque el nombre se utiliza\nantes de ser definido o de recibir un valor.</p>\n<p>En su programa, no existe ning\u00fan objeto con el nombre <code>car\u00e1cter</code>.\nNo tengo informaci\u00f3n adicional para usted.</p>",
+                            "friendly": "<p>Una excepci\u00f3n <code>NameError</code> indica que una variable o\nnombre de funci\u00f3n no es conocido por Python.\nLa mayor\u00eda de las veces, esto se debe a un error ortogr\u00e1fico.\nSin embargo, a veces es porque el nombre se utiliza\nantes de ser definido o de recibir un valor.</p>\n<p>En su programa, no existe ning\u00fan objeto con el nombre <code>car</code>.\nEl builtin de Python <code>chr</code> tiene un nombre similar.</p>",
                             "tail": ""
                         }
                     ],
                     "text": [
                         "Traceback (most recent call last):",
                         " File \"/my_program.py\", line 6, in <module>",
-                        "       5 |     car\u00e1cter = '!'",
-                        "-->    6 | frase += car\u00e1cter",
-                        "                    ^^^^^^^^",
+                        "       5 |     car = '!'",
+                        "-->    6 | frase += car",
+                        "                    ^^^",
                         "emocionado = False",
                         "frase = 'Hola Mundo'",
                         "",
-                        "NameError: name 'car\u00e1cter' is not defined"
+                        "NameError: name 'car' is not defined"
                     ],
                     "type": "traceback"
                 }
@@ -1490,10 +1490,10 @@
     {
         "get_solution": [
             "if emocionado:",
-            "    car\u00e1cter = '!'",
+            "    car = '!'",
             "else:",
-            "    car\u00e1cter = '.'",
-            "frase += car\u00e1cter",
+            "    car = '.'",
+            "frase += car",
             "",
             "print(frase)"
         ],
@@ -1502,10 +1502,10 @@
             "frase = 'Hello there'",
             "emocionado = True",
             "if emocionado:",
-            "    car\u00e1cter = '!'",
+            "    car = '!'",
             "else:",
-            "    car\u00e1cter = '.'",
-            "frase += car\u00e1cter",
+            "    car = '.'",
+            "frase += car",
             "",
             "print(frase)"
         ],
@@ -1524,12 +1524,12 @@
         "get_solution": [
             "upper = True",
             "nueva_frase = ''",
-            "for car\u00e1cter in frase:",
+            "for car in frase:",
             "    if upper:",
-            "        car\u00e1cter = car\u00e1cter.upper()",
+            "        car = car.upper()",
             "    else:",
-            "        car\u00e1cter = car\u00e1cter.lower()",
-            "    nueva_frase += car\u00e1cter",
+            "        car = car.lower()",
+            "    nueva_frase += car",
             "    upper = False",
             "",
             "print(nueva_frase)"
@@ -1539,12 +1539,12 @@
             "frase = 'HELLO THERE'",
             "upper = True",
             "nueva_frase = ''",
-            "for car\u00e1cter in frase:",
+            "for car in frase:",
             "    if upper:",
-            "        car\u00e1cter = car\u00e1cter.upper()",
+            "        car = car.upper()",
             "    else:",
-            "        car\u00e1cter = car\u00e1cter.lower()",
-            "    nueva_frase += car\u00e1cter",
+            "        car = car.lower()",
+            "    nueva_frase += car",
             "    upper = False",
             "",
             "print(nueva_frase)"
@@ -1564,14 +1564,14 @@
         "get_solution": [
             "upper = True",
             "nueva_frase = ''",
-            "for car\u00e1cter in frase:",
+            "for car in frase:",
             "    if upper:",
-            "        car\u00e1cter = car\u00e1cter.upper()",
+            "        car = car.upper()",
             "        upper = False",
             "    else:",
-            "        car\u00e1cter = car\u00e1cter.lower()",
+            "        car = car.lower()",
             "        upper = True",
-            "    nueva_frase += car\u00e1cter",
+            "    nueva_frase += car",
             "",
             "print(nueva_frase)"
         ],
@@ -1580,14 +1580,14 @@
             "frase = 'One more exercise, and then you can relax.'",
             "upper = True",
             "nueva_frase = ''",
-            "for car\u00e1cter in frase:",
+            "for car in frase:",
             "    if upper:",
-            "        car\u00e1cter = car\u00e1cter.upper()",
+            "        car = car.upper()",
             "        upper = False",
             "    else:",
-            "        car\u00e1cter = car\u00e1cter.lower()",
+            "        car = car.lower()",
             "        upper = True",
-            "    nueva_frase += car\u00e1cter",
+            "    nueva_frase += car",
             "",
             "print(nueva_frase)"
         ],
@@ -1709,16 +1709,16 @@
         "program": [
             "adn = 'AGTAGCGTC'",
             "adn_opuesto = ''",
-            "for car\u00e1cter in adn:",
-            "    if car\u00e1cter == 'A':",
-            "        car\u00e1cter = 'T'",
-            "    if car\u00e1cter == 'T':",
-            "        car\u00e1cter = 'A'",
-            "    if car\u00e1cter == 'G':",
-            "        car\u00e1cter = 'C'",
-            "    if car\u00e1cter == 'C':",
-            "        car\u00e1cter = 'G'",
-            "    adn_opuesto += car\u00e1cter",
+            "for car in adn:",
+            "    if car == 'A':",
+            "        car = 'T'",
+            "    if car == 'T':",
+            "        car = 'A'",
+            "    if car == 'G':",
+            "        car = 'C'",
+            "    if car == 'C':",
+            "        car = 'G'",
+            "    adn_opuesto += car",
             "",
             "print(adn_opuesto)"
         ],
@@ -1736,18 +1736,18 @@
     {
         "get_solution": [
             "adn_opuesto = ''",
-            "for car\u00e1cter in adn:",
-            "    if car\u00e1cter == 'A':",
-            "        car\u00e1cter = 'T'",
+            "for car in adn:",
+            "    if car == 'A':",
+            "        car = 'T'",
             "    else:",
-            "        if car\u00e1cter == 'T':",
-            "            car\u00e1cter = 'A'",
-            "    if car\u00e1cter == 'G':",
-            "        car\u00e1cter = 'C'",
+            "        if car == 'T':",
+            "            car = 'A'",
+            "    if car == 'G':",
+            "        car = 'C'",
             "    else:",
-            "        if car\u00e1cter == 'C':",
-            "            car\u00e1cter = 'G'",
-            "    adn_opuesto += car\u00e1cter",
+            "        if car == 'C':",
+            "            car = 'G'",
+            "    adn_opuesto += car",
             "",
             "print(adn_opuesto)"
         ],
@@ -1755,18 +1755,18 @@
         "program": [
             "adn = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
             "adn_opuesto = ''",
-            "for car\u00e1cter in adn:",
-            "    if car\u00e1cter == 'A':",
-            "        car\u00e1cter = 'T'",
+            "for car in adn:",
+            "    if car == 'A':",
+            "        car = 'T'",
             "    else:",
-            "        if car\u00e1cter == 'T':",
-            "            car\u00e1cter = 'A'",
-            "    if car\u00e1cter == 'G':",
-            "        car\u00e1cter = 'C'",
+            "        if car == 'T':",
+            "            car = 'A'",
+            "    if car == 'G':",
+            "        car = 'C'",
             "    else:",
-            "        if car\u00e1cter == 'C':",
-            "            car\u00e1cter = 'G'",
-            "    adn_opuesto += car\u00e1cter",
+            "        if car == 'C':",
+            "            car = 'G'",
+            "    adn_opuesto += car",
             "",
             "print(adn_opuesto)"
         ],
@@ -1787,16 +1787,16 @@
         "program": [
             "adn = 'AGTAGCGTC'",
             "adn_opuesto = ''",
-            "for car\u00e1cter in adn:",
-            "    if car\u00e1cter == 'A':",
-            "        car\u00e1cter = 'T'",
-            "    elif car\u00e1cter == 'T':",
-            "        car\u00e1cter = 'A'",
-            "    elif car\u00e1cter == 'G':",
-            "        car\u00e1cter = 'C'",
-            "    elif car\u00e1cter == 'C':",
-            "        car\u00e1cter = 'G'",
-            "    adn_opuesto += car\u00e1cter",
+            "for car in adn:",
+            "    if car == 'A':",
+            "        car = 'T'",
+            "    elif car == 'T':",
+            "        car = 'A'",
+            "    elif car == 'G':",
+            "        car = 'C'",
+            "    elif car == 'C':",
+            "        car = 'G'",
+            "    adn_opuesto += car",
             "",
             "print(adn_opuesto)"
         ],
@@ -2522,16 +2522,16 @@
     },
     {
         "get_solution": [
-            "for \u00edndice in range(len(palabras)):",
-            "    print(\u00edndice)",
-            "    print(palabras[\u00edndice])"
+            "for indice in range(len(palabras)):",
+            "    print(indice)",
+            "    print(palabras[indice])"
         ],
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "palabras = ['Python']",
-            "for \u00edndice in range(len(palabras)):",
-            "    print(\u00edndice)",
-            "    print(palabras[\u00edndice])"
+            "for indice in range(len(palabras)):",
+            "    print(indice)",
+            "    print(palabras[indice])"
         ],
         "response": {
             "passed": true,
@@ -3820,13 +3820,13 @@
         "get_solution": "program",
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
-            "print(\"Restaurante de Alice\")"
+            "print(\"Alice's Diner\")"
         ],
         "response": {
             "passed": true,
             "result": [
                 {
-                    "text": "Restaurante de Alice\n",
+                    "text": "Alice's Diner\n",
                     "type": "stdout"
                 }
             ]
@@ -4885,11 +4885,11 @@
         "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
-            "def print_many(cosa, n):",
+            "def imprimir_varios(cosa, n):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "print_many(\"Hola\", 3)"
+            "imprimir_varios(\"Hola\", 3)"
         ],
         "response": {
             "passed": true,
@@ -4917,11 +4917,11 @@
         "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
-            "def print_many(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
-            "print_many(3, \"Hola\")"
+            "imprimir_varios(3, \"Hola\")"
         ],
         "response": {
             "passed": true,
@@ -4938,12 +4938,12 @@
         "get_solution": "program",
         "page": "Llamando funciones dentro de funciones",
         "program": [
-            "def print_many(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
             "def imprimir_doble(x):",
-            "    print_many(2, x)",
+            "    imprimir_varios(2, x)",
             "",
             "imprimir_doble(\"Hola\")"
         ],
@@ -4962,12 +4962,12 @@
         "get_solution": "program",
         "page": "Llamando funciones dentro de funciones",
         "program": [
-            "def print_many(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
             "def imprimir_doble(x):",
-            "    print_many(2, x)",
+            "    imprimir_varios(2, x)",
             "",
             "imprimir_doble(\"Hola\")"
         ],
@@ -4975,11 +4975,11 @@
             "passed": true,
             "result": [
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, cosa):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_doble in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... cosa = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, cosa):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_doble in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_doble\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to imprimir_varios in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... cosa = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mimprimir_varios\u001b[39m(n, cosa):\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(cosa)\n",
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(cosa)\n",
                     "type": "snoop"
                 },
                 {
@@ -5011,7 +5011,7 @@
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_doble: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_varios: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     imprimir_varios(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from imprimir_doble: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | imprimir_doble(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHola\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
                     "type": "snoop"
                 }
             ]
@@ -5022,12 +5022,12 @@
         "get_solution": "program",
         "page": "Llamando funciones dentro de funciones",
         "program": [
-            "def print_many(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
             "def imprimir_doble(x):",
-            "    print_many(2, x)",
+            "    imprimir_varios(2, x)",
             "",
             "imprimir_doble(\"Hola\")"
         ],
@@ -5046,12 +5046,12 @@
         "get_solution": "program",
         "page": "Llamando funciones dentro de funciones",
         "program": [
-            "def print_many(n, cosa):",
+            "def imprimir_varios(n, cosa):",
             "    for _ in range(n):",
             "        print(cosa)",
             "",
             "def imprimir_doble(x):",
-            "    print_many(2, x)",
+            "    imprimir_varios(2, x)",
             "",
             "imprimir_doble(\"Hola\")"
         ],
@@ -6188,8 +6188,8 @@
             "def tablero_formateado(tablero):",
             "    resultado = ''",
             "    for i in range(len(tablero)):",
-            "        for car\u00e1cter in tablero[i]:",
-            "            resultado += car\u00e1cter",
+            "        for car in tablero[i]:",
+            "            resultado += car",
             "        if i != len(tablero) - 1:",
             "            resultado += '\\n'",
             "    return resultado"
@@ -7041,16 +7041,16 @@
         "program": [
             "def sustituto(cadena):",
             "    resultado = ''",
-            "    for car\u00e1cter in cadena:",
-            "        if car\u00e1cter == 'A':",
-            "            car\u00e1cter = 'T'",
-            "        elif car\u00e1cter == 'T':",
-            "            car\u00e1cter = 'A'",
-            "        elif car\u00e1cter == 'G':",
-            "            car\u00e1cter = 'C'",
-            "        elif car\u00e1cter == 'C':",
-            "            car\u00e1cter = 'G'",
-            "        resultado += car\u00e1cter",
+            "    for car in cadena:",
+            "        if car == 'A':",
+            "            car = 'T'",
+            "        elif car == 'T':",
+            "            car = 'A'",
+            "        elif car == 'G':",
+            "            car = 'C'",
+            "        elif car == 'C':",
+            "            car = 'G'",
+            "        resultado += car",
             "    return resultado",
             "",
             "original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
