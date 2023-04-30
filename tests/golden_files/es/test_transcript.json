@@ -3377,7 +3377,7 @@
         "get_solution": "program",
         "page": "M\u00e9todos de cadena e inmutabilidad",
         "program": [
-            "print('al' in 'alimentar al perro y al gato')"
+            "print('al' in 'dar de comer al perro y al gato')"
         ],
         "response": {
             "passed": true,
@@ -3394,7 +3394,7 @@
         "get_solution": "program",
         "page": "M\u00e9todos de cadena e inmutabilidad",
         "program": [
-            "string = 'alimentar al perro y al gato'",
+            "string = 'dar de comer al perro y al gato'",
             "print(string.count('al'))",
             "print(string.index('al'))"
         ],
@@ -3402,7 +3402,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "3\n0\n",
+                    "text": "2\n13\n",
                     "type": "stdout"
                 }
             ]
