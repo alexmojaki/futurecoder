@@ -6794,7 +6794,7 @@
         "get_solution": "program",
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s = {'manzana': 'pomme', 'caja': 'boite'}"
+            "frances = {'manzana': 'pomme', 'caja': 'boite'}"
         ],
         "response": {
             "passed": true,
@@ -6805,10 +6805,10 @@
     {
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s = {}"
+            "frances = {}"
         ],
         "response": {
-            "message": "<p>Oops, necesitas establecer <code>franc\u00e9s = {'apple': 'pomme', 'box': 'boite'}</code> antes de poder continuar.</p>",
+            "message": "<p>Oops, necesitas establecer <code>frances = {'manzana': 'pomme', 'caja': 'boite'}</code> antes de poder continuar.</p>",
             "passed": false,
             "result": []
         },
@@ -6818,7 +6818,7 @@
         "get_solution": "program",
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s[0]"
+            "frances[0]"
         ],
         "response": {
             "passed": true,
@@ -6839,7 +6839,7 @@
                                         {
                                             "is_current": true,
                                             "lineno": 1,
-                                            "text": "<span class=\"n n-ExecutingNode\">franc\u00e9s</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">0</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "text": "<span class=\"n n-ExecutingNode\">frances</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">0</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -6847,22 +6847,22 @@
                                     "type": "frame",
                                     "variables": [
                                         {
-                                            "name": "<span class=\"n\">franc\u00e9s</span>\n",
+                                            "name": "<span class=\"n\">frances</span>\n",
                                             "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;manzana&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;pomme&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;caja&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;boite&#39;</span><span class=\"p\">}</span>\n"
                                         }
                                     ]
                                 }
                             ],
-                            "friendly": "<p>Se produce un <code>KeyError</code> cuando no se encuentra un valor como llave\nen un dict de Python o en un objeto similar.</p>\n<p>La clave <code>0</code> no se encuentra en el dict <code>franc\u00e9s</code>.</p>",
+                            "friendly": "<p>Se produce un <code>KeyError</code> cuando no se encuentra un valor como llave\nen un dict de Python o en un objeto similar.</p>\n<p>La clave <code>0</code> no se encuentra en el dict <code>frances</code>.</p>",
                             "tail": ""
                         }
                     ],
                     "text": [
                         "Traceback (most recent call last):",
                         " File \"/my_program.py\", line 1, in <module>",
-                        "-->    1 | franc\u00e9s[0]",
+                        "-->    1 | frances[0]",
                         "           ^^^^^^^^^^",
-                        "franc\u00e9s = {'manzana': 'pomme', 'caja': 'boite'}",
+                        "frances = {'manzana': 'pomme', 'caja': 'boite'}",
                         "",
                         "KeyError: 0"
                     ],
@@ -6875,10 +6875,10 @@
     {
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s = {}"
+            "frances = {}"
         ],
         "response": {
-            "message": "<p>Oops, necesitas establecer <code>franc\u00e9s = {'apple': 'pomme', 'box': 'boite'}</code> antes de poder continuar.</p>",
+            "message": "<p>Oops, necesitas establecer <code>frances = {'manzana': 'pomme', 'caja': 'boite'}</code> antes de poder continuar.</p>",
             "passed": false,
             "result": []
         },
@@ -6888,7 +6888,7 @@
         "get_solution": "program",
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s['manzana']"
+            "frances['manzana']"
         ],
         "response": {
             "passed": true,
@@ -6904,10 +6904,10 @@
     {
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s = {}"
+            "frances = {}"
         ],
         "response": {
-            "message": "<p>Oops, necesitas establecer <code>franc\u00e9s = {'apple': 'pomme', 'box': 'boite'}</code> antes de poder continuar.</p>",
+            "message": "<p>Oops, necesitas establecer <code>frances = {'manzana': 'pomme', 'caja': 'boite'}</code> antes de poder continuar.</p>",
             "passed": false,
             "result": []
         },
@@ -6917,7 +6917,7 @@
         "get_solution": "program",
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s['caja']"
+            "frances['caja']"
         ],
         "response": {
             "passed": true,
@@ -6933,10 +6933,10 @@
     {
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s = {}"
+            "frances = {}"
         ],
         "response": {
-            "message": "<p>Oops, necesitas establecer <code>franc\u00e9s = {'apple': 'pomme', 'box': 'boite'}</code> antes de poder continuar.</p>",
+            "message": "<p>Oops, necesitas establecer <code>frances = {'manzana': 'pomme', 'caja': 'boite'}</code> antes de poder continuar.</p>",
             "passed": false,
             "result": []
         },
@@ -6946,7 +6946,7 @@
         "get_solution": "program",
         "page": "Introducci\u00f3n a los diccionarios",
         "program": [
-            "franc\u00e9s['pomme']"
+            "frances['pomme']"
         ],
         "response": {
             "passed": true,
@@ -6967,7 +6967,7 @@
                                         {
                                             "is_current": true,
                                             "lineno": 1,
-                                            "text": "<span class=\"n n-ExecutingNode\">franc\u00e9s</span><span class=\"p p-ExecutingNode\">[</span><span class=\"s1 s1-ExecutingNode\">&#39;pomme&#39;</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "text": "<span class=\"n n-ExecutingNode\">frances</span><span class=\"p p-ExecutingNode\">[</span><span class=\"s1 s1-ExecutingNode\">&#39;pomme&#39;</span><span class=\"p p-ExecutingNode\">]</span>",
                                             "type": "line"
                                         }
                                     ],
@@ -6975,22 +6975,22 @@
                                     "type": "frame",
                                     "variables": [
                                         {
-                                            "name": "<span class=\"n\">franc\u00e9s</span>\n",
+                                            "name": "<span class=\"n\">frances</span>\n",
                                             "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;manzana&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;pomme&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;caja&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;boite&#39;</span><span class=\"p\">}</span>\n"
                                         }
                                     ]
                                 }
                             ],
-                            "friendly": "<p>Se produce un <code>KeyError</code> cuando no se encuentra un valor como llave\nen un dict de Python o en un objeto similar.</p>\n<p>La clave <code>'pomme'</code> no se encuentra en el dict <code>franc\u00e9s</code>.</p>",
+                            "friendly": "<p>Se produce un <code>KeyError</code> cuando no se encuentra un valor como llave\nen un dict de Python o en un objeto similar.</p>\n<p>La clave <code>'pomme'</code> no se encuentra en el dict <code>frances</code>.</p>",
                             "tail": ""
                         }
                     ],
                     "text": [
                         "Traceback (most recent call last):",
                         " File \"/my_program.py\", line 1, in <module>",
-                        "-->    1 | franc\u00e9s['pomme']",
+                        "-->    1 | frances['pomme']",
                         "           ^^^^^^^^^^^^^^^^",
-                        "franc\u00e9s = {'manzana': 'pomme', 'caja': 'boite'}",
+                        "frances = {'manzana': 'pomme', 'caja': 'boite'}",
                         "",
                         "KeyError: 'pomme'"
                     ],
@@ -7162,10 +7162,10 @@
         "get_solution": "program",
         "page": "Iterando sobre las claves del diccionario",
         "program": [
-            "def imprimir_letras(franc\u00e9s):",
-            "    for palabra in franc\u00e9s:",
-            "        print(\"Ingl\u00e9s: \" + palabra)",
-            "        print(\"Franc\u00e9s: \" + franc\u00e9s[palabra])",
+            "def imprimir_letras(frances):",
+            "    for palabra in frances:",
+            "        print(\"Espa\u00f1ol: \" + palabra)",
+            "        print(\"Franc\u00e9s: \" + frances[palabra])",
             "        print(\"---\")"
         ],
         "response": {
@@ -7178,10 +7178,10 @@
         "get_solution": "program",
         "page": "Iterando sobre las claves del diccionario",
         "program": [
-            "def imprimir_letras(franc\u00e9s, alem\u00e1n):",
-            "    for palabra in franc\u00e9s:",
-            "        print(\"Ingl\u00e9s: \" + palabra)",
-            "        print(\"Franc\u00e9s: \" + franc\u00e9s[palabra])",
+            "def imprimir_letras(frances, alem\u00e1n):",
+            "    for palabra in frances:",
+            "        print(\"Espa\u00f1ol: \" + palabra)",
+            "        print(\"Franc\u00e9s: \" + frances[palabra])",
             "        print(\"Alem\u00e1n: \" + alem\u00e1n[palabra])",
             "        print(\"---\")"
         ],
