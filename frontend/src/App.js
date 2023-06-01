@@ -203,7 +203,7 @@ const Messages = (
         <div className="card-body">
           <details>
             <summary>
-              {_.template(terms.passed_tests)({ num: section.messages.length })}
+              {_.template(terms.assessment_passed_tests)({ num: section.messages.length })}
             </summary>
             <br/>
             <SectionMessages section={section}/>
@@ -217,7 +217,7 @@ const Messages = (
     } else {
       return <div key={section.type}>
         <div className="alert alert-warning" role="alert">
-          {_.template(terms.passed_tests)({ num: section.messages.length })}
+          {terms.assessment_lint}
         </div>
         <SectionMessages section={section}/>
       </div>
