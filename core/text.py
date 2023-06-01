@@ -108,11 +108,6 @@ def basic_signature(func):
     joined = ", ".join(inspect.signature(func).parameters)
     return f'({joined})'
 
-
-def basic_function_header(func):
-    return highlighted_markdown(f"    def {func.__name__}{basic_signature(func)}:")
-
-
 def clean_solution_function(func, source):
     return re.sub(
         rf"def {func.__name__}\(.+?\):",
@@ -333,11 +328,12 @@ class PageMeta(type):
         return step
 
     def step_texts(cls, *, raw: bool):
-        result = [step.raw_text if raw else step.text for step in cls.steps[:-1]] + [cls.final_text]
-        if not raw:
-            result = [highlighted_markdown(text) for text in result]
-            if "__copyable__" in str(result) or "__no_auto_translate__" in str(result):
-                qa_error(f"{cls} has __copyable__ or __no_auto_translate__ in step texts")
+        return [step.raw_text if raw else step.text for step in cls.steps[:-1]] + [cls.final_text]
+
+    def step_texts_parsed(cls):
+        result = [highlighted_markdown(text) for text in cls.step_texts(raw=False)]
+        if "__copyable__" in str(result) or "__no_auto_translate__" in str(result):
+            qa_error(f"{cls} has __copyable__ or __no_auto_translate__ in step texts")
         return result
 
     @property
@@ -346,11 +342,13 @@ class PageMeta(type):
 
     @property
     def title(cls):
-        return unwrapped_markdown(
-            t.get(
-                t.page_title(cls.slug),
-                cls.raw_title,
-            )
+        return unwrapped_markdown(cls.unparsed_title)
+
+    @property
+    def unparsed_title(cls):
+        return t.get(
+            t.page_title(cls.slug),
+            cls.raw_title,
         )
 
     @property
@@ -384,14 +382,17 @@ class PageMeta(type):
             dict(
                 index=index,
                 text=text,
+                unparsed_text=unparsed_text,
                 name=name,
-                hints=[highlighted_markdown(hint) for hint in getattr(step, "hints", [])],
+                unparsed_hints=(unparsed_hints := getattr(step, "hints", [])),
+                hints=[highlighted_markdown(hint) for hint in unparsed_hints],
                 solution=getattr(step, "get_solution", None),
+                program=getattr(step, "program", None),
                 prediction=get_predictions(step),
                 requirements=step.get_all_requirements() if getattr(step, "is_step", False) else None,
             )
-            for index, (name, text, step) in
-            enumerate(zip(self.step_names, self.step_texts(raw=False), self.steps))
+            for index, (name, text, unparsed_text, step) in
+            enumerate(zip(self.step_names, self.step_texts_parsed(), self.step_texts(raw=False), self.steps))
         ]
 
 
@@ -520,12 +521,20 @@ class Step(ABC):
             assert cls.hints
         elif cls.requirements:
             translated = t.get(t.requirements(cls), cls.requirements.strip())
-            result.append(dict(type="custom", message=highlighted_markdown(translated)))
+            result.append(dict(
+                type="custom",
+                message=highlighted_markdown(translated),
+                unparsed=dict(message=translated),
+            ))
 
         assert result, cls
 
         if cls.expected_code_source:
-            result.append(dict(type="custom", message=highlighted_markdown(cls.expected_code_source_term())))
+            result.append(dict(
+                type="custom",
+                message=highlighted_markdown(cls.expected_code_source_term()),
+                unparsed=dict(message=cls.expected_code_source_term()),
+            ))
         return result
 
     @classmethod
@@ -593,13 +602,15 @@ class ExerciseStep(Step):
     @classmethod
     def get_requirements(cls):
         result = [dict(type="exercise")]
-        inputs = cls.example_inputs()
-        stdin_input = inputs.pop("stdin_input", None)
+        raw_inputs = cls.example_inputs()
+        stdin_input = raw_inputs.pop("stdin_input", None)
         if not cls.is_function_exercise:
-            inputs = highlighted_markdown(indented_inputs_string(inputs))
-            result.append(dict(type="non_function_exercise", inputs=inputs))
+            inputs = highlighted_markdown(indented_inputs_string(raw_inputs))
+            result.append(dict(type="non_function_exercise", inputs=inputs, unparsed=dict(inputs=raw_inputs)))
         else:
-            result.append(dict(type="function_exercise", header=basic_function_header(cls.solution)))
+            raw_header = f"def {cls.solution.__name__}{basic_signature(cls.solution)}:"
+            header = highlighted_markdown("    " + raw_header)
+            result.append(dict(type="function_exercise", header=header, unparsed=dict(header=raw_header)))
             if goal := cls.function_exercise_goal():
                 result.append(dict(type="function_exercise_goal", print_or_return=goal))
         if stdin_input:
@@ -854,7 +865,7 @@ def get_pages():
     return dict(
         pages={
             slug: dict(
-                **select_attrs(page, "slug title index step_names"),
+                **select_attrs(page, "slug title unparsed_title index step_names"),
                 steps=page.step_dicts,
             )
             for slug, page in pages.items()

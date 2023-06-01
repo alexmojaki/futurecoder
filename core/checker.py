@@ -116,7 +116,8 @@ def check_entry(entry, callback, runner=default_runner):
             result["message_sections"] = [
                 dict(
                     type=typ,
-                    messages=[highlighted_markdown(message) for message in step_result.get(typ, [])],
+                    unparsed_messages=(raw_messages := step_result.get(typ, [])),
+                    messages=[highlighted_markdown(message) for message in raw_messages],
                 )
                 for typ in ["messages", "passed_tests", "lint"]
             ]

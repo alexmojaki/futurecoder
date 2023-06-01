@@ -92,10 +92,13 @@ def tarfile_filter(tar_info):
 
 
 def frontend_terms():
+    terms = {"unparsed": {}}
     for key, value in file_to_json(frontend_src / "english_terms.json").items():
         translation = t.get(f"frontend.{key}", value)
 
         assert ("\n" in translation) == ("\n" in value), (key, value, translation)
+
+        terms["unparsed"][key] = translation
 
         if "\n" in translation:
             value = markdown(translation)
@@ -106,7 +109,8 @@ def frontend_terms():
         if value != result:
             assert key.startswith("question_wizard_")
 
-        yield key, result
+        terms[key] = result
+    return terms
 
 
 def main():
@@ -115,7 +119,7 @@ def main():
 
     json_to_file(list(load_chapters()), frontend_src / "chapters.json")
     json_to_file(get_pages(), frontend_src / "book/pages.json.load_by_url")
-    json_to_file(dict(frontend_terms()), frontend_src / "terms.json", indent=4)
+    json_to_file(frontend_terms(), frontend_src / "terms.json", indent=4)
 
     birdseye_dest = frontend / "public/birdseye"
     shutil.rmtree(birdseye_dest, ignore_errors=True)
