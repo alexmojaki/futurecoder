@@ -500,7 +500,7 @@ class Step(ABC):
             except SyntaxError:
                 pass
             else:
-                result["lint"] = lint(tree)
+                result["lint"] = list(lint(tree))
 
         return result
 
