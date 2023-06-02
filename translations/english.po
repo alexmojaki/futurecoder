@@ -19646,6 +19646,12 @@ msgstr "Assessment"
 msgid "frontend.assessment_description"
 msgstr "When you run code that doesn't pass the current step, this section will *sometimes* explain what's wrong."
 
+msgid "frontend.assessment_lint"
+msgstr "Found the following generic problem(s) in your code:"
+
+msgid "frontend.assessment_passed_tests"
+msgstr "On the bright side, your code passed ${num} test(s)!"
+
 msgid "frontend.cancel"
 msgstr "Cancel"
 
