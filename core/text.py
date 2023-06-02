@@ -8,11 +8,9 @@ from abc import ABC, abstractmethod
 from copy import deepcopy
 from functools import cached_property, cache
 from importlib import import_module
-from io import StringIO
 from pathlib import Path
 from random import shuffle
 from textwrap import indent
-from tokenize import Untokenizer, generate_tokens
 from types import MethodType
 from typing import Union, List, get_type_hints
 
@@ -496,11 +494,9 @@ class Step(ABC):
 
         if self.code_source != "shell":
             try:
-                tree = self.tree
-            except SyntaxError:
+                result["lint"] = list(lint(self.tree))
+            except Exception:
                 pass
-            else:
-                result["lint"] = list(lint(tree))
 
         return result
 
