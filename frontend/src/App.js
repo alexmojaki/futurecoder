@@ -203,7 +203,7 @@ const Messages = (
         <div className="card-body">
           <details>
             <summary>
-              On the bright side, your code passed {section.messages.length} test(s)!
+              {_.template(terms.assessment_passed_tests)({ num: section.messages.length })}
             </summary>
             <br/>
             <SectionMessages section={section}/>
@@ -217,7 +217,7 @@ const Messages = (
     } else {
       return <div key={section.type}>
         <div className="alert alert-warning" role="alert">
-          Found the following generic problem(s) in your code:
+          {terms.assessment_lint}
         </div>
         <SectionMessages section={section}/>
       </div>
