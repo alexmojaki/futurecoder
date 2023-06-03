@@ -40,6 +40,7 @@ import {
   faListOl,
   faPlay,
   faQuestionCircle,
+  faRobot,
   faSignOutAlt,
   faStop,
   faUserGraduate
@@ -273,7 +274,7 @@ const Assistant = (assistant) => {
                    {newMessages && <span className="badge badge-pill badge-danger">{terms.new}</span>}
                  </div>}
     >
-      <Messages {...{messageSections}}/>
+      <Messages {...{ messageSections }}/>
     </Collapsible>
     <Collapsible classParentString="assistant-hints card"
                  contentInnerClassName="assistant-content card-body"
@@ -283,14 +284,52 @@ const Assistant = (assistant) => {
     >
       <HintsAssistant {...assistant}/>
     </Collapsible>
+    <Collapsible classParentString="assistant-ai card"
+                 contentInnerClassName="assistant-content card-body"
+                 trigger={<div className="card-header">
+                   <FontAwesomeIcon icon={faRobot}/> AI {/*terms.hints_and_solution TODO */}
+                 </div>}
+    >
+      <AI/>
+    </Collapsible>
   </div>
-    ;
 }
 
-const Requirement = (
-  {
-    requirement,
-  }) => {
+function AI() {
+  return <button onClick={async () => {
+    const page = currentPage();
+    const step = currentStep();
+    const requirements = step.requirements.map((requirement) =>
+      requirementText(
+        { ...requirement, ...(requirement.unparsed || {}) },
+        terms.unparsed,
+      ));
+    const { editorContent, assistant } = bookState;
+    const data = {
+      page,
+      stepName: step.name,
+      requirements,
+      editorContent,
+      assistant,
+      terms: terms.unparsed,
+    };
+    const res = await fetch(
+      "http://127.0.0.1:5001/futurecoder-io/us-central1/chat",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log(await res.text());
+  }}>
+    AI
+  </button>;
+}
+
+const requirementText = (requirement, terms) => {
   let text;
   switch (requirement.type) {
     case "verbatim":
@@ -322,8 +361,13 @@ const Requirement = (
       text = requirement.message;
       break;
   }
-  return <div className="assistant-requirement" dangerouslySetInnerHTML={{__html: text}}/>
+  return text;
 }
+
+const Requirement = ({ requirement, }) => {
+  return <div className="assistant-requirement"
+              dangerouslySetInnerHTML={{ __html: requirementText(requirement, terms) }}/>
+};
 
 const QuestionWizard = (
   {
@@ -333,7 +377,7 @@ const QuestionWizard = (
   }) =>
   <>
     <h1>{terms.question_wizard}</h1>
-    <div dangerouslySetInnerHTML={{__html: terms.question_wizard_intro}}/>
+    <div dangerouslySetInnerHTML={{ __html: terms.question_wizard_intro }}/>
     <hr/>
     {requestExpectedOutput && <>
       <div dangerouslySetInnerHTML={{__html: terms.question_wizard_expected_output}}/>

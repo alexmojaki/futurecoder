@@ -601,7 +601,8 @@ class ExerciseStep(Step):
         raw_inputs = cls.example_inputs()
         stdin_input = raw_inputs.pop("stdin_input", None)
         if not cls.is_function_exercise:
-            inputs = highlighted_markdown(indented_inputs_string(raw_inputs))
+            raw_inputs = indented_inputs_string(raw_inputs)
+            inputs = highlighted_markdown(raw_inputs)
             result.append(dict(type="non_function_exercise", inputs=inputs, unparsed=dict(inputs=raw_inputs)))
         else:
             raw_header = f"def {cls.solution.__name__}{basic_signature(cls.solution)}:"
