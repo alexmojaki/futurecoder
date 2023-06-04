@@ -58,6 +58,7 @@ import HeaderLoginInfo from "./components/HeaderLoginInfo";
 import terms from "./terms.json"
 import _ from "lodash";
 import {otherVisibleLanguages} from "./languages";
+import ReactMarkdown from "react-markdown";
 
 
 const EditorButtons = (
@@ -297,9 +298,9 @@ const Assistant = (assistant) => {
 
 function AI({ chat }) {
   return <div>
-    <div>
+    <ReactMarkdown>
       {chat}
-    </div>
+    </ReactMarkdown>
     <button
       className="btn btn-primary"
       onClick={async () => {
