@@ -90,6 +90,7 @@ const initialState = {
     messageSections: [],
     requestingSolution: 0,
     lastSeenMessageSections: [],
+    chat: "",
   },
   prediction: {
     choices: null,

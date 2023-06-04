@@ -290,43 +290,50 @@ const Assistant = (assistant) => {
                    <FontAwesomeIcon icon={faRobot}/> AI {/*terms.hints_and_solution TODO */}
                  </div>}
     >
-      <AI/>
+      <AI chat={assistant.chat}/>
     </Collapsible>
   </div>
 }
 
-function AI() {
-  return <button onClick={async () => {
-    const page = currentPage();
-    const step = currentStep();
-    const requirements = step.requirements.map((requirement) =>
-      requirementText(
-        { ...requirement, ...(requirement.unparsed || {}) },
-        terms.unparsed,
-      ));
-    const { editorContent, assistant } = bookState;
-    const data = {
-      page,
-      stepName: step.name,
-      requirements,
-      editorContent,
-      assistant,
-      terms: terms.unparsed,
-    };
-    const res = await fetch(
-      "http://127.0.0.1:5001/futurecoder-io/us-central1/chat",
-      {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    console.log(await res.text());
-  }}>
-    AI
-  </button>;
+function AI({ chat }) {
+  return <div>
+    <div>
+      {chat}
+    </div>
+    <button
+      className="btn btn-primary"
+      onClick={async () => {
+        const page = currentPage();
+        const step = currentStep();
+        const requirements = step.requirements.map((requirement) =>
+          requirementText(
+            { ...requirement, ...(requirement.unparsed || {}) },
+            terms.unparsed,
+          ));
+        const { editorContent, assistant } = bookState;
+        const data = {
+          page,
+          stepName: step.name,
+          requirements,
+          editorContent,
+          assistant,
+          terms: terms.unparsed,
+        };
+        const res = await fetch(
+          "http://127.0.0.1:5001/futurecoder-io/us-central1/chat",
+          {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        bookSetState("assistant.chat", await res.text());
+      }}>
+      Send
+    </button>
+  </div>;
 }
 
 const requirementText = (requirement, terms) => {
