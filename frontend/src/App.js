@@ -59,6 +59,7 @@ import terms from "./terms.json"
 import _ from "lodash";
 import {otherVisibleLanguages} from "./languages";
 import ReactMarkdown from "react-markdown";
+import {fetchEventSource} from '@microsoft/fetch-event-source';
 
 
 const EditorButtons = (
@@ -320,7 +321,8 @@ function AI({ chat }) {
           assistant,
           terms: terms.unparsed,
         };
-        const res = await fetch(
+        let currentChat = "";
+        await fetchEventSource(
           "http://127.0.0.1:5001/futurecoder-io/us-central1/chat",
           {
             method: "POST",
@@ -328,9 +330,20 @@ function AI({ chat }) {
             headers: {
               "Content-Type": "application/json",
             },
+            onmessage: (event) => {
+              console.log(event);
+              // currentChat += event.data;
+              // bookSetState("assistant.chat", currentChat);
+            },
+            onclose() {
+              console.log("closed");
+            },
+            onerror(error) {
+              console.error(error);
+              throw error;
+            }
           }
         );
-        bookSetState("assistant.chat", await res.text());
       }}>
       Send
     </button>

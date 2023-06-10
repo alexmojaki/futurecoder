@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@microsoft/fetch-event-source": "^2.0.1",
     "@sentry/react": "^7.16.0",
     "ansi_up": "^5.0.0",
     "axios": "^0.21.2",
