@@ -58,7 +58,8 @@ import HeaderLoginInfo from "./components/HeaderLoginInfo";
 import terms from "./terms.json"
 import _ from "lodash";
 import {otherVisibleLanguages} from "./languages";
-import ReactMarkdown from "react-markdown";
+import {Requirements} from "./Requirements";
+import {AI} from "./AI";
 
 
 const EditorButtons = (
@@ -255,16 +256,7 @@ const Assistant = (assistant) => {
                    <FontAwesomeIcon icon={faQuestionCircle}/> {terms.requirements}
                  </div>}
     >
-      <p>
-        {terms.requirements_description}
-      </p>
-      <ul>
-        {step.requirements.map((requirement, index) =>
-          <li key={index}>
-            <Requirement requirement={requirement}/>
-          </li>
-        )}
-      </ul>
+      <Requirements requirements={step.requirements}/>
     </Collapsible>
     <Collapsible onOpening={openAssessment}
                  onClosing={() => bookSetState("assessmentOpen", false)}
@@ -295,87 +287,6 @@ const Assistant = (assistant) => {
     </Collapsible>
   </div>
 }
-
-function AI({ chat }) {
-  return <div>
-    <ReactMarkdown>
-      {chat}
-    </ReactMarkdown>
-    <button
-      className="btn btn-primary"
-      onClick={async () => {
-        const page = currentPage();
-        const step = currentStep();
-        const requirements = step.requirements.map((requirement) =>
-          requirementText(
-            { ...requirement, ...(requirement.unparsed || {}) },
-            terms.unparsed,
-          ));
-        const { editorContent, assistant } = bookState;
-        const data = {
-          page,
-          stepName: step.name,
-          requirements,
-          editorContent,
-          assistant,
-          terms: terms.unparsed,
-        };
-        const res = await fetch(
-          "http://127.0.0.1:5001/futurecoder-io/us-central1/chat",
-          {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        bookSetState("assistant.chat", await res.text());
-      }}>
-      Send
-    </button>
-  </div>;
-}
-
-const requirementText = (requirement, terms) => {
-  let text;
-  switch (requirement.type) {
-    case "verbatim":
-      text = terms.verbatim;
-      break;
-    case "exercise":
-      text = terms.exercise_requirement;
-      break;
-    case "program_in_text":
-      text = terms.program_in_text;
-      break;
-    case "function_exercise":
-      text = _.template(terms.function_exercise)(requirement);
-      break;
-    case "function_exercise_goal":
-      text = _.template(terms.function_exercise_goal)(requirement);
-      break;
-    case "exercise_stdin":
-      text = terms.exercise_stdin;
-      break;
-    case "non_function_exercise":
-      if (!requirement.inputs.trim()) {
-        text = terms.no_input_variables;
-      } else {
-        text = _.template(terms.non_function_exercise)(requirement);
-      }
-      break;
-    default:
-      text = requirement.message;
-      break;
-  }
-  return text;
-}
-
-const Requirement = ({ requirement, }) => {
-  return <div className="assistant-requirement"
-              dangerouslySetInnerHTML={{ __html: requirementText(requirement, terms) }}/>
-};
 
 const QuestionWizard = (
   {
