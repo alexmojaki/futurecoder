@@ -283,7 +283,7 @@ const Assistant = (assistant) => {
                    <FontAwesomeIcon icon={faRobot}/> AI {/*terms.hints_and_solution TODO */}
                  </div>}
     >
-      <AI chat={assistant.chat}/>
+      <AI {...assistant.ai}/>
     </Collapsible>
   </div>
 }
