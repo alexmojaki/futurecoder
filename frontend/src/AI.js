@@ -52,10 +52,11 @@ export function AI({ response }) {
         bookSetState("assistant.ai.response", await res.text());
         userMessage.setHookValue("");
       }}>
-      <ReactMarkdown>
-        {response}
-      </ReactMarkdown>
       Send
     </button>
+    <br/>
+    <ReactMarkdown>
+      {response}
+    </ReactMarkdown>
   </div>;
 }
