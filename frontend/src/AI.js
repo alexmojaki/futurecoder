@@ -5,6 +5,8 @@ import terms from "./terms.json";
 import React from "react";
 import {useInput} from "./frontendlib/HookInput";
 import LoadingIndicator from "./components/LoadingIndicator";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPaperPlane, faRobot} from "@fortawesome/free-solid-svg-icons";
 
 export function AI({ response, running }) {
   const userMessage = useInput("", {
@@ -58,7 +60,12 @@ export function AI({ response, running }) {
       className="btn btn-primary"
       disabled={running}
     >
-      {running ? <LoadingIndicator/> : "Send"} {/* TODO terms */}
+      {running ?
+        <LoadingIndicator/> :
+        <>
+          <FontAwesomeIcon icon={faPaperPlane}/> Send {/* TODO terms */}
+        </>
+      }
     </button>
     <br/>
     <ReactMarkdown>
