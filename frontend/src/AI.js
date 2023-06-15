@@ -15,52 +15,54 @@ export function AI({ response, running }) {
       width: "100%",
     },
   });
-  return <div>
+  return <form onSubmit={async (e) => {
+    e.preventDefault();
+    const page = currentPage();
+    const step = currentStep();
+    const requirements = step.requirements.map((requirement) =>
+      requirementText(
+        { ...requirement, ...(requirement.unparsed || {}) },
+        terms.unparsed,
+      ));
+    const { editorContent, assistant } = bookState;
+    const data = {
+      page,
+      stepName: step.name,
+      requirements,
+      editorContent,
+      assistant,
+      terms: terms.unparsed,
+      userMessage: userMessage.value,
+    };
+    bookSetState("assistant.ai.running", true)
+    const res = await fetch(
+      "http://127.0.0.1:5001/futurecoder-io/us-central1/chat",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    bookSetState("assistant.ai.running", false)
+    bookSetState("assistant.ai.response", await res.text());
+    userMessage.setHookValue("");
+  }}>
     <div>
       {userMessage.input}
     </div>
     <br/>
     <button
+      type="submit"
       className="btn btn-primary"
       disabled={running}
-      onClick={async () => {
-        const page = currentPage();
-        const step = currentStep();
-        const requirements = step.requirements.map((requirement) =>
-          requirementText(
-            { ...requirement, ...(requirement.unparsed || {}) },
-            terms.unparsed,
-          ));
-        const { editorContent, assistant } = bookState;
-        const data = {
-          page,
-          stepName: step.name,
-          requirements,
-          editorContent,
-          assistant,
-          terms: terms.unparsed,
-          userMessage: userMessage.value,
-        };
-        bookSetState("assistant.ai.running", true)
-        const res = await fetch(
-          "http://127.0.0.1:5001/futurecoder-io/us-central1/chat",
-          {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        bookSetState("assistant.ai.running", false)
-        bookSetState("assistant.ai.response", await res.text());
-        userMessage.setHookValue("");
-      }}>
-      {running ? <LoadingIndicator/> : "Send"}
+    >
+      {running ? <LoadingIndicator/> : "Send"} {/* TODO terms */}
     </button>
     <br/>
     <ReactMarkdown>
       {response}
     </ReactMarkdown>
-  </div>;
+  </form>;
 }
