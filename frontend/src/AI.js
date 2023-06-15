@@ -4,8 +4,9 @@ import {requirementText} from "./Requirements";
 import terms from "./terms.json";
 import React from "react";
 import {useInput} from "./frontendlib/HookInput";
+import LoadingIndicator from "./components/LoadingIndicator";
 
-export function AI({ response }) {
+export function AI({ response, running }) {
   const userMessage = useInput("", {
     placeholder: "Enter message...",  // TODO terms
     type: 'text',
@@ -21,6 +22,7 @@ export function AI({ response }) {
     <br/>
     <button
       className="btn btn-primary"
+      disabled={running}
       onClick={async () => {
         const page = currentPage();
         const step = currentStep();
@@ -39,6 +41,7 @@ export function AI({ response }) {
           terms: terms.unparsed,
           userMessage: userMessage.value,
         };
+        bookSetState("assistant.ai.running", true)
         const res = await fetch(
           "http://127.0.0.1:5001/futurecoder-io/us-central1/chat",
           {
@@ -49,10 +52,11 @@ export function AI({ response }) {
             },
           }
         );
+        bookSetState("assistant.ai.running", false)
         bookSetState("assistant.ai.response", await res.text());
         userMessage.setHookValue("");
       }}>
-      Send
+      {running ? <LoadingIndicator/> : "Send"}
     </button>
     <br/>
     <ReactMarkdown>
