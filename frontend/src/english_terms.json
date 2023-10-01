@@ -66,6 +66,8 @@
   "click_to_expand": "Click to expand",
   "assessment": "Assessment",
   "assessment_description": "When you run code that doesn't pass the current step, this section will *sometimes* explain what's wrong.",
+  "assessment_passed_tests": "On the bright side, your code passed ${num} test(s)!",
+  "assessment_lint": "Found the following generic problem(s) in your code:",
   "requirements": "Requirements",
   "requirements_description": "You need to run some code according to the instructions above. In case those aren't clear enough, here's some extra clarification:",
   "exercise_requirement": "This step is an exercise. You need to figure out what code will produce the correct result. Many different correct answers are possible.",
