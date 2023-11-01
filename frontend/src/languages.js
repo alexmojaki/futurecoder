@@ -35,7 +35,7 @@ const languages = [
     code: 'es',
     name: 'Español',
     url: 'https://es.futurecoder.io/',
-    visible: false,
+    visible: true,
     firebaseConfig: {
       apiKey: "AIzaSyDkTwvLhDE53S5I-AjdKQQ4aFv305kSrfc",
       authDomain: "futurecoder-es.firebaseapp.com",
