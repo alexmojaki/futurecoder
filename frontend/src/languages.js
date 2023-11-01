@@ -16,22 +16,6 @@ const languages = [
     },
   },
   {
-    code: 'fr',
-    name: 'Français',
-    url: 'https://fr.futurecoder.io/',
-    visible: true,
-    firebaseConfig: {
-      apiKey: "AIzaSyBAC0zYqkdW6hJKD_RyTzBtIgndxyraW6o",
-      authDomain: "futurecoder-fr.firebaseapp.com",
-      databaseURL: "https://futurecoder-fr-default-rtdb.europe-west1.firebasedatabase.app",
-      projectId: "futurecoder-fr",
-      storageBucket: "futurecoder-fr.appspot.com",
-      messagingSenderId: "453289812685",
-      appId: "1:453289812685:web:1b390689ec643db8533f84",
-      measurementId: "G-E3E2910NY5"
-    }
-  },
-  {
     code: 'es',
     name: 'Español',
     url: 'https://es.futurecoder.io/',
@@ -45,6 +29,22 @@ const languages = [
       messagingSenderId: "748547684459",
       appId: "1:748547684459:web:10c851e2fe701d3234192e",
       measurementId: "G-72RVB6YHN3"
+    }
+  },
+  {
+    code: 'fr',
+    name: 'Français',
+    url: 'https://fr.futurecoder.io/',
+    visible: true,
+    firebaseConfig: {
+      apiKey: "AIzaSyBAC0zYqkdW6hJKD_RyTzBtIgndxyraW6o",
+      authDomain: "futurecoder-fr.firebaseapp.com",
+      databaseURL: "https://futurecoder-fr-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "futurecoder-fr",
+      storageBucket: "futurecoder-fr.appspot.com",
+      messagingSenderId: "453289812685",
+      appId: "1:453289812685:web:1b390689ec643db8533f84",
+      measurementId: "G-E3E2910NY5"
     }
   },
   {
