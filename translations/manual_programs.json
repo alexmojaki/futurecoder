@@ -6,6 +6,9 @@
         "es": [
             "palabras[4]"
         ],
+        "es-latam": [
+            "palabras[4]"
+        ],
         "fr": [
             "mots[4]"
         ],
@@ -23,6 +26,14 @@
             "    print(words[index])"
         ],
         "es": [
+            "palabras = ['Esto', 'es', 'una', 'lista']",
+            "indices = [0, 1, 2, 3]",
+            "",
+            "for indice in indices:",
+            "    print(indice)",
+            "    print(palabras[indice])"
+        ],
+        "es-latam": [
             "palabras = ['Esto', 'es', 'una', 'lista']",
             "indices = [0, 1, 2, 3]",
             "",
@@ -64,6 +75,14 @@
             "print(palabras[2])",
             "print(palabras[3])"
         ],
+        "es-latam": [
+            "palabras = ['Esto', 'es', 'una', 'lista']",
+            "",
+            "print(palabras[0])",
+            "print(palabras[1])",
+            "print(palabras[2])",
+            "print(palabras[3])"
+        ],
         "fr": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
             "",
@@ -97,6 +116,13 @@
             "    print(indice)",
             "    print(palabras[indice])"
         ],
+        "es-latam": [
+            "palabras = ['Esto', 'es', 'una', 'lista']",
+            "",
+            "for indice in range(len(palabras)):",
+            "    print(indice)",
+            "    print(palabras[indice])"
+        ],
         "fr": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
             "indices = range(4)",
@@ -123,6 +149,10 @@
             "palabras = ['Esto', 'es', 'una', 'lista']",
             "print(len(palabras))"
         ],
+        "es-latam": [
+            "palabras = ['Esto', 'es', 'una', 'lista']",
+            "print(len(palabras))"
+        ],
         "fr": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
             "print(len(mots))"
@@ -139,6 +169,11 @@
             "  print('---')"
         ],
         "es": [
+            "for caracter in nombre:",
+            "    print(caracter)",
+            "  print('---')"
+        ],
+        "es-latam": [
             "for caracter in nombre:",
             "    print(caracter)",
             "  print('---')"
@@ -163,6 +198,10 @@
             "for caracter in nombre:",
             "print(caracter)"
         ],
+        "es-latam": [
+            "for caracter in nombre:",
+            "print(caracter)"
+        ],
         "fr": [
             "for caractere in nom:",
             "print(caractere)"
@@ -180,6 +219,12 @@
             "    print(word)"
         ],
         "es": [
+            "palabras = ['Esto', 'es', 'una', 'lista']",
+            "",
+            "for palabra in palabras:",
+            "    print(palabra)"
+        ],
+        "es-latam": [
             "palabras = ['Esto', 'es', 'una', 'lista']",
             "",
             "for palabra in palabras:",
@@ -207,6 +252,10 @@
             "cadenas = [['hola', 'todos'], ['como', 'estas', 'tu']]",
             "print(cadenas[1][0])"
         ],
+        "es-latam": [
+            "cadenas = [['hola', 'todos'], ['como', 'estas', 'tu']]",
+            "print(cadenas[1][0])"
+        ],
         "fr": [
             "chaines = [['hello', 'there'], ['comment', 'allez', 'vous']]",
             "print(chaines[1][0])"
@@ -226,6 +275,10 @@
             "            name == \"Bob\""
         ],
         "es": [
+            "es_amigo = nombre == \"Alicia\" or",
+            "         nombre == \"Bob\""
+        ],
+        "es-latam": [
             "es_amigo = nombre == \"Alicia\" or",
             "         nombre == \"Bob\""
         ],
@@ -275,6 +328,18 @@
             "      X \"",
             ")"
         ],
+        "es-latam": [
+            "assert_equal(",
+            "    tablero_formateado([",
+            "        ['X', 'O', 'X'],",
+            "        [' ', 'O', 'O'],",
+            "        [' ', 'X', ' ']",
+            "    ]),",
+            "    \"XOX",
+            "      OO",
+            "      X \"",
+            ")"
+        ],
         "fr": [
             "assert_equal(",
             "    representation([",
@@ -311,6 +376,11 @@
             "Segunda l\u00ednea\"\"\"",
             "print(cadena)"
         ],
+        "es-latam": [
+            "cadena = \"\"\"Primera l\u00ednea",
+            "Segunda l\u00ednea\"\"\"",
+            "print(cadena)"
+        ],
         "fr": [
             "chaine = \"\"\"Premi\u00e8re ligne",
             "Deuxi\u00e8me ligne \"\"\"",
@@ -330,6 +400,9 @@
             "print('Alice's Diner')"
         ],
         "es": [
+            "print('Alice's Diner')"
+        ],
+        "es-latam": [
             "print('Ese es el perro'e Juan')"
         ],
         "fr": [
@@ -351,6 +424,11 @@
             "print(string.index('the'))"
         ],
         "es": [
+            "string = 'dar de comer al perro y al gato'",
+            "print(string.count('al'))",
+            "print(string.index('al'))"
+        ],
+        "es-latam": [
             "string = 'alimentar al perro y al gato'",
             "print(string.count('al'))",
             "print(string.index('al'))"
@@ -374,6 +452,9 @@
             "print('the' in 'feed the dog and the cat')"
         ],
         "es": [
+            "print('al' in 'dar de comer al perro y al gato')"
+        ],
+        "es-latam": [
             "print('al' in 'alimentar al perro y al gato')"
         ],
         "fr": [
@@ -391,6 +472,9 @@
             "print(1 + 2 = 3)"
         ],
         "es": [
+            "print(1 + 2 = 3)"
+        ],
+        "es-latam": [
             "print(1 + 2 = 3)"
         ],
         "fr": [

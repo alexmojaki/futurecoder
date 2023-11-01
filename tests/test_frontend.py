@@ -127,6 +127,7 @@ def _tests(driver):
 Sign out
 Settings
 Feedback
+Español
 Français
 தமிழ்"""
     )

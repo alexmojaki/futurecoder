@@ -15,7 +15,10 @@ import friendly_traceback
 
 linecache.getlines = old_getlines  # undo friendly monkeypatching
 
-friendly_traceback.set_lang(t.current_language or "en")
+friendly_language = t.current_language or "en"
+if friendly_language == "es-latam":
+    friendly_language = "es"
+friendly_traceback.set_lang(friendly_language)
 
 
 def friendly_message(e, double_newline: bool):
