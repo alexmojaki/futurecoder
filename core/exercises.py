@@ -19,6 +19,16 @@ class InvalidInitialCode(Exception):
 
 
 def make_function(program, arg_names):
+    """
+    Create a function from a provided program string and argument names
+
+    Args:
+        -program: string
+        -arg_names: List. List of argument names
+
+    Returns:
+        - Initial variable names, created function
+    """
     tree = ast.parse(program)
     try:
         assert len(tree.body) >= len(arg_names)
@@ -60,6 +70,15 @@ def match_returns_stdout(func, solution):
 
 
 def clean_result(result):
+    """
+    Clean the result string for display
+
+    Args:
+        - result: The result string
+
+    Returns:
+        - Cleaned result string.
+    """
     if not isinstance(result, str):
         result = repr(result)
     result = '\n'.join(line.rstrip() for line in result.rstrip().splitlines())
@@ -78,6 +97,17 @@ def inputs_string(inputs):
 
 
 def check_result(func, inputs, expected_result):
+    """
+    Check the result of a function against expected output.
+
+    Args:
+        - func: The function to be checked
+        - inputs: dictionary of input values
+        - expected_result: The expected output.
+
+    Returns:
+        - Dictionary with actual result
+    """
     try:
         result = func(**inputs)
     except Exception:

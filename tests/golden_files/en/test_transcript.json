@@ -233,7 +233,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 1,
                                     "lines": [
                                         {
@@ -254,7 +254,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 1, in <module>",
+                        " File \"c:\\my_program.py\", line 1, in <module>",
                         "-->    1 | sunshine",
                         "           ^^^^^^^^",
                         "",
@@ -1444,7 +1444,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 6,
                                     "lines": [
                                         {
@@ -1474,7 +1474,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 6, in <module>",
+                        " File \"c:\\my_program.py\", line 6, in <module>",
                         "       5 |     char = '!'",
                         "-->    6 | sentence += char",
                         "                       ^^^^",
@@ -2229,7 +2229,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 1,
                                     "lines": [
                                         {
@@ -2255,7 +2255,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 1, in <module>",
+                        " File \"c:\\my_program.py\", line 1, in <module>",
                         "-->    1 | words[4]",
                         "           ^^^^^^^^",
                         "words = ['This', 'is', 'a', 'list']",
@@ -2387,7 +2387,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 1,
                                     "lines": [
                                         {
@@ -2413,7 +2413,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 1, in <module>",
+                        " File \"c:\\my_program.py\", line 1, in <module>",
                         "-->    1 | indices[4]",
                         "           ^^^^^^^^^^",
                         "indices = range(0, 4)",
@@ -2766,7 +2766,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 3,
                                     "lines": [
                                         {
@@ -2792,7 +2792,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 3, in <module>",
+                        " File \"c:\\my_program.py\", line 3, in <module>",
                         "       2 | print(callable(f))",
                         "-->    3 | f()",
                         "           ^^^",
@@ -2852,7 +2852,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 2,
                                     "lines": [
                                         {
@@ -2878,7 +2878,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 2, in <module>",
+                        " File \"c:\\my_program.py\", line 2, in <module>",
                         "       1 | things = print([1, 2, 3])",
                         "-->    2 | length = len(things)",
                         "                    ^^^^^^^^^^^",
@@ -2931,7 +2931,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 2,
                                     "lines": [
                                         {
@@ -2957,7 +2957,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 2, in <module>",
+                        " File \"c:\\my_program.py\", line 2, in <module>",
                         "       1 | word = 'Hello'",
                         "-->    2 | word.append('!')",
                         "           ^^^^^^^^^^^",
@@ -3431,7 +3431,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 1,
                                     "lines": [
                                         {
@@ -3452,7 +3452,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 1, in <module>",
+                        " File \"c:\\my_program.py\", line 1, in <module>",
                         "-->    1 | 'Python'.append(' is cool!')",
                         "           ^^^^^^^^^^^^^^^",
                         "",
@@ -3648,7 +3648,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 3,
                                     "lines": [
                                         {
@@ -3694,7 +3694,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 3, in <module>",
+                        " File \"c:\\my_program.py\", line 3, in <module>",
                         "       2 | for i in range(len(numbers)):",
                         "-->    3 |     number = numbers[i]",
                         "                        ^^^^^^^^^^",
@@ -3961,7 +3961,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 3,
                                     "lines": [
                                         {
@@ -3999,7 +3999,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 3, in <module>",
+                        " File \"c:\\my_program.py\", line 3, in <module>",
                         "       2 | age = 20",
                         "-->    3 | print(\"Hello \" + name + \". You are \" + age + \" years old.\")",
                         "                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
@@ -4122,7 +4122,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 1,
                                     "lines": [
                                         {
@@ -4143,7 +4143,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 1, in <module>",
+                        " File \"c:\\my_program.py\", line 1, in <module>",
                         "-->    1 | print(1 + \"x\")",
                         "                 ^^^^^^^",
                         "",
@@ -4978,7 +4978,7 @@
             "passed": true,
             "result": [
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to print_twice in File \"c:\\my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_twice\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to print_many in File \"c:\\my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... thing = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148mprint_many\u001b[39m(n, thing):\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
                     "type": "snoop"
                 },
                 {
@@ -6397,7 +6397,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 1,
                                     "lines": [
                                         {
@@ -6418,7 +6418,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 1, in <module>",
+                        " File \"c:\\my_program.py\", line 1, in <module>",
                         "-->    1 | 12 + '34'",
                         "           ^^^^^^^^^",
                         "",
@@ -6836,7 +6836,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 1,
                                     "lines": [
                                         {
@@ -6862,7 +6862,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 1, in <module>",
+                        " File \"c:\\my_program.py\", line 1, in <module>",
                         "-->    1 | french[0]",
                         "           ^^^^^^^^^",
                         "french = {'apple': 'pomme', 'box': 'boite'}",
@@ -6964,7 +6964,7 @@
                             },
                             "frames": [
                                 {
-                                    "filename": "/my_program.py",
+                                    "filename": "c:\\my_program.py",
                                     "lineno": 1,
                                     "lines": [
                                         {
@@ -6990,7 +6990,7 @@
                     ],
                     "text": [
                         "Traceback (most recent call last):",
-                        " File \"/my_program.py\", line 1, in <module>",
+                        " File \"c:\\my_program.py\", line 1, in <module>",
                         "-->    1 | french['pomme']",
                         "           ^^^^^^^^^^^^^^^",
                         "french = {'apple': 'pomme', 'box': 'boite'}",

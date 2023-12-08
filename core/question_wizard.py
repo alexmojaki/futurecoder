@@ -10,6 +10,15 @@ from core.utils import highlighted_markdown, new_tab_links
 
 
 def input_messages(input_nodes):
+    """
+    Generates input related messages for the question wizard
+
+    Args:
+        - input_nodes: dictionary of input nodes during the question wizard
+
+    Returns:
+        - A list of input-related messages
+    """
     if not input_nodes:
         return []
 
@@ -50,29 +59,41 @@ def input_messages(input_nodes):
 
 
 def question_wizard_check(entry, output, runner):
+    """
+    Check the entry using the question wizard and generate messages
+
+    Args:
+        - entry: The entry to check
+        - output: The output of the code execution
+        - runner: the runner instance
+
+    Returns:
+        - list of formatted messages and a status string.
+
+    """
     if entry["source"] == "shell":
         return [], "shell"
 
-    messages = input_messages(runner.input_nodes)
+    generated_messages = input_messages(runner.input_nodes)
 
     if not output.strip():
-        messages.append(t.Terms.q_wiz_no_output)
+        generated_messages.append(t.Terms.q_wiz_no_output)
 
     try:
         tree = ast.parse(entry["input"])
     except SyntaxError:
         pass
     else:
-        messages.extend(lint(tree))
+        generated_messages.extend(lint(tree))
 
-    if not messages:
+    if not generated_messages:
         if not entry["expected_output"].strip():
             return [], "expected_output"
 
         if entry["expected_output"].strip() == output.strip():
-            messages.append(t.Terms.q_wiz_same_as_expected_output)
+            generated_messages.append(t.Terms.q_wiz_same_as_expected_output)
         elif entry["source"] == "editor":
-            messages.append(
+            generated_messages.append(
                 t.Terms.q_wiz_final_message.format(
                     indent(entry["input"], " " * 8).rstrip(),
                     indent(output, " " * 8).rstrip(),
@@ -80,7 +101,7 @@ def question_wizard_check(entry, output, runner):
                 )
             )
         else:
-            messages.append(t.Terms.q_wiz_debugger)
+            generated_messages.append(t.Terms.q_wiz_debugger)
 
-    messages = [new_tab_links(highlighted_markdown(message)) for message in messages]
-    return messages, "messages"
+    formatted_messages = [new_tab_links(highlighted_markdown(message)) for message in generated_messages]
+    return formatted_messages, "messages"

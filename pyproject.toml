@@ -5,7 +5,7 @@ description = ""
 authors = ["Alex Hall <alex.mojaki@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "3.11.2"
+python = "^3.11.2"
 birdseye = {git = "https://github.com/alexmojaki/birdseye.git", branch = "futurecoder"}
 snoop = "*"
 asttokens = "*"

@@ -21,6 +21,12 @@ class HighlightPythonTreeProcessor(Treeprocessor):
     codes = None
 
     def run(self, root):
+        """
+        Runs(Processes) the markdown tree to highlight Python code blocks
+
+        Args:
+            - root: The root element of the markdown tree.
+        """
         for node in root.findall(".//pre/code"):
             text = unescape(node.text)
 
@@ -50,6 +56,13 @@ class HighlightPythonTreeProcessor(Treeprocessor):
 
     @staticmethod
     def highlight_node(node, text):
+        """
+        Highlight a Python code block in the markdown tree node
+
+        Args:
+            - node: The markdown tree node containing the code block
+            - text(string): The text content
+        """
         import xml.etree.ElementTree as etree
         import pygments
 

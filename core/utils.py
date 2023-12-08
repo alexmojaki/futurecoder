@@ -118,7 +118,7 @@ def make_test_input_callback(stdin_input: Union[str, list]):
             print(f"<input: {result}>")
             return result
         else:
-            raise ValueError(t.Terms.no_more_test_inputs)
+            raise ValueError("No more test inputs available.")
 
     return input_callback
 

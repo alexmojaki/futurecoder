@@ -17,6 +17,15 @@ class FullRunner(EnhancedRunner):
     input_nodes = {}
 
     def input(self, prompt=""):
+        """
+        Tracks input nodes during question wizard execution
+
+        Args:
+            - prompt: prompts to display
+
+        Returns:
+            - user input.
+        """
         result = super().input(prompt)
         try:
             assert self.question_wizard
@@ -85,6 +94,9 @@ def check_entry(entry, callback, runner=default_runner):
         runner.birdseye_objects = None
         try:
             runner.run(entry["input"], mode)
+        except SyntaxError as syntax_error:
+            print(f"SyntaxError: {syntax_error}")
+            raise syntax_error
         finally:
             result["birdseye_objects"] = runner.birdseye_objects
 
@@ -105,8 +117,9 @@ def check_entry(entry, callback, runner=default_runner):
             )
             try:
                 step_result = step_instance.check_with_messages()
-            except SyntaxError:
-                pass
+            except SyntaxError as syntax_error:
+                print(f"SyntaxError: {syntax_error}")
+                raise syntax_error
 
         result["passed"] = step_result["passed"]
         if not result["passed"]:
