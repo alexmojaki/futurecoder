@@ -19,7 +19,7 @@ jobs:
     - name: Set up Node
       uses: actions/setup-node@v2
       with:
-        node-version: '16.17.1'
+        node-version: '18.17.1'
     - name: Install chromedriver
       uses: nanasess/setup-chromedriver@master
     - name: Install Python and JS dependencies
