@@ -3862,13 +3862,13 @@
         "get_solution": "program",
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
-            "print(\"Si continuamos as\u00ed nos vamos pa'rriba.\")"
+            "print(\"Conoc\u00ed al profesor D'Annunzio\")"
         ],
         "response": {
             "passed": true,
             "result": [
                 {
-                    "text": "Si continuamos as\u00ed nos vamos pa'rriba.\n",
+                    "text": "Conoc\u00ed al profesor D'Annunzio\n",
                     "type": "stdout"
                 }
             ]
