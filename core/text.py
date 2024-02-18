@@ -8,11 +8,9 @@ from abc import ABC, abstractmethod
 from copy import deepcopy
 from functools import cached_property, cache
 from importlib import import_module
-from io import StringIO
 from pathlib import Path
 from random import shuffle
 from textwrap import indent
-from tokenize import Untokenizer, generate_tokens
 from types import MethodType
 from typing import Union, List, get_type_hints
 
@@ -239,7 +237,7 @@ def get_predictions(cls):
 
     answer = cls.correct_output
     choices = [t.get(t.prediction_choice(cls, i), choice.rstrip()).rstrip() for i, choice in enumerate(choices)]
-    error = t.get(f"output_predictions.Error", "Error")
+    error = t.get("output_predictions.Error", "Error")
 
     if answer:
         assert answer == "Error"

@@ -5,7 +5,7 @@ from textwrap import dedent
 
 import pure_eval
 
-from core.text import ExerciseStep, Page, Step, VerbatimStep, search_ast, Disallowed
+from core.text import ExerciseStep, Page, Step, VerbatimStep, Disallowed
 
 
 class IntroducingIfStatements(Page):

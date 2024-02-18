@@ -137,7 +137,7 @@ def main():
         if t.current_language not in (None, "en"):
             for arcname in [
                 f"translations/locales/{t.current_language}/LC_MESSAGES",
-                f"translations/codes.json",
+                "translations/codes.json",
             ]:
                 tar.add(core_dir.parent / arcname, arcname=arcname, recursive=True, filter=tarfile_filter)
             arcname = f"friendly_traceback/locales/{t.current_language}/LC_MESSAGES/friendly_tb_{t.current_language}.mo"

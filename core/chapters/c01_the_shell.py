@@ -1,6 +1,5 @@
 # flake8: NOQA E501
 import ast
-from textwrap import dedent
 
 from core.text import MessageStep, Page, Step, VerbatimStep, search_ast
 

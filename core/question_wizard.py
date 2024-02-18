@@ -23,7 +23,7 @@ def input_messages(input_nodes):
             if len(multi_nodes) > 1:
                 list_name = f"test_inputs_{multi_nodes.index(node) + 1}"
             else:
-                list_name = f"test_inputs"
+                list_name = "test_inputs"
             list_line = f"{list_name} = {list(strings)}"
             replacement_text = f"{list_name}.pop(0)"
         else:

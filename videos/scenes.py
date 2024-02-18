@@ -1,4 +1,22 @@
-from manim import *
+from manim import (
+    DOWN,
+    LEFT,
+    ORIGIN,
+    RIGHT,
+    UP,
+    AnimationGroup,
+    ApplyMethod,
+    BulletedList,
+    FadeInFrom,
+    LaggedStart,
+    Line,
+    PangoText,
+    Scene,
+    ShowCreation,
+    VGroup,
+    Write,
+    config,
+)
 
 Text = PangoText
 

@@ -652,7 +652,7 @@ Beautiful! There's a pattern emerging here. The two languages could be merged in
                     print(f"English: {word}")
                     for language in translations:
                         print(f"{language}: {translations[language]}")
-                    print(f"---")
+                    print("---")
 
             print_words({
                 'apple': {
