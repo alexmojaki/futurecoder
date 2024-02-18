@@ -28521,7 +28521,7 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
 msgid "pages.MultiLineExpressions.steps.valid_multiline.text"
 msgstr ""
-"Python tries to intepret this as two separate lines of code and gets confused. You need to tell it that\n"
+"Python tries to interpret this as two separate lines of code and gets confused. You need to tell it that\n"
 "the first line is continuing onto the second line.\n"
 "\n"
 "One way to do this is by adding `\\` at the end of the line to 'escape' the line break.\n"
