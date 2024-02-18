@@ -16,8 +16,7 @@ __program_indented__
 
         def program(self):
             name = 'World'
-            for character in name:
-                print(character)
+            for character in name: print(character)
 
     final_text = """
 You can read the code almost like normal English:
