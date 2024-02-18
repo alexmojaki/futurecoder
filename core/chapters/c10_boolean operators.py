@@ -502,7 +502,7 @@ is_friend = name == "Alice" or
 
     class valid_multiline(VerbatimStep):
         """
-Python tries to intepret this as two separate lines of code and gets confused. You need to tell it that
+Python tries to interpret this as two separate lines of code and gets confused. You need to tell it that
 the first line is continuing onto the second line.
 
 One way to do this is by adding `\\` at the end of the line to 'escape' the line break.
