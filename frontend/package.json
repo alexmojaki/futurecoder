@@ -35,6 +35,7 @@
     "react-fast-compare": "^3.0.1",
     "react-firebaseui": "^5.0.2",
     "react-inner-html": "^1.0.1",
+    "react-markdown": "^8.0.7",
     "react-redux": "^7.2.2",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.2",

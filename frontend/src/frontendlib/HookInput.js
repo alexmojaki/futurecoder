@@ -11,5 +11,5 @@ export const HookInput = (hook, options, element = "input") =>
 export const useInput = (initialValue, options, element = "input") => {
   const hook = useState(initialValue);
   const input = HookInput(hook, options, element);
-  return {input, value: hook[0]};
+  return {input, value: hook[0], setHookValue: hook[1]};
 }

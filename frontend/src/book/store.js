@@ -90,6 +90,9 @@ const initialState = {
     messageSections: [],
     requestingSolution: 0,
     lastSeenMessageSections: [],
+    ai: {
+      response: "",
+    }
   },
   prediction: {
     choices: null,
