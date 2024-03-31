@@ -91,7 +91,8 @@ const initialState = {
     requestingSolution: 0,
     lastSeenMessageSections: [],
     ai: {
-      response: "",
+      messages: [],
+      running: false,
     }
   },
   prediction: {
@@ -533,3 +534,21 @@ export function postCodeEntry(codeEntry) {
     databaseRequest("POST", codeEntry, "code_entries").catch(e => console.error(e));
   }
 }
+
+export const sendAiMessage = makeAction(
+  'SEND_AI_MESSAGE',
+  (state, {value}) => {
+    state = ipush(state, "assistant.ai.messages", { role: "user", content: value });
+    state = iset(state, "assistant.ai.running", true);
+    return state;
+  }
+);
+
+export const receiveAiMessage = makeAction(
+  'RECEIVE_AI_MESSAGE',
+  (state, {value}) => {
+    state = ipush(state, "assistant.ai.messages", { role: "assistant", content: value });
+    state = iset(state, "assistant.ai.running", false);
+    return state;
+  }
+);
