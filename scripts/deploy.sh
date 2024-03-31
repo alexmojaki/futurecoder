@@ -29,8 +29,6 @@ done
 
 if [ "$FUTURECODER_LANGUAGE" = "en" ]; then
     PROJECT=futurecoder-io
-elif [ "$FUTURECODER_LANGUAGE" = "es" ]; then
-    PROJECT=futurecoder-es-latam
 else
     PROJECT=futurecoder-${FUTURECODER_LANGUAGE}
 fi

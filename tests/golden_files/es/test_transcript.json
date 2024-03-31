@@ -17,12 +17,12 @@
         "step": "first_expression"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a la ventana de comandos",
         "program": [
             "1+2"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -52,12 +52,12 @@
         "step": "more_calculation"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a la ventana de comandos",
         "program": [
             "5 - 6"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -69,12 +69,12 @@
         "step": "more_calculation"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Cadenas",
         "program": [
             "'hola'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -86,12 +86,12 @@
         "step": "hello_string"
     },
     {
+        "get_solution": "program",
         "page": "Uniendo cadenas",
         "program": [
             "'hola' + 'mundo'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -120,15 +120,12 @@
         "step": "hello_world_space"
     },
     {
-        "get_solution": [
-            "'hola ' + 'mundo'"
-        ],
+        "get_solution": "program",
         "page": "Uniendo cadenas",
         "program": [
             "'hola ' + 'mundo'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -140,12 +137,12 @@
         "step": "hello_world_space"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Variables",
         "program": [
             "palabra = 'Hola'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -164,12 +161,12 @@
         "step": "word_check"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Variables",
         "program": [
             "palabra"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -181,12 +178,12 @@
         "step": "word_check"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Variables",
         "program": [
             "'palabra'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "'palabra'",
@@ -208,12 +205,12 @@
         "step": "word_string_check"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Variables",
         "program": [
             "sol"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Error",
@@ -318,24 +315,24 @@
         "step": "name_assign"
     },
     {
+        "get_solution": "program",
         "page": "Usando Variables y <code>print()</code>",
         "program": [
             "tu_nombre = 'Alex'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "name_assign"
     },
     {
+        "get_solution": "program",
         "page": "Usando Variables y <code>print()</code>",
         "program": [
             "'Hola ' + tu_nombre"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -359,12 +356,12 @@
         "step": "word_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Usando Variables y <code>print()</code>",
         "program": [
             "palabra + tu_nombre"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -388,15 +385,12 @@
         "step": "word_plus_name_with_space"
     },
     {
-        "get_solution": [
-            "palabra + ' ' + tu_nombre"
-        ],
+        "get_solution": "program",
         "page": "Usando Variables y <code>print()</code>",
         "program": [
             "palabra + ' ' + tu_nombre"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -408,24 +402,24 @@
         "step": "word_plus_name_with_space"
     },
     {
+        "get_solution": "program",
         "page": "Usando Variables y <code>print()</code>",
         "program": [
             "palabra = 'Adi\u00f3s'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "word_assign_goodbye"
     },
     {
+        "get_solution": "program",
         "page": "Usando Variables y <code>print()</code>",
         "program": [
             "palabra + ' ' + tu_nombre"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -437,12 +431,12 @@
         "step": "goodbye_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Usando Variables y <code>print()</code>",
         "program": [
             "print(palabra + ' ' + tu_nombre)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -454,6 +448,7 @@
         "step": "first_print"
     },
     {
+        "get_solution": "program",
         "page": "Escribiendo Programas",
         "program": [
             "palabra = 'Hola'",
@@ -463,7 +458,6 @@
             "print(palabra + ' ' + nombre)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -475,6 +469,7 @@
         "step": "editor_hello_world"
     },
     {
+        "get_solution": "program",
         "page": "Almacenando c\u00e1lculos en variables",
         "program": [
             "palabra = 'Hola'",
@@ -483,7 +478,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hola Mundo",
@@ -507,6 +501,7 @@
         "step": "sentence_equals_word_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Almacenando c\u00e1lculos en variables",
         "program": [
             "palabra = 'Hola'",
@@ -517,14 +512,13 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hola Mundo\nHola Mundo",
                 "choices": [
                     "Hola Mundo\nHola Mundo",
-                    "Hola Mundo\nAdios Mundo",
-                    "Adios Mundo\nAdios Mundo",
+                    "Hola Mundo\nAdi\u00f3s Mundo",
+                    "Adi\u00f3s Mundo\nAdi\u00f3s Mundo",
                     "Error"
                 ]
             },
@@ -538,13 +532,13 @@
         "step": "sentence_doesnt_change"
     },
     {
+        "get_solution": "program",
         "page": "Introduci\u00f3n a los Bucles For",
         "program": [
             "nombre = 'Mundo'",
             "for caracter in nombre: print(caracter)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -556,13 +550,13 @@
         "step": "first_for_loop"
     },
     {
+        "get_solution": "program",
         "page": "Indentaci\u00f3n",
         "program": [
             "for caracter in nombre:",
             "print(caracter)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -575,6 +569,7 @@
         "step": "missing_indentation"
     },
     {
+        "get_solution": "program",
         "page": "Indentaci\u00f3n",
         "program": [
             "nombre = 'Mundo'",
@@ -584,7 +579,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -596,6 +590,7 @@
         "step": "two_indented_lines"
     },
     {
+        "get_solution": "program",
         "page": "Indentaci\u00f3n",
         "program": [
             "nombre = 'Mundo'",
@@ -605,7 +600,6 @@
             "print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -617,6 +611,7 @@
         "step": "one_indented_line"
     },
     {
+        "get_solution": "program",
         "page": "Indentaci\u00f3n",
         "program": [
             "for caracter in nombre:",
@@ -624,7 +619,6 @@
             "  print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -648,7 +642,6 @@
             "    print('---' + caracter)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -671,7 +664,6 @@
             "    print(nombre)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -683,6 +675,7 @@
         "step": "loop_exercise_2"
     },
     {
+        "get_solution": "program",
         "page": "Construyendo Cadenas",
         "program": [
             "hola = 'Hola'",
@@ -691,7 +684,6 @@
             "print(hola)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hola\nHola!",
@@ -712,6 +704,7 @@
         "step": "hello_plus_equals"
     },
     {
+        "get_solution": "program",
         "page": "Construyendo Cadenas",
         "program": [
             "nombre = 'Mundo'",
@@ -721,7 +714,6 @@
             "    print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "-M\n-Mu\n-Mun\n-Mund\n-Mundo",
@@ -747,6 +739,7 @@
         "step": "name_triangle"
     },
     {
+        "get_solution": "program",
         "page": "Construyendo Cadenas",
         "program": [
             "nombre = 'Mundo'",
@@ -756,7 +749,6 @@
             "    linea = linea + car"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "-\n-M\n-Mu\n-Mun\n-Mund",
@@ -777,12 +769,12 @@
         "step": "name_triangle_missing_last_line"
     },
     {
+        "get_solution": "program",
         "page": "Construyendo Cadenas",
         "program": [
             "'' + '' + ''"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "''",
@@ -824,7 +816,6 @@
             "    print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -851,7 +842,6 @@
             "    print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -878,7 +868,6 @@
             "    print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -907,7 +896,6 @@
             "print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -940,7 +928,6 @@
             "print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -977,7 +964,6 @@
             "print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1025,7 +1011,6 @@
             "    espacios += ' '"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1037,6 +1022,7 @@
         "step": "diagonal_name_bonus_challenge"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las sentencias If",
         "program": [
             "condicion = True",
@@ -1045,7 +1031,6 @@
             "print(condicion)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1057,6 +1042,7 @@
         "step": "introducing_booleans"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las sentencias If",
         "program": [
             "if True:",
@@ -1066,7 +1052,6 @@
             "    print('Esto no')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1078,6 +1063,7 @@
         "step": "first_if_statements"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las sentencias If",
         "program": [
             "frase = 'Hola Mundo'",
@@ -1087,7 +1073,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hola Mundo!",
@@ -1107,6 +1092,7 @@
         "step": "excited_example"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las sentencias If",
         "program": [
             "frase = 'Hola Mundo'",
@@ -1116,7 +1102,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hola Mundo",
@@ -1155,7 +1140,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1167,6 +1151,7 @@
         "step": "excited_confused_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Combinaci\u00f3n de declaraciones compuestas",
         "program": [
             "frase = 'Hola Mundo'",
@@ -1181,7 +1166,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "H!o!l!a! !M!u!n!d!o!",
@@ -1208,6 +1192,7 @@
         "step": "for_inside_if"
     },
     {
+        "get_solution": "program",
         "page": "Entendiendo Programas con <code>snoop</code>",
         "program": [
             "frase = 'Hola Mundo'",
@@ -1222,7 +1207,6 @@
             "print(nueva_frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "ola Mundo",
@@ -1245,6 +1229,7 @@
         "step": "print_tail"
     },
     {
+        "get_solution": "program",
         "page": "Entendiendo Programas con <code>snoop</code>",
         "program": [
             "frase = 'Hola Mundo'",
@@ -1259,7 +1244,6 @@
             "print(nueva_frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1326,7 +1310,6 @@
             "print(nueva_frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1338,6 +1321,7 @@
         "step": "print_first_character"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> y <code>else</code>",
         "program": [
             "condicion = True",
@@ -1347,7 +1331,6 @@
             "    print('No')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1359,6 +1342,7 @@
         "step": "first_if_else"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> y <code>else</code>",
         "program": [
             "condicion = False",
@@ -1368,7 +1352,6 @@
             "    print('No')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1380,6 +1363,7 @@
         "step": "first_if_else_false"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> y <code>else</code>",
         "program": [
             "frase = 'Hola Mundo'",
@@ -1391,7 +1375,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1403,6 +1386,7 @@
         "step": "if_upper_else_lower"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> y <code>else</code>",
         "program": [
             "frase = 'Hola Mundo'",
@@ -1414,7 +1398,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1426,6 +1409,7 @@
         "step": "if_upper_else_lower_false"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> y <code>else</code>",
         "program": [
             "frase = 'Hola Mundo'",
@@ -1438,7 +1422,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Error",
@@ -1527,7 +1510,6 @@
             "print(frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1568,7 +1550,6 @@
             "print(nueva_frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1611,7 +1592,6 @@
             "print(nueva_frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1623,6 +1603,7 @@
         "step": "spongebob"
     },
     {
+        "get_solution": "program",
         "page": "El operador de igualdad",
         "program": [
             "print(1 + 2 == 3)",
@@ -1630,7 +1611,6 @@
             "print('ab' + 'c' == 'a' + 'bc')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1642,12 +1622,12 @@
         "step": "introducing_equality"
     },
     {
+        "get_solution": "program",
         "page": "El operador de igualdad",
         "program": [
             "print(1 + 2 = 3)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1660,6 +1640,7 @@
         "step": "equality_vs_assignment"
     },
     {
+        "get_solution": "program",
         "page": "El operador de igualdad",
         "program": [
             "nombre = 'kesha'",
@@ -1672,7 +1653,6 @@
             "print(nuevo_nombre)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1713,7 +1693,6 @@
             "print(nuevo_nombre)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1725,6 +1704,7 @@
         "step": "if_equals_replacing_characters_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Presentando <code>elif</code>",
         "program": [
             "adn = 'AGTAGCGTC'",
@@ -1743,7 +1723,6 @@
             "print(adn_opuesto)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1792,7 +1771,6 @@
             "print(adn_opuesto)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1804,6 +1782,7 @@
         "step": "dna_example_with_else"
     },
     {
+        "get_solution": "program",
         "page": "Presentando <code>elif</code>",
         "program": [
             "adn = 'AGTAGCGTC'",
@@ -1822,7 +1801,6 @@
             "print(adn_opuesto)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1834,12 +1812,12 @@
         "step": "dna_example_with_elif"
     },
     {
+        "get_solution": "program",
         "page": "Otros operadores de comparaci\u00f3n",
         "program": [
             "1 != 2"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -1859,6 +1837,7 @@
         "step": "try_not_equals"
     },
     {
+        "get_solution": "program",
         "page": "Otros operadores de comparaci\u00f3n",
         "program": [
             "frase = 'La tecla e de mi teclado est\u00e1 quebrada'",
@@ -1869,7 +1848,6 @@
             "print(nueva_frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1881,15 +1859,12 @@
         "step": "brokn_kyboard"
     },
     {
-        "get_solution": [
-            "1 < 2"
-        ],
+        "get_solution": "program",
         "page": "Otros operadores de comparaci\u00f3n",
         "program": [
             "1 < 2"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1901,15 +1876,12 @@
         "step": "introducing_less_than"
     },
     {
-        "get_solution": [
-            "'1' < '2'"
-        ],
+        "get_solution": "program",
         "page": "Otros operadores de comparaci\u00f3n",
         "program": [
             "'1' < '2'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1921,6 +1893,7 @@
         "step": "comparing_strings"
     },
     {
+        "get_solution": "program",
         "page": "Otros operadores de comparaci\u00f3n",
         "program": [
             "porcentaje = 73",
@@ -1937,7 +1910,6 @@
             "print(grado)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "B",
@@ -1990,7 +1962,6 @@
             "print(primero)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2002,6 +1973,7 @@
         "step": "min_three_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Listas",
         "program": [
             "palabras = ['Esto', 'es', 'una', 'lista']",
@@ -2010,7 +1982,6 @@
             "    print(palabra)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2022,6 +1993,7 @@
         "step": "first_list"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Listas",
         "program": [
             "x = 1",
@@ -2029,7 +2001,6 @@
             "print(cosas)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2041,6 +2012,7 @@
         "step": "can_contain_anything"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Listas",
         "program": [
             "numeros = [3, 1, 4, 1, 5, 9]",
@@ -2052,7 +2024,6 @@
             "print(total)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2081,7 +2052,6 @@
             "print(total)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2121,7 +2091,6 @@
             "print(total)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2148,7 +2117,6 @@
             "print(doble)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2177,7 +2145,6 @@
             "print(numeros_grandes)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2209,7 +2176,6 @@
             "print(encontrado)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2221,6 +2187,7 @@
         "step": "list_contains_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "palabras = ['Esto', 'es', 'una', 'lista']",
@@ -2231,7 +2198,6 @@
             "print(palabras[3])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2243,12 +2209,12 @@
         "step": "introducing_subscripting"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "palabras[4]"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2301,6 +2267,7 @@
         "step": "index_error"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "palabras = ['Esto', 'es', 'una', 'lista']",
@@ -2311,7 +2278,6 @@
             "    print(palabras[indice])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "0\nEsto\n1\nes\n2\nuna\n3\nlista",
@@ -2335,6 +2301,7 @@
         "step": "introducing_len_and_range"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "palabras = ['Esto', 'es', 'una', 'lista']",
@@ -2344,7 +2311,6 @@
             "    print(palabras[indice])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2356,6 +2322,7 @@
         "step": "range_len"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "indices = range(4)",
@@ -2366,7 +2333,6 @@
             "print(indices[3])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "0\n1\n2\n3",
@@ -2389,12 +2355,12 @@
         "step": "printing_the_range"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "indices[4]"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Error",
@@ -2458,12 +2424,12 @@
         "step": "indices_out_of_bounds"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "range(4)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2475,12 +2441,12 @@
         "step": "range_almost_the_same_as_list"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "list(range(4))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[0, 1, 2, 3]",
@@ -2505,13 +2471,13 @@
         "step": "range_versus_list"
     },
     {
+        "get_solution": "program",
         "page": "Recuperando elementos en una posici\u00f3n, <code>range()</code> y <code>len()</code>.",
         "program": [
             "palabras = ['Esto', 'es', 'una', 'lista']",
             "print(len(palabras))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "4",
@@ -2544,7 +2510,6 @@
             "print(palabras[len(palabras) - 1])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2569,7 +2534,6 @@
             "    print(palabras[indice])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2641,7 +2605,6 @@
             "        break"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2669,7 +2632,6 @@
             "    print(car1 + ' ' + car2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2729,7 +2691,6 @@
             "    print(car1 + ' ' + car2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2741,13 +2702,13 @@
         "step": "zip_longest_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Terminolog\u00eda: Llamada a funciones y m\u00e9todos",
         "program": [
             "print(len)",
             "print(print)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2759,12 +2720,12 @@
         "step": "print_functions"
     },
     {
+        "get_solution": "program",
         "page": "Terminolog\u00eda: Llamada a funciones y m\u00e9todos",
         "program": [
             "print(callable(len))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2776,6 +2737,7 @@
         "step": "introducing_callable"
     },
     {
+        "get_solution": "program",
         "page": "Terminolog\u00eda: Llamada a funciones y m\u00e9todos",
         "program": [
             "f = 'una cadena'",
@@ -2783,7 +2745,6 @@
             "f()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2843,6 +2804,7 @@
         "step": "not_callable"
     },
     {
+        "get_solution": "program",
         "page": "Terminolog\u00eda: Llamada a funciones y m\u00e9todos",
         "program": [
             "cosas = [1, 2, 3]",
@@ -2851,7 +2813,6 @@
             "print(impreso)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2863,13 +2824,13 @@
         "step": "print_returns_none"
     },
     {
+        "get_solution": "program",
         "page": "Terminolog\u00eda: Llamada a funciones y m\u00e9todos",
         "program": [
             "cosas = print([1, 2, 3])",
             "largo = len(cosas)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2929,6 +2890,7 @@
         "step": "len_of_none"
     },
     {
+        "get_solution": "program",
         "page": "Terminolog\u00eda: Llamada a funciones y m\u00e9todos",
         "program": [
             "palabra = 'Hola'",
@@ -2936,7 +2898,6 @@
             "print(palabra.upper())"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2948,13 +2909,13 @@
         "step": "methods_of_str"
     },
     {
+        "get_solution": "program",
         "page": "Terminolog\u00eda: Llamada a funciones y m\u00e9todos",
         "program": [
             "palabra = 'Hola'",
             "palabra.append('!')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3008,6 +2969,7 @@
         "step": "no_append_for_str"
     },
     {
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "nums = [1, 2, 3]",
@@ -3018,7 +2980,6 @@
             "print(nums)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3030,6 +2991,7 @@
         "step": "append_vs_concatenate"
     },
     {
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "nums = [1, 2, 3]",
@@ -3037,7 +2999,6 @@
             "print(nums)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[1, 9, 3]",
@@ -3061,12 +3022,12 @@
         "step": "subscript_assignment_predict"
     },
     {
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "[7, 8, 9, 8].index(8)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "1",
@@ -3090,6 +3051,7 @@
         "step": "index_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "nums = [1, 2, 3]",
@@ -3097,7 +3059,6 @@
             "print(nums)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "2\n[1, 3]",
@@ -3121,6 +3082,7 @@
         "step": "pop_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "nums = [1, 2, 3]",
@@ -3128,7 +3090,6 @@
             "print(nums)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[2, 3]",
@@ -3152,11 +3113,7 @@
         "step": "remove_predict_exercise"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "x.append(x.pop(0))",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3164,7 +3121,6 @@
             "print(x)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3176,11 +3132,7 @@
         "step": "pop_remove_index_subscript_assignment"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "x[len(x) - 1] = x[0]",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3188,7 +3140,6 @@
             "print(x)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3200,11 +3151,7 @@
         "step": "subscript_assignment_exercise"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "y = x + [x[0]]",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3212,7 +3159,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3224,11 +3170,7 @@
         "step": "negative_index_concatenation_exercise"
     },
     {
-        "get_solution": [
-            "x = [1, 2, 0, 3]",
-            "x.pop(x.index(0))",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Funciones y M\u00e9todos para listas",
         "program": [
             "x = [1, 2, 0, 3]",
@@ -3236,7 +3178,6 @@
             "print(x)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3248,12 +3189,12 @@
         "step": "remove_exercise"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e1s funciones y m\u00e9todos de la lista",
         "program": [
             "sorted([2, 9, 1, 8, 5, 6])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[1, 2, 5, 6, 8, 9]",
@@ -3275,6 +3216,7 @@
         "step": "sorted_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e1s funciones y m\u00e9todos de la lista",
         "program": [
             "nums = [2, 9, 1, 8, 5, 64]",
@@ -3282,7 +3224,6 @@
             "print(2 in nums)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False\nTrue",
@@ -3304,12 +3245,12 @@
         "step": "in_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e1s funciones y m\u00e9todos de la lista",
         "program": [
             "sum([5, 3, 4])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "12",
@@ -3330,12 +3271,12 @@
         "step": "sum_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e1s funciones y m\u00e9todos de la lista",
         "program": [
             "[1, 2, 3, 2, 7, 2, 5].count(2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "3",
@@ -3357,11 +3298,7 @@
         "step": "count_predict_exercise"
     },
     {
-        "get_solution": [
-            "x = [1, 2, 0, 3]",
-            "y = x.count(1) > 0",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "M\u00e1s funciones y m\u00e9todos de la lista",
         "program": [
             "x = [1, 2, 0, 3]",
@@ -3369,7 +3306,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3381,11 +3317,7 @@
         "step": "count_in_sorted_sum"
     },
     {
-        "get_solution": [
-            "x = [15, 12, -6, 3]",
-            "y = sum(x) / len(x)",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "M\u00e1s funciones y m\u00e9todos de la lista",
         "program": [
             "x = [15, 12, -6, 3]",
@@ -3393,7 +3325,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3405,11 +3336,7 @@
         "step": "average_exercise"
     },
     {
-        "get_solution": [
-            "x = 100",
-            "y = sum(range(x + 1))",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "M\u00e1s funciones y m\u00e9todos de la lista",
         "program": [
             "x = 100",
@@ -3417,7 +3344,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3429,11 +3355,7 @@
         "step": "sum_range_exercise"
     },
     {
-        "get_solution": [
-            "x = [12, -6, 2, -1, 3]",
-            "y = sorted(x)[1]",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "M\u00e1s funciones y m\u00e9todos de la lista",
         "program": [
             "x = [12, -6, 2, -1, 3]",
@@ -3441,7 +3363,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3453,12 +3374,12 @@
         "step": "second_smallest_in_list_exercise"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9todos de cadena e inmutabilidad",
         "program": [
-            "print('al' in 'alimentar al perro y al gato')"
+            "print('al' in 'dar de comer al perro y al gato')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3470,18 +3391,18 @@
         "step": "string_in_step"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9todos de cadena e inmutabilidad",
         "program": [
-            "string = 'alimentar al perro y al gato'",
+            "string = 'dar de comer al perro y al gato'",
             "print(string.count('al'))",
             "print(string.index('al'))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "3\n0\n",
+                    "text": "2\n13\n",
                     "type": "stdout"
                 }
             ]
@@ -3489,12 +3410,12 @@
         "step": "string_count_index"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9todos de cadena e inmutabilidad",
         "program": [
             "'Python'.append(' es genial!')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3541,6 +3462,7 @@
         "step": "mutation_string_append"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9todos de cadena e inmutabilidad",
         "program": [
             "frase = \"Python es impresionante\"",
@@ -3549,7 +3471,6 @@
             "print(nueva_frase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3561,15 +3482,12 @@
         "step": "string_lower_upper"
     },
     {
-        "get_solution": [
-            "max([21, 55, 4, 91, 62, 49])"
-        ],
+        "get_solution": "program",
         "page": "C\u00f3mo Encontrar Informaci\u00f3n con Google, y m\u00e1s",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3581,11 +3499,7 @@
         "step": "sum_list"
     },
     {
-        "get_solution": [
-            "nums = [1, 2, 3, 4, 5]",
-            "nums.insert(2, 9)",
-            "print(nums)"
-        ],
+        "get_solution": "program",
         "page": "C\u00f3mo Encontrar Informaci\u00f3n con Google, y m\u00e1s",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
@@ -3593,7 +3507,6 @@
             "print(nums)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3605,16 +3518,16 @@
         "step": "list_insert"
     },
     {
+        "get_solution": "program",
         "page": "C\u00f3mo Encontrar Informaci\u00f3n con Google, y m\u00e1s",
         "program": [
             "dir([])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']\n",
+                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getstate__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']\n",
                     "type": "stdout"
                 }
             ]
@@ -3622,6 +3535,7 @@
         "step": "dir_list"
     },
     {
+        "get_solution": "program",
         "page": "Entendiendo programas con Python Tutor",
         "program": [
             "todo_numeros = [2, 4, 8, 1, 9, 7]",
@@ -3639,7 +3553,6 @@
             "print(numeros_grandes)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3651,6 +3564,7 @@
         "step": "run_with_python_tutor"
     },
     {
+        "get_solution": "program",
         "page": "<code>==</code> contra <code>is</code>, y Tener Varios Nombres Para un Mismo Valor",
         "program": [
             "lista1 = [1, 2, 3]",
@@ -3668,7 +3582,6 @@
             "print(lista2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3680,6 +3593,7 @@
         "step": "two_separate_lists"
     },
     {
+        "get_solution": "program",
         "page": "<code>==</code> contra <code>is</code>, y Tener Varios Nombres Para un Mismo Valor",
         "program": [
             "lista1 = [1, 2, 3]",
@@ -3697,7 +3611,6 @@
             "print(lista2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3709,6 +3622,7 @@
         "step": "same_list"
     },
     {
+        "get_solution": "program",
         "page": "Modificar Mientras se Itera",
         "program": [
             "numeros = [10, 7, 8, 3, 12, 15]",
@@ -3719,7 +3633,6 @@
             "print(numeros)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3798,6 +3711,7 @@
         "step": "run_broken_with_python_tutor"
     },
     {
+        "get_solution": "program",
         "page": "Modificar Mientras se Itera",
         "program": [
             "numeros = [10, 7, 8, 3, 12, 15]",
@@ -3807,7 +3721,6 @@
             "print(numeros)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3819,6 +3732,7 @@
         "step": "remove_instead_of_pop"
     },
     {
+        "get_solution": "program",
         "page": "Modificar Mientras se Itera",
         "program": [
             "numeros = [10, 7, 8, 3, 12, 15]",
@@ -3828,7 +3742,6 @@
             "print(numeros)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3840,6 +3753,7 @@
         "step": "make_copy"
     },
     {
+        "get_solution": "program",
         "page": "Modificar Mientras se Itera",
         "program": [
             "numeros = [10, 7, 8, 3, 12, 15]",
@@ -3851,7 +3765,6 @@
             "print(numeros_grandes)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3863,6 +3776,7 @@
         "step": "make_copy2"
     },
     {
+        "get_solution": "program",
         "page": "Modificar Mientras se Itera",
         "program": [
             "numeros = [10, 7, 8, 3, 12, 15]",
@@ -3874,7 +3788,6 @@
             "print(numeros_grandes)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3886,17 +3799,17 @@
         "step": "make_new_list"
     },
     {
+        "get_solution": "program",
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
-            "print('Ese es el perro'e Juan')"
+            "print('Alice's Diner')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>Actualmente, no puedo detectar la causa probable de este error.\nIntente examinar detenidamente la l\u00ednea indicada, as\u00ed como la l\u00ednea\ninmediatamente superior para ver si puede identificar alguna palabra mal escrita\no s\u00edmbolos que falten, como (, ), [, ], :, etc.</p>\n<p>A menos que su c\u00f3digo utilice anotaciones de tipo, que est\u00e1n fuera de nuestro alcance,\nsi cree que esto es algo que deber\u00eda ser manejado\npor friendly, por favor reporte este caso a\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
-                    "text": "    print('Ese es el perro'e Juan')\n          ^^^^^^^^^^^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\nen la l\u00ednea 1\n",
+                    "friendly": "<p>Un <code>SyntaxError</code> ocurre cuando Python no puede entender tu c\u00f3digo.</p>\n<p>I suspect that you were trying to use a quote character inside a string\nthat was enclosed in quotes of the same kind.\nPerhaps you should have escaped the inner quote character:</p>\n<pre><code>print('Alice\\'s Diner')\n            ^^\n</code></pre>",
+                    "text": "    print('Alice's Diner')\n                        ^\nSyntaxError: unterminated string literal (detected at line 1)\nen la l\u00ednea 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -3904,16 +3817,16 @@
         "step": "single_quotes_apostrophe"
     },
     {
+        "get_solution": "program",
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
-            "print(\"Ese es el perro'e Juan\")"
+            "print(\"Alice's Diner\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Ese es el perro'e Juan\n",
+                    "text": "Alice's Diner\n",
                     "type": "stdout"
                 }
             ]
@@ -3921,12 +3834,12 @@
         "step": "double_quotes"
     },
     {
+        "get_solution": "program",
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
             "'Alicia' == \"Alicia\""
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -3946,19 +3859,16 @@
         "step": "single_double_quotes_equal"
     },
     {
-        "get_solution": [
-            "print(\"Si continuamos as\u00ed nos vamos pa'rriba.\")"
-        ],
+        "get_solution": "program",
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
-            "print(\"Si continuamos as\u00ed nos vamos pa'rriba.\")"
+            "print(\"Conoc\u00ed al profesor D'Annunzio\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Si continuamos as\u00ed nos vamos pa'rriba.\n",
+                    "text": "Conoc\u00ed al profesor D'Annunzio\n",
                     "type": "stdout"
                 }
             ]
@@ -3966,19 +3876,16 @@
         "step": "double_quote_exercise"
     },
     {
-        "get_solution": [
-            "print('\"Hablar es barato. Mu\u00e9strame el c\u00f3digo.\" - Linus Torvalds')"
-        ],
+        "get_solution": "program",
         "page": "Comillas simples y dobles en las cadenas",
         "program": [
-            "print('\"Hablar es barato. Mu\u00e9strame el c\u00f3digo.\" - Linus Torvalds')"
+            "print('\"Hablar es f\u00e1cil. Mu\u00e9strame el c\u00f3digo.\" - Linus Torvalds')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "\"Hablar es barato. Mu\u00e9strame el c\u00f3digo.\" - Linus Torvalds\n",
+                    "text": "\"Hablar es f\u00e1cil. Mu\u00e9strame el c\u00f3digo.\" - Linus Torvalds\n",
                     "type": "stdout"
                 }
             ]
@@ -3986,6 +3893,7 @@
         "step": "single_quote_exercise"
     },
     {
+        "get_solution": "program",
         "page": "f-strings",
         "program": [
             "nombre = \"Alicia\"",
@@ -3994,7 +3902,6 @@
             "print(f\"{nombre} fue a {comida} con {amigo}.\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Alicia fue a almuerzo con Bob.",
@@ -4021,6 +3928,7 @@
         "step": "introduce_f_strings"
     },
     {
+        "get_solution": "program",
         "page": "f-strings",
         "program": [
             "nombre = \"Alicia\"",
@@ -4028,15 +3936,14 @@
             "print(\"Hola \" + nombre + \". T\u00fa tienes \" + edad + \" a\u00f1os.\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Error",
                 "choices": [
                     "\"Hola \" + nombre + \". T\u00fa tienes es \" + edad + \" a\u00f1os.\"",
-                    "Hola nombre. T\u00fa tienes es edad a\u00f1os.",
-                    "Hola Alicia. T\u00fa tienes es 20 a\u00f1os.",
-                    "Hola 'Alicia'. T\u00fa tienes es 20 a\u00f1os.",
+                    "Hola nombre. T\u00fa tienes edad a\u00f1os.",
+                    "Hola Alicia. T\u00fa tienes 20 a\u00f1os.",
+                    "Hola 'Alicia'. T\u00fa tienes 20 a\u00f1os.",
                     "Error"
                 ]
             },
@@ -4107,11 +4014,7 @@
         "step": "concatenate_string_number"
     },
     {
-        "get_solution": [
-            "nombre = \"Alicia\"",
-            "edad = 20",
-            "print(f'Hola {nombre}. T\u00fa tienes {edad} a\u00f1os.')"
-        ],
+        "get_solution": "program",
         "page": "f-strings",
         "program": [
             "nombre = \"Alicia\"",
@@ -4119,7 +4022,6 @@
             "print(f'Hola {nombre}. T\u00fa tienes {edad} a\u00f1os.')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4131,12 +4033,12 @@
         "step": "basic_f_string_exercise"
     },
     {
+        "get_solution": "program",
         "page": "f-strings",
         "program": [
             "f\"2 * 3 + 4 es igual a {2 * 3 + 4}\""
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4153,15 +4055,14 @@
         ],
         "page": "f-strings",
         "program": [
-            "personas = ['eODoUwNzS', 'ofHBEzZxs', 'zwTrQA', 'LDaOKmpHU', 'HCMLTt', 'NbRmEjaoyD']",
+            "personas = ['Alice', 'Bob', 'Charlie']",
             "print(f\"Hay {len(personas)} personas esperando, el nombre de la primera es {personas[0]}.\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Hay 6 personas esperando, el nombre de la primera es eODoUwNzS.\n",
+                    "text": "Hay 3 personas esperando, el nombre de la primera es Alice.\n",
                     "type": "stdout"
                 }
             ]
@@ -4169,6 +4070,7 @@
         "step": "fix_broken_program"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
             "for letra in \"ABC\":",
@@ -4178,7 +4080,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "A\nA 0\nA 1\nA 2\nA 3\n---\nB\nB 0\nB 1\nB 2\nB 3\n---\nC\nC 0\nC 1\nC 2\nC 3\n---",
@@ -4359,14 +4260,7 @@
         "step": "times_table_exercise"
     },
     {
-        "get_solution": [
-            "for izquierda in range(12):",
-            "    izquierda += 1",
-            "    for derecha in range(12):",
-            "        derecha += 1",
-            "        print(f'{izquierda} x {derecha} = {izquierda * derecha}')",
-            "    print('---')"
-        ],
+        "get_solution": "program",
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
             "for izquierda in range(12):",
@@ -4377,7 +4271,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4401,18 +4294,17 @@
         ],
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
-            "jugadores = ['OUumHyG', 'ocUyWBh', 'DbNQe', 'XjItgGJ', 'iOuKYyzZt', 'iySpdUX', 'EZkLNo']",
+            "jugadores = ['Alice', 'Bob', 'Charlie']",
             "for jugador1 in jugadores:",
             "    for jugador2 in jugadores:",
             "        if jugador1 != jugador2:",
             "            print(f'{jugador1} vs {jugador2}')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "OUumHyG vs ocUyWBh\nOUumHyG vs DbNQe\nOUumHyG vs XjItgGJ\nOUumHyG vs iOuKYyzZt\nOUumHyG vs iySpdUX\nOUumHyG vs EZkLNo\nocUyWBh vs OUumHyG\nocUyWBh vs DbNQe\nocUyWBh vs XjItgGJ\nocUyWBh vs iOuKYyzZt\nocUyWBh vs iySpdUX\nocUyWBh vs EZkLNo\nDbNQe vs OUumHyG\nDbNQe vs ocUyWBh\nDbNQe vs XjItgGJ\nDbNQe vs iOuKYyzZt\nDbNQe vs iySpdUX\nDbNQe vs EZkLNo\nXjItgGJ vs OUumHyG\nXjItgGJ vs ocUyWBh\nXjItgGJ vs DbNQe\nXjItgGJ vs iOuKYyzZt\nXjItgGJ vs iySpdUX\nXjItgGJ vs EZkLNo\niOuKYyzZt vs OUumHyG\niOuKYyzZt vs ocUyWBh\niOuKYyzZt vs DbNQe\niOuKYyzZt vs XjItgGJ\niOuKYyzZt vs iySpdUX\niOuKYyzZt vs EZkLNo\niySpdUX vs OUumHyG\niySpdUX vs ocUyWBh\niySpdUX vs DbNQe\niySpdUX vs XjItgGJ\niySpdUX vs iOuKYyzZt\niySpdUX vs EZkLNo\nEZkLNo vs OUumHyG\nEZkLNo vs ocUyWBh\nEZkLNo vs DbNQe\nEZkLNo vs XjItgGJ\nEZkLNo vs iOuKYyzZt\nEZkLNo vs iySpdUX\n",
+                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Alice\nBob vs Charlie\nCharlie vs Alice\nCharlie vs Bob\n",
                     "type": "stdout"
                 }
             ]
@@ -4437,7 +4329,6 @@
             "                print(c1 + c2 + c3 + c4)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4468,7 +4359,6 @@
             "    print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4488,18 +4378,17 @@
         ],
         "page": "Introducci\u00f3n a los bucles anidados",
         "program": [
-            "jugadores = ['JwsUZyHWXS', 'UepKEbOB', 'uTRiPVo', 'VWkbqMa', 'BwdsYFWHh', 'XmgDJ', 'WRoYNxvLF']",
+            "jugadores = ['Alice', 'Bob', 'Charlie']",
             "for i in range(len(jugadores)):",
             "    for j in range(len(jugadores)):",
             "        if i < j:",
             "            print(f'{jugadores[i]} vs {jugadores[j]}')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "JwsUZyHWXS vs UepKEbOB\nJwsUZyHWXS vs uTRiPVo\nJwsUZyHWXS vs VWkbqMa\nJwsUZyHWXS vs BwdsYFWHh\nJwsUZyHWXS vs XmgDJ\nJwsUZyHWXS vs WRoYNxvLF\nUepKEbOB vs uTRiPVo\nUepKEbOB vs VWkbqMa\nUepKEbOB vs BwdsYFWHh\nUepKEbOB vs XmgDJ\nUepKEbOB vs WRoYNxvLF\nuTRiPVo vs VWkbqMa\nuTRiPVo vs BwdsYFWHh\nuTRiPVo vs XmgDJ\nuTRiPVo vs WRoYNxvLF\nVWkbqMa vs BwdsYFWHh\nVWkbqMa vs XmgDJ\nVWkbqMa vs WRoYNxvLF\nBwdsYFWHh vs XmgDJ\nBwdsYFWHh vs WRoYNxvLF\nXmgDJ vs WRoYNxvLF\n",
+                    "text": "Alice vs Bob\nAlice vs Charlie\nBob vs Charlie\n",
                     "type": "stdout"
                 }
             ]
@@ -4507,6 +4396,7 @@
         "step": "player_vs_player_bonus"
     },
     {
+        "get_solution": "program",
         "page": "Comprensi\u00f3n de programas con <code>birdseye</code>",
         "program": [
             "a = 2",
@@ -4516,7 +4406,6 @@
             "print(a * b + c * d)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4528,6 +4417,7 @@
         "step": "first_birdseye_example"
     },
     {
+        "get_solution": "program",
         "page": "Comprensi\u00f3n de programas con <code>birdseye</code>",
         "program": [
             "palabra = 'Sorprendente'",
@@ -4542,7 +4432,6 @@
             "print(consonantes)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4565,7 +4454,6 @@
             "print(cadena[0])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4577,13 +4465,13 @@
         "step": "string_list_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Listas Anidadas",
         "program": [
             "cadenas = [\"abc\", \"def\", \"ghi\"]",
             "print(cadenas[1][0])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4604,7 +4492,6 @@
             "print(cadenas[-2][-1])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4616,13 +4503,13 @@
         "step": "double_subscripting_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a las Listas Anidadas",
         "program": [
             "cadenas = [['hola', 'todos'], ['como', 'estas', 'tu']]",
             "print(cadenas[1][0])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "como",
@@ -4660,7 +4547,6 @@
             "print(cadenas[1][2][0])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4672,6 +4558,7 @@
         "step": "triple_subscripting"
     },
     {
+        "get_solution": "program",
         "page": "Iterando sobre Listas Anidadas",
         "program": [
             "numeros = [[1, 2, 3], [4, 5], [6], []]",
@@ -4681,7 +4568,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---",
@@ -4704,6 +4590,7 @@
         "step": "nested_list_nested_loop_example"
     },
     {
+        "get_solution": "program",
         "page": "Iterando sobre Listas Anidadas",
         "program": [
             "numeros = [[1, 2, 3], [4, 5], [6], []]",
@@ -4713,7 +4600,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4741,7 +4627,6 @@
             "            print(cadena)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4773,7 +4658,6 @@
             "    print(presente)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4805,7 +4689,6 @@
             "print(presente)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4834,7 +4717,6 @@
             "    print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4879,7 +4761,6 @@
             "    print(linea)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4891,6 +4772,7 @@
         "step": "zip_longest_strings_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
             "def saludo(nombre):",
@@ -4900,7 +4782,6 @@
             "saludo(\"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4912,6 +4793,7 @@
         "step": "define_greet"
     },
     {
+        "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
             "def saludo(nombre):",
@@ -4922,7 +4804,6 @@
             "saludo(\"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "\u00a1Hola Alicia!\n\u00bfC\u00f3mo est\u00e1s?\n\u00a1Hola Bob!\n\u00bfC\u00f3mo est\u00e1s?",
@@ -4943,14 +4824,7 @@
         "step": "how_are_you"
     },
     {
-        "get_solution": [
-            "def di_hola(nombre):",
-            "    print(f\"\u00a1Hola {nombre}!\")",
-            "    print(\"\u00bfC\u00f3mo est\u00e1s?\")",
-            "",
-            "di_hola(\"Alicia\")",
-            "di_hola(\"Bob\")"
-        ],
+        "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
             "def di_hola(nombre):",
@@ -4961,7 +4835,6 @@
             "di_hola(\"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4973,14 +4846,7 @@
         "step": "change_function_name"
     },
     {
-        "get_solution": [
-            "def di_hola(nombre_persona):",
-            "    print(f\"\u00a1Hola {nombre_persona}!\")",
-            "    print(\"\u00bfC\u00f3mo est\u00e1s?\")",
-            "",
-            "di_hola(\"Alicia\")",
-            "di_hola(\"Bob\")"
-        ],
+        "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
             "def di_hola(nombre_persona):",
@@ -4991,7 +4857,6 @@
             "di_hola(\"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5003,11 +4868,7 @@
         "step": "change_parameter_name"
     },
     {
-        "get_solution": [
-            "def imprimir_doble(x):",
-            "    print(x)",
-            "    print(x)"
-        ],
+        "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
             "def imprimir_doble(x):",
@@ -5015,13 +4876,13 @@
             "    print(x)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "print_twice_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
             "def imprimir_varios(cosa, n):",
@@ -5031,7 +4892,6 @@
             "imprimir_varios(\"Hola\", 3)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hola\nHola\nHola",
@@ -5054,13 +4914,7 @@
         "step": "print_many"
     },
     {
-        "get_solution": [
-            "def imprimir_varios(n, cosa):",
-            "    for _ in range(n):",
-            "        print(cosa)",
-            "",
-            "imprimir_varios(3, \"Hola\")"
-        ],
+        "get_solution": "program",
         "page": "Definiendo Funciones",
         "program": [
             "def imprimir_varios(n, cosa):",
@@ -5070,7 +4924,6 @@
             "imprimir_varios(3, \"Hola\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5082,6 +4935,7 @@
         "step": "swap_parameters"
     },
     {
+        "get_solution": "program",
         "page": "Llamando funciones dentro de funciones",
         "program": [
             "def imprimir_varios(n, cosa):",
@@ -5094,7 +4948,6 @@
             "imprimir_doble(\"Hola\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5106,6 +4959,7 @@
         "step": "print_twice_call_print_many"
     },
     {
+        "get_solution": "program",
         "page": "Llamando funciones dentro de funciones",
         "program": [
             "def imprimir_varios(n, cosa):",
@@ -5118,7 +4972,6 @@
             "imprimir_doble(\"Hola\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5166,6 +5019,7 @@
         "step": "see_stack_in_snoop"
     },
     {
+        "get_solution": "program",
         "page": "Llamando funciones dentro de funciones",
         "program": [
             "def imprimir_varios(n, cosa):",
@@ -5178,7 +5032,6 @@
             "imprimir_doble(\"Hola\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5190,6 +5043,7 @@
         "step": "see_stack_in_pythontutor"
     },
     {
+        "get_solution": "program",
         "page": "Llamando funciones dentro de funciones",
         "program": [
             "def imprimir_varios(n, cosa):",
@@ -5202,7 +5056,6 @@
             "imprimir_doble(\"Hola\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5214,6 +5067,7 @@
         "step": "see_stack_in_birdseye"
     },
     {
+        "get_solution": "program",
         "page": "Devolviendo valores desde las funciones",
         "program": [
             "def doble(x):",
@@ -5225,7 +5079,6 @@
             "print(duplicar)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "5\n10",
@@ -5246,6 +5099,7 @@
         "step": "first_return"
     },
     {
+        "get_solution": "program",
         "page": "Devolviendo valores desde las funciones",
         "program": [
             "def doble(x):",
@@ -5256,7 +5110,6 @@
             "print(numero)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "5",
@@ -5302,13 +5155,13 @@
             "    return doble(doble(x))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "quadruple_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Probando Funciones",
         "program": [
             "def doble(x):",
@@ -5318,7 +5171,6 @@
             "assert_equal(doble(5), 10)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "OK\nOK",
@@ -5341,6 +5193,7 @@
         "step": "introducing_assert_equal"
     },
     {
+        "get_solution": "program",
         "page": "Probando Funciones",
         "program": [
             "def doble(x):",
@@ -5350,7 +5203,6 @@
             "assert_equal(doble(5), 10)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Error! 6 != 4\nError! 15 != 10",
@@ -5372,6 +5224,7 @@
         "step": "make_tests_fail"
     },
     {
+        "get_solution": "program",
         "page": "Probando Funciones",
         "program": [
             "def doble(x):",
@@ -5384,7 +5237,6 @@
             "assert_equal(cuadruple(5), 20)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5396,17 +5248,13 @@
         "step": "complete_quadruple_tests"
     },
     {
-        "get_solution": [
-            "def rodear(cadena, lados):",
-            "    return lados + cadena + lados"
-        ],
+        "get_solution": "program",
         "page": "Probando Funciones",
         "program": [
             "def rodear(cadena, lados):",
             "    return lados + cadena + lados"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -5465,13 +5313,13 @@
             "    return cadena"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "alert_exercise"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> finaliza la llamada a la funci\u00f3n",
         "program": [
             "def foo():",
@@ -5481,7 +5329,6 @@
             "print(foo())"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "1",
@@ -5504,6 +5351,7 @@
         "step": "double_return_in_one_function"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> finaliza la llamada a la funci\u00f3n",
         "program": [
             "def numeros_double(numeros):",
@@ -5513,7 +5361,6 @@
             "assert_equal(numeros_double([1, 2, 3]), [2, 4, 6])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5525,6 +5372,7 @@
         "step": "cannot_return_multiple_values"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> finaliza la llamada a la funci\u00f3n",
         "program": [
             "def foo():",
@@ -5537,7 +5385,6 @@
             "foo()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "a 0\na 1\na 2\nb 0",
@@ -5560,6 +5407,7 @@
         "step": "return_ends_whole_function"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> finaliza la llamada a la funci\u00f3n",
         "program": [
             "def foo():",
@@ -5572,7 +5420,6 @@
             "foo()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2",
@@ -5595,6 +5442,7 @@
         "step": "break_vs_return"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "def es_amigo(nombre):",
@@ -5610,7 +5458,6 @@
             "assert_equal(es_amigo(\"Carlos\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5622,12 +5469,12 @@
         "step": "InputAliceBob"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "True or True"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -5647,12 +5494,12 @@
         "step": "TrueOrTrue"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "True or False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -5672,12 +5519,12 @@
         "step": "TrueOrFalse"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "False or False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False",
@@ -5697,6 +5544,7 @@
         "step": "FalseOrFalse"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "def es_amigo(nombre):",
@@ -5710,7 +5558,6 @@
             "assert_equal(es_amigo(\"Carlos\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5722,6 +5569,7 @@
         "step": "ImprovingWithOr"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "def es_amigo(nombre):",
@@ -5732,7 +5580,6 @@
             "assert_equal(es_amigo(\"Carlos\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5744,6 +5591,7 @@
         "step": "FurtherImprovement"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "def es_amigo(nombre):",
@@ -5754,7 +5602,6 @@
             "assert_equal(es_amigo(\"Carlos\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5766,6 +5613,7 @@
         "step": "ACommonMistake"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "def es_amigo(nombre):",
@@ -5776,7 +5624,6 @@
             "assert_equal(es_amigo(\"Carlos\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5788,13 +5635,7 @@
         "step": "InspectWithBirdseye"
     },
     {
-        "get_solution": [
-            "def es_porcentaje_valido(x):",
-            "    if x < 0 or x > 100:",
-            "        return False",
-            "    else:",
-            "        return True"
-        ],
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>or</code>",
         "program": [
             "def es_porcentaje_valido(x):",
@@ -5804,19 +5645,18 @@
             "        return True"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "AnExercise"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>and</code>",
         "program": [
             "True and True"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -5836,12 +5676,12 @@
         "step": "TrueAndTrue"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>and</code>",
         "program": [
             "True and False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False",
@@ -5861,12 +5701,12 @@
         "step": "TrueAndFalse"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>and</code>",
         "program": [
             "False and False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False",
@@ -5886,13 +5726,7 @@
         "step": "FalseAndFalse"
     },
     {
-        "get_solution": [
-            "def es_porcentaje_valido(x):",
-            "    if 0 <= x and x <= 100:",
-            "        return True",
-            "    else:",
-            "        return False"
-        ],
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>and</code>",
         "program": [
             "def es_porcentaje_valido(x):",
@@ -5902,37 +5736,32 @@
             "        return False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "AndExercise"
     },
     {
-        "get_solution": [
-            "def todo_igual(fila):",
-            "    return fila[0] == fila[1] and fila[0] == fila[2]"
-        ],
+        "get_solution": "program",
         "page": "Introducci\u00f3n al operador l\u00f3gico <code>and</code>",
         "program": [
             "def todo_igual(fila):",
             "    return fila[0] == fila[1] and fila[0] == fila[2]"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "TicTacToeWinningRow"
     },
     {
+        "get_solution": "program",
         "page": "Declaraciones de varias l\u00edneas",
         "program": [
             "es_amigo = nombre == \"Alicia\" or",
             "         nombre == \"Bob\""
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5945,6 +5774,7 @@
         "step": "invalid_multiline"
     },
     {
+        "get_solution": "program",
         "page": "Declaraciones de varias l\u00edneas",
         "program": [
             "nombre = \"Bob\"",
@@ -5965,7 +5795,6 @@
             "      nombre == \"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5977,12 +5806,12 @@
         "step": "valid_multiline"
     },
     {
+        "get_solution": "program",
         "page": "Combinando los operadores l\u00f3gicos <code>and</code> y <code>or</code>",
         "program": [
             "True or False and False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5994,14 +5823,7 @@
         "step": "CombiningAndOr"
     },
     {
-        "get_solution": [
-            "def diagonal_ganadora(tablero):",
-            "    medio = tablero[1][1]",
-            "    return (",
-            "            (medio == tablero[0][0] and medio == tablero[2][2]) or",
-            "            (medio == tablero[0][2] and medio == tablero[2][0])",
-            "    )"
-        ],
+        "get_solution": "program",
         "page": "Combinando los operadores l\u00f3gicos <code>and</code> y <code>or</code>",
         "program": [
             "def diagonal_ganadora(tablero):",
@@ -6012,19 +5834,18 @@
             "    )"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "AndHasHigherPriority"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a la negaci\u00f3n l\u00f3gica <code>not</code>",
         "program": [
             "not True"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False",
@@ -6044,12 +5865,12 @@
         "step": "IntroducingNot"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a la negaci\u00f3n l\u00f3gica <code>not</code>",
         "program": [
             "not False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -6069,13 +5890,13 @@
         "step": "NotFalse"
     },
     {
+        "get_solution": "program",
         "page": "Introducci\u00f3n a la negaci\u00f3n l\u00f3gica <code>not</code>",
         "program": [
             "b = True",
             "print(not b or b)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6087,17 +5908,13 @@
         "step": "NotTrueOrTrue"
     },
     {
-        "get_solution": [
-            "def imagen_no_valida(nombrearchivo):",
-            "    return not (nombrearchivo.endswith(\".png\") or nombrearchivo.endswith(\".jpg\"))"
-        ],
+        "get_solution": "program",
         "page": "Introducci\u00f3n a la negaci\u00f3n l\u00f3gica <code>not</code>",
         "program": [
             "def imagen_no_valida(nombrearchivo):",
             "    return not (nombrearchivo.endswith(\".png\") or nombrearchivo.endswith(\".jpg\"))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -6126,19 +5943,7 @@
         "step": "intro_row_winner"
     },
     {
-        "get_solution": [
-            "def fila_ganadora(tablero):",
-            "    for fila in tablero:",
-            "        todo_igual = True",
-            "        pieza = fila[0]",
-            "        for entrada in fila:",
-            "            if entrada == ' ' or pieza != entrada:",
-            "                todo_igual = False",
-            "                break",
-            "        if todo_igual:",
-            "            return True",
-            "    return False"
-        ],
+        "get_solution": "program",
         "page": "Comprobando el tablero por el ganador",
         "program": [
             "def fila_ganadora(tablero):",
@@ -6154,26 +5959,13 @@
             "    return False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "intro_row_winner"
     },
     {
-        "get_solution": [
-            "def columna_ganadora(tablero):",
-            "    for col in range(len(tablero[0])):",
-            "        todo_igual = True",
-            "        pieza = tablero[0][col]",
-            "        for fila in tablero:",
-            "            if fila[col] == ' ' or fila[col] != pieza:",
-            "                todo_igual = False",
-            "                break",
-            "        if todo_igual:",
-            "            return True",
-            "    return False"
-        ],
+        "get_solution": "program",
         "page": "Comprobando el tablero por el ganador",
         "program": [
             "def columna_ganadora(tablero):",
@@ -6189,26 +5981,13 @@
             "    return False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "column_winner"
     },
     {
-        "get_solution": [
-            "def diagonal_ganadora(tablero):",
-            "    todo_igual1 = True",
-            "    todo_igual2 = True",
-            "    topizq = tablero[0][0]",
-            "    topdch = tablero[0][-1]",
-            "    for i in range(len(tablero)):",
-            "        if tablero[i][i] == ' ' or tablero[i][i] != topizq:",
-            "            todo_igual1 = False",
-            "        if tablero[i][-i - 1] == ' ' or tablero[i][-i - 1] != topdch:",
-            "            todo_igual2 = False",
-            "    return todo_igual1 or todo_igual2"
-        ],
+        "get_solution": "program",
         "page": "Comprobando el tablero por el ganador",
         "program": [
             "def diagonal_ganadora(tablero):",
@@ -6224,7 +6003,6 @@
             "    return todo_igual1 or todo_igual2"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -6273,13 +6051,13 @@
             "    return fila_ganadora(tablero) or columna_ganadora(tablero) or diagonal_ganadora(tablero)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "winner"
     },
     {
+        "get_solution": "program",
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
             "def imprimir_tablero(tablero):",
@@ -6293,7 +6071,6 @@
             "])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6305,6 +6082,7 @@
         "step": "one_way_to_print_board"
     },
     {
+        "get_solution": "program",
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
             "assert_equal(",
@@ -6319,7 +6097,6 @@
             ")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6332,6 +6109,7 @@
         "step": "invalid_multi_line_string"
     },
     {
+        "get_solution": "program",
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
             "cadena = \"\"\"Primera l\u00ednea",
@@ -6339,7 +6117,6 @@
             "print(cadena)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6363,12 +6140,12 @@
         "step": "discovering_newline"
     },
     {
+        "get_solution": "program",
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
             "cadena"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6380,12 +6157,12 @@
         "step": "discovering_newline"
     },
     {
+        "get_solution": "program",
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
             "len('\\n')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "1",
@@ -6405,16 +6182,7 @@
         "step": "introducing_newline"
     },
     {
-        "get_solution": [
-            "def tablero_formateado(tablero):",
-            "    resultado = ''",
-            "    for i in range(len(tablero)):",
-            "        for car in tablero[i]:",
-            "            resultado += car",
-            "        if i != len(tablero) - 1:",
-            "            resultado += '\\n'",
-            "    return resultado"
-        ],
+        "get_solution": "program",
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
             "def tablero_formateado(tablero):",
@@ -6427,24 +6195,13 @@
             "    return resultado"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "format_board_simple"
     },
     {
-        "get_solution": [
-            "def tablero_formateado(tablero):",
-            "    filas_unidas = []",
-            "    for fila in tablero:",
-            "        filas_unidas.append(\"|\".join(fila))",
-            "    lineas = []",
-            "    for _ in tablero[0]:",
-            "        lineas.append(\"-\")",
-            "    linea = f'\\n{\"+\".join(lineas)}\\n'",
-            "    return linea.join(filas_unidas)"
-        ],
+        "get_solution": "program",
         "page": "El car\u00e1cter de nueva l\u00ednea, <code>tablero_formateado</code>.",
         "program": [
             "def tablero_formateado(tablero):",
@@ -6458,13 +6215,13 @@
             "    return linea.join(filas_unidas)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "format_board_bonus_challenge"
     },
     {
+        "get_solution": "program",
         "page": "Tipos de Dato",
         "program": [
             "print(type('Hola Mundo'))",
@@ -6474,7 +6231,6 @@
             "print(type(4.56))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6486,12 +6242,12 @@
         "step": "five_different_types"
     },
     {
+        "get_solution": "program",
         "page": "Tipos de Dato",
         "program": [
             "type(3) == int"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6503,6 +6259,7 @@
         "step": "check_type_manually"
     },
     {
+        "get_solution": "program",
         "page": "Tipos de Dato",
         "program": [
             "print('123')",
@@ -6510,7 +6267,6 @@
             "print(123 == '123')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6522,13 +6278,13 @@
         "step": "different_types_look_same"
     },
     {
+        "get_solution": "program",
         "page": "Tipos de Dato",
         "program": [
             "print(123 + 456)",
             "print('123' + '456')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "579\n123456",
@@ -6552,13 +6308,13 @@
         "step": "plus_has_two_meanings"
     },
     {
+        "get_solution": "program",
         "page": "Tipos de Dato",
         "program": [
             "print(13 < 120)",
             "print('13' < '120')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True\nFalse",
@@ -6580,13 +6336,13 @@
         "step": "less_than_has_two_meanings"
     },
     {
+        "get_solution": "program",
         "page": "Tipos de Dato",
         "program": [
             "print(sorted([120, 13, 0]))",
             "print(sorted(['120', '13', '0']))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[0, 13, 120]\n['0', '120', '13']",
@@ -6610,12 +6366,12 @@
         "step": "less_than_sorting_strings"
     },
     {
+        "get_solution": "program",
         "page": "Tipos de Dato",
         "program": [
             "12 + '34'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Error",
@@ -6679,17 +6435,16 @@
         ],
         "page": "Tipos de Dato",
         "program": [
-            "numero = '2'",
+            "numero = '1'",
             "for i in range(int(numero)):",
             "    print('Comenzando...' + str(i + 1))",
             "print('\u00a1V\u00e9!')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Comenzando...1\nComenzando...2\n\u00a1V\u00e9!\n",
+                    "text": "Comenzando...1\n\u00a1V\u00e9!\n",
                     "type": "stdout"
                 }
             ]
@@ -6697,17 +6452,7 @@
         "step": "fixing_type_errors_with_conversion"
     },
     {
-        "get_solution": [
-            "def tablero_formateado(tablero):",
-            "    primera_fila = ' '",
-            "    for i in range(len(tablero)):",
-            "        primera_fila += str(i + 1)",
-            "    filas_unidas = [primera_fila]",
-            "    for i in range(len(tablero)):",
-            "        fila_unida = str(i + 1) + ''.join(tablero[i])",
-            "        filas_unidas.append(fila_unida)",
-            "    return \"\\n\".join(filas_unidas)"
-        ],
+        "get_solution": "program",
         "page": "Tipos de Dato",
         "program": [
             "def tablero_formateado(tablero):",
@@ -6721,13 +6466,13 @@
             "    return \"\\n\".join(filas_unidas)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "format_board_with_numbers"
     },
     {
+        "get_solution": "program",
         "page": "Programas interactivos con <code>input()</code>",
         "program": [
             "print('Escribe tu nombre y presiona Enter:')",
@@ -6735,7 +6480,6 @@
             "print(f'Hola {nombre}!')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6760,7 +6504,6 @@
     },
     {
         "get_solution": [
-            "numero_super_secreto = 7",
             "print(\"\u00bfEn qu\u00e9 n\u00famero estoy pensando?\")",
             "intento = input()",
             "if int(intento) == numero_super_secreto:",
@@ -6779,7 +6522,6 @@
             "    print(\"\u00a1Nope!\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6791,11 +6533,11 @@
                     "type": "input_prompt"
                 },
                 {
-                    "text": "<input: 1>\n",
+                    "text": "<input: 7>\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "\u00a1Nope!\n",
+                    "text": "\u00a1Incre\u00edble! \u00bfEres ps\u00edquico?\n",
                     "type": "stdout"
                 }
             ]
@@ -6803,6 +6545,7 @@
         "step": "convert_input_to_int"
     },
     {
+        "get_solution": "program",
         "page": "Tarea con Listas Anidadas: Jugando en el tablero",
         "program": [
             "def jugar_turno(tablero, jugador):",
@@ -6816,7 +6559,6 @@
             "jugar()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[' ', 'X', ' ']",
@@ -6843,6 +6585,7 @@
         "step": "modify_list_in_function"
     },
     {
+        "get_solution": "program",
         "page": "Tarea con Listas Anidadas: Jugando en el tablero",
         "program": [
             "def jugar_turno(tablero, jugador):",
@@ -6861,7 +6604,6 @@
             "jugar()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6873,12 +6615,7 @@
         "step": "nested_assignment_two_lines"
     },
     {
-        "get_solution": [
-            "def jugar_turno(tablero, jugador):",
-            "    fila = int(input()) - 1",
-            "    col = int(input()) - 1",
-            "    tablero[fila][col] = jugador"
-        ],
+        "get_solution": "program",
         "page": "Tarea con Listas Anidadas: Jugando en el tablero",
         "program": [
             "def jugar_turno(tablero, jugador):",
@@ -6887,13 +6624,13 @@
             "    tablero[fila][col] = jugador"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "nested_assignment_input"
     },
     {
+        "get_solution": "program",
         "page": "Construyendo el Tablero",
         "program": [
             "def crear_tablero(tamano):",
@@ -6922,7 +6659,6 @@
             "prueba()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6940,23 +6676,14 @@
             "def crear_tablero(tamano): return [[' '] * tamano] * tamano"
         ],
         "response": {
-            "message": "<p>Las sublistas en el resultado no son objetos separados.</p>",
+            "message": "<p>Dados los siguientes valores:</p>\n<pre><code class=\"codehilite\"><span><span class=\"n\">tamano</span> <span class=\"o\">=</span> <span class=\"mi\">2</span>\n</span></code></pre>\n<p>tu c\u00f3digo muestra:</p>\n<pre><code class=\"codehilite\"><span><span class=\"p\">[[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">],</span> <span class=\"p\">[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">]]</span>\n</span></code></pre>\n<p>\u00a1lo cual es correcto!</p>\n<p>Las sublistas en el resultado no son objetos separados.</p>",
             "passed": false,
             "result": []
         },
         "step": "fix_make_board"
     },
     {
-        "get_solution": [
-            "def crear_tablero(tamano):",
-            "    tablero = []",
-            "    for _ in range(tamano):",
-            "        fila = []",
-            "        for _ in range(tamano):",
-            "            fila.append(' ')",
-            "        tablero.append(fila)",
-            "    return tablero"
-        ],
+        "get_solution": "program",
         "page": "Construyendo el Tablero",
         "program": [
             "def crear_tablero(tamano):",
@@ -6969,7 +6696,6 @@
             "    return tablero"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -7059,10 +6785,445 @@
             "    imprimir_empate()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "the_full_game"
+    },
+    {
+        "get_solution": "program",
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances = {'manzana': 'pomme', 'caja': 'boite'}"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "first_dict"
+    },
+    {
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances = {}"
+        ],
+        "response": {
+            "message": "<p>Oops, necesitas establecer <code>frances = {'manzana': 'pomme', 'caja': 'boite'}</code> antes de poder continuar.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access"
+    },
+    {
+        "get_solution": "program",
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances[0]"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "0",
+                                "type": "KeyError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">frances</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">0</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">frances</span>\n",
+                                            "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;manzana&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;pomme&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;caja&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;boite&#39;</span><span class=\"p\">}</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>Se produce un <code>KeyError</code> cuando no se encuentra un valor como llave\nen un dict de Python o en un objeto similar.</p>\n<p>La clave <code>0</code> no se encuentra en el dict <code>frances</code>.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 1, in <module>",
+                        "-->    1 | frances[0]",
+                        "           ^^^^^^^^^^",
+                        "frances = {'manzana': 'pomme', 'caja': 'boite'}",
+                        "",
+                        "KeyError: 0"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "dict_access"
+    },
+    {
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances = {}"
+        ],
+        "response": {
+            "message": "<p>Oops, necesitas establecer <code>frances = {'manzana': 'pomme', 'caja': 'boite'}</code> antes de poder continuar.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access2"
+    },
+    {
+        "get_solution": "program",
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances['manzana']"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "'pomme'\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dict_access2"
+    },
+    {
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances = {}"
+        ],
+        "response": {
+            "message": "<p>Oops, necesitas establecer <code>frances = {'manzana': 'pomme', 'caja': 'boite'}</code> antes de poder continuar.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access3"
+    },
+    {
+        "get_solution": "program",
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances['caja']"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "'boite'\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dict_access3"
+    },
+    {
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances = {}"
+        ],
+        "response": {
+            "message": "<p>Oops, necesitas establecer <code>frances = {'manzana': 'pomme', 'caja': 'boite'}</code> antes de poder continuar.</p>",
+            "passed": false,
+            "result": []
+        },
+        "step": "dict_access4"
+    },
+    {
+        "get_solution": "program",
+        "page": "Introducci\u00f3n a los diccionarios",
+        "program": [
+            "frances['pomme']"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "'pomme'",
+                                "type": "KeyError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 1,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 1,
+                                            "text": "<span class=\"n n-ExecutingNode\">frances</span><span class=\"p p-ExecutingNode\">[</span><span class=\"s1 s1-ExecutingNode\">&#39;pomme&#39;</span><span class=\"p p-ExecutingNode\">]</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">frances</span>\n",
+                                            "value": "<span class=\"p\">{</span><span class=\"s1\">&#39;manzana&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;pomme&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;caja&#39;</span><span class=\"p\">:</span> <span class=\"s1\">&#39;boite&#39;</span><span class=\"p\">}</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>Se produce un <code>KeyError</code> cuando no se encuentra un valor como llave\nen un dict de Python o en un objeto similar.</p>\n<p>La clave <code>'pomme'</code> no se encuentra en el dict <code>frances</code>.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 1, in <module>",
+                        "-->    1 | frances['pomme']",
+                        "           ^^^^^^^^^^^^^^^^",
+                        "frances = {'manzana': 'pomme', 'caja': 'boite'}",
+                        "",
+                        "KeyError: 'pomme'"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "dict_access4"
+    },
+    {
+        "get_solution": "program",
+        "page": "Uso de diccionarios en la pr\u00e1ctica",
+        "program": [
+            "def coste_total(carro, precios):",
+            "    resultado = 0",
+            "    for item in carro:",
+            "        precio = precios[item]",
+            "        resultado += precio",
+            "    return resultado"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "shopping_cart1"
+    },
+    {
+        "get_solution": "program",
+        "page": "Uso de diccionarios en la pr\u00e1ctica",
+        "program": [
+            "def coste_total(carro, cantidades, precios):",
+            "    resultado = 0",
+            "    for item in carro:",
+            "        precio = precios[item]",
+            "        cantidad = cantidades[item]",
+            "        resultado += precio * cantidad",
+            "    return resultado"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "shopping_cart4"
+    },
+    {
+        "get_solution": "program",
+        "page": "Uso de diccionarios en la pr\u00e1ctica",
+        "program": [
+            "def sustituto(cadena):",
+            "    resultado = ''",
+            "    for car in cadena:",
+            "        if car == 'A':",
+            "            car = 'T'",
+            "        elif car == 'T':",
+            "            car = 'A'",
+            "        elif car == 'G':",
+            "            car = 'C'",
+            "        elif car == 'C':",
+            "            car = 'G'",
+            "        resultado += car",
+            "    return resultado",
+            "",
+            "original = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
+            "expected = 'TCATCGCAGGAATCAATGTCCTACCGAATA'",
+            "assert_equal(sustituto(original), expected)"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "OK\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dna_part1"
+    },
+    {
+        "get_solution": "program",
+        "page": "Uso de diccionarios en la pr\u00e1ctica",
+        "program": [
+            "def sustituto(cadena, d):",
+            "    resultado = \"\"",
+            "    for letra in cadena:",
+            "        resultado += d[letra]",
+            "    return resultado"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "dna_part2"
+    },
+    {
+        "get_solution": "program",
+        "page": "Iterando sobre las claves del diccionario",
+        "program": [
+            "cantidades = {'manzana': 1, 'gato': 10}",
+            "print(cantidades.keys())"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "dict_keys(['manzana', 'gato'])\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "introducing_keys"
+    },
+    {
+        "get_solution": "program",
+        "page": "Iterando sobre las claves del diccionario",
+        "program": [
+            "cantidades = {'manzana': 1, 'gato': 10}",
+            "for clave in cantidades.keys():",
+            "    print(clave)"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "manzana\ngato\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "keys_are_iterable"
+    },
+    {
+        "get_solution": "program",
+        "page": "Iterando sobre las claves del diccionario",
+        "program": [
+            "cantidades = {'manzana': 1, 'gato': 10}",
+            "for clave in cantidades:",
+            "    print(clave)"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "manzana\ngato\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "keys_are_iterable2"
+    },
+    {
+        "get_solution": "program",
+        "page": "Iterando sobre las claves del diccionario",
+        "program": [
+            "def coste_total(cantidades, precios):",
+            "    resultado = 0",
+            "    for item in cantidades:",
+            "        precio = precios[item]",
+            "        cantidad = cantidades[item]",
+            "        resultado += precio * cantidad",
+            "    return resultado"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "cleanup_shopping_cart"
+    },
+    {
+        "get_solution": "program",
+        "page": "Iterando sobre las claves del diccionario",
+        "program": [
+            "def imprimir_letras(frances):",
+            "    for palabra in frances:",
+            "        print(\"Espa\u00f1ol: \" + palabra)",
+            "        print(\"Franc\u00e9s: \" + frances[palabra])",
+            "        print(\"---\")"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "english_to_french"
+    },
+    {
+        "get_solution": "program",
+        "page": "Iterando sobre las claves del diccionario",
+        "program": [
+            "def imprimir_letras(frances, alem\u00e1n):",
+            "    for palabra in frances:",
+            "        print(\"Espa\u00f1ol: \" + palabra)",
+            "        print(\"Franc\u00e9s: \" + frances[palabra])",
+            "        print(\"Alem\u00e1n: \" + alem\u00e1n[palabra])",
+            "        print(\"---\")"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "english_to_german"
+    },
+    {
+        "get_solution": "program",
+        "page": "Iterando sobre las claves del diccionario",
+        "program": [
+            "def imprimir_letras(palabras):",
+            "    for palabra in palabras:",
+            "        traducciones = palabras[palabra]",
+            "",
+            "        print(f\"Espa\u00f1ol: {palabra}\")",
+            "        for idioma in traducciones:",
+            "            print(f\"{idioma}: {traducciones[idioma]}\")",
+            "        print(f\"---\")",
+            "",
+            "imprimir_letras({",
+            "    'manzana': {",
+            "        'Franc\u00e9s': 'pomme',",
+            "        'Alem\u00e1n': 'apfel',",
+            "    },",
+            "    'caja': {",
+            "        'Franc\u00e9s': 'boite',",
+            "        'Alem\u00e1n': 'kasten',",
+            "    },",
+            "})"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "Espa\u00f1ol: manzana\nFranc\u00e9s: pomme\nAlem\u00e1n: apfel\n---\nEspa\u00f1ol: caja\nFranc\u00e9s: boite\nAlem\u00e1n: kasten\n---\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "nested_dictionaries"
     }
 ]

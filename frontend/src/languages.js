@@ -16,6 +16,22 @@ const languages = [
     },
   },
   {
+    code: 'es',
+    name: 'Español',
+    url: 'https://es.futurecoder.io/',
+    visible: true,
+    firebaseConfig: {
+      apiKey: "AIzaSyDkTwvLhDE53S5I-AjdKQQ4aFv305kSrfc",
+      authDomain: "futurecoder-es.firebaseapp.com",
+      databaseURL: "https://futurecoder-es-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "futurecoder-es",
+      storageBucket: "futurecoder-es.appspot.com",
+      messagingSenderId: "748547684459",
+      appId: "1:748547684459:web:10c851e2fe701d3234192e",
+      measurementId: "G-72RVB6YHN3"
+    }
+  },
+  {
     code: 'fr',
     name: 'Français',
     url: 'https://fr.futurecoder.io/',
@@ -32,8 +48,8 @@ const languages = [
     }
   },
   {
-    code: 'es',
-    name: 'Español',
+    code: 'es-latam',
+    name: 'Español (Argentina)',
     url: 'https://es-latam.futurecoder.io/',
     visible: false,
     firebaseConfig: {
