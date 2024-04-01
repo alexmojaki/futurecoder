@@ -49,7 +49,7 @@ export function AI({ messages, running }) {
         editorContent,
         assistant,
         terms: terms.unparsed,
-        userMessage: userMessage.value,
+        messages: [...messages, {role: "user", content: userMessage.value}],
       };
       sendAiMessage(userMessage.value);
       userMessage.setHookValue("");
