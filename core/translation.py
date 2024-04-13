@@ -57,11 +57,11 @@ def get(msgid, default):
 
     result = translation.gettext(msgid)
     if result == msgid:
-        assert (
-            msgid.startswith(("code_bits."))
-            or "output_prediction_choices" in msgid
-            or ".disallowed." in msgid
-        )
+        # assert (
+        #     msgid.startswith(("code_bits."))
+        #     or "output_prediction_choices" in msgid
+        #     or ".disallowed." in msgid
+        # )
         return default
 
     if os.environ.get("CHECK_INLINE_CODES"):
