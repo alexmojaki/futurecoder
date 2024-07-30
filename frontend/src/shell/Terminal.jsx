@@ -11,6 +11,7 @@ import sourceStyles from './defs/styles/Terminal'
 import types from './defs/types/Terminal'
 import {bookState} from "../book/store";
 import {OutputPrediction} from "../OutputPrediction";
+import LoadingIndicator from "../components/LoadingIndicator";
 
 export default class Terminal extends Component {
   constructor(props) {
@@ -231,12 +232,7 @@ export default class Terminal extends Component {
           >
             {/* Input */}
             {bookState.processing &&
-            <div className="lds-ellipsis">
-              <div/>
-              <div/>
-              <div/>
-              <div/>
-            </div>}
+              <LoadingIndicator/>}
 
             {bookState.prediction.state !== "waiting" && bookState.prediction.state !== "showingResult" &&
             <input
