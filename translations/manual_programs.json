@@ -12,6 +12,9 @@
         "fr": [
             "mots[4]"
         ],
+        "pl": [
+            "words[4]"
+        ],
         "ta": [
             "words[4]"
         ]
@@ -48,6 +51,14 @@
             "for i in indices:",
             "    print(i)",
             "    print(mots[i])"
+        ],
+        "pl": [
+            "words = ['This', 'is', 'a', 'list']",
+            "indices = [0, 1, 2, 3]",
+            "",
+            "for index in indices:",
+            "    print(index)",
+            "    print(words[index])"
         ],
         "ta": [
             "words = ['This', 'is', 'a', 'list']",
@@ -91,6 +102,14 @@
             "print(mots[2])",
             "print(mots[3])"
         ],
+        "pl": [
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "print(words[0])",
+            "print(words[1])",
+            "print(words[2])",
+            "print(words[3])"
+        ],
         "ta": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -131,6 +150,14 @@
             "    print(i)",
             "    print(mots[i])"
         ],
+        "pl": [
+            "words = ['This', 'is', 'a', 'list']",
+            "indices = range(4)",
+            "",
+            "for index in indices:",
+            "    print(index)",
+            "    print(words[index])"
+        ],
         "ta": [
             "words = ['This', 'is', 'a', 'list']",
             "indices = range(4)",
@@ -156,6 +183,10 @@
         "fr": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
             "print(len(mots))"
+        ],
+        "pl": [
+            "words = ['This', 'is', 'a', 'list']",
+            "print(len(words))"
         ],
         "ta": [
             "words = ['This', 'is', 'a', 'list']",
@@ -183,6 +214,11 @@
             "    print(caractere)",
             "  print('---')"
         ],
+        "pl": [
+            "for character in name:",
+            "    print(character)",
+            "  print('---')"
+        ],
         "ta": [
             "for character in name:",
             "    print(character)",
@@ -205,6 +241,10 @@
         "fr": [
             "for caractere in nom:",
             "print(caractere)"
+        ],
+        "pl": [
+            "for character in name:",
+            "print(character)"
         ],
         "ta": [
             "for character in name:",
@@ -236,6 +276,12 @@
             "for mot in mots:",
             "    print(mot)"
         ],
+        "pl": [
+            "words = ['This', 'is', 'a', 'list']",
+            "",
+            "for word in words:",
+            "    print(word)"
+        ],
         "ta": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -259,6 +305,10 @@
         "fr": [
             "chaines = [['hello', 'there'], ['comment', 'allez', 'vous']]",
             "print(chaines[1][0])"
+        ],
+        "pl": [
+            "strings = [['hello', 'there'], ['how', 'are', 'you']]",
+            "print(strings[1][0])"
         ],
         "ta": [
             "strings = [['hello', 'there'], ['how', 'are', 'you']]",
@@ -285,6 +335,10 @@
         "fr": [
             "est_ami = nom == \"Alice\" or",
             "                 nom == \"Bob\""
+        ],
+        "pl": [
+            "is_friend = name == \"Alice\" or",
+            "            name == \"Bob\""
         ],
         "ta": [
             "is_friend = name == \"Alice\" or",
@@ -352,6 +406,18 @@
             "      X \"",
             ")"
         ],
+        "pl": [
+            "assert_equal(",
+            "    format_board([",
+            "        ['X', 'O', 'X'],",
+            "        [' ', 'O', 'O'],",
+            "        [' ', 'X', ' ']",
+            "    ]),",
+            "    \"XOX",
+            "      OO",
+            "      X \"",
+            ")"
+        ],
         "ta": [
             "assert_equal(",
             "    format_board([",
@@ -386,6 +452,11 @@
             "Deuxi\u00e8me ligne \"\"\"",
             "print(chaine)"
         ],
+        "pl": [
+            "string = \"\"\"First line",
+            "Second line\"\"\"",
+            "print(string)"
+        ],
         "ta": [
             "string = \"\"\"First line",
             "Second line\"\"\"",
@@ -407,6 +478,9 @@
         ],
         "fr": [
             "print('Alice s'en va diner')"
+        ],
+        "pl": [
+            "print('Alice's Diner')"
         ],
         "ta": [
             "print('Alice's Diner')"
@@ -438,6 +512,11 @@
             "print(chaine.count('tes'))",
             "print(chaine.index('tes'))"
         ],
+        "pl": [
+            "string = 'feed the dog and the cat'",
+            "print(string.count('the'))",
+            "print(string.index('the'))"
+        ],
         "ta": [
             "string = 'feed the dog and the cat'",
             "print(string.count('the'))",
@@ -460,6 +539,9 @@
         "fr": [
             "print('tes' in 'fait tes devoirs et apprend tes le\u00e7ons')"
         ],
+        "pl": [
+            "print('the' in 'feed the dog and the cat')"
+        ],
         "ta": [
             "print('the' in 'feed the dog and the cat')"
         ]
@@ -478,6 +560,9 @@
             "print(1 + 2 = 3)"
         ],
         "fr": [
+            "print(1 + 2 = 3)"
+        ],
+        "pl": [
             "print(1 + 2 = 3)"
         ],
         "ta": [
