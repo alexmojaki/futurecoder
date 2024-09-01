@@ -10,10 +10,4 @@ CHANNEL_NAME=$1
 
 ./scripts/build.sh
 
-if [ "$FUTURECODER_LANGUAGE" = "en" ]; then
-    PROJECT=futurecoder-io
-else
-    PROJECT=futurecoder-${FUTURECODER_LANGUAGE}
-fi
-
-firebase --project $PROJECT hosting:channel:deploy $CHANNEL_NAME --expires 28d
+firebase --project futurecoder-io hosting:channel:deploy $CHANNEL_NAME --expires 28d
