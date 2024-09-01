@@ -8,7 +8,7 @@ from io import StringIO
 from itertools import combinations
 from random import shuffle
 from textwrap import dedent
-from tokenize import generate_tokens
+from tokenize import generate_tokens, TokenError
 from types import ModuleType
 from typing import Union
 
@@ -34,6 +34,7 @@ def qa_error(message, cls=AssertionError):
 def stub_module(name):
     assert name not in sys.modules
     sys.modules[name] = ModuleType(name)
+
 
 stub_module("urllib3")
 stub_module("certifi")
@@ -324,7 +325,7 @@ def split_into_tokens_gen(s):
     linenos = asttokens.LineNumbers(s)
     try:
         tokens = list(generate_tokens(StringIO(s).readline))
-    except SyntaxError:
+    except (SyntaxError, TokenError):
         yield from s
         return
     for t1, t2 in zip(tokens, tokens[1:]):
