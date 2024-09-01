@@ -79,6 +79,21 @@ const languages = [
       measurementId: "G-3PK2WP7CCD"
     }
   },
+  {
+    code: 'pl',
+    name: 'Polski',
+    url: 'https://pl.futurecoder.io/',
+    visible: false,
+    firebaseConfig: {
+      apiKey: "AIzaSyDUzqc75Vn1UDJ7NSzduCVvwxC3ap9XtSc",
+      authDomain: "futurecoder-pl.firebaseapp.com",
+      projectId: "futurecoder-pl",
+      storageBucket: "futurecoder-pl.appspot.com",
+      messagingSenderId: "302555192729",
+      appId: "1:302555192729:web:9544e6dd2015e822708708",
+      measurementId: "G-XG7E3KF703"
+    }
+  },
 ];
 
 export let language = process.env.REACT_APP_LANGUAGE;
