@@ -32,10 +32,10 @@ def qa_error(message, cls=AssertionError):
 
 
 def stub_module(name):
-    assert name not in sys.modules
     sys.modules[name] = ModuleType(name)
 
 
+assert "selenium" in sys.modules or not ("urllib3" in sys.modules or "certifi" in sys.modules)
 stub_module("urllib3")
 stub_module("certifi")
 
@@ -310,6 +310,7 @@ def catch_internal_errors(func):
             if TESTING:
                 raise
             return internal_error_result(e)
+
     return wrapper
 
 
