@@ -40,6 +40,7 @@ import {
   faListOl,
   faPlay,
   faQuestionCircle,
+  faRobot,
   faSignOutAlt,
   faStop,
   faUserGraduate
@@ -57,6 +58,8 @@ import HeaderLoginInfo from "./components/HeaderLoginInfo";
 import terms from "./terms.json"
 import _ from "lodash";
 import {otherVisibleLanguages} from "./languages";
+import {Requirements} from "./Requirements";
+import {AI} from "./AI";
 
 
 const EditorButtons = (
@@ -253,16 +256,7 @@ const Assistant = (assistant) => {
                    <FontAwesomeIcon icon={faQuestionCircle}/> {terms.requirements}
                  </div>}
     >
-      <p>
-        {terms.requirements_description}
-      </p>
-      <ul>
-        {step.requirements.map((requirement, index) =>
-          <li key={index}>
-            <Requirement requirement={requirement}/>
-          </li>
-        )}
-      </ul>
+      <Requirements requirements={step.requirements}/>
     </Collapsible>
     <Collapsible onOpening={openAssessment}
                  onClosing={() => bookSetState("assessmentOpen", false)}
@@ -273,7 +267,7 @@ const Assistant = (assistant) => {
                    {newMessages && <span className="badge badge-pill badge-danger">{terms.new}</span>}
                  </div>}
     >
-      <Messages {...{messageSections}}/>
+      <Messages {...{ messageSections }}/>
     </Collapsible>
     <Collapsible classParentString="assistant-hints card"
                  contentInnerClassName="assistant-content card-body"
@@ -283,46 +277,15 @@ const Assistant = (assistant) => {
     >
       <HintsAssistant {...assistant}/>
     </Collapsible>
+    <Collapsible classParentString="assistant-ai card"
+                 contentInnerClassName="assistant-content card-body"
+                 trigger={<div className="card-header">
+                   <FontAwesomeIcon icon={faRobot}/> AI {/*terms.hints_and_solution TODO */}
+                 </div>}
+    >
+      <AI {...assistant.ai}/>
+    </Collapsible>
   </div>
-    ;
-}
-
-const Requirement = (
-  {
-    requirement,
-  }) => {
-  let text;
-  switch (requirement.type) {
-    case "verbatim":
-      text = terms.verbatim;
-      break;
-    case "exercise":
-      text = terms.exercise_requirement;
-      break;
-    case "program_in_text":
-      text = terms.program_in_text;
-      break;
-    case "function_exercise":
-      text = _.template(terms.function_exercise)(requirement);
-      break;
-    case "function_exercise_goal":
-      text = _.template(terms.function_exercise_goal)(requirement);
-      break;
-    case "exercise_stdin":
-      text = terms.exercise_stdin;
-      break;
-    case "non_function_exercise":
-      if (!requirement.inputs.trim()) {
-        text = terms.no_input_variables;
-      } else {
-        text = _.template(terms.non_function_exercise)(requirement);
-      }
-      break;
-    default:
-      text = requirement.message;
-      break;
-  }
-  return <div className="assistant-requirement" dangerouslySetInnerHTML={{__html: text}}/>
 }
 
 const QuestionWizard = (
@@ -333,7 +296,7 @@ const QuestionWizard = (
   }) =>
   <>
     <h1>{terms.question_wizard}</h1>
-    <div dangerouslySetInnerHTML={{__html: terms.question_wizard_intro}}/>
+    <div dangerouslySetInnerHTML={{ __html: terms.question_wizard_intro }}/>
     <hr/>
     {requestExpectedOutput && <>
       <div dangerouslySetInnerHTML={{__html: terms.question_wizard_expected_output}}/>
