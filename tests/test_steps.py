@@ -4,8 +4,6 @@ import random
 import re
 from pathlib import Path
 
-from littleutils import only
-
 import core.utils
 from core import translation as t
 from core.checker import check_entry, FullRunner

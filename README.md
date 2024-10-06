@@ -138,7 +138,7 @@ Several debuggers are provided, including [snoop](https://github.com/alexmojaki/
 ## Running locally
 
 1. Fork this repo, `git clone` it, and enter the top-level `futurecoder` folder.
-2. Install Python 3.11.2 and [poetry](https://python-poetry.org/docs/#installation).
+2. Install Python 3.12.1 and [poetry](https://python-poetry.org/docs/#installation).
 3. Run `poetry install` to install Python dependencies.
 4. Run `./scripts/generate.sh`. This will generate various static files from Python used by the frontend and run some tests. Repeat this step whenever you change Python files.
 5. In the `frontend` folder:

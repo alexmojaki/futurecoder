@@ -5,7 +5,6 @@ from time import sleep
 
 import pytest
 from selenium import webdriver
-from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -41,11 +40,8 @@ def get_driver(caps):
         options = Options()
         options.add_argument("--headless")
         options.add_argument("--disable-gpu")
-        desired_capabilities = DesiredCapabilities.CHROME
-        desired_capabilities["goog:loggingPrefs"] = {"browser": "ALL"}
-        driver = webdriver.Chrome(
-            options=options, desired_capabilities=desired_capabilities
-        )
+        options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
+        driver = webdriver.Chrome(options=options)
     driver.set_window_size(1024, 768)
     driver.implicitly_wait(5)
     return driver
@@ -100,7 +96,7 @@ def _tests(driver):
     driver.get("http://localhost:3000/course/#toc")
 
     # Go to page
-    driver.find_element_by_partial_link_text("Getting elements at a position").click()
+    driver.find_element(By.PARTIAL_LINK_TEXT, "Getting elements at a position").click()
 
     # Wait for page to load
     locator = (By.CSS_SELECTOR, ".book-text h1")
@@ -110,19 +106,19 @@ def _tests(driver):
     assert driver.find_element(*locator).text.startswith(
         "Getting elements at a position"
     )
-    assert driver.find_element_by_css_selector(".book-text p").text.startswith(
+    assert driver.find_element(By.CSS_SELECTOR, ".book-text p").text.startswith(
         "Looping is great"
     )
 
     # Reverse buttons don't exist (developer mode is off)
-    assert not driver.find_elements_by_class_name("button-reverse-step"), "Is developer mode on?"
+    assert not driver.find_elements(By.CLASS_NAME, "button-reverse-step"), "Is developer mode on?"
 
-    assert driver.find_element_by_class_name("navbar").text.strip() == "Login / Sign up\nTable of Contents"
+    assert driver.find_element(By.CLASS_NAME, "navbar").text.strip() == "Login / Sign up\nTable of Contents"
 
     # Click on menu
-    driver.find_element_by_css_selector(".nav-item.custom-popup").click()
+    driver.find_element(By.CSS_SELECTOR, ".nav-item.custom-popup").click()
     assert (
-        driver.find_element_by_class_name("menu-popup").text
+        driver.find_element(By.CLASS_NAME, "menu-popup").text
         == """\
 Sign out
 Settings
@@ -133,26 +129,26 @@ Français
     )
 
     # Open settings
-    settings_button = driver.find_element_by_css_selector(".menu-popup .btn.btn-primary")
+    settings_button = driver.find_element(By.CSS_SELECTOR, ".menu-popup .btn.btn-primary")
     assert settings_button.text.strip() == "Settings"
     settings_button.click()
 
     # Turn on developer mode
-    developer_mode_togle = driver.find_element_by_css_selector(".settings-modal label")
+    developer_mode_togle = driver.find_element(By.CSS_SELECTOR, ".settings-modal label")
     developer_mode_togle.click()
 
     # Reverse buttons exist now
-    reverse_button = driver.find_element_by_class_name("button-reverse-step")
-    skip_button = driver.find_element_by_class_name("button-skip-step")
+    reverse_button = driver.find_element(By.CLASS_NAME, "button-reverse-step")
+    skip_button = driver.find_element(By.CLASS_NAME, "button-skip-step")
 
     # Escape settings
-    driver.find_element_by_tag_name("html").send_keys(Keys.ESCAPE)
+    driver.find_element(By.TAG_NAME, "html").send_keys(Keys.ESCAPE)
 
     # Empty shell
     await_result(driver, "", ">>> ")
 
     # Run code in shell, check result
-    driver.find_element_by_css_selector(".terminal input").send_keys("12345\n")
+    driver.find_element(By.CSS_SELECTOR, ".terminal input").send_keys("12345\n")
     await_result(
         driver,
         "12345\n12345",
@@ -162,9 +158,9 @@ Français
 >>> """,
     )
 
-    editor = driver.find_element_by_css_selector("#editor textarea")
-    run_button = driver.find_element_by_css_selector(".editor-buttons .btn-primary")
-    snoop_button = driver.find_element_by_css_selector(".editor-buttons .btn-success")
+    editor = driver.find_element(By.CSS_SELECTOR, "#editor textarea")
+    run_button = driver.find_element(By.CSS_SELECTOR, ".editor-buttons .btn-primary")
+    snoop_button = driver.find_element(By.CSS_SELECTOR, ".editor-buttons .btn-success")
 
     # Run test_steps within futurecoder!
     run_code(editor, run_button, get_test_steps_code())
@@ -175,7 +171,7 @@ Français
         reverse_button.click()
         if (
             "In general, you can get the element"
-            not in driver.find_element_by_css_selector(".book-text").text
+            not in driver.find_element(By.CSS_SELECTOR, ".book-text").text
         ):
             break
         sleep(0.1)
@@ -183,7 +179,7 @@ Français
         pytest.fail()
 
     # Get code from instructions
-    code = driver.find_element_by_css_selector("#step-text-0 pre").text
+    code = driver.find_element(By.CSS_SELECTOR, "#step-text-0 pre").text
     assert (
         code
         == """\
@@ -213,7 +209,7 @@ list
     # Passed onto next step
     assert (
         "In general, you can get the element"
-        in driver.find_element_by_css_selector(".book-text").text
+        in driver.find_element(By.CSS_SELECTOR, ".book-text").text
     )
 
     # Run with snoop
@@ -242,7 +238,7 @@ list
 
     assert (
         "As you can see, the result is the same"
-        in driver.find_element_by_css_selector(".book-text").text
+        in driver.find_element(By.CSS_SELECTOR, ".book-text").text
     )
 
     # Correct answer first time
@@ -261,7 +257,7 @@ list
     predict_output(driver, editor, run_button, 1, 2)
 
     # Click OK
-    driver.find_element_by_css_selector(".submit-prediction button").click()
+    driver.find_element(By.CSS_SELECTOR, ".submit-prediction button").click()
 
     # Course has moved on to next step: indices_out_of_bounds
     # Let's skip to the end of this page
@@ -270,15 +266,15 @@ list
         skip_button.click()
         sleep(0.1)
 
-    force_click(driver, driver.find_element_by_class_name("next-button"))
+    force_click(driver, driver.find_element(By.CLASS_NAME, "next-button"))
 
-    assert "Given a list" in driver.find_element_by_css_selector(".book-text").text
+    assert "Given a list" in driver.find_element(By.CSS_SELECTOR, ".book-text").text
 
-    driver.find_element_by_css_selector(".assistant-hints .card-header").click()
+    driver.find_element(By.CSS_SELECTOR, ".assistant-hints .card-header").click()
     show_hints_and_solution(driver, num_hints=9, parsons=False)
 
     # Hidden solution contains correct text
-    code = driver.find_element_by_css_selector(".gradual-solution code")
+    code = driver.find_element(By.CSS_SELECTOR, ".gradual-solution code")
     assert (
         code.text
         == """\
@@ -289,26 +285,26 @@ for i in range(len(things)):
     )
 
     # Click button repeatedly to reveal solution
-    get_hint_button = driver.find_element_by_css_selector(".hints-popup .btn-primary")
+    get_hint_button = driver.find_element(By.CSS_SELECTOR, ".hints-popup .btn-primary")
     assert get_hint_button.text == "Reveal"
     scroll_to_bottom(driver)
     for i in range(24):
-        assert len(code.find_elements_by_class_name("solution-token-hidden")) == 24 - i
-        assert len(code.find_elements_by_class_name("solution-token-visible")) == 12 + i
+        assert len(code.find_elements(By.CLASS_NAME, "solution-token-hidden")) == 24 - i
+        assert len(code.find_elements(By.CLASS_NAME, "solution-token-visible")) == 12 + i
         get_hint_button.click()
 
     # Open assessment
-    force_click(driver, driver.find_element_by_css_selector(".assistant-assessment .card-header"))
+    force_click(driver, driver.find_element(By.CSS_SELECTOR, ".assistant-assessment .card-header"))
 
     # No messages visible
-    assert not driver.find_elements_by_class_name("assistant-messages-message")
+    assert not driver.find_elements(By.CLASS_NAME, "assistant-messages-message")
 
     # Run code which triggers a message
     run_code(editor, run_button, "12345")
 
     # Now we have a message
     assert (
-        driver.find_element_by_css_selector(".assistant-messages-message").text
+        driver.find_element(By.CSS_SELECTOR, ".assistant-messages-message").text
         == """\
 Your code should start like this:
 things = '...'
@@ -330,7 +326,7 @@ print(i)
 
     # Now we have a message
     assert (
-        driver.find_element_by_css_selector(".assistant-messages-message").text
+        driver.find_element(By.CSS_SELECTOR, ".assistant-messages-message").text
         == "You're almost there! However, this prints all the indices, not just the first one."
     )
 
@@ -340,7 +336,7 @@ print(i)
     sleep(0.2)
 
     # Step has passed, message has disappeared
-    assert not driver.find_elements_by_class_name("assistant-messages-message")
+    assert not driver.find_elements(By.CLASS_NAME, "assistant-messages-message")
 
     # Skip to zip_longest exercise
     skip_button.click()
@@ -349,9 +345,9 @@ print(i)
     show_hints_and_solution(driver, num_hints=10, parsons=True)
 
     assert {
-        node.text
-        for node in driver.find_elements_by_css_selector(".parsons-droppable code")
-    } == set(
+               node.text
+               for node in driver.find_elements(By.CSS_SELECTOR, ".parsons-droppable code")
+           } == set(
         """\
 length1 = len(string1)
 length2 = len(string2)
@@ -372,7 +368,7 @@ for i in range(length):
     )
 
     # Cannot go to next page yet
-    assert not driver.find_elements_by_class_name("next-button")
+    assert not driver.find_elements(By.CLASS_NAME, "next-button")
 
     # Next button appears after completing last step
     # Scroll to end of page to get skip button out of the way
@@ -380,19 +376,19 @@ for i in range(length):
     sleep(0.1)
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     sleep(0.1)
-    driver.find_element_by_class_name("next-button").click()
+    driver.find_element(By.CLASS_NAME, "next-button").click()
 
     # On next page
     sleep(0.1)
     assert (
-        driver.find_element_by_css_selector(".book-text h1").text
+        driver.find_element(By.CSS_SELECTOR, ".book-text h1").text
         == "Terminology: Calling functions and methods"
     )
 
     # Back to previous page
-    driver.find_element_by_class_name("previous-button").click()
+    driver.find_element(By.CLASS_NAME, "previous-button").click()
     sleep(0.1)
-    assert driver.find_element_by_css_selector(".book-text h1").text.startswith(
+    assert driver.find_element(By.CSS_SELECTOR, ".book-text h1").text.startswith(
         "Exercises with"
     )
 
@@ -404,8 +400,8 @@ def scroll_to_bottom(driver):
 def show_hints_and_solution(driver, *, num_hints, parsons):
     # Show all hints
     for hint_num in range(num_hints):
-        assert len(driver.find_elements_by_class_name("hint-body")) == hint_num
-        get_hint_button = driver.find_element_by_css_selector(
+        assert len(driver.find_elements(By.CLASS_NAME, "hint-body")) == hint_num
+        get_hint_button = driver.find_element(By.CSS_SELECTOR,
             ".hints-popup .btn-primary"
         )
         assert get_hint_button.text == (
@@ -414,37 +410,39 @@ def show_hints_and_solution(driver, *, num_hints, parsons):
         scroll_to_bottom(driver)
         get_hint_button.click()
         if hint_num < num_hints - 1:
-            hints_progress = driver.find_element_by_css_selector(
+            hints_progress = driver.find_element(By.CSS_SELECTOR,
                 ".hints-popup .hints-progress"
             )
             assert hints_progress.text == f"Shown {hint_num + 1} of {num_hints} hints"
 
     # All hints are shown
-    assert len(driver.find_elements_by_class_name("hint-body")) == num_hints
+    assert len(driver.find_elements(By.CLASS_NAME, "hint-body")) == num_hints
 
     # Click 'Show solution'
-    get_hint_button = driver.find_element_by_css_selector(".hints-popup .btn-primary")
+    get_hint_button = driver.find_element(By.CSS_SELECTOR, ".hints-popup .btn-primary")
     assert get_hint_button.text == ("Show shuffled solution" if parsons else "Show solution")
     scroll_to_bottom(driver)
     get_hint_button.click()
 
     # Solution not yet visible
-    assert not driver.find_elements_by_css_selector(".gradual-solution")
-    assert not driver.find_elements_by_css_selector(".parsons-droppable")
+    assert not driver.find_elements(By.CSS_SELECTOR, ".gradual-solution")
+    assert not driver.find_elements(By.CSS_SELECTOR, ".parsons-droppable")
 
     # Are you sure? Click 'Yes'
-    get_hint_button = driver.find_element_by_css_selector(".hints-popup .btn-primary")
+    get_hint_button = driver.find_element(By.CSS_SELECTOR, ".hints-popup .btn-primary")
     assert get_hint_button.text == "Yes"
     scroll_to_bottom(driver)
     get_hint_button.click()
 
     # Exactly one kind of solution visible
-    assert bool(driver.find_elements_by_css_selector(".gradual-solution")) == (not parsons)
-    assert bool(driver.find_elements_by_css_selector(".parsons-droppable")) == parsons
+    assert bool(driver.find_elements(By.CSS_SELECTOR, ".gradual-solution")) == (not parsons)
+    assert bool(driver.find_elements(By.CSS_SELECTOR, ".parsons-droppable")) == parsons
 
 
 def run_code(editor, run_button, text):
     editor.send_keys(Keys.CONTROL + "a")
+    editor.send_keys(Keys.BACK_SPACE)
+    editor.send_keys(Keys.COMMAND + "a")
     editor.send_keys(Keys.BACK_SPACE)
     editor.send_keys(text)
     run_button.click()
@@ -487,7 +485,7 @@ print(indices[3])
     sleep(2)
 
     # Check the choices
-    choices = driver.find_elements_by_class_name("prediction-choice")
+    choices = driver.find_elements(By.CLASS_NAME, "prediction-choice")
     assert len(choices) == 6
 
     # Click first choice
@@ -498,7 +496,7 @@ print(indices[3])
     check_choice_status(driver, first_choice, "selected")
 
     # Click Submit
-    driver.find_element_by_css_selector(".submit-prediction button").click()
+    driver.find_element(By.CSS_SELECTOR, ".submit-prediction button").click()
     sleep(0.1)
 
     check_choice_status(driver, first_choice, "correct" if is_correct else "wrong")
@@ -507,7 +505,7 @@ print(indices[3])
         bottom_text = "Correct!"
     else:
         bottom_text = "Oops, that's not right. You can try one more time!\nSubmit"
-    assert driver.find_element_by_css_selector(".submit-prediction").text == bottom_text
+    assert driver.find_element(By.CSS_SELECTOR, ".submit-prediction").text == bottom_text
 
     if is_correct:
         return
@@ -523,7 +521,7 @@ print(indices[3])
     check_choice_status(driver, second_choice, "selected")
 
     # Click Submit
-    driver.find_element_by_css_selector(".submit-prediction button").click()
+    driver.find_element(By.CSS_SELECTOR, ".submit-prediction button").click()
     sleep(0.1)
 
     check_choice_status(driver, first_choice, "wrong")
@@ -533,17 +531,17 @@ print(indices[3])
         bottom_text = "Correct!"
     else:
         bottom_text = "Sorry, wrong answer. Try again next time!\nOK"
-    assert driver.find_element_by_css_selector(".submit-prediction").text == bottom_text
+    assert driver.find_element(By.CSS_SELECTOR, ".submit-prediction").text == bottom_text
 
 
 def check_choice_status(driver, choice_index, status):
-    choices = driver.find_elements_by_class_name("prediction-choice")
+    choices = driver.find_elements(By.CLASS_NAME, "prediction-choice")
     choice = choices[choice_index]
     assert choice.get_attribute("class") == (
         f"prediction-choice prediction-{status}"
     ), [
         choice.get_attribute("class")
-        for choice in driver.find_elements_by_class_name("prediction-choice")
+        for choice in driver.find_elements(By.CLASS_NAME, "prediction-choice")
     ]
 
 
