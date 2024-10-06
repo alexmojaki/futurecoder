@@ -5014,7 +5014,7 @@
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;245m         \u001b[0m\u001b[31m\u001b[1m!!! Call ended by exception\u001b[0m\n\u001b[38;5;245m     \u001b[0m\u001b[38;5;245m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;245m     \u001b[0m\u001b[31m\u001b[1m!!! Call ended by exception\u001b[0m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "text": "\u001b[38;5;245m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_many: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;245m     \u001b[0m\u001b[38;5;245m   6\u001b[0m |     print_many(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;245m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from print_twice: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m | print_twice(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
                     "type": "snoop"
                 }
             ]

@@ -601,13 +601,13 @@ files = [
 
 [[package]]
 name = "snoop"
-version = "0.4.3"
+version = "0.6.0"
 description = "Powerful debugging tools for Python"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
 files = [
-    {file = "snoop-0.4.3-py2.py3-none-any.whl", hash = "sha256:b7418581889ff78b29d9dc5ad4625c4c475c74755fb5cba82c693c6e32afadc0"},
-    {file = "snoop-0.4.3.tar.gz", hash = "sha256:2e0930bb19ff0dbdaa6f5933f88e89ed5984210ea9f9de0e1d8231fa5c1c1f25"},
+    {file = "snoop-0.6.0-py3-none-any.whl", hash = "sha256:f5ea9060e65594bf404e6841086b4a964cc27bc30569109c91a470f948b0f729"},
+    {file = "snoop-0.6.0.tar.gz", hash = "sha256:c615eddf84d8907f893dec7fde38768aa4b1d88d92d63055b6cfc07e5cde37ec"},
 ]
 
 [package.dependencies]
@@ -615,10 +615,9 @@ asttokens = "*"
 cheap-repr = ">=0.4.0"
 executing = "*"
 pygments = "*"
-six = "*"
 
 [package.extras]
-tests = ["Django", "birdseye", "littleutils", "numpy (>=1.16.5)", "pandas (>=0.24.2)", "pprintpp", "prettyprinter", "pytest", "pytest-order", "pytest-order (<=0.11.0)"]
+tests = ["Django", "birdseye", "littleutils", "numpy (>=1.16.5)", "pandas (>=0.24.2)", "pprintpp", "prettyprinter", "pytest", "pytest-order"]
 
 [[package]]
 name = "sortedcontainers"
