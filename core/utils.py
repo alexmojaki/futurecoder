@@ -332,6 +332,7 @@ def split_into_tokens_gen(s):
     for t1, t2 in zip(tokens, tokens[1:]):
         start1, end1 = token_text_range(t1, linenos)
         start2, end2 = token_text_range(t2, linenos)
+        end1 = min(end1, start2)  # workaround a specific unicode bug in 3.12.1
         assert start1 <= end1 <= start2 <= end2
         yield s[start1:end1]
         yield s[end1:start2]
