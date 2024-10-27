@@ -450,7 +450,7 @@ Remove the `.keys()` and run the code again.
 
         program_in_text = False
         requirements = (
-            "Run the same code as the previous step, but without `.keys()`. after `quantities`, "
+            "Run the same code as the previous step, but without `.keys()` after `quantities`, "
             "so the middle line is `for key in quantities:`"
         )
 

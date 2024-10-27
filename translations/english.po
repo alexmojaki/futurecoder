@@ -22115,7 +22115,7 @@ msgstr ""
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 msgid "pages.DictionaryKeysAndValues.steps.keys_are_iterable2.requirements"
 msgstr ""
-"Run the same code as the previous step, but without `.keys()`. after `quantities`, so the middle line is `for key in "
+"Run the same code as the previous step, but without `.keys()` after `quantities`, so the middle line is `for key in "
 "quantities:`"
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues

@@ -17,12 +17,12 @@
         "step": "first_expression"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de la console",
         "program": [
             "1+2"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -52,12 +52,12 @@
         "step": "more_calculation"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de la console",
         "program": [
             "5 - 6"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -69,12 +69,12 @@
         "step": "more_calculation"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des chaines",
         "program": [
             "'hello'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -86,12 +86,12 @@
         "step": "hello_string"
     },
     {
+        "get_solution": "program",
         "page": "Concat\u00e9nation de chaines",
         "program": [
             "'hello' + 'world'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -120,15 +120,12 @@
         "step": "hello_world_space"
     },
     {
-        "get_solution": [
-            "'hello ' + 'world'"
-        ],
+        "get_solution": "program",
         "page": "Concat\u00e9nation de chaines",
         "program": [
             "'hello ' + 'world'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -140,12 +137,12 @@
         "step": "hello_world_space"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des variables",
         "program": [
             "mot = 'Hello'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -164,12 +161,12 @@
         "step": "word_check"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des variables",
         "program": [
             "mot"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -181,12 +178,12 @@
         "step": "word_check"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des variables",
         "program": [
             "'mot'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "'mot'",
@@ -208,12 +205,12 @@
         "step": "word_string_check"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des variables",
         "program": [
             "soleil"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Erreur",
@@ -311,31 +308,31 @@
             "votre_nom = ' Alex'"
         ],
         "response": {
-            "message": "<p>Pour cet exercice, choisissez un nom qui ne commence pas par une espace.</p>",
+            "message": "<p>Pour cet exercice, choisissez un nom qui ne commence pas par un espace.</p>",
             "passed": false,
             "result": []
         },
         "step": "name_assign"
     },
     {
+        "get_solution": "program",
         "page": "Utilisation de variables et de <code>print()</code>",
         "program": [
             "votre_nom = 'Alex'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "name_assign"
     },
     {
+        "get_solution": "program",
         "page": "Utilisation de variables et de <code>print()</code>",
         "program": [
             "'Hello ' + votre_nom"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -359,12 +356,12 @@
         "step": "word_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Utilisation de variables et de <code>print()</code>",
         "program": [
             "mot + votre_nom"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -388,15 +385,12 @@
         "step": "word_plus_name_with_space"
     },
     {
-        "get_solution": [
-            "mot + ' ' + votre_nom"
-        ],
+        "get_solution": "program",
         "page": "Utilisation de variables et de <code>print()</code>",
         "program": [
             "mot + ' ' + votre_nom"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -408,24 +402,24 @@
         "step": "word_plus_name_with_space"
     },
     {
+        "get_solution": "program",
         "page": "Utilisation de variables et de <code>print()</code>",
         "program": [
             "mot = 'Goodbye'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "word_assign_goodbye"
     },
     {
+        "get_solution": "program",
         "page": "Utilisation de variables et de <code>print()</code>",
         "program": [
             "mot + ' ' + votre_nom"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -437,12 +431,12 @@
         "step": "goodbye_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Utilisation de variables et de <code>print()</code>",
         "program": [
             "print(mot + ' ' + votre_nom)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -454,6 +448,7 @@
         "step": "first_print"
     },
     {
+        "get_solution": "program",
         "page": "\u00c9criture de scripts",
         "program": [
             "mot = 'Hello'",
@@ -463,7 +458,6 @@
             "print(mot + ' ' + nom)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -475,6 +469,7 @@
         "step": "editor_hello_world"
     },
     {
+        "get_solution": "program",
         "page": "Stockage de r\u00e9sultats avec des variables",
         "program": [
             "mot = 'Hello'",
@@ -483,7 +478,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hello World",
@@ -507,6 +501,7 @@
         "step": "sentence_equals_word_plus_name"
     },
     {
+        "get_solution": "program",
         "page": "Stockage de r\u00e9sultats avec des variables",
         "program": [
             "mot = 'Hello'",
@@ -517,7 +512,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hello World\nHello World",
@@ -538,13 +532,13 @@
         "step": "sentence_doesnt_change"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des boucles <code>for</code>",
         "program": [
             "nom = 'World'",
             "for caractere in nom: print(caractere)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -556,13 +550,13 @@
         "step": "first_for_loop"
     },
     {
+        "get_solution": "program",
         "page": "Indentation",
         "program": [
             "for caractere in nom:",
             "print(caractere)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -575,6 +569,7 @@
         "step": "missing_indentation"
     },
     {
+        "get_solution": "program",
         "page": "Indentation",
         "program": [
             "nom = 'World'",
@@ -584,7 +579,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -596,6 +590,7 @@
         "step": "two_indented_lines"
     },
     {
+        "get_solution": "program",
         "page": "Indentation",
         "program": [
             "nom = 'World'",
@@ -605,7 +600,6 @@
             "print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -617,6 +611,7 @@
         "step": "one_indented_line"
     },
     {
+        "get_solution": "program",
         "page": "Indentation",
         "program": [
             "for caractere in nom:",
@@ -624,7 +619,6 @@
             "  print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -648,7 +642,6 @@
             "    print('---' + caractere)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -671,7 +664,6 @@
             "    print(nom)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -683,6 +675,7 @@
         "step": "loop_exercise_2"
     },
     {
+        "get_solution": "program",
         "page": "Construction de chaines",
         "program": [
             "hello = 'Hello'",
@@ -691,7 +684,6 @@
             "print(hello)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hello\nHello!",
@@ -712,6 +704,7 @@
         "step": "hello_plus_equals"
     },
     {
+        "get_solution": "program",
         "page": "Construction de chaines",
         "program": [
             "nom = 'World'",
@@ -721,7 +714,6 @@
             "    print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "-W\n-Wo\n-Wor\n-Worl\n-World",
@@ -747,6 +739,7 @@
         "step": "name_triangle"
     },
     {
+        "get_solution": "program",
         "page": "Construction de chaines",
         "program": [
             "nom = 'World'",
@@ -756,7 +749,6 @@
             "    ligne = ligne + caractere"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "-\n-W\n-Wo\n-Wor\n-Worl",
@@ -777,12 +769,12 @@
         "step": "name_triangle_missing_last_line"
     },
     {
+        "get_solution": "program",
         "page": "Construction de chaines",
         "program": [
             "'' + '' + ''"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "''",
@@ -824,7 +816,6 @@
             "    print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -851,7 +842,6 @@
             "    print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -878,7 +868,6 @@
             "    print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -907,7 +896,6 @@
             "print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -940,7 +928,6 @@
             "print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -977,7 +964,6 @@
             "print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -998,7 +984,7 @@
             "    print(espaces + caractere)"
         ],
         "response": {
-            "message": "<p>On y est presque ! Vous avez une espace de trop avant chaque lettre.\nAssurez-vous que la premi\u00e8re fois que votre boucle appelle <code>print</code> votre variable qui contiendra les espaces soit une cha\u00eene vide.\nV\u00e9rifiez l'agencement de votre code.</p>",
+            "message": "<p>On y est presque ! Vous avez un espace de trop avant chaque lettre.\nAssurez-vous que la premi\u00e8re fois que votre boucle appelle <code>print</code> votre variable qui contiendra les espaces soit une cha\u00eene vide.\nV\u00e9rifiez l'agencement de votre code.</p>",
             "passed": false,
             "result": [
                 {
@@ -1025,7 +1011,6 @@
             "    espaces += ' '"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1037,6 +1022,7 @@
         "step": "diagonal_name_bonus_challenge"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des structures conditionnelles",
         "program": [
             "condition = True",
@@ -1045,7 +1031,6 @@
             "print(condition)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1057,6 +1042,7 @@
         "step": "introducing_booleans"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des structures conditionnelles",
         "program": [
             "if True:",
@@ -1066,7 +1052,6 @@
             "    print('Ceci non')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1078,6 +1063,7 @@
         "step": "first_if_statements"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des structures conditionnelles",
         "program": [
             "phrase = 'Hello World'",
@@ -1087,7 +1073,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hello World!",
@@ -1107,6 +1092,7 @@
         "step": "excited_example"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des structures conditionnelles",
         "program": [
             "phrase = 'Hello World'",
@@ -1116,7 +1102,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hello World",
@@ -1155,7 +1140,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1167,6 +1151,7 @@
         "step": "excited_confused_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Structures imbriqu\u00e9es",
         "program": [
             "phrase = 'Hello World'",
@@ -1181,7 +1166,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "H!e!l!l!o! !W!o!r!l!d!",
@@ -1208,6 +1192,7 @@
         "step": "for_inside_if"
     },
     {
+        "get_solution": "program",
         "page": "Observation des programmes avec <code>snoop</code>",
         "program": [
             "phrase = 'Hello World'",
@@ -1222,7 +1207,6 @@
             "print(nouvelle_phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "ello World",
@@ -1245,6 +1229,7 @@
         "step": "print_tail"
     },
     {
+        "get_solution": "program",
         "page": "Observation des programmes avec <code>snoop</code>",
         "program": [
             "phrase = 'Hello World'",
@@ -1259,31 +1244,30 @@
             "print(nouvelle_phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | phrase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   3\u001b[0m | inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   4\u001b[0m | nouvelle_phrase \u001b[38;5;197m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n",
+                    "text": "\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   1\u001b[0m | phrase \u001b[38;5;204m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   3\u001b[0m | inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mFalse\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   4\u001b[0m | nouvelle_phrase \u001b[38;5;204m=\u001b[39m \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mH\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n",
+                    "text": "\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186me\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mel\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n",
+                    "text": "\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mell\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186m \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n",
+                    "text": "\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello \u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mW\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello W\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n",
+                    "text": "\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wo\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mr\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Wor\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186ml\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;197m+\u001b[39m\u001b[38;5;197m=\u001b[39m caractere\n\u001b[38;5;242m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m |     inclus \u001b[38;5;197m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;197min\u001b[39m phrase:\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m  10\u001b[0m | print(nouvelle_phrase)\n",
+                    "text": "\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello Worl\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m...... caractere = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186md\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   6\u001b[0m |     \u001b[38;5;81mif\u001b[39m inclus:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   7\u001b[0m |         nouvelle_phrase \u001b[38;5;204m+\u001b[39m\u001b[38;5;204m=\u001b[39m caractere\n\u001b[38;5;245m \u001b[0m.............. nouvelle_phrase = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mello World\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m |     inclus \u001b[38;5;204m=\u001b[39m \u001b[38;5;81mTrue\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mfor\u001b[39m caractere \u001b[38;5;204min\u001b[39m phrase:\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m  10\u001b[0m | print(nouvelle_phrase)\n",
                     "type": "snoop"
                 },
                 {
@@ -1326,7 +1310,6 @@
             "print(nouvelle_phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1338,6 +1321,7 @@
         "step": "print_first_character"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> et <code>else</code>, le bloc sinon",
         "program": [
             "condition = True",
@@ -1347,7 +1331,6 @@
             "    print('Non')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1359,6 +1342,7 @@
         "step": "first_if_else"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> et <code>else</code>, le bloc sinon",
         "program": [
             "condition = False",
@@ -1368,7 +1352,6 @@
             "    print('Non')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1380,6 +1363,7 @@
         "step": "first_if_else_false"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> et <code>else</code>, le bloc sinon",
         "program": [
             "phrase = 'Hello World'",
@@ -1391,7 +1375,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1403,6 +1386,7 @@
         "step": "if_upper_else_lower"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> et <code>else</code>, le bloc sinon",
         "program": [
             "phrase = 'Hello World'",
@@ -1414,7 +1398,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1426,6 +1409,7 @@
         "step": "if_upper_else_lower_false"
     },
     {
+        "get_solution": "program",
         "page": "<code>if</code> et <code>else</code>, le bloc sinon",
         "program": [
             "phrase = 'Hello World'",
@@ -1438,7 +1422,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Erreur",
@@ -1527,7 +1510,6 @@
             "print(phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1568,7 +1550,6 @@
             "print(nouvelle_phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1611,7 +1592,6 @@
             "print(nouvelle_phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1623,6 +1603,7 @@
         "step": "spongebob"
     },
     {
+        "get_solution": "program",
         "page": "L'op\u00e9rateur d'\u00e9galit\u00e9",
         "program": [
             "print(1 + 2 == 3)",
@@ -1630,7 +1611,6 @@
             "print('ab' + 'c' == 'a' + 'bc')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1642,12 +1622,12 @@
         "step": "introducing_equality"
     },
     {
+        "get_solution": "program",
         "page": "L'op\u00e9rateur d'\u00e9galit\u00e9",
         "program": [
             "print(1 + 2 = 3)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1660,6 +1640,7 @@
         "step": "equality_vs_assignment"
     },
     {
+        "get_solution": "program",
         "page": "L'op\u00e9rateur d'\u00e9galit\u00e9",
         "program": [
             "nom = 'Melissa'",
@@ -1672,7 +1653,6 @@
             "print(nouveau_nom)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1713,7 +1693,6 @@
             "print(nouveau_nom)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1725,6 +1704,7 @@
         "step": "if_equals_replacing_characters_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>elif</code>, le bloc sinon si",
         "program": [
             "adn = 'AGTAGCGTC'",
@@ -1743,7 +1723,6 @@
             "print(adn_inverse)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1792,7 +1771,6 @@
             "print(adn_inverse)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1804,6 +1782,7 @@
         "step": "dna_example_with_else"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>elif</code>, le bloc sinon si",
         "program": [
             "adn = 'AGTAGCGTC'",
@@ -1822,7 +1801,6 @@
             "print(adn_inverse)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1834,12 +1812,12 @@
         "step": "dna_example_with_elif"
     },
     {
+        "get_solution": "program",
         "page": "Autres op\u00e9rateurs de comparaison",
         "program": [
             "1 != 2"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -1859,6 +1837,7 @@
         "step": "try_not_equals"
     },
     {
+        "get_solution": "program",
         "page": "Autres op\u00e9rateurs de comparaison",
         "program": [
             "phrase = 'La touche e de mon clavier est cass\u00e9e'",
@@ -1869,7 +1848,6 @@
             "print(nouvelle_phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1881,15 +1859,12 @@
         "step": "brokn_kyboard"
     },
     {
-        "get_solution": [
-            "1 < 2"
-        ],
+        "get_solution": "program",
         "page": "Autres op\u00e9rateurs de comparaison",
         "program": [
             "1 < 2"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1901,15 +1876,12 @@
         "step": "introducing_less_than"
     },
     {
-        "get_solution": [
-            "'1' < '2'"
-        ],
+        "get_solution": "program",
         "page": "Autres op\u00e9rateurs de comparaison",
         "program": [
             "'1' < '2'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -1921,6 +1893,7 @@
         "step": "comparing_strings"
     },
     {
+        "get_solution": "program",
         "page": "Autres op\u00e9rateurs de comparaison",
         "program": [
             "pourcentage = 73",
@@ -1937,7 +1910,6 @@
             "print(note)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "B",
@@ -1990,7 +1962,6 @@
             "print(premier)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2002,6 +1973,7 @@
         "step": "min_three_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des listes",
         "program": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
@@ -2010,7 +1982,6 @@
             "    print(mot)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2022,6 +1993,7 @@
         "step": "first_list"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des listes",
         "program": [
             "x = 1",
@@ -2029,7 +2001,6 @@
             "print(choses)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2041,6 +2012,7 @@
         "step": "can_contain_anything"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des listes",
         "program": [
             "nombres = [3, 1, 4, 1, 5, 9]",
@@ -2052,7 +2024,6 @@
             "print(total)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2081,7 +2052,6 @@
             "print(total)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2121,7 +2091,6 @@
             "print(total)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2148,7 +2117,6 @@
             "print(double)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2177,7 +2145,6 @@
             "print(grands_nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2209,7 +2176,6 @@
             "print(trouve)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2221,6 +2187,7 @@
         "step": "list_contains_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
@@ -2231,7 +2198,6 @@
             "print(mots[3])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2243,12 +2209,12 @@
         "step": "introducing_subscripting"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "mots[4]"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2301,6 +2267,7 @@
         "step": "index_error"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
@@ -2311,7 +2278,6 @@
             "    print(mots[i])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "0\nCeci\n1\nest\n2\nune\n3\nliste",
@@ -2335,6 +2301,7 @@
         "step": "introducing_len_and_range"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
@@ -2345,7 +2312,6 @@
             "    print(mots[i])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2357,6 +2323,7 @@
         "step": "range_len"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "indices = range(4)",
@@ -2367,7 +2334,6 @@
             "print(indices[3])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "0\n1\n2\n3",
@@ -2390,12 +2356,12 @@
         "step": "printing_the_range"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "indices[4]"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Erreur",
@@ -2459,12 +2425,12 @@
         "step": "indices_out_of_bounds"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "range(4)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2476,12 +2442,12 @@
         "step": "range_almost_the_same_as_list"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "list(range(4))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[0, 1, 2, 3]",
@@ -2506,13 +2472,13 @@
         "step": "range_versus_list"
     },
     {
+        "get_solution": "program",
         "page": "Lecture d'\u00e9l\u00e9ments \u00e0 une position, <code>range()</code> et <code>len()</code>",
         "program": [
             "mots = ['Ceci', 'est', 'une', 'liste']",
             "print(len(mots))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "4",
@@ -2545,7 +2511,6 @@
             "print(mots[len(mots) - 1])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2570,7 +2535,6 @@
             "    print(mots[indice])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2642,7 +2606,6 @@
             "        break"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2670,7 +2633,6 @@
             "    print(caractere_1 + ' ' + caractere_2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2730,7 +2692,6 @@
             "    print(caractere_1 + ' ' + caractere_2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2742,13 +2703,13 @@
         "step": "zip_longest_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Vocabulaire sur les appels de fonctions et les m\u00e9thodes",
         "program": [
             "print(len)",
             "print(print)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2760,12 +2721,12 @@
         "step": "print_functions"
     },
     {
+        "get_solution": "program",
         "page": "Vocabulaire sur les appels de fonctions et les m\u00e9thodes",
         "program": [
             "print(callable(len))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2777,6 +2738,7 @@
         "step": "introducing_callable"
     },
     {
+        "get_solution": "program",
         "page": "Vocabulaire sur les appels de fonctions et les m\u00e9thodes",
         "program": [
             "f = 'une chaine'",
@@ -2784,7 +2746,6 @@
             "f()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2823,7 +2784,7 @@
                                     ]
                                 }
                             ],
-                            "friendly": "<p>Une exception <code>TypeError</code> est g\u00e9n\u00e9ralement caus\u00e9e par une tentative\nde combiner deux types d\u2019objets incompatibles,\nen invoquant une fonction avec le mauvais type d\u2019objet,\nou en tentant d'effectuer une op\u00e9ration non permise sur un type d'objet donn\u00e9.</p>\n<p>En raison des parenth\u00e8ses, <code>f</code> est interpr\u00e9t\u00e9 par Python\ncomme indiquant une invocation de fonction pour <code>f</code>.\nCelui-ci n'est pas une fonction mais plut\u00f4t un objet de type <code>str</code>\nne pouvant pas \u00eatre invoqu\u00e9.</p>",
+                            "friendly": "<p>Une exception <code>TypeError</code> est g\u00e9n\u00e9ralement caus\u00e9e par une tentative\nde combiner deux types d\u2019objets incompatibles,\nen invoquant une fonction avec le mauvais type d\u2019objet,\nou en tentant d'effectuer une op\u00e9ration non permise sur un type d'objet donn\u00e9.</p>\n<p>En raison des parenthees, <code>` est interpr\u00e9t\u00e9 par Python\ncomme indiquant une invocation de fonction pour</code>f<code>, qui est un objet de type</code>str`\nne pouvant pas \u00eatre invoqu\u00e9.</p>",
                             "tail": ""
                         }
                     ],
@@ -2844,6 +2805,7 @@
         "step": "not_callable"
     },
     {
+        "get_solution": "program",
         "page": "Vocabulaire sur les appels de fonctions et les m\u00e9thodes",
         "program": [
             "choses = [1, 2, 3]",
@@ -2852,7 +2814,6 @@
             "print(affichage)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2864,13 +2825,13 @@
         "step": "print_returns_none"
     },
     {
+        "get_solution": "program",
         "page": "Vocabulaire sur les appels de fonctions et les m\u00e9thodes",
         "program": [
             "choses = print([1, 2, 3])",
             "longueur = len(choses)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2930,6 +2891,7 @@
         "step": "len_of_none"
     },
     {
+        "get_solution": "program",
         "page": "Vocabulaire sur les appels de fonctions et les m\u00e9thodes",
         "program": [
             "mot = 'Hello'",
@@ -2937,7 +2899,6 @@
             "print(mot.upper())"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -2949,13 +2910,13 @@
         "step": "methods_of_str"
     },
     {
+        "get_solution": "program",
         "page": "Vocabulaire sur les appels de fonctions et les m\u00e9thodes",
         "program": [
             "mot = 'Hello'",
             "mot.append('!')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3009,6 +2970,7 @@
         "step": "no_append_for_str"
     },
     {
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "nombres = [1, 2, 3]",
@@ -3019,7 +2981,6 @@
             "print(nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3031,6 +2992,7 @@
         "step": "append_vs_concatenate"
     },
     {
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "nombres = [1, 2, 3]",
@@ -3038,7 +3000,6 @@
             "print(nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[1, 9, 3]",
@@ -3062,12 +3023,12 @@
         "step": "subscript_assignment_predict"
     },
     {
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "[7, 8, 9, 8].index(8)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "1",
@@ -3091,6 +3052,7 @@
         "step": "index_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "nombres = [1, 2, 3]",
@@ -3098,7 +3060,6 @@
             "print(nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "2\n[1, 3]",
@@ -3122,6 +3083,7 @@
         "step": "pop_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "nombres = [1, 2, 3]",
@@ -3129,7 +3091,6 @@
             "print(nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[2, 3]",
@@ -3153,11 +3114,7 @@
         "step": "remove_predict_exercise"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "x.append(x.pop(0))",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3165,7 +3122,6 @@
             "print(x)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3177,11 +3133,7 @@
         "step": "pop_remove_index_subscript_assignment"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "x[len(x) - 1] = x[0]",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3189,7 +3141,6 @@
             "print(x)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3201,11 +3152,7 @@
         "step": "subscript_assignment_exercise"
     },
     {
-        "get_solution": [
-            "x = ['a', 'b', 'c']",
-            "y = x + [x[0]]",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "x = ['a', 'b', 'c']",
@@ -3213,7 +3160,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3225,11 +3171,7 @@
         "step": "negative_index_concatenation_exercise"
     },
     {
-        "get_solution": [
-            "x = [1, 2, 0, 3]",
-            "x.pop(x.index(0))",
-            "print(x)"
-        ],
+        "get_solution": "program",
         "page": "Fonctions et m\u00e9thodes sur les listes",
         "program": [
             "x = [1, 2, 0, 3]",
@@ -3237,7 +3179,6 @@
             "print(x)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3249,12 +3190,12 @@
         "step": "remove_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Plus de fonctions et de m\u00e9thodes sur les listes",
         "program": [
             "sorted([2, 9, 1, 8, 5, 6])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[1, 2, 5, 6, 8, 9]",
@@ -3276,6 +3217,7 @@
         "step": "sorted_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Plus de fonctions et de m\u00e9thodes sur les listes",
         "program": [
             "nombres = [2, 9, 1, 8, 5, 64]",
@@ -3283,7 +3225,6 @@
             "print(2 in nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False\nTrue",
@@ -3305,12 +3246,12 @@
         "step": "in_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Plus de fonctions et de m\u00e9thodes sur les listes",
         "program": [
             "sum([5, 3, 4])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "12",
@@ -3331,12 +3272,12 @@
         "step": "sum_predict_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Plus de fonctions et de m\u00e9thodes sur les listes",
         "program": [
             "[1, 2, 3, 2, 7, 2, 5].count(2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "3",
@@ -3358,11 +3299,7 @@
         "step": "count_predict_exercise"
     },
     {
-        "get_solution": [
-            "x = [1, 2, 0, 3]",
-            "y = x.count(1) > 0",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "Plus de fonctions et de m\u00e9thodes sur les listes",
         "program": [
             "x = [1, 2, 0, 3]",
@@ -3370,7 +3307,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3382,11 +3318,7 @@
         "step": "count_in_sorted_sum"
     },
     {
-        "get_solution": [
-            "x = [15, 12, -6, 3]",
-            "y = sum(x) / len(x)",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "Plus de fonctions et de m\u00e9thodes sur les listes",
         "program": [
             "x = [15, 12, -6, 3]",
@@ -3394,7 +3326,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3406,11 +3337,7 @@
         "step": "average_exercise"
     },
     {
-        "get_solution": [
-            "x = 100",
-            "y = sum(range(x + 1))",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "Plus de fonctions et de m\u00e9thodes sur les listes",
         "program": [
             "x = 100",
@@ -3418,7 +3345,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3430,11 +3356,7 @@
         "step": "sum_range_exercise"
     },
     {
-        "get_solution": [
-            "x = [12, -6, 2, -1, 3]",
-            "y = sorted(x)[1]",
-            "print(y)"
-        ],
+        "get_solution": "program",
         "page": "Plus de fonctions et de m\u00e9thodes sur les listes",
         "program": [
             "x = [12, -6, 2, -1, 3]",
@@ -3442,7 +3364,6 @@
             "print(y)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3454,12 +3375,12 @@
         "step": "second_smallest_in_list_exercise"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9thodes sur les chaines et immuabilit\u00e9",
         "program": [
             "print('tes' in 'fait tes devoirs et apprend tes le\u00e7ons')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3471,6 +3392,7 @@
         "step": "string_in_step"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9thodes sur les chaines et immuabilit\u00e9",
         "program": [
             "chaine = 'fait tes devoirs et apprend tes le\u00e7ons'",
@@ -3478,7 +3400,6 @@
             "print(chaine.index('tes'))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3490,12 +3411,12 @@
         "step": "string_count_index"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9thodes sur les chaines et immuabilit\u00e9",
         "program": [
             "'Python'.append(' est sympa !')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3542,6 +3463,7 @@
         "step": "mutation_string_append"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9thodes sur les chaines et immuabilit\u00e9",
         "program": [
             "phrase = \"Python brille !\"",
@@ -3550,7 +3472,6 @@
             "print(nouvelle_phrase)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3562,15 +3483,12 @@
         "step": "string_lower_upper"
     },
     {
-        "get_solution": [
-            "max([21, 55, 4, 91, 62, 49])"
-        ],
+        "get_solution": "program",
         "page": "Recherche d'informations sur le web",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3582,11 +3500,7 @@
         "step": "sum_list"
     },
     {
-        "get_solution": [
-            "nombres = [1, 2, 3, 4, 5]",
-            "nombres.insert(2, 9)",
-            "print(nombres)"
-        ],
+        "get_solution": "program",
         "page": "Recherche d'informations sur le web",
         "program": [
             "nombres = [1, 2, 3, 4, 5]",
@@ -3594,7 +3508,6 @@
             "print(nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3606,16 +3519,16 @@
         "step": "list_insert"
     },
     {
+        "get_solution": "program",
         "page": "Recherche d'informations sur le web",
         "program": [
             "dir([])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']\n",
+                    "text": "['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getstate__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']\n",
                     "type": "stdout"
                 }
             ]
@@ -3623,6 +3536,7 @@
         "step": "dir_list"
     },
     {
+        "get_solution": "program",
         "page": "Observation des programmes avec Python Tutor",
         "program": [
             "des_nombres = [2, 4, 8, 1, 9, 7]",
@@ -3640,7 +3554,6 @@
             "print(grands_nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3652,6 +3565,7 @@
         "step": "run_with_python_tutor"
     },
     {
+        "get_solution": "program",
         "page": "<code>==</code> ou <code>is</code>, test d'\u00e9galit\u00e9 ou d'identit\u00e9",
         "program": [
             "liste_1 = [1, 2, 3]",
@@ -3669,7 +3583,6 @@
             "print(liste_2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3681,6 +3594,7 @@
         "step": "two_separate_lists"
     },
     {
+        "get_solution": "program",
         "page": "<code>==</code> ou <code>is</code>, test d'\u00e9galit\u00e9 ou d'identit\u00e9",
         "program": [
             "liste_1 = [1, 2, 3]",
@@ -3698,7 +3612,6 @@
             "print(liste_2)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3710,6 +3623,7 @@
         "step": "same_list"
     },
     {
+        "get_solution": "program",
         "page": "Modifications pendant l'it\u00e9ration",
         "program": [
             "nombres = [10, 7, 8, 3, 12, 15]",
@@ -3720,7 +3634,6 @@
             "print(nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3799,6 +3712,7 @@
         "step": "run_broken_with_python_tutor"
     },
     {
+        "get_solution": "program",
         "page": "Modifications pendant l'it\u00e9ration",
         "program": [
             "nombres = [10, 7, 8, 3, 12, 15]",
@@ -3808,7 +3722,6 @@
             "print(nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3820,6 +3733,7 @@
         "step": "remove_instead_of_pop"
     },
     {
+        "get_solution": "program",
         "page": "Modifications pendant l'it\u00e9ration",
         "program": [
             "nombres = [10, 7, 8, 3, 12, 15]",
@@ -3829,7 +3743,6 @@
             "print(nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3841,6 +3754,7 @@
         "step": "make_copy"
     },
     {
+        "get_solution": "program",
         "page": "Modifications pendant l'it\u00e9ration",
         "program": [
             "nombres = [10, 7, 8, 3, 12, 15]",
@@ -3852,7 +3766,6 @@
             "print(grands_nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3864,6 +3777,7 @@
         "step": "make_copy2"
     },
     {
+        "get_solution": "program",
         "page": "Modifications pendant l'it\u00e9ration",
         "program": [
             "nombres = [10, 7, 8, 3, 12, 15]",
@@ -3875,7 +3789,6 @@
             "print(grands_nombres)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3887,17 +3800,17 @@
         "step": "make_new_list"
     },
     {
+        "get_solution": "program",
         "page": "Guillemets simples et doubles dans les chaines",
         "program": [
             "print('Alice s'en va diner')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Pr\u00e9sentement, je ne peux pas deviner la cause probable de cette erreur.\nEssayez d\u2019examiner attentivement la ligne indiqu\u00e9e ainsi que celle\nimm\u00e9diatement au dessus pour voir si vous pouvez identifier\nun mot mal orthographi\u00e9, ou des symboles manquants, comme (,), [,],:, etc.</p>\n<p>Si votre code n'utilise pas d'annotations de type,\net que vous pensez que friendly devrait\npouvoir l'analyser correctement, SVP rapporter ce cas au site suivant:\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
-                    "text": "    print('Alice s'en va diner')\n          ^^^^^^^^^^^\nSyntaxError: invalid syntax. Perhaps you forgot a comma?\nat line 1\n",
+                    "friendly": "<p>Une exception de type <code>SyntaxError</code> se produit lorsque Python ne peut pas comprendre votre code.</p>\n<p>Vous aviez commenc\u00e9 \u00e0 \u00e9crire une cha\u00eene de caract\u00e8res\navec un guillemet simple ou double, mais n'avez jamais\ntermin\u00e9 la cha\u00eene avec un autre guillemet sur cette ligne.</p>",
+                    "text": "    print('Alice s'en va diner')\n                              ^\nSyntaxError: unterminated string literal (detected at line 1)\nat line 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -3905,12 +3818,12 @@
         "step": "single_quotes_apostrophe"
     },
     {
+        "get_solution": "program",
         "page": "Guillemets simples et doubles dans les chaines",
         "program": [
             "print(\"Alice s'en va diner\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3922,12 +3835,12 @@
         "step": "double_quotes"
     },
     {
+        "get_solution": "program",
         "page": "Guillemets simples et doubles dans les chaines",
         "program": [
             "'Alice' == \"Alice\""
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -3947,15 +3860,12 @@
         "step": "single_double_quotes_equal"
     },
     {
-        "get_solution": [
-            "print(\"Un cas n\u2019est jamais assez particulier pour autoriser de briser une r\u00e8gle.\")"
-        ],
+        "get_solution": "program",
         "page": "Guillemets simples et doubles dans les chaines",
         "program": [
             "print(\"Un cas n\u2019est jamais assez particulier pour autoriser de briser une r\u00e8gle.\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3967,15 +3877,12 @@
         "step": "double_quote_exercise"
     },
     {
-        "get_solution": [
-            "print('\"Parler est facile. Montre-moi le code.\" - Linus Torvalds')"
-        ],
+        "get_solution": "program",
         "page": "Guillemets simples et doubles dans les chaines",
         "program": [
             "print('\"Parler est facile. Montre-moi le code.\" - Linus Torvalds')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -3987,6 +3894,7 @@
         "step": "single_quote_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Les f-string",
         "program": [
             "nom = \"Alice\"",
@@ -3995,7 +3903,6 @@
             "print(f\"{nom} est all\u00e9(e) {repas} avec {ami}.\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Alice est all\u00e9(e) d\u00e9jeuner avec Bob.",
@@ -4022,6 +3929,7 @@
         "step": "introduce_f_strings"
     },
     {
+        "get_solution": "program",
         "page": "Les f-string",
         "program": [
             "nom = \"Alice\"",
@@ -4029,7 +3937,6 @@
             "print(\"Bonjour \" + nom + \". Vous avez \" + age + \" ans.\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Erreur",
@@ -4108,11 +4015,7 @@
         "step": "concatenate_string_number"
     },
     {
-        "get_solution": [
-            "nom = \"Alice\"",
-            "age = 20",
-            "print(f'Bonjour {nom}. Vous avez {age} ans.')"
-        ],
+        "get_solution": "program",
         "page": "Les f-string",
         "program": [
             "nom = \"Alice\"",
@@ -4120,7 +4023,6 @@
             "print(f'Bonjour {nom}. Vous avez {age} ans.')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4132,12 +4034,12 @@
         "step": "basic_f_string_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Les f-string",
         "program": [
             "f\"2 * 3 + 4 est \u00e9gal \u00e0 {2 * 3 + 4}\""
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4154,15 +4056,14 @@
         ],
         "page": "Les f-string",
         "program": [
-            "personnes = ['eODoUwNzS', 'ofHBEzZxs', 'zwTrQA', 'LDaOKmpHU', 'HCMLTt', 'NbRmEjaoyD']",
+            "personnes = ['Alice', 'Bob', 'Charlie']",
             "print(f\"Il y a {len(personnes)} personnes qui attendent, la premi\u00e8re personne s'appelle {personnes[0]}.\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "Il y a 6 personnes qui attendent, la premi\u00e8re personne s'appelle eODoUwNzS.\n",
+                    "text": "Il y a 3 personnes qui attendent, la premi\u00e8re personne s'appelle Alice.\n",
                     "type": "stdout"
                 }
             ]
@@ -4170,6 +4071,7 @@
         "step": "fix_broken_program"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des boucles imbriqu\u00e9es",
         "program": [
             "for lettre in \"ABC\":",
@@ -4179,7 +4081,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "A\nA 0\nA 1\nA 2\nA 3\n---\nB\nB 0\nB 1\nB 2\nB 3\n---\nC\nC 0\nC 1\nC 2\nC 3\n---",
@@ -4360,14 +4261,7 @@
         "step": "times_table_exercise"
     },
     {
-        "get_solution": [
-            "for gauche in range(12):",
-            "    gauche += 1",
-            "    for droite in range(12):",
-            "        droite += 1",
-            "        print(f'{gauche} x {droite} = {gauche * droite}')",
-            "    print('---')"
-        ],
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des boucles imbriqu\u00e9es",
         "program": [
             "for gauche in range(12):",
@@ -4378,7 +4272,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4402,18 +4295,17 @@
         ],
         "page": "Pr\u00e9sentation des boucles imbriqu\u00e9es",
         "program": [
-            "joueurs = ['OUumHyG', 'ocUyWBh', 'DbNQe', 'XjItgGJ', 'iOuKYyzZt', 'iySpdUX', 'EZkLNo']",
+            "joueurs = ['Alice', 'Bob', 'Charlie']",
             "for joueur_1 in joueurs:",
             "    for joueur_2 in joueurs:",
             "        if joueur_1 != joueur_2:",
             "            print(f'{joueur_1} contre {joueur_2}')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "OUumHyG contre ocUyWBh\nOUumHyG contre DbNQe\nOUumHyG contre XjItgGJ\nOUumHyG contre iOuKYyzZt\nOUumHyG contre iySpdUX\nOUumHyG contre EZkLNo\nocUyWBh contre OUumHyG\nocUyWBh contre DbNQe\nocUyWBh contre XjItgGJ\nocUyWBh contre iOuKYyzZt\nocUyWBh contre iySpdUX\nocUyWBh contre EZkLNo\nDbNQe contre OUumHyG\nDbNQe contre ocUyWBh\nDbNQe contre XjItgGJ\nDbNQe contre iOuKYyzZt\nDbNQe contre iySpdUX\nDbNQe contre EZkLNo\nXjItgGJ contre OUumHyG\nXjItgGJ contre ocUyWBh\nXjItgGJ contre DbNQe\nXjItgGJ contre iOuKYyzZt\nXjItgGJ contre iySpdUX\nXjItgGJ contre EZkLNo\niOuKYyzZt contre OUumHyG\niOuKYyzZt contre ocUyWBh\niOuKYyzZt contre DbNQe\niOuKYyzZt contre XjItgGJ\niOuKYyzZt contre iySpdUX\niOuKYyzZt contre EZkLNo\niySpdUX contre OUumHyG\niySpdUX contre ocUyWBh\niySpdUX contre DbNQe\niySpdUX contre XjItgGJ\niySpdUX contre iOuKYyzZt\niySpdUX contre EZkLNo\nEZkLNo contre OUumHyG\nEZkLNo contre ocUyWBh\nEZkLNo contre DbNQe\nEZkLNo contre XjItgGJ\nEZkLNo contre iOuKYyzZt\nEZkLNo contre iySpdUX\n",
+                    "text": "Alice contre Bob\nAlice contre Charlie\nBob contre Alice\nBob contre Charlie\nCharlie contre Alice\nCharlie contre Bob\n",
                     "type": "stdout"
                 }
             ]
@@ -4438,7 +4330,6 @@
             "                print(c_1 + c_2 + c_3 + c_4)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4469,7 +4360,6 @@
             "    print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4489,18 +4379,17 @@
         ],
         "page": "Pr\u00e9sentation des boucles imbriqu\u00e9es",
         "program": [
-            "joueurs = ['JwsUZyHWXS', 'UepKEbOB', 'uTRiPVo', 'VWkbqMa', 'BwdsYFWHh', 'XmgDJ', 'WRoYNxvLF']",
+            "joueurs = ['Alice', 'Bob', 'Charlie']",
             "for i in range(len(joueurs)):",
             "    for j in range(len(joueurs)):",
             "        if i < j:",
             "            print(f'{joueurs[i]} contre {joueurs[j]}')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "JwsUZyHWXS contre UepKEbOB\nJwsUZyHWXS contre uTRiPVo\nJwsUZyHWXS contre VWkbqMa\nJwsUZyHWXS contre BwdsYFWHh\nJwsUZyHWXS contre XmgDJ\nJwsUZyHWXS contre WRoYNxvLF\nUepKEbOB contre uTRiPVo\nUepKEbOB contre VWkbqMa\nUepKEbOB contre BwdsYFWHh\nUepKEbOB contre XmgDJ\nUepKEbOB contre WRoYNxvLF\nuTRiPVo contre VWkbqMa\nuTRiPVo contre BwdsYFWHh\nuTRiPVo contre XmgDJ\nuTRiPVo contre WRoYNxvLF\nVWkbqMa contre BwdsYFWHh\nVWkbqMa contre XmgDJ\nVWkbqMa contre WRoYNxvLF\nBwdsYFWHh contre XmgDJ\nBwdsYFWHh contre WRoYNxvLF\nXmgDJ contre WRoYNxvLF\n",
+                    "text": "Alice contre Bob\nAlice contre Charlie\nBob contre Charlie\n",
                     "type": "stdout"
                 }
             ]
@@ -4508,6 +4397,7 @@
         "step": "player_vs_player_bonus"
     },
     {
+        "get_solution": "program",
         "page": "Observation des programmes avec <code>birdseye</code>",
         "program": [
             "a = 2",
@@ -4517,7 +4407,6 @@
             "print(a * b + c * d)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4529,6 +4418,7 @@
         "step": "first_birdseye_example"
     },
     {
+        "get_solution": "program",
         "page": "Observation des programmes avec <code>birdseye</code>",
         "program": [
             "mot = 'Fabuleux'",
@@ -4543,7 +4433,6 @@
             "print(consonnes)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4566,7 +4455,6 @@
             "print(chaine[0])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4578,13 +4466,13 @@
         "step": "string_list_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des listes imbriqu\u00e9es",
         "program": [
             "chaines = [\"abc\", \"def\", \"ghi\"]",
             "print(chaines[1][0])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4605,7 +4493,6 @@
             "print(chaines[-2][-1])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4617,13 +4504,13 @@
         "step": "double_subscripting_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation des listes imbriqu\u00e9es",
         "program": [
             "chaines = [['hello', 'there'], ['comment', 'allez', 'vous']]",
             "print(chaines[1][0])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "comment",
@@ -4661,7 +4548,6 @@
             "print(chaines[1][2][0])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4673,6 +4559,7 @@
         "step": "triple_subscripting"
     },
     {
+        "get_solution": "program",
         "page": "Faire des boucles avec des listes imbriqu\u00e9es",
         "program": [
             "nombres = [[1, 2, 3], [4, 5], [6], []]",
@@ -4682,7 +4569,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "1\n2\n3\n---\n4\n5\n---\n6\n---\n---",
@@ -4705,6 +4591,7 @@
         "step": "nested_list_nested_loop_example"
     },
     {
+        "get_solution": "program",
         "page": "Faire des boucles avec des listes imbriqu\u00e9es",
         "program": [
             "nombres = [[1, 2, 3], [4, 5], [6], []]",
@@ -4714,7 +4601,6 @@
             "    print('---')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4742,7 +4628,6 @@
             "            print(chaine)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4774,7 +4659,6 @@
             "    print(cadeau)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4806,7 +4690,6 @@
             "print(cadeau)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4835,7 +4718,6 @@
             "    print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4880,7 +4762,6 @@
             "    print(ligne)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4892,6 +4773,7 @@
         "step": "zip_longest_strings_exercise"
     },
     {
+        "get_solution": "program",
         "page": "D\u00e9finitions de fonctions",
         "program": [
             "def salutation(nom):",
@@ -4901,7 +4783,6 @@
             "salutation(\"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4913,6 +4794,7 @@
         "step": "define_greet"
     },
     {
+        "get_solution": "program",
         "page": "D\u00e9finitions de fonctions",
         "program": [
             "def salutation(nom):",
@@ -4923,7 +4805,6 @@
             "salutation(\"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Bonjour Alice !\nComment allez-vous ?\nBonjour Bob !\nComment allez-vous ?",
@@ -4944,14 +4825,7 @@
         "step": "how_are_you"
     },
     {
-        "get_solution": [
-            "def dit_bonjour(nom):",
-            "    print(f\"Bonjour {nom} !\")",
-            "    print(\"Comment allez-vous ?\")",
-            "",
-            "dit_bonjour(\"Alice\")",
-            "dit_bonjour(\"Bob\")"
-        ],
+        "get_solution": "program",
         "page": "D\u00e9finitions de fonctions",
         "program": [
             "def dit_bonjour(nom):",
@@ -4962,7 +4836,6 @@
             "dit_bonjour(\"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -4974,14 +4847,7 @@
         "step": "change_function_name"
     },
     {
-        "get_solution": [
-            "def dit_bonjour(nom_personne):",
-            "    print(f\"Bonjour {nom_personne} !\")",
-            "    print(\"Comment allez-vous ?\")",
-            "",
-            "dit_bonjour(\"Alice\")",
-            "dit_bonjour(\"Bob\")"
-        ],
+        "get_solution": "program",
         "page": "D\u00e9finitions de fonctions",
         "program": [
             "def dit_bonjour(nom_personne):",
@@ -4992,7 +4858,6 @@
             "dit_bonjour(\"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5004,11 +4869,7 @@
         "step": "change_parameter_name"
     },
     {
-        "get_solution": [
-            "def affiche_deux_fois(x):",
-            "    print(x)",
-            "    print(x)"
-        ],
+        "get_solution": "program",
         "page": "D\u00e9finitions de fonctions",
         "program": [
             "def affiche_deux_fois(x):",
@@ -5016,13 +4877,13 @@
             "    print(x)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "print_twice_exercise"
     },
     {
+        "get_solution": "program",
         "page": "D\u00e9finitions de fonctions",
         "program": [
             "def affiche_plusieurs(chose, n):",
@@ -5032,7 +4893,6 @@
             "affiche_plusieurs(\"Hello\", 3)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Hello\nHello\nHello",
@@ -5055,13 +4915,7 @@
         "step": "print_many"
     },
     {
-        "get_solution": [
-            "def affiche_plusieurs(n, chose):",
-            "    for _ in range(n):",
-            "        print(chose)",
-            "",
-            "affiche_plusieurs(3, \"Hello\")"
-        ],
+        "get_solution": "program",
         "page": "D\u00e9finitions de fonctions",
         "program": [
             "def affiche_plusieurs(n, chose):",
@@ -5071,7 +4925,6 @@
             "affiche_plusieurs(3, \"Hello\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5083,6 +4936,7 @@
         "step": "swap_parameters"
     },
     {
+        "get_solution": "program",
         "page": "Appels de fonctions dans des fonctions",
         "program": [
             "def affiche_plusieurs(n, chose):",
@@ -5095,7 +4949,6 @@
             "affiche_deux_fois(\"Hello\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5107,6 +4960,7 @@
         "step": "print_twice_call_print_many"
     },
     {
+        "get_solution": "program",
         "page": "Appels de fonctions dans des fonctions",
         "program": [
             "def affiche_plusieurs(n, chose):",
@@ -5119,31 +4973,14 @@
             "affiche_deux_fois(\"Hello\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148maffiche_plusieurs\u001b[39m(n, chose):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148maffiche_deux_fois\u001b[39m(x):\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | affiche_deux_fois(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;242m     \u001b[0m\u001b[36m\u001b[1m>>> Call to affiche_deux_fois in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;242m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148maffiche_deux_fois\u001b[39m(x):\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     affiche_plusieurs(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m         \u001b[0m\u001b[36m\u001b[1m>>> Call to affiche_plusieurs in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;242m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;242m         \u001b[0m...... chose = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148maffiche_plusieurs\u001b[39m(n, chose):\n",
+                    "text": "\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148maffiche_plusieurs\u001b[39m(n, chose):\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148maffiche_deux_fois\u001b[39m(x):\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m | affiche_deux_fois(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n\u001b[38;5;245m     \u001b[0m\u001b[36m\u001b[1m>>> Call to affiche_deux_fois in File \"/my_program.py\", line 5\u001b[0m\n\u001b[38;5;245m     \u001b[0m...... x = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m     \u001b[0m\u001b[38;5;245m   5\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148maffiche_deux_fois\u001b[39m(x):\n\u001b[38;5;245m     \u001b[0m\u001b[38;5;245m   6\u001b[0m |     affiche_plusieurs(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;245m         \u001b[0m\u001b[36m\u001b[1m>>> Call to affiche_plusieurs in File \"/my_program.py\", line 1\u001b[0m\n\u001b[38;5;245m         \u001b[0m...... n = \u001b[38;5;141m2\u001b[39m\n\u001b[38;5;245m         \u001b[0m...... chose = \u001b[38;5;186m'\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m'\u001b[39m\n\u001b[38;5;245m         \u001b[0m\u001b[38;5;245m   1\u001b[0m | \u001b[38;5;81mdef\u001b[39m \u001b[38;5;148maffiche_plusieurs\u001b[39m(n, chose):\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(chose)\n",
-                    "type": "snoop"
-                },
-                {
-                    "text": "Hello",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\n",
-                    "type": "stdout"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
-                    "type": "snoop"
-                },
-                {
-                    "text": "\u001b[38;5;242m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   3\u001b[0m |         print(chose)\n",
+                    "text": "\u001b[38;5;245m         \u001b[0m\u001b[38;5;245m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;204min\u001b[39m range(n):\n\u001b[38;5;245m         \u001b[0m.......... _ = \u001b[38;5;141m0\u001b[39m\n\u001b[38;5;245m         \u001b[0m\u001b[38;5;245m   3\u001b[0m |         print(chose)\n",
                     "type": "snoop"
                 },
                 {
@@ -5155,11 +4992,27 @@
                     "type": "stdout"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[38;5;242m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;197min\u001b[39m range(n):\n",
+                    "text": "\u001b[38;5;245m         \u001b[0m\u001b[38;5;245m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;204min\u001b[39m range(n):\n",
                     "type": "snoop"
                 },
                 {
-                    "text": "\u001b[38;5;242m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from affiche_plusieurs: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m     \u001b[0m\u001b[38;5;242m   6\u001b[0m |     affiche_plusieurs(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;242m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from affiche_deux_fois: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;242m \u001b[0m\u001b[38;5;242m   8\u001b[0m | affiche_deux_fois(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
+                    "text": "\u001b[38;5;245m         \u001b[0m.......... _ = \u001b[38;5;141m1\u001b[39m\n\u001b[38;5;245m         \u001b[0m\u001b[38;5;245m   3\u001b[0m |         print(chose)\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "Hello",
+                    "type": "stdout"
+                },
+                {
+                    "text": "\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "\u001b[38;5;245m         \u001b[0m\u001b[38;5;245m   2\u001b[0m |     \u001b[38;5;81mfor\u001b[39m _ \u001b[38;5;204min\u001b[39m range(n):\n",
+                    "type": "snoop"
+                },
+                {
+                    "text": "\u001b[38;5;245m         \u001b[0m\u001b[32m\u001b[1m<<< Return value from affiche_plusieurs: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;245m     \u001b[0m\u001b[38;5;245m   6\u001b[0m |     affiche_plusieurs(\u001b[38;5;141m2\u001b[39m, x)\n\u001b[38;5;245m     \u001b[0m\u001b[32m\u001b[1m<<< Return value from affiche_deux_fois: \u001b[0m\u001b[38;5;81mNone\u001b[39m\n\u001b[38;5;245m \u001b[0m\u001b[38;5;245m   8\u001b[0m | affiche_deux_fois(\u001b[38;5;186m\"\u001b[39m\u001b[38;5;186mHello\u001b[39m\u001b[38;5;186m\"\u001b[39m)\n",
                     "type": "snoop"
                 }
             ]
@@ -5167,6 +5020,7 @@
         "step": "see_stack_in_snoop"
     },
     {
+        "get_solution": "program",
         "page": "Appels de fonctions dans des fonctions",
         "program": [
             "def affiche_plusieurs(n, chose):",
@@ -5179,7 +5033,6 @@
             "affiche_deux_fois(\"Hello\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5191,6 +5044,7 @@
         "step": "see_stack_in_pythontutor"
     },
     {
+        "get_solution": "program",
         "page": "Appels de fonctions dans des fonctions",
         "program": [
             "def affiche_plusieurs(n, chose):",
@@ -5203,7 +5057,6 @@
             "affiche_deux_fois(\"Hello\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5215,6 +5068,7 @@
         "step": "see_stack_in_birdseye"
     },
     {
+        "get_solution": "program",
         "page": "Renvoi de valeurs par des fonctions",
         "program": [
             "def double(x):",
@@ -5226,7 +5080,6 @@
             "print(deux_fois)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "5\n10",
@@ -5247,6 +5100,7 @@
         "step": "first_return"
     },
     {
+        "get_solution": "program",
         "page": "Renvoi de valeurs par des fonctions",
         "program": [
             "def double(x):",
@@ -5257,7 +5111,6 @@
             "print(nombre)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "5",
@@ -5303,13 +5156,13 @@
             "    return double(double(x))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "quadruple_exercise"
     },
     {
+        "get_solution": "program",
         "page": "Fonctions de tests",
         "program": [
             "def double(x):",
@@ -5319,7 +5172,6 @@
             "assert_equal(double(5), 10)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "OK\nOK",
@@ -5342,6 +5194,7 @@
         "step": "introducing_assert_equal"
     },
     {
+        "get_solution": "program",
         "page": "Fonctions de tests",
         "program": [
             "def double(x):",
@@ -5351,7 +5204,6 @@
             "assert_equal(double(5), 10)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Error! 6 != 4\nError! 15 != 10",
@@ -5373,6 +5225,7 @@
         "step": "make_tests_fail"
     },
     {
+        "get_solution": "program",
         "page": "Fonctions de tests",
         "program": [
             "def double(x):",
@@ -5385,7 +5238,6 @@
             "assert_equal(quadruple(5), 20)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5397,17 +5249,13 @@
         "step": "complete_quadruple_tests"
     },
     {
-        "get_solution": [
-            "def entoure(chaine, balise):",
-            "    return balise + chaine + balise"
-        ],
+        "get_solution": "program",
         "page": "Fonctions de tests",
         "program": [
             "def entoure(chaine, balise):",
             "    return balise + chaine + balise"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -5466,13 +5314,13 @@
             "    return chaine"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "alert_exercise"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> termine l'appel de la fonction",
         "program": [
             "def foo():",
@@ -5482,7 +5330,6 @@
             "print(foo())"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "1",
@@ -5505,6 +5352,7 @@
         "step": "double_return_in_one_function"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> termine l'appel de la fonction",
         "program": [
             "def nombres_doubles(nombres):",
@@ -5514,7 +5362,6 @@
             "assert_equal(nombres_doubles([1, 2, 3]), [2, 4, 6])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5526,6 +5373,7 @@
         "step": "cannot_return_multiple_values"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> termine l'appel de la fonction",
         "program": [
             "def foo():",
@@ -5538,7 +5386,6 @@
             "foo()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "a 0\na 1\na 2\nb 0",
@@ -5561,6 +5408,7 @@
         "step": "return_ends_whole_function"
     },
     {
+        "get_solution": "program",
         "page": "<code>return</code> termine l'appel de la fonction",
         "program": [
             "def foo():",
@@ -5573,7 +5421,6 @@
             "foo()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "a 0\na 1\na 2\nb 0\nc 0\nc 1\nc 2",
@@ -5596,6 +5443,7 @@
         "step": "break_vs_return"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "def est_ami(nom):",
@@ -5611,7 +5459,6 @@
             "assert_equal(est_ami(\"Carole\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5623,12 +5470,12 @@
         "step": "InputAliceBob"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "True or True"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -5648,12 +5495,12 @@
         "step": "TrueOrTrue"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "True or False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -5673,12 +5520,12 @@
         "step": "TrueOrFalse"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "False or False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False",
@@ -5698,6 +5545,7 @@
         "step": "FalseOrFalse"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "def est_ami(nom):",
@@ -5711,7 +5559,6 @@
             "assert_equal(est_ami(\"Carole\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5723,6 +5570,7 @@
         "step": "ImprovingWithOr"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "def est_ami(nom):",
@@ -5733,7 +5581,6 @@
             "assert_equal(est_ami(\"Carole\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5745,6 +5592,7 @@
         "step": "FurtherImprovement"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "def est_ami(nom):",
@@ -5755,7 +5603,6 @@
             "assert_equal(est_ami(\"Carole\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5767,6 +5614,7 @@
         "step": "ACommonMistake"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "def est_ami(nom):",
@@ -5777,7 +5625,6 @@
             "assert_equal(est_ami(\"Carole\"), False)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5789,13 +5636,7 @@
         "step": "InspectWithBirdseye"
     },
     {
-        "get_solution": [
-            "def est_pourcentage_valide(x):",
-            "    if x < 0 or x > 100:",
-            "        return False",
-            "    else:",
-            "        return True"
-        ],
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>or</code>",
         "program": [
             "def est_pourcentage_valide(x):",
@@ -5805,19 +5646,18 @@
             "        return True"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "AnExercise"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>and</code>",
         "program": [
             "True and True"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -5837,12 +5677,12 @@
         "step": "TrueAndTrue"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>and</code>",
         "program": [
             "True and False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False",
@@ -5862,12 +5702,12 @@
         "step": "TrueAndFalse"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>and</code>",
         "program": [
             "False and False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False",
@@ -5887,13 +5727,7 @@
         "step": "FalseAndFalse"
     },
     {
-        "get_solution": [
-            "def est_pourcentage_valide(x):",
-            "    if 0 <= x and x <= 100:",
-            "        return True",
-            "    else:",
-            "        return False"
-        ],
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>and</code>",
         "program": [
             "def est_pourcentage_valide(x):",
@@ -5903,37 +5737,32 @@
             "        return False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "AndExercise"
     },
     {
-        "get_solution": [
-            "def tous_egaux(ligne):",
-            "    return ligne[0] == ligne[1] and ligne[0] == ligne[2]"
-        ],
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>and</code>",
         "program": [
             "def tous_egaux(ligne):",
             "    return ligne[0] == ligne[1] and ligne[0] == ligne[2]"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "TicTacToeWinningRow"
     },
     {
+        "get_solution": "program",
         "page": "Instructions sur plusieurs lignes",
         "program": [
             "est_ami = nom == \"Alice\" or",
             "                 nom == \"Bob\""
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5946,6 +5775,7 @@
         "step": "invalid_multiline"
     },
     {
+        "get_solution": "program",
         "page": "Instructions sur plusieurs lignes",
         "program": [
             "nom = \"Bob\"",
@@ -5966,7 +5796,6 @@
             "      nom == \"Bob\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5978,12 +5807,12 @@
         "step": "valid_multiline"
     },
     {
+        "get_solution": "program",
         "page": "M\u00e9langes de <code>and</code> et <code>or</code>",
         "program": [
             "True or False and False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -5995,14 +5824,7 @@
         "step": "CombiningAndOr"
     },
     {
-        "get_solution": [
-            "def victoire_en_diagonale(plateau):",
-            "    milieu = plateau[1][1]",
-            "    return (",
-            "            (milieu == plateau[0][0] and milieu == plateau[2][2]) or",
-            "            (milieu == plateau[0][2] and milieu == plateau[2][0])",
-            "    )"
-        ],
+        "get_solution": "program",
         "page": "M\u00e9langes de <code>and</code> et <code>or</code>",
         "program": [
             "def victoire_en_diagonale(plateau):",
@@ -6013,19 +5835,18 @@
             "    )"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "AndHasHigherPriority"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>not</code>",
         "program": [
             "not True"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "False",
@@ -6045,12 +5866,12 @@
         "step": "IntroducingNot"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>not</code>",
         "program": [
             "not False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True",
@@ -6070,13 +5891,13 @@
         "step": "NotFalse"
     },
     {
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>not</code>",
         "program": [
             "b = True",
             "print(not b or b)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6088,17 +5909,13 @@
         "step": "NotTrueOrTrue"
     },
     {
-        "get_solution": [
-            "def est_image_invalide(nom_fichier):",
-            "    return not (nom_fichier.endswith(\".png\") or nom_fichier.endswith(\".jpg\"))"
-        ],
+        "get_solution": "program",
         "page": "Pr\u00e9sentation de <code>not</code>",
         "program": [
             "def est_image_invalide(nom_fichier):",
             "    return not (nom_fichier.endswith(\".png\") or nom_fichier.endswith(\".jpg\"))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -6127,19 +5944,7 @@
         "step": "intro_row_winner"
     },
     {
-        "get_solution": [
-            "def victoire_en_ligne(plateau):",
-            "    for ligne in plateau:",
-            "        tous_egaux = True",
-            "        marque = ligne[0]",
-            "        for valeur in ligne:",
-            "            if valeur == ' ' or marque != valeur:",
-            "                tous_egaux = False",
-            "                break",
-            "        if tous_egaux:",
-            "            return True",
-            "    return False"
-        ],
+        "get_solution": "program",
         "page": "V\u00e9rification du plateau pour un gagnant",
         "program": [
             "def victoire_en_ligne(plateau):",
@@ -6155,26 +5960,13 @@
             "    return False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "intro_row_winner"
     },
     {
-        "get_solution": [
-            "def victoire_en_colonne(plateau):",
-            "    for i_colonne in range(len(plateau[0])):",
-            "        tous_egaux = True",
-            "        marque = plateau[0][i_colonne]",
-            "        for ligne in plateau:",
-            "            if ligne[i_colonne] == ' ' or ligne[i_colonne] != marque:",
-            "                tous_egaux = False",
-            "                break",
-            "        if tous_egaux:",
-            "            return True",
-            "    return False"
-        ],
+        "get_solution": "program",
         "page": "V\u00e9rification du plateau pour un gagnant",
         "program": [
             "def victoire_en_colonne(plateau):",
@@ -6190,26 +5982,13 @@
             "    return False"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "column_winner"
     },
     {
-        "get_solution": [
-            "def victoire_en_diagonale(plateau):",
-            "    tous_egaux_1 = True",
-            "    tous_egaux_2 = True",
-            "    haut_gauche = plateau[0][0]",
-            "    haut_droite = plateau[0][-1]",
-            "    for i in range(len(plateau)):",
-            "        if plateau[i][i] == ' ' or plateau[i][i] != haut_gauche:",
-            "            tous_egaux_1 = False",
-            "        if plateau[i][-i - 1] == ' ' or plateau[i][-i - 1] != haut_droite:",
-            "            tous_egaux_2 = False",
-            "    return tous_egaux_1 or tous_egaux_2"
-        ],
+        "get_solution": "program",
         "page": "V\u00e9rification du plateau pour un gagnant",
         "program": [
             "def victoire_en_diagonale(plateau):",
@@ -6225,7 +6004,6 @@
             "    return tous_egaux_1 or tous_egaux_2"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -6274,13 +6052,13 @@
             "    return victoire_en_ligne(plateau) or victoire_en_colonne(plateau) or victoire_en_diagonale(plateau)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "winner"
     },
     {
+        "get_solution": "program",
         "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "def affiche_plateau(plateau):",
@@ -6294,7 +6072,6 @@
             "])"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6306,6 +6083,7 @@
         "step": "one_way_to_print_board"
     },
     {
+        "get_solution": "program",
         "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "assert_equal(",
@@ -6320,7 +6098,6 @@
             ")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6333,6 +6110,7 @@
         "step": "invalid_multi_line_string"
     },
     {
+        "get_solution": "program",
         "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "chaine = \"\"\"Premi\u00e8re ligne",
@@ -6340,7 +6118,6 @@
             "print(chaine)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6364,12 +6141,12 @@
         "step": "discovering_newline"
     },
     {
+        "get_solution": "program",
         "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "chaine"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6381,12 +6158,12 @@
         "step": "discovering_newline"
     },
     {
+        "get_solution": "program",
         "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "len('\\n')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "1",
@@ -6406,16 +6183,7 @@
         "step": "introducing_newline"
     },
     {
-        "get_solution": [
-            "def representation(plateau):",
-            "    resultat = ''",
-            "    for i in range(len(plateau)):",
-            "        for caractere in plateau[i]:",
-            "            resultat += caractere",
-            "        if i != len(plateau) - 1:",
-            "            resultat += '\\n'",
-            "    return resultat"
-        ],
+        "get_solution": "program",
         "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "def representation(plateau):",
@@ -6428,24 +6196,13 @@
             "    return resultat"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "format_board_simple"
     },
     {
-        "get_solution": [
-            "def representation(plateau):",
-            "    liste_de_lignes = []",
-            "    for ligne in plateau:",
-            "        liste_de_lignes.append(\"|\".join(ligne))",
-            "    lignes = []",
-            "    for _ in plateau[0]:",
-            "        lignes.append(\"-\")",
-            "    ligne = f'\\n{\"+\".join(lignes)}\\n'",
-            "    return ligne.join(liste_de_lignes)"
-        ],
+        "get_solution": "program",
         "page": "Le caract\u00e8re saut de ligne, <code>representation</code>",
         "program": [
             "def representation(plateau):",
@@ -6459,13 +6216,13 @@
             "    return ligne.join(liste_de_lignes)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "format_board_bonus_challenge"
     },
     {
+        "get_solution": "program",
         "page": "Les types",
         "program": [
             "print(type('Hello World'))",
@@ -6475,7 +6232,6 @@
             "print(type(4.56))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6487,12 +6243,12 @@
         "step": "five_different_types"
     },
     {
+        "get_solution": "program",
         "page": "Les types",
         "program": [
             "type(3) == int"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6504,6 +6260,7 @@
         "step": "check_type_manually"
     },
     {
+        "get_solution": "program",
         "page": "Les types",
         "program": [
             "print('123')",
@@ -6511,7 +6268,6 @@
             "print(123 == '123')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6523,13 +6279,13 @@
         "step": "different_types_look_same"
     },
     {
+        "get_solution": "program",
         "page": "Les types",
         "program": [
             "print(123 + 456)",
             "print('123' + '456')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "579\n123456",
@@ -6553,13 +6309,13 @@
         "step": "plus_has_two_meanings"
     },
     {
+        "get_solution": "program",
         "page": "Les types",
         "program": [
             "print(13 < 120)",
             "print('13' < '120')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "True\nFalse",
@@ -6581,13 +6337,13 @@
         "step": "less_than_has_two_meanings"
     },
     {
+        "get_solution": "program",
         "page": "Les types",
         "program": [
             "print(sorted([120, 13, 0]))",
             "print(sorted(['120', '13', '0']))"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[0, 13, 120]\n['0', '120', '13']",
@@ -6611,12 +6367,12 @@
         "step": "less_than_sorting_strings"
     },
     {
+        "get_solution": "program",
         "page": "Les types",
         "program": [
             "12 + '34'"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "Erreur",
@@ -6680,17 +6436,16 @@
         ],
         "page": "Les types",
         "program": [
-            "nombre = '2'",
+            "nombre = '1'",
             "for i in range(int(nombre)):",
             "    print('\u00c0 la... ' + str(i + 1))",
             "print('Et hop !')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
-                    "text": "\u00c0 la... 1\n\u00c0 la... 2\nEt hop !\n",
+                    "text": "\u00c0 la... 1\nEt hop !\n",
                     "type": "stdout"
                 }
             ]
@@ -6698,17 +6453,7 @@
         "step": "fixing_type_errors_with_conversion"
     },
     {
-        "get_solution": [
-            "def representation(plateau):",
-            "    premiere_ligne = ' '",
-            "    for i in range(len(plateau)):",
-            "        premiere_ligne += str(i + 1)",
-            "    liste_de_lignes = [premiere_ligne]",
-            "    for i in range(len(plateau)):",
-            "        ligne = str(i + 1) + ''.join(plateau[i])",
-            "        liste_de_lignes.append(ligne)",
-            "    return \"\\n\".join(liste_de_lignes)"
-        ],
+        "get_solution": "program",
         "page": "Les types",
         "program": [
             "def representation(plateau):",
@@ -6722,13 +6467,13 @@
             "    return \"\\n\".join(liste_de_lignes)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "format_board_with_numbers"
     },
     {
+        "get_solution": "program",
         "page": "Programmes interactifs avec <code>input()</code>",
         "program": [
             "print('Tapez votre nom, puis appuyez sur \"Entr\u00e9e\" :')",
@@ -6736,7 +6481,6 @@
             "print(f'Bonjour {nom} !')"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6761,7 +6505,6 @@
     },
     {
         "get_solution": [
-            "nombre_super_secret = 7",
             "print(\"Quel est le nombre auquel je pense ?\")",
             "reponse = input()",
             "if int(reponse) == nombre_super_secret:",
@@ -6780,7 +6523,6 @@
             "    print(\"Perdu !\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6792,11 +6534,11 @@
                     "type": "input_prompt"
                 },
                 {
-                    "text": "<input: 1>\n",
+                    "text": "<input: 7>\n",
                     "type": "stdout"
                 },
                 {
-                    "text": "Perdu !\n",
+                    "text": "Incroyable ! \u00cates-vous devin ?\n",
                     "type": "stdout"
                 }
             ]
@@ -6804,6 +6546,7 @@
         "step": "convert_input_to_int"
     },
     {
+        "get_solution": "program",
         "page": "Affectation avec liste imbriqu\u00e9e : Jouer un coup sur un plateau",
         "program": [
             "def joue_un_coup(plateau, joueur):",
@@ -6817,7 +6560,6 @@
             "lance_jeu()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "prediction": {
                 "answer": "[' ', 'X', ' ']",
@@ -6844,6 +6586,7 @@
         "step": "modify_list_in_function"
     },
     {
+        "get_solution": "program",
         "page": "Affectation avec liste imbriqu\u00e9e : Jouer un coup sur un plateau",
         "program": [
             "def joue_un_coup(plateau, joueur):",
@@ -6862,7 +6605,6 @@
             "lance_jeu()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6874,12 +6616,7 @@
         "step": "nested_assignment_two_lines"
     },
     {
-        "get_solution": [
-            "def joue_un_coup(plateau, joueur):",
-            "    ligne = int(input()) - 1",
-            "    i_colonne = int(input()) - 1",
-            "    plateau[ligne][i_colonne] = joueur"
-        ],
+        "get_solution": "program",
         "page": "Affectation avec liste imbriqu\u00e9e : Jouer un coup sur un plateau",
         "program": [
             "def joue_un_coup(plateau, joueur):",
@@ -6888,13 +6625,13 @@
             "    plateau[ligne][i_colonne] = joueur"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "nested_assignment_input"
     },
     {
+        "get_solution": "program",
         "page": "Fabrication du plateau",
         "program": [
             "def fabrique_plateau(taille):",
@@ -6923,7 +6660,6 @@
             "test()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -6941,23 +6677,14 @@
             "def fabrique_plateau(taille): return [[' '] * taille] * taille"
         ],
         "response": {
-            "message": "<p>Les sous-listes dans le r\u00e9sultat sont des objets identiques.</p>",
+            "message": "<p>Avec ces valeurs :</p>\n<pre><code class=\"codehilite\"><span><span class=\"n\">taille</span> <span class=\"o\">=</span> <span class=\"mi\">2</span>\n</span></code></pre>\n<p>votre code affiche :</p>\n<pre><code class=\"codehilite\"><span><span class=\"p\">[[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">],</span> <span class=\"p\">[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">]]</span>\n</span></code></pre>\n<p>ce qui est exact !</p>\n<p>N\u00e9anmoins, les sous-listes dans le r\u00e9sultat sont des objets identiques.</p>",
             "passed": false,
             "result": []
         },
         "step": "fix_make_board"
     },
     {
-        "get_solution": [
-            "def fabrique_plateau(taille):",
-            "    plateau = []",
-            "    for _ in range(taille):",
-            "        ligne = []",
-            "        for _ in range(taille):",
-            "            ligne.append(' ')",
-            "        plateau.append(ligne)",
-            "    return plateau"
-        ],
+        "get_solution": "program",
         "page": "Fabrication du plateau",
         "program": [
             "def fabrique_plateau(taille):",
@@ -6970,7 +6697,6 @@
             "    return plateau"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -7060,19 +6786,18 @@
             "    affiche_egalite()"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "the_full_game"
     },
     {
+        "get_solution": "program",
         "page": "Introduction aux Dictionnaires",
         "program": [
             "anglais = {'pomme': 'apple', 'boite': 'box'}"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
@@ -7091,12 +6816,12 @@
         "step": "dict_access"
     },
     {
+        "get_solution": "program",
         "page": "Introduction aux Dictionnaires",
         "program": [
             "anglais[0]"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -7161,12 +6886,12 @@
         "step": "dict_access2"
     },
     {
+        "get_solution": "program",
         "page": "Introduction aux Dictionnaires",
         "program": [
             "anglais['pomme']"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -7190,12 +6915,12 @@
         "step": "dict_access3"
     },
     {
+        "get_solution": "program",
         "page": "Introduction aux Dictionnaires",
         "program": [
             "anglais['boite']"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -7219,12 +6944,12 @@
         "step": "dict_access4"
     },
     {
+        "get_solution": "program",
         "page": "Introduction aux Dictionnaires",
         "program": [
             "anglais['apple']"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -7277,14 +7002,7 @@
         "step": "dict_access4"
     },
     {
-        "get_solution": [
-            "def cout_total(panier, prix):",
-            "    resultat = 0",
-            "    for element in panier:",
-            "        tarif = prix[element]",
-            "        resultat += tarif",
-            "    return resultat"
-        ],
+        "get_solution": "program",
         "page": "Utiliser les Dictionnaires sur un exemple pratique",
         "program": [
             "def cout_total(panier, prix):",
@@ -7295,22 +7013,13 @@
             "    return resultat"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "shopping_cart1"
     },
     {
-        "get_solution": [
-            "def cout_total(panier, quantites, prix):",
-            "    resultat = 0",
-            "    for element in panier:",
-            "        tarif = prix[element]",
-            "        quantite = quantites[element]",
-            "        resultat += tarif * quantite",
-            "    return resultat"
-        ],
+        "get_solution": "program",
         "page": "Utiliser les Dictionnaires sur un exemple pratique",
         "program": [
             "def cout_total(panier, quantites, prix):",
@@ -7322,13 +7031,13 @@
             "    return resultat"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "shopping_cart4"
     },
     {
+        "get_solution": "program",
         "page": "Utiliser les Dictionnaires sur un exemple pratique",
         "program": [
             "def substitution(chaine):",
@@ -7350,7 +7059,6 @@
             "assert_equal(substitution(original), attendu)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -7362,13 +7070,7 @@
         "step": "dna_part1"
     },
     {
-        "get_solution": [
-            "def substitution(chaine, d):",
-            "    resultat = \"\"",
-            "    for lettre in chaine:",
-            "        resultat += d[lettre]",
-            "    return resultat"
-        ],
+        "get_solution": "program",
         "page": "Utiliser les Dictionnaires sur un exemple pratique",
         "program": [
             "def substitution(chaine, d):",
@@ -7378,20 +7080,19 @@
             "    return resultat"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "dna_part2"
     },
     {
+        "get_solution": "program",
         "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "quantites = {'pomme': 1, 'chat': 10}",
             "print(quantites.keys())"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -7403,6 +7104,7 @@
         "step": "introducing_keys"
     },
     {
+        "get_solution": "program",
         "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "quantites = {'pomme': 1, 'chat': 10}",
@@ -7410,7 +7112,6 @@
             "    print(clef)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -7422,6 +7123,7 @@
         "step": "keys_are_iterable"
     },
     {
+        "get_solution": "program",
         "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "quantites = {'pomme': 1, 'chat': 10}",
@@ -7429,7 +7131,6 @@
             "    print(clef)"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
@@ -7441,15 +7142,7 @@
         "step": "keys_are_iterable2"
     },
     {
-        "get_solution": [
-            "def cout_total(quantites, prix):",
-            "    resultat = 0",
-            "    for element in quantites:",
-            "        tarif = prix[element]",
-            "        quantite = quantites[element]",
-            "        resultat += tarif * quantite",
-            "    return resultat"
-        ],
+        "get_solution": "program",
         "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "def cout_total(quantites, prix):",
@@ -7461,20 +7154,13 @@
             "    return resultat"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "cleanup_shopping_cart"
     },
     {
-        "get_solution": [
-            "def affiche_mots(anglais):",
-            "    for mot in anglais:",
-            "        print(\"Francais: \" + mot)",
-            "        print(\"Anglais: \" + anglais[mot])",
-            "        print(\"---\")"
-        ],
+        "get_solution": "program",
         "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "def affiche_mots(anglais):",
@@ -7484,21 +7170,13 @@
             "        print(\"---\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "english_to_french"
     },
     {
-        "get_solution": [
-            "def affiche_mots(anglais, allemand):",
-            "    for mot in anglais:",
-            "        print(\"Francais: \" + mot)",
-            "        print(\"Anglais: \" + anglais[mot])",
-            "        print(\"Allemand: \" + allemand[mot])",
-            "        print(\"---\")"
-        ],
+        "get_solution": "program",
         "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "def affiche_mots(anglais, allemand):",
@@ -7509,13 +7187,13 @@
             "        print(\"---\")"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": []
         },
         "step": "english_to_german"
     },
     {
+        "get_solution": "program",
         "page": "It\u00e9rer sur les clefs d'un dictionnaire",
         "program": [
             "def affiche_mots(mots):",
@@ -7539,7 +7217,6 @@
             "})"
         ],
         "response": {
-            "message": "",
             "passed": true,
             "result": [
                 {
