@@ -478,8 +478,9 @@
     }
 
     &:after {
-      font-family: 'FontAwesome';
-      content: '\f107';
+      transform: translatey(-3px) rotate(180deg) scalex(1.2);
+      font-family: 'Tahoma', sans-serif;
+      content: '^';
       position: absolute;
       right: 20px;
       top: 10px;
@@ -489,7 +490,7 @@
 
     &.is-open {
       &:after {
-        transform: rotateZ(180deg);
+        transform: translatey(3px) rotate(0deg) scalex(1.2);
       }
     }
   }
