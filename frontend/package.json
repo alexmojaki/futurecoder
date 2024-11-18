@@ -18,7 +18,7 @@
     "comlink": "^4.3.1",
     "comsync": "^0.0.8",
     "defaults": "^1.0.3",
-    "firebase": "^8.6.3",
+    "firebase": "^10.9.0",
     "http-proxy-middleware": "^1.0.6",
     "localforage": "^1.9.0",
     "lodash": "^4.17.21",
