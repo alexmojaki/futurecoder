@@ -250,7 +250,7 @@ const Assistant = (assistant) => {
     <Collapsible classParentString="assistant-requirements card"
                  contentInnerClassName="assistant-content card-body"
                  trigger={<div className="card-header">
-                   <FontAwesomeIcon icon={faQuestionCircle}/> {terms.requirements}
+                   {terms.requirements}
                  </div>}
     >
       <p>
@@ -269,7 +269,7 @@ const Assistant = (assistant) => {
                  classParentString="assistant-assessment card"
                  contentInnerClassName="assistant-content card-body"
                  trigger={<div className="card-header">
-                   <FontAwesomeIcon icon={faListCheck}/> {terms.assessment} &nbsp;
+                   {terms.assessment} &nbsp;
                    {newMessages && <span className="badge badge-pill badge-danger">{terms.new}</span>}
                  </div>}
     >
@@ -278,7 +278,7 @@ const Assistant = (assistant) => {
     <Collapsible classParentString="assistant-hints card"
                  contentInnerClassName="assistant-content card-body"
                  trigger={<div className="card-header">
-                   <FontAwesomeIcon icon={faLightbulb}/> {terms.hints_and_solution}
+                   {terms.hints_and_solution}
                  </div>}
     >
       <HintsAssistant {...assistant}/>

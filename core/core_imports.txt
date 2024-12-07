@@ -13,6 +13,5 @@ pyflakes
 pygments
 python_runner
 sentry_sdk
-six.py
 snoop
 stack_data
