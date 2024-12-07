@@ -171,15 +171,15 @@ export const _runCode = wrapAsync(async function runCode({code, source}) {
   finishedLastRunResolve();
 
   postCodeEntry({
-    entry,
-    result: {
-      passed: data.passed,
-      messageSections: data.message_sections?.map(section => ({
-        type: section.type,
-        messages: section.messages?.map(m => _.truncate(m, {length: 1000})),
-      })),
-      output: _.truncate(data.output, {length: 1000}),
-    },
+    // entry,
+    // result: {
+    //   passed: data.passed,
+    //   messageSections: data.message_sections?.map(section => ({
+    //     type: section.type,
+    //     messages: section.messages?.map(m => _.truncate(m, {length: 1000})),
+    //   })),
+    //   output: _.truncate(data.output, {length: 1000}),
+    // },
   });
 });
 

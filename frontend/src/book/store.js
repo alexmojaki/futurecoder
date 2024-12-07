@@ -514,19 +514,20 @@ export function logEvent(name, data = {}) {
 }
 
 export function postCodeEntry(codeEntry) {
-  const {user: {developerMode}, route, assistant: {numHints, requestingSolution}} = localState;
-  codeEntry = {
-    ...codeEntry,
-    state: {
-      developerMode,
-      page_route: route,
-      num_hints: numHints,
-      requesting_solution: requestingSolution,
-    },
-    timestamp: new Date().toISOString(),
-  };
-  console.log("Posting code entry", codeEntry);
-  if (isProduction) {
-    databaseRequest("POST", codeEntry, "code_entries").catch(e => console.error(e));
-  }
+  // Disabling for now because this data isn't used.
+  // const {user: {developerMode}, route, assistant: {numHints, requestingSolution}} = localState;
+  // codeEntry = {
+  //   ...codeEntry,
+  //   state: {
+  //     developerMode,
+  //     page_route: route,
+  //     num_hints: numHints,
+  //     requesting_solution: requestingSolution,
+  //   },
+  //   timestamp: new Date().toISOString(),
+  // };
+  // console.log("Posting code entry", codeEntry);
+  // if (isProduction) {
+  //   databaseRequest("POST", codeEntry, "code_entries").catch(e => console.error(e));
+  // }
 }
