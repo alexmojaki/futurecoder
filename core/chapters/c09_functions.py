@@ -200,7 +200,7 @@ Make sure that you don't call `print_twice` inside the function body of `print_t
 
     class print_many(VerbatimStep):
         """
-Functions can have many parameters. Here's an example:
+Functions can have many parameters. Try the below example:
 
 __program_indented__
 """
