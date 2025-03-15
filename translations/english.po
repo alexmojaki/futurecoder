@@ -21719,7 +21719,7 @@ msgstr ""
 #. https://futurecoder.io/course/#DefiningFunctions
 msgid "pages.DefiningFunctions.steps.print_many.text"
 msgstr ""
-"Functions can have many parameters. Here's an example:\n"
+"Functions can have many parameters. Try the below example:\n"
 "\n"
 "__program_indented__"
 
