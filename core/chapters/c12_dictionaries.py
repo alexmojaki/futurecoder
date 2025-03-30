@@ -2,17 +2,14 @@
 import ast
 import random
 from collections import Counter
-from typing import List, Dict
+from copy import deepcopy
+from typing import Dict, List
 
 from core import translation as t
 from core.exercises import assert_equal
 from core.exercises import generate_string, generate_dict
-from core.text import (
-    ExerciseStep,
-    Page,
-    Step,
-    VerbatimStep,
-)
+from core.text import Page, VerbatimStep, ExerciseStep, Step
+from core.utils import returns_stdout, wrap_solution
 
 
 # Similar to word_must_be_hello
@@ -668,3 +665,385 @@ Beautiful! There's a pattern emerging here. The two languages could be merged in
     final_text = """
     Congratulations! You've reached the end of the course so far. More is on the way!
     """
+    # TODO
+
+
+class CreatingKeyValuePairs(Page):
+    title = "Creating Key-Value Pairs"
+
+    class list_append_reminder(VerbatimStep):
+        """
+        Now we'll learn how to add key-value pairs to a dictionary,
+        e.g. so that we can keep track of what the customer is buying.
+        Before looking at dictionaries, let's remind ourselves how to add items to a list. Run this program:
+
+            __copyable__
+            __program_indented__
+        """
+
+        def program(self):
+            cart = []
+            cart.append('dog')
+            cart.append('box')
+            print(cart)
+
+    class list_assign_reminder(VerbatimStep):
+        """
+        Pretty simple. We can also change the value at an index, replacing it with a different one:
+
+            __copyable__
+            __program_indented__
+        """
+        predicted_output_choices = [
+            "['dog', 'box']",
+            "['box', 'cat']",
+            "['dog', 'cat']",
+        ]
+
+        def program(self):
+            cart = ['dog', 'cat']
+            cart[1] = 'box'
+            print(cart)
+
+    class list_assign_invalid(VerbatimStep):
+        """
+        What if we used that idea to create our list in the first place?
+        We know we want a list where `cart[0]` is `'dog'` and `cart[1]` is `'box'`, so let's just say that:
+
+            __copyable__
+            __program_indented__
+        """
+        correct_output = "Error" # This program raises an IndexError
+
+        def program(self):
+            cart = []
+            cart[0] = 'dog'
+            cart[1] = 'box'
+            print(cart)
+
+    class dict_assignment_valid(VerbatimStep):
+        """
+        Sorry, that's not allowed. For lists, subscript assignment only works for existing valid indices.
+        But that's not true for dictionaries! Try this:
+
+            __copyable__
+            __program_indented__
+
+        Note that `{}` means an empty dictionary, i.e. a dictionary with no key-value pairs.
+        This is similar to `[]` meaning an empty list or `""` meaning an empty string.
+        """
+        predicted_output_choices = [
+            "{}",
+            "{'dog': 5000000}",
+            "{'box': 2}",
+            "{'dog': 5000000, 'box': 2}",
+            "{'box': 2, 'dog': 5000000}", # Order might vary, though CPython 3.7+ preserves insertion order
+        ]
+
+        def program(self):
+            quantities = {}
+            quantities['dog'] = 5000000
+            quantities['box'] = 2
+            print(quantities)
+
+    class buy_quantity_exercise(ExerciseStep):
+        """
+        That's exactly what we need. When the customer says they want 5 million boxes,
+        we can just put that information directly into our dictionary. So as an exercise, let's make a generic version of that.
+        Write a function `buy_quantity(quantities)` which calls `input()` twice to get an item name and quantity from the user
+        and assigns them in the `quantities` dictionary. Here's some starting code:
+
+            __copyable__
+            def buy_quantity(quantities):
+                print('Item:')
+                item = input()
+                print('Quantity:')
+                ...
+
+            def test():
+                quantities = {}
+                buy_quantity(quantities)
+                print(quantities)
+                buy_quantity(quantities)
+                print(quantities)
+
+            test()
+
+        and an example of how a session should look:
+
+            Item:
+            dog
+            Quantity:
+            5000000
+            {'dog': 5000000}
+            Item:
+            box
+            Quantity:
+            2
+            {'dog': 5000000, 'box': 2}
+
+        Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to return anything.
+        You can assume that the user will enter a valid integer for the quantity.
+        """
+        requirements = "Your function should modify the `quantities` argument. It doesn't need to `return` or `print` anything."
+        no_returns_stdout = True # The function itself doesn't print/return, the test harness does
+
+        hints = """
+        The function needs to get two inputs from the user: the item name and the quantity.
+        The item name is already stored in the `item` variable. You need to get the quantity similarly.
+        Remember that `input()` returns a string. The quantity needs to be stored as a number (`int`).
+        How do you convert a string to an integer?
+        Once you have the `item` (string) and the quantity (integer), you need to add them to the `quantities` dictionary.
+        Use the dictionary assignment syntax you just learned: `dictionary[key] = value`.
+        What should be the key and what should be the value in this case?
+        """
+
+        def solution(self):
+            def buy_quantity(quantities: Dict[str, int]):
+                print('Item:')
+                item = input()
+                print('Quantity:')
+                quantity_str = input()
+                quantities[item] = int(quantity_str)
+            return buy_quantity
+
+        @classmethod
+        def wrap_solution(cls, func):
+            @returns_stdout
+            @wrap_solution(func)
+            def wrapper(**kwargs):
+                quantities_name = t.get_code_bit("quantities")
+                quantities = kwargs[quantities_name] = deepcopy(kwargs[quantities_name])
+
+                func(**kwargs)
+                print(quantities)
+            return wrapper
+
+        @classmethod
+        def generate_inputs(cls):
+            return {
+                "stdin_input": [generate_string(5), str(random.randint(1, 10))],
+                "quantities": generate_dict(str, int),
+            }
+
+        tests = [
+            (
+                dict(
+                    quantities={},
+                    stdin_input=[
+                        "dog", "5000000",
+                    ]
+                ),
+                """\
+Item:
+<input: dog>
+Quantity:
+<input: 5000000>
+{'dog': 5000000}
+                """
+            ),
+            (
+                dict(
+                    quantities={'dog': 5000000},
+                    stdin_input=[
+                        "box", "2",
+                    ]
+                ),
+                """\
+Item:
+<input: box>
+Quantity:
+<input: 2>
+{'dog': 5000000, 'box': 2}
+                """
+            ),
+        ]
+
+    class total_cost_per_item_exercise(ExerciseStep):
+        """
+        Well done!
+
+        Next exercise: earlier we defined a function `total_cost(quantities, prices)` which returned a single number
+        with a grand total of all the items in the cart. Now let's make a function `total_cost_per_item(quantities, prices)`
+        which returns a new dictionary with the total cost for each item:
+
+            __copyable__
+            def total_cost_per_item(quantities, prices):
+                totals = {}
+                for item in quantities:
+                    ... = quantities[item] * prices[item]
+                return totals
+
+            assert_equal(
+                total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+                {'apple': 6},
+            )
+
+            assert_equal(
+                total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+                {'dog': 500000000, 'box': 10},
+            )
+        """
+        hints = """
+        You need to iterate through the items in the `quantities` dictionary.
+        For each `item`, calculate the total cost for that item (quantity * price).
+        Store this calculated cost in the `totals` dictionary.
+        The key for the `totals` dictionary should be the `item` name.
+        Use the dictionary assignment syntax: `totals[item] = calculated_cost`.
+        Make sure this assignment happens *inside* the loop.
+        The function should return the `totals` dictionary after the loop finishes.
+        """
+
+        def solution(self):
+            def total_cost_per_item(quantities: Dict[str, int], prices: Dict[str, int]):
+                totals = {}
+                for item in quantities:
+                    totals[item] = quantities[item] * prices[item]
+                return totals
+            return total_cost_per_item
+
+        tests = [
+            (({'apple': 2}, {'apple': 3, 'box': 5}), {'apple': 6}),
+            (({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}), {'dog': 500000000, 'box': 10}),
+            (({'pen': 5, 'pencil': 10}, {'pen': 1, 'pencil': 0.5, 'eraser': 2}), {'pen': 5, 'pencil': 5.0}),
+            (({}, {'apple': 1}), {}),
+        ]
+
+        @classmethod
+        def generate_inputs(cls):
+            prices = generate_dict(str, int)
+            quantities = {k: random.randint(1, 10) for k in prices if random.choice([True, False])}
+            return {"quantities": quantities, "prices": prices}
+
+    class make_english_to_german_exercise(ExerciseStep):
+        """
+        Perfect! This is like having a nice receipt full of useful information.
+
+        Let's come back to the example of using dictionaries for translation. Suppose we have one dictionary
+        for translating from English to French, and another for translating from French to German.
+        Let's use that to create a dictionary that translates from English to German:
+
+            __copyable__
+            def make_english_to_german(english_to_french, french_to_german):
+                ...
+
+            assert_equal(
+                make_english_to_german(
+                    {'apple': 'pomme', 'box': 'boite'},
+                    {'pomme': 'apfel', 'boite': 'kasten'},
+                ),
+                {'apple': 'apfel', 'box': 'kasten'},
+            )
+        """
+        parsons_solution = True
+
+        hints = """
+        You need to create a new empty dictionary, let's call it `english_to_german`.
+        Iterate through the keys (English words) of the `english_to_french` dictionary.
+        Inside the loop, for each `english` word:
+          1. Find the corresponding French word using `english_to_french`.
+          2. Use that French word as a key to find the German word in `french_to_german`.
+          3. Add the `english` word as a key and the `german` word as the value to your new `english_to_german` dictionary.
+        After the loop, return the `english_to_german` dictionary.
+        """
+
+        def solution(self):
+            def make_english_to_german(english_to_french: Dict[str, str], french_to_german: Dict[str, str]):
+                english_to_german = {}
+                for english in english_to_french:
+                    french = english_to_french[english]
+                    german = french_to_german[french]
+                    english_to_german[english] = german
+                return english_to_german
+            return make_english_to_german
+
+        tests = [
+            (({'apple': 'pomme', 'box': 'boite'}, {'pomme': 'apfel', 'boite': 'kasten'}),
+             {'apple': 'apfel', 'box': 'kasten'}),
+            (({'one': 'un', 'two': 'deux', 'three': 'trois'}, {'un': 'eins', 'deux': 'zwei', 'trois': 'drei'}),
+             {'one': 'eins', 'two': 'zwei', 'three': 'drei'}),
+            (({}, {}), {}),
+        ]
+
+        @classmethod
+        def generate_inputs(cls):
+            english_to_french = generate_dict(str, str)
+            french_to_german = {v: generate_string() for v in english_to_french.values()}
+            return {"english_to_french": english_to_french, "french_to_german": french_to_german}
+
+    class swap_keys_values_exercise(ExerciseStep):
+        """
+        Great job!
+
+        Of course, language isn't so simple, and there are many ways that using a dictionary like this could go wrong.
+        So...let's do something even worse! Write a function which takes a dictionary and swaps the keys and values,
+        so `a: b` becomes `b: a`.
+
+            __copyable__
+            def swap_keys_values(d):
+                ...
+
+            assert_equal(
+                swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
+                {'pomme': 'apple', 'boite': 'box'},
+            )
+        """
+        hints = """
+        Create a new empty dictionary to store the result.
+        Iterate through the keys of the input dictionary `d`.
+        Inside the loop, for each `key`:
+          1. Get the corresponding `value` from `d`.
+          2. Add an entry to the new dictionary where the *key* is the original `value` and the *value* is the original `key`.
+        Return the new dictionary after the loop.
+        """
+
+        def solution(self):
+            def swap_keys_values(d: Dict[str, str]):
+                new_dict = {}
+                for key in d:
+                    value = d[key]
+                    new_dict[value] = key
+                return new_dict
+            return swap_keys_values
+
+        tests = [
+            (({'apple': 'pomme', 'box': 'boite'},), {'pomme': 'apple', 'boite': 'box'}),
+            (({'a': 1, 'b': 2},), {1: 'a', 2: 'b'}),
+            (({10: 'x', 20: 'y'},), {'x': 10, 'y': 20}),
+            (({},), {}),
+        ]
+
+    final_text = """
+Magnificent!
+
+Jokes aside, it's important to remember how exactly this can go wrong. Just like multiple items in the store
+can have the same price, multiple words in English can have the same translation in French. If the original dictionary
+has duplicate *values*, what happens when you try to swap keys and values? Since dictionary keys must be unique,
+some data will be lost.
+
+But there are many situations where you can be sure that the values in a dictionary *are* unique and that this
+'inversion' makes sense. For example, we saw this code [earlier in the chapter](#UsingDictionariesInPractice):
+
+    __copyable__
+    __no_auto_translate__
+    def substitute(string, d):
+        result = ""
+        for letter in string:
+            result += d[letter]
+        return result
+
+    plaintext = 'helloworld'
+    encrypted = 'qpeefifmez'
+    letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}
+    reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}
+    assert_equal(substitute(plaintext, letters), encrypted)
+    assert_equal(substitute(encrypted, reverse), plaintext)
+
+Now we can construct the `reverse` dictionary automatically:
+
+    reverse = swap_keys_values(letters)
+
+For this to work, we just have to make sure that all the values in `letters` are unique.
+Otherwise it would be impossible to decrypt messages properly. If both `'h'` and `'j'` got replaced with `'q'`
+during encryption, there would be no way to know whether `'qpeef'` means `'hello'` or `'jello'`!
+"""

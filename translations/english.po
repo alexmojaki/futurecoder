@@ -2512,6 +2512,36 @@ msgstr "'Hello there'"
 msgid "code_bits.'Hello'"
 msgstr "'Hello'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+#. 
+#. def buy_quantity(quantities):
+#.     print('Item:')
+#.     item = input()
+#.     print('Quantity:')
+#.     quantity_str = input()
+#.     quantities[item] = int(quantity_str)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities):
+#.         print('Item:')
+#.         item = input()
+#.         print('Quantity:')
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#. 
+#.     test()
+msgid "code_bits.'Item:'"
+msgstr "'Item:'"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.first_if_else
 #. 
 #. condition = True
@@ -2571,6 +2601,36 @@ msgstr "'One more exercise, and then you can relax.'"
 #. 'Python'.append(' is cool!')
 msgid "code_bits.'Python'"
 msgstr "'Python'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+#. 
+#. def buy_quantity(quantities):
+#.     print('Item:')
+#.     item = input()
+#.     print('Quantity:')
+#.     quantity_str = input()
+#.     quantities[item] = int(quantity_str)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities):
+#.         print('Item:')
+#.         item = input()
+#.         print('Quantity:')
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#. 
+#.     test()
+msgid "code_bits.'Quantity:'"
+msgstr "'Quantity:'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.fixing_type_errors_with_conversion
 #. 
@@ -3185,6 +3245,21 @@ msgstr "'abcqwe'"
 msgid "code_bits.'aeiou'"
 msgstr "'aeiou'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
 #. 
 #.     def print_words(french, german):
@@ -3221,6 +3296,33 @@ msgstr "'aeiou'"
 msgid "code_bits.'apfel'"
 msgstr "'apfel'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.text
+#. 
+#.     def swap_keys_values(d):
+#.         ...
+#. 
+#.     assert_equal(
+#.         swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
+#.         {'pomme': 'apple', 'boite': 'box'},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
 #. 
 #.     def total_cost(quantities, prices):
@@ -3408,6 +3510,33 @@ msgstr "'are'"
 msgid "code_bits.'bc'"
 msgstr "'bc'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.text
+#. 
+#.     def swap_keys_values(d):
+#.         ...
+#. 
+#.     assert_equal(
+#.         swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
+#.         {'pomme': 'apple', 'boite': 'box'},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_french.text
 #. 
 #.     def print_words(french):
@@ -3459,6 +3588,68 @@ msgstr "'bc'"
 msgid "code_bits.'boite'"
 msgstr "'boite'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
+#. 
+#. quantities = {}
+#. quantities['dog'] = 5000000
+#. quantities['box'] = 2
+#. print(quantities)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+#. 
+#. cart = []
+#. cart.append('dog')
+#. cart.append('box')
+#. print(cart)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+#. 
+#. cart = []
+#. cart[0] = 'dog'
+#. cart[1] = 'box'
+#. print(cart)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+#. 
+#. cart = ['dog', 'cat']
+#. cart[1] = 'box'
+#. print(cart)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.text
+#. 
+#.     def swap_keys_values(d):
+#.         ...
+#. 
+#.     assert_equal(
+#.         swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
+#.         {'pomme': 'apple', 'boite': 'box'},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
 #. 
 #.     def total_cost(quantities, prices):
@@ -3582,6 +3773,14 @@ msgstr "'boite'"
 msgid "code_bits.'box'"
 msgstr "'box'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+#. 
+#. cart = ['dog', 'cat']
+#. cart[1] = 'box'
+#. print(cart)
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
 #. 
 #.     def total_cost(quantities, prices):
@@ -3723,6 +3922,41 @@ msgstr "'de'"
 msgid "code_bits.'def'"
 msgstr "'def'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
+#. 
+#. quantities = {}
+#. quantities['dog'] = 5000000
+#. quantities['box'] = 2
+#. print(quantities)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+#. 
+#. cart = []
+#. cart.append('dog')
+#. cart.append('box')
+#. print(cart)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+#. 
+#. cart = []
+#. cart[0] = 'dog'
+#. cart[1] = 'box'
+#. print(cart)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+#. 
+#. cart = ['dog', 'cat']
+#. cart[1] = 'box'
+#. print(cart)
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
 #. 
 #.     def total_cost(quantities, prices):
@@ -4102,6 +4336,21 @@ msgstr "'is'"
 msgid "code_bits.'jklmn'"
 msgstr "'jklmn'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german.text
 #. 
 #.     def print_words(french, german):
@@ -4220,6 +4469,33 @@ msgstr "'list'"
 msgid "code_bits.'on'"
 msgstr "'on'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.text
+#. 
+#.     def swap_keys_values(d):
+#.         ...
+#. 
+#.     assert_equal(
+#.         swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
+#.         {'pomme': 'apple', 'boite': 'box'},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_french.text
 #. 
 #.     def print_words(french):
@@ -4374,6 +4650,30 @@ msgstr "'you'"
 msgid "code_bits.Hello"
 msgstr "Hello"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.keys_are_iterable.text
 #. 
 #.     __program_indented__
@@ -4853,6 +5153,33 @@ msgstr "all_numbers"
 #.             ]
 #.         ),
 #.         False
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.text
+#. 
+#.     def swap_keys_values(d):
+#.         ...
+#. 
+#.     assert_equal(
+#.         swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
+#.         {'pomme': 'apple', 'boite': 'box'},
 #.     )
 #. 
 #. ------
@@ -6422,6 +6749,36 @@ msgstr "board"
 msgid "code_bits.board_size"
 msgstr "board_size"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+#. 
+#. def buy_quantity(quantities):
+#.     print('Item:')
+#.     item = input()
+#.     print('Quantity:')
+#.     quantity_str = input()
+#.     quantities[item] = int(quantity_str)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities):
+#.         print('Item:')
+#.         item = input()
+#.         print('Quantity:')
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#. 
+#.     test()
+msgid "code_bits.buy_quantity"
+msgstr "buy_quantity"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 #. 
 #. letters = 'AB'
@@ -6466,6 +6823,32 @@ msgstr "c3"
 msgid "code_bits.c4"
 msgstr "c4"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+#. 
+#. cart = []
+#. cart.append('dog')
+#. cart.append('box')
+#. print(cart)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+#. 
+#. cart = []
+#. cart[0] = 'dog'
+#. cart[1] = 'box'
+#. print(cart)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+#. 
+#. cart = ['dog', 'cat']
+#. cart[1] = 'box'
+#. print(cart)
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.UsingDictionaries.steps.shopping_cart1
 #. 
 #. def total_cost(cart, prices):
@@ -8612,6 +8995,57 @@ msgstr "doubles"
 msgid "code_bits.element"
 msgstr "element"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+#. 
+#. def make_english_to_german(english_to_french, french_to_german):
+#.     english_to_german = {}
+#.     for english in english_to_french:
+#.         french = english_to_french[english]
+#.         german = french_to_german[french]
+#.         english_to_german[english] = german
+#.     return english_to_german
+msgid "code_bits.english"
+msgstr "english"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+#. 
+#. def make_english_to_german(english_to_french, french_to_german):
+#.     english_to_german = {}
+#.     for english in english_to_french:
+#.         french = english_to_french[english]
+#.         german = french_to_german[french]
+#.         english_to_german[english] = german
+#.     return english_to_german
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+msgid "code_bits.english_to_french"
+msgstr "english_to_french"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+#. 
+#. def make_english_to_german(english_to_french, french_to_german):
+#.     english_to_german = {}
+#.     for english in english_to_french:
+#.         french = english_to_french[english]
+#.         german = french_to_german[french]
+#.         english_to_german[english] = german
+#.     return english_to_german
+msgid "code_bits.english_to_german"
+msgstr "english_to_german"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingTicTacToe.steps.intro_row_winner
 #. 
 #. def row_winner(board):
@@ -10302,6 +10736,18 @@ msgstr "format_board"
 msgid "code_bits.found"
 msgstr "found"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+#. 
+#. def make_english_to_german(english_to_french, french_to_german):
+#.     english_to_german = {}
+#.     for english in english_to_french:
+#.         french = english_to_french[english]
+#.         german = french_to_german[french]
+#.         english_to_german[english] = german
+#.     return english_to_german
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_french
 #. 
 #. def print_words(french):
@@ -10374,6 +10820,33 @@ msgstr "found"
 msgid "code_bits.french"
 msgstr "french"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+#. 
+#. def make_english_to_german(english_to_french, french_to_german):
+#.     english_to_german = {}
+#.     for english in english_to_french:
+#.         french = english_to_french[english]
+#.         german = french_to_german[french]
+#.         english_to_german[english] = german
+#.     return english_to_german
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+msgid "code_bits.french_to_german"
+msgstr "french_to_german"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
 #. 
 #. name = "Alice"
@@ -10412,6 +10885,18 @@ msgstr "friend"
 msgid "code_bits.game_board"
 msgstr "game_board"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+#. 
+#. def make_english_to_german(english_to_french, french_to_german):
+#.     english_to_german = {}
+#.     for english in english_to_french:
+#.         french = english_to_french[english]
+#.         german = french_to_german[french]
+#.         english_to_german[english] = german
+#.     return english_to_german
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.english_to_german
 #. 
 #. def print_words(french, german):
@@ -10863,6 +11348,46 @@ msgstr "is_friend"
 msgid "code_bits.is_valid_percentage"
 msgstr "is_valid_percentage"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+#. 
+#. def buy_quantity(quantities):
+#.     print('Item:')
+#.     item = input()
+#.     print('Quantity:')
+#.     quantity_str = input()
+#.     quantities[item] = int(quantity_str)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities):
+#.         print('Item:')
+#.         item = input()
+#.         print('Quantity:')
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#. 
+#.     test()
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+#. 
+#. def total_cost_per_item(quantities, prices):
+#.     totals = {}
+#.     for item in quantities:
+#.         totals[item] = quantities[item] * prices[item]
+#.     return totals
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -11076,6 +11601,17 @@ msgstr "joined_row"
 msgid "code_bits.joined_rows"
 msgstr "joined_rows"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         value = d[key]
+#.         new_dict[value] = key
+#.     return new_dict
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.keys_are_iterable
 #. 
 #. quantities = {'apple': 1, 'cat': 10}
@@ -11335,6 +11871,12 @@ msgstr "lengths"
 msgid "code_bits.letter"
 msgstr "letter"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.final_text.text
+#. 
+#.     reverse = swap_keys_values(letters)
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.crack_password_exercise
 #. 
 #. letters = 'AB'
@@ -12113,6 +12655,33 @@ msgstr "make_board"
 msgid "code_bits.make_cube"
 msgstr "make_cube"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+#. 
+#. def make_english_to_german(english_to_french, french_to_german):
+#.     english_to_german = {}
+#.     for english in english_to_french:
+#.         french = english_to_french[english]
+#.         german = french_to_german[french]
+#.         english_to_german[english] = german
+#.     return english_to_german
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
+#. 
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+msgid "code_bits.make_english_to_german"
+msgstr "make_english_to_german"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.introduce_f_strings
 #. 
 #. name = "Alice"
@@ -12679,6 +13248,17 @@ msgstr "middle"
 #. print(word + ' ' + name)
 msgid "code_bits.name"
 msgstr "name"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         value = d[key]
+#.         new_dict[value] = key
+#.     return new_dict
+msgid "code_bits.new_dict"
+msgstr "new_dict"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheEqualityOperator.steps.if_equals_replacing_characters
 #. 
@@ -14640,6 +15220,16 @@ msgstr "present"
 msgid "code_bits.price"
 msgstr "price"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+#. 
+#. def total_cost_per_item(quantities, prices):
+#.     totals = {}
+#.     for item in quantities:
+#.         totals[item] = quantities[item] * prices[item]
+#.     return totals
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -15268,6 +15858,55 @@ msgstr "printed"
 msgid "code_bits.quadruple"
 msgstr "quadruple"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+#. 
+#. def buy_quantity(quantities):
+#.     print('Item:')
+#.     item = input()
+#.     print('Quantity:')
+#.     quantity_str = input()
+#.     quantities[item] = int(quantity_str)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities):
+#.         print('Item:')
+#.         item = input()
+#.         print('Quantity:')
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#. 
+#.     test()
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
+#. 
+#. quantities = {}
+#. quantities['dog'] = 5000000
+#. quantities['box'] = 2
+#. print(quantities)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+#. 
+#. def total_cost_per_item(quantities, prices):
+#.     totals = {}
+#.     for item in quantities:
+#.         totals[item] = quantities[item] * prices[item]
+#.     return totals
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -15428,6 +16067,17 @@ msgstr "quantities"
 msgid "code_bits.quantity"
 msgstr "quantity"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+#. 
+#. def buy_quantity(quantities):
+#.     print('Item:')
+#.     item = input()
+#.     print('Quantity:')
+#.     quantity_str = input()
+#.     quantities[item] = int(quantity_str)
+msgid "code_bits.quantity_str"
+msgstr "quantity_str"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -15580,6 +16230,12 @@ msgstr "quantity"
 #.     )
 msgid "code_bits.result"
 msgstr "result"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.final_text.text
+#. 
+#.     reverse = swap_keys_values(letters)
+msgid "code_bits.reverse"
+msgstr "reverse"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLoops.steps.times_table_exercise
 #. 
@@ -17961,6 +18617,35 @@ msgstr "super_secret_number"
 msgid "code_bits.surround"
 msgstr "surround"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.final_text.text
+#. 
+#.     reverse = swap_keys_values(letters)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         value = d[key]
+#.         new_dict[value] = key
+#.     return new_dict
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.text
+#. 
+#.     def swap_keys_values(d):
+#.         ...
+#. 
+#.     assert_equal(
+#.         swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
+#.         {'pomme': 'apple', 'boite': 'box'},
+#.     )
+msgid "code_bits.swap_keys_values"
+msgstr "swap_keys_values"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BuildingUpStrings.steps.name_triangle.text
 #. 
 #.     temp = hello
@@ -17975,6 +18660,25 @@ msgstr "surround"
 msgid "code_bits.temp"
 msgstr "temp"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities):
+#.         print('Item:')
+#.         item = input()
+#.         print('Quantity:')
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#. 
+#.     test()
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.MakingTheBoard.steps.final_text.text
 #. 
 #.     def make_board(size):
@@ -18434,6 +19138,26 @@ msgstr "total"
 msgid "code_bits.total_cost"
 msgstr "total_cost"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+#. 
+#. def total_cost_per_item(quantities, prices):
+#.     totals = {}
+#.     for item in quantities:
+#.         totals[item] = quantities[item] * prices[item]
+#.     return totals
+msgid "code_bits.total_cost_per_item"
+msgstr "total_cost_per_item"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+#. 
+#. def total_cost_per_item(quantities, prices):
+#.     totals = {}
+#.     for item in quantities:
+#.         totals[item] = quantities[item] * prices[item]
+#.     return totals
+msgid "code_bits.totals"
+msgstr "totals"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.nested_dictionaries
 #. 
 #. def print_words(words):
@@ -18526,6 +19250,17 @@ msgstr "upper"
 msgid "code_bits.valid_image"
 msgstr "valid_image"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         value = d[key]
+#.         new_dict[value] = key
+#.     return new_dict
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.index_predict_exercise.text
 #. 
 #.     some_list.index(value)
@@ -21482,6 +22217,469 @@ msgstr ""
 #. https://futurecoder.io/course/#CombiningCompoundStatements
 msgid "pages.CombiningCompoundStatements.title"
 msgstr "Combining Compound Statements"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.0.text"
+msgstr "The function needs to get two inputs from the user: the item name and the quantity."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.1.text"
+msgstr "The item name is already stored in the `item` variable. You need to get the quantity similarly."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.2.text"
+msgstr "Remember that `input()` returns a string. The quantity needs to be stored as a number (`int`)."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.3.text"
+msgstr "How do you convert a string to an integer?"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.4.text"
+msgstr ""
+"Once you have the `item` (string) and the quantity (integer), you need to add them to the `quantities` dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.5.text"
+msgstr "Use the dictionary assignment syntax you just learned: `dictionary[key] = value`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.6.text"
+msgstr "What should be the key and what should be the value in this case?"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.requirements"
+msgstr "Your function should modify the `quantities` argument. It doesn't need to `return` or `print` anything."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     def buy_quantity(quantities):
+#.         print('Item:')
+#.         item = input()
+#.         print('Quantity:')
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#.         buy_quantity(quantities)
+#.         print(quantities)
+#. 
+#.     test()
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Item%3A%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Quantity%3A%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.buy_quantity
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.item
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quantities
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.test
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text"
+msgstr ""
+"That's exactly what we need. When the customer says they want 5 million boxes,\n"
+"we can just put that information directly into our dictionary. So as an exercise, let's make a generic version of that.\n"
+"Write a function `buy_quantity(quantities)` which calls `input()` twice to get an item name and quantity from the user\n"
+"and assigns them in the `quantities` dictionary. Here's some starting code:\n"
+"\n"
+"    __copyable__\n"
+"__code0__\n"
+"\n"
+"and an example of how a session should look:\n"
+"\n"
+"    Item:\n"
+"    dog\n"
+"    Quantity:\n"
+"    5000000\n"
+"    {'dog': 5000000}\n"
+"    Item:\n"
+"    box\n"
+"    Quantity:\n"
+"    2\n"
+"    {'dog': 5000000, 'box': 2}\n"
+"\n"
+"Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to return anything.\n"
+"You can assume that the user will enter a valid integer for the quantity."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
+msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.1"
+msgstr "{'dog': 5000000}"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
+msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.2"
+msgstr "{'box': 2}"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
+msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.3"
+msgstr "{'dog': 5000000, 'box': 2}"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
+msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.4"
+msgstr "{'box': 2, 'dog': 5000000}"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.text"
+msgstr ""
+"Sorry, that's not allowed. For lists, subscript assignment only works for existing valid indices.\n"
+"But that's not true for dictionaries! Try this:\n"
+"\n"
+"    __copyable__\n"
+"__code0__\n"
+"\n"
+"Note that `{}` means an empty dictionary, i.e. a dictionary with no key-value pairs.\n"
+"This is similar to `[]` meaning an empty list or `\"\"` meaning an empty string."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     reverse = swap_keys_values(letters)
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.letters
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.reverse
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.swap_keys_values
+msgid "pages.CreatingKeyValuePairs.steps.final_text.text"
+msgstr ""
+"Magnificent!\n"
+"\n"
+"Jokes aside, it's important to remember how exactly this can go wrong. Just like multiple items in the store\n"
+"can have the same price, multiple words in English can have the same translation in French. If the original dictionary\n"
+"has duplicate *values*, what happens when you try to swap keys and values? Since dictionary keys must be unique,\n"
+"some data will be lost.\n"
+"\n"
+"But there are many situations where you can be sure that the values in a dictionary *are* unique and that this\n"
+"'inversion' makes sense. For example, we saw this code [earlier in the chapter](#UsingDictionariesInPractice):\n"
+"\n"
+"    __copyable__\n"
+"    __no_auto_translate__\n"
+"    def substitute(string, d):\n"
+"        result = \"\"\n"
+"        for letter in string:\n"
+"            result += d[letter]\n"
+"        return result\n"
+"\n"
+"    plaintext = 'helloworld'\n"
+"    encrypted = 'qpeefifmez'\n"
+"    letters = {'h': 'q', 'e': 'p', 'l': 'e', 'o': 'f', 'w': 'i', 'r': 'm', 'd': 'z'}\n"
+"    reverse = {'q': 'h', 'p': 'e', 'e': 'l', 'f': 'o', 'i': 'w', 'm': 'r', 'z': 'd'}\n"
+"    assert_equal(substitute(plaintext, letters), encrypted)\n"
+"    assert_equal(substitute(encrypted, reverse), plaintext)\n"
+"\n"
+"Now we can construct the `reverse` dictionary automatically:\n"
+"\n"
+"__code0__\n"
+"\n"
+"For this to work, we just have to make sure that all the values in `letters` are unique.\n"
+"Otherwise it would be impossible to decrypt messages properly. If both `'h'` and `'j'` got replaced with `'q'`\n"
+"during encryption, there would be no way to know whether `'qpeef'` means `'hello'` or `'jello'`!"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.CreatingKeyValuePairs.steps.list_append_reminder.text"
+msgstr ""
+"Now we'll learn how to add key-value pairs to a dictionary,\n"
+"e.g. so that we can keep track of what the customer is buying.\n"
+"Before looking at dictionaries, let's remind ourselves how to add items to a list. Run this program:\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_invalid.text"
+msgstr ""
+"What if we used that idea to create our list in the first place?\n"
+"We know we want a list where `cart[0]` is `'dog'` and `cart[1]` is `'box'`, so let's just say that:\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.0"
+msgstr "['dog', 'box']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.1"
+msgstr "['box', 'cat']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.2"
+msgstr "['dog', 'cat']"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.text"
+msgstr ""
+"Pretty simple. We can also change the value at an index, replacing it with a different one:\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.0.text"
+msgstr "You need to create a new empty dictionary, let's call it `english_to_german`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.1.text"
+msgstr "Iterate through the keys (English words) of the `english_to_french` dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.2.text"
+msgstr "Inside the loop, for each `english` word:"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.3.text"
+msgstr "1. Find the corresponding French word using `english_to_french`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.4.text"
+msgstr "2. Use that French word as a key to find the German word in `french_to_german`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.5.text"
+msgstr ""
+"3. Add the `english` word as a key and the `german` word as the value to your new `english_to_german` dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.6.text"
+msgstr "After the loop, return the `english_to_german` dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     def make_english_to_german(english_to_french, french_to_german):
+#.         ...
+#. 
+#.     assert_equal(
+#.         make_english_to_german(
+#.             {'apple': 'pomme', 'box': 'boite'},
+#.             {'pomme': 'apfel', 'boite': 'kasten'},
+#.         ),
+#.         {'apple': 'apfel', 'box': 'kasten'},
+#.     )
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27apfel%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27apple%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27boite%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27box%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27kasten%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27pomme%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.english_to_french
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.french_to_german
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.make_english_to_german
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text"
+msgstr ""
+"Perfect! This is like having a nice receipt full of useful information.\n"
+"\n"
+"Let's come back to the example of using dictionaries for translation. Suppose we have one dictionary\n"
+"for translating from English to French, and another for translating from French to German.\n"
+"Let's use that to create a dictionary that translates from English to German:\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.0.text"
+msgstr "Create a new empty dictionary to store the result."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.1.text"
+msgstr "Iterate through the keys of the input dictionary `d`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.2.text"
+msgstr "Inside the loop, for each `key`:"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.3.text"
+msgstr "1. Get the corresponding `value` from `d`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.4.text"
+msgstr ""
+"2. Add an entry to the new dictionary where the *key* is the original `value` and the *value* is the original `key`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.5.text"
+msgstr "Return the new dictionary after the loop."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     def swap_keys_values(d):
+#.         ...
+#. 
+#.     assert_equal(
+#.         swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
+#.         {'pomme': 'apple', 'boite': 'box'},
+#.     )
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27apple%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27boite%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27box%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27pomme%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.swap_keys_values
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.text"
+msgstr ""
+"Great job!\n"
+"\n"
+"Of course, language isn't so simple, and there are many ways that using a dictionary like this could go wrong.\n"
+"So...let's do something even worse! Write a function which takes a dictionary and swaps the keys and values,\n"
+"so `a: b` becomes `b: a`.\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.0.text"
+msgstr "You need to iterate through the items in the `quantities` dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.1.text"
+msgstr "For each `item`, calculate the total cost for that item (quantity * price)."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.2.text"
+msgstr "Store this calculated cost in the `totals` dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.3.text"
+msgstr "The key for the `totals` dictionary should be the `item` name."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.4.text"
+msgstr "Use the dictionary assignment syntax: `totals[item] = calculated_cost`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.5.text"
+msgstr "Make sure this assignment happens *inside* the loop."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.6.text"
+msgstr "The function should return the `totals` dictionary after the loop finishes."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text"
+msgstr ""
+"Well done!\n"
+"\n"
+"Next exercise: earlier we defined a function `total_cost(quantities, prices)` which returned a single number\n"
+"with a grand total of all the items in the cart. Now let's make a function `total_cost_per_item(quantities, prices)`\n"
+"which returns a new dictionary with the total cost for each item:\n"
+"\n"
+"    __copyable__\n"
+"    def total_cost_per_item(quantities, prices):\n"
+"        totals = {}\n"
+"        for item in quantities:\n"
+"            ... = quantities[item] * prices[item]\n"
+"        return totals\n"
+"\n"
+"    assert_equal(\n"
+"        total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),\n"
+"        {'apple': 6},\n"
+"    )\n"
+"\n"
+"    assert_equal(\n"
+"        total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),\n"
+"        {'dog': 500000000, 'box': 10},\n"
+"    )"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+msgid "pages.CreatingKeyValuePairs.title"
+msgstr "Creating Key-Value Pairs"
 
 #. https://futurecoder.io/course/#DefiningFunctions
 #. 
