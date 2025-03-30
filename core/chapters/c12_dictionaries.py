@@ -784,9 +784,10 @@ class CreatingKeyValuePairs(Page):
 
         Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to return anything.
         You can assume that the user will enter a valid integer for the quantity.
+        You can also assume that the user won't enter an item that's already in `quantities`.
         """
         requirements = "Your function should modify the `quantities` argument. It doesn't need to `return` or `print` anything."
-        no_returns_stdout = True # The function itself doesn't print/return, the test harness does
+        no_returns_stdout = True
 
         hints = """
         The function needs to get two inputs from the user: the item name and the quantity.
@@ -1022,7 +1023,7 @@ has duplicate *values*, what happens when you try to swap keys and values? Since
 some data will be lost.
 
 But there are many situations where you can be sure that the values in a dictionary *are* unique and that this
-'inversion' makes sense. For example, we saw this code [earlier in the chapter](#UsingDictionariesInPractice):
+'inversion' makes sense. For example, we saw this code [earlier in the chapter](#UsingDictionaries):
 
     __copyable__
     __no_auto_translate__
