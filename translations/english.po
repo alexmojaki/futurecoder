@@ -536,6 +536,38 @@ msgstr "\"Alice's Diner\""
 msgid "code_bits.\"Amazing! Are you psychic?\""
 msgstr "\"Amazing! Are you psychic?\""
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1.copy() # Create a separate copy
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify the copy
+#. 
+#. print("d1 after:", d1) # Is d1 affected now?
+#. print("d2 after:", d2)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify via d2
+#. 
+#. print("d1 after:", d1) # Is d1 affected?
+#. print("d2 after:", d2)
+msgid "code_bits.\"Are they the same object?\""
+msgstr "\"Are they the same object?\""
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DefiningFunctions.steps.change_function_name
 #. 
 #. def say_hello(name):
@@ -1371,6 +1403,134 @@ msgstr "\"abc\""
 #.     assert_equal(invalid_image("invoice.pdf"), True)
 msgid "code_bits.\"cat.jpg\""
 msgstr "\"cat.jpg\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1.copy() # Create a separate copy
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify the copy
+#. 
+#. print("d1 after:", d1) # Is d1 affected now?
+#. print("d2 after:", d2)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify via d2
+#. 
+#. print("d1 after:", d1) # Is d1 affected?
+#. print("d2 after:", d2)
+msgid "code_bits.\"d1 after:\""
+msgstr "\"d1 after:\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1.copy() # Create a separate copy
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify the copy
+#. 
+#. print("d1 after:", d1) # Is d1 affected now?
+#. print("d2 after:", d2)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify via d2
+#. 
+#. print("d1 after:", d1) # Is d1 affected?
+#. print("d2 after:", d2)
+msgid "code_bits.\"d1 before:\""
+msgstr "\"d1 before:\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1.copy() # Create a separate copy
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify the copy
+#. 
+#. print("d1 after:", d1) # Is d1 affected now?
+#. print("d2 after:", d2)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify via d2
+#. 
+#. print("d1 after:", d1) # Is d1 affected?
+#. print("d2 after:", d2)
+msgid "code_bits.\"d2 after:\""
+msgstr "\"d2 after:\""
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1.copy() # Create a separate copy
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify the copy
+#. 
+#. print("d1 after:", d1) # Is d1 affected now?
+#. print("d2 after:", d2)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify via d2
+#. 
+#. print("d1 after:", d1) # Is d1 affected?
+#. print("d2 after:", d2)
+msgid "code_bits.\"d2 before:\""
+msgstr "\"d2 before:\""
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting
 #. 
@@ -3296,6 +3456,44 @@ msgstr "'aeiou'"
 msgid "code_bits.'apfel'"
 msgstr "'apfel'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
 #. 
 #.     def make_english_to_german(english_to_french, french_to_german):
@@ -3502,6 +3700,44 @@ msgstr "'apple'"
 msgid "code_bits.'are'"
 msgstr "'are'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.'banana'"
+msgstr "'banana'"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.TheEqualityOperator.steps.introducing_equality
 #. 
 #. print(1 + 2 == 3)
@@ -3587,6 +3823,27 @@ msgstr "'bc'"
 #. french = {'apple': 'pomme', 'box': 'boite'}
 msgid "code_bits.'boite'"
 msgstr "'boite'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.'book'"
+msgstr "'book'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 #. 
@@ -4469,6 +4726,111 @@ msgstr "'list'"
 msgid "code_bits.'on'"
 msgstr "'on'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.'orange'"
+msgstr "'orange'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.'paper'"
+msgstr "'paper'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.'pear'"
+msgstr "'pear'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.'pen'"
+msgstr "'pen'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.'pencil'"
+msgstr "'pencil'"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
 #. 
 #.     def make_english_to_german(english_to_french, french_to_german):
@@ -4650,6 +5012,18 @@ msgstr "'you'"
 msgid "code_bits.Hello"
 msgstr "Hello"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid.text
 #. 
 #.     __program_indented__
@@ -4960,6 +5334,32 @@ msgstr "__program_indented__"
 msgid "code_bits.actual"
 msgstr "actual"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+#. 
+#. def add_item(item, quantities):
+#.     new_quantities = quantities.copy()
+#.     new_quantities[item] = new_quantities[item] + 1
+#.     return new_quantities
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+msgid "code_bits.add_item"
+msgstr "add_item"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingFstrings.steps.basic_f_string_exercise
 #. 
 #. name = "Alice"
@@ -5153,6 +5553,44 @@ msgstr "all_numbers"
 #.             ]
 #.         ),
 #.         False
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
 #.     )
 #. 
 #. ------
@@ -8207,6 +8645,70 @@ msgstr "consonants"
 #.     test()
 msgid "code_bits.cube"
 msgstr "cube"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1.copy() # Create a separate copy
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify the copy
+#. 
+#. print("d1 after:", d1) # Is d1 affected now?
+#. print("d2 after:", d2)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify via d2
+#. 
+#. print("d1 after:", d1) # Is d1 affected?
+#. print("d2 after:", d2)
+msgid "code_bits.d1"
+msgstr "d1"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1.copy() # Create a separate copy
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify the copy
+#. 
+#. print("d1 after:", d1) # Is d1 affected now?
+#. print("d2 after:", d2)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+#. 
+#. d1 = {'a': 1, 'b': 2}
+#. d2 = d1
+#. 
+#. print("d1 before:", d1)
+#. print("d2 before:", d2)
+#. print("Are they the same object?", d1 is d2)
+#. 
+#. d2['c'] = 3 # Modify via d2
+#. 
+#. print("d1 after:", d1) # Is d1 affected?
+#. print("d2 after:", d2)
+msgid "code_bits.d2"
+msgstr "d2"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningAndAndOr.steps.final_text.text
 #. 
@@ -11348,6 +11850,44 @@ msgstr "is_friend"
 msgid "code_bits.is_valid_percentage"
 msgstr "is_valid_percentage"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+#. 
+#. def add_item(item, quantities):
+#.     new_quantities = quantities.copy()
+#.     new_quantities[item] = new_quantities[item] + 1
+#.     return new_quantities
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+#. 
+#. def positive_stock(stock):
+#.     result = {}
+#.     for item in stock:
+#.         quantity = stock[item]
+#.         if quantity > 0:
+#.             result[item] = quantity
+#.     return result
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
 #. 
 #. def buy_quantity(quantities):
@@ -13312,6 +13852,15 @@ msgstr "new_numbers"
 msgid "code_bits.new_nums"
 msgstr "new_nums"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+#. 
+#. def add_item(item, quantities):
+#.     new_quantities = quantities.copy()
+#.     new_quantities[item] = new_quantities[item] + 1
+#.     return new_quantities
+msgid "code_bits.new_quantities"
+msgstr "new_quantities"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CombiningCompoundStatements.steps.final_text.text
 #. 
 #.     sentence = 'Hello World'
@@ -13441,6 +13990,40 @@ msgstr "new_nums"
 #. print(new_sentence)
 msgid "code_bits.new_sentence"
 msgstr "new_sentence"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+msgid "code_bits.new_stock"
+msgstr "new_stock"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+msgid "code_bits.new_stock_2"
+msgstr "new_stock_2"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.FunctionsAndMethodsForLists.steps.subscript_assignment_predict.text
 #. 
@@ -15099,6 +15682,39 @@ msgstr "player2"
 msgid "code_bits.players"
 msgstr "players"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+#. 
+#. def positive_stock(stock):
+#.     result = {}
+#.     for item in stock:
+#.         quantity = stock[item]
+#.         if quantity > 0:
+#.             result[item] = quantity
+#.     return result
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.positive_stock"
+msgstr "positive_stock"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.LoopingOverNestedLists.steps.list_contains_word_exercise
 #. 
 #. strings = [['hello there', 'how are you'], ['goodbye world', 'hello world']]
@@ -15858,6 +16474,32 @@ msgstr "printed"
 msgid "code_bits.quadruple"
 msgstr "quadruple"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+#. 
+#. def add_item(item, quantities):
+#.     new_quantities = quantities.copy()
+#.     new_quantities[item] = new_quantities[item] + 1
+#.     return new_quantities
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
 #. 
 #. def buy_quantity(quantities):
@@ -16002,6 +16644,18 @@ msgstr "quadruple"
 msgid "code_bits.quantities"
 msgstr "quantities"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+#. 
+#. def positive_stock(stock):
+#.     result = {}
+#.     for item in stock:
+#.         quantity = stock[item]
+#.         if quantity > 0:
+#.             result[item] = quantity
+#.     return result
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -16078,6 +16732,18 @@ msgstr "quantity"
 msgid "code_bits.quantity_str"
 msgstr "quantity_str"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+#. 
+#. def positive_stock(stock):
+#.     result = {}
+#.     for item in stock:
+#.         quantity = stock[item]
+#.         if quantity > 0:
+#.             result[item] = quantity
+#.     return result
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -17770,6 +18436,56 @@ msgstr "some_list"
 #. print(line)
 msgid "code_bits.spaces"
 msgstr "spaces"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
+#. 
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+#. 
+#. def positive_stock(stock):
+#.     result = {}
+#.     for item in stock:
+#.         quantity = stock[item]
+#.         if quantity > 0:
+#.             result[item] = quantity
+#.     return result
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise.text
+#. 
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+msgid "code_bits.stock"
+msgstr "stock"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingNestedLists.steps.double_subscripting.text
 #. 
@@ -22218,6 +22934,283 @@ msgstr ""
 msgid "pages.CombiningCompoundStatements.title"
 msgstr "Combining Compound Statements"
 
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+msgid "pages.CopyingDictionaries.steps.add_item_exercise.hints.0.text"
+msgstr ""
+"First, create a *copy* of the input `quantities` dictionary using the `.copy()` method. Store this in a new variable, "
+"e.g., `new_quantities`."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+msgid "pages.CopyingDictionaries.steps.add_item_exercise.hints.1.text"
+msgstr "Since we assume `item` is already a key, you don't need to check for its existence in this exercise."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+msgid "pages.CopyingDictionaries.steps.add_item_exercise.hints.2.text"
+msgstr "Find the current quantity of the `item` in the `new_quantities` copy using `new_quantities[item]`."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+msgid "pages.CopyingDictionaries.steps.add_item_exercise.hints.3.text"
+msgstr "Calculate the new quantity by adding 1 to the current quantity."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+msgid "pages.CopyingDictionaries.steps.add_item_exercise.hints.4.text"
+msgstr ""
+"Update the value for `item` in the `new_quantities` copy with this new quantity using assignment: "
+"`new_quantities[item] = ...`."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise
+msgid "pages.CopyingDictionaries.steps.add_item_exercise.hints.5.text"
+msgstr "Return the `new_quantities` dictionary."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#.     # __code0__:
+#.     def add_item(item, quantities):
+#.         # Your code here
+#.         ...
+#. 
+#.     stock = {'apple': 5, 'banana': 2}
+#.     new_stock = add_item('apple', stock)
+#.     assert_equal(stock, {'apple': 5, 'banana': 2}) # Original unchanged
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Copy has incremented value
+#. 
+#.     new_stock_2 = add_item('banana', new_stock)
+#.     assert_equal(new_stock, {'apple': 6, 'banana': 2}) # Previous copy unchanged
+#.     assert_equal(new_stock_2, {'apple': 6, 'banana': 3}) # New copy incremented
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27apple%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27banana%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.add_item
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.item
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.new_stock
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.new_stock_2
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quantities
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.stock
+msgid "pages.CopyingDictionaries.steps.add_item_exercise.text"
+msgstr ""
+"Let's practice combining copying and modifying. Imagine we want to represent adding one unit of an item to our stock count.\n"
+"\n"
+"Write a function `add_item(item, quantities)` that takes an item name (`item`) and a dictionary `quantities`. You can assume the `item` *already exists* as a key in the `quantities` dictionary.\n"
+"\n"
+"The function should return a *new* dictionary which is a copy of `quantities`, but with the value associated with `item` increased by 1. The original `quantities` dictionary should not be changed.\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+msgid "pages.CopyingDictionaries.steps.final_text.text"
+msgstr ""
+"Great! You now know why copying dictionaries is important (because they are mutable) and how to do it using `.copy()`. You've also practiced creating modified copies, which is a common and safe way to work with data without accidentally changing things elsewhere in your program.\n"
+"\n"
+"Next, we'll see how to check if a key exists *before* trying to use it, to avoid errors."
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+msgid "pages.CopyingDictionaries.steps.making_copies.output_prediction_choices.0"
+msgstr ""
+"d1 before: {'a': 1, 'b': 2}\n"
+"d2 before: {'a': 1, 'b': 2}\n"
+"Are they the same object? True\n"
+"d1 after: {'a': 1, 'b': 2, 'c': 3}\n"
+"d2 after: {'a': 1, 'b': 2, 'c': 3}"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+msgid "pages.CopyingDictionaries.steps.making_copies.output_prediction_choices.1"
+msgstr ""
+"d1 before: {'a': 1, 'b': 2}\n"
+"d2 before: {'a': 1, 'b': 2}\n"
+"Are they the same object? False\n"
+"d1 after: {'a': 1, 'b': 2, 'c': 3}\n"
+"d2 after: {'a': 1, 'b': 2, 'c': 3}"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies
+msgid "pages.CopyingDictionaries.steps.making_copies.output_prediction_choices.2"
+msgstr ""
+"d1 before: {'a': 1, 'b': 2}\n"
+"d2 before: {'a': 1, 'b': 2}\n"
+"Are they the same object? False\n"
+"d1 after: {'a': 1, 'b': 2}\n"
+"d2 after: {'a': 1, 'b': 2, 'c': 3}"
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.CopyingDictionaries.steps.making_copies.text"
+msgstr ""
+"Because `d1` and `d2` referred to the exact same dictionary object (`d1 is d2` was `True`), changing it via `d2` also changed what `d1` saw.\n"
+"\n"
+"To get a *separate* dictionary with the same contents, use the `.copy()` method.\n"
+"\n"
+"Predict how using `.copy()` changes the outcome, then run this code:\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+msgid "pages.CopyingDictionaries.steps.positive_stock_exercise.hints.0.text"
+msgstr "Start by creating a new empty dictionary, e.g., `result = {}`."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+msgid "pages.CopyingDictionaries.steps.positive_stock_exercise.hints.1.text"
+msgstr "Loop through the keys of the input `stock` dictionary."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+msgid "pages.CopyingDictionaries.steps.positive_stock_exercise.hints.2.text"
+msgstr "Inside the loop, get the `quantity` for the current `item` using `stock[item]`."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+msgid "pages.CopyingDictionaries.steps.positive_stock_exercise.hints.3.text"
+msgstr "Use an `if` statement to check if `quantity > 0`."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+msgid "pages.CopyingDictionaries.steps.positive_stock_exercise.hints.4.text"
+msgstr ""
+"If the quantity is positive, add the `item` and its `quantity` to your `result` dictionary using `result[item] = "
+"quantity`."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+msgid "pages.CopyingDictionaries.steps.positive_stock_exercise.hints.5.text"
+msgstr "After the loop finishes, return the `result` dictionary."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
+msgid "pages.CopyingDictionaries.steps.positive_stock_exercise.hints.6.text"
+msgstr ""
+"Make sure you don't modify the original `stock` dictionary passed into the function. Creating a new `result` "
+"dictionary ensures this."
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#.     # __code0__:
+#.     def positive_stock(stock):
+#.         # Your code here
+#.         ...
+#. 
+#.     assert_equal(
+#.         positive_stock({'apple': 10, 'banana': 0, 'pear': 5, 'orange': 0}),
+#.         {'apple': 10, 'pear': 5}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'pen': 0, 'pencil': 0}),
+#.         {}
+#.     )
+#.     assert_equal(
+#.         positive_stock({'book': 1, 'paper': 5}),
+#.         {'book': 1, 'paper': 5}
+#.     )
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27apple%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27banana%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27book%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27orange%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27paper%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27pear%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27pen%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27pencil%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.positive_stock
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.stock
+msgid "pages.CopyingDictionaries.steps.positive_stock_exercise.text"
+msgstr ""
+"Making an exact copy is useful, but often we want a *modified* copy. Let's practice creating a new dictionary based on an old one.\n"
+"\n"
+"Write a function `positive_stock(stock)` that takes a dictionary `stock` (mapping item names to integer quantities) and returns a *new* dictionary containing only the items from the original `stock` where the quantity is strictly greater than 0. The original `stock` dictionary should not be changed.\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+msgid "pages.CopyingDictionaries.steps.shared_references.output_prediction_choices.0"
+msgstr ""
+"d1 before: {'a': 1, 'b': 2}\n"
+"d2 before: {'a': 1, 'b': 2}\n"
+"Are they the same object? True\n"
+"d1 after: {'a': 1, 'b': 2}\n"
+"d2 after: {'a': 1, 'b': 2, 'c': 3}"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+msgid "pages.CopyingDictionaries.steps.shared_references.output_prediction_choices.1"
+msgstr ""
+"d1 before: {'a': 1, 'b': 2}\n"
+"d2 before: {'a': 1, 'b': 2}\n"
+"Are they the same object? True\n"
+"d1 after: {'a': 1, 'b': 2, 'c': 3}\n"
+"d2 after: {'a': 1, 'b': 2, 'c': 3}"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references
+msgid "pages.CopyingDictionaries.steps.shared_references.output_prediction_choices.2"
+msgstr ""
+"d1 before: {'a': 1, 'b': 2}\n"
+"d2 before: {'a': 1, 'b': 2}\n"
+"Are they the same object? False\n"
+"d1 after: {'a': 1, 'b': 2}\n"
+"d2 after: {'a': 1, 'b': 2, 'c': 3}"
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+#. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.CopyingDictionaries.steps.shared_references.text"
+msgstr ""
+"Remember how assigning one list variable to another (`list2 = list1`) made both names point to the *same* list? Dictionaries work the same way because they are also *mutable* (can be changed).\n"
+"\n"
+"Predict what the following code will print, then run it to see:\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#CopyingDictionaries
+msgid "pages.CopyingDictionaries.title"
+msgstr "Copying Dictionaries"
+
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
@@ -22318,7 +23311,8 @@ msgstr ""
 "    {'dog': 5000000, 'box': 2}\n"
 "\n"
 "Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to return anything.\n"
-"You can assume that the user will enter a valid integer for the quantity."
+"You can assume that the user will enter a valid integer for the quantity.\n"
+"You can also assume that the user won't enter an item that's already in `quantities`."
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.1"
@@ -22373,7 +23367,7 @@ msgstr ""
 "some data will be lost.\n"
 "\n"
 "But there are many situations where you can be sure that the values in a dictionary *are* unique and that this\n"
-"'inversion' makes sense. For example, we saw this code [earlier in the chapter](#UsingDictionariesInPractice):\n"
+"'inversion' makes sense. For example, we saw this code [earlier in the chapter](#UsingDictionaries):\n"
 "\n"
 "    __copyable__\n"
 "    __no_auto_translate__\n"

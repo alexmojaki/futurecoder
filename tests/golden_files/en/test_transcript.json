@@ -7437,5 +7437,110 @@
             "result": []
         },
         "step": "swap_keys_values_exercise"
+    },
+    {
+        "get_solution": "program",
+        "page": "Copying Dictionaries",
+        "program": [
+            "d1 = {'a': 1, 'b': 2}",
+            "d2 = d1",
+            "",
+            "print(\"d1 before:\", d1)",
+            "print(\"d2 before:\", d2)",
+            "print(\"Are they the same object?\", d1 is d2)",
+            "",
+            "d2['c'] = 3 # Modify via d2",
+            "",
+            "print(\"d1 after:\", d1) # Is d1 affected?",
+            "print(\"d2 after:\", d2)"
+        ],
+        "response": {
+            "passed": true,
+            "prediction": {
+                "answer": "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? True\nd1 after: {'a': 1, 'b': 2, 'c': 3}\nd2 after: {'a': 1, 'b': 2, 'c': 3}",
+                "choices": [
+                    "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? True\nd1 after: {'a': 1, 'b': 2}\nd2 after: {'a': 1, 'b': 2, 'c': 3}",
+                    "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? True\nd1 after: {'a': 1, 'b': 2, 'c': 3}\nd2 after: {'a': 1, 'b': 2, 'c': 3}",
+                    "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? False\nd1 after: {'a': 1, 'b': 2}\nd2 after: {'a': 1, 'b': 2, 'c': 3}",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "text": "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? True\nd1 after: {'a': 1, 'b': 2, 'c': 3}\nd2 after: {'a': 1, 'b': 2, 'c': 3}\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "shared_references"
+    },
+    {
+        "get_solution": "program",
+        "page": "Copying Dictionaries",
+        "program": [
+            "d1 = {'a': 1, 'b': 2}",
+            "d2 = d1.copy() # Create a separate copy",
+            "",
+            "print(\"d1 before:\", d1)",
+            "print(\"d2 before:\", d2)",
+            "print(\"Are they the same object?\", d1 is d2)",
+            "",
+            "d2['c'] = 3 # Modify the copy",
+            "",
+            "print(\"d1 after:\", d1) # Is d1 affected now?",
+            "print(\"d2 after:\", d2)"
+        ],
+        "response": {
+            "passed": true,
+            "prediction": {
+                "answer": "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? False\nd1 after: {'a': 1, 'b': 2}\nd2 after: {'a': 1, 'b': 2, 'c': 3}",
+                "choices": [
+                    "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? True\nd1 after: {'a': 1, 'b': 2, 'c': 3}\nd2 after: {'a': 1, 'b': 2, 'c': 3}",
+                    "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? False\nd1 after: {'a': 1, 'b': 2, 'c': 3}\nd2 after: {'a': 1, 'b': 2, 'c': 3}",
+                    "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? False\nd1 after: {'a': 1, 'b': 2}\nd2 after: {'a': 1, 'b': 2, 'c': 3}",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "text": "d1 before: {'a': 1, 'b': 2}\nd2 before: {'a': 1, 'b': 2}\nAre they the same object? False\nd1 after: {'a': 1, 'b': 2}\nd2 after: {'a': 1, 'b': 2, 'c': 3}\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "making_copies"
+    },
+    {
+        "get_solution": "program",
+        "page": "Copying Dictionaries",
+        "program": [
+            "def positive_stock(stock):",
+            "    result = {}",
+            "    for item in stock:",
+            "        quantity = stock[item]",
+            "        if quantity > 0:",
+            "            result[item] = quantity",
+            "    return result"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "positive_stock_exercise"
+    },
+    {
+        "get_solution": "program",
+        "page": "Copying Dictionaries",
+        "program": [
+            "def add_item(item, quantities):",
+            "    new_quantities = quantities.copy()",
+            "    new_quantities[item] = new_quantities[item] + 1",
+            "    return new_quantities"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "add_item_exercise"
     }
 ]
