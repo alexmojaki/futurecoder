@@ -145,3 +145,4 @@ homepage/static/css/**/*.css
 
 translations/codes.json
 .DS_Store
+translations/chunks/
