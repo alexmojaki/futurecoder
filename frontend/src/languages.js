@@ -95,6 +95,22 @@ const languages = [
       measurementId: "G-XG7E3KF703"
     }
   },
+  {
+    code: 'zh',
+    name: '中文',
+    url: 'https://zh.futurecoder.io/',
+    visible: false,
+    firebaseConfig: {
+      apiKey: "AIzaSyBqtDR34wsBxKB-QrnDY97uJ6uXSVkvb7o",
+      authDomain: "futurecoder-zh.firebaseapp.com",
+      databaseURL: "https://futurecoder-zh-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "futurecoder-zh",
+      storageBucket: "futurecoder-zh.firebasestorage.app",
+      messagingSenderId: "103387137175",
+      appId: "1:103387137175:web:a841284a28104ec4f1d5d2",
+      measurementId: "G-3LND5RGTWT"
+    },
+  }
 ];
 
 export let language = process.env.REACT_APP_LANGUAGE;
