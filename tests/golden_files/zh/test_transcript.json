@@ -5,7 +5,7 @@
             "'literally anything'"
         ],
         "response": {
-            "message": "<p>\u592a\u68d2\u4e86\uff0c\u4f60\u5728\u5c1d\u8bd5\u81ea\u5df1\u7684\u5b9e\u9a8c\uff01\n\u8fd9\u662f\u4e00\u4e2a\u5f88\u597d\u7684\u8ff9\u8c61\u3002\u7ee7\u7eed\u52a0\u6cb9\u3002\n\u53ea\u662f\u544a\u8bc9\u4f60\uff0c\u6700\u7ec8\u4f60\u9700\u8981\u8f93\u5165 <code>1+2</code> \u624d\u80fd\u7ee7\u7eed\u8fdb\u884c\u3002</p>",
+            "message": "<p>\u5f88\u597d\uff0c\u4f60\u5728\u5c1d\u8bd5\u81ea\u5df1\u7684\u5b9e\u9a8c\uff01\n\u8fd9\u771f\u662f\u4e2a\u597d\u5146\u5934\u3002\u7ee7\u7eed\u4fdd\u6301\u3002\n\u6211\u53ea\u662f\u60f3\u8ba9\u4f60\u77e5\u9053\uff0c\u4f60\u6700\u7ec8\u9700\u8981\u8f93\u5165 <code>1+2</code> \u624d\u80fd\u7ee7\u7eed\u8fdb\u884c\u3002</p>",
             "passed": false,
             "result": [
                 {
@@ -39,12 +39,12 @@
             "3 x 4"
         ],
         "response": {
-            "message": "<p>\u6211\u770b\u5230\u4e00\u4e2a 'x'\u3002\u5982\u679c\u4f60\u60f3\u8981\u4e58\u6cd5\uff0c\u8bf7\u4f7f\u7528\u661f\u53f7\uff0c\u4f8b\u5982\uff1a</p>\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
+            "message": "<p>\u6211\u770b\u5230\u4e00\u4e2a 'x'\u3002\u5982\u679c\u4f60\u60f3\u8fdb\u884c\u4e58\u6cd5\u8fd0\u7b97\uff0c\u8bf7\u4f7f\u7528\u661f\u53f7\uff0c\u4f8b\u5982\uff1a</p>\n<pre><code class=\"codehilite\"><span><span class=\"mi\">3</span> <span class=\"o\">*</span> <span class=\"mi\">4</span>\n</span></code></pre>",
             "passed": false,
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>Currently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.</p>\n<p>Unless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\n\u5728\u884c 1\n",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\n\u5728\u7b2c 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -108,7 +108,7 @@
             "'hello world'"
         ],
         "response": {
-            "message": "<p>\u4f60\u4ecd\u7136\u5fc5\u987b\u5c06\u4e24\u4e2a\u6216\u66f4\u591a\u5b57\u7b26\u4e32\u8fde\u63a5\u5728\u4e00\u8d77\u3002</p>",
+            "message": "<p>\u4f60\u4ecd\u7136\u5fc5\u987b\u5c06\u4e24\u4e2a\u6216\u66f4\u591a\u5b57\u7b26\u4e32\u76f8\u52a0\u3002</p>",
             "passed": false,
             "result": [
                 {
@@ -138,7 +138,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u53d8\u91cf\u4ecb\u7ecd",
+        "page": "\u4ecb\u7ecd\u53d8\u91cf",
         "program": [
             "word = 'Hello'"
         ],
@@ -149,12 +149,12 @@
         "step": "word_assign"
     },
     {
-        "page": "\u53d8\u91cf\u4ecb\u7ecd",
+        "page": "\u4ecb\u7ecd\u53d8\u91cf",
         "program": [
             "word = 2"
         ],
         "response": {
-            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code>\uff0c\u624d\u80fd\u7ee7\u7eed\u3002</p>",
+            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code>\uff0c\u7136\u540e\u6211\u4eec\u624d\u80fd\u7ee7\u7eed\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -162,7 +162,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u53d8\u91cf\u4ecb\u7ecd",
+        "page": "\u4ecb\u7ecd\u53d8\u91cf",
         "program": [
             "word"
         ],
@@ -179,7 +179,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u53d8\u91cf\u4ecb\u7ecd",
+        "page": "\u4ecb\u7ecd\u53d8\u91cf",
         "program": [
             "'word'"
         ],
@@ -206,7 +206,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u53d8\u91cf\u4ecb\u7ecd",
+        "page": "\u4ecb\u7ecd\u53d8\u91cf",
         "program": [
             "sunshine"
         ],
@@ -284,7 +284,7 @@
             "your_name = ''"
         ],
         "response": {
-            "message": "<p>\u5bf9\u4e8e\u8fd9\u4e2a\u7ec3\u4e60\uff0c\u9009\u62e9\u4e00\u4e2a\u975e\u7a7a\u5b57\u7b26\u4e32\u3002</p>",
+            "message": "<p>\u5728\u8fd9\u4e2a\u7ec3\u4e60\u4e2d\uff0c\u9009\u62e9\u4e00\u4e2a\u975e\u7a7a\u5b57\u7b26\u4e32\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -308,7 +308,7 @@
             "your_name = ' Alex'"
         ],
         "response": {
-            "message": "<p>\u5bf9\u4e8e\u8fd9\u4e2a\u7ec3\u4e60\uff0c\u9009\u62e9\u4e00\u4e2a\u4e0d\u4ee5\u7a7a\u683c\u5f00\u5934\u7684\u540d\u5b57\u3002</p>",
+            "message": "<p>\u5728\u8fd9\u4e2a\u7ec3\u4e60\u4e2d\uff0c\u9009\u62e9\u4e00\u4e2a\u4e0d\u4ee5\u7a7a\u683c\u5f00\u5934\u7684\u540d\u5b57\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -349,7 +349,7 @@
             "word = 2"
         ],
         "response": {
-            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code> \u624d\u80fd\u7ee7\u7eed\u3002</p>",
+            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code>\uff0c\u7136\u540e\u6211\u4eec\u624d\u80fd\u7ee7\u7eed\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -378,7 +378,7 @@
             "word = 2"
         ],
         "response": {
-            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code> \u624d\u80fd\u7ee7\u7eed\u3002</p>",
+            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code>\uff0c\u7136\u540e\u6211\u4eec\u624d\u80fd\u7ee7\u7eed\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -470,7 +470,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u53d8\u91cf\u4e2d\u5b58\u50a8\u8ba1\u7b97",
+        "page": "\u5728\u53d8\u91cf\u4e2d\u5b58\u50a8\u8ba1\u7b97\u7ed3\u679c",
         "program": [
             "word = 'Hello'",
             "name = 'World'",
@@ -502,7 +502,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u53d8\u91cf\u4e2d\u5b58\u50a8\u8ba1\u7b97",
+        "page": "\u5728\u53d8\u91cf\u4e2d\u5b58\u50a8\u8ba1\u7b97\u7ed3\u679c",
         "program": [
             "word = 'Hello'",
             "name = 'World'",
@@ -533,7 +533,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5f15\u5165 For \u5faa\u73af",
+        "page": "\u4ecb\u7ecd For \u5faa\u73af",
         "program": [
             "name = 'World'",
             "for character in name: print(character)"
@@ -561,7 +561,7 @@
             "result": [
                 {
                     "friendly": "<p>An <code>IndentationError</code> occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.</p>\n<p>Line <code>2</code> identified above was expected to begin a new indented block.</p>",
-                    "text": "    print(character)\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 1\n\u5728\u884c 2\n",
+                    "text": "    print(character)\n    ^^^^^\nIndentationError: expected an indented block after 'for' statement on line 1\n\u5728\u7b2c 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -623,7 +623,7 @@
             "result": [
                 {
                     "friendly": "<p>An <code>IndentationError</code> occurs when a given line of code is\nnot indented (aligned vertically with other lines) as expected.</p>\n<p>Line <code>3</code> identified above is less indented than expected.</p>",
-                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\n\u5728\u884c 3\n",
+                    "text": "    print('---')\n                ^\nIndentationError: unindent does not match any outer indentation level\n\u5728\u7b2c 3\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1193,7 +1193,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u7406\u89e3\u4f7f\u7528 <code>snoop</code> \u7684\u7a0b\u5e8f",
+        "page": "\u4f7f\u7528 <code>snoop</code> \u7406\u89e3\u7a0b\u5e8f",
         "program": [
             "sentence = 'Hello World'",
             "",
@@ -1230,7 +1230,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u7406\u89e3\u4f7f\u7528 <code>snoop</code> \u7684\u7a0b\u5e8f",
+        "page": "\u4f7f\u7528 <code>snoop</code> \u7406\u89e3\u7a0b\u5e8f",
         "program": [
             "sentence = 'Hello World'",
             "",
@@ -1297,7 +1297,7 @@
             "",
             "print(new_sentence)"
         ],
-        "page": "\u7406\u89e3\u4f7f\u7528 <code>snoop</code> \u7684\u7a0b\u5e8f",
+        "page": "\u4f7f\u7528 <code>snoop</code> \u7406\u89e3\u7a0b\u5e8f",
         "program": [
             "sentence = 'Hello there'",
             "include = True",
@@ -1606,7 +1606,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u7b49\u53f7\u8fd0\u7b97\u7b26",
+        "page": "\u7b49\u53f7\u64cd\u4f5c\u7b26",
         "program": [
             "print(1 + 2 == 3)",
             "print(4 + 5 == 6)",
@@ -1625,7 +1625,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u7b49\u53f7\u8fd0\u7b97\u7b26",
+        "page": "\u7b49\u53f7\u64cd\u4f5c\u7b26",
         "program": [
             "print(1 + 2 = 3)"
         ],
@@ -1634,7 +1634,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You likely called a function with a named argument:</p>\n<pre><code>a_function(invalid=something)\n</code></pre>\n<p>where <code>invalid</code> is not a valid variable name in Python\neither because it starts with a number, or is a string,\nor contains a period, etc.</p>",
-                    "text": "    print(1 + 2 = 3)\n          ^^^^^^^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n\u5728\u884c 1\n",
+                    "text": "    print(1 + 2 = 3)\n          ^^^^^^^\nSyntaxError: expression cannot contain assignment, perhaps you meant \"==\"?\n\u5728\u7b2c 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -1643,7 +1643,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u7b49\u53f7\u8fd0\u7b97\u7b26",
+        "page": "\u7b49\u53f7\u64cd\u4f5c\u7b26",
         "program": [
             "name = 'kesha'",
             "new_name = ''",
@@ -1679,7 +1679,7 @@
             "",
             "print(new_name)"
         ],
-        "page": "\u7b49\u53f7\u8fd0\u7b97\u7b26",
+        "page": "\u7b49\u53f7\u64cd\u4f5c\u7b26",
         "program": [
             "name = 'kesha'",
             "new_name = ''",
@@ -1707,7 +1707,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd<code>elif</code>",
+        "page": "\u4ecb\u7ecd <code>elif</code>",
         "program": [
             "dna = 'AGTAGCGTC'",
             "opposite_dna = ''",
@@ -1753,7 +1753,7 @@
             "",
             "print(opposite_dna)"
         ],
-        "page": "\u4ecb\u7ecd<code>elif</code>",
+        "page": "\u4ecb\u7ecd <code>elif</code>",
         "program": [
             "dna = 'AGTAGCGTCCTTAGTTACAGGATGGCTTAT'",
             "opposite_dna = ''",
@@ -1785,7 +1785,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd<code>elif</code>",
+        "page": "\u4ecb\u7ecd <code>elif</code>",
         "program": [
             "dna = 'AGTAGCGTC'",
             "opposite_dna = ''",
@@ -2110,7 +2110,7 @@
             "    double += [number * 2]",
             "print(double)"
         ],
-        "page": "\u6784\u5efa\u65b0\u5217\u8868",
+        "page": "\u521b\u5efa\u65b0\u5217\u8868",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
             "double = []",
@@ -2137,7 +2137,7 @@
             "        big_numbers.append(number)",
             "print(big_numbers)"
         ],
-        "page": "\u6784\u5efa\u65b0\u5217\u8868",
+        "page": "\u521b\u5efa\u65b0\u5217\u8868",
         "program": [
             "numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]",
             "big_numbers = []",
@@ -2190,7 +2190,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -2212,7 +2212,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words[4]"
         ],
@@ -2270,7 +2270,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "indices = [0, 1, 2, 3]",
@@ -2304,7 +2304,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "indices = range(4)",
@@ -2326,7 +2326,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "indices = range(4)",
             "",
@@ -2359,7 +2359,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "indices[4]"
         ],
@@ -2428,7 +2428,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "range(4)"
         ],
@@ -2445,7 +2445,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "list(range(4))"
         ],
@@ -2475,7 +2475,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "print(len(words))"
@@ -2507,7 +2507,7 @@
         "get_solution": [
             "print(words[len(words) - 1])"
         ],
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['Python']",
             "print(words[len(words) - 1])"
@@ -2529,7 +2529,7 @@
             "    print(index)",
             "    print(words[index])"
         ],
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u4e0a\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['Python']",
             "for index in range(len(words)):",
@@ -3486,7 +3486,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u53ca\u5176\u4ed6\u65b9\u5f0f\u67e5\u627e\u4fe1\u606f",
+        "page": "\u5982\u4f55\u4f7f\u7528 Google \u67e5\u627e\u4fe1\u606f\uff0c\u4ee5\u53ca\u66f4\u591a",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
@@ -3503,7 +3503,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u53ca\u5176\u4ed6\u65b9\u5f0f\u67e5\u627e\u4fe1\u606f",
+        "page": "\u5982\u4f55\u4f7f\u7528 Google \u67e5\u627e\u4fe1\u606f\uff0c\u4ee5\u53ca\u66f4\u591a",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
             "nums.insert(2, 9)",
@@ -3522,7 +3522,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u53ca\u5176\u4ed6\u65b9\u5f0f\u67e5\u627e\u4fe1\u606f",
+        "page": "\u5982\u4f55\u4f7f\u7528 Google \u67e5\u627e\u4fe1\u606f\uff0c\u4ee5\u53ca\u66f4\u591a",
         "program": [
             "dir([])"
         ],
@@ -3812,7 +3812,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You started writing a string with a single or double quote\nbut never ended the string with another quote on that line.</p>",
-                    "text": "    print('Alice's Diner')\n                        ^\nSyntaxError: unterminated string literal (detected at line 1)\n\u5728\u884c 1\n",
+                    "text": "    print('Alice's Diner')\n                        ^\nSyntaxError: unterminated string literal (detected at line 1)\n\u5728\u7b2c 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4166,7 +4166,7 @@
             "    print('---')"
         ],
         "response": {
-            "message": "<p>\u4f60\u5728\u9519\u8bef\u7684\u5730\u65b9\u7ed9\u5916\u90e8\u5faa\u73af\u53d8\u91cf\u52a0\u4e86 1\uff01\n\u4f60\u5e94\u8be5\u5728\u54ea\u91cc\u505a\u8fd9\u4e2a\u6765\u4fee\u590d\u5b83\uff1f</p>",
+            "message": "<p>\u4f60\u5728\u9519\u8bef\u7684\u5730\u65b9\u5c06 1 \u52a0\u5230\u4e86\u5916\u90e8\u5faa\u73af\u53d8\u91cf\u4e0a\uff01\n\u4f60\u5e94\u8be5\u5728\u54ea\u91cc\u505a\u8fd9\u4e2a\u4ee5\u4fee\u590d\u5b83\uff1f</p>",
             "passed": false,
             "result": [
                 {
@@ -4201,7 +4201,7 @@
             "    print('---')"
         ],
         "response": {
-            "message": "<p>\u4f60\u7684\u89e3\u51b3\u65b9\u6848\u592a\u957f\u4e86\u3002\u8fd9\u4e2a\u95ee\u9898\u53ea\u9700\u8981\u51e0\u884c\u4ee3\u7801\u3002\n\u4f7f\u7528\u5d4c\u5957\u5faa\u73af\uff0c\u8fd9\u6837\u4f60\u5c31\u4e0d\u9700\u8981\u91cd\u590d\u81ea\u5df1\u3002\n\u8ba1\u7b97\u673a\u4f1a\u4e3a\u4f60\u5b8c\u6210\u91cd\u590d\u7684\u5de5\u4f5c\uff01</p>",
+            "message": "<p>\u4f60\u7684\u89e3\u51b3\u65b9\u6848\u592a\u957f\u4e86\u3002\u5bf9\u4e8e\u8fd9\u4e2a\u95ee\u9898\uff0c\u4f60\u53ea\u9700\u8981\u51e0\u884c\u4ee3\u7801\u3002\n\u4f7f\u7528\u5d4c\u5957\u5faa\u73af\uff0c\u8fd9\u6837\u4f60\u5c31\u4e0d\u9700\u8981\u91cd\u590d\u81ea\u5df1\u3002\n\u8ba1\u7b97\u673a\u4f1a\u4e3a\u4f60\u5b8c\u6210\u91cd\u590d\u7684\u5de5\u4f5c\uff01</p>",
             "passed": false,
             "result": [
                 {
@@ -4250,12 +4250,12 @@
             "3 x 4"
         ],
         "response": {
-            "message": "<p>\u8981\u4e58\u4ee5\u6570\u5b57\uff0c\u4f7f\u7528 <code>*</code></p>",
+            "message": "<p>\u8981\u4e58\u6570\u5b57\uff0c\u4f7f\u7528 <code>*</code></p>",
             "passed": false,
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>Currently, I cannot guess the likely cause of this error.\nTry to examine closely the line indicated as well as the line\nimmediately above to see if you can identify some misspelled\nword, or missing symbols, like (, ), [, ], :, etc.</p>\n<p>Unless your code uses type annotations, which are beyond our scope,\nif you think that this is something which should be handled\nby friendly, please report this case to\nhttps://github.com/friendly-traceback/friendly-traceback/issues</p>",
-                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\n\u5728\u884c 2\n",
+                    "text": "    3 x 4\n      ^\nSyntaxError: invalid syntax\n\u5728\u7b2c 2\n",
                     "type": "syntax_error"
                 }
             ]
@@ -4939,7 +4939,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u51fd\u6570\u5185\u8c03\u7528\u51fd\u6570",
+        "page": "\u5728\u51fd\u6570\u4e2d\u8c03\u7528\u51fd\u6570",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -4963,7 +4963,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u51fd\u6570\u5185\u8c03\u7528\u51fd\u6570",
+        "page": "\u5728\u51fd\u6570\u4e2d\u8c03\u7528\u51fd\u6570",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5023,7 +5023,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u51fd\u6570\u5185\u8c03\u7528\u51fd\u6570",
+        "page": "\u5728\u51fd\u6570\u4e2d\u8c03\u7528\u51fd\u6570",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5047,7 +5047,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u51fd\u6570\u5185\u8c03\u7528\u51fd\u6570",
+        "page": "\u5728\u51fd\u6570\u4e2d\u8c03\u7528\u51fd\u6570",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5138,7 +5138,7 @@
             "    return x * 4"
         ],
         "response": {
-            "message": "<p>\u4f60\u4e0d\u80fd\u5728 <code>quadruple</code> \u5185\u4f7f\u7528 <code>*</code>\u3001<code>+</code>\uff0c\u751a\u81f3\u4efb\u4f55\u6570\u5b57\u3002\n\u4f60\u5fc5\u987b\u8c03\u7528 <code>double</code> \u6765\u89e3\u51b3\u8fd9\u4e2a\u95ee\u9898\u3002</p>",
+            "message": "<p>\u4f60\u4e0d\u80fd\u5728 <code>quadruple</code> \u5185\u90e8\u4f7f\u7528 <code>*</code>\u3001<code>+</code>\uff0c\u751a\u81f3\u4efb\u4f55\u6570\u5b57\u3002\n\u4f60\u5fc5\u987b\u8c03\u7528 <code>double</code> \u6765\u89e3\u51b3\u8fd9\u4e2a\u95ee\u9898\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -5769,7 +5769,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>The Python keyword <code>or</code> can only be used for boolean expressions.\nPerhaps you meant to write</p>\n<p><code>is_friend = name == \"Alice\" ,</code></p>",
-                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\n\u5728\u884c 1\n",
+                    "text": "    is_friend = name == \"Alice\" or\n                                  ^\nSyntaxError: invalid syntax\n\u5728\u7b2c 1\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6061,7 +6061,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
         "program": [
             "def print_board(board):",
             "    for row in board:",
@@ -6086,7 +6086,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
         "program": [
             "assert_equal(",
             "    format_board([",
@@ -6104,7 +6104,7 @@
             "result": [
                 {
                     "friendly": "<p>A <code>SyntaxError</code> occurs when Python cannot understand your code.</p>\n<p>You started writing a string with a single or double quote\nbut never ended the string with another quote on that line.</p>",
-                    "text": "    \"XOX\n    ^\nSyntaxError: unterminated string literal (detected at line 7)\n\u5728\u884c 7\n",
+                    "text": "    \"XOX\n    ^\nSyntaxError: unterminated string literal (detected at line 7)\n\u5728\u7b2c 7\n",
                     "type": "syntax_error"
                 }
             ]
@@ -6113,7 +6113,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
         "program": [
             "string = \"\"\"First line",
             "Second line\"\"\"",
@@ -6131,7 +6131,7 @@
         "step": "multi_line_strings_triple_quotes"
     },
     {
-        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
         "program": [
             "string = 'a'"
         ],
@@ -6144,7 +6144,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
         "program": [
             "string"
         ],
@@ -6161,7 +6161,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
         "program": [
             "len('\\n')"
         ],
@@ -6186,7 +6186,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
         "program": [
             "def format_board(board):",
             "    result = ''",
@@ -6205,7 +6205,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
         "program": [
             "def format_board(board):",
             "    joined_rows = []",
@@ -6476,7 +6476,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4f7f\u7528 <code>input()</code> \u7684\u4ea4\u4e92\u5f0f\u7a0b\u5e8f",
+        "page": "\u4f7f\u7528 <code>input()</code> \u7684\u4e92\u52a8\u7a0b\u5e8f",
         "program": [
             "print('Type your name, then press Enter:')",
             "name = input()",
@@ -6514,7 +6514,7 @@
             "else:",
             "    print(\"Nope!\")"
         ],
-        "page": "\u4f7f\u7528 <code>input()</code> \u7684\u4ea4\u4e92\u5f0f\u7a0b\u5e8f",
+        "page": "\u4f7f\u7528 <code>input()</code> \u7684\u4e92\u52a8\u7a0b\u5e8f",
         "program": [
             "super_secret_number = 7",
             "print(\"What number am I thinking of?\")",
@@ -6679,7 +6679,7 @@
             "def make_board(size): return [[' '] * size] * size"
         ],
         "response": {
-            "message": "<p>\u7ed9\u5b9a\u8fd9\u4e9b\u503c\uff1a</p>\n<pre><code class=\"codehilite\"><span><span class=\"n\">size</span> <span class=\"o\">=</span> <span class=\"mi\">2</span>\n</span></code></pre>\n<p>\u4f60\u7684\u4ee3\u7801\u8f93\u51fa\uff1a</p>\n<pre><code class=\"codehilite\"><span><span class=\"p\">[[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">],</span> <span class=\"p\">[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">]]</span>\n</span></code></pre>\n<p>\u54ea\u4e00\u4e2a\u662f\u6b63\u786e\u7684\uff01</p>\n<p>\u7136\u800c\uff0c\u7ed3\u679c\u4e2d\u7684\u5b50\u5217\u8868\u5e76\u4e0d\u662f\u6240\u6709\u72ec\u7acb\u7684\u5bf9\u8c61\u3002</p>",
+            "message": "<p>\u7ed9\u5b9a\u8fd9\u4e9b\u503c\uff1a</p>\n<pre><code class=\"codehilite\"><span><span class=\"n\">size</span> <span class=\"o\">=</span> <span class=\"mi\">2</span>\n</span></code></pre>\n<p>\u4f60\u7684\u4ee3\u7801\u8f93\u51fa\uff1a</p>\n<pre><code class=\"codehilite\"><span><span class=\"p\">[[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">],</span> <span class=\"p\">[</span><span class=\"s1\">' '</span><span class=\"p\">,</span> <span class=\"s1\">' '</span><span class=\"p\">]]</span>\n</span></code></pre>\n<p>\u54ea\u4e2a\u662f\u6b63\u786e\u7684\uff01</p>\n<p>\u7136\u800c\uff0c\u7ed3\u679c\u4e2d\u7684\u5b50\u5217\u8868\u5e76\u4e0d\u662f\u6240\u6709\u72ec\u7acb\u7684\u5bf9\u8c61\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -7005,7 +7005,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
+        "page": "\u5728\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
         "program": [
             "def total_cost(cart, prices):",
             "    result = 0",
@@ -7022,7 +7022,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
+        "page": "\u5728\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
         "program": [
             "def total_cost(cart, quantities, prices):",
             "    result = 0",
@@ -7040,7 +7040,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
+        "page": "\u5728\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
         "program": [
             "def substitute(string):",
             "    result = ''",
@@ -7073,7 +7073,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
+        "page": "\u5728\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
         "program": [
             "def substitute(string, d):",
             "    result = \"\"",
