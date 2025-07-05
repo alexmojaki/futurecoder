@@ -5,7 +5,7 @@
             "'literally anything'"
         ],
         "response": {
-            "message": "<p>\u5f88\u68d2\uff0c\u4f60\u5728\u5c1d\u8bd5\u81ea\u5df1\u7684\u5b9e\u9a8c\uff01\n\u8fd9\u771f\u662f\u4e2a\u597d\u5146\u5934\u3002\u7ee7\u7eed\u4fdd\u6301\u3002\n\u53ea\u662f\u8ba9\u4f60\u77e5\u9053\uff0c\u4f60\u6700\u7ec8\u9700\u8981\u8f93\u5165 <code>1+2</code> \u624d\u80fd\u7ee7\u7eed\u8fdb\u884c\u3002</p>",
+            "message": "<p>\u592a\u68d2\u4e86\uff0c\u4f60\u5728\u5c1d\u8bd5\u81ea\u5df1\u7684\u5b9e\u9a8c\uff01\n\u8fd9\u662f\u4e00\u4e2a\u5f88\u597d\u7684\u8ff9\u8c61\u3002\u7ee7\u7eed\u52a0\u6cb9\u3002\n\u53ea\u662f\u544a\u8bc9\u4f60\uff0c\u6700\u7ec8\u4f60\u9700\u8981\u8f93\u5165 <code>1+2</code> \u624d\u80fd\u7ee7\u7eed\u8fdb\u884c\u3002</p>",
             "passed": false,
             "result": [
                 {
@@ -108,7 +108,7 @@
             "'hello world'"
         ],
         "response": {
-            "message": "<p>\u4f60\u4ecd\u7136\u5fc5\u987b\u5c06\u4e24\u4e2a\u6216\u66f4\u591a\u5b57\u7b26\u4e32\u76f8\u52a0\u3002</p>",
+            "message": "<p>\u4f60\u4ecd\u7136\u5fc5\u987b\u5c06\u4e24\u4e2a\u6216\u66f4\u591a\u5b57\u7b26\u4e32\u8fde\u63a5\u5728\u4e00\u8d77\u3002</p>",
             "passed": false,
             "result": [
                 {
@@ -138,7 +138,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd\u53d8\u91cf",
+        "page": "\u53d8\u91cf\u4ecb\u7ecd",
         "program": [
             "word = 'Hello'"
         ],
@@ -149,7 +149,7 @@
         "step": "word_assign"
     },
     {
-        "page": "\u4ecb\u7ecd\u53d8\u91cf",
+        "page": "\u53d8\u91cf\u4ecb\u7ecd",
         "program": [
             "word = 2"
         ],
@@ -162,7 +162,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd\u53d8\u91cf",
+        "page": "\u53d8\u91cf\u4ecb\u7ecd",
         "program": [
             "word"
         ],
@@ -179,7 +179,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd\u53d8\u91cf",
+        "page": "\u53d8\u91cf\u4ecb\u7ecd",
         "program": [
             "'word'"
         ],
@@ -206,7 +206,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd\u53d8\u91cf",
+        "page": "\u53d8\u91cf\u4ecb\u7ecd",
         "program": [
             "sunshine"
         ],
@@ -349,7 +349,7 @@
             "word = 2"
         ],
         "response": {
-            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code>\uff0c\u624d\u80fd\u7ee7\u7eed\u3002</p>",
+            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code> \u624d\u80fd\u7ee7\u7eed\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -378,7 +378,7 @@
             "word = 2"
         ],
         "response": {
-            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code>\uff0c\u624d\u80fd\u7ee7\u7eed\u3002</p>",
+            "message": "<p>\u54ce\u5440\uff0c\u4f60\u9700\u8981\u5148\u8bbe\u7f6e <code>word = 'Hello'</code> \u624d\u80fd\u7ee7\u7eed\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -635,7 +635,7 @@
             "for character in name:",
             "    print('---' + character)"
         ],
-        "page": "\u57fa\u672c\u7684 for \u5faa\u73af\u7ec3\u4e60",
+        "page": "\u57fa\u7840 for \u5faa\u73af\u7ec3\u4e60",
         "program": [
             "name = 'World'",
             "for character in name:",
@@ -657,7 +657,7 @@
             "for _ in name:",
             "    print(name)"
         ],
-        "page": "\u57fa\u672c\u7684 for \u5faa\u73af\u7ec3\u4e60",
+        "page": "\u57fa\u7840 for \u5faa\u73af\u7ec3\u4e60",
         "program": [
             "name = 'World'",
             "for _ in name:",
@@ -984,7 +984,7 @@
             "    print(spaces + char)"
         ],
         "response": {
-            "message": "<p>\u5feb\u5230\u4e86\uff01\u6bcf\u4e2a\u5b57\u6bcd\u524d\u9762\u591a\u4e86\u4e00\u4e2a\u7a7a\u683c\u3002\n\u786e\u4fdd\u4f60\u7684\u5faa\u73af\u7b2c\u4e00\u6b21\u8c03\u7528 <code>print</code>\n\u65f6\uff0c\u5305\u542b\u7a7a\u683c\u7684\u53d8\u91cf\u662f\u4e00\u4e2a\u7a7a\u5b57\u7b26\u4e32\u3002\n\u68c0\u67e5\u4f60\u7684\u4ee3\u7801\u987a\u5e8f\u3002</p>",
+            "message": "<p>\u5feb\u5230\u4e86\uff01\u6bcf\u4e2a\u5b57\u6bcd\u524d\u9762\u591a\u4e86\u4e00\u4e2a\u7a7a\u683c\u3002\n\u786e\u4fdd\u4f60\u7684\u5faa\u73af\u7b2c\u4e00\u6b21\u8c03\u7528 <code>print</code> \u65f6\uff0c\n\u5305\u542b\u7a7a\u683c\u7684\u53d8\u91cf\u662f\u4e00\u4e2a\u7a7a\u5b57\u7b26\u4e32\u3002\n\u68c0\u67e5\u4f60\u7684\u4ee3\u7801\u987a\u5e8f\u3002</p>",
             "passed": false,
             "result": [
                 {
@@ -1023,7 +1023,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd If \u8bed\u53e5",
+        "page": "\u4ecb\u7ecd if \u8bed\u53e5",
         "program": [
             "condition = True",
             "print(condition)",
@@ -1043,7 +1043,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd If \u8bed\u53e5",
+        "page": "\u4ecb\u7ecd if \u8bed\u53e5",
         "program": [
             "if True:",
             "    print('This gets printed')",
@@ -1064,7 +1064,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd If \u8bed\u53e5",
+        "page": "\u4ecb\u7ecd if \u8bed\u53e5",
         "program": [
             "sentence = 'Hello World'",
             "excited = True",
@@ -1093,7 +1093,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4ecb\u7ecd If \u8bed\u53e5",
+        "page": "\u4ecb\u7ecd if \u8bed\u53e5",
         "program": [
             "sentence = 'Hello World'",
             "excited = False",
@@ -1128,7 +1128,7 @@
             "    sentence += '?'",
             "print(sentence)"
         ],
-        "page": "\u4ecb\u7ecd If \u8bed\u53e5",
+        "page": "\u4ecb\u7ecd if \u8bed\u53e5",
         "program": [
             "sentence = 'Hello'",
             "excited = True",
@@ -1193,7 +1193,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4f7f\u7528 <code>snoop</code> \u7406\u89e3\u7a0b\u5e8f",
+        "page": "\u7406\u89e3\u4f7f\u7528 <code>snoop</code> \u7684\u7a0b\u5e8f",
         "program": [
             "sentence = 'Hello World'",
             "",
@@ -1230,7 +1230,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u4f7f\u7528 <code>snoop</code> \u7406\u89e3\u7a0b\u5e8f",
+        "page": "\u7406\u89e3\u4f7f\u7528 <code>snoop</code> \u7684\u7a0b\u5e8f",
         "program": [
             "sentence = 'Hello World'",
             "",
@@ -1297,7 +1297,7 @@
             "",
             "print(new_sentence)"
         ],
-        "page": "\u4f7f\u7528 <code>snoop</code> \u7406\u89e3\u7a0b\u5e8f",
+        "page": "\u7406\u89e3\u4f7f\u7528 <code>snoop</code> \u7684\u7a0b\u5e8f",
         "program": [
             "sentence = 'Hello there'",
             "include = True",
@@ -2190,7 +2190,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "",
@@ -2212,7 +2212,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words[4]"
         ],
@@ -2270,7 +2270,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "indices = [0, 1, 2, 3]",
@@ -2304,7 +2304,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "indices = range(4)",
@@ -2326,7 +2326,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "indices = range(4)",
             "",
@@ -2359,7 +2359,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "indices[4]"
         ],
@@ -2428,7 +2428,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "range(4)"
         ],
@@ -2445,7 +2445,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "list(range(4))"
         ],
@@ -2475,7 +2475,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['This', 'is', 'a', 'list']",
             "print(len(words))"
@@ -2507,7 +2507,7 @@
         "get_solution": [
             "print(words[len(words) - 1])"
         ],
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['Python']",
             "print(words[len(words) - 1])"
@@ -2529,7 +2529,7 @@
             "    print(index)",
             "    print(words[index])"
         ],
-        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c<code>range()</code> \u548c <code>len()</code>",
+        "page": "\u83b7\u53d6\u4f4d\u7f6e\u7684\u5143\u7d20\uff0c <code>range()</code> \u548c <code>len()</code>",
         "program": [
             "words = ['Python']",
             "for index in range(len(words)):",
@@ -3486,7 +3486,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u7b49\u67e5\u627e\u4fe1\u606f",
+        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u53ca\u5176\u4ed6\u65b9\u5f0f\u67e5\u627e\u4fe1\u606f",
         "program": [
             "max([21, 55, 4, 91, 62, 49])"
         ],
@@ -3503,7 +3503,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u7b49\u67e5\u627e\u4fe1\u606f",
+        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u53ca\u5176\u4ed6\u65b9\u5f0f\u67e5\u627e\u4fe1\u606f",
         "program": [
             "nums = [1, 2, 3, 4, 5]",
             "nums.insert(2, 9)",
@@ -3522,7 +3522,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u7b49\u67e5\u627e\u4fe1\u606f",
+        "page": "\u5982\u4f55\u4f7f\u7528\u8c37\u6b4c\u53ca\u5176\u4ed6\u65b9\u5f0f\u67e5\u627e\u4fe1\u606f",
         "program": [
             "dir([])"
         ],
@@ -3626,7 +3626,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u8fed\u4ee3\u65f6\u7684\u4fee\u6539",
+        "page": "\u5728\u8fed\u4ee3\u65f6\u4fee\u6539",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for i in range(len(numbers)):",
@@ -3715,7 +3715,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u8fed\u4ee3\u65f6\u7684\u4fee\u6539",
+        "page": "\u5728\u8fed\u4ee3\u65f6\u4fee\u6539",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for number in numbers:",
@@ -3736,7 +3736,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u8fed\u4ee3\u65f6\u7684\u4fee\u6539",
+        "page": "\u5728\u8fed\u4ee3\u65f6\u4fee\u6539",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "for number in numbers.copy():",
@@ -3757,7 +3757,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u8fed\u4ee3\u65f6\u7684\u4fee\u6539",
+        "page": "\u5728\u8fed\u4ee3\u65f6\u4fee\u6539",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "big_numbers = numbers.copy()",
@@ -3780,7 +3780,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u8fed\u4ee3\u65f6\u7684\u4fee\u6539",
+        "page": "\u5728\u8fed\u4ee3\u65f6\u4fee\u6539",
         "program": [
             "numbers = [10, 7, 8, 3, 12, 15]",
             "big_numbers = []",
@@ -4166,7 +4166,7 @@
             "    print('---')"
         ],
         "response": {
-            "message": "<p>\u4f60\u5728\u9519\u8bef\u7684\u5730\u65b9\u7ed9\u5916\u90e8\u5faa\u73af\u53d8\u91cf\u52a0\u4e86 1\uff01\n\u4f60\u5e94\u8be5\u5728\u54ea\u91cc\u505a\u8fd9\u4e2a\u4ee5\u4fee\u590d\u5b83\uff1f</p>",
+            "message": "<p>\u4f60\u5728\u9519\u8bef\u7684\u5730\u65b9\u7ed9\u5916\u90e8\u5faa\u73af\u53d8\u91cf\u52a0\u4e86 1\uff01\n\u4f60\u5e94\u8be5\u5728\u54ea\u91cc\u505a\u8fd9\u4e2a\u6765\u4fee\u590d\u5b83\uff1f</p>",
             "passed": false,
             "result": [
                 {
@@ -4250,7 +4250,7 @@
             "3 x 4"
         ],
         "response": {
-            "message": "<p>\u8981\u4e58\u6570\u5b57\uff0c\u4f7f\u7528 <code>*</code></p>",
+            "message": "<p>\u8981\u4e58\u4ee5\u6570\u5b57\uff0c\u4f7f\u7528 <code>*</code></p>",
             "passed": false,
             "result": [
                 {
@@ -4939,7 +4939,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u51fd\u6570\u4e2d\u8c03\u7528\u51fd\u6570",
+        "page": "\u5728\u51fd\u6570\u5185\u8c03\u7528\u51fd\u6570",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -4963,7 +4963,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u51fd\u6570\u4e2d\u8c03\u7528\u51fd\u6570",
+        "page": "\u5728\u51fd\u6570\u5185\u8c03\u7528\u51fd\u6570",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5023,7 +5023,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u51fd\u6570\u4e2d\u8c03\u7528\u51fd\u6570",
+        "page": "\u5728\u51fd\u6570\u5185\u8c03\u7528\u51fd\u6570",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5047,7 +5047,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u51fd\u6570\u4e2d\u8c03\u7528\u51fd\u6570",
+        "page": "\u5728\u51fd\u6570\u5185\u8c03\u7528\u51fd\u6570",
         "program": [
             "def print_many(n, thing):",
             "    for _ in range(n):",
@@ -5138,7 +5138,7 @@
             "    return x * 4"
         ],
         "response": {
-            "message": "<p>\u4f60\u4e0d\u80fd\u5728 <code>quadruple</code> \u5185\u90e8\u4f7f\u7528 <code>*</code>\u3001<code>+</code>\uff0c\u751a\u81f3\u4efb\u4f55\u6570\u5b57\u3002\n\u4f60\u5fc5\u987b\u8c03\u7528 <code>double</code> \u6765\u89e3\u51b3\u8fd9\u4e2a\u95ee\u9898\u3002</p>",
+            "message": "<p>\u4f60\u4e0d\u80fd\u5728 <code>quadruple</code> \u5185\u4f7f\u7528 <code>*</code>\u3001<code>+</code>\uff0c\u751a\u81f3\u4efb\u4f55\u6570\u5b57\u3002\n\u4f60\u5fc5\u987b\u8c03\u7528 <code>double</code> \u6765\u89e3\u51b3\u8fd9\u4e2a\u95ee\u9898\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -5276,7 +5276,7 @@
             "        return string"
         ],
         "response": {
-            "message": "<p>\u5728 <code>alert</code> \u51fd\u6570\u4e2d\uff0c\u4f60\u628a <code>return</code> \u8bed\u53e5\u653e\u9519\u4e86\u5730\u65b9\uff01\n\u6ce8\u610f\u4f60\u5728 <code>alert</code> \u4e2d\u7684\u7f29\u8fdb\u3002\u4f60\u53ef\u80fd\u8fc7\u65e9\u5730\u7528 <code>return</code> \u7ed3\u675f\u4e86\u4e00\u4e2a\u5faa\u73af\u3002</p>",
+            "message": "<p>\u5728 <code>alert</code> \u51fd\u6570\u4e2d\uff0c\u4f60\u628a <code>return</code> \u8bed\u53e5\u653e\u5728\u4e86\u9519\u8bef\u7684\u4f4d\u7f6e\uff01\n\u6ce8\u610f\u4f60\u5728 <code>alert</code> \u4e2d\u7684\u7f29\u8fdb\u3002\u4f60\u53ef\u80fd\u8fc7\u65e9\u5730\u7528 <code>return</code> \u7ed3\u675f\u4e86\u4e00\u4e2a\u5faa\u73af\u3002</p>",
             "passed": false,
             "result": []
         },
@@ -5323,7 +5323,7 @@
     },
     {
         "get_solution": "program",
-        "page": "<code>return</code>\u7ed3\u675f\u51fd\u6570\u8c03\u7528",
+        "page": "<code>return</code> \u7ed3\u675f\u51fd\u6570\u8c03\u7528",
         "program": [
             "def foo():",
             "    return 1",
@@ -5355,7 +5355,7 @@
     },
     {
         "get_solution": "program",
-        "page": "<code>return</code>\u7ed3\u675f\u51fd\u6570\u8c03\u7528",
+        "page": "<code>return</code> \u7ed3\u675f\u51fd\u6570\u8c03\u7528",
         "program": [
             "def double_numbers(numbers):",
             "    for x in numbers:",
@@ -5376,7 +5376,7 @@
     },
     {
         "get_solution": "program",
-        "page": "<code>return</code>\u7ed3\u675f\u51fd\u6570\u8c03\u7528",
+        "page": "<code>return</code> \u7ed3\u675f\u51fd\u6570\u8c03\u7528",
         "program": [
             "def foo():",
             "    for letter in 'abc':",
@@ -5411,7 +5411,7 @@
     },
     {
         "get_solution": "program",
-        "page": "<code>return</code>\u7ed3\u675f\u51fd\u6570\u8c03\u7528",
+        "page": "<code>return</code> \u7ed3\u675f\u51fd\u6570\u8c03\u7528",
         "program": [
             "def foo():",
             "    for letter in 'abc':",
@@ -6061,7 +6061,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
         "program": [
             "def print_board(board):",
             "    for row in board:",
@@ -6086,7 +6086,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
         "program": [
             "assert_equal(",
             "    format_board([",
@@ -6113,7 +6113,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
         "program": [
             "string = \"\"\"First line",
             "Second line\"\"\"",
@@ -6131,7 +6131,7 @@
         "step": "multi_line_strings_triple_quotes"
     },
     {
-        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
         "program": [
             "string = 'a'"
         ],
@@ -6144,7 +6144,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
         "program": [
             "string"
         ],
@@ -6161,7 +6161,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
         "program": [
             "len('\\n')"
         ],
@@ -6186,7 +6186,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
         "program": [
             "def format_board(board):",
             "    result = ''",
@@ -6205,7 +6205,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u6362\u884c\u7b26\uff0c<code>format_board</code>",
+        "page": "\u6362\u884c\u7b26\uff0c <code>format_board</code>",
         "program": [
             "def format_board(board):",
             "    joined_rows = []",
@@ -7005,7 +7005,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
+        "page": "\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
         "program": [
             "def total_cost(cart, prices):",
             "    result = 0",
@@ -7022,7 +7022,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
+        "page": "\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
         "program": [
             "def total_cost(cart, quantities, prices):",
             "    result = 0",
@@ -7040,7 +7040,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
+        "page": "\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
         "program": [
             "def substitute(string):",
             "    result = ''",
@@ -7073,7 +7073,7 @@
     },
     {
         "get_solution": "program",
-        "page": "\u5728\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
+        "page": "\u5b9e\u8df5\u4e2d\u4f7f\u7528\u5b57\u5178",
         "program": [
             "def substitute(string, d):",
             "    result = \"\"",
