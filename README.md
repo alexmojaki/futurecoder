@@ -15,7 +15,7 @@ You can try it out here: https://futurecoder.io/
 
 **Please consider [contributing](how_to_contribute.md) or [donating](https://opencollective.com/futurecoder)!**
 
-Alternatively, [come have a chat on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-tp8cmwra-CbdEeX9u3k1VyoMLDupAeQ).
+Alternatively, [come have a chat on discord](https://discord.gg/KwWvQCPBjW).
 
 ## Features
 

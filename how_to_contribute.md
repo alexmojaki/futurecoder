@@ -10,7 +10,7 @@ For starters, try using the platform to see what it's like. From the [table of c
 
 Please [open an issue](https://github.com/alexmojaki/futurecoder/issues/new) about anything that's confusing, could be done better, or doesn't work. All suggestions and feedback are welcome. Tell me what interests you!
 
-Consider adding your thoughts and ideas to [issues labeled 'discussion'](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3Adiscussion). Or [come have a chat about anything on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-tp8cmwra-CbdEeX9u3k1VyoMLDupAeQ).
+Consider adding your thoughts and ideas to [issues labeled 'discussion'](https://github.com/alexmojaki/futurecoder/issues?q=is%3Aissue+is%3Aopen+label%3Adiscussion). Or [come have a chat about anything on discord](https://discord.gg/KwWvQCPBjW).
 
 The easiest way to contribute concretely is to write learning material for the course and participate in related discussions. This doesn't require any expertise beyond knowing how Python works. See [Helping with course content](#helping-with-course-content) for more information.
 
@@ -28,7 +28,7 @@ It can be helpful to read through existing textbooks and such to find inspiratio
 
 If you want to contribute a solid bit of course with actual text, code, and exercises, open a new issue with a proposal draft just in markdown. Actually implementing course content in Python is trickier so I handle those details. If you're really curious, there's partial documentation [here](https://github.com/alexmojaki/futurecoder/wiki/How-course-content-works).
 
-If you have some partial ideas you'd like to talk about but don't feel ready to open an issue, [come chat on slack](https://join.slack.com/t/futurecoder/shared_invite/zt-tp8cmwra-CbdEeX9u3k1VyoMLDupAeQ).
+If you have some partial ideas you'd like to talk about but don't feel ready to open an issue, [come chat on discord](https://discord.gg/KwWvQCPBjW).
 
 ## Developing
 
