@@ -27,7 +27,6 @@
     <div class="body-wrap boxed-container home-page">
         <div style="position:fixed; z-index:0; top:0; left:0; width:100%; height:100%;">
             <canvas id="canvas" style="width:100%; height:100%;"></canvas>
-            <script type="text/javascript">new WarpSpeed("canvas");</script>
         </div>
 
         <header class="site-header">
@@ -35,10 +34,10 @@
                 <div class="site-header-inner">
                     <div class="brand header-brand float-left">
                         <img id="logo" src="static/logo/bordered.png" data-aos="fade-right"
-                            data-aos-delay="100">
+                            data-aos-delay="0">
                     </div>
                     <div class="navbar float-right" data-aos="fade" data-aos-duration="1000"
-                        data-aos-delay="1400">
+                        data-aos-delay="1000">
                         <a href="http://futurecoder.io">
                             <img class="translation-icon" src="static/img/icons/language.png"/> English
                         </a>
@@ -62,18 +61,18 @@
                     <div class="hero-inner">
                         <div>
                             <h1 class="hero-title mt-0 is-revealing" data-aos="fade-right"
-                                data-aos-delay="300">
+                                data-aos-delay="100">
                                 futurecoder
                             </h1>
                             <h3 class="hero-paragraph is-revealing" data-aos="fade-right"
-                                data-aos-delay="400">
+                                data-aos-delay="200">
                                 Le code du futur, c'est vous !
                             </h3>
 
 
                             <div class="bullets-inner section-inner">
                                 <div class="bullets-wrap">
-                                    <div class="bullet" data-aos="fade-up" data-aos-delay="1000"
+                                    <div class="bullet" data-aos="fade-up" data-aos-delay="500"
                                         data-aos-offset="-200px">
                                         <div class="bullet-inner">
                                             <div class="bullet-header mb-16">
@@ -104,7 +103,7 @@
                                             <!--p class="text-sm mb-0">...</p-->
                                         </div>
                                     </div>
-                                    <div class="bullet" data-aos="fade-up" data-aos-delay="1100"
+                                    <div class="bullet" data-aos="fade-up" data-aos-delay="600"
                                         data-aos-offset="-200px">
                                         <div class="bullet-inner">
                                             <div class="bullet-header mb-16">
@@ -142,7 +141,7 @@
                                             <!--p class="text-sm mb-0">...</p-->
                                         </div>
                                     </div>
-                                    <div class="bullet" data-aos="fade-up" data-aos-delay="1200"
+                                    <div class="bullet" data-aos="fade-up" data-aos-delay="700"
                                         data-aos-offset="-200px">
                                         <div class="bullet-inner">
                                             <div class="bullet-header mb-16">
@@ -171,7 +170,7 @@
                             </div>
 
 
-                            <div data-aos="fade-in" data-aos-delay="1900" data-aos-offset="-600px">
+                            <div data-aos="fade-in" data-aos-delay="1000" data-aos-offset="-600px">
                                 <a class="button button-primary button-complimentary-color button-block big"
                                     href="/course/">
                                     <i class="fa fa-chevron-right"></i><i
@@ -203,7 +202,7 @@
                 <div class="spacer"></div>
 
                 <div class="container flex" style="justify-content: center" data-aos="fade-down"
-                    data-aos-duration="1800" data-aos-delay="2000" data-aos-offset="-800px">
+                    data-aos-duration="1800" data-aos-delay="1200" data-aos-offset="-800px">
                     <div id="scroll-animation">
                         <a href="#header-end-anchor"><span></span></a>
                     </div>
@@ -384,7 +383,7 @@
                                 <p>
                                     Si un étudiant est bloqué malgré les différentes aides proposées, 
                                     la solution lui est fournie dans le désordre... À lui de la réorganiser.
-                                    
+
                                     Il peut ainsi progresser facilement sans pour autant arrêter de réfléchir !
                                 </p>
                             </div>
@@ -567,7 +566,7 @@
             </div>
             <div class="container flex">
                 <div class="site-footer-inner has-top-divider">
-                    <div class="footer-copyright">&copy; 2021 Alex Hall</div>
+                    <div class="footer-copyright">&copy; 2025 Alex Hall</div>
                     <!--ul class="footer-social-links list-reset">
                     <li>
                         <a href="#">
@@ -601,13 +600,21 @@
 
     <script src="static/js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-    // document.onload = AOS.init();
-    </script>
     <script type="text/javascript" src="static/js/warpspeed.min.js"></script>
     <script>
-        var x = new WarpSpeed(
-            "canvas", { "speed": 100, "targetSpeed": 1.5, "speedAdjFactor": 0.04, "density": 2, "shape": "square", "warpEffect": true, "warpEffectLength": 6, "depthFade": true, "starSize": 2, "backgroundColor": "hsl(263,45%,7%)", "starColor": "#eee" }
+        new WarpSpeed(
+            "canvas", {
+                "speed": 2,
+                "speedAdjFactor": 0,
+                "density": 1.5,
+                "shape": "square",
+                "warpEffect": true,
+                "warpEffectLength": 10,
+                "depthFade": true,
+                "starSize": 3,
+                "backgroundColor": "hsl(263,45%,7%)",
+                "starColor": "#eee"
+            }
         );
     </script>
 </body>
