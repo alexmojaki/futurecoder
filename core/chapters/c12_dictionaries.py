@@ -821,15 +821,9 @@ class CreatingKeyValuePairs(Page):
 
         @classmethod
         def generate_inputs(cls):
-            quantities = generate_dict(str, int)
-            item = generate_string()
-            quantities.pop(item, None)
-            quantity = random.randint(1, 100)
-            return {
-                "quantities": quantities,
-                "item": item,
-                "quantity": quantity,
-            }
+            result = super().generate_inputs()
+            result["quantities"].pop(result["item"], None)  # ensure item is not already in quantities
+            return result
 
         tests = [
             (
@@ -866,11 +860,42 @@ class CreatingKeyValuePairs(Page):
             ),
         ]
 
+    class buy_quantity_input_test(VerbatimStep):
+        """
+        Well done! Try it out interactively:
+
+        __copyable__
+        __program_indented__
+
+        Note the `int(input())` part, because `input()` returns a string, and `quantity` should be an integer
+        (a whole number). This'll break if you enter something that isn't a number, but that's OK for now.
+        """
+
+        def program(self):
+            def buy_quantity(quantities, item, quantity):
+                quantities[item] = quantity
+
+            def test():
+                quantities = {}
+                for _ in range(3):
+                    print('What would you like to buy?')
+                    item = input()
+
+                    print('How many?')
+                    quantity = int(input())
+
+                    buy_quantity(quantities, item, quantity)
+
+                    print("OK, here's your cart so far:")
+                    print(quantities)
+
+            test()
+
     class total_cost_per_item_exercise(ExerciseStep):
         """
-        Well done!
+        Thanks for shopping with us! Let's see how much you just spent on each item.
 
-        Next exercise: earlier we defined a function `total_cost(quantities, prices)` which returned a single number
+        Earlier we defined a function `total_cost(quantities, prices)` which returned a single number
         with a grand total of all the items in the cart. Now let's make a function `total_cost_per_item(quantities, prices)`
         which returns a new dictionary with the total cost for each item:
 
