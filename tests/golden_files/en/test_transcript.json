@@ -7228,5 +7228,371 @@
             ]
         },
         "step": "nested_dictionaries"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "cart = []",
+            "cart.append('dog')",
+            "cart.append('box')",
+            "print(cart)"
+        ],
+        "response": {
+            "passed": true,
+            "prediction": {
+                "answer": "['dog', 'box']",
+                "choices": [
+                    "[]",
+                    "['dog']",
+                    "['box']",
+                    "['dog', 'box']",
+                    "['box', 'dog']",
+                    "['dog', 'dog']",
+                    "['box', 'box']",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "text": "['dog', 'box']\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "list_append_reminder"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "cart = ['dog', 'cat']",
+            "cart[1] = 'box'",
+            "print(cart)"
+        ],
+        "response": {
+            "passed": true,
+            "prediction": {
+                "answer": "['dog', 'box']",
+                "choices": [
+                    "['box']",
+                    "['dog', 'cat']",
+                    "['box', 'dog']",
+                    "['box', 'cat']",
+                    "['dog', 'box']",
+                    "['cat', 'box']",
+                    "['box', 'dog', 'cat']",
+                    "['dog', 'box', 'cat']",
+                    "['dog', 'cat', 'box']",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "text": "['dog', 'box']\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "list_assign_reminder"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "cart = []",
+            "cart[0] = 'dog'",
+            "cart[1] = 'box'",
+            "print(cart)"
+        ],
+        "response": {
+            "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "[]",
+                    "['dog']",
+                    "['box']",
+                    "['dog', 'box']",
+                    "['box', 'dog']",
+                    "['dog', 'dog']",
+                    "['box', 'box']",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "data": [
+                        {
+                            "didyoumean": [],
+                            "exception": {
+                                "message": "list assignment index out of range",
+                                "type": "IndexError"
+                            },
+                            "frames": [
+                                {
+                                    "filename": "/my_program.py",
+                                    "lineno": 2,
+                                    "lines": [
+                                        {
+                                            "is_current": true,
+                                            "lineno": 2,
+                                            "text": "<span class=\"n n-ExecutingNode\">cart</span><span class=\"p p-ExecutingNode\">[</span><span class=\"mi mi-ExecutingNode\">0</span><span class=\"p p-ExecutingNode\">]</span> <span class=\"o\">=</span> <span class=\"s1\">&#39;dog&#39;</span>",
+                                            "type": "line"
+                                        }
+                                    ],
+                                    "name": "<module>",
+                                    "type": "frame",
+                                    "variables": [
+                                        {
+                                            "name": "<span class=\"n\">cart</span>\n",
+                                            "value": "<span class=\"p\">[]</span>\n"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "friendly": "<p>An <code>IndexError</code> occurs when you try to get an item from a list,\na tuple, or a similar object (sequence), and use an index which\ndoes not exist; typically, this happens because the index you give\nis greater than the length of the sequence.</p>\n<p>You have tried to assign a value to index <code>0</code> of <code>cart</code>,\na <code>list</code> which contains no item.</p>",
+                            "tail": ""
+                        }
+                    ],
+                    "text": [
+                        "Traceback (most recent call last):",
+                        " File \"/my_program.py\", line 2, in <module>",
+                        "       1 | cart = []",
+                        "-->    2 | cart[0] = 'dog'",
+                        "           ^^^^^^^",
+                        "cart = []",
+                        "",
+                        "IndexError: list assignment index out of range"
+                    ],
+                    "type": "traceback"
+                }
+            ]
+        },
+        "step": "list_assign_invalid"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "quantities = {}",
+            "quantities['dog'] = 500",
+            "quantities['box'] = 2",
+            "print(quantities)"
+        ],
+        "response": {
+            "passed": true,
+            "prediction": {
+                "answer": "{'dog': 500, 'box': 2}",
+                "choices": [
+                    "{'dog': 500, 'box': 2}",
+                    "{'dog': 2, 'box': 500}",
+                    "{2: 'dog', 500: 'box'}",
+                    "{500: 'dog', 2: 'box'}",
+                    "Error"
+                ]
+            },
+            "result": [
+                {
+                    "text": "{'dog': 500, 'box': 2}\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "dict_assignment_valid"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "def buy_quantity(quantities, item, quantity):",
+            "    quantities[item] = quantity"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "buy_quantity_exercise"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "def buy_quantity(quantities, item, quantity):",
+            "    quantities[item] = quantity",
+            "",
+            "def test():",
+            "    quantities = {}",
+            "    for _ in range(3):",
+            "        print('What would you like to buy?')",
+            "        item = input()",
+            "",
+            "        print('How many?')",
+            "        quantity = int(input())",
+            "",
+            "        buy_quantity(quantities, item, quantity)",
+            "",
+            "        print(\"OK, here's your cart so far:\")",
+            "        print(quantities)",
+            "",
+            "test()"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "What would you like to buy?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: apple>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "How many?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: 3>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "OK, here's your cart so far:\n{'apple': 3}\nWhat would you like to buy?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: banana>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "How many?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: 5>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "OK, here's your cart so far:\n{'apple': 3, 'banana': 5}\nWhat would you like to buy?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: cat>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "How many?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: 2>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "OK, here's your cart so far:\n{'apple': 3, 'banana': 5, 'cat': 2}\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "buy_quantity_input_test"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "def total_cost_per_item(quantities, prices):",
+            "    totals = {}",
+            "    for item in quantities:",
+            "        totals[item] = quantities[item] * prices[item]",
+            "    return totals"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "total_cost_per_item_exercise"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "def make_english_to_german(english_to_french, french_to_german):",
+            "    english_to_german = {}",
+            "    for english in english_to_french:",
+            "        french = english_to_french[english]",
+            "        german = french_to_german[french]",
+            "        english_to_german[english] = german",
+            "    return english_to_german"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "make_english_to_german_exercise"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "def swap_keys_values(d):",
+            "    new_dict = {}",
+            "    for key in d:",
+            "        value = d[key]",
+            "        new_dict[value] = key",
+            "    return new_dict"
+        ],
+        "response": {
+            "passed": true,
+            "result": []
+        },
+        "step": "swap_keys_values_exercise"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "def swap_keys_values(d):",
+            "    new_dict = {}",
+            "    for key in d:",
+            "        new_dict[d[key]] = key",
+            "    return new_dict",
+            "",
+            "print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))",
+            "print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "{'pomme': 'apple', 'avocat': 'lawyer'}\n{'pomme': 'apple', 'avocat': 'avocado'}\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "avocado_or_lawyer"
     }
 ]

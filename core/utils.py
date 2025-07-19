@@ -56,7 +56,7 @@ def clean_spaces(string):
     assert spaces <= {" ", "\n"}, (spaces, string)
     # In translation, special codes like `__copyable__` often get the wrong indentation.
     # They must be preceded by 0 or 4 spaces.
-    if re.search(r"^( {1,3}| {5,})_", string, re.MULTILINE):
+    if re.search(r"^( {1,3}| {5,})__[a-z]+", string, re.MULTILINE):
         qa_error("Incorrect indentation of code:\n" + string)
     return string
 
