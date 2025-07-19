@@ -1040,7 +1040,8 @@ class CreatingKeyValuePairs(Page):
         Great job!
 
         Of course, language isn't so simple, and there are many ways that using a dictionary like this could go wrong.
-        So...let's do something even worse! Write a function which takes a dictionary and swaps the keys and values,
+        So...let's do something even worse! Let's use an English-to-French dictionary to create a French-to-English dictionary.
+        Write a function which takes a dictionary returns a new dictionary where the keys and values are swapped,
         so `a: b` becomes `b: a`.
 
             __copyable__
@@ -1053,12 +1054,14 @@ class CreatingKeyValuePairs(Page):
             )
         """
         hints = """
-        Create a new empty dictionary to store the result.
-        Iterate through the keys of the input dictionary `d`.
-        Inside the loop, for each `key`:
-          1. Get the corresponding `value` from `d`.
-          2. Add an entry to the new dictionary where the *key* is the original `value` and the *value* is the original `key`.
-        Return the new dictionary after the loop.
+        Don't modify the input dictionary `d`.
+        You need to create a new dictionary and fill it with key-value pairs depending on the input dictionary.
+        You've done this in the previous exercise. The overall structure you want is similar to `make_english_to_german`.
+        It's actually even simpler, it just might feel weird.
+        Start by creating a new empty dictionary. Return the dictionary at the end. Put a `for` loop in between.
+        Think about what the keys and values of the new dictionary should be.
+        There's only one possible thing for you to loop over.
+        Use each key in the input dictionary `d` to get the corresponding value.
         """
 
         def solution(self):

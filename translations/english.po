@@ -24065,38 +24065,50 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
 msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.0.text"
-msgstr "Create a new empty dictionary to store the result."
+msgstr "Don't modify the input dictionary `d`."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
 msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.1.text"
-msgstr "Iterate through the keys of the input dictionary `d`."
+msgstr "You need to create a new dictionary and fill it with key-value pairs depending on the input dictionary."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
 msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.2.text"
-msgstr "Inside the loop, for each `key`:"
+msgstr ""
+"You've done this in the previous exercise. The overall structure you want is similar to `make_english_to_german`."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
 msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.3.text"
-msgstr "1. Get the corresponding `value` from `d`."
+msgstr "It's actually even simpler, it just might feel weird."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
 msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.4.text"
-msgstr ""
-"2. Add an entry to the new dictionary where the *key* is the original `value` and the *value* is the original `key`."
+msgstr "Start by creating a new empty dictionary. Return the dictionary at the end. Put a `for` loop in between."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
 msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.5.text"
-msgstr "Return the new dictionary after the loop."
+msgstr "Think about what the keys and values of the new dictionary should be."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.6.text"
+msgstr "There's only one possible thing for you to loop over."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
+msgid "pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise.hints.7.text"
+msgstr "Use each key in the input dictionary `d` to get the corresponding value."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
@@ -24125,7 +24137,8 @@ msgstr ""
 "Great job!\n"
 "\n"
 "Of course, language isn't so simple, and there are many ways that using a dictionary like this could go wrong.\n"
-"So...let's do something even worse! Write a function which takes a dictionary and swaps the keys and values,\n"
+"So...let's do something even worse! Let's use an English-to-French dictionary to create a French-to-English dictionary.\n"
+"Write a function which takes a dictionary returns a new dictionary where the keys and values are swapped,\n"
 "so `a: b` becomes `b: a`.\n"
 "\n"
 "    __copyable__\n"
