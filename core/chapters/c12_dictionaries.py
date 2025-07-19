@@ -663,9 +663,10 @@ Beautiful! There's a pattern emerging here. The two languages could be merged in
             })
 
     final_text = """
-    Congratulations! You've reached the end of the course so far. More is on the way!
+    👌
+
+    Now that you can *get* values from a dictionary, you'll soon learn how to *set* values in a dictionary.
     """
-    # TODO
 
 
 class CreatingKeyValuePairs(Page):
@@ -1136,4 +1137,6 @@ Now we can construct the `reverse` dictionary automatically:
 For this to work, we just have to make sure that all the values in `letters` are unique.
 Otherwise it would be impossible to decrypt messages properly. If both `'h'` and `'j'` got replaced with `'q'`
 during encryption, there would be no way to know whether `'qpeef'` means `'hello'` or `'jello'`!
+
+Congratulations! You've reached the end of the course so far. More is on the way!
 """
