@@ -931,14 +931,23 @@ class CreatingKeyValuePairs(Page):
             )
         """
         hints = """
-        You need to iterate through the items in the `quantities` dictionary.
-        For each `item`, calculate the total cost for that item (quantity * price).
-        Store this calculated cost in the `totals` dictionary.
-        The key for the `totals` dictionary should be the `item` name.
-        Use the dictionary assignment syntax: `totals[item] = calculated_cost`.
-        Make sure this assignment happens *inside* the loop.
-        The function should return the `totals` dictionary after the loop finishes.
+        You only need to fill in the `___` part.
+        But if you want, you could also just put a variable name there, and then add a new line below it.
+        Look at the tests with `assert_equal`. In the first example, the expected output is `{'apple': 6}`. Why?
+        Because the customer bought 2 apples, and each apple costs 3, so the total cost is `2 * 3 = 6`.
+        The `'box': 5` part is ignored because the customer didn't buy any boxes. It just means that the price of a box is 5.
+        You need to add a new key-value pair to a dictionary.
+        Identify the dictionary, the key, and the value.
+        They are all present in the given code already.
+        The value is the total cost for that item, which is the quantity multiplied by the price.
+        i.e. `quantities[item] * prices[item]`.
+        The dictionary is the thing that this function creates, builds, and returns.
+        i.e. `totals`.
+        Note how `'apple'` is a key in all three dictionaries in that test.
+        i.e. the dictionaries `quantities`, `prices`, and `totals`.
         """
+
+        requirements = "Run the program above, but replace the `___` with the correct code."
 
         def solution(self):
             def total_cost_per_item(quantities: Dict[str, int], prices: Dict[str, int]):
