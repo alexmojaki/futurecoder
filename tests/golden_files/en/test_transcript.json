@@ -7240,6 +7240,19 @@
         ],
         "response": {
             "passed": true,
+            "prediction": {
+                "answer": "['dog', 'box']",
+                "choices": [
+                    "[]",
+                    "['dog']",
+                    "['box']",
+                    "['dog', 'box']",
+                    "['box', 'dog']",
+                    "['dog', 'dog']",
+                    "['box', 'box']",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "text": "['dog', 'box']\n",
@@ -7262,9 +7275,15 @@
             "prediction": {
                 "answer": "['dog', 'box']",
                 "choices": [
-                    "['dog', 'box']",
-                    "['box', 'cat']",
+                    "['box']",
                     "['dog', 'cat']",
+                    "['box', 'dog']",
+                    "['box', 'cat']",
+                    "['dog', 'box']",
+                    "['cat', 'box']",
+                    "['box', 'dog', 'cat']",
+                    "['dog', 'box', 'cat']",
+                    "['dog', 'cat', 'box']",
                     "Error"
                 ]
             },
@@ -7288,6 +7307,19 @@
         ],
         "response": {
             "passed": true,
+            "prediction": {
+                "answer": "Error",
+                "choices": [
+                    "[]",
+                    "['dog']",
+                    "['box']",
+                    "['dog', 'box']",
+                    "['box', 'dog']",
+                    "['dog', 'dog']",
+                    "['box', 'box']",
+                    "Error"
+                ]
+            },
             "result": [
                 {
                     "data": [
@@ -7344,26 +7376,25 @@
         "page": "Creating Key-Value Pairs",
         "program": [
             "quantities = {}",
-            "quantities['dog'] = 5000000",
+            "quantities['dog'] = 500",
             "quantities['box'] = 2",
             "print(quantities)"
         ],
         "response": {
             "passed": true,
             "prediction": {
-                "answer": "{'dog': 5000000, 'box': 2}",
+                "answer": "{'dog': 500, 'box': 2}",
                 "choices": [
-                    "{}",
-                    "{'dog': 5000000}",
-                    "{'box': 2}",
-                    "{'dog': 5000000, 'box': 2}",
-                    "{'box': 2, 'dog': 5000000}",
+                    "{'dog': 500, 'box': 2}",
+                    "{'dog': 2, 'box': 500}",
+                    "{2: 'dog', 500: 'box'}",
+                    "{500: 'dog', 2: 'box'}",
                     "Error"
                 ]
             },
             "result": [
                 {
-                    "text": "{'dog': 5000000, 'box': 2}\n",
+                    "text": "{'dog': 500, 'box': 2}\n",
                     "type": "stdout"
                 }
             ]

@@ -687,6 +687,16 @@ class CreatingKeyValuePairs(Page):
             cart.append('box')
             print(cart)
 
+        predicted_output_choices = [
+            "[]",
+            "['dog']",
+            "['box']",
+            "['dog', 'box']",
+            "['box', 'dog']",
+            "['dog', 'dog']",
+            "['box', 'box']",
+        ]
+
     class list_assign_reminder(VerbatimStep):
         """
         Pretty simple. We can also change the value at an index, replacing it with a different one:
@@ -694,16 +704,23 @@ class CreatingKeyValuePairs(Page):
             __copyable__
             __program_indented__
         """
-        predicted_output_choices = [
-            "['dog', 'box']",
-            "['box', 'cat']",
-            "['dog', 'cat']",
-        ]
 
         def program(self):
             cart = ['dog', 'cat']
             cart[1] = 'box'
             print(cart)
+
+        predicted_output_choices = [
+            "['box']",
+            "['dog', 'cat']",
+            "['box', 'dog']",
+            "['box', 'cat']",
+            "['dog', 'box']",
+            "['cat', 'box']",
+            "['box', 'dog', 'cat']",
+            "['dog', 'box', 'cat']",
+            "['dog', 'cat', 'box']",
+        ]
 
     class list_assign_invalid(VerbatimStep):
         """
@@ -713,7 +730,6 @@ class CreatingKeyValuePairs(Page):
             __copyable__
             __program_indented__
         """
-        correct_output = "Error" # This program raises an IndexError
 
         def program(self):
             cart = []
@@ -721,34 +737,44 @@ class CreatingKeyValuePairs(Page):
             cart[1] = 'box'
             print(cart)
 
+        predicted_output_choices = [
+            "[]",
+            "['dog']",
+            "['box']",
+            "['dog', 'box']",
+            "['box', 'dog']",
+            "['dog', 'dog']",
+            "['box', 'box']",
+        ]
+
+        correct_output = "Error"
+
     class dict_assignment_valid(VerbatimStep):
         """
         Sorry, that's not allowed. For lists, subscript assignment only works for existing valid indices.
         But that's not true for dictionaries! Try this:
 
-            __copyable__
             __program_indented__
 
         Note that `{}` means an empty dictionary, i.e. a dictionary with no key-value pairs.
         This is similar to `[]` meaning an empty list or `""` meaning an empty string.
         """
         predicted_output_choices = [
-            "{}",
-            "{'dog': 5000000}",
-            "{'box': 2}",
-            "{'dog': 5000000, 'box': 2}",
-            "{'box': 2, 'dog': 5000000}", # Order might vary, though CPython 3.7+ preserves insertion order
+            "{'dog': 500, 'box': 2}",
+            "{'dog': 2, 'box': 500}",
+            "{2: 'dog', 500: 'box'}",
+            "{500: 'dog', 2: 'box'}",
         ]
 
         def program(self):
             quantities = {}
-            quantities['dog'] = 5000000
+            quantities['dog'] = 500
             quantities['box'] = 2
             print(quantities)
 
     class buy_quantity_exercise(ExerciseStep):
         """
-        That's exactly what we need. When the customer says they want 5 million boxes,
+        That's exactly what we need. Whether the customer says they want 500 or 5 million dogs,
         we can just put that information directly into our dictionary. So as an exercise, let's make a generic version of that.
         Write a function `buy_quantity(quantities)` which calls `input()` twice to get an item name and quantity from the user
         and assigns them in the `quantities` dictionary. Here's some starting code:
@@ -774,19 +800,19 @@ class CreatingKeyValuePairs(Page):
             Item:
             dog
             Quantity:
-            5000000
-            {'dog': 5000000}
+            500
+            {'dog': 500}
             Item:
             box
             Quantity:
             2
-            {'dog': 5000000, 'box': 2}
+            {'dog': 500, 'box': 2}
 
         Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to return anything.
         You can assume that the user will enter a valid integer for the quantity.
         You can also assume that the user won't enter an item that's already in `quantities`.
         """
-        requirements = "Your function should modify the `quantities` argument. It doesn't need to `return` or `print` anything."
+        requirements = "Your function should modify the `quantities` argument. It doesn't need to `return` anything."
         no_returns_stdout = True
 
         hints = """
@@ -832,20 +858,20 @@ class CreatingKeyValuePairs(Page):
                 dict(
                     quantities={},
                     stdin_input=[
-                        "dog", "5000000",
+                        "dog", "500",
                     ]
                 ),
                 """\
 Item:
 <input: dog>
 Quantity:
-<input: 5000000>
-{'dog': 5000000}
+<input: 500>
+{'dog': 500}
                 """
             ),
             (
                 dict(
-                    quantities={'dog': 5000000},
+                    quantities={'dog': 500},
                     stdin_input=[
                         "box", "2",
                     ]
@@ -855,7 +881,7 @@ Item:
 <input: box>
 Quantity:
 <input: 2>
-{'dog': 5000000, 'box': 2}
+{'dog': 500, 'box': 2}
                 """
             ),
         ]
@@ -881,8 +907,8 @@ Quantity:
             )
 
             assert_equal(
-                total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-                {'dog': 500000000, 'box': 10},
+                total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+                {'dog': 50000, 'box': 10},
             )
         """
         hints = """
@@ -905,7 +931,7 @@ Quantity:
 
         tests = [
             (({'apple': 2}, {'apple': 3, 'box': 5}), {'apple': 6}),
-            (({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}), {'dog': 500000000, 'box': 10}),
+            (({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}), {'dog': 50000, 'box': 10}),
             (({'pen': 5, 'pencil': 10}, {'pen': 1, 'pencil': 0.5, 'eraser': 2}), {'pen': 5, 'pencil': 5.0}),
             (({}, {'apple': 1}), {}),
         ]

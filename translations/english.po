@@ -3535,8 +3535,8 @@ msgstr "'apfel'"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 #. 
 #. ------
@@ -3868,7 +3868,7 @@ msgstr "'book'"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 #. 
 #. quantities = {}
-#. quantities['dog'] = 5000000
+#. quantities['dog'] = 500
 #. quantities['box'] = 2
 #. print(quantities)
 #. 
@@ -3941,8 +3941,8 @@ msgstr "'book'"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 #. 
 #. ------
@@ -4222,7 +4222,7 @@ msgstr "'def'"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 #. 
 #. quantities = {}
-#. quantities['dog'] = 5000000
+#. quantities['dog'] = 500
 #. quantities['box'] = 2
 #. print(quantities)
 #. 
@@ -4268,8 +4268,8 @@ msgstr "'def'"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 #. 
 #. ------
@@ -5086,8 +5086,8 @@ msgstr "Hello"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 msgid "code_bits.___"
 msgstr "___"
@@ -5716,8 +5716,8 @@ msgstr "all_numbers"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 #. 
 #. ------
@@ -12042,8 +12042,8 @@ msgstr "is_valid_percentage"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 #. 
 #. ------
@@ -15980,8 +15980,8 @@ msgstr "price"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 #. 
 #. ------
@@ -16673,7 +16673,7 @@ msgstr "quadruple"
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 #. 
 #. quantities = {}
-#. quantities['dog'] = 5000000
+#. quantities['dog'] = 500
 #. quantities['box'] = 2
 #. print(quantities)
 #. 
@@ -16703,8 +16703,8 @@ msgstr "quadruple"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 #. 
 #. ------
@@ -20038,8 +20038,8 @@ msgstr "total_cost"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 msgid "code_bits.total_cost_per_item"
 msgstr "total_cost_per_item"
@@ -20068,8 +20068,8 @@ msgstr "total_cost_per_item"
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 msgid "code_bits.totals"
 msgstr "totals"
@@ -23456,7 +23456,7 @@ msgstr "What should be the key and what should be the value in this case?"
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.requirements"
-msgstr "Your function should modify the `quantities` argument. It doesn't need to `return` or `print` anything."
+msgstr "Your function should modify the `quantities` argument. It doesn't need to `return` anything."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
@@ -23489,7 +23489,7 @@ msgstr "Your function should modify the `quantities` argument. It doesn't need t
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.test
 msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text"
 msgstr ""
-"That's exactly what we need. When the customer says they want 5 million boxes,\n"
+"That's exactly what we need. Whether the customer says they want 500 or 5 million dogs,\n"
 "we can just put that information directly into our dictionary. So as an exercise, let's make a generic version of that.\n"
 "Write a function `buy_quantity(quantities)` which calls `input()` twice to get an item name and quantity from the user\n"
 "and assigns them in the `quantities` dictionary. Here's some starting code:\n"
@@ -23502,33 +23502,33 @@ msgstr ""
 "    Item:\n"
 "    dog\n"
 "    Quantity:\n"
-"    5000000\n"
-"    {'dog': 5000000}\n"
+"    500\n"
+"    {'dog': 500}\n"
 "    Item:\n"
 "    box\n"
 "    Quantity:\n"
 "    2\n"
-"    {'dog': 5000000, 'box': 2}\n"
+"    {'dog': 500, 'box': 2}\n"
 "\n"
 "Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to return anything.\n"
 "You can assume that the user will enter a valid integer for the quantity.\n"
 "You can also assume that the user won't enter an item that's already in `quantities`."
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
+msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.0"
+msgstr "{'dog': 500, 'box': 2}"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.1"
-msgstr "{'dog': 5000000}"
+msgstr "{'dog': 2, 'box': 500}"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.2"
-msgstr "{'box': 2}"
+msgstr "{2: 'dog', 500: 'box'}"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.3"
-msgstr "{'dog': 5000000, 'box': 2}"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
-msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.4"
-msgstr "{'box': 2, 'dog': 5000000}"
+msgstr "{500: 'dog', 2: 'box'}"
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
@@ -23541,7 +23541,6 @@ msgstr ""
 "Sorry, that's not allowed. For lists, subscript assignment only works for existing valid indices.\n"
 "But that's not true for dictionaries! Try this:\n"
 "\n"
-"    __copyable__\n"
 "__code0__\n"
 "\n"
 "Note that `{}` means an empty dictionary, i.e. a dictionary with no key-value pairs.\n"
@@ -23592,6 +23591,30 @@ msgstr ""
 "Otherwise it would be impossible to decrypt messages properly. If both `'h'` and `'j'` got replaced with `'q'`\n"
 "during encryption, there would be no way to know whether `'qpeef'` means `'hello'` or `'jello'`!"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_append_reminder.output_prediction_choices.1"
+msgstr "['dog']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_append_reminder.output_prediction_choices.2"
+msgstr "['box']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_append_reminder.output_prediction_choices.3"
+msgstr "['dog', 'box']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_append_reminder.output_prediction_choices.4"
+msgstr "['box', 'dog']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_append_reminder.output_prediction_choices.5"
+msgstr "['dog', 'dog']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_append_reminder.output_prediction_choices.6"
+msgstr "['box', 'box']"
+
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #.     # __code0__:
@@ -23606,6 +23629,30 @@ msgstr ""
 "\n"
 "    __copyable__\n"
 "__code0__"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_invalid.output_prediction_choices.1"
+msgstr "['dog']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_invalid.output_prediction_choices.2"
+msgstr "['box']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_invalid.output_prediction_choices.3"
+msgstr "['dog', 'box']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_invalid.output_prediction_choices.4"
+msgstr "['box', 'dog']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_invalid.output_prediction_choices.5"
+msgstr "['dog', 'dog']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_invalid
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_invalid.output_prediction_choices.6"
+msgstr "['box', 'box']"
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
@@ -23623,15 +23670,39 @@ msgstr ""
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
 msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.0"
-msgstr "['dog', 'box']"
+msgstr "['box']"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
 msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.1"
-msgstr "['box', 'cat']"
+msgstr "['dog', 'cat']"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
 msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.2"
-msgstr "['dog', 'cat']"
+msgstr "['box', 'dog']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.3"
+msgstr "['box', 'cat']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.4"
+msgstr "['dog', 'box']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.5"
+msgstr "['cat', 'box']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.6"
+msgstr "['box', 'dog', 'cat']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.7"
+msgstr "['dog', 'box', 'cat']"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_assign_reminder
+msgid "pages.CreatingKeyValuePairs.steps.list_assign_reminder.output_prediction_choices.8"
+msgstr "['dog', 'cat', 'box']"
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
@@ -23860,8 +23931,8 @@ msgstr "The function should return the `totals` dictionary after the loop finish
 #.     )
 #. 
 #.     assert_equal(
-#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
-#.         {'dog': 500000000, 'box': 10},
+#.         total_cost_per_item({'dog': 500, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 50000, 'box': 10},
 #.     )
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27apple%27
