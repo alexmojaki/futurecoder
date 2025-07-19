@@ -83,7 +83,7 @@ const languages = [
     code: 'pl',
     name: 'Polski',
     url: 'https://pl.futurecoder.io/',
-    visible: false,
+    visible: true,
     firebaseConfig: {
       apiKey: "AIzaSyDUzqc75Vn1UDJ7NSzduCVvwxC3ap9XtSc",
       authDomain: "futurecoder-pl.firebaseapp.com",
@@ -99,7 +99,7 @@ const languages = [
     code: 'zh',
     name: '中文',
     url: 'https://zh.futurecoder.io/',
-    visible: false,
+    visible: true,
     firebaseConfig: {
       apiKey: "AIzaSyBqtDR34wsBxKB-QrnDY97uJ6uXSVkvb7o",
       authDomain: "futurecoder-zh.firebaseapp.com",
