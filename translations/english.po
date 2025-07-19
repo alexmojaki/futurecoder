@@ -21106,8 +21106,8 @@ msgstr "On the bright side, your code passed ${num} test(s)!"
 msgid "frontend.cancel"
 msgstr "Cancel"
 
-msgid "frontend.chat_on_slack"
-msgstr "Chat on Slack"
+msgid "frontend.chat_on_discord"
+msgstr "Chat on Discord"
 
 msgid "frontend.click_for_error_details"
 msgstr "Click for error details"

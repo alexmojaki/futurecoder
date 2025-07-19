@@ -99,8 +99,8 @@ ${description.value.trim()}`;
             </a>
           </li>
           <li>
-            <a href="https://join.slack.com/t/futurecoder/shared_invite/zt-tp8cmwra-CbdEeX9u3k1VyoMLDupAeQ">
-              {terms.chat_on_slack}
+            <a href="https://discord.gg/KwWvQCPBjW">
+              {terms.chat_on_discord}
             </a>
           </li>
         </ul>
