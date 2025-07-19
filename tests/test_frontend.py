@@ -125,7 +125,9 @@ Settings
 Feedback
 Español
 Français
-தமிழ்"""
+Polski
+தமிழ்
+中文"""
     )
 
     # Open settings
