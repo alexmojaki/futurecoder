@@ -23925,44 +23925,97 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
 msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.0.text"
-msgstr "You need to create a new empty dictionary, let's call it `english_to_german`."
+msgstr "You need to create a new dictionary and fill it with key-value pairs depending on the two input dictionaries."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
 msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.1.text"
-msgstr "Iterate through the keys (English words) of the `english_to_french` dictionary."
+msgstr "You've seen code that does this before."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.10.text"
+msgstr "The values should be German words, so they should come from the second dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.11.text"
+msgstr "Specifically the keys of your dictionary should be the keys of the first dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.12.text"
+msgstr "And the values of your dictionary should be the values of the second dictionary."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.13.text"
+msgstr "What about the values of the first dictionary and the keys of the second dictionary? They're important."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.14.text"
+msgstr "Look at the French words `'pomme'` and `'boite'` in the example test."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.15.text"
+msgstr "The values of the first input dictionary are the keys of the second input dictionary."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
 msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.2.text"
-msgstr "Inside the loop, for each `english` word:"
+msgstr "Specifically the previous step. The overall structure you want is similar to `total_cost_per_item`."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
 msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.3.text"
-msgstr "1. Find the corresponding French word using `english_to_french`."
+msgstr "Start by creating a new empty dictionary."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
 msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.4.text"
-msgstr "2. Use that French word as a key to find the German word in `french_to_german`."
+msgstr "Return the dictionary at the end. Then fill in the code in between."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
 msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.5.text"
-msgstr ""
-"3. Add the `english` word as a key and the `german` word as the value to your new `english_to_german` dictionary."
+msgstr "You need a `for` loop."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
 msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.6.text"
-msgstr "After the loop, return the `english_to_german` dictionary."
+msgstr "The line `totals[item] = quantities[item] * prices[item]` from the previous step is close to what you need."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.7.text"
+msgstr "You don't need to multiply anything with `*`, the names are different, and there's another difference in logic."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.8.text"
+msgstr "Think about what the keys and values of the new dictionary should be."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise
+msgid "pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.hints.9.text"
+msgstr "The keys should be English words, so they should come from the first dictionary."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 

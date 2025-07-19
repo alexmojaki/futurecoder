@@ -993,13 +993,22 @@ class CreatingKeyValuePairs(Page):
         parsons_solution = True
 
         hints = """
-        You need to create a new empty dictionary, let's call it `english_to_german`.
-        Iterate through the keys (English words) of the `english_to_french` dictionary.
-        Inside the loop, for each `english` word:
-          1. Find the corresponding French word using `english_to_french`.
-          2. Use that French word as a key to find the German word in `french_to_german`.
-          3. Add the `english` word as a key and the `german` word as the value to your new `english_to_german` dictionary.
-        After the loop, return the `english_to_german` dictionary.
+        You need to create a new dictionary and fill it with key-value pairs depending on the two input dictionaries.
+        You've seen code that does this before.
+        Specifically the previous step. The overall structure you want is similar to `total_cost_per_item`.
+        Start by creating a new empty dictionary.
+        Return the dictionary at the end. Then fill in the code in between.
+        You need a `for` loop.
+        The line `totals[item] = quantities[item] * prices[item]` from the previous step is close to what you need.
+        You don't need to multiply anything with `*`, the names are different, and there's another difference in logic.
+        Think about what the keys and values of the new dictionary should be.
+        The keys should be English words, so they should come from the first dictionary.
+        The values should be German words, so they should come from the second dictionary.
+        Specifically the keys of your dictionary should be the keys of the first dictionary.
+        And the values of your dictionary should be the values of the second dictionary.
+        What about the values of the first dictionary and the keys of the second dictionary? They're important.
+        Look at the French words `'pomme'` and `'boite'` in the example test.
+        The values of the first input dictionary are the keys of the second input dictionary.
         """
 
         def solution(self):
