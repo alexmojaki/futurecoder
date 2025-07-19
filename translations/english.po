@@ -1237,6 +1237,29 @@ msgstr "\"Nope!\""
 msgid "code_bits.\"OK\""
 msgstr "\"OK\""
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. def test():
+#.     quantities = {}
+#.     for _ in range(3):
+#.         print('What would you like to buy?')
+#.         item = input()
+#. 
+#.         print('How many?')
+#.         quantity = int(input())
+#. 
+#.         buy_quantity(quantities, item, quantity)
+#. 
+#.         print("OK, here's your cart so far:")
+#.         print(quantities)
+#. 
+#. test()
+msgid "code_bits.\"OK, here's your cart so far:\""
+msgstr "\"OK, here's your cart so far:\""
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.StringMethodsUnderstandingMutation.steps.string_lower_upper
 #. 
 #. sentence = "Python rocks!"
@@ -2672,6 +2695,29 @@ msgstr "'Hello there'"
 msgid "code_bits.'Hello'"
 msgstr "'Hello'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. def test():
+#.     quantities = {}
+#.     for _ in range(3):
+#.         print('What would you like to buy?')
+#.         item = input()
+#. 
+#.         print('How many?')
+#.         quantity = int(input())
+#. 
+#.         buy_quantity(quantities, item, quantity)
+#. 
+#.         print("OK, here's your cart so far:")
+#.         print(quantities)
+#. 
+#. test()
+msgid "code_bits.'How many?'"
+msgstr "'How many?'"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.first_if_else
 #. 
 #. condition = True
@@ -2862,6 +2908,29 @@ msgstr "'This'"
 #. print(f'Hello {name}!')
 msgid "code_bits.'Type your name, then press Enter:'"
 msgstr "'Type your name, then press Enter:'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. def test():
+#.     quantities = {}
+#.     for _ in range(3):
+#.         print('What would you like to buy?')
+#.         item = input()
+#. 
+#.         print('How many?')
+#.         quantity = int(input())
+#. 
+#.         buy_quantity(quantities, item, quantity)
+#. 
+#.         print("OK, here's your cart so far:")
+#.         print(quantities)
+#. 
+#. test()
+msgid "code_bits.'What would you like to buy?'"
+msgstr "'What would you like to buy?'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.BasicForLoopExercises.steps.loop_exercise_1
 #. 
@@ -5071,6 +5140,12 @@ msgstr "___"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test.text
 #. 
 #.     __program_indented__
 #. 
@@ -7295,6 +7370,29 @@ msgstr "board_size"
 #.         assert_equal(quantities, {'dog': 500, 'box': 2})
 #. 
 #.     test()
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. def test():
+#.     quantities = {}
+#.     for _ in range(3):
+#.         print('What would you like to buy?')
+#.         item = input()
+#. 
+#.         print('How many?')
+#.         quantity = int(input())
+#. 
+#.         buy_quantity(quantities, item, quantity)
+#. 
+#.         print("OK, here's your cart so far:")
+#.         print(quantities)
+#. 
+#. test()
 msgid "code_bits.buy_quantity"
 msgstr "buy_quantity"
 
@@ -11992,6 +12090,29 @@ msgstr "is_valid_percentage"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. def test():
+#.     quantities = {}
+#.     for _ in range(3):
+#.         print('What would you like to buy?')
+#.         item = input()
+#. 
+#.         print('How many?')
+#.         quantity = int(input())
+#. 
+#.         buy_quantity(quantities, item, quantity)
+#. 
+#.         print("OK, here's your cart so far:")
+#.         print(quantities)
+#. 
+#. test()
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
 #. 
 #. def total_cost_per_item(quantities, prices):
@@ -16637,6 +16758,29 @@ msgstr "quadruple"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. def test():
+#.     quantities = {}
+#.     for _ in range(3):
+#.         print('What would you like to buy?')
+#.         item = input()
+#. 
+#.         print('How many?')
+#.         quantity = int(input())
+#. 
+#.         buy_quantity(quantities, item, quantity)
+#. 
+#.         print("OK, here's your cart so far:")
+#.         print(quantities)
+#. 
+#. test()
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 #. 
 #. quantities = {}
@@ -16803,6 +16947,29 @@ msgstr "quantities"
 #.         assert_equal(quantities, {'dog': 500, 'box': 2})
 #. 
 #.     test()
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. def test():
+#.     quantities = {}
+#.     for _ in range(3):
+#.         print('What would you like to buy?')
+#.         item = input()
+#. 
+#.         print('How many?')
+#.         quantity = int(input())
+#. 
+#.         buy_quantity(quantities, item, quantity)
+#. 
+#.         print("OK, here's your cart so far:")
+#.         print(quantities)
+#. 
+#. test()
 #. 
 #. ------
 #. 
@@ -19528,6 +19695,29 @@ msgstr "temp"
 #.         assert_equal(quantities, {'dog': 500, 'box': 2})
 #. 
 #.     test()
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_input_test
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. def test():
+#.     quantities = {}
+#.     for _ in range(3):
+#.         print('What would you like to buy?')
+#.         item = input()
+#. 
+#.         print('How many?')
+#.         quantity = int(input())
+#. 
+#.         buy_quantity(quantities, item, quantity)
+#. 
+#.         print("OK, here's your cart so far:")
+#.         print(quantities)
+#. 
+#. test()
 #. 
 #. ------
 #. 
@@ -23440,6 +23630,22 @@ msgstr ""
 "Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to `return` or `print` anything.\n"
 "You can assume that `item` isn't already in `quantities`."
 
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_input_test.text"
+msgstr ""
+"Well done! Try it out interactively:\n"
+"\n"
+"    __copyable__\n"
+"__code0__\n"
+"\n"
+"Note the `int(input())` part, because `input()` returns a string, and `quantity` should be an integer\n"
+"(a whole number). This'll break if you enter something that isn't a number, but that's OK for now."
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.0"
 msgstr "{'dog': 500, 'box': 2}"
@@ -23882,9 +24088,9 @@ msgstr "The function should return the `totals` dictionary after the loop finish
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.totals
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text"
 msgstr ""
-"Well done!\n"
+"Thanks for shopping with us! Let's see how much you just spent on each item.\n"
 "\n"
-"Next exercise: earlier we defined a function `total_cost(quantities, prices)` which returned a single number\n"
+"Earlier we defined a function `total_cost(quantities, prices)` which returned a single number\n"
 "with a grand total of all the items in the cart. Now let's make a function `total_cost_per_item(quantities, prices)`\n"
 "which returns a new dictionary with the total cost for each item:\n"
 "\n"

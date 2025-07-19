@@ -7418,6 +7418,112 @@
         "get_solution": "program",
         "page": "Creating Key-Value Pairs",
         "program": [
+            "def buy_quantity(quantities, item, quantity):",
+            "    quantities[item] = quantity",
+            "",
+            "def test():",
+            "    quantities = {}",
+            "    for _ in range(3):",
+            "        print('What would you like to buy?')",
+            "        item = input()",
+            "",
+            "        print('How many?')",
+            "        quantity = int(input())",
+            "",
+            "        buy_quantity(quantities, item, quantity)",
+            "",
+            "        print(\"OK, here's your cart so far:\")",
+            "        print(quantities)",
+            "",
+            "test()"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "What would you like to buy?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: apple>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "How many?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: 3>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "OK, here's your cart so far:\n{'apple': 3}\nWhat would you like to buy?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: banana>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "How many?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: 5>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "OK, here's your cart so far:\n{'apple': 3, 'banana': 5}\nWhat would you like to buy?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: cat>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "How many?\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "",
+                    "type": "input_prompt"
+                },
+                {
+                    "text": "<input: 2>\n",
+                    "type": "stdout"
+                },
+                {
+                    "text": "OK, here's your cart so far:\n{'apple': 3, 'banana': 5, 'cat': 2}\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "buy_quantity_input_test"
+    },
+    {
+        "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
             "def total_cost_per_item(quantities, prices):",
             "    totals = {}",
             "    for item in quantities:",

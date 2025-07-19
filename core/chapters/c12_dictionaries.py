@@ -864,12 +864,14 @@ class CreatingKeyValuePairs(Page):
         """
         Well done! Try it out interactively:
 
-        __copyable__
-        __program_indented__
+            __copyable__
+            __program_indented__
 
         Note the `int(input())` part, because `input()` returns a string, and `quantity` should be an integer
         (a whole number). This'll break if you enter something that isn't a number, but that's OK for now.
         """
+
+        stdin_input = ["apple", "3", "banana", "5", "cat", "2"]
 
         def program(self):
             def buy_quantity(quantities, item, quantity):
