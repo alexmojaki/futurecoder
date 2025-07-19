@@ -872,7 +872,7 @@ Quantity:
             def total_cost_per_item(quantities, prices):
                 totals = {}
                 for item in quantities:
-                    ... = quantities[item] * prices[item]
+                    ___ = quantities[item] * prices[item]
                 return totals
 
             assert_equal(

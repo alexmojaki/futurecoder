@@ -3521,6 +3521,26 @@ msgstr "'apfel'"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
 #. 
 #.     def total_cost(quantities, prices):
@@ -3907,6 +3927,26 @@ msgstr "'book'"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart.text
 #. 
 #.     def total_cost(quantities, prices):
@@ -4211,6 +4251,26 @@ msgstr "'def'"
 #. cart = ['dog', 'cat']
 #. cart[1] = 'box'
 #. print(cart)
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
 #. 
 #. ------
 #. 
@@ -5012,6 +5072,26 @@ msgstr "'you'"
 msgid "code_bits.Hello"
 msgstr "Hello"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
+msgid "code_bits.___"
+msgstr "___"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.making_copies.text
 #. 
 #.     __program_indented__
@@ -5618,6 +5698,26 @@ msgstr "all_numbers"
 #.     assert_equal(
 #.         swap_keys_values({'apple': 'pomme', 'box': 'boite'}),
 #.         {'pomme': 'apple', 'boite': 'box'},
+#.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
 #.     )
 #. 
 #. ------
@@ -11928,6 +12028,26 @@ msgstr "is_valid_percentage"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -15846,6 +15966,26 @@ msgstr "price"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -16546,6 +16686,26 @@ msgstr "quadruple"
 #.     for item in quantities:
 #.         totals[item] = quantities[item] * prices[item]
 #.     return totals
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
 #. 
 #. ------
 #. 
@@ -19861,6 +20021,26 @@ msgstr "total_cost"
 #.     for item in quantities:
 #.         totals[item] = quantities[item] * prices[item]
 #.     return totals
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
 msgid "code_bits.total_cost_per_item"
 msgstr "total_cost_per_item"
 
@@ -19871,6 +20051,26 @@ msgstr "total_cost_per_item"
 #.     for item in quantities:
 #.         totals[item] = quantities[item] * prices[item]
 #.     return totals
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text
+#. 
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
 msgid "code_bits.totals"
 msgstr "totals"
 
@@ -23646,6 +23846,43 @@ msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.6.te
 msgstr "The function should return the `totals` dictionary after the loop finishes."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#.     # __code0__:
+#.     def total_cost_per_item(quantities, prices):
+#.         totals = {}
+#.         for item in quantities:
+#.             ___ = quantities[item] * prices[item]
+#.         return totals
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),
+#.         {'apple': 6},
+#.     )
+#. 
+#.     assert_equal(
+#.         total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),
+#.         {'dog': 500000000, 'box': 10},
+#.     )
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27apple%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27box%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27dog%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.___
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.item
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.prices
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quantities
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.total_cost_per_item
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.totals
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.text"
 msgstr ""
 "Well done!\n"
@@ -23655,21 +23892,7 @@ msgstr ""
 "which returns a new dictionary with the total cost for each item:\n"
 "\n"
 "    __copyable__\n"
-"    def total_cost_per_item(quantities, prices):\n"
-"        totals = {}\n"
-"        for item in quantities:\n"
-"            ... = quantities[item] * prices[item]\n"
-"        return totals\n"
-"\n"
-"    assert_equal(\n"
-"        total_cost_per_item({'apple': 2}, {'apple': 3, 'box': 5}),\n"
-"        {'apple': 6},\n"
-"    )\n"
-"\n"
-"    assert_equal(\n"
-"        total_cost_per_item({'dog': 5000000, 'box': 2}, {'dog': 100, 'box': 5}),\n"
-"        {'dog': 500000000, 'box': 10},\n"
-"    )"
+"__code0__"
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 msgid "pages.CreatingKeyValuePairs.title"
