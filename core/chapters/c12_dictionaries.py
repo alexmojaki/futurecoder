@@ -1080,13 +1080,36 @@ class CreatingKeyValuePairs(Page):
             (({},), {}),
         ]
 
-    final_text = """
+    class avocado_or_lawyer(VerbatimStep):
+        """
 Magnificent!
 
 Jokes aside, it's important to remember how exactly this can go wrong. Just like multiple items in the store
 can have the same price, multiple words in English can have the same translation in French. If the original dictionary
 has duplicate *values*, what happens when you try to swap keys and values? Since dictionary keys must be unique,
 some data will be lost.
+
+For example, 'avocat' in French can mean either 'avocado' and 'lawyer'. So it's easy to translate
+'avocado' from English to French, but it's not so clear how to translate 'avocat' back to English.
+Try to guess what the following code will print:
+
+    __copyable__
+    __program_indented__
+        """
+
+        def program(self):
+            def swap_keys_values(d):
+                new_dict = {}
+                for key in d:
+                    new_dict[d[key]] = key
+                return new_dict
+
+            print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+            print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+
+    final_text = """
+The result depends on the order of the keys in the original dictionary!
+If you're not sure why, try running the code with `snoop` or another debugger.
 
 But there are many situations where you can be sure that the values in a dictionary *are* unique and that this
 'inversion' makes sense. For example, we saw this code [earlier in the chapter](#UsingDictionaries):

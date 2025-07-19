@@ -7573,6 +7573,30 @@
     },
     {
         "get_solution": "program",
+        "page": "Creating Key-Value Pairs",
+        "program": [
+            "def swap_keys_values(d):",
+            "    new_dict = {}",
+            "    for key in d:",
+            "        new_dict[d[key]] = key",
+            "    return new_dict",
+            "",
+            "print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))",
+            "print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))"
+        ],
+        "response": {
+            "passed": true,
+            "result": [
+                {
+                    "text": "{'pomme': 'apple', 'avocat': 'lawyer'}\n{'pomme': 'apple', 'avocat': 'avocado'}\n",
+                    "type": "stdout"
+                }
+            ]
+        },
+        "step": "avocado_or_lawyer"
+    },
+    {
+        "get_solution": "program",
         "page": "Copying Dictionaries",
         "program": [
             "d1 = {'a': 1, 'b': 2}",

@@ -3503,6 +3503,19 @@ msgstr "'apfel'"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         new_dict[d[key]] = key
+#.     return new_dict
+#. 
+#. print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+#. print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
 #. 
 #.     def make_english_to_german(english_to_french, french_to_german):
@@ -3728,6 +3741,32 @@ msgstr "'apple'"
 #. print(present)
 msgid "code_bits.'are'"
 msgstr "'are'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         new_dict[d[key]] = key
+#.     return new_dict
+#. 
+#. print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+#. print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+msgid "code_bits.'avocado'"
+msgstr "'avocado'"
+
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         new_dict[d[key]] = key
+#.     return new_dict
+#. 
+#. print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+#. print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+msgid "code_bits.'avocat'"
+msgstr "'avocat'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.add_item_exercise.text
 #. 
@@ -4775,6 +4814,19 @@ msgstr "'kasten'"
 msgid "code_bits.'kesha'"
 msgstr "'kesha'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         new_dict[d[key]] = key
+#.     return new_dict
+#. 
+#. print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+#. print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+msgid "code_bits.'lawyer'"
+msgstr "'lawyer'"
+
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IntroducingLists.steps.strings_sum
 #. 
 #. words = ['This', 'is', 'a', 'list']
@@ -4932,6 +4984,19 @@ msgstr "'pen'"
 msgid "code_bits.'pencil'"
 msgstr "'pencil'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         new_dict[d[key]] = key
+#.     return new_dict
+#. 
+#. print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+#. print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.make_english_to_german_exercise.text
 #. 
 #.     def make_english_to_german(english_to_french, french_to_german):
@@ -5140,6 +5205,12 @@ msgstr "___"
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.shared_references.text
+#. 
+#.     __program_indented__
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer.text
 #. 
 #.     __program_indented__
 #. 
@@ -12356,6 +12427,19 @@ msgstr "joined_row"
 msgid "code_bits.joined_rows"
 msgstr "joined_rows"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         new_dict[d[key]] = key
+#.     return new_dict
+#. 
+#. print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+#. print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
 #. 
 #. def swap_keys_values(d):
@@ -14004,6 +14088,19 @@ msgstr "middle"
 msgid "code_bits.name"
 msgstr "name"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         new_dict[d[key]] = key
+#.     return new_dict
+#. 
+#. print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+#. print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.swap_keys_values_exercise
 #. 
 #. def swap_keys_values(d):
@@ -19639,6 +19736,19 @@ msgstr "super_secret_number"
 msgid "code_bits.surround"
 msgstr "surround"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.avocado_or_lawyer
+#. 
+#. def swap_keys_values(d):
+#.     new_dict = {}
+#.     for key in d:
+#.         new_dict[d[key]] = key
+#.     return new_dict
+#. 
+#. print(swap_keys_values({'apple': 'pomme', 'avocado': 'avocat', 'lawyer': 'avocat'}))
+#. print(swap_keys_values({'apple': 'pomme', 'lawyer': 'avocat', 'avocado': 'avocat'}))
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.final_text.text
 #. 
 #.     reverse = swap_keys_values(letters)
@@ -23579,6 +23689,28 @@ msgstr "Copying Dictionaries"
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
+#.     # __code0__:
+#.     __program_indented__
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.__program_indented__
+msgid "pages.CreatingKeyValuePairs.steps.avocado_or_lawyer.text"
+msgstr ""
+"Magnificent!\n"
+"\n"
+"Jokes aside, it's important to remember how exactly this can go wrong. Just like multiple items in the store\n"
+"can have the same price, multiple words in English can have the same translation in French. If the original dictionary\n"
+"has duplicate *values*, what happens when you try to swap keys and values? Since dictionary keys must be unique,\n"
+"some data will be lost.\n"
+"\n"
+"For example, 'avocat' in French can mean either 'avocado' and 'lawyer'. So it's easy to translate\n"
+"'avocado' from English to French, but it's not so clear how to translate 'avocat' back to English.\n"
+"Try to guess what the following code will print:\n"
+"\n"
+"    __copyable__\n"
+"__code0__"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
 msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.0.text"
 msgstr "The body of `buy_quantity` only needs one simple line of code."
@@ -23762,13 +23894,6 @@ msgstr ""
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.swap_keys_values
 msgid "pages.CreatingKeyValuePairs.steps.final_text.text"
 msgstr ""
-"Magnificent!\n"
-"\n"
-"Jokes aside, it's important to remember how exactly this can go wrong. Just like multiple items in the store\n"
-"can have the same price, multiple words in English can have the same translation in French. If the original dictionary\n"
-"has duplicate *values*, what happens when you try to swap keys and values? Since dictionary keys must be unique,\n"
-"some data will be lost.\n"
-"\n"
 "But there are many situations where you can be sure that the values in a dictionary *are* unique and that this\n"
 "'inversion' makes sense. For example, we saw this code [earlier in the chapter](#UsingDictionaries):\n"
 "\n"
