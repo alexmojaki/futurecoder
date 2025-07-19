@@ -22928,7 +22928,9 @@ msgstr ""
 "\n"
 "For this to work, we just have to make sure that all the values in `letters` are unique.\n"
 "Otherwise it would be impossible to decrypt messages properly. If both `'h'` and `'j'` got replaced with `'q'`\n"
-"during encryption, there would be no way to know whether `'qpeef'` means `'hello'` or `'jello'`!"
+"during encryption, there would be no way to know whether `'qpeef'` means `'hello'` or `'jello'`!\n"
+"\n"
+"Congratulations! You've reached the end of the course so far. More is on the way!"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.list_append_reminder
 msgid "pages.CreatingKeyValuePairs.steps.list_append_reminder.output_prediction_choices.1"
@@ -24010,7 +24012,10 @@ msgstr ""
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 msgid "pages.DictionaryKeysAndValues.steps.final_text.text"
-msgstr "Congratulations! You've reached the end of the course so far. More is on the way!"
+msgstr ""
+"👌\n"
+"\n"
+"Now that you can *get* values from a dictionary, you'll soon learn how to *set* values in a dictionary."
 
 #. https://futurecoder.io/course/#DictionaryKeysAndValues
 msgid "pages.DictionaryKeysAndValues.steps.introducing_keys.requirements"
