@@ -776,113 +776,93 @@ class CreatingKeyValuePairs(Page):
         """
         That's exactly what we need. Whether the customer says they want 500 or 5 million dogs,
         we can just put that information directly into our dictionary. So as an exercise, let's make a generic version of that.
-        Write a function `buy_quantity(quantities)` which calls `input()` twice to get an item name and quantity from the user
-        and assigns them in the `quantities` dictionary. Here's some starting code:
+        Write a function `buy_quantity(quantities, item, quantity)` which adds a new key-value pair to the `quantities` dictionary.
+        Here's some starting code:
 
             __copyable__
-            def buy_quantity(quantities):
-                print('Item:')
-                item = input()
-                print('Quantity:')
+            def buy_quantity(quantities, item, quantity):
                 ...
 
             def test():
                 quantities = {}
-                buy_quantity(quantities)
-                print(quantities)
-                buy_quantity(quantities)
-                print(quantities)
+                buy_quantity(quantities, 'dog', 500)
+                assert_equal(quantities, {'dog': 500})
+                buy_quantity(quantities, 'box', 2)
+                assert_equal(quantities, {'dog': 500, 'box': 2})
 
             test()
 
-        and an example of how a session should look:
-
-            Item:
-            dog
-            Quantity:
-            500
-            {'dog': 500}
-            Item:
-            box
-            Quantity:
-            2
-            {'dog': 500, 'box': 2}
-
-        Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to return anything.
-        You can assume that the user will enter a valid integer for the quantity.
-        You can also assume that the user won't enter an item that's already in `quantities`.
+        Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to `return` or `print` anything.
+        You can assume that `item` isn't already in `quantities`.
         """
-        requirements = "Your function should modify the `quantities` argument. It doesn't need to `return` anything."
-        no_returns_stdout = True
+        requirements = "Your function should modify the `quantities` argument. It doesn't need to `return` or `print` anything."
 
         hints = """
-        The function needs to get two inputs from the user: the item name and the quantity.
-        The item name is already stored in the `item` variable. You need to get the quantity similarly.
-        Remember that `input()` returns a string. The quantity needs to be stored as a number (`int`).
-        How do you convert a string to an integer?
-        Once you have the `item` (string) and the quantity (integer), you need to add them to the `quantities` dictionary.
-        Use the dictionary assignment syntax you just learned: `dictionary[key] = value`.
-        What should be the key and what should be the value in this case?
+        TODO
         """
 
+        no_returns_stdout = True  # because the solution doesn't return anything, returning stdout would be assumed
+
         def solution(self):
-            def buy_quantity(quantities: Dict[str, int]):
-                print('Item:')
-                item = input()
-                print('Quantity:')
-                quantity_str = input()
-                quantities[item] = int(quantity_str)
+            def buy_quantity(quantities: Dict[str, int], item: str, quantity: int):
+                quantities[item] = quantity
             return buy_quantity
 
         @classmethod
         def wrap_solution(cls, func):
-            @returns_stdout
             @wrap_solution(func)
             def wrapper(**kwargs):
                 quantities_name = t.get_code_bit("quantities")
                 quantities = kwargs[quantities_name] = deepcopy(kwargs[quantities_name])
 
                 func(**kwargs)
-                print(quantities)
+                return quantities
             return wrapper
 
         @classmethod
         def generate_inputs(cls):
+            quantities = generate_dict(str, int)
+            item = generate_string()
+            quantities.pop(item, None)
+            quantity = random.randint(1, 100)
             return {
-                "stdin_input": [generate_string(5), str(random.randint(1, 10))],
-                "quantities": generate_dict(str, int),
+                "quantities": quantities,
+                "item": item,
+                "quantity": quantity,
             }
 
         tests = [
             (
                 dict(
                     quantities={},
-                    stdin_input=[
-                        "dog", "500",
-                    ]
+                    item='dog',
+                    quantity=500
                 ),
-                """\
-Item:
-<input: dog>
-Quantity:
-<input: 500>
-{'dog': 500}
-                """
+                {'dog': 500}
             ),
             (
                 dict(
                     quantities={'dog': 500},
-                    stdin_input=[
-                        "box", "2",
-                    ]
+                    item='box',
+                    quantity=2
                 ),
-                """\
-Item:
-<input: box>
-Quantity:
-<input: 2>
-{'dog': 500, 'box': 2}
-                """
+                {'dog': 500, 'box': 2}
+            ),
+            (
+                dict(
+                    quantities={'apple': 3, 'banana': 5},
+                    item='orange',
+                    quantity=10
+                ),
+                {'apple': 3, 'banana': 5, 'orange': 10}
+            ),
+            (
+                dict(
+                    quantities={},
+                    item='cat',
+                    quantity=1
+                ),
+                {'cat': 1}
             ),
         ]
 

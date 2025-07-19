@@ -2672,36 +2672,6 @@ msgstr "'Hello there'"
 msgid "code_bits.'Hello'"
 msgstr "'Hello'"
 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-#. 
-#. def buy_quantity(quantities):
-#.     print('Item:')
-#.     item = input()
-#.     print('Quantity:')
-#.     quantity_str = input()
-#.     quantities[item] = int(quantity_str)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
-#. 
-#.     def buy_quantity(quantities):
-#.         print('Item:')
-#.         item = input()
-#.         print('Quantity:')
-#.         ...
-#. 
-#.     def test():
-#.         quantities = {}
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#. 
-#.     test()
-msgid "code_bits.'Item:'"
-msgstr "'Item:'"
-
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.IfAndElse.steps.first_if_else
 #. 
 #. condition = True
@@ -2761,36 +2731,6 @@ msgstr "'One more exercise, and then you can relax.'"
 #. 'Python'.append(' is cool!')
 msgid "code_bits.'Python'"
 msgstr "'Python'"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-#. 
-#. def buy_quantity(quantities):
-#.     print('Item:')
-#.     item = input()
-#.     print('Quantity:')
-#.     quantity_str = input()
-#.     quantities[item] = int(quantity_str)
-#. 
-#. ------
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
-#. 
-#.     def buy_quantity(quantities):
-#.         print('Item:')
-#.         item = input()
-#.         print('Quantity:')
-#.         ...
-#. 
-#.     def test():
-#.         quantities = {}
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#. 
-#.     test()
-msgid "code_bits.'Quantity:'"
-msgstr "'Quantity:'"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.Types.steps.fixing_type_errors_with_conversion
 #. 
@@ -3865,6 +3805,22 @@ msgstr "'boite'"
 msgid "code_bits.'book'"
 msgstr "'book'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities, item, quantity):
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
+#. 
+#.     test()
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 #. 
 #. quantities = {}
@@ -4219,6 +4175,22 @@ msgstr "'de'"
 msgid "code_bits.'def'"
 msgstr "'def'"
 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities, item, quantity):
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
+#. 
+#.     test()
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 #. 
 #. quantities = {}
@@ -5672,6 +5644,22 @@ msgstr "all_numbers"
 #.         positive_stock({'book': 1, 'paper': 5}),
 #.         {'book': 1, 'paper': 5}
 #.     )
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities, item, quantity):
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
+#. 
+#.     test()
 #. 
 #. ------
 #. 
@@ -7289,29 +7277,22 @@ msgstr "board_size"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
 #. 
-#. def buy_quantity(quantities):
-#.     print('Item:')
-#.     item = input()
-#.     print('Quantity:')
-#.     quantity_str = input()
-#.     quantities[item] = int(quantity_str)
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
 #. 
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
 #. 
-#.     def buy_quantity(quantities):
-#.         print('Item:')
-#.         item = input()
-#.         print('Quantity:')
+#.     def buy_quantity(quantities, item, quantity):
 #.         ...
 #. 
 #.     def test():
 #.         quantities = {}
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#.         buy_quantity(quantities)
-#.         print(quantities)
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
 #. 
 #.     test()
 msgid "code_bits.buy_quantity"
@@ -11990,29 +11971,22 @@ msgstr "is_valid_percentage"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
 #. 
-#. def buy_quantity(quantities):
-#.     print('Item:')
-#.     item = input()
-#.     print('Quantity:')
-#.     quantity_str = input()
-#.     quantities[item] = int(quantity_str)
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
 #. 
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
 #. 
-#.     def buy_quantity(quantities):
-#.         print('Item:')
-#.         item = input()
-#.         print('Quantity:')
+#.     def buy_quantity(quantities, item, quantity):
 #.         ...
 #. 
 #.     def test():
 #.         quantities = {}
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#.         buy_quantity(quantities)
-#.         print(quantities)
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
 #. 
 #.     test()
 #. 
@@ -16642,29 +16616,22 @@ msgstr "quadruple"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
 #. 
-#. def buy_quantity(quantities):
-#.     print('Item:')
-#.     item = input()
-#.     print('Quantity:')
-#.     quantity_str = input()
-#.     quantities[item] = int(quantity_str)
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
 #. 
 #. ------
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
 #. 
-#.     def buy_quantity(quantities):
-#.         print('Item:')
-#.         item = input()
-#.         print('Quantity:')
+#.     def buy_quantity(quantities, item, quantity):
 #.         ...
 #. 
 #.     def test():
 #.         quantities = {}
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#.         buy_quantity(quantities)
-#.         print(quantities)
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
 #. 
 #.     test()
 #. 
@@ -16816,6 +16783,29 @@ msgstr "quantities"
 #. 
 #. ------
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+#. 
+#. def buy_quantity(quantities, item, quantity):
+#.     quantities[item] = quantity
+#. 
+#. ------
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
+#. 
+#.     def buy_quantity(quantities, item, quantity):
+#.         ...
+#. 
+#.     def test():
+#.         quantities = {}
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
+#. 
+#.     test()
+#. 
+#. ------
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.DictionaryKeysAndValues.steps.cleanup_shopping_cart
 #. 
 #. def total_cost(quantities, prices):
@@ -16880,17 +16870,6 @@ msgstr "quantities"
 #.     )
 msgid "code_bits.quantity"
 msgstr "quantity"
-
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-#. 
-#. def buy_quantity(quantities):
-#.     print('Item:')
-#.     item = input()
-#.     print('Quantity:')
-#.     quantity_str = input()
-#.     quantities[item] = int(quantity_str)
-msgid "code_bits.quantity_str"
-msgstr "quantity_str"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CopyingDictionaries.steps.positive_stock_exercise
 #. 
@@ -19538,18 +19517,15 @@ msgstr "temp"
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text
 #. 
-#.     def buy_quantity(quantities):
-#.         print('Item:')
-#.         item = input()
-#.         print('Quantity:')
+#.     def buy_quantity(quantities, item, quantity):
 #.         ...
 #. 
 #.     def test():
 #.         quantities = {}
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#.         buy_quantity(quantities)
-#.         print(quantities)
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
 #. 
 #.     test()
 #. 
@@ -23415,70 +23391,32 @@ msgstr "Copying Dictionaries"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
 msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.0.text"
-msgstr "The function needs to get two inputs from the user: the item name and the quantity."
-
-#. https://futurecoder.io/course/#CreatingKeyValuePairs
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.1.text"
-msgstr "The item name is already stored in the `item` variable. You need to get the quantity similarly."
-
-#. https://futurecoder.io/course/#CreatingKeyValuePairs
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.2.text"
-msgstr "Remember that `input()` returns a string. The quantity needs to be stored as a number (`int`)."
-
-#. https://futurecoder.io/course/#CreatingKeyValuePairs
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.3.text"
-msgstr "How do you convert a string to an integer?"
-
-#. https://futurecoder.io/course/#CreatingKeyValuePairs
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.4.text"
-msgstr ""
-"Once you have the `item` (string) and the quantity (integer), you need to add them to the `quantities` dictionary."
-
-#. https://futurecoder.io/course/#CreatingKeyValuePairs
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.5.text"
-msgstr "Use the dictionary assignment syntax you just learned: `dictionary[key] = value`."
-
-#. https://futurecoder.io/course/#CreatingKeyValuePairs
-#. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
-msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.6.text"
-msgstr "What should be the key and what should be the value in this case?"
+msgstr "TODO"
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.requirements"
-msgstr "Your function should modify the `quantities` argument. It doesn't need to `return` anything."
+msgstr "Your function should modify the `quantities` argument. It doesn't need to `return` or `print` anything."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #.     # __code0__:
-#.     def buy_quantity(quantities):
-#.         print('Item:')
-#.         item = input()
-#.         print('Quantity:')
+#.     def buy_quantity(quantities, item, quantity):
 #.         ...
 #. 
 #.     def test():
 #.         quantities = {}
-#.         buy_quantity(quantities)
-#.         print(quantities)
-#.         buy_quantity(quantities)
-#.         print(quantities)
+#.         buy_quantity(quantities, 'dog', 500)
+#.         assert_equal(quantities, {'dog': 500})
+#.         buy_quantity(quantities, 'box', 2)
+#.         assert_equal(quantities, {'dog': 500, 'box': 2})
 #. 
 #.     test()
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Item%3A%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27box%27
 #. 
-#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27Quantity%3A%27
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.%27dog%27
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.assert_equal
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.buy_quantity
 #. 
@@ -23486,33 +23424,21 @@ msgstr "Your function should modify the `quantities` argument. It doesn't need t
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quantities
 #. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.quantity
+#. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=code_bits.test
 msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.text"
 msgstr ""
 "That's exactly what we need. Whether the customer says they want 500 or 5 million dogs,\n"
 "we can just put that information directly into our dictionary. So as an exercise, let's make a generic version of that.\n"
-"Write a function `buy_quantity(quantities)` which calls `input()` twice to get an item name and quantity from the user\n"
-"and assigns them in the `quantities` dictionary. Here's some starting code:\n"
+"Write a function `buy_quantity(quantities, item, quantity)` which adds a new key-value pair to the `quantities` dictionary.\n"
+"Here's some starting code:\n"
 "\n"
 "    __copyable__\n"
 "__code0__\n"
 "\n"
-"and an example of how a session should look:\n"
-"\n"
-"    Item:\n"
-"    dog\n"
-"    Quantity:\n"
-"    500\n"
-"    {'dog': 500}\n"
-"    Item:\n"
-"    box\n"
-"    Quantity:\n"
-"    2\n"
-"    {'dog': 500, 'box': 2}\n"
-"\n"
-"Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to return anything.\n"
-"You can assume that the user will enter a valid integer for the quantity.\n"
-"You can also assume that the user won't enter an item that's already in `quantities`."
+"Note that `buy_quantity` should *modify* the dictionary that's passed in, and doesn't need to `return` or `print` anything.\n"
+"You can assume that `item` isn't already in `quantities`."
 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.dict_assignment_valid
 msgid "pages.CreatingKeyValuePairs.steps.dict_assignment_valid.output_prediction_choices.0"

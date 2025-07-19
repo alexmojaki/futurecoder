@@ -7405,12 +7405,8 @@
         "get_solution": "program",
         "page": "Creating Key-Value Pairs",
         "program": [
-            "def buy_quantity(quantities):",
-            "    print('Item:')",
-            "    item = input()",
-            "    print('Quantity:')",
-            "    quantity_str = input()",
-            "    quantities[item] = int(quantity_str)"
+            "def buy_quantity(quantities, item, quantity):",
+            "    quantities[item] = quantity"
         ],
         "response": {
             "passed": true,

@@ -97,6 +97,10 @@ def normalise_response(response, is_message, substep):
 
     message_sections = response.pop("message_sections")
     if not is_message:
+        if message_sections:
+            for section in message_sections:
+                for message in section['messages']:
+                    print(message)
         assert not message_sections
     else:
         section = message_sections[0]
