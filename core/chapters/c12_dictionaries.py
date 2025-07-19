@@ -798,7 +798,19 @@ class CreatingKeyValuePairs(Page):
         requirements = "Your function should modify the `quantities` argument. It doesn't need to `return` or `print` anything."
 
         hints = """
-        TODO
+        The body of `buy_quantity` only needs one simple line of code.
+        It's similar to some of the lines in the previous step, but with variables instead of hardcoded values.
+        Be careful with quotes!
+        `'dog'` is an example of a value for `item`.
+        What would be an example of a value for `quantity`?
+        For `'dog'`, it was `500` above.
+        You're making a generic version of `quantities['dog'] = 500`.
+        The `quantities` part is fine as is.
+        Also keep the `[]` and `=`.
+        Remember that `item` is a variable, `'item'` is a string literal.
+        Replace `'dog'` with `item`.
+        Replace `500` with `quantity`.
+        Don't use `'item'` or `'quantity'`, use the variables `item` and `quantity` directly.
         """
 
         no_returns_stdout = True  # because the solution doesn't return anything, returning stdout would be assumed
