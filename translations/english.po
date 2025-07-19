@@ -23581,7 +23581,79 @@ msgstr "Copying Dictionaries"
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
 msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.0.text"
-msgstr "TODO"
+msgstr "The body of `buy_quantity` only needs one simple line of code."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.1.text"
+msgstr "It's similar to some of the lines in the previous step, but with variables instead of hardcoded values."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.10.text"
+msgstr "Replace `'dog'` with `item`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.11.text"
+msgstr "Replace `500` with `quantity`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.12.text"
+msgstr "Don't use `'item'` or `'quantity'`, use the variables `item` and `quantity` directly."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.2.text"
+msgstr "Be careful with quotes!"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.3.text"
+msgstr "`'dog'` is an example of a value for `item`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.4.text"
+msgstr "What would be an example of a value for `quantity`?"
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.5.text"
+msgstr "For `'dog'`, it was `500` above."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.6.text"
+msgstr "You're making a generic version of `quantities['dog'] = 500`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.7.text"
+msgstr "The `quantities` part is fine as is."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.8.text"
+msgstr "Also keep the `[]` and `=`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.buy_quantity_exercise
+msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.hints.9.text"
+msgstr "Remember that `item` is a variable, `'item'` is a string literal."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 msgid "pages.CreatingKeyValuePairs.steps.buy_quantity_exercise.requirements"
@@ -24010,43 +24082,90 @@ msgstr ""
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.0.text"
-msgstr "You need to iterate through the items in the `quantities` dictionary."
+msgstr "You only need to fill in the `___` part."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.1.text"
-msgstr "For each `item`, calculate the total cost for that item (quantity * price)."
+msgstr "But if you want, you could also just put a variable name there, and then add a new line below it."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.10.text"
+msgstr "The dictionary is the thing that this function creates, builds, and returns."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.11.text"
+msgstr "i.e. `totals`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.12.text"
+msgstr "Note how `'apple'` is a key in all three dictionaries in that test."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.13.text"
+msgstr "i.e. the dictionaries `quantities`, `prices`, and `totals`."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.2.text"
-msgstr "Store this calculated cost in the `totals` dictionary."
+msgstr "Look at the tests with `assert_equal`. In the first example, the expected output is `{'apple': 6}`. Why?"
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.3.text"
-msgstr "The key for the `totals` dictionary should be the `item` name."
+msgstr "Because the customer bought 2 apples, and each apple costs 3, so the total cost is `2 * 3 = 6`."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.4.text"
-msgstr "Use the dictionary assignment syntax: `totals[item] = calculated_cost`."
+msgstr ""
+"The `'box': 5` part is ignored because the customer didn't buy any boxes. It just means that the price of a box is 5."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.5.text"
-msgstr "Make sure this assignment happens *inside* the loop."
+msgstr "You need to add a new key-value pair to a dictionary."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
 #. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
 msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.6.text"
-msgstr "The function should return the `totals` dictionary after the loop finishes."
+msgstr "Identify the dictionary, the key, and the value."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.7.text"
+msgstr "They are all present in the given code already."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.8.text"
+msgstr "The value is the total cost for that item, which is the quantity multiplied by the price."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+#. 
+#. https://poeditor.com/projects/view_terms?id=490053&search=pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.hints.9.text"
+msgstr "i.e. `quantities[item] * prices[item]`."
+
+#. https://futurecoder.io/course/#CreatingKeyValuePairs
+msgid "pages.CreatingKeyValuePairs.steps.total_cost_per_item_exercise.requirements"
+msgstr "Run the program above, but replace the `___` with the correct code."
 
 #. https://futurecoder.io/course/#CreatingKeyValuePairs
 #. 
