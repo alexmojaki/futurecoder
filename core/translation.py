@@ -275,7 +275,8 @@ class Terms:
     disallowed_default_label = "more than {max_count} {label}"
 
     expected_mode_shell = (
-        "Type your code directly in the shell after `>>>` and press Enter."
+        "Type your code directly in the shell **after `>>>` and press Enter**. "
+        "Don't type in the editor, which is above the shell. Don't press 'Run' or other buttons at the top."
     )
     expected_mode_birdseye = (
         "With your code in the editor, click the `birdseye` button."

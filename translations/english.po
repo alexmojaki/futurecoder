@@ -21228,7 +21228,9 @@ msgid "misc_terms.expected_mode_pythontutor"
 msgstr "With your code in the editor, click the Python Tutor button."
 
 msgid "misc_terms.expected_mode_shell"
-msgstr "Type your code directly in the shell after `>>>` and press Enter."
+msgstr ""
+"Type your code directly in the shell **after `>>>` and press Enter**. Don't type in the editor, which is above the "
+"shell. Don't press 'Run' or other buttons at the top."
 
 msgid "misc_terms.expected_mode_snoop"
 msgstr "With your code in the editor, click the `snoop` button."
