@@ -526,7 +526,7 @@ function AppMain(
     <div className={`ide ide-${fullIde ? 'full' : 'half'}`}>
       <div className="editor-and-terminal">
         {showEditor &&
-          <Editor value={editorContent} readOnly={cantUseEditor}/>
+          <Editor key={fullIde ? 'full' : 'half'} value={editorContent} readOnly={cantUseEditor}/> 
         }
         <div className="terminal" style={{height: showEditor ? undefined : "100%"}}>
           <Shell/>
