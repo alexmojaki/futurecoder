@@ -160,28 +160,46 @@ const EditorButtons = (
       </a>}
   </div>;
 
-const Editor = ({readOnly, value}) =>
-  <div className="editor">
-    <AceEditor
-      mode="python"
-      theme="monokai"
-      onChange={setEditorContent}
-      onLoad={(editor) => {
-        editor.renderer.setScrollMargin(10);
-        editor.renderer.setPadding(10);
-      }}
-      value={value}
-      name="editor"
-      height="100%"
-      width="100%"
-      fontSize="15px"
-      setOptions={{
-        fontFamily: "monospace",
-        showPrintMargin: false,
-      }}
-      readOnly={readOnly}
-    />
-  </div>;
+const Editor = ({readOnly, value}) => {
+  const editorRef = React.useRef(null);
+  const containerRef = React.useRef(null);
+  React.useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    // ResizeObserver calls editor.resize() whenever the container size changes
+    const observer = new ResizeObserver(() => {
+      if (editorRef.current) {
+        editorRef.current.resize();
+      }
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <div className="editor" ref={containerRef}>
+      <AceEditor
+        mode="python"
+        theme="monokai"
+        onChange={setEditorContent}
+        onLoad={(editor) => {
+          editorRef.current = editor;
+          editor.renderer.setScrollMargin(10);
+          editor.renderer.setPadding(10);
+        }}
+        value={value}
+        name="editor"
+        height="100%"
+        width="100%"
+        fontSize="15px"
+        setOptions={{
+          fontFamily: "monospace",
+          showPrintMargin: false,
+        }}
+        readOnly={readOnly}
+      />
+    </div>
+  );
+};
 
 const Shell = () =>
   <Terminal
@@ -526,7 +544,7 @@ function AppMain(
     <div className={`ide ide-${fullIde ? 'full' : 'half'}`}>
       <div className="editor-and-terminal">
         {showEditor &&
-          <Editor key={fullIde ? 'full' : 'half'} value={editorContent} readOnly={cantUseEditor}/> 
+          <Editor value={editorContent} readOnly={cantUseEditor}/> 
         }
         <div className="terminal" style={{height: showEditor ? undefined : "100%"}}>
           <Shell/>
