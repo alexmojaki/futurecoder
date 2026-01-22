@@ -21,7 +21,7 @@
     "firebase": "^8.6.3",
     "http-proxy-middleware": "^3.0.5",
     "localforage": "^1.9.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "p-retry": "^5.0.0",
     "prop-types": "^15.7.2",
     "pyodide": "^0.26.2",
