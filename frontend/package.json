@@ -67,7 +67,7 @@
     ]
   },
   "devDependencies": {
-    "@pyodide/webpack-plugin": "^1.3.2",
+    "@pyodide/webpack-plugin": "^1.4.0",
     "raw-loader": "^4.0.2",
     "worker-loader": "^3.0.8"
   }
