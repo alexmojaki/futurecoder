@@ -30,7 +30,7 @@ isort = "^5.1.4"
 polib = "^1.1.1"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "7.3.1"
+pytest = "9.0.3"
 selenium = "^4.24.0"
 
 [build-system]
