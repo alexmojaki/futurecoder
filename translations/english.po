@@ -29683,6 +29683,8 @@ msgstr "Looping Over Nested Lists"
 #.             board.append(row)
 #.         return board
 #. 
+#.     # __code3__:
+#.     from copy import deepcopy
 #.     # __code1__:
 #.     board.append(row.copy())
 #. 
@@ -29731,6 +29733,12 @@ msgstr ""
 "- Call `make_board` repeatedly to make a new `board` each time, or\n"
 "- Use the `deepcopy` function instead of `board.copy()`.\n"
 "  `deepcopy` makes copies at every level of nested objects.\n"
+"\n"
+"To use `deepcopy`, you first need to import it from the `copy` module:\n"
+"\n"
+"__code3__\n"
+"\n"
+"Then you can use `deepcopy(board)` to make an independent copy of `board`.\n"
 "\n"
 "If you're still confused, don't worry.\n"
 "This is just preparing you to deal with your code behaving weirdly in the future.\n"

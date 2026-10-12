@@ -1855,6 +1855,12 @@ Changing `make_board` won't fix anything here, the solution is to either:
 - Use the `deepcopy` function instead of `board.copy()`.
   `deepcopy` makes copies at every level of nested objects.
 
+To use `deepcopy`, you first need to import it from the `copy` module:
+
+    from copy import deepcopy
+
+Then you can use `deepcopy(board)` to make an independent copy of `board`.
+
 If you're still confused, don't worry.
 This is just preparing you to deal with your code behaving weirdly in the future.
 You're not required to understand this right now and this lesson will still be valuable.
